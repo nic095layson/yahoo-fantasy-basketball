@@ -73,13 +73,62 @@ def check_freshness():
         + "!" * 72, file=sys.stderr)
 
 
+# Consensus-relevant players that must exist in the pool. A missing name
+# here means the dataset lost a draftable player (the Markkanen incident,
+# 2026-07-11). Checked on every freshness stamp and via `validate`.
+MUST_HAVE = [
+    "Nikola Jokic", "Victor Wembanyama", "Shai Gilgeous-Alexander",
+    "Luka Doncic", "Giannis Antetokounmpo", "Anthony Davis",
+    "Cade Cunningham", "Anthony Edwards", "Kevin Durant", "Jalen Williams",
+    "Chet Holmgren", "Evan Mobley", "Donovan Mitchell", "Devin Booker",
+    "Tyrese Maxey", "Karl-Anthony Towns", "Domantas Sabonis",
+    "Alperen Sengun", "Jalen Brunson", "Trae Young", "Ja Morant",
+    "Jaren Jackson Jr.", "Stephen Curry", "Bam Adebayo", "Cooper Flagg",
+    "Scottie Barnes", "Franz Wagner", "Paolo Banchero", "Jalen Johnson",
+    "Amen Thompson", "LeBron James", "Jaylen Brown", "Ivica Zubac",
+    "De'Aaron Fox", "Jamal Murray", "James Harden", "Zion Williamson",
+    "Kawhi Leonard", "Tyler Herro", "Desmond Bane", "Derrick White",
+    "Jimmy Butler", "LaMelo Ball", "Darius Garland", "Josh Giddey",
+    "Dyson Daniels", "Devin Vassell", "Jalen Duren", "Rudy Gobert",
+    "Jarrett Allen", "Walker Kessler", "Myles Turner", "Deandre Ayton",
+    "Mark Williams", "Kristaps Porzingis", "Joel Embiid", "Nikola Vucevic",
+    "Lauri Markkanen", "Tyrese Haliburton", "Jayson Tatum", "Kyrie Irving",
+    "Damian Lillard", "Fred VanVleet", "Dejounte Murray", "Paul George",
+    "Brandon Ingram", "Zach LaVine", "DeMar DeRozan", "Jalen Green",
+    "Norman Powell", "Cam Thomas", "Coby White", "Austin Reaves",
+    "CJ McCollum", "Anfernee Simons", "Immanuel Quickley", "Jalen Suggs",
+    "Jrue Holiday", "D'Angelo Russell", "OG Anunoby", "Mikal Bridges",
+    "Trey Murphy III", "Michael Porter Jr.", "Pascal Siakam",
+    "Julius Randle", "Tari Eason", "Aaron Gordon", "Payton Pritchard",
+    "Josh Hart", "Alex Sarr", "Zach Edey", "Donovan Clingan",
+    "Isaiah Hartenstein", "Kel'el Ware", "Miles Bridges", "Brandon Miller",
+    "RJ Barrett", "Deni Avdija", "Shaedon Sharpe", "Reed Sheppard",
+    "Andrew Nembhard", "Stephon Castle", "VJ Edgecombe", "Dylan Harper",
+    "Keyonte George",
+]
+
+
+def validate_pool(players):
+    """Return list of MUST_HAVE names missing from the pool."""
+    have = {p["player"] for p in players}
+    return [n for n in MUST_HAVE if n not in have]
+
+
 def cmd_freshness(args):
     if args.stamp:
+        missing = validate_pool(load_players())
+        if missing:
+            print("⚠ POOL INCOMPLETE — missing consensus players:")
+            for n in missing:
+                print(f"    {n}")
+            print("Add them to data/players.csv before stamping.")
+            sys.exit(1)
         stamp = {"date": datetime.date.today().isoformat(),
                  "note": args.note or "refreshed"}
         with open(FRESH_PATH, "w", encoding="utf-8") as f:
             json.dump(stamp, f, indent=2)
-        print(f"Freshness stamped: {stamp['date']} — {stamp['note']}")
+        print(f"Freshness stamped: {stamp['date']} — {stamp['note']} "
+              f"(pool complete: {len(MUST_HAVE)} consensus names present)")
     else:
         info = read_freshness()
         if info:
@@ -192,10 +241,17 @@ NICKNAMES = {
 
 
 def match_player(players, query, taken=None):
+    """Resolve a name. Priority: exact full name > nickname > exact word
+    (first/last name) > substring — so 'Ayton' hits Deandre Ayton, never
+    P-ayton Pritchard, and 'Hart' hits Josh Hart, not Hartenstein."""
     q = query.strip().lower()
     q = NICKNAMES.get(q, q)
-    exact = [p for p in players if p["player"].lower() == q]
-    subs = exact or [p for p in players if q in p["player"].lower()]
+    subs = [p for p in players if p["player"].lower() == q]
+    if not subs:
+        subs = [p for p in players
+                if q in p["player"].lower().replace(".", "").split()]
+    if not subs:
+        subs = [p for p in players if q in p["player"].lower()]
     if not subs:
         sys.exit(f"No player matching {query!r}. Try `find {query}`.")
     if len(subs) > 1:
@@ -346,7 +402,9 @@ def build_rosters(state, players):
     by_name = {p["player"]: p for p in players}
     rosters = {slot: [] for slot in range(1, state["teams"] + 1)}
     for pk in state["picks"]:
-        rosters[pk["slot"]].append(by_name[pk["player"]])
+        p = by_name.get(pk["player"])  # UNKNOWN placeholders are skipped
+        if p is not None:
+            rosters[pk["slot"]].append(p)
     return rosters
 
 
@@ -407,6 +465,20 @@ def cmd_draft(args, players):
         last = picks.pop()
         save_state(state)
         print(f"Undid: {last['player']} (Team {last['slot']})")
+
+    elif args.draft_cmd == "fix":
+        idx = args.number - 1
+        if not 0 <= idx < len(picks):
+            sys.exit(f"Pick #{args.number} not logged yet ({len(picks)} picks).")
+        old = picks[idx]
+        others = {pk["player"] for i, pk in enumerate(picks) if i != idx}
+        p = match_player(players, args.player, taken=others)
+        picks[idx]["player"] = p["player"]
+        if args.slot:
+            picks[idx]["slot"] = args.slot
+        save_state(state)
+        print(f"✎ #{args.number}: {old['player']} → {p['player']} "
+              f"(T{picks[idx]['slot']})")
 
     elif args.draft_cmd == "best":
         pool = [p for p in players
@@ -482,25 +554,57 @@ def cmd_draft(args, players):
 
     elif args.draft_cmd == "turn":
         # One-shot live-draft turn: log all announced picks, then emit the
-        # full decision card. Bad names are reported, never fatal.
+        # full decision card. Leading pick numbers ("77- Name", "Pick 77,
+        # Name") are authoritative: a number matching an existing pick is a
+        # correction; a number past the next slot back-fills UNKNOWN
+        # placeholders so snake attribution never drifts. A name that fails
+        # to match logs an UNKNOWN placeholder (fix later: draft fix N
+        # "Name") instead of silently shifting every later pick.
+        import re
         errors = []
         for raw in [s.strip() for s in (args.picks or "").split(";") if s.strip()]:
-            mine = raw.lower().startswith("my:")
-            name = raw[3:].strip() if mine else raw
-            try:
-                p = match_player(players, name, taken=taken)
-            except SystemExit as e:
-                errors.append(str(e))
+            m = re.match(r"^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$", raw, re.I)
+            num, body = (int(m.group(1)), m.group(2).strip()) if m else (None, raw)
+            mine = body.lower().startswith("my:")
+            name = body[3:].strip() if mine else body
+
+            if num is not None and num <= len(picks):  # explicit correction
+                idx = num - 1
+                old = picks[idx]["player"]
+                others = {pk["player"] for i, pk in enumerate(picks) if i != idx}
+                try:
+                    p = match_player(players, name, taken=others)
+                except SystemExit as e:
+                    errors.append(f"fix #{num}: {e}")
+                    continue
+                picks[idx]["player"] = p["player"]
+                taken.discard(old)
+                taken.add(p["player"])
+                print(f"  ✎ #{num} corrected: {old} → {p['player']}")
                 continue
+
+            while num is not None and len(picks) + 1 < num:  # gap: back-fill
+                g = len(picks)
+                picks.append({"player": f"UNKNOWN #{g + 1}",
+                              "slot": team_of_pick(g, teams)})
+                print(f"  ⚠ #{g + 1} UNKNOWN (gap) — fill with: "
+                      f"draft fix {g + 1} \"Name\"")
+
             n = len(picks)
             slot = myslot if mine else team_of_pick(n, teams)
-            picks.append({"player": p["player"], "slot": slot})
-            taken.add(p["player"])
-            you = " (YOU)" if slot == myslot else ""
-            print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → T{slot}{you}")
+            try:
+                p = match_player(players, name, taken=taken)
+                picks.append({"player": p["player"], "slot": slot})
+                taken.add(p["player"])
+                you = " (YOU)" if slot == myslot else ""
+                print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → T{slot}{you}")
+            except SystemExit as e:
+                picks.append({"player": f"UNKNOWN #{n + 1}", "slot": slot})
+                errors.append(f"#{n + 1} logged as UNKNOWN ({e}) — "
+                              f"fix with: draft fix {n + 1} \"Name\"")
         save_state(state)
         for e in errors:
-            print(f"  ⚠ NOT LOGGED: {e}")
+            print(f"  ⚠ {e}")
 
         rosters = build_rosters(state, players)
         mine_r = rosters[myslot]
@@ -611,6 +715,11 @@ def build_parser():
                     help="override the picking team (keepers, traded picks)")
 
     dsub.add_parser("undo", help="take back the last pick")
+
+    df = dsub.add_parser("fix", help='correct any logged pick: fix 44 "Herro"')
+    df.add_argument("number", type=int, help="pick number to correct")
+    df.add_argument("player")
+    df.add_argument("--slot", type=int, help="also reassign the team slot")
 
     db = dsub.add_parser("best", help="best available, need-annotated")
     db.add_argument("--pos")
