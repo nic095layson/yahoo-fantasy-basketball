@@ -8,9 +8,14 @@ this script turns them into 9-cat z-score values and provides:
     profile         Category strengths of a set of players (a roster)
     trade           Evaluate a trade:  trade --send "A,B" --get "C"
     find            Look up players by name fragment
-    draft init      Start a draft:  draft init --teams 12 --slot 5
-    draft pick      Log a pick — the picking team is inferred from snake
-                    order, so every team's roster builds automatically
+    freshness       Show or stamp the daily data refresh (--stamp --note)
+    validate        Check the pool for missing consensus players
+    draft init      Start a draft:  draft init --teams 12 --size 15 --slot 4
+    draft turn      ONE-SHOT live-draft turn: log announced picks
+                    ("Jokic; my:Wemby"; numeric prefixes correct/backfill)
+                    and emit the full decision card
+    draft fix       Correct any logged pick:  draft fix 15 "Name"
+    draft pick      Log a single pick (between-turn use)
     draft best      Best available, punt-aware, annotated with your needs
     draft status    Your roster, build profile, per-category rank vs field
     draft rosters   Every team's roster so far
@@ -194,7 +199,7 @@ def availability(p):
     *risk*       -> 0.85: chronic availability concern; mild downgrade
     """
     note = (p.get("note") or "").lower()
-    if note.startswith("out") or "out-for-season" in note:
+    if note.startswith("out-"):
         return 0.0
     if "recovery" in note:
         return 0.7
@@ -364,7 +369,7 @@ def cmd_find(args, players):
     hits = [p for p in players if q in p["player"].lower()]
     if not hits:
         print(f"No players matching {args.query!r} in data/players.csv "
-              "(pool is the top ~125; add rows for deeper players).")
+              "(pool is the top ~210; add rows for deeper players).")
         return
     for p in sorted(hits, key=lambda p: -total_value(p)):
         print(fmt_row(p))
@@ -445,6 +450,10 @@ def cmd_draft(args, players):
     if args.draft_cmd == "init":
         if os.path.isfile(STATE_PATH) and not args.force:
             sys.exit(f"{STATE_PATH} already exists — add --force to restart.")
+        if args.teams < 2 or args.size < 1:
+            sys.exit("--teams must be >= 2 and --size >= 1.")
+        if not 1 <= args.slot <= args.teams:
+            sys.exit(f"--slot must be between 1 and {args.teams}.")
         state = {"teams": args.teams, "slot": args.slot, "size": args.size,
                  "punt": list(parse_punt(args.punt)), "picks": []}
         save_state(state)
@@ -460,6 +469,8 @@ def cmd_draft(args, players):
     teams, myslot = state["teams"], state["slot"]
 
     if args.draft_cmd == "pick":
+        if args.slot and not 1 <= args.slot <= teams:
+            sys.exit(f"--slot must be between 1 and {teams}.")
         p = match_player(players, args.player, taken=taken)
         if availability(p) == 0.0:
             print(f"warning: {p['player']} is marked OUT for the season "
@@ -494,6 +505,8 @@ def cmd_draft(args, players):
         p = match_player(players, args.player, taken=others)
         picks[idx]["player"] = p["player"]
         if args.slot:
+            if not 1 <= args.slot <= teams:
+                sys.exit(f"--slot must be between 1 and {teams}.")
             picks[idx]["slot"] = args.slot
         save_state(state)
         print(f"✎ #{args.number}: {old['player']} → {p['player']} "
@@ -582,11 +595,18 @@ def cmd_draft(args, players):
         import re
         errors = []
         corrections = 0
+        snapshot = [dict(pk) for pk in picks]  # rollback point (drift halt)
+        max_pick = teams * state["size"]
         for raw in [s.strip() for s in (args.picks or "").split(";") if s.strip()]:
             m = re.match(r"^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$", raw, re.I)
             num, body = (int(m.group(1)), m.group(2).strip()) if m else (None, raw)
             mine = body.lower().startswith("my:")
             name = body[3:].strip() if mine else body
+
+            if num is not None and not 1 <= num <= max_pick:
+                errors.append(f"ignored {raw!r}: pick number out of range "
+                              f"(1-{max_pick})")
+                continue
 
             if num is not None and num <= len(picks):  # explicit correction
                 idx = num - 1
@@ -597,13 +617,18 @@ def cmd_draft(args, players):
                 except SystemExit as e:
                     errors.append(f"fix #{num}: {e}")
                     continue
+                if p["player"] == picks[idx]["player"]:
+                    print(f"  ✓ #{num} unchanged ({p['player']})")
+                    continue
                 corrections += 1
                 if corrections >= 3:
+                    state["picks"] = snapshot
                     save_state(state)
                     sys.exit(f"⚠ HALTED at {raw!r}: 3+ corrections in one "
                              "batch suggests numbering drift, not fixes. "
-                             "Run `draft status`, verify against the draft "
-                             "room, then resend.")
+                             "NO changes from this batch were applied. Run "
+                             "`draft status`, verify against the draft room, "
+                             "then resend the whole batch.")
                 picks[idx]["player"] = p["player"]
                 taken.discard(old)
                 taken.add(p["player"])
@@ -634,12 +659,13 @@ def cmd_draft(args, players):
                     note = f"  (assumed over {others})"
                 print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → "
                       f"T{slot}{you}{note}")
+            elif match_candidates(players, name):
+                # every match already drafted: duplicate feed — skip, no pick
+                errors.append(f"skipped {name!r}: already off the board "
+                              "(no pick logged)")
             else:
-                reason = ("already off the board"
-                          if match_candidates(players, name)
-                          else "no match")
                 picks.append({"player": f"UNKNOWN #{n + 1}", "slot": slot})
-                errors.append(f"#{n + 1} logged as UNKNOWN ({name!r}: {reason})"
+                errors.append(f"#{n + 1} logged as UNKNOWN ({name!r}: no match)"
                               f" — fix with: draft fix {n + 1} \"Name\"")
         save_state(state)
         for e in errors:
@@ -700,8 +726,9 @@ def cmd_draft(args, players):
                     f"{c}:{p['z'][c]:+.1f}" for c in weakest)
             if team_counts.get(p["team"], 0) >= 2:
                 line += f"  [would be 3rd {p['team']}]"
-            if ("recovery" in (p.get("note") or "") and any(
-                    "recovery" in (q.get("note") or "") for q in mine_r)):
+            if ("recovery" in (p.get("note") or "").lower() and any(
+                    "recovery" in (q.get("note") or "").lower()
+                    for q in mine_r)):
                 line += "  [2nd+ recovery bet]"
             print(line)
 
@@ -757,6 +784,8 @@ def build_parser():
 
     f = sub.add_parser("find", help="look up players by name fragment")
     f.add_argument("query")
+
+    sub.add_parser("validate", help="check pool for missing consensus players")
 
     fr = sub.add_parser("freshness", help="show or stamp the daily data refresh")
     fr.add_argument("--stamp", action="store_true",
@@ -817,6 +846,13 @@ def main(argv=None):
     args = build_parser().parse_args(argv)
     if args.command == "freshness":
         cmd_freshness(args)
+        return
+    if args.command == "validate":
+        missing = validate_pool(load_players())
+        if missing:
+            print("⚠ POOL INCOMPLETE — missing: " + ", ".join(missing))
+            sys.exit(1)
+        print(f"pool complete: all {len(MUST_HAVE)} consensus names present")
         return
     # Speed rule: live-draft commands never print the stale banner (a draft
     # is no time to refresh data). Staleness is enforced at `draft init`.

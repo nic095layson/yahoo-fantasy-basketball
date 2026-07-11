@@ -10,8 +10,8 @@ and a live snake-draft assistant.
 
 Three layers:
 
-1. **Data — `data/players.csv`.** ~125 players with per-game 9-cat
-   projections and injury/rookie notes. It's a plain CSV: edit a row, add a
+1. **Data — `data/players.csv`.** ~210 players with per-game 9-cat
+   projections and injury/rookie notes (top-200 consensus research baseline). It's a plain CSV: edit a row, add a
    player, and every ranking updates. Claude refreshes stale rows via web
    search before real decisions.
 2. **Engine — `scripts/hoops.py`** (stdlib-only Python). Converts projections
@@ -39,15 +39,18 @@ python3 scripts/hoops.py trade --send "Luka Doncic" --get "Sabonis,Derrick White
 Live draft:
 
 ```bash
-python3 scripts/hoops.py draft init --teams 12 --slot 5 --punt "FT%"
-python3 scripts/hoops.py draft pick "Jokic"           # team inferred from snake order
-python3 scripts/hoops.py draft pick "Giannis" --mine  # your pick (sanity-checked)
-python3 scripts/hoops.py draft best                   # best available + your needs
-python3 scripts/hoops.py draft status                 # your build + rank vs field
-python3 scripts/hoops.py draft matrix                 # all teams' category totals
-python3 scripts/hoops.py draft vs --team 8            # head-to-head vs one opponent
-python3 scripts/hoops.py draft rosters                # every team's picks so far
+python3 scripts/hoops.py draft init --teams 12 --size 15 --slot 4
+python3 scripts/hoops.py draft turn "Jokic; my:Wemby; SGA"   # THE live-draft command:
+#   logs every announced pick (yours prefixed my:), snake attribution automatic,
+#   nicknames + typos resolve, and it emits the full decision card in ~50ms —
+#   candidates, category ranks vs the field, feasibility/team-stack flags.
+python3 scripts/hoops.py draft fix 15 "Donovan Mitchell"     # correct any pick
+python3 scripts/hoops.py draft matrix                        # all teams' category totals
+python3 scripts/hoops.py draft vs --team 8                   # head-to-head vs one opponent
 ```
+
+(`draft pick/best/status/rosters/undo` exist for between-turn use; during a
+live draft, `draft turn` is the one-command-per-turn workflow.)
 
 Every pick is attributed to its team automatically (snake order), so the
 tracker holds all 12 rosters — recommendations weigh not just your build but
@@ -67,7 +70,7 @@ Claude adds the judgment (build fit, injury flags, when to reach).
 
 ```
 ├── README.md
-├── data/players.csv                  # editable projection pool (~125 players)
+├── data/players.csv                  # editable projection pool (~210 players)
 ├── scripts/hoops.py                  # z-score engine + draft tracker
 ├── .claude/skills/fantasy-basketball/SKILL.md
 └── evals/evals.json
@@ -79,7 +82,9 @@ Claude adds the judgment (build fit, injury flags, when to reach).
   above average in a category. FG%/FT% are weighted by attempt volume.
 - Draft state lives in `./draft_state.json` (start over with `draft init --force`).
 - The projections are a **baseline, not live data**. A daily freshness rule
-  is enforced: every command warns until the data has been refreshed that day
+  is enforced: analysis commands warn until the data has been refreshed that
+  day (live-draft commands are exempt by design — staleness is checked at
+  `draft init`)
   (Claude web-searches rosters/injuries, updates the CSV, then runs
   `freshness --stamp`). The `note` column flags injuries and rookie estimates.
 - History: this repo briefly contained a Yahoo Fantasy API OAuth client
