@@ -173,8 +173,27 @@ def parse_punt(arg):
     return tuple(punts)
 
 
+# Common nicknames — draft chatter under a pick clock uses these.
+NICKNAMES = {
+    "sga": "shai gilgeous-alexander", "kat": "karl-anthony towns",
+    "jjj": "jaren jackson", "dame": "damian lillard",
+    "ant": "anthony edwards", "melo": "lamelo ball",
+    "pg13": "paul george", "joker": "nikola jokic",
+    "the joker": "nikola jokic", "spida": "donovan mitchell",
+    "greek freak": "giannis", "book": "devin booker",
+    "klaw": "kawhi leonard", "wemby": "wembanyama",
+    "dlo": "d'angelo russell", "naw": "nickeil alexander-walker",
+    "kd": "kevin durant", "ad": "anthony davis", "cp3": "chris paul",
+    "steph": "stephen curry", "bron": "lebron james",
+    "lebron": "lebron james", "zu": "ivica zubac", "fvv": "fred vanvleet",
+    "kpj": "kevin porter", "mpj": "michael porter", "og": "og anunoby",
+    "jdub": "jalen williams", "scoot": "scoot henderson",
+}
+
+
 def match_player(players, query, taken=None):
     q = query.strip().lower()
+    q = NICKNAMES.get(q, q)
     exact = [p for p in players if p["player"].lower() == q]
     subs = exact or [p for p in players if q in p["player"].lower()]
     if not subs:
@@ -319,6 +338,10 @@ def my_next_pick(state):
         n += 1
 
 
+def positions_of(p):
+    return [s.strip() for s in p["pos"].replace('"', "").split(",")]
+
+
 def build_rosters(state, players):
     by_name = {p["player"]: p for p in players}
     rosters = {slot: [] for slot in range(1, state["teams"] + 1)}
@@ -457,6 +480,73 @@ def cmd_draft(args, players):
             print(f"  {cat:<5} you {a[cat]:+6.2f}  them {b[cat]:+6.2f}  → {lead}{tag}")
         print(f"\nKept categories: you lead {wins}–{losses}")
 
+    elif args.draft_cmd == "turn":
+        # One-shot live-draft turn: log all announced picks, then emit the
+        # full decision card. Bad names are reported, never fatal.
+        errors = []
+        for raw in [s.strip() for s in (args.picks or "").split(";") if s.strip()]:
+            mine = raw.lower().startswith("my:")
+            name = raw[3:].strip() if mine else raw
+            try:
+                p = match_player(players, name, taken=taken)
+            except SystemExit as e:
+                errors.append(str(e))
+                continue
+            n = len(picks)
+            slot = myslot if mine else team_of_pick(n, teams)
+            picks.append({"player": p["player"], "slot": slot})
+            taken.add(p["player"])
+            you = " (YOU)" if slot == myslot else ""
+            print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → T{slot}{you}")
+        save_state(state)
+        for e in errors:
+            print(f"  ⚠ NOT LOGGED: {e}")
+
+        rosters = build_rosters(state, players)
+        mine_r = rosters[myslot]
+        override = parse_punt(args.punt) if args.punt else punt
+        kept = [c for c in CATS if c not in override]
+        weakest = []
+        if mine_r:
+            totals = roster_totals(mine_r)
+            weakest = sorted(kept, key=lambda c: totals[c])[:2]
+
+        pool = [p for p in players
+                if p["player"] not in taken and availability(p) > 0]
+        if args.pos:
+            pool = [p for p in pool if args.pos.upper() in p["pos"].upper()]
+        pool.sort(key=lambda p: -adj_value(p, override))
+
+        print(f"\nYOUR PICK: #{my_next_pick(state)} | roster {len(mine_r)}/{state['size']}"
+              + (f" | weakest: {', '.join(weakest)}" if weakest else "")
+              + (f" | punting: {', '.join(override)}" if override else ""))
+        pos_counts = {}
+        for p in mine_r:
+            for ps in positions_of(p):
+                pos_counts[ps] = pos_counts.get(ps, 0) + 1
+        if pos_counts:
+            print("your positions: " + " ".join(
+                f"{k}:{v}" for k, v in sorted(pos_counts.items())))
+        print()
+        for i, p in enumerate(pool[:args.top], 1):
+            line = fmt_row(p, override, rank=i)
+            if weakest:
+                line += "   helps " + " ".join(
+                    f"{c}:{p['z'][c]:+.1f}" for c in weakest)
+            print(line)
+
+        if mine_r:
+            ranks, tots = my_category_ranks(state, players)
+            print("\nvs field: " + "  ".join(
+                f"{c}:{ranks[c]}" for c in kept))
+            rival = max((s for s in tots if s != myslot),
+                        key=lambda s: sum(v for c, v in tots[s].items()
+                                          if c not in override))
+            edge = [c for c in kept if tots[myslot][c] > tots[rival][c]]
+            print(f"top rival: T{rival} — you lead them in "
+                  f"{len(edge)}/{len(kept)} kept cats "
+                  f"({', '.join(edge) or 'none'})")
+
     elif args.draft_cmd == "status":
         overall = len(picks)
         rnd = overall // teams + 1
@@ -526,6 +616,16 @@ def build_parser():
     db.add_argument("--pos")
     db.add_argument("--punt", help="override the draft's punt setting")
     db.add_argument("--top", type=int, default=12)
+
+    dt = dsub.add_parser("turn",
+                         help="ONE-SHOT: log picks + full decision card")
+    dt.add_argument("picks", nargs="?", default="",
+                    help='semicolon-separated names in draft order; '
+                         'prefix your own with "my:", e.g. '
+                         '"Jokic; my:Booker; Curry"')
+    dt.add_argument("--top", type=int, default=8)
+    dt.add_argument("--pos")
+    dt.add_argument("--punt", help="override the draft's punt setting")
 
     dsub.add_parser("status", help="your roster, build profile, rank vs field")
     dsub.add_parser("rosters", help="every team's roster so far")
