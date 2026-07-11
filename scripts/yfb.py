@@ -128,9 +128,15 @@ def cmd_auth(_args):
             "Missing credentials. Set YAHOO_CLIENT_ID / YAHOO_CLIENT_SECRET "
             f"or create {CREDS_PATH} first."
         )
-    url = AUTH_URL + "?" + urllib.parse.urlencode(
-        {"client_id": cid, "redirect_uri": REDIRECT_URI, "response_type": "code"}
-    )
+    params = {"client_id": cid, "redirect_uri": REDIRECT_URI,
+              "response_type": "code"}
+    # Explicitly request the Fantasy Sports read scope. Yahoo's app portal
+    # sometimes omits the Fantasy Sports permission checkbox; asking for the
+    # scope here can still attach it. Override with YFB_SCOPE="" to disable.
+    scope = os.environ.get("YFB_SCOPE", "fspt-r")
+    if scope:
+        params["scope"] = scope
+    url = AUTH_URL + "?" + urllib.parse.urlencode(params)
     print("1. Open this URL in a browser, sign in, and click Agree:\n")
     print(f"   {url}\n")
     print(f"2. Your browser will then try to load {REDIRECT_URI} and show a")
