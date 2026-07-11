@@ -1,0 +1,9 @@
+# Yahoo API secrets — never commit
+credentials.json
+token.json
+*.pem
+.env
+
+# Python
+__pycache__/
+*.pyc
