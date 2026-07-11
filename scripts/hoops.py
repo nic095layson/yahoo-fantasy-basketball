@@ -640,6 +640,14 @@ def cmd_draft(args, players):
         if pos_counts:
             print("your positions: " + " ".join(
                 f"{k}:{v}" for k, v in sorted(pos_counts.items())))
+        # Feasibility guard (council rule): position only hard-matters when a
+        # base slot could become unfillable with the picks remaining.
+        missing = [b for b in ("PG", "SG", "SF", "PF", "C")
+                   if not pos_counts.get(b)]
+        remaining = state["size"] - len(mine_r)
+        if missing and remaining - len(missing) <= 2:
+            print(f"⚠ FEASIBILITY: no {'/'.join(missing)} rostered, "
+                  f"{remaining} picks left — cover these soon")
         print()
         for i, p in enumerate(pool[:args.top], 1):
             line = fmt_row(p, override, rank=i)
