@@ -91,8 +91,19 @@ def token_request(payload, cid, csec):
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        tok = json.load(resp)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            tok = json.load(resp)
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")[:500]
+        hint = ""
+        if "invalid_grant" in body:
+            hint = ("\nHint: authorization codes are single-use and expire in "
+                    "minutes — run `auth` again and paste a fresh code promptly.")
+        elif "invalid_scope" in body:
+            hint = ("\nHint: Yahoo refused the requested scope for this app — "
+                    "the app registration lacks the Fantasy Sports permission.")
+        sys.exit(f"Yahoo token endpoint error {e.code}:\n{body}{hint}")
     tok["obtained_at"] = int(time.time())
     save_private_json(TOKEN_PATH, tok)
     return tok
