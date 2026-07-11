@@ -241,10 +241,12 @@ NICKNAMES = {
 }
 
 
-def match_player(players, query, taken=None):
-    """Resolve a name. Priority: exact full name > nickname > exact word
-    (first/last name) > substring — so 'Ayton' hits Deandre Ayton, never
+def match_candidates(players, query):
+    """All plausible matches for a name. Priority: exact full name >
+    nickname > exact word (first/last name) > substring > fuzzy (typo
+    tolerance: Siakim→Siakam) — so 'Ayton' hits Deandre Ayton, never
     P-ayton Pritchard, and 'Hart' hits Josh Hart, not Hartenstein."""
+    import difflib
     q = query.strip().lower()
     q = NICKNAMES.get(q, q)
     subs = [p for p in players if p["player"].lower() == q]
@@ -253,6 +255,22 @@ def match_player(players, query, taken=None):
                 if q in p["player"].lower().replace(".", "").split()]
     if not subs:
         subs = [p for p in players if q in p["player"].lower()]
+    if not subs:  # typo fallback: fuzzy against full names and name words
+        full = difflib.get_close_matches(
+            q, [p["player"].lower() for p in players], n=3, cutoff=0.75)
+        subs = [p for p in players if p["player"].lower() in full]
+        if not subs:
+            hits = set()
+            for p in players:
+                for w in p["player"].lower().replace(".", "").split():
+                    if difflib.get_close_matches(q, [w], n=1, cutoff=0.8):
+                        hits.add(p["player"])
+            subs = [p for p in players if p["player"] in hits]
+    return subs
+
+
+def match_player(players, query, taken=None):
+    subs = match_candidates(players, query)
     if not subs:
         sys.exit(f"No player matching {query!r}. Try `find {query}`.")
     if len(subs) > 1:
@@ -601,16 +619,28 @@ def cmd_draft(args, players):
 
             n = len(picks)
             slot = myslot if mine else team_of_pick(n, teams)
-            try:
-                p = match_player(players, name, taken=taken)
+            # Ambiguity auto-resolves by draft context: the best available
+            # candidate is who gets drafted at this point; flag the guess.
+            cands = [c for c in match_candidates(players, name)
+                     if c["player"] not in taken]
+            if cands:
+                p = max(cands, key=adj_value)
                 picks.append({"player": p["player"], "slot": slot})
                 taken.add(p["player"])
                 you = " (YOU)" if slot == myslot else ""
-                print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → T{slot}{you}")
-            except SystemExit as e:
+                note = ""
+                if len(cands) > 1:
+                    others = ", ".join(c["player"] for c in cands[1:3])
+                    note = f"  (assumed over {others})"
+                print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → "
+                      f"T{slot}{you}{note}")
+            else:
+                reason = ("already off the board"
+                          if match_candidates(players, name)
+                          else "no match")
                 picks.append({"player": f"UNKNOWN #{n + 1}", "slot": slot})
-                errors.append(f"#{n + 1} logged as UNKNOWN ({e}) — "
-                              f"fix with: draft fix {n + 1} \"Name\"")
+                errors.append(f"#{n + 1} logged as UNKNOWN ({name!r}: {reason})"
+                              f" — fix with: draft fix {n + 1} \"Name\"")
         save_state(state)
         for e in errors:
             print(f"  ⚠ {e}")
