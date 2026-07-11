@@ -648,12 +648,28 @@ def cmd_draft(args, players):
         if missing and remaining - len(missing) <= 2:
             print(f"⚠ FEASIBILITY: no {'/'.join(missing)} rostered, "
                   f"{remaining} picks left — cover these soon")
+        # Owner soft rules (subordinate to winning potential):
+        # NBA-team stacking cap (avoid 3+ from one team) and position lean.
+        team_counts = {}
+        for p in mine_r:
+            team_counts[p["team"]] = team_counts.get(p["team"], 0) + 1
+        stacked = {k: v for k, v in team_counts.items() if v >= 2}
+        if stacked:
+            print("NBA-team stacks: " + " ".join(
+                f"{k}:{v}" for k, v in sorted(stacked.items())))
+        g_ct = pos_counts.get("PG", 0) + pos_counts.get("SG", 0)
+        f_ct = pos_counts.get("SF", 0) + pos_counts.get("PF", 0)
+        if len(mine_r) >= 5 and abs(g_ct - f_ct) >= 4:
+            lean = f"{f_ct}F vs {g_ct}G" if f_ct > g_ct else f"{g_ct}G vs {f_ct}F"
+            print(f"⚠ LEAN: {lean} — flag for roster balance")
         print()
         for i, p in enumerate(pool[:args.top], 1):
             line = fmt_row(p, override, rank=i)
             if weakest:
                 line += "   helps " + " ".join(
                     f"{c}:{p['z'][c]:+.1f}" for c in weakest)
+            if team_counts.get(p["team"], 0) >= 2:
+                line += f"  [would be 3rd {p['team']}]"
             print(line)
 
         if mine_r:
