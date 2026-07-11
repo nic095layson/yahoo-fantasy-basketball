@@ -136,6 +136,30 @@ def total_value(p, punt=()):
     return sum(z for cat, z in p["z"].items() if cat not in punt)
 
 
+def availability(p):
+    """Injury multiplier from the note column (owner's rule).
+
+    out-*        -> 0.0: season-ending; excluded from all boards
+    *recovery*   -> 0.7: returning from serious injury; value downgraded
+    *risk*       -> 0.85: chronic availability concern; mild downgrade
+    """
+    note = (p.get("note") or "").lower()
+    if note.startswith("out") or "out-for-season" in note:
+        return 0.0
+    if "recovery" in note:
+        return 0.7
+    if "risk" in note:
+        return 0.85
+    return 1.0
+
+
+def adj_value(p, punt=()):
+    """Injury-adjusted value used for ranking boards (never boosts negatives)."""
+    tv = total_value(p, punt)
+    av = availability(p)
+    return tv * av if tv > 0 else tv
+
+
 def parse_punt(arg):
     if not arg:
         return ()
@@ -172,8 +196,10 @@ def fmt_row(p, punt=(), rank=None):
     zs = " ".join(f"{cat}:{p['z'][cat]:+.1f}" for cat in CATS if cat not in punt)
     head = f"{rank:>3}. " if rank else ""
     note = f"  [{p['note']}]" if p.get("note") else ""
+    shown = adj_value(p, punt)
+    marker = "*" if shown != total_value(p, punt) else " "
     return (f"{head}{p['player']:<24} {p['team']:<3} {p['pos']:<6} "
-            f"val {total_value(p, punt):+6.2f}   {zs}{note}")
+            f"val {shown:+6.2f}{marker}  {zs}{note}")
 
 
 def print_profile(players_subset, punt=(), label="Roster"):
@@ -201,12 +227,15 @@ def print_profile(players_subset, punt=(), label="Roster"):
 
 def cmd_rank(args, players):
     punt = parse_punt(args.punt)
-    pool = players
+    pool = [p for p in players if availability(p) > 0]
+    dropped = len(players) - len(pool)
     if args.pos:
         pool = [p for p in pool if args.pos.upper() in p["pos"].upper()]
-    pool = sorted(pool, key=lambda p: -total_value(p, punt))
+    pool = sorted(pool, key=lambda p: -adj_value(p, punt))
     print(f"Rankings (punting: {', '.join(punt) or 'nothing'}"
-          + (f"; position: {args.pos.upper()}" if args.pos else "") + ")\n")
+          + (f"; position: {args.pos.upper()}" if args.pos else "")
+          + (f"; {dropped} out-for-season excluded" if dropped else "")
+          + ")\n* = injury-adjusted value\n")
     for i, p in enumerate(pool[:args.top], 1):
         print(fmt_row(p, punt, rank=i))
 
@@ -332,6 +361,9 @@ def cmd_draft(args, players):
 
     if args.draft_cmd == "pick":
         p = match_player(players, args.player, taken=taken)
+        if availability(p) == 0.0:
+            print(f"warning: {p['player']} is marked OUT for the season "
+                  f"({p.get('note')}) — logging the pick anyway.")
         n = len(picks)
         derived = team_of_pick(n, teams)
         slot = args.slot or (myslot if args.mine else derived)
@@ -354,11 +386,12 @@ def cmd_draft(args, players):
         print(f"Undid: {last['player']} (Team {last['slot']})")
 
     elif args.draft_cmd == "best":
-        pool = [p for p in players if p["player"] not in taken]
+        pool = [p for p in players
+                if p["player"] not in taken and availability(p) > 0]
         if args.pos:
             pool = [p for p in pool if args.pos.upper() in p["pos"].upper()]
         override = parse_punt(args.punt) if args.punt else punt
-        pool = sorted(pool, key=lambda p: -total_value(p, override))
+        pool = sorted(pool, key=lambda p: -adj_value(p, override))
         # Annotate how each candidate helps my weakest kept categories.
         mine = build_rosters(state, players)[myslot]
         weakest = []
