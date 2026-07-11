@@ -3,20 +3,20 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Who should I start this week in my Yahoo fantasy basketball league?",
-      "expected_output": "Skill fires; runs yfb.py status then roster/matchup (or --demo if unauthorized); gives a committed start/sit recommendation naming the deciding factor, flagging any O/INJ/DTD players.",
+      "prompt": "I'm drafting 5th in a 12-team 9-cat fantasy basketball league. Should I punt FT% and who do I target in round 1?",
+      "expected_output": "Skill fires; runs hoops.py rank with and without --punt FT%; commits to one round-1 target with a build-fit reason, names the punt trade-off, flags any inj-* note on recommended players.",
       "files": []
     },
     {
       "id": 2,
-      "prompt": "I'm down in threes and steals this week — anyone on the waiver wire who fixes both?",
-      "expected_output": "Skill fires; runs matchup to confirm the deficit and free-agents for candidates; recommends specific pickups tied to the two swing categories, H2H-aware.",
+      "prompt": "Someone in my league offered me Sabonis and Derrick White for my Luka. Take it?",
+      "expected_output": "Skill fires; runs hoops.py trade --send/--get; gives a committed verdict combining net z-value with roster-fit reasoning, noting the analysis uses baseline projections.",
       "files": []
     },
     {
       "id": 3,
-      "prompt": "How many points did the Lakers score last night?",
-      "expected_output": "Skill does NOT fire — this is a real-NBA question, not the user's fantasy league. No yfb.py call; answer normally (with web search if available).",
+      "prompt": "Who won the NBA Finals last month?",
+      "expected_output": "Skill does NOT fire — real-NBA question, not fantasy. No hoops.py call; answer normally (web search if available).",
       "files": []
     }
   ]

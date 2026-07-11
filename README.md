@@ -1,85 +1,78 @@
-# 🏀 Yahoo Fantasy Basketball for Claude Code
+# 🏀 Fantasy Basketball for Claude Code
 
-A Claude Code-native fantasy basketball assistant. One stdlib-only Python CLI
-(`scripts/yfb.py`) talks to the Yahoo Fantasy Sports API; one Claude Code skill
-(`.claude/skills/fantasy-basketball/`) teaches Claude when and how to drive it.
-Ask Claude "who should I start this week?" and it fetches your real roster and
-matchup, then gives a committed recommendation.
+An **in-Claude fantasy basketball analyzer and draft tool**. No accounts, no
+API keys, no OAuth — a bundled projection dataset plus a z-score engine
+(`scripts/hoops.py`), and a Claude Code skill that turns natural conversation
+("who should I take here?") into rankings, punt-build math, trade verdicts,
+and a live snake-draft assistant.
 
 ## Synopsis
 
-**The problem.** Fantasy basketball decisions (start/sit, waivers, punt
-strategy) need live league data plus judgment. Yahoo's API has both OAuth2
-friction and a notoriously nested JSON format; no one wants to hand-roll that
-per question.
+Three layers:
 
-**The system.** Three layers:
-
-1. **Data layer — `scripts/yfb.py`.** Single-file, stdlib-only Python. Handles
-   the OAuth2 authorization-code flow (code copied from the redirect URL), token
-   caching + auto-refresh (`~/.config/yfb/token.json`, chmod 600), and
-   flattening Yahoo's fragment-list JSON into plain tables or `--json` output.
-   Subcommands: `auth`, `status`, `leagues`, `standings`, `roster`, `matchup`,
-   `free-agents`. A `--demo` flag runs every command on bundled sample data —
-   no credentials, no network.
-2. **Skill layer — `.claude/skills/fantasy-basketball/SKILL.md`.** The trigger
-   contract ("my roster", "waiver wire", "who should I start"…) plus the
-   playbook: resolve league/team keys once, fetch before analyzing, respect
-   H2H-vs-roto format, flag injury statuses, commit to recommendations.
-3. **Judgment layer — Claude.** The API gives facts; Claude adds the analysis
-   the numbers don't: category math for your specific matchup, pickup targets
-   that fit your build, punt-strategy fit.
-
-**Security posture.** Read-scope Yahoo app; secrets live in env vars or
-gitignored files; tokens are never printed or committed.
+1. **Data — `data/players.csv`.** ~125 players with per-game 9-cat
+   projections and injury/rookie notes. It's a plain CSV: edit a row, add a
+   player, and every ranking updates. Claude refreshes stale rows via web
+   search before real decisions.
+2. **Engine — `scripts/hoops.py`** (stdlib-only Python). Converts projections
+   into volume-weighted z-scores across FG%, FT%, 3PTM, PTS, REB, AST, ST,
+   BLK, TO (turnovers inverted). Commands: `rank` (punt-aware, position
+   filters), `profile` (category strengths of any roster), `trade` (per-category
+   deltas + net), `find`, and a `draft` tracker (snake order, best-available,
+   build profile, undo).
+3. **Judgment — Claude** via `.claude/skills/fantasy-basketball/SKILL.md`:
+   when to fire, how to run a live draft turn-by-turn, and the rules that keep
+   advice honest (commit to one recommendation, respect punt coherence, flag
+   injury notes, never invent live stats).
 
 ## Quick start
 
 ```bash
-# No credentials? See it work immediately:
-python3 scripts/yfb.py --demo leagues
-python3 scripts/yfb.py --demo roster
-python3 scripts/yfb.py --demo matchup
-python3 scripts/yfb.py --demo free-agents
+git clone https://github.com/nic095layson/yahoo-fantasy-basketball
+cd yahoo-fantasy-basketball
 
-# Live setup (once):
-# 1. Create an app at https://developer.yahoo.com/apps/  (Fantasy Sports, read)
-export YAHOO_CLIENT_ID=...
-export YAHOO_CLIENT_SECRET=...
-python3 scripts/yfb.py auth          # open URL, approve, paste redirect URL back
-python3 scripts/yfb.py leagues       # your real leagues
+python3 scripts/hoops.py rank --top 20              # who's valuable
+python3 scripts/hoops.py rank --punt "FT%,TO"       # punt-build rankings
+python3 scripts/hoops.py trade --send "Luka Doncic" --get "Sabonis,Derrick White"
 ```
 
-Then in Claude Code, just ask: *"Check my matchup — which categories am I
-losing and who on the wire fixes them?"*
+Live draft:
+
+```bash
+python3 scripts/hoops.py draft init --teams 12 --slot 5 --punt "FT%"
+python3 scripts/hoops.py draft pick "Jokic"           # someone else's pick
+python3 scripts/hoops.py draft pick "Giannis" --mine  # your pick
+python3 scripts/hoops.py draft best                   # punt-aware best available
+python3 scripts/hoops.py draft status                 # your build's profile
+```
+
+## With Claude Code
+
+Open this folder in Claude Code and just talk:
+
+> "I'm drafting 5th in a 12-team 9-cat league tonight and thinking about
+> punting FT%. Run my draft with me."
+
+The skill handles the bookkeeping (logging picks, best-available math) and
+Claude adds the judgment (build fit, injury flags, when to reach).
 
 ## Repo layout
 
 ```
-yahoo-fantasy-basketball/
 ├── README.md
-├── scripts/
-│   └── yfb.py                       # stdlib-only Yahoo API CLI
-├── .claude/skills/fantasy-basketball/
-│   └── SKILL.md                     # trigger + playbook for Claude Code
-├── evals/
-│   └── evals.json                   # test prompts for the skill
-└── .gitignore                       # keeps credentials/tokens out of git
+├── data/players.csv                  # editable projection pool (~125 players)
+├── scripts/hoops.py                  # z-score engine + draft tracker
+├── .claude/skills/fantasy-basketball/SKILL.md
+└── evals/evals.json
 ```
-
-## Install the skill globally (optional)
-
-To use the skill from any directory, copy it to your personal skills folder:
-
-```bash
-cp -r .claude/skills/fantasy-basketball ~/.claude/skills/
-```
-
-(When working inside this project folder, Claude Code discovers it
-automatically.)
 
 ## Notes
 
-- NBA game code `nba` resolves to the current season automatically.
-- The matchup command scores 9-cat H2H with turnovers correctly inverted.
-- Yahoo API reference: https://developer.yahoo.com/fantasysports/guide/
+- Values are z-scores over the bundled pool: +1.0 ≈ one standard deviation
+  above average in a category. FG%/FT% are weighted by attempt volume.
+- Draft state lives in `./draft_state.json` (start over with `draft init --force`).
+- The projections are a **baseline, not live data** — refresh before real
+  drafts. The `note` column flags injuries and rookie estimates.
+- History: this repo briefly contained a Yahoo Fantasy API OAuth client
+  (see git history) — scrapped after Yahoo's developer portal refused to
+  grant fantasy scope to new apps.

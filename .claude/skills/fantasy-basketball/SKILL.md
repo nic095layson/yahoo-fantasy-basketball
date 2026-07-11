@@ -1,56 +1,56 @@
 ---
 name: fantasy-basketball
-description: Manage and analyze the user's Yahoo Fantasy Basketball leagues through the bundled yfb.py CLI — rosters, standings, weekly head-to-head matchups, and waiver-wire pickups. Use this skill whenever the user asks about "my fantasy team," "my roster," "fantasy basketball," "Yahoo fantasy," "waiver wire," "free agents," "who should I start," "who should I drop/pick up," "my matchup," or "league standings." Do NOT trigger for general NBA questions that are not about the user's fantasy league (real-game scores, trade rumors, career stats), and do NOT trigger for other fantasy sports (football, baseball).
+description: Analyze fantasy basketball decisions and run live drafts using the bundled hoops.py engine — z-score rankings, punt builds, trade evaluation, and a snake-draft tracker with best-available suggestions. Use this skill whenever the user asks about "fantasy basketball," "my fantasy team/roster," "fantasy draft," "mock draft," "who should I draft/pick," "punt build," "trade evaluation," "waiver wire," or "who should I start." Do NOT trigger for general NBA questions that are not about fantasy (real-game scores, news, career stats), and do NOT trigger for other fantasy sports (football, baseball).
 ---
 
-# Fantasy Basketball (Yahoo)
+# Fantasy Basketball (in-Claude analyzer and draft tool)
 
-Turns Claude Code into a fantasy basketball assistant for the user's Yahoo leagues. All data access goes through one stdlib-only script — `scripts/yfb.py` at this project's root — which handles Yahoo OAuth2, token refresh, and the Fantasy Sports API's deeply nested JSON. Your job is to run the right subcommands, then add the analysis the raw numbers don't give: start/sit calls, pickup targets, punt strategy, matchup math.
+A self-contained fantasy basketball brain: no accounts, no APIs. `scripts/hoops.py` converts the projection table in `data/players.csv` into 9-cat z-score values and exposes rankings, punt builds, trade math, and a live snake-draft tracker. Your job is to run the right subcommands, then add the judgment the numbers don't carry — and to keep the data honest by refreshing it when stakes are real.
 
-## Procedure
+## Data honesty (read first)
 
-1. **Check auth state first**: `python3 scripts/yfb.py status`. If credentials or token are missing, walk the user through setup (see Setup below) — do not attempt live calls before that.
-2. **Resolve keys before data calls.** Most commands need a `league_key` or `team_key`. Get them once with `python3 scripts/yfb.py leagues` and `... standings --league <league_key>` (standings lists every team_key). Remember them for the rest of the session.
-3. **Fetch, then analyze.** Pull the data with the relevant subcommand, then answer the user's actual question. Add `--json` when you want machine-readable output to reason over instead of a table.
+`data/players.csv` is a bundled BASELINE (~125 players, per-game projections, authored 2026-07-11). Before a real draft or a real trade decision, web-search current injury news and depth-chart changes for the specific players involved, and edit the CSV where it's stale — it's a plain file; changing a row changes every ranking. Rows carry a `note` column (`inj-*`, `rookie-proj`) — always surface these flags when recommending a flagged player. Never present bundled numbers as live stats; say they're projections.
 
-| User asks about | Run |
+## Analysis commands
+
+Run from the project root:
+
+| Question | Command |
 |---|---|
-| Their leagues | `python3 scripts/yfb.py leagues` |
-| Standings / playoff race | `python3 scripts/yfb.py standings --league <league_key>` |
-| Their roster / who to start | `python3 scripts/yfb.py roster --team <team_key>` |
-| This week's matchup | `python3 scripts/yfb.py matchup --team <team_key>` |
-| Waiver wire / pickups | `python3 scripts/yfb.py free-agents --league <league_key>` |
+| Overall or punt rankings | `python3 scripts/hoops.py rank --top 30 [--punt "FT%,TO"] [--pos C]` |
+| What does this roster look like | `python3 scripts/hoops.py profile --players "Name1,Name2,..." [--punt ...]` |
+| Should I make this trade | `python3 scripts/hoops.py trade --send "A,B" --get "C" [--punt ...]` |
+| Find a player / check the pool | `python3 scripts/hoops.py find <name-fragment>` |
 
-4. **Demo mode.** Append `--demo` to any data command to use bundled sample data — for testing the pipeline, demonstrating the tool, or when the user has no Yahoo credentials yet.
+Category convention: FG% and FT% are volume-weighted; TO is already inverted (positive z = fewer turnovers). +1.0 z ≈ one standard deviation above average.
+
+## Live draft protocol
+
+1. **Before the draft**: ask for team count, the user's slot, roster size, and whether they're committed to a punt build (offer `rank --punt` comparisons if undecided). Web-search for injury updates on likely first-two-round picks. Then `python3 scripts/hoops.py draft init --teams N --slot K [--punt ...]`.
+2. **During**: the user announces picks conversationally ("Jokic went", "I'll take Booker"). Log every one immediately: `draft pick "Jokic"` for other teams, `draft pick "Booker" --mine` for the user's. Names are fuzzy-matched; if the script reports ambiguity, ask which player was meant.
+3. **Approaching the user's turn** (the tracker prints their next pick number): run `draft best` and `draft status`, then recommend ONE player with a one-line reason tied to build fit — positional balance and category needs from the status profile, not just the top value. Offer one alternate.
+4. **Corrections**: `draft undo` reverses the last pick.
+5. If a drafted player isn't in the pool (deep-league picks), say so, log nothing, and continue — the tracker only needs the players who matter for value comparisons.
 
 ## Analysis rules
 
-- **Commit to a recommendation.** "Start Booker over Jaquez" beats a list of considerations. Name the deciding factor in one line.
-- **Respect the format.** Head-to-head category (`scoring_type: head`) is won in swing categories — check the matchup command's per-category leader column before advising; roto is won on season-long balance. Never give H2H advice to a roto team.
-- **Injury status is load-bearing.** Flag any rostered player with status `O`, `INJ`, or `DTD` when discussing lineups; check `status` in roster output before recommending a start.
-- **TO is inverted.** Lower turnovers win the category — the matchup command already accounts for this; don't double-invert.
-- **Never guess live data.** Player stats, game schedules, and injury news beyond what the API returns must come from a web search, clearly labeled — do not invent numbers.
-
-## Setup (first run)
-
-1. User creates a Yahoo app at https://developer.yahoo.com/apps/ — Confidential Client, Redirect URI `https://localhost:8080`, API permission "Fantasy Sports" (read).
-2. Export `YAHOO_CLIENT_ID` and `YAHOO_CLIENT_SECRET` (or write `~/.config/yfb/credentials.json`).
-3. Run `python3 scripts/yfb.py auth` — the user opens the printed URL, approves, then pastes back the `localhost:8080` URL from the browser's address bar (the "can't connect" error page is expected; the script extracts the `code=` value). Tokens cache to `~/.config/yfb/token.json` (chmod 600) and auto-refresh.
-
-Never print, log, or commit the client secret, access token, or refresh token. The token file and credentials file are gitignored; keep it that way.
+- **Commit.** One recommendation with the deciding factor named; alternatives get one line, not equal billing.
+- **Punt coherence.** In a punt build, judge every pickup/pick by the KEPT categories; call out when a tempting player's value lives in the punted ones.
+- **Trade verdicts** combine the script's net z with roster fit: a negative-net trade can still be right if it consolidates strength into scarce categories the user is contesting. Say which consideration wins and why.
+- **H2H vs roto**: z-totals map cleanly to roto; in head-to-head, weight swing categories (close weekly margins) and streaming flexibility more heavily.
+- **Never invent live data.** Season stats, injury news, and schedules beyond the CSV come from web search, labeled as such.
 
 ## Edge cases
 
-- **No credentials and the user just wants to explore** → use `--demo` and say clearly the data is sample data.
-- **API returns 401 after refresh** → token is revoked; re-run `auth`.
-- **User is in multiple leagues** → ask which one once, then stick with it for the session.
-- **Trade evaluation** → the API gives rosters and ownership, not projections; fetch both rosters, then reason about category impact explicitly, flagging that projections are your judgment, not Yahoo data.
+- **User's league is deeper than the ~125-player pool** → offer to add rows to `data/players.csv` for the missing players (same columns; estimates are fine if labeled in `note`).
+- **Draft state exists from a previous session** (`draft_state.json` in cwd) → `draft status` first and confirm whether to resume or `draft init --force`.
+- **Yahoo/ESPN integration requests** → this tool is deliberately offline; the user can paste rosters as text and you analyze via `profile`/`trade`. (A Yahoo OAuth client was removed from this repo — see git history — after Yahoo's portal refused fantasy API scope.)
 
 ## When NOT to use this skill
 
-- General NBA chat (real standings, awards, career stats) → answer normally or web-search; no yfb.py call.
-- Complex multi-option decisions the user wants deliberated ("council: should I trade Luka?") → the claude-council skill owns the deliberation; use this skill only to fetch the data it debates.
+- General NBA chat (real standings, awards, career stats) → answer normally or web-search; no hoops.py call.
+- Multi-option dilemmas the user wants formally deliberated ("council: should I punt assists?") → the claude-council skill owns the deliberation; use this skill to fetch the numbers it debates.
 
 ## Provenance and maintenance
 
-Authored 2026-07-11 against Yahoo Fantasy Sports API v2 (`fantasysports.yahooapis.com/fantasy/v2`, OAuth2 at `api.login.yahoo.com`). Volatile facts: NBA game code `nba` resolves to the current season's game_key; stat-id → category map in `yfb.py` (`STAT_LABELS`) reflects the default 9-cat H2H settings. Re-verify with `python3 scripts/yfb.py --demo leagues` (pipeline) and a live `leagues` call (API contract). Update when: Yahoo changes OAuth endpoints, the JSON envelope shape changes (`merge_fragments`/`iter_collection` break), or a new NBA season changes the game_key.
+Authored 2026-07-11. Volatile facts: `data/players.csv` reflects 2025-26-season-informed projections (~125 players) and rots continuously — refresh via web search before real decisions; z-scores are computed over this pool, so pool edits shift all values. Re-verify the engine with `python3 scripts/hoops.py rank --top 3` (expect Jokic-tier players on top) and the draft loop with `draft init --slot 1 --force` + a few picks in a scratch directory. Update when: the CSV schema changes, Yahoo default categories change, or a season rollover makes the bundled projections misleading.
