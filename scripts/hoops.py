@@ -509,7 +509,7 @@ def build_parser():
     di = dsub.add_parser("init", help="start a draft")
     di.add_argument("--teams", type=int, default=12)
     di.add_argument("--slot", type=int, required=True, help="your draft position (1-based)")
-    di.add_argument("--size", type=int, default=13, help="rounds/roster size")
+    di.add_argument("--size", type=int, default=15, help="rounds/roster size")
     di.add_argument("--punt", help="planned punt categories")
     di.add_argument("--force", action="store_true", help="overwrite existing draft")
 
