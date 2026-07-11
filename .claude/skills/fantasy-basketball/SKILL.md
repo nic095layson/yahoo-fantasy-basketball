@@ -9,7 +9,7 @@ A self-contained fantasy basketball brain: no accounts, no APIs. `scripts/hoops.
 
 ## Data honesty (read first)
 
-`data/players.csv` is a bundled BASELINE (~125 players, per-game projections, authored 2026-07-11). It's a plain file; changing a row changes every ranking. Rows carry a `note` column — always surface these flags when recommending a flagged player. **Injury handling is mechanical (owner's rule)**: a note starting `out-` (season-ending injury) removes the player from every ranking and draft board automatically; `*-recovery` notes apply a 0.7 value downgrade and `*-risk` 0.85 (shown as `*` injury-adjusted values). During the daily refresh, encode injury news with exactly these note conventions — announced out-for-the-season → `out-<reason>`; returning from serious injury → `inj-<reason>-recovery`. Never present bundled numbers as live stats; say they're projections.
+`data/players.csv` is the research baseline (~210 players, 2025-26 per-game production, July 2026 rosters; method in data/RESEARCH.md, rebuilt 2026-07-11). It's a plain file; changing a row changes every ranking. Rows carry a `note` column — always surface these flags when recommending a flagged player. **Injury handling is mechanical (owner's rule)**: a note starting `out-` (season-ending injury) removes the player from every ranking and draft board automatically; `*-recovery` notes apply a 0.7 value downgrade and `*-risk` 0.85 (shown as `*` injury-adjusted values). During the daily refresh, encode injury news with exactly these note conventions — announced out-for-the-season → `out-<reason>`; returning from serious injury → `inj-<reason>-recovery`. Never present bundled numbers as live stats; say they're projections.
 
 **Mandatory daily refresh (owner's rule).** Every hoops.py command checks `data/freshness.json` and prints a stale-data banner if the data wasn't refreshed today. That banner is BLOCKING for you: on the first fantasy request of a new day, before delivering any analysis, (1) web-search current NBA rosters/trades, injury reports, and rotation news for the players that matter to the request (the user's roster, draft-relevant tiers, any player being evaluated); (2) update the affected `players.csv` rows — team, stats, and `note` column; (3) record it: `python3 scripts/hoops.py freshness --stamp --note "<what changed>"`. Only then run the analysis. If web search is unavailable, say so explicitly, deliver the analysis labeled as running on unrefreshed data, and do not stamp.
 
@@ -47,7 +47,7 @@ Category convention: FG% and FT% are volume-weighted; TO is already inverted (po
 
 ## Edge cases
 
-- **User's league is deeper than the ~125-player pool** → offer to add rows to `data/players.csv` for the missing players (same columns; estimates are fine if labeled in `note`).
+- **A drafted player is missing from the ~210-player pool** → offer to add rows to `data/players.csv` for the missing players (same columns; estimates are fine if labeled in `note`).
 - **Draft state exists from a previous session** (`draft_state.json` in cwd) → `draft status` first and confirm whether to resume or `draft init --force`.
 - **Yahoo/ESPN integration requests** → this tool is deliberately offline; the user can paste rosters as text and you analyze via `profile`/`trade`. (A Yahoo OAuth client was removed from this repo — see git history — after Yahoo's portal refused fantasy API scope.)
 
@@ -58,4 +58,4 @@ Category convention: FG% and FT% are volume-weighted; TO is already inverted (po
 
 ## Provenance and maintenance
 
-Authored 2026-07-11. Volatile facts: `data/players.csv` reflects 2025-26-season-informed projections (~125 players) and rots continuously — refresh via web search before real decisions; z-scores are computed over this pool, so pool edits shift all values. Re-verify the engine with `python3 scripts/hoops.py rank --top 3` (expect Jokic-tier players on top) and the draft loop with `draft init --slot 1 --force` + a few picks in a scratch directory. Update when: the CSV schema changes, Yahoo default categories change, or a season rollover makes the bundled projections misleading.
+Authored 2026-07-11. Volatile facts: `data/players.csv` holds the top-210 2026-27 baseline (see data/RESEARCH.md) and rots continuously — refresh via web search before real decisions; z-scores are computed over this pool, so pool edits shift all values. Re-verify the engine with `python3 scripts/hoops.py rank --top 3` (expect Jokic-tier players on top) and the draft loop with `draft init --slot 1 --force` + a few picks in a scratch directory. Update when: the CSV schema changes, Yahoo default categories change, or a season rollover makes the bundled projections misleading.
