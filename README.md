@@ -16,7 +16,7 @@ per question.
 **The system.** Three layers:
 
 1. **Data layer — `scripts/yfb.py`.** Single-file, stdlib-only Python. Handles
-   the OAuth2 authorization-code flow (out-of-band verification code), token
+   the OAuth2 authorization-code flow (code copied from the redirect URL), token
    caching + auto-refresh (`~/.config/yfb/token.json`, chmod 600), and
    flattening Yahoo's fragment-list JSON into plain tables or `--json` output.
    Subcommands: `auth`, `status`, `leagues`, `standings`, `roster`, `matchup`,
@@ -46,7 +46,7 @@ python3 scripts/yfb.py --demo free-agents
 # 1. Create an app at https://developer.yahoo.com/apps/  (Fantasy Sports, read)
 export YAHOO_CLIENT_ID=...
 export YAHOO_CLIENT_SECRET=...
-python3 scripts/yfb.py auth          # open URL, approve, paste code
+python3 scripts/yfb.py auth          # open URL, approve, paste redirect URL back
 python3 scripts/yfb.py leagues       # your real leagues
 ```
 

@@ -40,7 +40,9 @@ import urllib.request
 API_BASE = "https://fantasysports.yahooapis.com/fantasy/v2"
 AUTH_URL = "https://api.login.yahoo.com/oauth2/request_auth"
 TOKEN_URL = "https://api.login.yahoo.com/oauth2/get_token"
-REDIRECT_URI = "oob"  # out-of-band: Yahoo shows the user a code to paste back
+# Must match the Redirect URI registered on the Yahoo app. The browser will
+# fail to load this address after approval — the code is in the address bar.
+REDIRECT_URI = os.environ.get("YFB_REDIRECT_URI", "https://localhost:8080")
 CONFIG_DIR = os.path.expanduser(os.environ.get("YFB_CONFIG_DIR", "~/.config/yfb"))
 TOKEN_PATH = os.path.join(CONFIG_DIR, "token.json")
 CREDS_PATH = os.path.join(CONFIG_DIR, "credentials.json")
@@ -129,12 +131,19 @@ def cmd_auth(_args):
     url = AUTH_URL + "?" + urllib.parse.urlencode(
         {"client_id": cid, "redirect_uri": REDIRECT_URI, "response_type": "code"}
     )
-    print("1. Open this URL in a browser and approve access:\n")
+    print("1. Open this URL in a browser, sign in, and click Agree:\n")
     print(f"   {url}\n")
-    print("2. Yahoo will display a short verification code.")
-    code = input("3. Paste the code here: ").strip()
-    if not code:
+    print(f"2. Your browser will then try to load {REDIRECT_URI} and show a")
+    print("   'can't connect' error page. That is EXPECTED — the code you need")
+    print("   is in the address bar, after `code=`.")
+    raw = input("3. Paste the full URL from the address bar (or just the code): ").strip()
+    if not raw:
         sys.exit("No code entered; aborting.")
+    if "code=" in raw:
+        query = urllib.parse.urlparse(raw).query or raw
+        code = urllib.parse.parse_qs(query).get("code", [raw])[0]
+    else:
+        code = raw
     token_request(
         {"grant_type": "authorization_code", "code": code,
          "redirect_uri": REDIRECT_URI},

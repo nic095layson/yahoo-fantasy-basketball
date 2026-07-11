@@ -33,9 +33,9 @@ Turns Claude Code into a fantasy basketball assistant for the user's Yahoo leagu
 
 ## Setup (first run)
 
-1. User creates a Yahoo app at https://developer.yahoo.com/apps/ — API permission "Fantasy Sports" (read), redirect/OOB flow.
+1. User creates a Yahoo app at https://developer.yahoo.com/apps/ — Confidential Client, Redirect URI `https://localhost:8080`, API permission "Fantasy Sports" (read).
 2. Export `YAHOO_CLIENT_ID` and `YAHOO_CLIENT_SECRET` (or write `~/.config/yfb/credentials.json`).
-3. Run `python3 scripts/yfb.py auth` — the user opens the printed URL, approves, and pastes the verification code back. Tokens cache to `~/.config/yfb/token.json` (chmod 600) and auto-refresh.
+3. Run `python3 scripts/yfb.py auth` — the user opens the printed URL, approves, then pastes back the `localhost:8080` URL from the browser's address bar (the "can't connect" error page is expected; the script extracts the `code=` value). Tokens cache to `~/.config/yfb/token.json` (chmod 600) and auto-refresh.
 
 Never print, log, or commit the client secret, access token, or refresh token. The token file and credentials file are gitignored; keep it that way.
 
