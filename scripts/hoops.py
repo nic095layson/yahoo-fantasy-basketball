@@ -670,6 +670,9 @@ def cmd_draft(args, players):
                     f"{c}:{p['z'][c]:+.1f}" for c in weakest)
             if team_counts.get(p["team"], 0) >= 2:
                 line += f"  [would be 3rd {p['team']}]"
+            if ("recovery" in (p.get("note") or "") and any(
+                    "recovery" in (q.get("note") or "") for q in mine_r)):
+                line += "  [2nd+ recovery bet]"
             print(line)
 
         if mine_r:
