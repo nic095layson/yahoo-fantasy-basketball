@@ -116,12 +116,13 @@ def validate_pool(players):
 
 def cmd_freshness(args):
     if args.stamp:
-        missing = validate_pool(load_players())
+        missing = [] if args.force else validate_pool(load_players())
         if missing:
             print("⚠ POOL INCOMPLETE — missing consensus players:")
             for n in missing:
                 print(f"    {n}")
-            print("Add them to data/players.csv before stamping.")
+            print("Add them to data/players.csv (retired players keep a row "
+                  "with note out-retired), or bypass with --force.")
             sys.exit(1)
         stamp = {"date": datetime.date.today().isoformat(),
                  "note": args.note or "refreshed"}
@@ -562,6 +563,7 @@ def cmd_draft(args, players):
         # "Name") instead of silently shifting every later pick.
         import re
         errors = []
+        corrections = 0
         for raw in [s.strip() for s in (args.picks or "").split(";") if s.strip()]:
             m = re.match(r"^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$", raw, re.I)
             num, body = (int(m.group(1)), m.group(2).strip()) if m else (None, raw)
@@ -577,6 +579,13 @@ def cmd_draft(args, players):
                 except SystemExit as e:
                     errors.append(f"fix #{num}: {e}")
                     continue
+                corrections += 1
+                if corrections >= 3:
+                    save_state(state)
+                    sys.exit(f"⚠ HALTED at {raw!r}: 3+ corrections in one "
+                             "batch suggests numbering drift, not fixes. "
+                             "Run `draft status`, verify against the draft "
+                             "room, then resend.")
                 picks[idx]["player"] = p["player"]
                 taken.discard(old)
                 taken.add(p["player"])
@@ -696,6 +705,8 @@ def build_parser():
     fr.add_argument("--stamp", action="store_true",
                     help="record that data was refreshed today")
     fr.add_argument("--note", help="what was updated in this refresh")
+    fr.add_argument("--force", action="store_true",
+                    help="stamp even if the pool validator finds missing names")
 
     d = sub.add_parser("draft", help="live draft tracker")
     dsub = d.add_subparsers(dest="draft_cmd", required=True)
@@ -750,7 +761,10 @@ def main(argv=None):
     if args.command == "freshness":
         cmd_freshness(args)
         return
-    check_freshness()
+    # Speed rule: live-draft commands never print the stale banner (a draft
+    # is no time to refresh data). Staleness is enforced at `draft init`.
+    if args.command != "draft" or args.draft_cmd == "init":
+        check_freshness()
     players = zscores(load_players())
     if args.command == "rank":
         cmd_rank(args, players)
@@ -765,4 +779,7 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BrokenPipeError:  # output piped to head etc. — not an error
+        sys.exit(0)
