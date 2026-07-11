@@ -9,7 +9,9 @@ A self-contained fantasy basketball brain: no accounts, no APIs. `scripts/hoops.
 
 ## Data honesty (read first)
 
-`data/players.csv` is a bundled BASELINE (~125 players, per-game projections, authored 2026-07-11). Before a real draft or a real trade decision, web-search current injury news and depth-chart changes for the specific players involved, and edit the CSV where it's stale — it's a plain file; changing a row changes every ranking. Rows carry a `note` column (`inj-*`, `rookie-proj`) — always surface these flags when recommending a flagged player. Never present bundled numbers as live stats; say they're projections.
+`data/players.csv` is a bundled BASELINE (~125 players, per-game projections, authored 2026-07-11). It's a plain file; changing a row changes every ranking. Rows carry a `note` column (`inj-*`, `rookie-proj`) — always surface these flags when recommending a flagged player. Never present bundled numbers as live stats; say they're projections.
+
+**Mandatory daily refresh (owner's rule).** Every hoops.py command checks `data/freshness.json` and prints a stale-data banner if the data wasn't refreshed today. That banner is BLOCKING for you: on the first fantasy request of a new day, before delivering any analysis, (1) web-search current NBA rosters/trades, injury reports, and rotation news for the players that matter to the request (the user's roster, draft-relevant tiers, any player being evaluated); (2) update the affected `players.csv` rows — team, stats, and `note` column; (3) record it: `python3 scripts/hoops.py freshness --stamp --note "<what changed>"`. Only then run the analysis. If web search is unavailable, say so explicitly, deliver the analysis labeled as running on unrefreshed data, and do not stamp.
 
 ## Analysis commands
 
@@ -27,10 +29,11 @@ Category convention: FG% and FT% are volume-weighted; TO is already inverted (po
 ## Live draft protocol
 
 1. **Before the draft**: ask for team count, the user's slot, roster size, and whether they're committed to a punt build (offer `rank --punt` comparisons if undecided). Web-search for injury updates on likely first-two-round picks. Then `python3 scripts/hoops.py draft init --teams N --slot K [--punt ...]`.
-2. **During**: the user announces picks conversationally ("Jokic went", "I'll take Booker"). Log every one immediately: `draft pick "Jokic"` for other teams, `draft pick "Booker" --mine` for the user's. Names are fuzzy-matched; if the script reports ambiguity, ask which player was meant.
-3. **Approaching the user's turn** (the tracker prints their next pick number): run `draft best` and `draft status`, then recommend ONE player with a one-line reason tied to build fit — positional balance and category needs from the status profile, not just the top value. Offer one alternate.
-4. **Corrections**: `draft undo` reverses the last pick.
-5. If a drafted player isn't in the pool (deep-league picks), say so, log nothing, and continue — the tracker only needs the players who matter for value comparisons.
+2. **During**: the user announces picks conversationally ("Jokic went", "I'll take Booker"). Log every one immediately with `draft pick "Name"` — the picking team is inferred from snake order automatically, so **every team's roster builds as the draft runs**. Add `--mine` on the user's own picks as a sanity check (it warns if the snake math disagrees, which catches missed picks), and `--slot N` for out-of-order picks (keepers, traded picks). Names are fuzzy-matched; if the script reports ambiguity, ask which player was meant.
+3. **Approaching the user's turn** (the tracker prints their next pick number): run `draft best` (candidates come annotated with how they help the user's two weakest kept categories) and `draft matrix` (per-category rank vs the whole field). Recommend ONE player with a one-line reason tied to the build AND the field — e.g. prefer a category where the user is 4th/12 and can climb over one where they're 1st (safe) or 11th (lost). Offer one alternate.
+4. **Opponent intel on demand**: `draft rosters` lists every team; `draft vs --team N` gives a head-to-head category comparison (useful in H2H leagues to spot rivals' weaknesses and in the endgame to pick fights the user can win).
+5. **Corrections**: `draft undo` reverses the last pick (any team's).
+6. If a drafted player isn't in the pool (deep-league picks), say so, log nothing, and continue — but note the skipped pick means snake attribution is off by one from then on; log remaining picks with explicit `--slot`.
 
 ## Analysis rules
 

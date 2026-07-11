@@ -40,11 +40,18 @@ Live draft:
 
 ```bash
 python3 scripts/hoops.py draft init --teams 12 --slot 5 --punt "FT%"
-python3 scripts/hoops.py draft pick "Jokic"           # someone else's pick
-python3 scripts/hoops.py draft pick "Giannis" --mine  # your pick
-python3 scripts/hoops.py draft best                   # punt-aware best available
-python3 scripts/hoops.py draft status                 # your build's profile
+python3 scripts/hoops.py draft pick "Jokic"           # team inferred from snake order
+python3 scripts/hoops.py draft pick "Giannis" --mine  # your pick (sanity-checked)
+python3 scripts/hoops.py draft best                   # best available + your needs
+python3 scripts/hoops.py draft status                 # your build + rank vs field
+python3 scripts/hoops.py draft matrix                 # all teams' category totals
+python3 scripts/hoops.py draft vs --team 8            # head-to-head vs one opponent
+python3 scripts/hoops.py draft rosters                # every team's picks so far
 ```
+
+Every pick is attributed to its team automatically (snake order), so the
+tracker holds all 12 rosters — recommendations weigh not just your build but
+where you rank per category against the field, and which fights are winnable.
 
 ## With Claude Code
 
@@ -71,8 +78,10 @@ Claude adds the judgment (build fit, injury flags, when to reach).
 - Values are z-scores over the bundled pool: +1.0 ≈ one standard deviation
   above average in a category. FG%/FT% are weighted by attempt volume.
 - Draft state lives in `./draft_state.json` (start over with `draft init --force`).
-- The projections are a **baseline, not live data** — refresh before real
-  drafts. The `note` column flags injuries and rookie estimates.
+- The projections are a **baseline, not live data**. A daily freshness rule
+  is enforced: every command warns until the data has been refreshed that day
+  (Claude web-searches rosters/injuries, updates the CSV, then runs
+  `freshness --stamp`). The `note` column flags injuries and rookie estimates.
 - History: this repo briefly contained a Yahoo Fantasy API OAuth client
   (see git history) — scrapped after Yahoo's developer portal refused to
   grant fantasy scope to new apps.

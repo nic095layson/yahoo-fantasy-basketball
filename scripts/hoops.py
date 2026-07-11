@@ -9,9 +9,13 @@ this script turns them into 9-cat z-score values and provides:
     trade           Evaluate a trade:  trade --send "A,B" --get "C"
     find            Look up players by name fragment
     draft init      Start a draft:  draft init --teams 12 --slot 5
-    draft pick      Log a pick:  draft pick "Jokic"   (add --mine for yours)
-    draft best      Best available, punt- and need-aware
-    draft status    Round/pick, your roster, category profile
+    draft pick      Log a pick — the picking team is inferred from snake
+                    order, so every team's roster builds automatically
+    draft best      Best available, punt-aware, annotated with your needs
+    draft status    Your roster, build profile, per-category rank vs field
+    draft rosters   Every team's roster so far
+    draft matrix    Category z-totals for all teams; where you lead/trail
+    draft vs        Head-to-head category comparison vs one opponent
     draft undo      Take back the last logged pick
 
 Categories: FG%, FT%, 3PTM, PTS, REB, AST, ST, BLK, TO (TO inverted).
@@ -22,6 +26,7 @@ than average in that category. State for a live draft sits in ./draft_state.json
 
 import argparse
 import csv
+import datetime
 import json
 import math
 import os
@@ -29,11 +34,59 @@ import sys
 
 DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                          "..", "data", "players.csv")
+FRESH_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "..", "data", "freshness.json")
 STATE_PATH = os.environ.get("HOOPS_DRAFT_STATE", "draft_state.json")
 
 CATS = ["FG%", "FT%", "3PTM", "PTS", "REB", "AST", "ST", "BLK", "TO"]
 COUNT_COLS = {"3PTM": "tpm", "PTS": "pts", "REB": "reb", "AST": "ast",
               "ST": "stl", "BLK": "blk", "TO": "tov"}
+
+
+# --------------------------------------------------------------------------
+# Data freshness — the daily-refresh rule
+# --------------------------------------------------------------------------
+
+def read_freshness():
+    try:
+        with open(FRESH_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
+def check_freshness():
+    """Warn loudly (stderr) when the data hasn't been refreshed today."""
+    today = datetime.date.today().isoformat()
+    info = read_freshness()
+    last = info.get("date", "never") if info else "never"
+    if last == today:
+        return
+    print(
+        "!" * 72 + "\n"
+        f"! DATA FRESHNESS RULE: projections last refreshed {last}; "
+        f"today is {today}.\n"
+        "! Before any analysis: web-search current NBA rosters, trades, and\n"
+        "! injuries for the players involved, update data/players.csv (stats,\n"
+        "! team, note column), then record the refresh:\n"
+        "!     python3 scripts/hoops.py freshness --stamp --note 'what changed'\n"
+        + "!" * 72, file=sys.stderr)
+
+
+def cmd_freshness(args):
+    if args.stamp:
+        stamp = {"date": datetime.date.today().isoformat(),
+                 "note": args.note or "refreshed"}
+        with open(FRESH_PATH, "w", encoding="utf-8") as f:
+            json.dump(stamp, f, indent=2)
+        print(f"Freshness stamped: {stamp['date']} — {stamp['note']}")
+    else:
+        info = read_freshness()
+        if info:
+            print(f"Last refresh: {info.get('date')} — {info.get('note', '')}")
+        else:
+            print("Never refreshed.")
+        check_freshness()
 
 
 # --------------------------------------------------------------------------
@@ -210,16 +263,53 @@ def save_state(state):
         json.dump(state, f, indent=2)
 
 
+def team_of_pick(n, teams):
+    """Which slot owns 0-based overall pick n in a snake draft."""
+    rnd, idx = divmod(n, teams)
+    return idx + 1 if rnd % 2 == 0 else teams - idx
+
+
+def normalize_picks(state):
+    """Accept legacy string picks; store {player, slot} objects."""
+    teams = state["teams"]
+    state["picks"] = [
+        pk if isinstance(pk, dict) else
+        {"player": pk, "slot": team_of_pick(i, teams)}
+        for i, pk in enumerate(state["picks"])
+    ]
+    return state
+
+
 def my_next_pick(state):
     """Next overall pick number that belongs to my slot (snake order)."""
     teams, slot = state["teams"], state["slot"]
     n = len(state["picks"])
     while True:
-        rnd, idx = divmod(n, teams)
-        pick_slot = idx + 1 if rnd % 2 == 0 else teams - idx
-        if pick_slot == slot:
+        if team_of_pick(n, teams) == slot:
             return n + 1
         n += 1
+
+
+def build_rosters(state, players):
+    by_name = {p["player"]: p for p in players}
+    rosters = {slot: [] for slot in range(1, state["teams"] + 1)}
+    for pk in state["picks"]:
+        rosters[pk["slot"]].append(by_name[pk["player"]])
+    return rosters
+
+
+def roster_totals(roster):
+    return {cat: sum(p["z"][cat] for p in roster) for cat in CATS}
+
+
+def my_category_ranks(state, players):
+    """My rank per category across all teams (1 = best; TO already inverted)."""
+    rosters = build_rosters(state, players)
+    totals = {slot: roster_totals(r) for slot, r in rosters.items()}
+    mine = totals[state["slot"]]
+    return {cat: 1 + sum(1 for s, t in totals.items()
+                         if s != state["slot"] and t[cat] > mine[cat])
+            for cat in CATS}, totals
 
 
 def cmd_draft(args, players):
@@ -227,37 +317,41 @@ def cmd_draft(args, players):
         if os.path.isfile(STATE_PATH) and not args.force:
             sys.exit(f"{STATE_PATH} already exists — add --force to restart.")
         state = {"teams": args.teams, "slot": args.slot, "size": args.size,
-                 "punt": list(parse_punt(args.punt)), "picks": [], "mine": []}
+                 "punt": list(parse_punt(args.punt)), "picks": []}
         save_state(state)
         print(f"Draft started: {args.teams} teams, you pick from slot {args.slot}, "
               f"{args.size} rounds, punting: {', '.join(state['punt']) or 'nothing'}.")
         print(f"State: {os.path.abspath(STATE_PATH)}")
         return
 
-    state = load_state()
-    taken = set(state["picks"])
+    state = normalize_picks(load_state())
+    picks = state["picks"]
+    taken = {pk["player"] for pk in picks}
     punt = tuple(state["punt"])
+    teams, myslot = state["teams"], state["slot"]
 
     if args.draft_cmd == "pick":
         p = match_player(players, args.player, taken=taken)
-        state["picks"].append(p["player"])
-        if args.mine:
-            state["mine"].append(p["player"])
+        n = len(picks)
+        derived = team_of_pick(n, teams)
+        slot = args.slot or (myslot if args.mine else derived)
+        if args.mine and derived != myslot and not args.slot:
+            print(f"note: snake order says pick {n + 1} belongs to Team "
+                  f"{derived}; logging to you (Team {myslot}) anyway. Use "
+                  "--slot for other out-of-order picks (keepers, trades).")
+        picks.append({"player": p["player"], "slot": slot})
         save_state(state)
-        overall = len(state["picks"])
-        rnd = (overall - 1) // state["teams"] + 1
-        who = "YOU" if args.mine else "someone"
-        print(f"Pick {overall} (round {rnd}): {p['player']} → {who}. "
-              f"{'Your next pick: #' + str(my_next_pick(state)) if not args.mine else ''}")
+        rnd = n // teams + 1
+        you = " (YOU)" if slot == myslot else ""
+        tail = "" if slot == myslot else f"  Your next pick: #{my_next_pick(state)}"
+        print(f"Pick {n + 1} (round {rnd}): {p['player']} → Team {slot}{you}.{tail}")
 
     elif args.draft_cmd == "undo":
-        if not state["picks"]:
+        if not picks:
             sys.exit("Nothing to undo.")
-        last = state["picks"].pop()
-        if state["mine"] and state["mine"][-1] == last:
-            state["mine"].pop()
+        last = picks.pop()
         save_state(state)
-        print(f"Undid: {last}")
+        print(f"Undid: {last['player']} (Team {last['slot']})")
 
     elif args.draft_cmd == "best":
         pool = [p for p in players if p["player"] not in taken]
@@ -265,25 +359,88 @@ def cmd_draft(args, players):
             pool = [p for p in pool if args.pos.upper() in p["pos"].upper()]
         override = parse_punt(args.punt) if args.punt else punt
         pool = sorted(pool, key=lambda p: -total_value(p, override))
+        # Annotate how each candidate helps my weakest kept categories.
+        mine = build_rosters(state, players)[myslot]
+        weakest = []
+        if mine:
+            totals = roster_totals(mine)
+            kept = [c for c in CATS if c not in override]
+            weakest = sorted(kept, key=lambda c: totals[c])[:2]
         print(f"Best available (punting: {', '.join(override) or 'nothing'}"
               + (f"; position: {args.pos.upper()}" if args.pos else "")
-              + f") — your next pick is #{my_next_pick(state)}\n")
+              + f") — your next pick is #{my_next_pick(state)}"
+              + (f"; your weakest kept cats: {', '.join(weakest)}" if weakest else "")
+              + "\n")
         for i, p in enumerate(pool[:args.top], 1):
-            print(fmt_row(p, override, rank=i))
+            line = fmt_row(p, override, rank=i)
+            if weakest:
+                line += "   helps " + " ".join(
+                    f"{c}:{p['z'][c]:+.1f}" for c in weakest)
+            print(line)
+
+    elif args.draft_cmd == "rosters":
+        rosters = build_rosters(state, players)
+        for slot in range(1, teams + 1):
+            r = rosters[slot]
+            you = " (YOU)" if slot == myslot else ""
+            val = sum(total_value(p, punt) for p in r)
+            names = ", ".join(p["player"] for p in r) or "(no picks yet)"
+            print(f"Team {slot}{you} — kept-cat value {val:+.1f}: {names}")
+
+    elif args.draft_cmd == "matrix":
+        ranks, totals = my_category_ranks(state, players)
+        header = "TEAM      " + "".join(f"{c:>7}" for c in CATS) + "    KEPT"
+        print(f"Category z-totals by team (TO inverted: higher is better; "
+              f"you are Team {myslot})\n\n{header}")
+        for slot in range(1, teams + 1):
+            t = totals[slot]
+            kept = sum(v for c, v in t.items() if c not in punt)
+            star = "*" if slot == myslot else " "
+            print(f"T{slot:<2}{star}      "
+                  + "".join(f"{t[c]:>+7.1f}" for c in CATS)
+                  + f"  {kept:>+7.1f}")
+        kept_cats = [c for c in CATS if c not in punt]
+        print("\nYour rank: " + "  ".join(
+            f"{c} {ranks[c]}/{teams}" for c in kept_cats))
+        winning = [c for c in kept_cats if ranks[c] <= max(1, teams // 3)]
+        losing = [c for c in kept_cats if ranks[c] > teams - teams // 3]
+        print(f"leading: {', '.join(winning) or '-'}   "
+              f"trailing: {', '.join(losing) or '-'}"
+              + (f"   punted: {', '.join(punt)}" if punt else ""))
+
+    elif args.draft_cmd == "vs":
+        if not 1 <= args.team <= teams or args.team == myslot:
+            sys.exit(f"--team must be an opponent slot between 1 and {teams}.")
+        rosters = build_rosters(state, players)
+        a, b = roster_totals(rosters[myslot]), roster_totals(rosters[args.team])
+        wins = losses = 0
+        print(f"You (Team {myslot}) vs Team {args.team} — category z-totals\n")
+        for cat in CATS:
+            tag = " (punted)" if cat in punt else ""
+            lead = "you" if a[cat] > b[cat] else ("them" if b[cat] > a[cat] else "tied")
+            if cat not in punt and a[cat] != b[cat]:
+                wins += lead == "you"
+                losses += lead == "them"
+            print(f"  {cat:<5} you {a[cat]:+6.2f}  them {b[cat]:+6.2f}  → {lead}{tag}")
+        print(f"\nKept categories: you lead {wins}–{losses}")
 
     elif args.draft_cmd == "status":
-        overall = len(state["picks"])
-        rnd = overall // state["teams"] + 1
+        overall = len(picks)
+        rnd = overall // teams + 1
         print(f"Draft: {overall} picks made (round {rnd} of {state['size']}), "
               f"your next pick: #{my_next_pick(state)}\n")
-        mine = [match_player(players, n) for n in state["mine"]]
-        if mine:
-            slots = ", ".join(sorted({p["pos"] for p in mine}))
-            print(f"Your roster ({len(mine)}): "
-                  + ", ".join(p["player"] for p in mine) + f"  [{slots}]\n")
-            print_profile(mine, punt, label="Your build")
-        else:
+        mine = build_rosters(state, players)[myslot]
+        if not mine:
             print("Your roster: empty.")
+            return
+        slots = ", ".join(sorted({p["pos"] for p in mine}))
+        print(f"Your roster ({len(mine)}): "
+              + ", ".join(p["player"] for p in mine) + f"  [{slots}]\n")
+        print_profile(mine, punt, label="Your build")
+        ranks, _ = my_category_ranks(state, players)
+        kept_cats = [c for c in CATS if c not in punt]
+        print("\n  vs field:  " + "  ".join(
+            f"{c} {ranks[c]}/{teams}" for c in kept_cats))
 
 
 def build_parser():
@@ -308,6 +465,11 @@ def build_parser():
     f = sub.add_parser("find", help="look up players by name fragment")
     f.add_argument("query")
 
+    fr = sub.add_parser("freshness", help="show or stamp the daily data refresh")
+    fr.add_argument("--stamp", action="store_true",
+                    help="record that data was refreshed today")
+    fr.add_argument("--note", help="what was updated in this refresh")
+
     d = sub.add_parser("draft", help="live draft tracker")
     dsub = d.add_subparsers(dest="draft_cmd", required=True)
 
@@ -318,23 +480,35 @@ def build_parser():
     di.add_argument("--punt", help="planned punt categories")
     di.add_argument("--force", action="store_true", help="overwrite existing draft")
 
-    dp = dsub.add_parser("pick", help="log a pick")
+    dp = dsub.add_parser("pick", help="log a pick (team inferred from snake order)")
     dp.add_argument("player")
-    dp.add_argument("--mine", action="store_true", help="this pick is yours")
+    dp.add_argument("--mine", action="store_true",
+                    help="assert this pick is yours (sanity-checks snake order)")
+    dp.add_argument("--slot", type=int,
+                    help="override the picking team (keepers, traded picks)")
 
     dsub.add_parser("undo", help="take back the last pick")
 
-    db = dsub.add_parser("best", help="best available")
+    db = dsub.add_parser("best", help="best available, need-annotated")
     db.add_argument("--pos")
     db.add_argument("--punt", help="override the draft's punt setting")
     db.add_argument("--top", type=int, default=12)
 
-    dsub.add_parser("status", help="draft state, your roster and build")
+    dsub.add_parser("status", help="your roster, build profile, rank vs field")
+    dsub.add_parser("rosters", help="every team's roster so far")
+    dsub.add_parser("matrix", help="category z-totals for all teams + your ranks")
+
+    dv = dsub.add_parser("vs", help="head-to-head category comparison vs one opponent")
+    dv.add_argument("--team", type=int, required=True, help="opponent slot number")
     return p
 
 
 def main(argv=None):
     args = build_parser().parse_args(argv)
+    if args.command == "freshness":
+        cmd_freshness(args)
+        return
+    check_freshness()
     players = zscores(load_players())
     if args.command == "rank":
         cmd_rank(args, players)

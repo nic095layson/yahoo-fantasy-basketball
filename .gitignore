@@ -7,3 +7,6 @@ token.json
 # Python
 __pycache__/
 *.pyc
+
+# Per-draft state, created wherever you run the draft
+draft_state.json
