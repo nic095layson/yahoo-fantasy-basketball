@@ -37,8 +37,10 @@ import math
 import os
 import sys
 
-DATA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                         "..", "data", "players.csv")
+DATA_PATH = os.environ.get(
+    "HOOPS_DATA",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                 "..", "data", "players.csv"))
 FRESH_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                           "..", "data", "freshness.json")
 STATE_PATH = os.environ.get("HOOPS_DRAFT_STATE", "draft_state.json")
