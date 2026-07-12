@@ -38,3 +38,19 @@ or arena work. Add entries dated, with the incident that taught them.
    harsher than the sim (risk-flagged: 51% of games vs 75% assumed;
    recovery: ~9% vs 60%). Variance needs its own price. (Arena calibration,
    web-verified vs StatMuse/NBA.com.)
+
+## 2026-07-12 — Live-arena ×3 integrity run (slots 1/6/10, post-discount)
+
+6. **Mean-priced discounts don't police concentration.** After deepening to
+   ×0.60/×0.78, three full live-arena drafts at three slots converged on the
+   IDENTICAL four recovery players (Haliburton, Tatum, Lillard, VanVleet):
+   risk-flagged players vanished from every roster, but discounted recovery
+   stars still out-price the healthy shelf where it collapses (R4–11), so
+   2nd/3rd/4th concurrent bets each won "clearly" on compounded value.
+   Deepening the per-player discount moved WHERE they were drafted, not
+   WHETHER. Concentration needs its own rule (capped bets or steeper
+   compounding) — see arena/results/report_2026-07-12_live_arena_x3.md §5-P1;
+   codification gate applies. Also surfaced there: the healthy-tiebreak's ~5%
+   band must name its reference number (adjusted vs compounded value — they
+   gave contradictory answers mid-draft), and the skill defines no multiplier
+   past the 3rd concurrent recovery bet.
