@@ -195,20 +195,26 @@ def availability(p):
     """Injury multiplier from the note column (owner's rule).
 
     out-*        -> 0.0: season-ending; excluded from all boards
-    *recovery*   -> 0.60: returning from serious injury; value downgraded
+    *recovery*   -> 0.0: serious-injury recovery; excluded from all boards
     *risk*       -> 0.78: chronic availability concern; downgraded
 
-    Deepened 2026-07-12 (owner-approved) from 0.7/0.85: real 2025-26
-    availability graded far below the old discounts, and flagged players
-    carry ~1.8x weekly game-count variance — pure downside in H2H.
-    Numbers stay above the raw realized ratios because missed games are
-    partially replaceable via streaming (value-over-replacement, not GP).
+    Owner ruling 2026-07-12 (supersedes the same-day 0.60 discount):
+    recovery-flagged players are REMOVED from the pool, not priced —
+    three live-arena drafts at three slots each stacked the identical
+    four discounted recovery stars, and real 2025-26 recovery players
+    delivered ~9% of games. No discount polices concentration; exclusion
+    does. Re-entry is via the daily refresh: when news confirms a
+    returnee is fully back and playing, re-tag `inj-<reason>-risk`
+    (first season back) or clear the note — only then are they
+    draftable. Risk 0.78 (from 0.85) is arena-calibrated vs real
+    2025-26 games played; it stays above the raw realized ratio because
+    missed games are partly replaceable via streaming.
     """
     note = (p.get("note") or "").lower()
     if note.startswith("out-"):
         return 0.0
     if "recovery" in note:
-        return 0.60
+        return 0.0
     if "risk" in note:
         return 0.78
     return 1.0
@@ -337,7 +343,7 @@ def cmd_rank(args, players):
     pool = sorted(pool, key=lambda p: -adj_value(p, punt))
     print(f"Rankings (punting: {', '.join(punt) or 'nothing'}"
           + (f"; position: {args.pos.upper()}" if args.pos else "")
-          + (f"; {dropped} out-for-season excluded" if dropped else "")
+          + (f"; {dropped} unavailable (out/recovery) excluded" if dropped else "")
           + ")\n* = injury-adjusted value\n")
     for i, p in enumerate(pool[:args.top], 1):
         print(fmt_row(p, punt, rank=i))
@@ -477,7 +483,7 @@ def cmd_draft(args, players):
             sys.exit(f"--slot must be between 1 and {teams}.")
         p = match_player(players, args.player, taken=taken)
         if availability(p) == 0.0:
-            print(f"warning: {p['player']} is marked OUT for the season "
+            print(f"warning: {p['player']} is flagged unavailable "
                   f"({p.get('note')}) — logging the pick anyway.")
         n = len(picks)
         derived = team_of_pick(n, teams)
@@ -760,10 +766,6 @@ def cmd_draft(args, players):
                     f"{c}:{p['z'][c]:+.1f}" for c in weakest)
             if team_counts.get(p["team"], 0) >= 2:
                 line += f"  [would be 3rd {p['team']}]"
-            if ("recovery" in (p.get("note") or "").lower() and any(
-                    "recovery" in (q.get("note") or "").lower()
-                    for q in mine_r)):
-                line += "  [2nd+ recovery bet]"
             print(line)
 
         if mine_r:
