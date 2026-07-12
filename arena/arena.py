@@ -12,6 +12,9 @@ its own frozen dataset (data/players_2025-10-21.csv — opening night of the
                                                  #   production draft state,
                                                  #   pausing at your turns
     python3 arena/arena.py tournament            # rotations x seeds x seasons
+    python3 arena/arena.py slots                 # champ%% by strategy x SLOT
+    python3 arena/arena.py cadence --slot 4      # what the board loses
+                                                 #   between YOUR turns
     python3 arena/arena.py tournament --seasons 200 --seeds 5 --rotations 3
     python3 arena/arena.py tournament --generations 3   # fixed-seed evolution
 
@@ -380,6 +383,143 @@ def cmd_live(args):
     json.dump(state, open(state_path, "w"), indent=2)
 
 
+def run_draft_ordered(order, pool_master, rng, param_overrides=None):
+    """run_draft + the pick sequence in draft order (for cadence analysis)."""
+    pool = list(pool_master)
+    rosters = {i: [] for i in range(1, TEAMS + 1)}
+    sequence = []
+    for n in range(TEAMS * ROUNDS):
+        slot = hoops.team_of_pick(n, TEAMS)
+        name = order[slot - 1]
+        params = strategy_params(name, (param_overrides or {}).get(name))
+        ranks = (ranks_for(rosters, slot)
+                 if params["matrix_aware"] and rosters[slot] else None)
+        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
+        rosters[slot].append(p)
+        sequence.append((slot, p))
+        pool.remove(p)
+    return rosters, sequence
+
+
+TIERS = ((1, 12), (13, 24), (25, 50), (51, 100))
+
+
+def cmd_cadence(args):
+    """Across many drafts, measure what disappears from the board between a
+    slot's consecutive turns: tier drain and position drain per gap. This is
+    draft-night intelligence — 'from slot 4, between your round-1 and
+    round-2 picks, expect ~N top-24 players and ~M centers to vanish'."""
+    rng = random.Random(args.seed)
+    pool = load_pool()
+    ranked = sorted(pool, key=lambda p: -hoops.adj_value(p))
+    rank_of = {p["player"]: i + 1 for i, p in enumerate(ranked)}
+    slots = [args.slot] if args.slot else list(range(1, TEAMS + 1))
+    # gaps[slot][k] = players taken between the slot's pick k and pick k+1
+    acc = {s: [{"tiers": [0.0] * len(TIERS), "pos": {b: 0.0 for b in BASE_POS},
+                "n": 0.0}
+               for _ in range(ROUNDS - 1)] for s in slots}
+    for d in range(args.drafts):
+        names = list(STRATEGIES)
+        rng.shuffle(names)
+        _, seq = run_draft_ordered(names, pool, rng)
+        for s in slots:
+            turns = [i for i, (slot, _) in enumerate(seq) if slot == s]
+            for k in range(len(turns) - 1):
+                between = seq[turns[k] + 1: turns[k + 1]]
+                g = acc[s][k]
+                g["n"] += 1
+                for _, p in between:
+                    r = rank_of[p["player"]]
+                    for ti, (lo, hi) in enumerate(TIERS):
+                        if lo <= r <= hi:
+                            g["tiers"][ti] += 1
+                    for b in positions_of(p):
+                        g["pos"][b] += 1
+    report = {}
+    for s in slots:
+        rows = []
+        for k, g in enumerate(acc[s]):
+            n = g["n"] or 1
+            rows.append({
+                "between_rounds": f"{k + 1}->{k + 2}",
+                "picks_between": (TEAMS - 1) * 2 - 1
+                if False else len_between(s, k),
+                "tier_drain": {f"top{hi}" if lo == 1 else f"{lo}-{hi}":
+                               round(g["tiers"][ti] / n, 2)
+                               for ti, (lo, hi) in enumerate(TIERS)},
+                "pos_drain": {b: round(v / n, 2)
+                              for b, v in g["pos"].items()},
+            })
+        report[s] = rows
+        print(f"\nSLOT {s} cadence ({args.drafts} drafts):")
+        for row in rows[:6]:
+            td = row["tier_drain"]
+            pd = row["pos_dr" "ain"]
+            print(f"  R{row['between_rounds']:<6} ({row['picks_between']:>2} "
+                  f"picks pass) | top12: {td['top12']:.1f}  13-24: "
+                  f"{td['13-24']:.1f}  25-50: {td['25-50']:.1f} | " +
+                  " ".join(f"{b}:{pd[b]:.1f}" for b in BASE_POS))
+        if len(rows) > 6:
+            print(f"  ... rounds 7-15 in the JSON report")
+    os.makedirs(args.out, exist_ok=True)
+    path = os.path.join(args.out, "cadence_intel.json")
+    with open(path, "w") as f:
+        json.dump({"drafts": args.drafts, "seed": args.seed,
+                   "slots": {str(s): report[s] for s in slots}}, f, indent=2)
+    print(f"\ncadence intel written: {path}")
+
+
+def len_between(slot, k):
+    """Picks made by others between a slot's pick k+1 and pick k+2 (snake)."""
+    n = 0
+    my = [i for i in range(TEAMS * ROUNDS)
+          if hoops.team_of_pick(i, TEAMS) == slot]
+    return my[k + 1] - my[k] - 1
+
+
+def cmd_slots(args):
+    """Championship%% per (strategy, slot): which builds win from which seat."""
+    rng = random.Random(args.seed)
+    pool = load_pool()
+    names = list(STRATEGIES)
+    cell_c = {n: {s: 0 for s in range(1, TEAMS + 1)} for n in names}
+    cell_n = {n: {s: 0 for s in range(1, TEAMS + 1)} for n in names}
+    for rr in range(args.rotations):
+        base = names[:]
+        if rr:
+            rng.shuffle(base)
+        for rotation in range(TEAMS):
+            order = base[rotation:] + base[:rotation]
+            rosters = run_draft(order, pool, rng)
+            champs, _ = simulate_seasons(rosters, args.seasons, rng)
+            for slot, name in enumerate(order, 1):
+                cell_c[name][slot] += champs[slot]
+                cell_n[name][slot] += args.seasons
+    print(f"\nchamp% by strategy x slot ({args.rotations} rotations x "
+          f"{args.seasons} seasons; ~{args.rotations} samples/cell — "
+          "directional, not gospel):\n")
+    print("STRATEGY      " + "".join(f"  S{s:<4}" for s in range(1, 13)))
+    for n in names:
+        row = "".join(f"  {100 * cell_c[n][s] / (cell_n[n][s] or 1):5.1f}"
+                      for s in range(1, 13))
+        print(f"{n:<12}{row}")
+    best = {}
+    for s in range(1, 13):
+        best[s] = max(names,
+                      key=lambda n: cell_c[n][s] / (cell_n[n][s] or 1))
+    print("\nbest strategy per slot: " +
+          "  ".join(f"S{s}:{best[s]}" for s in range(1, 13)))
+    os.makedirs(args.out, exist_ok=True)
+    path = os.path.join(args.out, "slot_intel.json")
+    with open(path, "w") as f:
+        json.dump({"champ_pct": {n: {str(s):
+                   100 * cell_c[n][s] / (cell_n[n][s] or 1)
+                   for s in range(1, 13)} for n in names},
+                   "best_per_slot": {str(s): best[s] for s in best}},
+                  f, indent=2)
+    print(f"slot intel written: {path}")
+
+
 def main():
     ap = argparse.ArgumentParser(prog="arena.py", description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -389,6 +529,16 @@ def main():
                         "production suggestion flow at your turns")
     lv.add_argument("--slot", type=int, default=4)
     lv.add_argument("--seed", type=int, default=1)
+    cd = sub.add_parser("cadence", help="board drain between a slot's turns")
+    cd.add_argument("--slot", type=int, help="one slot (default: all 12)")
+    cd.add_argument("--drafts", type=int, default=60)
+    cd.add_argument("--seed", type=int, default=1)
+    cd.add_argument("--out", default=os.path.join(ARENA_DIR, "results"))
+    sl = sub.add_parser("slots", help="champ%% by strategy x draft slot")
+    sl.add_argument("--seasons", type=int, default=200)
+    sl.add_argument("--rotations", type=int, default=5)
+    sl.add_argument("--seed", type=int, default=1)
+    sl.add_argument("--out", default=os.path.join(ARENA_DIR, "results"))
     t = sub.add_parser("tournament", help="rotations x seeds x seasons")
     t.add_argument("--seasons", type=int, default=200)
     t.add_argument("--seeds", type=int, default=3,
@@ -402,6 +552,12 @@ def main():
 
     if args.cmd == "live":
         cmd_live(args)
+        return
+    if args.cmd == "cadence":
+        cmd_cadence(args)
+        return
+    if args.cmd == "slots":
+        cmd_slots(args)
         return
     if args.cmd == "draft":
         rng = random.Random(args.seed)
