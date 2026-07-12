@@ -260,17 +260,15 @@ def match_candidates(players, query):
                 if q in p["player"].lower().replace(".", "").split()]
     if not subs:
         subs = [p for p in players if q in p["player"].lower()]
-    if not subs:  # typo fallback: fuzzy against full names and name words
-        full = difflib.get_close_matches(
-            q, [p["player"].lower() for p in players], n=3, cutoff=0.75)
-        subs = [p for p in players if p["player"].lower() in full]
-        if not subs:
-            hits = set()
-            for p in players:
-                for w in p["player"].lower().replace(".", "").split():
-                    if difflib.get_close_matches(q, [w], n=1, cutoff=0.8):
-                        hits.add(p["player"])
-            subs = [p for p in players if p["player"] in hits]
+    if not subs:  # typo fallback: fuzzy, SURNAME-only, first letter must
+        # agree (Collins never becomes Rollins; Siakim still finds Siakam)
+        hits = set()
+        for p in players:
+            last = p["player"].lower().replace(".", "").split()[-1]
+            if q[:1] == last[:1] and difflib.get_close_matches(
+                    q, [last], n=1, cutoff=0.8):
+                hits.add(p["player"])
+        subs = [p for p in players if p["player"] in hits]
     return subs
 
 
@@ -501,6 +499,15 @@ def cmd_draft(args, players):
         if not 0 <= idx < len(picks):
             sys.exit(f"Pick #{args.number} not logged yet ({len(picks)} picks).")
         old = picks[idx]
+        if args.player.upper().startswith("UNKNOWN"):
+            # out-of-pool player: keep attribution with a labeled placeholder
+            picks[idx]["player"] = args.player
+            if args.slot:
+                picks[idx]["slot"] = args.slot
+            save_state(state)
+            print(f"✎ #{args.number}: {old['player']} → {args.player} "
+                  f"(T{picks[idx]['slot']}, out-of-pool placeholder)")
+            return
         others = {pk["player"] for i, pk in enumerate(picks) if i != idx}
         p = match_player(players, args.player, taken=others)
         picks[idx]["player"] = p["player"]
@@ -585,6 +592,12 @@ def cmd_draft(args, players):
         print(f"\nKept categories: you lead {wins}–{losses}")
 
     elif args.draft_cmd == "turn":
+        if args.expect is not None and args.expect != len(picks):
+            tail = ", ".join(f"#{len(picks)-i} {pk['player']}"
+                             for i, pk in enumerate(reversed(picks[-3:])))
+            sys.exit(f"⚠ STATE MISMATCH: {len(picks)} picks logged, you "
+                     f"expected {args.expect}. Last: {tail}. Nothing was "
+                     "logged — reconcile, then resend only unlogged names.")
         # One-shot live-draft turn: log all announced picks, then emit the
         # full decision card. Leading pick numbers ("77- Name", "Pick 77,
         # Name") are authoritative: a number matching an existing pick is a
@@ -646,20 +659,35 @@ def cmd_draft(args, players):
             slot = myslot if mine else team_of_pick(n, teams)
             # Ambiguity auto-resolves by draft context: the best available
             # candidate is who gets drafted at this point; flag the guess.
-            cands = [c for c in match_candidates(players, name)
-                     if c["player"] not in taken]
+            all_c = match_candidates(players, name)
+            cands = [c for c in all_c if c["player"] not in taken]
+            exact = [c for c in cands
+                     if c["player"].lower() == name.strip().lower()]
+            best_all = max(all_c, key=adj_value) if all_c else None
+            if cands and not exact and best_all and \
+                    best_all["player"] in taken:
+                # Surname collision: the name's best match is already
+                # drafted. Logging a lesser candidate caused the Coby/
+                # Dejounte misattributions — HALT so numbering stays true.
+                save_state(state)
+                alts = ", ".join(c["player"] for c in cands[:3])
+                sys.exit(f"⚠ HALTED at {name!r}: best match "
+                         f"{best_all['player']} is already drafted. If you "
+                         f"meant {alts}, resend the REST of this feed using "
+                         "the fuller name. Nothing after this name was "
+                         "logged.")
             if cands:
-                p = max(cands, key=adj_value)
+                p = exact[0] if exact else max(cands, key=adj_value)
                 picks.append({"player": p["player"], "slot": slot})
                 taken.add(p["player"])
                 you = " (YOU)" if slot == myslot else ""
                 note = ""
-                if len(cands) > 1:
-                    others = ", ".join(c["player"] for c in cands[1:3])
-                    note = f"  (assumed over {others})"
+                losers = [c["player"] for c in cands if c is not p][:2]
+                if losers:
+                    note = f"  (assumed over {', '.join(losers)})"
                 print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → "
                       f"T{slot}{you}{note}")
-            elif match_candidates(players, name):
+            elif all_c:
                 # every match already drafted: duplicate feed — skip, no pick
                 errors.append(f"skipped {name!r}: already off the board "
                               "(no pick logged)")
@@ -832,6 +860,9 @@ def build_parser():
     dt.add_argument("--top", type=int, default=8)
     dt.add_argument("--pos")
     dt.add_argument("--punt", help="override the draft's punt setting")
+    dt.add_argument("--expect", type=int,
+                    help="picks already logged; abort with a state tail if "
+                         "reality differs (re-send safety after a lost result)")
 
     dsub.add_parser("status", help="your roster, build profile, rank vs field")
     dsub.add_parser("rosters", help="every team's roster so far")
