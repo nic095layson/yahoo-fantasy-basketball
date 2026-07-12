@@ -89,3 +89,24 @@ arena imports `hoops.py` for draft-side pricing, so all baselines above
 predate these discounts — re-baseline before comparing new runs to old
 numbers. The safe_stars "improvement" from gen 1 did not survive
 fresh-seed replication; refutations (council_safe, safe_punt_ft) did.
+
+## Owner ruling 2026-07-12 (post ×3 live run) and operating notes
+
+The ×3 live-arena run (results/report_2026-07-12_live_arena_x3.md) showed
+all three rosters stacking the identical four discounted recovery stars.
+Owner ruling: `*-recovery` players are now EXCLUDED from the pool entirely
+(hoops.py availability() returns 0.0) — this supersedes the ×0.60 discount
+and shifts arena baselines AGAIN: the report's post-discount tournament
+board already predates the exclusion. Re-baseline before comparing runs.
+Realism caveat: arena bots now also cannot draft recovery players, but
+real league-mates will — live-mode opponent behavior is slightly
+optimistic on this axis.
+
+Operating notes from the ×3 run:
+- **Live mode**: only the card printed after the latest `live` call is
+  authoritative — a card issued by the `my:` log call reflects state
+  BEFORE the bots advance.
+- **CLI quirk**: `tournament --out X.json` treats the path as a
+  directory, writing `X.json/tournament_seed1.json` inside it.
+- Live mode now warns at startup if any frozen-snapshot name is missing
+  from the live `data/players.csv` (cross-pool drift guard).

@@ -353,6 +353,21 @@ def cmd_live(args):
     managers = state["arena_managers"]
     user_slot = state["slot"]
     pool_all = load_pool()
+    # cross-pool guard: bots draft from the frozen snapshot but the user's
+    # cards price from the live CSV — a snapshot name missing there would
+    # silently skew roster totals in the production draft state.
+    live_csv = os.path.join(REPO, "data", "players.csv")
+    if os.path.isfile(live_csv):
+        import csv as _csv
+        with open(live_csv, newline="") as fh:
+            live_names = {row["player"] for row in _csv.DictReader(fh)}
+        missing = sorted(p["player"] for p in pool_all
+                         if p["player"] not in live_names)
+        if missing:
+            print(f"⚠ cross-pool: {len(missing)} snapshot player(s) absent "
+                  f"from live data/players.csv — cards will show them as "
+                  f"UNKNOWN: {', '.join(missing[:8])}"
+                  + (" …" if len(missing) > 8 else ""))
     taken = {p["player"] for p in state["picks"]}
     pool = [p for p in pool_all if p["player"] not in taken]
     by_name = {p["player"]: p for p in pool_all}
