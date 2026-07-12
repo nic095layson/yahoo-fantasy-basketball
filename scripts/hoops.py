@@ -109,7 +109,7 @@ MUST_HAVE = [
     "Isaiah Hartenstein", "Kel'el Ware", "Miles Bridges", "Brandon Miller",
     "RJ Barrett", "Deni Avdija", "Shaedon Sharpe", "Reed Sheppard",
     "Andrew Nembhard", "Stephon Castle", "VJ Edgecombe", "Dylan Harper",
-    "Keyonte George",
+    "Keyonte George", "Naz Reid", "Brook Lopez", "Donte DiVincenzo",
 ]
 
 
