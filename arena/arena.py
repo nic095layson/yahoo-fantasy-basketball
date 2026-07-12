@@ -334,11 +334,12 @@ def cmd_live(args):
     names = [n for n in STRATEGIES if n != "council"]
     rng.shuffle(names)
     if not os.path.isfile(state_path):
+        opp_slots = [s for s in range(1, TEAMS + 1) if s != args.slot]
         state = {"teams": TEAMS, "slot": args.slot, "size": ROUNDS,
                  "punt": [], "picks": [],
-                 "arena_managers": {str(s): names[(s - 1) % len(names)]
-                                    for s in range(1, TEAMS + 1)
-                                    if s != args.slot}}
+                 # one personality per opponent seat, no duplicates
+                 "arena_managers": {str(s): names[i]
+                                    for i, s in enumerate(opp_slots)}}
         json.dump(state, open(state_path, "w"), indent=2)
         print(f"live draft created: you are slot {args.slot}; opponents: "
               + ", ".join(f"T{s}={n}" for s, n in
