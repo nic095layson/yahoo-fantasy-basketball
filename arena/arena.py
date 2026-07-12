@@ -7,6 +7,10 @@ its own frozen dataset (data/players_2025-10-21.csv — opening night of the
 2025-26 season, no hindsight), and writes only under arena/results/.
 
     python3 arena/arena.py draft --seed 1        # one 12-team draft
+    python3 arena/arena.py live --slot 4         # YOU + 11 AI managers:
+                                                 #   bots pick into the
+                                                 #   production draft state,
+                                                 #   pausing at your turns
     python3 arena/arena.py tournament            # rotations x seeds x seasons
     python3 arena/arena.py tournament --seasons 200 --seeds 5 --rotations 3
     python3 arena/arena.py tournament --generations 3   # fixed-seed evolution
@@ -317,11 +321,74 @@ def evaluate(seasons, seeds, rotations, param_overrides=None):
     return out
 
 
+def cmd_live(args):
+    """Practice mode: 11 arena personalities + one human seat. Bots log
+    their picks into the PRODUCTION draft state (draft_state.json), so the
+    normal `draft turn` card / suggestions flow works unchanged at the
+    user's turns. Re-run after each user pick to advance the bots."""
+    state_path = os.environ.get("HOOPS_DRAFT_STATE", "draft_state.json")
+    rng = random.Random(args.seed)
+    names = [n for n in STRATEGIES if n != "council"]
+    rng.shuffle(names)
+    if not os.path.isfile(state_path):
+        state = {"teams": TEAMS, "slot": args.slot, "size": ROUNDS,
+                 "punt": [], "picks": [],
+                 "arena_managers": {str(s): names[(s - 1) % len(names)]
+                                    for s in range(1, TEAMS + 1)
+                                    if s != args.slot}}
+        json.dump(state, open(state_path, "w"), indent=2)
+        print(f"live draft created: you are slot {args.slot}; opponents: "
+              + ", ".join(f"T{s}={n}" for s, n in
+                          sorted(state["arena_managers"].items(),
+                                 key=lambda kv: int(kv[0]))))
+    else:
+        state = json.load(open(state_path))
+        if "arena_managers" not in state:
+            raise SystemExit(f"{state_path} exists but is not an arena live "
+                             "draft — remove it or set HOOPS_DRAFT_STATE.")
+    managers = state["arena_managers"]
+    user_slot = state["slot"]
+    pool_all = load_pool()
+    taken = {p["player"] for p in state["picks"]}
+    pool = [p for p in pool_all if p["player"] not in taken]
+    by_name = {p["player"]: p for p in pool_all}
+    while len(state["picks"]) < TEAMS * ROUNDS:
+        n = len(state["picks"])
+        slot = hoops.team_of_pick(n, TEAMS)
+        if slot == user_slot:
+            print(f"⏸  pick #{n + 1} is YOURS — get the card with: "
+                  f"python3 scripts/hoops.py draft turn \"\" "
+                  f"then log with draft turn \"my:Name\"; re-run live after.")
+            break
+        name = managers[str(slot)]
+        params = strategy_params(name)
+        rosters = {i: [] for i in range(1, TEAMS + 1)}
+        for pk in state["picks"]:
+            pl = by_name.get(pk["player"])
+            if pl:
+                rosters[pk["slot"]].append(pl)
+        ranks = (ranks_for(rosters, slot)
+                 if params["matrix_aware"] and rosters[slot] else None)
+        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
+        state["picks"].append({"player": p["player"], "slot": slot})
+        pool.remove(p)
+        print(f"  ✓ #{n + 1} R{n // TEAMS + 1}: {p['player']} → "
+              f"T{slot} ({name})")
+    else:
+        print("🏁 draft complete — analyze with scripts/hoops.py draft "
+              "matrix / status / vs.")
+    json.dump(state, open(state_path, "w"), indent=2)
+
+
 def main():
     ap = argparse.ArgumentParser(prog="arena.py", description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
     d = sub.add_parser("draft", help="run one 12-team draft, print rosters")
     d.add_argument("--seed", type=int, default=1)
+    lv = sub.add_parser("live", help="practice: you + 11 AI managers, "
+                        "production suggestion flow at your turns")
+    lv.add_argument("--slot", type=int, default=4)
+    lv.add_argument("--seed", type=int, default=1)
     t = sub.add_parser("tournament", help="rotations x seeds x seasons")
     t.add_argument("--seasons", type=int, default=200)
     t.add_argument("--seeds", type=int, default=3,
@@ -333,6 +400,9 @@ def main():
     t.add_argument("--out", default=os.path.join(ARENA_DIR, "results"))
     args = ap.parse_args()
 
+    if args.cmd == "live":
+        cmd_live(args)
+        return
     if args.cmd == "draft":
         rng = random.Random(args.seed)
         rosters = run_draft(list(STRATEGIES), load_pool(), rng)

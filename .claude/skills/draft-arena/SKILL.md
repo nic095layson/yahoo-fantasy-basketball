@@ -9,6 +9,7 @@ The arena's sole purpose is testing the system's draft analysis and league simul
 
 ## Procedure
 
+0. **Live practice** ("draft against the bots", "practice draft"): `python3 arena/arena.py live --slot N` — eleven personalities fill the other seats and write into the production draft state, pausing at the user's turns; present the standard confidence card there (production `draft turn` flow, mirror protocol, all owner rules), log the user's pick, re-run `live`. This is the 11-managers-plus-user mode.
 1. **Run**: `python3 arena/arena.py tournament --seasons 200 --seed <n>` (~2s). Vary seeds across runs; one seed is one sample, not a conclusion.
 2. **Read the board**: championship% is the metric that matters; playoff% shows floor. Slot rotation already removes draft-position luck.
 3. **Strategy lab (the Fable 5 part)**: analyze WHY the board looks the way it does — trace which categories the winners locked, where the losers' value leaked (injury availability, punt incoherence, positional walls). Then author or mutate strategies in `arena/arena.py`'s STRATEGIES table with reasoned parameter changes, and re-run. Prefer several parallel hypotheses per generation over one tweak at a time.

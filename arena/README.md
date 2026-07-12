@@ -19,9 +19,17 @@ isolated from the production tool:
 
 ```bash
 python3 arena/arena.py draft --seed 1               # one draft, rosters shown
+python3 arena/arena.py live --slot 4                # YOU vs 11 AI managers
 python3 arena/arena.py tournament                    # 12-slot rotation + seasons
 python3 arena/arena.py tournament --seasons 500 --generations 3
 ```
+
+**Live practice mode** (`live`): eleven arena personalities take the other
+seats and log their picks into the PRODUCTION draft state, pausing whenever
+it's your turn — so the normal `draft turn` confidence cards, flags, and
+rules fire exactly as they will on real draft night. Log your pick, re-run
+`live`, repeat. Post-draft, all production analysis (matrix/status/vs)
+works, and the arena's season simulator can grade the finished league.
 
 A full tournament (12 drafts × 200 seasons × 12 strategies) takes ~2 seconds.
 
