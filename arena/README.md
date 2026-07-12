@@ -76,3 +76,16 @@ never drafting injury-flagged players beats every clever weighting tested.
 Phase 2's first questions: are the production engine's injury discounts too
 shallow, and is the sim's availability model itself calibrated right
 (grade it against how 2025-26 actually unfolded)?
+
+## Phase 2 outcome (2026-07-12, overnight run — see results/findings_2026-07-12_overnight.md)
+
+Both questions answered. Calibration against real 2025-26 games played:
+the sim UNDERSTATES the injury penalty (risk-flagged played 51% vs 75%
+assumed; recovery ~9% vs 60%), so availability-dominance is conservative.
+Owner-approved codification followed: production `hoops.py` injury
+discounts deepened (risk 0.85 → 0.78, recovery 0.7 → 0.60) plus a
+healthy-within-5% tiebreak in the fantasy-basketball skill. **Note:** the
+arena imports `hoops.py` for draft-side pricing, so all baselines above
+predate these discounts — re-baseline before comparing new runs to old
+numbers. The safe_stars "improvement" from gen 1 did not survive
+fresh-seed replication; refutations (council_safe, safe_punt_ft) did.

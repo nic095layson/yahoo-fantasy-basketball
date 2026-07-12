@@ -195,16 +195,22 @@ def availability(p):
     """Injury multiplier from the note column (owner's rule).
 
     out-*        -> 0.0: season-ending; excluded from all boards
-    *recovery*   -> 0.7: returning from serious injury; value downgraded
-    *risk*       -> 0.85: chronic availability concern; mild downgrade
+    *recovery*   -> 0.60: returning from serious injury; value downgraded
+    *risk*       -> 0.78: chronic availability concern; downgraded
+
+    Deepened 2026-07-12 (owner-approved) from 0.7/0.85: real 2025-26
+    availability graded far below the old discounts, and flagged players
+    carry ~1.8x weekly game-count variance — pure downside in H2H.
+    Numbers stay above the raw realized ratios because missed games are
+    partially replaceable via streaming (value-over-replacement, not GP).
     """
     note = (p.get("note") or "").lower()
     if note.startswith("out-"):
         return 0.0
     if "recovery" in note:
-        return 0.7
+        return 0.60
     if "risk" in note:
-        return 0.85
+        return 0.78
     return 1.0
 
 
