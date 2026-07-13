@@ -89,3 +89,25 @@ or arena work. Add entries dated, with the incident that taught them.
    this; retest only after a Claude connector update, with the one-liner
    "read LESSONS.md from nic095layson/yahoo-fantasy-basketball" in a FRESH
    Cowork conversation.
+   *(2026-07-13: partially superseded — repos now public; READ half is moot,
+   WRITE half stands. See addendum 9-A below.)*
+
+## 2026-07-13 — Addendum to lesson 9: all four repos made public
+
+9-A. **Reads are un-broken; writes still need the relay.** David made all
+   four repos public 2026-07-13. Verified the same day from a cloud session:
+   `https://raw.githubusercontent.com/nic095layson/<repo>/main/<path>`
+   returns HTTP 200 with NO auth for all four repos, and `add_repo` + clone
+   succeeded where reads previously 404'd. Lesson 9's read failure (the
+   connector token sees zero repos) is therefore moot for READS: any surface
+   with plain web fetch — claude.ai projects, Cowork, cloud sessions — can
+   read live repo state without the connector at all. Amended standing
+   procedure: **pull-first via raw URLs for reads** (codified in
+   `fantasy-basketball-2026-27/instructions/claude-ai-project-instructions.md`);
+   **writes unchanged** — GitHub Desktop relay or a Claude Code cloud
+   session, because the connector's user-authorization half is still dead
+   and public visibility grants no write. Lesson 9's retest one-liner is
+   still worth running in a fresh Cowork conversation to check whether the
+   connector itself now reads public repos, but nothing depends on it
+   anymore. Corollary: public repos mean anyone can read these files — keep
+   credentials, tokens, and anything private out of all four repos.
