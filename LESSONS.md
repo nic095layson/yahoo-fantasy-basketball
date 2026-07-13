@@ -71,3 +71,21 @@ or arena work. Add entries dated, with the incident that taught them.
    feed produced zero double-logs and zero drift across 158 picks. Keep both
    forever; also: when a new message arrives during processing, always
    `draft status` before feeding it.
+
+## 2026-07-12 — GitHub connector debugging (Cowork ↔ cloud relay)
+
+9. **The Cowork GitHub connector cannot reach this repo — treat the GitHub
+   Desktop relay as the standard path, not a fallback.** Exhaustively
+   diagnosed 2026-07-12: the connector authenticates as nic095layson but its
+   token sees ZERO repositories (repo reads 404; a `user:` repo search returns
+   "no permission"), while the "Claude" GitHub App installation HAS the repo
+   grant (cloud sessions push over it all day). The user-authorization half of
+   the connector handshake never completes — the connect flow dead-ends on an
+   "organization settings / Team and Enterprise plans" error page — so
+   GitHub-side settings cannot fix it, and reconnect attempts (2×, plus a
+   verified installation grant) changed nothing. Standing procedure: Cowork
+   writes deliverables into the repo folder, David commits/pushes via GitHub
+   Desktop, the cloud session pulls. Do not spend session time re-debugging
+   this; retest only after a Claude connector update, with the one-liner
+   "read LESSONS.md from nic095layson/yahoo-fantasy-basketball" in a FRESH
+   Cowork conversation.
