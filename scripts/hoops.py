@@ -45,6 +45,15 @@ FRESH_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                           "..", "data", "freshness.json")
 STATE_PATH = os.environ.get("HOOPS_DRAFT_STATE", "draft_state.json")
 
+# Owner's league positional slots (layout confirmed 2026-07-12):
+# PG, SG, G, SF, PF, F, C, C — plus 2 Util and 3 BN, which any player
+# fills. Leagues with other layouts get an approximate feasibility guard.
+POSITIONAL_SLOTS = (
+    ("PG", ("PG",)), ("SG", ("SG",)), ("G", ("PG", "SG")),
+    ("SF", ("SF",)), ("PF", ("PF",)), ("F", ("SF", "PF")),
+    ("C", ("C",)), ("C", ("C",)),
+)
+
 CATS = ["FG%", "FT%", "3PTM", "PTS", "REB", "AST", "ST", "BLK", "TO"]
 COUNT_COLS = {"3PTM": "tpm", "PTS": "pts", "REB": "reb", "AST": "ast",
               "ST": "stl", "BLK": "blk", "TO": "tov"}
@@ -469,8 +478,13 @@ def cmd_draft(args, players):
         state = {"teams": args.teams, "slot": args.slot, "size": args.size,
                  "punt": list(parse_punt(args.punt)), "picks": []}
         save_state(state)
-        print(f"Draft started: {args.teams} teams, you pick from slot {args.slot}, "
-              f"{args.size} rounds, punting: {', '.join(state['punt']) or 'nothing'}.")
+        total = args.teams * args.size
+        print(f"Draft started: {args.teams} teams x {args.size} rounds = "
+              f"{total} total picks (last pick #{total}), you pick from "
+              f"slot {args.slot}, punting: "
+              f"{', '.join(state['punt']) or 'nothing'}.")
+        print("CONFIRM the teams x rounds product with the owner before "
+              "pick 1 (ledger lesson #7).")
         print(f"State: {os.path.abspath(STATE_PATH)}")
         return
 
@@ -739,12 +753,29 @@ def cmd_draft(args, players):
             print("your positions: " + " ".join(
                 f"{k}:{v}" for k, v in sorted(pos_counts.items())))
         # Feasibility guard (council rule): position only hard-matters when a
-        # base slot could become unfillable with the picks remaining.
-        missing = [b for b in ("PG", "SG", "SF", "PF", "C")
-                   if not pos_counts.get(b)]
+        # required slot could become unfillable with the picks remaining.
+        # Maximum bipartite matching of the roster onto POSITIONAL_SLOTS —
+        # one player per slot, multi-position players assigned where needed.
+        slot_match = {}  # roster index -> slot index
+
+        def _augment(si, seen):
+            for pi, pl in enumerate(mine_r):
+                if pi in seen or not any(
+                        e in positions_of(pl)
+                        for e in POSITIONAL_SLOTS[si][1]):
+                    continue
+                seen.add(pi)
+                if pi not in slot_match or _augment(slot_match[pi], seen):
+                    slot_match[pi] = si
+                    return True
+            return False
+
+        unfilled = [POSITIONAL_SLOTS[si][0]
+                    for si in range(len(POSITIONAL_SLOTS))
+                    if not _augment(si, set())]
         remaining = state["size"] - len(mine_r)
-        if missing and remaining - len(missing) <= 2:
-            print(f"⚠ FEASIBILITY: no {'/'.join(missing)} rostered, "
+        if unfilled and remaining - len(unfilled) <= 2:
+            print(f"⚠ FEASIBILITY: open slots {'/'.join(unfilled)}, "
                   f"{remaining} picks left — cover these soon")
         # Owner soft rules (subordinate to winning potential):
         # NBA-team stacking cap (avoid 3+ from one team) and position lean.
@@ -838,7 +869,8 @@ def build_parser():
     di = dsub.add_parser("init", help="start a draft")
     di.add_argument("--teams", type=int, default=12)
     di.add_argument("--slot", type=int, required=True, help="your draft position (1-based)")
-    di.add_argument("--size", type=int, default=15, help="rounds/roster size")
+    di.add_argument("--size", type=int, default=13,
+                    help="rounds/roster size (owner's league: 13)")
     di.add_argument("--punt", help="planned punt categories")
     di.add_argument("--force", action="store_true", help="overwrite existing draft")
 
