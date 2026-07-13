@@ -54,3 +54,20 @@ or arena work. Add entries dated, with the incident that taught them.
    band must name its reference number (adjusted vs compounded value — they
    gave contradictory answers mid-draft), and the skill defines no multiplier
    past the 3rd concurrent recovery bet.
+
+## 2026-07-12 — Slot-9 manual-feed practice draft (158 picks, opening-night 2025 snapshot)
+
+7. **Confirm teams × rounds = total picks BEFORE pick #1.** The draft ran on
+   `--size 15` per the session brief; the owner ended it at #158 and only then
+   surfaced that the intended roster was smaller (real league: 13 slots).
+   Cheap to catch at init ("12×15 = 180 picks, last pick #180, yours are
+   9/16/.../177 — confirm"), expensive to catch at the end: uneven rosters bias
+   every cross-team comparison. Add the arithmetic echo to the prime checklist.
+
+8. **Owner resubmits during processing are a normal input, not an anomaly —
+   and the 2026-07-12 protocol absorbs them.** Four feeds' results/echoes were
+   lost this draft because the owner re-sent while the engine call was in
+   flight (owner-confirmed root cause). State-read-first + `--expect` on every
+   feed produced zero double-logs and zero drift across 158 picks. Keep both
+   forever; also: when a new message arrives during processing, always
+   `draft status` before feeding it.
