@@ -92,6 +92,31 @@ or arena work. Add entries dated, with the incident that taught them.
    *(2026-07-13: partially superseded — repos now public; READ half is moot,
    WRITE half stands. See addendum 9-A below.)*
 
+## 2026-07-13 — Roster audit: 39/220 stale team values in the draft-kit CSV
+
+10. **A ledger of headline moves is not roster verification — bind data-policy
+   gates to the artifact, not the occasion.** The 2026-27 draft-kit CSV
+   (fantasy-basketball-2026-27) shipped 220 player-team pairings; a live-web
+   audit corrected 39 (17.7%), every one describing a move already public at
+   authoring — a January trade, February-deadline secondary pieces, and ten
+   days of live July free agency, including a four-team deal from two days
+   prior. Root cause: teams came from model memory patched with ~15 verified
+   headline moves, authored in a 24-minute window with no per-player pass;
+   the repo's own "never assert a team from memory / verify within 14 days"
+   rules were scoped to "the October run," so the interim artifact skipped
+   them; with no per-row provenance the staleness was invisible; and the
+   generated board overclaimed ("every verified move"). The headline research
+   itself held up 100% — coverage failed, not accuracy. Fix (same repo, PR
+   #1): a per-row source ledger (`roster-provenance.csv`), a mechanical gate
+   (`check_provenance.py`) that `rank_engine.py` runs before it will build a
+   board (mismatch → no artifact; `--allow-stale` → "Do not draft off this
+   board" stamped in the header), and PROMPT.md §0.6 binding the data policy
+   to every claims-bearing artifact. Portable rule: any committed file
+   asserting live-world facts carries per-row source + date, and a machine
+   check — not a checklist item — stands between it and whatever consumes it.
+   Full analysis: fantasy-basketball-2026-27
+   `report/postmortem-2026-07-13-roster-audit.md`.
+
 ## 2026-07-13 — Addendum to lesson 9: all four repos made public
 
 9-A. **Reads are un-broken; writes still need the relay.** David made all
