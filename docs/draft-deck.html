@@ -89,8 +89,11 @@ header.deck { display: flex; align-items: baseline; justify-content: space-betwe
 .echo { font-family: var(--font-data); font-size: var(--text-base); font-weight: var(--weight-bold); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0; }
 
 /* Two-column work area */
-.workgrid { display: grid; grid-template-columns: minmax(340px, 1fr) minmax(420px, 1.2fr); gap: var(--space-4); align-items: start; }
+.workgrid { display: grid; grid-template-columns: minmax(340px, 1fr) minmax(420px, 1.2fr); gap: var(--space-4); align-items: stretch; }
 @media (max-width: 960px) { .workgrid { grid-template-columns: 1fr; } }
+.toolbar { margin: 0 0 var(--space-2); }
+.card.feedcard { display: flex; flex-direction: column; }
+.feedcard .mirror { flex: 1 1 200px; min-height: 160px; max-height: none; }
 
 /* Feed console */
 .feedrow { display: flex; gap: var(--space-2); margin-bottom: var(--space-2); }
@@ -210,10 +213,17 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <!-- ============ DRAFT ============ -->
 <section id="draft" class="hidden">
+  <div class="btnrow toolbar">
+    <button class="ghost" id="advanceBtn" type="button">Advance AI picks</button>
+    <button class="ghost" id="undoBtn" type="button">Undo last pick</button>
+    <button class="ghost" id="exportBtn" type="button">Export draft_state.json</button>
+    <button class="ghost" id="copyBtn" type="button">Copy state JSON</button>
+    <button class="ghost" id="resetBtn" type="button">Reset draft</button>
+  </div>
   <div class="statusstrip" id="strip" aria-live="polite"></div>
 
   <div class="workgrid">
-    <div class="card">
+    <div class="card feedcard">
       <h2 id="feedTitle">Pick feed</h2>
       <div class="feedrow">
         <input type="text" id="feed" autocomplete="off" spellcheck="false"
@@ -223,6 +233,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For common surnames (White, Murray, Ball, Bridges, Sharpe…) feed first initial + surname: <code>D White</code>.</p>
       <p class="eyebrow" style="margin-top: var(--space-4)" id="myRosterTitle">Your roster</p>
       <ul class="myroster" id="myRoster"></ul>
+      <p class="eyebrow" style="margin-top: var(--space-4)">Pick-by-pick</p>
+      <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
     </div>
 
     <div class="card" id="decision">
@@ -232,15 +244,6 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <div id="valstrip"></div>
       <p class="eyebrow" style="margin-top:var(--space-3)" id="recoTitle">Top 5</p>
       <ol class="recos" id="recos"></ol>
-      <p class="eyebrow" style="margin-top: var(--space-4)">Pick-by-pick</p>
-      <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
-      <div class="btnrow">
-        <button class="ghost" id="advanceBtn" type="button">Advance AI picks</button>
-        <button class="ghost" id="undoBtn" type="button">Undo last pick</button>
-        <button class="ghost" id="exportBtn" type="button">Export draft_state.json</button>
-        <button class="ghost" id="copyBtn" type="button">Copy state JSON</button>
-        <button class="ghost" id="resetBtn" type="button">Reset draft</button>
-      </div>
     </div>
   </div>
 
