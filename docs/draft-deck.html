@@ -101,6 +101,11 @@ header.deck { display: flex; align-items: baseline; justify-content: space-betwe
 
 /* Decision card */
 .deckmeta { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; color: var(--ink-2); margin-bottom: var(--space-2); }
+.myroster { list-style: none; margin: var(--space-2) 0 0; padding: 0; font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.myroster li { display: flex; gap: var(--space-3); padding: var(--space-1) 0; border-top: 1px solid var(--line); }
+.myroster .pk { color: var(--muted); min-width: 72px; }
+.myroster .nm { font-family: var(--font-body); font-weight: var(--weight-medium); flex: 1; }
+.myroster .ps { color: var(--muted); }
 .flagline { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--status-risk); margin: var(--space-1) 0; }
 ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
 ol.recos li { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-1) var(--space-3); align-items: baseline; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
@@ -207,6 +212,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
         <button class="ghost" id="copyBtn" type="button">Copy state JSON</button>
         <button class="ghost" id="resetBtn" type="button">Reset draft</button>
       </div>
+      <p class="eyebrow" style="margin-top: var(--space-4)" id="myRosterTitle">Your roster</p>
+      <ul class="myroster" id="myRoster"></ul>
     </div>
 
     <div class="card" id="decision">
@@ -883,8 +890,39 @@ const PLAYERS = [{"n":"Nikola Jokic","t":"DEN","p":"C","note":"","av":1.0,"z":{"
   /* ---------- rendering ---------- */
   function renderAll() {
     hideTip();
-    renderStrip(); renderMirror(); renderDecision(); renderBest();
+    renderStrip(); renderMirror(); renderMyRoster(); renderDecision(); renderBest();
     renderGrid(); renderRosters(); renderMatrix(); renderVs();
+  }
+
+  function renderMyRoster() {
+    const st = deck.state;
+    const byName = new Map(PLAYERS.map(p => [p.n, p]));
+    const ul = $("myRoster");
+    ul.innerHTML = "";
+    let count = 0;
+    st.picks.forEach((pk, i) => {
+      if (pk.slot !== st.slot) return;
+      count++;
+      const p = byName.get(pk.player);
+      const li = document.createElement("li");
+      li.append(
+        el("span", "pk", `R${Math.floor(i / st.teams) + 1} #${i + 1}`),
+        el("span", "nm", pk.player),
+        el("span", "ps", p ? p.p : "?")
+      );
+      if (p && p.av > 0 && p.av < 1) {
+        const fl = el("span", "flag risk", "▲");
+        fl.dataset.tip = p.note;
+        li.querySelector(".nm").appendChild(fl);
+      }
+      ul.appendChild(li);
+    });
+    $("myRosterTitle").textContent = `Your roster (${count}/${st.size})`;
+    if (!count) {
+      const li = document.createElement("li");
+      li.append(el("span", "ps", "(no picks yet)"));
+      ul.appendChild(li);
+    }
   }
 
   function renderStrip() {
