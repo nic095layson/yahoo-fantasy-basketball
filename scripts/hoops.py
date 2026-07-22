@@ -121,6 +121,10 @@ MUST_HAVE = [
     "RJ Barrett", "Deni Avdija", "Shaedon Sharpe", "Reed Sheppard",
     "Andrew Nembhard", "Stephon Castle", "VJ Edgecombe", "Dylan Harper",
     "Keyonte George", "Naz Reid", "Brook Lopez", "Donte DiVincenzo",
+    # 2026 draft class (owner law 2026-07-22: every June draft adds its
+    # consensus fantasy-relevant rookies here so the stamp fails until
+    # the pool carries them)
+    "AJ Dybantsa", "Darryn Peterson", "Cameron Boozer", "Caleb Wilson",
 ]
 
 
