@@ -108,6 +108,12 @@ header.deck { display: flex; align-items: baseline; justify-content: space-betwe
 .myroster .pk { color: var(--muted); }
 .myroster li.empty .nm { color: var(--muted); font-weight: var(--weight-regular); }
 .flagline { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--status-risk); margin: var(--space-1) 0; }
+.valstrip { border: 1px solid var(--line); border-left: 3px solid var(--accent-fill); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
+.valstrip p { margin: 0 0 var(--space-1); max-width: none; }
+.valstrip p:last-child { margin-bottom: 0; }
+.valstrip .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+.valstrip .who { font-weight: var(--weight-bold); }
+.valstrip .why { color: var(--ink-2); }
 ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
 ol.recos li { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-1) var(--space-3); align-items: baseline; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
 ol.recos .rk { font-family: var(--font-data); font-weight: var(--weight-bold); color: var(--accent); }
@@ -213,6 +219,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <h2>Decision card</h2>
       <div class="deckmeta" id="deckmeta"></div>
       <div id="flags"></div>
+      <div id="valstrip"></div>
       <p class="eyebrow" style="margin-top:var(--space-3)" id="recoTitle">Top 5</p>
       <ol class="recos" id="recos"></ol>
       <p class="eyebrow" style="margin-top: var(--space-4)">Pick-by-pick</p>
@@ -662,6 +669,23 @@ const PLAYERS = [{"n":"Nikola Jokic","t":"DEN","p":"C","note":"","av":1.0,"z":{"
    Grounded in the 2026-07-22 refresh research. */
 const JUDGMENT = {
   date: "2026-07-22",
+  /* Value-on-the-board knobs (tuned at each republish).
+     Board slides — players available past their rank on OUR no-punt
+     pre-draft board — earn a capped score bonus: real 9-cat value is
+     sitting on the table. deadband/perSpot/cap are in picks and z-units. */
+  valueBoard: { deadband: 3, perSpot: 0.06, cap: 0.6, stripSlide: 4, stripRank: 40 },
+  /* Market star-tier: players real-world drafters take far above our
+     9-cat board (points-league premium, name value, trade capital).
+     Surfaced for due diligence when available past their market rank —
+     NO automatic score boost: if the market premium reflects something
+     our projections miss, it becomes a per-player judgment adj instead.
+     market = estimated consensus draft position (early 2026-27 reads;
+     no reliable 9-cat ADP exists yet in July — refreshed daily). */
+  starTier: {
+    "Devin Booker": { market: 13, why: "Elite scorer the market takes top-15; 9-cat math discounts the FG% drag and TO — weigh trade capital and usage upside before passing twice." },
+    "James Harden": { market: 15, why: "Market prices the assist/3PM engine top-15; our board sees the TO cost. Still a category anchor if you're building AST/3s." },
+    "Domantas Sabonis": { market: 14, why: "Triple-double base the market loves; FG%/REB/AST monster whose value concentrates — fits some builds far better than his flat rank suggests." },
+  },
   players: {
     "Jayson Tatum": { adj: 0.35, why: "Returned Mar 2026 and averaged 23+ in the playoffs — the generic ×0.78 risk multiplier overstates his game-count risk for a first full season back." },
     "LeBron James": { adj: -0.40, why: "Still unsigned as of July 21 — role, minutes, and fit unknowable until he lands; discount holds until he signs." },
@@ -906,6 +930,23 @@ const JUDGMENT = {
   });
   document.addEventListener("scroll", hideTip, { passive: true, capture: true });
 
+  /* Pre-draft board: no-punt injury-adjusted rank of every player.
+     The reference point for "value on the table" — computed once. */
+  const PRE_RANK = new Map();
+  {
+    const noPunt = new Set();
+    [...PLAYERS].filter(p => p.av > 0)
+      .sort((a, b) => adjValue(b, noPunt) - adjValue(a, noPunt))
+      .forEach((p, i) => PRE_RANK.set(p.n, i + 1));
+  }
+  function slideBonus(p, pickNo) {
+    const vb = JUDGMENT.valueBoard;
+    const rank = PRE_RANK.get(p.n);
+    if (!rank) return { slide: 0, bonus: 0, rank: null };
+    const slide = pickNo - rank;
+    return { slide, rank, bonus: Math.min(vb.cap, vb.perSpot * Math.max(0, slide - vb.deadband)) };
+  }
+
   /* ---------- rendering ---------- */
   function renderAll() {
     hideTip();
@@ -1077,6 +1118,44 @@ const JUDGMENT = {
         el("span", "", rival ? `top rival T${rival}: you lead ${edge.length}/${kept.length} kept` : ""));
     }
 
+    /* Value on the board — due-diligence strip, always shown when it fires */
+    const strip = $("valstrip");
+    strip.innerHTML = "";
+    strip.classList.add("hidden");
+    if (!draftDone()) {
+      const vb = JUDGMENT.valueBoard;
+      const N = myNextPick(st);
+      const avail = availablePool(st, PLAYERS);
+      const sliders = avail
+        .map(p => ({ p, ...slideBonus(p, N) }))
+        .filter(r => r.rank && r.rank <= vb.stripRank && r.slide >= vb.stripSlide)
+        .sort((a, b) => a.rank - b.rank)
+        .slice(0, 3);
+      const stars = avail
+        .map(p => ({ p, star: JUDGMENT.starTier[p.n] }))
+        .filter(r => r.star && r.star.market < N)
+        .sort((a, b) => a.star.market - b.star.market)
+        .slice(0, 3);
+      if (sliders.length || stars.length) {
+        strip.classList.remove("hidden");
+        const head = el("p", "", "");
+        head.append(el("span", "lead", "Value on the board — due diligence before you pick"));
+        strip.append(head);
+        for (const r of sliders) {
+          const line = el("p", "", "");
+          line.append(el("span", "who", `⚡ ${shortName(r.p.n)}`),
+            el("span", "why", ` — board #${r.rank}, still here at your #${N} (slid ${r.slide}). Real 9-cat value on the table.`));
+          strip.append(line);
+        }
+        for (const r of stars) {
+          const line = el("p", "", "");
+          line.append(el("span", "who", `⭐ ${shortName(r.p.n)}`),
+            el("span", "why", ` — market takes them ~#${r.star.market}, our board #${PRE_RANK.get(r.p.n)}. ${r.star.why}`));
+          strip.append(line);
+        }
+      }
+    }
+
     /* council recommendations */
     const recos = $("recos");
     recos.innerHTML = "";
@@ -1090,11 +1169,15 @@ const JUDGMENT = {
     const councilTop = strategyScores("council", pool, mine,
       ranks, Math.floor(st.picks.length / st.teams) + 1, st.size, rng).slice(0, 15);
     STRATEGIES.council = saved;
-    /* Judgment layer: additive per-player adjustments authored by Claude at
-       each daily republish. Re-rank the council's shortlist with them. */
+    /* Judgment layer + board-slide bonus: additive adjustments on the
+       council's shortlist, each with a visible rationale. */
+    const pickNo = draftDone() ? 0 : myNextPick(st);
     const scored = councilTop.map(r => {
       const j = JUDGMENT.players[r.p.n];
-      return { ...r, adj: j ? j.adj : 0, why: j ? j.why : "", fs: r.s + (j ? j.adj : 0) };
+      const v = slideBonus(r.p, pickNo);
+      return { ...r, adj: j ? j.adj : 0, why: j ? j.why : "",
+               slide: v.slide, boardRank: v.rank, vbonus: v.bonus,
+               fs: r.s + (j ? j.adj : 0) + v.bonus };
     }).sort((a, b) => b.fs - a.fs).slice(0, 5);
     $("recoTitle").textContent =
       `Top 5 — council score + Claude judgment layer (tuned ${JUDGMENT.date})`;
@@ -1111,8 +1194,14 @@ const JUDGMENT = {
       }
       li.append(nm, el("span", "sc", scored[i].fs.toFixed(2)));
       const bits = [`${p.p} · ${p.t}`, `val ${fmtVal(p, punt)}`];
-      if (scored[i].adj)
-        bits.push(`council ${s.toFixed(2)} ${scored[i].adj > 0 ? "+" : "−"} judgment ${Math.abs(scored[i].adj).toFixed(2)}`);
+      if (scored[i].adj || scored[i].vbonus) {
+        let breakdown = `council ${s.toFixed(2)}`;
+        if (scored[i].adj)
+          breakdown += ` ${scored[i].adj > 0 ? "+" : "−"} judgment ${Math.abs(scored[i].adj).toFixed(2)}`;
+        if (scored[i].vbonus)
+          breakdown += ` + slide ${scored[i].vbonus.toFixed(2)}`;
+        bits.push(breakdown);
+      }
       if (weakest.length)
         bits.push("helps " + weakest.map(c => `${c}:${fmtZ(p.z[c], 1)}`).join(" "));
       if ((teamCt2[p.t] || 0) >= 2) bits.push(`[would be 3rd ${p.t}]`);
@@ -1122,6 +1211,12 @@ const JUDGMENT = {
         const why = el("span", "meta", "⚖ " + scored[i].why);
         why.style.color = "var(--ink-2)";
         li.append(why);
+      }
+      if (scored[i].vbonus) {
+        const vb = el("span", "meta",
+          `⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}`);
+        vb.style.color = "var(--ink-2)";
+        li.append(vb);
       }
       const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage my: pick");
       take.type = "button";
