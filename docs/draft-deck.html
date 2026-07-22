@@ -114,6 +114,13 @@ header.deck { display: flex; align-items: baseline; justify-content: space-betwe
 .valstrip .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 .valstrip .who { font-weight: var(--weight-bold); }
 .valstrip .why { color: var(--ink-2); }
+.buildread { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
+.buildread p { margin: 0 0 var(--space-1); max-width: none; }
+.buildread p:last-child { margin-bottom: 0; }
+.buildread .lead { color: var(--muted); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+.buildread .k { font-weight: var(--weight-bold); }
+.buildread .why { color: var(--ink-2); }
+.buildread button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); margin-left: var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
 ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
 ol.recos li { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-1) var(--space-3); align-items: baseline; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
 ol.recos .rk { font-family: var(--font-data); font-weight: var(--weight-bold); color: var(--accent); }
@@ -219,6 +226,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <h2>Decision card</h2>
       <div class="deckmeta" id="deckmeta"></div>
       <div id="flags"></div>
+      <div id="buildread"></div>
       <div id="valstrip"></div>
       <p class="eyebrow" style="margin-top:var(--space-3)" id="recoTitle">Top 5</p>
       <ol class="recos" id="recos"></ol>
@@ -950,8 +958,117 @@ const JUDGMENT = {
   /* ---------- rendering ---------- */
   function renderAll() {
     hideTip();
-    renderStrip(); renderMirror(); renderMyRoster(); renderDecision(); renderBest();
+    renderStrip(); renderMirror(); renderMyRoster(); renderBuildRead();
+    renderDecision(); renderBest();
     renderGrid(); renderRosters(); renderMatrix(); renderVs();
+  }
+
+  /* Live build intelligence — recomputed on every pick. Four reads, one
+     line each, shown only once they mean something (roster >= 3). */
+  function renderBuildRead() {
+    const st = deck.state;
+    const box = $("buildread");
+    box.innerHTML = "";
+    box.classList.add("hidden");
+    const mine = buildRosters(st, PLAYERS)[st.slot];
+    if (mine.length < 3) return;
+    const punt = new Set(st.punt);
+    const kept = CATS.filter(c => !punt.has(c));
+    const { ranks, totals } = categoryRanks(st, PLAYERS);
+    const lines = [];
+
+    /* 1. Identity + weekly win path */
+    const strong = kept.filter(c => ranks[c] <= 3);
+    const wins = kept.filter(c => ranks[c] <= 4).length;
+    const losses = kept.filter(c => ranks[c] >= 9).length + st.punt.length;
+    lines.push([
+      ["k", "Identity"],
+      ["why", ` ${strong.length ? strong.join("·") + " build" : "balanced build"} — likely week: ${wins} up / ${losses} down / ${9 - wins - losses} swing`],
+    ]);
+
+    /* 2. Implicit punt drift (roster >= 5): kept cats ranked 10th+ */
+    let adoptList = [];
+    if (mine.length >= 5) {
+      const drift = kept.filter(c => ranks[c] >= 10)
+        .sort((a, b) => ranks[b] - ranks[a] || totals[st.slot][a] - totals[st.slot][b]);
+      if (drift.length) {
+        /* never suggest beyond a 3-category punt total */
+        adoptList = drift.slice(0, Math.max(0, 3 - st.punt.length));
+        const named = drift.slice(0, 2);
+        const rest = drift.slice(2);
+        const line = [
+          ["k", "Drift"],
+          ["why", ` drafting like a punt of ${named.map(c => `${c} (${ranks[c]}/${st.teams})`).join(", ")}` +
+            (rest.length ? ` — ${rest.join(", ")} also weak but salvageable` : "") +
+            (adoptList.length ? " — formalize it and the Top 5 turns punt-coherent."
+                              : " — already punting " + st.punt.length + "; trade for these instead of punting deeper.")],
+        ];
+        if (adoptList.length) line.push(["adopt", adoptList]);
+        lines.push(line);
+      }
+    }
+
+    /* 3. Tradeable surplus: kept cat where my lead over the whole field is big */
+    let bestSurplus = null;
+    for (const c of kept) {
+      let others = -Infinity;
+      for (let s = 1; s <= st.teams; s++)
+        if (s !== st.slot) others = Math.max(others, totals[s][c]);
+      const margin = totals[st.slot][c] - others;
+      if (margin > 2.5 && (!bestSurplus || margin > bestSurplus.margin))
+        bestSurplus = { c, margin };
+    }
+    if (bestSurplus) {
+      const targets = kept.filter(c => ranks[c] >= 8 && !adoptList.includes(c));
+      lines.push([
+        ["k", "Surplus"],
+        ["why", ` ${bestSurplus.c} +${bestSurplus.margin.toFixed(1)} over the field — trade capital` +
+          (targets.length ? `; shop it for ${targets.join("/")}` : "")],
+      ]);
+    }
+
+    /* 4. Swing vs the top rival: closest trailing kept cats */
+    if (mine.length >= 5) {
+      let rival = null, rivalKept = -Infinity;
+      for (let s = 1; s <= st.teams; s++) {
+        if (s === st.slot) continue;
+        const k = kept.reduce((acc, c) => acc + totals[s][c], 0);
+        if (k > rivalKept) { rivalKept = k; rival = s; }
+      }
+      if (rival) {
+        const swings = kept
+          .map(c => ({ c, m: totals[st.slot][c] - totals[rival][c] }))
+          .filter(r => r.m < 0 && r.m > -1.5)
+          .sort((a, b) => b.m - a.m).slice(0, 2);
+        if (swings.length)
+          lines.push([
+            ["k", "Swing"],
+            ["why", ` vs top rival T${rival}: ${swings.map(r => `${r.c} (${r.m.toFixed(1)})`).join(", ")} — closest flips to beat them`],
+          ]);
+      }
+    }
+
+    if (!lines.length) return;
+    box.classList.remove("hidden");
+    const head = el("p", "", "");
+    head.append(el("span", "lead", "Build read — live"));
+    box.append(head);
+    for (const parts of lines) {
+      const p = el("p", "", "");
+      for (const [cls, val] of parts) {
+        if (cls === "adopt") {
+          const b = el("button", "adopt", `Adopt punt ${val.join(", ")}`);
+          b.type = "button";
+          b.addEventListener("click", () => {
+            deck.state.punt = [...new Set([...deck.state.punt, ...val])];
+            log(`Punt adopted: ${deck.state.punt.join(", ")} — recommendations are now punt-coherent.`);
+            save(); renderAll();
+          });
+          p.append(b);
+        } else p.append(el("span", cls, val));
+      }
+      box.append(p);
+    }
   }
 
   function shortName(name) {
