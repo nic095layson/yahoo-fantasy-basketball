@@ -71,6 +71,8 @@ select, input[type="search"], input[type="number"], input[type="text"], textarea
 }
 button.primary { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-2) var(--space-6); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
 button.ghost { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: var(--space-1) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
+button.ghost.danger { border-color: var(--status-out); color: var(--status-out); }
+.err { color: var(--status-out); font-weight: var(--weight-medium); font-size: var(--text-sm); margin: var(--space-2) 0 0; }
 button.mode { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-2) var(--space-4); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-2); cursor: pointer; }
 button.mode[aria-pressed="true"] { background: var(--accent-fill); color: var(--on-accent); border-color: var(--accent-fill); }
 label.fld { display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--text-sm); color: var(--muted); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
@@ -203,6 +205,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     <button class="ghost" id="importBtn" type="button">Import draft_state.json</button>
     <input type="file" id="importFile" accept=".json,application/json" class="hidden" aria-hidden="true">
   </div>
+  <p id="setupErr" class="err hidden" role="alert"></p>
 </section>
 
 <!-- ============ DRAFT ============ -->
@@ -740,11 +743,18 @@ const JUDGMENT = {
     $("modeMock").setAttribute("aria-pressed", String(mock));
   }
 
+  function setupError(msg) {
+    const e = $("setupErr");
+    if (!msg) { e.classList.add("hidden"); e.textContent = ""; return; }
+    e.textContent = msg;
+    e.classList.remove("hidden");
+  }
   $("startBtn").addEventListener("click", () => {
     const teams = +$("cfgTeams").value, size = +$("cfgSize").value, slot = +$("cfgSlot").value;
-    if (!(teams >= 2)) return alert("Teams must be ≥ 2.");
-    if (!(size >= 1)) return alert("Rounds must be ≥ 1.");
-    if (!(slot >= 1 && slot <= teams)) return alert(`Your slot must be between 1 and ${teams}.`);
+    if (!(teams >= 2)) return setupError("Teams must be 2 or more.");
+    if (!(size >= 1)) return setupError("Rounds must be 1 or more.");
+    if (!(slot >= 1 && slot <= teams)) return setupError(`Your slot must be between 1 and ${teams}.`);
+    setupError(null);
     deck = {
       state: { teams, slot, size, punt: CATS.filter(c => setupPunt.has(c)), picks: [] },
       mode: mockMode ? "mock" : "live",
@@ -848,10 +858,31 @@ const JUDGMENT = {
     save(); renderAll();
   });
   $("advanceBtn").addEventListener("click", () => { advanceAI(); renderAll(); });
+  /* Two-click confirm: browser confirm() dialogs are blocked inside the
+     artifact sandbox, so the button itself asks for the second click. */
+  let resetArmed = null;
   $("resetBtn").addEventListener("click", () => {
-    if (!confirm("Reset the draft? This clears all logged picks on this device.")) return;
-    localStorage.removeItem(LS_KEY);
-    location.reload();
+    const btn = $("resetBtn");
+    if (resetArmed) {
+      clearTimeout(resetArmed);
+      resetArmed = null;
+      localStorage.removeItem(LS_KEY);
+      deck = null;
+      btn.textContent = "Reset draft";
+      btn.classList.remove("danger");
+      $("feed").value = "";
+      $("mirror").innerHTML = "";
+      $("draft").classList.add("hidden");
+      $("setup").classList.remove("hidden");
+      return;
+    }
+    btn.textContent = "Click again to confirm reset";
+    btn.classList.add("danger");
+    resetArmed = setTimeout(() => {
+      resetArmed = null;
+      btn.textContent = "Reset draft";
+      btn.classList.remove("danger");
+    }, 4000);
   });
 
   /* ---------- export / import ---------- */
@@ -897,9 +928,10 @@ const JUDGMENT = {
     if (!f) return;
     f.text().then(txt => {
       let st;
-      try { st = JSON.parse(txt); } catch (err) { return alert("Not valid JSON."); }
+      try { st = JSON.parse(txt); } catch (err) { return setupError("That file isn't valid JSON."); }
       if (!(st.teams >= 2 && st.slot >= 1 && st.size >= 1 && Array.isArray(st.picks)))
-        return alert("Missing keys — expected {teams, slot, size, punt, picks}.");
+        return setupError("Missing keys — expected {teams, slot, size, punt, picks}.");
+      setupError(null);
       st.picks = st.picks.map((pk, i) =>
         typeof pk === "string" ? { player: pk, slot: teamOfPick(i, st.teams) } : pk);
       deck = { state: { teams: st.teams, slot: st.slot, size: st.size, punt: st.punt || [], picks: st.picks },
