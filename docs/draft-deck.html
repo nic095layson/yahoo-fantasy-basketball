@@ -277,7 +277,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
       <span>TO inverted (+ = fewer turnovers)</span>
       <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
-      <span>Click a row to stage <code>my:Name</code> in the feed</span>
+      <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
     </div>
   </div>
 
@@ -484,6 +484,8 @@ function processFeed(state, players, feed) {
 
     const n = picks.length;
     const slot = mine ? state.slot : teamOfPick(n, state.teams);
+    if (mine && teamOfPick(n, state.teams) !== state.slot)
+      say(`⚠ my: pick at #${n + 1}, but the snake says T${teamOfPick(n, state.teams)} is on the clock — logging to YOUR team anyway; Undo if that was T${teamOfPick(n, state.teams)}'s pick`, "warn");
     const allC = matchCandidates(players, name);
     const cands = allC.filter(c => !taken.has(c.n));
     const exact = cands.filter(c => c.n.toLowerCase() === name.trim().toLowerCase());
@@ -1366,9 +1368,15 @@ const JUDGMENT = {
         vb.style.color = "var(--ink-2)";
         li.append(vb);
       }
-      const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage my: pick");
+      const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
       take.type = "button";
-      take.addEventListener("click", () => { $("feed").value = "my:" + p.n; if (deck.mode === "mock") runFeed(); });
+      take.addEventListener("click", () => {
+        const yourTurn = !draftDone() &&
+          teamOfPick(deck.state.picks.length, deck.state.teams) === deck.state.slot;
+        $("feed").value = (yourTurn ? "my:" : "") + p.n;
+        $("feed").focus();
+        if (deck.mode === "mock" && yourTurn) runFeed();
+      });
       li.append(take);
       recos.appendChild(li);
     }
@@ -1415,7 +1423,14 @@ const JUDGMENT = {
       const p = row.p;
       const tr = document.createElement("tr");
       tr.style.cursor = "pointer";
-      tr.addEventListener("click", () => { $("feed").value = "my:" + p.n; $("feed").focus(); });
+      tr.addEventListener("click", () => {
+        /* Turn-aware staging: the click means "this player was just picked"
+           — by you only if the snake says you're on the clock. */
+        const yourTurn = !draftDone() &&
+          teamOfPick(deck.state.picks.length, deck.state.teams) === deck.state.slot;
+        $("feed").value = (yourTurn ? "my:" : "") + p.n;
+        $("feed").focus();
+      });
       const tdR = el("td", "l", String(row.rank));
       const tdN = el("td", "l player", p.n);
       if (p.av > 0 && p.av < 1) {
