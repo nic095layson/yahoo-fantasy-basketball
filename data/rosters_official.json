@@ -1,10 +1,9 @@
 {
   "date": "2026-07-23",
-  "source": "NBA/ESPN-sourced verification, sessions 2026-07-22/23 (transaction sweep + per-player checks; each entry backed by a cited source); +2026-07-23 LAL FA signings (Sexton, Grimes \u2014 NBA.com official release)",
+  "source": "Full 226-player per-player verification grind, 2026-07-23: every pool row checked via direct player search, documented transaction, or current corroborating source (NBA.com/ESPN/team outlets). Supersedes the 07-22 transaction-sweep baseline. FA rows verified by absence from all team lists.",
   "teams": {
     "LAC": [
       "Kawhi Leonard",
-      "Bradley Beal",
       "Darius Garland",
       "Brook Lopez",
       "Bennedict Mathurin",
@@ -15,7 +14,9 @@
       "Evan Mobley",
       "James Harden",
       "Jarrett Allen",
-      "Dennis Schroder"
+      "Dennis Schroder",
+      "Max Strus",
+      "Sam Merrill"
     ],
     "TOR": [
       "Brandon Ingram",
@@ -23,7 +24,8 @@
       "Scottie Barnes",
       "Jakob Poeltl",
       "Immanuel Quickley",
-      "RJ Barrett"
+      "RJ Barrett",
+      "Trayce Jackson-Davis"
     ],
     "WAS": [
       "Anthony Davis",
@@ -42,7 +44,8 @@
       "Jusuf Nurkic",
       "Keyonte George",
       "Isaiah Collier",
-      "Ace Bailey"
+      "Ace Bailey",
+      "Lauri Markkanen"
     ],
     "IND": [
       "Ivica Zubac",
@@ -54,7 +57,6 @@
       "Obi Toppin"
     ],
     "BOS": [
-      "Nikola Vucevic",
       "Paul George",
       "Derrick White",
       "Mitchell Robinson",
@@ -70,6 +72,7 @@
     ],
     "CHA": [
       "Naz Reid",
+      "Tre Mann",
       "Grayson Allen",
       "Royce O'Neale",
       "Coby White",
@@ -83,19 +86,22 @@
       "Day'Ron Sharpe",
       "Egor Demin",
       "Keon Ellis",
-      "Michael Porter Jr."
+      "Michael Porter Jr.",
+      "Ochai Agbaji"
     ],
     "MIN": [
       "Anthony Edwards",
       "LaMelo Ball",
       "Rudy Gobert",
-      "Jaden McDaniels"
+      "Jaden McDaniels",
+      "Donte DiVincenzo"
     ],
     "POR": [
       "Ja Morant",
       "Donovan Clingan",
       "Damian Lillard",
       "Scoot Henderson",
+      "Jrue Holiday",
       "Deni Avdija",
       "Shaedon Sharpe",
       "Toumani Camara"
@@ -106,7 +112,9 @@
       "D'Angelo Russell",
       "Zach Edey",
       "Jaylen Wells",
-      "Cedric Coward"
+      "Cedric Coward",
+      "GG Jackson",
+      "Quinten Post"
     ],
     "SAC": [
       "Darius Acuff Jr.",
@@ -114,20 +122,26 @@
       "Zach LaVine",
       "Malik Monk",
       "Nique Clifford",
-      "Keegan Murray"
+      "Keegan Murray",
+      "De'Andre Hunter"
     ],
     "LAL": [
       "Collin Sexton",
       "Jaden Hardy",
       "Luka Doncic",
+      "Dalton Knecht",
+      "Ziaire Williams",
       "Quentin Grimes",
       "Walker Kessler",
-      "Austin Reaves"
+      "Austin Reaves",
+      "Jarred Vanderbilt"
     ],
     "DAL": [
       "Zaccharie Risacher",
       "Cooper Flagg",
       "Santi Aldama",
+      "Naji Marshall",
+      "Klay Thompson",
       "Daniel Gafford",
       "Dereck Lively II",
       "Kyrie Irving",
@@ -140,7 +154,8 @@
       "Kristaps Porzingis",
       "Brandin Podziemski",
       "Moses Moody",
-      "De'Anthony Melton"
+      "De'Anthony Melton",
+      "Al Horford"
     ],
     "NOP": [
       "Zion Williamson",
@@ -157,7 +172,10 @@
       "Karl-Anthony Towns",
       "Mikal Bridges",
       "OG Anunoby",
-      "Jose Alvarado"
+      "Jose Alvarado",
+      "Josh Hart",
+      "Landry Shamet",
+      "Jordan Clarkson"
     ],
     "DEN": [
       "Nikola Jokic",
@@ -172,19 +190,23 @@
       "Victor Wembanyama",
       "De'Aaron Fox",
       "Devin Vassell",
-      "Stephon Castle"
+      "Stephon Castle",
+      "Tobias Harris",
+      "Dylan Harper"
     ],
     "OKC": [
       "Chet Holmgren",
       "Shai Gilgeous-Alexander",
       "Isaiah Hartenstein",
-      "Cason Wallace"
+      "Cason Wallace",
+      "Jalen Williams"
     ],
     "MIA": [
       "Giannis Antetokounmpo",
       "Bam Adebayo",
       "Bobby Portis",
-      "Andrew Wiggins"
+      "Andrew Wiggins",
+      "Nikola Jovic"
     ],
     "MIL": [
       "Tyler Herro",
@@ -194,12 +216,16 @@
       "Myles Turner",
       "Kevin Porter Jr.",
       "Gary Trent Jr.",
-      "Kyle Kuzma"
+      "Kyle Kuzma",
+      "Ryan Rollins"
     ],
     "DET": [
       "Cade Cunningham",
       "John Collins",
-      "Jalen Duren"
+      "Jalen Duren",
+      "Ausar Thompson",
+      "Ron Holland",
+      "Duncan Robinson"
     ],
     "HOU": [
       "Kevin Durant",
@@ -211,7 +237,8 @@
       "Clint Capela",
       "Reed Sheppard",
       "Jabari Smith Jr.",
-      "Tari Eason"
+      "Tari Eason",
+      "Bogdan Bogdanovic"
     ],
     "PHX": [
       "Devin Booker",
@@ -235,7 +262,9 @@
       "Wendell Carter Jr.",
       "Goga Bitadze",
       "Jalen Suggs",
-      "Anthony Black"
+      "Anthony Black",
+      "Tristan da Silva",
+      "Nikola Vucevic"
     ],
     "ATL": [
       "CJ McCollum",
@@ -244,7 +273,8 @@
       "Dyson Daniels",
       "Buddy Hield",
       "Onyeka Okongwu",
-      "Nickeil Alexander-Walker"
+      "Nickeil Alexander-Walker",
+      "Gabe Vincent"
     ]
   }
 }
