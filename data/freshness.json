@@ -1,8 +1,8 @@
 {
   "date": "2026-07-23",
-  "note": "2026-07-23 roster validation: 11 stale Feb-window rows corrected \u2014 Garland LAC, Harden CLE, Zubac IND, Mathurin LAC, Vucevic BOS, Simons CHI, JJJ UTA, Vincent ATL, Reid CHA, Randle BKN, Claxton CHI (AD/DLo->WAS fixed earlier today)",
+  "note": "2026-07-23 spot-fix: Hachimura LAL->LAC (July FA signing missed by headline sweep \u2014 caught via owner report, lock's spot-verify path)",
   "rosters_verified": {
     "date": "2026-07-23",
-    "sources": "NBA.com/ESPN transaction sweep: Feb 2026 deadline recap, 2026 offseason tracker, FA tracker; four-team LaMelo deal detail; per-player checks Garland/Harden/Ja/LaMelo/Reid"
+    "sources": "owner spot-report + NBA.com/ESPN verification (Hachimura 2yr/28M Clippers FA signing; sign-and-trade collapsed)"
   }
 }
