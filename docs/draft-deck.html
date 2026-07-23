@@ -237,7 +237,9 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
   <div class="workgrid">
     <div class="card feedcard">
-      <h2 id="feedTitle">Pick feed</h2>
+      <p class="eyebrow">Pick-by-pick</p>
+      <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
+      <h2 id="feedTitle" style="margin-top: var(--space-4)">Pick feed</h2>
       <div class="feedrow">
         <input type="text" id="feed" autocomplete="off" spellcheck="false"
                placeholder='Jokic; my:Wemby; 44- Herro'>
@@ -246,8 +248,6 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For common surnames (White, Murray, Ball, Bridges, Sharpe…) feed first initial + surname: <code>D White</code>.</p>
       <p class="eyebrow" style="margin-top: var(--space-4)" id="myRosterTitle">Your roster</p>
       <ul class="myroster" id="myRoster"></ul>
-      <p class="eyebrow" style="margin-top: var(--space-4)">Pick-by-pick</p>
-      <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
     </div>
 
     <div class="card" id="decision">
