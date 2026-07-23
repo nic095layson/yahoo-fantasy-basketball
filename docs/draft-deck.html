@@ -278,7 +278,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span class="ctl">Show</span>
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
       <span class="ctl">Sort</span>
-      <select id="bestSort"><option value="fit" selected>Fit z (my roster)</option><option value="val">Balanced val</option></select>
+      <select id="bestSort" autocomplete="off"><option value="fit" selected>Fit z (my roster)</option><option value="val">Balanced val</option></select>
       <span class="small" id="bestSummary"></span>
     </div>
     <div class="tablewrap" tabindex="0" role="region" aria-label="Best available board">
@@ -287,7 +287,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
           <th scope="col">Val</th>
-          <th scope="col" title="Swing-weighted marginal z for YOUR roster: punted cats ×0, locked (rank ≤2) ×0.35, lost (rank ≥10) ×0.45, swing cats full — recomputed every pick">Fit</th>
+          <th scope="col" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick.">Fit</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -297,7 +297,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
       <span>TO inverted (+ = fewer turnovers)</span>
       <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
-      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0) — recomputed every pick</span>
+      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — recomputed every pick</span>
       <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
     </div>
   </div>
@@ -386,16 +386,30 @@ function adjValue(p, punt) {
    weight — the arena-validated council weighting, stripped of strategy
    extras, exposed as a clean sortable number. Weights activate once the
    roster has 2+ players; before that fit z equals balanced value. */
-function fitWeights(punt, myRanks, rosterLen) {
+/* Locked/lost rank tiers, scaled to league size. At 12 teams this yields
+   exactly the arena-validated constants (locked <= 2, lost >= 10); other
+   sizes scale proportionally (top ~sixth locked, bottom ~quarter lost). */
+function rankTiers(teams) {
+  const locked = Math.max(1, Math.round(teams / 6));
+  const lostFrom = teams - Math.max(1, Math.round(teams / 4)) + 1;
+  return { locked, lostFrom };
+}
+function fitWeights(punt, myRanks, rosterLen, teams = 12) {
+  const { locked, lostFrom } = rankTiers(teams);
   const w = {};
   for (const c of CATS) {
     if (punt.has(c)) w[c] = 0;
     else if (myRanks && rosterLen >= 2) {
       const r = myRanks[c];
-      w[c] = r <= 2 ? 0.35 : (r >= 10 ? 0.45 : 1.0);
+      w[c] = r <= locked ? 0.35 : (r >= lostFrom ? 0.45 : 1.0);
     } else w[c] = 1.0;
   }
   return w;
+}
+/* UNKNOWN placeholders are not in the pool, so they are invisible to
+   category ranks — count them so every rank consumer can say so. */
+function unknownCount(state) {
+  return state.picks.filter(pk => pk.player.startsWith("UNKNOWN")).length;
 }
 function fitZ(p, w) {
   let s = 0;
@@ -630,8 +644,9 @@ const STRATEGIES = {
 const MOCK_CAST = ["market", "punt_ft", "stars", "slot_filler", "scarcity",
   "safe_floor", "upside", "specialist", "bpa_pure", "punt_ft_to", "market"];
 
-/* Port of arena.pick_for: score every available player, return sorted scores. */
-function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng) {
+/* Port of arena.pick_for: score every available player, return sorted scores.
+   teams defaults to 12, where the tier thresholds equal the arena constants. */
+function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng, teams = 12) {
   const params = { ...STRAT_DEFAULT, ...STRATEGIES[name] };
   const punt = new Set(params.punt);
   const noPunt = new Set();
@@ -650,12 +665,13 @@ function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng) {
     for (const b of BASE_POS) scarce[b] = top.filter(p => positionsOf(p).includes(b)).length;
   }
   const useRanks = params.matrix_aware && myRanks && roster.length >= 2;
+  const tiers = rankTiers(teams);
   function weight(cat) {
     if (punt.has(cat)) return 0.0;
     if (useRanks) {
       const r = myRanks[cat];
-      if (r <= 2) return params.locked_w;
-      if (r >= 10) return params.lost_w;
+      if (r <= tiers.locked) return params.locked_w;
+      if (r >= tiers.lostFrom) return params.lost_w;
     }
     return 1.0;
   }
@@ -892,7 +908,7 @@ const JUDGMENT = {
       const ranks = params.matrix_aware && rosters[slot].length
         ? categoryRanksFor(st, slot) : null;
       const scored = strategyScores(name, pool, rosters[slot], ranks,
-        Math.floor(n / st.teams) + 1, st.size, rng);
+        Math.floor(n / st.teams) + 1, st.size, rng, st.teams);
       const p = scored[0].p;
       st.picks.push({ player: p.n, slot });
       rosters[slot].push(p);
@@ -1100,7 +1116,7 @@ const JUDGMENT = {
       return;
     }
     const drift = mine.length >= 4
-      ? kept.filter(c => ranks[c] >= 10)
+      ? kept.filter(c => ranks[c] >= rankTiers(st.teams).lostFrom)
           .sort((a, b) => ranks[b] - ranks[a]).slice(0, 3)
       : [];
     if (drift.length) {
@@ -1156,7 +1172,7 @@ const JUDGMENT = {
     /* 2. Implicit punt drift (roster >= 5): kept cats ranked 10th+ */
     let adoptList = [];
     if (mine.length >= 5) {
-      const drift = kept.filter(c => ranks[c] >= 10)
+      const drift = kept.filter(c => ranks[c] >= rankTiers(st.teams).lostFrom)
         .sort((a, b) => ranks[b] - ranks[a] || totals[st.slot][a] - totals[st.slot][b]);
       if (drift.length) {
         /* never suggest beyond a 3-category punt total */
@@ -1334,6 +1350,12 @@ const JUDGMENT = {
       el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"),
       el("span", "", `${availablePool(st, PLAYERS).length} available`)
     );
+    const unk = unknownCount(st);
+    if (unk) {
+      const w = el("span", "you", `⚠ ${unk} UNKNOWN — ranks exclude them; fix with n- Name`);
+      w.style.color = "var(--status-risk)";
+      strip.append(w);
+    }
   }
   function el(tag, cls, text) {
     const e = document.createElement(tag);
@@ -1455,13 +1477,13 @@ const JUDGMENT = {
     const saved = STRATEGIES.council;
     STRATEGIES.council = councilPunt;
     const ranks = mine.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
-    const recoFw = fitWeights(punt, ranks, mine.length);
+    const recoFw = fitWeights(punt, ranks, mine.length, st.teams);
     const rng = makeRng(1); // council has zero noise; rng unused but required
     /* Augment the WHOLE scored pool, not a shortlist slice — a fit-suppressed
        player with a big board slide or judgment adjustment must still compete
        for the Top 5 (validation finding, 2026-07-23). */
     const councilTop = strategyScores("council", pool, mine,
-      ranks, Math.floor(st.picks.length / st.teams) + 1, st.size, rng);
+      ranks, Math.floor(st.picks.length / st.teams) + 1, st.size, rng, st.teams);
     STRATEGIES.council = saved;
     /* Judgment layer + board-slide bonus: additive adjustments on the
        council's shortlist, each with a visible rationale. */
@@ -1558,6 +1580,7 @@ const JUDGMENT = {
   $("bestQ").addEventListener("input", e => { bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
   $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
   $("bestSort").addEventListener("change", e => { bestState.sort = e.target.value; renderBest(); });
+  $("bestSort").value = bestState.sort; /* re-sync after Firefox autofill */
   let bestHeadBuilt = false;
   function renderBest() {
     const st = deck.state;
@@ -1575,7 +1598,7 @@ const JUDGMENT = {
     /* fit weights — recomputed from the live board every render */
     const mineB = buildRosters(st, PLAYERS)[st.slot];
     const ranksB = mineB.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
-    const fw = fitWeights(punt, ranksB, mineB.length);
+    const fw = fitWeights(punt, ranksB, mineB.length, st.teams);
     const fitOf = new Map(pool.map(p => [p.n, fitZ(p, fw)]));
     pool.sort(bestState.sort === "fit"
       ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
@@ -1622,7 +1645,8 @@ const JUDGMENT = {
       const tdF = el("td", "val", fmtZ(f.adj, 2) + (p.av < 1 && f.raw > 0 ? "*" : ""));
       tdF.style.color = "var(--accent)";
       tdF.dataset.tip = ranksB
-        ? `swing-weighted for your roster (locked ×0.35, lost ×0.45, punt ×0)`
+        ? `swing-weighted for your roster: locked (≤${rankTiers(st.teams).locked}) ×0.35, lost (≥${rankTiers(st.teams).lostFrom}) ×0.45, punt ×0` +
+          (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
         : `roster < 2 — fit z equals balanced value for now`;
       tr.append(tdF);
       for (const c of CATS) {
