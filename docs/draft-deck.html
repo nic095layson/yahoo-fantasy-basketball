@@ -1802,21 +1802,20 @@ const JUDGMENT = {
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
   $("bestQ").addEventListener("input", e => { draftedNote = ""; bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
   /* Enter on a drafted name answers "where did he go?" (owner request) */
+  function draftedLookup(q) {
+    const st = deck.state;
+    const hits = st.picks.map((pk, i) => ({ pk, i }))
+      .filter(({ pk }) => pk.player.toLowerCase().includes(q));
+    if (hits.length)
+      return hits.slice(0, 3).map(({ pk, i }) =>
+        `${pk.player} — Drafted #${i + 1} (R${Math.floor(i / st.teams) + 1}) by ${pk.slot === st.slot ? "YOU" : "Team " + pk.slot}`).join("  ·  ");
+    if (!PLAYERS.some(p => p.n.toLowerCase().includes(q)))
+      return `no player matching “${q}” in the pool`;
+    return "";
+  }
   $("bestQ").addEventListener("keydown", e => {
     if (e.key !== "Enter") return;
-    draftedNote = "";
-    const q = bestState.q;
-    if (q) {
-      const st = deck.state;
-      const hits = st.picks.map((pk, i) => ({ pk, i }))
-        .filter(({ pk }) => pk.player.toLowerCase().includes(q));
-      if (hits.length) {
-        draftedNote = hits.slice(0, 3).map(({ pk, i }) =>
-          `${pk.player} — Drafted #${i + 1} (R${Math.floor(i / st.teams) + 1}) by ${pk.slot === st.slot ? "YOU" : "Team " + pk.slot}`).join("  ·  ");
-      } else if (!PLAYERS.some(p => p.n.toLowerCase().includes(q))) {
-        draftedNote = `no player matching “${q}” in the pool`;
-      }
-    }
+    draftedNote = bestState.q ? draftedLookup(bestState.q) : "";
     renderBest();
   });
   $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
@@ -1851,6 +1850,7 @@ const JUDGMENT = {
       matches++;
       if (shown.length < bestState.top) shown.push({ rank: i + 1, p: pool[i] });
     }
+    if (bestState.q && !matches && !draftedNote) draftedNote = draftedLookup(bestState.q);
     $("bestSummary").textContent = `${pool.length} available` +
       (bestState.q ? ` · matching “${bestState.q}”: ${matches}` +
         (shown.length < matches ? ` (showing ${shown.length})` : "") : "") +
