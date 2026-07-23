@@ -277,6 +277,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <input type="search" id="bestQ" placeholder="player name" autocomplete="off">
       <span class="ctl">Show</span>
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
+      <span class="ctl">Sort</span>
+      <select id="bestSort"><option value="fit" selected>Fit z (my roster)</option><option value="val">Balanced val</option></select>
       <span class="small" id="bestSummary"></span>
     </div>
     <div class="tablewrap" tabindex="0" role="region" aria-label="Best available board">
@@ -285,6 +287,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
           <th scope="col">Val</th>
+          <th scope="col" title="Swing-weighted marginal z for YOUR roster: punted cats ×0, locked (rank ≤2) ×0.35, lost (rank ≥10) ×0.45, swing cats full — recomputed every pick">Fit</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -294,6 +297,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
       <span>TO inverted (+ = fewer turnovers)</span>
       <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
+      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0) — recomputed every pick</span>
       <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
     </div>
   </div>
@@ -375,6 +379,28 @@ function totalValue(p, punt) {
 function adjValue(p, punt) {
   const tv = totalValue(p, punt);
   return tv > 0 ? tv * p.av : tv;
+}
+/* Fit z — swing-weighted marginal value. A candidate's z re-weighted by
+   what this roster actually needs: punted cats x0, locked cats (my rank
+   <= 2 vs field) x0.35, lost cats (rank >= 10) x0.45, swing cats full
+   weight — the arena-validated council weighting, stripped of strategy
+   extras, exposed as a clean sortable number. Weights activate once the
+   roster has 2+ players; before that fit z equals balanced value. */
+function fitWeights(punt, myRanks, rosterLen) {
+  const w = {};
+  for (const c of CATS) {
+    if (punt.has(c)) w[c] = 0;
+    else if (myRanks && rosterLen >= 2) {
+      const r = myRanks[c];
+      w[c] = r <= 2 ? 0.35 : (r >= 10 ? 0.45 : 1.0);
+    } else w[c] = 1.0;
+  }
+  return w;
+}
+function fitZ(p, w) {
+  let s = 0;
+  for (const c of CATS) s += p.z[c] * w[c];
+  return { raw: s, adj: s > 0 ? s * p.av : s };
 }
 function positionsOf(p) { return p.p.split(",").map(s => s.trim()); }
 function teamOfPick(n, teams) {
@@ -1429,6 +1455,7 @@ const JUDGMENT = {
     const saved = STRATEGIES.council;
     STRATEGIES.council = councilPunt;
     const ranks = mine.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
+    const recoFw = fitWeights(punt, ranks, mine.length);
     const rng = makeRng(1); // council has zero noise; rng unused but required
     /* Augment the WHOLE scored pool, not a shortlist slice — a fit-suppressed
        player with a big board slide or judgment adjustment must still compete
@@ -1477,6 +1504,10 @@ const JUDGMENT = {
         nm.appendChild(cf);
       }
       const bits = [`${p.p} · ${p.t}`, `val ${fmtVal(p, punt)}`];
+      {
+        const f = fitZ(p, recoFw);
+        bits.push(`fit ${fmtZ(f.adj, 2)}${p.av < 1 && f.raw > 0 ? "*" : ""}`);
+      }
       if (scored[i].adj || scored[i].vbonus) {
         let breakdown = `council ${s.toFixed(2)}`;
         if (scored[i].adj)
@@ -1522,10 +1553,11 @@ const JUDGMENT = {
   }
 
   /* best available tab */
-  let bestState = { pos: "", q: "", top: 25 };
+  let bestState = { pos: "", q: "", top: 25, sort: "fit" };
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
   $("bestQ").addEventListener("input", e => { bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
   $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
+  $("bestSort").addEventListener("change", e => { bestState.sort = e.target.value; renderBest(); });
   let bestHeadBuilt = false;
   function renderBest() {
     const st = deck.state;
@@ -1540,7 +1572,14 @@ const JUDGMENT = {
     }
     let pool = availablePool(st, PLAYERS);
     if (bestState.pos) pool = pool.filter(p => p.p.toUpperCase().includes(bestState.pos));
-    pool.sort((a, b) => adjValue(b, punt) - adjValue(a, punt));
+    /* fit weights — recomputed from the live board every render */
+    const mineB = buildRosters(st, PLAYERS)[st.slot];
+    const ranksB = mineB.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
+    const fw = fitWeights(punt, ranksB, mineB.length);
+    const fitOf = new Map(pool.map(p => [p.n, fitZ(p, fw)]));
+    pool.sort(bestState.sort === "fit"
+      ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
+      : (a, b) => adjValue(b, punt) - adjValue(a, punt));
     let matches = 0;
     const shown = [];
     for (let i = 0; i < pool.length; i++) {
@@ -1579,6 +1618,13 @@ const JUDGMENT = {
       tr.append(tdR, tdN, el("td", "l team", p.t), el("td", "l pos", p.p));
       const tdV = el("td", "val", fmtVal(p, punt));
       tr.append(tdV);
+      const f = fitOf.get(p.n);
+      const tdF = el("td", "val", fmtZ(f.adj, 2) + (p.av < 1 && f.raw > 0 ? "*" : ""));
+      tdF.style.color = "var(--accent)";
+      tdF.dataset.tip = ranksB
+        ? `swing-weighted for your roster (locked ×0.35, lost ×0.45, punt ×0)`
+        : `roster < 2 — fit z equals balanced value for now`;
+      tr.append(tdF);
       for (const c of CATS) {
         const z = p.z[c];
         const td = el("td", "z" + (z < 0 ? " neg" : ""), fmtZ(z, 1));
