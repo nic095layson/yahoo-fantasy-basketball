@@ -125,7 +125,7 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .who { font-weight: var(--weight-bold); }
 .valstrip .why { color: var(--ink-2); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
-.puntline .catrow { display: flex; justify-content: center; flex-wrap: wrap; gap: 2px 6px; max-width: 100%; }
+.puntline .catrow { display: flex; justify-content: center; flex-wrap: nowrap; gap: 2px 6px; max-width: 100%; }
 .puntline.lean { border-left: 3px solid var(--status-risk); }
 .puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 .puntline .txt { color: var(--ink-2); }
@@ -1226,7 +1226,7 @@ const JUDGMENT = {
         chip.dataset.tip = "ranks activate at 2+ picks";
       } else {
         const r = ranks[c];
-        chip.append(el("span", "catrank", `${r}/${st.teams}`));
+        chip.append(el("span", "catrank", String(r)));
         if (r <= tiers.locked) chip.classList.add("good");
         else if (r >= tiers.lostFrom) chip.classList.add("bad");
         chip.dataset.tip = `${c}: rank ${r} of ${st.teams} vs the field right now`;
