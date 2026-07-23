@@ -125,11 +125,11 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .who { font-weight: var(--weight-bold); }
 .valstrip .why { color: var(--ink-2); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
-.puntline .catrow { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--space-1) var(--space-2); }
+.puntline .catrow { display: flex; justify-content: center; flex-wrap: wrap; gap: 2px 6px; max-width: 100%; }
 .puntline.lean { border-left: 3px solid var(--status-risk); }
 .puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 .puntline .txt { color: var(--ink-2); }
-.puntline .cat { display: inline-flex; align-items: baseline; gap: 4px; padding: 0 var(--space-1); border-radius: var(--radius-sm); background: var(--surface); }
+.puntline .cat { display: inline-flex; align-items: baseline; gap: 3px; padding: 0 4px; border-radius: var(--radius-sm); background: var(--surface); white-space: nowrap; }
 .puntline .catname { color: var(--muted); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; }
 .puntline .catrank { color: var(--ink-2); font-weight: var(--weight-medium); }
 .puntline .cat.good .catrank { color: var(--delta-up); }
@@ -1214,7 +1214,6 @@ const JUDGMENT = {
     if (unknownCount(st) && haveRanks)
       lead.dataset.tip = `⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)`;
     const row1 = el("div", "catrow", "");
-    const row2 = el("div", "catrow", "");
     CATS.forEach((c, ci) => {
       const chip = el("span", "cat", "");
       chip.append(el("span", "catname", c === "TO" ? "TO↑" : c));
@@ -1232,9 +1231,9 @@ const JUDGMENT = {
         else if (r >= tiers.lostFrom) chip.classList.add("bad");
         chip.dataset.tip = `${c}: rank ${r} of ${st.teams} vs the field right now`;
       }
-      (ci < 5 ? row1 : row2).append(chip);
+      row1.append(chip);
     });
-    box.append(row1, row2);
+    box.append(row1);
     leanState = null;
     if (!haveRanks || st.punt.length) return;
     /* Punt governance unchanged behind the strip: firm-evidence gate +
