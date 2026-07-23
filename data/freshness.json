@@ -1,6 +1,6 @@
 {
   "date": "2026-07-23",
-  "note": "2026-07-23 lock v2 live: mechanical per-player verification required at every stamp (verify_rosters.py); Hachimura-class quiet moves now caught by FA-absence + placement checks",
+  "note": "2026-07-23 spot-fix: Sexton CHA->LAL and Grimes PHI->LAL (July 12 FA signings, NBA.com official release; owner-reported Sexton, Grimes surfaced by the same source)",
   "rosters_verified": {
     "date": "2026-07-23",
     "mode": "fallback-partial",

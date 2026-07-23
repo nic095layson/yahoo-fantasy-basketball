@@ -1,12 +1,12 @@
 {
   "date": "2026-07-23",
   "mode": "fallback-partial",
-  "source": "NBA/ESPN-sourced verification, sessions 2026-07-22/23 (transaction sweep + per-player checks; each entry backed by a cited source)",
+  "source": "NBA/ESPN-sourced verification, sessions 2026-07-22/23 (transaction sweep + per-player checks; each entry backed by a cited source); +2026-07-23 LAL FA signings (Sexton, Grimes \u2014 NBA.com official release)",
   "teams_covered": 17,
   "pool_size": 226,
-  "checked": 33,
+  "checked": 35,
   "mismatches": [],
-  "unmatched_count": 193,
+  "unmatched_count": 191,
   "unmatched": [
     "Nikola Jokic",
     "Victor Wembanyama",

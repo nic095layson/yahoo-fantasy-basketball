@@ -1,6 +1,6 @@
 {
   "date": "2026-07-23",
-  "source": "NBA/ESPN-sourced verification, sessions 2026-07-22/23 (transaction sweep + per-player checks; each entry backed by a cited source)",
+  "source": "NBA/ESPN-sourced verification, sessions 2026-07-22/23 (transaction sweep + per-player checks; each entry backed by a cited source); +2026-07-23 LAL FA signings (Sexton, Grimes \u2014 NBA.com official release)",
   "teams": {
     "LAC": [
       "Kawhi Leonard",
@@ -60,7 +60,9 @@
       "Darius Acuff Jr."
     ],
     "LAL": [
-      "Jaden Hardy"
+      "Collin Sexton",
+      "Jaden Hardy",
+      "Quentin Grimes"
     ],
     "DAL": [
       "Zaccharie Risacher"
