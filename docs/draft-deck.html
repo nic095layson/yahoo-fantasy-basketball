@@ -1362,8 +1362,11 @@ const JUDGMENT = {
     STRATEGIES.council = councilPunt;
     const ranks = mine.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
     const rng = makeRng(1); // council has zero noise; rng unused but required
+    /* Augment the WHOLE scored pool, not a shortlist slice — a fit-suppressed
+       player with a big board slide or judgment adjustment must still compete
+       for the Top 5 (validation finding, 2026-07-23). */
     const councilTop = strategyScores("council", pool, mine,
-      ranks, Math.floor(st.picks.length / st.teams) + 1, st.size, rng).slice(0, 15);
+      ranks, Math.floor(st.picks.length / st.teams) + 1, st.size, rng);
     STRATEGIES.council = saved;
     /* Judgment layer + board-slide bonus: additive adjustments on the
        council's shortlist, each with a visible rationale. */
