@@ -411,6 +411,17 @@ function fitWeights(punt, myRanks, rosterLen, teams = 12) {
 function unknownCount(state) {
   return state.picks.filter(pk => pk.player.startsWith("UNKNOWN")).length;
 }
+/* Clear-path rule (owner law 2026-07-23): a punt lean is only ACTIONABLE
+   when >= 70% of the categories kept after adoption are winnable (rank
+   within the top ~third of the league). Punting is commitment — commit
+   only when what remains is mostly won. */
+function puntPath(ranks, kept, adoptList, teams) {
+  const keptAfter = kept.filter(c => !adoptList.includes(c));
+  const thresh = Math.max(2, Math.round(teams / 3));
+  const winnable = keptAfter.filter(c => ranks[c] <= thresh);
+  const pct = keptAfter.length ? winnable.length / keptAfter.length : 0;
+  return { keptAfter, winnable, thresh, pct, clear: pct >= 0.7 };
+}
 function fitZ(p, w) {
   let s = 0;
   for (const c of CATS) s += p.z[c] * w[c];
@@ -1126,16 +1137,22 @@ const JUDGMENT = {
          weakest build. Offer the button only for 2+ drifted cats, or one
          sitting dead last. */
       const firm = drift.length >= 2 || ranks[drift[0]] >= st.teams;
+      const path = puntPath(ranks, kept, drift, st.teams);
+      let status;
+      if (!firm) status = " — early lean, not yet actionable";
+      else if (!path.clear) status =
+        ` — no clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable (need ≥70%) — draft strengths first`;
+      else status =
+        ` — clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable`;
       box.append(el("span", "txt",
         `leaning punt ${drift.map(c => `${c} (${ranks[c]}/${st.teams})`).join(", ")}` +
-        (strengths ? ` — ${strengths} carry the build` : "") +
-        (firm ? "" : " — early lean, not yet actionable")));
-      if (firm) {
+        (strengths ? ` — ${strengths} carry the build` : "") + status));
+      if (firm && path.clear) {
         const b = el("button", "adopt", `PUNT BUILD → ${drift.join("·")}`);
         b.type = "button";
         b.addEventListener("click", () => {
           deck.state.punt = drift;
-          log(`PUNT BUILD adopted: ${drift.join(", ")} — strategy pivoted; recommendations, board, and matrix are now punt-coherent.`);
+          log(`PUNT BUILD adopted: ${drift.join(", ")} — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`);
           save(); renderAll();
         });
         box.append(b);
@@ -1177,16 +1194,21 @@ const JUDGMENT = {
       if (drift.length) {
         /* never suggest beyond a 3-category punt total */
         adoptList = drift.slice(0, Math.max(0, 3 - st.punt.length));
+        /* clear-path rule: adoption offered only when >= 70% of the
+           prospective kept set is winnable */
+        const path = adoptList.length ? puntPath(ranks, kept, adoptList, st.teams) : null;
+        const offer = adoptList.length && path.clear;
         const named = drift.slice(0, 2);
         const rest = drift.slice(2);
         const line = [
           ["k", "Drift"],
           ["why", ` drafting like a punt of ${named.map(c => `${c} (${ranks[c]}/${st.teams})`).join(", ")}` +
             (rest.length ? ` — ${rest.join(", ")} also weak but salvageable` : "") +
-            (adoptList.length ? " — formalize it and the Top 5 turns punt-coherent."
-                              : " — already punting " + st.punt.length + "; trade for these instead of punting deeper.")],
+            (!adoptList.length ? " — already punting " + st.punt.length + "; trade for these instead of punting deeper."
+              : offer ? ` — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); formalize it and the Top 5 turns punt-coherent.`
+                      : ` — no clear path yet (${path.winnable.length}/${path.keptAfter.length} kept winnable, need ≥70%); build strengths before committing.`)],
         ];
-        if (adoptList.length) line.push(["adopt", adoptList]);
+        if (offer) line.push(["adopt", adoptList]);
         lines.push(line);
       }
     }
