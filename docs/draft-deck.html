@@ -333,7 +333,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-07-23 under the roster validation lock — a full NBA/ESPN transaction cross-reference corrected 11 stale February-window team rows (AD, DLo, Garland, Harden, Zubac, Mathurin, Vučević, Simons, JJJ, Reid, Randle, Claxton) (February eight-player deal + July option opt-in — a baseline error caught by the sweep); LaVine opted in with SAC; Tatum carries <code>inj-achilles-risk</code> (returned March 2026, played the playoffs); Risacher ATL→DAL; Brunson wrist-surgery note (expected ready for October); Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC); LeBron unsigned FA; Haliburton, Lillard, Kyrie, and VanVleet remain recovery-excluded until news confirms them playing. The 2026 rookie class is in under the pool-completeness law: Dybantsa (WAS), Peterson (UTA), Boozer (MEM), Wilson (CHI), Brown Jr. (BKN), Acuff (SAC) — <code>rookie-proj</code> estimates until preseason data lands. Values are z-scores over this 226-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are the council score plus a <strong>Claude judgment layer</strong> — per-player adjustments with rationales, authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations show <strong>confidence percentages</strong> on the owner's absolute scale (55% coin flip, 95% no contest), engine-calibrated from final-score separation over the council score plus a <strong>Claude judgment layer</strong> — per-player adjustments with rationales, authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1447,7 +1447,16 @@ const JUDGMENT = {
                fs: r.s + (j ? j.adj : 0) + v.bonus };
     }).sort((a, b) => b.fs - a.fs).slice(0, 5);
     $("recoTitle").textContent =
-      `Top 5 — council score + Claude judgment layer (tuned ${JUDGMENT.date})`;
+      `Top 5 — confidence % (council + judgment + value, tuned ${JUDGMENT.date})`;
+    /* Confidence mapping — owner's absolute anchors: 55% = coin flip,
+       95% = no contest. Engine-calibrated from final-score separation
+       (20 pts per z of gap), not live judgment. */
+    const confs = scored.map((r, i) => {
+      if (scored.length === 1) return 95;
+      const gap = i === 0 ? r.fs - scored[1].fs : r.fs - scored[0].fs;
+      return Math.max(25, Math.min(95, Math.round(55 + 20 * gap)));
+    });
+    const coinFlip = scored.length > 1 && confs[0] - confs[1] <= 5;
     const teamCt2 = teamCt;
     for (let i = 0; i < scored.length; i++) {
       const { p, s } = scored[i];
@@ -1459,7 +1468,14 @@ const JUDGMENT = {
         fl.dataset.tip = p.note;
         nm.appendChild(fl);
       }
-      li.append(nm, el("span", "sc", scored[i].fs.toFixed(2)));
+      const sc = el("span", "sc", confs[i] + "%");
+      sc.dataset.tip = `final score ${scored[i].fs.toFixed(2)} — confidence from separation vs ${i === 0 ? "next-best" : "the top pick"}`;
+      li.append(nm, sc);
+      if (i === 0 && coinFlip) {
+        const cf = el("span", "flag", "(coin flip)");
+        cf.style.color = "var(--muted)";
+        nm.appendChild(cf);
+      }
       const bits = [`${p.p} · ${p.t}`, `val ${fmtVal(p, punt)}`];
       if (scored[i].adj || scored[i].vbonus) {
         let breakdown = `council ${s.toFixed(2)}`;
