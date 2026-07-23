@@ -1571,7 +1571,9 @@ const JUDGMENT = {
   function renderMirror() {
     const m = $("mirror");
     m.innerHTML = "";
-    for (const l of deck.log.slice(-5)) {
+    /* full history, scrollable (owner request 2026-07-23); the box stays
+       pinned to the newest line via scrollTop below */
+    for (const l of deck.log) {
       const d = el("div", l.cls, l.t);
       m.appendChild(d);
     }
