@@ -1524,7 +1524,9 @@ const JUDGMENT = {
     /* family counts, right-aligned; multi-position players count in EACH
        family they are eligible for (owner spec 2026-07-23) */
     const famN = { G: 0, F: 0, C: 0 };
-    for (const p of mine) for (const f of familiesOf(p)) famN[f]++;
+    /* mine entries here are {name, pickNo, p} wrappers; UNKNOWN picks have
+       no player object and are skipped */
+    for (const e of mine) if (e.p) for (const f of familiesOf(e.p)) famN[f]++;
     $("myRosterFams").textContent = `G (${famN.G})  F (${famN.F})  C (${famN.C})`;
   }
 
