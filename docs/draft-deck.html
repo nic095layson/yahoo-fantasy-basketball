@@ -1796,8 +1796,27 @@ const JUDGMENT = {
 
   /* best available tab */
   let bestState = { pos: "", q: "", top: 25, sort: "fit" };
+  let draftedNote = "";
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
-  $("bestQ").addEventListener("input", e => { bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
+  $("bestQ").addEventListener("input", e => { draftedNote = ""; bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
+  /* Enter on a drafted name answers "where did he go?" (owner request) */
+  $("bestQ").addEventListener("keydown", e => {
+    if (e.key !== "Enter") return;
+    draftedNote = "";
+    const q = bestState.q;
+    if (q) {
+      const st = deck.state;
+      const hits = st.picks.map((pk, i) => ({ pk, i }))
+        .filter(({ pk }) => pk.player.toLowerCase().includes(q));
+      if (hits.length) {
+        draftedNote = hits.slice(0, 3).map(({ pk, i }) =>
+          `${pk.player} — Drafted #${i + 1} (R${Math.floor(i / st.teams) + 1}) by ${pk.slot === st.slot ? "YOU" : "Team " + pk.slot}`).join("  ·  ");
+      } else if (!PLAYERS.some(p => p.n.toLowerCase().includes(q))) {
+        draftedNote = `no player matching “${q}” in the pool`;
+      }
+    }
+    renderBest();
+  });
   $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
   $("bestSort").addEventListener("change", e => { bestState.sort = e.target.value; renderBest(); });
   $("bestSort").value = bestState.sort; /* re-sync after Firefox autofill */
@@ -1832,7 +1851,8 @@ const JUDGMENT = {
     }
     $("bestSummary").textContent = `${pool.length} available` +
       (bestState.q ? ` · matching “${bestState.q}”: ${matches}` +
-        (shown.length < matches ? ` (showing ${shown.length})` : "") : "");
+        (shown.length < matches ? ` (showing ${shown.length})` : "") : "") +
+      (draftedNote ? `  —  ${draftedNote}` : "");
     const frag = document.createDocumentFragment();
     for (const row of shown) {
       const p = row.p;
