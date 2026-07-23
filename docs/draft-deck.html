@@ -126,6 +126,10 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .why { color: var(--ink-2); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .hcenter { text-align: center; text-transform: uppercase; }
+#bestHead th[data-sort] { cursor: pointer; user-select: none; }
+#bestHead th[data-sort]:hover { color: var(--accent); }
+#bestHead th.sorted { color: var(--accent); }
+#bestHead th.sorted::after { content: " ▾"; }
 .rosterhead { display: flex; justify-content: space-between; align-items: baseline; }
 #myRosterFams { font-variant-numeric: tabular-nums; white-space: pre; color: var(--muted); }
 #deckmeta button.target { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; letter-spacing: 0.02em; }
@@ -299,11 +303,11 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     <div class="tablewrap" tabindex="0" role="region" aria-label="Best available board">
       <table class="board" aria-label="Best available players">
         <thead><tr id="bestHead">
+          <th scope="col" data-sort="mkt" title="Estimated real-draft position: points-volume market model with rookie-hype pins, refreshed each republish. A player available well past Mkt is a room-wide slide; past # (our board) is 9-cat value. Click to sort.">Mkt</th>
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
-          <th scope="col">Val</th>
-          <th scope="col" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick.">Fit</th>
-          <th scope="col" title="Estimated real-draft position: points-volume market model with rookie-hype pins, refreshed each republish. A player available well past Mkt is a room-wide slide; past # (our board) is 9-cat value.">Mkt</th>
+          <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to sort.">Val</th>
+          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. Click to sort.">Fit</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -1829,8 +1833,17 @@ const JUDGMENT = {
       for (const c of CATS) {
         const th = document.createElement("th");
         th.scope = "col"; th.textContent = c === "TO" ? "TO↑" : c;
+        th.dataset.sort = c;
+        th.title = `sort by ${c} z`;
         $("bestHead").appendChild(th);
       }
+      $("bestHead").addEventListener("click", e => {
+        const th = e.target.closest("th");
+        if (!th || !th.dataset.sort) return;
+        bestState.sort = th.dataset.sort === "val" ? "value" : th.dataset.sort;
+        $("bestSort").value = ["fit", "value"].includes(bestState.sort) ? bestState.sort : "";
+        renderBest();
+      });
       bestHeadBuilt = true;
     }
     let pool = availablePool(st, PLAYERS);
@@ -1840,9 +1853,15 @@ const JUDGMENT = {
     const ranksB = mineB.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
     const fw = fitWeights(punt, ranksB, mineB.length, st.teams);
     const fitOf = new Map(pool.map(p => [p.n, fitZ(p, fw)]));
-    pool.sort(bestState.sort === "fit"
-      ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
-      : (a, b) => adjValue(b, punt) - adjValue(a, punt));
+    const sk = bestState.sort;
+    pool.sort(
+      sk === "fit" ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
+      : sk === "mkt" ? (a, b) => (MKT_RANK.get(a.n) || 999) - (MKT_RANK.get(b.n) || 999)
+      : CATS.includes(sk) ? (a, b) => b.z[sk] - a.z[sk]
+      : (a, b) => adjValue(b, punt) - adjValue(a, punt));  /* val/value */
+    for (const th of $("bestHead").querySelectorAll("th"))
+      th.classList.toggle("sorted", th.dataset.sort === sk ||
+        (sk === "value" && th.dataset.sort === "val"));
     let matches = 0;
     const shown = [];
     for (let i = 0; i < pool.length; i++) {
@@ -1880,7 +1899,11 @@ const JUDGMENT = {
         fl.dataset.tip = p.note;
         tdN.appendChild(fl);
       }
-      tr.append(tdR, tdN, el("td", "l team", p.t), el("td", "l pos", p.p));
+      const mrk = MKT_RANK.get(p.n);
+      const tdM = el("td", "val", mrk ? "#" + mrk : "—");
+      tdM.style.color = "var(--muted)";
+      tdM.dataset.tip = "estimated real-draft position (market model)";
+      tr.append(tdM, tdR, tdN, el("td", "l team", p.t), el("td", "l pos", p.p));
       const tdV = el("td", "val", fmtVal(p, punt));
       tr.append(tdV);
       const f = fitOf.get(p.n);
@@ -1891,11 +1914,6 @@ const JUDGMENT = {
           (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
         : `roster < 2 — fit z equals balanced value for now`;
       tr.append(tdF);
-      const mrk = MKT_RANK.get(p.n);
-      const tdM = el("td", "val", mrk ? "#" + mrk : "—");
-      tdM.style.color = "var(--muted)";
-      tdM.dataset.tip = "estimated real-draft position (market model)";
-      tr.append(tdM);
       for (const c of CATS) {
         const z = p.z[c];
         const td = el("td", "z" + (z < 0 ? " neg" : ""), fmtZ(z, 1));
