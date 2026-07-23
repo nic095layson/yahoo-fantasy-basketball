@@ -125,6 +125,7 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .who { font-weight: var(--weight-bold); }
 .valstrip .why { color: var(--ink-2); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.hcenter { text-align: center; text-transform: uppercase; }
 .puntline .catrow { display: flex; justify-content: center; flex-wrap: nowrap; gap: 2px 6px; max-width: 100%; }
 .puntline.lean { border-left: 3px solid var(--status-risk); }
 .puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
@@ -249,7 +250,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     <div class="card feedcard">
       <p class="eyebrow">Pick-by-pick</p>
       <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
-      <h2 id="feedTitle" style="margin-top: var(--space-4)">Pick feed</h2>
+      <h2 id="feedTitle" class="hcenter" style="margin-top: var(--space-4)">Pick feed</h2>
       <div class="feedrow">
         <input type="text" id="feed" autocomplete="off" spellcheck="false"
                placeholder='Jokic; my:Wemby; 44- Herro'>
@@ -261,7 +262,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     </div>
 
     <div class="card" id="decision">
-      <h2>Decision card</h2>
+      <h2 class="hcenter">Decision card</h2>
       <div class="puntline" id="puntline"></div>
       <div class="deckmeta" id="deckmeta"></div>
       <div id="flags"></div>
