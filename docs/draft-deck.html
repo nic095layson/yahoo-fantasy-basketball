@@ -126,6 +126,8 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .why { color: var(--ink-2); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .hcenter { text-align: center; text-transform: uppercase; }
+#deckmeta button.target { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; letter-spacing: 0.02em; }
+#deckmeta button.target.urgent { border-color: var(--status-risk); color: var(--status-risk); }
 .puntline .catrow { display: flex; justify-content: center; flex-wrap: nowrap; gap: 2px 6px; max-width: 100%; }
 .puntline.lean { border-left: 3px solid var(--status-risk); }
 .puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
@@ -440,6 +442,89 @@ function fitZ(p, w) {
   return { raw: s, adj: s > 0 ? s * p.av : s };
 }
 function positionsOf(p) { return p.p.split(",").map(s => s.trim()); }
+/* TARGET archetype (owner spec + council amendments 2026-07-23).
+   Label = compression of what Fit Z is already recommending — derived from
+   the top-8 available by fit (never a parallel opinion), coherence-gated
+   (returns null when they share no profile). Position component priority:
+   premium-shelf scarcity > roster balance > engine lean. */
+const CAT_TERM = [
+  [["BLK", "FG%"], "High-FG% / Block"],
+  [["3PTM", "ST"], "3&D"],
+  [["REB", "FG%"], "Glass / FG%"],
+  [["AST", "ST"], "Two-way playmaking"],
+  [["PTS", "FT%"], "Volume-scoring"],
+  [["3PTM", "FT%"], "Sharpshooting"],
+  [["REB", "BLK"], "Rim-protecting"],
+  [["BLK"], "Shot-block"], [["3PTM"], "Shooting"], [["AST"], "Playmaking"],
+  [["REB"], "Rebounding"], [["ST"], "Steals-first"], [["PTS"], "Scoring"],
+  [["FT%"], "FT-anchor"], [["FG%"], "Efficient"], [["TO"], "Low-TO"],
+];
+const POS_FAMILY = { PG: "G", SG: "G", SF: "F", PF: "F", C: "C" };
+function familiesOf(p) { return [...new Set(positionsOf(p).map(x => POS_FAMILY[x]))]; }
+function archetypeRead(st, mine, pool, ranks, nextPickNo, mktRank) {
+  if (mine.length < 2 || !ranks || !pool.length) return null;
+  const punt = new Set(st.punt);
+  const kept = CATS.filter(c => !punt.has(c));
+  const fw = fitWeights(punt, ranks, mine.length, st.teams);
+  const needCats = kept.filter(c => fw[c] === 1.0)
+    .sort((a, b) => ranks[b] - ranks[a]);
+  const top8 = [...pool]
+    .sort((a, b) => fitZ(b, fw).adj - fitZ(a, fw).adj).slice(0, 8);
+  const famCt = { G: 0, F: 0, C: 0 };
+  for (const p of top8) for (const f of familiesOf(p)) famCt[f]++;
+  const domFam = ["G", "F", "C"].sort((a, b) => famCt[b] - famCt[a])[0];
+  const domOK = famCt[domFam] >= 4;
+  const fams = ["G", "F", "C"];
+  const balCt = { G: 0, F: 0, C: 0 };
+  for (const p of mine) balCt[POS_FAMILY[positionsOf(p)[0]]]++;
+  /* balance: a family is "the gap" only when under its startable floor
+     (G:3 F:3 C:2 in this layout) — heavy-vs-light alone is not a need
+     if the light family's slots are already covered. */
+  const FLOOR = { G: 3, F: 3, C: 2 };
+  const heavyFam = [...fams].sort((a, b) => balCt[b] - balCt[a])[0];
+  const belowFloor = fams.filter(f => balCt[f] < FLOOR[f])
+    .sort((a, b) => (FLOOR[b] - balCt[b]) - (FLOOR[a] - balCt[a]));
+  const imbalance = belowFloor.length && mine.length >= 4 ? belowFloor[0] : null;
+  /* scarcity: how many of each family the ROOM still prices inside the
+     next two rounds — stage-relative, not a fixed top-60. */
+  const window = st.picks.length + st.teams * 2;
+  const shelf = { G: 0, F: 0, C: 0 };
+  for (const p of pool) if ((mktRank.get(p.n) || 999) <= window)
+    for (const f of familiesOf(p)) shelf[f]++;
+  const openFams = [...new Set(unfilledSlots(mine).map(sl =>
+    sl === "G" || sl === "F" ? sl : POS_FAMILY[sl]))];
+  const scarceFam = fams.find(f => shelf[f] <= 2 &&
+    (openFams.includes(f) || balCt[f] === 0 || imbalance === f));
+  let fam = scarceFam || imbalance || (domOK ? domFam : null);
+  /* term + examples come from players who MATCH the family, so the label
+     can never name a profile its own example players don't have. */
+  const matchPool = fam
+    ? [...pool].filter(p => familiesOf(p).includes(fam))
+        .sort((a, b) => fitZ(b, fw).adj - fitZ(a, fw).adj).slice(0, 3)
+    : top8;
+  const quorum = fam ? 2 : 4;
+  const feeds = c => matchPool.filter(p => p.z[c] > 0.25).length >= quorum;
+  const fed = needCats.filter(feeds).slice(0, 2);
+  if (!fam && !fed.length) return null;  /* coherence gate: stay silent */
+  let term = "";
+  if (fed.length) {
+    const key = new Set(fed);
+    const hit = CAT_TERM.find(([cs]) => cs.length === key.size && cs.every(c => key.has(c)))
+      || CAT_TERM.find(([cs]) => cs.length === 1 && key.has(cs[0]));
+    term = hit ? hit[1] : fed.join("+");
+  }
+  const label = term && fam ? `${term} ${fam}` : (term ? term : `Best ${fam}`);
+  const matches = matchPool.slice(0, 3);
+  const minMkt = Math.min(...matches.map(p => mktRank.get(p.n) || 999));
+  const canWait = !scarceFam && matches.length && minMkt > nextPickNo + 8;
+  const tips = [`build ${balCt.G}G/${balCt.F}F/${balCt.C}C` +
+    (imbalance ? ` — ${heavyFam}-heavy, ${imbalance} is the gap` : "")];
+  if (scarceFam) tips.push(`${scarceFam} shelf: ${shelf[scarceFam]} the room prices in the next 2 rounds — act now`);
+  if (matches.length) tips.push(`best fits: ${matches.map(p => p.n).join(", ")}`);
+  if (canWait) tips.push(`matching fits priced #${minMkt}+ by the room — can likely wait a round`);
+  tips.push("click to filter Best Available");
+  return { label, fam, tip: tips.join(" · "), urgent: !!scarceFam, wait: canWait };
+}
 function teamOfPick(n, teams) {
   const rnd = Math.floor(n / teams), idx = n % teams;
   return rnd % 2 === 0 ? idx + 1 : teams - idx;
@@ -1538,6 +1623,23 @@ const JUDGMENT = {
       const edge = rival ? kept.filter(c => totals[st.slot][c] > totals[rival][c]) : [];
       if (rival)
         meta.append(el("span", "", `top rival T${rival}: you lead ${edge.length}/${kept.length} kept`));
+      const read = draftDone() ? null : archetypeRead(
+        st, mine, availablePool(st, PLAYERS), ranks, myNextPick(st), MKT_RANK);
+      if (read) {
+        const t = el("button", "target" + (read.urgent ? " urgent" : ""),
+          `TARGET: ${read.label}` + (read.urgent ? " — act now" : (read.wait ? " — can wait" : "")));
+        t.type = "button";
+        t.dataset.tip = read.tip;
+        t.addEventListener("click", () => {
+          bestState.pos = read.fam || "";
+          $("bestPos").value = read.fam || "";
+          bestState.sort = "fit";
+          $("bestSort").value = "fit";
+          renderBest();
+          $("bestSummary").scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        meta.append(t);
+      }
     }
 
     /* Value on the board — due-diligence strip, always shown when it fires */
