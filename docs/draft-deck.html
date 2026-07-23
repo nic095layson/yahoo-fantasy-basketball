@@ -92,8 +92,9 @@ header.deck { display: flex; align-items: baseline; justify-content: space-betwe
 .workgrid { display: grid; grid-template-columns: minmax(340px, 1fr) minmax(420px, 1.2fr); gap: var(--space-4); align-items: stretch; }
 @media (max-width: 960px) { .workgrid { grid-template-columns: 1fr; } }
 .toolbar { margin: 0 0 var(--space-2); }
+.toolbar #exportBtn { margin-left: auto; }
 .card.feedcard { display: flex; flex-direction: column; }
-.feedcard .mirror { flex: 1 1 200px; min-height: 160px; max-height: none; }
+.feedcard .mirror { flex: 1 1 120px; min-height: 120px; max-height: none; }
 
 /* Feed console */
 .feedrow { display: flex; gap: var(--space-2); margin-bottom: var(--space-2); }
@@ -127,12 +128,12 @@ header.deck { display: flex; align-items: baseline; justify-content: space-betwe
 .buildread .why { color: var(--ink-2); }
 .buildread button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); margin-left: var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
 ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
-ol.recos li { display: grid; grid-template-columns: auto 1fr auto; gap: var(--space-1) var(--space-3); align-items: baseline; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
+ol.recos li { display: grid; grid-template-columns: auto 1fr auto auto; gap: var(--space-1) var(--space-3); align-items: baseline; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
 ol.recos .rk { font-family: var(--font-data); font-weight: var(--weight-bold); color: var(--accent); }
 ol.recos .nm { font-weight: var(--weight-bold); }
-ol.recos .meta { grid-column: 2 / 4; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
+ol.recos .meta { grid-column: 2 / 5; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
 ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
-ol.recos button.take { grid-column: 2 / 4; justify-self: start; }
+ol.recos button.take { grid-column: 4; grid-row: 1; }
 
 /* Tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-8) 0 var(--space-3); border-bottom: 1px solid var(--line); }
@@ -480,7 +481,7 @@ function processFeed(state, players, feed) {
     while (num !== null && picks.length + 1 < num) { /* gap: back-fill */
       const g = picks.length;
       picks.push({ player: `UNKNOWN #${g + 1}`, slot: teamOfPick(g, state.teams) });
-      say(`⚠ #${g + 1} UNKNOWN (gap) — fill with: ${g + 1}- Name`, "warn");
+      say(`⚠ (R${Math.floor(g / state.teams) + 1}) #${g + 1}: UNKNOWN (gap) — fill with: ${g + 1}- Name`, "warn");
     }
 
     if (picks.length >= maxPick) { say(`⚠ ignored "${raw}": draft is complete (${maxPick} picks)`, "warn"); continue; }
@@ -504,13 +505,13 @@ function processFeed(state, players, feed) {
       taken.add(p.n);
       const you = slot === state.slot ? " (YOU)" : "";
       const losers = cands.filter(c => c !== p).slice(0, 2).map(c => c.n);
-      say(`  ✓ #${n + 1} R${Math.floor(n / state.teams) + 1}: ${p.n} → T${slot}${you}` +
+      say(`  ✓ (R${Math.floor(n / state.teams) + 1}) #${n + 1}: ${p.n} → T${slot}${you}` +
           (losers.length ? `  (assumed over ${losers.join(", ")})` : ""));
     } else if (allC.length) {
       say(`⚠ skipped "${name}": already off the board (no pick logged)`, "warn");
     } else {
       picks.push({ player: `UNKNOWN #${n + 1}`, slot });
-      say(`⚠ #${n + 1} logged as UNKNOWN ("${name}": no match) — fix with: ${n + 1}- Name`, "warn");
+      say(`⚠ (R${Math.floor(n / state.teams) + 1}) #${n + 1}: UNKNOWN ("${name}": no match) — fix with: ${n + 1}- Name`, "warn");
     }
   }
   return { lines, halted: false };
@@ -829,7 +830,7 @@ const JUDGMENT = {
       const p = scored[0].p;
       st.picks.push({ player: p.n, slot });
       rosters[slot].push(p);
-      log(`  ✓ #${n + 1} R${Math.floor(n / st.teams) + 1}: ${p.n} → T${slot} (${name})`);
+      log(`  ✓ (R${Math.floor(n / st.teams) + 1}) #${n + 1}: ${p.n} → T${slot} (${name})`);
       moved = true;
     }
     deck.rngState = rng.state;
@@ -1216,7 +1217,7 @@ const JUDGMENT = {
   function renderMirror() {
     const m = $("mirror");
     m.innerHTML = "";
-    for (const l of deck.log.slice(-120)) {
+    for (const l of deck.log.slice(-5)) {
       const d = el("div", l.cls, l.t);
       m.appendChild(d);
     }
@@ -1289,21 +1290,29 @@ const JUDGMENT = {
         .filter(r => r.star && r.star.market < N)
         .sort((a, b) => a.star.market - b.star.market)
         .slice(0, 3);
+      /* Compact: one labeled line per signal; rationale lives in hover tips */
       if (sliders.length || stars.length) {
         strip.classList.remove("hidden");
-        const head = el("p", "", "");
-        head.append(el("span", "lead", "Value on the board — due diligence before you pick"));
-        strip.append(head);
-        for (const r of sliders) {
+        if (sliders.length) {
           const line = el("p", "", "");
-          line.append(el("span", "who", `⚡ ${shortName(r.p.n)}`),
-            el("span", "why", ` — board #${r.rank}, still here at your #${N} (slid ${r.slide}). Real 9-cat value on the table.`));
+          line.append(el("span", "lead", "Value "));
+          sliders.forEach((r, i) => {
+            if (i) line.append(el("span", "why", "  ·  "));
+            const who = el("span", "who", `⚡ ${shortName(r.p.n)}`);
+            who.dataset.tip = `board #${r.rank}, still available at your #${N} — slid ${r.slide} spots`;
+            line.append(who, el("span", "why", ` bd#${r.rank} ↓${r.slide}`));
+          });
           strip.append(line);
         }
-        for (const r of stars) {
+        if (stars.length) {
           const line = el("p", "", "");
-          line.append(el("span", "who", `⭐ ${shortName(r.p.n)}`),
-            el("span", "why", ` — market takes them ~#${r.star.market}, our board #${PRE_RANK.get(r.p.n)}. ${r.star.why}`));
+          line.append(el("span", "lead", "Market "));
+          stars.forEach((r, i) => {
+            if (i) line.append(el("span", "why", "  ·  "));
+            const who = el("span", "who", `⭐ ${shortName(r.p.n)}`);
+            who.dataset.tip = r.star.why;
+            line.append(who, el("span", "why", ` ~#${r.star.market} mkt vs bd #${PRE_RANK.get(r.p.n)}`));
+          });
           strip.append(line);
         }
       }
