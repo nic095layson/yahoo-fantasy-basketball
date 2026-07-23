@@ -135,6 +135,7 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .puntline .cat.bad .catrank { color: var(--status-risk); }
 .puntline .cat.punted { opacity: 0.55; }
 .puntline .cat.punted .catrank { color: var(--muted); }
+.deckmeta button.fulltilt, #deckmeta button.fulltilt { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-1) var(--space-3); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; letter-spacing: 0.03em; }
 .puntline button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
 .buildread { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
 .buildread p { margin: 0 0 var(--space-1); max-width: none; }
@@ -1190,6 +1191,10 @@ const JUDGMENT = {
      States: forming (roster < 2) → lean detected (kept cat sunk to 10th+,
      PUNT BUILD button pivots the whole system) → punt active (kept
      strengths + weakest kept to watch). */
+  /* When the strip detects a firm, clear-path lean, the full-tilt pivot
+     button renders in the decision-card meta space (owner request). */
+  let leanState = null;
+
   function renderPuntAnalyzer() {
     const st = deck.state;
     const box = $("puntline");
@@ -1226,6 +1231,7 @@ const JUDGMENT = {
       }
       box.append(chip);
     }
+    leanState = null;
     if (!haveRanks || st.punt.length) return;
     /* Punt governance unchanged behind the strip: firm-evidence gate +
        70% clear-path rule decide when the pivot button appears. */
@@ -1238,17 +1244,7 @@ const JUDGMENT = {
     box.classList.add("lean");
     const firm = drift.length >= 2 || ranks[drift[0]] >= st.teams;
     const path = puntPath(ranks, kept, drift, st.teams);
-    if (firm && path.clear) {
-      const b = el("button", "adopt", `PUNT BUILD → ${drift.join("·")}`);
-      b.type = "button";
-      b.dataset.tip = `clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable (≥70%)`;
-      b.addEventListener("click", () => {
-        deck.state.punt = drift;
-        log(`PUNT BUILD adopted: ${drift.join(", ")} — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`);
-        save(); renderAll();
-      });
-      box.append(b);
-    }
+    if (firm && path.clear) leanState = { drift, path };
   }
 
   /* Live build intelligence — recomputed on every pick. Four reads, one
@@ -1500,11 +1496,20 @@ const JUDGMENT = {
     }
     const posCounts = {};
     for (const p of mine) for (const ps of positionsOf(p)) posCounts[ps] = (posCounts[ps] || 0) + 1;
-    meta.append(
-      el("span", "", `your pick: #${draftDone() ? "—" : myNextPick(st)}`),
-      el("span", "", `roster ${mine.length}/${st.size}`),
-      el("span", "", weakest.length ? `weakest: ${weakest.join(", ")}` : "weakest: —")
-    );
+    /* pick #, roster count, weakest, and vs-field ranks now live in the
+       category rank strip and grid — this space belongs to the pivot. */
+    if (leanState) {
+      const { drift, path } = leanState;
+      const b = el("button", "adopt fulltilt", `PUNT BUILD → ${drift.join("·")} — FULL TILT`);
+      b.type = "button";
+      b.dataset.tip = `clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable (≥70%) — pivots every board to the punt`;
+      b.addEventListener("click", () => {
+        deck.state.punt = drift;
+        log(`PUNT BUILD adopted: ${drift.join(", ")} — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`);
+        save(); renderAll();
+      });
+      meta.append(b);
+    }
     const unfilled = unfilledSlots(mine);
     const remaining = st.size - mine.length;
     if (unfilled.length && remaining - unfilled.length <= 2)
@@ -1520,7 +1525,6 @@ const JUDGMENT = {
       flags.appendChild(el("p", "flagline", `⚠ LEAN: ${f > g ? f + "F vs " + g + "G" : g + "G vs " + f + "F"} — flag for roster balance`));
     if (mine.length) {
       const { ranks, totals } = categoryRanks(st, PLAYERS);
-      const vsLine = kept.map(c => `${c}:${ranks[c]}`).join("  ");
       let rival = null, rivalKept = -Infinity;
       for (let s = 1; s <= st.teams; s++) {
         if (s === st.slot) continue;
@@ -1528,8 +1532,8 @@ const JUDGMENT = {
         if (k > rivalKept) { rivalKept = k; rival = s; }
       }
       const edge = rival ? kept.filter(c => totals[st.slot][c] > totals[rival][c]) : [];
-      meta.append(el("span", "", `vs field: ${vsLine}`),
-        el("span", "", rival ? `top rival T${rival}: you lead ${edge.length}/${kept.length} kept` : ""));
+      if (rival)
+        meta.append(el("span", "", `top rival T${rival}: you lead ${edge.length}/${kept.length} kept`));
     }
 
     /* Value on the board — due-diligence strip, always shown when it fires */
