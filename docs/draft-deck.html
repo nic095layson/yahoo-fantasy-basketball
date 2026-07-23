@@ -123,6 +123,11 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 .valstrip .who { font-weight: var(--weight-bold); }
 .valstrip .why { color: var(--ink-2); }
+.puntline { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-2); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.puntline.lean { border-left: 3px solid var(--status-risk); }
+.puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+.puntline .txt { color: var(--ink-2); }
+.puntline button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
 .buildread { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
 .buildread p { margin: 0 0 var(--space-1); max-width: none; }
 .buildread p:last-child { margin-bottom: 0; }
@@ -247,6 +252,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
     <div class="card" id="decision">
       <h2>Decision card</h2>
+      <div class="puntline" id="puntline"></div>
       <div class="deckmeta" id="deckmeta"></div>
       <div id="flags"></div>
       <div id="valstrip"></div>
@@ -1031,9 +1037,63 @@ const JUDGMENT = {
   /* ---------- rendering ---------- */
   function renderAll() {
     hideTip();
-    renderStrip(); renderMirror(); renderMyRoster(); renderBuildRead();
+    renderStrip(); renderMirror(); renderMyRoster(); renderPuntAnalyzer(); renderBuildRead();
     renderDecision(); renderBest();
     renderGrid(); renderRosters(); renderMatrix(); renderVs();
+  }
+
+  /* Punt Analyzer — one running line at the top of the decision card.
+     States: forming (roster < 2) → lean detected (kept cat sunk to 10th+,
+     PUNT BUILD button pivots the whole system) → punt active (kept
+     strengths + weakest kept to watch). */
+  function renderPuntAnalyzer() {
+    const st = deck.state;
+    const box = $("puntline");
+    box.innerHTML = "";
+    box.classList.remove("lean");
+    box.append(el("span", "lead", "Punt Analyzer"));
+    const mine = buildRosters(st, PLAYERS)[st.slot];
+    if (mine.length < 2) {
+      box.append(el("span", "txt",
+        st.punt.length ? `punting ${st.punt.join("·")} — build forming (${mine.length}/${st.size})`
+                       : `build forming (${mine.length}/${st.size}) — no punt set`));
+      return;
+    }
+    const punt = new Set(st.punt);
+    const kept = CATS.filter(c => !punt.has(c));
+    const { ranks } = categoryRanks(st, PLAYERS);
+    const strengths = kept.filter(c => ranks[c] <= 3)
+      .sort((a, b) => ranks[a] - ranks[b]).slice(0, 4)
+      .map(c => `${c} ${ranks[c]}`).join(" · ");
+    if (st.punt.length) {
+      const watch = kept.filter(c => ranks[c] >= 8)
+        .sort((a, b) => ranks[b] - ranks[a])[0];
+      box.append(el("span", "txt",
+        `punting ${st.punt.join("·")} — kept strengths: ${strengths || "still forming"}` +
+        (watch ? ` — watch ${watch} (${ranks[watch]}/${st.teams})` : "")));
+      return;
+    }
+    const drift = mine.length >= 4
+      ? kept.filter(c => ranks[c] >= 10)
+          .sort((a, b) => ranks[b] - ranks[a]).slice(0, 3)
+      : [];
+    if (drift.length) {
+      box.classList.add("lean");
+      box.append(el("span", "txt",
+        `leaning punt ${drift.map(c => `${c} (${ranks[c]}/${st.teams})`).join(", ")}` +
+        (strengths ? ` — ${strengths} carry the build` : "")));
+      const b = el("button", "adopt", `PUNT BUILD → ${drift.join("·")}`);
+      b.type = "button";
+      b.addEventListener("click", () => {
+        deck.state.punt = drift;
+        log(`PUNT BUILD adopted: ${drift.join(", ")} — strategy pivoted; recommendations, board, and matrix are now punt-coherent.`);
+        save(); renderAll();
+      });
+      box.append(b);
+    } else {
+      box.append(el("span", "txt",
+        "no punt — balanced build" + (strengths ? `; strongest: ${strengths}` : "")));
+    }
   }
 
   /* Live build intelligence — recomputed on every pick. Four reads, one
