@@ -144,12 +144,29 @@ def cmd_freshness(args):
             print("Add them to data/players.csv (retired players keep a row "
                   "with note out-retired), or bypass with --force.")
             sys.exit(1)
+        # Roster validation lock (owner law 2026-07-23): the stamp requires an
+        # explicit record that team assignments were cross-referenced against
+        # NBA/ESPN-sourced transaction records this pull. News-sweeps alone
+        # left 11 stale team rows from the Feb 2026 deadline in the pool.
+        if not args.rosters_verified and not args.force:
+            print("⚠ ROSTER VALIDATION LOCK — stamp refused.")
+            print("Cross-reference pool team assignments against NBA/ESPN")
+            print("transaction records (trade trackers, FA signings, draft),")
+            print('then stamp with: --rosters-verified "<sources checked>"')
+            print("(--force bypasses with a stated reason in --note).")
+            sys.exit(1)
         stamp = {"date": datetime.date.today().isoformat(),
                  "note": args.note or "refreshed"}
+        if args.rosters_verified:
+            stamp["rosters_verified"] = {
+                "date": stamp["date"], "sources": args.rosters_verified}
         with open(FRESH_PATH, "w", encoding="utf-8") as f:
             json.dump(stamp, f, indent=2)
         print(f"Freshness stamped: {stamp['date']} — {stamp['note']} "
-              f"(pool complete: {len(MUST_HAVE)} consensus names present)")
+              f"(pool complete: {len(MUST_HAVE)} consensus names present"
+              + (f"; rosters verified: {args.rosters_verified}"
+                 if args.rosters_verified else "; rosters NOT verified (--force)")
+              + ")")
     else:
         info = read_freshness()
         if info:
@@ -864,8 +881,13 @@ def build_parser():
     fr.add_argument("--stamp", action="store_true",
                     help="record that data was refreshed today")
     fr.add_argument("--note", help="what was updated in this refresh")
+    fr.add_argument("--rosters-verified", metavar="SOURCES",
+                    help="record that team assignments were cross-referenced "
+                         "against NBA/ESPN transaction records this pull "
+                         "(required for --stamp; the roster validation lock)")
     fr.add_argument("--force", action="store_true",
-                    help="stamp even if the pool validator finds missing names")
+                    help="stamp even if the pool validator finds missing names "
+                         "or rosters are unverified (state the reason in --note)")
 
     d = sub.add_parser("draft", help="live draft tracker")
     dsub = d.add_subparsers(dest="draft_cmd", required=True)
