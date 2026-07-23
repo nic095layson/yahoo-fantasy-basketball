@@ -289,6 +289,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
           <th scope="col">Val</th>
           <th scope="col" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick.">Fit</th>
+          <th scope="col" title="Estimated real-draft position: points-volume market model with rookie-hype pins, refreshed each republish. A player available well past Mkt is a room-wide slide; past # (our board) is 9-cat value.">Mkt</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -337,7 +338,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 </section>
 
 <footer class="colophon">
-  <p><strong>Data.</strong> Pool refreshed 2026-07-23 under the roster validation lock — a full NBA/ESPN transaction cross-reference corrected 11 stale February-window team rows (AD, DLo, Garland, Harden, Zubac, Mathurin, Vučević, Simons, JJJ, Reid, Randle, Claxton) (February eight-player deal + July option opt-in — a baseline error caught by the sweep); LaVine opted in with SAC; Tatum carries <code>inj-achilles-risk</code> (returned March 2026, played the playoffs); Risacher ATL→DAL; Brunson wrist-surgery note (expected ready for October); Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC); LeBron unsigned FA; Haliburton, Lillard, Kyrie, and VanVleet remain recovery-excluded until news confirms them playing. The 2026 rookie class is in under the pool-completeness law: Dybantsa (WAS), Peterson (UTA), Boozer (MEM), Wilson (CHI), Brown Jr. (BKN), Acuff (SAC) — <code>rookie-proj</code> estimates until preseason data lands. Values are z-scores over this 226-player pool; projections, not live stats.</p>
+  <p><strong>Data.</strong> Pool refreshed 2026-07-23 under the roster validation lock — the full 227-row per-player verification grind (every player checked against NBA/ESPN-sourced records) found and fixed 22 team moves (Trae Young WAS, the Giannis-deal ripples, the July six-team deal, Vučević ORL, Beal FA) and re-priced 26 projection lines for new-team roles under the role-reprice law. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC); LeBron is an unsigned FA. The 2026 rookie class is in under the pool-completeness law. The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 227-player pool; projections, not live stats.</p>
   <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. Mock opponents draft by board value with noise, not market ADP — stars fall further in mocks than they will in a real room (an ADP persona lands when September consensus data exists). The layer is authored fresh at each daily republish over the council score plus judgment — per-player adjustments with rationales, authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
@@ -635,10 +636,52 @@ function unfilledSlots(roster) {
   return unfilled;
 }
 
+/* ---- weekly lineup + market (ADP) model — arena parity 2026-07-23 ----
+   LINEUP_SLOTS: the owner-league starting ten (PG SG G SF PF F C C U U);
+   three bench spots score BENCH_WEIGHT. lineupWeights mirrors
+   arena.lineup_weights; marketRanks mirrors arena.market_ranks (points-
+   volume bias, rookie hype pins, name value — how real rooms draft). */
+const LINEUP_SLOTS = [["PG"], ["SG"], ["PG", "SG"], ["SF"], ["PF"],
+  ["SF", "PF"], ["C"], ["C"], null, null];
+const BENCH_WEIGHT = 0.15;
+function lineupWeights(roster) {
+  const ordered = [...roster].sort((a, b) =>
+    CATS.reduce((t, c) => t + b.z[c], 0) - CATS.reduce((t, c) => t + a.z[c], 0));
+  const open = [...LINEUP_SLOTS];
+  const w = new Map();
+  for (const p of ordered) {
+    const pos = positionsOf(p);
+    let idx = open.findIndex(sl => sl !== null && sl.some(b => pos.includes(b)));
+    if (idx === -1) idx = open.findIndex(sl => sl === null);
+    if (idx !== -1) { open.splice(idx, 1); w.set(p.n, 1.0); }
+    else w.set(p.n, BENCH_WEIGHT);
+  }
+  return w;
+}
+const MKT_W = { "PTS": 1.6, "3PTM": 1.2, "AST": 1.0, "REB": 1.0,
+  "ST": 0.7, "BLK": 0.7, "FG%": 0.5, "FT%": 0.5, "TO": 0.25 };
+const MKT_PIN = { "Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
+  "Dylan Harper": 60, "Cameron Boozer": 70, "Caleb Wilson": 90,
+  "Mikel Brown Jr.": 95 };
+function marketRanks(pool) {
+  const mscore = p => {
+    let v = CATS.reduce((t, c) => t + p.z[c] * MKT_W[c], 0);
+    const note = (p.note || "").toLowerCase();
+    if (note.includes("rookie-proj")) v *= 1.15;
+    if (note.includes("risk")) v *= 0.95;
+    return v;
+  };
+  const model = new Map([...pool].sort((a, b) => mscore(b) - mscore(a))
+    .map((p, i) => [p.n, i + 1]));
+  const eff = n => Math.min(model.get(n), MKT_PIN[n] ?? Infinity);
+  const final = [...model.keys()].sort((a, b) => eff(a) - eff(b) || model.get(a) - model.get(b));
+  return new Map(final.map((n, i) => [n, i + 1]));
+}
+
 /* ---- arena/arena.py strategies ---- */
 const STRAT_DEFAULT = { punt: [], matrix_aware: false, locked_w: 0.35, lost_w: 0.45,
   risk: "normal", rec_compound: false, need_w: 0.0, scarcity_w: 0.0,
-  stack_pen: 0.0, value_exp: 1.0, noise: 0.0 };
+  stack_pen: 0.0, value_exp: 1.0, noise: 0.0, adp: false, cat_w: null };
 const STRATEGIES = {
   council:     { matrix_aware: true, rec_compound: true, stack_pen: 0.5, need_w: 0.3 },
   bpa_pure:    {},
@@ -651,10 +694,13 @@ const STRATEGIES = {
   safe_floor:  { risk: "safe" },
   upside:      { risk: "upside", value_exp: 1.15 },
   specialist:  { matrix_aware: true, locked_w: 1.4, lost_w: 0.2 },
-  market:      { noise: 0.6 },
+  market:      { adp: true, noise: 4.0 },
+  points_chaser: { cat_w: MKT_W, noise: 0.4 },
 };
-const MOCK_CAST = ["market", "punt_ft", "stars", "slot_filler", "scarcity",
-  "safe_floor", "upside", "specialist", "bpa_pure", "punt_ft_to", "market"];
+/* Research-informed room (2026-07-23): most league-mates are ADP-anchored
+   with a points-league lean; committed punts are the rare sharps. */
+const MOCK_CAST = ["market", "points_chaser", "market", "punt_ft", "stars",
+  "slot_filler", "scarcity", "safe_floor", "upside", "bpa_pure", "punt_ft_to"];
 
 /* Port of arena.pick_for: score every available player, return sorted scores.
    teams defaults to 12, where the tier thresholds equal the arena constants. */
@@ -679,6 +725,7 @@ function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng, teams = 1
   const useRanks = params.matrix_aware && myRanks && roster.length >= 2;
   const tiers = rankTiers(teams);
   function weight(cat) {
+    if (params.cat_w) return params.cat_w[cat] ?? 1.0;
     if (punt.has(cat)) return 0.0;
     if (useRanks) {
       const r = myRanks[cat];
@@ -687,7 +734,21 @@ function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng, teams = 1
     }
     return 1.0;
   }
+  const nStarted = [...lineupWeights(roster).values()].filter(w => w === 1.0).length;
+  function benchBound(p) {
+    if (nStarted >= LINEUP_SLOTS.length) return false;
+    return (lineupWeights([...roster, p]).get(p.n) ?? BENCH_WEIGHT) < 1.0;
+  }
+  const mkt = params.adp ? marketRanks(pool) : null;
   function score(p) {
+    if (params.adp && mkt) {
+      let s = -(mkt.get(p.n) ?? 300);
+      if (benchBound(p)) s -= 50.0;
+      if (unfilled.length && rnd >= 6 && positionsOf(p).some(b => unfilled.includes(b)))
+        s += 15.0;
+      if (params.noise) s += rng.gauss(0, params.noise);
+      return s;
+    }
     let s = CATS.reduce((acc, c) => acc + p.z[c] * weight(c), 0);
     const note = (p.note || "").toLowerCase();
     const injuryNote = note.includes("inj") || note.startsWith("out-");
@@ -709,6 +770,7 @@ function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng, teams = 1
     if (params.stack_pen && (teamCt[p.t] || 0) >= 2) s -= params.stack_pen;
     if (params.noise) s += rng.gauss(0, params.noise);
     if (params.risk === "safe" && injuryNote) s -= 100.0;
+    if (s > 0 && benchBound(p)) s *= BENCH_WEIGHT;
     return s;
   }
   let cands = pool;
@@ -1100,6 +1162,7 @@ const JUDGMENT = {
       .sort((a, b) => adjValue(b, noPunt) - adjValue(a, noPunt))
       .forEach((p, i) => PRE_RANK.set(p.n, i + 1));
   }
+  const MKT_RANK = marketRanks([...PLAYERS].filter(p => p.av > 0));
   function slideBonus(p, pickNo) {
     const vb = JUDGMENT.valueBoard;
     const rank = PRE_RANK.get(p.n);
@@ -1683,6 +1746,11 @@ const JUDGMENT = {
           (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
         : `roster < 2 — fit z equals balanced value for now`;
       tr.append(tdF);
+      const mrk = MKT_RANK.get(p.n);
+      const tdM = el("td", "val", mrk ? "#" + mrk : "—");
+      tdM.style.color = "var(--muted)";
+      tdM.dataset.tip = "estimated real-draft position (market model)";
+      tr.append(tdM);
       for (const c of CATS) {
         const z = p.z[c];
         const td = el("td", "z" + (z < 0 ? " neg" : ""), fmtZ(z, 1));
