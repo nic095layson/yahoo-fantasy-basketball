@@ -144,28 +144,52 @@ def cmd_freshness(args):
             print("Add them to data/players.csv (retired players keep a row "
                   "with note out-retired), or bypass with --force.")
             sys.exit(1)
-        # Roster validation lock (owner law 2026-07-23): the stamp requires an
-        # explicit record that team assignments were cross-referenced against
-        # NBA/ESPN-sourced transaction records this pull. News-sweeps alone
-        # left 11 stale team rows from the Feb 2026 deadline in the pool.
-        if not args.rosters_verified and not args.force:
-            print("⚠ ROSTER VALIDATION LOCK — stamp refused.")
-            print("Cross-reference pool team assignments against NBA/ESPN")
-            print("transaction records (trade trackers, FA signings, draft),")
-            print('then stamp with: --rosters-verified "<sources checked>"')
-            print("(--force bypasses with a stated reason in --note).")
-            sys.exit(1)
+        # Roster validation lock v2 (owner law 2026-07-23, hardened after the
+        # Hachimura miss — a quiet FA signing that a headline sweep missed):
+        # the stamp requires TODAY'S mechanical verification artifact from
+        # scripts/verify_rosters.py with zero mismatches. That script
+        # cross-references every pool row against NBA/ESPN official roster
+        # data — complete when the environment's network policy allows
+        # site.api.espn.com, evidence-file fallback until then.
+        ver_mode = None
+        if not args.force:
+            vp = os.path.join(os.path.dirname(FRESH_PATH),
+                              "roster_verification.json")
+            ok = False
+            try:
+                with open(vp, encoding="utf-8") as f:
+                    v = json.load(f)
+                ver_mode = v.get("mode")
+                ok = (v.get("date") == datetime.date.today().isoformat()
+                      and not v.get("mismatches"))
+            except (OSError, ValueError):
+                ok = False
+            if not ok:
+                print("⚠ ROSTER VALIDATION LOCK — stamp refused.")
+                print("Run: python3 scripts/verify_rosters.py  (per-player")
+                print("cross-reference against NBA/ESPN official rosters).")
+                print("The stamp requires today's roster_verification.json")
+                print("with zero mismatches. --force bypasses with a stated")
+                print("reason in --note.")
+                sys.exit(1)
+            if ver_mode == "fallback-partial":
+                print("note: roster verification is fallback-partial — allow "
+                      "site.api.espn.com in the environment network policy "
+                      "for the complete direct pull.")
         stamp = {"date": datetime.date.today().isoformat(),
                  "note": args.note or "refreshed"}
-        if args.rosters_verified:
+        if args.rosters_verified or ver_mode:
             stamp["rosters_verified"] = {
-                "date": stamp["date"], "sources": args.rosters_verified}
+                "date": stamp["date"],
+                "mode": ver_mode or "forced",
+                "sources": args.rosters_verified or "scripts/verify_rosters.py"}
         with open(FRESH_PATH, "w", encoding="utf-8") as f:
             json.dump(stamp, f, indent=2)
         print(f"Freshness stamped: {stamp['date']} — {stamp['note']} "
               f"(pool complete: {len(MUST_HAVE)} consensus names present"
-              + (f"; rosters verified: {args.rosters_verified}"
-                 if args.rosters_verified else "; rosters NOT verified (--force)")
+              + (f"; rosters verified: {stamp['rosters_verified']['mode']}"
+                 if "rosters_verified" in stamp
+                 else "; rosters NOT verified (--force)")
               + ")")
     else:
         info = read_freshness()
