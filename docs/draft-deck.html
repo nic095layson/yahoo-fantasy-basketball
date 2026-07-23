@@ -128,6 +128,13 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .puntline.lean { border-left: 3px solid var(--status-risk); }
 .puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 .puntline .txt { color: var(--ink-2); }
+.puntline .cat { display: inline-flex; align-items: baseline; gap: 4px; padding: 0 var(--space-1); border-radius: var(--radius-sm); background: var(--surface); }
+.puntline .catname { color: var(--muted); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; }
+.puntline .catrank { color: var(--ink-2); font-weight: var(--weight-medium); }
+.puntline .cat.good .catrank { color: var(--delta-up); }
+.puntline .cat.bad .catrank { color: var(--status-risk); }
+.puntline .cat.punted { opacity: 0.55; }
+.puntline .cat.punted .catrank { color: var(--muted); }
 .puntline button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
 .buildread { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
 .buildread p { margin: 0 0 var(--space-1); max-width: none; }
@@ -1188,62 +1195,59 @@ const JUDGMENT = {
     const box = $("puntline");
     box.innerHTML = "";
     box.classList.remove("lean");
-    box.append(el("span", "lead", "Punt Analyzer"));
+    const lead = el("span", "lead", "Build");
+    box.append(lead);
     const mine = buildRosters(st, PLAYERS)[st.slot];
-    if (mine.length < 2) {
-      box.append(el("span", "txt",
-        st.punt.length ? `punting ${st.punt.join("·")} — build forming (${mine.length}/${st.size})`
-                       : `build forming (${mine.length}/${st.size}) — no punt set`));
-      return;
-    }
     const punt = new Set(st.punt);
-    const kept = CATS.filter(c => !punt.has(c));
-    const { ranks } = categoryRanks(st, PLAYERS);
-    const strengths = kept.filter(c => ranks[c] <= 3)
-      .sort((a, b) => ranks[a] - ranks[b]).slice(0, 4)
-      .map(c => `${c} ${ranks[c]}`).join(" · ");
-    if (st.punt.length) {
-      const watch = kept.filter(c => ranks[c] >= 8)
-        .sort((a, b) => ranks[b] - ranks[a])[0];
-      box.append(el("span", "txt",
-        `punting ${st.punt.join("·")} — kept strengths: ${strengths || "still forming"}` +
-        (watch ? ` — watch ${watch} (${ranks[watch]}/${st.teams})` : "")));
-      return;
+    const tiers = rankTiers(st.teams);
+    /* Category rank strip (owner request 2026-07-23): the nine cats across,
+       each with your live rank vs the field — replaces the running sentence.
+       Chip color IS the analysis: green locked, red drifted, × punted. */
+    const haveRanks = mine.length >= 2;
+    const ranks = haveRanks ? categoryRanks(st, PLAYERS).ranks : null;
+    if (unknownCount(st) && haveRanks)
+      lead.dataset.tip = `⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)`;
+    for (const c of CATS) {
+      const chip = el("span", "cat", "");
+      chip.append(el("span", "catname", c === "TO" ? "TO↑" : c));
+      if (punt.has(c)) {
+        chip.classList.add("punted");
+        chip.append(el("span", "catrank", "×"));
+        chip.dataset.tip = `${c} punted — excluded from the build`;
+      } else if (!haveRanks) {
+        chip.append(el("span", "catrank", "—"));
+        chip.dataset.tip = "ranks activate at 2+ picks";
+      } else {
+        const r = ranks[c];
+        chip.append(el("span", "catrank", `${r}/${st.teams}`));
+        if (r <= tiers.locked) chip.classList.add("good");
+        else if (r >= tiers.lostFrom) chip.classList.add("bad");
+        chip.dataset.tip = `${c}: rank ${r} of ${st.teams} vs the field right now`;
+      }
+      box.append(chip);
     }
+    if (!haveRanks || st.punt.length) return;
+    /* Punt governance unchanged behind the strip: firm-evidence gate +
+       70% clear-path rule decide when the pivot button appears. */
+    const kept = CATS.filter(c => !punt.has(c));
     const drift = mine.length >= 4
-      ? kept.filter(c => ranks[c] >= rankTiers(st.teams).lostFrom)
+      ? kept.filter(c => ranks[c] >= tiers.lostFrom)
           .sort((a, b) => ranks[b] - ranks[a]).slice(0, 3)
       : [];
-    if (drift.length) {
-      box.classList.add("lean");
-      /* Firm evidence gate (5-run mock study, 2026-07-23): a lone category
-         at 11th after four picks is noise — pivoting on it produced the
-         weakest build. Offer the button only for 2+ drifted cats, or one
-         sitting dead last. */
-      const firm = drift.length >= 2 || ranks[drift[0]] >= st.teams;
-      const path = puntPath(ranks, kept, drift, st.teams);
-      let status;
-      if (!firm) status = " — early lean, not yet actionable";
-      else if (!path.clear) status =
-        ` — no clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable (need ≥70%) — draft strengths first`;
-      else status =
-        ` — clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable`;
-      box.append(el("span", "txt",
-        `leaning punt ${drift.map(c => `${c} (${ranks[c]}/${st.teams})`).join(", ")}` +
-        (strengths ? ` — ${strengths} carry the build` : "") + status));
-      if (firm && path.clear) {
-        const b = el("button", "adopt", `PUNT BUILD → ${drift.join("·")}`);
-        b.type = "button";
-        b.addEventListener("click", () => {
-          deck.state.punt = drift;
-          log(`PUNT BUILD adopted: ${drift.join(", ")} — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`);
-          save(); renderAll();
-        });
-        box.append(b);
-      }
-    } else {
-      box.append(el("span", "txt",
-        "no punt — balanced build" + (strengths ? `; strongest: ${strengths}` : "")));
+    if (!drift.length) return;
+    box.classList.add("lean");
+    const firm = drift.length >= 2 || ranks[drift[0]] >= st.teams;
+    const path = puntPath(ranks, kept, drift, st.teams);
+    if (firm && path.clear) {
+      const b = el("button", "adopt", `PUNT BUILD → ${drift.join("·")}`);
+      b.type = "button";
+      b.dataset.tip = `clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable (≥70%)`;
+      b.addEventListener("click", () => {
+        deck.state.punt = drift;
+        log(`PUNT BUILD adopted: ${drift.join(", ")} — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`);
+        save(); renderAll();
+      });
+      box.append(b);
     }
   }
 
