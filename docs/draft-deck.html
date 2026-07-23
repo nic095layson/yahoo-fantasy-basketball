@@ -126,6 +126,8 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .why { color: var(--ink-2); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .hcenter { text-align: center; text-transform: uppercase; }
+.rosterhead { display: flex; justify-content: space-between; align-items: baseline; }
+#myRosterFams { font-variant-numeric: tabular-nums; white-space: pre; color: var(--muted); }
 #deckmeta button.target { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; letter-spacing: 0.02em; }
 #deckmeta button.target.urgent { border-color: var(--status-risk); color: var(--status-risk); }
 .puntline .catrow { display: flex; justify-content: center; flex-wrap: nowrap; gap: 2px 6px; max-width: 100%; }
@@ -259,7 +261,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
         <button class="primary" id="logBtn" type="button">Log</button>
       </div>
       <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For common surnames (White, Murray, Ball, Bridges, Sharpe…) feed first initial + surname: <code>D White</code>.</p>
-      <p class="eyebrow" style="margin-top: var(--space-4)" id="myRosterTitle">Your roster</p>
+      <p class="eyebrow rosterhead" style="margin-top: var(--space-4)"><span id="myRosterTitle">Your roster</span><span id="myRosterFams"></span></p>
       <ul class="myroster" id="myRoster"></ul>
     </div>
 
@@ -1519,6 +1521,11 @@ const JUDGMENT = {
       ul.appendChild(li);
     });
     $("myRosterTitle").textContent = `Your roster (${mine.length}/${st.size})`;
+    /* family counts, right-aligned; multi-position players count in EACH
+       family they are eligible for (owner spec 2026-07-23) */
+    const famN = { G: 0, F: 0, C: 0 };
+    for (const p of mine) for (const f of familiesOf(p)) famN[f]++;
+    $("myRosterFams").textContent = `G (${famN.G})  F (${famN.F})  C (${famN.C})`;
   }
 
   function renderStrip() {
