@@ -126,6 +126,8 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .valstrip .why { color: var(--ink-2); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .hcenter { text-align: center; text-transform: uppercase; }
+#bestReset { font: inherit; font-size: var(--text-sm); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+#bestReset:hover { color: var(--accent); border-color: var(--accent); }
 #bestHead th[data-sort] { cursor: pointer; user-select: none; }
 #bestHead th[data-sort]:hover { color: var(--accent); }
 #bestHead th.sorted { color: var(--accent); }
@@ -299,6 +301,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
       <span class="ctl">Sort</span>
       <select id="bestSort" autocomplete="off"><option value="fit" selected>Fit z (my roster)</option><option value="val">Balanced val</option></select>
+      <button type="button" id="bestReset" title="clear position, search, show, and sort filters">Reset</button>
       <span class="small" id="bestSummary"></span>
     </div>
     <div class="tablewrap" tabindex="0" role="region" aria-label="Best available board">
@@ -1830,6 +1833,13 @@ const JUDGMENT = {
   });
   $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
   $("bestSort").addEventListener("change", e => { bestState.sort = e.target.value; renderBest(); });
+  $("bestReset").addEventListener("click", () => {
+    bestState = { pos: "", q: "", top: 25, sort: "fit" };
+    draftedNote = "";
+    $("bestPos").value = ""; $("bestQ").value = "";
+    $("bestTop").value = "25"; $("bestSort").value = "fit";
+    renderBest();
+  });
   $("bestSort").value = bestState.sort; /* re-sync after Firefox autofill */
   let bestHeadBuilt = false;
   function renderBest() {
@@ -1846,8 +1856,8 @@ const JUDGMENT = {
       $("bestHead").addEventListener("click", e => {
         const th = e.target.closest("th");
         if (!th || !th.dataset.sort) return;
-        bestState.sort = th.dataset.sort === "val" ? "value" : th.dataset.sort;
-        $("bestSort").value = ["fit", "value"].includes(bestState.sort) ? bestState.sort : "";
+        bestState.sort = th.dataset.sort;
+        $("bestSort").value = ["fit", "val"].includes(bestState.sort) ? bestState.sort : "";
         renderBest();
       });
       bestHeadBuilt = true;
