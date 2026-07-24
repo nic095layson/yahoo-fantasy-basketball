@@ -259,6 +259,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <p class="eyebrow">Pick-by-pick</p>
       <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
       <h2 id="feedTitle" class="hcenter" style="margin-top: var(--space-4)">Pick feed</h2>
+      <p id="feedCountdown" class="hcenter" style="margin: 0 0 var(--space-1); color: var(--muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums;"></p>
       <div class="feedrow">
         <input type="text" id="feed" autocomplete="off" spellcheck="false"
                placeholder='Jokic; my:Wemby; 44- Herro'>
@@ -1540,6 +1541,7 @@ const JUDGMENT = {
     const total = st.teams * st.size;
     const strip = $("strip");
     if (draftDone()) {
+      $("feedCountdown").textContent = "(draft complete)";
       strip.innerHTML = "";
       strip.append(el("span", "", `Draft complete — ${total} picks`),
         el("span", "you", `your roster: Team ${st.slot}`),
@@ -1547,6 +1549,10 @@ const JUDGMENT = {
       return;
     }
     const onClock = teamOfPick(n, st.teams);
+    /* countdown under the feed title (owner request 2026-07-23) */
+    const until = myNextPick(st) - (n + 1);
+    $("feedCountdown").textContent =
+      until === 0 ? "(you're on the clock)" : `(${until} until your pick)`;
     const mine = buildRosters(st, PLAYERS)[st.slot];
     strip.innerHTML = "";
     strip.append(
