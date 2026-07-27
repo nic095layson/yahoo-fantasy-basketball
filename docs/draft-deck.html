@@ -435,7 +435,11 @@ function fitWeights(punt, myRanks, rosterLen, teams = 12) {
 function unknownCount(state) {
   return state.picks.filter(pk => pk.player.startsWith("UNKNOWN")).length;
 }
-/* Clear-path rule (owner law 2026-07-23): a punt lean is only ACTIONABLE
+/* Clear-path rule (owner law 2026-07-23; arena-validated 2026-07-27 —
+   loosened gates cost 5.8-6.6% relative championship output, and paired
+   counterfactuals measured mid-draft pivots net-negative; see
+   arena/results/findings_2026-07-27_punt_pivot_gate.md):
+   a punt lean is only ACTIONABLE
    when >= 70% of the categories kept after adoption are winnable (rank
    within the top ~third of the league). Punting is commitment — commit
    only when what remains is mostly won. */
@@ -765,9 +769,14 @@ function lineupWeights(roster) {
 }
 const MKT_W = { "PTS": 1.6, "3PTM": 1.2, "AST": 1.0, "REB": 1.0,
   "ST": 0.7, "BLK": 0.7, "FG%": 0.5, "FT%": 0.5, "TO": 0.25 };
-const MKT_PIN = { "Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
+/* Two-sided pins (2026-07-27): a pin is an EXACT market anchor, not a
+   ceiling — the model can no longer draft AD in round 1 when real rooms
+   fade him to ~50. Dated reads from the 7/27 Yahoo expert 9-cat top-50 +
+   rookie-hype reads; refreshed at each republish. */
+const MKT_PIN = { "Cooper Flagg": 15, "AJ Dybantsa": 30, "Darryn Peterson": 55,
   "Dylan Harper": 60, "Cameron Boozer": 70, "Caleb Wilson": 90,
-  "Mikel Brown Jr.": 95 };
+  "Mikel Brown Jr.": 95, "Anthony Davis": 50, "LeBron James": 49,
+  "Kyrie Irving": 48, "Kon Knueppel": 42, "Keyonte George": 44 };
 function marketRanks(pool) {
   const mscore = p => {
     let v = CATS.reduce((t, c) => t + p.z[c] * MKT_W[c], 0);
@@ -778,7 +787,7 @@ function marketRanks(pool) {
   };
   const model = new Map([...pool].sort((a, b) => mscore(b) - mscore(a))
     .map((p, i) => [p.n, i + 1]));
-  const eff = n => Math.min(model.get(n), MKT_PIN[n] ?? Infinity);
+  const eff = n => MKT_PIN[n] ?? model.get(n);  // two-sided: pins are exact anchors (2026-07-27)
   const final = [...model.keys()].sort((a, b) => eff(a) - eff(b) || model.get(a) - model.get(b));
   return new Map(final.map((n, i) => [n, i + 1]));
 }
@@ -1393,7 +1402,7 @@ const JUDGMENT = {
             (rest.length ? ` — ${rest.join(", ")} also weak but salvageable` : "") +
             (!adoptList.length ? " — already punting " + st.punt.length + "; trade for these instead of punting deeper."
               : offer ? ` — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); formalize it and the Top 5 turns punt-coherent.`
-                      : ` — no clear path yet (${path.winnable.length}/${path.keptAfter.length} kept winnable, need ≥70%); build strengths before committing.`)],
+                      : ` — no clear path yet (${path.winnable.length}/${path.keptAfter.length} kept winnable, need ≥70%); build strengths or commit pre-draft — mid-draft pivots measured net-negative in the arena (2026-07-27 study).`)],
         ];
         if (offer) line.push(["adopt", adoptList]);
         lines.push(line);
