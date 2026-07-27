@@ -110,3 +110,25 @@ or arena work. Add entries dated, with the incident that taught them.
     with SHA verification on origin/main; quiet days still commit a pull-log
     row and after-report, because those records are what date the next
     pull's window.
+
+## 2026-07-27 — The stale Draft Deck (published-artifact drift)
+
+11. **A published artifact is part of the deliverable — a refresh that
+    doesn't republish it didn't finish.** The owner opened the Draft Deck
+    on 2026-07-27 and found it serving the 2026-07-24 pool (header stamp:
+    3 days old) even though a fresh draft-kit pull had landed on
+    `fantasy-basketball-2026-27` `main` that morning. Two compounding
+    causes: (a) the deck renders only what `scripts/build_deck.py` baked
+    in at the last republish — repo pushes never reach the published
+    page; (b) the deck's source, builder, verifier, and the 7/23–24 data
+    refreshes were stranded on the unmerged PR #2 branch, so this repo's
+    `main` data plane still said fresh-as-of 7/11 while the published
+    deck said 7/24 and the draft-kit repo said 7/27 — three surfaces,
+    three different truths, no error anywhere a session would look.
+    Countermeasures: `DATA-PULL.md` §0 items 5–6 and §7 in the draft-kit
+    repo (deck sync + republish are definition-of-done for every pull),
+    the fantasy-basketball skill's publish-gate law now names republish
+    staleness a live defect, and the stranded branch was consolidated
+    into PR #3. Corollary of lesson 10 at the delivery layer: work
+    exists only where the consumer looks — the repo for sessions, the
+    published URL for the owner.
