@@ -125,6 +125,10 @@ MUST_HAVE = [
     # consensus fantasy-relevant rookies here so the stamp fails until
     # the pool carries them)
     "AJ Dybantsa", "Darryn Peterson", "Cameron Boozer", "Caleb Wilson",
+    # 2026-07-27 completeness sync vs the draft-kit top-200 (all inside the
+    # 156-pick draftable universe; ported with sourced provenance)
+    "Jerami Grant", "Yaxel Lendeborg", "Alex Caruso", "Kyle Filipowski",
+    "Jared McCain", "Ayo Dosunmu", "Luguentz Dort", "Derik Queen",
 ]
 
 

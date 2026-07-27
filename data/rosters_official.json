@@ -1,282 +1,301 @@
 {
-  "date": "2026-07-23",
-  "source": "Full 226-player per-player verification grind, 2026-07-23: every pool row checked via direct player search, documented transaction, or current corroborating source (NBA.com/ESPN/team outlets). Supersedes the 07-22 transaction-sweep baseline. FA rows verified by absence from all team lists.",
-  "teams": {
-    "LAC": [
-      "Kawhi Leonard",
-      "Darius Garland",
-      "Brook Lopez",
-      "Bennedict Mathurin",
-      "Rui Hachimura"
-    ],
-    "CLE": [
-      "Donovan Mitchell",
-      "Evan Mobley",
-      "James Harden",
-      "Jarrett Allen",
-      "Dennis Schroder",
-      "Max Strus",
-      "Sam Merrill"
-    ],
-    "TOR": [
-      "Brandon Ingram",
-      "Gradey Dick",
-      "Scottie Barnes",
-      "Jakob Poeltl",
-      "Immanuel Quickley",
-      "RJ Barrett",
-      "Trayce Jackson-Davis"
-    ],
-    "WAS": [
-      "Anthony Davis",
-      "Deandre Ayton",
-      "AJ Dybantsa",
-      "Trae Young",
-      "Alex Sarr",
-      "Bub Carrington",
-      "Tre Johnson",
-      "Bilal Coulibaly",
-      "Kyshawn George"
-    ],
-    "UTA": [
-      "Jaren Jackson Jr.",
-      "Darryn Peterson",
-      "Jusuf Nurkic",
-      "Keyonte George",
-      "Isaiah Collier",
-      "Ace Bailey",
-      "Lauri Markkanen"
-    ],
-    "IND": [
-      "Ivica Zubac",
-      "Tyrese Haliburton",
-      "Andrew Nembhard",
-      "Kelly Oubre Jr.",
-      "Aaron Nesmith",
-      "Pascal Siakam",
-      "Obi Toppin"
-    ],
-    "BOS": [
-      "Neemias Queta",
-      "Paul George",
-      "Derrick White",
-      "Mitchell Robinson",
-      "Jayson Tatum",
-      "Payton Pritchard"
-    ],
-    "CHI": [
-      "Nic Claxton",
-      "Caleb Wilson",
-      "Josh Giddey",
-      "Norman Powell",
-      "Matas Buzelis"
-    ],
-    "CHA": [
-      "Naz Reid",
-      "Tre Mann",
-      "Grayson Allen",
-      "Royce O'Neale",
-      "Coby White",
-      "Kon Knueppel",
-      "Brandon Miller",
-      "Dorian Finney-Smith"
-    ],
-    "BKN": [
-      "Julius Randle",
-      "Mikel Brown Jr.",
-      "Day'Ron Sharpe",
-      "Egor Demin",
-      "Keon Ellis",
-      "Michael Porter Jr.",
-      "Ochai Agbaji"
-    ],
-    "MIN": [
-      "Anthony Edwards",
-      "LaMelo Ball",
-      "Rudy Gobert",
-      "Jaden McDaniels",
-      "Donte DiVincenzo"
-    ],
-    "POR": [
-      "Ja Morant",
-      "Donovan Clingan",
-      "Damian Lillard",
-      "Scoot Henderson",
-      "Jrue Holiday",
-      "Deni Avdija",
-      "Shaedon Sharpe",
-      "Toumani Camara"
-    ],
-    "MEM": [
-      "Cameron Boozer",
-      "Isaiah Stewart",
-      "D'Angelo Russell",
-      "Zach Edey",
-      "Jaylen Wells",
-      "Cedric Coward",
-      "GG Jackson",
-      "Quinten Post"
-    ],
-    "SAC": [
-      "Darius Acuff Jr.",
-      "Domantas Sabonis",
-      "Zach LaVine",
-      "Malik Monk",
-      "Nique Clifford",
-      "Keegan Murray",
-      "De'Andre Hunter"
-    ],
-    "LAL": [
-      "Collin Sexton",
-      "Jaden Hardy",
-      "Luka Doncic",
-      "Dalton Knecht",
-      "Ziaire Williams",
-      "Quentin Grimes",
-      "Walker Kessler",
-      "Austin Reaves",
-      "Jarred Vanderbilt"
-    ],
-    "DAL": [
-      "Zaccharie Risacher",
-      "Cooper Flagg",
-      "Santi Aldama",
-      "Naji Marshall",
-      "Klay Thompson",
-      "Daniel Gafford",
-      "Dereck Lively II",
-      "Kyrie Irving",
-      "PJ Washington"
-    ],
-    "GSW": [
-      "Stephen Curry",
-      "Jimmy Butler",
-      "Draymond Green",
-      "Kristaps Porzingis",
-      "Brandin Podziemski",
-      "Moses Moody",
-      "De'Anthony Melton",
-      "Al Horford"
-    ],
-    "NOP": [
-      "Zion Williamson",
-      "Yves Missi",
-      "Dejounte Murray",
-      "Jordan Poole",
-      "Jeremiah Fears",
-      "Jordan Hawkins",
-      "Trey Murphy III",
-      "Herbert Jones"
-    ],
-    "NYK": [
-      "Jalen Brunson",
-      "Karl-Anthony Towns",
-      "Mikal Bridges",
-      "OG Anunoby",
-      "Jose Alvarado",
-      "Josh Hart",
-      "Landry Shamet",
-      "Jordan Clarkson"
-    ],
-    "DEN": [
-      "Nikola Jokic",
-      "Jamal Murray",
-      "Cameron Johnson",
-      "Aaron Gordon",
-      "Peyton Watson",
-      "Christian Braun",
-      "Julian Strawther"
-    ],
-    "SAS": [
-      "Victor Wembanyama",
-      "De'Aaron Fox",
-      "Devin Vassell",
-      "Stephon Castle",
-      "Tobias Harris",
-      "Dylan Harper"
-    ],
-    "OKC": [
-      "Chet Holmgren",
-      "Shai Gilgeous-Alexander",
-      "Isaiah Hartenstein",
-      "Cason Wallace",
-      "Jalen Williams"
-    ],
-    "MIA": [
-      "Giannis Antetokounmpo",
-      "Bam Adebayo",
-      "Bobby Portis",
-      "Andrew Wiggins",
-      "Nikola Jovic"
-    ],
-    "MIL": [
-      "Tyler Herro",
-      "Kel'el Ware",
-      "Jamie Jaquez Jr.",
-      "Caris LeVert",
-      "Myles Turner",
-      "Kevin Porter Jr.",
-      "Gary Trent Jr.",
-      "Kyle Kuzma",
-      "Ryan Rollins"
-    ],
-    "DET": [
-      "Cade Cunningham",
-      "John Collins",
-      "Jalen Duren",
-      "Ausar Thompson",
-      "Ron Holland",
-      "Duncan Robinson"
-    ],
-    "HOU": [
-      "Kevin Durant",
-      "Marcus Smart",
-      "Alperen Sengun",
-      "Amen Thompson",
-      "Steven Adams",
-      "Fred VanVleet",
-      "Clint Capela",
-      "Reed Sheppard",
-      "Jabari Smith Jr.",
-      "Tari Eason",
-      "Bogdan Bogdanovic"
-    ],
-    "PHX": [
-      "Devin Booker",
-      "Mark Williams",
-      "Miles Bridges",
-      "Khaman Maluach",
-      "Jalen Green",
-      "Dillon Brooks"
-    ],
-    "PHI": [
-      "Tyrese Maxey",
-      "Jaylen Brown",
-      "Joel Embiid",
-      "Anfernee Simons",
-      "VJ Edgecombe",
-      "LeBron James"
-    ],
-    "ORL": [
-      "Franz Wagner",
-      "Paolo Banchero",
-      "Desmond Bane",
-      "Wendell Carter Jr.",
-      "Goga Bitadze",
-      "Jalen Suggs",
-      "Anthony Black",
-      "Tristan da Silva",
-      "Nikola Vucevic"
-    ],
-    "ATL": [
-      "CJ McCollum",
-      "Corey Kispert",
-      "Jalen Johnson",
-      "Dyson Daniels",
-      "Buddy Hield",
-      "Onyeka Okongwu",
-      "Nickeil Alexander-Walker",
-      "Gabe Vincent"
-    ]
-  }
+ "date": "2026-07-27",
+ "source": "Full 226-player per-player verification grind, 2026-07-23: every pool row checked via direct player search, documented transaction, or current corroborating source (NBA.com/ESPN/team outlets). Supersedes the 07-22 transaction-sweep baseline. FA rows verified by absence from all team lists. | 2026-07-27 delta: Draymond Green removed from GSW (unsigned FA \u2014 declined option, re-sign expected but not official, HoopsHype 7/25 re-verified 7/27); Valanciunas absent (Zalgiris Kaunas 7/15, NBC/ESPN); Jaquez spelling corrected (Jaime); 20 pool additions ported from fantasy-basketball-2026-27 roster-provenance.csv (per-row dated sources, verified 2026-07-13..27). | Harden to FA (option declined 6/29 ESPN, re-sign framework agreed but UNSIGNED as of 7/27 per FearTheSword/HoopsRumors \u2014 same treatment as Draymond); Cole Anthony to MIL (buyout + Bucks signing, talkbasket/SI, ~7/12-25) with backup-PG reprice.",
+ "teams": {
+  "LAC": [
+   "Kawhi Leonard",
+   "Darius Garland",
+   "Brook Lopez",
+   "Bennedict Mathurin",
+   "Rui Hachimura",
+   "Derrick Jones Jr"
+  ],
+  "CLE": [
+   "Donovan Mitchell",
+   "Evan Mobley",
+   "Jarrett Allen",
+   "Dennis Schroder",
+   "Max Strus",
+   "Sam Merrill"
+  ],
+  "TOR": [
+   "Brandon Ingram",
+   "Gradey Dick",
+   "Scottie Barnes",
+   "Jakob Poeltl",
+   "Immanuel Quickley",
+   "RJ Barrett",
+   "Trayce Jackson-Davis"
+  ],
+  "WAS": [
+   "Anthony Davis",
+   "Deandre Ayton",
+   "AJ Dybantsa",
+   "Trae Young",
+   "Alex Sarr",
+   "Bub Carrington",
+   "Tre Johnson",
+   "Bilal Coulibaly",
+   "Kyshawn George",
+   "Khris Middleton"
+  ],
+  "UTA": [
+   "Jaren Jackson Jr.",
+   "Darryn Peterson",
+   "Jusuf Nurkic",
+   "Keyonte George",
+   "Isaiah Collier",
+   "Ace Bailey",
+   "Lauri Markkanen",
+   "Kyle Filipowski"
+  ],
+  "IND": [
+   "Ivica Zubac",
+   "Tyrese Haliburton",
+   "Andrew Nembhard",
+   "Kelly Oubre Jr.",
+   "Aaron Nesmith",
+   "Pascal Siakam",
+   "Obi Toppin"
+  ],
+  "BOS": [
+   "Neemias Queta",
+   "Paul George",
+   "Derrick White",
+   "Mitchell Robinson",
+   "Jayson Tatum",
+   "Payton Pritchard",
+   "Sam Hauser"
+  ],
+  "CHI": [
+   "Nic Claxton",
+   "Caleb Wilson",
+   "Josh Giddey",
+   "Norman Powell",
+   "Matas Buzelis",
+   "Rob Dillingham"
+  ],
+  "CHA": [
+   "Naz Reid",
+   "Tre Mann",
+   "Grayson Allen",
+   "Royce O'Neale",
+   "Coby White",
+   "Kon Knueppel",
+   "Brandon Miller",
+   "Dorian Finney-Smith",
+   "Moussa Diabate",
+   "Hannes Steinbach"
+  ],
+  "BKN": [
+   "Julius Randle",
+   "Mikel Brown Jr.",
+   "Day'Ron Sharpe",
+   "Egor Demin",
+   "Keon Ellis",
+   "Michael Porter Jr.",
+   "Ochai Agbaji"
+  ],
+  "MIN": [
+   "Anthony Edwards",
+   "LaMelo Ball",
+   "Rudy Gobert",
+   "Jaden McDaniels",
+   "Donte DiVincenzo",
+   "Ayo Dosunmu",
+   "Terrence Shannon Jr"
+  ],
+  "POR": [
+   "Ja Morant",
+   "Donovan Clingan",
+   "Damian Lillard",
+   "Scoot Henderson",
+   "Jrue Holiday",
+   "Deni Avdija",
+   "Shaedon Sharpe",
+   "Toumani Camara"
+  ],
+  "MEM": [
+   "Cameron Boozer",
+   "Isaiah Stewart",
+   "D'Angelo Russell",
+   "Zach Edey",
+   "Jaylen Wells",
+   "Cedric Coward",
+   "GG Jackson",
+   "Quinten Post",
+   "Jerami Grant",
+   "Taylor Hendricks"
+  ],
+  "SAC": [
+   "Darius Acuff Jr.",
+   "Domantas Sabonis",
+   "Zach LaVine",
+   "Malik Monk",
+   "Nique Clifford",
+   "Keegan Murray",
+   "De'Andre Hunter"
+  ],
+  "LAL": [
+   "Collin Sexton",
+   "Jaden Hardy",
+   "Luka Doncic",
+   "Dalton Knecht",
+   "Ziaire Williams",
+   "Quentin Grimes",
+   "Walker Kessler",
+   "Austin Reaves",
+   "Jarred Vanderbilt"
+  ],
+  "DAL": [
+   "Zaccharie Risacher",
+   "Cooper Flagg",
+   "Santi Aldama",
+   "Naji Marshall",
+   "Klay Thompson",
+   "Daniel Gafford",
+   "Dereck Lively II",
+   "Kyrie Irving",
+   "PJ Washington"
+  ],
+  "GSW": [
+   "Stephen Curry",
+   "Jimmy Butler",
+   "Kristaps Porzingis",
+   "Brandin Podziemski",
+   "Moses Moody",
+   "De'Anthony Melton",
+   "Al Horford",
+   "Yaxel Lendeborg"
+  ],
+  "NOP": [
+   "Zion Williamson",
+   "Yves Missi",
+   "Dejounte Murray",
+   "Jordan Poole",
+   "Jeremiah Fears",
+   "Jordan Hawkins",
+   "Trey Murphy III",
+   "Herbert Jones",
+   "Derik Queen"
+  ],
+  "NYK": [
+   "Jalen Brunson",
+   "Karl-Anthony Towns",
+   "Mikal Bridges",
+   "OG Anunoby",
+   "Jose Alvarado",
+   "Josh Hart",
+   "Landry Shamet",
+   "Jordan Clarkson"
+  ],
+  "DEN": [
+   "Nikola Jokic",
+   "Jamal Murray",
+   "Cameron Johnson",
+   "Aaron Gordon",
+   "Peyton Watson",
+   "Christian Braun",
+   "Julian Strawther"
+  ],
+  "SAS": [
+   "Victor Wembanyama",
+   "De'Aaron Fox",
+   "Devin Vassell",
+   "Stephon Castle",
+   "Tobias Harris",
+   "Dylan Harper",
+   "Keldon Johnson"
+  ],
+  "OKC": [
+   "Chet Holmgren",
+   "Shai Gilgeous-Alexander",
+   "Isaiah Hartenstein",
+   "Cason Wallace",
+   "Jalen Williams",
+   "Alex Caruso",
+   "Jared McCain"
+  ],
+  "MIA": [
+   "Giannis Antetokounmpo",
+   "Bam Adebayo",
+   "Bobby Portis",
+   "Andrew Wiggins",
+   "Nikola Jovic",
+   "Davion Mitchell"
+  ],
+  "MIL": [
+   "Tyler Herro",
+   "Kel'el Ware",
+   "Jaime Jaquez Jr.",
+   "Caris LeVert",
+   "Myles Turner",
+   "Kevin Porter Jr.",
+   "Gary Trent Jr.",
+   "Kyle Kuzma",
+   "Ryan Rollins",
+   "Kasparas Jakucionis",
+   "Cole Anthony"
+  ],
+  "DET": [
+   "Cade Cunningham",
+   "John Collins",
+   "Jalen Duren",
+   "Ausar Thompson",
+   "Ron Holland",
+   "Duncan Robinson"
+  ],
+  "HOU": [
+   "Kevin Durant",
+   "Marcus Smart",
+   "Alperen Sengun",
+   "Amen Thompson",
+   "Steven Adams",
+   "Fred VanVleet",
+   "Clint Capela",
+   "Reed Sheppard",
+   "Jabari Smith Jr.",
+   "Tari Eason",
+   "Bogdan Bogdanovic"
+  ],
+  "PHX": [
+   "Devin Booker",
+   "Mark Williams",
+   "Miles Bridges",
+   "Khaman Maluach",
+   "Jalen Green",
+   "Dillon Brooks"
+  ],
+  "PHI": [
+   "Tyrese Maxey",
+   "Jaylen Brown",
+   "Joel Embiid",
+   "Anfernee Simons",
+   "VJ Edgecombe",
+   "LeBron James"
+  ],
+  "ORL": [
+   "Franz Wagner",
+   "Paolo Banchero",
+   "Desmond Bane",
+   "Wendell Carter Jr.",
+   "Goga Bitadze",
+   "Jalen Suggs",
+   "Anthony Black",
+   "Tristan da Silva",
+   "Nikola Vucevic"
+  ],
+  "ATL": [
+   "CJ McCollum",
+   "Corey Kispert",
+   "Jalen Johnson",
+   "Dyson Daniels",
+   "Buddy Hield",
+   "Onyeka Okongwu",
+   "Nickeil Alexander-Walker",
+   "Gabe Vincent",
+   "Luguentz Dort",
+   "Jalen Wilson"
+  ]
+ }
 }
