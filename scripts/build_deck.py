@@ -98,7 +98,9 @@ def main():
         "verification": {"mode": ver.get("mode"),
                          "checked": ver.get("checked"),
                          "teams_covered": ver.get("teams_covered")},
-        "freshness_note": (fresh.get("note") or "")[:160],
+        "freshness_note": (lambda n: n if len(n) <= 160
+                           else n[:160].rsplit(" ", 1)[0] + " \u2026")(
+                              fresh.get("note") or ""),
     }
     manifest_comment = f"<!-- build-manifest {json.dumps(manifest)} -->\n"
     html = re.sub(r"<!-- build-manifest \{.*?\} -->\n", "", html)
