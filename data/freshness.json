@@ -1,4 +1,9 @@
 {
-  "date": "2026-07-11",
-  "note": "engine fixes; added Jrue Holiday, D'Angelo Russell"
+  "date": "2026-07-24",
+  "note": "Daily pull 2026-07-24: LeBron James signed PHI 2yr/8M player option (NBC/FOX/Yahoo + his X announcement) \u2014 FA->PHI, repriced age-41 4th option per role-reprice law, judgment unsigned-discount retired, Maxey squeeze note added. Sweep: Wemby 5yr/252M ext (SAS, no change), Mitchell 4yr/273M ext (CLE, no change), Kawhi trade still on league hold. Watch: Westbrook-MIA now live.",
+  "rosters_verified": {
+    "date": "2026-07-24",
+    "mode": "fallback-partial",
+    "sources": "scripts/verify_rosters.py"
+  }
 }

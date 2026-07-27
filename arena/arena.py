@@ -48,7 +48,7 @@ CATS = hoops.CATS
 BASE_POS = ("PG", "SG", "SF", "PF", "C")
 TEAMS, ROUNDS = 12, 15
 WEEKS, PLAYOFF_TEAMS = 18, 6
-STARTERS = 13           # weekly lineup slots; bench beyond this barely counts
+STARTERS = 13           # legacy cap (lineup_weights governs since 2026-07-23)
 BENCH_WEIGHT = 0.15
 # Per-game coefficient of variation by category: low-count stats are noisier.
 CV = {"PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55,
@@ -69,9 +69,13 @@ TEAM_WEEK_SHOCK = 0.06  # shared games-played shock, correlates counting cats
 #   stack_pen: 3rd-same-NBA-team penalty | value_exp: >1 favors stars
 #   noise: gaussian pick noise (the "market" persona)
 
+MKT_W = {"PTS": 1.6, "3PTM": 1.2, "AST": 1.0, "REB": 1.0,
+         "ST": 0.7, "BLK": 0.7, "FG%": 0.5, "FT%": 0.5, "TO": 0.25}
+
 DEFAULT = dict(punt=(), matrix_aware=False, locked_w=0.35, lost_w=0.45,
                risk="normal", rec_compound=False, need_w=0.0,
-               scarcity_w=0.0, stack_pen=0.0, value_exp=1.0, noise=0.0)
+               scarcity_w=0.0, stack_pen=0.0, value_exp=1.0, noise=0.0,
+               adp=False, cat_w=None)
 
 STRATEGIES = {
     "council":     dict(matrix_aware=True, rec_compound=True, stack_pen=0.5,
@@ -86,7 +90,8 @@ STRATEGIES = {
     "safe_floor":  dict(risk="safe"),
     "upside":      dict(risk="upside", value_exp=1.15),
     "specialist":  dict(matrix_aware=True, locked_w=1.4, lost_w=0.2),
-    "market":      dict(noise=0.6),           # adp-like ordinary league-mate
+    "market":      dict(adp=True, noise=4.0), # ADP-anchored ordinary league-mate
+    "points_chaser": dict(cat_w=MKT_W, noise=0.4), # points-league habits in a 9-cat room
 }
 
 
@@ -107,7 +112,69 @@ def strategy_params(name, overrides=None):
     return params
 
 
-def pick_for(params, pool, roster, my_ranks, rnd, rng):
+# Owner-league weekly lineup: 10 starters by slot + 3 bench (research-backed
+# realism fix, 2026-07-23: flat top-13 let 6-center rosters bank phantom
+# minutes; real layout caps startable bigs at C,C,Util,Util).
+LINEUP_SLOTS = (("PG",), ("SG",), ("PG", "SG"), ("SF",), ("PF",),
+                ("SF", "PF"), ("C",), ("C",), None, None)  # None = Util
+
+
+def lineup_weights(roster):
+    """Greedy weekly lineup: players in value order claim the first open
+    eligible slot (specific before flex before Util). Returns id->weight."""
+    ordered = sorted(roster, key=lambda p: -sum(p["z"][c] for c in CATS))
+    open_slots = list(LINEUP_SLOTS)
+    weights = {}
+    for p in ordered:
+        pos = positions_of(p)
+        claimed = None
+        for i, s in enumerate(open_slots):
+            if s is not None and any(b in s for b in pos):
+                claimed = i
+                break
+        if claimed is None:
+            for i, s in enumerate(open_slots):
+                if s is None:
+                    claimed = i
+                    break
+        if claimed is not None:
+            open_slots.pop(claimed)
+            weights[id(p)] = 1.0
+        else:
+            weights[id(p)] = BENCH_WEIGHT
+    return weights
+
+
+# Market (ADP) model — how ordinary drafters price players, per 9-cat draft
+# research (2026-07-23): points-volume bias, efficiency/TO myopia, rookie
+# hype (~2-round premium), name value for recovering stars (no availability
+# discount at the draft table), mild star top-heaviness.
+# Research-backed market pins (2026-07-23): hype the stat model can't see.
+# ESPN/SI early boards take Flagg top-20 (year-2 leap premium); lottery
+# rookies go rounds 3-7 on name value despite the 9-cat rookie tax.
+MKT_PIN = {"Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
+           "Dylan Harper": 60, "Cameron Boozer": 70, "Caleb Wilson": 90,
+           "Mikel Brown Jr.": 95}
+
+
+def market_ranks(pool):
+    """1-based estimated real-draft rank for every pool player."""
+    def mscore(p):
+        s = sum(p["z"][c] * MKT_W[c] for c in CATS)
+        note = (p.get("note") or "").lower()
+        if "rookie-proj" in note:
+            s *= 1.15
+        if "risk" in note:
+            s *= 0.95
+        return s
+    ordered = sorted(pool, key=lambda p: -mscore(p))
+    model = {p["player"]: i + 1 for i, p in enumerate(ordered)}
+    eff = {n: min(r, MKT_PIN.get(n, r)) for n, r in model.items()}
+    final = sorted(model, key=lambda n: (eff[n], model[n]))
+    return {n: i + 1 for i, n in enumerate(final)}
+
+
+def pick_for(params, pool, roster, my_ranks, rnd, rng, mkt=None):
     """Score every available player under this strategy's knobs; take max."""
     remaining = ROUNDS - len(roster)
     unfilled = [b for b in BASE_POS
@@ -125,6 +192,8 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng):
             scarce[b] = sum(1 for p in top if b in positions_of(p))
 
     def weight(cat):
+        if params.get("cat_w"):
+            return params["cat_w"].get(cat, 1.0)
         if cat in params["punt"]:
             return 0.0
         if params["matrix_aware"] and my_ranks and len(roster) >= 2:
@@ -135,7 +204,27 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng):
                 return params["lost_w"]
         return 1.0
 
+    slots_left = lineup_weights(roster)  # who starts today
+    n_started = sum(1 for w in slots_left.values() if w == 1.0)
+
+    def bench_bound(p):
+        """Would this candidate crack the starting lineup right now?"""
+        if n_started < len(LINEUP_SLOTS):
+            trial = lineup_weights(roster + [p])
+            return trial.get(id(p), BENCH_WEIGHT) < 1.0
+        return False  # lineup full: every candidate is depth, no distortion
+
     def score(p):
+        if params.get("adp") and mkt is not None:
+            s = -mkt.get(p["player"], 300)
+            if bench_bound(p):
+                s -= 50.0  # ordinary drafters don't hoard unplayable positions
+            if unfilled and rnd >= 6 and any(b in positions_of(p)
+                                             for b in unfilled):
+                s += 15.0  # "I still need a center" instinct in the mid-rounds
+            if params["noise"]:
+                s += rng.gauss(0, params["noise"])
+            return s
         s = sum(p["z"][c] * weight(c) for c in CATS)
         note = (p.get("note") or "").lower()
         injury_note = "inj" in note or note.startswith("out-")
@@ -159,6 +248,8 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng):
             s += rng.gauss(0, params["noise"])
         if params["risk"] == "safe" and injury_note:
             s -= 100.0  # avoid, but preserve ordering when forced
+        if s > 0 and bench_bound(p):
+            s *= BENCH_WEIGHT  # a bench-bound pick is worth bench minutes
         return s
 
     cands = pool
@@ -179,6 +270,7 @@ def ranks_for(rosters, me):
 
 def run_draft(order, pool_master, rng, param_overrides=None):
     pool = list(pool_master)
+    mkt = market_ranks(pool_master)
     rosters = {i: [] for i in range(1, TEAMS + 1)}
     for n in range(TEAMS * ROUNDS):
         slot = hoops.team_of_pick(n, TEAMS)
@@ -186,7 +278,8 @@ def run_draft(order, pool_master, rng, param_overrides=None):
         params = strategy_params(name, (param_overrides or {}).get(name))
         ranks = (ranks_for(rosters, slot)
                  if params["matrix_aware"] and rosters[slot] else None)
-        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
+        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng,
+                     mkt=mkt)
         rosters[slot].append(p)
         pool.remove(p)
     return rosters
@@ -212,10 +305,10 @@ def team_week_model(roster):
     availability-tier game-count variance Var[G] = 3.5*a*(1-a)."""
     mu = {c: 0.0 for c in CATS}
     var = {c: 0.0 for c in CATS}
-    ordered = sorted(roster, key=lambda p: -sum(p["z"][c] for c in CATS))
+    lw = lineup_weights(roster)
     fg_mk = fg_at = ft_mk = ft_at = 0.0
-    for i, p in enumerate(ordered):
-        w = 1.0 if i < STARTERS else BENCH_WEIGHT
+    for p in roster:
+        w = lw[id(p)]
         a = weekly_availability(p)
         g = 3.5 * a
         g_var = 3.5 * a * (1 - a)

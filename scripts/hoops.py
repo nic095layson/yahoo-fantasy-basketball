@@ -121,6 +121,10 @@ MUST_HAVE = [
     "RJ Barrett", "Deni Avdija", "Shaedon Sharpe", "Reed Sheppard",
     "Andrew Nembhard", "Stephon Castle", "VJ Edgecombe", "Dylan Harper",
     "Keyonte George", "Naz Reid", "Brook Lopez", "Donte DiVincenzo",
+    # 2026 draft class (owner law 2026-07-22: every June draft adds its
+    # consensus fantasy-relevant rookies here so the stamp fails until
+    # the pool carries them)
+    "AJ Dybantsa", "Darryn Peterson", "Cameron Boozer", "Caleb Wilson",
 ]
 
 
@@ -140,12 +144,53 @@ def cmd_freshness(args):
             print("Add them to data/players.csv (retired players keep a row "
                   "with note out-retired), or bypass with --force.")
             sys.exit(1)
+        # Roster validation lock v2 (owner law 2026-07-23, hardened after the
+        # Hachimura miss — a quiet FA signing that a headline sweep missed):
+        # the stamp requires TODAY'S mechanical verification artifact from
+        # scripts/verify_rosters.py with zero mismatches. That script
+        # cross-references every pool row against NBA/ESPN official roster
+        # data — complete when the environment's network policy allows
+        # site.api.espn.com, evidence-file fallback until then.
+        ver_mode = None
+        if not args.force:
+            vp = os.path.join(os.path.dirname(FRESH_PATH),
+                              "roster_verification.json")
+            ok = False
+            try:
+                with open(vp, encoding="utf-8") as f:
+                    v = json.load(f)
+                ver_mode = v.get("mode")
+                ok = (v.get("date") == datetime.date.today().isoformat()
+                      and not v.get("mismatches"))
+            except (OSError, ValueError):
+                ok = False
+            if not ok:
+                print("⚠ ROSTER VALIDATION LOCK — stamp refused.")
+                print("Run: python3 scripts/verify_rosters.py  (per-player")
+                print("cross-reference against NBA/ESPN official rosters).")
+                print("The stamp requires today's roster_verification.json")
+                print("with zero mismatches. --force bypasses with a stated")
+                print("reason in --note.")
+                sys.exit(1)
+            if ver_mode == "fallback-partial":
+                print("note: roster verification is fallback-partial — allow "
+                      "site.api.espn.com in the environment network policy "
+                      "for the complete direct pull.")
         stamp = {"date": datetime.date.today().isoformat(),
                  "note": args.note or "refreshed"}
+        if args.rosters_verified or ver_mode:
+            stamp["rosters_verified"] = {
+                "date": stamp["date"],
+                "mode": ver_mode or "forced",
+                "sources": args.rosters_verified or "scripts/verify_rosters.py"}
         with open(FRESH_PATH, "w", encoding="utf-8") as f:
             json.dump(stamp, f, indent=2)
         print(f"Freshness stamped: {stamp['date']} — {stamp['note']} "
-              f"(pool complete: {len(MUST_HAVE)} consensus names present)")
+              f"(pool complete: {len(MUST_HAVE)} consensus names present"
+              + (f"; rosters verified: {stamp['rosters_verified']['mode']}"
+                 if "rosters_verified" in stamp
+                 else "; rosters NOT verified (--force)")
+              + ")")
     else:
         info = read_freshness()
         if info:
@@ -860,8 +905,13 @@ def build_parser():
     fr.add_argument("--stamp", action="store_true",
                     help="record that data was refreshed today")
     fr.add_argument("--note", help="what was updated in this refresh")
+    fr.add_argument("--rosters-verified", metavar="SOURCES",
+                    help="record that team assignments were cross-referenced "
+                         "against NBA/ESPN transaction records this pull "
+                         "(required for --stamp; the roster validation lock)")
     fr.add_argument("--force", action="store_true",
-                    help="stamp even if the pool validator finds missing names")
+                    help="stamp even if the pool validator finds missing names "
+                         "or rosters are unverified (state the reason in --note)")
 
     d = sub.add_parser("draft", help="live draft tracker")
     dsub = d.add_subparsers(dest="draft_cmd", required=True)

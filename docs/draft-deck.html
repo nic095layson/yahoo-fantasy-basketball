@@ -1,0 +1,2078 @@
+<!-- build-manifest {"built": "2026-07-24", "pool": 227, "verification": {"mode": "fallback-partial", "checked": 227, "teams_covered": 30}, "freshness_note": "Daily pull 2026-07-24: LeBron James signed PHI 2yr/8M player option (NBC/FOX/Yahoo + his X announcement) \u2014 FA->PHI, repriced age-41 4th option per role-reprice "} -->
+<title>Draft Deck — Live 9-Cat Draft Board</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Tokens shared with the Cowork-vs-artifact page (contrast validated 2026-07-22,
+   WCAG 2.1 checker + dataviz validator, both themes). */
+:root {
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  --text-sm: 0.8rem;   --text-base: 1rem;  --text-lg: 1.25rem;
+  --text-xl: 1.563rem; --text-2xl: 1.953rem;
+  --weight-regular: 400; --weight-medium: 600; --weight-bold: 800; --weight-black: 900;
+  --leading-body: 1.5; --leading-tight: 1.15;
+  --measure: 70ch;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-data: ui-monospace, "SF Mono", "Cascadia Code", Consolas, Menlo, monospace;
+  --bg: #F7F1E5; --surface: #FFFFFF; --ink: #221B10; --ink-2: #574A36;
+  --muted: #6E5F4B; --line: #E3D9C6; --accent: #9C4A0E; --accent-fill: #B4540F;
+  --on-accent: #FFFFFF; --heat-pos: #2B5FA8; --heat-neg: #A83A28; --heat-max: 32%;
+  --delta-up: #2B5FA8; --delta-down: #A83A28;
+  --status-risk: #8A5A00; --status-out: #A3242A; --bar-track: #EFE7D6;
+  --shadow-sm: 0 1px 2px rgb(34 27 16 / 0.08);
+  --radius-sm: 4px; --radius-md: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16110A; --surface: #211A10; --ink: #F4ECDD; --ink-2: #CDBFA8;
+    --muted: #A79781; --line: #3A2F1F; --accent: #F0913F; --accent-fill: #F0913F;
+    --on-accent: #221B10; --heat-pos: #4E8AD4; --heat-neg: #C8643C; --heat-max: 42%;
+    --delta-up: #6BA0E0; --delta-down: #E0805A;
+    --status-risk: #E0A33E; --status-out: #EF837A; --bar-track: #2E2515;
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
+  }
+}
+:root[data-theme="light"] {
+  --bg: #F7F1E5; --surface: #FFFFFF; --ink: #221B10; --ink-2: #574A36;
+  --muted: #6E5F4B; --line: #E3D9C6; --accent: #9C4A0E; --accent-fill: #B4540F;
+  --on-accent: #FFFFFF; --heat-pos: #2B5FA8; --heat-neg: #A83A28; --heat-max: 32%;
+  --delta-up: #2B5FA8; --delta-down: #A83A28;
+  --status-risk: #8A5A00; --status-out: #A3242A; --bar-track: #EFE7D6;
+  --shadow-sm: 0 1px 2px rgb(34 27 16 / 0.08);
+}
+:root[data-theme="dark"] {
+  --bg: #16110A; --surface: #211A10; --ink: #F4ECDD; --ink-2: #CDBFA8;
+  --muted: #A79781; --line: #3A2F1F; --accent: #F0913F; --accent-fill: #F0913F;
+  --on-accent: #221B10; --heat-pos: #4E8AD4; --heat-neg: #C8643C; --heat-max: 42%;
+  --delta-up: #6BA0E0; --delta-down: #E0805A;
+  --status-risk: #E0A33E; --status-out: #EF837A; --bar-track: #2E2515;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: var(--text-base); line-height: var(--leading-body); }
+.shell { max-width: 1160px; margin: 0 auto; padding: var(--space-6) var(--space-4) var(--space-16); }
+p { max-width: var(--measure); }
+h1 { font-size: var(--text-xl); font-weight: var(--weight-black); letter-spacing: -0.01em; line-height: var(--leading-tight); margin: 0; text-transform: uppercase; }
+h2 { font-size: var(--text-lg); font-weight: var(--weight-bold); line-height: var(--leading-tight); margin: 0 0 var(--space-3); }
+.eyebrow { font-size: var(--text-sm); font-weight: var(--weight-medium); letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); margin: 0 0 var(--space-1); }
+.small { font-size: var(--text-sm); color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: var(--space-4); }
+
+button.chip { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); font-variant-numeric: tabular-nums; padding: var(--space-1) var(--space-3); border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+button.chip[aria-pressed="true"] { background: var(--accent-fill); color: var(--on-accent); border-color: var(--accent-fill); text-decoration: line-through; }
+button.chip:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible,
+button:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+select, input[type="search"], input[type="number"], input[type="text"], textarea {
+  font: inherit; font-size: var(--text-sm); padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: var(--surface); color: var(--ink);
+}
+button.primary { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-2) var(--space-6); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
+button.ghost { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: var(--space-1) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
+button.ghost.danger { border-color: var(--status-out); color: var(--status-out); }
+.err { color: var(--status-out); font-weight: var(--weight-medium); font-size: var(--text-sm); margin: var(--space-2) 0 0; }
+button.mode { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-2) var(--space-4); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+button.mode[aria-pressed="true"] { background: var(--accent-fill); color: var(--on-accent); border-color: var(--accent-fill); }
+label.fld { display: flex; flex-direction: column; gap: var(--space-1); font-size: var(--text-sm); color: var(--muted); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+label.fld input { width: 88px; font-variant-numeric: tabular-nums; }
+
+/* Header strip */
+header.deck { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-6); }
+.stamp { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-1); text-align: right; }
+.stamp p { margin: 0; font-variant-numeric: tabular-nums; }
+.stamp #pullMsg { max-width: 340px; }
+.statusstrip { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-2) var(--space-4); font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; margin-bottom: var(--space-4); }
+.statusstrip .you { color: var(--accent); font-weight: var(--weight-bold); }
+.statusstrip .onclock { font-weight: var(--weight-bold); }
+
+/* Setup */
+.setupgrid { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: flex-end; margin: var(--space-3) 0; }
+.echo { font-family: var(--font-data); font-size: var(--text-base); font-weight: var(--weight-bold); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0; }
+
+/* Two-column work area */
+.workgrid { display: grid; grid-template-columns: minmax(340px, 1fr) minmax(420px, 1.2fr); gap: var(--space-4); align-items: stretch; }
+@media (max-width: 960px) { .workgrid { grid-template-columns: 1fr; } }
+.toolbar { margin: 0 0 var(--space-2); }
+.toolbar #exportBtn { margin-left: auto; }
+.card.feedcard { display: flex; flex-direction: column; }
+.feedcard .mirror { flex: 1 1 120px; min-height: 120px; max-height: none; }
+
+/* Feed console */
+.feedrow { display: flex; gap: var(--space-2); margin-bottom: var(--space-2); }
+.feedrow input { flex: 1; font-family: var(--font-data); }
+.hint { font-size: var(--text-sm); color: var(--muted); margin: 0 0 var(--space-2); }
+.mirror { font-family: var(--font-data); font-size: var(--text-sm); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
+.mirror .warn { color: var(--status-risk); }
+.mirror .halt { color: var(--status-out); font-weight: var(--weight-bold); }
+.btnrow { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+
+/* Decision card */
+.deckmeta { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; color: var(--ink-2); margin-bottom: var(--space-2); }
+.myroster { list-style: none; margin: var(--space-2) 0 0; padding: 0; font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.myroster li { display: flex; gap: var(--space-3); padding: var(--space-1) 0; border-top: 1px solid var(--line); align-items: baseline; }
+.myroster .slot { color: var(--muted); min-width: 52px; letter-spacing: 0.06em; }
+.myroster .nm { font-family: var(--font-body); font-weight: var(--weight-medium); flex: 1; }
+.myroster .pk { color: var(--muted); }
+.myroster li.empty .nm { color: var(--muted); font-weight: var(--weight-regular); }
+.flagline { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--status-risk); margin: var(--space-1) 0; }
+.valstrip { border: 1px solid var(--line); border-left: 3px solid var(--accent-fill); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
+.valstrip p { margin: 0 0 var(--space-1); max-width: none; }
+.valstrip p:last-child { margin-bottom: 0; }
+.valstrip .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+.valstrip .who { font-weight: var(--weight-bold); }
+.valstrip .why { color: var(--ink-2); }
+.puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.hcenter { text-align: center; text-transform: uppercase; }
+#bestReset { font: inherit; font-size: var(--text-sm); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-2); cursor: pointer; }
+#bestReset:hover { color: var(--accent); border-color: var(--accent); }
+#bestHead th[data-sort] { cursor: pointer; user-select: none; }
+#bestHead th[data-sort]:hover { color: var(--accent); }
+#bestHead th.sorted { color: var(--accent); }
+#bestHead th.sorted::after { content: " ▾"; }
+.rosterhead { display: flex; justify-content: space-between; align-items: baseline; }
+#myRosterFams { font-variant-numeric: tabular-nums; white-space: pre; color: var(--muted); }
+#deckmeta button.target { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; letter-spacing: 0.02em; }
+#deckmeta button.target.urgent { border-color: var(--status-risk); color: var(--status-risk); }
+.puntline .catrow { display: flex; justify-content: center; flex-wrap: nowrap; gap: 2px 6px; max-width: 100%; }
+.puntline.lean { border-left: 3px solid var(--status-risk); }
+.puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+.puntline .txt { color: var(--ink-2); }
+.puntline .cat { display: inline-flex; align-items: baseline; gap: 3px; padding: 0 4px; border-radius: var(--radius-sm); background: var(--surface); white-space: nowrap; }
+.puntline .catname { color: var(--muted); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; }
+.puntline .catrank { color: var(--ink-2); font-weight: var(--weight-medium); }
+.puntline .cat.good .catrank { color: var(--delta-up); }
+.puntline .cat.bad .catrank { color: var(--status-risk); }
+.puntline .cat.punted { opacity: 0.55; }
+.puntline .cat.punted .catrank { color: var(--muted); }
+.deckmeta button.fulltilt, #deckmeta button.fulltilt { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-1) var(--space-3); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; letter-spacing: 0.03em; }
+.puntline button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
+.buildread { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
+.buildread p { margin: 0 0 var(--space-1); max-width: none; }
+.buildread p:last-child { margin-bottom: 0; }
+.buildread .lead { color: var(--muted); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+.buildread .k { font-weight: var(--weight-bold); }
+.buildread .why { color: var(--ink-2); }
+.buildread button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); margin-left: var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
+ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
+ol.recos li { display: grid; grid-template-columns: auto 1fr auto auto; gap: var(--space-1) var(--space-3); align-items: baseline; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
+ol.recos .rk { font-family: var(--font-data); font-weight: var(--weight-bold); color: var(--accent); }
+ol.recos .nm { font-weight: var(--weight-bold); }
+ol.recos .meta { grid-column: 2 / 5; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
+ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
+ol.recos button.take { grid-column: 4; grid-row: 1; }
+
+/* Tabs */
+.tabs { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-8) 0 var(--space-3); border-bottom: 1px solid var(--line); }
+.tabs button { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); letter-spacing: 0.06em; text-transform: uppercase; padding: var(--space-2) var(--space-3); border: none; border-bottom: 2px solid transparent; background: none; color: var(--muted); cursor: pointer; }
+.tabs button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent-fill); }
+
+/* Tables (shared board machinery) */
+.tablewrap { overflow: auto; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); max-height: 640px; }
+table.board { border-collapse: collapse; width: 100%; font-family: var(--font-data); font-size: var(--text-sm); }
+table.board th, table.board td { padding: var(--space-1) var(--space-2); white-space: nowrap; }
+table.board thead th { position: sticky; top: 0; z-index: 2; background: var(--surface); color: var(--muted); font-weight: var(--weight-medium); text-align: right; border-bottom: 1px solid var(--line); }
+table.board thead th.l { text-align: left; }
+table.board tbody td { text-align: right; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+table.board tbody tr:first-child td { border-top: none; }
+table.board td.l { text-align: left; }
+table.board td.player { font-family: var(--font-body); font-weight: var(--weight-medium); }
+table.board td.pos, table.board td.team { color: var(--muted); }
+table.board td.val { font-weight: var(--weight-bold); }
+table.board td.z { --hi: 0; background: color-mix(in srgb, var(--heat-pos) calc(var(--hi) * var(--heat-max)), transparent); }
+table.board td.z.neg { background: color-mix(in srgb, var(--heat-neg) calc(var(--hi) * var(--heat-max)), transparent); }
+table.board tr.you td { background: color-mix(in srgb, var(--accent-fill) 10%, transparent); }
+.flag { font-family: var(--font-body); font-size: var(--text-sm); font-weight: var(--weight-medium); margin-left: var(--space-1); }
+.flag.risk { color: var(--status-risk); }
+.legend { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; margin-top: var(--space-2); font-size: var(--text-sm); color: var(--muted); }
+.legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: var(--space-1); }
+.legend .sw.pos { background: color-mix(in srgb, var(--heat-pos) var(--heat-max), transparent); }
+.legend .sw.neg { background: color-mix(in srgb, var(--heat-neg) var(--heat-max), transparent); }
+
+/* Rosters tab */
+.rostergrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); }
+.roster { border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); padding: var(--space-3); }
+.roster.you { border-color: var(--accent-fill); }
+.roster h3 { margin: 0 0 var(--space-1); font-size: var(--text-base); font-weight: var(--weight-bold); }
+.roster .tot { font-family: var(--font-data); font-size: var(--text-sm); color: var(--muted); }
+.roster ul { margin: var(--space-2) 0 0; padding: 0; list-style: none; font-size: var(--text-sm); }
+.roster li { padding: 1px 0; border-top: 1px solid var(--line); }
+
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-3); }
+.controls .ctl { font-size: var(--text-sm); color: var(--muted); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
+
+#tip { position: fixed; z-index: 10; pointer-events: none; display: none; background: var(--ink); color: var(--bg); font-size: var(--text-sm); font-variant-numeric: tabular-nums; padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); max-width: 300px; }
+footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); border-top: 1px solid var(--line); font-size: var(--text-sm); color: var(--muted); }
+.hidden { display: none !important; }
+</style>
+
+<div class="shell">
+<header class="deck">
+  <div>
+    <p class="eyebrow">Fantasy hoops · 9-cat</p>
+    <h1>Draft Deck</h1>
+  </div>
+  <div class="stamp">
+    <p class="small" id="clock"></p>
+    <p class="small" id="dataAge"></p>
+    <button class="ghost" id="pullBtn" type="button">⟳ Fresh data pull</button>
+    <p class="small hidden" id="pullMsg" aria-live="polite"></p>
+  </div>
+</header>
+
+<!-- ============ SETUP ============ -->
+<section id="setup" class="card">
+  <h2>Draft setup</h2>
+  <div class="setupgrid" role="group" aria-label="Mode">
+    <button class="mode" id="modeLive" aria-pressed="true" type="button">LIVE — I feed every pick</button>
+    <button class="mode" id="modeMock" aria-pressed="false" type="button">MOCK — 11 arena personalities draft against me</button>
+  </div>
+  <div class="setupgrid">
+    <label class="fld">Teams <input type="number" id="cfgTeams" value="12" min="2" max="20"></label>
+    <label class="fld">Rounds <input type="number" id="cfgSize" value="13" min="1" max="20"></label>
+    <label class="fld">Your slot <input type="number" id="cfgSlot" value="4" min="1" max="12"></label>
+  </div>
+  <div class="controls"><span class="ctl">Punt plan (optional)</span><span id="setupPunt"></span></div>
+  <p class="echo" id="echo"></p>
+  <p class="hint">Confirm the total-picks product against your draft room before pick 1 — never discover the draft length at the end.</p>
+  <div class="btnrow">
+    <button class="primary" id="startBtn" type="button">Start draft</button>
+    <button class="ghost" id="importBtn" type="button">Import draft_state.json</button>
+    <input type="file" id="importFile" accept=".json,application/json" class="hidden" aria-hidden="true">
+  </div>
+  <p id="setupErr" class="err hidden" role="alert"></p>
+</section>
+
+<!-- ============ DRAFT ============ -->
+<section id="draft" class="hidden">
+  <div class="btnrow toolbar">
+    <button class="ghost" id="advanceBtn" type="button">Advance AI picks</button>
+    <button class="ghost" id="undoBtn" type="button">Undo last pick</button>
+    <button class="ghost" id="exportBtn" type="button">Export draft_state.json</button>
+    <button class="ghost" id="copyBtn" type="button">Copy state JSON</button>
+    <button class="ghost" id="resetBtn" type="button">Reset draft</button>
+  </div>
+  <div class="statusstrip" id="strip" aria-live="polite"></div>
+
+  <div class="workgrid">
+    <div class="card feedcard">
+      <p class="eyebrow">Pick-by-pick</p>
+      <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
+      <h2 id="feedTitle" class="hcenter" style="margin-top: var(--space-4)">Pick feed</h2>
+      <p id="feedCountdown" class="hcenter" style="margin: 0 0 var(--space-1); color: var(--muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums;"></p>
+      <div class="feedrow">
+        <input type="text" id="feed" autocomplete="off" spellcheck="false"
+               placeholder='Jokic; my:Wemby; 44- Herro'>
+        <button class="primary" id="logBtn" type="button">Log</button>
+      </div>
+      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For common surnames (White, Murray, Ball, Bridges, Sharpe…) feed first initial + surname: <code>D White</code>.</p>
+      <p class="eyebrow rosterhead" style="margin-top: var(--space-4)"><span id="myRosterTitle">Your roster</span><span id="myRosterFams"></span></p>
+      <ul class="myroster" id="myRoster"></ul>
+    </div>
+
+    <div class="card" id="decision">
+      <h2 class="hcenter">Decision card</h2>
+      <div class="puntline" id="puntline"></div>
+      <div class="deckmeta" id="deckmeta"></div>
+      <div id="flags"></div>
+      <div id="valstrip"></div>
+      <p class="eyebrow" style="margin-top:var(--space-3)" id="recoTitle">Top 5</p>
+      <ol class="recos" id="recos"></ol>
+    </div>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="Views">
+    <button role="tab" aria-selected="true" data-tab="best" id="tab-best" type="button">Best available</button>
+    <button role="tab" aria-selected="false" data-tab="boardtab" id="tab-boardtab" type="button">Draft board</button>
+    <button role="tab" aria-selected="false" data-tab="rosters" id="tab-rosters" type="button">Rosters</button>
+    <button role="tab" aria-selected="false" data-tab="matrix" id="tab-matrix" type="button">Matrix</button>
+    <button role="tab" aria-selected="false" data-tab="vs" id="tab-vs" type="button">Head-to-head</button>
+  </div>
+
+  <div id="pane-best" role="tabpanel" aria-labelledby="tab-best">
+    <div class="controls">
+      <span class="ctl">Pos</span>
+      <select id="bestPos"><option value="">All</option><option>PG</option><option>SG</option><option value="G">G</option><option>SF</option><option>PF</option><option value="F">F</option><option>C</option></select>
+      <span class="ctl">Find</span>
+      <input type="search" id="bestQ" placeholder="player name" autocomplete="off">
+      <span class="ctl">Show</span>
+      <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
+      <span class="ctl">Sort</span>
+      <select id="bestSort" autocomplete="off"><option value="fit" selected>Fit z (my roster)</option><option value="val">Balanced val</option></select>
+      <button type="button" id="bestReset" title="clear position, search, show, and sort filters">Reset</button>
+      <span class="small" id="bestSummary"></span>
+    </div>
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Best available board">
+      <table class="board" aria-label="Best available players">
+        <thead><tr id="bestHead">
+          <th scope="col" data-sort="mkt" title="Estimated real-draft position: points-volume market model with rookie-hype pins, refreshed each republish. A player available well past Mkt is a room-wide slide; past # (our board) is 9-cat value. Click to sort.">Mkt</th>
+          <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
+          <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
+          <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to sort.">Val</th>
+          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. Click to sort.">Fit</th>
+        </tr></thead>
+        <tbody id="bestRows"></tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span><span class="sw pos"></span>above pool average</span>
+      <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
+      <span>TO inverted (+ = fewer turnovers)</span>
+      <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
+      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — recomputed every pick</span>
+      <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
+    </div>
+  </div>
+
+  <div id="pane-boardtab" role="tabpanel" aria-labelledby="tab-boardtab" class="hidden">
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Draft board by round">
+      <table class="board" id="gridTable" aria-label="Draft board"><thead id="gridHead"></thead><tbody id="gridRows"></tbody></table>
+    </div>
+  </div>
+
+  <div id="pane-rosters" role="tabpanel" aria-labelledby="tab-rosters" class="hidden">
+    <div class="rostergrid" id="rosterGrid"></div>
+  </div>
+
+  <div id="pane-matrix" role="tabpanel" aria-labelledby="tab-matrix" class="hidden">
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Category totals by team">
+      <table class="board" id="matrixTable" aria-label="Category z-totals by team"><thead id="matrixHead"></thead><tbody id="matrixRows"></tbody></table>
+    </div>
+    <p class="small" id="matrixNote"></p>
+    <div id="buildread"></div>
+  </div>
+
+  <div id="pane-vs" role="tabpanel" aria-labelledby="tab-vs" class="hidden">
+    <div class="controls">
+      <span class="ctl">Opponent</span>
+      <select id="vsTeam"></select>
+    </div>
+    <div class="tablewrap" tabindex="0" role="region" aria-label="Head to head comparison">
+      <table class="board" aria-label="Head-to-head category comparison">
+        <thead><tr><th class="l" scope="col">Cat</th><th scope="col">You</th><th scope="col">Them</th><th class="l" scope="col">Lead</th></tr></thead>
+        <tbody id="vsRows"></tbody>
+      </table>
+    </div>
+    <p class="small" id="vsNote"></p>
+  </div>
+</section>
+
+<footer class="colophon">
+  <p><strong>Data.</strong> Pool refreshed 2026-07-24 under the roster validation lock — the full 227-row per-player verification grind (every player checked against NBA/ESPN-sourced records) found and fixed 22 team moves (Trae Young WAS, the Giannis-deal ripples, the July six-team deal, Vučević ORL, Beal FA) and re-priced 26 projection lines for new-team roles under the role-reprice law. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC); LeBron is an unsigned FA. The 2026 rookie class is in under the pool-completeness law. The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 227-player pool; projections, not live stats.</p>
+  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. Mock opponents draft by board value with noise, not market ADP — stars fall further in mocks than they will in a real room (an ADP persona lands when September consensus data exists). The layer is authored fresh at each daily republish over the council score plus judgment — per-player adjustments with rationales, authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+</footer>
+</div>
+
+<div id="tip" role="presentation"></div>
+
+<script id="engine">
+/* Pure logic — ports of scripts/hoops.py and arena/arena.py pick_for.
+   No DOM references: this block is extracted and run headless to verify
+   parity with the Python engine. */
+"use strict";
+const CATS = ["FG%", "FT%", "3PTM", "PTS", "REB", "AST", "ST", "BLK", "TO"];
+const BASE_POS = ["PG", "SG", "SF", "PF", "C"];
+const POSITIONAL_SLOTS = [
+  ["PG", ["PG"]], ["SG", ["SG"]], ["G", ["PG", "SG"]],
+  ["SF", ["SF"]], ["PF", ["PF"]], ["F", ["SF", "PF"]],
+  ["C", ["C"]], ["C", ["C"]],
+];
+const NICKNAMES = {
+  "sga": "shai gilgeous-alexander", "kat": "karl-anthony towns",
+  "jjj": "jaren jackson", "dame": "damian lillard",
+  "ant": "anthony edwards", "melo": "lamelo ball",
+  "pg13": "paul george", "joker": "nikola jokic",
+  "the joker": "nikola jokic", "spida": "donovan mitchell",
+  "greek freak": "giannis", "book": "devin booker",
+  "klaw": "kawhi leonard", "wemby": "wembanyama",
+  "dlo": "d'angelo russell", "naw": "nickeil alexander-walker",
+  "kd": "kevin durant", "ad": "anthony davis", "cp3": "chris paul",
+  "steph": "stephen curry", "bron": "lebron james",
+  "lebron": "lebron james", "zu": "ivica zubac", "fvv": "fred vanvleet",
+  "kpj": "kevin porter", "mpj": "michael porter", "og": "og anunoby",
+  "jdub": "jalen williams", "scoot": "scoot henderson",
+};
+
+function totalValue(p, punt) {
+  let tv = 0;
+  for (const c of CATS) if (!punt.has(c)) tv += p.z[c];
+  return tv;
+}
+function adjValue(p, punt) {
+  const tv = totalValue(p, punt);
+  return tv > 0 ? tv * p.av : tv;
+}
+/* Fit z — swing-weighted marginal value. A candidate's z re-weighted by
+   what this roster actually needs: punted cats x0, locked cats (my rank
+   <= 2 vs field) x0.35, lost cats (rank >= 10) x0.45, swing cats full
+   weight — the arena-validated council weighting, stripped of strategy
+   extras, exposed as a clean sortable number. Weights activate once the
+   roster has 2+ players; before that fit z equals balanced value. */
+/* Locked/lost rank tiers, scaled to league size. At 12 teams this yields
+   exactly the arena-validated constants (locked <= 2, lost >= 10); other
+   sizes scale proportionally (top ~sixth locked, bottom ~quarter lost). */
+function rankTiers(teams) {
+  const locked = Math.max(1, Math.round(teams / 6));
+  const lostFrom = teams - Math.max(1, Math.round(teams / 4)) + 1;
+  return { locked, lostFrom };
+}
+function fitWeights(punt, myRanks, rosterLen, teams = 12) {
+  const { locked, lostFrom } = rankTiers(teams);
+  const w = {};
+  for (const c of CATS) {
+    if (punt.has(c)) w[c] = 0;
+    else if (myRanks && rosterLen >= 2) {
+      const r = myRanks[c];
+      w[c] = r <= locked ? 0.35 : (r >= lostFrom ? 0.45 : 1.0);
+    } else w[c] = 1.0;
+  }
+  return w;
+}
+/* UNKNOWN placeholders are not in the pool, so they are invisible to
+   category ranks — count them so every rank consumer can say so. */
+function unknownCount(state) {
+  return state.picks.filter(pk => pk.player.startsWith("UNKNOWN")).length;
+}
+/* Clear-path rule (owner law 2026-07-23): a punt lean is only ACTIONABLE
+   when >= 70% of the categories kept after adoption are winnable (rank
+   within the top ~third of the league). Punting is commitment — commit
+   only when what remains is mostly won. */
+function puntPath(ranks, kept, adoptList, teams) {
+  const keptAfter = kept.filter(c => !adoptList.includes(c));
+  const thresh = Math.max(2, Math.round(teams / 3));
+  const winnable = keptAfter.filter(c => ranks[c] <= thresh);
+  const pct = keptAfter.length ? winnable.length / keptAfter.length : 0;
+  return { keptAfter, winnable, thresh, pct, clear: pct >= 0.7 };
+}
+function fitZ(p, w) {
+  let s = 0;
+  for (const c of CATS) s += p.z[c] * w[c];
+  return { raw: s, adj: s > 0 ? s * p.av : s };
+}
+function positionsOf(p) { return p.p.split(",").map(s => s.trim()); }
+/* TARGET archetype (owner spec + council amendments 2026-07-23).
+   Label = compression of what Fit Z is already recommending — derived from
+   the top-8 available by fit (never a parallel opinion), coherence-gated
+   (returns null when they share no profile). Position component priority:
+   premium-shelf scarcity > roster balance > engine lean. */
+const CAT_TERM = [
+  [["BLK", "FG%"], "High-FG% / Block"],
+  [["3PTM", "ST"], "3&D"],
+  [["REB", "FG%"], "Glass / FG%"],
+  [["AST", "ST"], "Two-way playmaking"],
+  [["PTS", "FT%"], "Volume-scoring"],
+  [["3PTM", "FT%"], "Sharpshooting"],
+  [["REB", "BLK"], "Rim-protecting"],
+  [["BLK"], "Shot-block"], [["3PTM"], "Shooting"], [["AST"], "Playmaking"],
+  [["REB"], "Rebounding"], [["ST"], "Steals-first"], [["PTS"], "Scoring"],
+  [["FT%"], "FT-anchor"], [["FG%"], "Efficient"], [["TO"], "Low-TO"],
+];
+const POS_FAMILY = { PG: "G", SG: "G", SF: "F", PF: "F", C: "C" };
+function familiesOf(p) { return [...new Set(positionsOf(p).map(x => POS_FAMILY[x]))]; }
+function archetypeRead(st, mine, pool, ranks, nextPickNo, mktRank) {
+  if (mine.length < 2 || !ranks || !pool.length) return null;
+  const punt = new Set(st.punt);
+  const kept = CATS.filter(c => !punt.has(c));
+  const fw = fitWeights(punt, ranks, mine.length, st.teams);
+  const needCats = kept.filter(c => fw[c] === 1.0)
+    .sort((a, b) => ranks[b] - ranks[a]);
+  const top8 = [...pool]
+    .sort((a, b) => fitZ(b, fw).adj - fitZ(a, fw).adj).slice(0, 8);
+  const famCt = { G: 0, F: 0, C: 0 };
+  for (const p of top8) for (const f of familiesOf(p)) famCt[f]++;
+  const domFam = ["G", "F", "C"].sort((a, b) => famCt[b] - famCt[a])[0];
+  const domOK = famCt[domFam] >= 4;
+  const fams = ["G", "F", "C"];
+  const balCt = { G: 0, F: 0, C: 0 };
+  for (const p of mine) balCt[POS_FAMILY[positionsOf(p)[0]]]++;
+  /* balance: a family is "the gap" only when under its startable floor
+     (G:3 F:3 C:2 in this layout) — heavy-vs-light alone is not a need
+     if the light family's slots are already covered. */
+  const FLOOR = { G: 3, F: 3, C: 2 };
+  const heavyFam = [...fams].sort((a, b) => balCt[b] - balCt[a])[0];
+  const belowFloor = fams.filter(f => balCt[f] < FLOOR[f])
+    .sort((a, b) => (FLOOR[b] - balCt[b]) - (FLOOR[a] - balCt[a]));
+  const imbalance = belowFloor.length && mine.length >= 4 ? belowFloor[0] : null;
+  /* scarcity: how many of each family the ROOM still prices inside the
+     next two rounds — stage-relative, not a fixed top-60. */
+  const window = st.picks.length + st.teams * 2;
+  const shelf = { G: 0, F: 0, C: 0 };
+  for (const p of pool) if ((mktRank.get(p.n) || 999) <= window)
+    for (const f of familiesOf(p)) shelf[f]++;
+  const openFams = [...new Set(unfilledSlots(mine).map(sl =>
+    sl === "G" || sl === "F" ? sl : POS_FAMILY[sl]))];
+  const scarceFam = fams.find(f => shelf[f] <= 2 &&
+    (openFams.includes(f) || balCt[f] === 0 || imbalance === f));
+  let fam = scarceFam || imbalance || (domOK ? domFam : null);
+  /* term + examples come from players who MATCH the family, so the label
+     can never name a profile its own example players don't have. */
+  const matchPool = fam
+    ? [...pool].filter(p => familiesOf(p).includes(fam))
+        .sort((a, b) => fitZ(b, fw).adj - fitZ(a, fw).adj).slice(0, 3)
+    : top8;
+  const quorum = fam ? 2 : 4;
+  const feeds = c => matchPool.filter(p => p.z[c] > 0.25).length >= quorum;
+  const fed = needCats.filter(feeds).slice(0, 2);
+  if (!fam && !fed.length) return null;  /* coherence gate: stay silent */
+  let term = "";
+  if (fed.length) {
+    const key = new Set(fed);
+    const hit = CAT_TERM.find(([cs]) => cs.length === key.size && cs.every(c => key.has(c)))
+      || CAT_TERM.find(([cs]) => cs.length === 1 && key.has(cs[0]));
+    term = hit ? hit[1] : fed.join("+");
+  }
+  const label = term && fam ? `${term} ${fam}` : (term ? term : `Best ${fam}`);
+  const matches = matchPool.slice(0, 3);
+  const minMkt = Math.min(...matches.map(p => mktRank.get(p.n) || 999));
+  const canWait = !scarceFam && matches.length && minMkt > nextPickNo + 8;
+  const tips = [`build ${balCt.G}G/${balCt.F}F/${balCt.C}C` +
+    (imbalance ? ` — ${heavyFam}-heavy, ${imbalance} is the gap` : "")];
+  if (scarceFam) tips.push(`${scarceFam} shelf: ${shelf[scarceFam]} the room prices in the next 2 rounds — act now`);
+  if (matches.length) tips.push(`best fits: ${matches.map(p => p.n).join(", ")}`);
+  if (canWait) tips.push(`matching fits priced #${minMkt}+ by the room — can likely wait a round`);
+  tips.push("click to filter Best Available");
+  return { label, fam, tip: tips.join(" · "), urgent: !!scarceFam, wait: canWait };
+}
+function teamOfPick(n, teams) {
+  const rnd = Math.floor(n / teams), idx = n % teams;
+  return rnd % 2 === 0 ? idx + 1 : teams - idx;
+}
+function myNextPick(state) {
+  let n = state.picks.length;
+  while (teamOfPick(n, state.teams) !== state.slot) n++;
+  return n + 1;
+}
+
+/* difflib.SequenceMatcher ratio (no junk; names are short, autojunk moot) */
+function _matchingBlocks(a, b) {
+  const b2j = {};
+  for (let j = 0; j < b.length; j++) (b2j[b[j]] = b2j[b[j]] || []).push(j);
+  function longest(alo, ahi, blo, bhi) {
+    let besti = alo, bestj = blo, bestsize = 0, j2len = {};
+    for (let i = alo; i < ahi; i++) {
+      const newj2len = {};
+      for (const j of (b2j[a[i]] || [])) {
+        if (j < blo) continue;
+        if (j >= bhi) break;
+        const k = (j2len[j - 1] || 0) + 1;
+        newj2len[j] = k;
+        if (k > bestsize) { besti = i - k + 1; bestj = j - k + 1; bestsize = k; }
+      }
+      j2len = newj2len;
+    }
+    return [besti, bestj, bestsize];
+  }
+  const queue = [[0, a.length, 0, b.length]], blocks = [];
+  while (queue.length) {
+    const [alo, ahi, blo, bhi] = queue.pop();
+    const [i, j, k] = longest(alo, ahi, blo, bhi);
+    if (k) {
+      blocks.push([i, j, k]);
+      if (alo < i && blo < j) queue.push([alo, i, blo, j]);
+      if (i + k < ahi && j + k < bhi) queue.push([i + k, ahi, j + k, bhi]);
+    }
+  }
+  return blocks;
+}
+function seqRatio(a, b) {
+  const m = _matchingBlocks(a, b).reduce((s, bl) => s + bl[2], 0);
+  return a.length + b.length ? (2 * m) / (a.length + b.length) : 1;
+}
+
+/* Port of hoops.match_candidates: exact > nickname > exact word > substring
+   > fuzzy surname (first letter must agree, ratio >= 0.8). */
+function matchCandidates(players, query) {
+  let q = query.trim().toLowerCase();
+  q = NICKNAMES[q] || q;
+  let subs = players.filter(p => p.n.toLowerCase() === q);
+  if (!subs.length)
+    subs = players.filter(p => p.n.toLowerCase().replace(/\./g, "").split(" ").includes(q));
+  if (!subs.length)
+    subs = players.filter(p => p.n.toLowerCase().includes(q));
+  if (!subs.length) {
+    subs = players.filter(p => {
+      const parts = p.n.toLowerCase().replace(/\./g, "").split(" ");
+      const last = parts[parts.length - 1];
+      return q[0] === last[0] && seqRatio(q, last) >= 0.8;
+    });
+  }
+  return subs;
+}
+
+/* Port of hoops.py `draft turn` feed processing. Mutates state.picks.
+   Returns {lines:[{t,cls}], halted}. Halt semantics match the engine:
+   3-correction halt rolls the whole batch back; surname-collision halt
+   keeps picks logged before the halt. */
+function processFeed(state, players, feed) {
+  const picks = state.picks;
+  const taken = new Set(picks.map(pk => pk.player));
+  const lines = [];
+  const say = (t, cls) => lines.push({ t, cls: cls || "" });
+  const snapshot = picks.map(pk => ({ ...pk }));
+  const maxPick = state.teams * state.size;
+  let corrections = 0;
+
+  for (const raw of feed.split(";").map(s => s.trim()).filter(Boolean)) {
+    const m = raw.match(/^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$/i);
+    let num = m ? parseInt(m[1], 10) : null;
+    let body = m ? m[2].trim() : raw;
+    const mine = body.toLowerCase().startsWith("my:");
+    const name = mine ? body.slice(3).trim() : body;
+
+    if (num !== null && !(num >= 1 && num <= maxPick)) {
+      say(`⚠ ignored "${raw}": pick number out of range (1-${maxPick})`, "warn");
+      continue;
+    }
+
+    if (num !== null && num <= picks.length) { /* explicit correction */
+      const idx = num - 1;
+      const old = picks[idx].player;
+      const others = new Set(picks.filter((_, i) => i !== idx).map(pk => pk.player));
+      const cands = matchCandidates(players, name).filter(c => !others.has(c.n));
+      if (!cands.length) { say(`⚠ fix #${num}: no available player matching "${name}"`, "warn"); continue; }
+      if (cands.length > 1) {
+        say(`⚠ fix #${num}: ambiguous "${name}": ${cands.slice(0, 6).map(c => c.n).join(", ")}`, "warn");
+        continue;
+      }
+      if (cands[0].n === old) { say(`  ✓ #${num} unchanged (${old})`); continue; }
+      corrections++;
+      if (corrections >= 3) {
+        state.picks = snapshot;
+        say(`⚠ HALTED at "${raw}": 3+ corrections in one batch suggests numbering drift, not fixes. NO changes from this batch were applied. Verify against the draft room, then resend the whole batch.`, "halt");
+        return { lines, halted: true };
+      }
+      picks[idx].player = cands[0].n;
+      taken.delete(old); taken.add(cands[0].n);
+      say(`  ✎ #${num} corrected: ${old} → ${cands[0].n}`);
+      continue;
+    }
+
+    while (num !== null && picks.length + 1 < num) { /* gap: back-fill */
+      const g = picks.length;
+      picks.push({ player: `UNKNOWN #${g + 1}`, slot: teamOfPick(g, state.teams) });
+      say(`⚠ (R${Math.floor(g / state.teams) + 1}) #${g + 1}: UNKNOWN (gap) — fill with: ${g + 1}- Name`, "warn");
+    }
+
+    if (picks.length >= maxPick) { say(`⚠ ignored "${raw}": draft is complete (${maxPick} picks)`, "warn"); continue; }
+
+    const n = picks.length;
+    const slot = mine ? state.slot : teamOfPick(n, state.teams);
+    if (mine && teamOfPick(n, state.teams) !== state.slot)
+      say(`⚠ my: pick at #${n + 1}, but the snake says T${teamOfPick(n, state.teams)} is on the clock — logging to YOUR team anyway; Undo if that was T${teamOfPick(n, state.teams)}'s pick`, "warn");
+    const allC = matchCandidates(players, name);
+    const cands = allC.filter(c => !taken.has(c.n));
+    const exact = cands.filter(c => c.n.toLowerCase() === name.trim().toLowerCase());
+    const noPunt = new Set();
+    const bestAll = allC.length ? allC.reduce((a, b) => adjValue(b, noPunt) > adjValue(a, noPunt) ? b : a) : null;
+    if (cands.length && !exact.length && bestAll && taken.has(bestAll.n)) {
+      say(`⚠ HALTED at "${name}": best match ${bestAll.n} is already drafted. If you meant ${cands.slice(0, 3).map(c => c.n).join(", ")}, resend the REST of this feed using the fuller name. Nothing after this name was logged.`, "halt");
+      return { lines, halted: true };
+    }
+    if (cands.length) {
+      const p = exact.length ? exact[0] : cands.reduce((a, b) => adjValue(b, noPunt) > adjValue(a, noPunt) ? b : a);
+      picks.push({ player: p.n, slot });
+      taken.add(p.n);
+      const you = slot === state.slot ? " (YOU)" : "";
+      const losers = cands.filter(c => c !== p).slice(0, 2).map(c => c.n);
+      say(`  ✓ (R${Math.floor(n / state.teams) + 1}) #${n + 1}: ${p.n} → T${slot}${you}` +
+          (losers.length ? `  (assumed over ${losers.join(", ")})` : ""));
+    } else if (allC.length) {
+      say(`⚠ skipped "${name}": already off the board (no pick logged)`, "warn");
+    } else {
+      picks.push({ player: `UNKNOWN #${n + 1}`, slot });
+      say(`⚠ (R${Math.floor(n / state.teams) + 1}) #${n + 1}: UNKNOWN ("${name}": no match) — fix with: ${n + 1}- Name`, "warn");
+    }
+  }
+  return { lines, halted: false };
+}
+
+function buildRosters(state, players) {
+  const byName = new Map(players.map(p => [p.n, p]));
+  const rosters = {};
+  for (let s = 1; s <= state.teams; s++) rosters[s] = [];
+  for (const pk of state.picks) {
+    const p = byName.get(pk.player);
+    if (p) rosters[pk.slot].push(p);
+  }
+  return rosters;
+}
+function rosterTotals(roster) {
+  const t = {};
+  for (const c of CATS) t[c] = roster.reduce((s, p) => s + p.z[c], 0);
+  return t;
+}
+function categoryRanks(state, players) {
+  const rosters = buildRosters(state, players);
+  const totals = {};
+  for (let s = 1; s <= state.teams; s++) totals[s] = rosterTotals(rosters[s]);
+  const mine = totals[state.slot];
+  const ranks = {};
+  for (const c of CATS) {
+    ranks[c] = 1;
+    for (let s = 1; s <= state.teams; s++)
+      if (s !== state.slot && totals[s][c] > mine[c]) ranks[c]++;
+  }
+  return { ranks, totals };
+}
+function availablePool(state, players) {
+  const taken = new Set(state.picks.map(pk => pk.player));
+  return players.filter(p => !taken.has(p.n) && p.av > 0);
+}
+/* Bipartite feasibility: which required slots can't be covered by the roster */
+function unfilledSlots(roster) {
+  const slotMatch = {};
+  function augment(si, seen) {
+    for (let pi = 0; pi < roster.length; pi++) {
+      if (seen.has(pi)) continue;
+      if (!POSITIONAL_SLOTS[si][1].some(e => positionsOf(roster[pi]).includes(e))) continue;
+      seen.add(pi);
+      if (!(pi in slotMatch) || augment(slotMatch[pi], seen)) {
+        slotMatch[pi] = si;
+        return true;
+      }
+    }
+    return false;
+  }
+  const unfilled = [];
+  for (let si = 0; si < POSITIONAL_SLOTS.length; si++)
+    if (!augment(si, new Set())) unfilled.push(POSITIONAL_SLOTS[si][0]);
+  return unfilled;
+}
+
+/* ---- weekly lineup + market (ADP) model — arena parity 2026-07-23 ----
+   LINEUP_SLOTS: the owner-league starting ten (PG SG G SF PF F C C U U);
+   three bench spots score BENCH_WEIGHT. lineupWeights mirrors
+   arena.lineup_weights; marketRanks mirrors arena.market_ranks (points-
+   volume bias, rookie hype pins, name value — how real rooms draft). */
+const LINEUP_SLOTS = [["PG"], ["SG"], ["PG", "SG"], ["SF"], ["PF"],
+  ["SF", "PF"], ["C"], ["C"], null, null];
+const BENCH_WEIGHT = 0.15;
+function lineupWeights(roster) {
+  const ordered = [...roster].sort((a, b) =>
+    CATS.reduce((t, c) => t + b.z[c], 0) - CATS.reduce((t, c) => t + a.z[c], 0));
+  const open = [...LINEUP_SLOTS];
+  const w = new Map();
+  for (const p of ordered) {
+    const pos = positionsOf(p);
+    let idx = open.findIndex(sl => sl !== null && sl.some(b => pos.includes(b)));
+    if (idx === -1) idx = open.findIndex(sl => sl === null);
+    if (idx !== -1) { open.splice(idx, 1); w.set(p.n, 1.0); }
+    else w.set(p.n, BENCH_WEIGHT);
+  }
+  return w;
+}
+const MKT_W = { "PTS": 1.6, "3PTM": 1.2, "AST": 1.0, "REB": 1.0,
+  "ST": 0.7, "BLK": 0.7, "FG%": 0.5, "FT%": 0.5, "TO": 0.25 };
+const MKT_PIN = { "Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
+  "Dylan Harper": 60, "Cameron Boozer": 70, "Caleb Wilson": 90,
+  "Mikel Brown Jr.": 95 };
+function marketRanks(pool) {
+  const mscore = p => {
+    let v = CATS.reduce((t, c) => t + p.z[c] * MKT_W[c], 0);
+    const note = (p.note || "").toLowerCase();
+    if (note.includes("rookie-proj")) v *= 1.15;
+    if (note.includes("risk")) v *= 0.95;
+    return v;
+  };
+  const model = new Map([...pool].sort((a, b) => mscore(b) - mscore(a))
+    .map((p, i) => [p.n, i + 1]));
+  const eff = n => Math.min(model.get(n), MKT_PIN[n] ?? Infinity);
+  const final = [...model.keys()].sort((a, b) => eff(a) - eff(b) || model.get(a) - model.get(b));
+  return new Map(final.map((n, i) => [n, i + 1]));
+}
+
+/* ---- arena/arena.py strategies ---- */
+const STRAT_DEFAULT = { punt: [], matrix_aware: false, locked_w: 0.35, lost_w: 0.45,
+  risk: "normal", rec_compound: false, need_w: 0.0, scarcity_w: 0.0,
+  stack_pen: 0.0, value_exp: 1.0, noise: 0.0, adp: false, cat_w: null };
+const STRATEGIES = {
+  council:     { matrix_aware: true, rec_compound: true, stack_pen: 0.5, need_w: 0.3 },
+  bpa_pure:    {},
+  punt_ft:     { punt: ["FT%"], matrix_aware: true },
+  punt_ast:    { punt: ["AST"], matrix_aware: true },
+  punt_ft_to:  { punt: ["FT%", "TO"], matrix_aware: true },
+  stars:       { value_exp: 1.35 },
+  slot_filler: { need_w: 1.2 },
+  scarcity:    { scarcity_w: 1.0, need_w: 0.4 },
+  safe_floor:  { risk: "safe" },
+  upside:      { risk: "upside", value_exp: 1.15 },
+  specialist:  { matrix_aware: true, locked_w: 1.4, lost_w: 0.2 },
+  market:      { adp: true, noise: 4.0 },
+  points_chaser: { cat_w: MKT_W, noise: 0.4 },
+};
+/* Research-informed room (2026-07-23): most league-mates are ADP-anchored
+   with a points-league lean; committed punts are the rare sharps. */
+const MOCK_CAST = ["market", "points_chaser", "market", "punt_ft", "stars",
+  "slot_filler", "scarcity", "safe_floor", "upside", "bpa_pure", "punt_ft_to"];
+
+/* Port of arena.pick_for: score every available player, return sorted scores.
+   teams defaults to 12, where the tier thresholds equal the arena constants. */
+function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng, teams = 12) {
+  const params = { ...STRAT_DEFAULT, ...STRATEGIES[name] };
+  const punt = new Set(params.punt);
+  const noPunt = new Set();
+  const remaining = rounds - roster.length;
+  const unfilled = BASE_POS.filter(b => !roster.some(p => positionsOf(p).includes(b)));
+  const mustFill = unfilled.length >= remaining;
+  const teamCt = {};
+  let recCt = 0;
+  for (const p of roster) {
+    teamCt[p.t] = (teamCt[p.t] || 0) + 1;
+    if ((p.note || "").toLowerCase().includes("recovery")) recCt++;
+  }
+  const scarce = {};
+  if (params.scarcity_w) {
+    const top = [...pool].sort((a, b) => adjValue(b, noPunt) - adjValue(a, noPunt)).slice(0, 100);
+    for (const b of BASE_POS) scarce[b] = top.filter(p => positionsOf(p).includes(b)).length;
+  }
+  const useRanks = params.matrix_aware && myRanks && roster.length >= 2;
+  const tiers = rankTiers(teams);
+  function weight(cat) {
+    if (params.cat_w) return params.cat_w[cat] ?? 1.0;
+    if (punt.has(cat)) return 0.0;
+    if (useRanks) {
+      const r = myRanks[cat];
+      if (r <= tiers.locked) return params.locked_w;
+      if (r >= tiers.lostFrom) return params.lost_w;
+    }
+    return 1.0;
+  }
+  const nStarted = [...lineupWeights(roster).values()].filter(w => w === 1.0).length;
+  function benchBound(p) {
+    if (nStarted >= LINEUP_SLOTS.length) return false;
+    return (lineupWeights([...roster, p]).get(p.n) ?? BENCH_WEIGHT) < 1.0;
+  }
+  const mkt = params.adp ? marketRanks(pool) : null;
+  function score(p) {
+    if (params.adp && mkt) {
+      let s = -(mkt.get(p.n) ?? 300);
+      if (benchBound(p)) s -= 50.0;
+      if (unfilled.length && rnd >= 6 && positionsOf(p).some(b => unfilled.includes(b)))
+        s += 15.0;
+      if (params.noise) s += rng.gauss(0, params.noise);
+      return s;
+    }
+    let s = CATS.reduce((acc, c) => acc + p.z[c] * weight(c), 0);
+    const note = (p.note || "").toLowerCase();
+    const injuryNote = note.includes("inj") || note.startsWith("out-");
+    if (params.risk !== "upside") {
+      let av = p.av;
+      if (params.rec_compound && note.includes("recovery"))
+        av *= recCt === 1 ? 0.85 : (recCt >= 2 ? 0.7 : 1.0);
+      s = s > 0 ? s * av : s;
+    }
+    if (params.value_exp !== 1.0)
+      s = Math.sign(s) * Math.pow(Math.abs(s), params.value_exp);
+    if (params.need_w && unfilled.length) {
+      const fills = unfilled.filter(b => positionsOf(p).includes(b)).length;
+      s += params.need_w * fills * (0.5 + rnd / rounds);
+    }
+    if (params.scarcity_w)
+      for (const b of positionsOf(p))
+        if ((scarce[b] ?? 99) <= 8) s += params.scarcity_w * (9 - scarce[b]) / 8;
+    if (params.stack_pen && (teamCt[p.t] || 0) >= 2) s -= params.stack_pen;
+    if (params.noise) s += rng.gauss(0, params.noise);
+    if (params.risk === "safe" && injuryNote) s -= 100.0;
+    if (s > 0 && benchBound(p)) s *= BENCH_WEIGHT;
+    return s;
+  }
+  let cands = pool;
+  if (mustFill) {
+    const filtered = pool.filter(p => unfilled.some(b => positionsOf(p).includes(b)));
+    if (filtered.length) cands = filtered;
+  }
+  return cands.map(p => ({ p, s: score(p) })).sort((a, b) => b.s - a.s);
+}
+
+/* Seeded RNG (mulberry32) + gaussian; state is a single uint32 for resume. */
+function makeRng(seedState) {
+  let a = seedState >>> 0;
+  const rng = {
+    get state() { return a >>> 0; },
+    next() {
+      a |= 0; a = (a + 0x6D2B79F5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    },
+    gauss(mu, sigma) {
+      let u = 0, v = 0;
+      while (u === 0) u = rng.next();
+      v = rng.next();
+      return mu + sigma * Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+    },
+  };
+  return rng;
+}
+</script>
+
+<script id="data">
+const PLAYERS = [{"n":"Nikola Jokic","t":"DEN","p":"C","note":"","av":1.0,"z":{"FG%":3.076541,"FT%":0.46794,"3PTM":-0.295056,"PTS":2.464622,"REB":2.774092,"AST":3.571784,"ST":2.048892,"BLK":0.106553,"TO":-1.774769}},{"n":"Victor Wembanyama","t":"SAS","p":"C","note":"","av":1.0,"z":{"FG%":0.457702,"FT%":1.269435,"3PTM":1.134683,"PTS":1.993005,"REB":2.814986,"AST":0.174895,"ST":0.572389,"BLK":6.870855,"TO":-2.060191}},{"n":"Shai Gilgeous-Alexander","t":"OKC","p":"PG","note":"","av":1.0,"z":{"FG%":1.570015,"FT%":3.378021,"3PTM":0.584783,"PTS":3.124885,"REB":-0.211133,"AST":1.501805,"ST":2.344193,"BLK":0.516511,"TO":-0.775794}},{"n":"Luka Doncic","t":"LAL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.228499,"FT%":0.319558,"3PTM":2.344463,"PTS":3.313532,"REB":1.179246,"AST":2.563332,"ST":1.458291,"BLK":-0.508384,"TO":-2.631034}},{"n":"Giannis Antetokounmpo","t":"MIA","p":"PF,C","note":"","av":1.0,"z":{"FG%":3.893452,"FT%":-5.796947,"3PTM":-1.504836,"PTS":2.804186,"REB":2.487838,"AST":1.395652,"ST":-0.313513,"BLK":0.926468,"TO":-1.774769}},{"n":"Anthony Davis","t":"WAS","p":"PF,C","note":"inj-risk","av":0.78,"z":{"FG%":1.100002,"FT%":-0.397911,"3PTM":-0.844956,"PTS":1.521389,"REB":2.528731,"AST":-0.143563,"ST":0.572389,"BLK":2.976257,"TO":-0.06224}},{"n":"Cade Cunningham","t":"DET","p":"PG","note":"","av":1.0,"z":{"FG%":-0.039508,"FT%":1.520154,"3PTM":0.584783,"PTS":2.181652,"REB":0.279589,"AST":3.04102,"ST":0.277088,"BLK":0.106553,"TO":-3.201877}},{"n":"Anthony Edwards","t":"MIN","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.730275,"FT%":1.208629,"3PTM":2.784383,"PTS":2.370299,"REB":0.075122,"AST":0.599506,"ST":0.86769,"BLK":-0.098426,"TO":-1.91748}},{"n":"Kevin Durant","t":"HOU","p":"SF,PF","note":"","av":1.0,"z":{"FG%":1.366544,"FT%":1.064687,"3PTM":0.694763,"PTS":1.898682,"REB":0.075122,"AST":0.174895,"ST":-0.608814,"BLK":0.926468,"TO":-1.489348}},{"n":"Jalen Williams","t":"OKC","p":"SG,SF","note":"","av":1.0,"z":{"FG%":0.336415,"FT%":0.083509,"3PTM":0.364823,"PTS":1.238419,"REB":-0.047559,"AST":0.917964,"ST":2.048892,"BLK":0.106553,"TO":-0.918504}},{"n":"Chet Holmgren","t":"OKC","p":"PF,C","note":"","av":1.0,"z":{"FG%":0.536654,"FT%":-0.45972,"3PTM":0.034884,"PTS":0.295186,"REB":1.301926,"AST":-0.674327,"ST":-0.313513,"BLK":3.591194,"TO":0.651314}},{"n":"Evan Mobley","t":"CLE","p":"PF,C","note":"","av":1.0,"z":{"FG%":2.02373,"FT%":-1.002974,"3PTM":-0.515016,"PTS":0.672479,"REB":1.588181,"AST":-0.037411,"ST":-0.018212,"BLK":2.156342,"TO":0.080471}},{"n":"Donovan Mitchell","t":"CLE","p":"SG","note":"","av":1.0,"z":{"FG%":-0.846833,"FT%":1.553606,"3PTM":2.234483,"PTS":1.615712,"REB":-0.497387,"AST":0.811812,"ST":1.16299,"BLK":-0.713363,"TO":-0.775794}},{"n":"Devin Booker","t":"PHX","p":"SG","note":"","av":1.0,"z":{"FG%":-0.354691,"FT%":2.169134,"3PTM":0.584783,"PTS":1.898682,"REB":-0.579174,"AST":1.767187,"ST":-0.313513,"BLK":-0.508384,"TO":-1.489348}},{"n":"Tyrese Maxey","t":"PHI","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.957287,"FT%":1.681897,"3PTM":1.574603,"PTS":1.710036,"REB":-0.865429,"AST":1.236423,"ST":1.753592,"BLK":-0.508384,"TO":-0.490372}},{"n":"Karl-Anthony Towns","t":"NYK","p":"C,PF","note":"","av":1.0,"z":{"FG%":1.2608,"FT%":0.741669,"3PTM":0.474803,"PTS":1.672306,"REB":2.814986,"AST":-0.249716,"ST":-0.018212,"BLK":0.311532,"TO":-1.346637}},{"n":"Domantas Sabonis","t":"SAC","p":"C,PF","note":"","av":1.0,"z":{"FG%":2.499971,"FT%":-0.686426,"3PTM":-1.064916,"PTS":0.672479,"REB":3.223921,"AST":1.342575,"ST":-0.608814,"BLK":-0.303405,"TO":-1.489348}},{"n":"Alperen Sengun","t":"HOU","p":"C","note":"","av":1.0,"z":{"FG%":0.636035,"FT%":-1.907275,"3PTM":-1.284876,"PTS":0.861126,"REB":1.997116,"AST":0.811812,"ST":0.572389,"BLK":0.516511,"TO":-1.203926}},{"n":"Jalen Brunson","t":"NYK","p":"PG","note":"wrist-surgery-monitor","av":1.0,"z":{"FG%":0.278209,"FT%":0.854893,"3PTM":0.804743,"PTS":1.993005,"REB":-1.069896,"AST":1.873339,"ST":-0.313513,"BLK":-1.12332,"TO":-0.918504}},{"n":"Trae Young","t":"WAS","p":"PG","note":"","av":1.0,"z":{"FG%":-1.7281,"FT%":1.852376,"3PTM":0.804743,"PTS":1.427066,"REB":-0.988109,"AST":3.253326,"ST":0.86769,"BLK":-0.918341,"TO":-3.201877}},{"n":"Ja Morant","t":"POR","p":"PG","note":"","av":1.0,"z":{"FG%":-0.631969,"FT%":0.686493,"3PTM":0.144863,"PTS":1.427066,"REB":-0.579174,"AST":2.032569,"ST":0.86769,"BLK":-0.713363,"TO":-2.060191}},{"n":"Jaren Jackson Jr.","t":"UTA","p":"PF,C","note":"inj-knee-risk (PVNS surgery)","av":0.78,"z":{"FG%":0.518665,"FT%":-0.011354,"3PTM":0.364823,"PTS":1.427066,"REB":0.156909,"AST":-0.78048,"ST":0.86769,"BLK":1.951363,"TO":0.080471}},{"n":"Stephen Curry","t":"GSW","p":"PG","note":"inj-risk","av":0.78,"z":{"FG%":-0.790377,"FT%":2.359913,"3PTM":2.894363,"PTS":1.521389,"REB":-0.538281,"AST":1.183346,"ST":-0.018212,"BLK":-0.508384,"TO":-1.203926}},{"n":"Bam Adebayo","t":"MIA","p":"C","note":"","av":1.0,"z":{"FG%":0.300512,"FT%":-0.278355,"3PTM":-0.954936,"PTS":0.10654,"REB":1.710861,"AST":0.068742,"ST":0.86769,"BLK":0.311532,"TO":-0.20495}},{"n":"Cooper Flagg","t":"DAL","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.199544,"FT%":-0.009042,"3PTM":-0.075096,"PTS":0.35178,"REB":0.892991,"AST":0.281048,"ST":1.16299,"BLK":0.926468,"TO":-0.775794}},{"n":"Scottie Barnes","t":"TOR","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.738264,"FT%":-0.57465,"3PTM":-0.405036,"PTS":0.861126,"REB":0.974778,"AST":1.236423,"ST":1.458291,"BLK":0.926468,"TO":-1.346637}},{"n":"Franz Wagner","t":"ORL","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.188893,"FT%":1.540851,"3PTM":-0.075096,"PTS":1.672306,"REB":0.075122,"AST":1.13027,"ST":0.86769,"BLK":-0.098426,"TO":-1.489348}},{"n":"Paolo Banchero","t":"ORL","p":"PF","note":"","av":1.0,"z":{"FG%":-0.522433,"FT%":-1.504461,"3PTM":0.254843,"PTS":1.993005,"REB":0.892991,"AST":0.705659,"ST":-0.313513,"BLK":0.106553,"TO":-1.774769}},{"n":"Jalen Johnson","t":"ATL","p":"SF,PF","note":"","av":1.0,"z":{"FG%":0.793157,"FT%":-0.788181,"3PTM":-0.075096,"PTS":1.144096,"REB":1.874435,"AST":2.032569,"ST":0.86769,"BLK":0.721489,"TO":-2.060191}},{"n":"Amen Thompson","t":"HOU","p":"PG,SF","note":"","av":1.0,"z":{"FG%":1.744594,"FT%":-1.532632,"3PTM":-1.394856,"PTS":0.10654,"REB":1.301926,"AST":0.440277,"ST":1.458291,"BLK":1.336426,"TO":-0.20495}},{"n":"LeBron James","t":"PHI","p":"SF,PF","note":"inj-age41-risk (4th option PHI)","av":0.78,"z":{"FG%":0.949312,"FT%":-0.13502,"3PTM":0.144863,"PTS":0.295186,"REB":0.238696,"AST":1.236423,"ST":-0.313513,"BLK":-0.303405,"TO":-0.918504}},{"n":"Jaylen Brown","t":"PHI","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.350996,"FT%":-0.37114,"3PTM":0.804743,"PTS":1.332742,"REB":0.116015,"AST":0.493353,"ST":0.572389,"BLK":-0.508384,"TO":-1.203926}},{"n":"Ivica Zubac","t":"IND","p":"C","note":"","av":1.0,"z":{"FG%":2.72471,"FT%":-1.722966,"3PTM":-1.834776,"PTS":0.200863,"REB":2.774092,"AST":-0.462022,"ST":-0.904114,"BLK":0.926468,"TO":0.365893}},{"n":"De'Aaron Fox","t":"SAS","p":"PG","note":"","av":1.0,"z":{"FG%":-0.192955,"FT%":-0.793204,"3PTM":0.034884,"PTS":1.521389,"REB":-0.29292,"AST":1.501805,"ST":1.753592,"BLK":-0.508384,"TO":-1.346637}},{"n":"Jamal Murray","t":"DEN","p":"PG","note":"","av":1.0,"z":{"FG%":-0.032341,"FT%":1.420736,"3PTM":1.024703,"PTS":1.106367,"REB":-0.660961,"AST":1.342575,"ST":0.86769,"BLK":-0.713363,"TO":-0.347661}},{"n":"James Harden","t":"CLE","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-1.677274,"FT%":1.91213,"3PTM":1.354643,"PTS":1.238419,"REB":-0.006665,"AST":2.563332,"ST":1.16299,"BLK":-0.098426,"TO":-3.201877}},{"n":"Zion Williamson","t":"NOP","p":"PF","note":"inj-risk","av":0.78,"z":{"FG%":2.395745,"FT%":-3.388047,"3PTM":-1.724796,"PTS":1.672306,"REB":0.688524,"AST":0.917964,"ST":0.572389,"BLK":0.516511,"TO":-1.91748}},{"n":"Kawhi Leonard","t":"LAC","p":"SF","note":"inj-risk; trade-agreed TOR (league hold)","av":0.78,"z":{"FG%":0.502948,"FT%":0.292462,"3PTM":0.474803,"PTS":0.955449,"REB":0.075122,"AST":-0.249716,"ST":1.753592,"BLK":-0.303405,"TO":0.223182}},{"n":"Tyler Herro","t":"MIL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.660056,"FT%":1.547345,"3PTM":1.684583,"PTS":1.710036,"REB":-0.252026,"AST":1.342575,"ST":-0.608814,"BLK":-0.918341,"TO":-1.632058}},{"n":"Desmond Bane","t":"ORL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":0.10239,"FT%":1.346359,"3PTM":1.024703,"PTS":0.729073,"REB":0.156909,"AST":0.811812,"ST":0.572389,"BLK":-0.508384,"TO":-0.633083}},{"n":"Derrick White","t":"BOS","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.750306,"FT%":0.655192,"3PTM":1.684583,"PTS":0.389509,"REB":-0.4156,"AST":0.811812,"ST":-0.018212,"BLK":1.131447,"TO":0.223182}},{"n":"Jimmy Butler","t":"GSW","p":"SF","note":"acl-recovery-jan26 (return ~2027)","av":0.0,"z":{"FG%":1.254116,"FT%":1.45414,"3PTM":-0.844956,"PTS":0.483833,"REB":-0.088452,"AST":1.024117,"ST":1.16299,"BLK":-0.713363,"TO":0.651314}},{"n":"LaMelo Ball","t":"MIN","p":"PG","note":"","av":1.0,"z":{"FG%":-1.418934,"FT%":0.836743,"3PTM":1.904543,"PTS":1.332742,"REB":-0.333813,"AST":1.767187,"ST":0.572389,"BLK":-0.713363,"TO":-2.060191}},{"n":"Darius Garland","t":"LAC","p":"PG","note":"","av":1.0,"z":{"FG%":-0.158426,"FT%":1.111512,"3PTM":1.354643,"PTS":0.861126,"REB":-1.11079,"AST":1.661034,"ST":0.572389,"BLK":-1.12332,"TO":-0.918504}},{"n":"Josh Giddey","t":"CHI","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.147255,"FT%":0.23397,"3PTM":0.144863,"PTS":0.10654,"REB":1.179246,"AST":2.191798,"ST":0.86769,"BLK":0.106553,"TO":-1.489348}},{"n":"Dyson Daniels","t":"ATL","p":"SG","note":"","av":1.0,"z":{"FG%":0.392928,"FT%":-1.493947,"3PTM":-0.624996,"PTS":-0.270754,"REB":0.156909,"AST":0.440277,"ST":5.887801,"BLK":0.106553,"TO":0.080471}},{"n":"Devin Vassell","t":"SAS","p":"SG","note":"","av":1.0,"z":{"FG%":-0.249392,"FT%":0.130346,"3PTM":0.804743,"PTS":0.163134,"REB":-0.660961,"AST":-0.355869,"ST":0.277088,"BLK":-0.508384,"TO":0.651314}},{"n":"Jalen Duren","t":"DET","p":"C","note":"","av":1.0,"z":{"FG%":3.024591,"FT%":-1.12393,"3PTM":-1.834776,"PTS":-0.648047,"REB":1.997116,"AST":-0.462022,"ST":-0.904114,"BLK":1.131447,"TO":0.080471}},{"n":"Rudy Gobert","t":"MIN","p":"C","note":"","av":1.0,"z":{"FG%":2.136862,"FT%":-1.663212,"3PTM":-1.834776,"PTS":-0.704641,"REB":2.119796,"AST":-0.939709,"ST":-0.608814,"BLK":1.541405,"TO":0.508604}},{"n":"Jarrett Allen","t":"CLE","p":"C","note":"","av":1.0,"z":{"FG%":3.165996,"FT%":-0.928783,"3PTM":-1.834776,"PTS":-0.402806,"REB":1.710861,"AST":-0.886633,"ST":-0.313513,"BLK":0.516511,"TO":0.794025}},{"n":"Walker Kessler","t":"LAL","p":"C","note":"inj-shoulder-risk (first season back)","av":0.78,"z":{"FG%":2.386227,"FT%":-1.570007,"3PTM":-1.834776,"PTS":-0.780099,"REB":2.610518,"AST":-0.992786,"ST":-1.494716,"BLK":3.591194,"TO":0.508604}},{"n":"Myles Turner","t":"MIL","p":"C","note":"","av":1.0,"z":{"FG%":0.071284,"FT%":-0.128736,"3PTM":0.584783,"PTS":-0.402806,"REB":0.238696,"AST":-1.098938,"ST":-0.608814,"BLK":2.566299,"TO":0.794025}},{"n":"Deandre Ayton","t":"WAS","p":"C","note":"","av":1.0,"z":{"FG%":1.33097,"FT%":-0.206874,"3PTM":-1.724796,"PTS":-0.931017,"REB":0.892991,"AST":-1.152015,"ST":-0.904114,"BLK":0.311532,"TO":0.651314}},{"n":"Mark Williams","t":"PHX","p":"C","note":"inj-risk","av":0.78,"z":{"FG%":1.762961,"FT%":0.070148,"3PTM":-1.834776,"PTS":-0.082107,"REB":1.956222,"AST":-0.568175,"ST":-0.904114,"BLK":1.131447,"TO":-0.490372}},{"n":"Kristaps Porzingis","t":"GSW","p":"C","note":"inj-risk","av":0.78,"z":{"FG%":0.201257,"FT%":0.307085,"3PTM":0.364823,"PTS":0.729073,"REB":0.52495,"AST":-0.78048,"ST":-0.904114,"BLK":1.746384,"TO":0.508604}},{"n":"Joel Embiid","t":"PHI","p":"C","note":"inj-risk","av":0.78,"z":{"FG%":-0.65141,"FT%":0.971469,"3PTM":-0.295056,"PTS":1.521389,"REB":1.097459,"AST":0.440277,"ST":-0.608814,"BLK":0.516511,"TO":-1.91748}},{"n":"Nikola Vucevic","t":"ORL","p":"C","note":"","av":1.0,"z":{"FG%":0.968327,"FT%":0.147072,"3PTM":-0.185076,"PTS":-0.4594,"REB":0.892991,"AST":-0.568175,"ST":-0.904114,"BLK":-0.098426,"TO":0.794025}},{"n":"Jakob Poeltl","t":"TOR","p":"C","note":"","av":1.0,"z":{"FG%":2.179768,"FT%":-1.021124,"3PTM":-1.834776,"PTS":-0.270754,"REB":1.669968,"AST":-0.462022,"ST":0.572389,"BLK":1.131447,"TO":0.080471}},{"n":"Onyeka Okongwu","t":"ATL","p":"C","note":"","av":1.0,"z":{"FG%":1.605027,"FT%":-0.111193,"3PTM":0.034884,"PTS":-0.17643,"REB":0.892991,"AST":-0.355869,"ST":-0.608814,"BLK":0.926468,"TO":0.651314}},{"n":"Kel'el Ware","t":"MIL","p":"C","note":"","av":1.0,"z":{"FG%":1.645214,"FT%":-0.68117,"3PTM":-0.954936,"PTS":-0.270754,"REB":1.997116,"AST":-1.152015,"ST":-1.199415,"BLK":1.541405,"TO":0.651314}},{"n":"Zach Edey","t":"MEM","p":"C","note":"inj-ankle-risk (bone stress surgery","av":0.78,"z":{"FG%":1.720994,"FT%":-0.849173,"3PTM":-1.614816,"PTS":-0.648047,"REB":1.997116,"AST":-1.311244,"ST":-1.494716,"BLK":1.746384,"TO":0.936736}},{"n":"Donovan Clingan","t":"POR","p":"C","note":"","av":1.0,"z":{"FG%":0.974217,"FT%":-1.132479,"3PTM":-1.724796,"PTS":-0.931017,"REB":1.997116,"AST":-1.152015,"ST":-0.904114,"BLK":2.771278,"TO":0.794025}},{"n":"Jusuf Nurkic","t":"UTA","p":"C","note":"","av":1.0,"z":{"FG%":0.451105,"FT%":-0.817404,"3PTM":-1.504836,"PTS":-1.02534,"REB":1.383713,"AST":-0.355869,"ST":-0.313513,"BLK":0.311532,"TO":-0.06224}},{"n":"Isaiah Hartenstein","t":"OKC","p":"C","note":"","av":1.0,"z":{"FG%":1.449258,"FT%":-0.914767,"3PTM":-1.834776,"PTS":-0.836693,"REB":2.201583,"AST":-0.090487,"ST":-0.608814,"BLK":0.721489,"TO":0.508604}},{"n":"Daniel Gafford","t":"DAL","p":"C","note":"","av":1.0,"z":{"FG%":2.421056,"FT%":-0.817404,"3PTM":-1.834776,"PTS":-1.02534,"REB":0.770311,"AST":-1.152015,"ST":-1.494716,"BLK":2.156342,"TO":1.222158}},{"n":"Dereck Lively II","t":"DAL","p":"C","note":"inj-risk","av":0.78,"z":{"FG%":2.048586,"FT%":-0.951535,"3PTM":-1.834776,"PTS":-1.402633,"REB":0.974778,"AST":-1.258168,"ST":-1.199415,"BLK":1.746384,"TO":1.079447}},{"n":"Neemias Queta","t":"BOS","p":"C","note":"","av":1.0,"z":{"FG%":1.920141,"FT%":-1.480165,"3PTM":-1.834776,"PTS":-1.02534,"REB":1.220139,"AST":-1.205091,"ST":-1.199415,"BLK":1.336426,"TO":0.651314}},{"n":"Mitchell Robinson","t":"BOS","p":"C","note":"inj-risk (timeshare w/ Queta)","av":0.78,"z":{"FG%":1.865591,"FT%":-1.809443,"3PTM":-1.834776,"PTS":-1.496956,"REB":1.383713,"AST":-1.417397,"ST":-0.608814,"BLK":1.541405,"TO":1.364868}},{"n":"Nic Claxton","t":"CHI","p":"C","note":"","av":1.0,"z":{"FG%":1.33097,"FT%":-1.900546,"3PTM":-1.724796,"PTS":-0.931017,"REB":1.056565,"AST":-0.674327,"ST":-0.313513,"BLK":1.746384,"TO":0.365893}},{"n":"Alex Sarr","t":"WAS","p":"C,PF","note":"inj-foot-risk (June surgery","av":0.78,"z":{"FG%":-0.958739,"FT%":-0.953637,"3PTM":-0.295056,"PTS":-0.17643,"REB":0.770311,"AST":-0.462022,"ST":-0.313513,"BLK":1.951363,"TO":0.080471}},{"n":"Khaman Maluach","t":"PHX","p":"C","note":"rookie-proj","av":1.0,"z":{"FG%":0.907189,"FT%":-0.951535,"3PTM":-1.724796,"PTS":-1.30831,"REB":0.770311,"AST":-1.52355,"ST":-1.790016,"BLK":1.541405,"TO":1.079447}},{"n":"Yves Missi","t":"NOP","p":"C","note":"","av":1.0,"z":{"FG%":1.046757,"FT%":-1.411207,"3PTM":-1.834776,"PTS":-1.119663,"REB":1.179246,"AST":-1.152015,"ST":-1.199415,"BLK":1.336426,"TO":0.794025}},{"n":"Steven Adams","t":"HOU","p":"C","note":"ankle-recovery (out indefinitely)","av":0.0,"z":{"FG%":0.777777,"FT%":-1.628499,"3PTM":-1.834776,"PTS":-1.779926,"REB":1.179246,"AST":-1.152015,"ST":-1.494716,"BLK":0.106553,"TO":1.364868}},{"n":"Clint Capela","t":"HOU","p":"C","note":"","av":1.0,"z":{"FG%":1.136852,"FT%":-1.290017,"3PTM":-1.834776,"PTS":-1.496956,"REB":0.974778,"AST":-1.417397,"ST":-1.199415,"BLK":0.721489,"TO":1.222158}},{"n":"Jonas Valanciunas","t":"FA","p":"C","note":"","av":1.0,"z":{"FG%":0.921987,"FT%":-0.095308,"3PTM":-1.614816,"PTS":-1.02534,"REB":0.770311,"AST":-0.886633,"ST":-1.790016,"BLK":-0.098426,"TO":0.651314}},{"n":"Wendell Carter Jr.","t":"ORL","p":"C","note":"","av":1.0,"z":{"FG%":0.732077,"FT%":-0.494386,"3PTM":-0.844956,"PTS":-0.74237,"REB":1.179246,"AST":-0.674327,"ST":-0.904114,"BLK":0.106553,"TO":0.508604}},{"n":"Goga Bitadze","t":"ORL","p":"C","note":"","av":1.0,"z":{"FG%":0.937221,"FT%":-0.845809,"3PTM":-1.724796,"PTS":-1.402633,"REB":0.565844,"AST":-0.992786,"ST":-0.904114,"BLK":1.131447,"TO":0.936736}},{"n":"Day'Ron Sharpe","t":"BKN","p":"C","note":"","av":1.0,"z":{"FG%":0.637775,"FT%":-0.749287,"3PTM":-1.724796,"PTS":-1.30831,"REB":0.974778,"AST":-0.992786,"ST":-0.904114,"BLK":0.721489,"TO":0.794025}},{"n":"Tyrese Haliburton","t":"IND","p":"PG","note":"inj-achilles-risk (first season back)","av":0.78,"z":{"FG%":-0.080054,"FT%":0.727402,"3PTM":1.464623,"PTS":0.502697,"REB":-0.865429,"AST":2.934867,"ST":1.16299,"BLK":0.106553,"TO":0.508604}},{"n":"Jayson Tatum","t":"BOS","p":"SF,PF","note":"inj-achilles-risk","av":0.78,"z":{"FG%":-0.725812,"FT%":0.524143,"3PTM":1.684583,"PTS":2.049599,"REB":1.261033,"AST":1.236423,"ST":0.277088,"BLK":-0.303405,"TO":-1.346637}},{"n":"Kyrie Irving","t":"DAL","p":"PG,SG","note":"inj-acl-risk (first season back)","av":0.78,"z":{"FG%":-0.086251,"FT%":1.887089,"3PTM":1.134683,"PTS":1.653442,"REB":-0.333813,"AST":0.493353,"ST":0.86769,"BLK":-0.303405,"TO":-0.20495}},{"n":"Damian Lillard","t":"POR","p":"PG","note":"inj-achilles-risk (first season back)","av":0.78,"z":{"FG%":-1.19667,"FT%":3.164304,"3PTM":1.464623,"PTS":1.521389,"REB":-0.579174,"AST":1.767187,"ST":-0.018212,"BLK":-0.713363,"TO":-1.346637}},{"n":"Fred VanVleet","t":"HOU","p":"PG","note":"inj-acl-risk (first season back)","av":0.78,"z":{"FG%":-2.123252,"FT%":0.168166,"3PTM":0.914723,"PTS":-0.346212,"REB":-0.783642,"AST":1.024117,"ST":1.753592,"BLK":-0.098426,"TO":0.508604}},{"n":"Dejounte Murray","t":"NOP","p":"PG","note":"inj-achilles-risk (14 games last season)","av":0.78,"z":{"FG%":-1.649564,"FT%":-0.00757,"3PTM":0.364823,"PTS":0.200863,"REB":0.075122,"AST":1.501805,"ST":2.344193,"BLK":-0.508384,"TO":-1.203926}},{"n":"Paul George","t":"BOS","p":"SF,PF","note":"inj-risk","av":0.78,"z":{"FG%":-0.923146,"FT%":0.204724,"3PTM":0.584783,"PTS":0.012216,"REB":-0.170239,"AST":0.281048,"ST":2.048892,"BLK":-0.303405,"TO":-0.633083}},{"n":"Brandon Ingram","t":"TOR","p":"SF","note":"trade-agreed LAC (league hold)","av":1.0,"z":{"FG%":-0.170613,"FT%":0.982788,"3PTM":0.254843,"PTS":1.144096,"REB":-0.047559,"AST":0.705659,"ST":-0.313513,"BLK":-0.098426,"TO":-1.203926}},{"n":"Zach LaVine","t":"SAC","p":"SG,SF","note":"","av":1.0,"z":{"FG%":0.793157,"FT%":0.706583,"3PTM":1.464623,"PTS":1.238419,"REB":-0.456494,"AST":0.174895,"ST":-0.608814,"BLK":-0.918341,"TO":-0.918504}},{"n":"DeMar DeRozan","t":"FA","p":"SF","note":"","av":1.0,"z":{"FG%":-0.03032,"FT%":1.064687,"3PTM":-0.954936,"PTS":1.049773,"REB":-0.742748,"AST":0.334124,"ST":-0.608814,"BLK":-0.303405,"TO":0.080471}},{"n":"Jalen Green","t":"PHX","p":"SG","note":"","av":1.0,"z":{"FG%":-1.365244,"FT%":0.741669,"3PTM":1.464623,"PTS":1.049773,"REB":-0.497387,"AST":-0.090487,"ST":-0.313513,"BLK":-0.713363,"TO":-0.918504}},{"n":"Norman Powell","t":"CHI","p":"SG","note":"","av":1.0,"z":{"FG%":0.098502,"FT%":0.206382,"3PTM":1.354643,"PTS":0.955449,"REB":-0.988109,"AST":-0.78048,"ST":0.277088,"BLK":-0.918341,"TO":0.223182}},{"n":"Cam Thomas","t":"FA","p":"SG","note":"","av":1.0,"z":{"FG%":-1.111169,"FT%":1.816449,"3PTM":0.914723,"PTS":1.521389,"REB":-0.906322,"AST":0.174895,"ST":-0.904114,"BLK":-0.918341,"TO":-1.061215}},{"n":"Coby White","t":"CHA","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.56175,"FT%":1.646391,"3PTM":1.464623,"PTS":0.861126,"REB":-0.742748,"AST":0.493353,"ST":-0.313513,"BLK":-0.918341,"TO":-0.490372}},{"n":"Austin Reaves","t":"LAL","p":"SG,PG","note":"","av":1.0,"z":{"FG%":-0.310354,"FT%":2.186466,"3PTM":1.134683,"PTS":1.332742,"REB":-0.4156,"AST":1.661034,"ST":0.277088,"BLK":-0.713363,"TO":-1.489348}},{"n":"Jordan Poole","t":"NOP","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-1.080422,"FT%":1.383758,"3PTM":1.464623,"PTS":0.861126,"REB":-1.069896,"AST":0.493353,"ST":0.86769,"BLK":-0.508384,"TO":-1.489348}},{"n":"CJ McCollum","t":"ATL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.750306,"FT%":-0.045996,"3PTM":1.024703,"PTS":0.295186,"REB":-0.865429,"AST":0.174895,"ST":-0.018212,"BLK":-0.508384,"TO":0.223182}},{"n":"Anfernee Simons","t":"PHI","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.920389,"FT%":1.070154,"3PTM":1.024703,"PTS":-0.270754,"REB":-1.23347,"AST":-0.143563,"ST":-0.608814,"BLK":-0.918341,"TO":0.223182}},{"n":"Malik Monk","t":"SAC","p":"SG,PG","note":"","av":1.0,"z":{"FG%":-0.792834,"FT%":0.923887,"3PTM":0.584783,"PTS":0.295186,"REB":-0.742748,"AST":1.024117,"ST":-0.313513,"BLK":-0.508384,"TO":-0.775794}},{"n":"Immanuel Quickley","t":"TOR","p":"PG","note":"","av":1.0,"z":{"FG%":-1.173235,"FT%":0.926188,"3PTM":1.024703,"PTS":0.295186,"REB":-0.824535,"AST":1.236423,"ST":-0.018212,"BLK":-1.12332,"TO":-0.20495}},{"n":"Jalen Suggs","t":"ORL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-1.213355,"FT%":0.835716,"3PTM":0.694763,"PTS":0.200863,"REB":-0.579174,"AST":0.174895,"ST":1.753592,"BLK":0.311532,"TO":-0.918504}},{"n":"Stephon Castle","t":"SAS","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.870917,"FT%":-1.047684,"3PTM":-0.515016,"PTS":0.10654,"REB":-0.660961,"AST":0.599506,"ST":-0.018212,"BLK":-0.508384,"TO":-0.633083}},{"n":"Scoot Henderson","t":"POR","p":"PG","note":"","av":1.0,"z":{"FG%":-0.766991,"FT%":-0.005257,"3PTM":-0.295056,"PTS":-0.836693,"REB":-1.069896,"AST":0.440277,"ST":-0.018212,"BLK":-0.713363,"TO":-0.490372}},{"n":"Reed Sheppard","t":"HOU","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.646816,"FT%":0.326334,"3PTM":1.134683,"PTS":-0.082107,"REB":-0.988109,"AST":0.917964,"ST":1.458291,"BLK":-0.303405,"TO":-0.06224}},{"n":"Andrew Nembhard","t":"IND","p":"PG","note":"","av":1.0,"z":{"FG%":-0.111711,"FT%":0.085215,"3PTM":-0.405036,"PTS":-0.648047,"REB":-0.988109,"AST":1.661034,"ST":0.572389,"BLK":-0.508384,"TO":-0.347661}},{"n":"Kevin Porter Jr.","t":"MIL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.414291,"FT%":-0.111193,"3PTM":-0.075096,"PTS":-0.270754,"REB":-0.579174,"AST":0.705659,"ST":0.277088,"BLK":-0.508384,"TO":-0.633083}},{"n":"Ryan Rollins","t":"MIL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.28131,"FT%":0.078114,"3PTM":-0.185076,"PTS":-0.553723,"REB":-0.742748,"AST":0.705659,"ST":0.86769,"BLK":-0.508384,"TO":0.080471}},{"n":"Dylan Harper","t":"SAS","p":"PG","note":"","av":1.0,"z":{"FG%":-0.438867,"FT%":-0.436734,"3PTM":-0.295056,"PTS":-0.082107,"REB":-0.579174,"AST":0.705659,"ST":0.86769,"BLK":-0.508384,"TO":-0.775794}},{"n":"VJ Edgecombe","t":"PHI","p":"SG","note":"","av":1.0,"z":{"FG%":-0.714085,"FT%":-0.075266,"3PTM":0.254843,"PTS":0.200863,"REB":-0.4156,"AST":0.068742,"ST":1.16299,"BLK":-0.303405,"TO":-0.20495}},{"n":"Keyonte George","t":"UTA","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-1.232747,"FT%":0.466305,"3PTM":1.134683,"PTS":0.295186,"REB":-0.824535,"AST":1.13027,"ST":-0.608814,"BLK":-0.918341,"TO":-1.061215}},{"n":"Isaiah Collier","t":"UTA","p":"PG","note":"","av":1.0,"z":{"FG%":-0.193971,"FT%":-0.743026,"3PTM":-0.954936,"PTS":-0.648047,"REB":-0.824535,"AST":1.767187,"ST":0.572389,"BLK":-0.918341,"TO":-1.346637}},{"n":"Jaden Ivey","t":"FA","p":"SG","note":"","av":1.0,"z":{"FG%":-0.361684,"FT%":-0.610157,"3PTM":0.474803,"PTS":0.389509,"REB":-0.579174,"AST":0.281048,"ST":-0.313513,"BLK":-0.303405,"TO":-0.633083}},{"n":"Cason Wallace","t":"OKC","p":"PG,SG","note":"","av":1.0,"z":{"FG%":0.055083,"FT%":0.05326,"3PTM":-0.295056,"PTS":-0.931017,"REB":-0.865429,"AST":-0.143563,"ST":2.048892,"BLK":-0.303405,"TO":1.222158}},{"n":"Bub Carrington","t":"WAS","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-1.073353,"FT%":0.146231,"3PTM":0.144863,"PTS":-0.553723,"REB":-0.579174,"AST":0.599506,"ST":-0.313513,"BLK":-0.713363,"TO":-0.20495}},{"n":"Jeremiah Fears","t":"NOP","p":"PG","note":"rookie-proj","av":1.0,"z":{"FG%":-0.920389,"FT%":-0.518633,"3PTM":-0.515016,"PTS":-0.365077,"REB":-0.988109,"AST":0.811812,"ST":0.277088,"BLK":-0.918341,"TO":-1.203926}},{"n":"Egor Demin","t":"BKN","p":"PG,SG","note":"rookie-proj","av":1.0,"z":{"FG%":-0.980018,"FT%":-0.206874,"3PTM":-0.185076,"PTS":-0.836693,"REB":-0.660961,"AST":0.971041,"ST":-0.018212,"BLK":-0.713363,"TO":-0.775794}},{"n":"Tre Johnson","t":"WAS","p":"SG","note":"rookie-proj","av":1.0,"z":{"FG%":-0.854764,"FT%":0.483452,"3PTM":0.474803,"PTS":-0.17643,"REB":-0.988109,"AST":-0.462022,"ST":-0.608814,"BLK":-0.713363,"TO":0.080471}},{"n":"Kon Knueppel","t":"CHA","p":"SG","note":"","av":1.0,"z":{"FG%":-0.4494,"FT%":0.702834,"3PTM":1.024703,"PTS":0.10654,"REB":-0.579174,"AST":-0.037411,"ST":-0.313513,"BLK":-0.713363,"TO":0.365893}},{"n":"Brandin Podziemski","t":"GSW","p":"SG,PG","note":"","av":1.0,"z":{"FG%":-0.455987,"FT%":0.063912,"3PTM":0.144863,"PTS":-0.648047,"REB":-0.333813,"AST":0.174895,"ST":-0.018212,"BLK":-0.713363,"TO":0.223182}},{"n":"Moses Moody","t":"GSW","p":"SG,SF","note":"patellar-recovery (no return timeline)","av":0.0,"z":{"FG%":-0.570601,"FT%":0.221449,"3PTM":0.144863,"PTS":-0.74237,"REB":-0.988109,"AST":-0.992786,"ST":-0.608814,"BLK":-0.508384,"TO":1.222158}},{"n":"De'Anthony Melton","t":"GSW","p":"PG,SG","note":"inj-risk","av":0.78,"z":{"FG%":-0.840015,"FT%":-0.063539,"3PTM":0.034884,"PTS":-1.02534,"REB":-0.824535,"AST":-0.249716,"ST":1.458291,"BLK":-0.508384,"TO":0.651314}},{"n":"Keon Ellis","t":"BKN","p":"SG","note":"","av":1.0,"z":{"FG%":-0.147788,"FT%":0.222501,"3PTM":0.034884,"PTS":-1.02534,"REB":-1.151683,"AST":-0.78048,"ST":1.16299,"BLK":-0.303405,"TO":1.364868}},{"n":"Gradey Dick","t":"TOR","p":"SG,SF","note":"trade-agreed LAC (league hold)","av":1.0,"z":{"FG%":-0.720759,"FT%":0.385668,"3PTM":0.584783,"PTS":-0.17643,"REB":-0.824535,"AST":-0.886633,"ST":-0.608814,"BLK":-0.713363,"TO":0.651314}},{"n":"Buddy Hield","t":"ATL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.728642,"FT%":0.13287,"3PTM":0.804743,"PTS":-0.836693,"REB":-1.069896,"AST":-0.992786,"ST":-0.904114,"BLK":-0.918341,"TO":1.079447}},{"n":"Gary Trent Jr.","t":"MIL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.751651,"FT%":0.178001,"3PTM":0.694763,"PTS":-0.74237,"REB":-1.23347,"AST":-1.152015,"ST":-0.018212,"BLK":-0.918341,"TO":1.364868}},{"n":"Jordan Hawkins","t":"NOP","p":"SG","note":"","av":1.0,"z":{"FG%":-0.980018,"FT%":0.447104,"3PTM":0.584783,"PTS":-0.553723,"REB":-1.151683,"AST":-0.992786,"ST":-0.608814,"BLK":-0.918341,"TO":0.651314}},{"n":"Collin Sexton","t":"LAL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.126944,"FT%":0.504335,"3PTM":0.034884,"PTS":0.10654,"REB":-1.069896,"AST":0.3872,"ST":-0.313513,"BLK":-1.12332,"TO":-0.490372}},{"n":"Dennis Schroder","t":"CLE","p":"PG","note":"","av":1.0,"z":{"FG%":-0.805341,"FT%":0.581235,"3PTM":-0.185076,"PTS":-0.553723,"REB":-1.151683,"AST":0.917964,"ST":-0.313513,"BLK":-1.12332,"TO":-0.347661}},{"n":"Russell Westbrook","t":"FA","p":"PG","note":"","av":1.0,"z":{"FG%":-0.600632,"FT%":-1.37486,"3PTM":-0.954936,"PTS":-0.74237,"REB":-0.252026,"AST":0.971041,"ST":0.277088,"BLK":-0.713363,"TO":-1.203926}},{"n":"Malcolm Brogdon","t":"FA","p":"PG","note":"out-retired","av":0.0,"z":{"FG%":-0.540569,"FT%":0.597541,"3PTM":-0.295056,"PTS":-0.836693,"REB":-0.906322,"AST":0.174895,"ST":-0.904114,"BLK":-0.918341,"TO":0.508604}},{"n":"Lonzo Ball","t":"FA","p":"PG","note":"inj-risk","av":0.78,"z":{"FG%":-0.793348,"FT%":-0.183047,"3PTM":0.144863,"PTS":-1.119663,"REB":-0.4156,"AST":0.705659,"ST":1.16299,"BLK":-0.098426,"TO":-0.06224}},{"n":"Jose Alvarado","t":"NYK","p":"PG","note":"","av":1.0,"z":{"FG%":-0.536894,"FT%":0.087739,"3PTM":-0.405036,"PTS":-1.402633,"REB":-1.397044,"AST":-0.090487,"ST":1.458291,"BLK":-0.918341,"TO":0.936736}},{"n":"Cole Anthony","t":"FA","p":"PG","note":"","av":1.0,"z":{"FG%":-0.683812,"FT%":0.356001,"3PTM":-0.295056,"PTS":-0.648047,"REB":-0.824535,"AST":0.3872,"ST":-0.313513,"BLK":-0.508384,"TO":0.080471}},{"n":"Payton Pritchard","t":"BOS","p":"PG","note":"","av":1.0,"z":{"FG%":-0.277102,"FT%":0.491815,"3PTM":2.344463,"PTS":0.578156,"REB":-0.579174,"AST":0.971041,"ST":-0.018212,"BLK":-0.918341,"TO":-0.06224}},{"n":"Anthony Black","t":"ORL","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.333539,"FT%":-0.275832,"3PTM":-0.624996,"PTS":-0.836693,"REB":-0.906322,"AST":0.281048,"ST":0.572389,"BLK":-0.303405,"TO":0.223182}},{"n":"Nickeil Alexander-Walker","t":"ATL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.802052,"FT%":0.106519,"3PTM":1.464623,"PTS":0.672479,"REB":-0.906322,"AST":0.068742,"ST":0.86769,"BLK":-0.303405,"TO":-0.06224}},{"n":"Mikal Bridges","t":"NYK","p":"SF","note":"","av":1.0,"z":{"FG%":0.588332,"FT%":0.202224,"3PTM":0.584783,"PTS":0.389509,"REB":-0.906322,"AST":0.068742,"ST":-0.018212,"BLK":-0.303405,"TO":0.651314}},{"n":"OG Anunoby","t":"NYK","p":"SF","note":"","av":1.0,"z":{"FG%":0.087485,"FT%":0.135778,"3PTM":0.694763,"PTS":0.483833,"REB":-0.252026,"AST":-0.727404,"ST":1.753592,"BLK":0.516511,"TO":0.794025}},{"n":"Trey Murphy III","t":"NOP","p":"SF","note":"inj-shoulder-risk (season ended early)","av":0.78,"z":{"FG%":-0.415267,"FT%":1.385218,"3PTM":1.574603,"PTS":1.144096,"REB":-0.129346,"AST":0.015666,"ST":0.277088,"BLK":0.106553,"TO":-0.20495}},{"n":"Herbert Jones","t":"NOP","p":"SF","note":"","av":1.0,"z":{"FG%":-0.315984,"FT%":0.182789,"3PTM":-0.405036,"PTS":-0.836693,"REB":-0.660961,"AST":-0.462022,"ST":2.344193,"BLK":0.311532,"TO":0.651314}},{"n":"Michael Porter Jr.","t":"BKN","p":"SF","note":"","av":1.0,"z":{"FG%":0.55653,"FT%":-0.18557,"3PTM":1.134683,"PTS":0.672479,"REB":0.647631,"AST":-0.674327,"ST":-0.904114,"BLK":-0.303405,"TO":0.508604}},{"n":"Cameron Johnson","t":"DEN","p":"SF","note":"","av":1.0,"z":{"FG%":-0.025358,"FT%":1.234162,"3PTM":1.244663,"PTS":0.578156,"REB":-0.497387,"AST":-0.090487,"ST":-0.313513,"BLK":-0.508384,"TO":0.365893}},{"n":"Andrew Wiggins","t":"MIA","p":"SF","note":"","av":1.0,"z":{"FG%":-0.361684,"FT%":-0.413748,"3PTM":0.364823,"PTS":0.389509,"REB":-0.4156,"AST":-0.515098,"ST":0.572389,"BLK":-0.098426,"TO":0.365893}},{"n":"Jaden McDaniels","t":"MIN","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.28131,"FT%":0.182789,"3PTM":-0.185076,"PTS":-0.553723,"REB":0.116015,"AST":-0.833557,"ST":0.86769,"BLK":0.516511,"TO":0.651314}},{"n":"Bilal Coulibaly","t":"WAS","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.84369,"FT%":-0.743026,"3PTM":-0.405036,"PTS":-0.4594,"REB":-0.170239,"AST":0.068742,"ST":1.458291,"BLK":0.311532,"TO":-0.20495}},{"n":"Matas Buzelis","t":"CHI","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.116788,"FT%":-0.111193,"3PTM":-0.185076,"PTS":-0.270754,"REB":0.238696,"AST":-0.886633,"ST":-0.608814,"BLK":0.926468,"TO":0.365893}},{"n":"Jaylen Wells","t":"MEM","p":"SG,SF","note":"inj-toe-risk (surgery","av":0.78,"z":{"FG%":-0.455987,"FT%":0.243594,"3PTM":0.034884,"PTS":-0.648047,"REB":-0.579174,"AST":-0.78048,"ST":-0.313513,"BLK":-0.508384,"TO":0.794025}},{"n":"Zaccharie Risacher","t":"DAL","p":"SF","note":"","av":1.0,"z":{"FG%":-0.212445,"FT%":-0.455515,"3PTM":0.254843,"PTS":-0.365077,"REB":-0.660961,"AST":-1.152015,"ST":-0.608814,"BLK":0.106553,"TO":0.936736}},{"n":"Ace Bailey","t":"UTA","p":"SF","note":"","av":1.0,"z":{"FG%":-0.888955,"FT%":-0.231963,"3PTM":0.144863,"PTS":-0.082107,"REB":0.075122,"AST":-0.78048,"ST":-0.608814,"BLK":0.516511,"TO":-0.20495}},{"n":"Cedric Coward","t":"MEM","p":"SG,SF","note":"rookie-proj","av":1.0,"z":{"FG%":-0.101555,"FT%":0.071013,"3PTM":-0.075096,"PTS":-0.553723,"REB":-0.456494,"AST":-0.621251,"ST":-0.313513,"BLK":-0.303405,"TO":0.651314}},{"n":"Nique Clifford","t":"SAC","p":"SG,SF","note":"rookie-proj","av":1.0,"z":{"FG%":-0.412559,"FT%":-0.071481,"3PTM":-0.405036,"PTS":-0.836693,"REB":-0.333813,"AST":-0.355869,"ST":-0.018212,"BLK":-0.508384,"TO":0.651314}},{"n":"Kyshawn George","t":"WAS","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.93335,"FT%":-0.079424,"3PTM":-0.075096,"PTS":-0.836693,"REB":-0.4156,"AST":-0.249716,"ST":-0.018212,"BLK":0.106553,"TO":0.223182}},{"n":"Brandon Miller","t":"CHA","p":"SF","note":"","av":1.0,"z":{"FG%":-1.487799,"FT%":1.254835,"3PTM":1.684583,"PTS":1.238419,"REB":-0.252026,"AST":0.493353,"ST":0.277088,"BLK":0.106553,"TO":-1.346637}},{"n":"Miles Bridges","t":"PHX","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-1.094099,"FT%":0.519168,"3PTM":0.694763,"PTS":0.766803,"REB":0.729417,"AST":0.174895,"ST":-0.313513,"BLK":0.106553,"TO":-0.633083}},{"n":"RJ Barrett","t":"TOR","p":"SF","note":"","av":1.0,"z":{"FG%":-0.286339,"FT%":-3.019243,"3PTM":-0.075096,"PTS":0.861126,"REB":0.238696,"AST":0.811812,"ST":-0.313513,"BLK":-0.713363,"TO":-1.061215}},{"n":"Deni Avdija","t":"POR","p":"SF,PF","note":"","av":1.0,"z":{"FG%":0.084245,"FT%":-0.010093,"3PTM":0.034884,"PTS":0.35178,"REB":0.729417,"AST":0.281048,"ST":0.277088,"BLK":-0.098426,"TO":-1.061215}},{"n":"Shaedon Sharpe","t":"POR","p":"SG","note":"","av":1.0,"z":{"FG%":-0.421312,"FT%":-0.005888,"3PTM":0.254843,"PTS":-0.17643,"REB":-0.742748,"AST":-0.568175,"ST":-0.608814,"BLK":-0.508384,"TO":0.223182}},{"n":"Toumani Camara","t":"POR","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.241123,"FT%":-0.530733,"3PTM":-0.185076,"PTS":-0.780099,"REB":0.116015,"AST":-0.727404,"ST":1.458291,"BLK":0.106553,"TO":0.651314}},{"n":"Dorian Finney-Smith","t":"CHA","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.575243,"FT%":-0.137916,"3PTM":-0.075096,"PTS":-1.213986,"REB":-0.497387,"AST":-1.152015,"ST":-0.904114,"BLK":-0.303405,"TO":1.364868}},{"n":"Kelly Oubre Jr.","t":"IND","p":"SF,SG","note":"","av":1.0,"z":{"FG%":-0.521128,"FT%":-0.457618,"3PTM":-0.185076,"PTS":-0.17643,"REB":-0.047559,"AST":-0.992786,"ST":0.572389,"BLK":-0.098426,"TO":0.365893}},{"n":"Aaron Nesmith","t":"IND","p":"SF,PF","note":"","av":1.0,"z":{"FG%":0.061564,"FT%":0.491815,"3PTM":0.254843,"PTS":-0.553723,"REB":-0.333813,"AST":-1.152015,"ST":-0.313513,"BLK":-0.098426,"TO":1.222158}},{"n":"Bennedict Mathurin","t":"LAC","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.321497,"FT%":0.768837,"3PTM":-0.295056,"PTS":0.10654,"REB":-0.088452,"AST":-0.886633,"ST":-0.904114,"BLK":-0.713363,"TO":0.080471}},{"n":"Pascal Siakam","t":"IND","p":"PF","note":"","av":1.0,"z":{"FG%":1.153779,"FT%":-0.719644,"3PTM":-0.185076,"PTS":0.861126,"REB":0.565844,"AST":-0.090487,"ST":-0.313513,"BLK":-0.303405,"TO":0.223182}},{"n":"Obi Toppin","t":"IND","p":"PF","note":"","av":1.0,"z":{"FG%":0.507493,"FT%":-0.063539,"3PTM":-0.185076,"PTS":-0.648047,"REB":-0.456494,"AST":-0.992786,"ST":-1.199415,"BLK":-0.303405,"TO":1.079447}},{"n":"Julius Randle","t":"BKN","p":"PF","note":"","av":1.0,"z":{"FG%":0.204217,"FT%":0.343643,"3PTM":-0.295056,"PTS":0.578156,"REB":0.647631,"AST":0.599506,"ST":-0.904114,"BLK":-0.713363,"TO":-1.203926}},{"n":"Jonathan Kuminga","t":"FA","p":"PF","note":"","av":1.0,"z":{"FG%":-0.348288,"FT%":-1.912694,"3PTM":-0.734976,"PTS":0.012216,"REB":-0.333813,"AST":-0.674327,"ST":-0.313513,"BLK":-0.303405,"TO":0.080471}},{"n":"Draymond Green","t":"GSW","p":"PF,C","note":"","av":1.0,"z":{"FG%":-0.468493,"FT%":-0.756388,"3PTM":-0.515016,"PTS":-1.27058,"REB":0.156909,"AST":0.971041,"ST":1.16299,"BLK":0.721489,"TO":-0.490372}},{"n":"Jabari Smith Jr.","t":"HOU","p":"PF,C","note":"","av":1.0,"z":{"FG%":-0.403758,"FT%":-0.005467,"3PTM":0.364823,"PTS":-0.270754,"REB":0.770311,"AST":-1.152015,"ST":-0.904114,"BLK":0.516511,"TO":0.936736}},{"n":"Tari Eason","t":"HOU","p":"PF","note":"","av":1.0,"z":{"FG%":0.314342,"FT%":-0.321804,"3PTM":-0.515016,"PTS":-0.4594,"REB":0.565844,"AST":-0.992786,"ST":2.344193,"BLK":0.516511,"TO":0.651314}},{"n":"Dillon Brooks","t":"PHX","p":"SF","note":"","av":1.0,"z":{"FG%":-0.820574,"FT%":0.085215,"3PTM":0.364823,"PTS":-0.17643,"REB":-0.865429,"AST":-0.78048,"ST":-0.313513,"BLK":-0.508384,"TO":0.223182}},{"n":"Quentin Grimes","t":"LAL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.361684,"FT%":-0.006308,"3PTM":0.804743,"PTS":0.295186,"REB":-0.456494,"AST":0.068742,"ST":0.277088,"BLK":-0.508384,"TO":-0.06224}},{"n":"Kyle Kuzma","t":"MIL","p":"PF","note":"","av":1.0,"z":{"FG%":-0.629696,"FT%":-0.987696,"3PTM":0.034884,"PTS":0.295186,"REB":0.238696,"AST":-0.355869,"ST":-1.199415,"BLK":-0.508384,"TO":-0.490372}},{"n":"Bobby Portis","t":"MIA","p":"PF,C","note":"","av":1.0,"z":{"FG%":-0.086322,"FT%":0.102362,"3PTM":-0.515016,"PTS":-1.02534,"REB":0.238696,"AST":-0.992786,"ST":-1.199415,"BLK":-0.713363,"TO":1.222158}},{"n":"Aaron Gordon","t":"DEN","p":"PF","note":"","av":1.0,"z":{"FG%":1.028767,"FT%":0.32172,"3PTM":-0.075096,"PTS":-0.082107,"REB":-0.252026,"AST":-0.19664,"ST":-0.904114,"BLK":-0.303405,"TO":0.651314}},{"n":"Peyton Watson","t":"DEN","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.227727,"FT%":-0.22986,"3PTM":-0.734976,"PTS":-0.931017,"REB":-0.497387,"AST":-1.205091,"ST":-0.608814,"BLK":1.131447,"TO":1.222158}},{"n":"Christian Braun","t":"DEN","p":"SG","note":"","av":1.0,"z":{"FG%":1.776831,"FT%":0.400501,"3PTM":-0.185076,"PTS":-0.082107,"REB":-0.129346,"AST":-0.515098,"ST":0.277088,"BLK":-0.508384,"TO":0.936736}},{"n":"Julian Strawther","t":"DEN","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.570601,"FT%":0.063912,"3PTM":0.144863,"PTS":-0.74237,"REB":-1.151683,"AST":-0.992786,"ST":-0.904114,"BLK":-0.713363,"TO":0.936736}},{"n":"Keegan Murray","t":"SAC","p":"SF,PF","note":"inj-ankle-risk (May scope","av":0.78,"z":{"FG%":-0.499414,"FT%":-0.131446,"3PTM":0.474803,"PTS":-0.553723,"REB":0.484057,"AST":-1.098938,"ST":-0.313513,"BLK":0.311532,"TO":1.222158}},{"n":"PJ Washington","t":"DAL","p":"PF,C","note":"","av":1.0,"z":{"FG%":-0.106633,"FT%":-0.396602,"3PTM":-0.185076,"PTS":-0.4594,"REB":0.647631,"AST":-0.674327,"ST":0.277088,"BLK":0.516511,"TO":0.651314}},{"n":"Naji Marshall","t":"DAL","p":"SF,PF","note":"","av":1.0,"z":{"FG%":0.068044,"FT%":-0.396602,"3PTM":-0.954936,"PTS":-0.553723,"REB":-0.252026,"AST":-0.249716,"ST":-0.018212,"BLK":-0.713363,"TO":0.365893}},{"n":"Klay Thompson","t":"DAL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-1.01653,"FT%":0.268262,"3PTM":0.804743,"PTS":-0.836693,"REB":-1.069896,"AST":-0.992786,"ST":-0.904114,"BLK":-0.508384,"TO":1.222158}},{"n":"Jaden Hardy","t":"LAL","p":"SG","note":"","av":1.0,"z":{"FG%":-0.570601,"FT%":0.146231,"3PTM":-0.075096,"PTS":-0.74237,"REB":-1.274364,"AST":-0.78048,"ST":-0.904114,"BLK":-0.918341,"TO":0.794025}},{"n":"Rui Hachimura","t":"LAC","p":"PF","note":"","av":1.0,"z":{"FG%":0.242721,"FT%":-0.139178,"3PTM":-0.295056,"PTS":-0.4594,"REB":-0.333813,"AST":-1.205091,"ST":-0.904114,"BLK":-0.508384,"TO":1.364868}},{"n":"Jarred Vanderbilt","t":"LAL","p":"PF","note":"inj-risk","av":0.78,"z":{"FG%":0.401632,"FT%":-0.740083,"3PTM":-1.614816,"PTS":-1.685603,"REB":0.361376,"AST":-1.152015,"ST":0.572389,"BLK":-0.098426,"TO":1.222158}},{"n":"Santi Aldama","t":"DAL","p":"PF,C","note":"","av":1.0,"z":{"FG%":0.064804,"FT%":-0.274571,"3PTM":-0.075096,"PTS":-0.648047,"REB":0.484057,"AST":-0.568175,"ST":-0.904114,"BLK":0.106553,"TO":0.936736}},{"n":"GG Jackson","t":"MEM","p":"PF,SF","note":"","av":1.0,"z":{"FG%":-0.630664,"FT%":-0.095308,"3PTM":0.034884,"PTS":-0.4594,"REB":-0.456494,"AST":-1.152015,"ST":-0.904114,"BLK":-0.303405,"TO":0.651314}},{"n":"Isaiah Stewart","t":"MEM","p":"PF,C","note":"","av":1.0,"z":{"FG%":0.258389,"FT%":-0.47766,"3PTM":-1.064916,"PTS":-1.30831,"REB":0.565844,"AST":-1.152015,"ST":-1.199415,"BLK":0.926468,"TO":1.222158}},{"n":"Ausar Thompson","t":"DET","p":"SF","note":"","av":1.0,"z":{"FG%":0.956662,"FT%":-1.37486,"3PTM":-1.614816,"PTS":-0.931017,"REB":-0.047559,"AST":-0.568175,"ST":2.048892,"BLK":0.516511,"TO":0.651314}},{"n":"Ron Holland","t":"DET","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.096477,"FT%":-0.88552,"3PTM":-1.174896,"PTS":-0.74237,"REB":-0.456494,"AST":-0.78048,"ST":0.277088,"BLK":-0.303405,"TO":0.508604}},{"n":"Tobias Harris","t":"SAS","p":"PF","note":"","av":1.0,"z":{"FG%":-0.111711,"FT%":0.265739,"3PTM":-0.515016,"PTS":-0.4594,"REB":0.116015,"AST":-0.78048,"ST":-0.608814,"BLK":-0.098426,"TO":1.079447}},{"n":"Duncan Robinson","t":"DET","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.61543,"FT%":0.357683,"3PTM":0.584783,"PTS":-0.74237,"REB":-1.23347,"AST":-0.674327,"ST":-1.199415,"BLK":-0.918341,"TO":0.936736}},{"n":"Caris LeVert","t":"MIL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.465707,"FT%":-0.087366,"3PTM":-0.405036,"PTS":-0.931017,"REB":-0.988109,"AST":-0.249716,"ST":-0.313513,"BLK":-0.713363,"TO":0.651314}},{"n":"De'Andre Hunter","t":"SAC","p":"SF,PF","note":"inj-eye-risk (retinal surgery Feb)","av":0.78,"z":{"FG%":-0.203208,"FT%":0.415335,"3PTM":0.364823,"PTS":-0.17643,"REB":-0.579174,"AST":-1.098938,"ST":-0.904114,"BLK":-0.508384,"TO":0.936736}},{"n":"Max Strus","t":"CLE","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.570601,"FT%":0.049709,"3PTM":0.694763,"PTS":-0.648047,"REB":-0.742748,"AST":-0.674327,"ST":-0.904114,"BLK":-0.713363,"TO":1.079447}},{"n":"Sam Merrill","t":"CLE","p":"SG","note":"","av":1.0,"z":{"FG%":-0.613593,"FT%":0.223132,"3PTM":0.584783,"PTS":-1.02534,"REB":-1.23347,"AST":-0.886633,"ST":-0.904114,"BLK":-0.918341,"TO":1.364868}},{"n":"Ochai Agbaji","t":"BKN","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.086322,"FT%":-0.266208,"3PTM":-0.185076,"PTS":-1.02534,"REB":-0.742748,"AST":-0.992786,"ST":-0.313513,"BLK":-0.303405,"TO":1.222158}},{"n":"Jamie Jaquez Jr.","t":"MIL","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.019294,"FT%":-0.321804,"3PTM":-1.064916,"PTS":-0.553723,"REB":-0.252026,"AST":-0.249716,"ST":-0.018212,"BLK":-0.713363,"TO":0.365893}},{"n":"Nikola Jovic","t":"MIA","p":"PF,SF","note":"","av":1.0,"z":{"FG%":-0.333539,"FT%":0.071013,"3PTM":-0.185076,"PTS":-0.74237,"REB":-0.456494,"AST":-0.355869,"ST":-0.608814,"BLK":-0.508384,"TO":0.508604}},{"n":"Bogdan Bogdanovic","t":"HOU","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.718002,"FT%":0.17716,"3PTM":0.584783,"PTS":-0.553723,"REB":-0.988109,"AST":-0.249716,"ST":-0.018212,"BLK":-0.713363,"TO":0.508604}},{"n":"Grayson Allen","t":"CHA","p":"SG","note":"","av":1.0,"z":{"FG%":-0.390846,"FT%":0.207667,"3PTM":0.584783,"PTS":-0.74237,"REB":-0.988109,"AST":-0.462022,"ST":-0.608814,"BLK":-0.713363,"TO":0.936736}},{"n":"Royce O'Neale","t":"CHA","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.613593,"FT%":-0.002103,"3PTM":0.364823,"PTS":-1.119663,"REB":-0.333813,"AST":-0.674327,"ST":-0.608814,"BLK":-0.508384,"TO":1.079447}},{"n":"Trayce Jackson-Davis","t":"TOR","p":"PF,C","note":"","av":1.0,"z":{"FG%":1.225109,"FT%":-0.845809,"3PTM":-1.834776,"PTS":-1.496956,"REB":0.361376,"AST":-0.992786,"ST":-1.199415,"BLK":0.721489,"TO":1.222158}},{"n":"Quinten Post","t":"MEM","p":"C","note":"","av":1.0,"z":{"FG%":-0.325705,"FT%":-0.002523,"3PTM":0.034884,"PTS":-1.213986,"REB":-0.252026,"AST":-0.992786,"ST":-1.494716,"BLK":-0.098426,"TO":1.222158}},{"n":"Jeremy Sochan","t":"FA","p":"PF","note":"","av":1.0,"z":{"FG%":0.930789,"FT%":-0.743026,"3PTM":-1.284876,"PTS":-0.74237,"REB":0.484057,"AST":-0.249716,"ST":0.277088,"BLK":-0.098426,"TO":0.080471}},{"n":"Corey Kispert","t":"ATL","p":"SF,SG","note":"","av":1.0,"z":{"FG%":-0.390846,"FT%":0.17716,"3PTM":0.254843,"PTS":-0.836693,"REB":-1.069896,"AST":-0.992786,"ST":-1.199415,"BLK":-0.713363,"TO":1.222158}},{"n":"Gabe Vincent","t":"ATL","p":"PG","note":"","av":1.0,"z":{"FG%":-0.700013,"FT%":0.155015,"3PTM":-0.075096,"PTS":-1.213986,"REB":-1.478831,"AST":-0.462022,"ST":-0.608814,"BLK":-0.918341,"TO":1.079447}},{"n":"Dalton Knecht","t":"LAL","p":"SG,SF","note":"","av":1.0,"z":{"FG%":-0.434273,"FT%":0.05681,"3PTM":0.474803,"PTS":-0.553723,"REB":-0.988109,"AST":-1.152015,"ST":-1.199415,"BLK":-0.713363,"TO":1.079447}},{"n":"Tristan da Silva","t":"ORL","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.369132,"FT%":0.05681,"3PTM":-0.295056,"PTS":-1.02534,"REB":-0.579174,"AST":-0.78048,"ST":-0.904114,"BLK":-0.713363,"TO":1.079447}},{"n":"Tre Mann","t":"CHA","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.766991,"FT%":0.146231,"3PTM":0.144863,"PTS":-0.648047,"REB":-1.069896,"AST":0.281048,"ST":-0.313513,"BLK":-0.918341,"TO":0.080471}},{"n":"Josh Hart","t":"NYK","p":"SG,SF","note":"","av":1.0,"z":{"FG%":0.693728,"FT%":-0.103251,"3PTM":-0.734976,"PTS":-0.4594,"REB":0.974778,"AST":0.440277,"ST":0.86769,"BLK":-0.713363,"TO":0.080471}},{"n":"Landry Shamet","t":"NYK","p":"SG","note":"","av":1.0,"z":{"FG%":-0.420442,"FT%":0.110725,"3PTM":0.034884,"PTS":-1.213986,"REB":-1.478831,"AST":-1.152015,"ST":-1.199415,"BLK":-0.918341,"TO":1.65029}},{"n":"Ziaire Williams","t":"LAL","p":"SF,PF","note":"","av":1.0,"z":{"FG%":-0.540569,"FT%":-0.079424,"3PTM":-0.185076,"PTS":-0.836693,"REB":-0.4156,"AST":-0.992786,"ST":-0.313513,"BLK":-0.303405,"TO":0.794025}},{"n":"Lauri Markkanen","t":"UTA","p":"PF,C","note":"","av":1.0,"z":{"FG%":-0.52664,"FT%":1.397329,"3PTM":1.244663,"PTS":0.672479,"REB":0.238696,"AST":-0.992786,"ST":-0.608814,"BLK":-0.303405,"TO":0.651314}},{"n":"Jrue Holiday","t":"POR","p":"PG","note":"","av":1.0,"z":{"FG%":-0.570601,"FT%":0.063912,"3PTM":0.144863,"PTS":-0.74237,"REB":-0.824535,"AST":0.440277,"ST":0.277088,"BLK":-0.303405,"TO":0.365893}},{"n":"D'Angelo Russell","t":"MEM","p":"PG","note":"","av":1.0,"z":{"FG%":-1.372315,"FT%":0.287884,"3PTM":1.024703,"PTS":-0.082107,"REB":-1.069896,"AST":1.342575,"ST":-0.018212,"BLK":-0.713363,"TO":-0.775794}},{"n":"Naz Reid","t":"CHA","p":"PF,C","note":"","av":1.0,"z":{"FG%":-0.116788,"FT%":-0.087366,"3PTM":0.584783,"PTS":-0.17643,"REB":0.565844,"AST":-0.621251,"ST":-0.608814,"BLK":0.516511,"TO":0.508604}},{"n":"Brook Lopez","t":"LAC","p":"C","note":"","av":1.0,"z":{"FG%":0.552603,"FT%":0.199304,"3PTM":0.254843,"PTS":-0.553723,"REB":-0.252026,"AST":-0.992786,"ST":-1.199415,"BLK":2.566299,"TO":1.079447}},{"n":"Donte DiVincenzo","t":"MIN","p":"SG,PG","note":"achilles-recovery (return late 2026-27 at best)","av":0.0,"z":{"FG%":-0.820574,"FT%":0.05681,"3PTM":1.244663,"PTS":-0.270754,"REB":-0.660961,"AST":-0.090487,"ST":0.572389,"BLK":-0.918341,"TO":0.508604}},{"n":"Jordan Clarkson","t":"NYK","p":"PG,SG","note":"","av":1.0,"z":{"FG%":-0.660695,"FT%":0.078114,"3PTM":0.144863,"PTS":-0.4594,"REB":-1.069896,"AST":-0.090487,"ST":-0.904114,"BLK":-0.918341,"TO":0.365893}},{"n":"Bradley Beal","t":"FA","p":"SG","note":"inj-hip-risk (6 games 2025-26; unsigned)","av":0.78,"z":{"FG%":-0.023888,"FT%":0.175477,"3PTM":0.254843,"PTS":0.10654,"REB":-0.865429,"AST":0.174895,"ST":-0.018212,"BLK":-0.508384,"TO":-0.06224}},{"n":"Marcus Smart","t":"HOU","p":"PG","note":"inj-risk","av":0.78,"z":{"FG%":-0.989738,"FT%":-0.206874,"3PTM":-0.185076,"PTS":-1.02534,"REB":-1.274364,"AST":0.174895,"ST":1.458291,"BLK":-0.713363,"TO":0.223182}},{"n":"Al Horford","t":"GSW","p":"C,PF","note":"","av":1.0,"z":{"FG%":-0.138551,"FT%":0.035506,"3PTM":0.034884,"PTS":-1.213986,"REB":-0.047559,"AST":-0.886633,"ST":-1.199415,"BLK":0.516511,"TO":1.507579}},{"n":"John Collins","t":"DET","p":"PF,C","note":"","av":1.0,"z":{"FG%":0.417398,"FT%":0.092317,"3PTM":-0.515016,"PTS":-0.365077,"REB":0.565844,"AST":-0.886633,"ST":-0.904114,"BLK":0.311532,"TO":0.936736}},{"n":"AJ Dybantsa","t":"WAS","p":"SF","note":"rookie-proj","av":1.0,"z":{"FG%":-0.579305,"FT%":-0.258127,"3PTM":0.254843,"PTS":0.861126,"REB":-0.047559,"AST":-0.355869,"ST":0.277088,"BLK":-0.098426,"TO":-1.203926}},{"n":"Darryn Peterson","t":"UTA","p":"SG,PG","note":"rookie-proj","av":1.0,"z":{"FG%":-0.900948,"FT%":0.177532,"3PTM":0.364823,"PTS":0.389509,"REB":-0.742748,"AST":0.599506,"ST":0.572389,"BLK":-0.713363,"TO":-1.346637}},{"n":"Cameron Boozer","t":"MEM","p":"PF","note":"rookie-proj","av":1.0,"z":{"FG%":0.876288,"FT%":-0.855667,"3PTM":-0.954936,"PTS":-0.17643,"REB":1.179246,"AST":-0.621251,"ST":-0.313513,"BLK":0.311532,"TO":-0.06224}},{"n":"Caleb Wilson","t":"CHI","p":"PF","note":"rookie-proj","av":1.0,"z":{"FG%":0.377646,"FT%":-1.192047,"3PTM":-1.284876,"PTS":-0.836693,"REB":0.565844,"AST":-0.992786,"ST":-0.018212,"BLK":0.516511,"TO":0.223182}},{"n":"Mikel Brown Jr.","t":"BKN","p":"PG","note":"rookie-proj","av":1.0,"z":{"FG%":-1.026685,"FT%":-0.119135,"3PTM":0.144863,"PTS":-0.648047,"REB":-1.069896,"AST":0.440277,"ST":-0.313513,"BLK":-0.918341,"TO":-0.347661}},{"n":"Darius Acuff Jr.","t":"SAC","p":"PG","note":"rookie-proj","av":1.0,"z":{"FG%":-0.805341,"FT%":0.113621,"3PTM":-0.075096,"PTS":-0.74237,"REB":-1.151683,"AST":0.174895,"ST":-0.608814,"BLK":-1.12332,"TO":-0.633083}}];
+</script>
+
+<script id="judgment">
+/* Claude judgment layer — re-authored at every daily refresh/republish.
+   Applies ONLY to the user's recommendation card, never to the mock AI
+   managers (they stay arena-faithful). `adj` is in z-value units and is
+   added to the council score; `why` is the rationale shown on the card.
+   Grounded in the 2026-07-22 refresh research. */
+const JUDGMENT = {
+  date: "2026-07-24",
+  /* Value-on-the-board knobs (tuned at each republish).
+     Board slides — players available past their rank on OUR no-punt
+     pre-draft board — earn a capped score bonus: real 9-cat value is
+     sitting on the table. deadband/perSpot/cap are in picks and z-units. */
+  valueBoard: { deadband: 3, perSpot: 0.06, cap: 0.6, stripSlide: 4, stripRank: 40 },
+  /* Market star-tier: players real-world drafters take far above our
+     9-cat board (points-league premium, name value, trade capital).
+     Surfaced for due diligence when available past their market rank —
+     NO automatic score boost: if the market premium reflects something
+     our projections miss, it becomes a per-player judgment adj instead.
+     market = estimated consensus draft position (early 2026-27 reads;
+     no reliable 9-cat ADP exists yet in July — refreshed daily). */
+  starTier: {
+    "Devin Booker": { market: 13, why: "Elite scorer the market takes top-15; 9-cat math discounts the FG% drag and TO — weigh trade capital and usage upside before passing twice." },
+    "James Harden": { market: 15, why: "Market prices the assist/3PM engine top-15; our board sees the TO cost. Still a category anchor if you're building AST/3s." },
+    "Domantas Sabonis": { market: 14, why: "Triple-double base the market loves; FG%/REB/AST monster whose value concentrates — fits some builds far better than his flat rank suggests." },
+    "AJ Dybantsa": { market: 30, why: "No. 1 pick, 20+ PPG projection on a rebuild — early consensus takes the hype in round 3; 9-cat math prices the rookie TO/efficiency tax. Name value and upside are real; the categories aren't yet." },
+  },
+  players: {
+    "Jayson Tatum": { adj: 0.35, why: "Returned Mar 2026 and averaged 23+ in the playoffs — the generic ×0.78 risk multiplier overstates his game-count risk for a first full season back." },
+    "Tyrese Maxey": { adj: -0.10, why: "PHI usage stack deepened again — LeBron (July 24) joins Brown, Embiid, Simons, Edgecombe; line already trimmed, this covers the residual squeeze." },
+    "Jalen Brunson": { adj: -0.15, why: "July 7 wrist surgery, cast ~6 weeks — expected ready for October; ramp-up risk only, not availability risk." },
+    "Kawhi Leonard": { adj: -0.20, why: "Toronto trade on hold pending the cap investigation — destination limbo stacks situation risk on the standing injury tag." },
+    /* Unsigned free agents: projections assume a role no team has
+       committed to yet — destination discount until they sign. */
+    "Jonathan Kuminga": { adj: -0.30, why: "Unsigned — ATL declined his option; sign-and-trade market unsettled. Role unknowable until he lands." },
+    "DeMar DeRozan": { adj: -0.25, why: "Waived by SAC, unsigned. A contender bench role would cut his shot volume hard." },
+    "Cam Thomas": { adj: -0.30, why: "Waived twice last season, still unsigned. His volume-scorer profile needs a green light no team has offered." },
+    "Bradley Beal": { adj: -0.25, why: "Unsigned after six games and hip-fracture surgery — destination and minutes both unknown." },
+    "Jonas Valanciunas": { adj: -0.20, why: "Waived by DEN, unsigned; backup-center market only." },
+    "Russell Westbrook": { adj: -0.20, why: "Unsigned; SAC moving toward youth. MIA pursuit reportedly live now that LeBron chose PHI — vet-minimum market." },
+    "Jaden Ivey": { adj: -0.20, why: "Waived in March (knee), unsigned — health and destination both open questions." },
+    "Jeremy Sochan": { adj: -0.15, why: "Unsigned after a limited NYK title-run role." },
+    "Lonzo Ball": { adj: -0.15, why: "Waived, unsigned; injury history stacks on destination risk." },
+    "Cole Anthony": { adj: -0.15, why: "Waived July 20, unsigned." },
+    /* Restricted free agents: team retains rights, but standoffs carry
+       ramp/route risk the roster listing hides. */
+    "Bennedict Mathurin": { adj: -0.15, why: "RFA frozen by the Kawhi investigation — re-sign, qualifying offer, or sign-and-trade all land differently for usage." },
+    "Jalen Duren": { adj: -0.10, why: "RFA standoff could run into August; DET expected to keep him, but the delay is ramp risk." },
+    "Peyton Watson": { adj: -0.10, why: "RFA unsigned; DEN expected to match, sign-and-trade suitors circling." },
+    /* Contract-signal reads the stat line can't see yet. */
+    "Gary Trent Jr.": { adj: 0.10, why: "4yr/$64M on a rebuild says MIL plans a much bigger role than last season's 8.1 ppg — the league's probe of the deal is fantasy noise." },
+    "Neemias Queta": { adj: 0.05, why: "4yr/$56M extension after 75 starts — the incumbent in the Boston center timeshare until Robinson proves durability." },
+  },
+};
+</script>
+
+<script id="app">
+"use strict";
+(function () {
+  const $ = id => document.getElementById(id);
+
+  /* ---------- header stamp + fresh-data-pull ---------- */
+  const BUILD_PULL = "2026-07-24"; // freshness stamp date; rewritten at each republish
+  function stampTick() {
+    const now = new Date();
+    $("clock").textContent = now.toLocaleString(undefined,
+      { weekday: "short", month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" });
+    const days = Math.floor((now - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
+    const a = $("dataAge");
+    a.textContent = `Data pull: ${BUILD_PULL} · ` +
+      (days <= 0 ? "fresh today" : `${days} day${days > 1 ? "s" : ""} old`) +
+      ` · ${PLAYERS.length} players`;
+    a.style.color = days >= 2 ? "var(--status-out)" : (days >= 1 ? "var(--status-risk)" : "var(--muted)");
+  }
+  stampTick();
+  setInterval(stampTick, 30000);
+  const PULL_REQUEST = "Fresh data pull for the Draft Deck: run the daily refresh per the freshness rule and pool-completeness law (rosters, trades, injuries, signings, rookie class), stamp freshness, regenerate the embedded pool, re-verify engine parity, and republish the Draft Deck artifact to the same URL.";
+  $("pullBtn").addEventListener("click", async () => {
+    const msg = $("pullMsg");
+    msg.classList.remove("hidden");
+    try {
+      await navigator.clipboard.writeText(PULL_REQUEST);
+      msg.textContent = "Request copied ✓ — paste it to Cowork. This page is sandboxed (no web access); Cowork pulls comprehensive data and republishes this same URL.";
+    } catch (e) {
+      msg.textContent = "Clipboard blocked — just tell Cowork: “Fresh data pull for the Draft Deck.”";
+    }
+  });
+  const LS_KEY = "draftdeck.v1";
+  let deck = null; // {state:{teams,slot,size,punt,picks}, mode, rngState, log:[]}
+
+  /* ---------- setup ---------- */
+  const setupPunt = new Set();
+  for (const c of CATS) {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = c;
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", () => {
+      const on = !setupPunt.has(c);
+      if (on) setupPunt.add(c); else setupPunt.delete(c);
+      b.setAttribute("aria-pressed", String(on));
+    });
+    $("setupPunt").appendChild(b);
+  }
+  function refreshEcho() {
+    const t = +$("cfgTeams").value || 0, s = +$("cfgSize").value || 0;
+    $("echo").textContent = `${t} teams × ${s} rounds = ${t * s} total picks (last pick #${t * s})`;
+  }
+  for (const id of ["cfgTeams", "cfgSize", "cfgSlot"]) $(id).addEventListener("input", refreshEcho);
+  refreshEcho();
+
+  let mockMode = false;
+  $("modeLive").addEventListener("click", () => setMode(false));
+  $("modeMock").addEventListener("click", () => setMode(true));
+  function setMode(mock) {
+    mockMode = mock;
+    $("modeLive").setAttribute("aria-pressed", String(!mock));
+    $("modeMock").setAttribute("aria-pressed", String(mock));
+  }
+
+  function setupError(msg) {
+    const e = $("setupErr");
+    if (!msg) { e.classList.add("hidden"); e.textContent = ""; return; }
+    e.textContent = msg;
+    e.classList.remove("hidden");
+  }
+  $("startBtn").addEventListener("click", () => {
+    const teams = +$("cfgTeams").value, size = +$("cfgSize").value, slot = +$("cfgSlot").value;
+    if (!(teams >= 2)) return setupError("Teams must be 2 or more.");
+    if (!(size >= 1)) return setupError("Rounds must be 1 or more.");
+    if (!(slot >= 1 && slot <= teams)) return setupError(`Your slot must be between 1 and ${teams}.`);
+    setupError(null);
+    deck = {
+      state: { teams, slot, size, punt: CATS.filter(c => setupPunt.has(c)), picks: [] },
+      mode: mockMode ? "mock" : "live",
+      rngState: (Date.now() ^ (slot * 2654435761)) >>> 0,
+      log: [],
+    };
+    log(`Draft started: ${teams} teams × ${size} rounds = ${teams * size} picks; you are Team ${slot}` +
+        (deck.state.punt.length ? `; punting ${deck.state.punt.join(", ")}` : "") +
+        (mockMode ? " · MOCK — arena personalities hold the other seats" : " · LIVE"));
+    if (mockMode) log(`Cast: ${mockCastFor().map(([s, n]) => `T${s}:${n}`).join(" ")}`);
+    save(); enterDraft();
+    if (mockMode) advanceAI();
+    renderAll();
+  });
+
+  /* ---------- persistence ---------- */
+  function save() { localStorage.setItem(LS_KEY, JSON.stringify(deck)); }
+  function restore() {
+    try {
+      const d = JSON.parse(localStorage.getItem(LS_KEY));
+      if (d && d.state && Array.isArray(d.state.picks)) return d;
+    } catch (e) { /* corrupt state: ignore */ }
+    return null;
+  }
+  function log(t, cls) {
+    deck.log.push({ t, cls: cls || "" });
+    if (deck.log.length > 400) deck.log = deck.log.slice(-400);
+  }
+
+  /* ---------- mode plumbing ---------- */
+  function enterDraft() {
+    $("setup").classList.add("hidden");
+    $("draft").classList.remove("hidden");
+    $("advanceBtn").classList.toggle("hidden", deck.mode !== "mock");
+    $("feedTitle").textContent = deck.mode === "mock" ? "Your pick" : "Pick feed";
+  }
+  function mockCastFor() {
+    const cast = [];
+    let i = 0;
+    for (let s = 1; s <= deck.state.teams; s++) {
+      if (s === deck.state.slot) continue;
+      cast.push([s, MOCK_CAST[i % MOCK_CAST.length]]);
+      i++;
+    }
+    return cast;
+  }
+  function draftDone() { return deck.state.picks.length >= deck.state.teams * deck.state.size; }
+
+  function advanceAI() {
+    if (deck.mode !== "mock") return;
+    const st = deck.state;
+    const castBySlot = new Map(mockCastFor());
+    const rng = makeRng(deck.rngState);
+    const rosters = buildRosters(st, PLAYERS);
+    let moved = false;
+    while (!draftDone()) {
+      const n = st.picks.length;
+      const slot = teamOfPick(n, st.teams);
+      if (slot === st.slot) break;
+      const name = castBySlot.get(slot);
+      const pool = availablePool(st, PLAYERS);
+      const params = { ...STRAT_DEFAULT, ...STRATEGIES[name] };
+      const ranks = params.matrix_aware && rosters[slot].length
+        ? categoryRanksFor(st, slot) : null;
+      const scored = strategyScores(name, pool, rosters[slot], ranks,
+        Math.floor(n / st.teams) + 1, st.size, rng, st.teams);
+      const p = scored[0].p;
+      st.picks.push({ player: p.n, slot });
+      rosters[slot].push(p);
+      log(`  ✓ (R${Math.floor(n / st.teams) + 1}) #${n + 1}: ${p.n} → T${slot} (${name})`);
+      moved = true;
+    }
+    deck.rngState = rng.state;
+    if (draftDone()) log("Draft complete — export the state and hand it to Cowork for grading.", "warn");
+    else if (moved) log(`— your pick, #${st.picks.length + 1} —`);
+    save();
+  }
+  function categoryRanksFor(st, slot) {
+    const fake = { ...st, slot };
+    return categoryRanks(fake, PLAYERS).ranks;
+  }
+
+  /* ---------- feed ---------- */
+  $("logBtn").addEventListener("click", runFeed);
+  $("feed").addEventListener("keydown", e => { if (e.key === "Enter") runFeed(); });
+  function runFeed() {
+    const feed = $("feed").value.trim();
+    if (!feed) return;
+    const res = processFeed(deck.state, PLAYERS, feed);
+    for (const l of res.lines) log(l.t, l.cls);
+    $("feed").value = "";
+    save();
+    if (!res.halted && deck.mode === "mock") advanceAI();
+    renderAll();
+  }
+  $("undoBtn").addEventListener("click", () => {
+    const picks = deck.state.picks;
+    if (!picks.length) return;
+    const last = picks.pop();
+    log(`  ↶ undid: ${last.player} (T${last.slot})`);
+    save(); renderAll();
+  });
+  $("advanceBtn").addEventListener("click", () => { advanceAI(); renderAll(); });
+  /* Two-click confirm: browser confirm() dialogs are blocked inside the
+     artifact sandbox, so the button itself asks for the second click. */
+  let resetArmed = null;
+  $("resetBtn").addEventListener("click", () => {
+    const btn = $("resetBtn");
+    if (resetArmed) {
+      clearTimeout(resetArmed);
+      resetArmed = null;
+      localStorage.removeItem(LS_KEY);
+      deck = null;
+      btn.textContent = "Reset draft";
+      btn.classList.remove("danger");
+      $("feed").value = "";
+      $("mirror").innerHTML = "";
+      $("draft").classList.add("hidden");
+      $("setup").classList.remove("hidden");
+      return;
+    }
+    btn.textContent = "Click again to confirm reset";
+    btn.classList.add("danger");
+    resetArmed = setTimeout(() => {
+      resetArmed = null;
+      btn.textContent = "Reset draft";
+      btn.classList.remove("danger");
+    }, 4000);
+  });
+
+  /* ---------- export / import ---------- */
+  function engineState() {
+    const { teams, slot, size, punt, picks } = deck.state;
+    return JSON.stringify({ teams, slot, size, punt, picks }, null, 2);
+  }
+  $("exportBtn").addEventListener("click", async () => {
+    const data = engineState();
+    const dl = window.claude && window.claude.downloads;
+    if (dl) {
+      try {
+        await dl.save({ filename: "draft_state.json", data });
+        log("Exported draft_state.json — drop it in the repo root and Cowork's engine picks up where this page left off.");
+      } catch (err) {
+        if (err && err.code === "declined") log("Export declined.", "warn");
+        else if (err && err.code === "rate_limited") log("Export prompt already open — try again in a moment.", "warn");
+        else fallbackDownload(data);
+      }
+    } else fallbackDownload(data);
+    renderMirror();
+  });
+  function fallbackDownload(data) {
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
+    a.download = "draft_state.json";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    log("Exported draft_state.json (browser download).");
+  }
+  $("copyBtn").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(engineState());
+      log("State JSON copied to clipboard.");
+    } catch (e) {
+      log("Clipboard unavailable — use Export instead.", "warn");
+    }
+    renderMirror();
+  });
+  $("importBtn").addEventListener("click", () => $("importFile").click());
+  $("importFile").addEventListener("change", e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    f.text().then(txt => {
+      let st;
+      try { st = JSON.parse(txt); } catch (err) { return setupError("That file isn't valid JSON."); }
+      if (!(st.teams >= 2 && st.slot >= 1 && st.size >= 1 && Array.isArray(st.picks)))
+        return setupError("Missing keys — expected {teams, slot, size, punt, picks}.");
+      setupError(null);
+      st.picks = st.picks.map((pk, i) =>
+        typeof pk === "string" ? { player: pk, slot: teamOfPick(i, st.teams) } : pk);
+      deck = { state: { teams: st.teams, slot: st.slot, size: st.size, punt: st.punt || [], picks: st.picks },
+               mode: "live", rngState: (Date.now() >>> 0), log: [] };
+      log(`Imported draft state: ${st.picks.length} picks, you are Team ${st.slot}.`);
+      save(); enterDraft(); renderAll();
+    });
+  });
+
+  /* ---------- tabs ---------- */
+  const TABS = ["best", "boardtab", "rosters", "matrix", "vs"];
+  for (const t of TABS) {
+    $("tab-" + t).addEventListener("click", () => {
+      for (const u of TABS) {
+        $("tab-" + u).setAttribute("aria-selected", String(u === t));
+        $("pane-" + u).classList.toggle("hidden", u !== t);
+      }
+    });
+  }
+
+  /* ---------- tooltip ---------- */
+  const tip = $("tip");
+  function showTip(text, x, y) {
+    tip.textContent = text;
+    tip.style.display = "block";
+    const pad = 12, w = tip.offsetWidth, h = tip.offsetHeight;
+    let left = x + pad, top = y + pad;
+    if (left + w > innerWidth - 8) left = x - w - pad;
+    if (top + h > innerHeight - 8) top = y - h - pad;
+    tip.style.left = Math.max(8, left) + "px";
+    tip.style.top = Math.max(8, top) + "px";
+  }
+  function hideTip() { tip.style.display = "none"; }
+  document.addEventListener("mousemove", e => {
+    const td = e.target.closest && e.target.closest("[data-tip]");
+    if (td) showTip(td.dataset.tip, e.clientX, e.clientY); else hideTip();
+  });
+  document.addEventListener("scroll", hideTip, { passive: true, capture: true });
+
+  /* Pre-draft board: no-punt injury-adjusted rank of every player.
+     The reference point for "value on the table" — computed once. */
+  const PRE_RANK = new Map();
+  {
+    const noPunt = new Set();
+    [...PLAYERS].filter(p => p.av > 0)
+      .sort((a, b) => adjValue(b, noPunt) - adjValue(a, noPunt))
+      .forEach((p, i) => PRE_RANK.set(p.n, i + 1));
+  }
+  const MKT_RANK = marketRanks([...PLAYERS].filter(p => p.av > 0));
+  function slideBonus(p, pickNo) {
+    const vb = JUDGMENT.valueBoard;
+    const rank = PRE_RANK.get(p.n);
+    if (!rank) return { slide: 0, bonus: 0, rank: null };
+    const slide = pickNo - rank;
+    return { slide, rank, bonus: Math.min(vb.cap, vb.perSpot * Math.max(0, slide - vb.deadband)) };
+  }
+
+  /* ---------- rendering ---------- */
+  function renderAll() {
+    hideTip();
+    renderStrip(); renderMirror(); renderMyRoster(); renderPuntAnalyzer(); renderBuildRead();
+    renderDecision(); renderBest();
+    renderGrid(); renderRosters(); renderMatrix(); renderVs();
+  }
+
+  /* Punt Analyzer — one running line at the top of the decision card.
+     States: forming (roster < 2) → lean detected (kept cat sunk to 10th+,
+     PUNT BUILD button pivots the whole system) → punt active (kept
+     strengths + weakest kept to watch). */
+  /* When the strip detects a firm, clear-path lean, the full-tilt pivot
+     button renders in the decision-card meta space (owner request). */
+  let leanState = null;
+
+  function renderPuntAnalyzer() {
+    const st = deck.state;
+    const box = $("puntline");
+    box.innerHTML = "";
+    box.classList.remove("lean");
+    const lead = el("span", "lead", "Build");
+    box.append(lead);
+    const mine = buildRosters(st, PLAYERS)[st.slot];
+    const punt = new Set(st.punt);
+    const tiers = rankTiers(st.teams);
+    /* Category rank strip (owner request 2026-07-23): the nine cats across,
+       each with your live rank vs the field — replaces the running sentence.
+       Chip color IS the analysis: green locked, red drifted, × punted. */
+    const haveRanks = mine.length >= 2;
+    const ranks = haveRanks ? categoryRanks(st, PLAYERS).ranks : null;
+    if (unknownCount(st) && haveRanks)
+      lead.dataset.tip = `⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)`;
+    const row1 = el("div", "catrow", "");
+    CATS.forEach((c, ci) => {
+      const chip = el("span", "cat", "");
+      chip.append(el("span", "catname", c === "TO" ? "TO↑" : c));
+      if (punt.has(c)) {
+        chip.classList.add("punted");
+        chip.append(el("span", "catrank", "×"));
+        chip.dataset.tip = `${c} punted — excluded from the build`;
+      } else if (!haveRanks) {
+        chip.append(el("span", "catrank", "—"));
+        chip.dataset.tip = "ranks activate at 2+ picks";
+      } else {
+        const r = ranks[c];
+        chip.append(el("span", "catrank", String(r)));
+        if (r <= tiers.locked) chip.classList.add("good");
+        else if (r >= tiers.lostFrom) chip.classList.add("bad");
+        chip.dataset.tip = `${c}: rank ${r} of ${st.teams} vs the field right now`;
+      }
+      row1.append(chip);
+    });
+    box.append(row1);
+    leanState = null;
+    if (!haveRanks || st.punt.length) return;
+    /* Punt governance unchanged behind the strip: firm-evidence gate +
+       70% clear-path rule decide when the pivot button appears. */
+    const kept = CATS.filter(c => !punt.has(c));
+    const drift = mine.length >= 4
+      ? kept.filter(c => ranks[c] >= tiers.lostFrom)
+          .sort((a, b) => ranks[b] - ranks[a]).slice(0, 3)
+      : [];
+    if (!drift.length) return;
+    box.classList.add("lean");
+    const firm = drift.length >= 2 || ranks[drift[0]] >= st.teams;
+    const path = puntPath(ranks, kept, drift, st.teams);
+    if (firm && path.clear) leanState = { drift, path };
+  }
+
+  /* Live build intelligence — recomputed on every pick. Four reads, one
+     line each, shown only once they mean something (roster >= 3). */
+  function renderBuildRead() {
+    const st = deck.state;
+    const box = $("buildread");
+    box.innerHTML = "";
+    box.classList.add("hidden");
+    const mine = buildRosters(st, PLAYERS)[st.slot];
+    if (mine.length < 3) return;
+    const punt = new Set(st.punt);
+    const kept = CATS.filter(c => !punt.has(c));
+    const { ranks, totals } = categoryRanks(st, PLAYERS);
+    const lines = [];
+
+    /* 1. Identity + weekly win path */
+    const strong = kept.filter(c => ranks[c] <= 3);
+    const wins = kept.filter(c => ranks[c] <= 4).length;
+    const losses = kept.filter(c => ranks[c] >= 9).length + st.punt.length;
+    lines.push([
+      ["k", "Identity"],
+      ["why", ` ${strong.length ? strong.join("·") + " build" : "balanced build"} — likely week: ${wins} up / ${losses} down / ${9 - wins - losses} swing`],
+    ]);
+
+    /* 2. Implicit punt drift (roster >= 5): kept cats ranked 10th+ */
+    let adoptList = [];
+    if (mine.length >= 5) {
+      const drift = kept.filter(c => ranks[c] >= rankTiers(st.teams).lostFrom)
+        .sort((a, b) => ranks[b] - ranks[a] || totals[st.slot][a] - totals[st.slot][b]);
+      if (drift.length) {
+        /* never suggest beyond a 3-category punt total */
+        adoptList = drift.slice(0, Math.max(0, 3 - st.punt.length));
+        /* clear-path rule: adoption offered only when >= 70% of the
+           prospective kept set is winnable */
+        const path = adoptList.length ? puntPath(ranks, kept, adoptList, st.teams) : null;
+        const offer = adoptList.length && path.clear;
+        const named = drift.slice(0, 2);
+        const rest = drift.slice(2);
+        const line = [
+          ["k", "Drift"],
+          ["why", ` drafting like a punt of ${named.map(c => `${c} (${ranks[c]}/${st.teams})`).join(", ")}` +
+            (rest.length ? ` — ${rest.join(", ")} also weak but salvageable` : "") +
+            (!adoptList.length ? " — already punting " + st.punt.length + "; trade for these instead of punting deeper."
+              : offer ? ` — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); formalize it and the Top 5 turns punt-coherent.`
+                      : ` — no clear path yet (${path.winnable.length}/${path.keptAfter.length} kept winnable, need ≥70%); build strengths before committing.`)],
+        ];
+        if (offer) line.push(["adopt", adoptList]);
+        lines.push(line);
+      }
+    }
+
+    /* 3. Tradeable surplus: kept cat where my lead over the whole field is big */
+    let bestSurplus = null;
+    for (const c of kept) {
+      let others = -Infinity;
+      for (let s = 1; s <= st.teams; s++)
+        if (s !== st.slot) others = Math.max(others, totals[s][c]);
+      const margin = totals[st.slot][c] - others;
+      if (margin > 2.5 && (!bestSurplus || margin > bestSurplus.margin))
+        bestSurplus = { c, margin };
+    }
+    if (bestSurplus) {
+      const targets = kept.filter(c => ranks[c] >= 8 && !adoptList.includes(c));
+      lines.push([
+        ["k", "Surplus"],
+        ["why", ` ${bestSurplus.c} +${bestSurplus.margin.toFixed(1)} over the field — trade capital` +
+          (targets.length ? `; shop it for ${targets.join("/")}` : "")],
+      ]);
+    }
+
+    /* 4. Swing vs the top rival: closest trailing kept cats */
+    if (mine.length >= 5) {
+      let rival = null, rivalKept = -Infinity;
+      for (let s = 1; s <= st.teams; s++) {
+        if (s === st.slot) continue;
+        const k = kept.reduce((acc, c) => acc + totals[s][c], 0);
+        if (k > rivalKept) { rivalKept = k; rival = s; }
+      }
+      if (rival) {
+        const swings = kept
+          .map(c => ({ c, m: totals[st.slot][c] - totals[rival][c] }))
+          .filter(r => r.m < 0 && r.m > -1.5)
+          .sort((a, b) => b.m - a.m).slice(0, 2);
+        if (swings.length)
+          lines.push([
+            ["k", "Swing"],
+            ["why", ` vs top rival T${rival}: ${swings.map(r => `${r.c} (${r.m.toFixed(1)})`).join(", ")} — closest flips to beat them`],
+          ]);
+      }
+    }
+
+    if (!lines.length) return;
+    box.classList.remove("hidden");
+    const head = el("p", "", "");
+    head.append(el("span", "lead", "Build read — live"));
+    box.append(head);
+    for (const parts of lines) {
+      const p = el("p", "", "");
+      for (const [cls, val] of parts) {
+        if (cls === "adopt") {
+          const b = el("button", "adopt", `Adopt punt ${val.join(", ")}`);
+          b.type = "button";
+          b.addEventListener("click", () => {
+            deck.state.punt = [...new Set([...deck.state.punt, ...val])];
+            log(`Punt adopted: ${deck.state.punt.join(", ")} — recommendations are now punt-coherent.`);
+            save(); renderAll();
+          });
+          p.append(b);
+        } else p.append(el("span", cls, val));
+      }
+      box.append(p);
+    }
+  }
+
+  function shortName(name) {
+    if (name.startsWith("UNKNOWN")) return name;
+    const parts = name.split(" ");
+    return parts.length > 1 ? parts[0][0] + " " + parts.slice(1).join(" ") : name;
+  }
+  /* Lineup-slot template in the owner's display order: positional slots,
+     then G/F flex, then Utils, Bench rows sized to the draft length. */
+  function slotTemplate(size) {
+    const restricted = [
+      ["PG", ["PG"]], ["SG", ["SG"]], ["SF", ["SF"]], ["PF", ["PF"]],
+      ["C", ["C"]], ["C", ["C"]], ["G", ["PG", "SG"]], ["F", ["SF", "PF"]],
+    ];
+    const slots = restricted.slice(0, Math.min(size, restricted.length))
+      .map(([label, elig]) => ({ label, elig }));
+    let flexLeft = size - slots.length;
+    for (let i = 0; i < Math.min(2, flexLeft); i++) slots.push({ label: "UTIL", elig: null });
+    flexLeft = size - slots.length;
+    for (let i = 0; i < flexLeft; i++) slots.push({ label: "BENCH", elig: null });
+    return slots;
+  }
+  function renderMyRoster() {
+    const st = deck.state;
+    const byName = new Map(PLAYERS.map(p => [p.n, p]));
+    const mine = [];
+    st.picks.forEach((pk, i) => {
+      if (pk.slot !== st.slot) return;
+      mine.push({ name: pk.player, pickNo: i + 1, p: byName.get(pk.player) || null });
+    });
+    const slots = slotTemplate(st.size);
+    /* Max bipartite matching of players onto restricted slots (same
+       augmenting approach as the feasibility guard). */
+    const slotOf = new Array(mine.length).fill(-1);
+    function augment(si, seen) {
+      for (let pi = 0; pi < mine.length; pi++) {
+        if (seen.has(pi) || !mine[pi].p) continue;
+        if (!slots[si].elig.some(e => positionsOf(mine[pi].p).includes(e))) continue;
+        seen.add(pi);
+        if (slotOf[pi] === -1 || augment(slotOf[pi], seen)) { slotOf[pi] = si; return true; }
+      }
+      return false;
+    }
+    for (let si = 0; si < slots.length; si++)
+      if (slots[si].elig) augment(si, new Set());
+    const assigned = new Array(slots.length).fill(null);
+    slotOf.forEach((si, pi) => { if (si >= 0) assigned[si] = mine[pi]; });
+    const leftovers = mine.filter((_, pi) => slotOf[pi] === -1);
+    for (let si = 0; si < slots.length && leftovers.length; si++)
+      if (!slots[si].elig && !assigned[si]) assigned[si] = leftovers.shift();
+
+    const ul = $("myRoster");
+    ul.innerHTML = "";
+    slots.forEach((slot, si) => {
+      const m = assigned[si];
+      const li = el("li", m ? "" : "empty");
+      li.append(el("span", "slot", slot.label));
+      if (m) {
+        const nm = el("span", "nm", shortName(m.name));
+        if (m.p) nm.dataset.tip = `${m.name} — ${m.p.p}${m.p.note ? " · " + m.p.note : ""}`;
+        if (m.p && m.p.av > 0 && m.p.av < 1) {
+          const fl = el("span", "flag risk", "▲");
+          fl.dataset.tip = m.p.note;
+          nm.appendChild(fl);
+        }
+        li.append(nm, el("span", "pk", `(Pick #${m.pickNo})`));
+      } else {
+        li.append(el("span", "nm", "—"));
+      }
+      ul.appendChild(li);
+    });
+    $("myRosterTitle").textContent = `Your roster (${mine.length}/${st.size})`;
+    /* family counts, right-aligned; multi-position players count in EACH
+       family they are eligible for (owner spec 2026-07-23) */
+    const famN = { G: 0, F: 0, C: 0 };
+    /* mine entries here are {name, pickNo, p} wrappers; UNKNOWN picks have
+       no player object and are skipped */
+    for (const e of mine) if (e.p) for (const f of familiesOf(e.p)) famN[f]++;
+    $("myRosterFams").textContent = `G (${famN.G})  F (${famN.F})  C (${famN.C})`;
+  }
+
+  function renderStrip() {
+    const st = deck.state;
+    const n = st.picks.length;
+    const total = st.teams * st.size;
+    const strip = $("strip");
+    if (draftDone()) {
+      $("feedCountdown").textContent = "(draft complete)";
+      strip.innerHTML = "";
+      strip.append(el("span", "", `Draft complete — ${total} picks`),
+        el("span", "you", `your roster: Team ${st.slot}`),
+        el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"));
+      return;
+    }
+    const onClock = teamOfPick(n, st.teams);
+    /* countdown under the feed title (owner request 2026-07-23) */
+    const until = myNextPick(st) - (n + 1);
+    $("feedCountdown").textContent =
+      until === 0 ? "(you're on the clock)" : `(${until} until your pick)`;
+    const mine = buildRosters(st, PLAYERS)[st.slot];
+    strip.innerHTML = "";
+    strip.append(
+      el("span", "", `Pick #${n + 1} · R${Math.floor(n / st.teams) + 1}/${st.size}`),
+      el("span", onClock === st.slot ? "onclock you" : "onclock",
+        onClock === st.slot ? "YOU are on the clock" : `T${onClock} on the clock`),
+      el("span", "", `your next: #${myNextPick(st)}`),
+      el("span", "", `your roster: ${mine.length}/${st.size}`),
+      el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"),
+      el("span", "", `${availablePool(st, PLAYERS).length} available`)
+    );
+    const unk = unknownCount(st);
+    if (unk) {
+      const w = el("span", "you", `⚠ ${unk} UNKNOWN — ranks exclude them; fix with n- Name`);
+      w.style.color = "var(--status-risk)";
+      strip.append(w);
+    }
+  }
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  function renderMirror() {
+    const m = $("mirror");
+    m.innerHTML = "";
+    /* full history, scrollable (owner request 2026-07-23); the box stays
+       pinned to the newest line via scrollTop below */
+    for (const l of deck.log) {
+      const d = el("div", l.cls, l.t);
+      m.appendChild(d);
+    }
+    m.scrollTop = m.scrollHeight;
+  }
+
+  function renderDecision() {
+    const st = deck.state;
+    const punt = new Set(st.punt);
+    const kept = CATS.filter(c => !punt.has(c));
+    const mine = buildRosters(st, PLAYERS)[st.slot];
+    const meta = $("deckmeta");
+    meta.innerHTML = "";
+    const flags = $("flags");
+    flags.innerHTML = "";
+    let weakest = [];
+    if (mine.length) {
+      const tot = rosterTotals(mine);
+      weakest = [...kept].sort((a, b) => tot[a] - tot[b]).slice(0, 2);
+    }
+    const posCounts = {};
+    for (const p of mine) for (const ps of positionsOf(p)) posCounts[ps] = (posCounts[ps] || 0) + 1;
+    /* pick #, roster count, weakest, and vs-field ranks now live in the
+       category rank strip and grid — this space belongs to the pivot. */
+    if (leanState) {
+      const { drift, path } = leanState;
+      const b = el("button", "adopt fulltilt", `PUNT BUILD → ${drift.join("·")} — FULL TILT`);
+      b.type = "button";
+      b.dataset.tip = `clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable (≥70%) — pivots every board to the punt`;
+      b.addEventListener("click", () => {
+        deck.state.punt = drift;
+        log(`PUNT BUILD adopted: ${drift.join(", ")} — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`);
+        save(); renderAll();
+      });
+      meta.append(b);
+    }
+    const unfilled = unfilledSlots(mine);
+    const remaining = st.size - mine.length;
+    if (unfilled.length && remaining - unfilled.length <= 2)
+      flags.appendChild(el("p", "flagline", `⚠ FEASIBILITY: open slots ${unfilled.join("/")}, ${remaining} picks left — cover these soon`));
+    const teamCt = {};
+    for (const p of mine) teamCt[p.t] = (teamCt[p.t] || 0) + 1;
+    const stacked = Object.entries(teamCt).filter(([, v]) => v >= 2);
+    if (stacked.length)
+      flags.appendChild(el("p", "flagline", "NBA-team stacks: " + stacked.sort().map(([k, v]) => `${k}:${v}`).join(" ")));
+    const g = (posCounts.PG || 0) + (posCounts.SG || 0);
+    const f = (posCounts.SF || 0) + (posCounts.PF || 0);
+    if (mine.length >= 5 && Math.abs(g - f) >= 4)
+      flags.appendChild(el("p", "flagline", `⚠ LEAN: ${f > g ? f + "F vs " + g + "G" : g + "G vs " + f + "F"} — flag for roster balance`));
+    if (mine.length) {
+      const { ranks, totals } = categoryRanks(st, PLAYERS);
+      let rival = null, rivalKept = -Infinity;
+      for (let s = 1; s <= st.teams; s++) {
+        if (s === st.slot) continue;
+        const k = kept.reduce((acc, c) => acc + totals[s][c], 0);
+        if (k > rivalKept) { rivalKept = k; rival = s; }
+      }
+      const edge = rival ? kept.filter(c => totals[st.slot][c] > totals[rival][c]) : [];
+      if (rival)
+        meta.append(el("span", "", `top rival T${rival}: you lead ${edge.length}/${kept.length} kept`));
+      const read = draftDone() ? null : archetypeRead(
+        st, mine, availablePool(st, PLAYERS), ranks, myNextPick(st), MKT_RANK);
+      if (read) {
+        const t = el("button", "target" + (read.urgent ? " urgent" : ""),
+          `TARGET: ${read.label}` + (read.urgent ? " — act now" : (read.wait ? " — can wait" : "")));
+        t.type = "button";
+        t.dataset.tip = read.tip;
+        t.addEventListener("click", () => {
+          bestState.pos = read.fam || "";
+          $("bestPos").value = read.fam || "";
+          bestState.sort = "fit";
+          $("bestSort").value = "fit";
+          renderBest();
+          $("bestSummary").scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        meta.append(t);
+      }
+    }
+
+    /* Value on the board — due-diligence strip, always shown when it fires */
+    const strip = $("valstrip");
+    strip.innerHTML = "";
+    strip.classList.add("hidden");
+    if (!draftDone()) {
+      const vb = JUDGMENT.valueBoard;
+      const N = myNextPick(st);
+      const avail = availablePool(st, PLAYERS);
+      const sliders = avail
+        .map(p => ({ p, ...slideBonus(p, N) }))
+        .filter(r => r.rank && r.rank <= vb.stripRank && r.slide >= vb.stripSlide)
+        .sort((a, b) => a.rank - b.rank)
+        .slice(0, 3);
+      const stars = avail
+        .map(p => ({ p, star: JUDGMENT.starTier[p.n] }))
+        .filter(r => r.star && r.star.market < N)
+        .sort((a, b) => a.star.market - b.star.market)
+        .slice(0, 3);
+      /* Compact: one labeled line per signal; rationale lives in hover tips */
+      if (sliders.length || stars.length) {
+        strip.classList.remove("hidden");
+        if (sliders.length) {
+          const line = el("p", "", "");
+          line.append(el("span", "lead", "Value "));
+          sliders.forEach((r, i) => {
+            if (i) line.append(el("span", "why", "  ·  "));
+            const who = el("span", "who", `⚡ ${shortName(r.p.n)}`);
+            who.dataset.tip = `board #${r.rank}, still available at your #${N} — slid ${r.slide} spots`;
+            line.append(who, el("span", "why", ` bd#${r.rank} ↓${r.slide}`));
+          });
+          strip.append(line);
+        }
+        if (stars.length) {
+          const line = el("p", "", "");
+          line.append(el("span", "lead", "Market "));
+          stars.forEach((r, i) => {
+            if (i) line.append(el("span", "why", "  ·  "));
+            const who = el("span", "who", `⭐ ${shortName(r.p.n)}`);
+            who.dataset.tip = r.star.why;
+            line.append(who, el("span", "why", ` ~#${r.star.market} mkt vs bd #${PRE_RANK.get(r.p.n)}`));
+          });
+          strip.append(line);
+        }
+      }
+    }
+
+    /* council recommendations */
+    const recos = $("recos");
+    recos.innerHTML = "";
+    if (draftDone()) { recos.appendChild(el("li", "", "Draft complete.")); return; }
+    const pool = availablePool(st, PLAYERS);
+    const councilPunt = st.punt.length ? { ...STRATEGIES.council, punt: st.punt } : STRATEGIES.council;
+    const saved = STRATEGIES.council;
+    STRATEGIES.council = councilPunt;
+    const ranks = mine.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
+    const recoFw = fitWeights(punt, ranks, mine.length, st.teams);
+    const rng = makeRng(1); // council has zero noise; rng unused but required
+    /* Augment the WHOLE scored pool, not a shortlist slice — a fit-suppressed
+       player with a big board slide or judgment adjustment must still compete
+       for the Top 5 (validation finding, 2026-07-23). */
+    const councilTop = strategyScores("council", pool, mine,
+      ranks, Math.floor(st.picks.length / st.teams) + 1, st.size, rng, st.teams);
+    STRATEGIES.council = saved;
+    /* Judgment layer + board-slide bonus: additive adjustments on the
+       council's shortlist, each with a visible rationale. */
+    const pickNo = draftDone() ? 0 : myNextPick(st);
+    const scored = councilTop.map(r => {
+      const j = JUDGMENT.players[r.p.n];
+      const v = slideBonus(r.p, pickNo);
+      return { ...r, adj: j ? j.adj : 0, why: j ? j.why : "",
+               slide: v.slide, boardRank: v.rank, vbonus: v.bonus,
+               fs: r.s + (j ? j.adj : 0) + v.bonus };
+    }).sort((a, b) => b.fs - a.fs).slice(0, 5);
+    $("recoTitle").textContent =
+      `Top 5 — ranked by council + judgment + value · showing FIT Z (tuned ${JUDGMENT.date})`;
+    /* Coin-flip tag: top two within 0.25z of composite score (the owner's
+       "~5 points" rule expressed in raw score, no invented slope). */
+    const coinFlip = scored.length > 1 && scored[0].fs - scored[1].fs <= 0.25;
+    const teamCt2 = teamCt;
+    for (let i = 0; i < scored.length; i++) {
+      const { p, s } = scored[i];
+      const li = document.createElement("li");
+      li.append(el("span", "rk", String(i + 1)));
+      const nm = el("span", "nm", p.n);
+      if (p.av > 0 && p.av < 1) {
+        const fl = el("span", "flag risk", "▲");
+        fl.dataset.tip = p.note;
+        nm.appendChild(fl);
+      }
+      const fRec = fitZ(p, recoFw);
+      const sc = el("span", "sc", fmtZ(fRec.adj, 2) + (p.av < 1 && fRec.raw > 0 ? "*" : ""));
+      sc.dataset.tip = `fit z — swing-weighted for your roster · composite rank score ${scored[i].fs.toFixed(2)}`;
+      li.append(nm, sc);
+      if (i === 0 && coinFlip) {
+        const cf = el("span", "flag", "(coin flip)");
+        cf.style.color = "var(--muted)";
+        nm.appendChild(cf);
+      }
+      const bits = [`${p.p} · ${p.t}`, `val ${fmtVal(p, punt)}`];
+      if (scored[i].adj || scored[i].vbonus) {
+        let breakdown = `council ${s.toFixed(2)}`;
+        if (scored[i].adj)
+          breakdown += ` ${scored[i].adj > 0 ? "+" : "−"} judgment ~${Math.abs(scored[i].adj).toFixed(2)}`;
+        if (scored[i].vbonus)
+          breakdown += ` + slide ${scored[i].vbonus.toFixed(2)}`;
+        bits.push(breakdown);
+      }
+      if (weakest.length)
+        bits.push("helps " + weakest.map(c => `${c}:${fmtZ(p.z[c], 1)}`).join(" "));
+      if ((teamCt2[p.t] || 0) >= 2) bits.push(`[would be 3rd ${p.t}]`);
+      if (p.note && p.av === 1) bits.push(`[${p.note}]`);
+      li.append(el("span", "meta", bits.join("   ")));
+      if (scored[i].why) {
+        const why = el("span", "meta", "⚖ " + scored[i].why);
+        why.style.color = "var(--ink-2)";
+        li.append(why);
+      }
+      if (scored[i].vbonus) {
+        const vb = el("span", "meta",
+          `⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}`);
+        vb.style.color = "var(--ink-2)";
+        li.append(vb);
+      }
+      const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
+      take.type = "button";
+      take.addEventListener("click", () => {
+        const yourTurn = !draftDone() &&
+          teamOfPick(deck.state.picks.length, deck.state.teams) === deck.state.slot;
+        $("feed").value = (yourTurn ? "my:" : "") + p.n;
+        $("feed").focus();
+        if (deck.mode === "mock" && yourTurn) runFeed();
+      });
+      li.append(take);
+      recos.appendChild(li);
+    }
+  }
+  function fmtZ(v, d) { return (v >= 0 ? "+" : "") + v.toFixed(d); }
+  function fmtVal(p, punt) {
+    const tv = totalValue(p, punt);
+    const av = adjValue(p, punt);
+    return fmtZ(av, 2) + (p.av < 1 && tv > 0 ? "*" : "");
+  }
+
+  /* best available tab */
+  let bestState = { pos: "", q: "", top: 25, sort: "fit" };
+  let draftedNote = "";
+  $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
+  $("bestQ").addEventListener("input", e => { draftedNote = ""; bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
+  /* Enter on a drafted name answers "where did he go?" (owner request) */
+  function draftedLookup(q) {
+    const st = deck.state;
+    const hits = st.picks.map((pk, i) => ({ pk, i }))
+      .filter(({ pk }) => pk.player.toLowerCase().includes(q));
+    if (hits.length)
+      return hits.slice(0, 3).map(({ pk, i }) =>
+        `${pk.player} — Drafted #${i + 1} (R${Math.floor(i / st.teams) + 1}) by ${pk.slot === st.slot ? "YOU" : "Team " + pk.slot}`).join("  ·  ");
+    if (!PLAYERS.some(p => p.n.toLowerCase().includes(q)))
+      return `no player matching “${q}” in the pool`;
+    return "";
+  }
+  $("bestQ").addEventListener("keydown", e => {
+    if (e.key !== "Enter") return;
+    draftedNote = bestState.q ? draftedLookup(bestState.q) : "";
+    renderBest();
+  });
+  $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
+  $("bestSort").addEventListener("change", e => { bestState.sort = e.target.value; renderBest(); });
+  $("bestReset").addEventListener("click", () => {
+    bestState = { pos: "", q: "", top: 25, sort: "fit" };
+    draftedNote = "";
+    $("bestPos").value = ""; $("bestQ").value = "";
+    $("bestTop").value = "25"; $("bestSort").value = "fit";
+    renderBest();
+  });
+  $("bestSort").value = bestState.sort; /* re-sync after Firefox autofill */
+  let bestHeadBuilt = false;
+  function renderBest() {
+    const st = deck.state;
+    const punt = new Set(st.punt);
+    if (!bestHeadBuilt) {
+      for (const c of CATS) {
+        const th = document.createElement("th");
+        th.scope = "col"; th.textContent = c === "TO" ? "TO↑" : c;
+        th.dataset.sort = c;
+        th.title = `sort by ${c} z`;
+        $("bestHead").appendChild(th);
+      }
+      $("bestHead").addEventListener("click", e => {
+        const th = e.target.closest("th");
+        if (!th || !th.dataset.sort) return;
+        bestState.sort = th.dataset.sort;
+        $("bestSort").value = ["fit", "val"].includes(bestState.sort) ? bestState.sort : "";
+        renderBest();
+      });
+      bestHeadBuilt = true;
+    }
+    let pool = availablePool(st, PLAYERS);
+    if (bestState.pos) pool = pool.filter(p => p.p.toUpperCase().includes(bestState.pos));
+    /* fit weights — recomputed from the live board every render */
+    const mineB = buildRosters(st, PLAYERS)[st.slot];
+    const ranksB = mineB.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
+    const fw = fitWeights(punt, ranksB, mineB.length, st.teams);
+    const fitOf = new Map(pool.map(p => [p.n, fitZ(p, fw)]));
+    const sk = bestState.sort;
+    pool.sort(
+      sk === "fit" ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
+      : sk === "mkt" ? (a, b) => (MKT_RANK.get(a.n) || 999) - (MKT_RANK.get(b.n) || 999)
+      : CATS.includes(sk) ? (a, b) => b.z[sk] - a.z[sk]
+      : (a, b) => adjValue(b, punt) - adjValue(a, punt));  /* val/value */
+    for (const th of $("bestHead").querySelectorAll("th"))
+      th.classList.toggle("sorted", th.dataset.sort === sk ||
+        (sk === "value" && th.dataset.sort === "val"));
+    let matches = 0;
+    const shown = [];
+    for (let i = 0; i < pool.length; i++) {
+      if (bestState.q && !pool[i].n.toLowerCase().includes(bestState.q)) continue;
+      matches++;
+      if (shown.length < bestState.top) shown.push({ rank: i + 1, p: pool[i] });
+    }
+    if (bestState.q && !matches && !draftedNote) draftedNote = draftedLookup(bestState.q);
+    $("bestSummary").textContent = `${pool.length} available` +
+      (bestState.q ? ` · matching “${bestState.q}”: ${matches}` +
+        (shown.length < matches ? ` (showing ${shown.length})` : "") : "") +
+      (draftedNote ? `  —  ${draftedNote}` : "");
+    const frag = document.createDocumentFragment();
+    for (const row of shown) {
+      const p = row.p;
+      const tr = document.createElement("tr");
+      tr.style.cursor = "pointer";
+      tr.addEventListener("click", () => {
+        /* Turn-aware staging: the click means "this player was just picked"
+           — by you only if the snake says you're on the clock. */
+        const yourTurn = !draftDone() &&
+          teamOfPick(deck.state.picks.length, deck.state.teams) === deck.state.slot;
+        $("feed").value = (yourTurn ? "my:" : "") + p.n;
+        $("feed").focus();
+      });
+      const tdR = el("td", "l", String(row.rank));
+      const tdN = el("td", "l player", p.n);
+      if (p.av > 0 && p.av < 1) {
+        const fl = el("span", "flag risk", "▲");
+        fl.dataset.tip = p.note;
+        tdN.appendChild(fl);
+      } else if (p.note) {
+        const fl = el("span", "flag", "†");
+        fl.style.color = "var(--muted)";
+        fl.dataset.tip = p.note;
+        tdN.appendChild(fl);
+      }
+      const mrk = MKT_RANK.get(p.n);
+      const tdM = el("td", "val", mrk ? "#" + mrk : "—");
+      tdM.style.color = "var(--muted)";
+      tdM.dataset.tip = "estimated real-draft position (market model)";
+      tr.append(tdM, tdR, tdN, el("td", "l team", p.t), el("td", "l pos", p.p));
+      const tdV = el("td", "val", fmtVal(p, punt));
+      tr.append(tdV);
+      const f = fitOf.get(p.n);
+      const tdF = el("td", "val", fmtZ(f.adj, 2) + (p.av < 1 && f.raw > 0 ? "*" : ""));
+      tdF.style.color = "var(--accent)";
+      tdF.dataset.tip = ranksB
+        ? `swing-weighted for your roster: locked (≤${rankTiers(st.teams).locked}) ×0.35, lost (≥${rankTiers(st.teams).lostFrom}) ×0.45, punt ×0` +
+          (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
+        : `roster < 2 — fit z equals balanced value for now`;
+      tr.append(tdF);
+      for (const c of CATS) {
+        const z = p.z[c];
+        const td = el("td", "z" + (z < 0 ? " neg" : ""), fmtZ(z, 1));
+        if (punt.has(c)) { td.className = "z"; td.style.setProperty("--hi", "0"); td.style.color = "var(--muted)"; td.style.textDecoration = "line-through"; }
+        else td.style.setProperty("--hi", Math.min(1, Math.abs(z) / 3).toFixed(3));
+        td.dataset.tip = `${c} z ${fmtZ(z, 2)}`;
+        tr.append(td);
+      }
+      frag.appendChild(tr);
+    }
+    $("bestRows").replaceChildren(frag);
+  }
+
+  /* draft board grid */
+  function renderGrid() {
+    const st = deck.state;
+    const head = $("gridHead");
+    head.innerHTML = "";
+    const hr = document.createElement("tr");
+    hr.appendChild(Object.assign(document.createElement("th"), { className: "l", scope: "col", textContent: "Rd" }));
+    for (let s = 1; s <= st.teams; s++) {
+      const th = document.createElement("th");
+      th.scope = "col"; th.className = "l";
+      th.textContent = s === st.slot ? `T${s} YOU` : `T${s}`;
+      hr.appendChild(th);
+    }
+    head.appendChild(hr);
+    const rows = $("gridRows");
+    rows.innerHTML = "";
+    const byPick = {};
+    st.picks.forEach((pk, i) => { byPick[i] = pk; });
+    for (let r = 0; r < st.size; r++) {
+      const tr = document.createElement("tr");
+      tr.appendChild(el("td", "l", String(r + 1)));
+      for (let col = 1; col <= st.teams; col++) {
+        const idx = r % 2 === 0 ? r * st.teams + (col - 1) : r * st.teams + (st.teams - col);
+        const pk = byPick[idx];
+        const td = el("td", "l" + (col === st.slot ? " player" : ""), pk ? pk.player : "·");
+        if (pk) td.dataset.tip = `#${idx + 1} → T${pk.slot}`;
+        tr.appendChild(td);
+      }
+      rows.appendChild(tr);
+    }
+  }
+
+  function renderRosters() {
+    const st = deck.state;
+    const punt = new Set(st.punt);
+    const rosters = buildRosters(st, PLAYERS);
+    const byName = new Map(PLAYERS.map(p => [p.n, p]));
+    const grid = $("rosterGrid");
+    grid.innerHTML = "";
+    for (let s = 1; s <= st.teams; s++) {
+      const div = el("div", "roster" + (s === st.slot ? " you" : ""));
+      const val = rosters[s].reduce((acc, p) => acc + totalValue(p, punt), 0);
+      div.appendChild(el("h3", "", s === st.slot ? `Team ${s} — YOU` : `Team ${s}`));
+      div.appendChild(el("p", "tot", `kept-cat value ${fmtZ(val, 1)}`));
+      const ul = document.createElement("ul");
+      for (const pk of st.picks.filter(pk => pk.slot === s)) {
+        const p = byName.get(pk.player);
+        ul.appendChild(el("li", "", p ? `${pk.player}  (${p.p})` : pk.player));
+      }
+      if (!st.picks.some(pk => pk.slot === s)) ul.appendChild(el("li", "", "(no picks yet)"));
+      div.appendChild(ul);
+      grid.appendChild(div);
+    }
+  }
+
+  function renderMatrix() {
+    const st = deck.state;
+    const punt = new Set(st.punt);
+    const { ranks, totals } = categoryRanks(st, PLAYERS);
+    const head = $("matrixHead");
+    head.innerHTML = "";
+    const hr = document.createElement("tr");
+    hr.appendChild(Object.assign(document.createElement("th"), { className: "l", scope: "col", textContent: "Team" }));
+    for (const c of CATS) hr.appendChild(Object.assign(document.createElement("th"), { scope: "col", textContent: c === "TO" ? "TO↑" : c }));
+    hr.appendChild(Object.assign(document.createElement("th"), { scope: "col", textContent: "Kept" }));
+    head.appendChild(hr);
+    const rows = $("matrixRows");
+    rows.innerHTML = "";
+    for (let s = 1; s <= st.teams; s++) {
+      const tr = document.createElement("tr");
+      if (s === st.slot) tr.className = "you";
+      tr.appendChild(el("td", "l player", s === st.slot ? `T${s} YOU` : `T${s}`));
+      for (const c of CATS) {
+        const v = totals[s][c];
+        const td = el("td", "z" + (v < 0 ? " neg" : ""), fmtZ(v, 1));
+        td.style.setProperty("--hi", Math.min(1, Math.abs(v) / 8).toFixed(3));
+        if (punt.has(c)) { td.style.color = "var(--muted)"; td.style.textDecoration = "line-through"; }
+        tr.appendChild(td);
+      }
+      const kept = CATS.filter(c => !punt.has(c)).reduce((acc, c) => acc + totals[s][c], 0);
+      tr.appendChild(el("td", "val", fmtZ(kept, 1)));
+      rows.appendChild(tr);
+    }
+    const keptCats = CATS.filter(c => !punt.has(c));
+    const winning = keptCats.filter(c => ranks[c] <= Math.max(1, Math.floor(st.teams / 3)));
+    const losing = keptCats.filter(c => ranks[c] > st.teams - Math.floor(st.teams / 3));
+    $("matrixNote").textContent =
+      "Your rank: " + keptCats.map(c => `${c} ${ranks[c]}/${st.teams}`).join("  ") +
+      ` · leading: ${winning.join(", ") || "–"} · trailing: ${losing.join(", ") || "–"}` +
+      (st.punt.length ? ` · punted: ${st.punt.join(", ")}` : "");
+  }
+
+  function renderVs() {
+    const st = deck.state;
+    const sel = $("vsTeam");
+    if (sel.options.length !== st.teams - 1) {
+      sel.innerHTML = "";
+      for (let s = 1; s <= st.teams; s++) {
+        if (s === st.slot) continue;
+        const o = document.createElement("option");
+        o.value = s; o.textContent = `Team ${s}`;
+        sel.appendChild(o);
+      }
+      sel.addEventListener("change", renderVs);
+    }
+    const opp = +sel.value || (st.slot === 1 ? 2 : 1);
+    const punt = new Set(st.punt);
+    const rosters = buildRosters(st, PLAYERS);
+    const a = rosterTotals(rosters[st.slot]), b = rosterTotals(rosters[opp]);
+    const rows = $("vsRows");
+    rows.innerHTML = "";
+    let wins = 0, losses = 0;
+    for (const c of CATS) {
+      const tr = document.createElement("tr");
+      const lead = a[c] > b[c] ? "you" : (b[c] > a[c] ? "them" : "tied");
+      if (!punt.has(c) && a[c] !== b[c]) { wins += lead === "you"; losses += lead === "them"; }
+      tr.append(el("td", "l player", c + (punt.has(c) ? " (punted)" : "")),
+        el("td", "", fmtZ(a[c], 2)), el("td", "", fmtZ(b[c], 2)),
+        el("td", "l " + (lead === "you" ? "player" : ""), lead));
+      rows.appendChild(tr);
+    }
+    $("vsNote").textContent = `Kept categories: you lead ${wins}–${losses} vs Team ${opp}`;
+  }
+
+  /* ---------- boot ---------- */
+  const prior = restore();
+  if (prior) {
+    deck = prior;
+    log(`— resumed: ${deck.state.picks.length} picks logged —`);
+    enterDraft(); renderAll();
+  }
+})();
+</script>
