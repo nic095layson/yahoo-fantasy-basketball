@@ -89,3 +89,24 @@ or arena work. Add entries dated, with the incident that taught them.
    this; retest only after a Claude connector update, with the one-liner
    "read LESSONS.md from nic095layson/yahoo-fantasy-basketball" in a FRESH
    Cowork conversation.
+
+## 2026-07-27 — The unlanded 2026-07-24 pull (fantasy-basketball-2026-27)
+
+10. **A pull that isn't pushed didn't happen — the repo is the only
+    persistence layer.** A draft-kit data pull was run on 2026-07-24 but its
+    output was never committed: no data-file commit exists after 2026-07-13
+    on any branch of `fantasy-basketball-2026-27` (the same day's daily pull
+    DID land in this repo — `3e4e827`, LeBron→PHI — the draft-kit half was
+    what got left behind). The next session (2026-07-27) had no way to see
+    the Friday work — chat transcripts, analysis, and delivered-but-
+    uncommitted files are invisible across sessions — so it correctly
+    measured the data layer as 14 days stale and re-did the window. Changes
+    dated 7/13–7/19 (Bridges official, Valanciunas to EuroLeague, the Dort
+    three-team trade) were still unapplied on 7/27, confirming the 7/24
+    draft-kit output never landed anywhere. Same root pattern as
+    lesson-of-7/12 (memory-sourced CSV): work exists only when it lands in
+    the repo, with provenance. Countermeasure: DATA-PULL.md §0 in
+    `fantasy-basketball-2026-27` makes push-to-main the definition of done,
+    with SHA verification on origin/main; quiet days still commit a pull-log
+    row and after-report, because those records are what date the next
+    pull's window.
