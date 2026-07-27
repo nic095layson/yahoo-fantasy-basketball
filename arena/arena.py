@@ -152,12 +152,9 @@ def lineup_weights(roster):
 # Research-backed market pins (2026-07-23): hype the stat model can't see.
 # ESPN/SI early boards take Flagg top-20 (year-2 leap premium); lottery
 # rookies go rounds 3-7 on name value despite the 9-cat rookie tax.
-# Two-sided pins (2026-07-27): exact market anchors, not ceilings — dated
-# reads from the 7/27 Yahoo expert 9-cat top-50 + rookie-hype reads.
-MKT_PIN = {"Cooper Flagg": 15, "AJ Dybantsa": 30, "Darryn Peterson": 55,
+MKT_PIN = {"Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
            "Dylan Harper": 60, "Cameron Boozer": 70, "Caleb Wilson": 90,
-           "Mikel Brown Jr.": 95, "Anthony Davis": 50, "LeBron James": 49,
-           "Kyrie Irving": 48, "Kon Knueppel": 42, "Keyonte George": 44}
+           "Mikel Brown Jr.": 95}
 
 
 def market_ranks(pool):
@@ -172,7 +169,7 @@ def market_ranks(pool):
         return s
     ordered = sorted(pool, key=lambda p: -mscore(p))
     model = {p["player"]: i + 1 for i, p in enumerate(ordered)}
-    eff = {n: MKT_PIN.get(n, r) for n, r in model.items()}  # two-sided anchors (2026-07-27)
+    eff = {n: min(r, MKT_PIN.get(n, r)) for n, r in model.items()}
     final = sorted(model, key=lambda n: (eff[n], model[n]))
     return {n: i + 1 for i, n in enumerate(final)}
 

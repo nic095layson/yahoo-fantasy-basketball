@@ -769,14 +769,9 @@ function lineupWeights(roster) {
 }
 const MKT_W = { "PTS": 1.6, "3PTM": 1.2, "AST": 1.0, "REB": 1.0,
   "ST": 0.7, "BLK": 0.7, "FG%": 0.5, "FT%": 0.5, "TO": 0.25 };
-/* Two-sided pins (2026-07-27): a pin is an EXACT market anchor, not a
-   ceiling — the model can no longer draft AD in round 1 when real rooms
-   fade him to ~50. Dated reads from the 7/27 Yahoo expert 9-cat top-50 +
-   rookie-hype reads; refreshed at each republish. */
-const MKT_PIN = { "Cooper Flagg": 15, "AJ Dybantsa": 30, "Darryn Peterson": 55,
+const MKT_PIN = { "Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
   "Dylan Harper": 60, "Cameron Boozer": 70, "Caleb Wilson": 90,
-  "Mikel Brown Jr.": 95, "Anthony Davis": 50, "LeBron James": 49,
-  "Kyrie Irving": 48, "Kon Knueppel": 42, "Keyonte George": 44 };
+  "Mikel Brown Jr.": 95 };
 function marketRanks(pool) {
   const mscore = p => {
     let v = CATS.reduce((t, c) => t + p.z[c] * MKT_W[c], 0);
@@ -787,7 +782,7 @@ function marketRanks(pool) {
   };
   const model = new Map([...pool].sort((a, b) => mscore(b) - mscore(a))
     .map((p, i) => [p.n, i + 1]));
-  const eff = n => MKT_PIN[n] ?? model.get(n);  // two-sided: pins are exact anchors (2026-07-27)
+  const eff = n => Math.min(model.get(n), MKT_PIN[n] ?? Infinity);
   const final = [...model.keys()].sort((a, b) => eff(a) - eff(b) || model.get(a) - model.get(b));
   return new Map(final.map((n, i) => [n, i + 1]));
 }
