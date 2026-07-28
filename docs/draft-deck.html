@@ -84,6 +84,10 @@ header.deck { display: flex; align-items: flex-start; justify-content: space-bet
 .stamp { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-1); text-align: right; }
 .stamp p { margin: 0; font-variant-numeric: tabular-nums; }
 .stamp #pullMsg { max-width: 340px; }
+.stamp #pullPanel { max-width: 360px; margin: 0; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-sm); text-align: left; }
+.stamp #pullPanel p { margin: 0 0 var(--space-1); text-align: left; }
+.stamp #pullPanel ol { margin: var(--space-1) 0 0; padding-inline-start: 1.3em; }
+button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk); }
 .statusstrip { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); align-items: baseline; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-2) var(--space-4); font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; margin-bottom: var(--space-4); }
 .statusstrip .you { color: var(--accent); font-weight: var(--weight-bold); }
 .statusstrip .onclock { font-weight: var(--weight-bold); }
@@ -217,8 +221,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
   <div class="stamp">
     <p class="small" id="clock"></p>
     <p class="small" id="dataAge"></p>
-    <button class="ghost" id="pullBtn" type="button">⟳ Fresh data pull</button>
-    <p class="small hidden" id="pullMsg" aria-live="polite"></p>
+    <button class="ghost" id="pullBtn" type="button">⟳ Daily sweep</button>
+    <div class="small hidden" id="pullPanel" aria-live="polite"></div>
   </div>
 </header>
 
@@ -1011,29 +1015,68 @@ const JUDGMENT = {
 
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-07-28"; // freshness stamp date; rewritten at each republish
+  // what the last sweep changed — rewritten at each republish
+  const BUILD_NOTE = "Daily sweep 7/28: Draymond Green FA->GSW (1yr/$27.7M agreed, HoopsRumors+BR 7/28); Harden/DeRozan/Beal/Westbrook still FA; no injury tag changes (Brunson/Ingram/Giddey camp-ready).";
+  function pullAge() {
+    return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
+  }
   function stampTick() {
     const now = new Date();
     $("clock").textContent = now.toLocaleString(undefined,
       { weekday: "short", month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" });
-    const days = Math.floor((now - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
+    const days = pullAge();
     const a = $("dataAge");
     a.textContent = `Data pull: ${BUILD_PULL} · ` +
       (days <= 0 ? "fresh today" : `${days} day${days > 1 ? "s" : ""} old`) +
       ` · ${PLAYERS.length} players`;
     a.style.color = days >= 2 ? "var(--status-out)" : (days >= 1 ? "var(--status-risk)" : "var(--muted)");
+    const b = $("pullBtn");
+    b.classList.toggle("stale", days >= 1);
+    b.textContent = days >= 1 ? `⟳ Daily sweep — ${days} day${days > 1 ? "s" : ""} behind` : "⟳ Daily sweep";
   }
   stampTick();
   setInterval(stampTick, 30000);
-  const PULL_REQUEST = "Fresh data pull for the Draft Deck: run the daily refresh per the freshness rule and pool-completeness law (rosters, trades, injuries, signings, rookie class), stamp freshness, regenerate the embedded pool, re-verify engine parity, and republish the Draft Deck artifact to the same URL.";
+  const PULL_REQUEST = "Daily sweep for the Draft Deck: run the daily refresh per the freshness rule and pool-completeness law (rosters, trades, injuries, signings, rookie class; two-source rule for team moves), verify rosters, stamp freshness, rebuild through scripts/build_deck.py with all gates, re-verify engine parity, and republish the Draft Deck artifact to the same URL.";
+  /* The sweep itself needs live web research + the fail-closed build gates,
+     which this sandboxed page cannot run (no network access by design —
+     that same lock is what makes the numbers trustworthy). The button is
+     the honest version: live freshness, what the last sweep changed, and
+     a one-click request handoff to Cowork, which does the real work and
+     republishes this exact URL. */
   $("pullBtn").addEventListener("click", async () => {
-    const msg = $("pullMsg");
-    msg.classList.remove("hidden");
-    try {
-      await navigator.clipboard.writeText(PULL_REQUEST);
-      msg.textContent = "Request copied ✓ — paste it to Cowork. This page is sandboxed (no web access); Cowork pulls comprehensive data and republishes this same URL.";
-    } catch (e) {
-      msg.textContent = "Clipboard blocked — just tell Cowork: “Fresh data pull for the Draft Deck.”";
+    const panel = $("pullPanel");
+    if (!panel.classList.contains("hidden")) { panel.classList.add("hidden"); return; }
+    panel.classList.remove("hidden");
+    const days = pullAge();
+    let copied = false;
+    try { await navigator.clipboard.writeText(PULL_REQUEST); copied = true; } catch (e) {}
+    panel.replaceChildren();
+    const status = el("p", "small",
+      days <= 0 ? "✓ Data is fresh — swept and republished today. A sweep now would only catch news from the last few hours."
+                : `⚠ Data is ${days} day${days > 1 ? "s" : ""} old — run the sweep before drafting.`);
+    status.style.color = days >= 1 ? "var(--status-risk)" : "var(--status-ok, var(--muted))";
+    panel.appendChild(status);
+    if (BUILD_NOTE) {
+      const note = el("p", "small", `Last sweep (${BUILD_PULL}): ${BUILD_NOTE}`);
+      note.style.color = "var(--muted)";
+      panel.appendChild(note);
     }
+    const how = el("p", "small", copied
+      ? "Sweep request copied to your clipboard ✓"
+      : "Clipboard blocked — just tell Cowork: “Daily sweep for the Draft Deck.”");
+    panel.appendChild(how);
+    const ol = document.createElement("ol");
+    ol.className = "small";
+    for (const step of [
+      copied ? "Paste it into Cowork (Claude) and send." : "Ask Cowork: “Daily sweep for the Draft Deck.”",
+      "Cowork sweeps the news, re-verifies all 246 placements, rebuilds through the fail-closed gates, and republishes this same URL (~10 min).",
+      "Hard-refresh this page (Ctrl/Cmd+Shift+R) — the stamp above should show today's date.",
+    ]) {
+      const li = document.createElement("li");
+      li.textContent = step;
+      ol.appendChild(li);
+    }
+    panel.appendChild(ol);
   });
   const LS_KEY = "draftdeck.v1";
   let deck = null; // {state:{teams,slot,size,punt,picks}, mode, rngState, log:[]}

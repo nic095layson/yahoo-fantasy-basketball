@@ -83,13 +83,21 @@ def main():
                        flags=re.S)
     html, n2 = re.subn(r'const BUILD_PULL = "[^"]*";',
                        f'const BUILD_PULL = "{fresh["date"]}";', html, count=1)
+    # what the last sweep changed, shown by the Daily-sweep button panel
+    note = json.dumps(fresh.get("note") or "")
+    # whole-line anchor (the JSON note contains semicolons) and a callable
+    # replacement (the JSON may contain backslash escapes re.sub would eat);
+    # the declaration line must carry no trailing comment
+    html, n2b = re.subn(r"const BUILD_NOTE = .*",
+                        lambda m: f"const BUILD_NOTE = {note};", html, count=1)
     # the visible header stamp renders from BUILD_PULL at runtime; the footer
     # prose date is soft-synced (narrative text, shape may change)
     html, n3 = re.subn(r"Pool refreshed \d{4}-\d{2}-\d{2}",
                        f"Pool refreshed {fresh['date']}", html, count=1)
-    if not (n1 == 1 and n2 == 1):
-        fail(f"injection anchors not found (players={n1}, build_pull={n2}) — "
-             "deck markup drifted; do not hand-edit anchors")
+    if not (n1 == 1 and n2 == 1 and n2b == 1):
+        fail(f"injection anchors not found (players={n1}, build_pull={n2}, "
+             f"build_note={n2b}) — deck markup drifted; do not hand-edit "
+             "anchors")
     if n3 == 0:
         print("note: footer prose date anchor not found (soft sync skipped)")
 
@@ -117,6 +125,8 @@ def main():
              "round-trip; deck NOT safe to publish")
     if f'const BUILD_PULL = "{fresh["date"]}"' not in back:
         fail("post-write integrity check failed — BUILD_PULL not synced")
+    if f"const BUILD_NOTE = {note};" not in back:
+        fail("post-write integrity check failed — BUILD_NOTE not synced")
 
     print(f"deck built: {len(pool)} players · pull {fresh['date']} · "
           f"verification {ver.get('mode')} ({ver.get('checked')}/{len(pool)} "
