@@ -46,7 +46,7 @@ hoops.DATA_PATH = DATA  # arena reads its own frozen snapshot
 
 CATS = hoops.CATS
 BASE_POS = ("PG", "SG", "SF", "PF", "C")
-TEAMS, ROUNDS = 12, 15
+TEAMS, ROUNDS = 12, 13   # 13-slot league codified 2026-07-12 (was 15; re-based 2026-07-28)
 WEEKS, PLAYOFF_TEAMS = 18, 6
 STARTERS = 13           # legacy cap (lineup_weights governs since 2026-07-23)
 BENCH_WEIGHT = 0.15
@@ -79,7 +79,13 @@ DEFAULT = dict(punt=(), matrix_aware=False, locked_w=0.35, lost_w=0.45,
 
 STRATEGIES = {
     "council":     dict(matrix_aware=True, rec_compound=True, stack_pen=0.5,
-                        need_w=0.3),          # the production ruleset
+                        need_w=0.3,
+                        # locked/lost neutralized 2026-07-28: swing
+                        # down-weighting cost -3.78pp champ causally
+                        # (120 CRN-paired drafts, t=5.16; monotone
+                        # cur->mid->neutral sweep). Field seats keep
+                        # DEFAULT 0.35/0.45 so baselines stay comparable.
+                        locked_w=1.0, lost_w=1.0),
     "bpa_pure":    dict(),
     "punt_ft":     dict(punt=("FT%",), matrix_aware=True),
     "punt_ast":    dict(punt=("AST",), matrix_aware=True),

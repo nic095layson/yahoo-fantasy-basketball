@@ -1,0 +1,208 @@
+[
+ {
+  "round": 1,
+  "actual": "Cade Cunningham",
+  "actual_rank": 5,
+  "in_top5": true,
+  "no1": "Tyrese Maxey (fs 5.64)",
+  "target": null,
+  "pinned": null
+ },
+ {
+  "round": 2,
+  "actual": "Donovan Mitchell",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Donovan Mitchell (fs 5.00)",
+  "target": null,
+  "pinned": null
+ },
+ {
+  "round": 3,
+  "actual": "Devin Booker",
+  "actual_rank": 3,
+  "in_top5": true,
+  "no1": "Desmond Bane (fs 4.43)",
+  "target": {
+   "label": "Scoring C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false,
+   "shelf": 2,
+   "best": "Lauri Markkanen"
+  },
+  "pinned": null
+ },
+ {
+  "round": 4,
+  "actual": "Jalen Brunson",
+  "actual_rank": 8,
+  "in_top5": false,
+  "no1": "Payton Pritchard (fs 2.74)",
+  "target": {
+   "label": "Shooting G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false,
+   "shelf": 15,
+   "best": "Payton Pritchard"
+  },
+  "pinned": null
+ },
+ {
+  "round": 5,
+  "actual": "Lauri Markkanen",
+  "actual_rank": 2,
+  "in_top5": true,
+  "no1": "Cameron Johnson (fs 2.71)",
+  "target": {
+   "label": "Shooting F",
+   "fam": "F",
+   "urgent": false,
+   "wait": false,
+   "shelf": 14,
+   "best": "Cameron Johnson"
+  },
+  "pinned": null
+ },
+ {
+  "round": 6,
+  "actual": "Joel Embiid",
+  "actual_rank": 18,
+  "in_top5": false,
+  "no1": "Zach LaVine (fs 2.05)",
+  "target": {
+   "label": "Shooting C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false,
+   "shelf": 1,
+   "best": "Brook Lopez"
+  },
+  "pinned": null
+ },
+ {
+  "round": 7,
+  "actual": "Pascal Siakam",
+  "actual_rank": 3,
+  "in_top5": true,
+  "no1": "Mikal Bridges (fs 2.30)",
+  "target": {
+   "label": "Shooting C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false,
+   "shelf": 1,
+   "best": "Naz Reid"
+  },
+  "pinned": {
+   "name": "Naz Reid",
+   "fs": 0.74,
+   "gap_to_no1": 1.56,
+   "urgent": true,
+   "shelf": 1
+  }
+ },
+ {
+  "round": 8,
+  "actual": "Herbert Jones",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Herbert Jones (fs 1.57)",
+  "target": {
+   "label": "Shooting F",
+   "fam": "F",
+   "urgent": false,
+   "wait": false,
+   "shelf": 12,
+   "best": "Aaron Gordon"
+  },
+  "pinned": null
+ },
+ {
+  "round": 9,
+  "actual": "Devin Vassell",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Devin Vassell (fs 0.72)",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": true,
+   "shelf": 4,
+   "best": "John Collins"
+  },
+  "pinned": {
+   "name": "John Collins",
+   "fs": -0.19,
+   "gap_to_no1": 0.9,
+   "urgent": false,
+   "shelf": 4
+  }
+ },
+ {
+  "round": 10,
+  "actual": "Jerami Grant",
+  "actual_rank": 2,
+  "in_top5": true,
+  "no1": "Jabari Smith Jr. (fs 0.19)",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 3,
+   "best": "John Collins"
+  },
+  "pinned": null
+ },
+ {
+  "round": 11,
+  "actual": "Keon Ellis",
+  "actual_rank": 2,
+  "in_top5": true,
+  "no1": "Cameron Boozer (fs -0.14)",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 2,
+   "best": "Santi Aldama"
+  },
+  "pinned": null
+ },
+ {
+  "round": 12,
+  "actual": "Alex Caruso",
+  "actual_rank": 2,
+  "in_top5": true,
+  "no1": "Dereck Lively II (fs -0.33)",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 1,
+   "best": "Wendell Carter Jr."
+  },
+  "pinned": null
+ },
+ {
+  "round": 13,
+  "actual": "Ayo Dosunmu",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Ayo Dosunmu (fs -1.07)",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 2,
+   "best": "Derik Queen"
+  },
+  "pinned": null
+ }
+]

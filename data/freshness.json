@@ -1,9 +1,9 @@
 {
-  "date": "2026-07-27",
-  "note": "Daily pull 2026-07-27: LeBron PHI official (7/26) + KCP to PHI (7/25) \u2014 PHI logjam judgments refreshed (Maxey/Simons/Edgecombe); Draymond AND Harden to FA (options declined, re-signs expected but unsigned as of 7/27 \u2014 consistent treatment); Cole Anthony to MIL w/ backup-PG reprice (buyout+signing ~7/12-25); Valanciunas removed (Zalgiris 7/15); Jaquez spelling + 4 comma-broken notes repaired; completeness sync: 20 names ported from draft-kit verified projections, MUST_HAVE +8. Sweep 7/24-27 (5-agent, 2-source rule): Westbrook still FA, Kawhi hold unchanged (fact-finding done 7/25), Kuminga rights resolve to ATL, Hezonja\u2192CLE + Terry waived (fringe watchlist).",
+  "date": "2026-07-28",
+  "note": "Daily sweep 7/28: Draymond Green FA->GSW (1yr/$27.7M agreed, HoopsRumors+BR 7/28); Harden/DeRozan/Beal/Westbrook still FA; no injury tag changes (Brunson/Ingram/Giddey camp-ready).",
   "rosters_verified": {
-    "date": "2026-07-27",
+    "date": "2026-07-28",
     "mode": "fallback-partial",
-    "sources": "scripts/verify_rosters.py fallback-partial 246/246 clean; evidence data/rosters_official.json updated 2026-07-27 (per-row dated sources)"
+    "sources": "fallback-partial vs data/rosters_official.json (2026-07-28): 0 mismatches"
   }
 }
