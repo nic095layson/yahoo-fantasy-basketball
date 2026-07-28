@@ -385,6 +385,7 @@ def tournament(seasons, seed, rotations=1, param_overrides=None, names=None):
     names = names or list(STRATEGIES)
     total_c = {n: 0 for n in names}
     total_p = {n: 0 for n in names}
+    seated = {n: 0 for n in names}
     for rr in range(rotations):
         base = names[:]
         if rr:
@@ -393,12 +394,17 @@ def tournament(seasons, seed, rotations=1, param_overrides=None, names=None):
             order = base[rotation:] + base[:rotation]
             rosters = run_draft(order, pool, rng, param_overrides)
             champs, plays = simulate_seasons(rosters, seasons, rng)
-            for slot, name in enumerate(order, 1):
+            # only the first TEAMS names are seated; with more strategies
+            # than seats, extras sit this draft out (crash fix 2026-07-28:
+            # adding the 13th personality made enumerate(order) walk past
+            # slot 12 -> KeyError, breaking stock tournament/slots/cadence)
+            for slot, name in enumerate(order[:TEAMS], 1):
                 total_c[name] += champs[slot]
                 total_p[name] += plays[slot]
-    denom = seasons * TEAMS * rotations
-    return {n: {"champ_pct": 100 * total_c[n] / denom,
-                "playoff_pct": 100 * total_p[n] / denom} for n in names}
+                seated[name] += 1
+    return {n: {"champ_pct": 100 * total_c[n] / (seasons * seated[n]),
+                "playoff_pct": 100 * total_p[n] / (seasons * seated[n]),
+                "drafts_seated": seated[n]} for n in names if seated[n]}
 
 
 def evaluate(seasons, seeds, rotations, param_overrides=None):
