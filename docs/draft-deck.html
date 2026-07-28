@@ -304,7 +304,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span class="ctl">Show</span>
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
       <span class="ctl">Sort</span>
-      <select id="bestSort" autocomplete="off"><option value="fit" selected>Fit z (my roster)</option><option value="val">Balanced val</option></select>
+      <select id="bestSort" autocomplete="off"><option value="val" selected>Balanced val</option><option value="fit">Fit z (my roster)</option></select>
       <button type="button" id="bestReset" title="clear position, search, show, and sort filters">Reset</button>
       <span class="small" id="bestSummary"></span>
     </div>
@@ -365,7 +365,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-07-28 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (7/28): Draymond Green is back on GSW — one year, $27.7M agreed (Hoops Rumors + Bleacher Report, 7/28); Harden's Cleveland return remains agreed-but-unsigned by design, and DeRozan, Beal, and Westbrook are still true free agents. Carried forward: LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. As of 2026-07-28 the council scores all nine categories at full weight: the old locked/lost down-weighting cost 3.8 championship points causally in 120 paired arena drafts (t=5.16), so it was retired from the ranking and survives only as the Fit reading lens. Mock opponents draft by board value with noise, not market ADP — stars fall further in mocks than they will in a real room (an ADP persona lands when September consensus data exists). The judgment layer — per-player adjustments with rationales — is authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. As of 2026-07-28 the council scores all nine categories at full weight: the old locked/lost down-weighting cost 3.8 championship points causally in 120 paired arena drafts (t=5.16), so it was retired from the ranking and survives only as the Fit reading lens. The same day's market-timing layer (owner rule: value says who, price says when) adds a BUY-NOW / CAN-WAIT / TOSS-UP verdict to each recommendation from a survival model over the market ranks — ~Φ((mkt−pick)/σ) — plus a wait-chain for your neediest position; these are display advice only, never re-rank anything, and are calibrated for a market-priced room (mock bots draft by value, so discounted vets leave mock boards earlier than real ones). Mock opponents draft by board value with noise, not market ADP — stars fall further in mocks than they will in a real room (an ADP persona lands when September consensus data exists). The judgment layer — per-player adjustments with rationales — is authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1348,6 +1348,33 @@ const JUDGMENT = {
       .forEach((p, i) => PRE_RANK.set(p.n, i + 1));
   }
   const MKT_RANK = marketRanks([...PLAYERS].filter(p => p.av > 0));
+  /* Market-timing layer (owner RULE 2026-07-28: "value says WHO, price
+     says WHEN — never pay pick-50 price for a pick-100 player"). The
+     survival model: a player leaves the board around his market rank
+     with a spread that widens down-board — P(alive at pick N) =
+     Φ((mkt − N) / σ), σ = max(6, 0.15·mkt). July market estimate;
+     the September multi-source ADP pull sharpens it. Display-only:
+     these numbers never re-rank anything. */
+  function survivalP(mkt, pickN) {
+    if (!mkt || mkt >= 999) return 0.95;
+    const s = (mkt - pickN) / Math.max(6, 0.15 * mkt);
+    const x = Math.abs(s) / Math.SQRT2;
+    const t = 1 / (1 + 0.3275911 * x);
+    const poly = t * (0.254829592 + t * (-0.284496736 + t * (1.421413741 +
+      t * (-1.453152027 + t * 1.061405429))));
+    const erf = 1 - poly * Math.exp(-x * x);
+    const phi = 0.5 * (1 + (s < 0 ? -erf : erf));
+    return Math.min(0.99, Math.max(0.01, phi));
+  }
+  function myFuturePicks(state, k) {
+    const out = [];
+    let n = state.picks.length;
+    while (out.length < k && n < state.teams * state.size) {
+      if (teamOfPick(n, state.teams) === state.slot) out.push(n + 1);
+      n++;
+    }
+    return out;
+  }
   function slideBonus(p, pickNo) {
     const vb = JUDGMENT.valueBoard;
     const rank = PRE_RANK.get(p.n);
@@ -1835,6 +1862,15 @@ const JUDGMENT = {
        at 1.5 (one genuine FT%-punt runaway at 1.98). Glyph is 🚀, NOT ⭐ —
        the star already means "market star" in the strip above. */
     const standout = scored.length > 1 && scored[0].fs - scored[1].fs >= 1.5;
+    /* family shelves for the verdict chips: how many of each family the
+       room still prices inside the next two rounds (same math as the
+       TARGET's scarcity read) */
+    const priceWin = st.picks.length + st.teams * 2;
+    const shelfNow = { G: 0, F: 0, C: 0 };
+    for (const q of pool) if ((MKT_RANK.get(q.n) || 999) <= priceWin)
+      for (const f of familiesOf(q)) shelfNow[f]++;
+    const futurePicks = myFuturePicks(st, 2);
+    const nextTurn = futurePicks.length > 1 ? futurePicks[1] : null;
     const teamCt2 = teamCt;
     for (let i = 0; i < scored.length; i++) {
       const { p, s } = scored[i];
@@ -1887,6 +1923,39 @@ const JUDGMENT = {
         vb.style.color = "var(--ink-2)";
         li.append(vb);
       }
+      /* Market-timing verdict chip (owner RULE 2026-07-28): value says
+         WHO, price says WHEN. Scarcity (shelf ≤ 2) is the only thing
+         allowed to beat price. Display-only — never re-ranks. */
+      const mktR = MKT_RANK.get(p.n);
+      if (mktR && nextTurn) {
+        const ps = survivalP(mktR, nextTurn);
+        const pFams = familiesOf(p);
+        const dying = pFams.filter(f => shelfNow[f] <= 2);
+        let chip, why;
+        if (dying.length) {
+          chip = "BUY NOW"; why = `${dying.map(f => `${f} shelf: ${shelfNow[f]} in window`).join(", ")} — scarcity beats price`;
+        } else if (ps >= 0.60) {
+          chip = "CAN WAIT"; why = `room price #${mktR} — ~${Math.round(ps * 100)}% still there at your #${nextTurn}`;
+          /* mock-room truth guard (verified empirically 2026-07-28: in
+             replayed mocks, market-based WAITs survived only 32/88 —
+             value-drafting bots don't misprice, so the discount that
+             makes waiting profitable doesn't exist here) */
+          if (deck.mode === "mock" &&
+              survivalP(PRE_RANK.get(p.n) || 999, nextTurn) < 0.40)
+            why += ` · but THIS mock's bots draft by value — here he likely goes sooner`;
+        } else if (ps <= 0.40) {
+          chip = "BUY NOW"; why = `room price #${mktR} — only ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
+        } else {
+          chip = "TOSS-UP"; why = `room price #${mktR} — ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
+        }
+        const pl = el("span", "meta", `⏱ ${why} → `);
+        const ch = el("span", "flag", chip);
+        ch.style.fontWeight = "600";
+        ch.style.color = chip === "CAN WAIT" ? "var(--muted)" : "var(--accent)";
+        ch.dataset.tip = "survival % assumes a market-priced room (July estimate — September ADP sharpens it) — the room you're TRAINING for. Mock bots draft by VALUE, so a warning is appended when this mock room will likely jump the line. Shelf ≤ 2 overrides price.";
+        pl.appendChild(ch);
+        li.append(pl);
+      }
       const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
       take.type = "button";
       take.addEventListener("click", () => {
@@ -1932,6 +2001,40 @@ const JUDGMENT = {
         recos.appendChild(li);
       }
     }
+    /* Last-bus ladder (owner RULE 2026-07-28): for the family furthest
+       under its startable floor, the wait-chain across my future picks —
+       at each turn, the best candidate with ≥50% survival odds under the
+       market model. Passing on a need becomes a plan, not a free-fall. */
+    const famCt3 = { G: 0, F: 0, C: 0 };
+    for (const q of mine) for (const f of familiesOf(q)) famCt3[f]++;
+    const FLOOR3 = { G: 3, F: 3, C: 2 };
+    const ladderFam = ["C", "F", "G"].filter(f => famCt3[f] < FLOOR3[f])
+      .sort((a, b) => (FLOOR3[b] - famCt3[b]) - (FLOOR3[a] - famCt3[a]))[0];
+    const laterPicks = myFuturePicks(st, 4).slice(1);
+    if (ladderFam && laterPicks.length) {
+      const famAll = [...pool]
+        .filter(q => familiesOf(q).includes(ladderFam) && adjValue(q, punt) > 0)
+        .sort((a, b) => adjValue(b, punt) - adjValue(a, punt));
+      const seen = new Set();
+      const steps = [];
+      for (const pk of laterPicks) {
+        const cand = famAll.find(q => !seen.has(q.n) &&
+          survivalP(MKT_RANK.get(q.n), pk) >= 0.5);
+        if (!cand) continue;
+        seen.add(cand.n);
+        steps.push(`your #${pk}: ${cand.n} ~${Math.round(survivalP(MKT_RANK.get(cand.n), pk) * 100)}%`);
+      }
+      if (steps.length) {
+        const li = document.createElement("li");
+        li.style.borderStyle = "dotted";
+        li.append(el("span", "rk", "🚌"));
+        const meta = el("span", "meta",
+          `${ladderFam} wait-chain — best ${ladderFam} likely still on the bus: ${steps.join(" → ")}`);
+        meta.dataset.tip = "for your neediest family: at each future pick, the highest-value candidate with ≥50% survival under the market model — real-room advice. In mock mode the value-drafting bots take these players earlier; the chain trains your September timing. July prices; ADP sharpens.";
+        li.append(meta);
+        recos.appendChild(li);
+      }
+    }
   }
   function fmtZ(v, d) { return (v >= 0 ? "+" : "") + v.toFixed(d); }
   function fmtVal(p, punt) {
@@ -1941,7 +2044,9 @@ const JUDGMENT = {
   }
 
   /* best available tab */
-  let bestState = { pos: "", q: "", top: 25, sort: "fit" };
+  /* default sort is VAL (owner RULE 2026-07-28: value-first — the Fit
+     lens hid a co-top-value C from the visible top 25 mid-draft) */
+  let bestState = { pos: "", q: "", top: 25, sort: "val" };
   let draftedNote = "";
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
   $("bestQ").addEventListener("input", e => { draftedNote = ""; bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
@@ -1965,10 +2070,10 @@ const JUDGMENT = {
   $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
   $("bestSort").addEventListener("change", e => { bestState.sort = e.target.value; renderBest(); });
   $("bestReset").addEventListener("click", () => {
-    bestState = { pos: "", q: "", top: 25, sort: "fit" };
+    bestState = { pos: "", q: "", top: 25, sort: "val" };
     draftedNote = "";
     $("bestPos").value = ""; $("bestQ").value = "";
-    $("bestTop").value = "25"; $("bestSort").value = "fit";
+    $("bestTop").value = "25"; $("bestSort").value = "val";
     renderBest();
   });
   $("bestSort").value = bestState.sort; /* re-sync after Firefox autofill */
