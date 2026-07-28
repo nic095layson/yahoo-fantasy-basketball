@@ -613,7 +613,9 @@ def cmd_slots(args):
             order = base[rotation:] + base[:rotation]
             rosters = run_draft(order, pool, rng)
             champs, _ = simulate_seasons(rosters, args.seasons, rng)
-            for slot, name in enumerate(order, 1):
+            # 13 personalities, 12 seats: only the seated prefix scores
+            # (same fix as tournament(), gauntlet 2026-07-28)
+            for slot, name in enumerate(order[:TEAMS], 1):
                 cell_c[name][slot] += champs[slot]
                 cell_n[name][slot] += args.seasons
     print(f"\nchamp% by strategy x slot ({args.rotations} rotations x "

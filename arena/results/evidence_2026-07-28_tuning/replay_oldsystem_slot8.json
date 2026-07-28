@@ -1,0 +1,291 @@
+[
+ {
+  "round": 1,
+  "pick_no": 8,
+  "actual": "Cade Cunningham",
+  "actual_council_rank": 5,
+  "actual_fit_rank": 5,
+  "fs_delta_vs_no1": 0.42,
+  "top5": [
+   "Tyrese Maxey (fs 5.64)",
+   "Chet Holmgren (fs 5.56)",
+   "Evan Mobley (fs 5.56)",
+   "Tyrese Haliburton (fs 5.41)",
+   "Cade Cunningham (fs 5.23)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Tyrese Maxey",
+  "target": null
+ },
+ {
+  "round": 2,
+  "pick_no": 17,
+  "actual": "Donovan Mitchell",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Donovan Mitchell (fs 5.00)",
+   "Kevin Durant (fs 4.79)",
+   "Jalen Williams (fs 4.78)",
+   "Jayson Tatum (fs 4.57)",
+   "Jamal Murray (fs 4.26)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Donovan Mitchell",
+  "target": null
+ },
+ {
+  "round": 3,
+  "pick_no": 32,
+  "actual": "Devin Booker",
+  "actual_council_rank": 2,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0.33,
+  "top5": [
+   "Desmond Bane (fs 4.53)",
+   "Devin Booker (fs 4.20)",
+   "OG Anunoby (fs 3.81)",
+   "Darius Garland (fs 3.78)",
+   "Payton Pritchard (fs 3.69)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Devin Booker",
+  "target": {
+   "label": "Scoring C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 4,
+  "pick_no": 41,
+  "actual": "Jalen Brunson",
+  "actual_council_rank": 2,
+  "actual_fit_rank": 2,
+  "fs_delta_vs_no1": 0.29,
+  "top5": [
+   "Payton Pritchard (fs 3.35)",
+   "Jalen Brunson (fs 3.06)",
+   "Tyler Herro (fs 2.72)",
+   "Darius Garland (fs 2.69)",
+   "LaMelo Ball (fs 2.55)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Payton Pritchard",
+  "target": {
+   "label": "Shooting G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 5,
+  "pick_no": 56,
+  "actual": "Lauri Markkanen",
+  "actual_council_rank": 2,
+  "actual_fit_rank": 7,
+  "fs_delta_vs_no1": 0.38,
+  "top5": [
+   "Cameron Johnson (fs 2.57)",
+   "Lauri Markkanen (fs 2.19)",
+   "Zach LaVine (fs 2.09)",
+   "Nickeil Alexander-Walker (fs 2.07)",
+   "Michael Porter Jr. (fs 1.97)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Cameron Johnson",
+  "target": {
+   "label": "Shooting F",
+   "fam": "F",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 6,
+  "pick_no": 65,
+  "actual": "Joel Embiid",
+  "actual_council_rank": 28,
+  "actual_fit_rank": 29,
+  "fs_delta_vs_no1": 1.77,
+  "top5": [
+   "Zach LaVine (fs 2.18)",
+   "Nickeil Alexander-Walker (fs 2.09)",
+   "Michael Porter Jr. (fs 1.99)",
+   "Coby White (fs 1.91)",
+   "Mikal Bridges (fs 1.89)"
+  ],
+  "in_top5": false,
+  "fit_no1": "Coby White",
+  "target": {
+   "label": "Shooting C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 7,
+  "pick_no": 80,
+  "actual": "Pascal Siakam",
+  "actual_council_rank": 2,
+  "actual_fit_rank": 5,
+  "fs_delta_vs_no1": 0.86,
+  "top5": [
+   "Mikal Bridges (fs 2.46)",
+   "Pascal Siakam (fs 1.60)",
+   "Immanuel Quickley (fs 1.39)",
+   "Fred VanVleet (fs 1.34)",
+   "Norman Powell (fs 1.27)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Mikal Bridges",
+  "target": {
+   "label": "Shooting C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 8,
+  "pick_no": 89,
+  "actual": "Herbert Jones",
+  "actual_council_rank": 3,
+  "actual_fit_rank": 14,
+  "fs_delta_vs_no1": 0.16,
+  "top5": [
+   "Nikola Vucevic (fs 0.94)",
+   "Aaron Gordon (fs 0.93)",
+   "Herbert Jones (fs 0.78)",
+   "Daniel Gafford (fs 0.76)",
+   "Fred VanVleet (fs 0.67)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Nikola Vucevic",
+  "target": {
+   "label": "Shooting F",
+   "fam": "F",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 9,
+  "pick_no": 104,
+  "actual": "Devin Vassell",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Devin Vassell (fs 1.34)",
+   "Kon Knueppel (fs 1.09)",
+   "Aaron Gordon (fs 0.89)",
+   "Malik Monk (fs 0.54)",
+   "CJ McCollum (fs 0.41)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Devin Vassell",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": true
+  }
+ },
+ {
+  "round": 10,
+  "pick_no": 113,
+  "actual": "Jerami Grant",
+  "actual_council_rank": 2,
+  "actual_fit_rank": 7,
+  "fs_delta_vs_no1": 0.01,
+  "top5": [
+   "Malik Monk (fs 0.08)",
+   "Jerami Grant (fs 0.07)",
+   "CJ McCollum (fs 0.06)",
+   "Keon Ellis (fs 0.05)",
+   "Ryan Rollins (fs 0.04)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Malik Monk",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 11,
+  "pick_no": 128,
+  "actual": "Keon Ellis",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 2,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Keon Ellis (fs 0.20)",
+   "Alex Caruso (fs 0.05)",
+   "Andrew Nembhard (fs 0.03)",
+   "Bradley Beal (fs -0.25)",
+   "Lonzo Ball (fs -0.28)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Andrew Nembhard",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 12,
+  "pick_no": 137,
+  "actual": "Alex Caruso",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Alex Caruso (fs 0.23)",
+   "Jrue Holiday (fs -0.46)",
+   "D'Angelo Russell (fs -0.46)",
+   "De'Anthony Melton (fs -0.48)",
+   "Dylan Harper (fs -0.53)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Alex Caruso",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 13,
+  "pick_no": 152,
+  "actual": "Ayo Dosunmu",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Ayo Dosunmu (fs -0.28)",
+   "Luguentz Dort (fs -0.78)",
+   "Brandin Podziemski (fs -0.80)",
+   "Jose Alvarado (fs -0.95)",
+   "Bogdan Bogdanovic (fs -1.04)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Ayo Dosunmu",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ }
+]

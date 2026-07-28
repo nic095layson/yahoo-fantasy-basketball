@@ -62,18 +62,29 @@ two harnesses, one conclusion.
 
 ## 5. UI patches verified headless (both mocks replayed)
 
-- **Urgency decay**: slot-8's TARGET rang "URGENT C" at r3,6,7,11,12,13
-  pre-patch. Post-patch: r3/6/7 only (best C fit +2.72/+0.91/+0.54);
-  r11–13 stay silent (best fits −0.92/−1.41/−1.74 — dead shelf, tip now
-  says "do not chase").
-- **Pinned TARGET row**: slot-8 r6 pins Brook Lopez (fs 0.91 under old
-  weights, gap 1.26) exactly as pre-registered from the post-mortem.
-- **Structural fix**: under the neutral council, slot-8 r6's Top 5 now
-  contains Brook Lopez at #2 (fs 2.05, coin-flip with #1 LaVine) and
-  Kel'el Ware at #4 — the original "TARGET says C, no C in the list"
-  contradiction resolves inside the list itself; the pinned row remains
-  as the safety net for turns where the family still misses (r7: Naz
-  Reid pinned).
+Three engine states, all replayed on both uploaded mocks and committed
+to the evidence bundle:
+
+- `replay_oldsystem_*.json` — old weights + pre-patch UI (the shipped
+  7/27 system). Slot-8's TARGET rang "URGENT C" at r3,6,7,11,12,13 —
+  including three dead-shelf rounds — and at r6 called a C that the Top
+  5 never showed (Brook Lopez, fs 0.91 vs LaVine 2.18 per
+  `debrief_2026-07-27_mock_postmortem.md`).
+- `replay2_*.json` — neutral weights + first-iteration UI (fs-floor
+  urgency decay, pinned row). Urgent collapsed to r3/6/7; Lopez entered
+  the Top 5 itself at r6 (#2, fs 2.05, coin-flip with LaVine #1;
+  Kel'el Ware #4) — the "TARGET says C, no C in the list" contradiction
+  resolves inside the list; r7 pinned Naz Reid as the safety net.
+- `replay3_*.json` — FINAL shipped engine after gauntlet hardening
+  (§7): urgency additionally requires a positive-value candidate INSIDE
+  the priced window (and names them in the tip), TARGET candidate
+  ordering is neutral punt-aware (the retired 0.35/0.45 lens no longer
+  picks any actionable candidate), and family coverage is
+  eligibility-aware. Net effect on slot-8: urgent still exactly r3/6/7,
+  and rounds 9–13 stop calling for a C entirely — Markkanen (PF,C)
+  finally counts as C coverage, which the primary-position counter had
+  missed all draft. Slot-3 flips from C to F exactly when Sarr completes
+  the C floor at r10.
 
 ## 6. New-council tournament
 
@@ -91,10 +102,55 @@ re-run with the neutralized council:
 
 Council +4.03pp, and it now edges bpa_pure — the "naive BPA beats the
 production ruleset" anomaly from the activation-gate study is closed.
-Honest caveat: the new council's cross-seed spread is wider (±3.92 vs
-±1.75); the paired CRN test in §3, which removes that noise, is the
-load-bearing evidence. Field seats' shifts are same-simulation noise
-(their code is unchanged).
+Honest caveats: (a) the new council's cross-seed spread is wider (±3.92
+vs ±1.75); the paired CRN test in §3, which removes that noise, is the
+load-bearing evidence; field seats' shifts are same-simulation noise.
+(b) With 13 personalities in 12 seats the tournament's first
+rotation-round is unshuffled, so slot coverage is not perfectly
+balanced across strategies and the header's seasons/strategy figure
+overstates the 12 short-seated seats — a bias shared identically by
+the old and new runs (both committed to the evidence bundle), so the
+old-vs-new delta is internally consistent even though absolute champ%
+carries the composition artifact.
+
+## 7. Gauntlet (14 agents, find → adversarial verify → critic)
+
+Six adversarial dimensions over the changed system; data plane and deck
+build came back clean; 7 findings survived independent refutation
+attempts (zero refuted) and every one was fixed before push:
+
+1. `cmd_slots` still crashed on the 13th personality (KeyError: 13) —
+   the seated-prefix fix had only been applied to `tournament()`. Fixed
+   the same way; smoke-tested.
+2. The pinned TARGET's candidate and its "act now" gate were ranked by
+   the retired 0.35/0.45 lens — an actionable path the evidence had
+   just retired from ranking, and one the obey-cell harness never
+   validated. Candidate ordering and the urgency floor are now neutral
+   punt-aware.
+3. "Act now" could point at a player priced far OUTSIDE the 2-round
+   window whose scarcity triggered it (urgency about one shelf, button
+   on another). Urgency now requires a positive-value candidate inside
+   the window and names those candidates in the tip.
+4. Family coverage counted only each player's first-listed position —
+   a PF,C roster read "0C", falsely opening the scarcity gate. Coverage
+   is now eligibility-aware (dual-eligible count both).
+5. The new Fit legend overclaimed ("every category at full weight") —
+   false under an active punt. Copy now says "every non-punted
+   category".
+6. The archived 6-cell sweep and the historical paired/gate harnesses
+   were irreproducible from repo head after the codification changed
+   the field's own council seat. All three harnesses now pin the
+   pre-codification 0.35/0.45 field explicitly.
+7. Findings §5's r6-Lopez numbers cited an artifact that was never
+   committed (the old-weights replay had been overwritten by the
+   neutral rerun). The bundle now carries all three engine states
+   (`replay_oldsystem_*`, `replay2_*`, `replay3_*`) plus both
+   tournament anchors, which the top-level `arena/results/*.json`
+   gitignore had silently excluded.
+
+Critic gaps also closed: the judgment layer was re-authored for 7/28
+(Draymond's stale unsigned discount removed, JUDGMENT.date rolled), and
+the tournament composition caveat was added to §6.
 
 ## Verdict
 
@@ -105,5 +161,6 @@ survives only as the Fit display lens. Evidence: monotone 6-cell sweep,
 corroborated at 15 rounds independently.
 
 Evidence bundle (committed): `results/evidence_2026-07-28_tuning/` —
-the 6 sweep cells, the 13-round paired confirmation, and both
-post-patch mock replays.
+the 6 sweep cells, the 13-round paired confirmation, mock replays for
+all three engine states (old system / first iteration / final), and
+both tournament anchors (old weights and new council).

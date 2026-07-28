@@ -26,6 +26,24 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import arena  # noqa: E402
 
+# Freeze the FIELD's council seat at the pre-codification constants so the
+# archived 2026-07-28 6-cell table stays reproducible from repo head — the
+# codification this sweep motivated changed STRATEGIES["council"] to
+# 1.0/1.0, and an unfrozen field would draft a different room.
+arena.STRATEGIES["council"] = dict(arena.STRATEGIES["council"],
+                                   locked_w=0.35, lost_w=0.45)
+
+# Known mirror divergences from the deck's urgent-TARGET (disclosed after
+# gauntlet review 2026-07-28; all bias the obey cells toward attenuation
+# or neutral, none were codified into production):
+#   - candidate choice + urgency floor use raw adj_value, not the deck's
+#     punt-aware neutral fitZ, and are never crossed with the W-cell
+#     weights;
+#   - the scarcity gate uses static primary-position floors, not the
+#     deck's openFams/balCt/imbalance conditions;
+#   - family priority is C,F,G (deck: G,F,C);
+#   - obedience stops after round 10 while the deck has no upper cap.
+
 TEAMS = arena.TEAMS
 FIELD = ["council", "punt_ft", "punt_ft_to", "stars", "slot_filler",
          "scarcity", "safe_floor", "upside", "specialist", "market",

@@ -29,6 +29,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import arena  # noqa: E402
 
+# Historical harness (pre-codification): pin council at 0.35/0.45 so the
+# archived activation-gate results stay reproducible from repo head after
+# the 2026-07-28 neutralization of STRATEGIES["council"].
+arena.STRATEGIES["council"] = dict(arena.STRATEGIES["council"],
+                                   locked_w=0.35, lost_w=0.45)
+
 # arena clone with the >=2 floor relaxed to >=1 (for K=1 only)
 _src = open(os.path.join(HERE, "arena.py")).read().replace(
     'len(roster) >= 2', 'len(roster) >= 1')

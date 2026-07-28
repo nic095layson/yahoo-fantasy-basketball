@@ -20,6 +20,13 @@ sys.path.insert(0, HERE)
 import arena  # noqa: E402
 from rank_gate_experiment import FIELD, run_draft_gated  # noqa: E402
 
+# Historical harness: it measures the RETIRED 0.35/0.45 weighting against
+# neutral. The 2026-07-28 codification set repo-head council to 1.0/1.0,
+# which would make both arms identical — pin the pre-codification
+# constants so the ON arm still means what the archived findings say.
+arena.STRATEGIES["council"] = dict(arena.STRATEGIES["council"],
+                                   locked_w=0.35, lost_w=0.45)
+
 TEAMS = arena.TEAMS
 
 

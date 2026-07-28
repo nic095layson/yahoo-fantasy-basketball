@@ -311,7 +311,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
           <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to sort.">Val</th>
-          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking scores every category at full weight (arena-codified 2026-07-28). Click to sort.">Fit</th>
+          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking scores every non-punted category at full weight (arena-codified 2026-07-28). Click to sort.">Fit</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -321,7 +321,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
       <span>TO inverted (+ = fewer turnovers)</span>
       <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
-      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — a reading lens; the Top-5 ranking weighs all nine cats fully (arena-codified 2026-07-28)</span>
+      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — a reading lens; the Top-5 ranking weighs every non-punted cat fully (arena-codified 2026-07-28)</span>
       <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
     </div>
   </div>
@@ -407,9 +407,11 @@ function adjValue(p, punt) {
 /* Fit z — swing-weighted marginal value. A candidate's z re-weighted by
    what this roster actually needs: punted cats x0, locked cats (my rank
    <= 2 vs field) x0.35, lost cats (rank >= 10) x0.45, swing cats full
-   weight — the arena-validated council weighting, stripped of strategy
-   extras, exposed as a clean sortable number. Weights activate once the
-   roster has 2+ players; before that fit z equals balanced value. */
+   weight. A READING LENS only — retired from council ranking and from
+   every actionable candidate choice on 2026-07-28 (the arena measured
+   the down-weighting at -3.78pp championship, causally). Weights
+   activate once the roster has 2+ players; before that fit z equals
+   balanced value. */
 /* Locked/lost rank tiers, scaled to league size. At 12 teams this yields
    exactly the arena-validated constants (locked <= 2, lost >= 10); other
    sizes scale proportionally (top ~sixth locked, bottom ~quarter lost). */
@@ -456,11 +458,13 @@ function fitZ(p, w) {
   return { raw: s, adj: s > 0 ? s * p.av : s };
 }
 function positionsOf(p) { return p.p.split(",").map(s => s.trim()); }
-/* TARGET archetype (owner spec + council amendments 2026-07-23).
-   Label = compression of what Fit Z is already recommending — derived from
-   the top-8 available by fit (never a parallel opinion), coherence-gated
-   (returns null when they share no profile). Position component priority:
-   premium-shelf scarcity > roster balance > engine lean. */
+/* TARGET archetype (owner spec + council amendments 2026-07-23; candidate
+   ordering neutralized 2026-07-28). Label = compression of what the board
+   is already recommending — derived from the top-8 available by neutral
+   punt-aware value, the same scale that ranks the Top 5 (never a parallel
+   opinion), coherence-gated (returns null when they share no profile).
+   Position component priority: premium-shelf scarcity > roster balance >
+   engine lean. */
 const CAT_TERM = [
   [["BLK", "FG%"], "High-FG% / Block"],
   [["3PTM", "ST"], "3&D"],
@@ -482,15 +486,23 @@ function archetypeRead(st, mine, pool, ranks, nextPickNo, mktRank) {
   const fw = fitWeights(punt, ranks, mine.length, st.teams);
   const needCats = kept.filter(c => fw[c] === 1.0)
     .sort((a, b) => ranks[b] - ranks[a]);
+  /* Candidate ORDERING is neutral punt-aware (gauntlet fix 2026-07-28):
+     the swing lens (fw) still chooses which cats to TALK about, but the
+     retired 0.35/0.45 weighting never chooses which player to BUY. */
+  const nw = {};
+  for (const c of CATS) nw[c] = punt.has(c) ? 0 : 1.0;
   const top8 = [...pool]
-    .sort((a, b) => fitZ(b, fw).adj - fitZ(a, fw).adj).slice(0, 8);
+    .sort((a, b) => fitZ(b, nw).adj - fitZ(a, nw).adj).slice(0, 8);
   const famCt = { G: 0, F: 0, C: 0 };
   for (const p of top8) for (const f of familiesOf(p)) famCt[f]++;
   const domFam = ["G", "F", "C"].sort((a, b) => famCt[b] - famCt[a])[0];
   const domOK = famCt[domFam] >= 4;
   const fams = ["G", "F", "C"];
   const balCt = { G: 0, F: 0, C: 0 };
-  for (const p of mine) balCt[POS_FAMILY[positionsOf(p)[0]]]++;
+  /* eligibility-aware coverage (gauntlet fix 2026-07-28): a PF,C covers
+     BOTH F and C — the gates must never report a family missing while a
+     rostered player is eligible for it. */
+  for (const p of mine) for (const f of familiesOf(p)) balCt[f]++;
   /* balance: a family is "the gap" only when under its startable floor
      (G:3 F:3 C:2 in this layout) — heavy-vs-light alone is not a need
      if the light family's slots are already covered. */
@@ -512,10 +524,11 @@ function archetypeRead(st, mine, pool, ranks, nextPickNo, mktRank) {
   let fam = scarceFam || imbalance || (domOK ? domFam : null);
   /* term + examples come from players who MATCH the family, so the label
      can never name a profile its own example players don't have. */
-  const matchPool = fam
+  const famPool = fam
     ? [...pool].filter(p => familiesOf(p).includes(fam))
-        .sort((a, b) => fitZ(b, fw).adj - fitZ(a, fw).adj).slice(0, 3)
-    : top8;
+        .sort((a, b) => fitZ(b, nw).adj - fitZ(a, nw).adj)
+    : [];
+  const matchPool = fam ? famPool.slice(0, 3) : top8;
   const quorum = fam ? 2 : 4;
   const feeds = c => matchPool.filter(p => p.z[c] > 0.25).length >= quorum;
   const fed = needCats.filter(feeds).slice(0, 2);
@@ -531,21 +544,25 @@ function archetypeRead(st, mine, pool, ranks, nextPickNo, mktRank) {
   const matches = matchPool.slice(0, 3);
   const minMkt = Math.min(...matches.map(p => mktRank.get(p.n) || 999));
   const canWait = !scarceFam && matches.length && minMkt > nextPickNo + 8;
-  /* Urgency decay (owner fix 2026-07-28, from the slot-8 post-mortem):
-     "act now" only while the best family candidate still carries positive
-     fit — a dead shelf must not ring the bell after the fire. */
-  const bestFamFit = fam && matchPool.length ? fitZ(matchPool[0], fw).adj : null;
-  const liveUrgent = !!scarceFam && bestFamFit !== null && bestFamFit > 0;
-  const tips = [`build ${balCt.G}G/${balCt.F}F/${balCt.C}C` +
+  /* Urgency decay (owner fix + gauntlet hardening 2026-07-28): "act now"
+     only while the vanishing shelf ITSELF holds a positive-value
+     candidate — urgency counted on the 2-round window must never point
+     at a player priced outside it, and a dead shelf must not ring the
+     bell after the fire. Positive value = neutral punt-aware. */
+  const inWin = famPool.filter(p => (mktRank.get(p.n) || 999) <= window &&
+    fitZ(p, nw).adj > 0);
+  const liveUrgent = !!scarceFam && inWin.length > 0;
+  const best = liveUrgent ? inWin[0].n
+    : (fam && famPool.length ? famPool[0].n : null);
+  const tips = [`covers ${balCt.G}G/${balCt.F}F/${balCt.C}C (dual-eligible count both)` +
     (imbalance ? ` — ${heavyFam}-heavy, ${imbalance} is the gap` : "")];
-  if (liveUrgent) tips.push(`${scarceFam} shelf: ${shelf[scarceFam]} the room prices in the next 2 rounds — act now`);
-  else if (scarceFam) tips.push(`${scarceFam} shelf effectively empty — remaining candidates are negative value; do not chase`);
+  if (liveUrgent) tips.push(`${scarceFam} shelf: ${shelf[scarceFam]} left at the room's prices in the next 2 rounds — act now: ${inWin.slice(0, 2).map(p => p.n).join(", ")}`);
+  else if (scarceFam) tips.push(`${scarceFam} shelf effectively empty — no positive-value ${scarceFam} left in the window; do not chase`);
   if (matches.length) tips.push(`best fits: ${matches.map(p => p.n).join(", ")}`);
   if (canWait) tips.push(`matching fits priced #${minMkt}+ by the room — can likely wait a round`);
   tips.push("click to filter Best Available");
   return { label, fam, tip: tips.join(" · "), urgent: liveUrgent, wait: canWait,
-           shelfCount: fam ? shelf[fam] : null,
-           best: fam && matchPool.length ? matchPool[0].n : null };
+           shelfCount: fam ? shelf[fam] : null, best };
 }
 function teamOfPick(n, teams) {
   const rnd = Math.floor(n / teams), idx = n % teams;
@@ -934,9 +951,9 @@ const PLAYERS = [{"n":"Nikola Jokic","t":"DEN","p":"C","note":"","av":1.0,"z":{"
    Applies ONLY to the user's recommendation card, never to the mock AI
    managers (they stay arena-faithful). `adj` is in z-value units and is
    added to the council score; `why` is the rationale shown on the card.
-   Grounded in the 2026-07-27 refresh research (re-dated at each republish alongside JUDGMENT.date). */
+   Grounded in the 2026-07-28 refresh research (re-dated at each republish alongside JUDGMENT.date). */
 const JUDGMENT = {
-  date: "2026-07-27",
+  date: "2026-07-28",
   /* Value-on-the-board knobs (tuned at each republish).
      Board slides — players available past their rank on OUR no-punt
      pre-draft board — earn a capped score bonus: real 9-cat value is
@@ -963,7 +980,6 @@ const JUDGMENT = {
     "VJ Edgecombe": { adj: -0.10, why: "Second-year wing squeezed by the same PHI logjam \u2014 rotation minutes now contested by LeBron and KCP; first trim candidate if camp reporting firms up." },
     "Jalen Brunson": { adj: -0.15, why: "July 7 wrist surgery, cast ~6 weeks \u2014 expected ready for October; ramp-up risk only, not availability risk." },
     "Kawhi Leonard": { adj: -0.20, why: "Toronto trade still on league hold (fact-finding done 7/25, NBA reviewing) \u2014 destination limbo stacks situation risk on the standing injury tag; could execute any time after a ruling." },
-    "Draymond Green": { adj: -0.10, why: "Unsigned as of 7/27, but a ~$28M GSW re-sign is 'expected' (7/25) \u2014 destination near-certain, so a mild discount rather than the full unsigned cut." },
     "Alex Caruso": { adj: 0.05, why: "OKC wing minutes open post-Dort (7/19) \u2014 modest upside lean while the rotation math settles; no reprice yet." },
     /* Unsigned free agents: projections assume a role no team has
        committed to yet — destination discount until they sign. */
@@ -1838,7 +1854,7 @@ const JUDGMENT = {
         li.append(el("span", "rk", "🎯"));
         li.append(el("span", "nm", tp.n), el("span", "sc", fmtZ(row.fs, 2)));
         li.append(el("span", "meta",
-          `TARGET ${readR.label} — best ${readR.fam} by fit · ` +
+          `TARGET ${readR.label} — best ${readR.fam} in reach · ` +
           (readR.urgent
             ? `shelf: ${readR.shelfCount} left in the room's next 2 rounds — act now`
             : (readR.shelfCount !== null ? `shelf: ${readR.shelfCount} in window` : "build need")) +
