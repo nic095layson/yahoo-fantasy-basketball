@@ -1825,6 +1825,16 @@ const JUDGMENT = {
     /* Coin-flip tag: top two within 0.25z of composite score (the owner's
        "~5 points" rule expressed in raw score, no invented slope). */
     const coinFlip = scored.length > 1 && scored[0].fs - scored[1].fs <= 0.25;
+    /* Standout tag (owner ask 2026-07-28, from the mock-8 post-mortem where
+       a 6.3-point runaway was passed over silently): the coin flip's mirror —
+       when #1's lead is a runaway, say so. Threshold 1.5, calibrated twice:
+       65 owner turns across the five uploaded mocks (fires 3/65, all true
+       runaways at 4.2-6.3; next gap 0.65) and an adversarial 312-turn
+       replay (fires 6/312, all >= 2.18 — a 1.0 cut would also catch a
+       marginal 1.02). Punt mode reshapes gaps but showed no spurious fire
+       at 1.5 (one genuine FT%-punt runaway at 1.98). Glyph is 🚀, NOT ⭐ —
+       the star already means "market star" in the strip above. */
+    const standout = scored.length > 1 && scored[0].fs - scored[1].fs >= 1.5;
     const teamCt2 = teamCt;
     for (let i = 0; i < scored.length; i++) {
       const { p, s } = scored[i];
@@ -1844,6 +1854,13 @@ const JUDGMENT = {
         const cf = el("span", "flag", "(coin flip)");
         cf.style.color = "var(--muted)";
         nm.appendChild(cf);
+      }
+      if (i === 0 && standout) {
+        const so = el("span", "flag",
+          `🚀 standout — leads #2 by ${(scored[0].fs - scored[1].fs).toFixed(1)}`);
+        so.style.color = "var(--accent)";
+        so.dataset.tip = "the #1's score lead is a runaway (≥1.5) — passing on them costs real value; the coin-flip tag is this rule's mirror";
+        nm.appendChild(so);
       }
       const bits = [`${p.p} · ${p.t}`, `val ${fmtVal(p, punt)}`];
       if (scored[i].adj || scored[i].vbonus) {
