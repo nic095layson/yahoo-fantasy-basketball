@@ -365,7 +365,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-07-28 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (7/28): Draymond Green is back on GSW — one year, $27.7M agreed (Hoops Rumors + Bleacher Report, 7/28); Harden's Cleveland return remains agreed-but-unsigned by design, and DeRozan, Beal, and Westbrook are still true free agents. Carried forward: LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. As of 2026-07-28 the council scores all nine categories at full weight: the old locked/lost down-weighting cost 3.8 championship points causally in 120 paired arena drafts (t=5.16), so it was retired from the ranking and survives only as the Fit reading lens. The same day's market-timing layer (owner rule: value says who, price says when) adds a BUY-NOW / CAN-WAIT / TOSS-UP verdict to each recommendation from a survival model over the market ranks — ~Φ((mkt−pick)/σ) — plus a wait-chain for your neediest position; these are display advice only, never re-rank anything, and are calibrated for a market-priced room (mock bots draft by value, so discounted vets leave mock boards earlier than real ones). Mock opponents draft by board value with noise, not market ADP — stars fall further in mocks than they will in a real room (an ADP persona lands when September consensus data exists). The judgment layer — per-player adjustments with rationales — is authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. As of 2026-07-28 the council scores all nine categories at full weight: the old locked/lost down-weighting cost 3.8 championship points causally in 120 paired arena drafts (t=5.16), so it was retired from the ranking and survives only as the Fit reading lens. The same day's market-timing layer (owner rule: value says who, price says when) adds a BUY-NOW / CAN-WAIT / TOSS-UP verdict to each recommendation from a survival model over the market ranks — ~Φ((mkt−pick)/σ) — plus a wait-chain for your neediest position; these are display advice only, never re-rank anything, and are calibrated for a market-priced room (mock rooms seat mostly value-drafters plus two market seats, so discounted vets leave mock boards earlier than a real room would take them). Mock opponents mostly draft by board value with noise (two seats use the July market model) — stars still fall further in mocks than they will in a real room; September consensus ADP upgrades the market seats. The judgment layer — per-player adjustments with rationales — is authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1930,19 +1930,26 @@ const JUDGMENT = {
       if (mktR && nextTurn) {
         const ps = survivalP(mktR, nextTurn);
         const pFams = familiesOf(p);
-        const dying = pFams.filter(f => shelfNow[f] <= 2);
+        /* scarcity beats price ONLY when the shelf is small but ALIVE
+           and THIS player is priced inside it — an out-of-window player
+           keeps his price verdict, and a dead shelf must not ring the
+           bell (gauntlet 2026-07-28: 177 out-of-window + 3 dead-shelf
+           bad chips in the 785-state replay before this guard). */
+        const dying = mktR <= priceWin
+          ? pFams.filter(f => shelfNow[f] > 0 && shelfNow[f] <= 2)
+          : [];
         let chip, why;
         if (dying.length) {
           chip = "BUY NOW"; why = `${dying.map(f => `${f} shelf: ${shelfNow[f]} in window`).join(", ")} — scarcity beats price`;
         } else if (ps >= 0.60) {
           chip = "CAN WAIT"; why = `room price #${mktR} — ~${Math.round(ps * 100)}% still there at your #${nextTurn}`;
-          /* mock-room truth guard (verified empirically 2026-07-28: in
-             replayed mocks, market-based WAITs survived only 32/88 —
-             value-drafting bots don't misprice, so the discount that
-             makes waiting profitable doesn't exist here) */
-          if (deck.mode === "mock" &&
-              survivalP(PRE_RANK.get(p.n) || 999, nextTurn) < 0.40)
-            why += ` · but THIS mock's bots draft by value — here he likely goes sooner`;
+          /* mock-room truth guard — a STANDING banner, not a conditional:
+             replayed mocks showed market-based WAITs survive only ~40%
+             here, and a board-rank condition fires on 100% of Top-5
+             WAITs anyway (they are top-of-board by construction —
+             gauntlet 2026-07-28). Real rooms are the calibration target. */
+          if (deck.mode === "mock")
+            why += ` · but this mock room drafts mostly by value — here he likely goes sooner`;
         } else if (ps <= 0.40) {
           chip = "BUY NOW"; why = `room price #${mktR} — only ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
         } else {
@@ -1952,7 +1959,7 @@ const JUDGMENT = {
         const ch = el("span", "flag", chip);
         ch.style.fontWeight = "600";
         ch.style.color = chip === "CAN WAIT" ? "var(--muted)" : "var(--accent)";
-        ch.dataset.tip = "survival % assumes a market-priced room (July estimate — September ADP sharpens it) — the room you're TRAINING for. Mock bots draft by VALUE, so a warning is appended when this mock room will likely jump the line. Shelf ≤ 2 overrides price.";
+        ch.dataset.tip = "survival % assumes a market-priced room (July estimate — September ADP sharpens it) — the room you're TRAINING for. Mock rooms seat 9 value-drafters + 2 market seats, so mock CAN-WAITs carry a standing warning. A live 1–2-player shelf that includes this player overrides price.";
         pl.appendChild(ch);
         li.append(pl);
       }
@@ -2030,7 +2037,7 @@ const JUDGMENT = {
         li.append(el("span", "rk", "🚌"));
         const meta = el("span", "meta",
           `${ladderFam} wait-chain — best ${ladderFam} likely still on the bus: ${steps.join(" → ")}`);
-        meta.dataset.tip = "for your neediest family: at each future pick, the highest-value candidate with ≥50% survival under the market model — real-room advice. In mock mode the value-drafting bots take these players earlier; the chain trains your September timing. July prices; ADP sharpens.";
+        meta.dataset.tip = "for your neediest family: at each of your next few picks (up to 3; turns with no ≥50% candidate are skipped), the highest-value candidate under the market model — real-room advice. Mock rooms (mostly value-drafters) take these players earlier; the chain trains your September timing. July prices; ADP sharpens.";
         li.append(meta);
         recos.appendChild(li);
       }
