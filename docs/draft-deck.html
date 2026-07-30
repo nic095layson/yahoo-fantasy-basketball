@@ -136,6 +136,10 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 #bestHead th[data-sort]:hover { color: var(--accent); }
 #bestHead th.sorted { color: var(--accent); }
 #bestHead th.sorted::after { content: " ▾"; }
+#bestChips { margin: calc(-1 * var(--space-2)) 0 var(--space-3); }
+.catchip { font: inherit; font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: 999px; background: var(--surface); color: var(--accent); cursor: pointer; white-space: nowrap; }
+.catchip .x { margin-left: var(--space-1); font-weight: var(--weight-bold); }
+.catchip:hover { background: var(--accent); color: var(--surface); }
 .rosterhead { display: flex; justify-content: space-between; align-items: baseline; }
 #myRosterFams { font-variant-numeric: tabular-nums; white-space: pre; color: var(--muted); }
 #deckmeta button.target { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; letter-spacing: 0.02em; }
@@ -161,19 +165,25 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 .buildread .why { color: var(--ink-2); }
 .buildread button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); margin-left: var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
 ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
-ol.recos li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto auto auto auto; gap: var(--space-1) var(--space-3); align-items: center; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
+/* Row 1: rank · name (only flexible column — never crushed) · score · button.
+   Row 2: tags line (archetype · 🎯 · ⏱ verdict) wraps freely under the name.
+   Metas auto-place below. Fixes the collapsed-name bug at side-panel widths. */
+ol.recos li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: var(--space-1) var(--space-3); align-items: center; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
 ol.recos li.aux { display: block; border-style: none; padding: var(--space-1) var(--space-3); }
-ol.recos .rk { font-family: var(--font-data); font-weight: var(--weight-bold); color: var(--accent); }
-ol.recos .nm { font-weight: var(--weight-bold); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ol.recos .rk { grid-row: 1; grid-column: 1; font-family: var(--font-data); font-weight: var(--weight-bold); color: var(--accent); }
+ol.recos .nm { grid-row: 1; grid-column: 2; font-weight: var(--weight-bold); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ol.recos li > .sc { grid-row: 1; grid-column: 3; justify-self: end; }
+ol.recos li > .take { grid-row: 1; grid-column: 4; }
+ol.recos .tags { grid-row: 2; grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); }
 ol.recos .arch { font-size: var(--text-sm); color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; }
 ol.recos .gi { font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; white-space: nowrap; }
-ol.recos .meta { grid-column: 1 / -1; order: 5; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
+ol.recos .meta { grid-column: 1 / -1; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
 ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
 .verdict { font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .verdict.buy { color: var(--accent); border-color: var(--accent); }
 .verdict.wait { color: var(--muted); }
 .verdict.toss { color: var(--ink-2); }
-@media (max-width: 720px) { ol.recos li { grid-template-columns: auto minmax(0, 1fr) auto auto; } ol.recos .arch, ol.recos .gi { display: none; } }
+@media (max-width: 480px) { ol.recos .arch { display: none; } }
 
 /* Tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-8) 0 var(--space-3); border-bottom: 1px solid var(--line); }
@@ -310,19 +320,20 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <input type="search" id="bestQ" placeholder="player name" autocomplete="off">
       <span class="ctl">Show</span>
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
-      <span class="ctl">Sort</span>
-      <select id="bestSort" autocomplete="off"><option value="val" selected>Balanced val</option><option value="fit">Fit z (my roster)</option></select>
-      <button type="button" id="bestReset" title="clear position, search, show, and sort filters">Reset</button>
+      <span class="ctl">Lens</span>
+      <select id="bestSort" autocomplete="off"><option value="" hidden>cat lens active</option><option value="val" selected>Balanced val</option><option value="fit">Fit z (my roster)</option><option value="mkt">Mkt rank (room price)</option></select>
+      <button type="button" id="bestReset" title="clear position, search, show, lens, and cat filters">Reset</button>
       <span class="small" id="bestSummary"></span>
     </div>
+    <div id="bestChips" class="controls hidden"></div>
     <div class="tablewrap" tabindex="0" role="region" aria-label="Best available board">
       <table class="board" aria-label="Best available players">
         <thead><tr id="bestHead">
-          <th scope="col" data-sort="mkt" title="Estimated real-draft position: points-volume market model with rookie-hype pins, refreshed each republish. A player available well past Mkt is a room-wide slide; past # (our board) is 9-cat value. Click to sort.">Mkt</th>
+          <th scope="col" data-sort="mkt" title="Estimated real-draft position: points-volume market model with rookie-hype pins, refreshed each republish. A player available well past Mkt is a room-wide slide; past # (our board) is 9-cat value. Click to make this the lens (clears cat filters).">Mkt</th>
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
-          <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to sort.">Val</th>
-          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking scores every non-punted category at full weight (arena-codified 2026-07-28). Click to sort.">Fit</th>
+          <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to make this the lens (clears cat filters).">Val</th>
+          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking scores every non-punted category at full weight (arena-codified 2026-07-28). Click to make this the lens (clears cat filters).">Fit</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -1500,6 +1511,11 @@ const JUDGMENT = {
   /* ---------- rendering ---------- */
   function renderAll() {
     hideTip();
+    if (deck.mode === "mock") {
+      /* owner request 2026-07-30: show the overall number of YOUR next pick */
+      const nx = myFuturePicks(deck.state, 1)[0];
+      $("feedTitle").textContent = nx ? `Your pick #${nx}` : "Your pick";
+    }
     renderStrip(); renderMirror(); renderMyRoster(); renderPuntAnalyzer(); renderBuildRead();
     renderDecision(); renderBest();
     renderGrid(); renderRosters(); renderMatrix(); renderVs();
@@ -1887,7 +1903,8 @@ const JUDGMENT = {
         t.addEventListener("click", () => {
           bestState.pos = read.fam || "";
           $("bestPos").value = read.fam || "";
-          bestState.sort = "fit";
+          bestState.lens = "fit";
+          bestState.cats = [];
           $("bestSort").value = "fit";
           renderBest();
           $("bestSummary").scrollIntoView({ behavior: "smooth", block: "center" });
@@ -2056,8 +2073,7 @@ const JUDGMENT = {
       const at = el("span", "arch",
         (p.ar || (p.fx || []).length) ? (p.ar || "") + ((p.fx || []).length ? "✦" : "") : "");
       if (p.ar || (p.fx || []).length) at.dataset.tip = archTip(p);
-      let vSpan = el("span", "verdict wait", "");
-      vSpan.style.visibility = "hidden";
+      let vSpan = null;
       const fRec = fitZ(p, recoFw);
       const sc = el("span", "sc", fmtZ(scored[i].fs, 2) + (p.av < 1 && fRec.raw > 0 ? "*" : ""));
       sc.dataset.tip = `composite score — this number ranks the list · fit z ${fmtZ(fRec.adj, 2)} (swing-weighted for your roster)`;
@@ -2151,7 +2167,11 @@ const JUDGMENT = {
         $("feed").focus();
         if (deck.mode === "mock" && yourTurn) runFeed();
       });
-      li.append(nm, at, gc, vSpan, sc, take);
+      const tags = el("span", "tags");
+      if (at.textContent) tags.append(at);
+      tags.append(gc);
+      if (vSpan) tags.append(vSpan);
+      li.append(nm, tags, sc, take);
       recos.appendChild(li);
     }
     /* Pinned TARGET row (owner UX fix 2026-07-28, council-ratified 5-0):
@@ -2233,7 +2253,10 @@ const JUDGMENT = {
   /* best available tab */
   /* default sort is VAL (owner RULE 2026-07-28: value-first — the Fit
      lens hid a co-top-value C from the visible top 25 mid-draft) */
-  let bestState = { pos: "", q: "", top: 25, sort: "val" };
+  /* Owner request 2026-07-30: Mkt/Val/Fit are ONE mutually-exclusive
+     primary lens (picking it supersedes everything); the 9 cat headers
+     stack into a combined-z cat lens, up to 3, removable via × chips. */
+  let bestState = { pos: "", q: "", top: 25, lens: "val", cats: [] };
   let draftedNote = "";
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
   $("bestQ").addEventListener("input", e => { draftedNote = ""; bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
@@ -2255,15 +2278,20 @@ const JUDGMENT = {
     renderBest();
   });
   $("bestTop").addEventListener("change", e => { bestState.top = +e.target.value; renderBest(); });
-  $("bestSort").addEventListener("change", e => { bestState.sort = e.target.value; renderBest(); });
+  $("bestSort").addEventListener("change", e => {
+    if (!e.target.value) return; /* hidden "cat lens active" placeholder */
+    bestState.lens = e.target.value;
+    bestState.cats = []; /* the primary lens supersedes cat filters */
+    renderBest();
+  });
   $("bestReset").addEventListener("click", () => {
-    bestState = { pos: "", q: "", top: 25, sort: "val" };
+    bestState = { pos: "", q: "", top: 25, lens: "val", cats: [] };
     draftedNote = "";
     $("bestPos").value = ""; $("bestQ").value = "";
     $("bestTop").value = "25"; $("bestSort").value = "val";
     renderBest();
   });
-  $("bestSort").value = bestState.sort; /* re-sync after Firefox autofill */
+  $("bestSort").value = bestState.lens; /* re-sync after Firefox autofill */
   let bestHeadBuilt = false;
   function renderBest() {
     const st = deck.state;
@@ -2273,14 +2301,24 @@ const JUDGMENT = {
         const th = document.createElement("th");
         th.scope = "col"; th.textContent = c === "TO" ? "TO↑" : c;
         th.dataset.sort = c;
-        th.title = `sort by ${c} z`;
+        th.title = `cat filter: rank by ${c} z — stack up to 3 (oldest drops); click again or its × chip to remove`;
         $("bestHead").appendChild(th);
       }
       $("bestHead").addEventListener("click", e => {
         const th = e.target.closest("th");
         if (!th || !th.dataset.sort) return;
-        bestState.sort = th.dataset.sort;
-        $("bestSort").value = ["fit", "val"].includes(bestState.sort) ? bestState.sort : "";
+        const k = th.dataset.sort;
+        if (CATS.includes(k)) {
+          const i = bestState.cats.indexOf(k);
+          if (i >= 0) bestState.cats.splice(i, 1);
+          else {
+            bestState.cats.push(k);
+            while (bestState.cats.length > 3) bestState.cats.shift(); /* up to 3 — oldest drops */
+          }
+        } else {
+          bestState.lens = k;
+          bestState.cats = []; /* single primary lens supersedes cat filters */
+        }
         renderBest();
       });
       bestHeadBuilt = true;
@@ -2292,15 +2330,38 @@ const JUDGMENT = {
     const ranksB = mineB.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
     const fw = fitWeights(punt, ranksB, mineB.length, st.teams);
     const fitOf = new Map(pool.map(p => [p.n, fitZ(p, fw)]));
-    const sk = bestState.sort;
+    const cats = bestState.cats, lens = bestState.lens;
+    const catSum = p => cats.reduce((s, c) => s + p.z[c], 0);
     pool.sort(
-      sk === "fit" ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
-      : sk === "mkt" ? (a, b) => (MKT_RANK.get(a.n) || 999) - (MKT_RANK.get(b.n) || 999)
-      : CATS.includes(sk) ? (a, b) => b.z[sk] - a.z[sk]
-      : (a, b) => adjValue(b, punt) - adjValue(a, punt));  /* val/value */
+      cats.length ? (a, b) => catSum(b) - catSum(a) /* combined selected-cat z */
+      : lens === "fit" ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
+      : lens === "mkt" ? (a, b) => (MKT_RANK.get(a.n) || 999) - (MKT_RANK.get(b.n) || 999)
+      : (a, b) => adjValue(b, punt) - adjValue(a, punt));  /* val */
     for (const th of $("bestHead").querySelectorAll("th"))
-      th.classList.toggle("sorted", th.dataset.sort === sk ||
-        (sk === "value" && th.dataset.sort === "val"));
+      th.classList.toggle("sorted", cats.length
+        ? cats.includes(th.dataset.sort)
+        : th.dataset.sort === lens);
+    $("bestSort").value = cats.length ? "" : lens;
+    const chipBox = $("bestChips");
+    chipBox.replaceChildren();
+    if (cats.length) {
+      chipBox.append(el("span", "ctl", "Cat lens"));
+      for (const c of cats) {
+        const chip = el("button", "catchip", c === "TO" ? "TO↑" : c);
+        chip.type = "button";
+        chip.title = `remove ${c} from the cat lens`;
+        chip.appendChild(el("span", "x", "×"));
+        chip.addEventListener("click", () => {
+          bestState.cats = bestState.cats.filter(k => k !== c);
+          renderBest();
+        });
+        chipBox.appendChild(chip);
+      }
+      chipBox.append(el("span", "small",
+        cats.length < 3 ? "ranked by combined z — click more cat headers to stack (up to 3)"
+        : "ranked by combined z — a 4th cat drops the oldest"));
+    }
+    chipBox.classList.toggle("hidden", !cats.length);
     let matches = 0;
     const shown = [];
     for (let i = 0; i < pool.length; i++) {
