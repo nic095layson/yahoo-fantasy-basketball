@@ -53,6 +53,16 @@ BENCH_WEIGHT = 0.15
 # Per-game coefficient of variation by category: low-count stats are noisier.
 CV = {"PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55,
       "ST": 0.70, "BLK": 0.75, "TO": 0.50}
+# Slot-conditional gradient ordering (codified 2026-07-30, council 5-0):
+# from draft slots 1-3 the council seat scores candidates by the marginal
+# category-win-probability gradient instead of the flat z-sum. CRN-paired
+# confirmation at fresh seeds: +12.67pp champ, t=4.63 (18 cells, slots
+# 1-3, seeds 7/13/21/34/55/89); the global variant was inconclusive
+# (t=0.64, 36 cells), so the gradient stays slot-gated.
+GRAD_DEFL = {"ST": 0.580, "TO": 0.705, "FG%": 0.736, "PTS": 0.774,
+             "BLK": 0.785, "3PTM": 0.790, "REB": 0.819, "AST": 0.837,
+             "FT%": 0.862}
+GRAD_K, GRAD_SLOTS, GRAD_SCALE = 1.0, 3, 10.0
 PCT_MIX_INFL = 1.15     # shot-mix/lineup inflation over the binomial floor
 # (PCT_WEEK_SD=0.012 retired 2026-07-30: it sat 2-4x under the binomial
 #  floor of the sim's own attempt volumes, making % cats near-deterministic
@@ -239,7 +249,21 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng, mkt=None):
             if params["noise"]:
                 s += rng.gauss(0, params["noise"])
             return s
-        s = sum(p["z"][c] * weight(c) for c in CATS)
+        if params.get("grad_k"):
+            gk = params["grad_k"]
+            rr = len(roster)
+            s = 0.0
+            for c in CATS:
+                w = weight(c)
+                if not w:
+                    continue
+                S = sum(q["z"][c] for q in roster)
+                sig = gk * math.sqrt(rr + 1) / GRAD_DEFL[c]
+                s += w * (0.5 * (1 + math.erf((S + p["z"][c]) / (sig * math.sqrt(2))))
+                          - 0.5 * (1 + math.erf(S / (sig * math.sqrt(2)))))
+            s *= GRAD_SCALE
+        else:
+            s = sum(p["z"][c] * weight(c) for c in CATS)
         note = (p.get("note") or "").lower()
         injury_note = "inj" in note or note.startswith("out-")
         if params["risk"] != "upside":
@@ -290,6 +314,8 @@ def run_draft(order, pool_master, rng, param_overrides=None):
         slot = hoops.team_of_pick(n, TEAMS)
         name = order[slot - 1]
         params = strategy_params(name, (param_overrides or {}).get(name))
+        if name == "council" and slot <= GRAD_SLOTS and "grad_k" not in params:
+            params = {**params, "grad_k": GRAD_K}
         ranks = (ranks_for(rosters, slot)
                  if params["matrix_aware"] and rosters[slot] else None)
         p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng,
@@ -531,6 +557,8 @@ def run_draft_ordered(order, pool_master, rng, param_overrides=None):
         slot = hoops.team_of_pick(n, TEAMS)
         name = order[slot - 1]
         params = strategy_params(name, (param_overrides or {}).get(name))
+        if name == "council" and slot <= GRAD_SLOTS and "grad_k" not in params:
+            params = {**params, "grad_k": GRAD_K}
         ranks = (ranks_for(rosters, slot)
                  if params["matrix_aware"] and rosters[slot] else None)
         p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
