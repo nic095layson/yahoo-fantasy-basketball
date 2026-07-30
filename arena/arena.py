@@ -53,7 +53,11 @@ BENCH_WEIGHT = 0.15
 # Per-game coefficient of variation by category: low-count stats are noisier.
 CV = {"PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55,
       "ST": 0.70, "BLK": 0.75, "TO": 0.50}
-PCT_WEEK_SD = 0.012     # weekly team FG%/FT% sd, fraction units (~1.2 pts)
+PCT_MIX_INFL = 1.15     # shot-mix/lineup inflation over the binomial floor
+# (PCT_WEEK_SD=0.012 retired 2026-07-30: it sat 2-4x under the binomial
+#  floor of the sim's own attempt volumes, making % cats near-deterministic
+#  — 9-CAT math audit, findings_2026-07-30. Weekly % variance is now
+#  per-roster binomial x PCT_MIX_INFL, computed in team_week_model.)
 TEAM_WEEK_SHOCK = 0.06  # shared games-played shock, correlates counting cats
 
 
@@ -168,10 +172,14 @@ def market_ranks(pool):
     def mscore(p):
         s = sum(p["z"][c] * MKT_W[c] for c in CATS)
         note = (p.get("note") or "").lower()
+        # Sign-aware multipliers (codified 2026-07-30): a plain product
+        # inverted in the negative tail — rookie hype LOWERED
+        # negative-score rookies, the risk discount RAISED negative
+        # vets. Division mirrors the intent below zero.
         if "rookie-proj" in note:
-            s *= 1.15
+            s = s * 1.15 if s > 0 else s / 1.15
         if "risk" in note:
-            s *= 0.95
+            s = s * 0.95 if s > 0 else s / 0.95
         return s
     ordered = sorted(pool, key=lambda p: -mscore(p))
     model = {p["player"]: i + 1 for i, p in enumerate(ordered)}
@@ -326,8 +334,15 @@ def team_week_model(roster):
         fg_at += w * p["fga"] * g
         ft_mk += w * p["ft_pct"] * p["fta"] * g
         ft_at += w * p["fta"] * g
-    mu["FG%"], var["FG%"] = fg_mk / (fg_at or 1), PCT_WEEK_SD ** 2
-    mu["FT%"], var["FT%"] = ft_mk / (ft_at or 1), PCT_WEEK_SD ** 2
+    # Weekly % variance: per-roster binomial floor x mix inflation
+    # (codified 2026-07-30; replaces the flat PCT_WEEK_SD=0.012 that
+    #  made the better team win FT% in 99.4% of weeks).
+    p_fg = fg_mk / (fg_at or 1)
+    p_ft = ft_mk / (ft_at or 1)
+    mu["FG%"] = p_fg
+    var["FG%"] = (PCT_MIX_INFL ** 2) * max(p_fg * (1 - p_fg), 1e-4) / (fg_at or 1)
+    mu["FT%"] = p_ft
+    var["FT%"] = (PCT_MIX_INFL ** 2) * max(p_ft * (1 - p_ft), 1e-4) / (ft_at or 1)
     return mu, var
 
 
@@ -350,8 +365,8 @@ def simulate_seasons(rosters, seasons, rng):
             sa = rng.gauss(ma, sigmas[a][c])
             sb = rng.gauss(mb, sigmas[b][c])
             better = sa < sb if c == "TO" else sa > sb
-            wins += 1 if better else -1
-        return wins > 0  # 9 cats: no ties
+            wins += 1 if better else 0
+        return wins  # cats won by a, 0..9 (continuous draws: no ties)
 
     ids = list(rosters)
     for _ in range(seasons):
@@ -361,20 +376,23 @@ def simulate_seasons(rosters, seasons, rng):
             rng.shuffle(pairing)
             for k in range(0, TEAMS, 2):
                 a, b = pairing[k], pairing[k + 1]
-                if week_result(a, b):
-                    record[a] += 1
-                else:
-                    record[b] += 1
+                # Yahoo H2H-each-cat standings accumulate the CATEGORY
+                # record, not weekly binary wins (codified 2026-07-30;
+                # the weekly-binary rule shifted playoff% by up to
+                # +-29pp on identical rosters — 9-CAT math audit).
+                wa = week_result(a, b)
+                record[a] += wa
+                record[b] += 9 - wa
         seeds = sorted(ids, key=lambda i: (-record[i], rng.random()))
         top = seeds[:PLAYOFF_TEAMS]
         for i in top:
             playoffs[i] += 1
         # seeds 1-2 byes; 3v6, 4v5; FIXED bracket (Yahoo default, no reseed)
         qf = [(top[2], top[5]), (top[3], top[4])]
-        w1 = [a if week_result(a, b) else b for a, b in qf]
+        w1 = [a if week_result(a, b) >= 5 else b for a, b in qf]
         sf = [(top[0], w1[1]), (top[1], w1[0])]
-        w2 = [a if week_result(a, b) else b for a, b in sf]
-        champs[w2[0] if week_result(*w2) else w2[1]] += 1
+        w2 = [a if week_result(a, b) >= 5 else b for a, b in sf]
+        champs[w2[0] if week_result(*w2) >= 5 else w2[1]] += 1
     return champs, playoffs
 
 

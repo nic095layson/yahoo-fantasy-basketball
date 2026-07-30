@@ -218,32 +218,63 @@ def load_players():
     return rows
 
 
+DRAFTABLE = 156  # 12 teams x 13 rounds — the draftable universe
+
+
 def zscores(players):
-    """Attach per-category z-scores and a punt-independent value dict."""
-    n = len(players)
+    """Attach per-category z-scores, standardized over the DRAFTABLE pool.
 
-    def mean_std(vals):
-        m = sum(vals) / n
-        var = sum((v - m) ** 2 for v in vals) / n
-        return m, math.sqrt(var) or 1.0
+    Codified 2026-07-30 (9-CAT math audit, findings_2026-07-30): league
+    percentage baselines, means, and stds come from the top-156
+    draftable fixed point rather than the full pool — the ~90
+    sub-replacement rows shifted every baseline by 0.16-0.40 sigma and
+    mispriced the top-100 by up to 14 ranks. The fixed-point parameters
+    are applied to ALL rows so undrafted players still carry comparable
+    z's, and the z-sum's zero sits at replacement level, which is what
+    the availability haircut in adj_value taxes.
+    """
+    def params_over(pool):
+        n = len(pool)
+        lg_fg = (sum(p["fg_pct"] * p["fga"] for p in pool)
+                 / (sum(p["fga"] for p in pool) or 1))
+        lg_ft = (sum(p["ft_pct"] * p["fta"] for p in pool)
+                 / (sum(p["fta"] for p in pool) or 1))
+        stats = {"FG%": [(p["fg_pct"] - lg_fg) * p["fga"] for p in pool],
+                 "FT%": [(p["ft_pct"] - lg_ft) * p["fta"] for p in pool]}
+        for cat, col in COUNT_COLS.items():
+            stats[cat] = [p[col] for p in pool]
+        prm = {}
+        for cat, vals in stats.items():
+            m = sum(vals) / n
+            s = math.sqrt(sum((v - m) ** 2 for v in vals) / n) or 1.0
+            prm[cat] = (m, s)
+        return lg_fg, lg_ft, prm
 
-    # Volume-weighted percentage impact
-    lg_fg = sum(p["fg_pct"] * p["fga"] for p in players) / sum(p["fga"] for p in players)
-    lg_ft = sum(p["ft_pct"] * p["fta"] for p in players) / sum(p["fta"] for p in players)
-    for p in players:
-        p["_fg_imp"] = (p["fg_pct"] - lg_fg) * p["fga"]
-        p["_ft_imp"] = (p["ft_pct"] - lg_ft) * p["fta"]
+    def apply(lg_fg, lg_ft, prm):
+        for p in players:
+            p["_fg_imp"] = (p["fg_pct"] - lg_fg) * p["fga"]
+            p["_ft_imp"] = (p["ft_pct"] - lg_ft) * p["fta"]
+            vals = {"FG%": p["_fg_imp"], "FT%": p["_ft_imp"]}
+            for cat, col in COUNT_COLS.items():
+                vals[cat] = p[col]
+            p["z"] = {}
+            for cat, v in vals.items():
+                m, s = prm[cat]
+                z = (v - m) / s
+                p["z"][cat] = -z if cat == "TO" else z
 
-    stats = {"FG%": [p["_fg_imp"] for p in players],
-             "FT%": [p["_ft_imp"] for p in players]}
-    for cat, col in COUNT_COLS.items():
-        stats[cat] = [p[col] for p in players]
-
-    for cat, vals in stats.items():
-        m, s = mean_std(vals)
-        for p, v in zip(players, vals):
-            z = (v - m) / s
-            p.setdefault("z", {})[cat] = -z if cat == "TO" else z
+    # Pass 0 over the full pool seeds the board; then iterate to the
+    # top-156-by-value fixed point (audit: converges in one step).
+    apply(*params_over(players))
+    seen = set()
+    for _ in range(5):
+        avail = [p for p in players if availability(p) > 0]
+        top = sorted(avail, key=lambda p: -total_value(p))[:DRAFTABLE]
+        key = frozenset(p["player"] for p in top)
+        if key in seen:
+            break
+        seen.add(key)
+        apply(*params_over(top))
     return players
 
 
