@@ -103,6 +103,21 @@ honest instrument are an open follow-up. Historical harnesses
 (`matrix_paired.py` etc.) still pin their original fields and remain
 reproducible only against commit `1ae3693` or earlier.
 
+## Slot intel snapshot (fixed instrument, 2026-07-30)
+
+Regenerated post-codification (1,500 seasons × 3 rotations; cadence 60
+drafts). The JSONs are gitignored scratch — this table is the curated
+record; the pre-draft checklist now regenerates intel fresh at prime
+time (SKILL.md amended).
+
+Best strategy per slot: S1 safe_floor · S2 scarcity · S3 safe_floor ·
+S4 scarcity · S5 slot_filler · S6 safe_floor · S7 slot_filler ·
+S8 safe_floor · S9 slot_filler · S10 scarcity · S11 slot_filler ·
+S12 **council**. Council champ% by slot: 12.8 / **24.6** / 13.1 /
+**20.7** / 9.5 / 6.4 / 4.3 / 12.7 / 11.6 / 11.5 / 6.4 / 13.1 —
+strongest at slots 2 and 4, weakest mid-snake 5–7 (per-cell noise is
+real at this N; treat as coarse guidance, not gospel).
+
 ## Follow-up register
 
 1. Slot-conditional elasticity weights (slots 1–3 only) — CRN experiment.
