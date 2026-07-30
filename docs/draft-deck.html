@@ -166,7 +166,7 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 .buildread button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); margin-left: var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
 ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
 /* Row 1: rank · name (only flexible column — never crushed) · score · button.
-   Row 2: tags line (archetype · 🎯 · ⏱ verdict) wraps freely under the name.
+   Row 2: tags line (🎯 · ⏱ verdict) wraps freely under the name.
    Metas auto-place below. Fixes the collapsed-name bug at side-panel widths. */
 ol.recos li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: var(--space-1) var(--space-3); align-items: center; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
 ol.recos li.aux { display: block; border-style: none; padding: var(--space-1) var(--space-3); }
@@ -175,7 +175,6 @@ ol.recos .nm { grid-row: 1; grid-column: 2; font-weight: var(--weight-bold); ove
 ol.recos li > .sc { grid-row: 1; grid-column: 3; justify-self: end; }
 ol.recos li > .take { grid-row: 1; grid-column: 4; }
 ol.recos .tags { grid-row: 2; grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); }
-ol.recos .arch { font-size: var(--text-sm); color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; }
 ol.recos .gi { font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; white-space: nowrap; }
 ol.recos .meta { grid-column: 1 / -1; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
 ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
@@ -183,7 +182,6 @@ ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); f
 .verdict.buy { color: var(--accent); border-color: var(--accent); }
 .verdict.wait { color: var(--muted); }
 .verdict.toss { color: var(--ink-2); }
-@media (max-width: 480px) { ol.recos .arch { display: none; } }
 
 /* Tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-8) 0 var(--space-3); border-bottom: 1px solid var(--line); }
@@ -1420,20 +1418,9 @@ const JUDGMENT = {
     return Math.min(0.99, Math.max(0.01, phi));
   }
   /* Archetype layer (codified 2026-07-30, gap study G3): codes/flags/style
-     are BAKED into PLAYERS at build time by scripts/archetypes.py —
-     profile, not position. Display-only. */
-  const ARCH_NAME = { BIG: "Traditional Big", ALPHA: "High-Usage Alpha",
-    GEN: "Floor General", "3D": "3-and-D Wing" };
-  function archTip(p) {
-    const base = p.ar
-      ? `${ARCH_NAME[p.ar]} (style ${p.sy >= 0 ? "+" : ""}${p.sy})`
-      : `Balanced profile (style ${p.sy >= 0 ? "+" : ""}${p.sy})`;
-    const fx = (p.fx || []).length
-      ? ` · out-of-position: ${p.fx.join(", ")}` : "";
-    return base + fx + " — profile from stat shape, not listed position " +
-      "(Wemby and Jokić classify ALPHA: their guard-side production is " +
-      "why they go 1-2). Display-only; never re-ranks.";
-  }
+     are BAKED into PLAYERS at build time by scripts/archetypes.py.
+     INTERNAL ONLY since 2026-07-30 (owner: tags were noise) — the compass
+     and TARGET logic consume sy/ar; nothing renders the labels. */
   /* Concession diagnostic (gap study G1b): puntFit = cov_gain/0.0905 −
      sunk/2.148 (board-richness demoted to tiebreaker per study
      refinement). DIAGNOSTIC ONLY — the same study measured every
@@ -1772,16 +1759,10 @@ const JUDGMENT = {
     /* mine entries here are {name, pickNo, p} wrappers; UNKNOWN picks have
        no player object and are skipped */
     for (const e of mine) if (e.p) for (const f of familiesOf(e.p)) famN[f]++;
-    const withP = mine.filter(e => e.p);
-    let build = "";
-    if (withP.length >= 2) {
-      const ct = {};
-      for (const e of withP) if (e.p.ar) ct[e.p.ar] = (ct[e.p.ar] || 0) + 1;
-      const census = Object.entries(ct).map(([a, n2]) => `${n2} ${a}`).join(" + ") || "balanced";
-      build = `  ·  ${census}`;
-    }
+    /* archetype census retired from display 2026-07-30 (owner: noise);
+       the ar/fx/sy layer stays internal — compass + TARGET consume it */
     $("myRosterFams").textContent =
-      `G (${famN.G})  F (${famN.F})  C (${famN.C})${build}`;
+      `G (${famN.G})  F (${famN.F})  C (${famN.C})`;
   }
 
   function renderStrip() {
@@ -2070,9 +2051,6 @@ const JUDGMENT = {
         fl.dataset.tip = p.note;
         nm.appendChild(fl);
       }
-      const at = el("span", "arch",
-        (p.ar || (p.fx || []).length) ? (p.ar || "") + ((p.fx || []).length ? "✦" : "") : "");
-      if (p.ar || (p.fx || []).length) at.dataset.tip = archTip(p);
       let vSpan = null;
       const fRec = fitZ(p, recoFw);
       const sc = el("span", "sc", fmtZ(scored[i].fs, 2) + (p.av < 1 && fRec.raw > 0 ? "*" : ""));
@@ -2168,7 +2146,6 @@ const JUDGMENT = {
         if (deck.mode === "mock" && yourTurn) runFeed();
       });
       const tags = el("span", "tags");
-      if (at.textContent) tags.append(at);
       tags.append(gc);
       if (vSpan) tags.append(vSpan);
       li.append(nm, tags, sc, take);
