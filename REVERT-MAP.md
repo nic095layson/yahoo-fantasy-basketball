@@ -10,11 +10,19 @@ relevant files) and republishes to the standing artifact URL.
 
 | Layer | Switch | Effect |
 |---|---|---|
-| Slot-gated gradient ordering | set `GRAD_SLOTS = 0` in `arena/arena.py` AND `docs/draft-deck.html` (one constant each) | gradient ordering off everywhere; 🎯 display + composite ordering unaffected |
-| 🎯 confidence display | remove the `gc` span block in the Top-5 loop (single block, marked) | display gone; ordering untouched |
-| 🧭 Draft Compass | remove the compass block (marked, self-contained; absorbed the retired ⚖ meter and 🪙 chip 2026-07-30) | shape guidance line gone |
-| Archetype layer | remove the `at` tag block + roster census + drop `ar/fx/sy` from build_deck.py (scripts/archetypes.py standalone) | chips gone; data fields regenerate away next build |
+| Slot-gated gradient ordering | set `GRAD_SLOTS = 0` in `arena/arena.py` AND `docs/draft-deck.html` (one constant each) | gradient ordering off everywhere; composite ordering unaffected |
+| Single-🎯 system-pick marker | remove the `isRec`/`tgOnPin` marks in the Top-5 loop + pinned row | marker gone; ordering untouched |
+| Strengths/Weaknesses header | remove the `#swline` render block in renderDecision | header gone |
 | Market-timing chips / ladder | display blocks in the app script, all marked | display-only by construction |
+
+**Display surfaces RETIRED 2026-07-30 (owner: noise)** — all removed in
+commits `d2e930d` (archetype tags + roster census) and the simplification
+commit after it (🧭 compass line, 🎯 NN% confidence spans, Value/Market
+strips, composite title line). The underlying layers stay internal:
+`ar/fx/sy` still bake into PLAYERS, the archetype/style math still feeds
+TARGET + the punt analyzer, `gradImpact`/`cheapestConcessions` remain
+defined for future surfaces and harnesses. To restore any retired surface,
+`git revert` the removing commit (each is atomic and display-only).
 
 ## Full-layer reverts (git)
 
