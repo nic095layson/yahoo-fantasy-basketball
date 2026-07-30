@@ -161,12 +161,19 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 .buildread .why { color: var(--ink-2); }
 .buildread button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); margin-left: var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
 ol.recos { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
-ol.recos li { display: grid; grid-template-columns: auto 1fr auto auto; gap: var(--space-1) var(--space-3); align-items: baseline; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
+ol.recos li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto auto auto auto; gap: var(--space-1) var(--space-3); align-items: center; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); }
+ol.recos li.aux { display: block; border-style: none; padding: var(--space-1) var(--space-3); }
 ol.recos .rk { font-family: var(--font-data); font-weight: var(--weight-bold); color: var(--accent); }
-ol.recos .nm { font-weight: var(--weight-bold); }
-ol.recos .meta { grid-column: 2 / 5; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
+ol.recos .nm { font-weight: var(--weight-bold); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ol.recos .arch { font-size: var(--text-sm); color: var(--muted); letter-spacing: 0.04em; white-space: nowrap; }
+ol.recos .gi { font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; white-space: nowrap; }
+ol.recos .meta { grid-column: 1 / -1; order: 5; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
 ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
-ol.recos button.take { grid-column: 4; grid-row: 1; }
+.verdict { font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.verdict.buy { color: var(--accent); border-color: var(--accent); }
+.verdict.wait { color: var(--muted); }
+.verdict.toss { color: var(--ink-2); }
+@media (max-width: 720px) { ol.recos li { grid-template-columns: auto minmax(0, 1fr) auto auto; } ol.recos .arch, ol.recos .gi { display: none; } }
 
 /* Tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-8) 0 var(--space-3); border-bottom: 1px solid var(--line); }
@@ -365,7 +372,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-07-30 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (7/28): Draymond Green is back on GSW — one year, $27.7M agreed (Hoops Rumors + Bleacher Report, 7/28); Harden's Cleveland return remains agreed-but-unsigned by design, and DeRozan, Beal, and Westbrook are still true free agents. Carried forward: LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. As of 2026-07-28 the council scores all nine categories at full weight: the old locked/lost down-weighting cost 3.8 championship points causally in 120 paired arena drafts (t=5.16), so it was retired from the ranking and survives only as the Fit reading lens. The same day's market-timing layer (owner rule: value says who, price says when) adds a BUY-NOW / CAN-WAIT / TOSS-UP verdict to each recommendation from a survival model over the market ranks — ~Φ((mkt−pick)/σ) — plus a wait-chain for your neediest position; these are display advice only, never re-rank anything, and are calibrated for a market-priced room (mock rooms seat mostly value-drafters plus two market seats, so discounted vets leave mock boards earlier than a real room would take them). Mock opponents mostly draft by board value with noise (two seats use the July market model) — stars still fall further in mocks than they will in a real room; September consensus ADP upgrades the market seats. The 🎯 confidence figure (added 2026-07-30) is a roster-conditional impact: expected weekly category wins the pick adds to <em>your</em> roster, from a win-probability gradient over the replacement-anchored z's with weekly-noise deflation — it prices diminishing returns the composite cannot see (a fifth center's blocks are worth less than your first's). From draft slots 1–3 the gradient also <strong>orders</strong> the Top 5 (⚡ badge shown): CRN-confirmed at fresh seeds the same day, +12.7pp championship, t=4.63, council-ratified 5–0. From slots 4–12 the composite orders the list and 🎯 advises — the global gradient ordering was tested (36 CRN cells) and did not causally beat the composite there. The archetype chips (BIG / ALPHA / GEN / 3&amp;D, ✦ = out-of-position provider) and the roster build line come from a PCA of the pool's own correlation structure that blindly reproduces the classic synergy axes (42% of variance is big-vs-guard); they are profile-not-position, baked at build time by <code>scripts/archetypes.py</code>, and display-only. The 🧭 Draft Compass consolidates the shape guidance into one line — your roster's position on the measured big-vs-guard axis, its state (exploring → leaning → committed), what to deepen, and the cheapest cats to stop chasing (a diagnostic validated 6/6 on replayed mocks). It never gates or prescribes the punt box: <em>declaring</em> punts tested causally harmful (−5 to −11pp), so the compass steers coherent axis-building instead. The judgment layer — per-player adjustments with rationales — is authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: the ⏱ BUY/WAIT verdicts price survival to your next pick under a market model (July estimate; September ADP sharpens); 🎯 is the roster-conditional impact (expected weekly category wins added — from draft slots 1–3 it also <strong>orders</strong> the list, arena-confirmed +12.7pp, t=4.6); the 🧭 compass tracks your build's axis (profile-not-position archetypes from the pool's own correlation structure) and names what to deepen and what to stop chasing — it never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1991,14 +1998,7 @@ const JUDGMENT = {
     const teamCt2 = teamCt;
     const grads = scored.map(r => gradImpact(r.p, mine, punt));
     const gmax = Math.max(...grads);
-    if (st.slot <= GRAD_SLOTS) {
-      const gb = document.createElement("li");
-      gb.style.borderStyle = "none";
-      const gbm = el("span", "meta", "⚡ gradient order active (slots 1–3)");
-      gbm.dataset.tip = "from draft slots 1–3 this list is RANKED by the roster-conditional win-probability gradient, not the flat composite — arena-confirmed +12.7pp championship (t=4.6, 18 fresh CRN cells, council 5–0, 2026-07-30). The composite still shows as the score; 🎯 shows each pick's marginal impact.";
-      gb.append(gbm);
-      recos.appendChild(gb);
-    }
+
     /* 🧭 Draft Compass (2026-07-30 consolidation, council-ratified):
        ONE always-visible line replacing the ⚖ commitment meter and the
        🪙 concession chip (both folded in — cheapestConcessions() feeds
@@ -2012,8 +2012,8 @@ const JUDGMENT = {
     {
       const nCp = mine.length;
       const lean = nCp ? mine.reduce((t, q) => t + (q.sy || 0), 0) / nCp : 0;
-      const pos = Math.max(0, Math.min(14, Math.round((lean + 2.5) / 5 * 14)));
-      const gauge = "GUARD ◄" + "━".repeat(pos) + "●" + "━".repeat(14 - pos) + "► BIG";
+      const pos = Math.max(0, Math.min(8, Math.round((lean + 2.5) / 5 * 8)));
+      const gauge = "G◄" + "━".repeat(pos) + "●" + "━".repeat(8 - pos) + "►B";
       const cheap = nCp >= 4 ? cheapestConcessions(mine, st) : null;
       let cstate, advice;
       if (nCp < 2) {
@@ -2035,10 +2035,11 @@ const JUDGMENT = {
           : "value drafting — no axis yet";
       }
       const cl = document.createElement("li");
-      cl.style.borderStyle = "none";
+      cl.className = "aux";
+      const grAct = st.slot <= GRAD_SLOTS ? "⚡" : "";
       const cm = el("span", "meta",
-        `🧭 ${gauge}  ${lean >= 0 ? "+" : ""}${lean.toFixed(2)} · ${cstate} — ${advice}`);
-      cm.dataset.tip = "Draft Compass — your roster's mean style coordinate on the measured big-vs-guard axis (42% of pool variance; PCA of the pool itself). EXPLORING (<2 picks) → LEANING (past the lean band) → COMMITTED (past the archetype cut). Causally-tested doctrine: deepen a decisive lean (mock 16, co-2nd), never half-repair against it (mock 17, 9th), and NEVER zero-weight the stop-chasing cats in the punt box — every punt-declaring policy measured −5 to −11pp (G1a, CRN). Stop-chasing list = the concession diagnostic (6/6 naming the weak family on replayed mocks). This line replaces the ⚖ meter and 🪙 chip (consolidation).";
+        `🧭${grAct} ${gauge} ${lean >= 0 ? "+" : ""}${lean.toFixed(2)} · ${cstate} — ${advice}`);
+      cm.dataset.tip = (st.slot <= GRAD_SLOTS ? "⚡ gradient order ACTIVE (slots 1–3): this list is ranked by the roster-conditional win-probability gradient, arena-confirmed +12.7pp (t=4.6). " : "") + "Draft Compass — your roster's mean style coordinate on the measured big-vs-guard axis (42% of pool variance; PCA of the pool itself). EXPLORING (<2 picks) → LEANING (past the lean band) → COMMITTED (past the archetype cut). Causally-tested doctrine: deepen a decisive lean (mock 16, co-2nd), never half-repair against it (mock 17, 9th), and NEVER zero-weight the stop-chasing cats in the punt box — every punt-declaring policy measured −5 to −11pp (G1a, CRN). Stop-chasing list = the concession diagnostic (6/6 naming the weak family on replayed mocks). This line replaces the ⚖ meter and 🪙 chip (consolidation).";
       cl.append(cm);
       recos.appendChild(cl);
     }
@@ -2052,22 +2053,19 @@ const JUDGMENT = {
         fl.dataset.tip = p.note;
         nm.appendChild(fl);
       }
-      if (p.ar || (p.fx || []).length) {
-        const at = el("span", "flag", (p.ar || "") + ((p.fx || []).length ? "✦" : ""));
-        at.style.color = "var(--muted)";
-        at.dataset.tip = archTip(p);
-        nm.appendChild(at);
-      }
+      const at = el("span", "arch",
+        (p.ar || (p.fx || []).length) ? (p.ar || "") + ((p.fx || []).length ? "✦" : "") : "");
+      if (p.ar || (p.fx || []).length) at.dataset.tip = archTip(p);
+      let vSpan = el("span", "verdict wait", "");
+      vSpan.style.visibility = "hidden";
       const fRec = fitZ(p, recoFw);
       const sc = el("span", "sc", fmtZ(scored[i].fs, 2) + (p.av < 1 && fRec.raw > 0 ? "*" : ""));
       sc.dataset.tip = `composite score — this number ranks the list · fit z ${fmtZ(fRec.adj, 2)} (swing-weighted for your roster)`;
-      li.append(nm, sc);
       const gi = grads[i];
-      const gc = el("span", "meta",
-        `🎯 ${gmax > 0 ? Math.round(100 * Math.max(0, gi) / gmax) + "% conf · " : ""}` +
-        `${gi >= 0 ? "+" : ""}${gi.toFixed(2)} cats/wk`);
+      const gc = el("span", "gi",
+        `🎯${gmax > 0 ? Math.round(100 * Math.max(0, gi) / gmax) + "%" : "—"} ` +
+        `${gi >= 0 ? "+" : ""}${gi.toFixed(2)}`);
       gc.dataset.tip = "roster-conditional impact: expected weekly category wins this pick ADDS to YOUR roster right now — diminishing returns on cats you already dominate, premium on contested cats, near-zero on lost ones (win-probability gradient, replacement-anchored z, weekly-noise-deflated). Confidence = share of the best visible pick's impact. From draft slots 1–3 the gradient also ORDERS this list (arena-confirmed +12.7pp, t=4.6). From slots 4–12 it is DIAGNOSTIC, not an order: use it to spot the one hole in a committed build (mock-14 Allen, +3.9pp) — greedily taking the 🎯 top every turn from a mid seat builds a flat roster and LOSES (mock-15 CF: −1.9pp, 11th). Commit to a shape first; 🎯 tells you which pick serves it.";
-      li.append(gc);
       if (i === 0 && coinFlip) {
         const cf = el("span", "flag", "(coin flip)");
         cf.style.color = "var(--muted)";
@@ -2137,13 +2135,12 @@ const JUDGMENT = {
         } else {
           chip = "TOSS-UP"; why = `room price #${mktR} — ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
         }
-        const pl = el("span", "meta", `⏱ ${why} → `);
-        const ch = el("span", "flag", chip);
-        ch.style.fontWeight = "600";
-        ch.style.color = chip === "CAN WAIT" ? "var(--muted)" : "var(--accent)";
-        ch.dataset.tip = "survival % assumes a market-priced room (July estimate — September ADP sharpens it) — the room you're TRAINING for. Mock rooms seat 9 value-drafters + 2 market seats, so mock CAN-WAITs carry a standing warning. A live 1–2-player shelf that includes this player overrides price.";
-        pl.appendChild(ch);
-        li.append(pl);
+        const pm2 = (why || "").match(/~\d+%/);
+        const vcls = chip === "CAN WAIT" ? "wait" : chip === "TOSS-UP" ? "toss" : "buy";
+        const ch = el("span", "verdict " + vcls,
+          `⏱ ${chip}${pm2 ? " " + pm2[0] : (why || "").includes("scarcity") ? " ·shelf" : ""}`);
+        ch.dataset.tip = why + " — survival % assumes a market-priced room (July estimate; September ADP sharpens it). Mock rooms seat 9 value-drafters + 2 market seats, so mock CAN-WAITs carry a standing warning. A live 1–2-player shelf that includes this player overrides price.";
+        vSpan = ch;
       }
       const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
       take.type = "button";
@@ -2154,7 +2151,7 @@ const JUDGMENT = {
         $("feed").focus();
         if (deck.mode === "mock" && yourTurn) runFeed();
       });
-      li.append(take);
+      li.append(nm, at, gc, vSpan, sc, take);
       recos.appendChild(li);
     }
     /* Pinned TARGET row (owner UX fix 2026-07-28, council-ratified 5-0):
@@ -2215,6 +2212,7 @@ const JUDGMENT = {
       }
       if (steps.length) {
         const li = document.createElement("li");
+        li.className = "aux";
         li.style.borderStyle = "dotted";
         li.append(el("span", "rk", "🚌"));
         const meta = el("span", "meta",
