@@ -1936,8 +1936,10 @@ const JUDGMENT = {
     }
     /* Commitment meter (2026-07-30, mock-15 debrief): flat builds graded
        7th-10th across six replayed mocks; committed shapes took 2nd-3rd.
-       Display-only nudge — fires past R4 when no punt is declared and no
-       category projects better than 5th. */
+       Display-only nudge — fires past R4 when no category projects better
+       than 5th. Gap-study causal update (same day): the CURE is coherent
+       axis-building, NOT punt declaration — all six CRN-tested punt
+       policies were significantly negative; tooltip reflects this. */
     if (!st.punt.length && ranks && mine.length >= 4) {
       const bestRank = Math.min(...CATS.map(c => ranks[c]));
       if (bestRank > 4) {
@@ -1945,7 +1947,7 @@ const JUDGMENT = {
         nl.style.borderStyle = "none";
         const nm2 = el("span", "meta",
           `⚖ no declared shape — best category rank ${bestRank}th of 12`);
-        nm2.dataset.tip = "flat builds graded 7th–10th across six replayed mocks; committed shapes took 2nd–3rd. Declaring a punt re-aims TARGET, the composite, AND 🎯 in one stroke (punted cats drop to weight 0). Set it in the punt box — this is the highest-evidence lever in the lab.";
+        nm2.dataset.tip = "flat builds graded 7th–10th across six replayed mocks; committed shapes took 2nd–3rd. CAUSAL UPDATE (gap study 2026-07-30): declaring a punt is NOT the cure — all six punt policies tested CRN-paired were significantly negative (−5 to −11pp champ; the Big-Man FT%+3PTM punt worst). Commitment means building a coherent axis, not conceding categories: lean into your strong side via the card and 🎯 rather than zero-weighting cats.";
         nl.append(nm2);
         recos.appendChild(nl);
       }
