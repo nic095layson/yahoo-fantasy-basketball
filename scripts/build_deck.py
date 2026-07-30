@@ -19,6 +19,8 @@ import os
 import re
 import sys
 
+import archetypes
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
 DECK = os.path.join(ROOT, "docs", "draft-deck.html")
@@ -70,10 +72,14 @@ def main():
 
     # build the embedded pool
     players = hoops.zscores(players_raw)
+    archetypes.prime(players, hoops.availability)
     pool = [{
         "n": p["player"], "t": p["team"], "p": p["pos"].replace('"', ""),
         "note": p.get("note") or "", "av": hoops.availability(p),
         "z": {c: round(p["z"][c], 6) for c in hoops.CATS},
+        # archetype layer (codified 2026-07-30): profile code, out-of-
+        # position flags, style coordinate — display-only consumers
+        **dict(zip(("ar", "fx", "sy"), archetypes.classify(p))),
     } for p in players]
     data = json.dumps(pool, separators=(",", ":"))
 
