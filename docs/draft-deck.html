@@ -1934,6 +1934,22 @@ const JUDGMENT = {
       gb.append(gbm);
       recos.appendChild(gb);
     }
+    /* Commitment meter (2026-07-30, mock-15 debrief): flat builds graded
+       7th-10th across six replayed mocks; committed shapes took 2nd-3rd.
+       Display-only nudge — fires past R4 when no punt is declared and no
+       category projects better than 5th. */
+    if (!st.punt.length && ranks && mine.length >= 4) {
+      const bestRank = Math.min(...CATS.map(c => ranks[c]));
+      if (bestRank > 4) {
+        const nl = document.createElement("li");
+        nl.style.borderStyle = "none";
+        const nm2 = el("span", "meta",
+          `⚖ no declared shape — best category rank ${bestRank}th of 12`);
+        nm2.dataset.tip = "flat builds graded 7th–10th across six replayed mocks; committed shapes took 2nd–3rd. Declaring a punt re-aims TARGET, the composite, AND 🎯 in one stroke (punted cats drop to weight 0). Set it in the punt box — this is the highest-evidence lever in the lab.";
+        nl.append(nm2);
+        recos.appendChild(nl);
+      }
+    }
     for (let i = 0; i < scored.length; i++) {
       const { p, s } = scored[i];
       const li = document.createElement("li");
