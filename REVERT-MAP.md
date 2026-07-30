@@ -12,7 +12,8 @@ relevant files) and republishes to the standing artifact URL.
 |---|---|---|
 | Slot-gated gradient ordering | set `GRAD_SLOTS = 0` in `arena/arena.py` AND `docs/draft-deck.html` (one constant each) | gradient ordering off everywhere; 🎯 display + composite ordering unaffected |
 | 🎯 confidence display | remove the `gc` span block in the Top-5 loop (single block, marked) | display gone; ordering untouched |
-| Commitment meter | remove the `⚖` block (marked, self-contained) | nudge gone |
+| 🧭 Draft Compass | remove the compass block (marked, self-contained; absorbed the retired ⚖ meter and 🪙 chip 2026-07-30) | shape guidance line gone |
+| Archetype layer | remove the `at` tag block + roster census + drop `ar/fx/sy` from build_deck.py (scripts/archetypes.py standalone) | chips gone; data fields regenerate away next build |
 | Market-timing chips / ladder | display blocks in the app script, all marked | display-only by construction |
 
 ## Full-layer reverts (git)

@@ -71,3 +71,27 @@ Threshold gradient (shelved, inconclusive twice); adaptive-R4 punt
 (causally refuted). The ⚖/🪙 surfaces exist to steer *coherent
 axis-building*, which is the behavior the six-mock ledger and the
 G1a arms jointly support.
+
+
+## Addendum — 🧭 Draft Compass consolidation + FEATURE FREEZE (same day)
+
+Owner-directed consolidation, council-ratified 5–0: the ⚖ commitment
+meter, 🪙 concession chip, and roster lean suffix are **merged into one
+always-visible Draft Compass line** — axis gauge (guard ↔ big), lean
+value, state (EXPLORING → LEANING → COMMITTED at the measured
+archetype thresholds), deepen-list, and stop-chasing list. Net card
+density DOWN (3 surfaces → 1). The flat-past-R4 warning survives as
+the NO-LEAN state's alarm. The compass informs the punt box and never
+gates or prescribes it (G1a stands). State tests: empty → EXPLORING;
+mock-17 R4 → COMMITTED GUARD −1.21 (the exact state drafted against);
+AD/Gobert/Sabonis/Duren → COMMITTED BIG +1.42; mock-16 top-5 →
+LEANING GUARD. Gates: build clean, parity EXACT, syntax clean, old
+blocks fully removed.
+
+**FEATURE FREEZE (owner-ratified intent, effective now → September
+consensus ADP):** no new engine or display layers. In scope during the
+freeze: daily data pulls, mock workups/debriefs, truth fixes to
+existing copy, and the already-registered follow-up experiments
+(slot-3 refinement, k-scheduling, PCT_MIX_INFL re-estimate, September
+re-run of the full ladder). The next feature decision happens on
+September data.

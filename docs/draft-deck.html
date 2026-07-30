@@ -365,7 +365,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-07-30 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (7/28): Draymond Green is back on GSW — one year, $27.7M agreed (Hoops Rumors + Bleacher Report, 7/28); Harden's Cleveland return remains agreed-but-unsigned by design, and DeRozan, Beal, and Westbrook are still true free agents. Carried forward: LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. As of 2026-07-28 the council scores all nine categories at full weight: the old locked/lost down-weighting cost 3.8 championship points causally in 120 paired arena drafts (t=5.16), so it was retired from the ranking and survives only as the Fit reading lens. The same day's market-timing layer (owner rule: value says who, price says when) adds a BUY-NOW / CAN-WAIT / TOSS-UP verdict to each recommendation from a survival model over the market ranks — ~Φ((mkt−pick)/σ) — plus a wait-chain for your neediest position; these are display advice only, never re-rank anything, and are calibrated for a market-priced room (mock rooms seat mostly value-drafters plus two market seats, so discounted vets leave mock boards earlier than a real room would take them). Mock opponents mostly draft by board value with noise (two seats use the July market model) — stars still fall further in mocks than they will in a real room; September consensus ADP upgrades the market seats. The 🎯 confidence figure (added 2026-07-30) is a roster-conditional impact: expected weekly category wins the pick adds to <em>your</em> roster, from a win-probability gradient over the replacement-anchored z's with weekly-noise deflation — it prices diminishing returns the composite cannot see (a fifth center's blocks are worth less than your first's). From draft slots 1–3 the gradient also <strong>orders</strong> the Top 5 (⚡ badge shown): CRN-confirmed at fresh seeds the same day, +12.7pp championship, t=4.63, council-ratified 5–0. From slots 4–12 the composite orders the list and 🎯 advises — the global gradient ordering was tested (36 CRN cells) and did not causally beat the composite there. The archetype chips (BIG / ALPHA / GEN / 3&amp;D, ✦ = out-of-position provider) and the roster build line come from a PCA of the pool's own correlation structure that blindly reproduces the classic synergy axes (42% of variance is big-vs-guard); they are profile-not-position, baked at build time by <code>scripts/archetypes.py</code>, and display-only. The 🪙 concession line is a diagnostic with a causal warning built in: naming your cheapest concessions validated 6/6 on replayed mocks, but <em>declaring</em> punts tested harmful (−5 to −11pp), so it advises what to stop chasing, never what to zero-weight. The judgment layer — per-player adjustments with rationales — is authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> Snake attribution, name matching (nicknames, typo fuzzing, surname-collision halts), punt math, injury rules, feasibility guard, and the council recommendation ruleset are ports of <code>scripts/hoops.py</code> and <code>arena/arena.py</code>, verified against engine output at build time. Recommendations are ranked by the council score plus a <strong>Claude judgment layer</strong> and display <strong>fit z</strong> — verified arithmetic, not probability; judgment magnitudes are marked ~ as the estimates they are. As of 2026-07-28 the council scores all nine categories at full weight: the old locked/lost down-weighting cost 3.8 championship points causally in 120 paired arena drafts (t=5.16), so it was retired from the ranking and survives only as the Fit reading lens. The same day's market-timing layer (owner rule: value says who, price says when) adds a BUY-NOW / CAN-WAIT / TOSS-UP verdict to each recommendation from a survival model over the market ranks — ~Φ((mkt−pick)/σ) — plus a wait-chain for your neediest position; these are display advice only, never re-rank anything, and are calibrated for a market-priced room (mock rooms seat mostly value-drafters plus two market seats, so discounted vets leave mock boards earlier than a real room would take them). Mock opponents mostly draft by board value with noise (two seats use the July market model) — stars still fall further in mocks than they will in a real room; September consensus ADP upgrades the market seats. The 🎯 confidence figure (added 2026-07-30) is a roster-conditional impact: expected weekly category wins the pick adds to <em>your</em> roster, from a win-probability gradient over the replacement-anchored z's with weekly-noise deflation — it prices diminishing returns the composite cannot see (a fifth center's blocks are worth less than your first's). From draft slots 1–3 the gradient also <strong>orders</strong> the Top 5 (⚡ badge shown): CRN-confirmed at fresh seeds the same day, +12.7pp championship, t=4.63, council-ratified 5–0. From slots 4–12 the composite orders the list and 🎯 advises — the global gradient ordering was tested (36 CRN cells) and did not causally beat the composite there. The archetype chips (BIG / ALPHA / GEN / 3&amp;D, ✦ = out-of-position provider) and the roster build line come from a PCA of the pool's own correlation structure that blindly reproduces the classic synergy axes (42% of variance is big-vs-guard); they are profile-not-position, baked at build time by <code>scripts/archetypes.py</code>, and display-only. The 🧭 Draft Compass consolidates the shape guidance into one line — your roster's position on the measured big-vs-guard axis, its state (exploring → leaning → committed), what to deepen, and the cheapest cats to stop chasing (a diagnostic validated 6/6 on replayed mocks). It never gates or prescribes the punt box: <em>declaring</em> punts tested causally harmful (−5 to −11pp), so the compass steers coherent axis-building instead. The judgment layer — per-player adjustments with rationales — is authored fresh at each daily republish from that day's research (never invented at view time, and never applied to the mock AI managers, who stay arena-faithful). For a genuinely novel draft-night situation, export the state and bring it to Cowork. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1755,10 +1755,7 @@ const JUDGMENT = {
       const ct = {};
       for (const e of withP) if (e.p.ar) ct[e.p.ar] = (ct[e.p.ar] || 0) + 1;
       const census = Object.entries(ct).map(([a, n2]) => `${n2} ${a}`).join(" + ") || "balanced";
-      const lean = withP.reduce((t, e) => t + (e.p.sy || 0), 0) / withP.length;
-      const leanTxt = lean >= 0.1896 ? "big-axis lean"
-        : lean <= -0.2376 ? "guard-axis lean" : "no axis lean";
-      build = `  ·  ${census} — ${leanTxt}`;
+      build = `  ·  ${census}`;
     }
     $("myRosterFams").textContent =
       `G (${famN.G})  F (${famN.F})  C (${famN.C})${build}`;
@@ -2002,44 +1999,48 @@ const JUDGMENT = {
       gb.append(gbm);
       recos.appendChild(gb);
     }
-    /* Commitment meter (2026-07-30, mock-15 debrief): flat builds graded
-       7th-10th across six replayed mocks; committed shapes took 2nd-3rd.
-       Display-only nudge — fires past R4 when no category projects better
-       than 5th. Gap-study causal update (same day): the CURE is coherent
-       axis-building, NOT punt declaration — all six CRN-tested punt
-       policies were significantly negative; tooltip reflects this. */
-    if (!st.punt.length && ranks && mine.length >= 4) {
-      const bestRank = Math.min(...CATS.map(c => ranks[c]));
-      if (bestRank > 4) {
-        const meanSy = mine.reduce((t, q) => t + (q.sy || 0), 0) / mine.length;
-        const leanClause = meanSy >= 0.1896
-          ? " · big-axis lean: deepen FG%/REB/BLK"
-          : meanSy <= -0.2376
-            ? " · guard-axis lean: deepen AST/3PTM/FT%"
-            : "";
-        const nl = document.createElement("li");
-        nl.style.borderStyle = "none";
-        const nm2 = el("span", "meta",
-          `⚖ no committed shape — best category rank ${bestRank}th of 12${leanClause}`);
-        nm2.dataset.tip = "flat builds graded 7th–10th across six replayed mocks; committed shapes took 2nd–3rd. CAUSAL UPDATE (gap study 2026-07-30): declaring a punt is NOT the cure — all six punt policies tested CRN-paired were significantly negative (−5 to −11pp champ; the Big-Man FT%+3PTM punt worst). Commitment means building a coherent axis, not conceding categories: lean into your strong side via the card and 🎯 rather than zero-weighting cats.";
-        nl.append(nm2);
-        recos.appendChild(nl);
+    /* 🧭 Draft Compass (2026-07-30 consolidation, council-ratified):
+       ONE always-visible line replacing the ⚖ commitment meter and the
+       🪙 concession chip (both folded in — cheapestConcessions() feeds
+       the stop-chasing list). States from the archetype study's measured
+       thresholds: EXPLORING → LEANING (past ±lean band +0.19/−0.24) →
+       COMMITTED (past the archetype cuts +0.60/−0.37). Doctrine it
+       encodes, causally tested: deepen a decisive lean (m16 co-2nd),
+       never half-repair against it (m17 9th), never zero-weight the
+       stop-chasing cats (G1a: every punt-declaring policy −5..−11pp).
+       It informs the punt box; it never gates or prescribes it. */
+    {
+      const nCp = mine.length;
+      const lean = nCp ? mine.reduce((t, q) => t + (q.sy || 0), 0) / nCp : 0;
+      const pos = Math.max(0, Math.min(14, Math.round((lean + 2.5) / 5 * 14)));
+      const gauge = "GUARD ◄" + "━".repeat(pos) + "●" + "━".repeat(14 - pos) + "► BIG";
+      const cheap = nCp >= 4 ? cheapestConcessions(mine, st) : null;
+      let cstate, advice;
+      if (nCp < 2) {
+        cstate = "EXPLORING"; advice = "draft value — direction will emerge";
+      } else if (lean >= 0.6005 || lean <= -0.3701) {
+        cstate = "COMMITTED " + (lean > 0 ? "BIG" : "GUARD");
+        advice = (lean > 0 ? "deepen FG% · REB · BLK" : "deepen AST · 3PTM · FT%") +
+          (cheap ? ` — stop chasing ${cheap[0]} · ${cheap[1]}` : "");
+      } else if (lean >= 0.1896 || lean <= -0.2376) {
+        cstate = "LEANING " + (lean > 0 ? "BIG" : "GUARD");
+        advice = (lean > 0 ? "favor FG%/REB/BLK depth" : "favor AST/3PTM/FT% depth") +
+          (cheap ? ` — cheapest concessions ${cheap[0]} · ${cheap[1]}` : "");
+      } else {
+        const flat = ranks && nCp >= 4 &&
+          Math.min(...CATS.map(c => ranks[c])) > 4;
+        cstate = "NO LEAN";
+        advice = flat
+          ? "⚠ flat past R4 (graded 7th–10th) — pick a direction and deepen it"
+          : "value drafting — no axis yet";
       }
-    }
-    /* Concession diagnostic chip (gap study G1b, authorized 2026-07-30):
-       diagnostic ONLY — 6/6 retro validity naming the weak family, but
-       punt-DECLARING measured causally harmful; framing reflects both. */
-    if (mine.length >= 4) {
-      const cheap = cheapestConcessions(mine, st);
-      if (cheap) {
-        const cl = document.createElement("li");
-        cl.style.borderStyle = "none";
-        const cm = el("span", "meta",
-          `🪙 cheapest cats to stop chasing: ${cheap[0]} · ${cheap[1]}`);
-        cm.dataset.tip = "diagnostic, not an instruction: your two cheapest concessions by roster fit (elasticity-weighted winnability gain minus value already banked; board-richness demoted to tiebreaker). Validated 6/6 at naming the weak family in replayed mocks — but DECLARING a punt was measured causally harmful (−5 to −11pp champ, CRN-tested), so do NOT zero-weight these in the punt box on this advice; just stop paying premiums to chase them.";
-        cl.append(cm);
-        recos.appendChild(cl);
-      }
+      const cl = document.createElement("li");
+      cl.style.borderStyle = "none";
+      const cm = el("span", "meta",
+        `🧭 ${gauge}  ${lean >= 0 ? "+" : ""}${lean.toFixed(2)} · ${cstate} — ${advice}`);
+      cm.dataset.tip = "Draft Compass — your roster's mean style coordinate on the measured big-vs-guard axis (42% of pool variance; PCA of the pool itself). EXPLORING (<2 picks) → LEANING (past the lean band) → COMMITTED (past the archetype cut). Causally-tested doctrine: deepen a decisive lean (mock 16, co-2nd), never half-repair against it (mock 17, 9th), and NEVER zero-weight the stop-chasing cats in the punt box — every punt-declaring policy measured −5 to −11pp (G1a, CRN). Stop-chasing list = the concession diagnostic (6/6 naming the weak family on replayed mocks). This line replaces the ⚖ meter and 🪙 chip (consolidation).";
+      cl.append(cm);
+      recos.appendChild(cl);
     }
     for (let i = 0; i < scored.length; i++) {
       const { p, s } = scored[i];
