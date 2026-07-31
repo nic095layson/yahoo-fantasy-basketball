@@ -4,13 +4,13 @@ Completed 13-round mock (156/156). Second gradient seat (slot 2 ≤
 GRAD_SLOTS) and the first draft with the structural-drift latch live.
 Replay via the shipped app block; seasons 6,000 × 3; three CFs 6,000 × 2.
 
-## Outcome — third straight top finish
+## Outcome — second consecutive 1st (third in the last five drafts)
 
 | Metric | Mock 25 (slot 2) | Same-day ledger |
 |---|---|---|
-| Champ% | **29.00 (1st/12)** | m24 29.66 (1st), m21 26.73 (1st) |
+| Champ% | **29.00 (1st/12)** | m24 29.66 (1st) immediately prior; m23 0.16 (12th) and m22 0.22 (11th) before that |
 | Playoff% | **94.4 — best measured** | |
-| Kept-total | **+6.36 (1st)** | third board-and-finish double in a row |
+| Kept-total | **+6.36 (1st)** | board-and-finish double, as in m24 and m21 |
 | 🎯 exact hits | **10/13 — best measured** | the last TEN picks all exact |
 
 Roster: Wemby, KD, Tatum, Garland, Hart, LeBron, MPJ, McDaniels,
@@ -67,9 +67,12 @@ reaches) but it is a proxy, and this pair shows the proxy breaking.
 
 ## Ledger after 14 graded mocks
 
-Four of the last five drafts finished 1st (26.7 / 29.7 / 29.0) or
-grade as catastrophes (0.22 / 0.16) with nothing in between — the
-system has become bimodal on one variable: interior coverage. The
+The last five drafts, in order: m21 26.73% (1st), m22 0.22% (11th),
+m23 0.16% (12th), m24 29.66% (1st), m25 29.00% (1st). ALL FIVE land in
+one of two buckets — 1st place or catastrophe — with nothing in
+between, and the separating variable is interior coverage. Mock 25 is
+the second consecutive 1st, not a third: the 12th-place mock 23 sits
+two drafts back. The
 winning recipe is now stable and repeatable: **anchor with the outlier
 big, follow the card everywhere the roster isn't screaming, and never
 let three categories reach 11th.**
