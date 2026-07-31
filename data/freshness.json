@@ -1,9 +1,9 @@
 {
-  "date": "2026-07-30",
-  "note": "Second sweep 7/30 (evening pull): zero pool changes. Harden (CLE talks), DeRozan (WAS/MIA/DEN/CLE interest), Beal all still unsigned FA. Rui Hachimura->LAC 2yr/$28M already reflected (deal 7/7; ESPN+Yahoo+CBS). Thomas Bryant CLE return \u2014 not in pool. Board on post-codification draftable-156 z (b328ef7).",
+  "date": "2026-07-31",
+  "note": "Morning sweep 7/31: zero pool changes. LeBron->PHI already reflected (age41-risk, 4th-option reprice); LaVine SAC opt-in reflected; Harden (CLE, signing expected soon), DeRozan (SAC waive, WAS/MIA/DEN/CLE interest), Beal (LAC opt-out) all still unsigned FA. Board on draftable-156 z (b328ef7).",
   "rosters_verified": {
-    "date": "2026-07-30",
+    "date": "2026-07-31",
     "mode": "fallback-partial",
-    "sources": "fallback-partial vs data/rosters_official.json (2026-07-30): 0 mismatches"
+    "sources": "NBA.com offseason roundup + ESPN buzz tracker + CBS/BR FA trackers, 2026-07-31; verify_rosters.py 246/246, 0 mismatches (fallback-partial)"
   }
 }

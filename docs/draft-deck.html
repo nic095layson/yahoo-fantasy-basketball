@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-07-30", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "Second sweep 7/30 (evening pull): zero pool changes. Harden (CLE talks), DeRozan (WAS/MIA/DEN/CLE interest), Beal all still unsigned FA. Rui Hachimura->LAC \u2026"} -->
+<!-- build-manifest {"built": "2026-07-31", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "Morning sweep 7/31: zero pool changes. LeBron->PHI already reflected (age41-risk, 4th-option reprice); LaVine SAC opt-in reflected; Harden (CLE, signing \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -122,10 +122,11 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 .myroster .pk { color: var(--muted); }
 .myroster li.empty .nm { color: var(--muted); font-weight: var(--weight-regular); }
 .flagline { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--status-risk); margin: var(--space-1) 0; }
-#swline { margin: var(--space-3) 0 0; font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+#swline { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-12); margin: var(--space-3) 0 0; font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 #swline p { margin: 0 0 var(--space-1); max-width: none; }
 #swline .lead { display: inline-block; min-width: 7.5em; color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 #swline .cats { font-family: var(--font-data); }
+ol.recos .tm { font-family: var(--font-data); font-size: var(--text-sm); color: var(--muted); letter-spacing: 0.04em; }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .hcenter { text-align: center; text-transform: uppercase; }
 #bestReset { font: inherit; font-size: var(--text-sm); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-2); cursor: pointer; }
@@ -376,7 +377,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 </section>
 
 <footer class="colophon">
-  <p><strong>Data.</strong> Pool refreshed 2026-07-30 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (7/28): Draymond Green is back on GSW — one year, $27.7M agreed (Hoops Rumors + Bleacher Report, 7/28); Harden's Cleveland return remains agreed-but-unsigned by design, and DeRozan, Beal, and Westbrook are still true free agents. Carried forward: LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
+  <p><strong>Data.</strong> Pool refreshed 2026-07-31 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (7/28): Draymond Green is back on GSW — one year, $27.7M agreed (Hoops Rumors + Bleacher Report, 7/28); Harden's Cleveland return remains agreed-but-unsigned by design, and DeRozan, Beal, and Westbrook are still true free agents. Carried forward: LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
   <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY/WAIT verdicts price survival to your next pick under a market model (July estimate; September ADP sharpens); the single 🎯 marks the system pick — the top composite card, or an urgent structural TARGET when a needed family's shelf is nearly empty (from draft slots 1–3 the list order itself uses the win-probability gradient, arena-confirmed +12.7pp, t=4.6). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
@@ -1061,9 +1062,9 @@ const JUDGMENT = {
   const $ = id => document.getElementById(id);
 
   /* ---------- header stamp + fresh-data-pull ---------- */
-  const BUILD_PULL = "2026-07-30"; // freshness stamp date; rewritten at each republish
+  const BUILD_PULL = "2026-07-31"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "Second sweep 7/30 (evening pull): zero pool changes. Harden (CLE talks), DeRozan (WAS/MIA/DEN/CLE interest), Beal all still unsigned FA. Rui Hachimura->LAC 2yr/$28M already reflected (deal 7/7; ESPN+Yahoo+CBS). Thomas Bryant CLE return \u2014 not in pool. Board on post-codification draftable-156 z (b328ef7).";
+  const BUILD_NOTE = "Morning sweep 7/31: zero pool changes. LeBron->PHI already reflected (age41-risk, 4th-option reprice); LaVine SAC opt-in reflected; Harden (CLE, signing expected soon), DeRozan (SAC waive, WAS/MIA/DEN/CLE interest), Beal (LAC opt-out) all still unsigned FA. Board on draftable-156 z (b328ef7).";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -1825,11 +1826,6 @@ const JUDGMENT = {
     meta.innerHTML = "";
     const flags = $("flags");
     flags.innerHTML = "";
-    let weakest = [];
-    if (mine.length) {
-      const tot = rosterTotals(mine);
-      weakest = [...kept].sort((a, b) => tot[a] - tot[b]).slice(0, 2);
-    }
     const posCounts = {};
     for (const p of mine) for (const ps of positionsOf(p)) posCounts[ps] = (posCounts[ps] || 0) + 1;
     /* pick #, roster count, weakest, and vs-field ranks now live in the
@@ -1917,17 +1913,30 @@ const JUDGMENT = {
       const lockAt = rankTiers(st.teams).locked;
       const byRank = kept.slice().sort((a, b) => ranks[a] - ranks[b]);
       const tag = c => (ranks[c] <= lockAt ? "🔒" : "") + c;
-      const mkLine = (label, cs) => {
+      const swL = el("div", "swcol", ""), swR = el("div", "swcol", "");
+      const mkLine = (col, label, txt, tip) => {
         const line = el("p", "", "");
         line.append(el("span", "lead", label));
-        const sp = el("span", "cats", cs.map(tag).join(" · "));
-        sp.dataset.tip = cs.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") +
-          ` — vs the field on current rosters, recomputed every pick; 🔒 = dominated (rank ≤ ${lockAt})`;
+        const sp = el("span", "cats", txt);
+        sp.dataset.tip = tip;
         line.append(sp);
-        sw.append(line);
+        col.append(line);
       };
-      mkLine("Strengths", byRank.slice(0, 3));
-      mkLine("Weaknesses", byRank.slice(-3).reverse());
+      const rankTip = cs => cs.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") +
+        ` — vs the field on current rosters, recomputed every pick; 🔒 = dominated (rank ≤ ${lockAt})`;
+      const s3 = byRank.slice(0, 3), w3 = byRank.slice(-3).reverse();
+      mkLine(swL, "Strengths", s3.map(tag).join(" · "), rankTip(s3));
+      mkLine(swL, "Weaknesses", w3.map(tag).join(" · "), rankTip(w3));
+      /* Soft punt (owner spec 2026-07-30): the concession diagnostic —
+         the cheapest cats to stop paying premiums for, given what the
+         room has drafted. Advisory ONLY: never zero-weight them — every
+         punt-DECLARING policy measured −5 to −11pp (G1a, CRN). */
+      const cheap = mine.length >= 4 ? cheapestConcessions(mine, st) : null;
+      mkLine(swR, "Soft punt", cheap ? cheap.join(" · ") : "—",
+        cheap
+          ? "cheapest cats to stop chasing (concession diagnostic: coverage gained elsewhere minus value already sunk, elasticity-weighted vs the room's live rosters). Stop paying premiums here — do NOT zero-weight or declare a punt: every punt-declaring policy measured −5 to −11pp (G1a, CRN)."
+          : "forms from your 4th pick — needs enough of the room's rosters to price concessions");
+      sw.append(swL, swR);
     }
     const recoFw = fitWeights(punt, ranks, mine.length, st.teams);
     const rng = makeRng(1); // council has zero noise; rng unused but required
@@ -1989,7 +1998,7 @@ const JUDGMENT = {
       const li = document.createElement("li");
       li.append(el("span", "rk", String(i + 1)));
       const isRec = i === 0 && !tgOnPin;
-      const nm = el("span", "nm", (isRec ? "🎯 " : "") + p.n);
+      const nm = el("span", "nm", (isRec ? "🎯 " : "") + p.n + ", " + p.p);
       if (isRec) nm.dataset.tip = "🎯 system pick — top composite score (council + judgment + value" +
         (st.slot <= GRAD_SLOTS ? "; gradient-ordered from this seat, arena-confirmed +12.7pp" : "") + ")";
       if (p.av > 0 && p.av < 1) {
@@ -2000,7 +2009,13 @@ const JUDGMENT = {
       let vSpan = null;
       const fRec = fitZ(p, recoFw);
       const sc = el("span", "sc", fmtZ(scored[i].fs, 2) + (p.av < 1 && fRec.raw > 0 ? "*" : ""));
-      sc.dataset.tip = `composite score — this number ranks the list · fit z ${fmtZ(fRec.adj, 2)} (swing-weighted for your roster)`;
+      sc.dataset.tip = `composite ${fmtZ(scored[i].fs, 2)} = council ${s.toFixed(2)} (punt-aware 9-cat value + your roster's contested-cat needs + scarcity/round context)` +
+        (scored[i].adj ? ` ${scored[i].adj > 0 ? "+" : "−"} judgment ${Math.abs(scored[i].adj).toFixed(2)}` : "") +
+        (scored[i].vbonus ? ` + slide ${scored[i].vbonus.toFixed(2)}` : "") +
+        ` · fit z ${fmtZ(fRec.adj, 2)}` +
+        (i === 0 && scored.length > 1 ? ` · lead over #2: ${(scored[0].fs - scored[1].fs).toFixed(2)}` : "") +
+        (i > 0 ? ` · gap to #1: −${(scored[0].fs - scored[i].fs).toFixed(2)}` : "") +
+        " — the number is RELATIVE to this turn's board (it ranks, it isn't absolute): read the margins, not the magnitude.";
       if (i === 0 && coinFlip) {
         const cf = el("span", "flag", "(coin flip)");
         cf.style.color = "var(--muted)";
@@ -2013,31 +2028,23 @@ const JUDGMENT = {
         so.dataset.tip = "the #1's score lead is a runaway (≥1.5) — passing on them costs real value; the coin-flip tag is this rule's mirror";
         nm.appendChild(so);
       }
-      const bits = [`${p.p} · ${p.t}`, `val ${fmtVal(p, punt)}`];
-      if (scored[i].adj || scored[i].vbonus) {
-        let breakdown = `council ${s.toFixed(2)}`;
-        if (scored[i].adj)
-          breakdown += ` ${scored[i].adj > 0 ? "+" : "−"} judgment ~${Math.abs(scored[i].adj).toFixed(2)}`;
-        if (scored[i].vbonus)
-          breakdown += ` + slide ${scored[i].vbonus.toFixed(2)}`;
-        bits.push(breakdown);
-      }
-      if (weakest.length)
-        bits.push("helps " + weakest.map(c => `${c}:${fmtZ(p.z[c], 1)}`).join(" "));
-      if ((teamCt2[p.t] || 0) >= 2) bits.push(`[would be 3rd ${p.t}]`);
-      if (p.note && p.av === 1) bits.push(`[${p.note}]`);
-      li.append(el("span", "meta", bits.join("   ")));
-      if (scored[i].why) {
-        const why = el("span", "meta", "⚖ " + scored[i].why);
-        why.style.color = "var(--ink-2)";
-        li.append(why);
-      }
-      if (scored[i].vbonus) {
-        const vb = el("span", "meta",
-          `⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}`);
-        vb.style.color = "var(--ink-2)";
-        li.append(vb);
-      }
+      /* Concise breakdown line (owner spec 2026-07-30): council/slide
+         numbers + the player's plus-cats; rationale detail lives in the
+         line's tooltip and the score tooltip. */
+      const bits = [`council ${s.toFixed(2)}`];
+      if (scored[i].adj) bits.push(`jdg ${scored[i].adj > 0 ? "+" : "−"}${Math.abs(scored[i].adj).toFixed(2)}`);
+      if (scored[i].vbonus) bits.push(`slide +${scored[i].vbonus.toFixed(2)}`);
+      const plus = CATS.filter(c => !punt.has(c) && p.z[c] >= 0.5)
+        .sort((a, b) => p.z[b] - p.z[a]).slice(0, 3);
+      let line = bits.join(" · ") + (plus.length ? `   +${plus.join(" +")}` : "");
+      if ((teamCt2[p.t] || 0) >= 2) line += `   [would be 3rd ${p.t}]`;
+      if (p.note && p.av === 1) line += `   [${p.note}]`;
+      const ml = el("span", "meta", line);
+      ml.dataset.tip = `val ${fmtVal(p, punt)} (injury-adjusted 9-cat z)` +
+        (scored[i].why ? ` · ⚖ ${scored[i].why}` : "") +
+        (scored[i].vbonus ? ` · ⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}` : "") +
+        (plus.length ? ` · plus-cats = strongest z (≥ +0.5), capped at 3` : "");
+      li.append(ml);
       /* Market-timing verdict chip (owner RULE 2026-07-28): value says
          WHO, price says WHEN. Scarcity (shelf ≤ 2) is the only thing
          allowed to beat price. Display-only — never re-ranks. */
@@ -2087,6 +2094,7 @@ const JUDGMENT = {
         if (deck.mode === "mock" && yourTurn) runFeed();
       });
       const tags = el("span", "tags");
+      tags.append(el("span", "tm", p.t));
       if (vSpan) tags.append(vSpan);
       li.append(nm, tags, sc, take);
       recos.appendChild(li);
@@ -2103,7 +2111,7 @@ const JUDGMENT = {
         li.style.borderStyle = "dashed";
         li.style.borderColor = "var(--accent)";
         li.append(el("span", "rk", "→"));
-        const tnm = el("span", "nm", (tgOnPin ? "🎯 " : "") + tp.n);
+        const tnm = el("span", "nm", (tgOnPin ? "🎯 " : "") + tp.n + ", " + tp.p);
         if (tgOnPin) tnm.dataset.tip = `🎯 system pick — urgent structural need: best ${readR.fam} in reach with the shelf nearly empty (the override class the mock ledger grades positive)`;
         li.append(tnm, el("span", "sc", fmtZ(row.fs, 2)));
         li.append(el("span", "meta",
