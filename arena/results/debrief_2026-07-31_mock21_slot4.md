@@ -49,7 +49,9 @@ Hartenstein, DeRozan, Nesmith, Tobias, Melton. Broad-strong shape
   Refinement: within ~0.4 of the top card, the owner's shape judgment
   outperforms the composite's ordering — exactly the band where the
   card itself declares a coin flip.
-- **Interior structural family: 5-for-5** (m13, m18, m19, m20, m21).
+- **Interior structural family: positive again** (verified count and
+  membership criteria: `arena/results/LEDGER.md` — the list originally
+  printed here included m13, which predates this instrument).
   Quiet-C Kessler at #52 was worth +5.1pp over the on-card guard.
 
 **Doctrine, v3 (11 graded mocks):** take the 🎯 when it's a fallen R1

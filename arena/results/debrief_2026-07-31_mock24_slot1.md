@@ -54,8 +54,14 @@ all 4th, nothing conceded worse than 8th — the Wemby-anchor build.
 split in two: *a fallen star is a take* (m20/m21, both confirmed), but
 *the empty-roster 🎯 is the card's least-trusted output* — at pick 1,
 an outlier anchor (Wemby-class) beat the gradient's spread pick
-decisively. Deep deviations (board ≥10, no structural hole): now
-0-for-6 across the ledger. Shallow band: trust yourself.
+decisively. Shallow band: trust yourself.
+
+**CORRECTION (2026-07-31, owner-caught):** this section originally read
+"deep deviations: now 0-for-6 across the ledger". That tally was wrong —
+the CF-tested sample is 8 arms, of which 5 cost and 3 were washes. The
+defensible claim is *no CF-tested deviation has ever clearly beaten the
+card (0 of 8), but 3 cost nothing measurable*. All cumulative tallies are
+now derived in `arena/results/LEDGER.md`, not carried in prose.
 
 ## Wheel-horizon fix — validated live at the other wheel
 
