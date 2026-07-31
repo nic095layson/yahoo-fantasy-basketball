@@ -138,6 +138,7 @@ ol.recos .tm { font-family: var(--font-data); font-size: var(--text-sm); color: 
 .catchip { font: inherit; font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: 999px; background: var(--surface); color: var(--accent); cursor: pointer; white-space: nowrap; }
 .catchip .x { margin-left: var(--space-1); font-weight: var(--weight-bold); }
 .catchip:hover { background: var(--accent); color: var(--surface); }
+.capwarn { color: var(--status-risk); font-weight: var(--weight-medium); }
 .rosterhead { display: flex; justify-content: space-between; align-items: baseline; }
 #myRosterFams { font-variant-numeric: tabular-nums; white-space: pre; color: var(--muted); }
 #deckmeta button.target { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; letter-spacing: 0.02em; }
@@ -2219,6 +2220,7 @@ const JUDGMENT = {
      primary lens (picking it supersedes everything); the 9 cat headers
      stack into a combined-z cat lens, up to 3, removable via × chips. */
   let bestState = { pos: "", q: "", top: 25, lens: "val", cats: [] };
+  let catCapWarn = false; /* one-shot: a blocked 4th cat selection prompts */
   let draftedNote = "";
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
   $("bestQ").addEventListener("input", e => { draftedNote = ""; bestState.q = e.target.value.trim().toLowerCase(); renderBest(); });
@@ -2263,7 +2265,7 @@ const JUDGMENT = {
         const th = document.createElement("th");
         th.scope = "col"; th.textContent = c === "TO" ? "TO↑" : c;
         th.dataset.sort = c;
-        th.title = `cat filter: rank by ${c} z — stack up to 3 (oldest drops); click again or its × chip to remove`;
+        th.title = `cat filter: rank by ${c} z — stack up to 3; re-click a selected cat to jump its ranking to the top; remove via its × chip or Reset`;
         $("bestHead").appendChild(th);
       }
       $("bestHead").addEventListener("click", e => {
@@ -2271,12 +2273,22 @@ const JUDGMENT = {
         if (!th || !th.dataset.sort) return;
         const k = th.dataset.sort;
         if (CATS.includes(k)) {
-          const i = bestState.cats.indexOf(k);
-          if (i >= 0) bestState.cats.splice(i, 1);
-          else {
-            bestState.cats.push(k);
-            while (bestState.cats.length > 3) bestState.cats.shift(); /* up to 3 — oldest drops */
+          /* Owner spec 2026-07-31: removal happens ONLY via the × chips or
+             Reset. Re-clicking a selected cat re-asserts the combined lens
+             and jumps the ranked results back to the top; a 4th selection
+             is blocked with a prompt (no silent oldest-drop eviction). */
+          if (bestState.cats.includes(k)) {
+            renderBest();
+            const tw = $("bestRows").closest && $("bestRows").closest(".tablewrap");
+            if (tw) tw.scrollTop = 0;
+            return;
           }
+          if (bestState.cats.length >= 3) {
+            catCapWarn = true;
+            renderBest();
+            return;
+          }
+          bestState.cats.push(k);
         } else {
           bestState.lens = k;
           bestState.cats = []; /* single primary lens supersedes cat filters */
@@ -2319,9 +2331,15 @@ const JUDGMENT = {
         });
         chipBox.appendChild(chip);
       }
-      chipBox.append(el("span", "small",
-        cats.length < 3 ? "ranked by combined z — click more cat headers to stack (up to 3)"
-        : "ranked by combined z — a 4th cat drops the oldest"));
+      if (catCapWarn) {
+        chipBox.append(el("span", "small capwarn",
+          "⚠ 3-cat limit — remove one with its × or hit Reset before adding another"));
+      } else {
+        chipBox.append(el("span", "small",
+          cats.length < 3 ? "ranked by combined z — click more cat headers to stack (up to 3)"
+          : "ranked by combined z — 3-cat max; × one or Reset to change"));
+      }
+      catCapWarn = false;
     }
     chipBox.classList.toggle("hidden", !cats.length);
     let matches = 0;
