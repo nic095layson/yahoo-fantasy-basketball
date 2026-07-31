@@ -2007,8 +2007,18 @@ const JUDGMENT = {
     const shelfNow = { G: 0, F: 0, C: 0 };
     for (const q of pool) if ((MKT_RANK.get(q.n) || 999) <= priceWin)
       for (const f of familiesOf(q)) shelfNow[f]++;
-    const futurePicks = myFuturePicks(st, 2);
-    const nextTurn = futurePicks.length > 1 ? futurePicks[1] : null;
+    /* Timing horizon = the next of MY picks that actually has opponent picks
+       before it (wheel-seat fix 2026-07-31, mock 23). At slots 1 and 12 the
+       snake gives back-to-back picks, so "survives to my next pick" is
+       vacuous across a pair — nothing can be taken in between. Measured on
+       mock 23's six pair-boundaries: BUY NOW precision 0/10 on the old
+       adjacent horizon, 17/17 on this look-through one. */
+    const futurePicks = myFuturePicks(st, 4);
+    let nextTurn = null;
+    for (let i = 1; i < futurePicks.length; i++)
+      if (futurePicks[i] > futurePicks[i - 1] + 1) { nextTurn = futurePicks[i]; break; }
+    if (nextTurn === null && futurePicks.length > 1)
+      nextTurn = futurePicks[futurePicks.length - 1];
     const teamCt2 = teamCt;
     /* 🧭 compass line retired from display 2026-07-30 (owner: noise); the
        archetype/style layer stays internal — TARGET + punt analyzer use it. */
