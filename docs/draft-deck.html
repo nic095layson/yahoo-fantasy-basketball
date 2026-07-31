@@ -1591,6 +1591,32 @@ const JUDGMENT = {
       ["why", ` ${strong.length ? strong.join("·") + " build" : "balanced build"} — likely week: ${wins} up / ${losses} down / ${9 - wins - losses} swing`],
     ]);
 
+    /* Structural-drift ESCALATION (calibration workflow + refutation,
+       2026-07-31). Trigger: roster >= 5 AND >= 3 kept cats at rank >=
+       teams-1 AND < 2 C-eligible players; LATCHES for the rest of the
+       draft (the raw condition un-fires at m23 R9 while both measured
+       repair picks lie outside the R6-R8 window). Calibration: fires
+       m22 R6 + m23 R6, never on any of the six non-catastrophes (all
+       peak at ONE dead cat); on the 108-team base it is a WEAK marker
+       (25 fires, bust recall 7/23, one elite FP at 15.56%) — shipped
+       as a severity escalation of the existing Drift diagnostic, not a
+       rescue mechanism (catastrophe sample n=2). Payload states count
+       and ranks only — no champ%% citation, no pivot prescription. */
+    const deadTier = st.teams - 1;
+    const deadKept = kept.filter(c => ranks[c] >= deadTier)
+      .sort((a, b) => ranks[b] - ranks[a]);
+    const nCel = mine.filter(p => positionsOf(p).includes("C")).length;
+    if (!st.driftLatch && mine.length >= 5 && deadKept.length >= 3 && nCel < 2) {
+      st.driftLatch = true;
+      save();
+    }
+    if (st.driftLatch) {
+      lines.push([
+        ["k", "⚠⚠ STRUCTURE"],
+        ["why", ` ${deadKept.length ? deadKept.map(c => `${c} ${ranks[c]}/${st.teams}`).join(" · ") : "(condition eased — flag latched)"} — ${deadKept.length || "several"} categories at ${deadTier}th-or-worse with fewer than 2 C-eligible players when this latched. Sustained interior repair (multiple picks, not one) was the only measured mitigation.`],
+      ]);
+    }
+
     /* 2. Implicit punt drift (roster >= 5): kept cats ranked 10th+ */
     let adoptList = [];
     if (mine.length >= 5) {
@@ -1961,8 +1987,15 @@ const JUDGMENT = {
          the cheapest cats to stop paying premiums for, given what the
          room has drafted. Advisory ONLY: never zero-weight them — every
          punt-DECLARING policy measured −5 to −11pp (G1a, CRN). */
+      /* Ranks appended per the calibration refutation (2026-07-31):
+         re-selecting which cats get named is provably degenerate here
+         (the only non-dead, non-Winnable cats are locked strengths),
+         so instead a dead concession is made to READ as the tautology
+         it is — "BLK 12/12" self-annotates. */
       const cheap = mine.length >= 4 ? cheapestConcessions(mine, st) : null;
-      mkLine(swR, "Soft punt", cheap ? cheap.join(" · ") : "—",
+      const cheapFmt = cheap ? cheap.map(lbl =>
+        lbl.split("+").map(c => `${c} ${ranks[c]}/${st.teams}`).join(" + ")).join(" · ") : null;
+      mkLine(swR, "Soft punt", cheapFmt || "—",
         cheap
           ? "cheapest cats to stop chasing (concession diagnostic: coverage gained elsewhere minus value already sunk, elasticity-weighted vs the room's live rosters). Stop paying premiums here — do NOT zero-weight or declare a punt: every punt-declaring policy measured −5 to −11pp (G1a, CRN)."
           : "forms from your 4th pick — needs enough of the room's rosters to price concessions");
@@ -2179,7 +2212,11 @@ const JUDGMENT = {
     const ladderFam = ["C", "F", "G"].filter(f => famCt3[f] < FLOOR3[f])
       .sort((a, b) => (FLOOR3[b] - famCt3[b]) - (FLOOR3[a] - famCt3[a]))[0];
     const laterPicks = myFuturePicks(st, 4).slice(1);
-    if (ladderFam && laterPicks.length) {
+    /* Bus row suppressed while the structural latch is on (refutation
+       C11, 2026-07-31): at m23's fire state the chain claimed ~95%
+       survival for a big that vanished in 4 picks — the survival model
+       is the component that fails in exactly these states. */
+    if (ladderFam && laterPicks.length && !st.driftLatch) {
       const famAll = [...pool]
         .filter(q => familiesOf(q).includes(ladderFam) && adjValue(q, punt) > 0)
         .sort((a, b) => adjValue(b, punt) - adjValue(a, punt));
