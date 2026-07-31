@@ -1924,11 +1924,14 @@ const JUDGMENT = {
       };
       const rankTip = cs => cs.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") +
         ` — vs the field on current rosters, recomputed every pick; 🔒 = dominated (rank ≤ ${lockAt})`;
-      const s3 = byRank.slice(0, 3), w3 = byRank.slice(-3).reverse();
       const lostAt = rankTiers(st.teams).lostFrom;
+      /* Selection is by rank; DISPLAY is in the deck's canonical cat order
+         (owner spec 2026-07-31) so each cat holds a fixed position. */
+      const ord = cs => CATS.filter(c => cs.includes(c));
+      const s3 = ord(byRank.slice(0, 3)), w3 = ord(byRank.slice(-3));
       /* Winnable = contested cats within reach: not in the strengths trio,
          not lost (rank < lostFrom) — the ones one good pick can flip. */
-      const win3 = byRank.filter(c => !s3.includes(c) && ranks[c] < lostAt).slice(0, 3);
+      const win3 = ord(byRank.filter(c => !s3.includes(c) && ranks[c] < lostAt).slice(0, 3));
       mkLine(swL, "Strengths", s3.map(tag).join(" · "), rankTip(s3));
       mkLine(swL, "Winnable", win3.length ? win3.map(tag).join(" · ") : "—",
         win3.length
