@@ -83,3 +83,27 @@ load-bearing again (Soft Punt consumes it).
 the path reachable live), keep the archetype bake per the owner's fresh
 "keep internal" instruction. Freeze intact: no engine math changed —
 parity EXACT and the arena instrument untouched throughout.
+
+## Addendum — session-interruption post-mortem (2026-07-31, owner-requested)
+
+The session hit a Fable usage limit overnight and ran on Opus for four PR
+check-in turns before returning to Fable. Continuity verdict: **nothing
+was lost or left half-finished.**
+
+- **Timing was fortunate:** the audit turn (workflow → council → fixes →
+  gates → commit `33f2ef7` → push → artifact republish) had fully
+  completed BEFORE the model switch. The switch landed mid-way through
+  a routine PR check-in, which completed normally under Opus.
+- **Work done under Opus (verified present):** the PR #3 body update —
+  sections 12–14 (archetype/compass arc, card simplification, this
+  audit) added to a description that had gone 20 commits stale — plus
+  three silent no-change check-ins, each correctly re-armed.
+- **Fresh re-verification under Fable (this addendum):** working tree
+  clean; local == remote == `33f2ef7`; all audit deliverables present
+  (punt-aware concessions, Winnable de-overlap, tier-derived Identity
+  thresholds, dead-weight removals, REVERT-MAP correction); gates re-run
+  green — parity EXACT, syntax clean, both standing smokes, all three
+  audit fixtures (punt/UNKNOWN/14-team), 65-state gauntlet 0 violations;
+  published artifact serves the four script blocks byte-identical to the
+  repo with `built: 2026-07-31`; exactly one active check-in trigger (no
+  duplicates from the interrupted turn).
