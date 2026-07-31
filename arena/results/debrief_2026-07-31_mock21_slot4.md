@@ -43,7 +43,8 @@ Hartenstein, DeRozan, Nesmith, Tobias, Melton. Broad-strong shape
   at BUY NOW ~1% and went two picks later; Quickley was board #23. A
   36% draft — which would have been the best roster this lab has ever
   simulated — was one card-follow away. Deep deviations (board ≥ ~10)
-  are now 0-for-4 across the ledger.
+  have never clearly beaten the card; verified count and membership:
+  `arena/results/LEDGER.md`.
 - **Shallow overrides inside the coin-flip band were GOOD (−5.9pp to
   undo them).** KD (Δ−0.38) and Flagg (Δ−0.18) beat the card's own #1s.
   Refinement: within ~0.4 of the top card, the owner's shape judgment
@@ -57,7 +58,8 @@ Hartenstein, DeRozan, Nesmith, Tobias, Melton. Broad-strong shape
 **Doctrine, v3 (11 graded mocks):** take the 🎯 when it's a fallen R1
 star or the gap is deep; trust your own read inside the coin-flip band;
 buy structural interior whenever the card underprices it; never deviate
-to board-#20+ names — that class is 0-for-4 and just cost a 36% draft.
+to board-#20+ names — that class has never clearly won (see `LEDGER.md`)
+and just cost a 36% draft.
 
 ## Chip scorecard (card-v4 methodology debut)
 

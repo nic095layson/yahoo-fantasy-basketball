@@ -7,12 +7,15 @@ Replay run TWICE (punt-on and punt-off cards — the state file doesn't
 record when the punt was declared; grading below uses punt-off for R1–2
 and punt-on from R3, disclosed); seasons 6,000 × 3; two CFs 6,000 × 2.
 
-## Outcome — worst result ever measured
+## Outcome — worst result measured AT THE TIME
+
+*(Superseded hours later: mock 23 finished 0.16% / 4.2% playoffs. Live
+superlatives are maintained only in `arena/results/LEDGER.md`.)*
 
 | Metric | Mock 22 (slot 11, punt) | Ledger context |
 |---|---|---|
 | Champ% | **0.22 (11th/12)** | m21 the day before: 26.73, 1st |
-| Playoff% | **6.9** | worst measured |
+| Playoff% | **6.9** | second-worst; m23 later measured 4.2 |
 | Kept-total | −5.47 (9th) | |
 | 🎯 hits (hybrid grading) | 7/13 | adherence was fine — structure wasn't |
 
@@ -50,7 +53,7 @@ premiums) yes; declared punts no; three-cat big-side punts never.
 CF1 is the sharpest lesson of the pair: following the punt-coherent card
 HARDER made things worse — within a doomed structure, better coherence
 just digs faster. The deep-deviation law (board-20+ reaches, previously
-0-for-4) is hereby scoped: it operates WITHIN a sound structure; it
+see `LEDGER.md`) is hereby scoped: it operates WITHIN a sound structure; it
 cannot rescue an unsound one. The structure decision was worth ~±25pp;
 every within-structure pick decision combined was worth <2.5.
 

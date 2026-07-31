@@ -66,8 +66,11 @@ now derived in `arena/results/LEDGER.md`, not carried in prose.
 ## Wheel-horizon fix — validated live at the other wheel
 
 BUY NOW graded **28/30 (93%) gone** at the corrected look-through
-horizon across slot 1's six pair-boundaries — the same grading that
-measured 0/10 at slot 12 pre-fix. Quiet survival ran 2/9: slot-1
+horizon across ALL of slot 1's turns; restricted to the six
+pair-boundaries the fix actually targets it is **15/17 (88%)**. (Audit
+correction 2026-07-31: this paragraph originally attributed the
+all-turns figure to the pair-boundaries.) The comparable pre-fix
+measurement at slot 12 was 0/10. Quiet survival ran 2/9: slot-1
 horizons span ~23 picks and the value-drafting mock room accelerates
 across that window — the known caveat, already registered for
 September recalibration. The 🎯-Hart sequence graded itself: quiet at

@@ -42,7 +42,9 @@ threshold (1.5) — and the owner took Luka.
   the top of the draft. Passing scarcity-shelf WCJ at #140 was
   defensible with the C floor already met (WCJ still vanished 2 picks
   later — the chip was right).
-- **Interior structural add positive AGAIN (4-for-4: m13/m18/m19/m20).**
+- **Interior structural add positive AGAIN** (verified count + membership:
+  `arena/results/LEDGER.md`; the list printed here originally included m13,
+  which predates this instrument).
   Duren was the pinned TARGET at #68 ("Best C — shelf: 0 in window");
   removing him costs −1.9pp and a playoff-odds cliff (62% → 51%).
 
