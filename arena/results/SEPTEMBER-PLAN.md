@@ -1,0 +1,74 @@
+# September recalibration plan — pre-registered 2026-07-31, owner-authorized
+
+**Standing state until this plan executes:** FEATURE FREEZE. No engine or
+judgment-layer changes ship before the September run. Allowed meanwhile:
+display-only fixes, truth/reporting fixes, and anything the owner asks
+for explicitly. Measure-only studies are always allowed.
+
+**Authorization.** On 2026-07-31 the owner asked that the September work
+happen systematically, without a prompt from him. A one-shot scheduled
+Routine fires on **2026-09-01** and executes this file top to bottom in a
+fresh session. This file is the single source of truth for that run —
+the firing prompt intentionally contains no details beyond "execute
+SEPTEMBER-PLAN.md".
+
+**Ship rule (the honest contract).** "Systematically installed" means
+systematically *executed*. Each item below carries a pre-registered
+acceptance bar. Data recalibrations ship when the build gates pass.
+Engine/judgment changes ship **only if they beat the incumbent on the
+arena instrument without regressing the winners** (mocks 21/24/25/26 as
+replay baselines). Anything that fails its bar stays out and gets a
+written negative result. This is the same standard that kept the
+computational layer defect-free through two full audits — it does not
+relax because the calendar turned.
+
+## 0. Read first (context recovery for the fresh session)
+
+`LESSONS.md` (all lessons; data-pull countermeasures are lessons 8–10),
+`REVERT-MAP.md` (kill switches), `arena/results/LEDGER.md` (derived
+tallies + the no-remembered-tallies rule), the two 2026-07-31 audits,
+`arena/results/findings_2026-07-31_tunnel_vision.md`, and the mock
+debriefs for 22/23/24/25/26.
+
+## 1. Data refresh (precondition for everything)
+
+1. Fresh player-pool pull with per-player roster verification
+   (`scripts/verify_rosters.py`, mechanical NBA/ESPN check) and a
+   same-day freshness stamp (`docs/freshness.json`).
+2. **September consensus ADP** replaces the July market board
+   (`PRE_RANK` / `MKT_RANK` sources in the data block). This is the
+   event the freeze was waiting for.
+3. Rebuild via `scripts/build_deck.py` — all fail-closed gates must
+   pass; JS↔Python parity must print `PARITY: EXACT MATCH`.
+4. Re-baseline the arena on the fresh pool before any experiment runs
+   (all July numbers are stale the moment the pool changes).
+
+## 2. Experiment queue (pre-registered bars)
+
+| # | Experiment | Origin | Ship bar |
+|---|---|---|---|
+| E1 | Empty-roster gradient across outlier profiles (r=0 anchor pick) | LEDGER §4: Wemby −14.1/−7.5pp, Luka +6.3pp | Any gradient change must improve ≥2 distinct outlier-anchor profiles by >1pp AND not regress conventional anchors (Luka-class) beyond −1pp |
+| E2 | Quiet-chip survival + punt-mode chip recalibration on September ADP | m22: punt-mode BUY NOW gone-rate 54% vs 83–91% normal; quiet-survival optimistic | Replay calibration across ledger mocks: normal-mode BUY NOW gone-rate stays ≥80%; wheel-seat pair-boundary precision not below 17/17 (slot 12) and 15/17 (slot 1); punt-mode caveat replaced by measured curve |
+| E3 | PCT_MIX_INFL re-estimate | registered 07-30 | Data-driven refresh; gates + parity only |
+| E4 | Bundle-lookahead probe (2-pick joint scoring at reach turns) | findings_2026-07-31_tunnel_vision.md §mechanism-2; m26 bundle beat card by 5.76pp | Measure first. Ship only if it proposes m26-style bundles AND always-rank-1 replay results do not degrade on any winner |
+| E5 | Earlier structural-drift sensitivity (latch currently fires ~2 rounds after cheapest repair) | findings file; m23 latch at #61 vs repair at #37 | Must keep **0 false positives** on all winning drafts (current bar); any earlier trigger that breaks this stays out |
+| E6 | Slot-3 refinement + k-scheduling (GRAD_K) | registered 07-30/31 | Beat incumbent across gradient-seat replays (m24/m25/m26) beyond ±1pp; no regression elsewhere |
+| E7 | `ar/fx/sy` (7.8KB) + `gradImpact` use-or-drop checkpoint | REVERT-MAP, owner instruction | If no shipped feature consumes them after E1–E6 land, remove them (REVERT-MAP has the procedure) |
+
+## 3. Validation before anything merges
+
+Parity EXACT; build gates; the 130-state render gauntlet + mutation
+suite (harness described in `audit_2026-07-31b_deck_integrity.md`);
+replay of ledger mocks as regression fixtures; `LEDGER.md` updated per
+its standing rule — plus the audit's grep sweep for unbacked derived
+claims in any new prose.
+
+## 4. Delivery
+
+Branch `claude/2026-09-01-september-recal` off the default branch; draft
+PR; subscribe to PR activity. Rebuild and **republish the deck artifact
+to the existing URL** (https://claude.ai/code/artifact/190e2c13-a19c-4239-8085-73230ef4eae0
+— pass it as `url`; republish is part of the definition of done).
+Report to the owner: per-experiment verdict table (shipped / rejected,
+with numbers), what changed in the deck, and anything genuinely
+requiring his judgment.
