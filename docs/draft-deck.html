@@ -83,7 +83,6 @@ label.fld input { width: 88px; font-variant-numeric: tabular-nums; }
 header.deck { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-6); }
 .stamp { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-1); text-align: right; }
 .stamp p { margin: 0; font-variant-numeric: tabular-nums; }
-.stamp #pullMsg { max-width: 340px; }
 .stamp #pullPanel { max-width: 360px; margin: 0; padding: var(--space-2) var(--space-3); border: 1px solid var(--line); border-radius: var(--radius-sm); text-align: left; }
 .stamp #pullPanel p { margin: 0 0 var(--space-1); text-align: left; }
 .stamp #pullPanel ol { margin: var(--space-1) 0 0; padding-inline-start: 1.3em; }
@@ -146,7 +145,6 @@ ol.recos .tm { font-family: var(--font-data); font-size: var(--text-sm); color: 
 .puntline .catrow { display: flex; justify-content: center; flex-wrap: nowrap; gap: 2px 6px; max-width: 100%; }
 .puntline.lean { border-left: 3px solid var(--status-risk); }
 .puntline .lead { color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
-.puntline .txt { color: var(--ink-2); }
 .puntline .cat { display: inline-flex; align-items: baseline; gap: 3px; padding: 0 4px; border-radius: var(--radius-sm); background: var(--surface); white-space: nowrap; }
 .puntline .catname { color: var(--muted); font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.04em; }
 .puntline .catrank { color: var(--ink-2); font-weight: var(--weight-medium); }
@@ -289,7 +287,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <ul class="myroster" id="myRoster"></ul>
     </div>
 
-    <div class="card" id="decision">
+    <div class="card">
       <h2 class="hcenter">Decision card</h2>
       <div class="puntline" id="puntline"></div>
       <div class="deckmeta" id="deckmeta"></div>
@@ -345,7 +343,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
   <div id="pane-boardtab" role="tabpanel" aria-labelledby="tab-boardtab" class="hidden">
     <div class="tablewrap" tabindex="0" role="region" aria-label="Draft board by round">
-      <table class="board" id="gridTable" aria-label="Draft board"><thead id="gridHead"></thead><tbody id="gridRows"></tbody></table>
+      <table class="board" aria-label="Draft board"><thead id="gridHead"></thead><tbody id="gridRows"></tbody></table>
     </div>
   </div>
 
@@ -355,7 +353,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
   <div id="pane-matrix" role="tabpanel" aria-labelledby="tab-matrix" class="hidden">
     <div class="tablewrap" tabindex="0" role="region" aria-label="Category totals by team">
-      <table class="board" id="matrixTable" aria-label="Category z-totals by team"><thead id="matrixHead"></thead><tbody id="matrixRows"></tbody></table>
+      <table class="board" aria-label="Category z-totals by team"><thead id="matrixHead"></thead><tbody id="matrixRows"></tbody></table>
     </div>
     <p class="small" id="matrixNote"></p>
     <div id="buildread"></div>
@@ -1010,20 +1008,10 @@ const JUDGMENT = {
      Board slides — players available past their rank on OUR no-punt
      pre-draft board — earn a capped score bonus: real 9-cat value is
      sitting on the table. deadband/perSpot/cap are in picks and z-units. */
-  valueBoard: { deadband: 3, perSpot: 0.06, cap: 0.6, stripSlide: 4, stripRank: 40 },
-  /* Market star-tier: players real-world drafters take far above our
-     9-cat board (points-league premium, name value, trade capital).
-     Surfaced for due diligence when available past their market rank —
-     NO automatic score boost: if the market premium reflects something
-     our projections miss, it becomes a per-player judgment adj instead.
-     market = estimated consensus draft position (early 2026-27 reads;
-     no reliable 9-cat ADP exists yet in July — refreshed daily). */
-  starTier: {
-    "Devin Booker": { market: 13, why: "Elite scorer the market takes top-15; 9-cat math discounts the FG% drag and TO — weigh trade capital and usage upside before passing twice." },
-    "James Harden": { market: 15, why: "Market prices the assist/3PM engine top-15; our board sees the TO cost. Still a category anchor if you're building AST/3s." },
-    "Domantas Sabonis": { market: 14, why: "Triple-double base the market loves; FG%/REB/AST monster whose value concentrates — fits some builds far better than his flat rank suggests." },
-    "AJ Dybantsa": { market: 30, why: "No. 1 pick, 20+ PPG projection on a rebuild — early consensus takes the hype in round 3; 9-cat math prices the rookie TO/efficiency tax. Name value and upside are real; the categories aren't yet." },
-  },
+  valueBoard: { deadband: 3, perSpot: 0.06, cap: 0.6 },
+  /* starTier retired 2026-07-31 (audit RD-01): its only reader was the
+     Value/Market strip, removed with the card simplification. Market
+     premiums that matter become per-player judgment adjs below. */
   players: {
     "Jayson Tatum": { adj: 0.35, why: "Returned Mar 2026 and averaged 23+ in the playoffs — the generic \u00d70.78 risk multiplier overstates his game-count risk for a first full season back." },
     "Joel Embiid": { adj: 0.10, why: "First offseason without a surgery \u2014 'first summer he's actually been healthy' (Rich Paul, 7/24). The 38-game-season risk tag stays; this softens its edge." },
@@ -1416,8 +1404,9 @@ const JUDGMENT = {
   }
   /* Archetype layer (codified 2026-07-30, gap study G3): codes/flags/style
      are BAKED into PLAYERS at build time by scripts/archetypes.py.
-     INTERNAL ONLY since 2026-07-30 (owner: tags were noise) — the compass
-     and TARGET logic consume sy/ar; nothing renders the labels. */
+     INTERNAL ONLY since 2026-07-30 (owner: tags were noise). Currently
+     UNCONSUMED by the live app (audit 2026-07-31) — kept per REVERT-MAP
+     for harnesses/future surfaces; September checkpoint to drop or use. */
   /* Concession diagnostic (gap study G1b): puntFit = cov_gain/0.0905 −
      sunk/2.148 (board-richness demoted to tiebreaker per study
      refinement). DIAGNOSTIC ONLY — the same study measured every
@@ -1437,32 +1426,40 @@ const JUDGMENT = {
     }
     const opps = Object.values(oppSums);
     if (opps.length < 2) return null;
+    /* Punt-aware base (audit fix 2026-07-31, council 5-0): with a punt
+       active, candidates and coverage run over KEPT cats only — advising
+       the concession of an already-punted cat was a wasted slot. With no
+       punt this is byte-identical to the codified all-9 math. */
+    const puntSet = new Set(st.punt);
+    const base = CATS.filter(c => !puntSet.has(c));
+    if (base.length < 4) return null;
     const ZR = {}, w = {};
-    for (const c of CATS) {
+    for (const c of base) {
       ZR[c] = mine.reduce((t, q) => t + q.z[c], 0);
       const vals = opps.map(o => o[c] || 0);
       const mu = vals.reduce((a, b) => a + b, 0) / vals.length;
       const sd = Math.sqrt(vals.reduce((a, b) => a + (b - mu) ** 2, 0) / vals.length);
       w[c] = Math.max(-2, Math.min(2, (ZR[c] - mu) / (sd + 0.25)));
     }
-    const mean9 = CATS.reduce((t, c) => t + ZR[c], 0) / 9;
+    const meanK = base.reduce((t, c) => t + ZR[c], 0) / base.length;
     const cov = kept => {
       let num = 0, den = 0;
       for (const c of kept) { num += ELAST[c] * w[c]; den += ELAST[c]; }
       return num / den;
     };
-    const cov0 = cov(CATS);
-    const scored = CONC_CANDS.map(P => {
-      const kept = CATS.filter(c => !P.includes(c));
-      const sunk = P.reduce((t, c) => t + (ZR[c] - mean9), 0) / P.length;
+    const cov0 = cov(base);
+    const scored = CONC_CANDS.filter(P => P.every(c => !puntSet.has(c))).map(P => {
+      const kept = base.filter(c => !P.includes(c));
+      const sunk = P.reduce((t, c) => t + (ZR[c] - meanK), 0) / P.length;
       return { P, s: (cov(kept) - cov0) / 0.0905 - sunk / 2.148 };
     }).sort((a, b) => b.s - a.s);
     return scored.slice(0, 2).map(x => x.P.join("+"));
   }
   /* gradImpact = expected weekly category wins a candidate ADDS to this
      roster (win-probability gradient; GRAD_DEFL/normCdf live in the
-     engine block). Shown on every Top-5 row; from draft slots 1-3 the
-     gradient also ORDERS the list (arena-confirmed, see engine). */
+     engine block). Display retired 2026-07-31; currently unconsumed —
+     kept per REVERT-MAP for harnesses/future surfaces. The ordering
+     variant lives in the engine council scorer (slots 1-3). */
   function gradImpact(p, mine, punt) {
     const r = mine.length;
     let g = 0;
@@ -1581,10 +1578,13 @@ const JUDGMENT = {
     const { ranks, totals } = categoryRanks(st, PLAYERS);
     const lines = [];
 
-    /* 1. Identity + weekly win path */
-    const strong = kept.filter(c => ranks[c] <= 3);
-    const wins = kept.filter(c => ranks[c] <= 4).length;
-    const losses = kept.filter(c => ranks[c] >= 9).length + st.punt.length;
+    /* 1. Identity + weekly win path — tiers derived from league size
+       (audit fix 2026-07-31: was hardcoded <=4 / >=9, correct only at 12
+       teams; now the same thirds math renderMatrix uses) */
+    const upTier = Math.max(1, Math.floor(st.teams / 3));
+    const strong = kept.filter(c => ranks[c] <= Math.max(2, Math.round(st.teams / 4)));
+    const wins = kept.filter(c => ranks[c] <= upTier).length;
+    const losses = kept.filter(c => ranks[c] > st.teams - upTier).length + st.punt.length;
     lines.push([
       ["k", "Identity"],
       ["why", ` ${strong.length ? strong.join("·") + " build" : "balanced build"} — likely week: ${wins} up / ${losses} down / ${9 - wins - losses} swing`],
@@ -1757,7 +1757,7 @@ const JUDGMENT = {
        no player object and are skipped */
     for (const e of mine) if (e.p) for (const f of familiesOf(e.p)) famN[f]++;
     /* archetype census retired from display 2026-07-30 (owner: noise);
-       the ar/fx/sy layer stays internal — compass + TARGET consume it */
+       ar/fx/sy stay baked but unconsumed (audit 2026-07-31, REVERT-MAP) */
     $("myRosterFams").textContent =
       `G (${famN.G})  F (${famN.F})  C (${famN.C})`;
   }
@@ -1930,8 +1930,10 @@ const JUDGMENT = {
       const ord = cs => CATS.filter(c => cs.includes(c));
       const s3 = ord(byRank.slice(0, 3)), w3 = ord(byRank.slice(-3));
       /* Winnable = contested cats within reach: not in the strengths trio,
-         not lost (rank < lostFrom) — the ones one good pick can flip. */
-      const win3 = ord(byRank.filter(c => !s3.includes(c) && ranks[c] < lostAt).slice(0, 3));
+         not in the weakness trio (audit fix 2026-07-31 — overlap made the
+         panel degenerate under a punt's 6-cat kept pool), not lost. */
+      const win3 = ord(byRank.filter(c =>
+        !s3.includes(c) && !w3.includes(c) && ranks[c] < lostAt).slice(0, 3));
       mkLine(swL, "Strengths", s3.map(tag).join(" · "), rankTip(s3));
       mkLine(swL, "Winnable", win3.length ? win3.map(tag).join(" · ") : "—",
         win3.length

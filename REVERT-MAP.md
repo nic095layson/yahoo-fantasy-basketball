@@ -19,9 +19,11 @@ relevant files) and republishes to the standing artifact URL.
 commits `d2e930d` (archetype tags + roster census) and the simplification
 commit after it (🧭 compass line, 🎯 NN% confidence spans, Value/Market
 strips, composite title line). The underlying layers stay internal:
-`ar/fx/sy` still bake into PLAYERS, the archetype/style math still feeds
-TARGET + the punt analyzer, `gradImpact`/`cheapestConcessions` remain
-defined for future surfaces and harnesses. To restore any retired surface,
+`ar/fx/sy` still bake into PLAYERS (currently UNCONSUMED by the live app —
+audit 2026-07-31; September checkpoint to drop or re-use), `gradImpact`
+remains defined for harnesses/future surfaces, and `cheapestConcessions`
+is LOAD-BEARING again — the Soft Punt panel line consumes it (punt-aware
+since the 2026-07-31 audit fix). To restore any retired surface,
 `git revert` the removing commit (each is atomic and display-only).
 
 ## Full-layer reverts (git)
