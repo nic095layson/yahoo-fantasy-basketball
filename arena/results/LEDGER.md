@@ -33,6 +33,7 @@ is computed here from artifacts, with its membership criteria stated.**
 | 23 | 12 | 0.16 | 4.2 | 12 | 9 | silent structural drift |
 | 24 | 1 | **29.66** | 92.4 | 1 | 1 | best champ% measured |
 | 25 | 2 | 29.00 | **94.4** | 1 | 1 | best playoff% measured |
+| 26 | 3 | 22.61 | 85.6 | 1 | 3 | third gradient seat |
 
 Verified superlatives: best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the
@@ -76,22 +77,33 @@ by >1pp.
 | 24 | jjj_to_bane | 29.82 | 35.14 | +5.32 | COST |
 | 25 | kd_to_murray | 29.19 | 29.65 | +0.46 | WASH |
 | 25 | tatum_to_murray | 29.19 | 33.28 | +4.09 | COST |
+| 26 | early_deviations_to_card (3 swaps) | 22.57 | 16.81 | **−5.76** | **DEVIATION WON** |
+| 26 | pritchard_to_lopez | 22.57 | 21.91 | −0.66 | WASH |
 
-**Verified: 8 arms — 5 COST, 3 WASH, 0 where the deviation clearly won.**
+**Verified: 10 arms — 5 COST, 4 WASH, 1 DEVIATION WON.**
 
-**Correction to prior debriefs.** Mock 24's debrief claimed deep
-deviations were "0-for-6 across the ledger". Two errors: the sample is
-8 arms, not 6, and three of them are WASHES, not losses. The defensible
-statement is narrower: *no CF-tested deviation has ever clearly beaten
-the card (0 of 8), but 3 of 8 cost nothing measurable.* The m25 pair
-(KD board-13 free, Tatum board-5 costly) further shows board depth is a
-weak proxy — **who you gave up predicts cost better than how deep the
+**SUPERSEDED 2026-07-31 (mock 26).** The prior statement "no CF-tested
+deviation has ever clearly beaten the card (0 of 8)" is now FALSE. Mock
+26's bundle of three deep early reaches (Tatum board 14, Sabonis board 19,
+Pritchard board 16) beat the card by **5.76pp**. The surviving, weaker
+claim: deviations lose more often than they win (5 COST vs 1 WON), and
+board depth remains a poor predictor of which is which.
+
+**History of this tally (kept so the drift is visible).** It was first
+published as "0-for-4", then "0-for-6" — both wrong on sample size, and
+both implying every deviation cost when several were washes. It was
+corrected to "0 of 8, 3 washes" on 2026-07-31, and that statement was
+itself falsified the same day by mock 26. Current standing claim, and the
+only one to quote: **10 arms — 5 COST, 4 WASH, 1 DEVIATION WON.**
+
+Board depth is a weak predictor throughout: m25's board-13 deviation was
+free while its board-5 deviation cost 4.1pp, and m26's board-14/19/16
+bundle *won*. **Who you gave up predicts cost better than how deep the
 deviation was.**
 
-Note also that these arms are not all independent single-pick tests: m19,
-m22 and m23's arms each bundle 3 swaps, and m25's two arms both target
-the same passed player. Treat the tally as directional, not as 8
-independent trials.
+These arms are not independent single-pick tests: m19, m22, m23 and m26
+each bundle 3 swaps, and m25's two arms both target the same passed
+player. Treat the tally as directional, not as 10 independent trials.
 
 ## 4. Empty-roster gradient (open question, not a tally)
 
@@ -100,7 +112,17 @@ independent trials.
 | 24 | wemby_to_sga (slot 1) | 29.82 | 15.70 | **−14.12** |
 | 25 | wemby_to_sga (slot 2) | 29.19 | 21.66 | **−7.53** |
 
-Two rooms agree the gradient's r=0 pick is beatable by an outlier anchor,
-**but both are the same player pair in the same pool** — replication
-across rooms/seeds, not across outlier profiles. Registered as a
-September experiment; no engine change on this evidence.
+| 26 | luka_to_sga (slot 3) | 22.57 | 28.85 | **+6.28 — CARD WON** |
+
+**REVERSED 2026-07-31 by mock 26.** The broad claim "the empty-roster 🎯
+is the card's least-trusted output" is REFUTED. With a *different* anchor
+(Luka, a conventional high-usage guard rather than an extreme single-cat
+outlier), following the card at r=0 was **better by 6.28pp**.
+
+What survives is narrower and *consistent with the original mechanism
+hypothesis*: the r=0 gradient appears to undervalue **extreme single-cat
+outliers specifically** (Wemby, +7z BLK — 2 instances, both large), and to
+be **correct for conventional profiles** (Luka — 1 instance, card wins).
+The Φ-saturation story predicted exactly this asymmetry. Still n=3 across
+2 anchor types in one pool; September experiment stands, now with a
+sharper hypothesis to test. No engine change.

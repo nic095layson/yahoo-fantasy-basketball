@@ -58,9 +58,9 @@ decisively. Shallow band: trust yourself.
 
 **CORRECTION (2026-07-31, owner-caught):** this section originally read
 "deep deviations: now 0-for-6 across the ledger". That tally was wrong —
-the CF-tested sample is 8 arms, of which 5 cost and 3 were washes. The
-defensible claim is *no CF-tested deviation has ever clearly beaten the
-card (0 of 8), but 3 cost nothing measurable*. All cumulative tallies are
+the CF-tested sample is 8 arms, of which 5 cost and 3 were washes. The tally is maintained in `LEDGER.md` and has since been falsified again
+by mock 26 (a deviation bundle beat the card by 5.8pp) — quote the LEDGER,
+never a remembered number. All cumulative tallies are
 now derived in `arena/results/LEDGER.md`, not carried in prose.
 
 ## Wheel-horizon fix — validated live at the other wheel

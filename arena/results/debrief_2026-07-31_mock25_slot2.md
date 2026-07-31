@@ -49,9 +49,9 @@ turns are entangled — both passed the same 🎯 (Murray, who lasted to
 #30) — so they are not independent single-pick tests. The correct read
 is not "depth predicts cost" but **"who you gave up predicts cost"**:
 KD ≈ Murray for this roster, Tatum < Murray. Depth of deviation remains
-a useful prior (no CF-tested deviation has ever clearly beaten the card
-— 0 of 8 arms, though 3 were washes; see `arena/results/LEDGER.md`) but
-it is a proxy, and this pair shows the proxy breaking.
+a weak prior only (current tally in `arena/results/LEDGER.md`; mock 26
+later produced the first deviation bundle to clearly BEAT the card) — this
+pair already shows the proxy breaking.
 
 ## New instrumentation — first live outing
 
