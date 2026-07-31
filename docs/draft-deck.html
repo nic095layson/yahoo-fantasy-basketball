@@ -173,12 +173,12 @@ ol.recos .rk { grid-row: 1; grid-column: 1; font-family: var(--font-data); font-
 ol.recos .nm { grid-row: 1; grid-column: 2; font-weight: var(--weight-bold); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 ol.recos li > .sc { grid-row: 1; grid-column: 3; justify-self: end; }
 ol.recos li > .take { grid-row: 1; grid-column: 4; }
-ol.recos .tags { grid-row: 2; grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); }
+ol.recos .tags { grid-row: 2; grid-column: 2 / 4; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-3); }
+ol.recos li > .verdict { grid-row: 2; grid-column: 4; justify-self: end; }
 ol.recos .meta { grid-column: 1 / -1; font-size: var(--text-sm); color: var(--muted); font-variant-numeric: tabular-nums; }
 ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); font-variant-numeric: tabular-nums; }
 .verdict { font-size: var(--text-sm); font-weight: var(--weight-medium); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .verdict.buy { color: var(--accent); border-color: var(--accent); }
-.verdict.wait { color: var(--muted); }
 .verdict.toss { color: var(--ink-2); }
 
 /* Tabs */
@@ -378,7 +378,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-07-31 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (7/28): Draymond Green is back on GSW — one year, $27.7M agreed (Hoops Rumors + Bleacher Report, 7/28); Harden's Cleveland return remains agreed-but-unsigned by design, and DeRozan, Beal, and Westbrook are still true free agents. Carried forward: LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY/WAIT verdicts price survival to your next pick under a market model (July estimate; September ADP sharpens); the single 🎯 marks the system pick — the top composite card, or an urgent structural TARGET when a needed family's shelf is nearly empty (from draft slots 1–3 the list order itself uses the win-probability gradient, arena-confirmed +12.7pp, t=4.6). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a market model (no marker = safe to wait; July estimate, September ADP sharpens); the single 🎯 marks the system pick — the top composite card, or an urgent structural TARGET when a needed family's shelf is nearly empty (from draft slots 1–3 the list order itself uses the win-probability gradient, arena-confirmed +12.7pp, t=4.6). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1925,8 +1925,17 @@ const JUDGMENT = {
       const rankTip = cs => cs.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") +
         ` — vs the field on current rosters, recomputed every pick; 🔒 = dominated (rank ≤ ${lockAt})`;
       const s3 = byRank.slice(0, 3), w3 = byRank.slice(-3).reverse();
+      const lostAt = rankTiers(st.teams).lostFrom;
+      /* Winnable = contested cats within reach: not in the strengths trio,
+         not lost (rank < lostFrom) — the ones one good pick can flip. */
+      const win3 = byRank.filter(c => !s3.includes(c) && ranks[c] < lostAt).slice(0, 3);
       mkLine(swL, "Strengths", s3.map(tag).join(" · "), rankTip(s3));
-      mkLine(swL, "Weaknesses", w3.map(tag).join(" · "), rankTip(w3));
+      mkLine(swL, "Winnable", win3.length ? win3.map(tag).join(" · ") : "—",
+        win3.length
+          ? win3.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") +
+            ` — contested and within reach (rank < ${lostAt}): one good pick can flip these`
+          : `no contested cats in reach — everything is either a strength or effectively lost (rank ≥ ${lostAt})`);
+      mkLine(swR, "Weaknesses", w3.map(tag).join(" · "), rankTip(w3));
       /* Soft punt (owner spec 2026-07-30): the concession diagnostic —
          the cheapest cats to stop paying premiums for, given what the
          room has drafted. Advisory ONLY: never zero-weight them — every
@@ -2060,29 +2069,24 @@ const JUDGMENT = {
         const dying = mktR <= priceWin
           ? pFams.filter(f => shelfNow[f] > 0 && shelfNow[f] <= 2)
           : [];
-        let chip, why;
+        /* CAN WAIT (ps ≥ 0.60) retired from DISPLAY 2026-07-31 (owner):
+           a quiet card means safe to wait. The survival math still fuels
+           the 🚌 ladder and the TARGET shelf counts. */
+        let chip = null, why;
         if (dying.length) {
           chip = "BUY NOW"; why = `${dying.map(f => `${f} shelf: ${shelfNow[f]} in window`).join(", ")} — scarcity beats price`;
-        } else if (ps >= 0.60) {
-          chip = "CAN WAIT"; why = `room price #${mktR} — ~${Math.round(ps * 100)}% still there at your #${nextTurn}`;
-          /* mock-room truth guard — a STANDING banner, not a conditional:
-             replayed mocks showed market-based WAITs survive only ~40%
-             here, and a board-rank condition fires on 100% of Top-5
-             WAITs anyway (they are top-of-board by construction —
-             gauntlet 2026-07-28). Real rooms are the calibration target. */
-          if (deck.mode === "mock")
-            why += ` · but this mock room drafts mostly by value — here he likely goes sooner`;
         } else if (ps <= 0.40) {
           chip = "BUY NOW"; why = `room price #${mktR} — only ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
-        } else {
+        } else if (ps < 0.60) {
           chip = "TOSS-UP"; why = `room price #${mktR} — ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
         }
-        const pm2 = (why || "").match(/~\d+%/);
-        const vcls = chip === "CAN WAIT" ? "wait" : chip === "TOSS-UP" ? "toss" : "buy";
-        const ch = el("span", "verdict " + vcls,
-          `⏱ ${chip}${pm2 ? " " + pm2[0] : (why || "").includes("scarcity") ? " ·shelf" : ""}`);
-        ch.dataset.tip = why + " — survival % assumes a market-priced room (July estimate; September ADP sharpens it). Mock rooms seat 9 value-drafters + 2 market seats, so mock CAN-WAITs carry a standing warning. A live 1–2-player shelf that includes this player overrides price.";
-        vSpan = ch;
+        if (chip) {
+          const pm2 = (why || "").match(/~\d+%/);
+          const ch = el("span", "verdict " + (chip === "TOSS-UP" ? "toss" : "buy"),
+            `⏱ ${chip}${pm2 ? " " + pm2[0] : (why || "").includes("scarcity") ? " ·shelf" : ""}`);
+          ch.dataset.tip = why + " — survival % assumes a market-priced room (July estimate; September ADP sharpens it). No marker = safe to wait for your next pick. A live 1–2-player shelf that includes this player overrides price.";
+          vSpan = ch;
+        }
       }
       const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
       take.type = "button";
@@ -2095,8 +2099,8 @@ const JUDGMENT = {
       });
       const tags = el("span", "tags");
       tags.append(el("span", "tm", p.t));
-      if (vSpan) tags.append(vSpan);
       li.append(nm, tags, sc, take);
+      if (vSpan) li.append(vSpan); /* bottom-right, under the button (owner spec) */
       recos.appendChild(li);
     }
     /* Pinned TARGET row (owner UX fix 2026-07-28, council-ratified 5-0):
