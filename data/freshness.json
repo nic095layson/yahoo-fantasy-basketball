@@ -1,9 +1,9 @@
 {
-  "date": "2026-07-31",
-  "note": "Morning sweep 7/31: zero pool changes. LeBron->PHI already reflected (age41-risk, 4th-option reprice); LaVine SAC opt-in reflected; Harden (CLE, signing expected soon), DeRozan (SAC waive, WAS/MIA/DEN/CLE interest), Beal (LAC opt-out) all still unsigned FA. Board on draftable-156 z (b328ef7).",
+  "date": "2026-08-03",
+  "note": "Sweep 8/3: Sochan -> POR (vet-min non-gtd camp deal, agreed 8/1) is the only pool change. Harden/DeRozan/Beal still unsigned FA. OKC moved Joe/Wiggins/Dort (Dort already ATL in pool; Joe/Wiggins not in pool). Board on draftable-156 z.",
   "rosters_verified": {
-    "date": "2026-07-31",
+    "date": "2026-08-03",
     "mode": "fallback-partial",
-    "sources": "NBA.com offseason roundup + ESPN buzz tracker + CBS/BR FA trackers, 2026-07-31; verify_rosters.py 246/246, 0 mismatches (fallback-partial)"
+    "sources": "scripts/verify_rosters.py"
   }
 }
