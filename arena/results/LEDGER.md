@@ -20,7 +20,7 @@ is computed here from artifacts, with its membership criteria stated.**
 | 10 | 4 | 12.11 | 67.1 | 3 | 2 | old instrument |
 | 11 | 6 | 1.76 | 25.5 | 10 | 2 | old instrument |
 | 12 | 8 | 4.64 | 48.4 | 7 | 10 | old instrument |
-| 13 | 3 | 10.05 | 72.0 | 5 | 9 | old instrument |
+| 13 | 6 | 13.39 | 77.7 | 2 | 10 | old instrument; **row corrected 2026-08-03** |
 | 14 | 11 | 5.76 | 53.5 | 6 | 10 | old instrument |
 | 15 | 7 | 2.06 | 30.9 | 8 | 10 | old instrument |
 | 16 | 3 | 15.37 | 73.1 | 2 | 1 | |
@@ -34,11 +34,33 @@ is computed here from artifacts, with its membership criteria stated.**
 | 24 | 1 | **29.66** | 92.4 | 1 | 1 | best champ% measured |
 | 25 | 2 | 29.00 | **94.4** | 1 | 1 | best playoff% measured |
 | 26 | 3 | 22.61 | 85.6 | 1 | 3 | third gradient seat |
+| 27 | 4 | 9.53 | 62.4 | 7 (4–7, see note) | 1 | **best board, first to miss top-3** |
 
 Verified superlatives: best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the
 only consecutive 1st-place pair is m24→m25. Mocks 22 and 23 (11th, 12th)
 sit between m21 and m24 — there has never been a three-draft winning run.
+
+**Finish precision (m27).** Slots 4/8/5/11 span 9.53–10.83 = 1.30pp,
+inside the arena's ~2pp trust threshold, so m27's finish is honestly a
+four-way tie for **4th–7th**. The nominal 7th is used in the table for
+consistency; the load-bearing fact (outside the top 3) holds at either end.
+
+**Board-rank-1 instances (n=5):** m16 finish 2, m21 finish 1, m24 finish 1,
+m25 finish 1, **m27 finish 4–7**. Mock 27 is the first rank-1 board to miss
+the top 3.
+
+**ROW CORRECTION 2026-08-03 (mock 13).** The m13 row previously read
+"| 13 | 3 | 10.05 | 72.0 | 5 | 9 |" — those are the numbers for the *bot*
+in slot 3 (market persona), not the owner. The owner drafted from **slot 6**
+(13.39 champ, 77.7 playoff, finish 2, board rank 10), matching
+`debrief_2026-07-30_mock13_slot6.md`. The row had scraped the wrong slot.
+Found by an adversarial verifier on 2026-08-03; all 17 rows were then
+re-derived mechanically from the retained `season_sim_mock*_out.json`
+artifacts — **16 of 17 matched, m13 was the only defect**, now fixed. The
+irony is recorded deliberately: this file exists to end exactly this class
+of error, and still carried one for three days. Re-derivation is now part
+of the audit sweep, not an assumption.
 
 ## 2. Interior-structural tally — membership rule
 
@@ -79,8 +101,26 @@ by >1pp.
 | 25 | tatum_to_murray | 29.19 | 33.28 | +4.09 | COST |
 | 26 | early_deviations_to_card (3 swaps) | 22.57 | 16.81 | **−5.76** | **DEVIATION WON** |
 | 26 | pritchard_to_lopez | 22.57 | 21.91 | −0.66 | WASH |
+| 27 | all_deviations_to_card (8 swaps) | 9.76 | 1.05 | **−8.71** | **DEVIATION WON** |
+| 27 | mathurin_to_wcj (board-44 reach) | 9.76 | 12.57 | +2.81 | COST |
+| 27 | embiid_to_white | 9.76 | 11.78 | +2.02 | COST |
+| 27 | bridges_to_suggs | 9.76 | 10.52 | +0.76 | WASH |
 
-**Verified: 10 arms — 5 COST, 4 WASH, 1 DEVIATION WON.**
+**Verified: 14 arms — 7 COST, 5 WASH, 2 DEVIATION WON.**
+
+*m27 baseline note:* the m27 arms are paired against an as-drafted run at
+the **same** config as the arms (6,000 × seeds [11,23] = 9.76), not the
+3-seed headline (9.53). Pairing the arms to the headline would overstate
+every m27 delta by 0.23pp.
+
+**The m27 non-additivity — the sharpest result in this table.** Following
+the card at *individual* turns was right twice (+2.81, +2.02), but
+following it at *all eight* deviation turns was the worst outcome measured
+in the arm set (−8.71pp, 1.05% champ, 10th) — despite that arm holding the
+**highest kept-total of any m27 line (+7.68)**. Pick-by-pick correctness
+and policy correctness are different questions, and the card is graded only
+on the first. This is the same bundle effect m26 showed, now with the sign
+reversed and eight swaps instead of three.
 
 **SUPERSEDED 2026-07-31 (mock 26).** The prior statement "no CF-tested
 deviation has ever clearly beaten the card (0 of 8)" is now FALSE. Mock

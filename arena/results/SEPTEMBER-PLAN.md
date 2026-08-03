@@ -54,6 +54,8 @@ debriefs for 22/23/24/25/26.
 | E5 | Earlier structural-drift sensitivity (latch currently fires ~2 rounds after cheapest repair) | findings file; m23 latch at #61 vs repair at #37 | Must keep **0 false positives** on all winning drafts (current bar); any earlier trigger that breaks this stays out |
 | E6 | Slot-3 refinement + k-scheduling (GRAD_K) | registered 07-30/31 | Beat incumbent across gradient-seat replays (m24/m25/m26) beyond ±1pp; no regression elsewhere |
 | E7 | `ar/fx/sy` (7.8KB) + `gradImpact` use-or-drop checkpoint | REVERT-MAP, owner instruction | If no shipped feature consumes them after E1–E6 land, remove them (REVERT-MAP has the procedure) |
+| E8 | Replace/augment "board rank" (kept-total) with **expected categories won per week** in debriefs + LEDGER; re-derive every retained mock | debrief_2026-08-03_mock27_slot4.md: corr with champ% +0.931 vs +0.828 (n=12) | Reporting-layer only — no engine change. Ship if the re-derivation reproduces every retained artifact and the new column explains m27 (board 1st, finish 4–7) |
+| E9 | Test expected-cats-won as a **draft-time** signal (marginal Δ-cats-won per candidate); includes extending the r=0 gradient gate past slot 3 | m27 was slot 4, just outside the gradient gate, and produced exactly the surplus-in-won-cats pathology the gradient is designed to prevent | Must beat the incumbent across ledger replays **without regressing m21/m24/m25/m26**. Measure first; ship only on a clean win |
 
 ## 3. Validation before anything merges
 
