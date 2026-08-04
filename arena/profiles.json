@@ -4,7 +4,8 @@
   "source": "league_intel_2025-26.md §5/§9/§10/§11/§12 — three seasons of standings, boards, moves; reach indices quantitative for 2025-26 (frozen Oct-2025 pool), qualitative otherwise",
   "consumers": "E18: deck mock cast (named opponents, shuffled seats) + LIVE-mode per-seat survival projection",
   "params": "adp_w = weight on market/ADP board when picking; val_w = weight on 9-cat value; noise = pick randomness (sd in board ranks); pos_bias = per-family multiplier on candidate scores; streamer = in-season churn (draft floor matters less)",
-  "loyalty": "named manager-player pairs only (league-wide repetition is AT chance: 28 pair-repeats vs 30.4 expected); boosts apply per report_2026-08-04_manager_profiles.md"
+  "loyalty": "named manager-player pairs only (league-wide repetition is AT chance: 28 pair-repeats vs 30.4 expected); boosts apply per report_2026-08-04_manager_profiles.md",
+  "e18_calibration": "shipped to the deck 2026-08-04 (findings_2026-08-04_e18_named_room.md): 60-room sim, scaled reach band ±8 = 11/11 pass, Spearman 0.936 on reach ordering; absolute band deferred to the October real-ADP sync (synthetic market carries only ~0.45 of real Yahoo's divergence from the value board — Noah anchors the scale)"
  },
  "managers": {
   "Robby": {
@@ -26,13 +27,13 @@
    ],
    "autodraft": false,
    "model": {
-    "adp_w": 0.55,
-    "val_w": 0.45,
+    "adp_w": 0.7,
+    "val_w": 0.3,
     "noise": 8,
     "pos_bias": {},
     "streamer": false
    },
-   "read": "back-to-back champ then collapse; name-brand early, solid value late; set-and-forget",
+   "read": "back-to-back champ then collapse; name-brand early, solid value late; set-and-forget; adp_w refit 0.55->0.7 (E18 calib 2026-08-04: his measured reach is 2nd-deepest among active drafters and the 0.55 blend under-produced it)",
    "loyalty": {
     "3peat": [
      "Jarrett Allen",

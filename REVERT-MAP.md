@@ -86,3 +86,19 @@ the `r` array in PLAYERS are inert once the sort reverts — safe to leave.
 blend50-follow measures worse than composite-follow beyond noise trigger
 this revert plus a written post-mortem (findings file, §Standing caveats).
 
+
+## named-room (E18 mock cast, shipped 2026-08-04)
+
+Mock seats are held by the 11 named league-mates (`MANAGERS` +
+`managerScores` in the engine block; per-draft seat shuffle stored as
+`state.cast` in the app's start handler). Validation:
+`arena/results/findings_2026-08-04_e18_named_room.md` (smoke 5/5 owner
+slots, owner-card parity 7/7 byte-identical, scaled reach band 11/11,
+Spearman 0.936). **Kill switch:** in the app block's start handler, delete
+the `if (mockMode) { ... deck.state.cast = cast; }` block — `mockCastFor()`
+already falls back to the legacy `MOCK_CAST` persona cast when no cast is
+stored, and `advanceAI` dispatches non-manager names through
+`strategyScores` unchanged. The engine-block `MANAGERS`/`managerScores`
+section is inert once no cast references it — safe to leave. The owner's
+ΔECW blend50 card is independent of this ship (parity-proven) and keeps
+its own kill switch above.

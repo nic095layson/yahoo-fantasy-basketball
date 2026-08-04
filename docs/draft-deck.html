@@ -243,7 +243,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
   <h2>Draft setup</h2>
   <div class="setupgrid" role="group" aria-label="Mode">
     <button class="mode" id="modeLive" aria-pressed="true" type="button">LIVE — I feed every pick</button>
-    <button class="mode" id="modeMock" aria-pressed="false" type="button">MOCK — 11 arena personalities draft against me</button>
+    <button class="mode" id="modeMock" aria-pressed="false" type="button">MOCK — my 11 league-mates draft against me</button>
   </div>
   <div class="setupgrid">
     <label class="fld">Teams <input type="number" id="cfgTeams" value="12" min="2" max="20"></label>
@@ -869,6 +869,76 @@ const STRATEGIES = {
 const MOCK_CAST = ["market", "points_chaser", "market", "punt_ft", "stars",
   "slot_filler", "scarcity", "safe_floor", "upside", "bpa_pure", "punt_ft_to"];
 
+/* ---- E18: the real room (2026-08-04) ----
+   Mock seats are held by the 11 named league-mates (arena/profiles.json —
+   three seasons of boards, standings, and moves; league_intel §12).
+   Candidates are scored on a blended board rank
+     rank = adp_w·marketRank + val_w·valueRank
+   with gaussian noise in board-rank units, position-family bias (rank/bias),
+   loyalty pulls (flat rank discount ≈1.5 rounds for a 3-peat pair, ≈1 round
+   for a 2-peat — the observed pairs are round-sticky), and an availability
+   penalty streamers discount (they churn injured spots away in-season).
+   Coherent-team machinery (must-fill, bench-bound, late positional need)
+   matches the arena ADP scorer. David is the owner and never in the cast. */
+const MANAGERS = {
+  Robby:  { adp_w: 0.7, val_w: 0.3, noise: 8,  bias: {}, streamer: false,
+            loyal: { "Jarrett Allen": 18, "Collin Sexton": 18,
+                     "Devin Booker": 10, "Devin Vassell": 10 } },
+  Martin: { adp_w: 0.45, val_w: 0.55, noise: 10, bias: {}, streamer: true,
+            loyal: { "Luka Doncic": 10, "Brandon Ingram": 10, "Jalen Suggs": 10 } },
+  Oblena: { adp_w: 0.35, val_w: 0.65, noise: 9,  bias: {}, streamer: true,
+            loyal: { "Donovan Mitchell": 10 } },
+  Kevin:  { adp_w: 0.45, val_w: 0.55, noise: 10, bias: { G: 1.25, C: 0.85 },
+            streamer: false, loyal: { "Pascal Siakam": 10 } },
+  Noah:   { adp_w: 1.0, val_w: 0.0, noise: 2, bias: {}, streamer: false,
+            loyal: {} }, /* autodraft (owner-confirmed): his board IS the market */
+  Cayas:  { adp_w: 0.4,  val_w: 0.6,  noise: 12, bias: {}, streamer: true, loyal: {} },
+  John:   { adp_w: 0.5,  val_w: 0.5,  noise: 7,  bias: {}, streamer: false,
+            loyal: { "Tyrese Maxey": 10, "Jakob Poeltl": 10, "Jeremy Sochan": 10 } },
+  Hegi:   { adp_w: 0.65, val_w: 0.35, noise: 14, bias: {}, streamer: false,
+            loyal: { "Immanuel Quickley": 10, "Andrew Wiggins": 10 } },
+  Will:   { adp_w: 0.55, val_w: 0.45, noise: 11, bias: {}, streamer: true,
+            loyal: { "Onyeka Okongwu": 10, "Jaden Ivey": 10 } },
+  Kyle:   { adp_w: 0.55, val_w: 0.45, noise: 10, bias: {}, streamer: false, loyal: {} },
+  JCo:    { adp_w: 0.45, val_w: 0.55, noise: 8,  bias: {}, streamer: false,
+            loyal: { "Tyrese Haliburton": 10, "Jimmy Butler": 10, "Nic Claxton": 10 } },
+};
+function managerScores(mgr, pool, roster, rnd, rounds, rng) {
+  const m = MANAGERS[mgr];
+  const remaining = rounds - roster.length;
+  const unfilled = BASE_POS.filter(b => !roster.some(p => positionsOf(p).includes(b)));
+  const mustFill = unfilled.length >= remaining;
+  const mkt = marketRanks(pool);
+  const noPunt = new Set();
+  const vrank = new Map([...pool].sort((a, b) => adjValue(b, noPunt) - adjValue(a, noPunt))
+    .map((p, i) => [p.n, i + 1]));
+  const nStarted = [...lineupWeights(roster).values()].filter(w => w === 1.0).length;
+  function benchBound(p) {
+    if (nStarted >= LINEUP_SLOTS.length) return false;
+    return (lineupWeights([...roster, p]).get(p.n) ?? BENCH_WEIGHT) < 1.0;
+  }
+  function score(p) {
+    let r = m.adp_w * (mkt.get(p.n) ?? 300) + m.val_w * (vrank.get(p.n) ?? 300);
+    let bias = 1.0;
+    for (const f of familiesOf(p)) if (m.bias[f]) bias *= m.bias[f];
+    if (bias !== 1.0) r /= bias;
+    if (m.loyal[p.n]) r -= m.loyal[p.n];
+    r += (1 - p.av) * (m.streamer ? 15 : 40);
+    let s = -r;
+    if (benchBound(p)) s -= 50.0;
+    if (unfilled.length && rnd >= 6 && positionsOf(p).some(b => unfilled.includes(b)))
+      s += 15.0;
+    if (m.noise) s += rng.gauss(0, m.noise);
+    return s;
+  }
+  let cands = pool;
+  if (mustFill) {
+    const filtered = pool.filter(p => unfilled.some(b => positionsOf(p).includes(b)));
+    if (filtered.length) cands = filtered;
+  }
+  return cands.map(p => ({ p, s: score(p) })).sort((a, b) => b.s - a.s);
+}
+
 /* Port of arena.pick_for: score every available player, return sorted scores.
    teams defaults to 12, where the tier thresholds equal the arena constants. */
 /* Slot-conditional gradient ordering (codified 2026-07-30, council 5-0):
@@ -1246,9 +1316,27 @@ const JUDGMENT = {
       rngState: (Date.now() ^ (slot * 2654435761)) >>> 0,
       log: [],
     };
+    if (mockMode) {
+      /* E18: seat the 11 named league-mates, shuffled per draft (Fisher-
+         Yates on this draft's rng seed); the owner slot is skipped */
+      const names = Object.keys(MANAGERS);
+      const crng = makeRng((deck.rngState ^ 0x9e3779b9) >>> 0);
+      for (let i = names.length - 1; i > 0; i--) {
+        const j = Math.floor(crng.next() * (i + 1));
+        [names[i], names[j]] = [names[j], names[i]];
+      }
+      const cast = [];
+      let i = 0;
+      for (let s = 1; s <= teams; s++) {
+        if (s === slot) continue;
+        cast.push([s, names[i % names.length]]);
+        i++;
+      }
+      deck.state.cast = cast;
+    }
     log(`Draft started: ${teams} teams × ${size} rounds = ${teams * size} picks; you are Team ${slot}` +
         (deck.state.punt.length ? `; punting ${deck.state.punt.join(", ")}` : "") +
-        (mockMode ? " · MOCK — arena personalities hold the other seats" : " · LIVE"));
+        (mockMode ? " · MOCK — your 11 league-mates hold the other seats" : " · LIVE"));
     if (mockMode) log(`Cast: ${mockCastFor().map(([s, n]) => `T${s}:${n}`).join(" ")}`);
     save(); enterDraft();
     if (mockMode) advanceAI();
@@ -1277,6 +1365,8 @@ const JUDGMENT = {
     $("feedTitle").textContent = deck.mode === "mock" ? "Your pick" : "Pick feed";
   }
   function mockCastFor() {
+    if (deck.state.cast) return deck.state.cast;
+    /* legacy: drafts saved before the named room (E18) keep the old cast */
     const cast = [];
     let i = 0;
     for (let s = 1; s <= deck.state.teams; s++) {
@@ -1301,11 +1391,17 @@ const JUDGMENT = {
       if (slot === st.slot) break;
       const name = castBySlot.get(slot);
       const pool = availablePool(st, PLAYERS);
-      const params = { ...STRAT_DEFAULT, ...STRATEGIES[name] };
-      const ranks = params.matrix_aware && rosters[slot].length
-        ? categoryRanksFor(st, slot) : null;
-      const scored = strategyScores(name, pool, rosters[slot], ranks,
-        Math.floor(n / st.teams) + 1, st.size, rng, st.teams);
+      let scored;
+      if (MANAGERS[name]) {
+        scored = managerScores(name, pool, rosters[slot],
+          Math.floor(n / st.teams) + 1, st.size, rng);
+      } else {
+        const params = { ...STRAT_DEFAULT, ...STRATEGIES[name] };
+        const ranks = params.matrix_aware && rosters[slot].length
+          ? categoryRanksFor(st, slot) : null;
+        scored = strategyScores(name, pool, rosters[slot], ranks,
+          Math.floor(n / st.teams) + 1, st.size, rng, st.teams);
+      }
       const p = scored[0].p;
       st.picks.push({ player: p.n, slot });
       rosters[slot].push(p);
