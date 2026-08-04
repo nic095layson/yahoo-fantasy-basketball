@@ -87,4 +87,11 @@ requiring his judgment.
 **Superseded within the plan:** the "extend the gradient gate past slot 3"
 half of E9 is closed as a measured negative result. Do not re-open it without
 new evidence of a different kind.
+| E13 | **Quiet-chip suppression or recalibration.** Either recalibrate the survival model for value-drafting rooms, or suppress the "no marker = safe to wait" semantics until it is | Quiet survival measured 50% → 37% → 22% → **0% (0/24)** across mocks 27–30 (n=96). A marker that is wrong 24/24 times is worse than no marker | BUY NOW precision must not fall below 80% as a side effect; re-measure quiet survival across all ledger replays |
+
+**Priority note (2026-08-03):** E13 and E12 are the only two items with
+*owner-visible wrongness* attached — a chip that is currently 0-for-24, and a
+TARGET line that names a position family the roster does not need in 12 of 32
+firings. Both are candidates for a pre-September display fix rather than
+waiting for the full run.
 

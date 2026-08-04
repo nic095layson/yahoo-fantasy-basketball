@@ -37,6 +37,7 @@ is computed here from artifacts, with its membership criteria stated.**
 | 27 | 4 | 9.53 | 62.4 | 7 (4–7, see note) | 1 | **best board, first to miss top-3** |
 | 28 | 5 | 6.44 | 63.2 | 6 | 5 | ECW 4.665; kept-total *anti*-correlated in this room |
 | 29 | 6 | 8.99 | 58.7 | 5 | 10 | ECW 4.643; board rank 10 yet 5th — board *under*-rates this one |
+| 30 | 7 | 2.09 | 31.1 | 8 | 10 | ECW 4.396; the owner's live-screenshot draft |
 
 Verified superlatives: best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the
@@ -114,14 +115,21 @@ by >1pp.
 | 28 | all_deviations_to_card (7 swaps) | 6.50 | 7.34 | +0.84 | WASH |
 | 28 | bam_to_zubac | 6.50 | 7.09 | +0.59 | WASH |
 | 29 | all_deviations_to_card (9 swaps) | 8.90 | 3.21 | **−5.69** | **DEVIATION WON** |
+| 30 | all_deviations_to_card (9 swaps) | 2.12 | 8.66 | **+6.54** | COST |
+| 30 | embiid_to_lopez (board-13 reach) | 2.12 | 4.30 | +2.18 | COST |
+| 30 | simons_to_lively (#138, owner-questioned) | 2.12 | 2.24 | +0.12 | WASH |
+| 30 | lavine_to_braun (board-10 reach) | 2.12 | 2.04 | −0.08 | WASH |
 
-**Verified: 18 arms — 8 COST, 7 WASH, 3 DEVIATION WON.**
+**Verified: 22 arms — 10 COST, 9 WASH, 3 DEVIATION WON.**
 
-**All three DEVIATION WON arms are full-bundle card-follows** (m26 3 swaps,
-m27 8 swaps, m29 9 swaps), and all three are large (−5.69 to −8.71pp). Every
-COST arm is a single swap or a small set. The pattern across 18 arms: the
-card is usually right about one pick and reliably wrong as a whole-draft
-policy. See also `findings_2026-08-03_gradient_gate.md`, where following the
+**Bundle arms cut both ways — the m29 generalisation did not survive m30.**
+Three full-bundle card-follows WON for the owner (m26, m27, m29; −5.69 to
+−8.71pp) but m30's bundle was the largest COST in the table (+6.54pp). After
+22 arms the honest statement is narrower: **a full card-follow has high
+variance in both directions and is not predictable from the draft's shape.**
+The claim written one draft earlier — "the card is reliably wrong as a
+whole-draft policy" — is withdrawn; it was a 3-instance pattern that the very
+next draft inverted. See also `findings_2026-08-03_gradient_gate.md`, where following the
 card beat as-drafted in only 1 of 3 rooms.
 
 **EXCLUDED as degenerate (m28, `keyonte_to_harris`).** Both players were

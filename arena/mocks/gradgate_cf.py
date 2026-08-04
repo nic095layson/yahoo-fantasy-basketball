@@ -34,7 +34,8 @@ SP = "/tmp/claude-0/-home-user-yahoo-fantasy-basketball/58588377-022f-59e5-ac2c-
 UP = "/root/.claude/uploads/58588377-022f-59e5-ac2c-106514acd881/"
 MOCKS = {27: ("5130afad-draft_state_16.json", 4),
          28: ("4cb343cd-draft_state_17.json", 5),
-         29: ("9c3e53b2-draft_state_18.json", 6)}
+         29: ("9c3e53b2-draft_state_18.json", 6),
+         30: ("e7463e95-draft_state_19.json", 7)}
 CATS = hoops.CATS
 byname = {p["player"]: p for p in players}
 
@@ -130,6 +131,10 @@ elif arm == "composite_card":
     seq, skipped = seq_for(composite_card())
 elif arm == "gradient_card":
     seq, skipped = seq_for(gradient_card())
+elif arm.startswith("single:"):
+    # single:<pickNo>:<Player Name> — isolate one card-follow
+    _, pn, alt = arm.split(":", 2)
+    seq, skipped = seq_for({int(pn): alt})
 else:
     raise SystemExit(f"unknown arm {arm}")
 
