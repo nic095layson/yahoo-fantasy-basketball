@@ -287,6 +287,11 @@ HalleLuka = Sales & Markkanen = Martin.)*
   board, not a persona. For E17, model Noah as pure market/ADP drafter —
   the single most predictable seat in the room. Slots near Noah inherit
   clean ADP-chalk expectations.
+  **CORRECTED (owner, 2026-08-04): the autodraft was 2025-26 ONLY —
+  2023-24 and 2024-25 were manual.** The −43.5 stays as the room's pure
+  board-geometry reference; Noah's behavioral model is refit to the manual
+  seasons (ADP-leaning, real LaMelo loyalty) — see
+  report_2026-08-04_manager_profiles.md §5 and profiles.json.
 - **Hegi**: 12 → 9 → 10, low engagement; a source of falling value around
   his picks (he took Sochan #150 in 25-26-style spots).
 - **Kevin**: guard-heavy identity three years running (name literally says

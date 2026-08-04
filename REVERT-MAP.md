@@ -94,7 +94,7 @@ Mock seats are held by the 11 named league-mates (`MANAGERS` +
 `state.cast` in the app's start handler). Validation:
 `arena/results/findings_2026-08-04_e18_named_room.md` (smoke 5/5 owner
 slots, owner-card parity 7/7 byte-identical, scaled reach band 11/11,
-Spearman 0.936). **Kill switch:** in the app block's start handler, delete
+Spearman 0.936; noise model corrected same day by E18b — see below). **Kill switch:** in the app block's start handler, delete
 the `if (mockMode) { ... deck.state.cast = cast; }` block — `mockCastFor()`
 already falls back to the legacy `MOCK_CAST` persona cast when no cast is
 stored, and `advanceAI` dispatches non-manager names through
@@ -102,3 +102,19 @@ stored, and `advanceAI` dispatches non-manager names through
 section is inert once no cast references it — safe to leave. The owner's
 ΔECW blend50 card is independent of this ship (parity-proven) and keeps
 its own kill switch above.
+
+### E18b amendment (noise model, shipped 2026-08-04)
+
+Owner-reported realism defect (SGA alive at pick 8) fixed:
+`managerScores` noise became log-normal on rank (`r *= exp(N(0, noise/
+MGR_NOISE_DIV))`, `MGR_NOISE_DIV = 50`), availability became proportional
+(`r *= 1 + (1-av)*0.35`, streamers `0.15`), loyalty discount floored at 1;
+Noah refit to manual drafter (owner correction: autodraft was 2025-26
+only) and Kyle refit to his measured mild reach. Validation:
+`arena/results/findings_2026-08-04_e18b_noise_model.md` (all six gates
+pass; owner-card parity 7/7 byte-identical). **Narrow revert** (noise
+model only, keeps the named room): restore the three lines in `score()` —
+`r -= m.loyal[p.n]` un-floored, `r += (1-av)*(streamer?15:40)`, and the
+additive `s += rng.gauss(0, m.noise)` after the need bonus — and restore
+Noah/Kyle's prior MANAGERS entries. The full named-room kill switch above
+also covers this.

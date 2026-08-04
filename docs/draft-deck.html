@@ -869,17 +869,24 @@ const STRATEGIES = {
 const MOCK_CAST = ["market", "points_chaser", "market", "punt_ft", "stars",
   "slot_filler", "scarcity", "safe_floor", "upside", "bpa_pure", "punt_ft_to"];
 
-/* ---- E18: the real room (2026-08-04) ----
+/* ---- E18: the real room (2026-08-04; noise model E18b same day) ----
    Mock seats are held by the 11 named league-mates (arena/profiles.json —
    three seasons of boards, standings, and moves; league_intel §12).
    Candidates are scored on a blended board rank
      rank = adp_w·marketRank + val_w·valueRank
-   with gaussian noise in board-rank units, position-family bias (rank/bias),
-   loyalty pulls (flat rank discount ≈1.5 rounds for a 3-peat pair, ≈1 round
-   for a 2-peat — the observed pairs are round-sticky), and an availability
-   penalty streamers discount (they churn injured spots away in-season).
-   Coherent-team machinery (must-fill, bench-bound, late positional need)
-   matches the arena ADP scorer. David is the owner and never in the cast. */
+   with LOG-NORMAL rank noise — rank × exp(N(0, noise/50)) — so the top of
+   the board is near-deterministic and disagreement grows with depth
+   (E18b, owner-reported defect: flat additive noise let SGA slip past
+   pick 7 in 20% of rooms; multiplicative noise measures 0%). Position-
+   family bias applies as rank/bias; loyalty pulls as flat rank discounts
+   (≈1.5 rounds for a 3-peat pair, ≈1 round for a 2-peat, floored at 1);
+   availability scales the rank proportionally (×1.35 of the injury gap,
+   streamers ×1.15 — they churn injured spots away in-season). Noah is
+   modeled as a MANUAL ADP-leaning drafter: owner correction 2026-08-04,
+   his autodraft was 2025-26 only. Coherent-team machinery (must-fill,
+   bench-bound, late positional need) matches the arena ADP scorer.
+   David is the owner and never in the cast. */
+const MGR_NOISE_DIV = 50;
 const MANAGERS = {
   Robby:  { adp_w: 0.7, val_w: 0.3, noise: 8,  bias: {}, streamer: false,
             loyal: { "Jarrett Allen": 18, "Collin Sexton": 18,
@@ -890,8 +897,10 @@ const MANAGERS = {
             loyal: { "Donovan Mitchell": 10 } },
   Kevin:  { adp_w: 0.45, val_w: 0.55, noise: 10, bias: { G: 1.25, C: 0.85 },
             streamer: false, loyal: { "Pascal Siakam": 10 } },
-  Noah:   { adp_w: 1.0, val_w: 0.0, noise: 2, bias: {}, streamer: false,
-            loyal: {} }, /* autodraft (owner-confirmed): his board IS the market */
+  Noah:   { adp_w: 0.75, val_w: 0.25, noise: 9, bias: {}, streamer: false,
+            loyal: { "LaMelo Ball": 10 } }, /* manual drafter — autodraft was
+            2025-26 ONLY (owner correction); LaMelo loyalty is from the
+            two manual seasons (R1, R2) */
   Cayas:  { adp_w: 0.4,  val_w: 0.6,  noise: 12, bias: {}, streamer: true, loyal: {} },
   John:   { adp_w: 0.5,  val_w: 0.5,  noise: 7,  bias: {}, streamer: false,
             loyal: { "Tyrese Maxey": 10, "Jakob Poeltl": 10, "Jeremy Sochan": 10 } },
@@ -899,7 +908,9 @@ const MANAGERS = {
             loyal: { "Immanuel Quickley": 10, "Andrew Wiggins": 10 } },
   Will:   { adp_w: 0.55, val_w: 0.45, noise: 11, bias: {}, streamer: true,
             loyal: { "Onyeka Okongwu": 10, "Jaden Ivey": 10 } },
-  Kyle:   { adp_w: 0.55, val_w: 0.45, noise: 10, bias: {}, streamer: false, loyal: {} },
+  Kyle:   { adp_w: 0.45, val_w: 0.55, noise: 9, bias: {}, streamer: false,
+            loyal: {} }, /* E18b refit: his measured reach is mild (-7) —
+            adp 0.55 over-reached him vs his own data */
   JCo:    { adp_w: 0.45, val_w: 0.55, noise: 8,  bias: {}, streamer: false,
             loyal: { "Tyrese Haliburton": 10, "Jimmy Butler": 10, "Nic Claxton": 10 } },
 };
@@ -922,13 +933,13 @@ function managerScores(mgr, pool, roster, rnd, rounds, rng) {
     let bias = 1.0;
     for (const f of familiesOf(p)) if (m.bias[f]) bias *= m.bias[f];
     if (bias !== 1.0) r /= bias;
-    if (m.loyal[p.n]) r -= m.loyal[p.n];
-    r += (1 - p.av) * (m.streamer ? 15 : 40);
+    if (m.loyal[p.n]) r = Math.max(1, r - m.loyal[p.n]);
+    r *= 1 + (1 - p.av) * (m.streamer ? 0.15 : 0.35);
+    if (m.noise) r *= Math.exp(rng.gauss(0, m.noise / MGR_NOISE_DIV));
     let s = -r;
     if (benchBound(p)) s -= 50.0;
     if (unfilled.length && rnd >= 6 && positionsOf(p).some(b => unfilled.includes(b)))
       s += 15.0;
-    if (m.noise) s += rng.gauss(0, m.noise);
     return s;
   }
   let cands = pool;

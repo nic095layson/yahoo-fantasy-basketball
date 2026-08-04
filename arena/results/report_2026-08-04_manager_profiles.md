@@ -150,3 +150,23 @@ falls around his picks — draft-day gift dispenser to his neighbors.
 - Loyalty boosts in E18 must stay calibrated: league-wide repetition is at
   chance, so the boost applies ONLY to the named manager-player pairs
   above, not as a general behavior.
+
+## 5. Correction (owner, 2026-08-04, post-publication)
+
+**Noah autodrafted in 2025-26 ONLY; his 2023-24 and 2024-25 drafts were
+manual.** Three downstream edits to this report's claims:
+
+- §1/§3 called his LaMelo (R1, R2) and Naz Reid (R13, R8) repeats
+  "autodraft ADP artifacts." Wrong on LaMelo: both LaMelo picks fell in
+  the MANUAL seasons — that pair is genuine loyalty, modeled as such now.
+  Naz Reid stays dropped (the R8 leg was the 25-26 autodraft).
+- His 25-26 reach index (−43.5) is a pure reading of Yahoo's default
+  board vs our value board — behaviorally uninformative for Noah, but
+  the cleanest board-geometry reference the data contains. It is kept for
+  exactly that purpose and excluded from his behavioral profile per the
+  owner's instruction.
+- His forward model (profiles.json + deck) is refit to the manual
+  seasons: ADP-leaning manual drafter (adp_w 0.75, noise 9) with LaMelo
+  loyalty — no longer a deterministic market bot. Whether he autodrafts
+  again in October is unknown; if the owner learns he will, flip
+  `autodraft` back and the model reverts to adp_w 1.0 / noise 2.
