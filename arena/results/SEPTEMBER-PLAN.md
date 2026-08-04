@@ -24,6 +24,9 @@ relax because the calendar turned.
 
 ## 0. Read first (context recovery for the fresh session)
 
+**`arena/results/league_intel_2025-26.md` — the owner's REAL league ground
+truth (settings, standings, weekly data, draft board, room model). It
+supersedes any assumption it contradicts and feeds E14–E17.** Then
 `LESSONS.md` (all lessons; data-pull countermeasures are lessons 8–10),
 `REVERT-MAP.md` (kill switches), `arena/results/LEDGER.md` (derived
 tallies + the no-remembered-tallies rule), the two 2026-07-31 audits,
@@ -92,4 +95,8 @@ new evidence of a different kind.
 **Priority note resolved 2026-08-04:** both owner-visible defects (E13 quiet
 chip, E12 TARGET label) were fixed, calibrated, validated, and shipped on
 owner instruction — see `after_2026-08-04_fixes_recalibration.md`.
+| E14 | **Adopt the real playoff format** in the arena (8 of 12 qualify, NO byes) at the re-baseline | league_intel: champion had the 7th-best record and doesn't qualify under the shipped 6-team format; measured deltas −4 to −6pp champ for elite rosters (`arena/mocks/format_delta.py`) | Instrument change at re-baseline only; dual-report one mock both formats for continuity |
+| E15 | IL+ stash revaluation (2 IL+ slots make recovery stashes ~free; champion stashed Embiid, a rival drafted Tatum R13 as a stash) | league_intel §7; recovery-exclusion rule was calibrated with no IL slots | Measure stash-arm counterfactuals before changing the exclusion rule; pool re-entry stays news-gated |
+| E16 | Streaming gap: real league runs 27–83 moves/team; arena runs zero | league_intel §7 | At minimum, report champ% as a no-streaming bound; full streaming model is a scope decision, not a default |
+| E17 | Refit the arena room (`MOCK_CAST`) + survival blend to the MEASURED reach profiles of the 11 returning managers | league_intel §5: 8–9 of 11 opponents reach past value early — the real room is market/name-shaped, not value-bot-shaped | Chip calibration must be re-run on the refit room; BUY NOW ≥80% precision bar unchanged |
 
