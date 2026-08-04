@@ -113,8 +113,8 @@ ros, dropped = build(seq)
 for pn, alt, why in dropped:
     print(f"  dropped mid-arm: #{pn} -> {alt}: {why}")
 
-SEEDS = [11, 23]
-N = 6000
+SEEDS = [int(x) for x in os.environ.get("DECW_SEEDS", "11,23").split(",")]
+N = int(os.environ.get("DECW_N", "6000"))
 tc = {i: 0 for i in ros}
 tp = {i: 0 for i in ros}
 for sd in SEEDS:
@@ -130,6 +130,7 @@ res = {"mock": mock, "arm": arm,
        "n_applied": len(seq) - len(dropped),
        "swaps": seq, "dropped": dropped,
        "screened_out": [[pn, alt, why] for pn, alt, why in skipped]}
-json.dump(res, open(f"{SP}/decw_cf_m{mock}_{arm}.json", "w"), indent=1)
+suffix = os.environ.get("DECW_TAG", "")
+json.dump(res, open(f"{SP}/decw_cf_m{mock}_{arm}{suffix}.json", "w"), indent=1)
 print(f"m{mock} {arm:<12} champ {res['champ']:6.2f}%  playoff {res['playoff']:6.2f}%  "
       f"finish {res['finish']:>2}  ({res['n_applied']} swaps applied)")
