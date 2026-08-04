@@ -56,7 +56,7 @@ and 28 (they motivate E8/E9/E10 and LEDGER §5).
 | E6 | Slot-3 refinement + k-scheduling (GRAD_K) | registered 07-30/31 | Beat incumbent across gradient-seat replays (m24/m25/m26) beyond ±1pp; no regression elsewhere |
 | E7 | `ar/fx/sy` (7.8KB) + `gradImpact` use-or-drop checkpoint | REVERT-MAP, owner instruction | If no shipped feature consumes them after E1–E6 and E8–E10 land, remove them (REVERT-MAP has the procedure) |
 | E8 | Replace/augment "board rank" (kept-total) with **expected categories won per week** in debriefs + LEDGER; re-derive every retained mock | m27: corr +0.931 vs +0.828 (n=12). **m28 (controlled): kept-total correlates −0.293 *within* a room; a kept-total-maximizing oracle finished 11th while an ECW-maximizing oracle with identical hindsight finished 1st at 34.58%** (LEDGER §5) | Reporting-layer only — no engine change. Ship if the re-derivation reproduces every retained artifact and the new column explains m27 (board 1st, finish 4–7) |
-| E9 | Test expected-cats-won as a **draft-time** signal (marginal Δ-cats-won per candidate **under a survival model**, not foresight); includes extending the r=0 gradient gate past slot 3 | m27 (slot 4) and m28 (slot 5) both sit outside the gradient gate and both produced the surplus-in-won-cats pathology. m28's controlled oracle pair shows the objective — not the hindsight — drives the 28pp gap (LEDGER §5). Honest prior: a realizable version captures far less than 28pp | Must beat the incumbent across ledger replays **without regressing m21/m24/m25/m26**. Measure first; ship only on a clean win |
+| E9 | Test expected-cats-won as a **draft-time** signal (marginal Δ-cats-won per candidate **under a survival model**, not foresight). ~~extend the gradient gate past slot 3~~ — **REMOVED 2026-08-03, measured and rejected** (`findings_2026-08-03_gradient_gate.md`: widening the gate lost in 2 of 3 rooms) | m27 (slot 4) and m28 (slot 5) both sit outside the gradient gate and both produced the surplus-in-won-cats pathology. m28's controlled oracle pair shows the objective — not the hindsight — drives the 28pp gap (LEDGER §5). Honest prior: a realizable version captures far less than 28pp | Must beat the incumbent across ledger replays **without regressing m21/m24/m25/m26**. Measure first; ship only on a clean win |
 | E10 | "Quiet zone" escalation: builds that are neither healthy nor drift-latched | m27 and m28 both finished mid-table with the drift latch correctly silent (each had <3 dead kept cats or ≥2 C-eligible). Nothing on the card marks this zone | Must preserve the latch's **0 false positives** on m21/m24/m25/m26; measure before proposing any UI |
 
 ## 3. Validation before anything merges
@@ -76,3 +76,15 @@ to the existing URL** (https://claude.ai/code/artifact/190e2c13-a19c-4239-8085-7
 Report to the owner: per-experiment verdict table (shipped / rejected,
 with numbers), what changed in the deck, and anything genuinely
 requiring his judgment.
+
+## 5. Added 2026-08-03 (from mocks 27–29 and an owner-reported defect)
+
+| # | Experiment | Origin | Ship bar |
+|---|---|---|---|
+| E11 | Any future card-vs-card counterfactual must carry a **perturbation-matched placebo arm** (N random legal swaps) and report per-arm field-strength delta | Gradient-gate verifiers showed arms differing in swap count, reach distance, and z removed from rivals — "better card" was confounded with "more disturbance" | Methodological requirement, not an experiment: no card-comparison result is quotable without it |
+| E12 | TARGET family-need gate (`domFam` fallback currently has no roster-need check) | `findings_2026-08-03_target_family_defect.md`: 12 of 32 TARGET lines across mocks 27–29 name a family already at/above its startable floor with no open lineup slot | Must not silence any TARGET line that was load-bearing (m22 Markkanen structural transfer, m23 repair pleas); re-run the 130-state gauntlet and ledger replays |
+
+**Superseded within the plan:** the "extend the gradient gate past slot 3"
+half of E9 is closed as a measured negative result. Do not re-open it without
+new evidence of a different kind.
+

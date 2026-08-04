@@ -36,6 +36,7 @@ is computed here from artifacts, with its membership criteria stated.**
 | 26 | 3 | 22.61 | 85.6 | 1 | 3 | third gradient seat |
 | 27 | 4 | 9.53 | 62.4 | 7 (4–7, see note) | 1 | **best board, first to miss top-3** |
 | 28 | 5 | 6.44 | 63.2 | 6 | 5 | ECW 4.665; kept-total *anti*-correlated in this room |
+| 29 | 6 | 8.99 | 58.7 | 5 | 10 | ECW 4.643; board rank 10 yet 5th — board *under*-rates this one |
 
 Verified superlatives: best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the
@@ -112,8 +113,16 @@ by >1pp.
 | 28 | brunson_to_kessler | 6.50 | 8.40 | +1.90 | COST |
 | 28 | all_deviations_to_card (7 swaps) | 6.50 | 7.34 | +0.84 | WASH |
 | 28 | bam_to_zubac | 6.50 | 7.09 | +0.59 | WASH |
+| 29 | all_deviations_to_card (9 swaps) | 8.90 | 3.21 | **−5.69** | **DEVIATION WON** |
 
-**Verified: 17 arms — 8 COST, 7 WASH, 2 DEVIATION WON.**
+**Verified: 18 arms — 8 COST, 7 WASH, 3 DEVIATION WON.**
+
+**All three DEVIATION WON arms are full-bundle card-follows** (m26 3 swaps,
+m27 8 swaps, m29 9 swaps), and all three are large (−5.69 to −8.71pp). Every
+COST arm is a single swap or a small set. The pattern across 18 arms: the
+card is usually right about one pick and reliably wrong as a whole-draft
+policy. See also `findings_2026-08-03_gradient_gate.md`, where following the
+card beat as-drafted in only 1 of 3 rooms.
 
 **EXCLUDED as degenerate (m28, `keyonte_to_harris`).** Both players were
 *owner* picks (#140 and #149), so the swap only reorders the owner's own
