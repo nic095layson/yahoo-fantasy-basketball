@@ -9,8 +9,9 @@ for explicitly. Measure-only studies are always allowed.
 happen systematically, without a prompt from him. A one-shot scheduled
 Routine fires on **2026-09-01** and executes this file top to bottom in a
 fresh session. This file is the single source of truth for that run —
-the firing prompt intentionally contains no details beyond "execute
-SEPTEMBER-PLAN.md".
+the firing prompt carries authorization, the ship rule, and
+delivery pointers but no experiment content, and states that where it and
+this file disagree, this file wins (prompt/file reconciled 2026-08-04).
 
 **Ship rule (the honest contract).** "Systematically installed" means
 systematically *executed*. Each item below carries a pre-registered
