@@ -70,3 +70,19 @@ old-instrument and not comparable to current runs.
   `boardOnly`; app block label template). REVERT: drop the `boardOnly` const +
   tip line and restore the fixed `TARGET:` prefix.
 
+## decw-ordering (E9 blend50, shipped 2026-08-04)
+
+The Top-5 ORDER at every seat is the ΔECW blend50 score (`ds`), replacing
+the composite `fs` sort and the slot-1–3 gradient gate. Validation:
+`arena/results/findings_2026-08-04_decw_round2.md` (14/14 improved, 0
+winner regressions, fresh-seed replicated; JS↔Python ordering parity
+182/182 EXACT). **Kill switch:** in the app block, change the scoredAll
+sort back to `.sort((a, b) => b.fs - a.fs)` (one line; `fs` is still
+computed on every row), restore the fs-unit coin-flip/standout thresholds
+(0.25 / 1.5), and revert the score display spans from `ds * 100` to
+`fmtZ(fs, 2)`. The engine-block ΔECW section (RAW_COLS … decwScores) and
+the `r` array in PLAYERS are inert once the sort reverts — safe to leave.
+**Standing kill RULE:** two consecutive out-of-sample mocks where
+blend50-follow measures worse than composite-follow beyond noise trigger
+this revert plus a written post-mortem (findings file, §Standing caveats).
+

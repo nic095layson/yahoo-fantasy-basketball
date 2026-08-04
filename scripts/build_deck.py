@@ -77,6 +77,12 @@ def main():
         "n": p["player"], "t": p["team"], "p": p["pos"].replace('"', ""),
         "note": p.get("note") or "", "av": hoops.availability(p),
         "z": {c: round(p["z"][c], 6) for c in hoops.CATS},
+        # raw per-game stats (E9 ship 2026-08-04): the ΔECW weekly model
+        # consumes raw rates, not z — order: tpm,pts,reb,ast,stl,blk,tov,
+        # fg_pct,fga,ft_pct,fta (see RAW_COLS in the engine block)
+        "r": [round(float(p[c]), 4) for c in
+              ("tpm", "pts", "reb", "ast", "stl", "blk", "tov",
+               "fg_pct", "fga", "ft_pct", "fta")],
         # archetype layer (codified 2026-07-30): profile code, out-of-
         # position flags, style coordinate — display-only consumers
         **dict(zip(("ar", "fx", "sy"), archetypes.classify(p))),
