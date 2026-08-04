@@ -24,11 +24,26 @@ owner decision.
   the uploaded draft state, runs `arena.simulate_seasons` at 6,000 seasons ×
   seeds [11, 23, 47], and reports champ%/playoff%/kept-total per team plus
   the owner's per-category z-sums and ranks.
+- `season_sim_mock28.py`, `mock28_cf.py` — same pair for mock 28. The m28
+  CF file additionally carries the two **oracle** arms behind LEDGER §5:
+  `CF5_ecw_greedy_oracle` and `CF7_kept_greedy_oracle`. Both walk the owner's
+  13 turns and take the best legal later-drafted player by their objective —
+  identical hindsight, opposite objectives (34.58% vs 0.28%). They are upper
+  bounds, not strategies: they know exactly when every player will be taken.
 - `mock27_cf.py` — counterfactual arms. `python3 mock27_cf.py ARM [ARM...]`,
   or no args for every arm. Each arm is a set of **pairwise legal** swaps:
   the alternative must have been drafted strictly *later* than the owner pick
   it replaces (asserted in `build()`; an illegal arm is refused, not run —
   see `CF4_steals_repair`). 6,000 seasons × seeds [11, 23].
+
+## Swap-arm screening (added 2026-08-03)
+
+Before running a pairwise arm, check that the alternative is **not also an
+owner pick**. Mock 28's `keyonte_to_harris` swapped two of the owner's own
+picks (#140 and #149), which only reorders the owner's roster and reproduces
+the baseline to the last decimal. `build_seq()` enforces legality (alt drafted
+strictly later) but cannot tell a degenerate arm from a real one — that check
+is on the author. See LEDGER §3.
 
 ## Reproduction notes
 

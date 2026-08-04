@@ -35,6 +35,7 @@ is computed here from artifacts, with its membership criteria stated.**
 | 25 | 2 | 29.00 | **94.4** | 1 | 1 | best playoff% measured |
 | 26 | 3 | 22.61 | 85.6 | 1 | 3 | third gradient seat |
 | 27 | 4 | 9.53 | 62.4 | 7 (4–7, see note) | 1 | **best board, first to miss top-3** |
+| 28 | 5 | 6.44 | 63.2 | 6 | 5 | ECW 4.665; kept-total *anti*-correlated in this room |
 
 Verified superlatives: best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the
@@ -74,10 +75,13 @@ coverage on the same-instrument engine. *Excluded:* pre-2026-07-30
 | 20 | CF3_interior_removed | 6.51 | 4.64 | **+1.87pp** | artifact |
 | 21 | CF3_interior_removed | 26.91 | 21.78 | **+5.13pp** | artifact |
 | 23 | CF2_interior_repair_only | 0.17 | 3.17 | **+3.00pp** | artifact |
+| 28 | CF6_interior_repair (Kessler + Claxton ADDED) | 6.50 | 9.37 | **+2.87pp** | artifact |
 | 18 | CF1 (interior overrides removed) | 4.33 | 0.49 | +3.84pp | debrief only — CF JSON not retained |
 
-**Verified: 4/4 positive from retained artifacts; 5/5 including m18's
-debrief-recorded value.** Prior debriefs said "5-for-5 (m13, m18, m19,
+**Verified: 5/5 positive from retained artifacts; 6/6 including m18's
+debrief-recorded value.** Mock 28's arm is the first to measure the effect
+by *adding* interior coverage rather than removing it, and it points the
+same way (+2.87pp). Prior debriefs said "5-for-5 (m13, m18, m19,
 m20, m21)" — that membership list was wrong: m13 predates this instrument
 and has no CF artifact, and m23 (which does qualify) was omitted because
 it hadn't happened yet. The *count* survived; the *list* did not.
@@ -105,8 +109,17 @@ by >1pp.
 | 27 | mathurin_to_wcj (board-44 reach) | 9.76 | 12.57 | +2.81 | COST |
 | 27 | embiid_to_white | 9.76 | 11.78 | +2.02 | COST |
 | 27 | bridges_to_suggs | 9.76 | 10.52 | +0.76 | WASH |
+| 28 | brunson_to_kessler | 6.50 | 8.40 | +1.90 | COST |
+| 28 | all_deviations_to_card (7 swaps) | 6.50 | 7.34 | +0.84 | WASH |
+| 28 | bam_to_zubac | 6.50 | 7.09 | +0.59 | WASH |
 
-**Verified: 14 arms — 7 COST, 5 WASH, 2 DEVIATION WON.**
+**Verified: 17 arms — 8 COST, 7 WASH, 2 DEVIATION WON.**
+
+**EXCLUDED as degenerate (m28, `keyonte_to_harris`).** Both players were
+*owner* picks (#140 and #149), so the swap only reorders the owner's own
+roster and returns the baseline to the last decimal by construction. It is
+not a wash — it is not an arm. Recorded here so it is never counted.
+Swap arms must be screened for alt-is-also-an-owner-pick before they run.
 
 *m27 baseline note:* the m27 arms are paired against an as-drafted run at
 the **same** config as the arms (6,000 × seeds [11,23] = 9.76), not the
@@ -166,3 +179,34 @@ be **correct for conventional profiles** (Luka — 1 instance, card wins).
 The Φ-saturation story predicted exactly this asymmetry. Still n=3 across
 2 anchor types in one pool; September experiment stands, now with a
 sharper hypothesis to test. No engine change.
+
+## 5. Board metric — the controlled result (mock 28, 2026-08-03)
+
+*Not a tally; a single controlled experiment, recorded here because it bears
+on how every row in §1 should be read.*
+
+Two oracles, identical mechanics and identical hindsight (walk the owner's 13
+turns; at each, consider every player drafted strictly later; take the best by
+the objective). **Only the objective differs.**
+
+| Arm | Kept-total | Expected cats won/wk | Champ% | Finish |
+|---|---|---|---|---|
+| m28 as drafted | +1.58 | 4.665 | 6.50 | 6 |
+| ECW-greedy oracle | **−0.92** | **5.268** | **34.58** | **1** |
+| Kept-total-greedy oracle | **+3.54** | 4.114 | **0.28** | **11** |
+
+Replicated at three fresh seeds (101/202/303, 18,000 seasons): oracle 35.63%,
+baseline 6.59%.
+
+**Reading of the "Board rank" column in §1.** It ranks kept-total. Maximizing
+that quantity with perfect foresight produced the second-worst roster in the
+room, and within the m28 room kept-total correlates with champ% at **−0.293**
+while expected-cats-won correlates at **+0.823**. Across mocks 16–28 the
+same comparison is +0.828 (kept-total) vs +0.931 (ECW). **Board rank is
+retained in §1 for continuity with every prior debrief, but it should not be
+read as a quality ranking.** Replacing it is registered as September E8.
+
+*Bound:* ECW is computed from the simulator's own `team_week_model`, so it is
+a better readout of the instrument, not an independent predictor. The oracle
+has perfect draft-order foresight and is an upper bound, not a strategy.
+
