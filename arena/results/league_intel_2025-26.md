@@ -218,3 +218,41 @@ would be dishonest; qualitative reads only until/unless an Oct-2024 value
 reference is sourced). Raw board preserved in this repo's git history via
 the owner's message of 2026-08-04.
 
+## 11. Third season ingested: 2023-24 (owner-provided 2026-08-04) — calibration set complete
+
+Standings + full draft board. **Note: 20-week regular season that year**
+(180 cat-games); the league moved to 18 weeks in 2024-25 and stayed there.
+8 playoff teams again. Owner = **LayBron**, drafted slot 5, finished **7th**
+(.531, record rank 3).
+
+Playoff finish vs record rank: 1st=rank 2 (Poole-ootan), 2nd=rank 6,
+3rd=rank 4, 4th=**rank 1** (REBUILDING SZN .596), 5th=5, 6th=8, 7th=3, 8th=7.
+
+**The three-season signature, finalized:**
+
+- **The #1 record has never won the title** in three seasons: finished 4th
+  (23-24, .596), 8th (24-25, .611), 6th (25-26, the owner at .640).
+- Champions' record ranks: **2, 7, 7**.
+- The regular season selects the field; the 3-week bracket decides the
+  title, and it has repeatedly favored mid-seeds. E14 and the E9
+  playoff-tier objective are the response.
+
+**The dynasty profile — Poole-ootan Party = Put Me in Coach = Gotta Be
+Bamonte (owner-confirmed): back-to-back champion (23-24, 24-25), then
+last-place record (25-26).** Their 23-24 title came from record rank 2 with
+28 moves; their 24-25 title from rank 7 with 16 moves — low-churn,
+draft-it-and-ride manager whose 25-26 draft (Sabonis R1) collapsed. Watch
+for reversion, not repetition.
+
+**Owner three-season arc (LayBron → David's Demure → JAMAL AL-QUETA):**
+playoff finishes 7th → 3rd → 6th; record ranks 3 → 8 → **1**. The
+regular-season engine has improved every year; the bracket has been the
+ceiling all three years.
+
+**Season-length caveat for any cross-season rate comparison:** 23-24 rates
+are per-20-weeks; 24-25/25-26 per-18. Current league = 18 (`WEEKS = 18`
+stays correct).
+
+2023-24 draft board recorded via the owner's message (git history);
+qualitative use only — no Oct-2023 value reference exists.
+
