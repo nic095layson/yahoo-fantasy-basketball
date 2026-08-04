@@ -82,16 +82,14 @@ requiring his judgment.
 | # | Experiment | Origin | Ship bar |
 |---|---|---|---|
 | E11 | Any future card-vs-card counterfactual must carry a **perturbation-matched placebo arm** (N random legal swaps) and report per-arm field-strength delta | Gradient-gate verifiers showed arms differing in swap count, reach distance, and z removed from rivals — "better card" was confounded with "more disturbance" | Methodological requirement, not an experiment: no card-comparison result is quotable without it |
-| E12 | TARGET family-need gate (`domFam` fallback currently has no roster-need check) | `findings_2026-08-03_target_family_defect.md`: 12 of 32 TARGET lines across mocks 27–29 name a family already at/above its startable floor with no open lineup slot | Must not silence any TARGET line that was load-bearing (m22 Markkanen structural transfer, m23 repair pleas); re-run the 130-state gauntlet and ledger replays |
+| E12 | TARGET family-need gate — **Option A (BOARD LEAN relabel) SHIPPED 2026-08-04**; this item is now Option B only (suppress the family when covered) | `findings_2026-08-03_target_family_defect.md`: 12 of 32 TARGET lines across mocks 27–29 name a family already at/above its startable floor with no open lineup slot | Must not silence any TARGET line that was load-bearing (m22 Markkanen structural transfer, m23 repair pleas); re-run the 130-state gauntlet and ledger replays |
 
 **Superseded within the plan:** the "extend the gradient gate past slot 3"
 half of E9 is closed as a measured negative result. Do not re-open it without
 new evidence of a different kind.
-| E13 | **Quiet-chip suppression or recalibration.** Either recalibrate the survival model for value-drafting rooms, or suppress the "no marker = safe to wait" semantics until it is | Quiet survival measured 50% → 37% → 22% → **0% (0/24)** across mocks 27–30 (n=96). A marker that is wrong 24/24 times is worse than no marker | BUY NOW precision must not fall below 80% as a side effect; re-measure quiet survival across all ledger replays |
+| E13 | ~~Quiet-chip suppression or recalibration~~ — **SHIPPED 2026-08-04** (`after_2026-08-04_fixes_recalibration.md`): room-mix survival blend (9 value + 2 market seats), thresholds re-fit; quiet survival 58%→89%, BUY precision 94% look-through / 82% conservative, wheel bars exceeded | was: quiet 50→37→22→0% across m27–30 | Bar was met before shipping. September E2 narrows to the punt-mode curve + ADP re-fit of the market weight |
 
-**Priority note (2026-08-03):** E13 and E12 are the only two items with
-*owner-visible wrongness* attached — a chip that is currently 0-for-24, and a
-TARGET line that names a position family the roster does not need in 12 of 32
-firings. Both are candidates for a pre-September display fix rather than
-waiting for the full run.
+**Priority note resolved 2026-08-04:** both owner-visible defects (E13 quiet
+chip, E12 TARGET label) were fixed, calibrated, validated, and shipped on
+owner instruction — see `after_2026-08-04_fixes_recalibration.md`.
 

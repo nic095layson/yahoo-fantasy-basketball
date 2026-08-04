@@ -57,3 +57,16 @@ Reproducibility: historical experiment harnesses pin their engines
 (scratch copies or the 0.35/0.45 field pins) and reproduce against the
 SHAs noted in their findings files. Arena numbers before `b328ef7` are
 old-instrument and not comparable to current runs.
+
+## 2026-08-04 — owner-directed display fixes (both single-site reverts)
+
+- **Room-mix survival model** (`docs/draft-deck.html`, app block): constants
+  `SURV_K/SURV_FLOOR/SURV_W_VAL/SURV_W_MKT`, `VAL_RANK`, `survPhi`, and the
+  blended `survivalP(name, pickN)`; chip thresholds BUY ≤0.20 / TOSS <0.40.
+  REVERT: restore `survivalP(mkt, pickN)` with Φ((mkt−N)/max(6,0.15·mkt)) and
+  thresholds 0.40/0.60, and re-point the three call sites at `MKT_RANK.get`.
+  Calibration record: `arena/results/after_2026-08-04_fixes_recalibration.md`.
+- **TARGET/BOARD LEAN provenance** (`engine` block `archetypeRead` returns
+  `boardOnly`; app block label template). REVERT: drop the `boardOnly` const +
+  tip line and restore the fixed `TARGET:` prefix.
+

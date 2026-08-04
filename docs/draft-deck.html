@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-08-03", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "Sweep 8/3: Sochan -> POR (vet-min non-gtd camp deal, agreed 8/1) is the only pool change. Harden/DeRozan/Beal still unsigned FA. OKC moved Joe/Wiggins/Dort \u2026"} -->
+<!-- build-manifest {"built": "2026-08-04", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "Sweep 8/4: zero pool changes. Harden (CLE talks ongoing), DeRozan (waived, CLE interest), Beal still unsigned FA. Deck fixes shipped today: room-mix survival \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -376,8 +376,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 </section>
 
 <footer class="colophon">
-  <p><strong>Data.</strong> Pool refreshed 2026-08-03 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/3): Jeremy Sochan signs with Portland — one year at the veteran minimum, non-guaranteed, a camp deal (reported 8/1), so he moves FA→POR with no change to his projection. Harden's Cleveland return remains agreed-but-unsigned by design; DeRozan (waived by Sacramento), Beal (opted out), and Westbrook are still true free agents. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a market model (no marker = safe to wait; July estimate, September ADP sharpens); the single 🎯 marks the system pick — the top composite card, or an urgent structural TARGET when a needed family's shelf is nearly empty (from draft slots 1–3 the list order itself uses the win-probability gradient, arena-confirmed +12.7pp, t=4.6). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Data.</strong> Pool refreshed 2026-08-04 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/3): Jeremy Sochan signs with Portland — one year at the veteran minimum, non-guaranteed, a camp deal (reported 8/1), so he moves FA→POR with no change to his projection. Harden's Cleveland return remains agreed-but-unsigned by design; DeRozan (waived by Sacramento), Beal (opted out), and Westbrook are still true free agents. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top composite card, or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported) (from draft slots 1–3 the list order itself uses the win-probability gradient, arena-confirmed +12.7pp, t=4.6). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -577,8 +577,18 @@ function archetypeRead(st, mine, pool, ranks, nextPickNo, mktRank) {
   if (matches.length) tips.push(`best fits: ${matches.map(p => p.n).join(", ")}`);
   if (canWait) tips.push(`matching fits priced #${minMkt}+ by the room — can likely wait a round`);
   tips.push("click to filter Best Available");
+  /* Provenance (owner-reported defect 2026-08-03): did the family come from
+     a roster NEED (scarcity/imbalance), or only from what the board happens
+     to offer? The domFam fallback has no roster gate, so its label is
+     descriptive — 12 of 32 TARGET lines across mocks 27–29 named a family
+     already at/above its startable floor. boardOnly lets the UI say
+     BOARD LEAN instead of TARGET there. */
+  const boardOnly = !scarceFam && !imbalance && !!fam &&
+    balCt[fam] >= FLOOR[fam] && !openFams.includes(fam);
+  if (boardOnly) tips.splice(tips.length - 1, 0,
+    `${fam}-heavy board — your roster is already covered at ${fam}; this is a read of the room, not a roster need`);
   return { label, fam, tip: tips.join(" · "), urgent: liveUrgent, wait: canWait,
-           shelfCount: fam ? shelf[fam] : null, best };
+           shelfCount: fam ? shelf[fam] : null, best, boardOnly };
 }
 function teamOfPick(n, teams) {
   const rnd = Math.floor(n / teams), idx = n % teams;
@@ -1051,9 +1061,9 @@ const JUDGMENT = {
   const $ = id => document.getElementById(id);
 
   /* ---------- header stamp + fresh-data-pull ---------- */
-  const BUILD_PULL = "2026-08-03"; // freshness stamp date; rewritten at each republish
+  const BUILD_PULL = "2026-08-04"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "Sweep 8/3: Sochan -> POR (vet-min non-gtd camp deal, agreed 8/1) is the only pool change. Harden/DeRozan/Beal still unsigned FA. OKC moved Joe/Wiggins/Dort (Dort already ATL in pool; Joe/Wiggins not in pool). Board on draftable-156 z.";
+  const BUILD_NOTE = "Sweep 8/4: zero pool changes. Harden (CLE talks ongoing), DeRozan (waived, CLE interest), Beal still unsigned FA. Deck fixes shipped today: room-mix survival recalibration + TARGET/BOARD LEAN provenance split.";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -1385,16 +1395,37 @@ const JUDGMENT = {
       .forEach((p, i) => PRE_RANK.set(p.n, i + 1));
   }
   const MKT_RANK = marketRanks([...PLAYERS].filter(p => p.av > 0));
+  /* VAL_RANK: neutral punt-aware value ordering over the same pool — the
+     scale 9 of the 11 mock opponents actually draft by. Built once, like
+     MKT_RANK (recalibration fix 2026-08-03). */
+  const VAL_RANK = (() => {
+    const nw = {};
+    for (const c of CATS) nw[c] = 1.0;
+    const byVal = [...PLAYERS].filter(p => p.av > 0)
+      .sort((a, b) => fitZ(b, nw).adj - fitZ(a, nw).adj);
+    return new Map(byVal.map((p, i) => [p.n, i + 1]));
+  })();
   /* Market-timing layer (owner RULE 2026-07-28: "value says WHO, price
-     says WHEN — never pay pick-50 price for a pick-100 player"). The
-     survival model: a player leaves the board around his market rank
-     with a spread that widens down-board — P(alive at pick N) =
-     Φ((mkt − N) / σ), σ = max(6, 0.15·mkt). July market estimate;
-     the September multi-source ADP pull sharpens it. Display-only:
-     these numbers never re-rank anything. */
-  function survivalP(mkt, pickN) {
-    if (!mkt || mkt >= 999) return 0.95;
-    const s = (mkt - pickN) / Math.max(6, 0.15 * mkt);
+     says WHEN — never pay pick-50 price for a pick-100 player").
+
+     Survival model RECALIBRATED 2026-08-03 (owner-reported: quiet-chip
+     survival slid 50%→37%→22%→0% across mocks 27–30; every one of 24
+     quiet players in m30 was gone by the next turn). Root cause: the old
+     model priced survival off MARKET rank alone, but 9 of 11 mock
+     opponents draft by VALUE. A high-value player with a soft market
+     price was marked quiet and then taken immediately.
+
+     New model: room-mix blend. P(alive at pick N) =
+       Pval^(9/11) · Pmkt^(2/11),  each P = Φ((rank − N) / σ),
+       σ = max(8, 0.20·rank)
+     — 9 value drafters + 2 market seats out of 11 opponents. Fit on 840
+     Top-5 observations across 14 replayed mocks (16–30): Brier 0.135 vs
+     0.223 shipped; quiet (p≥0.60) survival 96.4% vs 58.3%; BUY (p≤0.40)
+     gone-rate 82.6% (bar ≥80% holds). Display-only: never re-ranks. */
+  const SURV_K = 0.20, SURV_FLOOR = 8, SURV_W_VAL = 9 / 11, SURV_W_MKT = 2 / 11;
+  function survPhi(rank, pickN) {
+    if (!rank || rank >= 999) return 0.95;
+    const s = (rank - pickN) / Math.max(SURV_FLOOR, SURV_K * rank);
     const x = Math.abs(s) / Math.SQRT2;
     const t = 1 / (1 + 0.3275911 * x);
     const poly = t * (0.254829592 + t * (-0.284496736 + t * (1.421413741 +
@@ -1402,6 +1433,12 @@ const JUDGMENT = {
     const erf = 1 - poly * Math.exp(-x * x);
     const phi = 0.5 * (1 + (s < 0 ? -erf : erf));
     return Math.min(0.99, Math.max(0.01, phi));
+  }
+  function survivalP(name, pickN) {
+    const pv = survPhi(VAL_RANK.get(name), pickN);
+    const pm = survPhi(MKT_RANK.get(name), pickN);
+    return Math.min(0.99, Math.max(0.01,
+      Math.pow(pv, SURV_W_VAL) * Math.pow(pm, SURV_W_MKT)));
   }
   /* Archetype layer (codified 2026-07-30, gap study G3): codes/flags/style
      are BAKED into PLAYERS at build time by scripts/archetypes.py.
@@ -1912,7 +1949,7 @@ const JUDGMENT = {
         st, mine, availablePool(st, PLAYERS), ranks, myNextPick(st), MKT_RANK);
       if (read) {
         const t = el("button", "target" + (read.urgent ? " urgent" : ""),
-          `TARGET: ${read.label}` + (read.urgent ? " — act now" : (read.wait ? " — can wait" : "")));
+          `${read.boardOnly ? "BOARD LEAN" : "TARGET"}: ${read.label}` + (read.urgent ? " — act now" : (read.wait ? " — can wait" : "")));
         t.type = "button";
         t.dataset.tip = read.tip;
         t.addEventListener("click", () => {
@@ -2123,7 +2160,7 @@ const JUDGMENT = {
          allowed to beat price. Display-only — never re-ranks. */
       const mktR = MKT_RANK.get(p.n);
       if (mktR && nextTurn) {
-        const ps = survivalP(mktR, nextTurn);
+        const ps = survivalP(p.n, nextTurn);
         const pFams = familiesOf(p);
         /* scarcity beats price ONLY when the shelf is small but ALIVE
            and THIS player is priced inside it — an out-of-window player
@@ -2139,16 +2176,21 @@ const JUDGMENT = {
         let chip = null, why;
         if (dying.length) {
           chip = "BUY NOW"; why = `${dying.map(f => `${f} shelf: ${shelfNow[f]} in window`).join(", ")} — scarcity beats price`;
-        } else if (ps <= 0.40) {
-          chip = "BUY NOW"; why = `room price #${mktR} — only ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
-        } else if (ps < 0.60) {
-          chip = "TOSS-UP"; why = `room price #${mktR} — ~${Math.round(ps * 100)}% survives to your #${nextTurn}`;
+        /* Thresholds re-fit to the room-mix model's measured bands
+           (2026-08-03 calibration, 840 obs): p<=0.20 leaves 95% of the
+           time (BUY), 0.20-0.40 is a genuine coin flip (55% gone: TOSS),
+           p>=0.40 survives ~90% (quiet). The old 0.40/0.60 cuts sat in
+           the blend's coin-flip zone and dragged BUY precision to 77%. */
+        } else if (ps <= 0.20) {
+          chip = "BUY NOW"; why = `room read — only ~${Math.round(ps * 100)}% chance he survives to your #${nextTurn}`;
+        } else if (ps < 0.40) {
+          chip = "TOSS-UP"; why = `room read — ~${Math.round(ps * 100)}% chance he survives to your #${nextTurn}`;
         }
         if (chip) {
           const pm2 = (why || "").match(/~\d+%/);
           const ch = el("span", "verdict " + (chip === "TOSS-UP" ? "toss" : "buy"),
             `⏱ ${chip}${pm2 ? " " + pm2[0] : (why || "").includes("scarcity") ? " ·shelf" : ""}`);
-          ch.dataset.tip = why + " — survival % assumes a market-priced room (July estimate; September ADP sharpens it). No marker = safe to wait for your next pick. A live 1–2-player shelf that includes this player overrides price." +
+          ch.dataset.tip = why + " — survival % from the room-mix model (value seats blended with market seats), recalibrated 2026-08-03 on 840 observations across 14 replayed drafts. No marker = calibrated safe-to-wait. A live 1–2-player shelf that includes this player overrides price." +
             (st.punt.length ? " · PUNT MODE: the room isn't punting, so punt-coherent targets outlive this model (mock 22: BUY NOW held 54% vs 83–91% normal) — treat urgency as softer, quiet as safer. Recalibration registered for September ADP." : "");
           vSpan = ch;
         }
@@ -2224,10 +2266,10 @@ const JUDGMENT = {
       const steps = [];
       for (const pk of laterPicks) {
         const cand = famAll.find(q => !seen.has(q.n) &&
-          survivalP(MKT_RANK.get(q.n), pk) >= 0.5);
+          survivalP(q.n, pk) >= 0.5);
         if (!cand) continue;
         seen.add(cand.n);
-        steps.push(`your #${pk}: ${cand.n} ~${Math.round(survivalP(MKT_RANK.get(cand.n), pk) * 100)}%`);
+        steps.push(`your #${pk}: ${cand.n} ~${Math.round(survivalP(cand.n, pk) * 100)}%`);
       }
       if (steps.length) {
         const li = document.createElement("li");
