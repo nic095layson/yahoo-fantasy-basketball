@@ -22,6 +22,14 @@ written negative result. This is the same standard that kept the
 computational layer defect-free through two full audits — it does not
 relax because the calendar turned.
 
+**Bar-registry law (added 2026-08-04, from the independent system review
+and LESSONS.md lesson 14):** the ship bars in this file are append-only. A
+re-scope adds a dated line beside the original wording — it never edits
+the registered text (the E18 ship commit edited its own bar in place; that
+hole is closed). Two re-scopes of the same bar = the bar failed: write the
+negative result and stop. A dropped or deferred pre-registered check is
+disclosed in the ship note itself.
+
 ## 0. Read first (context recovery for the fresh session)
 
 **`arena/results/league_intel_2025-26.md` — the owner's REAL league ground
@@ -79,8 +87,11 @@ claims in any new prose.
 
 ## 4. Delivery
 
-Branch `claude/2026-09-01-september-recal` off the default branch; draft
-PR; subscribe to PR activity. Rebuild and **republish the deck artifact
+Branch `claude/2026-09-01-september-recal` off the default branch — and
+verify first that the branched tree contains `docs/draft-deck.html` and
+this file; if either is absent, the default branch is stale (unmerged
+work) — stop, fetch `claude/2026-07-27-data-pull-kxzden`, and report
+before proceeding. Draft PR; subscribe to PR activity. Rebuild and **republish the deck artifact
 to the existing URL** (https://claude.ai/code/artifact/190e2c13-a19c-4239-8085-73230ef4eae0
 — pass it as `url`; republish is part of the definition of done).
 Report to the owner: per-experiment verdict table (shipped / rejected,
@@ -108,4 +119,34 @@ owner instruction — see `after_2026-08-04_fixes_recalibration.md`.
 | E17 | Refit the arena room (`MOCK_CAST`) + survival blend to the MEASURED reach profiles of the 11 returning managers | league_intel §5: 8–9 of 11 opponents reach past value early — the real room is market/name-shaped, not value-bot-shaped | Chip calibration must be re-run on the refit room; BUY NOW ≥80% precision bar unchanged. The deck side shipped 2026-08-04 (E18a); this item now covers the ARENA cast + survival refit to the same profiles |
 | E19 | **Returnee repricing wave (owner directive 2026-08-04):** per-returnee camp verification (minutes restrictions, preseason usage, beat reports) → re-tag notes (clear / keep 0.78 / deepen); evaluate an age-conditioned Achilles tier in the arena (36yo Lillard ≠ 26yo Haliburton at a flat 0.78) before any engine change | `report_2026-08-04_injury_returnees.md`: five named returnees priced at last-healthy 24-25 rates ×0.78; Haliburton ranks ~top-12 by value even after the haircut — right if fully ramped, overpriced if capped | Any tier change validates in the arena first (feature freeze); October ADP sync adds per-returnee EDGE (our rank vs market) to the card |
 | E18 | **Named manager profiles (owner directive 2026-08-04):** (a) ~~deck MOCK mode fields the 11 real managers~~ **SHIPPED 2026-08-04** (`findings_2026-08-04_e18_named_room.md`): MANAGERS + managerScores in the engine, per-draft seat shuffle stored on state, Robby adp_w refit 0.55→0.7; smoke 5/5 slots, owner-card parity 7/7 byte-identical, scaled reach band pass, Spearman 0.952 — **noise model corrected same day (E18b, owner-reported: log-normal rank noise, proportional availability, Noah manual refit per owner correction, Kyle refit; `findings_2026-08-04_e18b_noise_model.md`)**; (b) LIVE mode with named seats replaces the generic room-mix survival with **per-seat pick projection**: P(manager m takes player p before my next turn), chained across the actual managers sitting between my picks, feeding BUY NOW/quiet and a pre-draft per-round target sheet per rival — still open for September | Three-season boards + complete identity map (league_intel §12); profiles.json committed 2026-08-04 | **Absolute ±8 reach bar re-arms at the October real-ADP sync** — the synthetic market carries only ~0.45 of real Yahoo's divergence from the value board (Noah anchors the scale), so until real ADP replaces the proxy geometry the binding bar is the Noah-anchored scaled band (passed 11/11). Survival: BUY NOW precision ≥80% maintained; October brief consumes the projection sheet |
+| E9b | **Single regularized draft objective (registered 2026-08-04, owner-authorized via the independent system review; N4 disposition — measure-only):** move blend50's regularization *inside* the objective (concession floor on per-category marginal weight, or a concave per-category utility) and retire the two-proxy percentile mix | `analysis_2026-08-04_self_critique_round2.md` N4 (α=0.5 knife-edge: 0.4 craters m29, 0.6 regresses m25); `findings_2026-08-04_decw_round1.md` (concession spiral); the review's finding that raw ΔECW is not a coherent utility | Measure-only until it beats blend50 on the full ledger + fresh seeds with **zero winner regressions** AND stays clean under **±0.1 perturbation of its own hyperparameters** (the robustness property blend50 lacks); runs on the E14 real bracket, and on the refit weekly model if the weekly-record refit has landed; must include held-out states beyond the 14-mock tuning panel |
 
+
+## 6. October final refresh (executed by the October Routine, ~2026-10-12)
+
+The October Routine executes THIS section in a fresh session. Same branch
+guard as §4: branch `claude/2026-10-12-october-refresh` off the default
+branch, verify the tree contains `docs/draft-deck.html` and this file
+(if absent: stop, fetch the newest `claude/*` branch, report).
+
+1. **Fresh pool pull** with per-player roster verification
+   (`scripts/verify_rosters.py`) and a same-day `data/freshness.json`
+   stamp — opening-night rosters, late cuts, camp injuries.
+2. **Real October ADP replaces all synthetic market geometry** in
+   `PRE_RANK` / `MKT_RANK`. This gate is artifact-bound: the build must
+   FAIL, not warn, if the market source is still the synthetic proxy
+   after real ADP has published (the ~0.45× divergence measurement is the
+   reason — see E18's bar and the 2026-08-04 system review N2).
+3. **Re-arm and grade the E18 absolute ±8 reach bar** on the real-ADP
+   room, exactly as originally registered (LESSONS.md lesson 14: the
+   original wording binds; a second re-scope = the bar failed).
+4. **Per-returnee EDGE columns** (our rank vs market) land on the card
+   per E19; re-verify each returnee's camp status the same day.
+5. Rebuild via `scripts/build_deck.py` (all gates + parity), **republish
+   the deck artifact to the existing URL**
+   (https://claude.ai/code/artifact/190e2c13-a19c-4239-8085-73230ef4eae0,
+   passed as `url`), confirm the page header reads fresh-today.
+6. Sync the same window's news to `fantasy-basketball-2026-27` per its
+   DATA-PULL.md (both planes, one window), and report to the owner:
+   what moved on the board, which bars passed/failed, and the per-rival
+   target sheet if E18(b) shipped.

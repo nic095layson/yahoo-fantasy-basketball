@@ -163,8 +163,14 @@ board depth remains a poor predictor of which is which.
 published as "0-for-4", then "0-for-6" — both wrong on sample size, and
 both implying every deviation cost when several were washes. It was
 corrected to "0 of 8, 3 washes" on 2026-07-31, and that statement was
-itself falsified the same day by mock 26. Current standing claim, and the
-only one to quote: **10 arms — 5 COST, 4 WASH, 1 DEVIATION WON.**
+itself falsified the same day by mock 26; the 2026-08-01 restatement ("10
+arms — 5 COST, 4 WASH, 1 DEVIATION WON") went stale in place as twelve
+more arms accumulated, and on 2026-08-04 this paragraph briefly offered a
+second "current" tally contradicting the derived line above — in the file
+that exists to end exactly that error (caught by the independent system
+review). **No tally in this history paragraph is ever quotable. The only
+quotable tally is the bold "Verified" line directly under the arm table,
+derived from the table itself.**
 
 Board depth is a weak predictor throughout: m25's board-13 deviation was
 free while its board-5 deviation cost 4.1pp, and m26's board-14/19/16

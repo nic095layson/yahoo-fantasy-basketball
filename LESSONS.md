@@ -89,6 +89,9 @@ or arena work. Add entries dated, with the incident that taught them.
    this; retest only after a Claude connector update, with the one-liner
    "read LESSONS.md from nic095layson/yahoo-fantasy-basketball" in a FRESH
    Cowork conversation.
+   *(2026-07-13: partially superseded — repos now public; READ half is moot,
+   WRITE half stands. See addendum 9-A below, ported 2026-08-04 during the
+   LESSONS fork reconciliation.)*
 
 ## 2026-07-27 — The unlanded 2026-07-24 pull (fantasy-basketball-2026-27)
 
@@ -132,3 +135,93 @@ or arena work. Add entries dated, with the incident that taught them.
     into PR #3. Corollary of lesson 10 at the delivery layer: work
     exists only where the consumer looks — the repo for sessions, the
     published URL for the owner.
+
+## 2026-07-13 — Addendum to lesson 9: all four repos made public
+*(ported 2026-08-04 from the `claude/lesson-9-addendum-public-repos` branch,
+PR #1, during the LESSONS fork reconciliation — original date preserved)*
+
+9-A. **Reads are un-broken; writes still need the relay.** David made all
+   four repos public 2026-07-13. Verified the same day from a cloud session:
+   `https://raw.githubusercontent.com/nic095layson/<repo>/main/<path>`
+   returns HTTP 200 with NO auth for all four repos, and `add_repo` + clone
+   succeeded where reads previously 404'd. Lesson 9's read failure (the
+   connector token sees zero repos) is therefore moot for READS: any surface
+   with plain web fetch — claude.ai projects, Cowork, cloud sessions — can
+   read live repo state without the connector at all. Amended standing
+   procedure: **pull-first via raw URLs for reads** (codified in
+   `fantasy-basketball-2026-27/instructions/claude-ai-project-instructions.md`);
+   **writes unchanged** — GitHub Desktop relay or a Claude Code cloud
+   session, because the connector's user-authorization half is still dead
+   and public visibility grants no write. Lesson 9's retest one-liner is
+   still worth running in a fresh Cowork conversation to check whether the
+   connector itself now reads public repos, but nothing depends on it
+   anymore. Corollary: public repos mean anyone can read these files — keep
+   credentials, tokens, and anything private out of all four repos.
+
+## 2026-07-13 — Roster audit: 39/220 stale team values in the draft-kit CSV
+*(ported 2026-08-04 from PR #1, where it was numbered lesson 10; renumbered
+12 here because this branch's lessons 10–11 were written later under those
+numbers — content unchanged)*
+
+12. **A ledger of headline moves is not roster verification — bind data-policy
+   gates to the artifact, not the occasion.** The 2026-27 draft-kit CSV
+   (fantasy-basketball-2026-27) shipped 220 player-team pairings; a live-web
+   audit corrected 39 (17.7%), every one describing a move already public at
+   authoring — a January trade, February-deadline secondary pieces, and ten
+   days of live July free agency, including a four-team deal from two days
+   prior. Root cause: teams came from model memory patched with ~15 verified
+   headline moves, authored in a 24-minute window with no per-player pass;
+   the repo's own "never assert a team from memory / verify within 14 days"
+   rules were scoped to "the October run," so the interim artifact skipped
+   them; with no per-row provenance the staleness was invisible; and the
+   generated board overclaimed ("every verified move"). The headline research
+   itself held up 100% — coverage failed, not accuracy. Fix (same repo, PR
+   #1): a per-row source ledger (`roster-provenance.csv`), a mechanical gate
+   (`check_provenance.py`) that `rank_engine.py` runs before it will build a
+   board (mismatch → no artifact; `--allow-stale` → "Do not draft off this
+   board" stamped in the header), and PROMPT.md §0.6 binding the data policy
+   to every claims-bearing artifact. Portable rule: any committed file
+   asserting live-world facts carries per-row source + date, and a machine
+   check — not a checklist item — stands between it and whatever consumes it.
+   Full analysis: fantasy-basketball-2026-27
+   `report/postmortem-2026-07-13-roster-audit.md`.
+
+## 2026-08-04 — Shipped results whose evidence lives outside the repo
+
+13. **A result is only as landed as its derivation — the evidence-landing
+   law.** The 2026-08-04 independent system review tried to re-derive the
+   shipped E9/blend50 and E18 numbers and could not: the mock draft states
+   live under a session-scoped uploads path, the result JSONs in a session
+   scratchpad, and the committed harnesses hardcode a foreign machine's
+   `os.chdir` — none of it reachable from a fresh clone. The measured-side
+   numbers that COULD be recomputed from committed artifacts all reproduced
+   exactly (which is why this is a lesson, not a retraction), but the
+   sim-side numbers (panel tables, Spearman checks, parity counts) currently
+   rest on records, not re-derivable artifacts. This is lesson 10's failure
+   shape (work that never landed) and the LEDGER's founding defect
+   (remembered tallies), recurring at the validation layer. Law: **no
+   shipped number is quotable unless a fresh clone plus one committed
+   command regenerates it — commit the inputs and outputs, or a
+   regeneration manifest with repo-relative paths; anything else is quoted
+   as [UNREPRODUCIBLE] until backfilled.** Backfill of the existing mock
+   states/results is queued for the September run (see SEPTEMBER-PLAN).
+
+## 2026-08-04 — The E18 bar re-scope (pre-registration must be append-only)
+
+14. **A bar you can edit while shipping is not a bar.** E18's pre-registered
+   replay-calibration bar ("±8 reach index") was registered at 21:05, failed
+   7/11 at test, was re-scoped to a Noah-anchored scaled band, and shipped
+   at 21:38 — the pre-registration lived 33 minutes, never crossed a session
+   boundary, and the ship commit itself edited the bar's wording in the
+   registration file. The re-scope's diagnosis was defensible (the absolute
+   bar largely tested the market proxy's geometry, not the manager model);
+   the process was not — and a second, undisclosed instance existed the same
+   week (blend50 shipped without its pre-registered both-formats
+   re-validation, recorded as a prediction instead of a measurement). Laws,
+   now bound here where every session reads them: **(a) bar registries are
+   append-only — a re-scope adds a dated row beside the original wording,
+   never edits it; (b) two re-scopes of the same bar = the bar failed;
+   write the negative result and stop; (c) a dropped or deferred
+   pre-registered check is disclosed in the ship note itself, not
+   discovered by the next audit.** The E18 original ±8 bar re-arms at the
+   October real-ADP sync exactly as registered.
