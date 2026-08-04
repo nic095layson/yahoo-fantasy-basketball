@@ -12,8 +12,8 @@ in `arena/arena.py` / the deck's `DECW_CV` block.
 2026-08-04 in batches (weeks 1–5, 6–10, 11–15, 16–19). Transcribed
 same-day. **Validation:** every week's category score was recomputed from
 the transcribed totals (8 count cats + FG%/FT% from makes/attempts, TOV
-inverted) and matched against the recorded matchup result — 19/19 weeks
-reconcile exactly. Stronger check: the owner's regular-season rows
+inverted) and matched against the recorded matchup result — 22/22 matchups
+reconcile exactly (19 owner weeks + the champion's 3 playoff rounds). Stronger check: the owner's regular-season rows
 (weeks 1–18) sum to 103 wins with exactly one tie (week 1, TO 68–68),
 independently reproducing the displayed season record 103-58-1. Weeks 15
 and 19 date ranges are inferred from week sequence (screenshot headers
@@ -33,9 +33,23 @@ different season or is wrong.
 "Games Played" tracker); FG%/FT% are derivable from makes/attempts (kept
 raw for fitting). Manager first names match `arena/profiles.json`.
 
-**Known limits.** (a) Owner-matchup weeks only — 2 of 6 league matchups
-per week; opponent-vs-opponent weeks are not visible to this account's
-scoreboard view. (b) One season. (c) Team totals, not per-day lines —
+**Champion's playoff run added (owner-delivered, same 2026-08-04 batch
+set):** Martin (HalleLuka Amen) won the title **5-4, 5-4, 5-4** — QF vs
+Kevin, SF vs Justin, F vs William — three consecutive one-category
+margins, with a sub-.500 regular-season cat record (78-82-2). Final
+placements shown by Yahoo ("| Nth") are post-playoff standings (Martin
+1st, William 2nd, JCo 3rd, Justin 4th, David 6th); David's 103-58-1 was
+the league's best cat record, consistent with the co-GM brief's "1st
+seed" — the brief's "lost in semis" remains unreconciled with the
+week-19 round-1 exit shown here (possibly a prior-season memory). This
+is the strongest in-league evidence for the E14 bracket emphasis: the
+title ran through three coin-flip weeks, not through season-long
+category dominance.
+
+**Known limits.** (a) Mostly owner-matchup weeks (2 of 6 league matchups
+per week) plus the champion's three playoff matchups; other
+opponent-vs-opponent weeks are not visible to this account's scoreboard
+view. (b) One season. (c) Team totals, not per-day lines —
 sufficient for weekly variance/covariance fitting, not for within-week
 lineup reconstruction. Do not fit TEAM_WEEK_SHOCK cross-team covariance
 from the owner's rows alone; each row-pair IS a valid (team, opponent)
