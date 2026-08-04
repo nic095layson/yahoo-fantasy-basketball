@@ -123,12 +123,43 @@ the #1 seed no shelter.
   winning 3 H2H weeks vs playoff-tier teams, not season-long dominance:
   evaluate ECW against projected playoff-tier opponents specifically.
 
-## 8. Still missing / open asks
+## 8. ~~Still missing~~ — ANSWERED (owner, 2026-08-04)
 
-1. Playoff matchup lengths (1 week per round? any 2-week rounds?) and which
-   weeks (19–21?).
-2. Confirmation the same 11 managers return for 2026-27.
-3. Owner risk preference (ceiling vs floor) — his history *suggests*
-   injury-tolerant value hunting, but a stated preference beats inference.
-4. Trusted projection sources for the September cross-check.
-5. Waiver type (FAB vs rolling priority) — matters for E16's scope.
+## 9. Owner's answers, verbatim facts (2026-08-04) — all 17 questions
+
+1. **Exact 9 cats confirmed**: FG%, FT%, 3PTM, PTS, REB, AST, ST, BLK, TO.
+2. **Playoffs: 1 week per matchup, weeks 19–21** (chosen to dodge late-season
+   rest). Completes the E14 spec: 8 teams, no byes, three 1-week rounds.
+3. **Daily lineup setting** (not weekly). Raises streaming/bench-flexibility
+   value further; E16 scope input.
+4. **Unlimited moves.**
+5. **Daily waivers, free-for-all; players lock at game time.**
+6. **IL+ accepts day-to-day/GTD — but the owner drafts ONLY for active
+   roster + bench, never for IL+ stashes.** Standing owner rule. This
+   CLOSES E15 in the direction already shipped: the recovery-exclusion
+   rule stands; no stash-drafting logic will be added.
+7. **No keepers** — full redraft.
+8. **Real draft: October, the week before the NBA season opens.** September
+   is regimen-building; date TBD.
+9. **Snake confirmed**; slot TBD.
+10. **Live deck use on draft day confirmed** — the mock workflow is the
+    real workflow.
+11. **Same 11 managers return.** E17's measured reach profiles carry over
+    at full weight.
+12. No extra manager quirks beyond the data; synthesize from the board.
+13. **Risk preference: value-first, risk-tolerant when the price is right.**
+    Kawhi/KP were best-available steals at their draft positions, not a
+    deliberate ceiling strategy. This matches the tool's adj-value + haircut
+    design; no repricing needed.
+14. **Projections: the owner will upload multiple ranking datasets in
+    September; Claude synthesizes them into its OWN projection set** with
+    injury adjustments, rookie scaling, and independent analysis — the
+    intended edge over the room. This becomes the core of the September
+    data-refresh step.
+15. **ΔECW draft-time prototype (E9/P1): AUTHORIZED.** Engine change may
+    ship if it passes the pre-registered bar.
+16. Harness backfill: approved per recommendation — **done 2026-08-04**
+    (all mock 10–30 harnesses committed to `arena/mocks/`).
+17. **Two-stage calendar confirmed:** September recalibration run when
+    multi-source projections land; **final refresh + deck rebuild the week
+    before the October draft.**

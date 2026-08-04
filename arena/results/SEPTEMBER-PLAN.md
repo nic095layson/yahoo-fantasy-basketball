@@ -42,6 +42,13 @@ and 28 (they motivate E8/E9/E10 and LEDGER §5).
 2. **September consensus ADP** replaces the July market board
    (`PRE_RANK` / `MKT_RANK` sources in the data block). This is the
    event the freeze was waiting for.
+2b. **Projection synthesis (owner directive 2026-08-04, Q14):** the owner
+   uploads multiple third-party ranking/projection datasets in September.
+   Synthesize them into the tool's OWN projection set — cross-source
+   blending, injury adjustments, rookie scaling, independent analysis —
+   rather than adopting any single source. This synthesized set becomes
+   `data/players.csv` for the October draft build. Document per-player
+   provenance for anything that deviates >15 ranks from consensus.
 3. Rebuild via `scripts/build_deck.py` — all fail-closed gates must
    pass; JS↔Python parity must print `PARITY: EXACT MATCH`.
 4. Re-baseline the arena on the fresh pool before any experiment runs
@@ -95,8 +102,8 @@ new evidence of a different kind.
 **Priority note resolved 2026-08-04:** both owner-visible defects (E13 quiet
 chip, E12 TARGET label) were fixed, calibrated, validated, and shipped on
 owner instruction — see `after_2026-08-04_fixes_recalibration.md`.
-| E14 | **Adopt the real playoff format** in the arena (8 of 12 qualify, NO byes) at the re-baseline | league_intel: champion had the 7th-best record and doesn't qualify under the shipped 6-team format; measured deltas −4 to −6pp champ for elite rosters (`arena/mocks/format_delta.py`) | Instrument change at re-baseline only; dual-report one mock both formats for continuity |
-| E15 | IL+ stash revaluation (2 IL+ slots make recovery stashes ~free; champion stashed Embiid, a rival drafted Tatum R13 as a stash) | league_intel §7; recovery-exclusion rule was calibrated with no IL slots | Measure stash-arm counterfactuals before changing the exclusion rule; pool re-entry stays news-gated |
-| E16 | Streaming gap: real league runs 27–83 moves/team; arena runs zero | league_intel §7 | At minimum, report champ% as a no-streaming bound; full streaming model is a scope decision, not a default |
+| E14 | **Adopt the real playoff format** in the arena (8 of 12, NO byes, **three 1-week rounds, weeks 19–21 — spec completed by owner Q2**) at the re-baseline | league_intel §9; measured deltas −4 to −6pp champ for elite rosters (`arena/mocks/format_delta.py`) | Instrument change at re-baseline only; dual-report one mock both formats for continuity |
+| E15 | ~~IL+ stash revaluation~~ **CLOSED 2026-08-04 by owner rule (Q6): drafts target active roster + bench only, never IL+ stashes.** The recovery-exclusion rule stands as shipped | league_intel §9 | No work |
+| E16 | Streaming gap: real league runs 27–83 moves/team vs arena's zero — now known to be **daily lineups, unlimited moves, daily FFA waivers with game-time locks (Q3–Q5)** | league_intel §9 | At minimum, report champ% as a no-streaming bound and tilt bench value toward flexibility; full streaming model is a scope decision, not a default |
 | E17 | Refit the arena room (`MOCK_CAST`) + survival blend to the MEASURED reach profiles of the 11 returning managers | league_intel §5: 8–9 of 11 opponents reach past value early — the real room is market/name-shaped, not value-bot-shaped | Chip calibration must be re-run on the refit room; BUY NOW ≥80% precision bar unchanged |
 

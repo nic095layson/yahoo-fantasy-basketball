@@ -12,11 +12,12 @@ scratchpad — they were not in the repo, and `arena/results/*.json` is
 gitignored. The integrity property the LEDGER claims was therefore not
 actually reproducible from a fresh clone.
 
-**Known exposure:** harnesses for mocks 10–26 still live only in session
-scratchpads and are not recoverable once those sessions end. Their *results*
-survive in the debriefs and the LEDGER; their *re-derivation* does not.
-Mock 27 onward is committed here. Backfilling the earlier ones is an open
-owner decision.
+**Backfill complete (2026-08-04, owner-approved):** the full harness set for
+mocks 10–30 — every `season_sim_mockNN.py` and every retained `mockNN_cf.py` —
+is now committed here. Every LEDGER row is re-derivable from a fresh clone.
+Note the older sims read draft states from the original session's uploads
+path (`STATE` constant at the top of each file); point it at your own copy
+of the corresponding `draft_state_N.json` to reproduce.
 
 ## Files
 
