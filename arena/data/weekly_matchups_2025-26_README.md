@@ -9,13 +9,23 @@ re-estimated from these observed weeks instead of the hand-set constants
 in `arena/arena.py` / the deck's `DECW_CV` block.
 
 **Provenance.** Owner-uploaded Yahoo scoreboard screenshots, delivered
-2026-08-04 in batches (weeks 1–5, 6–10, 11–15; more expected — append
-below, two rows per week). Transcribed same-day. **Validation:** every
-week's category score was recomputed from the transcribed totals (8 count
-cats + FG%/FT% from makes/attempts, TOV inverted) and matched against the
-recorded matchup result — 15/15 weeks reconcile exactly. Week 15's date
-range is inferred from week sequence (its screenshot header was cropped);
-all other date ranges are as displayed.
+2026-08-04 in batches (weeks 1–5, 6–10, 11–15, 16–19). Transcribed
+same-day. **Validation:** every week's category score was recomputed from
+the transcribed totals (8 count cats + FG%/FT% from makes/attempts, TOV
+inverted) and matched against the recorded matchup result — 19/19 weeks
+reconcile exactly. Stronger check: the owner's regular-season rows
+(weeks 1–18) sum to 103 wins with exactly one tie (week 1, TO 68–68),
+independently reproducing the displayed season record 103-58-1. Weeks 15
+and 19 date ranges are inferred from week sequence (screenshot headers
+cropped); all others as displayed. **Week 17 spans two calendar weeks
+(2/9–2/22, All-Star break — GP 56/55); weeks 1–18 are regular season;
+week 19 is the playoff quarterfinal (owner eliminated 2–7 by JCo — lost
+ST by 1, PTS by 10, REB by 9: the bracket-variance data point E14
+models).** Reconciliation flag for the September profiles work: the co-GM
+brief (`fantasy-basketball-2026-27/instructions/...`) says the owner was
+"1st seed, lost in semis last season" — this scoreboard shows a 6th-place
+display and a round-1 exit in 2025-26; one of those claims is about a
+different season or is wrong.
 
 **Schema.** One row per team per week:
 `season,week,dates,manager,team_name,fgm,fga,ftm,fta,tpm,pts,reb,ast,stl,blk,tov,gp,cats_won,opponent_manager`
