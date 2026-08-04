@@ -201,11 +201,7 @@ cat-games = 18 weeks × 9, 8 playoff teams. Owner drafted from **slot 9** as
 
 | 2024-25 | 2025-26 | Note |
 |---|---|---|
-| Put Me in Coach (champion) | Gotta Be Bamonte (.323) | owner-confirmed; title → collapse |
-| Match My Freak (.584, record #2) | **HalleLuka Amen (champion)** | owner-confirmed 2026-08-04 — the 25-26 champ is one of the room's strongest managers two years running (record #2, then the title) |
-| David's Demure Team | JAMAL AL-QUETA | the owner: 3rd, then #1 seed |
-| John's Matchless Team | John's Cool Team | name inference (John) |
-| *(8 remaining mappings)* | | **owner offered to match — pending** |
+*(superseded by the complete owner-provided map below, 2026-08-04)*
 
 **Owner's two-season profile:** slot 9 → 3rd place; slot 4 → #1 seed. Ant/
 Chet/PG/Jaylen Brown core in 24-25, SGA/Brunson/JJJ in 25-26 — consistently
@@ -256,3 +252,48 @@ stays correct).
 2023-24 draft board recorded via the owner's message (git history);
 qualitative use only — no Oct-2023 value reference exists.
 
+## 12. COMPLETE manager map, all three seasons (owner-provided 2026-08-04)
+
+*(Supersedes the earlier partial map — the owner's quick answer had matched
+Match My Freak to the 25-26 champion; the complete list corrects this:
+HalleLuka = Sales & Markkanen = Martin.)*
+
+| Manager | 2023-24 (finish) | 2024-25 (finish) | 2025-26 (finish) |
+|---|---|---|---|
+| **David (owner)** | LayBron (7) | David's Demure Team (3) | **JAMAL AL-QUETA (6, record #1)** |
+| Robby | **Poole-ootan Party (1)** | **Put Me in Coach (1)** | Gotta Be Bamonte (12th record) |
+| Martin | Martin you're him (5) | Sales & Markkanen (2) | **HalleLuka Amen (1)** |
+| Oblena | D.O.L.L.A. (8) | Match My Freak (5, record #2) | Itsy Bitsy Spida (9) |
+| Kevin | The Big Deuce (11) | Day to Davis (10) | All guards no defense (8, record #2) |
+| **Noah — AUTODRAFTS** | Strokin my Saboner (9) | Poop and Scoot Streaks (7) | Devin Minutes in Heaven (11) |
+| Cayas | REBUILDING SZN (4, record #1) | BALLSACK LAVINE (11) | IM SO HORT (4) |
+| John | Steph BoyArdee (2) | John's Matchless Team (8, record #1) | John's Cool Team (5) |
+| Hegi | Sing to me Paolo (12) | Quickley Luk-a Fox and a Kat (9) | Not hurt just SARR (10) |
+| Will | TEAM MENISCUS TEAR (3) | LAME TIME (6) | The Konclave (2) |
+| Kyle | Last Place HumilAyton (10) | Jericho's Incredible Team (12) | ur my only hope Anti-wan (7) |
+| JCo | Beats by Dray (6) | MOO DURANT (4) | Wing Chun Wemby (3) |
+
+**Three-season profiles for the October brief:**
+
+- **Martin is the room's apex threat**: 5th → 2nd → champion, ascending
+  every year, heavy streamer (87→50 moves). The reach index (−14.8 early in
+  25-26) says he reaches for *his* guys and makes it work.
+- **Robby (the dynasty)**: back-to-back titles then total collapse. Watch
+  for reversion toward competence.
+- **Will**: 3rd → 6th → 2nd, top-2 streamer every year (87/70/83 moves) —
+  the in-season grinder; his drafts matter less than his waiver wire.
+- **JCo**: 6 → 4 → 3, quietly ascending. Sneaky.
+- **Noah AUTODRAFTS** — his 25-26 reach index (−43.5) is Yahoo's default
+  board, not a persona. For E17, model Noah as pure market/ADP drafter —
+  the single most predictable seat in the room. Slots near Noah inherit
+  clean ADP-chalk expectations.
+- **Hegi**: 12 → 9 → 10, low engagement; a source of falling value around
+  his picks (he took Sochan #150 in 25-26-style spots).
+- **Kevin**: guard-heavy identity three years running (name literally says
+  it) — REB/BLK/FG% fall to his neighbors.
+- **Cayas**: volatile — record #1, then 11th, then 4th.
+- **Kyle**: 10 → 12 → 7, improving from the basement.
+- **John**: steady mid-to-high; 24-25's record #1 that lost the QF.
+
+E17's room refit now has named, three-season behavioral profiles for all
+11 opponents plus one confirmed autodrafter.
