@@ -315,7 +315,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span class="ctl">Show</span>
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
       <span class="ctl">Lens</span>
-      <select id="bestSort" autocomplete="off"><option value="" hidden>cat lens active</option><option value="val" selected>Balanced val</option><option value="fit">Fit z (my roster)</option><option value="mkt">Mkt rank (room price)</option></select>
+      <select id="bestSort" autocomplete="off"><option value="" hidden>cat lens active</option><option value="val">Balanced val</option><option value="fit">Fit z (my roster)</option><option value="mkt" selected>Mkt rank (room price)</option></select>
       <button type="button" id="bestReset" title="clear position, search, show, lens, and cat filters">Reset</button>
       <span class="small" id="bestSummary"></span>
     </div>
@@ -2496,7 +2496,7 @@ const JUDGMENT = {
   /* Owner request 2026-07-30: Mkt/Val/Fit are ONE mutually-exclusive
      primary lens (picking it supersedes everything); the 9 cat headers
      stack into a combined-z cat lens, up to 3, removable via × chips. */
-  let bestState = { pos: "", q: "", top: 25, lens: "val", cats: [] };
+  let bestState = { pos: "", q: "", top: 25, lens: "mkt", cats: [] }; /* Mkt default: owner request 2026-08-04 */
   let catCapWarn = false; /* one-shot: a blocked 4th cat selection prompts */
   let draftedNote = "";
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
@@ -2526,10 +2526,10 @@ const JUDGMENT = {
     renderBest();
   });
   $("bestReset").addEventListener("click", () => {
-    bestState = { pos: "", q: "", top: 25, lens: "val", cats: [] };
+    bestState = { pos: "", q: "", top: 25, lens: "mkt", cats: [] };
     draftedNote = "";
     $("bestPos").value = ""; $("bestQ").value = "";
-    $("bestTop").value = "25"; $("bestSort").value = "val";
+    $("bestTop").value = "25"; $("bestSort").value = "mkt";
     renderBest();
   });
   $("bestSort").value = bestState.lens; /* re-sync after Firefox autofill */

@@ -39,6 +39,7 @@ is computed here from artifacts, with its membership criteria stated.**
 | 29 | 6 | 8.99 | 58.7 | 5 | 10 | ECW 4.643; board rank 10 yet 5th — board *under*-rates this one |
 | 30 | 7 | 2.09 | 31.1 | 8 | 10 | ECW 4.396; the owner's live-screenshot draft |
 | 31 | 9 | 6.16 | 59.4 | 5 | 12 | ECW 4.610; declared 3-cat punt (FT%/3PM/TO) — kept-z +23.50 under own punt, rank 1 by 16 z; cf. m22 (last 3-cat punt: 0.22%, 11th). First lesson-13-compliant harness (`season_sim_mock31.py`, state + out.json committed) |
+| 32 | 10 | 4.11 | 39.0 | 9 | 12 | ECW 4.450; declared 3-cat punt (FT%/3PM/ST) — punt INVERTED for the drafted roster (ST kept-rank 3 punted, TO rank 11 kept; single-swap punt-TO worth +6.5 kept-z); five balanced-board picks inside the punt frame (`season_sim_mock32.py`) |
 
 Verified superlatives: best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the
