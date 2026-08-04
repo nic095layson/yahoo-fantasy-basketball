@@ -163,3 +163,58 @@ the #1 seed no shelter.
 17. **Two-stage calendar confirmed:** September recalibration run when
     multi-source projections land; **final refresh + deck rebuild the week
     before the October draft.**
+
+## 10. Second season ingested: 2024-25 (owner-provided 2026-08-04)
+
+Standings + full 13-round draft board. Same format verified again: 162
+cat-games = 18 weeks × 9, 8 playoff teams. Owner drafted from **slot 9** as
+"David's Demure Team" and finished **3rd** (.506, 8th-best record).
+
+| Final | Team (2024-25 name) | Record | Pct | Record rank | Moves |
+|---|---|---|---|---|---|
+| 1 🏆 | Put Me in Coach | 84-76-2 | .525 | **7** | **16** |
+| 2 | Sales & Markkanen | 90-71-1 | .559 | 3 | 87 |
+| 3 | **David's Demure Team (owner)** | 81-79-2 | .506 | 8 | 84 |
+| 4 | MOO DURANT | 87-75-0 | .537 | 5 | 45 |
+| 5 | Match My Freak | 94-67-1 | .584 | 2 | 40 |
+| 6 | LAME TIME | 85-75-2 | .531 | 6 | 70 |
+| 7 | Poop and Scoot Streaks | 88-72-2 | .550 | 4 | 61 |
+| 8 | John's Matchless Team | 99-63-0 | **.611** | **1** | 31 |
+| 9–12 | Quickley Luk-a… / Day to Davis / BALLSACK LAVINE / Jericho's | .469/.466/.346/.315 | | | |
+
+**The two-season structural signature — no longer a one-year fluke:**
+
+- **Both #1 seeds lost in the playoffs without reaching the final**: 2024-25
+  John's (.611) finished 8th of 8 playoff teams; 2025-26 the owner (.640)
+  finished 6th.
+- **Both champions had exactly the 7th-best record** (.525 and .488).
+- 2024-25's playoff order nearly *inverted* the record order (record ranks
+  by finish: 7, 3, 8, 5, 2, 6, 4, 1). n=2 seasons, so this is an observed
+  pattern, not a law — but it is now the league's defining feature, and it
+  makes E14 (real bracket in the sim) and the E9 playoff-tier refinement
+  first-order, not cosmetic.
+- The 2024-25 champion made **16 moves all season** (fewest in the league)
+  — a set-and-forget title. Streaming (E16) helps but is demonstrably not
+  required. That same manager finished last in record the next year.
+
+**Cross-season identity map (owner-confirmed + safe inference):**
+
+| 2024-25 | 2025-26 | Note |
+|---|---|---|
+| Put Me in Coach (champion) | Gotta Be Bamonte (.323) | owner-confirmed; title → collapse |
+| Match My Freak (.584, record #2) | **HalleLuka Amen (champion)** | owner-confirmed 2026-08-04 — the 25-26 champ is one of the room's strongest managers two years running (record #2, then the title) |
+| David's Demure Team | JAMAL AL-QUETA | the owner: 3rd, then #1 seed |
+| John's Matchless Team | John's Cool Team | name inference (John) |
+| *(8 remaining mappings)* | | **owner offered to match — pending** |
+
+**Owner's two-season profile:** slot 9 → 3rd place; slot 4 → #1 seed. Ant/
+Chet/PG/Jaylen Brown core in 24-25, SGA/Brunson/JJJ in 25-26 — consistently
+value-anchored, consistently strong, twice stopped short by the bracket.
+
+**2024-25 draft board:** recorded in full for September's two-season manager
+profiling (`room_model.py` cannot grade it quantitatively — the arena's
+frozen pool is October 2025, and grading a 2024 draft against a 2025 board
+would be dishonest; qualitative reads only until/unless an Oct-2024 value
+reference is sourced). Raw board preserved in this repo's git history via
+the owner's message of 2026-08-04.
+
