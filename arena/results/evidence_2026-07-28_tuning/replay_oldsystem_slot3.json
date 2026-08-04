@@ -1,0 +1,291 @@
+[
+ {
+  "round": 1,
+  "pick_no": 3,
+  "actual": "Shai Gilgeous-Alexander",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Shai Gilgeous-Alexander (fs 12.63)",
+   "Luka Doncic (fs 8.47)",
+   "Karl-Anthony Towns (fs 6.29)",
+   "Anthony Davis (fs 6.23)",
+   "Anthony Edwards (fs 5.79)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Shai Gilgeous-Alexander",
+  "target": null
+ },
+ {
+  "round": 2,
+  "pick_no": 22,
+  "actual": "Kevin Durant",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Kevin Durant (fs 4.97)",
+   "Jamal Murray (fs 4.32)",
+   "Desmond Bane (fs 4.24)",
+   "Domantas Sabonis (fs 4.22)",
+   "Jaren Jackson Jr. (fs 4.17)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Kevin Durant",
+  "target": null
+ },
+ {
+  "round": 3,
+  "pick_no": 27,
+  "actual": "Jamal Murray",
+  "actual_council_rank": 2,
+  "actual_fit_rank": 2,
+  "fs_delta_vs_no1": 0.07,
+  "top5": [
+   "Derrick White (fs 5.05)",
+   "Jamal Murray (fs 4.98)",
+   "Desmond Bane (fs 3.95)",
+   "OG Anunoby (fs 3.77)",
+   "Franz Wagner (fs 3.76)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Derrick White",
+  "target": {
+   "label": "Shooting F",
+   "fam": "F",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 4,
+  "pick_no": 46,
+  "actual": "Tyler Herro",
+  "actual_council_rank": 12,
+  "actual_fit_rank": 14,
+  "fs_delta_vs_no1": 0.71,
+  "top5": [
+   "De'Aaron Fox (fs 2.54)",
+   "Reed Sheppard (fs 2.50)",
+   "Darius Garland (fs 2.44)",
+   "Myles Turner (fs 2.40)",
+   "Jakob Poeltl (fs 2.23)"
+  ],
+  "in_top5": false,
+  "fit_no1": "De'Aaron Fox",
+  "target": {
+   "label": "Shooting G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 5,
+  "pick_no": 51,
+  "actual": "Tari Eason",
+  "actual_council_rank": 2,
+  "actual_fit_rank": 2,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Myles Turner (fs 2.42)",
+   "Tari Eason (fs 2.42)",
+   "Jakob Poeltl (fs 2.32)",
+   "Kristaps Porzingis (fs 2.31)",
+   "Reed Sheppard (fs 2.26)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Reed Sheppard",
+  "target": {
+   "label": "Steals-first F",
+   "fam": "F",
+   "urgent": false,
+   "wait": true
+  }
+ },
+ {
+  "round": 6,
+  "pick_no": 70,
+  "actual": "Mikal Bridges",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Mikal Bridges (fs 1.95)",
+   "Nickeil Alexander-Walker (fs 1.85)",
+   "Michael Porter Jr. (fs 1.77)",
+   "Coby White (fs 1.74)",
+   "Pascal Siakam (fs 1.67)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Mikal Bridges",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 7,
+  "pick_no": 75,
+  "actual": "Nickeil Alexander-Walker",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Nickeil Alexander-Walker (fs 1.99)",
+   "Michael Porter Jr. (fs 1.95)",
+   "Jalen Suggs (fs 1.88)",
+   "Norman Powell (fs 1.65)",
+   "Immanuel Quickley (fs 1.36)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Nickeil Alexander-Walker",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 8,
+  "pick_no": 94,
+  "actual": "Norman Powell",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Norman Powell (fs 1.65)",
+   "Immanuel Quickley (fs 1.36)",
+   "Devin Vassell (fs 1.04)",
+   "Kon Knueppel (fs 0.97)",
+   "Quentin Grimes (fs 0.73)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Norman Powell",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 9,
+  "pick_no": 99,
+  "actual": "Naz Reid",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 14,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Naz Reid (fs 0.82)",
+   "Jaden McDaniels (fs 0.57)",
+   "Immanuel Quickley (fs 0.20)",
+   "PJ Washington (fs 0.17)",
+   "Devin Vassell (fs 0.16)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Immanuel Quickley",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 10,
+  "pick_no": 118,
+  "actual": "Alex Sarr",
+  "actual_council_rank": 46,
+  "actual_fit_rank": 56,
+  "fs_delta_vs_no1": 1.7,
+  "top5": [
+   "CJ McCollum (fs 0.06)",
+   "Keon Ellis (fs 0.05)",
+   "Ryan Rollins (fs 0.04)",
+   "Alex Caruso (fs 0.02)",
+   "Aaron Nesmith (fs 0.01)"
+  ],
+  "in_top5": false,
+  "fit_no1": "CJ McCollum",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 11,
+  "pick_no": 123,
+  "actual": "Dereck Lively II",
+  "actual_council_rank": 24,
+  "actual_fit_rank": 24,
+  "fs_delta_vs_no1": 1.45,
+  "top5": [
+   "Aaron Nesmith (fs 0.27)",
+   "Keon Ellis (fs 0.15)",
+   "Ryan Rollins (fs 0.08)",
+   "John Collins (fs 0.02)",
+   "Alex Caruso (fs -0.13)"
+  ],
+  "in_top5": false,
+  "fit_no1": "Keon Ellis",
+  "target": {
+   "label": "High-FG% / Block C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false
+  }
+ },
+ {
+  "round": 12,
+  "pick_no": 142,
+  "actual": "Jrue Holiday",
+  "actual_council_rank": 1,
+  "actual_fit_rank": 1,
+  "fs_delta_vs_no1": 0,
+  "top5": [
+   "Jrue Holiday (fs -0.50)",
+   "D'Angelo Russell (fs -0.65)",
+   "Jared McCain (fs -0.67)",
+   "De'Anthony Melton (fs -0.79)",
+   "Ayo Dosunmu (fs -0.91)"
+  ],
+  "in_top5": true,
+  "fit_no1": "Jrue Holiday",
+  "target": {
+   "label": "Playmaking G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false
+  }
+ },
+ {
+  "round": 13,
+  "pick_no": 147,
+  "actual": "Ayo Dosunmu",
+  "actual_council_rank": 4,
+  "actual_fit_rank": 4,
+  "fs_delta_vs_no1": 0.5,
+  "top5": [
+   "D'Angelo Russell (fs -0.41)",
+   "Jared McCain (fs -0.55)",
+   "De'Anthony Melton (fs -0.61)",
+   "Ayo Dosunmu (fs -0.91)",
+   "Luguentz Dort (fs -1.10)"
+  ],
+  "in_top5": true,
+  "fit_no1": "D'Angelo Russell",
+  "target": {
+   "label": "Shooting G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false
+  }
+ }
+]

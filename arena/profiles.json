@@ -1,0 +1,398 @@
+{
+ "_meta": {
+  "built": "2026-08-04",
+  "source": "league_intel_2025-26.md \u00a75/\u00a79/\u00a710/\u00a711/\u00a712 \u2014 three seasons of standings, boards, moves; reach indices quantitative for 2025-26 (frozen Oct-2025 pool), qualitative otherwise",
+  "consumers": "E18: deck mock cast (named opponents, shuffled seats) + LIVE-mode per-seat survival projection",
+  "params": "adp_w = weight on market/ADP board when picking; val_w = weight on 9-cat value; noise = pick randomness (sd in board ranks); pos_bias = per-family multiplier on candidate scores; streamer = in-season churn (draft floor matters less)",
+  "loyalty": "named manager-player pairs only (league-wide repetition is AT chance: 28 pair-repeats vs 30.4 expected); boosts apply per report_2026-08-04_manager_profiles.md",
+  "e18_calibration": "E18a shipped 2026-08-04 (named room, findings_2026-08-04_e18_named_room.md); E18b noise model shipped same day (findings_2026-08-04_e18b_noise_model.md): owner-reported realism defect (SGA past pick 7 in 20% of rooms under flat additive rank noise) fixed with log-normal rank noise (rank x exp(N(0, noise/50))) and proportional availability (x1+(1-av)*0.35, streamers 0.15). 8-variant sweep, 300 realism rooms + 60 reach rooms per cell. Final gates ALL PASS: P(market-top-2 alive at pick 5)=0, P(market-top-4 alive at pick 8)=0, off-book R1 picks 0.9%, scaled reach band 10/10 (Noah excluded per owner correction - his -43.5 is autodraft board geometry, kept as the seat-free geometry reference), Spearman 0.952, P(Robby drafts Jarrett Allen)=0.77. Absolute reach band still re-arms at the October real-ADP sync."
+ },
+ "managers": {
+  "Robby": {
+   "teams": [
+    "Poole-ootan Party",
+    "Put Me in Coach",
+    "Gotta Be Bamonte"
+   ],
+   "finishes": [
+    1,
+    1,
+    12
+   ],
+   "reach_early_2526": -25.7,
+   "moves": [
+    28,
+    16,
+    44
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.7,
+    "val_w": 0.3,
+    "noise": 8,
+    "pos_bias": {},
+    "streamer": false
+   },
+   "read": "back-to-back champ then collapse; name-brand early, solid value late; set-and-forget; adp_w refit 0.55->0.7 (E18 calib 2026-08-04: his measured reach is 2nd-deepest among active drafters and the 0.55 blend under-produced it)",
+   "loyalty": {
+    "3peat": [
+     "Jarrett Allen",
+     "Collin Sexton"
+    ],
+    "2peat": [
+     "Devin Booker",
+     "Devin Vassell"
+    ]
+   },
+   "composite_rank_3yr": 6
+  },
+  "Martin": {
+   "teams": [
+    "Martin you're him!",
+    "Sales & Markkanen",
+    "HalleLuka Amen"
+   ],
+   "finishes": [
+    5,
+    2,
+    1
+   ],
+   "reach_early_2526": -14.8,
+   "moves": [
+    36,
+    87,
+    50
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.45,
+    "val_w": 0.55,
+    "noise": 10,
+    "pos_bias": {},
+    "streamer": true
+   },
+   "read": "apex threat, ascending 3 straight years; reaches for HIS guys and converts; heavy streamer",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "Luka Doncic",
+     "Brandon Ingram",
+     "Jalen Suggs"
+    ]
+   },
+   "composite_rank_3yr": 1
+  },
+  "Oblena": {
+   "teams": [
+    "D.O.L.L.A.",
+    "Match My Freak",
+    "Itsy Bitsy Spida"
+   ],
+   "finishes": [
+    8,
+    5,
+    9
+   ],
+   "reach_early_2526": 9.3,
+   "moves": [
+    79,
+    40,
+    69
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.35,
+    "val_w": 0.65,
+    "noise": 9,
+    "pos_bias": {},
+    "streamer": true
+   },
+   "read": "value early, hype late; record #2 in 24-25 \u2014 real drafter, inconsistent finisher",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "Donovan Mitchell"
+    ]
+   },
+   "composite_rank_3yr": 8
+  },
+  "Kevin": {
+   "teams": [
+    "The Big Deuce",
+    "Day to Davis",
+    "All guards no defense"
+   ],
+   "finishes": [
+    11,
+    10,
+    8
+   ],
+   "reach_early_2526": -15.8,
+   "moves": [
+    41,
+    26,
+    61
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.45,
+    "val_w": 0.55,
+    "noise": 10,
+    "pos_bias": {
+     "G": 1.25,
+     "C": 0.85
+    },
+    "streamer": false
+   },
+   "read": "guard-heavy identity three years running \u2014 bigs fall to his neighbors, guards vanish near his picks",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "Pascal Siakam"
+    ]
+   },
+   "composite_rank_3yr": 10
+  },
+  "Noah": {
+   "teams": [
+    "Strokin my Saboner",
+    "Poop and Scoot Streaks",
+    "Devin Minutes in Heaven"
+   ],
+   "finishes": [
+    9,
+    7,
+    11
+   ],
+   "reach_early_2526": -43.5,
+   "moves": [
+    57,
+    61,
+    27
+   ],
+   "autodraft": "2025-26 only (owner correction 2026-08-04); 2023-24 and 2024-25 were manual drafts",
+   "model": {
+    "adp_w": 0.75,
+    "val_w": 0.25,
+    "noise": 9,
+    "pos_bias": {},
+    "streamer": false
+   },
+   "read": "MANUAL drafter (owner correction 2026-08-04: autodraft was 2025-26 ONLY, so the -43.5 reach is Yahoo's board geometry, not his behavior - it is retained as the room's geometry reference and excluded from his behavioral fit). Manual seasons read ADP-leaning with real LaMelo loyalty (R1 23-24, R2 24-25, both manual)",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "LaMelo Ball"
+    ],
+    "note": "LaMelo R1/R2 in the two MANUAL seasons - genuine loyalty (was mislabeled autodraft artifact before the owner correction). Naz Reid R13/R8 is dropped: the R8 leg was the 25-26 autodraft, so the pair is contaminated"
+   },
+   "composite_rank_3yr": 9
+  },
+  "Cayas": {
+   "teams": [
+    "REBUILDING SZN",
+    "BALLSACK LAVINE",
+    "IM SO HORT"
+   ],
+   "finishes": [
+    4,
+    11,
+    4
+   ],
+   "reach_early_2526": 5.5,
+   "moves": [
+    43,
+    76,
+    61
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.4,
+    "val_w": 0.6,
+    "noise": 12,
+    "pos_bias": {},
+    "streamer": true
+   },
+   "read": "volatile: record #1, then 11th, then 4th; value-anchored 25-26; high variance drafter",
+   "loyalty": {
+    "3peat": [],
+    "2peat": []
+   },
+   "composite_rank_3yr": 6
+  },
+  "John": {
+   "teams": [
+    "Steph BoyArdee",
+    "John's Matchless Team",
+    "John's Cool Team"
+   ],
+   "finishes": [
+    2,
+    8,
+    5
+   ],
+   "reach_early_2526": -8.0,
+   "moves": [
+    27,
+    31,
+    41
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.5,
+    "val_w": 0.5,
+    "noise": 7,
+    "pos_bias": {},
+    "streamer": false
+   },
+   "read": "steady, competent, low-churn; 24-25's record #1; mild reacher, rarely surprising",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "Tyrese Maxey",
+     "Jakob Poeltl",
+     "Jeremy Sochan"
+    ]
+   },
+   "composite_rank_3yr": 3
+  },
+  "Hegi": {
+   "teams": [
+    "Sing to me Paolo",
+    "Quickley Luk-a Fox and a Kat!!",
+    "Not hurt just SARR"
+   ],
+   "finishes": [
+    12,
+    9,
+    10
+   ],
+   "reach_early_2526": -26.0,
+   "moves": [
+    27,
+    51,
+    41
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.65,
+    "val_w": 0.35,
+    "noise": 14,
+    "pos_bias": {},
+    "streamer": false
+   },
+   "read": "low-engagement bottom-dweller; name/hype reaches; value falls AROUND his picks",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "Immanuel Quickley",
+     "Andrew Wiggins"
+    ]
+   },
+   "composite_rank_3yr": 12
+  },
+  "Will": {
+   "teams": [
+    "TEAM MENISCUS TEAR",
+    "LAME TIME",
+    "The Konclave"
+   ],
+   "finishes": [
+    3,
+    6,
+    2
+   ],
+   "reach_early_2526": -16.5,
+   "moves": [
+    87,
+    70,
+    83
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.55,
+    "val_w": 0.45,
+    "noise": 11,
+    "pos_bias": {},
+    "streamer": true
+   },
+   "read": "the waiver-wire grinder (top-2 moves every year); early name reaches, salvages in-season",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "Onyeka Okongwu",
+     "Jaden Ivey"
+    ]
+   },
+   "composite_rank_3yr": 2
+  },
+  "Kyle": {
+   "teams": [
+    "Last Place HumilAyton",
+    "Jericho's Incredible Team",
+    "ur my only hope Anti-wan"
+   ],
+   "finishes": [
+    10,
+    12,
+    7
+   ],
+   "reach_early_2526": -7.0,
+   "moves": [
+    15,
+    9,
+    74
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.45,
+    "val_w": 0.55,
+    "noise": 9,
+    "pos_bias": {},
+    "streamer": false
+   },
+   "read": "improving from the basement; near-ADP drafter; engagement jumped in 25-26 (74 moves); E18b refit 2026-08-04: measured reach is MILD (-7, 7th-deepest of 10) - the initial adp_w 0.55 simmed him 3rd-deepest, so adp_w 0.55->0.45, noise 10->9 (fit to his own measurement)",
+   "loyalty": {
+    "3peat": [],
+    "2peat": []
+   },
+   "composite_rank_3yr": 11
+  },
+  "JCo": {
+   "teams": [
+    "Beats by Dray",
+    "MOO DURANT",
+    "Wing Chun Wemby"
+   ],
+   "finishes": [
+    6,
+    4,
+    3
+   ],
+   "reach_early_2526": 4.3,
+   "moves": [
+    62,
+    45,
+    47
+   ],
+   "autodraft": false,
+   "model": {
+    "adp_w": 0.45,
+    "val_w": 0.55,
+    "noise": 8,
+    "pos_bias": {},
+    "streamer": false
+   },
+   "read": "quietly ascending 3 straight years (6-4-3); value-anchored; the sneaky threat",
+   "loyalty": {
+    "3peat": [],
+    "2peat": [
+     "Tyrese Haliburton",
+     "Jimmy Butler III",
+     "Nic Claxton"
+    ]
+   },
+   "composite_rank_3yr": 5
+  }
+ }
+}

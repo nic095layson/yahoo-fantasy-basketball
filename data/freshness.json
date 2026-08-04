@@ -1,4 +1,9 @@
 {
-  "date": "2026-07-11",
-  "note": "engine fixes; added Jrue Holiday, D'Angelo Russell"
+  "date": "2026-08-04",
+  "note": "Sweep 8/4: zero pool changes. Harden (CLE talks ongoing), DeRozan (waived, CLE interest), Beal still unsigned FA. Deck fixes shipped today: room-mix survival recalibration + TARGET/BOARD LEAN provenance split.",
+  "rosters_verified": {
+    "date": "2026-08-04",
+    "mode": "fallback-partial",
+    "sources": "scripts/verify_rosters.py"
+  }
 }

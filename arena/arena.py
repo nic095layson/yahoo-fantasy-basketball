@@ -46,14 +46,28 @@ hoops.DATA_PATH = DATA  # arena reads its own frozen snapshot
 
 CATS = hoops.CATS
 BASE_POS = ("PG", "SG", "SF", "PF", "C")
-TEAMS, ROUNDS = 12, 15
+TEAMS, ROUNDS = 12, 13   # 13-slot league codified 2026-07-12 (was 15; re-based 2026-07-28)
 WEEKS, PLAYOFF_TEAMS = 18, 6
-STARTERS = 13           # weekly lineup slots; bench beyond this barely counts
+STARTERS = 13           # legacy cap (lineup_weights governs since 2026-07-23)
 BENCH_WEIGHT = 0.15
 # Per-game coefficient of variation by category: low-count stats are noisier.
 CV = {"PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55,
       "ST": 0.70, "BLK": 0.75, "TO": 0.50}
-PCT_WEEK_SD = 0.012     # weekly team FG%/FT% sd, fraction units (~1.2 pts)
+# Slot-conditional gradient ordering (codified 2026-07-30, council 5-0):
+# from draft slots 1-3 the council seat scores candidates by the marginal
+# category-win-probability gradient instead of the flat z-sum. CRN-paired
+# confirmation at fresh seeds: +12.67pp champ, t=4.63 (18 cells, slots
+# 1-3, seeds 7/13/21/34/55/89); the global variant was inconclusive
+# (t=0.64, 36 cells), so the gradient stays slot-gated.
+GRAD_DEFL = {"ST": 0.580, "TO": 0.705, "FG%": 0.736, "PTS": 0.774,
+             "BLK": 0.785, "3PTM": 0.790, "REB": 0.819, "AST": 0.837,
+             "FT%": 0.862}
+GRAD_K, GRAD_SLOTS, GRAD_SCALE = 1.0, 3, 10.0
+PCT_MIX_INFL = 1.15     # shot-mix/lineup inflation over the binomial floor
+# (PCT_WEEK_SD=0.012 retired 2026-07-30: it sat 2-4x under the binomial
+#  floor of the sim's own attempt volumes, making % cats near-deterministic
+#  — 9-CAT math audit, findings_2026-07-30. Weekly % variance is now
+#  per-roster binomial x PCT_MIX_INFL, computed in team_week_model.)
 TEAM_WEEK_SHOCK = 0.06  # shared games-played shock, correlates counting cats
 
 
@@ -69,13 +83,23 @@ TEAM_WEEK_SHOCK = 0.06  # shared games-played shock, correlates counting cats
 #   stack_pen: 3rd-same-NBA-team penalty | value_exp: >1 favors stars
 #   noise: gaussian pick noise (the "market" persona)
 
+MKT_W = {"PTS": 1.6, "3PTM": 1.2, "AST": 1.0, "REB": 1.0,
+         "ST": 0.7, "BLK": 0.7, "FG%": 0.5, "FT%": 0.5, "TO": 0.25}
+
 DEFAULT = dict(punt=(), matrix_aware=False, locked_w=0.35, lost_w=0.45,
                risk="normal", rec_compound=False, need_w=0.0,
-               scarcity_w=0.0, stack_pen=0.0, value_exp=1.0, noise=0.0)
+               scarcity_w=0.0, stack_pen=0.0, value_exp=1.0, noise=0.0,
+               adp=False, cat_w=None)
 
 STRATEGIES = {
     "council":     dict(matrix_aware=True, rec_compound=True, stack_pen=0.5,
-                        need_w=0.3),          # the production ruleset
+                        need_w=0.3,
+                        # locked/lost neutralized 2026-07-28: swing
+                        # down-weighting cost -3.78pp champ causally
+                        # (120 CRN-paired drafts, t=5.16; monotone
+                        # cur->mid->neutral sweep). Field seats keep
+                        # DEFAULT 0.35/0.45 so baselines stay comparable.
+                        locked_w=1.0, lost_w=1.0),
     "bpa_pure":    dict(),
     "punt_ft":     dict(punt=("FT%",), matrix_aware=True),
     "punt_ast":    dict(punt=("AST",), matrix_aware=True),
@@ -86,7 +110,8 @@ STRATEGIES = {
     "safe_floor":  dict(risk="safe"),
     "upside":      dict(risk="upside", value_exp=1.15),
     "specialist":  dict(matrix_aware=True, locked_w=1.4, lost_w=0.2),
-    "market":      dict(noise=0.6),           # adp-like ordinary league-mate
+    "market":      dict(adp=True, noise=4.0), # ADP-anchored ordinary league-mate
+    "points_chaser": dict(cat_w=MKT_W, noise=0.4), # points-league habits in a 9-cat room
 }
 
 
@@ -107,7 +132,73 @@ def strategy_params(name, overrides=None):
     return params
 
 
-def pick_for(params, pool, roster, my_ranks, rnd, rng):
+# Owner-league weekly lineup: 10 starters by slot + 3 bench (research-backed
+# realism fix, 2026-07-23: flat top-13 let 6-center rosters bank phantom
+# minutes; real layout caps startable bigs at C,C,Util,Util).
+LINEUP_SLOTS = (("PG",), ("SG",), ("PG", "SG"), ("SF",), ("PF",),
+                ("SF", "PF"), ("C",), ("C",), None, None)  # None = Util
+
+
+def lineup_weights(roster):
+    """Greedy weekly lineup: players in value order claim the first open
+    eligible slot (specific before flex before Util). Returns id->weight."""
+    ordered = sorted(roster, key=lambda p: -sum(p["z"][c] for c in CATS))
+    open_slots = list(LINEUP_SLOTS)
+    weights = {}
+    for p in ordered:
+        pos = positions_of(p)
+        claimed = None
+        for i, s in enumerate(open_slots):
+            if s is not None and any(b in s for b in pos):
+                claimed = i
+                break
+        if claimed is None:
+            for i, s in enumerate(open_slots):
+                if s is None:
+                    claimed = i
+                    break
+        if claimed is not None:
+            open_slots.pop(claimed)
+            weights[id(p)] = 1.0
+        else:
+            weights[id(p)] = BENCH_WEIGHT
+    return weights
+
+
+# Market (ADP) model — how ordinary drafters price players, per 9-cat draft
+# research (2026-07-23): points-volume bias, efficiency/TO myopia, rookie
+# hype (~2-round premium), name value for recovering stars (no availability
+# discount at the draft table), mild star top-heaviness.
+# Research-backed market pins (2026-07-23): hype the stat model can't see.
+# ESPN/SI early boards take Flagg top-20 (year-2 leap premium); lottery
+# rookies go rounds 3-7 on name value despite the 9-cat rookie tax.
+MKT_PIN = {"Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
+           "Dylan Harper": 60, "Cameron Boozer": 70, "Caleb Wilson": 90,
+           "Mikel Brown Jr.": 95}
+
+
+def market_ranks(pool):
+    """1-based estimated real-draft rank for every pool player."""
+    def mscore(p):
+        s = sum(p["z"][c] * MKT_W[c] for c in CATS)
+        note = (p.get("note") or "").lower()
+        # Sign-aware multipliers (codified 2026-07-30): a plain product
+        # inverted in the negative tail — rookie hype LOWERED
+        # negative-score rookies, the risk discount RAISED negative
+        # vets. Division mirrors the intent below zero.
+        if "rookie-proj" in note:
+            s = s * 1.15 if s > 0 else s / 1.15
+        if "risk" in note:
+            s = s * 0.95 if s > 0 else s / 0.95
+        return s
+    ordered = sorted(pool, key=lambda p: -mscore(p))
+    model = {p["player"]: i + 1 for i, p in enumerate(ordered)}
+    eff = {n: min(r, MKT_PIN.get(n, r)) for n, r in model.items()}
+    final = sorted(model, key=lambda n: (eff[n], model[n]))
+    return {n: i + 1 for i, n in enumerate(final)}
+
+
+def pick_for(params, pool, roster, my_ranks, rnd, rng, mkt=None):
     """Score every available player under this strategy's knobs; take max."""
     remaining = ROUNDS - len(roster)
     unfilled = [b for b in BASE_POS
@@ -125,6 +216,8 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng):
             scarce[b] = sum(1 for p in top if b in positions_of(p))
 
     def weight(cat):
+        if params.get("cat_w"):
+            return params["cat_w"].get(cat, 1.0)
         if cat in params["punt"]:
             return 0.0
         if params["matrix_aware"] and my_ranks and len(roster) >= 2:
@@ -135,8 +228,42 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng):
                 return params["lost_w"]
         return 1.0
 
+    slots_left = lineup_weights(roster)  # who starts today
+    n_started = sum(1 for w in slots_left.values() if w == 1.0)
+
+    def bench_bound(p):
+        """Would this candidate crack the starting lineup right now?"""
+        if n_started < len(LINEUP_SLOTS):
+            trial = lineup_weights(roster + [p])
+            return trial.get(id(p), BENCH_WEIGHT) < 1.0
+        return False  # lineup full: every candidate is depth, no distortion
+
     def score(p):
-        s = sum(p["z"][c] * weight(c) for c in CATS)
+        if params.get("adp") and mkt is not None:
+            s = -mkt.get(p["player"], 300)
+            if bench_bound(p):
+                s -= 50.0  # ordinary drafters don't hoard unplayable positions
+            if unfilled and rnd >= 6 and any(b in positions_of(p)
+                                             for b in unfilled):
+                s += 15.0  # "I still need a center" instinct in the mid-rounds
+            if params["noise"]:
+                s += rng.gauss(0, params["noise"])
+            return s
+        if params.get("grad_k"):
+            gk = params["grad_k"]
+            rr = len(roster)
+            s = 0.0
+            for c in CATS:
+                w = weight(c)
+                if not w:
+                    continue
+                S = sum(q["z"][c] for q in roster)
+                sig = gk * math.sqrt(rr + 1) / GRAD_DEFL[c]
+                s += w * (0.5 * (1 + math.erf((S + p["z"][c]) / (sig * math.sqrt(2))))
+                          - 0.5 * (1 + math.erf(S / (sig * math.sqrt(2)))))
+            s *= GRAD_SCALE
+        else:
+            s = sum(p["z"][c] * weight(c) for c in CATS)
         note = (p.get("note") or "").lower()
         injury_note = "inj" in note or note.startswith("out-")
         if params["risk"] != "upside":
@@ -159,6 +286,8 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng):
             s += rng.gauss(0, params["noise"])
         if params["risk"] == "safe" and injury_note:
             s -= 100.0  # avoid, but preserve ordering when forced
+        if s > 0 and bench_bound(p):
+            s *= BENCH_WEIGHT  # a bench-bound pick is worth bench minutes
         return s
 
     cands = pool
@@ -179,14 +308,18 @@ def ranks_for(rosters, me):
 
 def run_draft(order, pool_master, rng, param_overrides=None):
     pool = list(pool_master)
+    mkt = market_ranks(pool_master)
     rosters = {i: [] for i in range(1, TEAMS + 1)}
     for n in range(TEAMS * ROUNDS):
         slot = hoops.team_of_pick(n, TEAMS)
         name = order[slot - 1]
         params = strategy_params(name, (param_overrides or {}).get(name))
+        if name == "council" and slot <= GRAD_SLOTS and "grad_k" not in params:
+            params = {**params, "grad_k": GRAD_K}
         ranks = (ranks_for(rosters, slot)
                  if params["matrix_aware"] and rosters[slot] else None)
-        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
+        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng,
+                     mkt=mkt)
         rosters[slot].append(p)
         pool.remove(p)
     return rosters
@@ -212,10 +345,10 @@ def team_week_model(roster):
     availability-tier game-count variance Var[G] = 3.5*a*(1-a)."""
     mu = {c: 0.0 for c in CATS}
     var = {c: 0.0 for c in CATS}
-    ordered = sorted(roster, key=lambda p: -sum(p["z"][c] for c in CATS))
+    lw = lineup_weights(roster)
     fg_mk = fg_at = ft_mk = ft_at = 0.0
-    for i, p in enumerate(ordered):
-        w = 1.0 if i < STARTERS else BENCH_WEIGHT
+    for p in roster:
+        w = lw[id(p)]
         a = weekly_availability(p)
         g = 3.5 * a
         g_var = 3.5 * a * (1 - a)
@@ -227,8 +360,15 @@ def team_week_model(roster):
         fg_at += w * p["fga"] * g
         ft_mk += w * p["ft_pct"] * p["fta"] * g
         ft_at += w * p["fta"] * g
-    mu["FG%"], var["FG%"] = fg_mk / (fg_at or 1), PCT_WEEK_SD ** 2
-    mu["FT%"], var["FT%"] = ft_mk / (ft_at or 1), PCT_WEEK_SD ** 2
+    # Weekly % variance: per-roster binomial floor x mix inflation
+    # (codified 2026-07-30; replaces the flat PCT_WEEK_SD=0.012 that
+    #  made the better team win FT% in 99.4% of weeks).
+    p_fg = fg_mk / (fg_at or 1)
+    p_ft = ft_mk / (ft_at or 1)
+    mu["FG%"] = p_fg
+    var["FG%"] = (PCT_MIX_INFL ** 2) * max(p_fg * (1 - p_fg), 1e-4) / (fg_at or 1)
+    mu["FT%"] = p_ft
+    var["FT%"] = (PCT_MIX_INFL ** 2) * max(p_ft * (1 - p_ft), 1e-4) / (ft_at or 1)
     return mu, var
 
 
@@ -251,8 +391,8 @@ def simulate_seasons(rosters, seasons, rng):
             sa = rng.gauss(ma, sigmas[a][c])
             sb = rng.gauss(mb, sigmas[b][c])
             better = sa < sb if c == "TO" else sa > sb
-            wins += 1 if better else -1
-        return wins > 0  # 9 cats: no ties
+            wins += 1 if better else 0
+        return wins  # cats won by a, 0..9 (continuous draws: no ties)
 
     ids = list(rosters)
     for _ in range(seasons):
@@ -262,20 +402,23 @@ def simulate_seasons(rosters, seasons, rng):
             rng.shuffle(pairing)
             for k in range(0, TEAMS, 2):
                 a, b = pairing[k], pairing[k + 1]
-                if week_result(a, b):
-                    record[a] += 1
-                else:
-                    record[b] += 1
+                # Yahoo H2H-each-cat standings accumulate the CATEGORY
+                # record, not weekly binary wins (codified 2026-07-30;
+                # the weekly-binary rule shifted playoff% by up to
+                # +-29pp on identical rosters — 9-CAT math audit).
+                wa = week_result(a, b)
+                record[a] += wa
+                record[b] += 9 - wa
         seeds = sorted(ids, key=lambda i: (-record[i], rng.random()))
         top = seeds[:PLAYOFF_TEAMS]
         for i in top:
             playoffs[i] += 1
         # seeds 1-2 byes; 3v6, 4v5; FIXED bracket (Yahoo default, no reseed)
         qf = [(top[2], top[5]), (top[3], top[4])]
-        w1 = [a if week_result(a, b) else b for a, b in qf]
+        w1 = [a if week_result(a, b) >= 5 else b for a, b in qf]
         sf = [(top[0], w1[1]), (top[1], w1[0])]
-        w2 = [a if week_result(a, b) else b for a, b in sf]
-        champs[w2[0] if week_result(*w2) else w2[1]] += 1
+        w2 = [a if week_result(a, b) >= 5 else b for a, b in sf]
+        champs[w2[0] if week_result(*w2) >= 5 else w2[1]] += 1
     return champs, playoffs
 
 
@@ -292,6 +435,7 @@ def tournament(seasons, seed, rotations=1, param_overrides=None, names=None):
     names = names or list(STRATEGIES)
     total_c = {n: 0 for n in names}
     total_p = {n: 0 for n in names}
+    seated = {n: 0 for n in names}
     for rr in range(rotations):
         base = names[:]
         if rr:
@@ -300,12 +444,17 @@ def tournament(seasons, seed, rotations=1, param_overrides=None, names=None):
             order = base[rotation:] + base[:rotation]
             rosters = run_draft(order, pool, rng, param_overrides)
             champs, plays = simulate_seasons(rosters, seasons, rng)
-            for slot, name in enumerate(order, 1):
+            # only the first TEAMS names are seated; with more strategies
+            # than seats, extras sit this draft out (crash fix 2026-07-28:
+            # adding the 13th personality made enumerate(order) walk past
+            # slot 12 -> KeyError, breaking stock tournament/slots/cadence)
+            for slot, name in enumerate(order[:TEAMS], 1):
                 total_c[name] += champs[slot]
                 total_p[name] += plays[slot]
-    denom = seasons * TEAMS * rotations
-    return {n: {"champ_pct": 100 * total_c[n] / denom,
-                "playoff_pct": 100 * total_p[n] / denom} for n in names}
+                seated[name] += 1
+    return {n: {"champ_pct": 100 * total_c[n] / (seasons * seated[n]),
+                "playoff_pct": 100 * total_p[n] / (seasons * seated[n]),
+                "drafts_seated": seated[n]} for n in names if seated[n]}
 
 
 def evaluate(seasons, seeds, rotations, param_overrides=None):
@@ -408,6 +557,8 @@ def run_draft_ordered(order, pool_master, rng, param_overrides=None):
         slot = hoops.team_of_pick(n, TEAMS)
         name = order[slot - 1]
         params = strategy_params(name, (param_overrides or {}).get(name))
+        if name == "council" and slot <= GRAD_SLOTS and "grad_k" not in params:
+            params = {**params, "grad_k": GRAD_K}
         ranks = (ranks_for(rosters, slot)
                  if params["matrix_aware"] and rosters[slot] else None)
         p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
@@ -508,7 +659,9 @@ def cmd_slots(args):
             order = base[rotation:] + base[:rotation]
             rosters = run_draft(order, pool, rng)
             champs, _ = simulate_seasons(rosters, args.seasons, rng)
-            for slot, name in enumerate(order, 1):
+            # 13 personalities, 12 seats: only the seated prefix scores
+            # (same fix as tournament(), gauntlet 2026-07-28)
+            for slot, name in enumerate(order[:TEAMS], 1):
                 cell_c[name][slot] += champs[slot]
                 cell_n[name][slot] += args.seasons
     print(f"\nchamp% by strategy x slot ({args.rotations} rotations x "

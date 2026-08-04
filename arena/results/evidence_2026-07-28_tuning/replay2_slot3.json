@@ -1,0 +1,196 @@
+[
+ {
+  "round": 1,
+  "actual": "Shai Gilgeous-Alexander",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Shai Gilgeous-Alexander (fs 12.63)",
+  "target": null,
+  "pinned": null
+ },
+ {
+  "round": 2,
+  "actual": "Kevin Durant",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Kevin Durant (fs 4.97)",
+  "target": null,
+  "pinned": null
+ },
+ {
+  "round": 3,
+  "actual": "Jamal Murray",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Jamal Murray (fs 4.62)",
+  "target": {
+   "label": "Shooting F",
+   "fam": "F",
+   "urgent": false,
+   "wait": false,
+   "shelf": 13,
+   "best": "OG Anunoby"
+  },
+  "pinned": null
+ },
+ {
+  "round": 4,
+  "actual": "Tyler Herro",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Tyler Herro (fs 2.75)",
+  "target": {
+   "label": "Shooting G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false,
+   "shelf": 15,
+   "best": "De'Aaron Fox"
+  },
+  "pinned": null
+ },
+ {
+  "round": 5,
+  "actual": "Tari Eason",
+  "actual_rank": 3,
+  "in_top5": true,
+  "no1": "Kristaps Porzingis (fs 2.72)",
+  "target": {
+   "label": "Steals-first F",
+   "fam": "F",
+   "urgent": false,
+   "wait": true,
+   "shelf": 14,
+   "best": "Tari Eason"
+  },
+  "pinned": null
+ },
+ {
+  "round": 6,
+  "actual": "Mikal Bridges",
+  "actual_rank": 6,
+  "in_top5": false,
+  "no1": "Coby White (fs 1.96)",
+  "target": {
+   "label": "Efficient C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false,
+   "shelf": 1,
+   "best": "Jalen Duren"
+  },
+  "pinned": null
+ },
+ {
+  "round": 7,
+  "actual": "Nickeil Alexander-Walker",
+  "actual_rank": 5,
+  "in_top5": true,
+  "no1": "Michael Porter Jr. (fs 2.18)",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": true,
+   "wait": false,
+   "shelf": 1,
+   "best": "Nikola Vucevic"
+  },
+  "pinned": null
+ },
+ {
+  "round": 8,
+  "actual": "Norman Powell",
+  "actual_rank": 7,
+  "in_top5": false,
+  "no1": "Isaiah Hartenstein (fs 1.28)",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 5,
+   "best": "Naz Reid"
+  },
+  "pinned": null
+ },
+ {
+  "round": 9,
+  "actual": "Naz Reid",
+  "actual_rank": 2,
+  "in_top5": true,
+  "no1": "Isaiah Hartenstein (fs 1.60)",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 6,
+   "best": "Naz Reid"
+  },
+  "pinned": null
+ },
+ {
+  "round": 10,
+  "actual": "Alex Sarr",
+  "actual_rank": 2,
+  "in_top5": true,
+  "no1": "John Collins (fs 0.05)",
+  "target": {
+   "label": "Low-TO C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 5,
+   "best": "John Collins"
+  },
+  "pinned": null
+ },
+ {
+  "round": 11,
+  "actual": "Dereck Lively II",
+  "actual_rank": 8,
+  "in_top5": false,
+  "no1": "John Collins (fs 0.35)",
+  "target": {
+   "label": "High-FG% / Block C",
+   "fam": "C",
+   "urgent": false,
+   "wait": false,
+   "shelf": 2,
+   "best": "John Collins"
+  },
+  "pinned": null
+ },
+ {
+  "round": 12,
+  "actual": "Jrue Holiday",
+  "actual_rank": 1,
+  "in_top5": true,
+  "no1": "Jrue Holiday (fs -0.94)",
+  "target": {
+   "label": "Playmaking G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false,
+   "shelf": 21,
+   "best": "Jrue Holiday"
+  },
+  "pinned": null
+ },
+ {
+  "round": 13,
+  "actual": "Ayo Dosunmu",
+  "actual_rank": 6,
+  "in_top5": false,
+  "no1": "D'Angelo Russell (fs -0.98)",
+  "target": {
+   "label": "Shooting G",
+   "fam": "G",
+   "urgent": false,
+   "wait": false,
+   "shelf": 20,
+   "best": "D'Angelo Russell"
+  },
+  "pinned": null
+ }
+]

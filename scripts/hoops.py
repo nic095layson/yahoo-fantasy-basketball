@@ -121,6 +121,14 @@ MUST_HAVE = [
     "RJ Barrett", "Deni Avdija", "Shaedon Sharpe", "Reed Sheppard",
     "Andrew Nembhard", "Stephon Castle", "VJ Edgecombe", "Dylan Harper",
     "Keyonte George", "Naz Reid", "Brook Lopez", "Donte DiVincenzo",
+    # 2026 draft class (owner law 2026-07-22: every June draft adds its
+    # consensus fantasy-relevant rookies here so the stamp fails until
+    # the pool carries them)
+    "AJ Dybantsa", "Darryn Peterson", "Cameron Boozer", "Caleb Wilson",
+    # 2026-07-27 completeness sync vs the draft-kit top-200 (all inside the
+    # 156-pick draftable universe; ported with sourced provenance)
+    "Jerami Grant", "Yaxel Lendeborg", "Alex Caruso", "Kyle Filipowski",
+    "Jared McCain", "Ayo Dosunmu", "Luguentz Dort", "Derik Queen",
 ]
 
 
@@ -140,12 +148,53 @@ def cmd_freshness(args):
             print("Add them to data/players.csv (retired players keep a row "
                   "with note out-retired), or bypass with --force.")
             sys.exit(1)
+        # Roster validation lock v2 (owner law 2026-07-23, hardened after the
+        # Hachimura miss — a quiet FA signing that a headline sweep missed):
+        # the stamp requires TODAY'S mechanical verification artifact from
+        # scripts/verify_rosters.py with zero mismatches. That script
+        # cross-references every pool row against NBA/ESPN official roster
+        # data — complete when the environment's network policy allows
+        # site.api.espn.com, evidence-file fallback until then.
+        ver_mode = None
+        if not args.force:
+            vp = os.path.join(os.path.dirname(FRESH_PATH),
+                              "roster_verification.json")
+            ok = False
+            try:
+                with open(vp, encoding="utf-8") as f:
+                    v = json.load(f)
+                ver_mode = v.get("mode")
+                ok = (v.get("date") == datetime.date.today().isoformat()
+                      and not v.get("mismatches"))
+            except (OSError, ValueError):
+                ok = False
+            if not ok:
+                print("⚠ ROSTER VALIDATION LOCK — stamp refused.")
+                print("Run: python3 scripts/verify_rosters.py  (per-player")
+                print("cross-reference against NBA/ESPN official rosters).")
+                print("The stamp requires today's roster_verification.json")
+                print("with zero mismatches. --force bypasses with a stated")
+                print("reason in --note.")
+                sys.exit(1)
+            if ver_mode == "fallback-partial":
+                print("note: roster verification is fallback-partial — allow "
+                      "site.api.espn.com in the environment network policy "
+                      "for the complete direct pull.")
         stamp = {"date": datetime.date.today().isoformat(),
                  "note": args.note or "refreshed"}
+        if args.rosters_verified or ver_mode:
+            stamp["rosters_verified"] = {
+                "date": stamp["date"],
+                "mode": ver_mode or "forced",
+                "sources": args.rosters_verified or "scripts/verify_rosters.py"}
         with open(FRESH_PATH, "w", encoding="utf-8") as f:
             json.dump(stamp, f, indent=2)
         print(f"Freshness stamped: {stamp['date']} — {stamp['note']} "
-              f"(pool complete: {len(MUST_HAVE)} consensus names present)")
+              f"(pool complete: {len(MUST_HAVE)} consensus names present"
+              + (f"; rosters verified: {stamp['rosters_verified']['mode']}"
+                 if "rosters_verified" in stamp
+                 else "; rosters NOT verified (--force)")
+              + ")")
     else:
         info = read_freshness()
         if info:
@@ -169,32 +218,63 @@ def load_players():
     return rows
 
 
+DRAFTABLE = 156  # 12 teams x 13 rounds — the draftable universe
+
+
 def zscores(players):
-    """Attach per-category z-scores and a punt-independent value dict."""
-    n = len(players)
+    """Attach per-category z-scores, standardized over the DRAFTABLE pool.
 
-    def mean_std(vals):
-        m = sum(vals) / n
-        var = sum((v - m) ** 2 for v in vals) / n
-        return m, math.sqrt(var) or 1.0
+    Codified 2026-07-30 (9-CAT math audit, findings_2026-07-30): league
+    percentage baselines, means, and stds come from the top-156
+    draftable fixed point rather than the full pool — the ~90
+    sub-replacement rows shifted every baseline by 0.16-0.40 sigma and
+    mispriced the top-100 by up to 14 ranks. The fixed-point parameters
+    are applied to ALL rows so undrafted players still carry comparable
+    z's, and the z-sum's zero sits at replacement level, which is what
+    the availability haircut in adj_value taxes.
+    """
+    def params_over(pool):
+        n = len(pool)
+        lg_fg = (sum(p["fg_pct"] * p["fga"] for p in pool)
+                 / (sum(p["fga"] for p in pool) or 1))
+        lg_ft = (sum(p["ft_pct"] * p["fta"] for p in pool)
+                 / (sum(p["fta"] for p in pool) or 1))
+        stats = {"FG%": [(p["fg_pct"] - lg_fg) * p["fga"] for p in pool],
+                 "FT%": [(p["ft_pct"] - lg_ft) * p["fta"] for p in pool]}
+        for cat, col in COUNT_COLS.items():
+            stats[cat] = [p[col] for p in pool]
+        prm = {}
+        for cat, vals in stats.items():
+            m = sum(vals) / n
+            s = math.sqrt(sum((v - m) ** 2 for v in vals) / n) or 1.0
+            prm[cat] = (m, s)
+        return lg_fg, lg_ft, prm
 
-    # Volume-weighted percentage impact
-    lg_fg = sum(p["fg_pct"] * p["fga"] for p in players) / sum(p["fga"] for p in players)
-    lg_ft = sum(p["ft_pct"] * p["fta"] for p in players) / sum(p["fta"] for p in players)
-    for p in players:
-        p["_fg_imp"] = (p["fg_pct"] - lg_fg) * p["fga"]
-        p["_ft_imp"] = (p["ft_pct"] - lg_ft) * p["fta"]
+    def apply(lg_fg, lg_ft, prm):
+        for p in players:
+            p["_fg_imp"] = (p["fg_pct"] - lg_fg) * p["fga"]
+            p["_ft_imp"] = (p["ft_pct"] - lg_ft) * p["fta"]
+            vals = {"FG%": p["_fg_imp"], "FT%": p["_ft_imp"]}
+            for cat, col in COUNT_COLS.items():
+                vals[cat] = p[col]
+            p["z"] = {}
+            for cat, v in vals.items():
+                m, s = prm[cat]
+                z = (v - m) / s
+                p["z"][cat] = -z if cat == "TO" else z
 
-    stats = {"FG%": [p["_fg_imp"] for p in players],
-             "FT%": [p["_ft_imp"] for p in players]}
-    for cat, col in COUNT_COLS.items():
-        stats[cat] = [p[col] for p in players]
-
-    for cat, vals in stats.items():
-        m, s = mean_std(vals)
-        for p, v in zip(players, vals):
-            z = (v - m) / s
-            p.setdefault("z", {})[cat] = -z if cat == "TO" else z
+    # Pass 0 over the full pool seeds the board; then iterate to the
+    # top-156-by-value fixed point (audit: converges in one step).
+    apply(*params_over(players))
+    seen = set()
+    for _ in range(5):
+        avail = [p for p in players if availability(p) > 0]
+        top = sorted(avail, key=lambda p: -total_value(p))[:DRAFTABLE]
+        key = frozenset(p["player"] for p in top)
+        if key in seen:
+            break
+        seen.add(key)
+        apply(*params_over(top))
     return players
 
 
@@ -860,8 +940,13 @@ def build_parser():
     fr.add_argument("--stamp", action="store_true",
                     help="record that data was refreshed today")
     fr.add_argument("--note", help="what was updated in this refresh")
+    fr.add_argument("--rosters-verified", metavar="SOURCES",
+                    help="record that team assignments were cross-referenced "
+                         "against NBA/ESPN transaction records this pull "
+                         "(required for --stamp; the roster validation lock)")
     fr.add_argument("--force", action="store_true",
-                    help="stamp even if the pool validator finds missing names")
+                    help="stamp even if the pool validator finds missing names "
+                         "or rosters are unverified (state the reason in --note)")
 
     d = sub.add_parser("draft", help="live draft tracker")
     dsub = d.add_subparsers(dest="draft_cmd", required=True)
