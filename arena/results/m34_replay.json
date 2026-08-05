@@ -1,0 +1,1059 @@
+[
+ {
+  "pickNo": 8,
+  "rosterN": 0,
+  "roster": [],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Tyrese Haliburton",
+  "shipped": [
+   {
+    "n": "Anthony Edwards",
+    "pos": "SG,SF",
+    "ds": 0.9957,
+    "fs": -1.67,
+    "bench": false
+   },
+   {
+    "n": "Tyrese Haliburton",
+    "pos": "PG",
+    "ds": 0.9871,
+    "fs": 2.38,
+    "bench": false
+   },
+   {
+    "n": "Cade Cunningham",
+    "pos": "PG",
+    "ds": 0.985,
+    "fs": -0.29,
+    "bench": false
+   },
+   {
+    "n": "Jalen Johnson",
+    "pos": "SF,PF",
+    "ds": 0.9764,
+    "fs": 3.5,
+    "bench": false
+   },
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9742,
+    "fs": 4.91,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Giannis Antetokounmpo",
+    "pos": "PF,C",
+    "ds": 0.9957
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9957
+   },
+   {
+    "n": "Dyson Daniels",
+    "pos": "SG",
+    "ds": 0.9871
+   },
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9828
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9807
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 17,
+  "rosterN": 1,
+  "roster": [
+   "Tyrese Haliburton[PG]"
+  ],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Evan Mobley",
+  "shipped": [
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9978,
+    "fs": 5.14,
+    "bench": false
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.9978,
+    "fs": 4.59,
+    "bench": false
+   },
+   {
+    "n": "Kevin Durant",
+    "pos": "SF,PF",
+    "ds": 0.9821,
+    "fs": -0.17,
+    "bench": false
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9799,
+    "fs": 0.35,
+    "bench": false
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.9754,
+    "fs": 1.87,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9933
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9911
+   },
+   {
+    "n": "Giannis Antetokounmpo",
+    "pos": "PF,C",
+    "ds": 0.9911
+   },
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9821
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9777
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 32,
+  "rosterN": 2,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]"
+  ],
+  "nC": 1,
+  "nBig": 1,
+  "benched": [],
+  "actual": "Dyson Daniels",
+  "shipped": [
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9928,
+    "fs": 1.61,
+    "bench": false
+   },
+   {
+    "n": "Dyson Daniels",
+    "pos": "SG",
+    "ds": 0.988,
+    "fs": 6.81,
+    "bench": false
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9809,
+    "fs": -1.63,
+    "bench": false
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9809,
+    "fs": 5.12,
+    "bench": false
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9713,
+    "fs": 2.08,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Dyson Daniels",
+    "pos": "SG",
+    "ds": 0.9976
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9952
+   },
+   {
+    "n": "Giannis Antetokounmpo",
+    "pos": "PF,C",
+    "ds": 0.9928
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9833
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9809
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 41,
+  "rosterN": 3,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]"
+  ],
+  "nC": 1,
+  "nBig": 1,
+  "benched": [],
+  "actual": "OG Anunoby",
+  "shipped": [
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9925,
+    "fs": 2.2,
+    "bench": false
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9875,
+    "fs": 2.11,
+    "bench": false
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.975,
+    "fs": 5.63,
+    "bench": false
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9625,
+    "fs": 4.25,
+    "bench": false
+   },
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9625,
+    "fs": 1.67,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9975
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9925
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.985
+   },
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.985
+   },
+   {
+    "n": "Walker Kessler",
+    "pos": "C",
+    "ds": 0.9775
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 56,
+  "rosterN": 4,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]"
+  ],
+  "nC": 1,
+  "nBig": 1,
+  "benched": [],
+  "actual": "Bam Adebayo",
+  "shipped": [
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9946,
+    "fs": 4.61,
+    "bench": false
+   },
+   {
+    "n": "Bam Adebayo",
+    "pos": "C",
+    "ds": 0.9757,
+    "fs": 2.3,
+    "bench": false
+   },
+   {
+    "n": "Lauri Markkanen",
+    "pos": "PF,C",
+    "ds": 0.973,
+    "fs": -2.26,
+    "bench": false
+   },
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.9703,
+    "fs": -1,
+    "bench": false
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9595,
+    "fs": 3.83,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9892
+   },
+   {
+    "n": "Walker Kessler",
+    "pos": "C",
+    "ds": 0.9838
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9838
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9811
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 65,
+  "rosterN": 5,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]"
+  ],
+  "nC": 2,
+  "nBig": 2,
+  "benched": [],
+  "actual": "Pascal Siakam",
+  "shipped": [
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9801,
+    "fs": 1.63,
+    "bench": false
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9801,
+    "fs": 4.19,
+    "bench": false
+   },
+   {
+    "n": "Kel'el Ware",
+    "pos": "C",
+    "ds": 0.9773,
+    "fs": 2.55,
+    "bench": false
+   },
+   {
+    "n": "Pascal Siakam",
+    "pos": "PF",
+    "ds": 0.9688,
+    "fs": 0.29,
+    "bench": false
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9688,
+    "fs": 1.43,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9943
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9943
+   },
+   {
+    "n": "Walker Kessler",
+    "pos": "C",
+    "ds": 0.9886
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9858
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9773
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 80,
+  "rosterN": 6,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]",
+   "Pascal Siakam[PF]"
+  ],
+  "nC": 2,
+  "nBig": 3,
+  "benched": [],
+  "actual": "Kel'el Ware",
+  "shipped": [
+   {
+    "n": "Kel'el Ware",
+    "pos": "C",
+    "ds": 0.9938,
+    "fs": 3.03,
+    "bench": false
+   },
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9907,
+    "fs": 1.41,
+    "bench": false
+   },
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9876,
+    "fs": 4.14,
+    "bench": false
+   },
+   {
+    "n": "Josh Hart",
+    "pos": "SG,SF",
+    "ds": 0.9689,
+    "fs": 1.54,
+    "bench": false
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9627,
+    "fs": 3.18,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9938
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9845
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9845
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9752
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 89,
+  "rosterN": 7,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]",
+   "Pascal Siakam[PF]",
+   "Kel'el Ware[C]"
+  ],
+  "nC": 3,
+  "nBig": 4,
+  "benched": [],
+  "actual": "Kon Knueppel",
+  "shipped": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9737,
+    "fs": 4.2,
+    "bench": false
+   },
+   {
+    "n": "Nikola Vucevic",
+    "pos": "C",
+    "ds": 0.9605,
+    "fs": 0.21,
+    "bench": false
+   },
+   {
+    "n": "Kon Knueppel",
+    "pos": "SG",
+    "ds": 0.9539,
+    "fs": -2.41,
+    "bench": false
+   },
+   {
+    "n": "Aaron Gordon",
+    "pos": "PF",
+    "ds": 0.9474,
+    "fs": -0.81,
+    "bench": false
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9408,
+    "fs": 3.18,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9934
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9836
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9836
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9737
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 104,
+  "rosterN": 8,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]",
+   "Pascal Siakam[PF]",
+   "Kel'el Ware[C]",
+   "Kon Knueppel[SG]"
+  ],
+  "nC": 3,
+  "nBig": 4,
+  "benched": [],
+  "actual": "Herbert Jones",
+  "shipped": [
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9818,
+    "fs": 4.26,
+    "bench": false
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9781,
+    "fs": 4.02,
+    "bench": false
+   },
+   {
+    "n": "Jerami Grant",
+    "pos": "PF",
+    "ds": 0.9453,
+    "fs": -2.04,
+    "bench": false
+   },
+   {
+    "n": "CJ McCollum",
+    "pos": "PG,SG",
+    "ds": 0.9416,
+    "fs": -2.43,
+    "bench": false
+   },
+   {
+    "n": "Herbert Jones",
+    "pos": "SF",
+    "ds": 0.9307,
+    "fs": 1.65,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9927
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9854
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9745
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9635
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 113,
+  "rosterN": 9,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]",
+   "Pascal Siakam[PF]",
+   "Kel'el Ware[C]",
+   "Kon Knueppel[SG]",
+   "Herbert Jones[SF]"
+  ],
+  "nC": 3,
+  "nBig": 4,
+  "benched": [],
+  "actual": "Jalen Green",
+  "shipped": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9805,
+    "fs": 3.42,
+    "bench": false
+   },
+   {
+    "n": "John Collins",
+    "pos": "PF,C",
+    "ds": 0.9727,
+    "fs": -0.38,
+    "bench": false
+   },
+   {
+    "n": "Kyle Filipowski",
+    "pos": "C",
+    "ds": 0.9531,
+    "fs": -0.1,
+    "bench": false
+   },
+   {
+    "n": "Jalen Green",
+    "pos": "SG",
+    "ds": 0.9453,
+    "fs": -4.51,
+    "bench": false
+   },
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.9375,
+    "fs": -1.85,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9883
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9727
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9688
+   },
+   {
+    "n": "Zach Edey",
+    "pos": "C",
+    "ds": 0.9648
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 128,
+  "rosterN": 10,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]",
+   "Pascal Siakam[PF]",
+   "Kel'el Ware[C]",
+   "Kon Knueppel[SG]",
+   "Herbert Jones[SF]",
+   "Jalen Green[SG]"
+  ],
+  "nC": 3,
+  "nBig": 4,
+  "benched": [],
+  "actual": "Santi Aldama",
+  "shipped": [
+   {
+    "n": "Santi Aldama",
+    "pos": "PF,C",
+    "ds": 0.9779,
+    "fs": -0.65,
+    "bench": true
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9469,
+    "fs": 2.48,
+    "bench": true
+   },
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9425,
+    "fs": 0.11,
+    "bench": true
+   },
+   {
+    "n": "D'Angelo Russell",
+    "pos": "PG",
+    "ds": 0.9292,
+    "fs": -3.21,
+    "bench": true
+   },
+   {
+    "n": "Tobias Harris",
+    "pos": "PF",
+    "ds": 0.9204,
+    "fs": -1.15,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9912
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9735
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9558
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9513
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 137,
+  "rosterN": 11,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]",
+   "Pascal Siakam[PF]",
+   "Kel'el Ware[C]",
+   "Kon Knueppel[SG]",
+   "Herbert Jones[SF]",
+   "Jalen Green[SG]",
+   "Santi Aldama[PF,C]"
+  ],
+  "nC": 4,
+  "nBig": 5,
+  "benched": [
+   "Santi Aldama"
+  ],
+  "actual": "Wendell Carter Jr.",
+  "shipped": [
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9663,
+    "fs": 0.11,
+    "bench": true
+   },
+   {
+    "n": "Tobias Harris",
+    "pos": "PF",
+    "ds": 0.9519,
+    "fs": -1.15,
+    "bench": true
+   },
+   {
+    "n": "Al Horford",
+    "pos": "C,PF",
+    "ds": 0.9375,
+    "fs": -0.98,
+    "bench": true
+   },
+   {
+    "n": "Keyonte George",
+    "pos": "PG,SG",
+    "ds": 0.9279,
+    "fs": -4.1,
+    "bench": true
+   },
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.9183,
+    "fs": -3.49,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.976
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9712
+   },
+   {
+    "n": "Moussa Diabate",
+    "pos": "C",
+    "ds": 0.9615
+   },
+   {
+    "n": "Yves Missi",
+    "pos": "C",
+    "ds": 0.9615
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 152,
+  "rosterN": 12,
+  "roster": [
+   "Tyrese Haliburton[PG]",
+   "Evan Mobley[PF,C]",
+   "Dyson Daniels[SG]",
+   "OG Anunoby[SF]",
+   "Bam Adebayo[C]",
+   "Pascal Siakam[PF]",
+   "Kel'el Ware[C]",
+   "Kon Knueppel[SG]",
+   "Herbert Jones[SF]",
+   "Jalen Green[SG]",
+   "Santi Aldama[PF,C]",
+   "Wendell Carter Jr.[C]"
+  ],
+  "nC": 5,
+  "nBig": 6,
+  "benched": [
+   "Santi Aldama",
+   "Wendell Carter Jr."
+  ],
+  "actual": "Daniel Gafford",
+  "shipped": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9831,
+    "fs": 3.42,
+    "bench": true
+   },
+   {
+    "n": "Al Horford",
+    "pos": "C,PF",
+    "ds": 0.9719,
+    "fs": -0.56,
+    "bench": true
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9551,
+    "fs": 1.76,
+    "bench": true
+   },
+   {
+    "n": "Jusuf Nurkic",
+    "pos": "C",
+    "ds": 0.9326,
+    "fs": 0.58,
+    "bench": true
+   },
+   {
+    "n": "Deandre Ayton",
+    "pos": "C",
+    "ds": 0.9157,
+    "fs": 0.23,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9719
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9663
+   },
+   {
+    "n": "Yves Missi",
+    "pos": "C",
+    "ds": 0.9551
+   },
+   {
+    "n": "Moussa Diabate",
+    "pos": "C",
+    "ds": 0.9551
+   }
+  ],
+  "rnd": 13
+ }
+]

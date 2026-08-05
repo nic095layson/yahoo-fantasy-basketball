@@ -1,0 +1,2417 @@
+{
+ "mock": 31,
+ "owner": 8,
+ "punt": [
+  "FT%",
+  "3PTM",
+  "PTS"
+ ],
+ "kept": [
+  "FG%",
+  "REB",
+  "AST",
+  "ST",
+  "BLK",
+  "TO"
+ ],
+ "seasons_per_arm": 18000,
+ "head_seeds": [
+  11,
+  23,
+  47
+ ],
+ "block_seeds": [
+  1001,
+  1002,
+  1003,
+  1004,
+  1005,
+  1006,
+  1007,
+  1008,
+  1009,
+  1010,
+  1011,
+  1012,
+  1013,
+  1014,
+  1015,
+  1016,
+  1017,
+  1018
+ ],
+ "arms": {
+  "ARM0_as_drafted": {
+   "pcat": {
+    "FG%": 0.728,
+    "FT%": 0.274,
+    "3PTM": 0.171,
+    "PTS": 0.144,
+    "REB": 0.661,
+    "AST": 0.202,
+    "ST": 0.75,
+    "BLK": 0.771,
+    "TO": 0.931
+   },
+   "champ": 9.522,
+   "playoff": 68.089,
+   "finish": 4,
+   "seasons": 18000,
+   "champ_per_seed": {
+    "11": 9.367,
+    "23": 9.817,
+    "47": 9.383
+   },
+   "champ_blocks": [
+    10.2,
+    8.6,
+    8.2,
+    8.8,
+    10.3,
+    11.8,
+    9.7,
+    10.1,
+    8.6,
+    9.9,
+    9.1,
+    10.0,
+    8.6,
+    8.7,
+    9.2,
+    9.7,
+    11.2,
+    9.9
+   ],
+   "ecw9": 4.63,
+   "ecw_kept6": 4.042,
+   "kept_z": 15.9,
+   "roster": [
+    "Tyrese Haliburton",
+    "Evan Mobley",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Bam Adebayo",
+    "Pascal Siakam",
+    "Kel'el Ware",
+    "Kon Knueppel",
+    "Herbert Jones",
+    "Jalen Green",
+    "Santi Aldama",
+    "Wendell Carter Jr.",
+    "Daniel Gafford"
+   ],
+   "changed_vs_base": [],
+   "opp_rosters_touched": 0,
+   "swaps": [],
+   "noop_swaps": [],
+   "n_swaps": 0,
+   "n_noop_swaps": 0,
+   "log": [
+    [
+     null,
+     null,
+     "baseline"
+    ]
+   ]
+  },
+  "ARM1_shipped_card": {
+   "pcat": {
+    "FG%": 0.841,
+    "FT%": 0.263,
+    "3PTM": 0.133,
+    "PTS": 0.038,
+    "REB": 0.772,
+    "AST": 0.001,
+    "ST": 0.076,
+    "BLK": 0.856,
+    "TO": 0.97
+   },
+   "champ": 0.0,
+   "playoff": 1.722,
+   "finish": 12,
+   "seasons": 18000,
+   "champ_per_seed": {
+    "11": 0.0,
+    "23": 0.0,
+    "47": 0.0
+   },
+   "champ_blocks": [
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.1,
+    0.0,
+    0.0,
+    0.1
+   ],
+   "ecw9": 3.95,
+   "ecw_kept6": 3.516,
+   "kept_z": 23.82,
+   "roster": [
+    "Anthony Edwards",
+    "Evan Mobley",
+    "OG Anunoby",
+    "Onyeka Okongwu",
+    "Ivica Zubac",
+    "Myles Turner",
+    "Kel'el Ware",
+    "Jalen Duren",
+    "Rudy Gobert",
+    "Daniel Gafford",
+    "Santi Aldama",
+    "Wendell Carter Jr.",
+    "Jusuf Nurkic"
+   ],
+   "changed_vs_base": [
+    "Anthony Edwards",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jusuf Nurkic",
+    "Myles Turner",
+    "Onyeka Okongwu",
+    "Rudy Gobert"
+   ],
+   "opp_rosters_touched": 5,
+   "swaps": [
+    [
+     8,
+     "Tyrese Haliburton",
+     "Anthony Edwards"
+    ],
+    [
+     41,
+     "Dyson Daniels",
+     "Onyeka Okongwu"
+    ],
+    [
+     56,
+     "Bam Adebayo",
+     "Ivica Zubac"
+    ],
+    [
+     65,
+     "Pascal Siakam",
+     "Myles Turner"
+    ],
+    [
+     89,
+     "Kon Knueppel",
+     "Jalen Duren"
+    ],
+    [
+     104,
+     "Herbert Jones",
+     "Rudy Gobert"
+    ],
+    [
+     152,
+     "Jalen Green",
+     "Jusuf Nurkic"
+    ]
+   ],
+   "noop_swaps": [
+    [
+     32,
+     "Dyson Daniels",
+     "OG Anunoby"
+    ],
+    [
+     113,
+     "Jalen Green",
+     "Daniel Gafford"
+    ]
+   ],
+   "n_swaps": 7,
+   "n_noop_swaps": 2,
+   "log": [
+    [
+     8,
+     "Anthony Edwards",
+     "SWAP: Tyrese Haliburton displaced to #9 (slot 9)"
+    ],
+    [
+     17,
+     "Evan Mobley",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     32,
+     "OG Anunoby",
+     "NO-OP swap (alt is owner's own pick #41): "
+    ],
+    [
+     41,
+     "Onyeka Okongwu",
+     "SWAP: Dyson Daniels displaced to #52 (slot 4)"
+    ],
+    [
+     56,
+     "Ivica Zubac",
+     "SWAP: Bam Adebayo displaced to #64 (slot 9)"
+    ],
+    [
+     65,
+     "Myles Turner",
+     "SWAP: Pascal Siakam displaced to #68 (slot 5)"
+    ],
+    [
+     80,
+     "Kel'el Ware",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     89,
+     "Jalen Duren",
+     "SWAP: Kon Knueppel displaced to #92 (slot 5)"
+    ],
+    [
+     104,
+     "Rudy Gobert",
+     "SWAP: Herbert Jones displaced to #111 (slot 10)"
+    ],
+    [
+     113,
+     "Daniel Gafford",
+     "NO-OP swap (alt is owner's own pick #152): "
+    ],
+    [
+     128,
+     "Santi Aldama",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     137,
+     "Wendell Carter Jr.",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     152,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     152,
+     "Al Horford",
+     "undrafted in this room, descend"
+    ],
+    [
+     152,
+     "Neemias Queta",
+     "undrafted in this room, descend"
+    ],
+    [
+     152,
+     "Jusuf Nurkic",
+     "SWAP: Jalen Green displaced to #156 (slot 12)"
+    ]
+   ]
+  },
+  "ARM2_punt_aware_card": {
+   "pcat": {
+    "FG%": 0.978,
+    "FT%": 0.031,
+    "3PTM": 0.0,
+    "PTS": 0.094,
+    "REB": 0.984,
+    "AST": 0.127,
+    "ST": 0.568,
+    "BLK": 0.873,
+    "TO": 0.793
+   },
+   "champ": 3.261,
+   "playoff": 39.344,
+   "finish": 8,
+   "seasons": 18000,
+   "champ_per_seed": {
+    "11": 2.95,
+    "23": 3.45,
+    "47": 3.383
+   },
+   "champ_blocks": [
+    3.6,
+    3.5,
+    2.7,
+    3.6,
+    3.1,
+    3.7,
+    3.2,
+    3.8,
+    3.1,
+    3.9,
+    2.5,
+    3.2,
+    2.6,
+    3.2,
+    3.3,
+    2.9,
+    3.3,
+    2.9
+   ],
+   "ecw9": 4.449,
+   "ecw_kept6": 4.324,
+   "kept_z": 39.15,
+   "roster": [
+    "Giannis Antetokounmpo",
+    "Amen Thompson",
+    "Dyson Daniels",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jarrett Allen",
+    "Rudy Gobert",
+    "Isaiah Hartenstein",
+    "Donovan Clingan",
+    "Daniel Gafford",
+    "Ausar Thompson",
+    "Wendell Carter Jr.",
+    "Jalen Green"
+   ],
+   "changed_vs_base": [
+    "Amen Thompson",
+    "Ausar Thompson",
+    "Donovan Clingan",
+    "Giannis Antetokounmpo",
+    "Isaiah Hartenstein",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jarrett Allen",
+    "Rudy Gobert"
+   ],
+   "opp_rosters_touched": 6,
+   "swaps": [
+    [
+     8,
+     "Tyrese Haliburton",
+     "Giannis Antetokounmpo"
+    ],
+    [
+     17,
+     "Evan Mobley",
+     "Amen Thompson"
+    ],
+    [
+     41,
+     "OG Anunoby",
+     "Ivica Zubac"
+    ],
+    [
+     56,
+     "Bam Adebayo",
+     "Jalen Duren"
+    ],
+    [
+     65,
+     "Pascal Siakam",
+     "Jarrett Allen"
+    ],
+    [
+     80,
+     "Kel'el Ware",
+     "Rudy Gobert"
+    ],
+    [
+     89,
+     "Kon Knueppel",
+     "Isaiah Hartenstein"
+    ],
+    [
+     104,
+     "Herbert Jones",
+     "Donovan Clingan"
+    ],
+    [
+     128,
+     "Santi Aldama",
+     "Ausar Thompson"
+    ]
+   ],
+   "noop_swaps": [
+    [
+     113,
+     "Jalen Green",
+     "Daniel Gafford"
+    ]
+   ],
+   "n_swaps": 9,
+   "n_noop_swaps": 1,
+   "log": [
+    [
+     8,
+     "Giannis Antetokounmpo",
+     "SWAP: Tyrese Haliburton displaced to #34 (slot 10)"
+    ],
+    [
+     17,
+     "Amen Thompson",
+     "SWAP: Evan Mobley displaced to #43 (slot 6)"
+    ],
+    [
+     32,
+     "Dyson Daniels",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     41,
+     "Ivica Zubac",
+     "SWAP: OG Anunoby displaced to #64 (slot 9)"
+    ],
+    [
+     56,
+     "Ivica Zubac",
+     "already off the running board (#41), descend"
+    ],
+    [
+     56,
+     "Jalen Duren",
+     "SWAP: Bam Adebayo displaced to #92 (slot 5)"
+    ],
+    [
+     65,
+     "Jalen Duren",
+     "already off the running board (#56), descend"
+    ],
+    [
+     65,
+     "Jarrett Allen",
+     "SWAP: Pascal Siakam displaced to #79 (slot 7)"
+    ],
+    [
+     80,
+     "Jalen Duren",
+     "already off the running board (#56), descend"
+    ],
+    [
+     80,
+     "Rudy Gobert",
+     "SWAP: Kel'el Ware displaced to #111 (slot 10)"
+    ],
+    [
+     89,
+     "Jalen Duren",
+     "already off the running board (#56), descend"
+    ],
+    [
+     89,
+     "Rudy Gobert",
+     "already off the running board (#80), descend"
+    ],
+    [
+     89,
+     "Isaiah Hartenstein",
+     "SWAP: Kon Knueppel displaced to #103 (slot 7)"
+    ],
+    [
+     104,
+     "Rudy Gobert",
+     "already off the running board (#80), descend"
+    ],
+    [
+     104,
+     "Donovan Clingan",
+     "SWAP: Herbert Jones displaced to #112 (slot 9)"
+    ],
+    [
+     113,
+     "Daniel Gafford",
+     "NO-OP swap (alt is owner's own pick #152): "
+    ],
+    [
+     128,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     128,
+     "Ausar Thompson",
+     "SWAP: Santi Aldama displaced to #133 (slot 12)"
+    ],
+    [
+     137,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     137,
+     "Neemias Queta",
+     "undrafted in this room, descend"
+    ],
+    [
+     137,
+     "Mitchell Robinson",
+     "undrafted in this room, descend"
+    ],
+    [
+     137,
+     "Moussa Diabate",
+     "undrafted in this room, descend"
+    ],
+    [
+     137,
+     "Yves Missi",
+     "undrafted in this room, descend"
+    ],
+    [
+     137,
+     null,
+     "no legal candidate in top-5, keep actual pick"
+    ],
+    [
+     152,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     152,
+     "Neemias Queta",
+     "undrafted in this room, descend"
+    ],
+    [
+     152,
+     "Mitchell Robinson",
+     "undrafted in this room, descend"
+    ],
+    [
+     152,
+     "Yves Missi",
+     "undrafted in this room, descend"
+    ],
+    [
+     152,
+     "Moussa Diabate",
+     "undrafted in this room, descend"
+    ],
+    [
+     152,
+     null,
+     "no legal candidate in top-5, keep actual pick"
+    ]
+   ]
+  },
+  "ARM3_placebo": {
+   "draws": [
+    {
+     "pcat": {
+      "FG%": 0.63,
+      "FT%": 0.263,
+      "3PTM": 0.152,
+      "PTS": 0.058,
+      "REB": 0.451,
+      "AST": 0.055,
+      "ST": 0.7,
+      "BLK": 0.458,
+      "TO": 0.902
+     },
+     "champ": 0.011,
+     "playoff": 0.689,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.017,
+      "23": 0.017,
+      "47": 0.0
+     },
+     "champ_blocks": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "ecw9": 3.668,
+     "ecw_kept6": 3.195,
+     "kept_z": 0.1,
+     "roster": [
+      "Cedric Coward",
+      "Josh Hart",
+      "Dyson Daniels",
+      "Ivica Zubac",
+      "Matas Buzelis",
+      "Norman Powell",
+      "Bilal Coulibaly",
+      "Aaron Nesmith",
+      "Cason Wallace",
+      "Jalen Green",
+      "Anfernee Simons",
+      "Wendell Carter Jr.",
+      "Daniel Gafford"
+     ],
+     "changed_vs_base": [
+      "Aaron Nesmith",
+      "Anfernee Simons",
+      "Bilal Coulibaly",
+      "Cason Wallace",
+      "Cedric Coward",
+      "Ivica Zubac",
+      "Josh Hart",
+      "Matas Buzelis",
+      "Norman Powell"
+     ],
+     "opp_rosters_touched": 6,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Cedric Coward"
+      ],
+      [
+       17,
+       "Evan Mobley",
+       "Josh Hart"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Ivica Zubac"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Matas Buzelis"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Norman Powell"
+      ],
+      [
+       80,
+       "Kel'el Ware",
+       "Bilal Coulibaly"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Aaron Nesmith"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Cason Wallace"
+      ],
+      [
+       128,
+       "Santi Aldama",
+       "Anfernee Simons"
+      ]
+     ],
+     "n_swaps": 9,
+     "draw": 0
+    },
+    {
+     "pcat": {
+      "FG%": 0.409,
+      "FT%": 0.467,
+      "3PTM": 0.314,
+      "PTS": 0.082,
+      "REB": 0.144,
+      "AST": 0.24,
+      "ST": 0.511,
+      "BLK": 0.406,
+      "TO": 0.65
+     },
+     "champ": 0.0,
+     "playoff": 0.022,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.224,
+     "ecw_kept6": 2.361,
+     "kept_z": -12.73,
+     "roster": [
+      "Matas Buzelis",
+      "James Harden",
+      "Dyson Daniels",
+      "Ace Bailey",
+      "Lonzo Ball",
+      "Bradley Beal",
+      "Aaron Gordon",
+      "Jerami Grant",
+      "Collin Sexton",
+      "Jalen Green",
+      "Darryn Peterson",
+      "Wendell Carter Jr.",
+      "Daniel Gafford"
+     ],
+     "changed_vs_base": [
+      "Aaron Gordon",
+      "Ace Bailey",
+      "Bradley Beal",
+      "Collin Sexton",
+      "Darryn Peterson",
+      "James Harden",
+      "Jerami Grant",
+      "Lonzo Ball",
+      "Matas Buzelis"
+     ],
+     "opp_rosters_touched": 5,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Matas Buzelis"
+      ],
+      [
+       17,
+       "Evan Mobley",
+       "James Harden"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Ace Bailey"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Lonzo Ball"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Bradley Beal"
+      ],
+      [
+       80,
+       "Kel'el Ware",
+       "Aaron Gordon"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Jerami Grant"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Collin Sexton"
+      ],
+      [
+       128,
+       "Santi Aldama",
+       "Darryn Peterson"
+      ]
+     ],
+     "n_swaps": 9,
+     "draw": 1
+    },
+    {
+     "pcat": {
+      "FG%": 0.645,
+      "FT%": 0.252,
+      "3PTM": 0.138,
+      "PTS": 0.034,
+      "REB": 0.207,
+      "AST": 0.044,
+      "ST": 0.765,
+      "BLK": 0.496,
+      "TO": 0.927
+     },
+     "champ": 0.0,
+     "playoff": 0.111,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.508,
+     "ecw_kept6": 3.084,
+     "kept_z": 3.29,
+     "roster": [
+      "Ausar Thompson",
+      "Jerami Grant",
+      "Dyson Daniels",
+      "Paul George",
+      "Michael Porter Jr.",
+      "Christian Braun",
+      "Nic Claxton",
+      "Jared McCain",
+      "Cason Wallace",
+      "Jalen Green",
+      "Jrue Holiday",
+      "Wendell Carter Jr.",
+      "Daniel Gafford"
+     ],
+     "changed_vs_base": [
+      "Ausar Thompson",
+      "Cason Wallace",
+      "Christian Braun",
+      "Jared McCain",
+      "Jerami Grant",
+      "Jrue Holiday",
+      "Michael Porter Jr.",
+      "Nic Claxton",
+      "Paul George"
+     ],
+     "opp_rosters_touched": 5,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Ausar Thompson"
+      ],
+      [
+       17,
+       "Evan Mobley",
+       "Jerami Grant"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Paul George"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Michael Porter Jr."
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Christian Braun"
+      ],
+      [
+       80,
+       "Kel'el Ware",
+       "Nic Claxton"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Jared McCain"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Cason Wallace"
+      ],
+      [
+       128,
+       "Santi Aldama",
+       "Jrue Holiday"
+      ]
+     ],
+     "n_swaps": 9,
+     "draw": 2
+    },
+    {
+     "pcat": {
+      "FG%": 0.43,
+      "FT%": 0.476,
+      "3PTM": 0.278,
+      "PTS": 0.123,
+      "REB": 0.261,
+      "AST": 0.201,
+      "ST": 0.622,
+      "BLK": 0.335,
+      "TO": 0.673
+     },
+     "champ": 0.0,
+     "playoff": 0.228,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.399,
+     "ecw_kept6": 2.522,
+     "kept_z": -10.84,
+     "roster": [
+      "Dylan Harper",
+      "Ryan Rollins",
+      "Dyson Daniels",
+      "Brandon Ingram",
+      "Aaron Nesmith",
+      "Jordan Poole",
+      "D'Angelo Russell",
+      "Bam Adebayo",
+      "Bennedict Mathurin",
+      "Jalen Green",
+      "Cedric Coward",
+      "Wendell Carter Jr.",
+      "Daniel Gafford"
+     ],
+     "changed_vs_base": [
+      "Aaron Nesmith",
+      "Bennedict Mathurin",
+      "Brandon Ingram",
+      "Cedric Coward",
+      "D'Angelo Russell",
+      "Dylan Harper",
+      "Jordan Poole",
+      "Ryan Rollins"
+     ],
+     "opp_rosters_touched": 6,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Dylan Harper"
+      ],
+      [
+       17,
+       "Evan Mobley",
+       "Ryan Rollins"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Brandon Ingram"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Aaron Nesmith"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Jordan Poole"
+      ],
+      [
+       80,
+       "Kel'el Ware",
+       "D'Angelo Russell"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Bam Adebayo"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Bennedict Mathurin"
+      ],
+      [
+       128,
+       "Santi Aldama",
+       "Cedric Coward"
+      ]
+     ],
+     "n_swaps": 9,
+     "draw": 3
+    },
+    {
+     "pcat": {
+      "FG%": 0.455,
+      "FT%": 0.35,
+      "3PTM": 0.314,
+      "PTS": 0.079,
+      "REB": 0.296,
+      "AST": 0.113,
+      "ST": 0.58,
+      "BLK": 0.413,
+      "TO": 0.775
+     },
+     "champ": 0.0,
+     "playoff": 0.106,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.375,
+     "ecw_kept6": 2.633,
+     "kept_z": -7.28,
+     "roster": [
+      "Payton Pritchard",
+      "De'Andre Hunter",
+      "Dyson Daniels",
+      "Kevin Porter Jr.",
+      "Jerami Grant",
+      "Yaxel Lendeborg",
+      "Jaden McDaniels",
+      "Cedric Coward",
+      "AJ Dybantsa",
+      "Jalen Green",
+      "Derik Queen",
+      "Wendell Carter Jr.",
+      "Daniel Gafford"
+     ],
+     "changed_vs_base": [
+      "AJ Dybantsa",
+      "Cedric Coward",
+      "De'Andre Hunter",
+      "Derik Queen",
+      "Jaden McDaniels",
+      "Jerami Grant",
+      "Kevin Porter Jr.",
+      "Payton Pritchard",
+      "Yaxel Lendeborg"
+     ],
+     "opp_rosters_touched": 8,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Payton Pritchard"
+      ],
+      [
+       17,
+       "Evan Mobley",
+       "De'Andre Hunter"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Kevin Porter Jr."
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Jerami Grant"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Yaxel Lendeborg"
+      ],
+      [
+       80,
+       "Kel'el Ware",
+       "Jaden McDaniels"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Cedric Coward"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "AJ Dybantsa"
+      ],
+      [
+       128,
+       "Santi Aldama",
+       "Derik Queen"
+      ]
+     ],
+     "n_swaps": 9,
+     "draw": 4
+    },
+    {
+     "pcat": {
+      "FG%": 0.532,
+      "FT%": 0.302,
+      "3PTM": 0.138,
+      "PTS": 0.051,
+      "REB": 0.43,
+      "AST": 0.145,
+      "ST": 0.622,
+      "BLK": 0.498,
+      "TO": 0.807
+     },
+     "champ": 0.006,
+     "playoff": 0.167,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.017,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.525,
+     "ecw_kept6": 3.033,
+     "kept_z": -2.31,
+     "roster": [
+      "Keyonte George",
+      "Aaron Gordon",
+      "Dyson Daniels",
+      "Miles Bridges",
+      "Toumani Camara",
+      "De'Anthony Melton",
+      "Mark Williams",
+      "De'Andre Hunter",
+      "Draymond Green",
+      "Jalen Green",
+      "Pascal Siakam",
+      "Wendell Carter Jr.",
+      "Daniel Gafford"
+     ],
+     "changed_vs_base": [
+      "Aaron Gordon",
+      "De'Andre Hunter",
+      "De'Anthony Melton",
+      "Draymond Green",
+      "Keyonte George",
+      "Mark Williams",
+      "Miles Bridges",
+      "Toumani Camara"
+     ],
+     "opp_rosters_touched": 5,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Keyonte George"
+      ],
+      [
+       17,
+       "Evan Mobley",
+       "Aaron Gordon"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Miles Bridges"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Toumani Camara"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "De'Anthony Melton"
+      ],
+      [
+       80,
+       "Kel'el Ware",
+       "Mark Williams"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "De'Andre Hunter"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Draymond Green"
+      ],
+      [
+       128,
+       "Santi Aldama",
+       "Pascal Siakam"
+      ]
+     ],
+     "n_swaps": 9,
+     "draw": 5
+    }
+   ],
+   "champ": 0.003,
+   "champ_min": 0.0,
+   "champ_max": 0.011,
+   "playoff": 0.221,
+   "n_swaps": 9,
+   "turns": [
+    8,
+    17,
+    41,
+    56,
+    65,
+    80,
+    89,
+    104,
+    128
+   ],
+   "champ_blocks": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "ARM3b_placebo_loser_matched": {
+   "draws": [
+    {
+     "pcat": {
+      "FG%": 0.645,
+      "FT%": 0.275,
+      "3PTM": 0.102,
+      "PTS": 0.006,
+      "REB": 0.367,
+      "AST": 0.037,
+      "ST": 0.488,
+      "BLK": 0.644,
+      "TO": 0.972
+     },
+     "champ": 0.0,
+     "playoff": 0.161,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "ecw9": 3.535,
+     "ecw_kept6": 3.153,
+     "kept_z": 6.27,
+     "roster": [
+      "Onyeka Okongwu",
+      "Evan Mobley",
+      "Dyson Daniels",
+      "Draymond Green",
+      "Jerami Grant",
+      "Bogdan Bogdanovic",
+      "Kel'el Ware",
+      "Yaxel Lendeborg",
+      "John Collins",
+      "Jalen Green",
+      "Santi Aldama",
+      "Wendell Carter Jr.",
+      "Keon Ellis"
+     ],
+     "changed_vs_base": [
+      "Bogdan Bogdanovic",
+      "Draymond Green",
+      "Jerami Grant",
+      "John Collins",
+      "Keon Ellis",
+      "Onyeka Okongwu",
+      "Yaxel Lendeborg"
+     ],
+     "opp_rosters_touched": 6,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Onyeka Okongwu"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Draymond Green"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Jerami Grant"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Bogdan Bogdanovic"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Yaxel Lendeborg"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "John Collins"
+      ],
+      [
+       152,
+       "Daniel Gafford",
+       "Keon Ellis"
+      ]
+     ],
+     "n_swaps": 7,
+     "draw": 0
+    },
+    {
+     "pcat": {
+      "FG%": 0.601,
+      "FT%": 0.249,
+      "3PTM": 0.234,
+      "PTS": 0.186,
+      "REB": 0.58,
+      "AST": 0.13,
+      "ST": 0.612,
+      "BLK": 0.602,
+      "TO": 0.781
+     },
+     "champ": 0.222,
+     "playoff": 7.767,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.3,
+      "23": 0.167,
+      "47": 0.2
+     },
+     "champ_blocks": [],
+     "ecw9": 3.975,
+     "ecw_kept6": 3.305,
+     "kept_z": 1.38,
+     "roster": [
+      "Christian Braun",
+      "Evan Mobley",
+      "Dyson Daniels",
+      "Paolo Banchero",
+      "Matas Buzelis",
+      "Jeremy Sochan",
+      "Kel'el Ware",
+      "Anfernee Simons",
+      "Ryan Rollins",
+      "Jalen Green",
+      "Santi Aldama",
+      "Wendell Carter Jr.",
+      "Keon Ellis"
+     ],
+     "changed_vs_base": [
+      "Anfernee Simons",
+      "Christian Braun",
+      "Jeremy Sochan",
+      "Keon Ellis",
+      "Matas Buzelis",
+      "Paolo Banchero",
+      "Ryan Rollins"
+     ],
+     "opp_rosters_touched": 5,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Christian Braun"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Paolo Banchero"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Matas Buzelis"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Jeremy Sochan"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Anfernee Simons"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Ryan Rollins"
+      ],
+      [
+       152,
+       "Daniel Gafford",
+       "Keon Ellis"
+      ]
+     ],
+     "n_swaps": 7,
+     "draw": 1
+    },
+    {
+     "pcat": {
+      "FG%": 0.462,
+      "FT%": 0.312,
+      "3PTM": 0.28,
+      "PTS": 0.183,
+      "REB": 0.601,
+      "AST": 0.046,
+      "ST": 0.528,
+      "BLK": 0.659,
+      "TO": 0.765
+     },
+     "champ": 0.011,
+     "playoff": 2.956,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.0,
+      "47": 0.033
+     },
+     "champ_blocks": [],
+     "ecw9": 3.835,
+     "ecw_kept6": 3.061,
+     "kept_z": -1.32,
+     "roster": [
+      "Cam Thomas",
+      "Evan Mobley",
+      "Dyson Daniels",
+      "De'Anthony Melton",
+      "Devin Vassell",
+      "AJ Dybantsa",
+      "Kel'el Ware",
+      "Donovan Clingan",
+      "Ace Bailey",
+      "Jalen Green",
+      "Santi Aldama",
+      "Wendell Carter Jr.",
+      "Jusuf Nurkic"
+     ],
+     "changed_vs_base": [
+      "AJ Dybantsa",
+      "Ace Bailey",
+      "Cam Thomas",
+      "De'Anthony Melton",
+      "Devin Vassell",
+      "Donovan Clingan",
+      "Jusuf Nurkic"
+     ],
+     "opp_rosters_touched": 6,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Cam Thomas"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "De'Anthony Melton"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Devin Vassell"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "AJ Dybantsa"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Donovan Clingan"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Ace Bailey"
+      ],
+      [
+       152,
+       "Daniel Gafford",
+       "Jusuf Nurkic"
+      ]
+     ],
+     "n_swaps": 7,
+     "draw": 2
+    },
+    {
+     "pcat": {
+      "FG%": 0.579,
+      "FT%": 0.275,
+      "3PTM": 0.245,
+      "PTS": 0.107,
+      "REB": 0.605,
+      "AST": 0.175,
+      "ST": 0.469,
+      "BLK": 0.482,
+      "TO": 0.776
+     },
+     "champ": 0.006,
+     "playoff": 1.489,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.017,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.714,
+     "ecw_kept6": 3.087,
+     "kept_z": -4.73,
+     "roster": [
+      "Bennedict Mathurin",
+      "Evan Mobley",
+      "Dyson Daniels",
+      "LeBron James",
+      "Jared McCain",
+      "Kevin Porter Jr.",
+      "Kel'el Ware",
+      "PJ Washington",
+      "Ayo Dosunmu",
+      "Jalen Green",
+      "Santi Aldama",
+      "Wendell Carter Jr.",
+      "De'Andre Hunter"
+     ],
+     "changed_vs_base": [
+      "Ayo Dosunmu",
+      "Bennedict Mathurin",
+      "De'Andre Hunter",
+      "Jared McCain",
+      "Kevin Porter Jr.",
+      "LeBron James",
+      "PJ Washington"
+     ],
+     "opp_rosters_touched": 7,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Bennedict Mathurin"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "LeBron James"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Jared McCain"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Kevin Porter Jr."
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "PJ Washington"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Ayo Dosunmu"
+      ],
+      [
+       152,
+       "Daniel Gafford",
+       "De'Andre Hunter"
+      ]
+     ],
+     "n_swaps": 7,
+     "draw": 3
+    },
+    {
+     "pcat": {
+      "FG%": 0.615,
+      "FT%": 0.198,
+      "3PTM": 0.092,
+      "PTS": 0.073,
+      "REB": 0.525,
+      "AST": 0.078,
+      "ST": 0.62,
+      "BLK": 0.608,
+      "TO": 0.89
+     },
+     "champ": 0.006,
+     "playoff": 0.728,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.017,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.698,
+     "ecw_kept6": 3.335,
+     "kept_z": 8.36,
+     "roster": [
+      "Amen Thompson",
+      "Evan Mobley",
+      "Dyson Daniels",
+      "De'Aaron Fox",
+      "Bradley Beal",
+      "Jabari Smith Jr.",
+      "Kel'el Ware",
+      "Jusuf Nurkic",
+      "Dylan Harper",
+      "Jalen Green",
+      "Santi Aldama",
+      "Wendell Carter Jr.",
+      "Keon Ellis"
+     ],
+     "changed_vs_base": [
+      "Amen Thompson",
+      "Bradley Beal",
+      "De'Aaron Fox",
+      "Dylan Harper",
+      "Jabari Smith Jr.",
+      "Jusuf Nurkic",
+      "Keon Ellis"
+     ],
+     "opp_rosters_touched": 7,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Amen Thompson"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "De'Aaron Fox"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "Bradley Beal"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Jabari Smith Jr."
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Jusuf Nurkic"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Dylan Harper"
+      ],
+      [
+       152,
+       "Daniel Gafford",
+       "Keon Ellis"
+      ]
+     ],
+     "n_swaps": 7,
+     "draw": 4
+    },
+    {
+     "pcat": {
+      "FG%": 0.702,
+      "FT%": 0.231,
+      "3PTM": 0.09,
+      "PTS": 0.067,
+      "REB": 0.569,
+      "AST": 0.072,
+      "ST": 0.479,
+      "BLK": 0.435,
+      "TO": 0.921
+     },
+     "champ": 0.0,
+     "playoff": 0.267,
+     "finish": 12,
+     "seasons": 18000,
+     "champ_per_seed": {
+      "11": 0.0,
+      "23": 0.0,
+      "47": 0.0
+     },
+     "champ_blocks": [],
+     "ecw9": 3.565,
+     "ecw_kept6": 3.177,
+     "kept_z": 8.18,
+     "roster": [
+      "Ryan Rollins",
+      "Evan Mobley",
+      "Dyson Daniels",
+      "Christian Braun",
+      "PJ Washington",
+      "Kyle Filipowski",
+      "Kel'el Ware",
+      "Pascal Siakam",
+      "Ayo Dosunmu",
+      "Jalen Green",
+      "Santi Aldama",
+      "Wendell Carter Jr.",
+      "Jusuf Nurkic"
+     ],
+     "changed_vs_base": [
+      "Ayo Dosunmu",
+      "Christian Braun",
+      "Jusuf Nurkic",
+      "Kyle Filipowski",
+      "PJ Washington",
+      "Ryan Rollins"
+     ],
+     "opp_rosters_touched": 4,
+     "swaps": [
+      [
+       8,
+       "Tyrese Haliburton",
+       "Ryan Rollins"
+      ],
+      [
+       41,
+       "OG Anunoby",
+       "Christian Braun"
+      ],
+      [
+       56,
+       "Bam Adebayo",
+       "PJ Washington"
+      ],
+      [
+       65,
+       "Pascal Siakam",
+       "Kyle Filipowski"
+      ],
+      [
+       89,
+       "Kon Knueppel",
+       "Pascal Siakam"
+      ],
+      [
+       104,
+       "Herbert Jones",
+       "Ayo Dosunmu"
+      ],
+      [
+       152,
+       "Daniel Gafford",
+       "Jusuf Nurkic"
+      ]
+     ],
+     "n_swaps": 7,
+     "draw": 5
+    }
+   ],
+   "champ": 0.041,
+   "champ_min": 0.0,
+   "champ_max": 0.222,
+   "playoff": 2.228,
+   "n_swaps": 7,
+   "turns": [
+    8,
+    41,
+    56,
+    65,
+    89,
+    104,
+    152
+   ],
+   "champ_blocks": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "SENS1_shipped_release": {
+   "pcat": {
+    "FG%": 0.837,
+    "FT%": 0.271,
+    "3PTM": 0.145,
+    "PTS": 0.036,
+    "REB": 0.75,
+    "AST": 0.001,
+    "ST": 0.07,
+    "BLK": 0.857,
+    "TO": 0.974
+   },
+   "champ": 0.0,
+   "playoff": 1.789,
+   "finish": 12,
+   "seasons": 18000,
+   "champ_per_seed": {
+    "11": 0.0,
+    "23": 0.0,
+    "47": 0.0
+   },
+   "champ_blocks": [],
+   "ecw9": 3.94,
+   "ecw_kept6": 3.489,
+   "kept_z": 22.27,
+   "roster": [
+    "Anthony Edwards",
+    "Evan Mobley",
+    "OG Anunoby",
+    "Onyeka Okongwu",
+    "Ivica Zubac",
+    "Myles Turner",
+    "Kel'el Ware",
+    "Jalen Duren",
+    "Rudy Gobert",
+    "Daniel Gafford",
+    "Santi Aldama",
+    "Wendell Carter Jr.",
+    "Al Horford"
+   ],
+   "changed_vs_base": [
+    "Al Horford",
+    "Anthony Edwards",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Myles Turner",
+    "Onyeka Okongwu",
+    "Rudy Gobert"
+   ],
+   "opp_rosters_touched": 4,
+   "swaps": [
+    [
+     8,
+     "Tyrese Haliburton",
+     "Anthony Edwards"
+    ],
+    [
+     41,
+     "Dyson Daniels",
+     "Onyeka Okongwu"
+    ],
+    [
+     56,
+     "Bam Adebayo",
+     "Ivica Zubac"
+    ],
+    [
+     65,
+     "Pascal Siakam",
+     "Myles Turner"
+    ],
+    [
+     89,
+     "Kon Knueppel",
+     "Jalen Duren"
+    ],
+    [
+     104,
+     "Herbert Jones",
+     "Rudy Gobert"
+    ],
+    [
+     152,
+     "Jalen Green",
+     "Al Horford"
+    ]
+   ],
+   "noop_swaps": [
+    [
+     32,
+     "Dyson Daniels",
+     "OG Anunoby"
+    ],
+    [
+     113,
+     "Jalen Green",
+     "Daniel Gafford"
+    ]
+   ],
+   "n_swaps": 7,
+   "log": [
+    [
+     8,
+     "Anthony Edwards",
+     "SWAP: Tyrese Haliburton displaced to #9 (slot 9)"
+    ],
+    [
+     17,
+     "Evan Mobley",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     32,
+     "OG Anunoby",
+     "NO-OP swap (alt is owner's own pick #41): "
+    ],
+    [
+     41,
+     "Onyeka Okongwu",
+     "SWAP: Dyson Daniels displaced to #52 (slot 4)"
+    ],
+    [
+     56,
+     "Ivica Zubac",
+     "SWAP: Bam Adebayo displaced to #64 (slot 9)"
+    ],
+    [
+     65,
+     "Myles Turner",
+     "SWAP: Pascal Siakam displaced to #68 (slot 5)"
+    ],
+    [
+     80,
+     "Kel'el Ware",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     89,
+     "Jalen Duren",
+     "SWAP: Kon Knueppel displaced to #92 (slot 5)"
+    ],
+    [
+     104,
+     "Rudy Gobert",
+     "SWAP: Herbert Jones displaced to #111 (slot 10)"
+    ],
+    [
+     113,
+     "Daniel Gafford",
+     "NO-OP swap (alt is owner's own pick #152): "
+    ],
+    [
+     128,
+     "Santi Aldama",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     137,
+     "Wendell Carter Jr.",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     152,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     152,
+     "Al Horford",
+     "RELEASE swap: Jalen Green -> undrafted"
+    ]
+   ]
+  },
+  "SENS2_punt_aware_release": {
+   "pcat": {
+    "FG%": 0.995,
+    "FT%": 0.018,
+    "3PTM": 0.0,
+    "PTS": 0.015,
+    "REB": 0.969,
+    "AST": 0.051,
+    "ST": 0.448,
+    "BLK": 0.869,
+    "TO": 0.932
+   },
+   "champ": 0.678,
+   "playoff": 13.778,
+   "finish": 10,
+   "seasons": 18000,
+   "champ_per_seed": {
+    "11": 0.683,
+    "23": 0.683,
+    "47": 0.667
+   },
+   "champ_blocks": [],
+   "ecw9": 4.296,
+   "ecw_kept6": 4.263,
+   "kept_z": 48.36,
+   "roster": [
+    "Giannis Antetokounmpo",
+    "Amen Thompson",
+    "Dyson Daniels",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jarrett Allen",
+    "Rudy Gobert",
+    "Isaiah Hartenstein",
+    "Donovan Clingan",
+    "Daniel Gafford",
+    "Ausar Thompson",
+    "Neemias Queta",
+    "Mitchell Robinson"
+   ],
+   "changed_vs_base": [
+    "Amen Thompson",
+    "Ausar Thompson",
+    "Donovan Clingan",
+    "Giannis Antetokounmpo",
+    "Isaiah Hartenstein",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jarrett Allen",
+    "Mitchell Robinson",
+    "Neemias Queta",
+    "Rudy Gobert"
+   ],
+   "opp_rosters_touched": 6,
+   "swaps": [
+    [
+     8,
+     "Tyrese Haliburton",
+     "Giannis Antetokounmpo"
+    ],
+    [
+     17,
+     "Evan Mobley",
+     "Amen Thompson"
+    ],
+    [
+     41,
+     "OG Anunoby",
+     "Ivica Zubac"
+    ],
+    [
+     56,
+     "Bam Adebayo",
+     "Jalen Duren"
+    ],
+    [
+     65,
+     "Pascal Siakam",
+     "Jarrett Allen"
+    ],
+    [
+     80,
+     "Kel'el Ware",
+     "Rudy Gobert"
+    ],
+    [
+     89,
+     "Kon Knueppel",
+     "Isaiah Hartenstein"
+    ],
+    [
+     104,
+     "Herbert Jones",
+     "Donovan Clingan"
+    ],
+    [
+     128,
+     "Santi Aldama",
+     "Ausar Thompson"
+    ],
+    [
+     137,
+     "Wendell Carter Jr.",
+     "Neemias Queta"
+    ],
+    [
+     152,
+     "Jalen Green",
+     "Mitchell Robinson"
+    ]
+   ],
+   "noop_swaps": [
+    [
+     113,
+     "Jalen Green",
+     "Daniel Gafford"
+    ]
+   ],
+   "n_swaps": 11,
+   "log": [
+    [
+     8,
+     "Giannis Antetokounmpo",
+     "SWAP: Tyrese Haliburton displaced to #34 (slot 10)"
+    ],
+    [
+     17,
+     "Amen Thompson",
+     "SWAP: Evan Mobley displaced to #43 (slot 6)"
+    ],
+    [
+     32,
+     "Dyson Daniels",
+     "card #1 == actual pick, no swap"
+    ],
+    [
+     41,
+     "Ivica Zubac",
+     "SWAP: OG Anunoby displaced to #64 (slot 9)"
+    ],
+    [
+     56,
+     "Ivica Zubac",
+     "already off the running board (#41), descend"
+    ],
+    [
+     56,
+     "Jalen Duren",
+     "SWAP: Bam Adebayo displaced to #92 (slot 5)"
+    ],
+    [
+     65,
+     "Jalen Duren",
+     "already off the running board (#56), descend"
+    ],
+    [
+     65,
+     "Jarrett Allen",
+     "SWAP: Pascal Siakam displaced to #79 (slot 7)"
+    ],
+    [
+     80,
+     "Jalen Duren",
+     "already off the running board (#56), descend"
+    ],
+    [
+     80,
+     "Rudy Gobert",
+     "SWAP: Kel'el Ware displaced to #111 (slot 10)"
+    ],
+    [
+     89,
+     "Jalen Duren",
+     "already off the running board (#56), descend"
+    ],
+    [
+     89,
+     "Rudy Gobert",
+     "already off the running board (#80), descend"
+    ],
+    [
+     89,
+     "Isaiah Hartenstein",
+     "SWAP: Kon Knueppel displaced to #103 (slot 7)"
+    ],
+    [
+     104,
+     "Rudy Gobert",
+     "already off the running board (#80), descend"
+    ],
+    [
+     104,
+     "Donovan Clingan",
+     "SWAP: Herbert Jones displaced to #112 (slot 9)"
+    ],
+    [
+     113,
+     "Daniel Gafford",
+     "NO-OP swap (alt is owner's own pick #152): "
+    ],
+    [
+     128,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     128,
+     "Ausar Thompson",
+     "SWAP: Santi Aldama displaced to #133 (slot 12)"
+    ],
+    [
+     137,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     137,
+     "Neemias Queta",
+     "RELEASE swap: Wendell Carter Jr. -> undrafted"
+    ],
+    [
+     152,
+     "Daniel Gafford",
+     "already off the running board (#113), descend"
+    ],
+    [
+     152,
+     "Neemias Queta",
+     "already off the running board (#137), descend"
+    ],
+    [
+     152,
+     "Mitchell Robinson",
+     "RELEASE swap: Jalen Green -> undrafted"
+    ]
+   ]
+  },
+  "FIELDFIXED_ARM1_shipped_card": {
+   "pcat": {
+    "FG%": 0.823,
+    "FT%": 0.268,
+    "3PTM": 0.13,
+    "PTS": 0.035,
+    "REB": 0.705,
+    "AST": 0.002,
+    "ST": 0.094,
+    "BLK": 0.825,
+    "TO": 0.978
+   },
+   "champ": 0.0,
+   "playoff": 0.911,
+   "finish": 12,
+   "seasons": 18000,
+   "champ_per_seed": {
+    "11": 0.0,
+    "23": 0.0,
+    "47": 0.0
+   },
+   "champ_blocks": [],
+   "ecw9": 3.86,
+   "ecw_kept6": 3.427,
+   "kept_z": 23.82,
+   "roster": [
+    "Anthony Edwards",
+    "Evan Mobley",
+    "OG Anunoby",
+    "Onyeka Okongwu",
+    "Ivica Zubac",
+    "Myles Turner",
+    "Kel'el Ware",
+    "Jalen Duren",
+    "Rudy Gobert",
+    "Daniel Gafford",
+    "Santi Aldama",
+    "Wendell Carter Jr.",
+    "Jusuf Nurkic"
+   ],
+   "changed_vs_base": [
+    "Anthony Edwards",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jusuf Nurkic",
+    "Myles Turner",
+    "Onyeka Okongwu",
+    "Rudy Gobert"
+   ],
+   "opp_rosters_touched": 0,
+   "note": "DIAGNOSTIC ONLY - opponents held as-drafted, players duplicated"
+  },
+  "FIELDFIXED_ARM2_punt_aware_card": {
+   "pcat": {
+    "FG%": 0.968,
+    "FT%": 0.045,
+    "3PTM": 0.0,
+    "PTS": 0.07,
+    "REB": 0.958,
+    "AST": 0.077,
+    "ST": 0.539,
+    "BLK": 0.824,
+    "TO": 0.851
+   },
+   "champ": 1.778,
+   "playoff": 24.206,
+   "finish": 10,
+   "seasons": 18000,
+   "champ_per_seed": {
+    "11": 1.75,
+    "23": 1.883,
+    "47": 1.7
+   },
+   "champ_blocks": [],
+   "ecw9": 4.332,
+   "ecw_kept6": 4.217,
+   "kept_z": 39.15,
+   "roster": [
+    "Giannis Antetokounmpo",
+    "Amen Thompson",
+    "Dyson Daniels",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jarrett Allen",
+    "Rudy Gobert",
+    "Isaiah Hartenstein",
+    "Donovan Clingan",
+    "Daniel Gafford",
+    "Ausar Thompson",
+    "Wendell Carter Jr.",
+    "Jalen Green"
+   ],
+   "changed_vs_base": [
+    "Amen Thompson",
+    "Ausar Thompson",
+    "Donovan Clingan",
+    "Giannis Antetokounmpo",
+    "Isaiah Hartenstein",
+    "Ivica Zubac",
+    "Jalen Duren",
+    "Jarrett Allen",
+    "Rudy Gobert"
+   ],
+   "opp_rosters_touched": 0,
+   "note": "DIAGNOSTIC ONLY - opponents held as-drafted, players duplicated"
+  }
+ },
+ "placebo_matched_to": "ARM2_punt_aware_card",
+ "placebo_turns": [
+  8,
+  17,
+  41,
+  56,
+  65,
+  80,
+  89,
+  104,
+  128
+ ],
+ "placebo_secondary_matched_to": "ARM1_shipped_card",
+ "paired_delta": {
+  "ARM1_shipped_card": {
+   "mean_pp": -9.572,
+   "se_pp": 0.228,
+   "n_blocks": 18
+  },
+  "ARM2_punt_aware_card": {
+   "mean_pp": -6.361,
+   "se_pp": 0.203,
+   "n_blocks": 18
+  },
+  "ARM3_placebo": {
+   "mean_pp": -9.589,
+   "se_pp": 0.226,
+   "n_blocks": 18
+  },
+  "ARM3b_placebo_loser_matched": {
+   "mean_pp": -9.589,
+   "se_pp": 0.226,
+   "n_blocks": 18
+  }
+ }
+}

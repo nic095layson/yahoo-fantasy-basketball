@@ -1,0 +1,131 @@
+{
+ "CF5_embiid_to_white": {
+  "champ": 11.78,
+  "playoff": 67.62,
+  "finish": 4,
+  "kept_total": 6.07,
+  "cat_ranks": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 7,
+   "PTS": 4,
+   "REB": 9,
+   "AST": 5,
+   "ST": 12,
+   "BLK": 7,
+   "TO": 7
+  },
+  "swaps": {
+   "Joel Embiid": "Coby White"
+  }
+ },
+ "CF3_all_deviations_to_card": {
+  "champ": 1.05,
+  "playoff": 19.88,
+  "finish": 10,
+  "kept_total": 7.68,
+  "cat_ranks": {
+   "FG%": 7,
+   "FT%": 4,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 6,
+   "AST": 8,
+   "ST": 6,
+   "BLK": 6,
+   "TO": 4
+  },
+  "swaps": {
+   "Jalen Brunson": "Kristaps Porzingis",
+   "Joel Embiid": "Coby White",
+   "Mikal Bridges": "Jalen Suggs",
+   "Deni Avdija": "Norman Powell",
+   "Zach Edey": "Nikola Vucevic",
+   "DeMar DeRozan": "Jabari Smith Jr.",
+   "Bennedict Mathurin": "Wendell Carter Jr.",
+   "Al Horford": "De'Anthony Melton"
+  }
+ },
+ "CF1_bridges_to_suggs": {
+  "champ": 10.52,
+  "playoff": 64.74,
+  "finish": 6,
+  "kept_total": 5.77,
+  "cat_ranks": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 8,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 5,
+   "ST": 10,
+   "BLK": 6,
+   "TO": 8
+  },
+  "swaps": {
+   "Mikal Bridges": "Jalen Suggs"
+  }
+ },
+ "as_drafted": {
+  "champ": 9.76,
+  "playoff": 62.5,
+  "finish": 6,
+  "kept_total": 5.72,
+  "cat_ranks": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 8,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 5,
+   "ST": 12,
+   "BLK": 6,
+   "TO": 8
+  },
+  "swaps": {}
+ },
+ "CF4_steals_repair": {
+  "error": "('DeMar DeRozan', 'Toumani Camara', 'ILLEGAL: alt was already drafted at that turn')"
+ },
+ "CF2_mathurin_to_wcj": {
+  "champ": 12.57,
+  "playoff": 70.48,
+  "finish": 4,
+  "kept_total": 6.85,
+  "cat_ranks": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 8,
+   "PTS": 4,
+   "REB": 4,
+   "AST": 5,
+   "ST": 12,
+   "BLK": 6,
+   "TO": 8
+  },
+  "swaps": {
+   "Bennedict Mathurin": "Wendell Carter Jr."
+  }
+ },
+ "CF6_steals_repair_legal": {
+  "champ": 10.47,
+  "playoff": 64.47,
+  "finish": 5,
+  "kept_total": 5.63,
+  "cat_ranks": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 9,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 7,
+   "ST": 10,
+   "BLK": 6,
+   "TO": 8
+  },
+  "swaps": {
+   "Mikal Bridges": "Jalen Suggs",
+   "CJ McCollum": "Keon Ellis"
+  }
+ }
+}
