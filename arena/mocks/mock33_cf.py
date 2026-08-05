@@ -15,7 +15,7 @@ Arms (each 18000 seasons, CRN-paired against the as-drafted baseline):
                        at random from the legal available pool.
 
 Recommendations are NOT recomputed here; they are read from the already-computed
-per-turn replay (m31_replay.json, fields "shipped" / "puntAware", each a top-5 in
+per-turn replay (m33_replay.json, fields "shipped" / "puntAware", each a top-5 in
 order).  Legality is screened against the RUNNING board, in pick order: a
 recommended name that an earlier swap has already consumed is skipped and the
 walk descends the top-5.  (This is the mock27-29 lesson: screening against the
@@ -37,7 +37,8 @@ Run: python3 arena/mocks/mock33_cf.py
 """
 import sys, os, json, random, math, statistics
 
-os.chdir("/home/user/yahoo-fantasy-basketball")
+REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+os.chdir(REPO)
 sys.path = [os.path.abspath("scripts"), os.path.abspath("arena")] + [
     p for p in sys.path if p not in (os.path.abspath("scripts"), os.path.abspath("arena"))]
 
@@ -48,11 +49,11 @@ import arena  # noqa: E402
 CATS = hoops.CATS
 byname = {p["player"]: p for p in players}
 
-STATE = "/root/.claude/uploads/58588377-022f-59e5-ac2c-106514acd881/6ae5fe0f-draft_state_20.json"
+STATE = os.path.join(REPO, "arena", "data", "states", "draft_state_mock33.json")
 SP = os.environ.get(
-    "M31_OUT",
-    "/tmp/claude-0/-home-user-yahoo-fantasy-basketball/58588377-022f-59e5-ac2c-106514acd881/scratchpad")
-REPLAY = f"{SP}/m31_replay.json"
+    "M33_OUT",
+    os.path.join(REPO, "arena", "results"))
+REPLAY = f"{SP}/m33_replay.json"
 OWNER = 8
 
 state = json.load(open(STATE))

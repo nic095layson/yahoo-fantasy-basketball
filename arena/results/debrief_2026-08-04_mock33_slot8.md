@@ -232,13 +232,38 @@ E20/E23 relative to what this debrief alone would justify.
   pool, 246 players), so these numbers are not comparable to arena
   tournament rates.
 
-## 7. Provenance
+## 7. Provenance and regeneration (lesson 13)
 
 Produced 2026-08-04 by an 8-agent workflow (4 measurement + 4 adversarial
-verification, ~750k tokens). Scripts:
-`arena/mocks/season_sim_mock33.py`, `arena/mocks/mock33_cf.py`. Replay and
-audit artifacts in the session scratchpad (`m33_replay.json`,
-`m33_legacy.json`, `ledger_punt_results.json`). Every headline number in
-this debrief was independently re-run by a verifier agent; the four
-PARTIAL verdicts and their corrections are folded in above rather than
-appended.
+verification, ~750k tokens). Every headline number was independently
+re-run by a verifier agent; the four PARTIAL verdicts and their
+corrections are folded in above rather than appended.
+
+**Landed under the evidence-landing law (2026-08-05).** Inputs and outputs
+are committed with repo-relative paths; a fresh clone regenerates the
+season-sim block with one command:
+
+```
+python3 arena/mocks/season_sim_mock33.py     # -> arena/results/season_sim_mock33_out.json
+python3 arena/mocks/mock33_cf.py             # -> arena/results/mock33_cf_out.json (~30 min, 4 arms x 18k seasons)
+```
+
+| Artifact | Path |
+|---|---|
+| Draft state | `arena/data/states/draft_state_mock33.json` |
+| Season sim | `arena/mocks/season_sim_mock33.py` → `arena/results/season_sim_mock33_out.json` |
+| Counterfactual arms | `arena/mocks/mock33_cf.py` → `arena/results/mock33_cf_out.json` |
+| Frozen per-turn card | `arena/results/m33_replay.json` (CF input) |
+
+**Regeneration status, stated honestly:** the season-sim block (§1) was
+re-run from the committed state on 2026-08-05 and reproduced exactly —
+9.52% champ, ECW 4.630, rank 4, per-seed 9.37/9.82/9.38, kept-total rank
+1. The counterfactual harness (§3) had its paths made repo-relative and
+its inputs verified to resolve (156 picks, owner slot 8, 13 replay turns),
+but the 18,000-season × 4-arm run was NOT repeated — those numbers still
+rest on the committed `mock33_cf_out.json` from the original run. The
+punt-plumbing audit (§2) ran in JavaScript against the deck engine and its
+driver still lives in the session scratchpad; **its numbers are
+[UNREPRODUCIBLE] from a fresh clone until that driver is landed**, which
+E21 requires anyway when the audit is re-run across all four punted
+drafts.
