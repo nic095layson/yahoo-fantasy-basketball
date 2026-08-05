@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-08-04", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "Sweep 8/4: zero pool changes. Harden (CLE talks ongoing), DeRozan (waived, CLE interest), Beal still unsigned FA. Deck fixes shipped today: room-mix survival \u2026"} -->
+<!-- build-manifest {"built": "2026-08-05", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "UTC-rollover stamp for owner-ordered UI republish (decision-card redesign). Pool unchanged; last news sweep 8/4 evening (~2h prior, zero changes); rosters \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -180,6 +180,22 @@ ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); f
 .verdict.buy { color: var(--accent); border-color: var(--accent); }
 .verdict.toss { color: var(--ink-2); }
 
+/* Zone labels + build-coherence strip + dual-lens chips (owner redesign 2026-08-05) */
+.zoneline { display: flex; align-items: baseline; gap: var(--space-2); font-size: var(--text-sm); color: var(--muted); margin: var(--space-3) 0 var(--space-1); border-top: 1px solid var(--line); padding-top: var(--space-2); }
+.zoneline .zl { font-weight: var(--weight-medium); letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+.coherence { border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); font-size: var(--text-sm); margin: 0 0 var(--space-3); }
+.coherence p { margin: var(--space-1) 0 0; max-width: none; font-variant-numeric: tabular-nums; }
+.coherence .state { font-weight: var(--weight-black); letter-spacing: 0.06em; }
+.coherence.aligned { border-left-color: var(--delta-up); }
+.coherence.aligned .state { color: var(--delta-up); }
+.coherence.drifting { border-left-color: var(--status-risk); }
+.coherence.drifting .state { color: var(--status-risk); }
+.coherence.inverted { border-color: var(--status-out); border-left-color: var(--status-out); }
+.coherence.inverted .state { color: var(--status-out); }
+.coherence button.swapbtn { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); display: block; margin-top: var(--space-2); padding: var(--space-1) var(--space-3); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
+ol.recos .keptchip { grid-column: 1 / 4; justify-self: start; font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; color: var(--delta-up); border: 1px solid var(--delta-up); border-radius: var(--radius-sm); padding: 0 var(--space-1); }
+ol.recos .keptchip.anti { color: var(--status-risk); border-color: var(--status-risk); }
+
 /* Tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-8) 0 var(--space-3); border-bottom: 1px solid var(--line); }
 .tabs button { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-medium); letter-spacing: 0.06em; text-transform: uppercase; padding: var(--space-2) var(--space-3); border: none; border-bottom: 2px solid transparent; background: none; color: var(--muted); cursor: pointer; }
@@ -290,7 +306,10 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
     <div class="card">
       <h2 class="hcenter">Decision card</h2>
+      <p class="zoneline"><span class="zl">Your build</span><span title="Punt chips, category ranks, and the coherence strip read your declared punt. Analysis only — never advice.">punt-aware · analysis, not advice</span></p>
       <div class="puntline" id="puntline"></div>
+      <div id="coherence" class="hidden"></div>
+      <p class="zoneline"><span class="zl">The card's advice</span><span title="Ranked by blend50: marginal expected weekly category wins vs these 11 rosters + balanced value. Deliberately ignores the punt box — every punt-steered ordering tested measured −3.8 to −11pp championship. Blue chips show each player under YOUR punt.">build-agnostic · by design</span></p>
       <div class="deckmeta" id="deckmeta"></div>
       <div id="flags"></div>
       <div id="swline" class="hidden"></div>
@@ -327,7 +346,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
           <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to make this the lens (clears cat filters).">Val</th>
-          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking scores every non-punted category at full weight (arena-codified 2026-07-28). Click to make this the lens (clears cat filters).">Fit</th>
+          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking is blend50 and build-agnostic by design (punt-steered orderings measured negative; arena-codified 2026-07-28, blend50 2026-08-04). Click to make this the lens (clears cat filters).">Fit</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -337,7 +356,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
       <span>TO inverted (+ = fewer turnovers)</span>
       <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
-      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — a reading lens; the Top-5 ranking weighs every non-punted cat fully (arena-codified 2026-07-28)</span>
+      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — a reading lens; the Top-5 ranking is blend50, build-agnostic by design</span>
       <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
     </div>
   </div>
@@ -376,8 +395,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 </section>
 
 <footer class="colophon">
-  <p><strong>Data.</strong> Pool refreshed 2026-08-04 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/3): Jeremy Sochan signs with Portland — one year at the veteran minimum, non-guaranteed, a camp deal (reported 8/1), so he moves FA→POR with no change to his projection. Harden's Cleveland return remains agreed-but-unsigned by design; DeRozan (waived by Sacramento), Beal (opted out), and Westbrook are still true free agents. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top composite card, or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported) (from draft slots 1–3 the list order itself uses the win-probability gradient, arena-confirmed +12.7pp, t=4.6). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Data.</strong> Pool refreshed 2026-08-05 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/3): Jeremy Sochan signs with Portland — one year at the veteran minimum, non-guaranteed, a camp deal (reported 8/1), so he moves FA→POR with no change to his projection. Harden's Cleveland return remains agreed-but-unsigned by design; DeRozan (waived by Sacramento), Beal (opted out), and Westbrook are still true free agents. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared punt against every single-swap neighbor on the roster as drafted (display + declaration only; added 2026-08-05 after mock 32 declared a steals punt over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1213,9 +1232,9 @@ const JUDGMENT = {
   const $ = id => document.getElementById(id);
 
   /* ---------- header stamp + fresh-data-pull ---------- */
-  const BUILD_PULL = "2026-08-04"; // freshness stamp date; rewritten at each republish
+  const BUILD_PULL = "2026-08-05"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "Sweep 8/4: zero pool changes. Harden (CLE talks ongoing), DeRozan (waived, CLE interest), Beal still unsigned FA. Deck fixes shipped today: room-mix survival recalibration + TARGET/BOARD LEAN provenance split.";
+  const BUILD_NOTE = "UTC-rollover stamp for owner-ordered UI republish (decision-card redesign). Pool unchanged; last news sweep 8/4 evening (~2h prior, zero changes); rosters re-verified this run (246/246, fallback-partial). Next news sweep owed later 8/5.";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -1713,9 +1732,59 @@ const JUDGMENT = {
       const nx = myFuturePicks(deck.state, 1)[0];
       $("feedTitle").textContent = nx ? `Your pick #${nx}` : "Your pick";
     }
-    renderStrip(); renderMirror(); renderMyRoster(); renderPuntAnalyzer(); renderBuildRead();
+    renderStrip(); renderMirror(); renderMyRoster(); renderPuntAnalyzer(); renderCoherence(); renderBuildRead();
     renderDecision(); renderBest();
     renderGrid(); renderRosters(); renderMatrix(); renderVs();
+  }
+
+  /* Build-coherence strip (owner redesign 2026-08-05; lesson L-m32a in
+     arena/results/debrief_2026-08-04_mock32_slot10.md). Compares the
+     DECLARED punt against every single-swap neighbor on the roster AS
+     DRAFTED (raw kept-z sums — the same math the mock post-mortems grade
+     by). Display + declaration only: the advice ranking never reads the
+     punt box, by measured design. */
+  function renderCoherence() {
+    const box = $("coherence");
+    if (!box) return;
+    box.className = "hidden";
+    box.textContent = "";
+    const st = deck.state;
+    const mineP = st.picks.filter(pk => pk.slot === st.slot && !pk.player.startsWith("UNKNOWN"))
+      .map(pk => PLAYERS.find(q => q.n === pk.player)).filter(Boolean);
+    if (!st.punt.length || mineP.length < 3) return;
+    const keptSum = arr => {
+      const ps = new Set(arr);
+      return mineP.reduce((t, q) => t + totalValue(q, ps), 0);
+    };
+    const declared = keptSum(st.punt);
+    let best = null;
+    for (const out of st.punt)
+      for (const inn of CATS.filter(c => !st.punt.includes(c))) {
+        const alt = st.punt.filter(c => c !== out).concat(inn);
+        const v = keptSum(alt);
+        if (!best || v > best.v) best = { alt, v };
+      }
+    const delta = best.v - declared;
+    const state = delta > 2 ? "inverted" : delta > 0.75 ? "drifting" : "aligned";
+    box.className = "coherence " + state;
+    const head = el("span", "state",
+      state === "inverted" ? "\u26a0 PUNT INVERTED" : state === "drifting" ? "\u25c7 PUNT DRIFTING" : "\u2713 PUNT ALIGNED");
+    head.dataset.tip = "Single-swap check of your declared punt vs the roster you have actually drafted (kept-z, raw sums). The declaration steers analysis lenses only \u2014 the advice list stays build-agnostic either way.";
+    box.append(head);
+    box.append(el("p", "",
+      `Declared ${st.punt.join("\u00b7")}: kept ${fmtZ(declared, 1)}` +
+      (state === "aligned" ? " \u2014 best available declaration for this roster."
+        : ` \u00b7 best single swap ${best.alt.join("\u00b7")}: ${fmtZ(best.v, 1)} (+${delta.toFixed(1)})`)));
+    if (state !== "aligned") {
+      const b = el("button", "swapbtn", `Switch punt to ${best.alt.join(" \u00b7 ")}`);
+      b.type = "button";
+      b.addEventListener("click", () => {
+        deck.state.punt = best.alt;
+        log(`Punt re-declared: ${best.alt.join(", ")} (coherence swap, +${delta.toFixed(1)} kept-z).`);
+        save(); renderAll();
+      });
+      box.append(b);
+    }
   }
 
   /* Punt Analyzer — one running line at the top of the decision card.
@@ -2310,8 +2379,7 @@ const JUDGMENT = {
       li.append(el("span", "rk", String(i + 1)));
       const isRec = i === 0 && !tgOnPin;
       const nm = el("span", "nm", (isRec ? "🎯 " : "") + p.n + ", " + p.p);
-      if (isRec) nm.dataset.tip = "🎯 system pick — top composite score (council + judgment + value" +
-        (st.slot <= GRAD_SLOTS ? "; gradient-ordered from this seat, arena-confirmed +12.7pp" : "") + ")";
+      if (isRec) nm.dataset.tip = "🎯 system pick — top blend50 score: 50% marginal expected-cats-won vs this room + 50% balanced value (deliberately punt-blind; your punt's numbers ride the blue chip). An urgent structural TARGET can take this marker instead.";
       if (p.av > 0 && p.av < 1) {
         const fl = el("span", "flag risk", "▲");
         fl.dataset.tip = p.note;
@@ -2320,7 +2388,7 @@ const JUDGMENT = {
       let vSpan = null;
       const fRec = fitZ(p, recoFw);
       const sc = el("span", "sc", (scored[i].ds * 100).toFixed(1) + (p.av < 1 && fRec.raw > 0 ? "*" : ""));
-      sc.dataset.tip = `ΔECW-blend ${(scored[i].ds * 100).toFixed(1)} — 50% marginal expected-cats-won vs the room's CURRENT rosters + 50% punt-aware 9-cat value, both as pool percentiles (validated 2026-08-04: +11.6pp mean, 0 winner regressions across 14 replayed drafts). Informational: council ${s.toFixed(2)}` +
+      sc.dataset.tip = `ΔECW-blend ${(scored[i].ds * 100).toFixed(1)} — 50% marginal expected-cats-won vs the room's CURRENT rosters + 50% balanced 9-cat value (punt-blind by design \u2014 punt-steered orderings measured \u22123.8 to \u221211pp), both as pool percentiles (validated 2026-08-04: +11.6pp mean, 0 winner regressions across 14 replayed drafts). Informational: council ${s.toFixed(2)}` +
         (scored[i].adj ? ` · judgment ${fmtZ(scored[i].adj, 2)}` : "") +
         (i === 0 && scored.length > 1 ? ` · lead over #2: ${((scored[0].ds - scored[1].ds) * 100).toFixed(1)}` : "") +
         (i > 0 ? ` · gap to #1: −${((scored[0].ds - scored[i].ds) * 100).toFixed(1)}` : "");
@@ -2353,6 +2421,17 @@ const JUDGMENT = {
         (scored[i].vbonus ? ` · ⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}` : "") +
         (plus.length ? ` · plus-cats = strongest z (≥ +0.5), capped at 3` : "");
       li.append(ml);
+      /* Dual-lens chip (owner redesign 2026-08-05): when a punt is
+         declared, show this candidate under YOUR punt beside the
+         build-agnostic score. Display-only \u2014 never re-ranks. */
+      if (st.punt.length) {
+        const kv = adjValue(p, punt);
+        const kvBest = Math.max(...scored.map(r => adjValue(r.p, punt)));
+        const kc = el("span", "keptchip" + (kv < 0 ? " anti" : ""),
+          `your punt ${fmtZ(kv, 1)}` + (kv === kvBest ? " \u00b7 best fit" : kv < 0 ? " \u00b7 anti-fit" : ""));
+        kc.dataset.tip = "Injury-adjusted z with your punted categories removed \u2014 the number the mock post-mortems grade picks by. Information only; the ranking stays build-agnostic.";
+        li.append(kc);
+      }
       /* Market-timing verdict chip (owner RULE 2026-07-28): value says
          WHO, price says WHEN. Scarcity (shelf ≤ 2) is the only thing
          allowed to beat price. Display-only — never re-ranks. */
