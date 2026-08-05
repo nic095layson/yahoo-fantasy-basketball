@@ -1,0 +1,165 @@
+{
+ "26": {
+  "mock": "26",
+  "owner_slot": 3,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   11,
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 23.117,
+    "playoff": 84.578,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Jayson Tatum",
+     "Domantas Sabonis",
+     "Payton Pritchard",
+     "Cooper Flagg",
+     "Jalen Suggs",
+     "Jalen Duren",
+     "Jaden McDaniels",
+     "Nikola Vucevic",
+     "Jerami Grant",
+     "Aaron Nesmith",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ]
+   },
+   "v1cards": {
+    "champ": 27.967,
+    "playoff": 91.289,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Myles Turner",
+     "Michael Porter Jr.",
+     "Jalen Duren",
+     "Norman Powell",
+     "PJ Washington",
+     "Jerami Grant",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      22,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ],
+     [
+      27,
+      "Domantas Sabonis",
+      "Derrick White"
+     ],
+     [
+      51,
+      "Payton Pritchard",
+      "Myles Turner"
+     ],
+     [
+      70,
+      "Jalen Suggs",
+      "Michael Porter Jr."
+     ],
+     [
+      94,
+      "Jaden McDaniels",
+      "Norman Powell"
+     ],
+     [
+      99,
+      "Nikola Vucevic",
+      "PJ Washington"
+     ],
+     [
+      123,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 31.722,
+    "playoff": 93.561,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Myles Turner",
+     "Michael Porter Jr.",
+     "Jalen Duren",
+     "Norman Powell",
+     "PJ Washington",
+     "Jerami Grant",
+     "John Collins",
+     "D'Angelo Russell",
+     "Wendell Carter Jr."
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      22,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ],
+     [
+      27,
+      "Domantas Sabonis",
+      "Derrick White"
+     ],
+     [
+      51,
+      "Payton Pritchard",
+      "Myles Turner"
+     ],
+     [
+      70,
+      "Jalen Suggs",
+      "Michael Porter Jr."
+     ],
+     [
+      94,
+      "Jaden McDaniels",
+      "Norman Powell"
+     ],
+     [
+      99,
+      "Nikola Vucevic",
+      "PJ Washington"
+     ],
+     [
+      123,
+      "Aaron Nesmith",
+      "John Collins"
+     ],
+     [
+      147,
+      "Jared McCain",
+      "Wendell Carter Jr."
+     ]
+    ]
+   }
+  }
+ }
+}
