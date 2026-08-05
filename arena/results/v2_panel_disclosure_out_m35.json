@@ -1,0 +1,124 @@
+{
+ "35": {
+  "mock": "35",
+  "owner_slot": 12,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 8.817,
+    "playoff": 58.172,
+    "finish": 6,
+    "seasons": 18000,
+    "roster": [
+     "Evan Mobley",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "VJ Edgecombe",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "RJ Barrett"
+    ]
+   },
+   "v1cards": {
+    "champ": 9.094,
+    "playoff": 61.383,
+    "finish": 5,
+    "seasons": 18000,
+    "roster": [
+     "Evan Mobley",
+     "Donovan Mitchell",
+     "Amen Thompson",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Aaron Gordon",
+     "Aaron Nesmith",
+     "Nic Claxton",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Giannis Antetokounmpo",
+      "Donovan Mitchell"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      109,
+      "VJ Edgecombe",
+      "Aaron Gordon"
+     ],
+     [
+      132,
+      "Ausar Thompson",
+      "Aaron Nesmith"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 6.85,
+    "playoff": 53.906,
+    "finish": 6,
+    "seasons": 18000,
+    "roster": [
+     "Evan Mobley",
+     "Donovan Mitchell",
+     "Amen Thompson",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Aaron Gordon",
+     "Aaron Nesmith",
+     "Jrue Holiday",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Giannis Antetokounmpo",
+      "Donovan Mitchell"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      109,
+      "VJ Edgecombe",
+      "Aaron Gordon"
+     ],
+     [
+      132,
+      "Ausar Thompson",
+      "Aaron Nesmith"
+     ],
+     [
+      133,
+      "Nic Claxton",
+      "Jrue Holiday"
+     ]
+    ]
+   }
+  }
+ }
+}

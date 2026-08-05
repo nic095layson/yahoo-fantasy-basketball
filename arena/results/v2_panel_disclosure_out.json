@@ -1,0 +1,2027 @@
+{
+ "22": {
+  "mock": "22",
+  "owner_slot": 11,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   9,
+   10,
+   11,
+   12
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 0.583,
+    "playoff": 14.628,
+    "finish": 10,
+    "seasons": 18000,
+    "roster": [
+     "Anthony Edwards",
+     "Cade Cunningham",
+     "Trae Young",
+     "OG Anunoby",
+     "Coby White",
+     "Lauri Markkanen",
+     "LeBron James",
+     "Immanuel Quickley",
+     "Kon Knueppel",
+     "Jabari Smith Jr.",
+     "D'Angelo Russell",
+     "Kyle Kuzma",
+     "Anfernee Simons"
+    ]
+   },
+   "v1cards": {
+    "champ": 2.433,
+    "playoff": 32.544,
+    "finish": 8,
+    "seasons": 18000,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "Josh Giddey",
+     "Cooper Flagg",
+     "Kel'el Ware",
+     "Jarrett Allen",
+     "Josh Hart",
+     "Donovan Clingan",
+     "Jabari Smith Jr.",
+     "John Collins",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Neemias Queta"
+    ],
+    "swaps": [
+     [
+      14,
+      "Cade Cunningham",
+      "Evan Mobley"
+     ],
+     [
+      35,
+      "Trae Young",
+      "Josh Giddey"
+     ],
+     [
+      38,
+      "OG Anunoby",
+      "Cooper Flagg"
+     ],
+     [
+      59,
+      "Coby White",
+      "Kel'el Ware"
+     ],
+     [
+      62,
+      "Lauri Markkanen",
+      "Jarrett Allen"
+     ],
+     [
+      83,
+      "LeBron James",
+      "Josh Hart"
+     ],
+     [
+      86,
+      "Immanuel Quickley",
+      "Donovan Clingan"
+     ],
+     [
+      110,
+      "Kon Knueppel",
+      "John Collins"
+     ],
+     [
+      131,
+      "D'Angelo Russell",
+      "Santi Aldama"
+     ],
+     [
+      134,
+      "Kyle Kuzma",
+      "Wendell Carter Jr."
+     ],
+     [
+      155,
+      "Anfernee Simons",
+      "Neemias Queta"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 8.056,
+    "playoff": 56.539,
+    "finish": 5,
+    "seasons": 18000,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "Josh Giddey",
+     "Cooper Flagg",
+     "Kel'el Ware",
+     "Jarrett Allen",
+     "Josh Hart",
+     "Donovan Clingan",
+     "Toumani Camara",
+     "Ausar Thompson",
+     "Cameron Boozer",
+     "Matas Buzelis",
+     "Neemias Queta"
+    ],
+    "swaps": [
+     [
+      14,
+      "Cade Cunningham",
+      "Evan Mobley"
+     ],
+     [
+      35,
+      "Trae Young",
+      "Josh Giddey"
+     ],
+     [
+      38,
+      "OG Anunoby",
+      "Cooper Flagg"
+     ],
+     [
+      59,
+      "Coby White",
+      "Kel'el Ware"
+     ],
+     [
+      62,
+      "Lauri Markkanen",
+      "Jarrett Allen"
+     ],
+     [
+      83,
+      "LeBron James",
+      "Josh Hart"
+     ],
+     [
+      86,
+      "Immanuel Quickley",
+      "Donovan Clingan"
+     ],
+     [
+      107,
+      "Kon Knueppel",
+      "Toumani Camara"
+     ],
+     [
+      110,
+      "Jabari Smith Jr.",
+      "Ausar Thompson"
+     ],
+     [
+      131,
+      "D'Angelo Russell",
+      "Cameron Boozer"
+     ],
+     [
+      134,
+      "Kyle Kuzma",
+      "Matas Buzelis"
+     ],
+     [
+      155,
+      "Anfernee Simons",
+      "Neemias Queta"
+     ]
+    ]
+   }
+  }
+ },
+ "31": {
+  "mock": "31",
+  "owner_slot": 9,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   12,
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 13.539,
+    "playoff": 76.478,
+    "finish": 3,
+    "seasons": 18000,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Cooper Flagg",
+     "Alperen Sengun",
+     "Zion Williamson",
+     "Paolo Banchero",
+     "Dylan Harper",
+     "Darryn Peterson",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "Isaiah Collier"
+    ]
+   },
+   "v1cards": {
+    "champ": 15.889,
+    "playoff": 81.817,
+    "finish": 3,
+    "seasons": 18000,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Jamal Murray",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "Isaiah Collier"
+    ],
+    "swaps": [
+     [
+      16,
+      "Giannis Antetokounmpo",
+      "Jamal Murray"
+     ],
+     [
+      33,
+      "Trae Young",
+      "Dyson Daniels"
+     ],
+     [
+      40,
+      "Cooper Flagg",
+      "OG Anunoby"
+     ],
+     [
+      57,
+      "Alperen Sengun",
+      "Reed Sheppard"
+     ],
+     [
+      64,
+      "Zion Williamson",
+      "Tari Eason"
+     ],
+     [
+      81,
+      "Paolo Banchero",
+      "Jarrett Allen"
+     ],
+     [
+      88,
+      "Dylan Harper",
+      "Jalen Duren"
+     ],
+     [
+      105,
+      "Darryn Peterson",
+      "Rudy Gobert"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 18.933,
+    "playoff": 85.85,
+    "finish": 3,
+    "seasons": 18000,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Jamal Murray",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Daniel Gafford",
+     "Isaiah Collier"
+    ],
+    "swaps": [
+     [
+      16,
+      "Giannis Antetokounmpo",
+      "Jamal Murray"
+     ],
+     [
+      33,
+      "Trae Young",
+      "Dyson Daniels"
+     ],
+     [
+      40,
+      "Cooper Flagg",
+      "OG Anunoby"
+     ],
+     [
+      57,
+      "Alperen Sengun",
+      "Reed Sheppard"
+     ],
+     [
+      64,
+      "Zion Williamson",
+      "Tari Eason"
+     ],
+     [
+      81,
+      "Paolo Banchero",
+      "Jarrett Allen"
+     ],
+     [
+      88,
+      "Dylan Harper",
+      "Jalen Duren"
+     ],
+     [
+      105,
+      "Darryn Peterson",
+      "Rudy Gobert"
+     ],
+     [
+      136,
+      "Nic Claxton",
+      "Daniel Gafford"
+     ]
+    ]
+   }
+  }
+ },
+ "32": {
+  "mock": "32",
+  "owner_slot": 10,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 6.6,
+    "playoff": 51.628,
+    "finish": 5,
+    "seasons": 18000,
+    "roster": [
+     "Cade Cunningham",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Paolo Banchero",
+     "Joel Embiid",
+     "Myles Turner",
+     "Zion Williamson",
+     "Dylan Harper",
+     "Rudy Gobert",
+     "Cason Wallace",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ]
+   },
+   "v1cards": {
+    "champ": 0.422,
+    "playoff": 15.367,
+    "finish": 12,
+    "seasons": 18000,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Rudy Gobert",
+     "Keon Ellis",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Tyrese Haliburton"
+     ],
+     [
+      15,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Dyson Daniels"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Reed Sheppard"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      111,
+      "Dylan Harper",
+      "Keon Ellis"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 3.406,
+    "playoff": 43.261,
+    "finish": 8,
+    "seasons": 18000,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Rudy Gobert",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Daniel Gafford",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Tyrese Haliburton"
+     ],
+     [
+      15,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Dyson Daniels"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Reed Sheppard"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Dylan Harper",
+      "Daniel Gafford"
+     ]
+    ]
+   }
+  }
+ },
+ "34": {
+  "mock": "34",
+  "owner_slot": 8,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   11,
+   12
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 17.589,
+    "playoff": 82.3,
+    "finish": 2,
+    "seasons": 18000,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Bam Adebayo",
+     "Pascal Siakam",
+     "Kel'el Ware",
+     "Kon Knueppel",
+     "Herbert Jones",
+     "Jalen Green",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Daniel Gafford"
+    ]
+   },
+   "v1cards": {
+    "champ": 0.044,
+    "playoff": 5.706,
+    "finish": 12,
+    "seasons": 18000,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Ivica Zubac",
+     "Myles Turner",
+     "Kel'el Ware",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Daniel Gafford",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Jusuf Nurkic"
+    ],
+    "swaps": [
+     [
+      8,
+      "Tyrese Haliburton",
+      "Anthony Edwards"
+     ],
+     [
+      41,
+      "Dyson Daniels",
+      "Onyeka Okongwu"
+     ],
+     [
+      56,
+      "Bam Adebayo",
+      "Ivica Zubac"
+     ],
+     [
+      65,
+      "Pascal Siakam",
+      "Myles Turner"
+     ],
+     [
+      89,
+      "Kon Knueppel",
+      "Jalen Duren"
+     ],
+     [
+      104,
+      "Herbert Jones",
+      "Rudy Gobert"
+     ],
+     [
+      152,
+      "Jalen Green",
+      "Jusuf Nurkic"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 0.667,
+    "playoff": 24.006,
+    "finish": 11,
+    "seasons": 18000,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Ivica Zubac",
+     "Myles Turner",
+     "Kel'el Ware",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Daniel Gafford",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      8,
+      "Tyrese Haliburton",
+      "Anthony Edwards"
+     ],
+     [
+      41,
+      "Dyson Daniels",
+      "Onyeka Okongwu"
+     ],
+     [
+      56,
+      "Bam Adebayo",
+      "Ivica Zubac"
+     ],
+     [
+      65,
+      "Pascal Siakam",
+      "Myles Turner"
+     ],
+     [
+      89,
+      "Kon Knueppel",
+      "Jalen Duren"
+     ],
+     [
+      104,
+      "Herbert Jones",
+      "Rudy Gobert"
+     ],
+     [
+      152,
+      "Jalen Green",
+      "Keon Ellis"
+     ]
+    ]
+   }
+  }
+ },
+ "35": {
+  "mock": "35",
+  "owner_slot": 12,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 8.817,
+    "playoff": 58.172,
+    "finish": 6,
+    "seasons": 18000,
+    "roster": [
+     "Evan Mobley",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "VJ Edgecombe",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "RJ Barrett"
+    ]
+   },
+   "v1cards": {
+    "champ": 9.094,
+    "playoff": 61.383,
+    "finish": 5,
+    "seasons": 18000,
+    "roster": [
+     "Evan Mobley",
+     "Donovan Mitchell",
+     "Amen Thompson",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Aaron Gordon",
+     "Aaron Nesmith",
+     "Nic Claxton",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Giannis Antetokounmpo",
+      "Donovan Mitchell"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      109,
+      "VJ Edgecombe",
+      "Aaron Gordon"
+     ],
+     [
+      132,
+      "Ausar Thompson",
+      "Aaron Nesmith"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 6.85,
+    "playoff": 53.906,
+    "finish": 6,
+    "seasons": 18000,
+    "roster": [
+     "Evan Mobley",
+     "Donovan Mitchell",
+     "Amen Thompson",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Aaron Gordon",
+     "Aaron Nesmith",
+     "Jrue Holiday",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Giannis Antetokounmpo",
+      "Donovan Mitchell"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      109,
+      "VJ Edgecombe",
+      "Aaron Gordon"
+     ],
+     [
+      132,
+      "Ausar Thompson",
+      "Aaron Nesmith"
+     ],
+     [
+      133,
+      "Nic Claxton",
+      "Jrue Holiday"
+     ]
+    ]
+   }
+  }
+ },
+ "36": {
+  "mock": "36",
+  "owner_slot": 1,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   10,
+   12
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 30.783,
+    "playoff": 92.65,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Giannis Antetokounmpo",
+     "James Harden",
+     "Reed Sheppard",
+     "Alperen Sengun",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Aaron Nesmith",
+     "Andrew Nembhard",
+     "Keon Ellis",
+     "Al Horford"
+    ]
+   },
+   "v1cards": {
+    "champ": 29.106,
+    "playoff": 94.25,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "Reed Sheppard",
+     "Cameron Johnson",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Aaron Nesmith",
+     "Andrew Nembhard",
+     "Keon Ellis",
+     "Al Horford"
+    ],
+    "swaps": [
+     [
+      24,
+      "Giannis Antetokounmpo",
+      "Desmond Bane"
+     ],
+     [
+      25,
+      "James Harden",
+      "Derrick White"
+     ],
+     [
+      49,
+      "Alperen Sengun",
+      "Cameron Johnson"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 27.783,
+    "playoff": 93.989,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "Reed Sheppard",
+     "Cameron Johnson",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Andrew Nembhard",
+     "Santi Aldama",
+     "Brandin Podziemski",
+     "Al Horford"
+    ],
+    "swaps": [
+     [
+      24,
+      "Giannis Antetokounmpo",
+      "Desmond Bane"
+     ],
+     [
+      25,
+      "James Harden",
+      "Derrick White"
+     ],
+     [
+      49,
+      "Alperen Sengun",
+      "Cameron Johnson"
+     ],
+     [
+      121,
+      "Aaron Nesmith",
+      "Santi Aldama"
+     ],
+     [
+      144,
+      "Keon Ellis",
+      "Brandin Podziemski"
+     ]
+    ]
+   }
+  }
+ },
+ "37": {
+  "mock": "37",
+  "owner_slot": 2,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   10,
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 29.689,
+    "playoff": 91.756,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Nikola Jokic",
+     "James Harden",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Zion Williamson",
+     "Alex Sarr",
+     "Ausar Thompson",
+     "Jalen Green",
+     "Bilal Coulibaly",
+     "Daniel Gafford",
+     "Derik Queen"
+    ]
+   },
+   "v1cards": {
+    "champ": 12.65,
+    "playoff": 75.167,
+    "finish": 4,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Myles Turner",
+     "Tari Eason",
+     "Brook Lopez",
+     "Christian Braun",
+     "Donovan Clingan",
+     "Herbert Jones",
+     "Jalen Green",
+     "Daniel Gafford",
+     "Jeremy Sochan",
+     "Derik Queen"
+    ],
+    "swaps": [
+     [
+      2,
+      "Nikola Jokic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      23,
+      "James Harden",
+      "Chet Holmgren"
+     ],
+     [
+      26,
+      "Giannis Antetokounmpo",
+      "Derrick White"
+     ],
+     [
+      47,
+      "Trae Young",
+      "Myles Turner"
+     ],
+     [
+      71,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      74,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      95,
+      "Alex Sarr",
+      "Donovan Clingan"
+     ],
+     [
+      98,
+      "Ausar Thompson",
+      "Herbert Jones"
+     ],
+     [
+      143,
+      "Bilal Coulibaly",
+      "Jeremy Sochan"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 12.972,
+    "playoff": 76.1,
+    "finish": 4,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Myles Turner",
+     "Tari Eason",
+     "Brook Lopez",
+     "Christian Braun",
+     "Donovan Clingan",
+     "Herbert Jones",
+     "Daniel Gafford",
+     "Matas Buzelis",
+     "Jeremy Sochan",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      2,
+      "Nikola Jokic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      23,
+      "James Harden",
+      "Chet Holmgren"
+     ],
+     [
+      26,
+      "Giannis Antetokounmpo",
+      "Derrick White"
+     ],
+     [
+      47,
+      "Trae Young",
+      "Myles Turner"
+     ],
+     [
+      71,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      74,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      95,
+      "Alex Sarr",
+      "Donovan Clingan"
+     ],
+     [
+      98,
+      "Ausar Thompson",
+      "Herbert Jones"
+     ],
+     [
+      122,
+      "Bilal Coulibaly",
+      "Matas Buzelis"
+     ],
+     [
+      143,
+      "Jalen Green",
+      "Jeremy Sochan"
+     ],
+     [
+      146,
+      "Derik Queen",
+      "Keon Ellis"
+     ]
+    ]
+   }
+  }
+ },
+ "38": {
+  "mock": "38",
+  "owner_slot": 3,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   11
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 19.378,
+    "playoff": 80.739,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Jamal Murray",
+     "Chet Holmgren",
+     "Josh Hart",
+     "Reed Sheppard",
+     "Jakob Poeltl",
+     "Christian Braun",
+     "Alex Sarr",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Cameron Boozer",
+     "Ausar Thompson",
+     "Derik Queen"
+    ]
+   },
+   "v1cards": {
+    "champ": 31.028,
+    "playoff": 93.289,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Onyeka Okongwu",
+     "Cameron Johnson",
+     "Jakob Poeltl",
+     "Christian Braun",
+     "Nikola Vucevic",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Cameron Boozer",
+     "Ausar Thompson",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      27,
+      "Jamal Murray",
+      "Derrick White"
+     ],
+     [
+      46,
+      "Josh Hart",
+      "Onyeka Okongwu"
+     ],
+     [
+      51,
+      "Reed Sheppard",
+      "Cameron Johnson"
+     ],
+     [
+      94,
+      "Alex Sarr",
+      "Nikola Vucevic"
+     ],
+     [
+      147,
+      "Derik Queen",
+      "Tobias Harris"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 29.211,
+    "playoff": 92.311,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Onyeka Okongwu",
+     "Cameron Johnson",
+     "Jakob Poeltl",
+     "Christian Braun",
+     "Nikola Vucevic",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Aaron Nesmith",
+     "Ausar Thompson",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      27,
+      "Jamal Murray",
+      "Derrick White"
+     ],
+     [
+      46,
+      "Josh Hart",
+      "Onyeka Okongwu"
+     ],
+     [
+      51,
+      "Reed Sheppard",
+      "Cameron Johnson"
+     ],
+     [
+      94,
+      "Alex Sarr",
+      "Nikola Vucevic"
+     ],
+     [
+      123,
+      "Cameron Boozer",
+      "Aaron Nesmith"
+     ],
+     [
+      147,
+      "Derik Queen",
+      "Tobias Harris"
+     ]
+    ]
+   }
+  }
+ },
+ "39": {
+  "mock": "39",
+  "owner_slot": 4,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   10
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 40.75,
+    "playoff": 97.256,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Amen Thompson",
+     "Alperen Sengun",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Ausar Thompson",
+     "Ryan Rollins",
+     "Bilal Coulibaly",
+     "Daniel Gafford",
+     "RJ Barrett"
+    ]
+   },
+   "v1cards": {
+    "champ": 26.689,
+    "playoff": 89.8,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Ryan Rollins",
+     "Daniel Gafford",
+     "Tobias Harris",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      141,
+      "Bilal Coulibaly",
+      "Tobias Harris"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 24.311,
+    "playoff": 88.422,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Yaxel Lendeborg",
+     "Tobias Harris",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      124,
+      "Bilal Coulibaly",
+      "Yaxel Lendeborg"
+     ],
+     [
+      141,
+      "Ryan Rollins",
+      "Tobias Harris"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ]
+   }
+  }
+ },
+ "21": {
+  "mock": "21",
+  "owner_slot": 4,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   9,
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 21.028,
+    "playoff": 83.361,
+    "finish": 2,
+    "seasons": 18000,
+    "roster": [
+     "Nikola Jokic",
+     "Jayson Tatum",
+     "Kevin Durant",
+     "Cooper Flagg",
+     "Walker Kessler",
+     "Coby White",
+     "Immanuel Quickley",
+     "Norman Powell",
+     "Isaiah Hartenstein",
+     "DeMar DeRozan",
+     "Aaron Nesmith",
+     "Tobias Harris",
+     "De'Anthony Melton"
+    ]
+   },
+   "v1cards": {
+    "champ": 39.5,
+    "playoff": 97.911,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Nikola Jokic",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Coby White",
+     "Jalen Suggs",
+     "Naz Reid",
+     "Jaden McDaniels",
+     "Jerami Grant",
+     "Yaxel Lendeborg",
+     "Wendell Carter Jr.",
+     "Jeremy Sochan"
+    ],
+    "swaps": [
+     [
+      28,
+      "Jayson Tatum",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Walker Kessler",
+      "Payton Pritchard"
+     ],
+     [
+      76,
+      "Immanuel Quickley",
+      "Jalen Suggs"
+     ],
+     [
+      93,
+      "Norman Powell",
+      "Naz Reid"
+     ],
+     [
+      100,
+      "Isaiah Hartenstein",
+      "Jaden McDaniels"
+     ],
+     [
+      117,
+      "DeMar DeRozan",
+      "Jerami Grant"
+     ],
+     [
+      124,
+      "Aaron Nesmith",
+      "Yaxel Lendeborg"
+     ],
+     [
+      141,
+      "Tobias Harris",
+      "Wendell Carter Jr."
+     ],
+     [
+      148,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 43.183,
+    "playoff": 98.578,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Nikola Jokic",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Coby White",
+     "Jalen Suggs",
+     "Naz Reid",
+     "Isaiah Hartenstein",
+     "Jerami Grant",
+     "Yaxel Lendeborg",
+     "Wendell Carter Jr.",
+     "Al Horford"
+    ],
+    "swaps": [
+     [
+      28,
+      "Jayson Tatum",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Walker Kessler",
+      "Payton Pritchard"
+     ],
+     [
+      76,
+      "Immanuel Quickley",
+      "Jalen Suggs"
+     ],
+     [
+      93,
+      "Norman Powell",
+      "Naz Reid"
+     ],
+     [
+      117,
+      "DeMar DeRozan",
+      "Jerami Grant"
+     ],
+     [
+      124,
+      "Aaron Nesmith",
+      "Yaxel Lendeborg"
+     ],
+     [
+      141,
+      "Tobias Harris",
+      "Wendell Carter Jr."
+     ],
+     [
+      148,
+      "De'Anthony Melton",
+      "Al Horford"
+     ]
+    ]
+   }
+  }
+ },
+ "24": {
+  "mock": "24",
+  "owner_slot": 1,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   11
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 22.833,
+    "playoff": 83.75,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Jaren Jackson Jr.",
+     "Jalen Brunson",
+     "Bam Adebayo",
+     "LeBron James",
+     "Jalen Suggs",
+     "Deni Avdija",
+     "Nikola Vucevic",
+     "Cameron Boozer",
+     "Jerami Grant",
+     "De'Anthony Melton",
+     "Jared McCain"
+    ]
+   },
+   "v1cards": {
+    "champ": 30.528,
+    "playoff": 93.067,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Kyle Filipowski",
+     "Jeremy Sochan",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      121,
+      "Jerami Grant",
+      "Kyle Filipowski"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ],
+     [
+      145,
+      "Jared McCain",
+      "Tobias Harris"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 29.889,
+    "playoff": 92.367,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Jerami Grant",
+     "Jeremy Sochan",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ],
+     [
+      145,
+      "Jared McCain",
+      "Tobias Harris"
+     ]
+    ]
+   }
+  }
+ },
+ "25": {
+  "mock": "25",
+  "owner_slot": 2,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   8
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 25.061,
+    "playoff": 89.578,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Kevin Durant",
+     "Jayson Tatum",
+     "Darius Garland",
+     "Josh Hart",
+     "LeBron James",
+     "Michael Porter Jr.",
+     "Jaden McDaniels",
+     "Aaron Gordon",
+     "John Collins",
+     "Aaron Nesmith",
+     "Al Horford",
+     "D'Angelo Russell"
+    ]
+   },
+   "v1cards": {
+    "champ": 30.617,
+    "playoff": 93.272,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Tari Eason",
+     "Michael Porter Jr.",
+     "Jalen Suggs",
+     "Jaden McDaniels",
+     "PJ Washington",
+     "CJ McCollum",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      23,
+      "Kevin Durant",
+      "Jamal Murray"
+     ],
+     [
+      26,
+      "Jayson Tatum",
+      "Desmond Bane"
+     ],
+     [
+      47,
+      "Darius Garland",
+      "Jalen Brunson"
+     ],
+     [
+      50,
+      "Josh Hart",
+      "Tari Eason"
+     ],
+     [
+      74,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      98,
+      "Aaron Gordon",
+      "PJ Washington"
+     ],
+     [
+      119,
+      "John Collins",
+      "CJ McCollum"
+     ],
+     [
+      122,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      146,
+      "Al Horford",
+      "Jared McCain"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 21.578,
+    "playoff": 84.628,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Tari Eason",
+     "Michael Porter Jr.",
+     "Jalen Suggs",
+     "PJ Washington",
+     "Immanuel Quickley",
+     "CJ McCollum",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      23,
+      "Kevin Durant",
+      "Jamal Murray"
+     ],
+     [
+      26,
+      "Jayson Tatum",
+      "Desmond Bane"
+     ],
+     [
+      47,
+      "Darius Garland",
+      "Jalen Brunson"
+     ],
+     [
+      50,
+      "Josh Hart",
+      "Tari Eason"
+     ],
+     [
+      74,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      95,
+      "Jaden McDaniels",
+      "PJ Washington"
+     ],
+     [
+      98,
+      "Aaron Gordon",
+      "Immanuel Quickley"
+     ],
+     [
+      119,
+      "John Collins",
+      "CJ McCollum"
+     ],
+     [
+      122,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      146,
+      "Al Horford",
+      "Jared McCain"
+     ]
+    ]
+   }
+  }
+ },
+ "26": {
+  "mock": "26",
+  "owner_slot": 3,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   11,
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 23.117,
+    "playoff": 84.578,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Jayson Tatum",
+     "Domantas Sabonis",
+     "Payton Pritchard",
+     "Cooper Flagg",
+     "Jalen Suggs",
+     "Jalen Duren",
+     "Jaden McDaniels",
+     "Nikola Vucevic",
+     "Jerami Grant",
+     "Aaron Nesmith",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ]
+   },
+   "v1cards": {
+    "champ": 27.967,
+    "playoff": 91.289,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Myles Turner",
+     "Michael Porter Jr.",
+     "Jalen Duren",
+     "Norman Powell",
+     "PJ Washington",
+     "Jerami Grant",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      22,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ],
+     [
+      27,
+      "Domantas Sabonis",
+      "Derrick White"
+     ],
+     [
+      51,
+      "Payton Pritchard",
+      "Myles Turner"
+     ],
+     [
+      70,
+      "Jalen Suggs",
+      "Michael Porter Jr."
+     ],
+     [
+      94,
+      "Jaden McDaniels",
+      "Norman Powell"
+     ],
+     [
+      99,
+      "Nikola Vucevic",
+      "PJ Washington"
+     ],
+     [
+      123,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 31.722,
+    "playoff": 93.561,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Myles Turner",
+     "Michael Porter Jr.",
+     "Jalen Duren",
+     "Norman Powell",
+     "PJ Washington",
+     "Jerami Grant",
+     "John Collins",
+     "D'Angelo Russell",
+     "Wendell Carter Jr."
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      22,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ],
+     [
+      27,
+      "Domantas Sabonis",
+      "Derrick White"
+     ],
+     [
+      51,
+      "Payton Pritchard",
+      "Myles Turner"
+     ],
+     [
+      70,
+      "Jalen Suggs",
+      "Michael Porter Jr."
+     ],
+     [
+      94,
+      "Jaden McDaniels",
+      "Norman Powell"
+     ],
+     [
+      99,
+      "Nikola Vucevic",
+      "PJ Washington"
+     ],
+     [
+      123,
+      "Aaron Nesmith",
+      "John Collins"
+     ],
+     [
+      147,
+      "Jared McCain",
+      "Wendell Carter Jr."
+     ]
+    ]
+   }
+  }
+ }
+}

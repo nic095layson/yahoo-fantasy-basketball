@@ -1,0 +1,150 @@
+{
+ "34": {
+  "mock": "34",
+  "owner_slot": 8,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   11,
+   12
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 17.589,
+    "playoff": 82.3,
+    "finish": 2,
+    "seasons": 18000,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Bam Adebayo",
+     "Pascal Siakam",
+     "Kel'el Ware",
+     "Kon Knueppel",
+     "Herbert Jones",
+     "Jalen Green",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Daniel Gafford"
+    ]
+   },
+   "v1cards": {
+    "champ": 0.044,
+    "playoff": 5.706,
+    "finish": 12,
+    "seasons": 18000,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Ivica Zubac",
+     "Myles Turner",
+     "Kel'el Ware",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Daniel Gafford",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Jusuf Nurkic"
+    ],
+    "swaps": [
+     [
+      8,
+      "Tyrese Haliburton",
+      "Anthony Edwards"
+     ],
+     [
+      41,
+      "Dyson Daniels",
+      "Onyeka Okongwu"
+     ],
+     [
+      56,
+      "Bam Adebayo",
+      "Ivica Zubac"
+     ],
+     [
+      65,
+      "Pascal Siakam",
+      "Myles Turner"
+     ],
+     [
+      89,
+      "Kon Knueppel",
+      "Jalen Duren"
+     ],
+     [
+      104,
+      "Herbert Jones",
+      "Rudy Gobert"
+     ],
+     [
+      152,
+      "Jalen Green",
+      "Jusuf Nurkic"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 0.667,
+    "playoff": 24.006,
+    "finish": 11,
+    "seasons": 18000,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Ivica Zubac",
+     "Myles Turner",
+     "Kel'el Ware",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Daniel Gafford",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      8,
+      "Tyrese Haliburton",
+      "Anthony Edwards"
+     ],
+     [
+      41,
+      "Dyson Daniels",
+      "Onyeka Okongwu"
+     ],
+     [
+      56,
+      "Bam Adebayo",
+      "Ivica Zubac"
+     ],
+     [
+      65,
+      "Pascal Siakam",
+      "Myles Turner"
+     ],
+     [
+      89,
+      "Kon Knueppel",
+      "Jalen Duren"
+     ],
+     [
+      104,
+      "Herbert Jones",
+      "Rudy Gobert"
+     ],
+     [
+      152,
+      "Jalen Green",
+      "Keon Ellis"
+     ]
+    ]
+   }
+  }
+ }
+}
