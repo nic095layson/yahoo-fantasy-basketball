@@ -1,0 +1,202 @@
+{
+ "32": {
+  "mock": "32",
+  "owner_slot": 10,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "ST"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [],
+   "resil": []
+  },
+  "top1_diverge_turns": [
+   135,
+   154
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 4.106,
+    "playoff": 38.989,
+    "finish": 9,
+    "seasons": 18000,
+    "kept_z": 11.07,
+    "ecw_std": 4.446,
+    "ecw_slf": 4.538,
+    "roster": [
+     "Cade Cunningham",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Paolo Banchero",
+     "Joel Embiid",
+     "Myles Turner",
+     "Zion Williamson",
+     "Dylan Harper",
+     "Rudy Gobert",
+     "Cason Wallace",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ]
+   },
+   "shipped": {
+    "champ": 0.006,
+    "playoff": 1.778,
+    "finish": 12,
+    "seasons": 18000,
+    "kept_z": 1.23,
+    "ecw_std": 3.83,
+    "ecw_slf": 3.788,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Rudy Gobert",
+     "Keon Ellis",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Tyrese Haliburton"
+     ],
+     [
+      15,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Dyson Daniels"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Reed Sheppard"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      111,
+      "Dylan Harper",
+      "Keon Ellis"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      87,
+      "Dylan Harper",
+      "Cason Wallace"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 0.006,
+    "playoff": 1.833,
+    "finish": 12,
+    "seasons": 18000,
+    "kept_z": -2.14,
+    "ecw_std": 3.825,
+    "ecw_slf": 3.733,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Rudy Gobert",
+     "Keon Ellis",
+     "Ausar Thompson",
+     "D'Angelo Russell",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Tyrese Haliburton"
+     ],
+     [
+      15,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Dyson Daniels"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Reed Sheppard"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      111,
+      "Dylan Harper",
+      "Keon Ellis"
+     ],
+     [
+      135,
+      "Yaxel Lendeborg",
+      "D'Angelo Russell"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      87,
+      "Dylan Harper",
+      "Cason Wallace"
+     ]
+    ]
+   }
+  }
+ }
+}

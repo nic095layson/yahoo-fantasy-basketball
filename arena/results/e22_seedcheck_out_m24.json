@@ -1,0 +1,209 @@
+{
+ "24": {
+  "mock": "24",
+  "owner_slot": 1,
+  "punt": [],
+  "seeds": [
+   101,
+   103,
+   107
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    48,
+    96
+   ],
+   "resil": [
+    48,
+    96
+   ]
+  },
+  "top1_diverge_turns": [
+   144,
+   145
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 29.433,
+    "playoff": 92.389,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.26,
+    "ecw_std": 5.059,
+    "ecw_slf": 5.15,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Jaren Jackson Jr.",
+     "Jalen Brunson",
+     "Bam Adebayo",
+     "LeBron James",
+     "Jalen Suggs",
+     "Deni Avdija",
+     "Nikola Vucevic",
+     "Cameron Boozer",
+     "Jerami Grant",
+     "De'Anthony Melton",
+     "Jared McCain"
+    ]
+   },
+   "shipped": {
+    "champ": 32.028,
+    "playoff": 95.061,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 6.63,
+    "ecw_std": 5.13,
+    "ecw_slf": 5.008,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Kyle Filipowski",
+     "Jeremy Sochan",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      121,
+      "Jerami Grant",
+      "Kyle Filipowski"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ],
+     [
+      145,
+      "Jared McCain",
+      "Tobias Harris"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      72,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      96,
+      "Deni Avdija",
+      "Nikola Vucevic"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 8.856,
+    "playoff": 61.0,
+    "finish": 6,
+    "seasons": 18000,
+    "kept_z": 6.14,
+    "ecw_std": 4.641,
+    "ecw_slf": 4.496,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Andrew Nembhard",
+     "Jared McCain",
+     "Kelly Oubre Jr."
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      121,
+      "Jerami Grant",
+      "Andrew Nembhard"
+     ],
+     [
+      145,
+      "De'Anthony Melton",
+      "Kelly Oubre Jr."
+     ]
+    ],
+    "noop_swaps": [
+     [
+      72,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      96,
+      "Deni Avdija",
+      "Nikola Vucevic"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jared McCain"
+     ]
+    ]
+   }
+  }
+ }
+}

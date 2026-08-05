@@ -1,0 +1,218 @@
+{
+ "25": {
+  "mock": "25",
+  "owner_slot": 2,
+  "punt": [],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    2,
+    47,
+    74
+   ],
+   "resil": [
+    2,
+    47,
+    74
+   ]
+  },
+  "top1_diverge_turns": [],
+  "arms": {
+   "baseline": {
+    "champ": 29.0,
+    "playoff": 94.417,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 6.36,
+    "ecw_std": 5.102,
+    "ecw_slf": 5.038,
+    "roster": [
+     "Victor Wembanyama",
+     "Kevin Durant",
+     "Jayson Tatum",
+     "Darius Garland",
+     "Josh Hart",
+     "LeBron James",
+     "Michael Porter Jr.",
+     "Jaden McDaniels",
+     "Aaron Gordon",
+     "John Collins",
+     "Aaron Nesmith",
+     "Al Horford",
+     "D'Angelo Russell"
+    ]
+   },
+   "shipped": {
+    "champ": 44.878,
+    "playoff": 98.761,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 6.54,
+    "ecw_std": 5.323,
+    "ecw_slf": 4.998,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Tari Eason",
+     "Michael Porter Jr.",
+     "Jalen Suggs",
+     "Jaden McDaniels",
+     "PJ Washington",
+     "CJ McCollum",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      23,
+      "Kevin Durant",
+      "Jamal Murray"
+     ],
+     [
+      26,
+      "Jayson Tatum",
+      "Desmond Bane"
+     ],
+     [
+      47,
+      "Darius Garland",
+      "Jalen Brunson"
+     ],
+     [
+      50,
+      "Josh Hart",
+      "Tari Eason"
+     ],
+     [
+      74,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      98,
+      "Aaron Gordon",
+      "PJ Washington"
+     ],
+     [
+      119,
+      "John Collins",
+      "CJ McCollum"
+     ],
+     [
+      122,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      146,
+      "Al Horford",
+      "Jared McCain"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      71,
+      "LeBron James",
+      "Michael Porter Jr."
+     ],
+     [
+      143,
+      "Al Horford",
+      "D'Angelo Russell"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 44.878,
+    "playoff": 98.761,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 6.54,
+    "ecw_std": 5.323,
+    "ecw_slf": 4.998,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Tari Eason",
+     "Michael Porter Jr.",
+     "Jalen Suggs",
+     "Jaden McDaniels",
+     "PJ Washington",
+     "CJ McCollum",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      23,
+      "Kevin Durant",
+      "Jamal Murray"
+     ],
+     [
+      26,
+      "Jayson Tatum",
+      "Desmond Bane"
+     ],
+     [
+      47,
+      "Darius Garland",
+      "Jalen Brunson"
+     ],
+     [
+      50,
+      "Josh Hart",
+      "Tari Eason"
+     ],
+     [
+      74,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      98,
+      "Aaron Gordon",
+      "PJ Washington"
+     ],
+     [
+      119,
+      "John Collins",
+      "CJ McCollum"
+     ],
+     [
+      122,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      146,
+      "Al Horford",
+      "Jared McCain"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      71,
+      "LeBron James",
+      "Michael Porter Jr."
+     ],
+     [
+      143,
+      "Al Horford",
+      "D'Angelo Russell"
+     ]
+    ]
+   }
+  }
+ }
+}
