@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-08-05", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "UTC-rollover stamp for owner-ordered UI republish (decision-card redesign). Pool unchanged; last news sweep 8/4 evening (~2h prior, zero changes); rosters \u2026"} -->
+<!-- build-manifest {"built": "2026-08-05", "pool": 246, "verification": {"mode": "fallback-partial", "checked": 246, "teams_covered": 30}, "freshness_note": "Daily sweep 08-04\u219208-05: zero confirmed roster changes (32 queries, watchlist + general). New flags: Klay Thompson DAL trade/buyout exploration; Kawhi probe \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -153,6 +153,8 @@ ol.recos .tm { font-family: var(--font-data); font-size: var(--text-sm); color: 
 .puntline .cat.bad .catrank { color: var(--status-risk); }
 .puntline .cat.punted { opacity: 0.55; }
 .puntline .cat.punted .catrank { color: var(--muted); }
+.puntline .cat.heat { --hi: 0; background: color-mix(in srgb, var(--heat-pos) calc(var(--hi) * var(--heat-max)), var(--surface)); }
+.puntline .cat.heat.neg { background: color-mix(in srgb, var(--heat-neg) calc(var(--hi) * var(--heat-max)), var(--surface)); }
 .deckmeta button.fulltilt, #deckmeta button.fulltilt { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-1) var(--space-3); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; letter-spacing: 0.03em; }
 .puntline button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
 .buildread { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
@@ -1236,7 +1238,7 @@ const JUDGMENT = {
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-08-05"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "UTC-rollover stamp for owner-ordered UI republish (decision-card redesign). Pool unchanged; last news sweep 8/4 evening (~2h prior, zero changes); rosters re-verified this run (246/246, fallback-partial). Next news sweep owed later 8/5.";
+  const BUILD_NOTE = "Daily sweep 08-04\u219208-05: zero confirmed roster changes (32 queries, watchlist + general). New flags: Klay Thompson DAL trade/buyout exploration; Kawhi probe EXPANDED (2nd endorsement deal); Watson suitors now MIL/CLE/ATL/LAC; Harden-CLE resolution expected this week; Butler early-Feb return framing sourced (GP review next pull); Cole Anthony\u2192NBL [LIKELY, 1 source \u2014 pool exit pending 2nd source]. UI: category-rank heat grading shipped (owner request).";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -1832,6 +1834,13 @@ const JUDGMENT = {
         chip.append(el("span", "catrank", String(r)));
         if (r <= tiers.locked) chip.classList.add("good");
         else if (r >= tiers.lostFrom) chip.classList.add("bad");
+        /* Heat grading (owner request 2026-08-05): chip background scales
+           blue (strong) \u2192 beige (neutral) \u2192 red (weak) with rank,
+           mirroring the board cells' validated color-mix mechanism. */
+        const mid = (st.teams + 1) / 2;
+        chip.classList.add("heat");
+        if (r > mid) chip.classList.add("neg");
+        chip.style.setProperty("--hi", (Math.abs(mid - r) / (mid - 1)).toFixed(3));
         chip.dataset.tip = `${c}: rank ${r} of ${st.teams} vs the field right now`;
       }
       row1.append(chip);
