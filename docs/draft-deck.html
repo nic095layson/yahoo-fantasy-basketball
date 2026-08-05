@@ -333,7 +333,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
   <div id="pane-best" role="tabpanel" aria-labelledby="tab-best">
     <div class="controls">
       <span class="ctl">Pos</span>
-      <select id="bestPos"><option value="">All</option><option>PG</option><option>SG</option><option value="G">G</option><option>SF</option><option>PF</option><option value="F">F</option><option>C</option></select>
+      <select id="bestPos"><option value="">All</option><option>PG</option><option>SG</option><option value="G">G</option><option>SF</option><option>PF</option><option value="F">F</option><option value="G+F" title="dual-eligible: covers a guard AND a forward slot">G/F</option><option value="F+C" title="dual-eligible: covers a forward slot AND center">F/C</option><option>C</option></select>
       <span class="ctl">Find</span>
       <input type="search" id="bestQ" placeholder="player name" autocomplete="off">
       <span class="ctl">Show</span>
@@ -2439,14 +2439,17 @@ const JUDGMENT = {
         .sort((a, b) => p.z[b] - p.z[a]).slice(0, 3);
       /* Machinery numbers (council/judgment/slide) demoted to the tooltip
          (owner concision pass 2026-08-05). */
-      let line = (plus.length ? `+${plus.join(" +")}` : "");
+      const cardMkt = MKT_RANK.get(p.n);
+      let line = [cardMkt ? `Mkt ${cardMkt}` : "", plus.length ? `+${plus.join(" +")}` : ""]
+        .filter(Boolean).join("   ");
       if ((teamCt2[p.t] || 0) >= 2) line += `   [would be 3rd ${p.t}]`;
       if (p.note && p.av === 1) line += `   [${p.note}]`;
       const ml = el("span", "meta", line);
       ml.dataset.tip = `${bits.join(" · ")} · val ${fmtVal(p, punt)} (injury-adjusted 9-cat z)` +
         (scored[i].why ? ` · ⚖ ${scored[i].why}` : "") +
         (scored[i].vbonus ? ` · ⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}` : "") +
-        (plus.length ? ` · plus-cats = strongest z (≥ +0.5), capped at 3` : "");
+        (plus.length ? ` · plus-cats = strongest z (≥ +0.5), capped at 3` : "") +
+        (cardMkt ? ` · Mkt = market model's estimated real-draft position (same number as the Best-available Mkt column)` : "");
       li.append(ml);
       /* Dual-lens chip (owner redesign 2026-08-05): when a punt is
          declared, show this candidate under YOUR punt beside the
@@ -2714,7 +2717,16 @@ const JUDGMENT = {
       bestHeadBuilt = true;
     }
     let pool = availablePool(st, PLAYERS);
-    if (bestState.pos) pool = pool.filter(p => p.p.toUpperCase().includes(bestState.pos));
+    if (bestState.pos) pool = pool.filter(p => {
+      /* G+F / F+C (owner add 2026-08-05): dual-eligibility — the player
+         covers BOTH families' lineup slots. Plain values stay substring. */
+      if (bestState.pos === "G+F" || bestState.pos === "F+C") {
+        const f = familiesOf(p);
+        return bestState.pos === "G+F" ? f.includes("G") && f.includes("F")
+                                       : f.includes("F") && f.includes("C");
+      }
+      return p.p.toUpperCase().includes(bestState.pos);
+    });
     /* fit weights — recomputed from the live board every render */
     const mineB = buildRosters(st, PLAYERS)[st.slot];
     const ranksB = mineB.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
