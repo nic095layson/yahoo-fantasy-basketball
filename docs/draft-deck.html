@@ -303,7 +303,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
                placeholder='Jokic; my:Wemby; 44- Herro'>
         <button class="primary" id="logBtn" type="button">Log</button>
       </div>
-      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For common surnames (White, Murray, Ball, Bridges, Sharpe…) feed first initial + surname: <code>D White</code>.</p>
+      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For common surnames (White, Murray, Ball, Bridges, Sharpe…) feed first initial + surname: <code>D White</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
       <p class="eyebrow rosterhead" style="margin-top: var(--space-4)"><span id="myRosterTitle">Your roster</span><span id="myRosterFams"></span></p>
       <ul class="myroster" id="myRoster"></ul>
     </div>
@@ -1456,9 +1456,16 @@ const JUDGMENT = {
   /* ---------- feed ---------- */
   $("logBtn").addEventListener("click", runFeed);
   $("feed").addEventListener("keydown", e => { if (e.key === "Enter") runFeed(); });
+  /* Per-pick input memory (owner request 2026-08-05): in a mock run the
+     text sent at each overall pick number is kept on the saved deck, so
+     returning to that pick (undo, reload) restores it into the box.
+     feedMemFill tracks what this code auto-filled — a value the user has
+     typed or edited is never overwritten. */
+  let feedMemFill = "";
   function runFeed() {
     const feed = $("feed").value.trim();
     if (!feed) return;
+    if (deck.mode === "mock") (deck.inputs = deck.inputs || {})[deck.state.picks.length + 1] = feed;
     const res = processFeed(deck.state, PLAYERS, feed);
     for (const l of res.lines) log(l.t, l.cls);
     $("feed").value = "";
@@ -1736,6 +1743,14 @@ const JUDGMENT = {
       /* owner request 2026-07-30: show the overall number of YOUR next pick */
       const nx = myFuturePicks(deck.state, 1)[0];
       $("feedTitle").textContent = nx ? `Your pick #${nx}` : "Your pick";
+      const fb = $("feed");
+      const onClock = !draftDone() &&
+        teamOfPick(deck.state.picks.length, deck.state.teams) === deck.state.slot;
+      const mem = onClock ? (deck.inputs || {})[deck.state.picks.length + 1] : undefined;
+      if (!fb.value || fb.value === feedMemFill) {
+        fb.value = mem || "";
+        feedMemFill = fb.value;
+      }
     }
     renderStrip(); renderMirror(); renderMyRoster(); renderPuntAnalyzer(); renderCoherence(); renderBuildRead();
     renderDecision(); renderBest();
