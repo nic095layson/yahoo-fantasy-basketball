@@ -12,4 +12,4 @@ __pycache__/
 draft_state.json
 
 # Arena: commit curated reports only, not raw tournament dumps
-arena/results/*.json
+# results JSONs are committed evidence per LESSONS.md lesson 13 (2026-08-04)

@@ -1,12 +1,18 @@
-# Mock 31 debrief — slot 8, declared punt FT%/3PTM/PTS (2026-08-04)
+# Mock 33 debrief — slot 8, declared punt FT%/3PTM/PTS (2026-08-04)
+
+**Numbering note (2026-08-05):** this draft was analyzed as "mock 31"
+before a parallel session merged its own mock 31 (slot 9, punt
+FT%/3PTM/TO) and mock 32 (slot 10, punt FT%/3PTM/ST) to main. Those
+numbers are taken; this slot-8 draft is renumbered **33** and its scripts
+renamed to match. Same draft, same measurements — identifier only.
 
 **Owner's report:** "Not sure how I feel about this one. Punt was declared
 but then system kept only proposing for me to select C."
 
 **Method.** Turn-by-turn replay of all 13 owner turns through the shipped
 UI handlers (fake-DOM harness, same instrument as the ledger); 18,000-season
-simulation (`arena/mocks/season_sim_mock31.py`); counterfactual arms
-(`arena/mocks/mock31_cf.py`); a ledger-wide punt-plumbing audit; and a
+simulation (`arena/mocks/season_sim_mock33.py`); counterfactual arms
+(`arena/mocks/mock33_cf.py`); a ledger-wide punt-plumbing audit; and a
 lineup/saturation audit. **Every finding was then attacked by an
 independent adversarial verifier**; four verdicts came back PARTIAL, and
 this debrief reports the CORRECTED numbers only. Corrections that changed
@@ -62,7 +68,7 @@ reliably delivers exactly 5 — with no margin for a bad week.
 readout here is zero-sum within the room (ECW sums to exactly 54.000 across
 12 teams by construction), so none of them can detect room strength; and
 measured independently, this room was the **5th most top-heavy of 22**
-(leader 34.84%, HHI 0.186) and m31's champ% sits **2.20pp BELOW** what its
+(leader 34.84%, HHI 0.186) and m33's champ% sits **2.20pp BELOW** what its
 ECW predicts from the repo's own 15-mock calibration. If anything the
 finish understates the build. Fourth is earned.
 
@@ -83,13 +89,13 @@ panel, the warning line). This is a structural zero, not a small effect.
 sits at mean shipped rank 11.73 (median 6, max 40) — typically buried
 below a card that shows five rows.
 
-**Mock 22 is where this defect is ugly, and mock 31 hides it.** In mock 22
+**Mock 22 is where this defect is ugly, and mock 33 hides it.** In mock 22
 the declared punt was **REB + BLK + FG% — the big-man categories** — and
 the shipped card still recommended a center at 8/13 turns and a big at
 9/13. The punt-aware card recommended a center at **0/13** (all thirteen
 were guards). The owner overrode the card in that draft (his actual pick
 was in the shipped Top-5 only 4/13, but in the punt-aware Top-5 7/13) —
-he drafted the punt-aware answer without the tool's help. In mock 31 the
+he drafted the punt-aware answer without the tool's help. In mock 33 the
 punt happens to point the same direction as the punt-blind card, so both
 recommend centers and the defect is invisible from the card alone.
 
@@ -179,7 +185,7 @@ proposals, ordered by measured support.
    currently accepts a declaration and silently discards it, which is the
    worst of the three options. My recommendation: (b) now as a
    display-only truth fix, (a) measured in September against mock 22 and
-   mock 31 before any ordering change.
+   mock 33 before any ordering change.
 2. **Register a punted-draft ship bar.** No future ordering change ships
    without being screened on every punted mock in the ledger. This is the
    specific hole that let today's regression through.
@@ -191,11 +197,30 @@ proposals, ordered by measured support.
 5. **Re-run the E9 ledger validation including mock 22**, which the
    original panel skipped.
 
+## 5b. Cross-reference: the two punt defects compound
+
+A parallel session's `debrief_2026-08-04_mock32_slot10.md` reports a
+different punt failure on a different draft: the owner **declared the
+wrong punt** — conceding ST (a rank-3 strength, +1.68z) while keeping TO
+(a rank-11 weakness, −4.81z); the inverted declaration was worth +6.5z of
+kept value.
+
+The two findings are independent and they compound. That draft shows the
+punt box is easy to get wrong; this one shows the tool would not have
+corrected it either way, because the declaration never reaches the
+ordering. A punt-aware card is the only mechanism that could have
+surfaced either problem at declaration time, which raises the priority of
+E20/E23 relative to what this debrief alone would justify.
+
 ## 6. Bounds
 
-- n is small: only 2 of 27 uploaded drafts declared a punt (26 owner
-  turns, 2 seats). Rates carry roughly ±15pp of binomial noise — read
-  0.808 as "most turns," not a constant.
+- n is small: the punt audit covered the 2 punted drafts available in
+  this session's uploads (26 owner turns, 2 seats). Rates carry roughly
+  ±15pp of binomial noise — read 0.808 as "most turns," not a constant.
+  **Superseded scope (2026-08-05):** main now also carries mock 31
+  (slot 9, FT%/3PTM/TO) and mock 32 (slot 10, FT%/3PTM/ST), so the
+  punted-draft screening set for E21 is now FOUR drafts, not two. The
+  audit should be re-run across all four before E20 is decided.
 - All champ% are simulator-conditional (self-critique N1). The weekly
   category data the owner delivered today (`arena/data/weekly_matchups_2025-26.csv`)
   is the fit set that will finally test this model; it has not yet been
@@ -211,9 +236,9 @@ proposals, ordered by measured support.
 
 Produced 2026-08-04 by an 8-agent workflow (4 measurement + 4 adversarial
 verification, ~750k tokens). Scripts:
-`arena/mocks/season_sim_mock31.py`, `arena/mocks/mock31_cf.py`. Replay and
-audit artifacts in the session scratchpad (`m31_replay.json`,
-`m31_legacy.json`, `ledger_punt_results.json`). Every headline number in
+`arena/mocks/season_sim_mock33.py`, `arena/mocks/mock33_cf.py`. Replay and
+audit artifacts in the session scratchpad (`m33_replay.json`,
+`m33_legacy.json`, `ledger_punt_results.json`). Every headline number in
 this debrief was independently re-run by a verifier agent; the four
 PARTIAL verdicts and their corrections are folded in above rather than
 appended.

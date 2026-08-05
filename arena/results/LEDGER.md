@@ -38,6 +38,9 @@ is computed here from artifacts, with its membership criteria stated.**
 | 28 | 5 | 6.44 | 63.2 | 6 | 5 | ECW 4.665; kept-total *anti*-correlated in this room |
 | 29 | 6 | 8.99 | 58.7 | 5 | 10 | ECW 4.643; board rank 10 yet 5th — board *under*-rates this one |
 | 30 | 7 | 2.09 | 31.1 | 8 | 10 | ECW 4.396; the owner's live-screenshot draft |
+| 31 | 9 | 6.16 | 59.4 | 5 | 12 | ECW 4.610; declared 3-cat punt (FT%/3PM/TO) — kept-z +23.50 under own punt, rank 1 by 16 z; cf. m22 (last 3-cat punt: 0.22%, 11th). First lesson-13-compliant harness (`season_sim_mock31.py`, state + out.json committed) |
+| 32 | 10 | 4.11 | 39.0 | 9 | 12 | ECW 4.450; declared 3-cat punt (FT%/3PM/ST) — punt INVERTED for the drafted roster (ST kept-rank 3 punted, TO rank 11 kept; single-swap punt-TO worth +6.5 kept-z); five balanced-board picks inside the punt frame (`season_sim_mock32.py`) |
+| 33 | 8 | 9.52 | 68.1 | 4 | 12 | ECW 4.630; declared 3-cat punt (FT%/3PTM/PTS) — board rank **1** of 12 (+4.67). AST fell to an UNDECLARED 4th punt (kept-cat pwin 0.202, clustered with the punted cats' 0.144-0.171). Punt-box defect measured here: shipped Top-5 byte-identical 26/26 turns with the punt declared vs cleared (`decwScores` is punt-blind); full card-follow 0.008% vs as-drafted 9.52%. Analyzed as "31" pre-merge; renumbered 33 (slots 9/10 took 31/32). (`season_sim_mock33.py`, `mock33_cf.py`) |
 
 Verified superlatives: best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the

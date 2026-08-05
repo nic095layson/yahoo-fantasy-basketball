@@ -1,6 +1,6 @@
-"""Mock 31 counterfactual: would a PUNT-AWARE card have produced a better team?
+"""Mock 33 counterfactual: would a PUNT-AWARE card have produced a better team?
 
-Mock 31 = 12 teams / 13 rounds, owner slot 8, DECLARED PUNT ["FT%","3PTM","PTS"].
+Mock 33 = 12 teams / 13 rounds, owner slot 8, DECLARED PUNT ["FT%","3PTM","PTS"].
 Complaint under test: "punt was declared but the system kept proposing centers."
 
 Arms (each 18000 seasons, CRN-paired against the as-drafted baseline):
@@ -33,7 +33,7 @@ still holds 13.  Two boundary cases the earlier harnesses only screened out:
     sensitivity variant where the owner simply takes the undrafted player and
     his actual pick goes to free agency (opponents still untouched).
 
-Run: python3 arena/mocks/mock31_cf.py
+Run: python3 arena/mocks/mock33_cf.py
 """
 import sys, os, json, random, math, statistics
 
@@ -330,5 +330,5 @@ for tag in OUT["arms"]:
                                 "se_pp": round(se, 3), "n_blocks": len(d)}
     print(f"paired delta {tag:<24} {statistics.mean(d):+6.3f} pp  +-{se:.3f} (1 SE, 18 CRN blocks)")
 
-json.dump(OUT, open(f"{SP}/mock31_cf_results.json", "w"), indent=1)
-print(f"\nwrote {SP}/mock31_cf_results.json")
+json.dump(OUT, open(f"{SP}/mock33_cf_results.json", "w"), indent=1)
+print(f"\nwrote {SP}/mock33_cf_results.json")

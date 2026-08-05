@@ -1,8 +1,8 @@
 {
-  "date": "2026-08-04",
-  "note": "Sweep 8/4: zero pool changes. Harden (CLE talks ongoing), DeRozan (waived, CLE interest), Beal still unsigned FA. Deck fixes shipped today: room-mix survival recalibration + TARGET/BOARD LEAN provenance split.",
+  "date": "2026-08-05",
+  "note": "UTC-rollover stamp for owner-ordered UI republish (decision-card redesign). Pool unchanged; last news sweep 8/4 evening (~2h prior, zero changes); rosters re-verified this run (246/246, fallback-partial). Next news sweep owed later 8/5.",
   "rosters_verified": {
-    "date": "2026-08-04",
+    "date": "2026-08-05",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }

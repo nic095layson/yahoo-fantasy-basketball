@@ -1,0 +1,116 @@
+{
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "seasons_per_seed": 6000,
+ "table": [
+  {
+   "slot": 1,
+   "persona": "market",
+   "champ_pct": 15.35,
+   "playoff_pct": 77.96,
+   "kept_total": 1.34
+  },
+  {
+   "slot": 2,
+   "persona": "points_chaser",
+   "champ_pct": 2.86,
+   "playoff_pct": 35.01,
+   "kept_total": -2.7
+  },
+  {
+   "slot": 3,
+   "persona": "market",
+   "champ_pct": 0.22,
+   "playoff_pct": 7.28,
+   "kept_total": -6.53
+  },
+  {
+   "slot": 4,
+   "persona": "OWNER (deck user)",
+   "champ_pct": 9.53,
+   "playoff_pct": 62.39,
+   "kept_total": 5.72
+  },
+  {
+   "slot": 5,
+   "persona": "punt_ft",
+   "champ_pct": 10.69,
+   "playoff_pct": 61.37,
+   "kept_total": -5.97
+  },
+  {
+   "slot": 6,
+   "persona": "stars",
+   "champ_pct": 14.09,
+   "playoff_pct": 75.61,
+   "kept_total": 4.26
+  },
+  {
+   "slot": 7,
+   "persona": "slot_filler",
+   "champ_pct": 1.37,
+   "playoff_pct": 20.13,
+   "kept_total": 2.34
+  },
+  {
+   "slot": 8,
+   "persona": "scarcity",
+   "champ_pct": 9.83,
+   "playoff_pct": 62.9,
+   "kept_total": 1.21
+  },
+  {
+   "slot": 9,
+   "persona": "safe_floor",
+   "champ_pct": 17.91,
+   "playoff_pct": 79.59,
+   "kept_total": 1.37
+  },
+  {
+   "slot": 10,
+   "persona": "upside",
+   "champ_pct": 0.01,
+   "playoff_pct": 0.23,
+   "kept_total": 4.09
+  },
+  {
+   "slot": 11,
+   "persona": "bpa_pure",
+   "champ_pct": 10.83,
+   "playoff_pct": 67.61,
+   "kept_total": 1.76
+  },
+  {
+   "slot": 12,
+   "persona": "punt_ft_to",
+   "champ_pct": 7.32,
+   "playoff_pct": 49.93,
+   "kept_total": -11.18
+  }
+ ],
+ "owner_cat_ranks": {
+  "FG%": 5,
+  "FT%": 3,
+  "3PTM": 8,
+  "PTS": 4,
+  "REB": 5,
+  "AST": 5,
+  "ST": 12,
+  "BLK": 6,
+  "TO": 8
+ },
+ "owner_cat_z": {
+  "FG%": 1.53,
+  "FT%": 4.89,
+  "3PTM": -0.74,
+  "PTS": 5.03,
+  "REB": -0.11,
+  "AST": 0.33,
+  "ST": -6.0,
+  "BLK": 0.16,
+  "TO": 0.63
+ }
+}
