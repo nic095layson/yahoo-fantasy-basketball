@@ -2181,6 +2181,15 @@ const JUDGMENT = {
         w = `⚠ declared punt (${st.punt.join(", ")}): punt-declaring measured −5 to −11pp vs soft-punting (G1a, CRN) — the Soft Punt line advises concessions without zero-weighting.`;
       }
       flags.appendChild(el("p", "flagline", w));
+      /* E20 truth line (measured 2026-08-05, owner-authorized run): the
+         declared punt does NOT enter the Top-5 ordering, and the measured
+         punt-aware alternative FAILED its bar (1-of-5 punted mocks vs the
+         incumbent, never above baseline, ~= random swaps). Display truth,
+         not a defect notice. */
+      flags.appendChild(el("p", "flagline",
+        "\u24d8 The declared punt shapes panels and warnings, NOT the Top-5 ordering. " +
+        "This is measured, not an oversight: a punt-aware ordering failed 1-of-5 punted mocks " +
+        "vs the incumbent and never beat drafting as-is (E20, 2026-08-05)."));
     }
     const unfilled = unfilledSlots(mine);
     const remaining = st.size - mine.length;
