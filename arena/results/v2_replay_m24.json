@@ -1,0 +1,418 @@
+[
+ {
+  "pickNo": 1,
+  "actual": "Victor Wembanyama",
+  "shipped": [
+   {
+    "n": "Victor Wembanyama",
+    "pos": "C",
+    "ds": 11.0025
+   },
+   {
+    "n": "Nikola Jokic",
+    "pos": "C",
+    "ds": 10.4308
+   },
+   {
+    "n": "Shai Gilgeous-Alexander",
+    "pos": "PG",
+    "ds": 9.8638
+   },
+   {
+    "n": "Luka Doncic",
+    "pos": "PG,SG",
+    "ds": 6.0402
+   },
+   {
+    "n": "Anthony Davis",
+    "pos": "PF,C",
+    "ds": 4.2855
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 24,
+  "actual": "Jamal Murray",
+  "shipped": [
+   {
+    "n": "Jamal Murray",
+    "pos": "PG",
+    "ds": 1
+   },
+   {
+    "n": "Desmond Bane",
+    "pos": "SG,SF",
+    "ds": 0.9885
+   },
+   {
+    "n": "Austin Reaves",
+    "pos": "SG,PG",
+    "ds": 0.9862
+   },
+   {
+    "n": "Josh Giddey",
+    "pos": "PG,SG",
+    "ds": 0.9724
+   },
+   {
+    "n": "Franz Wagner",
+    "pos": "SF,PF",
+    "ds": 0.9677
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 25,
+  "actual": "Jaren Jackson Jr.",
+  "shipped": [
+   {
+    "n": "Desmond Bane",
+    "pos": "SG,SF",
+    "ds": 0.9954
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9884
+   },
+   {
+    "n": "Austin Reaves",
+    "pos": "SG,PG",
+    "ds": 0.9861
+   },
+   {
+    "n": "Josh Giddey",
+    "pos": "PG,SG",
+    "ds": 0.9792
+   },
+   {
+    "n": "Franz Wagner",
+    "pos": "SF,PF",
+    "ds": 0.9769
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 48,
+  "actual": "Jalen Brunson",
+  "shipped": [
+   {
+    "n": "Jalen Brunson",
+    "pos": "PG",
+    "ds": 0.9974
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.9974
+   },
+   {
+    "n": "Cameron Johnson",
+    "pos": "SF",
+    "ds": 0.9767
+   },
+   {
+    "n": "Brandon Miller",
+    "pos": "SF",
+    "ds": 0.9767
+   },
+   {
+    "n": "Bam Adebayo",
+    "pos": "C",
+    "ds": 0.9689
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 49,
+  "actual": "Bam Adebayo",
+  "shipped": [
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 1
+   },
+   {
+    "n": "Bam Adebayo",
+    "pos": "C",
+    "ds": 0.987
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.974
+   },
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 0.9714
+   },
+   {
+    "n": "Brandon Miller",
+    "pos": "SF",
+    "ds": 0.9714
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 72,
+  "actual": "LeBron James",
+  "shipped": [
+   {
+    "n": "Jalen Suggs",
+    "pos": "PG,SG",
+    "ds": 0.9882
+   },
+   {
+    "n": "Mikal Bridges",
+    "pos": "SF",
+    "ds": 0.9793
+   },
+   {
+    "n": "Brandon Ingram",
+    "pos": "SF",
+    "ds": 0.9793
+   },
+   {
+    "n": "Josh Hart",
+    "pos": "SG,SF",
+    "ds": 0.9734
+   },
+   {
+    "n": "Nickeil Alexander-Walker",
+    "pos": "SG,SF",
+    "ds": 0.9704
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 73,
+  "actual": "Jalen Suggs",
+  "shipped": [
+   {
+    "n": "Jalen Suggs",
+    "pos": "PG,SG",
+    "ds": 0.9911
+   },
+   {
+    "n": "Mikal Bridges",
+    "pos": "SF",
+    "ds": 0.9792
+   },
+   {
+    "n": "Nickeil Alexander-Walker",
+    "pos": "SG,SF",
+    "ds": 0.9732
+   },
+   {
+    "n": "Miles Bridges",
+    "pos": "SF,PF",
+    "ds": 0.9732
+   },
+   {
+    "n": "Josh Hart",
+    "pos": "SG,SF",
+    "ds": 0.9732
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 96,
+  "actual": "Deni Avdija",
+  "shipped": [
+   {
+    "n": "Nikola Vucevic",
+    "pos": "C",
+    "ds": 0.9966
+   },
+   {
+    "n": "Deni Avdija",
+    "pos": "SF,PF",
+    "ds": 0.9966
+   },
+   {
+    "n": "Jaden McDaniels",
+    "pos": "SF,PF",
+    "ds": 0.9724
+   },
+   {
+    "n": "PJ Washington",
+    "pos": "PF,C",
+    "ds": 0.969
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.969
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 97,
+  "actual": "Nikola Vucevic",
+  "shipped": [
+   {
+    "n": "Nikola Vucevic",
+    "pos": "C",
+    "ds": 0.9965
+   },
+   {
+    "n": "Norman Powell",
+    "pos": "SG",
+    "ds": 0.9757
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.9757
+   },
+   {
+    "n": "Quentin Grimes",
+    "pos": "SG,SF",
+    "ds": 0.9722
+   },
+   {
+    "n": "PJ Washington",
+    "pos": "PF,C",
+    "ds": 0.9688
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 120,
+  "actual": "Cameron Boozer",
+  "shipped": [
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9835
+   },
+   {
+    "n": "Jerami Grant",
+    "pos": "PF",
+    "ds": 0.9711
+   },
+   {
+    "n": "Yaxel Lendeborg",
+    "pos": "PF",
+    "ds": 0.9669
+   },
+   {
+    "n": "John Collins",
+    "pos": "PF,C",
+    "ds": 0.9628
+   },
+   {
+    "n": "Andrew Nembhard",
+    "pos": "PG",
+    "ds": 0.9587
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 121,
+  "actual": "Jerami Grant",
+  "shipped": [
+   {
+    "n": "Jerami Grant",
+    "pos": "PF",
+    "ds": 0.9833
+   },
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9792
+   },
+   {
+    "n": "Andrew Nembhard",
+    "pos": "PG",
+    "ds": 0.9667
+   },
+   {
+    "n": "Yaxel Lendeborg",
+    "pos": "PF",
+    "ds": 0.9542
+   },
+   {
+    "n": "Kyle Filipowski",
+    "pos": "C",
+    "ds": 0.9458
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 144,
+  "actual": "De'Anthony Melton",
+  "shipped": [
+   {
+    "n": "Jeremy Sochan",
+    "pos": "PF",
+    "ds": 0.9742
+   },
+   {
+    "n": "Tobias Harris",
+    "pos": "PF",
+    "ds": 0.9536
+   },
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.9536
+   },
+   {
+    "n": "Brandin Podziemski",
+    "pos": "SG,PG",
+    "ds": 0.9536
+   },
+   {
+    "n": "Kevin Porter Jr.",
+    "pos": "PG,SG",
+    "ds": 0.9485
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 145,
+  "actual": "Jared McCain",
+  "shipped": [
+   {
+    "n": "Jeremy Sochan",
+    "pos": "PF",
+    "ds": 0.9792
+   },
+   {
+    "n": "Tobias Harris",
+    "pos": "PF",
+    "ds": 0.9635
+   },
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.9635
+   },
+   {
+    "n": "Kevin Porter Jr.",
+    "pos": "PG,SG",
+    "ds": 0.9583
+   },
+   {
+    "n": "Brandin Podziemski",
+    "pos": "SG,PG",
+    "ds": 0.9583
+   }
+  ],
+  "rnd": 13
+ }
+]

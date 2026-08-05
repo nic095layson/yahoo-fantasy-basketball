@@ -13,6 +13,18 @@ counters with a derived table and explicit rules.
 **Rule going forward: no cumulative tally appears in a debrief unless it
 is computed here from artifacts, with its membership criteria stated.**
 
+**Instrument epoch note (2026-08-05, owner-directed scoring audit).** Every
+champ%/playoff%/ECW number in this file through mock 39 was graded by the
+STATIC-lineup week model (10 starters × 1.0, 3 bench × 0.15, fixed all
+week). The scoring audit (`findings_2026-08-05_scoring_model_audit.md`)
+measured that real daily-managed Yahoo lineups start ~99.4% of played
+games, so the instrument moved to **v2 (daily-fill start rates)** the same
+day — started games count 100%, bench games 0, bench backfills open slots
+daily. Pre-v2 numbers regenerate exactly with `ARENA_WEEK_MODEL=static`;
+cross-epoch comparisons of absolute champ% are not valid. The v2 ordering
+consequence is disclosed in `v2_panel_disclosure_out.json` (per E21).
+Rows added after this note are v2 unless marked otherwise.
+
 ## 1. Results — every graded mock (owner seat)
 
 | Mock | Slot | Champ% | Playoff% | Finish | Board rank | Note |

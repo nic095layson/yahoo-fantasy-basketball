@@ -1,0 +1,418 @@
+[
+ {
+  "pickNo": 9,
+  "actual": "Karl-Anthony Towns",
+  "shipped": [
+   {
+    "n": "Karl-Anthony Towns",
+    "pos": "C,PF",
+    "ds": 0.9957
+   },
+   {
+    "n": "Jalen Johnson",
+    "pos": "SF,PF",
+    "ds": 0.9892
+   },
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9849
+   },
+   {
+    "n": "Anthony Davis",
+    "pos": "PF,C",
+    "ds": 0.9763
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.9698
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 16,
+  "actual": "Giannis Antetokounmpo",
+  "shipped": [
+   {
+    "n": "Jamal Murray",
+    "pos": "PG",
+    "ds": 0.9889
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.9867
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.98
+   },
+   {
+    "n": "Desmond Bane",
+    "pos": "SG,SF",
+    "ds": 0.9711
+   },
+   {
+    "n": "Austin Reaves",
+    "pos": "SG,PG",
+    "ds": 0.9689
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 33,
+  "actual": "Trae Young",
+  "shipped": [
+   {
+    "n": "Dyson Daniels",
+    "pos": "SG",
+    "ds": 0.9976
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9928
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9832
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9784
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.976
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 40,
+  "actual": "Cooper Flagg",
+  "shipped": [
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9975
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.9801
+   },
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9751
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9751
+   },
+   {
+    "n": "Tyler Herro",
+    "pos": "PG,SG",
+    "ds": 0.9701
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 57,
+  "actual": "Alperen Sengun",
+  "shipped": [
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 0.9837
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.981
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9647
+   },
+   {
+    "n": "Mikal Bridges",
+    "pos": "SF",
+    "ds": 0.9565
+   },
+   {
+    "n": "Lauri Markkanen",
+    "pos": "PF,C",
+    "ds": 0.9511
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 64,
+  "actual": "Zion Williamson",
+  "shipped": [
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9746
+   },
+   {
+    "n": "Nickeil Alexander-Walker",
+    "pos": "SG,SF",
+    "ds": 0.9605
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9605
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9576
+   },
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.9548
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 81,
+  "actual": "Paolo Banchero",
+  "shipped": [
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9875
+   },
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.975
+   },
+   {
+    "n": "Herbert Jones",
+    "pos": "SF",
+    "ds": 0.975
+   },
+   {
+    "n": "Josh Hart",
+    "pos": "SG,SF",
+    "ds": 0.9688
+   },
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 0.9688
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 88,
+  "actual": "Dylan Harper",
+  "shipped": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9869
+   },
+   {
+    "n": "Herbert Jones",
+    "pos": "SF",
+    "ds": 0.9869
+   },
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 0.9837
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9542
+   },
+   {
+    "n": "VJ Edgecombe",
+    "pos": "SG",
+    "ds": 0.9346
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 105,
+  "actual": "Darryn Peterson",
+  "shipped": [
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9853
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9853
+   },
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 0.9853
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9669
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9596
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 112,
+  "actual": "Donovan Clingan",
+  "shipped": [
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9767
+   },
+   {
+    "n": "Toumani Camara",
+    "pos": "SF,PF",
+    "ds": 0.969
+   },
+   {
+    "n": "Draymond Green",
+    "pos": "PF,C",
+    "ds": 0.969
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.969
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 129,
+  "actual": "Ausar Thompson",
+  "shipped": [
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9955
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9866
+   },
+   {
+    "n": "Bilal Coulibaly",
+    "pos": "SG,SF",
+    "ds": 0.9643
+   },
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.9554
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9509
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 136,
+  "actual": "Nic Claxton",
+  "shipped": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9952
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9762
+   },
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.9667
+   },
+   {
+    "n": "Keon Ellis",
+    "pos": "SG",
+    "ds": 0.9524
+   },
+   {
+    "n": "Kevin Porter Jr.",
+    "pos": "PG,SG",
+    "ds": 0.919
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 153,
+  "actual": "Isaiah Collier",
+  "shipped": [
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.9943
+   },
+   {
+    "n": "Jusuf Nurkic",
+    "pos": "C",
+    "ds": 0.9148
+   },
+   {
+    "n": "Anthony Black",
+    "pos": "PG,SG",
+    "ds": 0.9034
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.892
+   },
+   {
+    "n": "Jose Alvarado",
+    "pos": "PG",
+    "ds": 0.8352
+   }
+  ],
+  "rnd": 13
+ }
+]
