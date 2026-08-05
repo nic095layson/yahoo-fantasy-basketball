@@ -195,6 +195,7 @@ ol.recos .sc { font-family: var(--font-data); font-weight: var(--weight-bold); f
 .coherence button.swapbtn { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); display: block; margin-top: var(--space-2); padding: var(--space-1) var(--space-3); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: transparent; color: var(--accent); cursor: pointer; }
 ol.recos .keptchip { grid-column: 1 / 4; justify-self: start; font-family: var(--font-data); font-size: var(--text-sm); font-variant-numeric: tabular-nums; color: var(--delta-up); border: 1px solid var(--delta-up); border-radius: var(--radius-sm); padding: 0 var(--space-1); }
 ol.recos .keptchip.anti { color: var(--status-risk); border-color: var(--status-risk); }
+.adviceline { font-size: var(--text-base); font-weight: var(--weight-medium); margin: var(--space-1) 0 var(--space-2); max-width: none; }
 
 /* Tabs */
 .tabs { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-8) 0 var(--space-3); border-bottom: 1px solid var(--line); }
@@ -266,7 +267,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     <label class="fld">Rounds <input type="number" id="cfgSize" value="13" min="1" max="20"></label>
     <label class="fld">Your slot <input type="number" id="cfgSlot" value="4" min="1" max="12"></label>
   </div>
-  <div class="controls"><span class="ctl">Punt plan (optional)</span><span id="setupPunt"></span></div>
+  <div class="controls"><span class="ctl">Build plan — punt these, target the rest (optional)</span><span id="setupPunt"></span></div>
   <p class="echo" id="echo"></p>
   <p class="hint">Confirm the total-picks product against your draft room before pick 1 — never discover the draft length at the end.</p>
   <div class="btnrow">
@@ -306,10 +307,11 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
     <div class="card">
       <h2 class="hcenter">Decision card</h2>
-      <p class="zoneline"><span class="zl">Your build</span><span title="Punt chips, category ranks, and the coherence strip read your declared punt. Analysis only — never advice.">punt-aware · analysis, not advice</span></p>
+      <p class="zoneline"><span class="zl">Your build</span><span title="Your declared build: what you're targeting and what you're punting. Category ranks and the coherence strip read it. Analysis only — never advice.">targets &amp; punts · analysis, not advice</span></p>
       <div class="puntline" id="puntline"></div>
       <div id="coherence" class="hidden"></div>
-      <p class="zoneline"><span class="zl">The card's advice</span><span title="Ranked by blend50: marginal expected weekly category wins vs these 11 rosters + balanced value. Deliberately ignores the punt box — every punt-steered ordering tested measured −3.8 to −11pp championship. Blue chips show each player under YOUR punt.">build-agnostic · by design</span></p>
+      <p class="zoneline"><span class="zl">The card's advice</span><span title="Ranked by blend50: marginal expected weekly category wins vs these 11 rosters + balanced value. Deliberately ignores the punt box — every punt-steered ordering tested measured −3.8 to −11pp championship. Blue chips show each player's fit for YOUR targets.">build-agnostic · by design</span></p>
+      <p class="adviceline hidden" id="adviceline"></p>
       <div class="deckmeta" id="deckmeta"></div>
       <div id="flags"></div>
       <div id="swline" class="hidden"></div>
@@ -396,7 +398,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-08-05 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/3): Jeremy Sochan signs with Portland — one year at the veteran minimum, non-guaranteed, a camp deal (reported 8/1), so he moves FA→POR with no change to his projection. Harden's Cleveland return remains agreed-but-unsigned by design; DeRozan (waived by Sacramento), Beal (opted out), and Westbrook are still true free agents. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared punt against every single-swap neighbor on the roster as drafted (display + declaration only; added 2026-08-05 after mock 32 declared a steals punt over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -1762,25 +1764,27 @@ const JUDGMENT = {
       for (const inn of CATS.filter(c => !st.punt.includes(c))) {
         const alt = st.punt.filter(c => c !== out).concat(inn);
         const v = keptSum(alt);
-        if (!best || v > best.v) best = { alt, v };
+        if (!best || v > best.v) best = { alt, v, out, inn };
       }
     const delta = best.v - declared;
     const state = delta > 2 ? "inverted" : delta > 0.75 ? "drifting" : "aligned";
     box.className = "coherence " + state;
+    const keptCats = CATS.filter(c => !st.punt.includes(c));
     const head = el("span", "state",
-      state === "inverted" ? "\u26a0 PUNT INVERTED" : state === "drifting" ? "\u25c7 PUNT DRIFTING" : "\u2713 PUNT ALIGNED");
-    head.dataset.tip = "Single-swap check of your declared punt vs the roster you have actually drafted (kept-z, raw sums). The declaration steers analysis lenses only \u2014 the advice list stays build-agnostic either way.";
+      state === "inverted" ? "\u26a0 WRONG TARGETS" : state === "drifting" ? "\u25c7 OFF TARGET" : "\u2713 ON TARGET");
+    head.dataset.tip = "Checks your declared TARGETS (the categories you kept) against the roster you have actually drafted \u2014 roster fit = z summed over targeted cats, compared against every single-swap alternative. Declaration steers analysis only; the advice list stays build-agnostic either way.";
     box.append(head);
     box.append(el("p", "",
-      `Declared ${st.punt.join("\u00b7")}: kept ${fmtZ(declared, 1)}` +
-      (state === "aligned" ? " \u2014 best available declaration for this roster."
-        : ` \u00b7 best single swap ${best.alt.join("\u00b7")}: ${fmtZ(best.v, 1)} (+${delta.toFixed(1)})`)));
+      `Targeting ${keptCats.join("\u00b7")} (punting ${st.punt.join("\u00b7")}) \u00b7 roster fit ${fmtZ(declared, 1)}` +
+      (state === "aligned" ? " \u2014 the best target set for this roster." : "")));
     if (state !== "aligned") {
-      const b = el("button", "swapbtn", `Switch punt to ${best.alt.join(" \u00b7 ")}`);
+      box.append(el("p", "",
+        `This roster fits better targeting ${best.out} \u2014 punt ${best.inn} instead: fit ${fmtZ(best.v, 1)} (+${delta.toFixed(1)})`));
+      const b = el("button", "swapbtn", `Retarget: ${best.out} in \u00b7 punt ${best.inn}`);
       b.type = "button";
       b.addEventListener("click", () => {
         deck.state.punt = best.alt;
-        log(`Punt re-declared: ${best.alt.join(", ")} (coherence swap, +${delta.toFixed(1)} kept-z).`);
+        log(`Retargeted: now targeting ${CATS.filter(c => !best.alt.includes(c)).join(", ")} (punting ${best.alt.join(", ")}) \u2014 +${delta.toFixed(1)} roster fit.`);
         save(); renderAll();
       });
       box.append(b);
@@ -2341,6 +2345,9 @@ const JUDGMENT = {
        at 1.5 (one genuine FT%-punt runaway at 1.98). Glyph is 🚀, NOT ⭐ —
        the star already means "market star" in the strip above. */
     const standout = scored.length > 1 && scored[0].ds - scored[1].ds >= 0.035;
+    const alBox = $("adviceline");
+    if (alBox) { alBox.classList.add("hidden"); alBox.textContent = ""; }
+    let adviceChip = null;
     /* family shelves for the verdict chips: how many of each family the
        room still prices inside the next two rounds (same math as the
        TARGET's scarcity read) */
@@ -2387,23 +2394,22 @@ const JUDGMENT = {
       }
       let vSpan = null;
       const fRec = fitZ(p, recoFw);
-      const sc = el("span", "sc", (scored[i].ds * 100).toFixed(1) + (p.av < 1 && fRec.raw > 0 ? "*" : ""));
+      /* Score number demoted (owner concision pass 2026-08-05): rank order
+         already encodes it. Row 1 shows the decision-relevant part \u2014 the
+         lead over #2 \u2014 with runaway/coin-flip folded in; raw percentiles
+         live in the tooltip. */
+      const lead = i === 0 && scored.length > 1 ? (scored[0].ds - scored[1].ds) * 100 : null;
+      const sc = el("span", "sc", lead === null ? "" : `lead +${lead.toFixed(1)}`);
+      if (i === 0 && standout) { sc.style.color = "var(--accent)"; sc.textContent += " \ud83d\ude80"; }
+      if (i === 0 && coinFlip) { sc.style.color = "var(--muted)"; sc.textContent = `coin flip (+${lead.toFixed(1)})`; }
+      if (i === 0 && p.av < 1 && fRec.raw > 0) sc.textContent += "*";
       sc.dataset.tip = `ΔECW-blend ${(scored[i].ds * 100).toFixed(1)} — 50% marginal expected-cats-won vs the room's CURRENT rosters + 50% balanced 9-cat value (punt-blind by design \u2014 punt-steered orderings measured \u22123.8 to \u221211pp), both as pool percentiles (validated 2026-08-04: +11.6pp mean, 0 winner regressions across 14 replayed drafts). Informational: council ${s.toFixed(2)}` +
         (scored[i].adj ? ` · judgment ${fmtZ(scored[i].adj, 2)}` : "") +
         (i === 0 && scored.length > 1 ? ` · lead over #2: ${((scored[0].ds - scored[1].ds) * 100).toFixed(1)}` : "") +
         (i > 0 ? ` · gap to #1: −${((scored[0].ds - scored[i].ds) * 100).toFixed(1)}` : "");
-      if (i === 0 && coinFlip) {
-        const cf = el("span", "flag", "(coin flip)");
-        cf.style.color = "var(--muted)";
-        nm.appendChild(cf);
-      }
-      if (i === 0 && standout) {
-        const so = el("span", "flag",
-          `🚀 standout — leads #2 by ${((scored[0].ds - scored[1].ds) * 100).toFixed(1)}`);
-        so.style.color = "var(--accent)";
-        so.dataset.tip = "the #1's score lead is a runaway (≥1.5) — passing on them costs real value; the coin-flip tag is this rule's mirror";
-        nm.appendChild(so);
-      }
+      /* coin-flip / standout name-flags folded into the row-1 lead
+         display (owner concision pass 2026-08-05) \u2014 same signals, one
+         surface, tooltips unchanged. */
       /* Concise breakdown line (owner spec 2026-07-30): council/slide
          numbers + the player's plus-cats; rationale detail lives in the
          line's tooltip and the score tooltip. */
@@ -2412,11 +2418,13 @@ const JUDGMENT = {
       if (scored[i].vbonus) bits.push(`slide +${scored[i].vbonus.toFixed(2)}`);
       const plus = CATS.filter(c => !punt.has(c) && p.z[c] >= 0.5)
         .sort((a, b) => p.z[b] - p.z[a]).slice(0, 3);
-      let line = bits.join(" · ") + (plus.length ? `   +${plus.join(" +")}` : "");
+      /* Machinery numbers (council/judgment/slide) demoted to the tooltip
+         (owner concision pass 2026-08-05). */
+      let line = (plus.length ? `+${plus.join(" +")}` : "");
       if ((teamCt2[p.t] || 0) >= 2) line += `   [would be 3rd ${p.t}]`;
       if (p.note && p.av === 1) line += `   [${p.note}]`;
       const ml = el("span", "meta", line);
-      ml.dataset.tip = `val ${fmtVal(p, punt)} (injury-adjusted 9-cat z)` +
+      ml.dataset.tip = `${bits.join(" · ")} · val ${fmtVal(p, punt)} (injury-adjusted 9-cat z)` +
         (scored[i].why ? ` · ⚖ ${scored[i].why}` : "") +
         (scored[i].vbonus ? ` · ⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}` : "") +
         (plus.length ? ` · plus-cats = strongest z (≥ +0.5), capped at 3` : "");
@@ -2428,8 +2436,8 @@ const JUDGMENT = {
         const kv = adjValue(p, punt);
         const kvBest = Math.max(...scored.map(r => adjValue(r.p, punt)));
         const kc = el("span", "keptchip" + (kv < 0 ? " anti" : ""),
-          `your punt ${fmtZ(kv, 1)}` + (kv === kvBest ? " \u00b7 best fit" : kv < 0 ? " \u00b7 anti-fit" : ""));
-        kc.dataset.tip = "Injury-adjusted z with your punted categories removed \u2014 the number the mock post-mortems grade picks by. Information only; the ranking stays build-agnostic.";
+          `target fit ${fmtZ(kv, 1)}` + (kv === kvBest ? " \u00b7 best on board" : kv < 0 ? " \u00b7 off-target" : ""));
+        kc.dataset.tip = "Injury-adjusted z summed over YOUR TARGETED categories (punted cats excluded) \u2014 the number the mock post-mortems grade picks by. Information only; the ranking stays build-agnostic.";
         li.append(kc);
       }
       /* Market-timing verdict chip (owner RULE 2026-07-28): value says
@@ -2485,7 +2493,36 @@ const JUDGMENT = {
       tags.append(el("span", "tm", p.t));
       li.append(nm, tags, sc, take);
       if (vSpan) li.append(vSpan); /* bottom-right, under the button (owner spec) */
+      if (i === 0 && vSpan) adviceChip = vSpan.textContent;
       recos.appendChild(li);
+    }
+    /* Advice line (owner-approved 2026-08-05): one plain-English
+       instruction synthesized from signals the card already computes \u2014
+       nothing new is decided here. */
+    if (alBox && scored.length && !draftDone()) {
+      let txt;
+      if (tgOnPin && pinTarget) {
+        txt = `Take ${pinTarget.n} \u2014 structural ${readR.fam} need, the shelf is nearly empty.`;
+      } else {
+        const top0 = scored[0].p;
+        txt = `Take ${top0.n}`;
+        txt += standout ? " \u2014 clear of the field" : coinFlip ? " \u2014 coin flip with #2, either is fine" : " \u2014 best week-win blend";
+        if (adviceChip) {
+          const pm = adviceChip.match(/~\d+%/);
+          if (adviceChip.includes("BUY NOW")) txt += pm ? `; only ${pm[0]} chance he survives to your next turn` : "; the shelf is nearly empty";
+          else if (adviceChip.includes("TOSS-UP")) txt += pm ? `; ${pm[0]} to survive to your next turn` : "";
+        }
+        txt += ".";
+        if (st.punt.length) {
+          let bi = 0;
+          for (let j = 1; j < scored.length; j++)
+            if (adjValue(scored[j].p, punt) > adjValue(scored[bi].p, punt)) bi = j;
+          if (bi !== 0 && adjValue(scored[bi].p, punt) > 0)
+            txt += ` ${scored[bi].p.n} is the best fit for your targets.`;
+        }
+      }
+      alBox.textContent = txt;
+      alBox.classList.remove("hidden");
     }
     /* Pinned TARGET row (owner UX fix 2026-07-28, council-ratified 5-0):
        when the archetype names a family absent from the Top 5, its best
