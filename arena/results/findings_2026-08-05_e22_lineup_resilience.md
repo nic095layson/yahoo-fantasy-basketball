@@ -15,11 +15,12 @@ docstring, registered before any simulation ran).
 
 ## 0. What the system already models, and what it did not (EVIDENCE)
 
-- Both the season sim (`arena.team_week_model`) and the deck's ΔECW half
-  (`teamWeekModel`) have priced the owner's REAL weekly lineup since
-  2026-07-23: 10 slots (PG SG G SF PF F C C U U), bench at 0.15,
-  per-player availability tiers (0.88 / 0.75 risk / 0.60 recovery) in
-  both mean and variance.
+- The weekly lineup model — 10 slots (PG SG G SF PF F C C U U), bench at
+  0.15, per-player availability tiers (0.88 / 0.75 risk / 0.60 recovery)
+  in both mean and variance — has been in the season sim
+  (`arena.team_week_model`) and the deck engine since 2026-07-23; the
+  deck's ΔECW ordering half has consumed it since blend50 shipped
+  (2026-08-04).
 - NOT modeled anywhere before today: **replacement dynamics** — when a
   starter misses games, his production is simply lost; the bench player
   who would start those nights stays at 0.15. Plug-in depth had no
@@ -44,7 +45,7 @@ Arms per mock, one CRN-paired 18,000-season set each (seeds 11/23/47 ×
 
 | Mock | Punt | Baseline | Shipped | Resil | Δ (resil−shipped) |
 |---|---|---|---|---|---|
-| 22 | REB/BLK/FG% | 0.22 | 6.14 | 6.14 | 0.00 (cards identical) |
+| 22 | REB/BLK/FG% | 0.22 | 6.14 | 6.14 | 0.00 (#1 never diverges; identical rosters) |
 | 31 | FT%/3PTM/TO | 6.16 | 15.87 | 15.87 | 0.00 |
 | 32 | FT%/3PTM/ST | 4.11 | 0.01 | 0.01 | 0.00 |
 | 34 | FT%/3PTM/PTS | 9.52 | 0.00 | **10.07** | **+10.07** |
@@ -75,13 +76,18 @@ bench competition exists. Every large champ% swing above traces to one
 to three late-round player substitutions:
 
 - **m39 (+24.08):** ONE player — resil takes Aaron Nesmith at pick 124
-  where shipped ends up with Tobias Harris. (Both full-follow arms rip
-  out the owner's punt-fit stars and fall far below the owner's real
-  33.98 — the m37/m39 lesson that full-follow autopilot ≠ advice.)
-- **m34 (+10.07):** resil's guard-first endgame (the smoke case: Anthony
-  Black/Caruso over the all-big Top-5) beats BOTH shipped (0.00) and the
-  as-drafted baseline (9.52) — the registered E22 failure mode (6
-  C-eligible, AST dead at 0.202 pwin) is real and this fixes it.
+  where shipped ends up with Tobias Harris. (Shipped-follow collapses
+  far below the owner's real 33.98, to 6.45; resil-follow lands 3.45pp
+  below it — within the noise band — the m37/m39 lesson that full-follow
+  autopilot ≠ advice.)
+- **m34 (+10.07):** the measured mechanism is two substitutions — resil
+  takes Brandin Podziemski over Wendell Carter Jr. at 137 and keeps
+  Jalen Green where shipped adds Jusuf Nurkic at 152 — and the result
+  beats BOTH shipped (0.00) and the as-drafted baseline (9.52).
+  Separately, at turn 152 the resil CARD's top-2 (Anthony Black, Alex
+  Caruso — the registered smoke case, vs shipped's 5/5-C-eligible Top-5)
+  confirm the card-level fix, though neither player enters any arm's
+  roster.
 - **m21 (−26.14):** resil swaps Lendeborg → Ryan Rollins (124), Wendell
   Carter Jr. → Ayo Dosunmu (141), Sochan → Kelly Oubre Jr. (148) —
   three frontcourt pieces become guards/wings on a roster whose lineup
@@ -90,9 +96,13 @@ to three late-round player substitutions:
   and takes Kelly Oubre Jr. at 145; shipped's Sochan/Harris path keeps
   the balance.
 
-**The dual-instrument readout settles whether the collapses are an
-instrument artifact: they are not.** Scoring every final roster's ECW
-under BOTH week models (static fill and SLF fill):
+**The dual-instrument readout settles the pre-flagged caveat: the
+collapses are not an artifact of the static-fill grader specifically —
+both week models score the m21/m24 resil rosters as worse.** (A
+misspecification SHARED by both fill models — they differ only in the
+weights — would fool both together; E22c's real-data calibration is the
+arbiter for that residual.) Scoring every final roster's ECW under BOTH
+week models (static fill and SLF fill):
 
 | Roster | ECW static (ship/resil) | ECW SLF (ship/resil) | agree? |
 |---|---|---|---|
@@ -102,8 +112,8 @@ under BOTH week models (static fill and SLF fill):
 | m24 | **5.130** / 4.641 | **5.008** / 4.496 | both say resil WORSE |
 
 The pre-flagged caveat ("the static-fill grader may under-reward
-resilience") is REFUTED for these four: even the SLF instrument scores
-the m21/m24 resil picks as worse rosters. The resil ordering made
+resilience") is REFUTED for these four rosters: even the SLF instrument
+scores the m21/m24 resil picks as worse. The resil ordering made
 genuinely bad calls there, not differently-graded good ones.
 
 ## 4. Seed robustness of the four big swings (EVIDENCE)
@@ -117,9 +127,9 @@ Re-simulated on a disjoint seed set (101/103/107 × 6,000):
 | 34 | shipped / resil | 0.00 / 10.07 | 0.02 / 9.68 |
 | 39 | shipped / resil | 6.45 / 30.53 | 6.47 / 31.12 |
 
-Every gap reproduces within ~1pp on seeds the original run never saw
-(regenerate: `python3 arena/mocks/e22_seedcheck.py` →
-`arena/results/e22_seedcheck_out.json`). The four big swings are real
+Every gap reproduces within ~1.2pp (max: m21 at 1.17pp) on seeds the
+original run never saw (regenerate: `python3 arena/mocks/e22_seedcheck.py`
+→ `arena/results/e22_seedcheck_out.json`). The four big swings are real
 properties of those rosters under the instrument, not CRN artifacts —
 one late-round player really is worth ±24pp to this simulator in these
 rooms (a statement about the instrument's tail sensitivity as much as
@@ -141,9 +151,18 @@ Two consequences worth registering, neither shippable today:
 
 - **E22b (September candidate): penalty-only / guard-rail SLF.** Apply
   SLF as a saturation CHECK, not a re-ranking: keep the static ordering
-  unless the static Top-5 is ≥4/5 one position family in R10+ (the
-  measured m34/m39 failure signature), and only then re-rank those five
-  by SLF. Must re-clear this study's full 13-mock panel.
+  unless the static Top-5 is ≥4/5 one position family in R10+, and only
+  then re-rank those five by SLF. Precision note (verified 2026-08-05):
+  that signature is the measured **m34** signature only (turn 152 is
+  5/5 C-eligible); m39's rescue turn (pick 124: Gafford/Lendeborg/
+  Nembhard/Buzelis/Coulibaly) does NOT match it, and no trigger
+  condition capturing m39 is currently known. Must re-clear this
+  study's full 13-mock panel. *Postscript, same day:* E22b was
+  owner-directed and measured immediately — it FAILED its bar
+  (`e22b_measurement_out.json`: captures only +1.28 of m34's rescue,
+  fires on m21's poison turn for −24.96, wins 1/9); the shipped answer
+  became the display-only LINEUP CAP warning. See the SEPTEMBER-PLAN
+  E22b resolution line.
 - **E22c (September, data): calibrate the fill model against reality.**
   The owner's uploaded weekly breakdowns (games played per week) are
   ground truth for how his lineups actually filled. Fitting BENCH_WEIGHT
@@ -156,13 +175,22 @@ Two consequences worth registering, neither shippable today:
 - Full-follow arms measure each ordering as an autopilot; the owner's
   real drafts beat both arms on m32, m36, m37, m39. Advice ≠ policy.
 - Single-player champ% swings of ±24pp under CRN pairs confirm the
-  ledger's standing lesson on tail sensitivity; per-mock deltas below
-  ~5pp should never drive ship decisions (the bar's design assumption,
-  and why the count criterion exists).
+  ledger's standing lesson on tail sensitivity. Single-mock deltas at
+  the ~1–3pp placebo scale (the bar's registered design assumption)
+  should never drive ship decisions — and this author's wider judgment
+  (marked as such, post-hoc) is to distrust anything under ~5pp on a
+  single mock; the count criterion exists for exactly this reason.
 - The grading instrument still carries the static-bench blind spot for
   ROSTERS NOT IN THIS PANEL; §3's dual readout settles the four big
   cases only. E22c is the principled fix.
-- 3 of 9 punted mocks produced byte-identical cards (m22/31/32) — the
-  punted-set sample for the win-count is effectively six decided mocks.
-  Recorded as-is; the bar was registered on all nine and is applied
-  as registered.
+- Convergence detail on the three 0.00-delta punted mocks (corrected
+  after adversarial verification — an earlier draft called all three
+  "byte-identical cards", which the replays refute): m22 — the #1 never
+  diverged (lower card ranks differ at picks 107/110) and both arms
+  drafted identical rosters; m31 — the #1 diverged once (pick 153) but
+  both follow arms still drafted the same roster; m32 — the arms drafted
+  rosters differing by one player (Lendeborg vs D'Angelo Russell at pick
+  135) that TIED at 0.006% champ, a decided comparison that dead-heated.
+  The win-count sample is therefore seven decided comparisons (one a
+  tie) plus two convergent mocks. Recorded as-is; the bar was registered
+  on all nine and is applied as registered.
