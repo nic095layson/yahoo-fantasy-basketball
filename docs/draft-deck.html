@@ -101,13 +101,17 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 .toolbar { margin: 0 0 var(--space-2); }
 .toolbar #exportBtn { margin-left: auto; }
 .card.feedcard { display: flex; flex-direction: column; }
-.feedcard .mirror { flex: 1 1 120px; min-height: 120px; max-height: none; }
+/* Pick log shows ~6 rows — the last few picks (owner request 2026-08-05:
+   the full-height log read as a wall of text). Whole history stays in the
+   box; scroll up for it. border-box, so padding+border ride in the calc. */
+.feedcard .mirror { flex: 0 1 auto; min-height: 0;
+  max-height: calc(6 * var(--leading-body) * var(--text-sm) + 2 * var(--space-2) + 2px); }
 
 /* Feed console */
 .feedrow { display: flex; gap: var(--space-2); margin-bottom: var(--space-2); }
 .feedrow input { flex: 1; font-family: var(--font-data); }
 .hint { font-size: var(--text-sm); color: var(--muted); margin: 0 0 var(--space-2); }
-.mirror { font-family: var(--font-data); font-size: var(--text-sm); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
+.mirror { font-family: var(--font-data); font-size: var(--text-sm); line-height: var(--leading-body); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
 .mirror .warn { color: var(--status-risk); }
 .mirror .halt { color: var(--status-out); font-weight: var(--weight-bold); }
 .btnrow { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
@@ -2156,14 +2160,18 @@ const JUDGMENT = {
 
   function renderMirror() {
     const m = $("mirror");
+    /* Full history stays in the box (owner request 2026-07-23), but only the
+       last few rows are visible. Stay pinned to the newest line UNLESS the
+       reader has scrolled up into history — then hold their place, so a
+       re-render doesn't yank them back down mid-read. */
+    const atBottom = !(m.scrollHeight - m.scrollTop - m.clientHeight > 24);
+    const prevTop = m.scrollTop;
     m.innerHTML = "";
-    /* full history, scrollable (owner request 2026-07-23); the box stays
-       pinned to the newest line via scrollTop below */
     for (const l of deck.log) {
       const d = el("div", l.cls, l.t);
       m.appendChild(d);
     }
-    m.scrollTop = m.scrollHeight;
+    m.scrollTop = atBottom ? m.scrollHeight : prevTop;
   }
 
   function renderDecision() {
