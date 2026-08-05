@@ -1,0 +1,64 @@
+{
+ "36": {
+  "mock": "36",
+  "owner_slot": 1,
+  "trigger_turns": [
+   [
+    10,
+    "F"
+   ],
+   [
+    12,
+    "G"
+   ],
+   [
+    13,
+    "G"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 27.211,
+   "playoff": 93.578,
+   "finish": 1,
+   "seasons": 18000,
+   "roster": [
+    "Victor Wembanyama",
+    "Desmond Bane",
+    "Derrick White",
+    "Reed Sheppard",
+    "Cameron Johnson",
+    "Mikal Bridges",
+    "Christian Braun",
+    "Cason Wallace",
+    "Nikola Vucevic",
+    "Aaron Nesmith",
+    "Andrew Nembhard",
+    "Al Horford",
+    "Ace Bailey"
+   ],
+   "swaps": [
+    [
+     24,
+     "Giannis Antetokounmpo",
+     "Desmond Bane"
+    ],
+    [
+     25,
+     "James Harden",
+     "Derrick White"
+    ],
+    [
+     49,
+     "Alperen Sengun",
+     "Cameron Johnson"
+    ],
+    [
+     145,
+     "Keon Ellis",
+     "Ace Bailey"
+    ]
+   ]
+  }
+ }
+}

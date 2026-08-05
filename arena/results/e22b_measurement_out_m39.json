@@ -1,0 +1,71 @@
+{
+ "39": {
+  "mock": "39",
+  "owner_slot": 4,
+  "trigger_turns": [
+   [
+    10,
+    "G"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 6.45,
+   "playoff": 47.917,
+   "finish": 7,
+   "seasons": 18000,
+   "roster": [
+    "Luka Doncic",
+    "Evan Mobley",
+    "Derrick White",
+    "Amen Thompson",
+    "Onyeka Okongwu",
+    "Tari Eason",
+    "Brook Lopez",
+    "Jalen Duren",
+    "Cason Wallace",
+    "Ryan Rollins",
+    "Daniel Gafford",
+    "Tobias Harris",
+    "Keon Ellis"
+   ],
+   "swaps": [
+    [
+     21,
+     "Giannis Antetokounmpo",
+     "Evan Mobley"
+    ],
+    [
+     28,
+     "Trae Young",
+     "Derrick White"
+    ],
+    [
+     52,
+     "Alperen Sengun",
+     "Onyeka Okongwu"
+    ],
+    [
+     76,
+     "Jarrett Allen",
+     "Brook Lopez"
+    ],
+    [
+     100,
+     "Ausar Thompson",
+     "Cason Wallace"
+    ],
+    [
+     141,
+     "Bilal Coulibaly",
+     "Tobias Harris"
+    ],
+    [
+     148,
+     "RJ Barrett",
+     "Keon Ellis"
+    ]
+   ]
+  }
+ }
+}

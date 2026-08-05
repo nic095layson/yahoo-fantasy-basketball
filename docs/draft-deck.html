@@ -2380,6 +2380,29 @@ const JUDGMENT = {
        are common at the top (percentile quantization) and the parity gate
        requires deterministic agreement */
     const scored = scoredAll.slice(0, 5);
+    /* Lineup-capacity truth line (owner-reported 2026-08-05: "it wouldn't
+       routinely have me load up on 5 or 6 C's"). E22/E22b measured both
+       reordering fixes and both failed their registered bars, so the card
+       keeps its validated ordering and NAMES the trap instead. Startable
+       ceilings come from the lineup layout: C = C·C·Util·Util = 4;
+       G = PG·SG·G·Util·Util = 5; F = SF·PF·F·Util·Util = 5. Fires only
+       when the card is ≥4/5 one family AND the roster already holds that
+       family's ceiling. */
+    if (scored.length === 5) {
+      const famOf = p => { const s = new Set(); for (const t of positionsOf(p)) s.add(t === "C" ? "C" : (t === "PG" || t === "SG") ? "G" : "F"); return s; };
+      const CAP = { C: 4, G: 5, F: 5 };
+      const FNAME = { C: "center", G: "guard", F: "forward" };
+      const SLOTS_TXT = { C: "C·C·Util·Util", G: "PG·SG·G·Util·Util", F: "SF·PF·F·Util·Util" };
+      for (const f of ["C", "F", "G"]) {
+        const nCard = scored.filter(r => famOf(r.p).has(f)).length;
+        const nMine = mine.filter(p => famOf(p).has(f)).length;
+        if (nCard >= 4 && nMine >= CAP[f]) {
+          flags.appendChild(el("p", "flagline",
+            `⚠ LINEUP CAP: ${nCard} of these 5 are ${FNAME[f]}-eligible and you already roster ${nMine} — at most ${CAP[f]} can start on a given day (${SLOTS_TXT[f]}), so another would ride your bench whenever they're all healthy`));
+          break;
+        }
+      }
+    }
     /* Coin-flip tag: top two within 0.25z of composite score (the owner's
        "~5 points" rule expressed in raw score, no invented slope). */
     /* Thresholds rate-matched to blend units on the 182 ledger turns
