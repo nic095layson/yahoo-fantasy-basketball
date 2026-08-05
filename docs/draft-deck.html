@@ -1322,6 +1322,14 @@ const JUDGMENT = {
     $("echo").textContent = `${t} teams × ${s} rounds = ${t * s} total picks (last pick #${t * s})`;
   }
   for (const id of ["cfgTeams", "cfgSize", "cfgSlot"]) $(id).addEventListener("input", refreshEcho);
+  /* Setup memory (owner request 2026-08-05): pre-fill "Your slot" with the
+     value the last draft was started with. Own key, so Reset draft (which
+     clears the deck state) never forgets the slot. */
+  const SETUP_KEY = "draftdeck.setup.v1";
+  try {
+    const s = JSON.parse(localStorage.getItem(SETUP_KEY));
+    if (s && +s.slot >= 1) $("cfgSlot").value = +s.slot;
+  } catch (e) { /* absent or corrupt: keep the HTML default */ }
   refreshEcho();
 
   let mockMode = false;
@@ -1345,6 +1353,7 @@ const JUDGMENT = {
     if (!(size >= 1)) return setupError("Rounds must be 1 or more.");
     if (!(slot >= 1 && slot <= teams)) return setupError(`Your slot must be between 1 and ${teams}.`);
     setupError(null);
+    try { localStorage.setItem(SETUP_KEY, JSON.stringify({ slot })); } catch (e) { /* private mode */ }
     deck = {
       state: { teams, slot, size, punt: CATS.filter(c => setupPunt.has(c)), picks: [] },
       mode: mockMode ? "mock" : "live",
