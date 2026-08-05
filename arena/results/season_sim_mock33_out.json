@@ -1,11 +1,7 @@
 {
  "mock": 33,
- "owner_slot": 8,
- "declared_punt": [
-  "FT%",
-  "3PTM",
-  "PTS"
- ],
+ "owner_slot": 10,
+ "declared_punt": [],
  "seeds": [
   11,
   23,
@@ -15,136 +11,136 @@
  "table": [
   {
    "slot": 1,
-   "champ_pct": 6.59,
-   "playoff_pct": 57.04,
-   "ecw_per_week": 4.562,
-   "kept_total_9cat": -2.41,
-   "kept_total_owner_punt": -12.6
+   "champ_pct": 19.67,
+   "playoff_pct": 80.69,
+   "ecw_per_week": 4.786,
+   "kept_total_9cat": 8.0,
+   "kept_total_owner_punt": 8.0
   },
   {
    "slot": 2,
-   "champ_pct": 34.84,
-   "playoff_pct": 95.47,
-   "ecw_per_week": 5.125,
-   "kept_total_9cat": 2.23,
-   "kept_total_owner_punt": -6.16
+   "champ_pct": 10.53,
+   "playoff_pct": 61.63,
+   "ecw_per_week": 4.629,
+   "kept_total_9cat": 3.48,
+   "kept_total_owner_punt": 3.48
   },
   {
    "slot": 3,
-   "champ_pct": 5.18,
-   "playoff_pct": 48.5,
-   "ecw_per_week": 4.483,
-   "kept_total_9cat": 0.69,
-   "kept_total_owner_punt": -6.91
+   "champ_pct": 13.36,
+   "playoff_pct": 67.73,
+   "ecw_per_week": 4.68,
+   "kept_total_9cat": 2.74,
+   "kept_total_owner_punt": 2.74
   },
   {
    "slot": 4,
-   "champ_pct": 14.75,
-   "playoff_pct": 78.37,
-   "ecw_per_week": 4.799,
-   "kept_total_9cat": 2.28,
-   "kept_total_owner_punt": -10.1
+   "champ_pct": 10.5,
+   "playoff_pct": 58.24,
+   "ecw_per_week": 4.629,
+   "kept_total_9cat": -1.3,
+   "kept_total_owner_punt": -1.3
   },
   {
    "slot": 5,
-   "champ_pct": 2.24,
-   "playoff_pct": 32.83,
-   "ecw_per_week": 4.296,
-   "kept_total_9cat": -0.4,
-   "kept_total_owner_punt": -0.77
+   "champ_pct": 6.51,
+   "playoff_pct": 49.88,
+   "ecw_per_week": 4.501,
+   "kept_total_9cat": 1.41,
+   "kept_total_owner_punt": 1.41
   },
   {
    "slot": 6,
-   "champ_pct": 0.47,
-   "playoff_pct": 10.35,
-   "ecw_per_week": 4.039,
-   "kept_total_9cat": 0.11,
-   "kept_total_owner_punt": 12.67
+   "champ_pct": 7.24,
+   "playoff_pct": 50.78,
+   "ecw_per_week": 4.534,
+   "kept_total_9cat": -3.87,
+   "kept_total_owner_punt": -3.87
   },
   {
    "slot": 7,
-   "champ_pct": 14.47,
-   "playoff_pct": 77.67,
-   "ecw_per_week": 4.746,
-   "kept_total_9cat": 0.34,
-   "kept_total_owner_punt": 9.66
+   "champ_pct": 5.21,
+   "playoff_pct": 40.33,
+   "ecw_per_week": 4.463,
+   "kept_total_9cat": -7.54,
+   "kept_total_owner_punt": -7.54
   },
   {
    "slot": 8,
-   "champ_pct": 9.52,
-   "playoff_pct": 68.09,
-   "ecw_per_week": 4.63,
-   "kept_total_9cat": 4.67,
-   "kept_total_owner_punt": 15.9
+   "champ_pct": 1.52,
+   "playoff_pct": 18.43,
+   "ecw_per_week": 4.155,
+   "kept_total_9cat": -2.99,
+   "kept_total_owner_punt": -2.99
   },
   {
    "slot": 9,
-   "champ_pct": 6.37,
-   "playoff_pct": 55.82,
-   "ecw_per_week": 4.561,
-   "kept_total_9cat": 1.31,
-   "kept_total_owner_punt": -4.44
+   "champ_pct": 8.58,
+   "playoff_pct": 57.24,
+   "ecw_per_week": 4.549,
+   "kept_total_9cat": 1.54,
+   "kept_total_owner_punt": 1.54
   },
   {
    "slot": 10,
-   "champ_pct": 3.31,
-   "playoff_pct": 37.72,
-   "ecw_per_week": 4.416,
-   "kept_total_9cat": -5.55,
-   "kept_total_owner_punt": -8.06
+   "champ_pct": 11.37,
+   "playoff_pct": 64.38,
+   "ecw_per_week": 4.65,
+   "kept_total_9cat": -0.4,
+   "kept_total_owner_punt": -0.4
   },
   {
    "slot": 11,
-   "champ_pct": 1.61,
-   "playoff_pct": 25.46,
-   "ecw_per_week": 4.255,
-   "kept_total_9cat": -3.18,
-   "kept_total_owner_punt": -4.84
+   "champ_pct": 5.17,
+   "playoff_pct": 43.67,
+   "ecw_per_week": 4.429,
+   "kept_total_9cat": 1.46,
+   "kept_total_owner_punt": 1.46
   },
   {
    "slot": 12,
-   "champ_pct": 0.64,
-   "playoff_pct": 12.7,
-   "ecw_per_week": 4.088,
-   "kept_total_9cat": -4.75,
-   "kept_total_owner_punt": -8.22
+   "champ_pct": 0.33,
+   "playoff_pct": 6.98,
+   "ecw_per_week": 3.995,
+   "kept_total_9cat": -6.3,
+   "kept_total_owner_punt": -6.3
   }
  ],
  "owner_cat_ranks": {
-  "FG%": 1,
-  "FT%": 11,
-  "3PTM": 10,
-  "PTS": 12,
-  "REB": 1,
-  "AST": 10,
-  "ST": 4,
-  "BLK": 2,
-  "TO": 1
+  "FG%": 2,
+  "FT%": 9,
+  "3PTM": 11,
+  "PTS": 11,
+  "REB": 11,
+  "AST": 8,
+  "ST": 2,
+  "BLK": 5,
+  "TO": 5
  },
  "owner_cat_z": {
-  "FG%": 4.18,
-  "FT%": -3.82,
-  "3PTM": -3.1,
-  "PTS": -4.31,
-  "REB": 2.31,
-  "AST": -4.26,
-  "ST": 3.11,
-  "BLK": 2.83,
-  "TO": 7.74
+  "FG%": 1.83,
+  "FT%": -1.58,
+  "3PTM": -1.35,
+  "PTS": -3.67,
+  "REB": -1.65,
+  "AST": -0.55,
+  "ST": 3.68,
+  "BLK": 0.73,
+  "TO": 2.16
  },
  "owner_roster": [
-  "Tyrese Haliburton",
-  "Evan Mobley",
-  "Dyson Daniels",
+  "Cade Cunningham",
+  "Jalen Johnson",
   "OG Anunoby",
-  "Bam Adebayo",
-  "Pascal Siakam",
-  "Kel'el Ware",
-  "Kon Knueppel",
-  "Herbert Jones",
-  "Jalen Green",
-  "Santi Aldama",
-  "Wendell Carter Jr.",
-  "Daniel Gafford"
+  "Cooper Flagg",
+  "Lauri Markkanen",
+  "Mikal Bridges",
+  "Norman Powell",
+  "Jalen Duren",
+  "Cason Wallace",
+  "Draymond Green",
+  "Jrue Holiday",
+  "Nic Claxton",
+  "Keon Ellis"
  ]
 }

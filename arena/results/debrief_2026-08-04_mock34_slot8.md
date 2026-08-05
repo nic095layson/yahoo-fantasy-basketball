@@ -1,18 +1,24 @@
-# Mock 33 debrief — slot 8, declared punt FT%/3PTM/PTS (2026-08-04)
+# Mock 34 debrief — slot 8, declared punt FT%/3PTM/PTS (2026-08-04)
 
-**Numbering note (2026-08-05):** this draft was analyzed as "mock 31"
-before a parallel session merged its own mock 31 (slot 9, punt
-FT%/3PTM/TO) and mock 32 (slot 10, punt FT%/3PTM/ST) to main. Those
-numbers are taken; this slot-8 draft is renumbered **33** and its scripts
-renamed to match. Same draft, same measurements — identifier only.
+**Numbering note (2026-08-05).** This draft was analyzed as "mock 31",
+renumbered "33", and is now **34** — a parallel session merged its own
+mock 31 (slot 9, punt FT%/3PTM/TO), 32 (slot 10, punt FT%/3PTM/ST) and
+33 (slot 10, no punt) to main while this branch was open. Same draft,
+same measurements throughout; the identifier is the only thing that
+moved. Because the sequence number is contested, this draft's stable
+fingerprint is: **owner slot 8, declared punt FT%/3PTM/PTS, 156 picks,
+state md5 `4afb57781be3203302b5646ac2954603`** — cite that, not the
+number, when cross-referencing. Two independent sessions numbering mocks
+off the same counter is the underlying cause; the owner may want one
+session to own the LEDGER sequence.
 
 **Owner's report:** "Not sure how I feel about this one. Punt was declared
 but then system kept only proposing for me to select C."
 
 **Method.** Turn-by-turn replay of all 13 owner turns through the shipped
 UI handlers (fake-DOM harness, same instrument as the ledger); 18,000-season
-simulation (`arena/mocks/season_sim_mock33.py`); counterfactual arms
-(`arena/mocks/mock33_cf.py`); a ledger-wide punt-plumbing audit; and a
+simulation (`arena/mocks/season_sim_mock34.py`); counterfactual arms
+(`arena/mocks/mock34_cf.py`); a ledger-wide punt-plumbing audit; and a
 lineup/saturation audit. **Every finding was then attacked by an
 independent adversarial verifier**; four verdicts came back PARTIAL, and
 this debrief reports the CORRECTED numbers only. Corrections that changed
@@ -89,13 +95,13 @@ panel, the warning line). This is a structural zero, not a small effect.
 sits at mean shipped rank 11.73 (median 6, max 40) — typically buried
 below a card that shows five rows.
 
-**Mock 22 is where this defect is ugly, and mock 33 hides it.** In mock 22
+**Mock 22 is where this defect is ugly, and mock 34 hides it.** In mock 22
 the declared punt was **REB + BLK + FG% — the big-man categories** — and
 the shipped card still recommended a center at 8/13 turns and a big at
 9/13. The punt-aware card recommended a center at **0/13** (all thirteen
 were guards). The owner overrode the card in that draft (his actual pick
 was in the shipped Top-5 only 4/13, but in the punt-aware Top-5 7/13) —
-he drafted the punt-aware answer without the tool's help. In mock 33 the
+he drafted the punt-aware answer without the tool's help. In mock 34 the
 punt happens to point the same direction as the punt-blind card, so both
 recommend centers and the defect is invisible from the card alone.
 
@@ -185,7 +191,7 @@ proposals, ordered by measured support.
    currently accepts a declaration and silently discards it, which is the
    worst of the three options. My recommendation: (b) now as a
    display-only truth fix, (a) measured in September against mock 22 and
-   mock 33 before any ordering change.
+   mock 34 before any ordering change.
 2. **Register a punted-draft ship bar.** No future ordering change ships
    without being screened on every punted mock in the ledger. This is the
    specific hole that let today's regression through.
@@ -244,16 +250,16 @@ are committed with repo-relative paths; a fresh clone regenerates the
 season-sim block with one command:
 
 ```
-python3 arena/mocks/season_sim_mock33.py     # -> arena/results/season_sim_mock33_out.json
-python3 arena/mocks/mock33_cf.py             # -> arena/results/mock33_cf_out.json (~30 min, 4 arms x 18k seasons)
+python3 arena/mocks/season_sim_mock34.py     # -> arena/results/season_sim_mock34_out.json
+python3 arena/mocks/mock34_cf.py             # -> arena/results/mock34_cf_out.json (~30 min, 4 arms x 18k seasons)
 ```
 
 | Artifact | Path |
 |---|---|
-| Draft state | `arena/data/states/draft_state_mock33.json` |
-| Season sim | `arena/mocks/season_sim_mock33.py` → `arena/results/season_sim_mock33_out.json` |
-| Counterfactual arms | `arena/mocks/mock33_cf.py` → `arena/results/mock33_cf_out.json` |
-| Frozen per-turn card | `arena/results/m33_replay.json` (CF input) |
+| Draft state | `arena/data/states/draft_state_mock34.json` |
+| Season sim | `arena/mocks/season_sim_mock34.py` → `arena/results/season_sim_mock34_out.json` |
+| Counterfactual arms | `arena/mocks/mock34_cf.py` → `arena/results/mock34_cf_out.json` |
+| Frozen per-turn card | `arena/results/m34_replay.json` (CF input) |
 
 **Regeneration status, stated honestly:** the season-sim block (§1) was
 re-run from the committed state on 2026-08-05 and reproduced exactly —
@@ -261,7 +267,7 @@ re-run from the committed state on 2026-08-05 and reproduced exactly —
 1. The counterfactual harness (§3) had its paths made repo-relative and
 its inputs verified to resolve (156 picks, owner slot 8, 13 replay turns),
 but the 18,000-season × 4-arm run was NOT repeated — those numbers still
-rest on the committed `mock33_cf_out.json` from the original run. The
+rest on the committed `mock34_cf_out.json` from the original run. The
 punt-plumbing audit (§2) ran in JavaScript against the deck engine and its
 driver still lives in the session scratchpad; **its numbers are
 [UNREPRODUCIBLE] from a fresh clone until that driver is landed**, which

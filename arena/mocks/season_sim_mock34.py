@@ -1,10 +1,11 @@
-"""Mock 33 (slot 10, no punt declared (balanced build)) — season sim + readouts.
+"""Mock 34 (slot 8, declared triple punt FT%/3PTM/PTS) — season sim + readouts.
 
-First harness written under LESSONS.md lesson 13 (evidence-landing law):
+Written under LESSONS.md lesson 13 (evidence-landing law), mirroring
+season_sim_mock34.py:
 repo-relative paths only; the draft state lives at
-arena/data/states/draft_state_mock33.json and the output JSON is committed
-next to the results. Fresh clone + `python3 arena/mocks/season_sim_mock33.py`
-regenerates every number quoted in the mock-31 debrief and LEDGER row.
+arena/data/states/draft_state_mock34.json and the output JSON is committed
+next to the results. Fresh clone + `python3 arena/mocks/season_sim_mock34.py`
+regenerates every number quoted in the mock-33 debrief and LEDGER row.
 """
 import sys, os, json, random
 
@@ -17,10 +18,10 @@ import hoops
 players = hoops.zscores(hoops.load_players())
 import arena  # noqa: E402
 
-STATE = os.path.join(REPO, "arena", "data", "states", "draft_state_mock33.json")
+STATE = os.path.join(REPO, "arena", "data", "states", "draft_state_mock34.json")
 state = json.load(open(STATE))
 OWNER = state["slot"]
-assert state["teams"] == 12 and state["size"] == 13 and OWNER == 10, state
+assert state["teams"] == 12 and state["size"] == 13 and OWNER == 8, state
 picks = state["picks"]
 assert len(picks) == 156, len(picks)
 DECLARED_PUNT = state.get("punt", [])
@@ -78,7 +79,7 @@ ecw = {i: pwins_total(models[i], [models[j] for j in rosters if j != i]) for i i
 # Owner build under the DECLARED punt: kept-total dropping punted cats
 kept_declared = {i: sum(z for c, z in zsum[i].items() if c not in DECLARED_PUNT) for i in rosters}
 
-print(f"mock 33 — slot {OWNER}, declared punt {DECLARED_PUNT}")
+print(f"mock 31 — slot {OWNER}, declared punt {DECLARED_PUNT}")
 print(f"seasons/seed {N}, seeds {SEEDS}, total {TOTAL}")
 print("\nslot  champ%  playoff%  ECW/wk  9cat-z  kept-z(owner-punt)")
 order = sorted(rosters, key=lambda x: -tot_c[x])
@@ -109,6 +110,6 @@ out = {
     "owner_cat_z": {c: round(zsum[OWNER][c], 2) for c in CATS},
     "owner_roster": [p["player"] for p in rosters[OWNER]],
 }
-OUT = os.path.join(REPO, "arena", "results", "season_sim_mock33_out.json")
+OUT = os.path.join(REPO, "arena", "results", "season_sim_mock34_out.json")
 json.dump(out, open(OUT, "w"), indent=1)
 print(f"\nwrote {os.path.relpath(OUT, REPO)}")
