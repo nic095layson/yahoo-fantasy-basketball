@@ -9,6 +9,9 @@ Hardened swap machinery (lessons from mocks 27–29): pairwise legal only
 (alt must not be another owner pick), repeated card targets dropped
 mid-arm and recorded, never fatal.
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, random, math
 
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))

@@ -1,0 +1,384 @@
+{
+ "39": {
+  "mock": "39",
+  "slot": 4,
+  "n_C_eligible": 5,
+  "frac_all": 0.994272941300955,
+  "frac_top10": 1.0,
+  "frac_bench": 0.9752613837627835,
+  "played_pw_all": 37.803,
+  "started_pw_all": 37.5865,
+  "mc_week": {
+   "3PTM": 38.187250000004475,
+   "PTS": 674.2890000001457,
+   "REB": 283.99630000001105,
+   "AST": 170.83179999993683,
+   "ST": 45.48609999999226,
+   "BLK": 31.822650000014686,
+   "TO": 87.3905500000039
+  },
+  "static_week": {
+   "3PTM": 33.063799999999986,
+   "PTS": 601.4469999999999,
+   "REB": 252.97580000000002,
+   "AST": 154.231,
+   "ST": 40.763799999999996,
+   "BLK": 26.549599999999998,
+   "TO": 77.56980000000001
+  },
+  "static_adj": {
+   "3PTM": 31.268907999999985,
+   "PTS": 568.7970199999999,
+   "REB": 239.242828,
+   "AST": 145.85846,
+   "ST": 38.550908,
+   "BLK": 25.108336,
+   "TO": 73.35886800000002
+  },
+  "gap_raw": {
+   "3PTM": 15.495647808190505,
+   "PTS": 12.11112533608878,
+   "REB": 12.262240103603194,
+   "AST": 10.763594867398151,
+   "ST": 11.584543148558923,
+   "BLK": 19.86112785132239,
+   "TO": 12.660532836237671
+  },
+  "gap_schedule_matched": {
+   "3PTM": 22.125307350050385,
+   "PTS": 18.546507152963976,
+   "REB": 18.70629618205777,
+   "AST": 17.12162599271707,
+   "ST": 17.989698193340242,
+   "BLK": 26.741373860914884,
+   "TO": 19.127451639526228
+  },
+  "per_player": [
+   {
+    "player": "Luka Doncic",
+    "pos": "PG,SG",
+    "team": "LAL",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.9045,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Amen Thompson",
+    "pos": "PG,SF",
+    "team": "HOU",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.926,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Tari Eason",
+    "pos": "PF",
+    "team": "HOU",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.909,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Giannis Antetokounmpo",
+    "pos": "PF,C",
+    "team": "MIA",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.9015,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Jarrett Allen",
+    "pos": "C",
+    "team": "CLE",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.861,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Trae Young",
+    "pos": "PG",
+    "team": "WAS",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.9145,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Jalen Duren",
+    "pos": "C",
+    "team": "DET",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.8965,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Alperen Sengun",
+    "pos": "C",
+    "team": "HOU",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.9215,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Daniel Gafford",
+    "pos": "C",
+    "team": "DAL",
+    "tier": "bench",
+    "avail": 0.88,
+    "played_pw": 2.912,
+    "start_frac": 0.9811126373626373
+   },
+   {
+    "player": "Ausar Thompson",
+    "pos": "SF",
+    "team": "DET",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.909,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Ryan Rollins",
+    "pos": "PG,SG",
+    "team": "MIL",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.908,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Bilal Coulibaly",
+    "pos": "SG,SF",
+    "team": "WAS",
+    "tier": "bench",
+    "avail": 0.88,
+    "played_pw": 2.928,
+    "start_frac": 0.9854849726775956
+   },
+   {
+    "player": "RJ Barrett",
+    "pos": "SF",
+    "team": "TOR",
+    "tier": "bench",
+    "avail": 0.88,
+    "played_pw": 2.9115,
+    "start_frac": 0.9591275974583549
+   }
+  ]
+ },
+ "34": {
+  "mock": "34",
+  "slot": 8,
+  "n_C_eligible": 6,
+  "frac_all": 0.9941841766723842,
+  "frac_top10": 1.0,
+  "frac_bench": 0.9750875380288158,
+  "played_pw_all": 37.312,
+  "started_pw_all": 37.095,
+  "mc_week": {
+   "3PTM": 56.78155000002802,
+   "PTS": 590.2979499999907,
+   "REB": 248.38790000000296,
+   "AST": 125.53679999999521,
+   "ST": 43.71609999999692,
+   "BLK": 32.0316000000001,
+   "TO": 62.8521000000172
+  },
+  "static_week": {
+   "3PTM": 46.144,
+   "PTS": 508.977,
+   "REB": 213.86890000000002,
+   "AST": 111.545,
+   "ST": 40.465599999999995,
+   "BLK": 29.726899999999993,
+   "TO": 52.63299999999999
+  },
+  "static_adj": {
+   "3PTM": 43.63904,
+   "PTS": 481.34682000000004,
+   "REB": 202.25887400000005,
+   "AST": 105.4897,
+   "ST": 38.26889599999999,
+   "BLK": 28.11315399999999,
+   "TO": 49.77577999999999
+  },
+  "gap_raw": {
+   "3PTM": 23.052942961225774,
+   "PTS": 15.977332963963153,
+   "REB": 16.14026162756854,
+   "AST": 12.543637097131398,
+   "ST": 8.032748803914757,
+   "BLK": 7.752910663406221,
+   "TO": 19.415765774356796
+  },
+  "gap_schedule_matched": {
+   "3PTM": 30.116404943894317,
+   "PTS": 22.634642106909663,
+   "REB": 22.806923171144966,
+   "AST": 19.003845873099667,
+   "ST": 14.2340244150156,
+   "BLK": 13.93812305798241,
+   "TO": 26.270447193428637
+  },
+  "per_player": [
+   {
+    "player": "Tyrese Haliburton",
+    "pos": "PG",
+    "team": "IND",
+    "tier": "top10",
+    "avail": 0.75,
+    "played_pw": 2.4595,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Evan Mobley",
+    "pos": "PF,C",
+    "team": "CLE",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.8825,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Dyson Daniels",
+    "pos": "SG",
+    "team": "ATL",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.9305,
+    "start_frac": 1.0
+   },
+   {
+    "player": "OG Anunoby",
+    "pos": "SF",
+    "team": "NYK",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.8795,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Bam Adebayo",
+    "pos": "C",
+    "team": "MIA",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.897,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Kel'el Ware",
+    "pos": "C",
+    "team": "MIL",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.8995,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Pascal Siakam",
+    "pos": "PF",
+    "team": "IND",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.913,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Herbert Jones",
+    "pos": "SF",
+    "team": "NOP",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.9265,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Daniel Gafford",
+    "pos": "C",
+    "team": "DAL",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.9005,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Kon Knueppel",
+    "pos": "SG",
+    "team": "CHA",
+    "tier": "top10",
+    "avail": 0.88,
+    "played_pw": 2.913,
+    "start_frac": 1.0
+   },
+   {
+    "player": "Jalen Green",
+    "pos": "SG",
+    "team": "PHX",
+    "tier": "bench",
+    "avail": 0.88,
+    "played_pw": 2.8985,
+    "start_frac": 0.9987924788683802
+   },
+   {
+    "player": "Santi Aldama",
+    "pos": "PF,C",
+    "team": "DAL",
+    "tier": "bench",
+    "avail": 0.88,
+    "played_pw": 2.896,
+    "start_frac": 0.9811809392265194
+   },
+   {
+    "player": "Wendell Carter Jr.",
+    "pos": "C",
+    "team": "ORL",
+    "tier": "bench",
+    "avail": 0.88,
+    "played_pw": 2.916,
+    "start_frac": 0.9454732510288066
+   }
+  ]
+ },
+ "_assumptions": {
+  "weeks": 2000,
+  "seed": 20260805,
+  "G_dist": [
+   [
+    3,
+    0.55
+   ],
+   [
+    4,
+    0.35
+   ],
+   [
+    2,
+    0.08
+   ],
+   [
+    5,
+    0.02
+   ]
+  ],
+  "E_G": 3.31,
+  "day_weights": [
+   1.3,
+   0.7,
+   1.4,
+   0.8,
+   1.5,
+   0.9,
+   1.4
+  ],
+  "static_bench_weight": 0.15,
+  "static_games_baseline": 3.5
+ }
+}

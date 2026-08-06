@@ -1,0 +1,154 @@
+{
+ "24": {
+  "mock": "24",
+  "owner_slot": 1,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   11
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 22.833,
+    "playoff": 83.75,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Jaren Jackson Jr.",
+     "Jalen Brunson",
+     "Bam Adebayo",
+     "LeBron James",
+     "Jalen Suggs",
+     "Deni Avdija",
+     "Nikola Vucevic",
+     "Cameron Boozer",
+     "Jerami Grant",
+     "De'Anthony Melton",
+     "Jared McCain"
+    ]
+   },
+   "v1cards": {
+    "champ": 30.528,
+    "playoff": 93.067,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Kyle Filipowski",
+     "Jeremy Sochan",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      121,
+      "Jerami Grant",
+      "Kyle Filipowski"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ],
+     [
+      145,
+      "Jared McCain",
+      "Tobias Harris"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 29.889,
+    "playoff": 92.367,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Jerami Grant",
+     "Jeremy Sochan",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ],
+     [
+      145,
+      "Jared McCain",
+      "Tobias Harris"
+     ]
+    ]
+   }
+  }
+ }
+}

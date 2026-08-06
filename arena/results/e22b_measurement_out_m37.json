@@ -1,0 +1,81 @@
+{
+ "37": {
+  "mock": "37",
+  "owner_slot": 2,
+  "trigger_turns": [
+   [
+    10,
+    "G"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 11.839,
+   "playoff": 75.422,
+   "finish": 4,
+   "seasons": 18000,
+   "roster": [
+    "Shai Gilgeous-Alexander",
+    "Chet Holmgren",
+    "Derrick White",
+    "Myles Turner",
+    "Tari Eason",
+    "Brook Lopez",
+    "Christian Braun",
+    "Donovan Clingan",
+    "Herbert Jones",
+    "Jalen Green",
+    "Daniel Gafford",
+    "Jeremy Sochan",
+    "Derik Queen"
+   ],
+   "swaps": [
+    [
+     2,
+     "Nikola Jokic",
+     "Shai Gilgeous-Alexander"
+    ],
+    [
+     23,
+     "James Harden",
+     "Chet Holmgren"
+    ],
+    [
+     26,
+     "Giannis Antetokounmpo",
+     "Derrick White"
+    ],
+    [
+     47,
+     "Trae Young",
+     "Myles Turner"
+    ],
+    [
+     71,
+     "Jarrett Allen",
+     "Brook Lopez"
+    ],
+    [
+     74,
+     "Zion Williamson",
+     "Christian Braun"
+    ],
+    [
+     95,
+     "Alex Sarr",
+     "Donovan Clingan"
+    ],
+    [
+     98,
+     "Ausar Thompson",
+     "Herbert Jones"
+    ],
+    [
+     143,
+     "Bilal Coulibaly",
+     "Jeremy Sochan"
+    ]
+   ]
+  }
+ }
+}

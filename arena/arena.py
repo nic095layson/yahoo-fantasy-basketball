@@ -338,17 +338,125 @@ def weekly_availability(p):
     return 0.88
 
 
+# --- Instrument v2 (2026-08-05): daily-fill start rates -------------------
+# Yahoo lineups are set DAILY: every started game counts 100%, bench games
+# count 0, and a bench player backfills any eligible open slot on his game
+# days (owner-league ground truth + Yahoo SLN22673/SLN6775; measured in
+# arena/mocks/daily_lineup_mc.py: a 13-man roster starts ~99.4% of played
+# games — the static 10x1.0 + 3x0.15 lineup underweights bench ~6.5x).
+# w_p here = P(a played game of p gets a starting slot), from K deterministic
+# common-random-number weeks: games/week ~ P(2)=.08 P(3)=.55 P(4)=.35
+# P(5)=.02 on heavy/light-weighted days, availability per game, greedy daily
+# slot fill in season-value order. ARENA_WEEK_MODEL=static reverts to the
+# pre-v2 instrument (regenerates all numbers quoted before this date).
+DF_K = 32
+DF_DAY_W = (1.3, 0.7, 1.4, 0.8, 1.5, 0.9, 1.4)
+
+
+def week_model_mode():
+    """Read at CALL time so epoch-pinned harnesses can set the env var
+    whenever convenient (v1-epoch harnesses pin "static" to regenerate
+    their quoted numbers; v2 code pins "daily" explicitly)."""
+    return os.environ.get("ARENA_WEEK_MODEL", "daily")
+
+
+def df_hash(name, k, salt):
+    """FNV-1a + finalizer, bit-identical to the deck's dfHash (verified
+    72/72 test vectors 2026-08-05)."""
+    M = 0xFFFFFFFF
+
+    def imul(a, b):
+        return ((a & M) * (b & M)) & M
+
+    h = (2166136261 ^ imul(k, 2654435761) ^ imul(salt, 2246822519)) & M
+    for ch in name:
+        h ^= ord(ch)
+        h = imul(h, 16777619)
+    h ^= h >> 15
+    h = imul(h, 2246822507)
+    h ^= h >> 13
+    h = imul(h, 3266489909)
+    h ^= h >> 16
+    return h / 4294967296.0
+
+
+def daily_fill_weights(roster):
+    """name -> fraction of played games that claim a starting slot."""
+    val = {}
+    for p in roster:
+        v = 0.0
+        for c in CATS:
+            v += p["z"][c]
+        val[p["player"]] = v
+    started = {p["player"]: 0 for p in roster}
+    played = {p["player"]: 0 for p in roster}
+    for k in range(DF_K):
+        by_day = [[] for _ in range(7)]
+        for p in roster:
+            nm = p["player"]
+            u = df_hash(nm, k, 1)
+            g = 2 if u < 0.08 else 3 if u < 0.63 else 4 if u < 0.98 else 5
+            days = list(range(7))
+            wts = list(DF_DAY_W)
+            a = weekly_availability(p)
+            for j in range(g):
+                u2 = df_hash(nm, k, 10 + j)
+                tot = 0.0
+                for d in days:
+                    tot += wts[d]
+                r = u2 * tot
+                acc = 0.0
+                pick = days[-1]
+                for d in days:
+                    acc += wts[d]
+                    if r < acc:
+                        pick = d
+                        break
+                days.remove(pick)
+                if df_hash(nm, k, 20 + pick) < a:
+                    played[nm] += 1
+                    by_day[pick].append(p)
+        for d in range(7):
+            cands = sorted(by_day[d], key=lambda q: (-val[q["player"]], q["player"]))
+            open_slots = list(LINEUP_SLOTS)
+            for p in cands:
+                pos = positions_of(p)
+                claimed = None
+                for i, s in enumerate(open_slots):
+                    if s is not None and any(b in s for b in pos):
+                        claimed = i
+                        break
+                if claimed is None:
+                    for i, s in enumerate(open_slots):
+                        if s is None:
+                            claimed = i
+                            break
+                if claimed is not None:
+                    open_slots.pop(claimed)
+                    started[p["player"]] += 1
+    return {nm: (started[nm] / played[nm] if played[nm] else 1.0)
+            for nm in started}
+
+
 def team_week_model(roster):
-    """Per-category weekly (mu, var). Only STARTERS players count fully;
-    deep bench is discounted. Counting-stat variance = compound-sum
-    E[G]*Var[X] + Var[G]*E[X]^2 with category-specific per-game CV and
-    availability-tier game-count variance Var[G] = 3.5*a*(1-a)."""
+    """Per-category weekly (mu, var). Instrument v2 (default): every player
+    counts at his daily-fill start rate — started games 100%, bench games 0,
+    per the owner-league daily-lineup rules. ARENA_WEEK_MODEL=static reverts
+    to the pre-2026-08-05 fixed weekly lineup (starters 1.0 / bench 0.15).
+    Counting-stat variance = compound-sum E[G]*Var[X] + Var[G]*E[X]^2 with
+    category-specific per-game CV and availability-tier game-count variance
+    Var[G] = 3.5*a*(1-a)."""
     mu = {c: 0.0 for c in CATS}
     var = {c: 0.0 for c in CATS}
-    lw = lineup_weights(roster)
+    if week_model_mode() == "static":
+        lw = lineup_weights(roster)
+        dfw = None
+    else:
+        dfw = daily_fill_weights(roster)
+        lw = None
     fg_mk = fg_at = ft_mk = ft_at = 0.0
     for p in roster:
-        w = lw[id(p)]
+        w = lw[id(p)] if dfw is None else dfw[p["player"]]
         a = weekly_availability(p)
         g = 3.5 * a
         g_var = 3.5 * a * (1 - a)

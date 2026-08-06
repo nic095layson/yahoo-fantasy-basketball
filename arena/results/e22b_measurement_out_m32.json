@@ -1,0 +1,93 @@
+{
+ "32": {
+  "mock": "32",
+  "owner_slot": 10,
+  "trigger_turns": [
+   [
+    10,
+    "G"
+   ],
+   [
+    11,
+    "F"
+   ],
+   [
+    12,
+    "F"
+   ],
+   [
+    13,
+    "C"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 0.006,
+   "playoff": 1.833,
+   "finish": 12,
+   "seasons": 18000,
+   "roster": [
+    "Tyrese Haliburton",
+    "Evan Mobley",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Reed Sheppard",
+    "Tari Eason",
+    "Christian Braun",
+    "Cason Wallace",
+    "Rudy Gobert",
+    "Keon Ellis",
+    "Ausar Thompson",
+    "D'Angelo Russell",
+    "Anthony Black"
+   ],
+   "swaps": [
+    [
+     10,
+     "Cade Cunningham",
+     "Tyrese Haliburton"
+    ],
+    [
+     15,
+     "Giannis Antetokounmpo",
+     "Evan Mobley"
+    ],
+    [
+     34,
+     "Cooper Flagg",
+     "Dyson Daniels"
+    ],
+    [
+     39,
+     "Paolo Banchero",
+     "OG Anunoby"
+    ],
+    [
+     58,
+     "Joel Embiid",
+     "Reed Sheppard"
+    ],
+    [
+     63,
+     "Myles Turner",
+     "Tari Eason"
+    ],
+    [
+     82,
+     "Zion Williamson",
+     "Christian Braun"
+    ],
+    [
+     111,
+     "Dylan Harper",
+     "Keon Ellis"
+    ],
+    [
+     135,
+     "Yaxel Lendeborg",
+     "D'Angelo Russell"
+    ]
+   ]
+  }
+ }
+}

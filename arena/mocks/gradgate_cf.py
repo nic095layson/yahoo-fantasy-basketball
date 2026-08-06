@@ -20,6 +20,9 @@ mocks: an alternative that is ALSO an owner pick makes the arm degenerate
 (mock 28's keyonte_to_harris), and an alternative already off the board is
 illegal (mock 27's CF4). Both are refused, not silently run.
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, random, math
 
 os.chdir("/home/user/yahoo-fantasy-basketball")

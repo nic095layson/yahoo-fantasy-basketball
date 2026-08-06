@@ -1,0 +1,1059 @@
+[
+ {
+  "pickNo": 12,
+  "rosterN": 0,
+  "roster": [],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Evan Mobley",
+  "shipped": [
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9934,
+    "fs": 5.5,
+    "bench": false
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.9825,
+    "fs": 5.14,
+    "bench": false
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.9803,
+    "fs": 2.05,
+    "bench": false
+   },
+   {
+    "n": "Donovan Mitchell",
+    "pos": "SG",
+    "ds": 0.9803,
+    "fs": -0.75,
+    "bench": false
+   },
+   {
+    "n": "Kevin Durant",
+    "pos": "SF,PF",
+    "ds": 0.9738,
+    "fs": 1.4,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Giannis Antetokounmpo",
+    "pos": "PF,C",
+    "ds": 1
+   },
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9934
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9847
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9782
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9782
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 13,
+  "rosterN": 1,
+  "roster": [
+   "Evan Mobley[PF,C]"
+  ],
+  "nC": 1,
+  "nBig": 1,
+  "benched": [],
+  "actual": "Giannis Antetokounmpo",
+  "shipped": [
+   {
+    "n": "Donovan Mitchell",
+    "pos": "SG",
+    "ds": 0.9934,
+    "fs": -0.72,
+    "bench": false
+   },
+   {
+    "n": "Jamal Murray",
+    "pos": "PG",
+    "ds": 0.9868,
+    "fs": -0.51,
+    "bench": false
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.9781,
+    "fs": 2.1,
+    "bench": false
+   },
+   {
+    "n": "Desmond Bane",
+    "pos": "SG,SF",
+    "ds": 0.9671,
+    "fs": -0.13,
+    "bench": false
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9671,
+    "fs": 0.02,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Giannis Antetokounmpo",
+    "pos": "PF,C",
+    "ds": 0.9912
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9868
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9868
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9868
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9825
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 36,
+  "rosterN": 2,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]"
+  ],
+  "nC": 2,
+  "nBig": 2,
+  "benched": [],
+  "actual": "Cooper Flagg",
+  "shipped": [
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9976,
+    "fs": 5.08,
+    "bench": false
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9951,
+    "fs": 2.92,
+    "bench": false
+   },
+   {
+    "n": "Scottie Barnes",
+    "pos": "SF,PF",
+    "ds": 0.978,
+    "fs": 1.35,
+    "bench": false
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.978,
+    "fs": -1.89,
+    "bench": false
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.9659,
+    "fs": -2.48,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9951
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9878
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9829
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.978
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9732
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 37,
+  "rosterN": 3,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]"
+  ],
+  "nC": 2,
+  "nBig": 3,
+  "benched": [],
+  "actual": "Payton Pritchard",
+  "shipped": [
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9902,
+    "fs": -1.87,
+    "bench": false
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.9804,
+    "fs": -2.46,
+    "bench": false
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.973,
+    "fs": 2.76,
+    "bench": false
+   },
+   {
+    "n": "Tyler Herro",
+    "pos": "PG,SG",
+    "ds": 0.9681,
+    "fs": -2.66,
+    "bench": false
+   },
+   {
+    "n": "Scottie Barnes",
+    "pos": "SF,PF",
+    "ds": 0.9534,
+    "fs": 1.13,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9951
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9853
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9828
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9804
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.973
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 60,
+  "rosterN": 4,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]"
+  ],
+  "nC": 2,
+  "nBig": 3,
+  "benched": [],
+  "actual": "Tari Eason",
+  "shipped": [
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.989,
+    "fs": 3.46,
+    "bench": false
+   },
+   {
+    "n": "Lauri Markkanen",
+    "pos": "PF,C",
+    "ds": 0.9669,
+    "fs": -0.75,
+    "bench": false
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9613,
+    "fs": 2.05,
+    "bench": false
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9613,
+    "fs": 4.65,
+    "bench": false
+   },
+   {
+    "n": "Nickeil Alexander-Walker",
+    "pos": "SG,SF",
+    "ds": 0.9586,
+    "fs": -1.11,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9945
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.989
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9862
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9779
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9779
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 61,
+  "rosterN": 5,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]"
+  ],
+  "nC": 2,
+  "nBig": 4,
+  "benched": [],
+  "actual": "Lauri Markkanen",
+  "shipped": [
+   {
+    "n": "Lauri Markkanen",
+    "pos": "PF,C",
+    "ds": 0.9667,
+    "fs": -0.75,
+    "bench": false
+   },
+   {
+    "n": "Mikal Bridges",
+    "pos": "SF",
+    "ds": 0.9639,
+    "fs": -0.57,
+    "bench": false
+   },
+   {
+    "n": "Nickeil Alexander-Walker",
+    "pos": "SG,SF",
+    "ds": 0.9611,
+    "fs": -1.09,
+    "bench": false
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9417,
+    "fs": 1.78,
+    "bench": false
+   },
+   {
+    "n": "Jordan Poole",
+    "pos": "PG,SG",
+    "ds": 0.9361,
+    "fs": -2.9,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9972
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9944
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9861
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9778
+   },
+   {
+    "n": "Kel'el Ware",
+    "pos": "C",
+    "ds": 0.9639
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 84,
+  "rosterN": 6,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]",
+   "Lauri Markkanen[PF,C]"
+  ],
+  "nC": 3,
+  "nBig": 5,
+  "benched": [],
+  "actual": "VJ Edgecombe",
+  "shipped": [
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9968,
+    "fs": 1.7,
+    "bench": false
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9873,
+    "fs": 4.77,
+    "bench": false
+   },
+   {
+    "n": "Herbert Jones",
+    "pos": "SF",
+    "ds": 0.9586,
+    "fs": 0.55,
+    "bench": false
+   },
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 0.9586,
+    "fs": 0.61,
+    "bench": false
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.9522,
+    "fs": -0.89,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9936
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9873
+   },
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9809
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9745
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 85,
+  "rosterN": 7,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]",
+   "Lauri Markkanen[PF,C]",
+   "VJ Edgecombe[SG]"
+  ],
+  "nC": 3,
+  "nBig": 5,
+  "benched": [],
+  "actual": "Brook Lopez",
+  "shipped": [
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9808,
+    "fs": 1.7,
+    "bench": false
+   },
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 0.9551,
+    "fs": 0.35,
+    "bench": false
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.9519,
+    "fs": -1.2,
+    "bench": false
+   },
+   {
+    "n": "Quentin Grimes",
+    "pos": "SG,SF",
+    "ds": 0.9455,
+    "fs": -1.67,
+    "bench": false
+   },
+   {
+    "n": "Kon Knueppel",
+    "pos": "SG",
+    "ds": 0.9359,
+    "fs": -2.39,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9936
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.984
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9808
+   },
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9776
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 108,
+  "rosterN": 8,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]",
+   "Lauri Markkanen[PF,C]",
+   "VJ Edgecombe[SG]",
+   "Brook Lopez[C]"
+  ],
+  "nC": 4,
+  "nBig": 6,
+  "benched": [],
+  "actual": "Cason Wallace",
+  "shipped": [
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 0.9962,
+    "fs": 0.89,
+    "bench": false
+   },
+   {
+    "n": "Toumani Camara",
+    "pos": "SF,PF",
+    "ds": 0.9737,
+    "fs": 0.56,
+    "bench": false
+   },
+   {
+    "n": "Jabari Smith Jr.",
+    "pos": "PF,C",
+    "ds": 0.9737,
+    "fs": -0.27,
+    "bench": false
+   },
+   {
+    "n": "Aaron Gordon",
+    "pos": "PF",
+    "ds": 0.9737,
+    "fs": -0.4,
+    "bench": false
+   },
+   {
+    "n": "Draymond Green",
+    "pos": "PF,C",
+    "ds": 0.9398,
+    "fs": -1.09,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9925
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9774
+   },
+   {
+    "n": "Zach Edey",
+    "pos": "C",
+    "ds": 0.9699
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9699
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 109,
+  "rosterN": 9,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]",
+   "Lauri Markkanen[PF,C]",
+   "VJ Edgecombe[SG]",
+   "Brook Lopez[C]",
+   "Cason Wallace[PG,SG]"
+  ],
+  "nC": 4,
+  "nBig": 6,
+  "benched": [],
+  "actual": "Toumani Camara",
+  "shipped": [
+   {
+    "n": "Aaron Gordon",
+    "pos": "PF",
+    "ds": 0.9886,
+    "fs": -0.34,
+    "bench": false
+   },
+   {
+    "n": "Jabari Smith Jr.",
+    "pos": "PF,C",
+    "ds": 0.9659,
+    "fs": -0.21,
+    "bench": false
+   },
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9356,
+    "fs": -1.98,
+    "bench": false
+   },
+   {
+    "n": "Toumani Camara",
+    "pos": "SF,PF",
+    "ds": 0.9318,
+    "fs": 0.62,
+    "bench": false
+   },
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.928,
+    "fs": -0.91,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9924
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9735
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9735
+   },
+   {
+    "n": "Zach Edey",
+    "pos": "C",
+    "ds": 0.9697
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 132,
+  "rosterN": 10,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]",
+   "Lauri Markkanen[PF,C]",
+   "VJ Edgecombe[SG]",
+   "Brook Lopez[C]",
+   "Cason Wallace[PG,SG]",
+   "Toumani Camara[SF,PF]"
+  ],
+  "nC": 4,
+  "nBig": 7,
+  "benched": [],
+  "actual": "Ausar Thompson",
+  "shipped": [
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.9908,
+    "fs": -0.31,
+    "bench": true
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9541,
+    "fs": 2.09,
+    "bench": true
+   },
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9495,
+    "fs": -0.1,
+    "bench": true
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9495,
+    "fs": 2.69,
+    "bench": true
+   },
+   {
+    "n": "Tobias Harris",
+    "pos": "PF",
+    "ds": 0.9358,
+    "fs": -0.97,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9817
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9725
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9679
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9679
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 133,
+  "rosterN": 11,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]",
+   "Lauri Markkanen[PF,C]",
+   "VJ Edgecombe[SG]",
+   "Brook Lopez[C]",
+   "Cason Wallace[PG,SG]",
+   "Toumani Camara[SF,PF]",
+   "Ausar Thompson[SF]"
+  ],
+  "nC": 4,
+  "nBig": 7,
+  "benched": [
+   "Ausar Thompson"
+  ],
+  "actual": "Nic Claxton",
+  "shipped": [
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.9954,
+    "fs": -0.31,
+    "bench": true
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9537,
+    "fs": 2.09,
+    "bench": true
+   },
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9491,
+    "fs": -0.1,
+    "bench": true
+   },
+   {
+    "n": "Tobias Harris",
+    "pos": "PF",
+    "ds": 0.9352,
+    "fs": -0.97,
+    "bench": true
+   },
+   {
+    "n": "Jrue Holiday",
+    "pos": "PG",
+    "ds": 0.9306,
+    "fs": -2.59,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.9861
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9769
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9722
+   },
+   {
+    "n": "Moussa Diabate",
+    "pos": "C",
+    "ds": 0.963
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 156,
+  "rosterN": 12,
+  "roster": [
+   "Evan Mobley[PF,C]",
+   "Giannis Antetokounmpo[PF,C]",
+   "Cooper Flagg[SF,PF]",
+   "Payton Pritchard[PG]",
+   "Tari Eason[PF]",
+   "Lauri Markkanen[PF,C]",
+   "VJ Edgecombe[SG]",
+   "Brook Lopez[C]",
+   "Cason Wallace[PG,SG]",
+   "Toumani Camara[SF,PF]",
+   "Ausar Thompson[SF]",
+   "Nic Claxton[C]"
+  ],
+  "nC": 5,
+  "nBig": 8,
+  "benched": [
+   "Ausar Thompson",
+   "Nic Claxton"
+  ],
+  "actual": "RJ Barrett",
+  "shipped": [
+   {
+    "n": "Al Horford",
+    "pos": "C,PF",
+    "ds": 0.9706,
+    "fs": -0.85,
+    "bench": true
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9529,
+    "fs": 1.79,
+    "bench": true
+   },
+   {
+    "n": "Luguentz Dort",
+    "pos": "SG",
+    "ds": 0.9529,
+    "fs": -1.21,
+    "bench": true
+   },
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.9412,
+    "fs": -0.29,
+    "bench": true
+   },
+   {
+    "n": "Jusuf Nurkic",
+    "pos": "C",
+    "ds": 0.9235,
+    "fs": -0.22,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9824
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9706
+   },
+   {
+    "n": "Moussa Diabate",
+    "pos": "C",
+    "ds": 0.9647
+   },
+   {
+    "n": "Yves Missi",
+    "pos": "C",
+    "ds": 0.9529
+   }
+  ],
+  "rnd": 13
+ }
+]

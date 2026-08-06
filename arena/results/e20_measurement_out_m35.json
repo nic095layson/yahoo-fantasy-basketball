@@ -1,0 +1,270 @@
+{
+ "35": {
+  "mock": "35",
+  "owner_slot": 12,
+  "punt": [
+   "FT%",
+   "AST",
+   "3PTM"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [],
+   "puntAware": []
+  },
+  "arms": {
+   "baseline": {
+    "champ": 7.111,
+    "playoff": 54.728,
+    "finish": 6,
+    "seasons": 18000,
+    "kept_z": 15.72,
+    "roster": [
+     "Evan Mobley",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "VJ Edgecombe",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "RJ Barrett"
+    ]
+   },
+   "shipped": {
+    "champ": 7.706,
+    "playoff": 59.144,
+    "finish": 6,
+    "seasons": 18000,
+    "kept_z": 8.72,
+    "roster": [
+     "Evan Mobley",
+     "Donovan Mitchell",
+     "Amen Thompson",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Aaron Gordon",
+     "Aaron Nesmith",
+     "Nic Claxton",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Giannis Antetokounmpo",
+      "Donovan Mitchell"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      109,
+      "VJ Edgecombe",
+      "Aaron Gordon"
+     ],
+     [
+      132,
+      "Ausar Thompson",
+      "Aaron Nesmith"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      84,
+      "VJ Edgecombe",
+      "Brook Lopez"
+     ],
+     [
+      85,
+      "VJ Edgecombe",
+      "Cason Wallace"
+     ],
+     [
+      108,
+      "VJ Edgecombe",
+      "Toumani Camara"
+     ]
+    ]
+   },
+   "puntAware": {
+    "champ": 0.656,
+    "playoff": 16.506,
+    "finish": 10,
+    "seasons": 18000,
+    "kept_z": 37.42,
+    "roster": [
+     "Giannis Antetokounmpo",
+     "Jarrett Allen",
+     "Amen Thompson",
+     "Ivica Zubac",
+     "Jakob Poeltl",
+     "Rudy Gobert",
+     "Donovan Clingan",
+     "Jalen Duren",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "Cason Wallace",
+     "Toumani Camara",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Evan Mobley",
+      "Jarrett Allen"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      37,
+      "Payton Pritchard",
+      "Ivica Zubac"
+     ],
+     [
+      60,
+      "Tari Eason",
+      "Jakob Poeltl"
+     ],
+     [
+      61,
+      "Lauri Markkanen",
+      "Rudy Gobert"
+     ],
+     [
+      84,
+      "VJ Edgecombe",
+      "Donovan Clingan"
+     ],
+     [
+      85,
+      "Brook Lopez",
+      "Jalen Duren"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      12,
+      "Evan Mobley",
+      "Giannis Antetokounmpo"
+     ],
+     [
+      108,
+      "Cason Wallace",
+      "Ausar Thompson"
+     ],
+     [
+      109,
+      "Toumani Camara",
+      "Nic Claxton"
+     ]
+    ]
+   },
+   "placebo_draws": [
+    {
+     "champ": 4.167,
+     "playoff": 43.683,
+     "finish": 7,
+     "seasons": 18000,
+     "kept_z": -4.89,
+     "roster": [
+      "Evan Mobley",
+      "Derrick White",
+      "Brandon Miller",
+      "Payton Pritchard",
+      "Tari Eason",
+      "Lauri Markkanen",
+      "VJ Edgecombe",
+      "Brook Lopez",
+      "Cason Wallace",
+      "Jaden Ivey",
+      "Keyonte George",
+      "Nic Claxton",
+      "RJ Barrett"
+     ],
+     "swap_turns": [
+      13,
+      36,
+      109,
+      132
+     ]
+    },
+    {
+     "champ": 2.489,
+     "playoff": 33.722,
+     "finish": 8,
+     "seasons": 18000,
+     "kept_z": 6.37,
+     "roster": [
+      "Evan Mobley",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Tari Eason",
+      "Lauri Markkanen",
+      "VJ Edgecombe",
+      "Brook Lopez",
+      "Cason Wallace",
+      "Collin Sexton",
+      "Brandin Podziemski",
+      "Nic Claxton",
+      "RJ Barrett"
+     ],
+     "swap_turns": [
+      13,
+      36,
+      109,
+      132
+     ]
+    },
+    {
+     "champ": 2.344,
+     "playoff": 32.583,
+     "finish": 10,
+     "seasons": 18000,
+     "kept_z": 3.31,
+     "roster": [
+      "Evan Mobley",
+      "Jalen Brunson",
+      "Amen Thompson",
+      "Payton Pritchard",
+      "Tari Eason",
+      "Lauri Markkanen",
+      "VJ Edgecombe",
+      "Brook Lopez",
+      "Cason Wallace",
+      "Jaden Ivey",
+      "De'Anthony Melton",
+      "Nic Claxton",
+      "RJ Barrett"
+     ],
+     "swap_turns": [
+      13,
+      36,
+      109,
+      132
+     ]
+    }
+   ],
+   "placebo_mean_champ": 3.0
+  },
+  "placebo_matched_to": "shipped"
+ }
+}

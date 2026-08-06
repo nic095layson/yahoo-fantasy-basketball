@@ -1,0 +1,189 @@
+{
+ "39": {
+  "mock": "39",
+  "owner_slot": 4,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "TO"
+  ],
+  "seeds": [
+   101,
+   103,
+   107
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    21,
+    28,
+    148
+   ],
+   "resil": [
+    21,
+    28,
+    124,
+    148
+   ]
+  },
+  "top1_diverge_turns": [
+   124
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 34.961,
+    "playoff": 94.533,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 26.84,
+    "ecw_std": 4.994,
+    "ecw_slf": 4.991,
+    "roster": [
+     "Luka Doncic",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Amen Thompson",
+     "Alperen Sengun",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Ausar Thompson",
+     "Ryan Rollins",
+     "Bilal Coulibaly",
+     "Daniel Gafford",
+     "RJ Barrett"
+    ]
+   },
+   "shipped": {
+    "champ": 6.472,
+    "playoff": 47.828,
+    "finish": 8,
+    "seasons": 18000,
+    "kept_z": 7.85,
+    "ecw_std": 4.463,
+    "ecw_slf": 4.385,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Ryan Rollins",
+     "Daniel Gafford",
+     "Tobias Harris",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      141,
+      "Bilal Coulibaly",
+      "Tobias Harris"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      124,
+      "Bilal Coulibaly",
+      "Daniel Gafford"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 31.122,
+    "playoff": 92.55,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.41,
+    "ecw_std": 4.958,
+    "ecw_slf": 4.711,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Ryan Rollins",
+     "Aaron Nesmith",
+     "Daniel Gafford",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      124,
+      "Bilal Coulibaly",
+      "Aaron Nesmith"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ],
+    "noop_swaps": []
+   }
+  }
+ }
+}

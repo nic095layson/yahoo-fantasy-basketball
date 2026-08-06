@@ -1,0 +1,66 @@
+{
+ "34": {
+  "mock": "34",
+  "owner_slot": 8,
+  "trigger_turns": [
+   [
+    13,
+    "C"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 1.283,
+   "playoff": 30.367,
+   "finish": 9,
+   "seasons": 18000,
+   "roster": [
+    "Anthony Edwards",
+    "Evan Mobley",
+    "OG Anunoby",
+    "Onyeka Okongwu",
+    "Ivica Zubac",
+    "Myles Turner",
+    "Kel'el Ware",
+    "Jalen Duren",
+    "Rudy Gobert",
+    "Daniel Gafford",
+    "Santi Aldama",
+    "Wendell Carter Jr.",
+    "Jalen Green"
+   ],
+   "swaps": [
+    [
+     8,
+     "Tyrese Haliburton",
+     "Anthony Edwards"
+    ],
+    [
+     41,
+     "Dyson Daniels",
+     "Onyeka Okongwu"
+    ],
+    [
+     56,
+     "Bam Adebayo",
+     "Ivica Zubac"
+    ],
+    [
+     65,
+     "Pascal Siakam",
+     "Myles Turner"
+    ],
+    [
+     89,
+     "Kon Knueppel",
+     "Jalen Duren"
+    ],
+    [
+     104,
+     "Herbert Jones",
+     "Rudy Gobert"
+    ]
+   ]
+  }
+ }
+}

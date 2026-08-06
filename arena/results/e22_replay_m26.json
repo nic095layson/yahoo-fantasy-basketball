@@ -1,0 +1,782 @@
+[
+ {
+  "pickNo": 3,
+  "rosterN": 0,
+  "actual": "Luka Doncic",
+  "shipped": [
+   {
+    "n": "Shai Gilgeous-Alexander",
+    "pos": "PG",
+    "ds": 1
+   },
+   {
+    "n": "Luka Doncic",
+    "pos": "PG,SG",
+    "ds": 0.9958
+   },
+   {
+    "n": "Karl-Anthony Towns",
+    "pos": "C,PF",
+    "ds": 0.9874
+   },
+   {
+    "n": "Tyrese Maxey",
+    "pos": "PG,SG",
+    "ds": 0.9853
+   },
+   {
+    "n": "Tyrese Haliburton",
+    "pos": "PG",
+    "ds": 0.9811
+   }
+  ],
+  "resil": [
+   {
+    "n": "Shai Gilgeous-Alexander",
+    "pos": "PG",
+    "ds": 1
+   },
+   {
+    "n": "Luka Doncic",
+    "pos": "PG,SG",
+    "ds": 0.9958
+   },
+   {
+    "n": "Karl-Anthony Towns",
+    "pos": "C,PF",
+    "ds": 0.9874
+   },
+   {
+    "n": "Tyrese Maxey",
+    "pos": "PG,SG",
+    "ds": 0.9853
+   },
+   {
+    "n": "Tyrese Haliburton",
+    "pos": "PG",
+    "ds": 0.9811
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 22,
+  "rosterN": 1,
+  "actual": "Jayson Tatum",
+  "shipped": [
+   {
+    "n": "Kevin Durant",
+    "pos": "SF,PF",
+    "ds": 0.9954
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9863
+   },
+   {
+    "n": "Domantas Sabonis",
+    "pos": "C,PF",
+    "ds": 0.9703
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.968
+   },
+   {
+    "n": "Josh Giddey",
+    "pos": "PG,SG",
+    "ds": 0.9658
+   }
+  ],
+  "resil": [
+   {
+    "n": "Kevin Durant",
+    "pos": "SF,PF",
+    "ds": 0.9954
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9863
+   },
+   {
+    "n": "Domantas Sabonis",
+    "pos": "C,PF",
+    "ds": 0.9703
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.968
+   },
+   {
+    "n": "Josh Giddey",
+    "pos": "PG,SG",
+    "ds": 0.9658
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 27,
+  "rosterN": 2,
+  "actual": "Domantas Sabonis",
+  "shipped": [
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9953
+   },
+   {
+    "n": "Jaren Jackson Jr.",
+    "pos": "PF,C",
+    "ds": 0.9766
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9743
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9696
+   },
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.965
+   }
+  ],
+  "resil": [
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9953
+   },
+   {
+    "n": "Jaren Jackson Jr.",
+    "pos": "PF,C",
+    "ds": 0.9766
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9743
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9696
+   },
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.965
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 46,
+  "rosterN": 3,
+  "actual": "Payton Pritchard",
+  "shipped": [
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9949
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9872
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9846
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.9769
+   },
+   {
+    "n": "Brandon Miller",
+    "pos": "SF",
+    "ds": 0.9744
+   }
+  ],
+  "resil": [
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9949
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9872
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9846
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.9769
+   },
+   {
+    "n": "Brandon Miller",
+    "pos": "SF",
+    "ds": 0.9744
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 51,
+  "rosterN": 4,
+  "actual": "Cooper Flagg",
+  "shipped": [
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9947
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9895
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9868
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9816
+   },
+   {
+    "n": "Kristaps Porzingis",
+    "pos": "C",
+    "ds": 0.9711
+   }
+  ],
+  "resil": [
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9947
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9895
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9868
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9816
+   },
+   {
+    "n": "Kristaps Porzingis",
+    "pos": "C",
+    "ds": 0.9711
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 70,
+  "rosterN": 5,
+  "actual": "Jalen Suggs",
+  "shipped": [
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.9971
+   },
+   {
+    "n": "Jalen Suggs",
+    "pos": "PG,SG",
+    "ds": 0.9912
+   },
+   {
+    "n": "Zach LaVine",
+    "pos": "SG,SF",
+    "ds": 0.9883
+   },
+   {
+    "n": "Coby White",
+    "pos": "PG,SG",
+    "ds": 0.9795
+   },
+   {
+    "n": "Brandon Ingram",
+    "pos": "SF",
+    "ds": 0.9708
+   }
+  ],
+  "resil": [
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.9971
+   },
+   {
+    "n": "Jalen Suggs",
+    "pos": "PG,SG",
+    "ds": 0.9912
+   },
+   {
+    "n": "Zach LaVine",
+    "pos": "SG,SF",
+    "ds": 0.9883
+   },
+   {
+    "n": "Coby White",
+    "pos": "PG,SG",
+    "ds": 0.9795
+   },
+   {
+    "n": "Brandon Ingram",
+    "pos": "SF",
+    "ds": 0.9708
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 75,
+  "rosterN": 6,
+  "actual": "Jalen Duren",
+  "shipped": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.991
+   },
+   {
+    "n": "Brandon Ingram",
+    "pos": "SF",
+    "ds": 0.9819
+   },
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.9789
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9639
+   },
+   {
+    "n": "Pascal Siakam",
+    "pos": "PF",
+    "ds": 0.9608
+   }
+  ],
+  "resil": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.991
+   },
+   {
+    "n": "Brandon Ingram",
+    "pos": "SF",
+    "ds": 0.9819
+   },
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.9789
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9639
+   },
+   {
+    "n": "Pascal Siakam",
+    "pos": "PF",
+    "ds": 0.9608
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 94,
+  "rosterN": 7,
+  "actual": "Jaden McDaniels",
+  "shipped": [
+   {
+    "n": "Norman Powell",
+    "pos": "SG",
+    "ds": 0.9898
+   },
+   {
+    "n": "Jaden McDaniels",
+    "pos": "SF,PF",
+    "ds": 0.9864
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.9796
+   },
+   {
+    "n": "Nikola Vucevic",
+    "pos": "C",
+    "ds": 0.9626
+   },
+   {
+    "n": "Immanuel Quickley",
+    "pos": "PG",
+    "ds": 0.9626
+   }
+  ],
+  "resil": [
+   {
+    "n": "Norman Powell",
+    "pos": "SG",
+    "ds": 0.9898
+   },
+   {
+    "n": "Jaden McDaniels",
+    "pos": "SF,PF",
+    "ds": 0.9864
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.9796
+   },
+   {
+    "n": "Nikola Vucevic",
+    "pos": "C",
+    "ds": 0.9626
+   },
+   {
+    "n": "Immanuel Quickley",
+    "pos": "PG",
+    "ds": 0.9626
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 99,
+  "rosterN": 8,
+  "actual": "Nikola Vucevic",
+  "shipped": [
+   {
+    "n": "PJ Washington",
+    "pos": "PF,C",
+    "ds": 0.9894
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9859
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.9824
+   },
+   {
+    "n": "VJ Edgecombe",
+    "pos": "SG",
+    "ds": 0.9648
+   },
+   {
+    "n": "Nikola Vucevic",
+    "pos": "C",
+    "ds": 0.9648
+   }
+  ],
+  "resil": [
+   {
+    "n": "PJ Washington",
+    "pos": "PF,C",
+    "ds": 0.9894
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9859
+   },
+   {
+    "n": "Devin Vassell",
+    "pos": "SG",
+    "ds": 0.9824
+   },
+   {
+    "n": "VJ Edgecombe",
+    "pos": "SG",
+    "ds": 0.9648
+   },
+   {
+    "n": "Nikola Vucevic",
+    "pos": "C",
+    "ds": 0.9648
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 118,
+  "rosterN": 9,
+  "actual": "Jerami Grant",
+  "shipped": [
+   {
+    "n": "Jerami Grant",
+    "pos": "PF",
+    "ds": 0.9959
+   },
+   {
+    "n": "CJ McCollum",
+    "pos": "PG,SG",
+    "ds": 0.9878
+   },
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9593
+   },
+   {
+    "n": "Matas Buzelis",
+    "pos": "SF,PF",
+    "ds": 0.9431
+   },
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.9431
+   }
+  ],
+  "resil": [
+   {
+    "n": "Jerami Grant",
+    "pos": "PF",
+    "ds": 0.9959
+   },
+   {
+    "n": "CJ McCollum",
+    "pos": "PG,SG",
+    "ds": 0.9878
+   },
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9593
+   },
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.9472
+   },
+   {
+    "n": "Matas Buzelis",
+    "pos": "SF,PF",
+    "ds": 0.9431
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 123,
+  "rosterN": 10,
+  "actual": "Aaron Nesmith",
+  "shipped": [
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9831
+   },
+   {
+    "n": "John Collins",
+    "pos": "PF,C",
+    "ds": 0.9746
+   },
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.9746
+   },
+   {
+    "n": "Andrew Nembhard",
+    "pos": "PG",
+    "ds": 0.9703
+   },
+   {
+    "n": "Matas Buzelis",
+    "pos": "SF,PF",
+    "ds": 0.9576
+   }
+  ],
+  "resil": [
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9788
+   },
+   {
+    "n": "Keon Ellis",
+    "pos": "SG",
+    "ds": 0.9746
+   },
+   {
+    "n": "John Collins",
+    "pos": "PF,C",
+    "ds": 0.9746
+   },
+   {
+    "n": "Bilal Coulibaly",
+    "pos": "SG,SF",
+    "ds": 0.9492
+   },
+   {
+    "n": "Andrew Nembhard",
+    "pos": "PG",
+    "ds": 0.9237
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 142,
+  "rosterN": 11,
+  "actual": "D'Angelo Russell",
+  "shipped": [
+   {
+    "n": "D'Angelo Russell",
+    "pos": "PG",
+    "ds": 0.9949
+   },
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.9596
+   },
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9495
+   },
+   {
+    "n": "Al Horford",
+    "pos": "C,PF",
+    "ds": 0.9495
+   },
+   {
+    "n": "Kelly Oubre Jr.",
+    "pos": "SF,SG",
+    "ds": 0.9444
+   }
+  ],
+  "resil": [
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.9697
+   },
+   {
+    "n": "Kevin Porter Jr.",
+    "pos": "PG,SG",
+    "ds": 0.9545
+   },
+   {
+    "n": "Brandin Podziemski",
+    "pos": "SG,PG",
+    "ds": 0.9495
+   },
+   {
+    "n": "Darryn Peterson",
+    "pos": "SG,PG",
+    "ds": 0.9444
+   },
+   {
+    "n": "Ayo Dosunmu",
+    "pos": "SG",
+    "ds": 0.9444
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 147,
+  "rosterN": 12,
+  "actual": "Jared McCain",
+  "shipped": [
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.984
+   },
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9734
+   },
+   {
+    "n": "Al Horford",
+    "pos": "C,PF",
+    "ds": 0.9734
+   },
+   {
+    "n": "Kelly Oubre Jr.",
+    "pos": "SF,SG",
+    "ds": 0.9681
+   },
+   {
+    "n": "Jeremy Sochan",
+    "pos": "PF",
+    "ds": 0.9628
+   }
+  ],
+  "resil": [
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9894
+   },
+   {
+    "n": "Al Horford",
+    "pos": "C,PF",
+    "ds": 0.9894
+   },
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.9574
+   },
+   {
+    "n": "Brandin Podziemski",
+    "pos": "SG,PG",
+    "ds": 0.9521
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9468
+   }
+  ],
+  "rnd": 13
+ }
+]

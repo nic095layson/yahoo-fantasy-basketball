@@ -1,0 +1,293 @@
+{
+ "31": {
+  "mock": "31",
+  "owner_slot": 9,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "TO"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    105
+   ],
+   "puntAware": [
+    57,
+    81,
+    129,
+    153
+   ]
+  },
+  "arms": {
+   "baseline": {
+    "champ": 6.156,
+    "playoff": 59.394,
+    "finish": 5,
+    "seasons": 18000,
+    "kept_z": 23.5,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Cooper Flagg",
+     "Alperen Sengun",
+     "Zion Williamson",
+     "Paolo Banchero",
+     "Dylan Harper",
+     "Darryn Peterson",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "Isaiah Collier"
+    ]
+   },
+   "shipped": {
+    "champ": 15.872,
+    "playoff": 83.156,
+    "finish": 3,
+    "seasons": 18000,
+    "kept_z": 17.16,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Jamal Murray",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "Isaiah Collier"
+    ],
+    "swaps": [
+     [
+      16,
+      "Giannis Antetokounmpo",
+      "Jamal Murray"
+     ],
+     [
+      33,
+      "Trae Young",
+      "Dyson Daniels"
+     ],
+     [
+      40,
+      "Cooper Flagg",
+      "OG Anunoby"
+     ],
+     [
+      57,
+      "Alperen Sengun",
+      "Reed Sheppard"
+     ],
+     [
+      64,
+      "Zion Williamson",
+      "Tari Eason"
+     ],
+     [
+      81,
+      "Paolo Banchero",
+      "Jarrett Allen"
+     ],
+     [
+      88,
+      "Dylan Harper",
+      "Jalen Duren"
+     ],
+     [
+      105,
+      "Darryn Peterson",
+      "Rudy Gobert"
+     ]
+    ],
+    "noop_swaps": []
+   },
+   "puntAware": {
+    "champ": 3.106,
+    "playoff": 43.9,
+    "finish": 7,
+    "seasons": 18000,
+    "kept_z": 36.05,
+    "roster": [
+     "Giannis Antetokounmpo",
+     "Amen Thompson",
+     "Dyson Daniels",
+     "Alperen Sengun",
+     "Zion Williamson",
+     "Jakob Poeltl",
+     "Paolo Banchero",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Donovan Clingan",
+     "Nic Claxton",
+     "Jeremy Sochan",
+     "Isaiah Collier"
+    ],
+    "swaps": [
+     [
+      16,
+      "Karl-Anthony Towns",
+      "Amen Thompson"
+     ],
+     [
+      33,
+      "Trae Young",
+      "Dyson Daniels"
+     ],
+     [
+      64,
+      "Cooper Flagg",
+      "Jakob Poeltl"
+     ],
+     [
+      88,
+      "Dylan Harper",
+      "Jalen Duren"
+     ],
+     [
+      105,
+      "Darryn Peterson",
+      "Rudy Gobert"
+     ],
+     [
+      136,
+      "Ausar Thompson",
+      "Jeremy Sochan"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      9,
+      "Karl-Anthony Towns",
+      "Giannis Antetokounmpo"
+     ],
+     [
+      40,
+      "Cooper Flagg",
+      "Alperen Sengun"
+     ],
+     [
+      57,
+      "Cooper Flagg",
+      "Zion Williamson"
+     ],
+     [
+      129,
+      "Ausar Thompson",
+      "Nic Claxton"
+     ]
+    ]
+   },
+   "placebo_draws": [
+    {
+     "champ": 1.078,
+     "playoff": 22.611,
+     "finish": 11,
+     "seasons": 18000,
+     "kept_z": 11.89,
+     "roster": [
+      "Karl-Anthony Towns",
+      "Dyson Daniels",
+      "Tyler Herro",
+      "Onyeka Okongwu",
+      "Lauri Markkanen",
+      "Walker Kessler",
+      "Mark Williams",
+      "Rudy Gobert",
+      "Bradley Beal",
+      "Donovan Clingan",
+      "Ausar Thompson",
+      "Nic Claxton",
+      "Isaiah Collier"
+     ],
+     "swap_turns": [
+      16,
+      33,
+      40,
+      57,
+      64,
+      81,
+      88,
+      105
+     ]
+    },
+    {
+     "champ": 2.011,
+     "playoff": 34.428,
+     "finish": 9,
+     "seasons": 18000,
+     "kept_z": 0.16,
+     "roster": [
+      "Karl-Anthony Towns",
+      "Derrick White",
+      "Reed Sheppard",
+      "Myles Turner",
+      "LeBron James",
+      "Fred VanVleet",
+      "Devin Vassell",
+      "Herbert Jones",
+      "Rudy Gobert",
+      "Donovan Clingan",
+      "Ausar Thompson",
+      "Nic Claxton",
+      "Isaiah Collier"
+     ],
+     "swap_turns": [
+      16,
+      33,
+      40,
+      57,
+      64,
+      81,
+      88,
+      105
+     ]
+    },
+    {
+     "champ": 0.0,
+     "playoff": 0.917,
+     "finish": 12,
+     "seasons": 18000,
+     "kept_z": 2.15,
+     "roster": [
+      "Karl-Anthony Towns",
+      "Payton Pritchard",
+      "Kawhi Leonard",
+      "Onyeka Okongwu",
+      "Deni Avdija",
+      "Jarrett Allen",
+      "Aaron Gordon",
+      "PJ Washington",
+      "John Collins",
+      "Donovan Clingan",
+      "Ausar Thompson",
+      "Nic Claxton",
+      "Isaiah Collier"
+     ],
+     "swap_turns": [
+      16,
+      33,
+      40,
+      57,
+      64,
+      81,
+      88,
+      105
+     ]
+    }
+   ],
+   "placebo_mean_champ": 1.03
+  },
+  "placebo_matched_to": "shipped"
+ }
+}

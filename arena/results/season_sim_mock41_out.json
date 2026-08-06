@@ -1,0 +1,150 @@
+{
+ "mock": 41,
+ "owner_slot": 4,
+ "declared_punt": [
+  "FT%",
+  "3PTM",
+  "TO"
+ ],
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "seasons_per_seed": 6000,
+ "table": [
+  {
+   "slot": 1,
+   "champ_pct": 8.44,
+   "playoff_pct": 63.68,
+   "ecw_per_week": 4.585,
+   "kept_total_9cat": 4.2,
+   "kept_total_owner_punt": -3.75
+  },
+  {
+   "slot": 2,
+   "champ_pct": 5.91,
+   "playoff_pct": 49.27,
+   "ecw_per_week": 4.481,
+   "kept_total_9cat": -0.22,
+   "kept_total_owner_punt": -2.76
+  },
+  {
+   "slot": 3,
+   "champ_pct": 3.52,
+   "playoff_pct": 38.94,
+   "ecw_per_week": 4.358,
+   "kept_total_9cat": -2.15,
+   "kept_total_owner_punt": -4.39
+  },
+  {
+   "slot": 4,
+   "champ_pct": 43.84,
+   "playoff_pct": 96.65,
+   "ecw_per_week": 5.111,
+   "kept_total_9cat": 0.94,
+   "kept_total_owner_punt": 27.43
+  },
+  {
+   "slot": 5,
+   "champ_pct": 1.94,
+   "playoff_pct": 26.74,
+   "ecw_per_week": 4.296,
+   "kept_total_9cat": 0.59,
+   "kept_total_owner_punt": -8.65
+  },
+  {
+   "slot": 6,
+   "champ_pct": 8.91,
+   "playoff_pct": 65.05,
+   "ecw_per_week": 4.585,
+   "kept_total_9cat": 2.16,
+   "kept_total_owner_punt": -6.04
+  },
+  {
+   "slot": 7,
+   "champ_pct": 8.59,
+   "playoff_pct": 63.53,
+   "ecw_per_week": 4.584,
+   "kept_total_9cat": 4.69,
+   "kept_total_owner_punt": -4.05
+  },
+  {
+   "slot": 8,
+   "champ_pct": 4.23,
+   "playoff_pct": 44.18,
+   "ecw_per_week": 4.447,
+   "kept_total_9cat": -4.45,
+   "kept_total_owner_punt": 1.17
+  },
+  {
+   "slot": 9,
+   "champ_pct": 5.44,
+   "playoff_pct": 52.21,
+   "ecw_per_week": 4.479,
+   "kept_total_9cat": 0.67,
+   "kept_total_owner_punt": -1.88
+  },
+  {
+   "slot": 10,
+   "champ_pct": 1.57,
+   "playoff_pct": 21.72,
+   "ecw_per_week": 4.227,
+   "kept_total_9cat": 0.19,
+   "kept_total_owner_punt": -0.46
+  },
+  {
+   "slot": 11,
+   "champ_pct": 3.83,
+   "playoff_pct": 38.38,
+   "ecw_per_week": 4.444,
+   "kept_total_9cat": -7.66,
+   "kept_total_owner_punt": -2.04
+  },
+  {
+   "slot": 12,
+   "champ_pct": 3.78,
+   "playoff_pct": 39.63,
+   "ecw_per_week": 4.401,
+   "kept_total_9cat": -2.23,
+   "kept_total_owner_punt": -4.13
+  }
+ ],
+ "owner_cat_ranks": {
+  "FG%": 1,
+  "FT%": 12,
+  "3PTM": 12,
+  "PTS": 6,
+  "REB": 1,
+  "AST": 2,
+  "ST": 1,
+  "BLK": 1,
+  "TO": 9
+ },
+ "owner_cat_z": {
+  "FG%": 9.8,
+  "FT%": -13.21,
+  "3PTM": -9.87,
+  "PTS": 0.91,
+  "REB": 4.45,
+  "AST": 3.57,
+  "ST": 5.1,
+  "BLK": 3.6,
+  "TO": -3.42
+ },
+ "owner_roster": [
+  "Nikola Jokic",
+  "Giannis Antetokounmpo",
+  "Evan Mobley",
+  "Trae Young",
+  "Jaylen Brown",
+  "Zion Williamson",
+  "Bilal Coulibaly",
+  "Rudy Gobert",
+  "Jaden McDaniels",
+  "Ausar Thompson",
+  "Dylan Harper",
+  "Daniel Gafford",
+  "Alex Caruso"
+ ]
+}

@@ -1,0 +1,88 @@
+{
+ "31": {
+  "mock": "31",
+  "owner_slot": 9,
+  "trigger_turns": [
+   [
+    10,
+    "C"
+   ],
+   [
+    11,
+    "F"
+   ],
+   [
+    12,
+    "C"
+   ],
+   [
+    13,
+    "C"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 15.872,
+   "playoff": 83.156,
+   "finish": 3,
+   "seasons": 18000,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Reed Sheppard",
+    "Tari Eason",
+    "Jarrett Allen",
+    "Jalen Duren",
+    "Rudy Gobert",
+    "Donovan Clingan",
+    "Ausar Thompson",
+    "Nic Claxton",
+    "Isaiah Collier"
+   ],
+   "swaps": [
+    [
+     16,
+     "Giannis Antetokounmpo",
+     "Jamal Murray"
+    ],
+    [
+     33,
+     "Trae Young",
+     "Dyson Daniels"
+    ],
+    [
+     40,
+     "Cooper Flagg",
+     "OG Anunoby"
+    ],
+    [
+     57,
+     "Alperen Sengun",
+     "Reed Sheppard"
+    ],
+    [
+     64,
+     "Zion Williamson",
+     "Tari Eason"
+    ],
+    [
+     81,
+     "Paolo Banchero",
+     "Jarrett Allen"
+    ],
+    [
+     88,
+     "Dylan Harper",
+     "Jalen Duren"
+    ],
+    [
+     105,
+     "Darryn Peterson",
+     "Rudy Gobert"
+    ]
+   ]
+  }
+ }
+}

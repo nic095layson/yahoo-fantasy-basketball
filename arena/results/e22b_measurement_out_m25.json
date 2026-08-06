@@ -1,0 +1,89 @@
+{
+ "25": {
+  "mock": "25",
+  "owner_slot": 2,
+  "trigger_turns": [
+   [
+    11,
+    "G"
+   ],
+   [
+    12,
+    "G"
+   ],
+   [
+    13,
+    "G"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 44.878,
+   "playoff": 98.761,
+   "finish": 1,
+   "seasons": 18000,
+   "roster": [
+    "Victor Wembanyama",
+    "Jamal Murray",
+    "Desmond Bane",
+    "Jalen Brunson",
+    "Tari Eason",
+    "Michael Porter Jr.",
+    "Jalen Suggs",
+    "Jaden McDaniels",
+    "PJ Washington",
+    "CJ McCollum",
+    "Ryan Rollins",
+    "D'Angelo Russell",
+    "Jared McCain"
+   ],
+   "swaps": [
+    [
+     23,
+     "Kevin Durant",
+     "Jamal Murray"
+    ],
+    [
+     26,
+     "Jayson Tatum",
+     "Desmond Bane"
+    ],
+    [
+     47,
+     "Darius Garland",
+     "Jalen Brunson"
+    ],
+    [
+     50,
+     "Josh Hart",
+     "Tari Eason"
+    ],
+    [
+     74,
+     "LeBron James",
+     "Jalen Suggs"
+    ],
+    [
+     98,
+     "Aaron Gordon",
+     "PJ Washington"
+    ],
+    [
+     119,
+     "John Collins",
+     "CJ McCollum"
+    ],
+    [
+     122,
+     "Aaron Nesmith",
+     "Ryan Rollins"
+    ],
+    [
+     146,
+     "Al Horford",
+     "Jared McCain"
+    ]
+   ]
+  }
+ }
+}

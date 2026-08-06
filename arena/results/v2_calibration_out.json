@@ -1,0 +1,38 @@
+{
+ "k_precision": {
+  "max_drift_K32_vs_K512": 0.0339,
+  "mean_drift": 0.00198,
+  "n": 169
+ },
+ "mc_crosscheck_pct_gap_schedule_matched": {
+  "39": {
+   "3PTM": 0.5,
+   "PTS": 0.5,
+   "REB": 0.6,
+   "AST": 0.4,
+   "ST": 0.4,
+   "BLK": 0.6,
+   "TO": 0.5
+  },
+  "34": {
+   "3PTM": 0.8,
+   "PTS": 0.8,
+   "REB": 0.9,
+   "AST": 0.7,
+   "ST": 0.5,
+   "BLK": 0.8,
+   "TO": 0.8
+  }
+ },
+ "symmetry": {
+  "champ_pct_range": [
+   7.97,
+   8.9
+  ],
+  "expected": 8.33
+ },
+ "ecw_v2_scale": {
+  "m36": 5.046,
+  "m39": 5.088
+ }
+}
