@@ -1428,6 +1428,7 @@ const JUDGMENT = {
     if (!(size >= 1)) return setupError("Rounds must be 1 or more.");
     if (!(slot >= 1 && slot <= teams)) return setupError(`Your slot must be between 1 and ${teams}.`);
     setupError(null);
+    resetBestView();  /* new draft starts on the default Mkt view (2026-08-06) */
     try { localStorage.setItem(SETUP_KEY, JSON.stringify({ slot })); } catch (e) { /* private mode */ }
     deck = {
       state: { teams, slot, size, punt: CATS.filter(c => setupPunt.has(c)), picks: [] },
@@ -1579,6 +1580,7 @@ const JUDGMENT = {
       btn.classList.remove("danger");
       $("feed").value = "";
       $("mirror").innerHTML = "";
+      resetBestView();
       $("draft").classList.add("hidden");
       $("setup").classList.remove("hidden");
       return;
@@ -2794,11 +2796,22 @@ const JUDGMENT = {
     bestState.cats = []; bestState.drill = null; /* the primary lens supersedes cat filters */
     renderBest();
   });
-  $("bestReset").addEventListener("click", () => {
+  /* Pool view defaults. bestState is module-level, so without an explicit
+     reset a lens set in one draft (e.g. the TARGET chip switches to Fit)
+     silently carried into the NEXT draft — owner-reported 2026-08-06:
+     "started a new draft and the pool was not sorted by MKT". Called from
+     the clear-filters button, Start draft, and Reset draft. */
+  function resetBestView() {
     bestState = { pos: "", q: "", top: 25, lens: "mkt", cats: [], drill: null };
     draftedNote = "";
-    $("bestPos").value = ""; $("bestQ").value = "";
-    $("bestTop").value = "25"; $("bestSort").value = "mkt";
+    if ($("bestPos")) $("bestPos").value = "";
+    if ($("bestQ")) $("bestQ").value = "";
+    if ($("bestTop")) $("bestTop").value = "25";
+    if ($("bestSort")) $("bestSort").value = "mkt";
+  }
+  globalThis.__resetBestView = resetBestView;
+  $("bestReset").addEventListener("click", () => {
+    resetBestView();
     renderBest();
   });
   $("bestSort").value = bestState.lens; /* re-sync after Firefox autofill */
