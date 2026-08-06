@@ -1,9 +1,19 @@
 # E25 — sharp mode FAILS its bar; the diagnosis is the valuable part (2026-08-06)
 
 **Owner-directed** ("Build sharp mode"). Built, measured against the bar
-registered in SEPTEMBER-PLAN E25 **before** any run, and **not shipped**:
-1 of 4 prongs passes. The deck is byte-identical to its pre-E25 state.
-The harness, the rooms, and this result are committed.
+registered in SEPTEMBER-PLAN E25 **before** any run: **1 of 4 prongs
+passes — the bar reads FAIL and is not renegotiated.**
+
+**Disposition (updated same day):** presented with the numbers below, the
+owner elected to keep it ("Stress test"). It is therefore SHIPPED as an
+explicitly labeled, unvalidated stress test — the button, its tooltip,
+the draft log line, and the deck's Logic paragraph each state that it
+failed its bar and quote the measured −2.5pp / 5-of-8 result; default
+MOCK remains the draft-night forecast. Guards re-verified after restore:
+default-mode rooms 8/8 byte-identical to pre-E25, owner Top-5 card
+replays identical on m40 and m38 (sharp mode cannot reach the owner's
+advice), 10/10 UI assertions. **This is an owner decision on an under-bar
+feature, disclosed per the bar-registry law — not a passing result.**
 
 Regenerate: `python3 arena/mocks/e25_measurement.py` (needs the scratchpad
 room runner; see the module docstring) →
@@ -49,7 +59,10 @@ unpunted, two owner policies (shipped-card follow; mock-40 picks).
 | 2 — harder room | owner champ ≤ −3pp | **−2.53pp** | **FAIL** (close; 5 of 8 rooms harder, 3 easier) |
 | 3 — realism guard | default byte-identical | 8/8 rooms identical | **PASS** |
 
-**Not shipped.** Same standard that rejected E20, E22, and E22b today.
+**The bar reads FAIL.** Under the standard that rejected E20, E22 and
+E22b today this would not ship; it is retained only by the owner override
+recorded at the top of this file, and is labeled as unvalidated wherever
+it appears in the UI.
 
 ## 3. Why it failed — structural, not a tuning miss (EVIDENCE)
 
