@@ -351,7 +351,13 @@ def weekly_availability(p):
 # pre-v2 instrument (regenerates all numbers quoted before this date).
 DF_K = 32
 DF_DAY_W = (1.3, 0.7, 1.4, 0.8, 1.5, 0.9, 1.4)
-WEEK_MODEL = os.environ.get("ARENA_WEEK_MODEL", "daily")
+
+
+def week_model_mode():
+    """Read at CALL time so epoch-pinned harnesses can set the env var
+    whenever convenient (v1-epoch harnesses pin "static" to regenerate
+    their quoted numbers; v2 code pins "daily" explicitly)."""
+    return os.environ.get("ARENA_WEEK_MODEL", "daily")
 
 
 def df_hash(name, k, salt):
@@ -442,7 +448,7 @@ def team_week_model(roster):
     Var[G] = 3.5*a*(1-a)."""
     mu = {c: 0.0 for c in CATS}
     var = {c: 0.0 for c in CATS}
-    if WEEK_MODEL == "static":
+    if week_model_mode() == "static":
         lw = lineup_weights(roster)
         dfw = None
     else:

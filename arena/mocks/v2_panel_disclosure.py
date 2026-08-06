@@ -35,8 +35,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import e22_measurement as e22  # noqa: E402  (chdirs to repo root; loads pool)
 
-assert os.environ.get("ARENA_WEEK_MODEL", "daily") == "daily", \
-    "disclosure must run under the v2 instrument"
+os.environ["ARENA_WEEK_MODEL"] = "daily"  # v2-epoch harness: hard-set, immune to import order
 
 
 def measure(mk):

@@ -14,6 +14,9 @@ Usage: DECW_OUT=<dir> python3 decw_card_v2.py <alpha> <anchor_rounds> [mock...]
 Writes decw_card_m<NN>.json into DECW_OUT (same schema as v1, so decw_cf.py
 consumes them unchanged via its DECW_OUT env var).
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, math
 
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))

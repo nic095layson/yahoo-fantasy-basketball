@@ -265,4 +265,8 @@ def main():
 
 
 if __name__ == "__main__":
+    # v1-epoch harness when run standalone: regenerates the quoted
+    # pre-2026-08-05 instrument numbers. As a LIBRARY import (e.g.
+    # v2_panel_disclosure) it stays neutral - callers pick the epoch.
+    os.environ.setdefault("ARENA_WEEK_MODEL", "static")
     main()

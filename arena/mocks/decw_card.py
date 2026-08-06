@@ -20,6 +20,9 @@ Writes decw_card_m<NN>.json next to this file's output dir (scratchpad if
 present, else cwd): per-turn top-5 by ΔECW + the full score of the actual
 pick, for grading and counterfactuals.
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, math
 
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))

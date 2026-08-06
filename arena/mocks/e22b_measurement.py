@@ -23,6 +23,9 @@ Fresh clone + `python3 arena/mocks/e22b_measurement.py` regenerates
 arena/results/e22b_measurement_out.json. E22B_MOCKS=34 etc. for one mock
 per process (partials: e22b_measurement_out_m<ids>.json).
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import json
 import os
 import sys

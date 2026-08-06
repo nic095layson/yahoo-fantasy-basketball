@@ -9,6 +9,9 @@ if a gap is a common-random-number artifact it will not survive.
 Fresh clone + `python3 arena/mocks/e22_seedcheck.py` regenerates
 arena/results/e22_seedcheck_out.json.
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import json
 import os
 import sys

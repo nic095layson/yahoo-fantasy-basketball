@@ -35,6 +35,9 @@ still holds 13.  Two boundary cases the earlier harnesses only screened out:
 
 Run: python3 arena/mocks/mock34_cf.py
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, random, math, statistics
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))

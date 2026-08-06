@@ -19,6 +19,9 @@ E20_MOCKS=22 (etc.) to run one mock per process for parallelism.
 Ship decision NOT taken here: the September bar (SEPTEMBER-PLAN E20) does
 that. This file only measures.
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import json
 import os
 import random
