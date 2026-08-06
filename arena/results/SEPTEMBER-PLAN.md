@@ -51,6 +51,15 @@ and 28 (they motivate E8/E9/E10 and LEDGER §5).
 2. **September consensus ADP** replaces the July market board
    (`PRE_RANK` / `MKT_RANK` sources in the data block). This is the
    event the freeze was waiting for.
+2b-i. **Young-row re-projection checklist (owner-reported 2026-08-06, Dylan
+   Harper; `findings_2026-08-06_dylan_harper_projection.md`).** The 14
+   unverified young rows flagged in the July self-critique (T4) are
+   re-projected from ACTUAL production, not pre-draft expectation —
+   **Harper first** (his row is a pre-rookie-season guess: z −2.74, value
+   rank 150, while a league-average-efficiency line alone is worth +22
+   board spots and a genuine leap ~72). Also: retire his `MKT_PIN` entry
+   (a rookie-hype pin on a second-year player) and re-check that
+   `rookie-proj` ×1.15 membership covers only players with zero NBA games.
 2b. **Projection synthesis (owner directive 2026-08-04, Q14):** the owner
    uploads multiple third-party ranking/projection datasets in September.
    Synthesize them into the tool's OWN projection set — cross-source
