@@ -268,7 +268,6 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
   <div class="setupgrid" role="group" aria-label="Mode">
     <button class="mode" id="modeLive" aria-pressed="true" type="button">LIVE — I feed every pick</button>
     <button class="mode" id="modeMock" aria-pressed="false" type="button">MOCK — my 11 league-mates draft against me</button>
-    <button class="mode" id="modeSharp" aria-pressed="false" type="button" title="Unvalidated stress test, kept by owner decision after it failed its ship bar. Same 11 managers with the same reach habits and favorite players, but from round 8 they stop feeding categories they have already conceded. Measured over 8 test rooms: your title odds fall 2.5pp on average, but unevenly — 5 rooms got harder, 3 got easier. It is NOT a validated model of stronger managers, and default MOCK remains the forecast of draft night.">SHARP ROOM — rough stress test (unvalidated)</button>
   </div>
   <div class="setupgrid">
     <label class="fld">Teams <input type="number" id="cfgTeams" value="12" min="2" max="20"></label>
@@ -406,7 +405,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-08-05 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/3): Jeremy Sochan signs with Portland — one year at the veteran minimum, non-guaranteed, a camp deal (reported 8/1), so he moves FA→POR with no change to his projection. Harden's Cleveland return remains agreed-but-unsigned by design; DeRozan (waived by Sacramento), Beal (opted out), and Westbrook are still true free agents. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. The optional SHARP ROOM is an <em>unvalidated</em> stress test kept by owner decision after it failed its registered bar (E25, 2026-08-06): the same 11 personalities stop feeding conceded categories from round 8, worth a measured −2.5pp to the owner's title odds across 8 test rooms but unevenly (5 harder, 3 easier); default MOCK remains the draft-night forecast. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -943,36 +942,7 @@ const MANAGERS = {
   JCo:    { adp_w: 0.45, val_w: 0.55, noise: 8,  bias: {}, streamer: false,
             loyal: { "Tyrese Haliburton": 10, "Jimmy Butler": 10, "Nic Claxton": 10 } },
 };
-/* ---- E25 sharp mode (owner-directed 2026-08-06; OFF by default) ----
-   HONEST STATUS: this FAILED its registered ship bar and is retained only
-   because the owner elected to keep it as a labeled stress test
-   (findings_2026-08-06_e25_sharp_mode.md). Measured over 8 CRN-paired
-   rooms, 18k seasons/arm: owner title odds -2.53pp on average (bar wanted
-   -3pp) and INCONSISTENT - 5 of 8 rooms got harder, 3 got easier; bot
-   dead-kept-categories 1.69 -> 1.50 (bar wanted <=0.80); bot ECW +0.002
-   (bar wanted +0.05). A held-out sweep showed the shortfall is structural,
-   not tuning: coherence needs CONCESSION and this term only ever adds to
-   weak categories. Treat a sharp room as "somewhat harder, unevenly",
-   never as a validated model of stronger managers.
-   Mechanism: from round SHARP_R0 on, a manager stops feeding categories
-   his roster has conceded and pays up for the ones still in reach.
-   adp_w/val_w/noise/bias/loyal are untouched, so personalities keep their
-   reach habits and favorite players. */
-const SHARP_R0 = 8, SHARP_W = 12.0, SHARP_DEAD = -3.0;
-function sharpBonus(p, roster) {
-  if (!roster.length) return 0;
-  const rz = {};
-  for (const c of CATS) rz[c] = roster.reduce((a, q) => a + q.z[c], 0);
-  let num = 0, den = 0;
-  for (const c of CATS) {
-    if (rz[c] <= SHARP_DEAD) continue;          /* conceded: stop feeding it */
-    const w = Math.min(2.0, Math.max(0.2, 1 - rz[c] / 6));  /* weakest live cat weighs most */
-    num += p.z[c] * w;
-    den += w;
-  }
-  return den ? SHARP_W * num / den : 0;
-}
-function managerScores(mgr, pool, roster, rnd, rounds, rng, sharp) {
+function managerScores(mgr, pool, roster, rnd, rounds, rng) {
   const m = MANAGERS[mgr];
   const remaining = rounds - roster.length;
   const unfilled = BASE_POS.filter(b => !roster.some(p => positionsOf(p).includes(b)));
@@ -998,7 +968,6 @@ function managerScores(mgr, pool, roster, rnd, rounds, rng, sharp) {
     if (benchBound(p)) s -= 50.0;
     if (unfilled.length && rnd >= 6 && positionsOf(p).some(b => unfilled.includes(b)))
       s += 15.0;
-    if (sharp && rnd >= SHARP_R0) s += sharpBonus(p, roster);
     return s;
   }
   let cands = pool;
@@ -1438,18 +1407,13 @@ const JUDGMENT = {
   } catch (e) { /* absent or corrupt: keep the HTML default */ }
   refreshEcho();
 
-  let mockMode = false, sharpMode = false;
+  let mockMode = false;
   $("modeLive").addEventListener("click", () => setMode(false));
   $("modeMock").addEventListener("click", () => setMode(true));
-  /* E25 sharp room: opt-in, failed its bar, kept as a labeled stress test
-     by owner decision 2026-08-06. Implies mock mode; LIVE or MOCK clears it. */
-  $("modeSharp").addEventListener("click", () => { sharpMode = !sharpMode; setMode(true); });
   function setMode(mock) {
     mockMode = mock;
-    if (!mock) sharpMode = false;
     $("modeLive").setAttribute("aria-pressed", String(!mock));
-    $("modeMock").setAttribute("aria-pressed", String(mock && !sharpMode));
-    $("modeSharp").setAttribute("aria-pressed", String(sharpMode));
+    $("modeMock").setAttribute("aria-pressed", String(mock));
   }
 
   function setupError(msg) {
@@ -1466,8 +1430,7 @@ const JUDGMENT = {
     setupError(null);
     try { localStorage.setItem(SETUP_KEY, JSON.stringify({ slot })); } catch (e) { /* private mode */ }
     deck = {
-      state: { teams, slot, size, punt: CATS.filter(c => setupPunt.has(c)), picks: [],
-               ...(mockMode && sharpMode ? { sharp: true } : {}) },
+      state: { teams, slot, size, punt: CATS.filter(c => setupPunt.has(c)), picks: [] },
       mode: mockMode ? "mock" : "live",
       rngState: (Date.now() ^ (slot * 2654435761)) >>> 0,
       log: [],
@@ -1492,9 +1455,7 @@ const JUDGMENT = {
     }
     log(`Draft started: ${teams} teams × ${size} rounds = ${teams * size} picks; you are Team ${slot}` +
         (deck.state.punt.length ? `; punting ${deck.state.punt.join(", ")}` : "") +
-        (mockMode ? (sharpMode
-            ? " · SHARP ROOM — unvalidated stress test: same 11 managers, but from R8 they stop feeding conceded categories. Measured −2.5pp to your title odds on average, unevenly (5 of 8 test rooms harder, 3 easier). NOT a draft-night forecast — use default MOCK for that."
-            : " · MOCK — your 11 league-mates hold the other seats") : " · LIVE"));
+        (mockMode ? " · MOCK — your 11 league-mates hold the other seats" : " · LIVE"));
     if (mockMode) log(`Cast: ${mockCastFor().map(([s, n]) => `T${s}:${n}`).join(" ")}`);
     save(); enterDraft();
     if (mockMode) advanceAI();
@@ -1552,7 +1513,7 @@ const JUDGMENT = {
       let scored;
       if (MANAGERS[name]) {
         scored = managerScores(name, pool, rosters[slot],
-          Math.floor(n / st.teams) + 1, st.size, rng, !!st.sharp);
+          Math.floor(n / st.teams) + 1, st.size, rng);
       } else {
         const params = { ...STRAT_DEFAULT, ...STRATEGIES[name] };
         const ranks = params.matrix_aware && rosters[slot].length
@@ -1638,7 +1599,7 @@ const JUDGMENT = {
        analysis and the file had no way to say who sat where). Additive:
        every consumer reads named fields, so older harnesses ignore it. */
     const out = { teams, slot, size, punt, picks };
-    if (deck.mode === "mock") { out.cast = mockCastFor(); if (deck.state.sharp) out.sharp = true; }
+    if (deck.mode === "mock") out.cast = mockCastFor();
     return JSON.stringify(out, null, 2);
   }
   $("exportBtn").addEventListener("click", async () => {
