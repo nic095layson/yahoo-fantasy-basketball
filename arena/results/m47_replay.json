@@ -1,0 +1,418 @@
+[
+ {
+  "pickNo": 10,
+  "actual": "Cade Cunningham",
+  "shipped": [
+   {
+    "n": "Karl-Anthony Towns",
+    "pos": "C,PF",
+    "ds": 0.9957
+   },
+   {
+    "n": "Cade Cunningham",
+    "pos": "PG",
+    "ds": 0.9913
+   },
+   {
+    "n": "Jalen Johnson",
+    "pos": "SF,PF",
+    "ds": 0.987
+   },
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9827
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.974
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 15,
+  "actual": "Kyrie Irving",
+  "shipped": [
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9934
+   },
+   {
+    "n": "Kevin Durant",
+    "pos": "SF,PF",
+    "ds": 0.9867
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.9845
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9801
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.9779
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 34,
+  "actual": "Giannis Antetokounmpo",
+  "shipped": [
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9928
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9903
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9807
+   },
+   {
+    "n": "Dyson Daniels",
+    "pos": "SG",
+    "ds": 0.9807
+   },
+   {
+    "n": "Scottie Barnes",
+    "pos": "SF,PF",
+    "ds": 0.9783
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 39,
+  "actual": "Cooper Flagg",
+  "shipped": [
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 1
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9876
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9876
+   },
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9851
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9802
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 58,
+  "actual": "Alperen Sengun",
+  "shipped": [
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9918
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9809
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9617
+   },
+   {
+    "n": "Ivica Zubac",
+    "pos": "C",
+    "ds": 0.9617
+   },
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.959
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 63,
+  "actual": "Paul George",
+  "shipped": [
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9916
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9747
+   },
+   {
+    "n": "Mikal Bridges",
+    "pos": "SF",
+    "ds": 0.9691
+   },
+   {
+    "n": "Michael Porter Jr.",
+    "pos": "SF",
+    "ds": 0.9691
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9607
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 82,
+  "actual": "Zion Williamson",
+  "shipped": [
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9937
+   },
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9906
+   },
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9874
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9623
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.956
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 87,
+  "actual": "Paolo Banchero",
+  "shipped": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9968
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.987
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.974
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9708
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9708
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 106,
+  "actual": "Bilal Coulibaly",
+  "shipped": [
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9963
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9963
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9704
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.963
+   },
+   {
+    "n": "Toumani Camara",
+    "pos": "SF,PF",
+    "ds": 0.9593
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 111,
+  "actual": "Rudy Gobert",
+  "shipped": [
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9962
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9962
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9769
+   },
+   {
+    "n": "Toumani Camara",
+    "pos": "SF,PF",
+    "ds": 0.9654
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9654
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 130,
+  "actual": "Kelly Oubre Jr.",
+  "shipped": [
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9955
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.991
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.964
+   },
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.9279
+   },
+   {
+    "n": "Jeremy Sochan",
+    "pos": "PF",
+    "ds": 0.9234
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 135,
+  "actual": "Ausar Thompson",
+  "shipped": [
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9953
+   },
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9858
+   },
+   {
+    "n": "Nic Claxton",
+    "pos": "C",
+    "ds": 0.967
+   },
+   {
+    "n": "Jrue Holiday",
+    "pos": "PG",
+    "ds": 0.9434
+   },
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.9434
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 154,
+  "actual": "Neemias Queta",
+  "shipped": [
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.977
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9598
+   },
+   {
+    "n": "Keon Ellis",
+    "pos": "SG",
+    "ds": 0.9368
+   },
+   {
+    "n": "Moussa Diabate",
+    "pos": "C",
+    "ds": 0.9195
+   },
+   {
+    "n": "Deandre Ayton",
+    "pos": "C",
+    "ds": 0.9023
+   }
+  ],
+  "rnd": 13
+ }
+]
