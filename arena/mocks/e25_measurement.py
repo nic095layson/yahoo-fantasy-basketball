@@ -168,8 +168,9 @@ def main():
                   f"{sum(b['dead_kept'] for b in bots)/11:.2f} | bot ECW "
                   f"{sum(b['ecw'] for b in bots)/11:.3f}", flush=True)
         results[key] = entry
-    path = ("arena/results/e25_measurement_out.json" if not only else
-            f"arena/results/e25_measurement_out_{only.replace(',', '_')}.json")
+    tag = os.environ.get("E25_TAG", "")  # "b" -> e25b_* (frame-declaring variant)
+    stem = f"arena/results/e25{tag}_measurement_out"
+    path = f"{stem}.json" if not only else f"{stem}_{only.replace(',', '_')}.json"
     json.dump(results, open(path, "w"), indent=1)
     print("wrote", path)
 

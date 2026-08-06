@@ -1,0 +1,1460 @@
+{
+ "202_1": {
+  "seed": 202,
+  "slot": 1,
+  "policy": "card",
+  "punt": "",
+  "default": {
+   "owner_slot": 1,
+   "seats": {
+    "1": {
+     "champ": 37.656,
+     "playoff": 96.7,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "AST",
+      "PTS",
+      "REB"
+     ],
+     "best_z": 18.5,
+     "roster": [
+      "Victor Wembanyama",
+      "Desmond Bane",
+      "Derrick White",
+      "Onyeka Okongwu",
+      "Reed Sheppard",
+      "Christian Braun",
+      "Mikal Bridges",
+      "Cason Wallace",
+      "Isaiah Hartenstein",
+      "Aaron Nesmith",
+      "Andrew Nembhard",
+      "Ausar Thompson",
+      "Al Horford"
+     ],
+     "ecw": 5.096
+    },
+    "2": {
+     "champ": 12.217,
+     "playoff": 71.444,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "REB",
+      "TO"
+     ],
+     "best_z": 16.98,
+     "roster": [
+      "Nikola Jokic",
+      "Austin Reaves",
+      "Damian Lillard",
+      "Cameron Johnson",
+      "Trae Young",
+      "Paul George",
+      "Jordan Poole",
+      "VJ Edgecombe",
+      "DeMar DeRozan",
+      "John Collins",
+      "Cameron Boozer",
+      "Nic Claxton",
+      "Dylan Harper"
+     ],
+     "ecw": 4.685
+    },
+    "3": {
+     "champ": 7.267,
+     "playoff": 57.222,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "AST",
+      "BLK",
+      "FG%"
+     ],
+     "best_z": 5.65,
+     "roster": [
+      "Luka Doncic",
+      "Domantas Sabonis",
+      "Franz Wagner",
+      "Kristaps Porzingis",
+      "Bam Adebayo",
+      "Tari Eason",
+      "Fred VanVleet",
+      "Jaden McDaniels",
+      "PJ Washington",
+      "Bradley Beal",
+      "Matas Buzelis",
+      "Anfernee Simons",
+      "Bogdan Bogdanovic"
+     ],
+     "ecw": 4.556
+    },
+    "4": {
+     "champ": 12.628,
+     "playoff": 76.094,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "ST"
+     ],
+     "best_z": 24.34,
+     "roster": [
+      "Shai Gilgeous-Alexander",
+      "Jaren Jackson Jr.",
+      "Evan Mobley",
+      "Amen Thompson",
+      "Lauri Markkanen",
+      "Nickeil Alexander-Walker",
+      "Walker Kessler",
+      "Jalen Duren",
+      "Aaron Gordon",
+      "Zach Edey",
+      "AJ Dybantsa",
+      "Tobias Harris",
+      "Ayo Dosunmu"
+     ],
+     "ecw": 4.688
+    },
+    "5": {
+     "champ": 2.411,
+     "playoff": 31.978,
+     "dead_kept": 3,
+     "live_cats": 3,
+     "best_punt": [
+      "FG%",
+      "FT%",
+      "TO"
+     ],
+     "best_z": 7.01,
+     "roster": [
+      "Anthony Edwards",
+      "LaMelo Ball",
+      "James Harden",
+      "De'Aaron Fox",
+      "Zach LaVine",
+      "LeBron James",
+      "Naz Reid",
+      "Zion Williamson",
+      "Alex Sarr",
+      "Toumani Camara",
+      "Santi Aldama",
+      "Kevin Porter Jr.",
+      "Ace Bailey"
+     ],
+     "ecw": 4.334
+    },
+    "6": {
+     "champ": 10.972,
+     "playoff": 68.889,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "FG%",
+      "PTS"
+     ],
+     "best_z": 5.43,
+     "roster": [
+      "Anthony Davis",
+      "Jamal Murray",
+      "Chet Holmgren",
+      "Cooper Flagg",
+      "Brandon Ingram",
+      "Jalen Suggs",
+      "Josh Hart",
+      "Nikola Vucevic",
+      "Malik Monk",
+      "Rudy Gobert",
+      "Bilal Coulibaly",
+      "Keyonte George",
+      "Cedric Coward"
+     ],
+     "ecw": 4.653
+    },
+    "7": {
+     "champ": 6.306,
+     "playoff": 55.383,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "PTS"
+     ],
+     "best_z": 11.0,
+     "roster": [
+      "Karl-Anthony Towns",
+      "Jalen Williams",
+      "Josh Giddey",
+      "OG Anunoby",
+      "Ivica Zubac",
+      "Michael Porter Jr.",
+      "Deni Avdija",
+      "Mark Williams",
+      "Herbert Jones",
+      "Ryan Rollins",
+      "Yaxel Lendeborg",
+      "Brandin Podziemski",
+      "Derik Queen"
+     ],
+     "ecw": 4.511
+    },
+    "8": {
+     "champ": 0.833,
+     "playoff": 15.694,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "ST",
+      "TO"
+     ],
+     "best_z": 11.04,
+     "roster": [
+      "Cade Cunningham",
+      "Devin Booker",
+      "Tyler Herro",
+      "Brandon Miller",
+      "Ja Morant",
+      "Miles Bridges",
+      "Jarrett Allen",
+      "Devin Vassell",
+      "Julius Randle",
+      "Kyle Filipowski",
+      "Collin Sexton",
+      "Darryn Peterson",
+      "Tre Johnson"
+     ],
+     "ecw": 4.175
+    },
+    "9": {
+     "champ": 1.633,
+     "playoff": 23.939,
+     "dead_kept": 4,
+     "live_cats": 2,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "FT%"
+     ],
+     "best_z": 1.16,
+     "roster": [
+      "Jalen Johnson",
+      "Kevin Durant",
+      "Jalen Brunson",
+      "Kawhi Leonard",
+      "Alperen Sengun",
+      "Jaylen Brown",
+      "Immanuel Quickley",
+      "Andrew Wiggins",
+      "CJ McCollum",
+      "Keegan Murray",
+      "Wendell Carter Jr.",
+      "Kelly Oubre Jr.",
+      "Bennedict Mathurin"
+     ],
+     "ecw": 4.249
+    },
+    "10": {
+     "champ": 4.222,
+     "playoff": 44.078,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "AST",
+      "REB",
+      "ST"
+     ],
+     "best_z": 7.58,
+     "roster": [
+      "Tyrese Maxey",
+      "Kyrie Irving",
+      "Trey Murphy III",
+      "Giannis Antetokounmpo",
+      "Coby White",
+      "Jakob Poeltl",
+      "Norman Powell",
+      "Brook Lopez",
+      "Cam Thomas",
+      "Donovan Clingan",
+      "Jeremy Sochan",
+      "Jrue Holiday",
+      "Keon Ellis"
+     ],
+     "ecw": 4.407
+    },
+    "11": {
+     "champ": 1.489,
+     "playoff": 25.889,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "FG%",
+      "PTS",
+      "REB"
+     ],
+     "best_z": 16.89,
+     "roster": [
+      "Tyrese Haliburton",
+      "Stephen Curry",
+      "Dyson Daniels",
+      "Darius Garland",
+      "Pascal Siakam",
+      "Myles Turner",
+      "Quentin Grimes",
+      "Kon Knueppel",
+      "Jerami Grant",
+      "Draymond Green",
+      "Lonzo Ball",
+      "Jared McCain",
+      "De'Anthony Melton"
+     ],
+     "ecw": 4.285
+    },
+    "12": {
+     "champ": 2.367,
+     "playoff": 32.689,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "TO"
+     ],
+     "best_z": 11.88,
+     "roster": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Payton Pritchard",
+      "Scottie Barnes",
+      "Dejounte Murray",
+      "Joel Embiid",
+      "Kel'el Ware",
+      "Paolo Banchero",
+      "Jabari Smith Jr.",
+      "Jalen Green",
+      "Jaden Ivey",
+      "D'Angelo Russell",
+      "De'Andre Hunter"
+     ],
+     "ecw": 4.361
+    }
+   },
+   "owner": {
+    "champ": 37.656,
+    "playoff": 96.7,
+    "dead_kept": 1,
+    "live_cats": 5,
+    "best_punt": [
+     "AST",
+     "PTS",
+     "REB"
+    ],
+    "best_z": 18.5,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "Onyeka Okongwu",
+     "Reed Sheppard",
+     "Christian Braun",
+     "Mikal Bridges",
+     "Cason Wallace",
+     "Isaiah Hartenstein",
+     "Aaron Nesmith",
+     "Andrew Nembhard",
+     "Ausar Thompson",
+     "Al Horford"
+    ],
+    "ecw": 5.096
+   },
+   "bots": [
+    {
+     "champ": 12.217,
+     "playoff": 71.444,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "REB",
+      "TO"
+     ],
+     "best_z": 16.98,
+     "roster": [
+      "Nikola Jokic",
+      "Austin Reaves",
+      "Damian Lillard",
+      "Cameron Johnson",
+      "Trae Young",
+      "Paul George",
+      "Jordan Poole",
+      "VJ Edgecombe",
+      "DeMar DeRozan",
+      "John Collins",
+      "Cameron Boozer",
+      "Nic Claxton",
+      "Dylan Harper"
+     ],
+     "ecw": 4.685
+    },
+    {
+     "champ": 7.267,
+     "playoff": 57.222,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "AST",
+      "BLK",
+      "FG%"
+     ],
+     "best_z": 5.65,
+     "roster": [
+      "Luka Doncic",
+      "Domantas Sabonis",
+      "Franz Wagner",
+      "Kristaps Porzingis",
+      "Bam Adebayo",
+      "Tari Eason",
+      "Fred VanVleet",
+      "Jaden McDaniels",
+      "PJ Washington",
+      "Bradley Beal",
+      "Matas Buzelis",
+      "Anfernee Simons",
+      "Bogdan Bogdanovic"
+     ],
+     "ecw": 4.556
+    },
+    {
+     "champ": 12.628,
+     "playoff": 76.094,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "ST"
+     ],
+     "best_z": 24.34,
+     "roster": [
+      "Shai Gilgeous-Alexander",
+      "Jaren Jackson Jr.",
+      "Evan Mobley",
+      "Amen Thompson",
+      "Lauri Markkanen",
+      "Nickeil Alexander-Walker",
+      "Walker Kessler",
+      "Jalen Duren",
+      "Aaron Gordon",
+      "Zach Edey",
+      "AJ Dybantsa",
+      "Tobias Harris",
+      "Ayo Dosunmu"
+     ],
+     "ecw": 4.688
+    },
+    {
+     "champ": 2.411,
+     "playoff": 31.978,
+     "dead_kept": 3,
+     "live_cats": 3,
+     "best_punt": [
+      "FG%",
+      "FT%",
+      "TO"
+     ],
+     "best_z": 7.01,
+     "roster": [
+      "Anthony Edwards",
+      "LaMelo Ball",
+      "James Harden",
+      "De'Aaron Fox",
+      "Zach LaVine",
+      "LeBron James",
+      "Naz Reid",
+      "Zion Williamson",
+      "Alex Sarr",
+      "Toumani Camara",
+      "Santi Aldama",
+      "Kevin Porter Jr.",
+      "Ace Bailey"
+     ],
+     "ecw": 4.334
+    },
+    {
+     "champ": 10.972,
+     "playoff": 68.889,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "FG%",
+      "PTS"
+     ],
+     "best_z": 5.43,
+     "roster": [
+      "Anthony Davis",
+      "Jamal Murray",
+      "Chet Holmgren",
+      "Cooper Flagg",
+      "Brandon Ingram",
+      "Jalen Suggs",
+      "Josh Hart",
+      "Nikola Vucevic",
+      "Malik Monk",
+      "Rudy Gobert",
+      "Bilal Coulibaly",
+      "Keyonte George",
+      "Cedric Coward"
+     ],
+     "ecw": 4.653
+    },
+    {
+     "champ": 6.306,
+     "playoff": 55.383,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "PTS"
+     ],
+     "best_z": 11.0,
+     "roster": [
+      "Karl-Anthony Towns",
+      "Jalen Williams",
+      "Josh Giddey",
+      "OG Anunoby",
+      "Ivica Zubac",
+      "Michael Porter Jr.",
+      "Deni Avdija",
+      "Mark Williams",
+      "Herbert Jones",
+      "Ryan Rollins",
+      "Yaxel Lendeborg",
+      "Brandin Podziemski",
+      "Derik Queen"
+     ],
+     "ecw": 4.511
+    },
+    {
+     "champ": 0.833,
+     "playoff": 15.694,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "ST",
+      "TO"
+     ],
+     "best_z": 11.04,
+     "roster": [
+      "Cade Cunningham",
+      "Devin Booker",
+      "Tyler Herro",
+      "Brandon Miller",
+      "Ja Morant",
+      "Miles Bridges",
+      "Jarrett Allen",
+      "Devin Vassell",
+      "Julius Randle",
+      "Kyle Filipowski",
+      "Collin Sexton",
+      "Darryn Peterson",
+      "Tre Johnson"
+     ],
+     "ecw": 4.175
+    },
+    {
+     "champ": 1.633,
+     "playoff": 23.939,
+     "dead_kept": 4,
+     "live_cats": 2,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "FT%"
+     ],
+     "best_z": 1.16,
+     "roster": [
+      "Jalen Johnson",
+      "Kevin Durant",
+      "Jalen Brunson",
+      "Kawhi Leonard",
+      "Alperen Sengun",
+      "Jaylen Brown",
+      "Immanuel Quickley",
+      "Andrew Wiggins",
+      "CJ McCollum",
+      "Keegan Murray",
+      "Wendell Carter Jr.",
+      "Kelly Oubre Jr.",
+      "Bennedict Mathurin"
+     ],
+     "ecw": 4.249
+    },
+    {
+     "champ": 4.222,
+     "playoff": 44.078,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "AST",
+      "REB",
+      "ST"
+     ],
+     "best_z": 7.58,
+     "roster": [
+      "Tyrese Maxey",
+      "Kyrie Irving",
+      "Trey Murphy III",
+      "Giannis Antetokounmpo",
+      "Coby White",
+      "Jakob Poeltl",
+      "Norman Powell",
+      "Brook Lopez",
+      "Cam Thomas",
+      "Donovan Clingan",
+      "Jeremy Sochan",
+      "Jrue Holiday",
+      "Keon Ellis"
+     ],
+     "ecw": 4.407
+    },
+    {
+     "champ": 1.489,
+     "playoff": 25.889,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "FG%",
+      "PTS",
+      "REB"
+     ],
+     "best_z": 16.89,
+     "roster": [
+      "Tyrese Haliburton",
+      "Stephen Curry",
+      "Dyson Daniels",
+      "Darius Garland",
+      "Pascal Siakam",
+      "Myles Turner",
+      "Quentin Grimes",
+      "Kon Knueppel",
+      "Jerami Grant",
+      "Draymond Green",
+      "Lonzo Ball",
+      "Jared McCain",
+      "De'Anthony Melton"
+     ],
+     "ecw": 4.285
+    },
+    {
+     "champ": 2.367,
+     "playoff": 32.689,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "TO"
+     ],
+     "best_z": 11.88,
+     "roster": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Payton Pritchard",
+      "Scottie Barnes",
+      "Dejounte Murray",
+      "Joel Embiid",
+      "Kel'el Ware",
+      "Paolo Banchero",
+      "Jabari Smith Jr.",
+      "Jalen Green",
+      "Jaden Ivey",
+      "D'Angelo Russell",
+      "De'Andre Hunter"
+     ],
+     "ecw": 4.361
+    }
+   ],
+   "owner_got": 0,
+   "cast": [
+    [
+     2,
+     "JCo"
+    ],
+    [
+     3,
+     "Cayas"
+    ],
+    [
+     4,
+     "Oblena"
+    ],
+    [
+     5,
+     "Noah"
+    ],
+    [
+     6,
+     "Martin"
+    ],
+    [
+     7,
+     "Kyle"
+    ],
+    [
+     8,
+     "Robby"
+    ],
+    [
+     9,
+     "Hegi"
+    ],
+    [
+     10,
+     "John"
+    ],
+    [
+     11,
+     "Kevin"
+    ],
+    [
+     12,
+     "Will"
+    ]
+   ]
+  },
+  "sharp": {
+   "owner_slot": 1,
+   "seats": {
+    "1": {
+     "champ": 43.65,
+     "playoff": 98.444,
+     "dead_kept": 0,
+     "live_cats": 6,
+     "best_punt": [
+      "AST",
+      "PTS",
+      "REB"
+     ],
+     "best_z": 24.81,
+     "roster": [
+      "Victor Wembanyama",
+      "Desmond Bane",
+      "Derrick White",
+      "OG Anunoby",
+      "Onyeka Okongwu",
+      "Tari Eason",
+      "Christian Braun",
+      "Cason Wallace",
+      "Brook Lopez",
+      "Toumani Camara",
+      "Jabari Smith Jr.",
+      "Matas Buzelis",
+      "Jrue Holiday"
+     ],
+     "ecw": 5.136
+    },
+    "2": {
+     "champ": 7.433,
+     "playoff": 59.144,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "REB"
+     ],
+     "best_z": 20.9,
+     "roster": [
+      "Nikola Jokic",
+      "Austin Reaves",
+      "Damian Lillard",
+      "Jordan Poole",
+      "Kawhi Leonard",
+      "Cameron Johnson",
+      "Cam Thomas",
+      "Aaron Gordon",
+      "D'Angelo Russell",
+      "Ryan Rollins",
+      "Lonzo Ball",
+      "Al Horford",
+      "Bogdan Bogdanovic"
+     ],
+     "ecw": 4.567
+    },
+    "3": {
+     "champ": 14.2,
+     "playoff": 81.161,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "FT%",
+      "TO"
+     ],
+     "best_z": 11.83,
+     "roster": [
+      "Luka Doncic",
+      "Domantas Sabonis",
+      "Franz Wagner",
+      "Paolo Banchero",
+      "Jaylen Brown",
+      "Pascal Siakam",
+      "Michael Porter Jr.",
+      "Keyonte George",
+      "Jarrett Allen",
+      "Dylan Harper",
+      "Rudy Gobert",
+      "Bilal Coulibaly",
+      "Brandin Podziemski"
+     ],
+     "ecw": 4.773
+    },
+    "4": {
+     "champ": 9.022,
+     "playoff": 66.483,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "FT%"
+     ],
+     "best_z": 36.07,
+     "roster": [
+      "Shai Gilgeous-Alexander",
+      "Jaren Jackson Jr.",
+      "Evan Mobley",
+      "Cooper Flagg",
+      "Alperen Sengun",
+      "Ivica Zubac",
+      "Josh Hart",
+      "Mark Williams",
+      "Kel'el Ware",
+      "Kelly Oubre Jr.",
+      "Donovan Clingan",
+      "Nic Claxton",
+      "Daniel Gafford"
+     ],
+     "ecw": 4.574
+    },
+    "5": {
+     "champ": 1.667,
+     "playoff": 25.122,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "TO"
+     ],
+     "best_z": 14.68,
+     "roster": [
+      "Anthony Edwards",
+      "LaMelo Ball",
+      "James Harden",
+      "Ja Morant",
+      "Joel Embiid",
+      "Deni Avdija",
+      "Immanuel Quickley",
+      "Andrew Wiggins",
+      "Devin Vassell",
+      "Nikola Vucevic",
+      "Keegan Murray",
+      "Kevin Porter Jr.",
+      "Kasparas Jakucionis"
+     ],
+     "ecw": 4.28
+    },
+    "6": {
+     "champ": 7.533,
+     "playoff": 59.0,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "FT%"
+     ],
+     "best_z": 35.19,
+     "roster": [
+      "Anthony Davis",
+      "Jamal Murray",
+      "Chet Holmgren",
+      "Amen Thompson",
+      "Zion Williamson",
+      "Jalen Suggs",
+      "Jakob Poeltl",
+      "Walker Kessler",
+      "Jalen Duren",
+      "Isaiah Hartenstein",
+      "Ausar Thompson",
+      "Yaxel Lendeborg",
+      "Derik Queen"
+     ],
+     "ecw": 4.515
+    },
+    "7": {
+     "champ": 2.494,
+     "playoff": 32.533,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "REB",
+      "TO"
+     ],
+     "best_z": 4.72,
+     "roster": [
+      "Karl-Anthony Towns",
+      "Jalen Williams",
+      "Josh Giddey",
+      "De'Aaron Fox",
+      "Zach LaVine",
+      "LeBron James",
+      "Norman Powell",
+      "Darryn Peterson",
+      "CJ McCollum",
+      "PJ Washington",
+      "Aaron Nesmith",
+      "Wendell Carter Jr.",
+      "Isaiah Collier"
+     ],
+     "ecw": 4.331
+    },
+    "8": {
+     "champ": 3.567,
+     "playoff": 46.322,
+     "dead_kept": 3,
+     "live_cats": 3,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "TO"
+     ],
+     "best_z": 11.4,
+     "roster": [
+      "Cade Cunningham",
+      "Devin Booker",
+      "Tyler Herro",
+      "Scottie Barnes",
+      "Dejounte Murray",
+      "Bam Adebayo",
+      "Fred VanVleet",
+      "Julius Randle",
+      "DeMar DeRozan",
+      "Jerami Grant",
+      "Kyle Filipowski",
+      "Collin Sexton",
+      "Ace Bailey"
+     ],
+     "ecw": 4.476
+    },
+    "9": {
+     "champ": 1.35,
+     "playoff": 28.472,
+     "dead_kept": 0,
+     "live_cats": 6,
+     "best_punt": [
+      "FT%",
+      "ST",
+      "TO"
+     ],
+     "best_z": 14.57,
+     "roster": [
+      "Jalen Johnson",
+      "Kevin Durant",
+      "Jalen Brunson",
+      "Giannis Antetokounmpo",
+      "Brandon Ingram",
+      "Jalen Green",
+      "Kristaps Porzingis",
+      "Myles Turner",
+      "RJ Barrett",
+      "Alex Sarr",
+      "Jaden Ivey",
+      "Cameron Boozer",
+      "Kyle Kuzma"
+     ],
+     "ecw": 4.314
+    },
+    "10": {
+     "champ": 2.578,
+     "playoff": 33.017,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "REB"
+     ],
+     "best_z": 19.77,
+     "roster": [
+      "Tyrese Maxey",
+      "Kyrie Irving",
+      "Trey Murphy III",
+      "Darius Garland",
+      "Coby White",
+      "Miles Bridges",
+      "Mikal Bridges",
+      "VJ Edgecombe",
+      "Naz Reid",
+      "Draymond Green",
+      "Jared McCain",
+      "Anfernee Simons",
+      "Tre Johnson"
+     ],
+     "ecw": 4.341
+    },
+    "11": {
+     "champ": 4.633,
+     "playoff": 46.206,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "FG%",
+      "PTS",
+      "REB"
+     ],
+     "best_z": 16.05,
+     "roster": [
+      "Tyrese Haliburton",
+      "Stephen Curry",
+      "Dyson Daniels",
+      "Brandon Miller",
+      "Nickeil Alexander-Walker",
+      "Paul George",
+      "Malik Monk",
+      "Kon Knueppel",
+      "Herbert Jones",
+      "Jaden McDaniels",
+      "Santi Aldama",
+      "Zach Edey",
+      "Kyshawn George"
+     ],
+     "ecw": 4.442
+    },
+    "12": {
+     "champ": 1.872,
+     "playoff": 24.094,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "REB"
+     ],
+     "best_z": 13.08,
+     "roster": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Payton Pritchard",
+      "Trae Young",
+      "Reed Sheppard",
+      "Lauri Markkanen",
+      "AJ Dybantsa",
+      "Quentin Grimes",
+      "Bradley Beal",
+      "Andrew Nembhard",
+      "Keon Ellis",
+      "John Collins",
+      "Jusuf Nurkic"
+     ],
+     "ecw": 4.25
+    }
+   },
+   "owner": {
+    "champ": 43.65,
+    "playoff": 98.444,
+    "dead_kept": 0,
+    "live_cats": 6,
+    "best_punt": [
+     "AST",
+     "PTS",
+     "REB"
+    ],
+    "best_z": 24.81,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Brook Lopez",
+     "Toumani Camara",
+     "Jabari Smith Jr.",
+     "Matas Buzelis",
+     "Jrue Holiday"
+    ],
+    "ecw": 5.136
+   },
+   "bots": [
+    {
+     "champ": 7.433,
+     "playoff": 59.144,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "REB"
+     ],
+     "best_z": 20.9,
+     "roster": [
+      "Nikola Jokic",
+      "Austin Reaves",
+      "Damian Lillard",
+      "Jordan Poole",
+      "Kawhi Leonard",
+      "Cameron Johnson",
+      "Cam Thomas",
+      "Aaron Gordon",
+      "D'Angelo Russell",
+      "Ryan Rollins",
+      "Lonzo Ball",
+      "Al Horford",
+      "Bogdan Bogdanovic"
+     ],
+     "ecw": 4.567
+    },
+    {
+     "champ": 14.2,
+     "playoff": 81.161,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "FT%",
+      "TO"
+     ],
+     "best_z": 11.83,
+     "roster": [
+      "Luka Doncic",
+      "Domantas Sabonis",
+      "Franz Wagner",
+      "Paolo Banchero",
+      "Jaylen Brown",
+      "Pascal Siakam",
+      "Michael Porter Jr.",
+      "Keyonte George",
+      "Jarrett Allen",
+      "Dylan Harper",
+      "Rudy Gobert",
+      "Bilal Coulibaly",
+      "Brandin Podziemski"
+     ],
+     "ecw": 4.773
+    },
+    {
+     "champ": 9.022,
+     "playoff": 66.483,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "FT%"
+     ],
+     "best_z": 36.07,
+     "roster": [
+      "Shai Gilgeous-Alexander",
+      "Jaren Jackson Jr.",
+      "Evan Mobley",
+      "Cooper Flagg",
+      "Alperen Sengun",
+      "Ivica Zubac",
+      "Josh Hart",
+      "Mark Williams",
+      "Kel'el Ware",
+      "Kelly Oubre Jr.",
+      "Donovan Clingan",
+      "Nic Claxton",
+      "Daniel Gafford"
+     ],
+     "ecw": 4.574
+    },
+    {
+     "champ": 1.667,
+     "playoff": 25.122,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "TO"
+     ],
+     "best_z": 14.68,
+     "roster": [
+      "Anthony Edwards",
+      "LaMelo Ball",
+      "James Harden",
+      "Ja Morant",
+      "Joel Embiid",
+      "Deni Avdija",
+      "Immanuel Quickley",
+      "Andrew Wiggins",
+      "Devin Vassell",
+      "Nikola Vucevic",
+      "Keegan Murray",
+      "Kevin Porter Jr.",
+      "Kasparas Jakucionis"
+     ],
+     "ecw": 4.28
+    },
+    {
+     "champ": 7.533,
+     "playoff": 59.0,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "3PTM",
+      "AST",
+      "FT%"
+     ],
+     "best_z": 35.19,
+     "roster": [
+      "Anthony Davis",
+      "Jamal Murray",
+      "Chet Holmgren",
+      "Amen Thompson",
+      "Zion Williamson",
+      "Jalen Suggs",
+      "Jakob Poeltl",
+      "Walker Kessler",
+      "Jalen Duren",
+      "Isaiah Hartenstein",
+      "Ausar Thompson",
+      "Yaxel Lendeborg",
+      "Derik Queen"
+     ],
+     "ecw": 4.515
+    },
+    {
+     "champ": 2.494,
+     "playoff": 32.533,
+     "dead_kept": 2,
+     "live_cats": 4,
+     "best_punt": [
+      "BLK",
+      "REB",
+      "TO"
+     ],
+     "best_z": 4.72,
+     "roster": [
+      "Karl-Anthony Towns",
+      "Jalen Williams",
+      "Josh Giddey",
+      "De'Aaron Fox",
+      "Zach LaVine",
+      "LeBron James",
+      "Norman Powell",
+      "Darryn Peterson",
+      "CJ McCollum",
+      "PJ Washington",
+      "Aaron Nesmith",
+      "Wendell Carter Jr.",
+      "Isaiah Collier"
+     ],
+     "ecw": 4.331
+    },
+    {
+     "champ": 3.567,
+     "playoff": 46.322,
+     "dead_kept": 3,
+     "live_cats": 3,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "TO"
+     ],
+     "best_z": 11.4,
+     "roster": [
+      "Cade Cunningham",
+      "Devin Booker",
+      "Tyler Herro",
+      "Scottie Barnes",
+      "Dejounte Murray",
+      "Bam Adebayo",
+      "Fred VanVleet",
+      "Julius Randle",
+      "DeMar DeRozan",
+      "Jerami Grant",
+      "Kyle Filipowski",
+      "Collin Sexton",
+      "Ace Bailey"
+     ],
+     "ecw": 4.476
+    },
+    {
+     "champ": 1.35,
+     "playoff": 28.472,
+     "dead_kept": 0,
+     "live_cats": 6,
+     "best_punt": [
+      "FT%",
+      "ST",
+      "TO"
+     ],
+     "best_z": 14.57,
+     "roster": [
+      "Jalen Johnson",
+      "Kevin Durant",
+      "Jalen Brunson",
+      "Giannis Antetokounmpo",
+      "Brandon Ingram",
+      "Jalen Green",
+      "Kristaps Porzingis",
+      "Myles Turner",
+      "RJ Barrett",
+      "Alex Sarr",
+      "Jaden Ivey",
+      "Cameron Boozer",
+      "Kyle Kuzma"
+     ],
+     "ecw": 4.314
+    },
+    {
+     "champ": 2.578,
+     "playoff": 33.017,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "REB"
+     ],
+     "best_z": 19.77,
+     "roster": [
+      "Tyrese Maxey",
+      "Kyrie Irving",
+      "Trey Murphy III",
+      "Darius Garland",
+      "Coby White",
+      "Miles Bridges",
+      "Mikal Bridges",
+      "VJ Edgecombe",
+      "Naz Reid",
+      "Draymond Green",
+      "Jared McCain",
+      "Anfernee Simons",
+      "Tre Johnson"
+     ],
+     "ecw": 4.341
+    },
+    {
+     "champ": 4.633,
+     "playoff": 46.206,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "FG%",
+      "PTS",
+      "REB"
+     ],
+     "best_z": 16.05,
+     "roster": [
+      "Tyrese Haliburton",
+      "Stephen Curry",
+      "Dyson Daniels",
+      "Brandon Miller",
+      "Nickeil Alexander-Walker",
+      "Paul George",
+      "Malik Monk",
+      "Kon Knueppel",
+      "Herbert Jones",
+      "Jaden McDaniels",
+      "Santi Aldama",
+      "Zach Edey",
+      "Kyshawn George"
+     ],
+     "ecw": 4.442
+    },
+    {
+     "champ": 1.872,
+     "playoff": 24.094,
+     "dead_kept": 1,
+     "live_cats": 5,
+     "best_punt": [
+      "BLK",
+      "FG%",
+      "REB"
+     ],
+     "best_z": 13.08,
+     "roster": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Payton Pritchard",
+      "Trae Young",
+      "Reed Sheppard",
+      "Lauri Markkanen",
+      "AJ Dybantsa",
+      "Quentin Grimes",
+      "Bradley Beal",
+      "Andrew Nembhard",
+      "Keon Ellis",
+      "John Collins",
+      "Jusuf Nurkic"
+     ],
+     "ecw": 4.25
+    }
+   ],
+   "owner_got": 0,
+   "cast": [
+    [
+     2,
+     "JCo"
+    ],
+    [
+     3,
+     "Cayas"
+    ],
+    [
+     4,
+     "Oblena"
+    ],
+    [
+     5,
+     "Noah"
+    ],
+    [
+     6,
+     "Martin"
+    ],
+    [
+     7,
+     "Kyle"
+    ],
+    [
+     8,
+     "Robby"
+    ],
+    [
+     9,
+     "Hegi"
+    ],
+    [
+     10,
+     "John"
+    ],
+    [
+     11,
+     "Kevin"
+    ],
+    [
+     12,
+     "Will"
+    ]
+   ]
+  }
+ }
+}
