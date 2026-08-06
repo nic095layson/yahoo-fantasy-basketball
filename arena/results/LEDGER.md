@@ -59,12 +59,15 @@ Rows added after this note are v2 unless marked otherwise.
 | 37 | 2 | 19.04 | 82.2 | 3 | 12 | ECW 4.83; declared punt FT%/TO/3PTM is the #1 punt of 84 AND genuinely played (FT% −10.5, 3PTM −8.9, TO −6.3 sunk) — highest punt-frame kept-z ever (+26.65, prior m31 +23.50); FIRST punted build with all six kept cats positive (no m34/m35 dead-cat). Owner-driven: card exact-#1 followed only 3/13. Kept-total ranks 7th vs ECW/champ rank 3 — the yardstick split again (`season_sim_mock37.py`, `m37_replay.json`) |
 | 38 | 3 | 16.46 | 75.2 | 1 | 12 | ECW 4.73 (room max 4.74 — flat room); FIRST PUNTED BUILD TO RANK 1. Declared punt FT%/3PTM/PTS is the #1 punt of 84 (third straight optimal declaration: m35/m37/m38) and genuinely played (FT% −4.5, 3PTM −5.9, PTS −4.4 all sunk). Card exact-#1 followed 8/13; the ONLY two off-card picks (R4 Hart over Okongwu, R8 Sarr over Vucevic) were punt-fit corrections — the m36-spine + m37-frame synthesis. Five kept cats at rank 1–2; AST soft (9, −2.56) but not dead (`season_sim_mock38.py`, `m38_replay.json`) |
 | 39 | 4 | 33.98 | 94.0 | 1 | 12 | ECW 4.99 — **NEW BEST OWNER BUILD EVER** (prior m36 31.18; 0.6pp under the m28 oracle; next seat 13.00, a 2.6× gap). FOURTH straight optimal declaration: FT%/3PTM/TO is #1 of 84 (+26.84, new punt-frame record, prior m37 +26.65) and played to the floor (FT% −15.2 deepest sink ever, 3PTM −10.2). All six kept cats positive incl. two rank-1 (FG%, REB). Kept-total(9cat) ranks 10 vs champ rank 1 — the yardstick split at its limit; ECW is the yardstick. Card exact-#1 6/13; off-card = punt-fit stars (Giannis, Trae, Sengun, RJ) (`season_sim_mock39.py`, `m39_replay.json`) |
+| 40 | 4 | 26.29 | 88.0 | 1 | 12 | **v2 EPOCH (first)** — ECW 4.94, all three lead the room; 1.66x the next seat, widest owner margin over #2 in the ledger. Declared punt 3PTM/TO/FT% is the #1 of 84 (FIFTH straight optimal declaration) and genuinely played (3PTM -5.05, FT% -3.66, TO -3.28). FIVE C-eligible players and it WINS: all six kept cats positive (FG% 2, BLK 2, REB 2, ST 4, PTS 5, AST 5) - the m34 dead-AST pattern absent because guard equity survives. v2's late card went 0-2/5 C-eligible in R10-R13 (led Ausar, Nesmith, Ellis) where v1 produced all-big cards. Card exact-#1 4/13, owner-driven (Harden/Giannis/Trae star injections) (`season_sim_mock40.py`, `m40_replay.json`) |
 
-Verified superlatives: best champ% = **m39 (33.98, 2026-08-05)** — prior
-holders m36 (31.18) then m24; worst = m23; best playoff% = m25 (94.4,
-still standing; m39's 94.0 is #2); m21 was the best at the time it was
-drafted. **Streak facts:** the only consecutive 1st-place pair through
-m35 was m24→m25; mocks 38→39 (both rank 1) now match it. Mocks 22 and 23
+Verified superlatives (v1 epoch, mocks 10–39 — m40 is v2 and NOT
+comparable on absolute champ%): best champ% = **m39 (33.98, 2026-08-05)**
+— prior holders m36 (31.18) then m24; worst = m23; best playoff% = m25
+(94.4, still standing; m39's 94.0 is #2); m21 was the best at the time it
+was drafted. **Streak facts** (epoch-independent, rank-based): the only
+consecutive 1st-place pair through m35 was m24→m25; mocks 38→39→40 are
+now a three-draft first-place streak, the longest in the ledger. Mocks 22 and 23
 (11th, 12th) sit between m21 and m24.
 
 **Finish precision (m27).** Slots 4/8/5/11 span 9.53–10.83 = 1.30pp,
