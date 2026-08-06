@@ -1595,7 +1595,12 @@ const JUDGMENT = {
   /* ---------- export / import ---------- */
   function engineState() {
     const { teams, slot, size, punt, picks } = deck.state;
-    return JSON.stringify({ teams, slot, size, punt, picks }, null, 2);
+    /* cast exported 2026-08-06 (owner asked for per-manager opponent
+       analysis and the file had no way to say who sat where). Additive:
+       every consumer reads named fields, so older harnesses ignore it. */
+    const out = { teams, slot, size, punt, picks };
+    if (deck.mode === "mock") out.cast = mockCastFor();
+    return JSON.stringify(out, null, 2);
   }
   $("exportBtn").addEventListener("click", async () => {
     const data = engineState();
