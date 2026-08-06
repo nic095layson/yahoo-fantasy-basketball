@@ -130,6 +130,7 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 #swline .lead { display: inline-block; min-width: 7.5em; color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 #swline .cats { font-family: var(--font-data); }
 ol.recos .tm { font-family: var(--font-data); font-size: var(--text-sm); color: var(--muted); letter-spacing: 0.04em; }
+ol.recos .tmpos { font-family: var(--font-data); font-size: var(--text-sm); color: var(--ink); letter-spacing: 0.04em; margin-left: var(--space-3); font-weight: var(--weight-medium); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .hcenter { text-align: center; text-transform: uppercase; }
 #bestReset { font: inherit; font-size: var(--text-sm); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-2); cursor: pointer; }
@@ -2537,7 +2538,10 @@ const JUDGMENT = {
       const li = document.createElement("li");
       li.append(el("span", "rk", String(i + 1)));
       const isRec = i === 0 && !tgOnPin;
-      const nm = el("span", "nm", (isRec ? "🎯 " : "") + p.n + ", " + p.p);
+      /* Position moved off the name and onto the team line (owner-reported
+         2026-08-06): long names truncate with an ellipsis and took the
+         eligibility string with them ("Ausar T…" hid SF,PF). */
+      const nm = el("span", "nm", (isRec ? "🎯 " : "") + p.n);
       if (isRec) nm.dataset.tip = "🎯 system pick — top blend50 score: 50% marginal expected-cats-won vs this room + 50% balanced value (deliberately punt-blind; your punt's numbers ride the blue chip). An urgent structural TARGET can take this marker instead.";
       if (p.av > 0 && p.av < 1) {
         const fl = el("span", "flag risk", "▲");
@@ -2646,6 +2650,7 @@ const JUDGMENT = {
       });
       const tags = el("span", "tags");
       tags.append(el("span", "tm", p.t));
+      tags.append(el("span", "tmpos", p.p));
       li.append(nm, tags, sc, take);
       if (vSpan) li.append(vSpan); /* bottom-right, under the button (owner spec) */
       if (i === 0 && vSpan) adviceChip = vSpan.textContent;
