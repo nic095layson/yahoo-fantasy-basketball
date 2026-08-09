@@ -11,7 +11,8 @@ and a live snake-draft assistant.
 Three layers:
 
 1. **Data — `data/players.csv`.** the pool is whatever the file holds
-   (currently 246 rows) with per-game 9-cat
+   (the row count lives in `data/roster_verification.json` and the deck's
+   build manifest — never quote it from memory) with per-game 9-cat
    projections and injury/rookie notes (top-200 consensus research baseline). It's a plain CSV: edit a row, add a
    player, and every ranking updates. Claude refreshes stale rows via web
    search before real decisions.
@@ -80,7 +81,7 @@ Claude adds the judgment (build fit, injury flags, when to reach).
 
 ```
 ├── README.md
-├── data/players.csv                  # editable projection pool (currently 246 rows)
+├── data/players.csv                  # editable projection pool (count: see roster_verification.json)
 ├── scripts/hoops.py                  # z-score engine + draft tracker
 ├── .claude/skills/fantasy-basketball/SKILL.md
 └── evals/evals.json

@@ -2,9 +2,11 @@
 
 ## What this is
 `players.csv` is the 2026-27 draft baseline: the pool is whatever the file
-holds (currently **246 rows** — do not quote a fixed number here, it rots)
-with per-game 9-cat lines reflecting 2025-26 season production, teams as of
-the July 2026 free-agency moves known on 2026-07-11, and mechanical injury
+holds (the live count is stamped in `roster_verification.json` and the deck's
+build manifest — a number quoted here rots, so this file no longer carries one)
+with per-game 9-cat lines reflecting 2025-26 season production, team
+placements maintained by the daily sweep since the 2026-07-11 baseline
+(evidence trail in `rosters_official.json`), and mechanical injury
 notes.
 
 **Injury tiers, corrected 2026-08-09 — the numbers below were stale.** The
