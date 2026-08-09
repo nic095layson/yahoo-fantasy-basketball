@@ -30,6 +30,7 @@ import argparse
 import importlib.util
 import json
 import math
+import re
 import os
 import random
 
@@ -330,10 +331,18 @@ def run_draft(order, pool_master, rng, param_overrides=None):
 # --------------------------------------------------------------------------
 
 def weekly_availability(p):
+    # Leading tag only, risk before recovery (audit 2026-08-09, F16 — mirrors
+    # hoops.availability). Substring-matching the whole note made
+    # "inj-achilles-risk (recovery on track)" score as a 0.60 recovery tier.
     note = (p.get("note") or "").lower()
-    if "recovery" in note:
+    tag = re.split(r"[\s(]", note, 1)[0]
+    if tag.endswith("-recovery"):
         return 0.60
-    if "risk" in note:
+    if tag.endswith("-risk") or tag in ("risk", "inj-risk"):
+        return 0.75
+    if "recovery" in tag:
+        return 0.60
+    if "risk" in tag:
         return 0.75
     return 0.88
 
@@ -520,6 +529,7 @@ def cmd_live(args):
     taken = {p["player"] for p in state["picks"]}
     pool = [p for p in pool_all if p["player"] not in taken]
     by_name = {p["player"]: p for p in pool_all}
+    mkt = market_ranks(pool_all)   # audit F11/A15: the ADP seat was inert here
     while len(state["picks"]) < TEAMS * ROUNDS:
         n = len(state["picks"])
         slot = hoops.team_of_pick(n, TEAMS)
@@ -537,7 +547,8 @@ def cmd_live(args):
                 rosters[pk["slot"]].append(pl)
         ranks = (ranks_for(rosters, slot)
                  if params["matrix_aware"] and rosters[slot] else None)
-        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
+        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng,
+                     mkt=mkt)
         state["picks"].append({"player": p["player"], "slot": slot})
         pool.remove(p)
         print(f"  ✓ #{n + 1} R{n // TEAMS + 1}: {p['player']} → "
@@ -551,6 +562,13 @@ def cmd_live(args):
 def run_draft_ordered(order, pool_master, rng, param_overrides=None):
     """run_draft + the pick sequence in draft order (for cadence analysis)."""
     pool = list(pool_master)
+    # Audit 2026-08-09 (F11/A15): this and cmd_live omitted mkt, so pick_for's
+    # ADP branch (gated on `mkt is not None`) never fired. The `market` persona
+    # — the only adp=True strategy, i.e. the room's ordinary league-mate —
+    # silently degraded to sum(z) + gauss(0, 4.0), skipping the -50 bench-bound
+    # penalty and the +15 mid-round positional instinct. Practice drafts and
+    # the committed cadence_intel.json therefore contained ZERO ADP drafters.
+    mkt = market_ranks(pool_master)
     rosters = {i: [] for i in range(1, TEAMS + 1)}
     sequence = []
     for n in range(TEAMS * ROUNDS):
@@ -561,7 +579,8 @@ def run_draft_ordered(order, pool_master, rng, param_overrides=None):
             params = {**params, "grad_k": GRAD_K}
         ranks = (ranks_for(rosters, slot)
                  if params["matrix_aware"] and rosters[slot] else None)
-        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng)
+        p = pick_for(params, pool, rosters[slot], ranks, n // TEAMS + 1, rng,
+                     mkt=mkt)
         rosters[slot].append(p)
         sequence.append((slot, p))
         pool.remove(p)

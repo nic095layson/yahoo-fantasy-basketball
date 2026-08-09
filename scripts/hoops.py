@@ -36,6 +36,7 @@ import datetime
 import json
 import math
 import os
+import re
 import sys
 import unicodedata
 
@@ -317,11 +318,26 @@ def availability(p):
     missed games are partly replaceable via streaming.
     """
     note = (p.get("note") or "").lower()
-    if note.startswith("out-"):
+    # The status tier is read from the LEADING tag only — everything from the
+    # first space or parenthesis onward is prose for humans (audit 2026-08-09,
+    # F16). The previous version tested `"recovery" in note` against the whole
+    # string and tested it BEFORE `"risk"`, so a note like
+    #   inj-achilles-risk (recovery on track)
+    # silently deleted the player from every board and every draft candidate
+    # list — no warning, no count, just gone. All four re-entered returnees
+    # (Haliburton, Lillard, Irving, VanVleet) carry `inj-*-risk (first season
+    # back)` parentheticals, one word away from this; Haliburton ranks ~top-12
+    # by adjusted value.
+    tag = re.split(r"[\s(]", note, 1)[0]
+    if tag.startswith("out-"):
         return 0.0
-    if "recovery" in note:
+    if tag.endswith("-recovery"):
         return 0.0
-    if "risk" in note:
+    if tag.endswith("-risk") or tag == "risk" or tag == "inj-risk":
+        return 0.78
+    if "recovery" in tag:
+        return 0.0
+    if "risk" in tag:
         return 0.78
     return 1.0
 
@@ -787,8 +803,14 @@ def cmd_draft(args, players):
         for i, p in enumerate(pool[:args.top], 1):
             line = fmt_row(p, override, rank=i)
             if weakest:
-                line += "   helps " + " ".join(
-                    f"{c}:{p['z'][c]:+.1f}" for c in weakest)
+                good = [c for c in weakest if p["z"][c] > 0]
+                bad = [c for c in weakest if p["z"][c] <= 0]
+                if good:
+                    line += "   helps " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in good)
+                if bad:
+                    line += "   hurts " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in bad)
             print(line)
 
     elif args.draft_cmd == "rosters":
@@ -1040,9 +1062,19 @@ def cmd_draft(args, players):
         print()
         for i, p in enumerate(pool[:args.top], 1):
             line = fmt_row(p, override, rank=i)
+            # "helps" must only name categories the player actually helps
+            # (audit 2026-08-09, F65): it printed every weak category with its
+            # raw z, so a candidate who makes your worst category WORSE read as
+            # "helps BLK:-0.7". Negatives are now labelled as what they are.
             if weakest:
-                line += "   helps " + " ".join(
-                    f"{c}:{p['z'][c]:+.1f}" for c in weakest)
+                good = [c for c in weakest if p["z"][c] > 0]
+                bad = [c for c in weakest if p["z"][c] <= 0]
+                if good:
+                    line += "   helps " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in good)
+                if bad:
+                    line += "   hurts " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in bad)
             if team_counts.get(p["team"], 0) >= 2:
                 line += f"  [would be 3rd {p['team']}]"
             print(line)
