@@ -14,6 +14,7 @@ injection round-trips byte-identical. Exit non-zero on any failure; nothing
 is written unless every gate and check passes.
 """
 import datetime
+import hashlib
 import json
 import os
 import re
@@ -51,6 +52,13 @@ def main():
     if ver.get("mismatches"):
         fail(f"roster verification has {len(ver['mismatches'])} mismatch(es) — "
              "fix data/players.csv first")
+    # gate 1b: rows on no official roster are not exempt (audit F01)
+    if ver.get("unmatched_count"):
+        fail(f"roster verification has {ver['unmatched_count']} unmatched row(s) "
+             f"({', '.join(ver.get('unmatched', [])[:5])}) — these sit on no "
+             "official roster and are the rows most likely to be wrong. Verify "
+             "them, or re-run verify_rosters.py --allow-unmatched and state the "
+             "reason in the freshness note.")
 
     # gate 2: freshness stamped today with verification recorded
     try:
@@ -69,6 +77,58 @@ def main():
     missing = hoops.validate_pool(players_raw)
     if missing:
         fail(f"pool incomplete — missing consensus names: {missing[:5]}")
+
+    # gate 4: the pool must have MOVED, or the note must say why it didn't
+    # (audit 2026-08-09, F04). Gates 1-3 all reduce to dates the scripts
+    # stamp on themselves; none of them observes whether any research
+    # happened. A content hash does: either players.csv changed since the
+    # last build, or this pull explicitly asserts a quiet day with its
+    # sources named. Nothing else gets to publish.
+    pool_hash = hashlib.sha256(
+        open(os.path.join(ROOT, "data", "players.csv"), "rb").read()).hexdigest()
+    prev = re.search(r"<!-- build-manifest (\{.*?\}) -->", open(DECK, encoding="utf-8").read())
+    prev_hash = json.loads(prev.group(1)).get("pool_sha256") if prev else None
+    note_l = (fresh.get("note") or "").lower()
+    quiet_ok = any(k in note_l for k in ("no change", "zero confirmed",
+                                         "zero pool", "quiet"))
+    if prev_hash and pool_hash == prev_hash and not quiet_ok:
+        fail("data/players.csv is byte-identical to the last published build "
+             f"({pool_hash[:12]}). Either this pull changed nothing — in which "
+             "case say so explicitly in the freshness --note, naming the "
+             "sources swept — or the pull did not actually land. A build that "
+             "republishes an unchanged pool under a fresh date is the failure "
+             "this gate exists to catch.")
+
+    # gate 5: the deck's JUDGMENT layer rides outside every other check
+    # (audit F15/F19/F35). It is hand-authored prose that renders to the
+    # owner as the stated reason to fade a player, it was byte-identical
+    # across four stamped pulls and ~11 republishes, and its own `date` is
+    # never rendered anywhere in the page.
+    # The block is a JS object literal (unquoted keys, comments), not JSON, so
+    # it is read by targeted regex rather than a parser.
+    deck_src = open(DECK, encoding="utf-8").read()
+    jm = re.search(r"const JUDGMENT = \{(.*?)\n\};", deck_src, re.S)
+    if not jm:
+        fail("JUDGMENT block not found — deck markup drifted; do not hand-edit")
+    jdate = re.search(r'date:\s*"(\d{4}-\d{2}-\d{2})"', jm.group(1))
+    if not jdate:
+        fail("JUDGMENT block carries no `date:` field — cannot tell whether "
+             "the layer was re-authored with this pull")
+    if jdate.group(1) != fresh["date"]:
+        fail(f"JUDGMENT layer is dated {jdate.group(1)} but the pool is "
+             f"{fresh['date']}. SKILL.md §1d requires the judgment layer to be "
+             "re-authored in the same pass as the data — it rides on the card "
+             "as the stated reason to fade a player. Re-author it and its "
+             "`date`, or delete the entries that no longer hold.")
+    pmatch = re.search(r"\n  players: \{(.*?)\n  \},?\n", jm.group(1), re.S)
+    if pmatch:
+        pool_names = {p["player"] for p in players_raw}
+        named = re.findall(r'^\s{4}"([^"]+)":', pmatch.group(1), re.M)
+        orphans = [n for n in named if n not in pool_names]
+        if orphans:
+            fail(f"JUDGMENT names absent from the pool: {orphans[:5]} — an "
+                 "entry for an undraftable player renders a rationale for a "
+                 "row that does not exist.")
 
     # build the embedded pool
     players = hoops.zscores(players_raw)
@@ -115,6 +175,10 @@ def main():
 
     manifest = {
         "built": today, "pool": len(pool),
+        "pool_sha256": pool_hash,
+        "verification_mode": ver.get("mode"),
+        "evidence_date": ver.get("evidence_date"),
+        "unmatched": ver.get("unmatched_count"),
         "verification": {"mode": ver.get("mode"),
                          "checked": ver.get("checked"),
                          "teams_covered": ver.get("teams_covered")},
@@ -141,8 +205,14 @@ def main():
         fail("post-write integrity check failed — BUILD_NOTE not synced")
 
     print(f"deck built: {len(pool)} players · pull {fresh['date']} · "
-          f"verification {ver.get('mode')} ({ver.get('checked')}/{len(pool)} "
-          "rows checked) · injection round-trip OK")
+          f"pool {pool_hash[:12]} · injection round-trip OK")
+    if ver.get("mode") != "direct-complete":
+        print(f"  PARTIAL VERIFICATION — {ver.get('checked')}/{len(pool)} rows "
+              f"checked against data/rosters_official.json (authored "
+              f"{ver.get('evidence_date')}), not an independent live source.")
+    else:
+        print(f"  verification direct-complete: {ver.get('checked')}/{len(pool)} "
+              "rows against all 30 official rosters")
     print("safe to publish docs/draft-deck.html")
 
 
