@@ -282,3 +282,36 @@ numbers — content unchanged)*
     than reported. **Law: when choosing what a number on a card means, ask what
     it is incapable of saying. A quantity in real units can carry bad news; an
     index normalised for display often cannot.**
+
+## 2026-08-10 — Round-4 audit: two lessons from 13 regressions
+
+19. **A fix-batch is code like any other — it ships with its own defects, and
+    the newest code is always the least-audited.** The 2026-08-09 batch that
+    closed 20 audit findings introduced 13 new ones, including a critical:
+    `resync`'s recovery promise was false (the one-generation `.bak` was
+    overwritten by resync's own second save, so the "backup" held the wiped
+    board), the degenerate-feed guard silently unmatched seven real players
+    whose first names are two letters (CJ/GG/Ja/AJ/PJ/RJ/VJ), and two of the
+    new publish gates had never been observed failing — one was a deadlock
+    (its own prescribed bypass couldn't satisfy it), one was dead code (its
+    regex could never match the file it inspected). **Laws: (a) every fix
+    lands with a regression test that FAILED before the fix — red first, then
+    green; (b) a gate is untested until it has been seen red — every gate
+    suite must drive each gate to refusal AND acceptance
+    (`scripts/test_gates.py`); (c) a fixture's expected values must be
+    derived from intent, not recorded from the implementation — the parity
+    fixture had enshrined the two-letter bug by recording `'aj' → []` as the
+    expected answer.**
+
+20. **Committed evidence needs overwrite guards in the tools, not discipline
+    in the agents.** Three artifact-clobber incidents in two days, each by a
+    process explicitly instructed read-only: a verifier re-dated
+    `roster_verification.json` (round 3), an auditor's `--quick` run replaced
+    the committed 18,000-season E24 evidence with a 4× noisier file at the
+    same path, and a cadence run overwrote `cadence_intel.json` (round 4).
+    All three were caught by `git status` before commit — but catching is not
+    preventing. **Law: any tool that writes a committed evidence artifact
+    refuses to overwrite a file whose recorded config differs from the run's
+    (implemented in `bench_weight_study.py` 2026-08-10), and `git status`
+    runs before EVERY commit, treating any unexpected modification as an
+    incident to investigate, not noise to restore.**

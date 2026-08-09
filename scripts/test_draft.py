@@ -151,6 +151,48 @@ def main():
         check("F36 status --tail prints the SYNC tail", out,
               must_have=["Last 3 picks", "#5 R1: Cade Cunningham"])
 
+        # R4-F01 — resync's recovery file must hold the PRIOR board, and an
+        # empty paste must be refused. The shipped A5 resync saved twice in
+        # one command, so the one-generation .bak ended up holding the WIPED
+        # board while the command printed a reassurance that it survived.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA; my:Luka; Cade Cunningham;"
+            " Trae Young", "--top", "0")
+        out = run(st, "draft", "resync",
+                  "Jokic; Wemby; SGA; my:Luka; Cade Cunningham; Trae Young; "
+                  "Anthony Edwards", "--top", "0")
+        import json as _json
+        pre_path = st + ".pre-resync"
+        ok_file = os.path.isfile(pre_path)
+        prior = (_json.load(open(pre_path)) if ok_file else {}).get("picks", [])
+        check("R4-F01 resync names a recovery file that exists", out,
+              must_have=["pre-resync"], must_not=[".bak holds the prior board"])
+        check("R4-F01 the recovery file holds the PRIOR 6-pick board",
+              f"picks={len(prior)}", must_have=["picks=6"])
+        out = run(st, "draft", "resync", "", "--top", "0", expect_fail=True)
+        with open(st) as f:
+            n_after = len(_json.load(f)["picks"])
+        check("R4-F01 empty paste is refused and clears nothing",
+              out + f" [picks_after={n_after}]",
+              must_have=["RESYNC refused", "[picks_after=7]"])
+
+        # R4-F06 — two-letter real first names must resolve; the <3-char
+        # guard shipped rejecting CJ/GG/Ja/AJ/PJ/RJ/VJ as degenerate.
+        fresh(st)
+        out = run(st, "draft", "turn", "CJ; GG; Ja; PJ; RJ; VJ; AJ",
+                  "--top", "0")
+        check("R4-F06 two-letter first-name tokens resolve", out,
+              must_have=["CJ McCollum", "GG Jackson", "Ja Morant",
+                         "PJ Washington", "RJ Barrett", "VJ Edgecombe",
+                         "AJ Dybantsa"],
+              must_not=["UNKNOWN"])
+        # ...while genuinely degenerate segments stay blocked
+        fresh(st)
+        out = run(st, "draft", "turn", "Jokic; .; a; j", "--top", "0")
+        check("R4-F06 degenerate segments still blocked", out,
+              must_have=["#1 R1: Nikola Jokic"],
+              must_not=["#2 R1: J", "#3 R1: "])
+
         # F55 — a corrupt state file explains itself and the .bak restores
         shutil.copy(st, st + ".good")
         with open(st, "w") as f:
