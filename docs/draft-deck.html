@@ -660,20 +660,37 @@ function seqRatio(a, b) {
   return a.length + b.length ? (2 * m) / (a.length + b.length) : 1;
 }
 
+/* Port of hoops.fold / hoops.surname_key (audit 2026-08-09, F27/F22).
+   fold strips diacritics so a feed pasted from Yahoo/ESPN ("Jokić",
+   "Şengün") matches the ASCII pool; surnameKey ignores a trailing suffix so
+   "jr" is not the fuzzy key for the pool's 14 suffixed players. */
+const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
+function fold(s) {
+  return s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
+}
+function surnameKey(name) {
+  const parts = fold(name).replace(/\./g, "").split(" ")
+    .filter(t => t && !NAME_SUFFIXES.has(t));
+  return parts.length ? parts[parts.length - 1] : "";
+}
+
 /* Port of hoops.match_candidates: exact > nickname > exact word > substring
    > fuzzy surname (first letter must agree, ratio >= 0.8). */
 function matchCandidates(players, query) {
-  let q = query.trim().toLowerCase();
+  let q = fold(query.trim());
   q = NICKNAMES[q] || q;
-  let subs = players.filter(p => p.n.toLowerCase() === q);
+  /* Degenerate segments never match (F02): a lone '.', '-' or an empty
+     "my:" reached the substring stage and logged the best remaining player
+     as a confirmed pick. Nicknames resolve first, so kd/ad/og/zu survive. */
+  if (q.length < 3 || !/[a-z]/.test(q)) return [];
+  let subs = players.filter(p => fold(p.n) === q);
   if (!subs.length)
-    subs = players.filter(p => p.n.toLowerCase().replace(/\./g, "").split(" ").includes(q));
+    subs = players.filter(p => fold(p.n).replace(/\./g, "").split(" ").includes(q));
   if (!subs.length)
-    subs = players.filter(p => p.n.toLowerCase().includes(q));
+    subs = players.filter(p => fold(p.n).includes(q));
   if (!subs.length) {
     subs = players.filter(p => {
-      const parts = p.n.toLowerCase().replace(/\./g, "").split(" ");
-      const last = parts[parts.length - 1];
+      const last = surnameKey(p.n);
       return q[0] === last[0] && seqRatio(q, last) >= 0.8;
     });
   }
@@ -1051,7 +1068,18 @@ function pctRanks(vals) {
 function decwScores(pool, mine, oppRosters) {
   const vals = pool.map(p => adjValue(p, new Set()));
   const opp = oppRosters.filter(r => r.length).map(teamWeekModel);
-  if (!opp.length) return vals.map((v, i) => ({ p: pool[i], ds: v }));
+  if (!opp.length) {
+    /* Empty board: percentile-rank so `ds` is on the same [0,1] scale the
+       blended branch produces (audit 2026-08-09, F20). Returning raw adjValue
+       made the pick-#1 card render "lead +57.2 🚀" and a tooltip reading
+       "ΔECW-blend 1100.3 … as pool percentiles" — 11x above the top of its own
+       declared scale — while firing the standout threshold unconditionally and
+       making the coin-flip threshold unreachable. In LIVE mode this rendered
+       for every seat until the first opponent pick was entered. pctRanks is
+       monotone in adjValue, so the ORDER is unchanged. */
+    const pv0 = pctRanks(vals);
+    return pool.map((p, i) => ({ p, ds: pv0[i] }));
+  }
   const base = mine.length ? pwinsTotal(teamWeekModel(mine), opp) : 0;
   const decw = pool.map(p => pwinsTotal(teamWeekModel([...mine, p]), opp) - base);
   const pd = pctRanks(decw), pv = pctRanks(vals);
@@ -2344,7 +2372,15 @@ const JUDGMENT = {
     /* Thresholds rate-matched to blend units on the 182 ledger turns
        (2026-08-04): coin-flip 0.011 preserves the old ~64% fire rate,
        standout 0.035 the old ~2%. September recalibrates on fresh data. */
-    const coinFlip = scored.length > 1 && scored[0].ds - scored[1].ds <= 0.011;
+    /* Neither threshold has meaning before any opponent has drafted: with no
+       room to measure ΔECW against, `ds` collapses to the pure value
+       percentile, whose adjacent gaps are a constant 1/(n-1) = 0.004 for
+       every pair on the board. Left ungated, that constant would trip the
+       coin-flip test on EVERY turn-1 card (audit 2026-08-09, F20 — the
+       mirror of the off-scale bug this same fix removed). */
+    const noRoom = !oppRosters.length;
+    const coinFlip = !noRoom && scored.length > 1 &&
+      scored[0].ds - scored[1].ds <= 0.011;
     /* Standout tag (owner ask 2026-07-28, from the mock-8 post-mortem where
        a 6.3-point runaway was passed over silently): the coin flip's mirror —
        when #1's lead is a runaway, say so. Threshold 1.5, calibrated twice:
@@ -2354,7 +2390,8 @@ const JUDGMENT = {
        marginal 1.02). Punt mode reshapes gaps but showed no spurious fire
        at 1.5 (one genuine FT%-punt runaway at 1.98). Glyph is 🚀, NOT ⭐ —
        the star already means "market star" in the strip above. */
-    const standout = scored.length > 1 && scored[0].ds - scored[1].ds >= 0.035;
+    const standout = !noRoom && scored.length > 1 &&
+      scored[0].ds - scored[1].ds >= 0.035;
     const alBox = $("adviceline");
     if (alBox) { alBox.classList.add("hidden"); alBox.textContent = ""; }
     let adviceChip = null;
@@ -2516,7 +2553,10 @@ const JUDGMENT = {
       } else {
         const top0 = scored[0].p;
         txt = `Take ${top0.n}`;
-        txt += standout ? " \u2014 clear of the field" : coinFlip ? " \u2014 coin flip with #2, either is fine" : " \u2014 best week-win blend";
+        txt += standout ? " \u2014 clear of the field"
+          : coinFlip ? " \u2014 coin flip with #2, either is fine"
+          : noRoom ? " \u2014 top of the value board; no room to read yet"
+          : " \u2014 best week-win blend";
         if (adviceChip) {
           const pm = adviceChip.match(/~\d+%/);
           if (adviceChip.includes("BUY NOW")) txt += pm ? `; only ${pm[0]} chance he survives to your next turn` : "; the shelf is nearly empty";
