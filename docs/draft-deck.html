@@ -660,20 +660,37 @@ function seqRatio(a, b) {
   return a.length + b.length ? (2 * m) / (a.length + b.length) : 1;
 }
 
+/* Port of hoops.fold / hoops.surname_key (audit 2026-08-09, F27/F22).
+   fold strips diacritics so a feed pasted from Yahoo/ESPN ("Jokić",
+   "Şengün") matches the ASCII pool; surnameKey ignores a trailing suffix so
+   "jr" is not the fuzzy key for the pool's 14 suffixed players. */
+const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
+function fold(s) {
+  return s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
+}
+function surnameKey(name) {
+  const parts = fold(name).replace(/\./g, "").split(" ")
+    .filter(t => t && !NAME_SUFFIXES.has(t));
+  return parts.length ? parts[parts.length - 1] : "";
+}
+
 /* Port of hoops.match_candidates: exact > nickname > exact word > substring
    > fuzzy surname (first letter must agree, ratio >= 0.8). */
 function matchCandidates(players, query) {
-  let q = query.trim().toLowerCase();
+  let q = fold(query.trim());
   q = NICKNAMES[q] || q;
-  let subs = players.filter(p => p.n.toLowerCase() === q);
+  /* Degenerate segments never match (F02): a lone '.', '-' or an empty
+     "my:" reached the substring stage and logged the best remaining player
+     as a confirmed pick. Nicknames resolve first, so kd/ad/og/zu survive. */
+  if (q.length < 3 || !/[a-z]/.test(q)) return [];
+  let subs = players.filter(p => fold(p.n) === q);
   if (!subs.length)
-    subs = players.filter(p => p.n.toLowerCase().replace(/\./g, "").split(" ").includes(q));
+    subs = players.filter(p => fold(p.n).replace(/\./g, "").split(" ").includes(q));
   if (!subs.length)
-    subs = players.filter(p => p.n.toLowerCase().includes(q));
+    subs = players.filter(p => fold(p.n).includes(q));
   if (!subs.length) {
     subs = players.filter(p => {
-      const parts = p.n.toLowerCase().replace(/\./g, "").split(" ");
-      const last = parts[parts.length - 1];
+      const last = surnameKey(p.n);
       return q[0] === last[0] && seqRatio(q, last) >= 0.8;
     });
   }
@@ -999,9 +1016,16 @@ const DECW_CV = { "PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55,
   "ST": 0.70, "BLK": 0.75, "TO": 0.50 };
 const PCT_MIX_INFL = 1.15, DECW_ALPHA = 0.5;
 function weeklyAvail(p) {
+  /* Leading tag only, risk before recovery (audit 2026-08-09, F16 — mirrors
+     hoops.availability / arena.weekly_availability). Substring-matching the
+     whole note scored "inj-achilles-risk (recovery on track)" as a 0.60
+     recovery tier; all four re-entered returnees carry that note shape. */
   const note = (p.note || "").toLowerCase();
-  if (note.includes("recovery")) return 0.60;
-  if (note.includes("risk")) return 0.75;
+  const tag = note.split(/[\s(]/)[0];
+  if (tag.endsWith("-recovery")) return 0.60;
+  if (tag.endsWith("-risk") || tag === "risk" || tag === "inj-risk") return 0.75;
+  if (tag.includes("recovery")) return 0.60;
+  if (tag.includes("risk")) return 0.75;
   return 0.88;
 }
 function teamWeekModel(roster) {
@@ -1051,11 +1075,28 @@ function pctRanks(vals) {
 function decwScores(pool, mine, oppRosters) {
   const vals = pool.map(p => adjValue(p, new Set()));
   const opp = oppRosters.filter(r => r.length).map(teamWeekModel);
-  if (!opp.length) return vals.map((v, i) => ({ p: pool[i], ds: v }));
+  if (!opp.length) {
+    /* Empty board: percentile-rank so `ds` is on the same [0,1] scale the
+       blended branch produces (audit 2026-08-09, F20). Returning raw adjValue
+       made the pick-#1 card render "lead +57.2 🚀" and a tooltip reading
+       "ΔECW-blend 1100.3 … as pool percentiles" — 11x above the top of its own
+       declared scale — while firing the standout threshold unconditionally and
+       making the coin-flip threshold unreachable. In LIVE mode this rendered
+       for every seat until the first opponent pick was entered. pctRanks is
+       monotone in adjValue, so the ORDER is unchanged. */
+    const pv0 = pctRanks(vals);
+    return pool.map((p, i) => ({ p, ds: pv0[i], decw: null }));
+  }
   const base = mine.length ? pwinsTotal(teamWeekModel(mine), opp) : 0;
   const decw = pool.map(p => pwinsTotal(teamWeekModel([...mine, p]), opp) - base);
   const pd = pctRanks(decw), pv = pctRanks(vals);
-  return pool.map((p, i) => ({ p, ds: DECW_ALPHA * pd[i] + (1 - DECW_ALPHA) * pv[i] }));
+  /* decw is carried through in its own unit — expected categories won per
+     week against the room's current rosters. The card reports THAT number
+     rather than a confidence percentage (owner directive 2026-08-09): the
+     percentile blend orders the list, the cats/wk figure says what the
+     choice is worth. */
+  return pool.map((p, i) => ({ p, decw: decw[i],
+    ds: DECW_ALPHA * pd[i] + (1 - DECW_ALPHA) * pv[i] }));
 }
 function normCdf(x) {
   const ax = Math.abs(x) / Math.SQRT2;
@@ -2324,13 +2365,16 @@ const JUDGMENT = {
         .map(pk => PLAYERS.find(q => q.n === pk.player)).filter(Boolean);
       if (r.length) oppRosters.push(r);
     }
-    const dsMap = new Map(decwScores(pool, mine, oppRosters).map(x => [x.p.n, x.ds]));
+    const dsAll = decwScores(pool, mine, oppRosters);
+    const dsMap = new Map(dsAll.map(x => [x.p.n, x.ds]));
+    const ecwMap = new Map(dsAll.map(x => [x.p.n, x.decw]));
     const scoredAll = councilTop.map(r => {
       const j = JUDGMENT.players[r.p.n];
       const v = slideBonus(r.p, pickNo);
       return { ...r, adj: j ? j.adj : 0, why: j ? j.why : "",
                slide: v.slide, boardRank: v.rank, vbonus: v.bonus,
                ds: dsMap.get(r.p.n) ?? -1,
+               decw: ecwMap.get(r.p.n) ?? null,
                fs: r.s + (j ? j.adj : 0) + v.bonus };
     }).sort((a, b) => b.ds - a.ds ||
       (a.p.n < b.p.n ? 1 : a.p.n > b.p.n ? -1 : 0));
@@ -2339,22 +2383,18 @@ const JUDGMENT = {
        are common at the top (percentile quantization) and the parity gate
        requires deterministic agreement */
     const scored = scoredAll.slice(0, 5);
-    /* Coin-flip tag: top two within 0.25z of composite score (the owner's
-       "~5 points" rule expressed in raw score, no invented slope). */
-    /* Thresholds rate-matched to blend units on the 182 ledger turns
-       (2026-08-04): coin-flip 0.011 preserves the old ~64% fire rate,
-       standout 0.035 the old ~2%. September recalibrates on fresh data. */
-    const coinFlip = scored.length > 1 && scored[0].ds - scored[1].ds <= 0.011;
-    /* Standout tag (owner ask 2026-07-28, from the mock-8 post-mortem where
-       a 6.3-point runaway was passed over silently): the coin flip's mirror —
-       when #1's lead is a runaway, say so. Threshold 1.5, calibrated twice:
-       65 owner turns across the five uploaded mocks (fires 3/65, all true
-       runaways at 4.2-6.3; next gap 0.65) and an adversarial 312-turn
-       replay (fires 6/312, all >= 2.18 — a 1.0 cut would also catch a
-       marginal 1.02). Punt mode reshapes gaps but showed no spurious fire
-       at 1.5 (one genuine FT%-punt runaway at 1.98). Glyph is 🚀, NOT ⭐ —
-       the star already means "market star" in the strip above. */
-    const standout = scored.length > 1 && scored[0].ds - scored[1].ds >= 0.035;
+    /* The coin-flip and standout tags are RETIRED (owner directive
+       2026-08-09). They were percentile-gap thresholds rate-matched to a
+       confidence display that no longer exists, and the skill carried a
+       SECOND, unrelated coin-flip rule computed from hand-authored
+       percentages \u2014 two surfaces disagreeing turn by turn about the same
+       word. The row-1 margin in cats/wk states the same thing in a unit,
+       without a threshold to calibrate: a 0.004 margin and a 0.31 margin
+       are self-evidently different decisions. Re-deriving a threshold on
+       the cats/wk scale is a September item, gated on the punted mocks
+       per E21. Kept: noRoom, which reports that turn-1 has no room to
+       measure a marginal category against at all. */
+    const noRoom = !oppRosters.length;
     const alBox = $("adviceline");
     if (alBox) { alBox.classList.add("hidden"); alBox.textContent = ""; }
     let adviceChip = null;
@@ -2404,22 +2444,30 @@ const JUDGMENT = {
       }
       let vSpan = null;
       const fRec = fitZ(p, recoFw);
-      /* Score number demoted (owner concision pass 2026-08-05): rank order
-         already encodes it. Row 1 shows the decision-relevant part \u2014 the
-         lead over #2 \u2014 with runaway/coin-flip folded in; raw percentiles
-         live in the tooltip. */
-      const lead = i === 0 && scored.length > 1 ? (scored[0].ds - scored[1].ds) * 100 : null;
-      const sc = el("span", "sc", lead === null ? "" : `lead +${lead.toFixed(1)}`);
-      if (i === 0 && standout) { sc.style.color = "var(--accent)"; sc.textContent += " \ud83d\ude80"; }
-      if (i === 0 && coinFlip) { sc.style.color = "var(--muted)"; sc.textContent = `coin flip (+${lead.toFixed(1)})`; }
+      /* Owner directive 2026-08-09: the confidence figure is REMOVED. It had
+         no calibration procedure and no anchor \u2014 across the only 45
+         recorded cards the top candidate never left a 50-88 band and the
+         scale's own "95% = no contest" end was reached zero times \u2014 and
+         it read as a probability it was not. The row now reports the marginal
+         value of the choice in the unit the league is actually scored in:
+         expected categories won per week against the room's CURRENT rosters.
+         That number needs no calibration; it IS the quantity. A negative
+         row-1 margin is shown as such \u2014 it says the blend's value half,
+         not the weekly model, is carrying the ordering at this turn. */
+      const myEcw = scored[i].decw;
+      const refEcw = i === 0 ? (scored[1] ? scored[1].decw : null) : scored[0].decw;
+      const dEcw = (myEcw == null || refEcw == null) ? null : myEcw - refEcw;
+      const sc = el("span", "sc", dEcw === null ? ""
+        : `${dEcw >= 0 ? "+" : "\u2212"}${Math.abs(dEcw).toFixed(3)} cats/wk`);
+      if (i > 0) sc.style.color = "var(--muted)";
       if (i === 0 && p.av < 1 && fRec.raw > 0) sc.textContent += "*";
-      sc.dataset.tip = `ΔECW-blend ${(scored[i].ds * 100).toFixed(1)} — 50% marginal expected-cats-won vs the room's CURRENT rosters + 50% balanced 9-cat value (punt-blind by design \u2014 punt-steered orderings measured \u22123.8 to \u221211pp), both as pool percentiles (validated 2026-08-04: +11.6pp mean, 0 winner regressions across 14 replayed drafts). Informational: council ${s.toFixed(2)}` +
-        (scored[i].adj ? ` · judgment ${fmtZ(scored[i].adj, 2)}` : "") +
-        (i === 0 && scored.length > 1 ? ` · lead over #2: ${((scored[0].ds - scored[1].ds) * 100).toFixed(1)}` : "") +
-        (i > 0 ? ` · gap to #1: −${((scored[0].ds - scored[i].ds) * 100).toFixed(1)}` : "");
-      /* coin-flip / standout name-flags folded into the row-1 lead
-         display (owner concision pass 2026-08-05) \u2014 same signals, one
-         surface, tooltips unchanged. */
+      sc.dataset.tip = (myEcw == null
+        ? "No opponent has drafted yet, so there is no room to measure marginal categories against \u2014 the ordering here is pure 9-cat value."
+        : `Marginal expected categories won per week from adding this player, measured against the room's CURRENT rosters: ${myEcw >= 0 ? "+" : "\u2212"}${Math.abs(myEcw).toFixed(3)}. `
+          + (i === 0 ? "The figure on the row is the margin over #2."
+                     : "The figure on the row is the deficit to #1.")
+          + ` Ordering is the blend50 score (${(scored[i].ds * 100).toFixed(1)} of 100): 50% percentile of this \u0394ECW + 50% percentile of balanced 9-cat value, punt-blind by design \u2014 punt-steered orderings measured \u22123.8 to \u221211pp. Validated 2026-08-04: +11.6pp mean, 0 winner regressions across 14 replayed drafts. Informational: council ${s.toFixed(2)}`) +
+        (scored[i].adj ? ` \u00b7 judgment ${fmtZ(scored[i].adj, 2)}` : "");
       /* Concise breakdown line (owner spec 2026-07-30): council/slide
          numbers + the player's plus-cats; rationale detail lives in the
          line's tooltip and the score tooltip. */
@@ -2516,7 +2564,13 @@ const JUDGMENT = {
       } else {
         const top0 = scored[0].p;
         txt = `Take ${top0.n}`;
-        txt += standout ? " \u2014 clear of the field" : coinFlip ? " \u2014 coin flip with #2, either is fine" : " \u2014 best week-win blend";
+        /* Calculated, not editorialised (owner directive 2026-08-09): the
+           advice line reports the measured margin rather than grading it
+           with a word. */
+        const m0 = scored[0].decw, m1 = scored[1] ? scored[1].decw : null;
+        txt += noRoom || m0 == null || m1 == null
+          ? " \u2014 top of the 9-cat value board; no opponent roster to measure a marginal category against yet"
+          : ` \u2014 ${m0 - m1 >= 0 ? "+" : "\u2212"}${Math.abs(m0 - m1).toFixed(3)} expected categories per week over ${scored[1].p.n}`;
         if (adviceChip) {
           const pm = adviceChip.match(/~\d+%/);
           if (adviceChip.includes("BUY NOW")) txt += pm ? `; only ${pm[0]} chance he survives to your next turn` : "; the shelf is nearly empty";

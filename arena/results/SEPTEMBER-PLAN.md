@@ -36,6 +36,11 @@ disclosed in the ship note itself.
 **`arena/results/league_intel_2025-26.md` — the owner's REAL league ground
 truth (settings, standings, weekly data, draft board, room model). It
 supersedes any assumption it contradicts and feeds E14–E17.** Then
+**`arena/results/analysis_2026-08-09_self_critique_round3.md` and its companion
+`analysis_2026-08-09_findings_table.md` (66 verified findings, F01–F66) and
+`report_2026-08-09_bench_regrade_and_integrity.md` — the round-3 audit. It
+re-scopes E22, adds §7 below, and several of its findings change what the items
+already in this file mean.** Then
 `LESSONS.md` (all lessons; data-pull countermeasures are lessons 8–10),
 `REVERT-MAP.md` (kill switches), `arena/results/LEDGER.md` (derived
 tallies + the no-remembered-tallies rule), the two 2026-07-31 audits,
@@ -156,3 +161,103 @@ branch, verify the tree contains `docs/draft-deck.html` and this file
    DATA-PULL.md (both planes, one window), and report to the owner:
    what moved on the board, which bars passed/failed, and the per-rival
    target sheet if E18(b) shipped.
+
+## 7. Added 2026-08-09 — round-3 audit registrations (APPEND-ONLY, lesson 14)
+
+Source: `analysis_2026-08-09_self_critique_round3.md` (66 verified findings) and
+`report_2026-08-09_bench_regrade_and_integrity.md` (the measured study). No bar
+above is edited; re-scopes are dated rows beside the original wording.
+
+### 7.1 E22 — RE-SCOPE (original wording in §2 stands untouched)
+
+**Registered 2026-08-09.** E22 asks for a positional-saturation term in
+`decwScores`, on the premise that the bench discount is right and
+under-applied. The audit measured the opposite premise. Under the owner's
+DAILY-lineup format a 13-man roster has ~6.5 players with a game on a typical
+day against 10 startable slots, so positional saturation costs **0.5–3% of
+games**, not 85%. `BENCH_WEIGHT = 0.15` is ~6.4× too low
+(`arena/mocks/bench_share_fit.py`: ranks 11–13 start 0.953 of their own games,
+ranks 1–10 start 0.997).
+
+**Pre-registered prediction, dated 2026-08-09, before the measurement:** a
+positional-saturation term will NOT clear its bar, because the effect it is
+built to capture is near zero in this format. **Order of work is therefore
+reversed: fix the bench weight first (7.2), then re-run E22's motivating
+measurement on the corrected instrument. Do not build the term first.**
+If the corrected measurement still shows the late-round all-big card, the cause
+is elsewhere and E22 needs a new mechanism, not a new constant.
+
+### 7.2 E24 (NEW) — bench-weight correction, at the E14 re-baseline
+
+| Item | Detail |
+|---|---|
+| Change | `BENCH_WEIGHT` 0.15 → a measured start-share (0.956 flat, or the per-rank curve from `bench_share_fit.py`), applied identically in `arena.lineup_weights`, the deck's `lineupWeights`, and the ADP bot's −50 bench-bound penalty |
+| Measured effect | Owner champ% rises in 4/4 reproducible mocks: m31 +7.01, m32 +2.08, m33 +1.17, m34 +5.96 (18,000 seasons/arm, rosters fixed). 5–8 of 12 seats reorder per mock — not a common-mode rescale |
+| Replication | Unseen seeds 101/202/303: direction 4/4; magnitude within 0.63/0.31/0.12pp on m31/m32/m34; **m33 halves (+1.17 → +0.48)** |
+| Mechanism | **UNEXPLAINED.** Two hypotheses tested and refuted: "owner's bench is stronger" (corr −0.515, wrong sign) and "variance compression favours strong rosters" (corr +0.206 across 48 team-observations, wrong sign; top-3 ECW rosters lose) |
+| Ship bar | Runs at the E14 re-baseline ONLY, dual-reported old-vs-new exactly as `league_intel §4` dual-reported the bracket. Must not regress m21/m24/m25/m26 once their states exist (see 7.5). A mechanism must be identified before it ships — a large consistent effect nobody can explain is not a finding, it is a lead |
+| Do NOT | ship it standalone, or hand-tune the constant upward. It re-grades every historical champ% at once; every number in `LEDGER.md` is conditional on it |
+
+### 7.3 E25 (NEW) — close N1 with the data already in the repo
+
+`arena/data/weekly_matchups_2025-26.csv` — the owner's real per-category weekly
+totals, 45 rows including the champion's playoff run — is read by **zero lines
+of code**. N1 has been called the deepest remaining weakness since 2026-08-04
+while its closing data sat committed and unused.
+
+First measurement against it (audit F10/F21/F50): FG% is well calibrated
+(implied inflation 1.08–1.11 vs `PCT_MIX_INFL = 1.15`, χ² p≈0.40); FT% is
+directionally lower (0.86–0.94) but does **not** reject at the owner's attempt
+volume (p = 0.077–0.106, n=16–18); counting-cat dispersion is light by
+~1.1–1.65× in 3 of 7 categories once week 17 (All-Star double week) and week 8
+(21-game short week) are excluded.
+
+**Fit games BEFORE the CV constants** — roughly half the missing variance is
+the constant `3.5` games-per-week assumption, not per-game noise.
+
+**Ship bar:** E25 is a PRECONDITION of E9b, not a parallel workstream. E9b's
+registered bar already says "runs on the refit weekly model if the weekly-record
+refit has landed"; this makes the refit the gating item. Carry the bound: n=16–18
+team-weeks from one team, enough to move a hand-set constant, not enough to fit
+nine of them well.
+
+### 7.4 Pre-registered hypothesis (dated 2026-08-09) — punt interaction
+
+Across both seed sets, the three **punted** mocks average **+4.7pp** under the
+bench correction and the single **unpunted** mock **+0.8pp** (n=3 vs 1). The
+only mock whose magnitude failed to replicate (m33, +1.17 → +0.48) is the
+unpunted one.
+
+**Hypothesis, registered before the test exists:** the bench-weight correction
+matters chiefly in punt builds, where a roster deliberately concedes categories
+and the last three spots carry more of what remains. Test it on the wider panel
+at the re-baseline. n=3 vs 1 today — a hypothesis, not a finding.
+
+### 7.5 Process corrections to items already in this file
+
+- **§3's `PARITY: EXACT MATCH` gate now exists.** `scripts/check_parity.py`
+  (added 2026-08-09) compares the deck's engine against the Python engine on
+  246 pool rows, 2,214 z cells, 39 name fixtures and 52 card orderings across
+  every committed mock state. Until today this file gated on a script that did
+  not exist (F46/F60). The "130-state render gauntlet + mutation suite" §3 also
+  cites still exists only as prose in an audit document — either build it or
+  strike the reference.
+- **§4/§6 republish is now checkable.** After republishing, WebFetch the
+  artifact URL and assert the returned build-manifest `built` date equals today;
+  paste that assertion into the owner report. "Republish" was the definition of
+  done with nothing verifying it (F56).
+- **Backfill.** Lesson 13 says mock-state backfill is "queued for the September
+  run"; this file contained zero occurrences of "backfill" (F34). It is queued
+  HERE, now: the unreproducible boundary runs **past** mock 26 —
+  `season_sim_mock27|28.py`, `mock28_cf.py:17` and `format_delta.py:23-27` all
+  read the vanished uploads path, which places **LEDGER §5** (sole cited basis
+  for E8 and E9) and **all four `format_delta` states** (entire measured basis
+  for E14) inside the unreproducible set while both are quoted as
+  artifact-derived. Either the states are recovered, or every dependent claim is
+  marked [UNREPRODUCIBLE] and the E8/E9/E9b bars are rewritten against mocks
+  31–34, the only states that exist.
+- **Schema widening is a September-only window (F24/F41).** `gp` (projected
+  games), `min`, `age`, `adp` and an uncertainty column must land in the Q14
+  multi-source synthesis, before the pool freezes. `gp` is the input both the
+  weekly model (7.3) and any real availability model need; it cannot be
+  retrofitted after October.

@@ -10,7 +10,8 @@ and a live snake-draft assistant.
 
 Three layers:
 
-1. **Data — `data/players.csv`.** a ~250-player pool with per-game 9-cat
+1. **Data — `data/players.csv`.** the pool is whatever the file holds
+   (currently 246 rows) with per-game 9-cat
    projections and injury/rookie notes (top-200 consensus research baseline). It's a plain CSV: edit a row, add a
    player, and every ranking updates. Claude refreshes stale rows via web
    search before real decisions.
@@ -39,7 +40,7 @@ python3 scripts/hoops.py trade --send "Luka Doncic" --get "Sabonis,Derrick White
 Live draft:
 
 ```bash
-python3 scripts/hoops.py draft init --teams 12 --size 15 --slot 4
+python3 scripts/hoops.py draft init --teams 12 --size 13 --slot 4   # 12x13 = 156 picks
 python3 scripts/hoops.py draft turn "Jokic; my:Wemby; SGA"   # THE live-draft command:
 #   logs every announced pick (yours prefixed my:), snake attribution automatic,
 #   nicknames + typos resolve, and it emits the full decision card in ~50ms —
@@ -56,6 +57,15 @@ Every pick is attributed to its team automatically (snake order), so the
 tracker holds all 12 rosters — recommendations weigh not just your build but
 where you rank per category against the field, and which fights are winnable.
 
+## The Draft Deck
+
+The live draft-night board is the published Draft Deck artifact — a
+self-contained page built from this repo by `scripts/build_deck.py`
+(`docs/draft-deck.html`). **On draft night the deck is the board and the
+ledger**; `scripts/hoops.py` is the fallback board, the punt-coherence layer
+(the deck's ordering is punt-blind by design), and the state-integrity layer.
+See `.claude/skills/fantasy-basketball/SKILL.md` — "Draft-night surface".
+
 ## With Claude Code
 
 Open this folder in Claude Code and just talk:
@@ -70,7 +80,7 @@ Claude adds the judgment (build fit, injury flags, when to reach).
 
 ```
 ├── README.md
-├── data/players.csv                  # editable projection pool (a ~250-player pool)
+├── data/players.csv                  # editable projection pool (currently 246 rows)
 ├── scripts/hoops.py                  # z-score engine + draft tracker
 ├── .claude/skills/fantasy-basketball/SKILL.md
 └── evals/evals.json
@@ -81,6 +91,8 @@ Claude adds the judgment (build fit, injury flags, when to reach).
 - Values are z-scores over the bundled pool: +1.0 ≈ one standard deviation
   above average in a category. FG%/FT% are weighted by attempt volume.
 - Draft state lives in `./draft_state.json` (start over with `draft init --force`).
+  Writes are atomic and keep one `.bak`; `draft resync "<pasted picks>"` rebuilds
+  a board from a paste, `draft status --tail N` prints the recent-picks tail.
 - The projections are a **baseline, not live data**. A daily freshness rule
   is enforced: analysis commands warn until the data has been refreshed that
   day (live-draft commands are exempt by design — staleness is checked at

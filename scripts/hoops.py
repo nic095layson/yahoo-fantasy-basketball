@@ -14,6 +14,7 @@ this script turns them into 9-cat z-score values and provides:
     draft turn      ONE-SHOT live-draft turn: log announced picks
                     ("Jokic; my:Wemby"; numeric prefixes correct/backfill)
                     and emit the full decision card
+    draft resync    Wipe the board and rebuild it from a pasted pick list
     draft fix       Correct any logged pick:  draft fix 15 "Name"
     draft pick      Log a single pick (between-turn use)
     draft best      Best available, punt-aware, annotated with your needs
@@ -35,7 +36,9 @@ import datetime
 import json
 import math
 import os
+import re
 import sys
+import unicodedata
 
 DATA_PATH = os.environ.get(
     "HOOPS_DATA",
@@ -208,13 +211,26 @@ def cmd_freshness(args):
 # Data loading and valuation
 # --------------------------------------------------------------------------
 
+NUMERIC_COLS = ("fg_pct", "fga", "ft_pct", "fta",
+                "tpm", "pts", "reb", "ast", "stl", "blk", "tov")
+
+
 def load_players():
     with open(DATA_PATH, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    for r in rows:
-        for k in ("fg_pct", "fga", "ft_pct", "fta",
-                  "tpm", "pts", "reb", "ast", "stl", "blk", "tov"):
-            r[k] = float(r[k])
+    for i, r in enumerate(rows, 2):  # row 1 is the header
+        for k in NUMERIC_COLS:
+            try:
+                r[k] = float(r[k])
+            except (TypeError, ValueError):
+                # SKILL.md §9 has the operator editing this file between
+                # turns; a bare float() raised a traceback naming neither the
+                # row nor the column (audit F53). `validate` catches it too,
+                # since it loads the pool the same way.
+                sys.exit(f"data/players.csv row {i} "
+                         f"({r.get('player') or '?'}): column {k!r} is "
+                         f"{r.get(k)!r}, not a number. Fix that cell — every "
+                         "command, draft turn included, loads this file.")
     return rows
 
 
@@ -302,11 +318,26 @@ def availability(p):
     missed games are partly replaceable via streaming.
     """
     note = (p.get("note") or "").lower()
-    if note.startswith("out-"):
+    # The status tier is read from the LEADING tag only — everything from the
+    # first space or parenthesis onward is prose for humans (audit 2026-08-09,
+    # F16). The previous version tested `"recovery" in note` against the whole
+    # string and tested it BEFORE `"risk"`, so a note like
+    #   inj-achilles-risk (recovery on track)
+    # silently deleted the player from every board and every draft candidate
+    # list — no warning, no count, just gone. All four re-entered returnees
+    # (Haliburton, Lillard, Irving, VanVleet) carry `inj-*-risk (first season
+    # back)` parentheticals, one word away from this; Haliburton ranks ~top-12
+    # by adjusted value.
+    tag = re.split(r"[\s(]", note, 1)[0]
+    if tag.startswith("out-"):
         return 0.0
-    if "recovery" in note:
+    if tag.endswith("-recovery"):
         return 0.0
-    if "risk" in note:
+    if tag.endswith("-risk") or tag == "risk" or tag == "inj-risk":
+        return 0.78
+    if "recovery" in tag:
+        return 0.0
+    if "risk" in tag:
         return 0.78
     return 1.0
 
@@ -349,25 +380,62 @@ NICKNAMES = {
 }
 
 
+NAME_SUFFIXES = {"jr", "sr", "ii", "iii", "iv", "v"}
+
+
+def fold(s):
+    """Lowercase and strip diacritics: Jokić → jokic, Şengün → sengun.
+
+    Live feeds are pasted from Yahoo/ESPN/NBA.com, which render accents the
+    pool does not carry. Audit 2026-08-09 (F27): eight accented names matched
+    nothing, were logged as UNKNOWN, and the board went on recommending them
+    as available. Both pools are pure ASCII, so folding changes nothing for
+    names already in them.
+    """
+    return "".join(c for c in unicodedata.normalize("NFKD", s.lower())
+                   if not unicodedata.combining(c))
+
+
+def surname_key(name):
+    """Last name-bearing token, ignoring a trailing suffix.
+
+    Audit 2026-08-09 (F22): keying the fuzzy stage on the raw last token made
+    "jr" the key for 14 players, so typo tolerance was dead for all of them —
+    and "jacksn" resolved to a single candidate, GG Jackson, logging silently
+    in place of Jaren Jackson Jr.
+    """
+    parts = [t for t in fold(name).replace(".", "").split()
+             if t not in NAME_SUFFIXES]
+    return parts[-1] if parts else ""
+
+
 def match_candidates(players, query):
     """All plausible matches for a name. Priority: exact full name >
     nickname > exact word (first/last name) > substring > fuzzy (typo
     tolerance: Siakim→Siakam) — so 'Ayton' hits Deandre Ayton, never
     P-ayton Pritchard, and 'Hart' hits Josh Hart, not Hartenstein."""
     import difflib
-    q = query.strip().lower()
+    q = fold(query.strip())
     q = NICKNAMES.get(q, q)
-    subs = [p for p in players if p["player"].lower() == q]
+    # Degenerate segments never match (audit 2026-08-09, F02). A lone '.',
+    # '-', apostrophe, or an empty `my:` used to reach the substring stage,
+    # match most of the pool, and log the best remaining player as a
+    # CONFIRMED pick — '.' logged Jaren Jackson Jr., a bare `my:` logged
+    # Wembanyama to the owner's own slot. Nickname resolution runs first so
+    # two-letter nicknames (kd, ad, og, zu) still work.
+    if len(q) < 3 or not any(c.isalpha() for c in q):
+        return []
+    subs = [p for p in players if fold(p["player"]) == q]
     if not subs:
         subs = [p for p in players
-                if q in p["player"].lower().replace(".", "").split()]
+                if q in fold(p["player"]).replace(".", "").split()]
     if not subs:
-        subs = [p for p in players if q in p["player"].lower()]
+        subs = [p for p in players if q in fold(p["player"])]
     if not subs:  # typo fallback: fuzzy, SURNAME-only, first letter must
         # agree (Collins never becomes Rollins; Siakim still finds Siakam)
         hits = set()
         for p in players:
-            last = p["player"].lower().replace(".", "").split()[-1]
+            last = surname_key(p["player"])
             if q[:1] == last[:1] and difflib.get_close_matches(
                     q, [last], n=1, cutoff=0.8):
                 hits.add(p["player"])
@@ -483,13 +551,59 @@ def cmd_find(args, players):
 def load_state():
     if not os.path.isfile(STATE_PATH):
         sys.exit("No draft in progress here. Start one: draft init --teams 12 --slot 5")
-    with open(STATE_PATH, encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(STATE_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except ValueError as e:
+        bak = STATE_PATH + ".bak"
+        hint = (f"Restore the pick before last:  cp {bak} {STATE_PATH}"
+                if os.path.isfile(bak) else
+                'No .bak found — rebuild from the draft room:  '
+                'draft resync "Name; Name; my:Name; ..."')
+        sys.exit(f"⚠ DRAFT STATE CORRUPT — {STATE_PATH}: {e}\n{hint}")
 
 
 def save_state(state):
-    with open(STATE_PATH, "w", encoding="utf-8") as f:
+    """Atomic write, keeping one generation of backup (audit 2026-08-09, F55).
+
+    The previous version truncated the live state file in place, so an
+    interrupted write mid-draft was the one way to produce the corrupt file
+    load_state now reports — with nothing to fall back to.
+    """
+    if os.path.isfile(STATE_PATH):
+        try:
+            with open(STATE_PATH, encoding="utf-8") as src, \
+                    open(STATE_PATH + ".bak", "w", encoding="utf-8") as dst:
+                dst.write(src.read())
+        except OSError:
+            pass  # a failed backup must never block logging the pick itself
+    tmp = STATE_PATH + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, STATE_PATH)
+
+
+def is_unknown(pk):
+    return str(pk["player"]).upper().startswith("UNKNOWN")
+
+
+def unknown_picks(state, slot=None):
+    """Pick numbers standing in as UNKNOWN placeholders, optionally one slot."""
+    return [i + 1 for i, pk in enumerate(state["picks"])
+            if is_unknown(pk) and (slot is None or pk["slot"] == slot)]
+
+
+def picks_owned(state, slot):
+    """True pick count for a slot, INCLUDING UNKNOWN placeholders.
+
+    Audit 2026-08-09 (F29): build_rosters drops UNKNOWNs, so every
+    roster-derived number silently under-counted for the rest of the draft —
+    a 7-pick roster printed "roster 3/13" and the feasibility guard reported
+    "6 picks left" with 2 remaining.
+    """
+    return sum(1 for pk in state["picks"] if pk["slot"] == slot)
 
 
 def team_of_pick(n, teams):
@@ -510,13 +624,18 @@ def normalize_picks(state):
 
 
 def my_next_pick(state):
-    """Next overall pick number that belongs to my slot (snake order)."""
+    """Next overall pick that belongs to my slot, or None once the draft is
+    over — it used to count on into rounds that do not exist (audit F52)."""
     teams, slot = state["teams"], state["slot"]
-    n = len(state["picks"])
-    while True:
+    for n in range(len(state["picks"]), teams * state["size"]):
         if team_of_pick(n, teams) == slot:
             return n + 1
-        n += 1
+    return None
+
+
+def next_pick_label(state):
+    n = my_next_pick(state)
+    return f"#{n}" if n else "— none left, draft complete"
 
 
 def positions_of(p):
@@ -526,10 +645,19 @@ def positions_of(p):
 def build_rosters(state, players):
     by_name = {p["player"]: p for p in players}
     rosters = {slot: [] for slot in range(1, state["teams"] + 1)}
+    stray = set()
     for pk in state["picks"]:
         p = by_name.get(pk["player"])  # UNKNOWN placeholders are skipped
-        if p is not None:
-            rosters[pk["slot"]].append(p)
+        if p is None:
+            continue
+        if pk["slot"] not in rosters:  # out-of-range slot: degrade, never
+            stray.add(pk["slot"])      # crash mid-draft (audit F30)
+            continue
+        rosters[pk["slot"]].append(p)
+    if stray:
+        print(f"⚠ picks logged to slot(s) {sorted(stray)} outside 1-"
+              f"{state['teams']} are excluded — fix with: draft fix N "
+              '"Name" --slot K', file=sys.stderr)
     return rosters
 
 
@@ -569,6 +697,20 @@ def cmd_draft(args, players):
         return
 
     state = normalize_picks(load_state())
+    # RESYNC (SKILL.md §4): wipe the board and rebuild it from a pasted pick
+    # list. The keyword was in the protocol with no mechanism behind it, so
+    # the sequence had to be improvised live (audit F36). Snake attribution
+    # re-derives positionally, so `my:` markers are optional in a complete
+    # in-order paste. The prior board survives in draft_state.json.bak.
+    if args.draft_cmd == "resync":
+        prior = len(state["picks"])
+        state["picks"] = []
+        save_state(state)
+        print(f"RESYNC: cleared {prior} logged pick(s); rebuilding from the "
+              f"paste ({os.path.abspath(STATE_PATH)}.bak holds the prior "
+              "board).")
+        args.draft_cmd = "turn"
+
     picks = state["picks"]
     taken = {pk["player"] for pk in picks}
     punt = tuple(state["punt"])
@@ -577,6 +719,10 @@ def cmd_draft(args, players):
     if args.draft_cmd == "pick":
         if args.slot and not 1 <= args.slot <= teams:
             sys.exit(f"--slot must be between 1 and {teams}.")
+        if len(picks) >= teams * state["size"]:
+            sys.exit(f"Draft is complete — {len(picks)} of "
+                     f"{teams * state['size']} picks logged. Nothing more to "
+                     'append; correct a pick with: draft fix N "Name"')
         p = match_player(players, args.player, taken=taken)
         if availability(p) == 0.0:
             print(f"warning: {p['player']} is flagged unavailable "
@@ -592,7 +738,7 @@ def cmd_draft(args, players):
         save_state(state)
         rnd = n // teams + 1
         you = " (YOU)" if slot == myslot else ""
-        tail = "" if slot == myslot else f"  Your next pick: #{my_next_pick(state)}"
+        tail = "" if slot == myslot else f"  Your next pick: {next_pick_label(state)}"
         print(f"Pick {n + 1} (round {rnd}): {p['player']} → Team {slot}{you}.{tail}")
 
     elif args.draft_cmd == "undo":
@@ -606,7 +752,17 @@ def cmd_draft(args, players):
         idx = args.number - 1
         if not 0 <= idx < len(picks):
             sys.exit(f"Pick #{args.number} not logged yet ({len(picks)} picks).")
-        old = picks[idx]
+        # --slot is validated for BOTH branches before anything is written:
+        # the UNKNOWN branch used to skip the range check, persisting a bad
+        # slot that detonated as an unhandled KeyError in build_rosters the
+        # moment the placeholder was fixed to a real player (audit F30).
+        if args.slot and not 1 <= args.slot <= teams:
+            sys.exit(f"--slot must be between 1 and {teams}.")
+        # Copy, don't alias: printing old["player"] after mutating the same
+        # dict showed the NEW name on both sides of the arrow, so the
+        # before/after echo SKILL.md §5 mandates could never verify a
+        # mistyped pick number (audit F31).
+        old = dict(picks[idx])
         if args.player.upper().startswith("UNKNOWN"):
             # out-of-pool player: keep attribution with a labeled placeholder
             picks[idx]["player"] = args.player
@@ -620,8 +776,6 @@ def cmd_draft(args, players):
         p = match_player(players, args.player, taken=others)
         picks[idx]["player"] = p["player"]
         if args.slot:
-            if not 1 <= args.slot <= teams:
-                sys.exit(f"--slot must be between 1 and {teams}.")
             picks[idx]["slot"] = args.slot
         save_state(state)
         print(f"✎ #{args.number}: {old['player']} → {p['player']} "
@@ -643,14 +797,20 @@ def cmd_draft(args, players):
             weakest = sorted(kept, key=lambda c: totals[c])[:2]
         print(f"Best available (punting: {', '.join(override) or 'nothing'}"
               + (f"; position: {args.pos.upper()}" if args.pos else "")
-              + f") — your next pick is #{my_next_pick(state)}"
+              + f") — your next pick is {next_pick_label(state)}"
               + (f"; your weakest kept cats: {', '.join(weakest)}" if weakest else "")
               + "\n")
         for i, p in enumerate(pool[:args.top], 1):
             line = fmt_row(p, override, rank=i)
             if weakest:
-                line += "   helps " + " ".join(
-                    f"{c}:{p['z'][c]:+.1f}" for c in weakest)
+                good = [c for c in weakest if p["z"][c] > 0]
+                bad = [c for c in weakest if p["z"][c] <= 0]
+                if good:
+                    line += "   helps " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in good)
+                if bad:
+                    line += "   hurts " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in bad)
             print(line)
 
     elif args.draft_cmd == "rosters":
@@ -763,8 +923,23 @@ def cmd_draft(args, players):
                 print(f"  ⚠ #{g + 1} UNKNOWN (gap) — fill with: "
                       f"draft fix {g + 1} \"Name\"")
 
+            if len(picks) >= max_pick:  # audit F52: no phantom round 14
+                errors.append(f"ignored {name!r}: draft is already complete "
+                              f"({max_pick} picks logged)")
+                continue
+
             n = len(picks)
             slot = myslot if mine else team_of_pick(n, teams)
+            # A my: that lands off the snake permanently transfers a pick from
+            # a rival to the owner and corrupts both rosters plus every
+            # vs-field line. `draft pick --mine` has always warned; the
+            # one-command live path did not (audit F32). --expect cannot see
+            # it — a misattributed my: leaves the pick COUNT correct.
+            if mine and team_of_pick(n, teams) != myslot:
+                errors.append(
+                    f"#{n + 1} logged to YOU, but snake order says Team "
+                    f"{team_of_pick(n, teams)} — verify before your next turn "
+                    f'(draft fix {n + 1} "Name" --slot K)')
             # Ambiguity auto-resolves by draft context: the best available
             # candidate is who gets drafted at this point; flag the guess.
             all_c = match_candidates(players, name)
@@ -790,9 +965,12 @@ def cmd_draft(args, players):
                 taken.add(p["player"])
                 you = " (YOU)" if slot == myslot else ""
                 note = ""
-                losers = [c["player"] for c in cands if c is not p][:2]
+                losers = [c["player"] for c in cands if c is not p]
                 if losers:
-                    note = f"  (assumed over {', '.join(losers)})"
+                    more = f" +{len(losers) - 2} more" if len(losers) > 2 else ""
+                    note = f"  (assumed over {', '.join(losers[:2])}{more})"
+                    if len(cands) > 4:  # audit F02: a broad query still
+                        note += "  ⚠ WIDE MATCH — verify"  # resolves, loudly
                 print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → "
                       f"T{slot}{you}{note}")
             elif all_c:
@@ -822,9 +1000,19 @@ def cmd_draft(args, players):
             pool = [p for p in pool if args.pos.upper() in p["pos"].upper()]
         pool.sort(key=lambda p: -adj_value(p, override))
 
-        print(f"\nYOUR PICK: #{my_next_pick(state)} | roster {len(mine_r)}/{state['size']}"
+        owned = picks_owned(state, myslot)
+        my_unknown = unknown_picks(state, myslot)
+        print(f"\nYOUR PICK: {next_pick_label(state)} | roster {owned}/{state['size']}"
               + (f" | weakest: {', '.join(weakest)}" if weakest else "")
               + (f" | punting: {', '.join(override)}" if override else ""))
+        # The UNKNOWN warning used to print once, in the batch where it
+        # happened, and never again — so the phantom roster spots stayed
+        # invisible for the rest of the draft (audit F29).
+        if my_unknown:
+            print(f"⚠ {len(my_unknown)} of YOUR picks are UNKNOWN "
+                  f"(#{', #'.join(str(u) for u in my_unknown)}) — the counts, "
+                  "position tally and category ranks below EXCLUDE them. Fix: "
+                  'draft fix N "Name"')
         pos_counts = {}
         for p in mine_r:
             for ps in positions_of(p):
@@ -853,7 +1041,7 @@ def cmd_draft(args, players):
         unfilled = [POSITIONAL_SLOTS[si][0]
                     for si in range(len(POSITIONAL_SLOTS))
                     if not _augment(si, set())]
-        remaining = state["size"] - len(mine_r)
+        remaining = state["size"] - owned  # true count, UNKNOWNs included
         if unfilled and remaining - len(unfilled) <= 2:
             print(f"⚠ FEASIBILITY: open slots {'/'.join(unfilled)}, "
                   f"{remaining} picks left — cover these soon")
@@ -874,9 +1062,19 @@ def cmd_draft(args, players):
         print()
         for i, p in enumerate(pool[:args.top], 1):
             line = fmt_row(p, override, rank=i)
+            # "helps" must only name categories the player actually helps
+            # (audit 2026-08-09, F65): it printed every weak category with its
+            # raw z, so a candidate who makes your worst category WORSE read as
+            # "helps BLK:-0.7". Negatives are now labelled as what they are.
             if weakest:
-                line += "   helps " + " ".join(
-                    f"{c}:{p['z'][c]:+.1f}" for c in weakest)
+                good = [c for c in weakest if p["z"][c] > 0]
+                bad = [c for c in weakest if p["z"][c] <= 0]
+                if good:
+                    line += "   helps " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in good)
+                if bad:
+                    line += "   hurts " + " ".join(
+                        f"{c}:{p['z'][c]:+.1f}" for c in bad)
             if team_counts.get(p["team"], 0) >= 2:
                 line += f"  [would be 3rd {p['team']}]"
             print(line)
@@ -897,13 +1095,29 @@ def cmd_draft(args, players):
         overall = len(picks)
         rnd = overall // teams + 1
         print(f"Draft: {overall} picks made (round {rnd} of {state['size']}), "
-              f"your next pick: #{my_next_pick(state)}\n")
+              f"your next pick: {next_pick_label(state)}\n")
+        if args.tail:
+            print(f"Last {min(args.tail, overall)} picks (the SYNC tail):")
+            for i in range(max(0, overall - args.tail), overall):
+                pk = picks[i]
+                you = " (YOU)" if pk["slot"] == myslot else ""
+                print(f"  #{i + 1} R{i // teams + 1}: {pk['player']} "
+                      f"→ T{pk['slot']}{you}")
+            print()
+        stray = unknown_picks(state)
+        if stray:
+            print(f"⚠ {len(stray)} UNKNOWN placeholder(s) on the board: "
+                  f"#{', #'.join(str(u) for u in stray)}\n")
         mine = build_rosters(state, players)[myslot]
+        owned = picks_owned(state, myslot)
         if not mine:
-            print("Your roster: empty.")
+            print(f"Your roster: empty ({owned} picks logged)."
+                  if owned else "Your roster: empty.")
             return
         slots = ", ".join(sorted({p["pos"] for p in mine}))
-        print(f"Your roster ({len(mine)}): "
+        gap = (f" + {owned - len(mine)} UNKNOWN"
+               if owned > len(mine) else "")
+        print(f"Your roster ({len(mine)}{gap}): "
               + ", ".join(p["player"] for p in mine) + f"  [{slots}]\n")
         print_profile(mine, punt, label="Your build")
         ranks, _ = my_category_ranks(state, players)
@@ -991,7 +1205,20 @@ def build_parser():
                     help="picks already logged; abort with a state tail if "
                          "reality differs (re-send safety after a lost result)")
 
-    dsub.add_parser("status", help="your roster, build profile, rank vs field")
+    dr = dsub.add_parser("resync",
+                         help="wipe the board and rebuild it from a pasted "
+                              "pick list (SKILL.md §4 RESYNC)")
+    dr.add_argument("picks", nargs="?", default="",
+                    help="semicolon-separated names in draft order")
+    dr.add_argument("--top", type=int, default=8)
+    dr.add_argument("--pos")
+    dr.add_argument("--punt")
+    dr.set_defaults(expect=None)
+
+    ds = dsub.add_parser("status",
+                         help="your roster, build profile, rank vs field")
+    ds.add_argument("--tail", type=int, metavar="N", default=0,
+                    help="also print the last N picks (the SYNC tail)")
     dsub.add_parser("rosters", help="every team's roster so far")
     dsub.add_parser("matrix", help="category z-totals for all teams + your ranks")
 

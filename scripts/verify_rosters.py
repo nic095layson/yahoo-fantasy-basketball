@@ -54,10 +54,18 @@ def fetch_json(url, timeout=20):
 
 def try_direct():
     """All 30 official rosters via ESPN's public API. Returns {ABBR: [names]}
-    or None if the network policy blocks the domain."""
+    or None if the network policy blocks the domain.
+
+    The failure is REPORTED, not swallowed (audit 2026-08-09, F01): a bare
+    `except: return None` made a transient timeout indistinguishable from a
+    policy denial, so an intermittent network fault silently downgraded the
+    run to the evidence-file mode behind one advisory line.
+    """
     try:
         teams = fetch_json(ESPN_TEAMS)
-    except Exception:
+    except Exception as e:
+        print(f"verify_rosters: direct ESPN pull unavailable — {type(e).__name__}: {e}",
+              file=sys.stderr)
         return None
     rosters = {}
     entries = teams["sports"][0]["leagues"][0]["teams"]
@@ -77,7 +85,14 @@ def load_fallback():
 
 
 def main():
-    strict = "--strict" in sys.argv
+    # Unmatched rows now FAIL by default (audit F01): a pool row on no
+    # official roster used to land in `unmatched`, which is never a mismatch,
+    # so a fabricated team ("Bronny James,ZZZ") exited 0 and passed both
+    # gates — exempting exactly the rows most likely to be wrong, the newly
+    # added ones. `--strict` is retained as a no-op alias; the bypass is now
+    # explicit and must carry a reason.
+    allow_unmatched = "--allow-unmatched" in sys.argv
+    ev = None
     rosters = try_direct()
     if rosters is not None:
         mode, source = "direct-complete", "site.api.espn.com (all 30 rosters)"
@@ -120,8 +135,22 @@ def main():
             mismatches.append({"player": player, "pool": team,
                                "official": official})
 
+    # THE CENTRAL FIX (audit 2026-08-09, F01/F04). `date` used to be
+    # today() unconditionally — a date this script stamps on itself. Every
+    # downstream gate then checked that self-written date and reported green,
+    # so the whole pipeline could be walked end to end having done zero
+    # research. In fallback mode the artifact now inherits the EVIDENCE
+    # file's own date, so `freshness --stamp` and `build_deck.py` (both of
+    # which require date == today) fail until data/rosters_official.json is
+    # RE-AUTHORED by that day's pull. Re-dating the evidence is a deliberate
+    # act that means "I checked today"; nothing re-dates it automatically.
+    # `checked_at` keeps the mechanical run time, which is a different fact.
+    today = datetime.date.today().isoformat()
+    ev_date = (ev or {}).get("date") if mode == "fallback-partial" else today
     result = {
-        "date": datetime.date.today().isoformat(),
+        "date": ev_date or "unknown",
+        "checked_at": today,
+        "evidence_date": ev_date,
         "mode": mode,
         "source": source,
         "teams_covered": len(rosters),
@@ -144,10 +173,24 @@ def main():
         sys.exit(1)
     print("  mismatches: 0")
     if mode == "fallback-partial":
-        print("  NOTE: partial coverage — allow site.api.espn.com in the "
-              "environment network policy for the complete direct guarantee.")
-    if strict and unmatched:
-        sys.exit(1)
+        print("  PARTIAL VERIFICATION — checked against data/rosters_official"
+              f".json (authored {ev_date}), not an independent live source.")
+        print("  Allow site.api.espn.com in the environment network policy for "
+              "the complete direct guarantee.")
+        if ev_date != today:
+            print(f"  STALE EVIDENCE: the evidence file is dated {ev_date}, "
+                  f"today is {today}. This artifact inherits {ev_date}, so the "
+                  "freshness stamp and the deck build will REFUSE until that "
+                  "file is re-authored by today's pull. That is the gate "
+                  "working: nothing here has checked the world today.")
+    if unmatched:
+        print(f"  UNMATCHED ({len(unmatched)}): "
+              + ", ".join(unmatched[:8])
+              + (f" … +{len(unmatched) - 8} more" if len(unmatched) > 8 else ""))
+        print("  These rows sit on no official roster — verify each, or pass "
+              "--allow-unmatched with the reason recorded in the stamp note.")
+        if not allow_unmatched:
+            sys.exit(1)
 
 
 if __name__ == "__main__":

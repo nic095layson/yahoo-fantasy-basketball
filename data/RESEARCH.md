@@ -1,10 +1,19 @@
 # Baseline research: top-210 player pool (built 2026-07-11)
 
 ## What this is
-`players.csv` is the 2026-27 draft baseline: ~210 fantasy-relevant players
+`players.csv` is the 2026-27 draft baseline: the pool is whatever the file
+holds (currently **246 rows** — do not quote a fixed number here, it rots)
 with per-game 9-cat lines reflecting 2025-26 season production, teams as of
 the July 2026 free-agency moves known on 2026-07-11, and mechanical injury
-notes (`out-*` = excluded, `*-recovery` = 0.7x, `*-risk` = 0.85x).
+notes.
+
+**Injury tiers, corrected 2026-08-09 — the numbers below were stale.** The
+engine (`hoops.availability`) reads the note's LEADING tag only and applies:
+`out-*` = 0.0 (excluded), `*-recovery` = **0.0, EXCLUDED not discounted**
+(owner ruling 2026-07-12, superseding the 0.7x written here), `*-risk` =
+**0.78** (arena-calibrated vs real 2025-26 games played, from 0.85). Anything
+after the first space or parenthesis is prose for humans and does not affect
+the tier.
 
 ## Method
 1. **Ranking methodology**: volume-weighted z-scores over the pool (the
@@ -24,8 +33,11 @@ notes (`out-*` = excluded, `*-recovery` = 0.7x, `*-risk` = 0.85x).
    extension SAS; LeBron UNSIGNED (CLE/MIA/PHI per reports) — flagged
    `unsigned-fa-monitor`; Kawhi trade on hold pending NBA investigation.
 5. **Recoveries for 2026-27**: Tatum, Haliburton (achilles), Kyrie, VanVleet
-   (ACL), Lillard (achilles) — stat lines are their last healthy season,
-   discounted 0.7x by the engine.
+   (ACL), Lillard (achilles) — stat lines are their last healthy season.
+   **Corrected 2026-08-09:** recovery-tagged players are EXCLUDED from every
+   board, not discounted. Re-entry is via the daily refresh re-tagging them
+   `inj-<reason>-risk` (0.78) once news confirms a full return — which is what
+   happened to these five; they are `-risk`, not `-recovery`, today.
 
 ## Known limits (refresh before draft night)
 - Bulk stat sites (Basketball-Reference, NBA.com, ESPN, Yahoo) were
