@@ -54,7 +54,10 @@ QUERIES = [
     "Şengün", "Porziņģis", "Vučević", "sga", "kd", "ad", "og", "zu", "kat",
     "dame", "wemby", "jdub", "White", "Murray", "Bridges", "Jackson",
     "jacksn", "porrter", "livley", "murphey", "siakim", "collins",
-    ".", "-", "'", "", "a", "j", "aj", "  ", "zzzzz", "Hart", "Ayton",
+    ".", "-", "'", "", "a", "j", "  ", "zzzzz", "Hart", "Ayton",
+    # R4-F06: real two-letter first-name tokens must resolve; the original
+    # fixture recorded 'aj' -> [] as the EXPECTED answer, blessing the bug.
+    "aj", "cj", "gg", "ja", "pj", "rj", "vj",
 ]
 
 

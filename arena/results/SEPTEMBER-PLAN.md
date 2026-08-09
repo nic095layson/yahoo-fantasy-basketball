@@ -261,3 +261,112 @@ at the re-baseline. n=3 vs 1 today — a hypothesis, not a finding.
   multi-source synthesis, before the pool freezes. `gp` is the input both the
   weekly model (7.3) and any real availability model need; it cannot be
   retrofitted after October.
+
+## 8. Added 2026-08-10 — round-4 registrations (APPEND-ONLY, lesson 14)
+
+Source: `analysis_2026-08-10_self_critique_round4.md` (41 verified findings,
+R4-F01…R4-F41) and the owner's same-day rulings. No bar above is edited.
+
+### 8.1 E24 amendment — the mechanism is found; the re-baseline design changes
+
+**Registered 2026-08-10 (R4-F07).** `TEAM_WEEK_SHOCK`'s sd scales linearly with
+the lineup weight while `team_week_model` base noise scales as √w — a channel
+ECW is structurally blind to (`pwins_total` uses base variance only). Measured
+at 2000×3 seeds: m33's gain decomposes +1.62 shock-on → **+0.42 shock-off**
+(~74% artifact — and the artifact component is exactly what failed fresh-seed
+replication); the three punted mocks move the OPPOSITE way (m31 +7.28→+8.58,
+m32 +1.70→+2.37, m34 +6.53→+7.27). Shock-off, §7.4's punt gap **widens**:
+punted average +6.1pp vs unpunted +0.4pp.
+
+E24's bar therefore gains: **(a)** the re-baseline re-grade runs shock-on AND
+shock-off arms so the mean-level effect is separated from the shock artifact;
+**(b)** §7.4's punt hypothesis is graded on the shock-off arm — pre-registered
+prediction, dated 2026-08-10, before the wider panel exists: *the punted-vs-
+unpunted gap widens with shock off*; **(c)** wherever ECW is displayed beside
+champ%, the display must state that ECW excludes TEAM_WEEK_SHOCK; **(d)** the
+0.956 constant is quoted as a **0.940–0.968 band** (teammate schedule
+correlation −0.016; teammate absences +0.028 — R4-F25), and the re-baseline
+fit uses team-shared schedules via `p["team"]` (≈6-line harness change);
+**(e)** mechanism experiments M1 (channel ablation: {0.15, 0.956}³ over
+μ/var/%-attempt-pools, CRN, mocks 31–34), M2 (closed-form per-category
+win-prob decomposition — run FIRST, it is cheap), M3 (variance-only vs
+mean-only tiebreaker) are the September queue, M2's prediction pre-registered
+before any of them runs. The %-attempt-pool channel (fg_at/ft_at scale with w,
+moving both the %-mix mean AND the binomial variance floor) is a live
+candidate for the punt interaction since all three punted study mocks punt a
+% category.
+
+### 8.2 E17/E18 amendment — measured market-model prior (R4-F04)
+
+Graded against the real 2025-26 board (146–148/156 picks matched): Spearman
+≈0.81, MAE ≈22 picks — but the miss is systematically positional: C-eligible
+players go a mean **21.7 picks earlier in rounds 1–5** than `MKT_W` predicts
+(Allen #37 vs #107, Duren #46 vs #109, Ayton #49 vs #108); guards ~7.5 picks
+later. Split-half CV refit: both folds raise FG% (0.5 → 1.2–1.4) and cut TO
+(0.25 → 0.0–0.4); REB/FT% directions are fold-dependent — not settled. The
+September refit calibrates on the owner's three boards with this CV procedure,
+not national-ADP intuition, and re-runs chip calibration per E17's bar. The
+deck's survival chips inherit the ~2-round center optimism until then.
+
+### 8.3 E23 amendment + owner punt ruling (2026-08-10)
+
+Corrected-instrument punt-declaring cost: **−3.09pp** (1-cat, t=−3.93) to
+**−6.43pp** (2-cat, t=−8.55), CRN-paired, n=36 cells at 500 seasons/cell on
+the shipped 6-team bracket — ~26–31% attenuated from the −5 to −11pp the deck
+quotes in four places. E23's wording quotes both ranges with their
+instruments. Full-scale re-run (2000 seasons/cell, real bracket) precedes any
+E20 punt-aware-ordering decision.
+
+**Owner ruling (supersedes E23's declaration-time framing for this owner):**
+he will not declare punts — *"I only wait until the system calculates this and
+directs to full tilt when clear dominance over opponent rosters."* The
+operative surface is concession DETECTION and full-tilt direction (SKILL.md
+Analysis rules, "Full-tilt doctrine"), not declaration warnings. E23's
+display work re-scopes to sharpening the detect-and-direct path: the Soft
+Punt panel, the drift latch, and the card's dead-category signal.
+
+### 8.4 Q3 disposition (owner delegated 2026-08-10) and Q4 deadline
+
+**Q3:** mock 10–30 draft states are treated as LOST. LEDGER §5 (the m28
+oracle pair) and the four `format_delta` states are marked [UNREPRODUCIBLE];
+the September session rewrites the E8/E9/E9b regression bars against the
+committed states (mocks 31–34 and anything newer) BEFORE running those
+experiments, and the LEDGER gains a one-line header noting which rows are
+historical record vs re-derivable evidence.
+
+**Q4 (projection source): still TBD as of 2026-08-10.** Hard deadline
+2026-09-01: if unanswered when the Routine fires, the September session must
+NOT pick an anchor source itself (a domain judgment the owner reserved) —
+it proceeds with the schema widening (§7.5) on the existing pool, marks the
+synthesis blocked-on-owner, and says so in its report.
+
+### 8.5 A19/A20 mechanization (R4-F16/17)
+
+Before 2026-09-01, from a session that demonstrably holds the Artifact tool:
+publish a no-op redeploy of the standing artifact URL to prove the grant
+survives into fired sessions, or delete+recreate both Routines from such a
+session. §6 gains a final step: *before closing, the October session creates
+a one-shot draft-eve Routine (T-1) that executes §6 steps 1 and 5 only (pool
+pull → verify → stamp → build → republish → WebFetch built-date assert)* —
+the existing self-reschedule clause is inert by construction (any plausible
+draft date sits within its ~10-day threshold of Oct 12). Fallback wording if
+the Artifact tool is unavailable at republish time: STOP, SendUserFile the
+built deck, tell the owner the page is stale. Record the firm draft date in
+league_intel the moment Yahoo schedules it.
+
+### 8.6 Schema window addendum (R4-F14)
+
+The weeks-19–21 playoff-density quantification: a ±1-game week for a single
+top starter swings a 1-week playoff round's win probability ±5.5–6.4pp in the
+sim's own model; a whole-team 3-vs-4 mismatch collapses it to ~0.11. The §7.5
+schema widening adds per-player weeks-19–21 game counts when the 2026-27 NBA
+schedule publishes (mid-August); the October build surfaces a playoff-density
+column and the E9 playoff-tier objective consumes it.
+
+### 8.7 In-season surfaces (R4-F15)
+
+Two truth rules added to SKILL.md territory in September: (1) in-season
+stash/drop/trade questions must state IL+ economics — a recovery player
+eligible for the 2 IL+ slots costs zero active spots, so board absence is
+never droppability; (2) F26's availability-adjusted trade delta ships before
+the season starts (engine change: September window).

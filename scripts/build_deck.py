@@ -52,13 +52,25 @@ def main():
     if ver.get("mismatches"):
         fail(f"roster verification has {len(ver['mismatches'])} mismatch(es) — "
              "fix data/players.csv first")
-    # gate 1b: rows on no official roster are not exempt (audit F01)
+    # gate 1b: rows on no official roster are not exempt (audit F01).
+    # R4-F05 (2026-08-10): the bypass must be RECORDED in the artifact —
+    # the original gate told the operator to re-run with --allow-unmatched,
+    # but that flag only changed an exit code, so the gate refused again
+    # with the identical message: a deadlock with no sanctioned publish
+    # path for any legitimately rosterless pool row.
     if ver.get("unmatched_count"):
-        fail(f"roster verification has {ver['unmatched_count']} unmatched row(s) "
-             f"({', '.join(ver.get('unmatched', [])[:5])}) — these sit on no "
-             "official roster and are the rows most likely to be wrong. Verify "
-             "them, or re-run verify_rosters.py --allow-unmatched and state the "
-             "reason in the freshness note.")
+        if ver.get("allow_unmatched") is True:
+            print(f"  UNMATCHED EXEMPTION (recorded in the verification "
+                  f"artifact): {ver['unmatched_count']} row(s) on no official "
+                  f"roster — {', '.join(ver.get('unmatched', [])[:8])}. "
+                  "State the reason in the freshness note.")
+        else:
+            fail(f"roster verification has {ver['unmatched_count']} unmatched "
+                 f"row(s) ({', '.join(ver.get('unmatched', [])[:5])}) — these "
+                 "sit on no official roster and are the rows most likely to be "
+                 "wrong. Verify them, or re-run verify_rosters.py "
+                 "--allow-unmatched (which records the exemption in the "
+                 "artifact) and state the reason in the freshness note.")
 
     # gate 2: freshness stamped today with verification recorded
     try:
@@ -78,26 +90,36 @@ def main():
     if missing:
         fail(f"pool incomplete — missing consensus names: {missing[:5]}")
 
-    # gate 4: the pool must have MOVED, or the note must say why it didn't
-    # (audit 2026-08-09, F04). Gates 1-3 all reduce to dates the scripts
-    # stamp on themselves; none of them observes whether any research
-    # happened. A content hash does: either players.csv changed since the
-    # last build, or this pull explicitly asserts a quiet day with its
-    # sources named. Nothing else gets to publish.
+    # gate 4: the pool must have MOVED, or the stamp must DELIBERATELY
+    # assert it didn't (audit 2026-08-09 F04; reworked 2026-08-10 R4-F22).
+    # The original escape valve scanned the prose note for substrings like
+    # "quiet" — which any sentence could satisfy by accident — and the gate
+    # silently skipped itself when the previous manifest carried no hash
+    # (i.e. on exactly the first build after A4 shipped). The assertion is
+    # now a structured stamp field (--pool-changes / --no-pool-changes) and
+    # a missing prior hash REQUIRES it rather than waiving the gate.
     pool_hash = hashlib.sha256(
         open(os.path.join(ROOT, "data", "players.csv"), "rb").read()).hexdigest()
     prev = re.search(r"<!-- build-manifest (\{.*?\}) -->", open(DECK, encoding="utf-8").read())
     prev_hash = json.loads(prev.group(1)).get("pool_sha256") if prev else None
-    note_l = (fresh.get("note") or "").lower()
-    quiet_ok = any(k in note_l for k in ("no change", "zero confirmed",
-                                         "zero pool", "quiet"))
-    if prev_hash and pool_hash == prev_hash and not quiet_ok:
-        fail("data/players.csv is byte-identical to the last published build "
-             f"({pool_hash[:12]}). Either this pull changed nothing — in which "
-             "case say so explicitly in the freshness --note, naming the "
-             "sources swept — or the pull did not actually land. A build that "
-             "republishes an unchanged pool under a fresh date is the failure "
-             "this gate exists to catch.")
+    pc = fresh.get("pool_changes")
+    if pc is None:
+        fail("the freshness stamp carries no pool_changes assertion. Restamp "
+             "with --pool-changes 'what moved' or --no-pool-changes — gate 4 "
+             "no longer accepts keywords in the prose note, and a missing "
+             "prior manifest hash no longer waives the check.")
+    if prev_hash is not None:
+        if pool_hash == prev_hash and pc.get("changed"):
+            fail("the stamp asserts pool changes "
+                 f"({pc.get('note', '')!r}) but data/players.csv is "
+                 f"byte-identical to the last published build "
+                 f"({pool_hash[:12]}). Either the change never landed in the "
+                 "CSV or the assertion is wrong — reconcile before publishing.")
+        if pool_hash != prev_hash and pc.get("changed") is False:
+            fail("the stamp asserts NO pool changes but data/players.csv "
+                 f"differs from the last published build ({prev_hash[:12]} -> "
+                 f"{pool_hash[:12]}). Something changed the pool without the "
+                 "pull knowing — reconcile before publishing.")
 
     # gate 5: the deck's JUDGMENT layer rides outside every other check
     # (audit F15/F19/F35). It is hand-authored prose that renders to the
@@ -120,15 +142,23 @@ def main():
              "re-authored in the same pass as the data — it rides on the card "
              "as the stated reason to fade a player. Re-author it and its "
              "`date`, or delete the entries that no longer hold.")
-    pmatch = re.search(r"\n  players: \{(.*?)\n  \},?\n", jm.group(1), re.S)
-    if pmatch:
-        pool_names = {p["player"] for p in players_raw}
-        named = re.findall(r'^\s{4}"([^"]+)":', pmatch.group(1), re.M)
-        orphans = [n for n in named if n not in pool_names]
-        if orphans:
-            fail(f"JUDGMENT names absent from the pool: {orphans[:5]} — an "
-                 "entry for an undraftable player renders a rationale for a "
-                 "row that does not exist.")
+    # R4-F21 (2026-08-10): the original pattern required a newline after the
+    # players block's closing brace, but players: is the LAST key of JUDGMENT
+    # — the captured body ends at that brace, so pmatch was always None and
+    # the orphan check was dead code that shipped never having fired. The
+    # pattern now tolerates end-of-body, and a MISSING players block is fatal
+    # (markup drift), matching how gate 5 treats every other anchor.
+    pmatch = re.search(r"\n  players: \{(.*)\n  \}", jm.group(1), re.S)
+    if not pmatch:
+        fail("JUDGMENT players block not found — deck markup drifted; do not "
+             "hand-edit")
+    pool_names = {p["player"] for p in players_raw}
+    named = re.findall(r'^\s{4}"([^"]+)":', pmatch.group(1), re.M)
+    orphans = [n for n in named if n not in pool_names]
+    if orphans:
+        fail(f"JUDGMENT names absent from the pool: {orphans[:5]} — an "
+             "entry for an undraftable player renders a rationale for a "
+             "row that does not exist.")
 
     # build the embedded pool
     players = hoops.zscores(players_raw)

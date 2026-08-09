@@ -185,6 +185,14 @@ def cmd_freshness(args):
                       "for the complete direct pull.")
         stamp = {"date": datetime.date.today().isoformat(),
                  "note": args.note or "refreshed"}
+        # Structured pool-motion assertion (R4-F22, 2026-08-10): gate 4 used
+        # to scan the prose note for keywords like "quiet", which any
+        # sentence could satisfy by accident. The assertion is now a
+        # deliberate flag, or absent.
+        if args.pool_changes is not None:
+            stamp["pool_changes"] = {"changed": True, "note": args.pool_changes}
+        elif args.no_pool_changes:
+            stamp["pool_changes"] = {"changed": False, "note": ""}
         if args.rosters_verified or ver_mode:
             stamp["rosters_verified"] = {
                 "date": stamp["date"],
@@ -298,6 +306,14 @@ def total_value(p, punt=()):
     return sum(z for cat, z in p["z"].items() if cat not in punt)
 
 
+def note_tag(note):
+    """Leading tag of a note — the machine-readable half. Everything from
+    the first space or parenthesis onward is prose for humans (F16/A17;
+    unified across all consumers 2026-08-10, R4-F23 — five substring
+    parsers had survived the A17 fix)."""
+    return re.split(r"[\s(]", (note or "").lower(), 1)[0]
+
+
 def availability(p):
     """Injury multiplier from the note column (owner's rule).
 
@@ -317,7 +333,6 @@ def availability(p):
     2025-26 games played; it stays above the raw realized ratio because
     missed games are partly replaceable via streaming.
     """
-    note = (p.get("note") or "").lower()
     # The status tier is read from the LEADING tag only — everything from the
     # first space or parenthesis onward is prose for humans (audit 2026-08-09,
     # F16). The previous version tested `"recovery" in note` against the whole
@@ -328,7 +343,7 @@ def availability(p):
     # (Haliburton, Lillard, Irving, VanVleet) carry `inj-*-risk (first season
     # back)` parentheticals, one word away from this; Haliburton ranks ~top-12
     # by adjusted value.
-    tag = re.split(r"[\s(]", note, 1)[0]
+    tag = note_tag(p.get("note"))
     if tag.startswith("out-"):
         return 0.0
     if tag.endswith("-recovery"):
@@ -423,7 +438,15 @@ def match_candidates(players, query):
     # CONFIRMED pick — '.' logged Jaren Jackson Jr., a bare `my:` logged
     # Wembanyama to the owner's own slot. Nickname resolution runs first so
     # two-letter nicknames (kd, ad, og, zu) still work.
-    if len(q) < 3 or not any(c.isalpha() for c in q):
+    # Real name tokens are exempt (audit 2026-08-10, R4-F06): seven pool
+    # players' actual first names are two letters — CJ, GG, Ja, AJ, PJ, RJ,
+    # VJ — and the bare length guard rejected all of them as junk. Any query
+    # exactly matching a legitimate >=2-char alphabetic token of a pool name
+    # passes to the normal match stages.
+    name_tokens = {t for p in players
+                   for t in fold(p["player"]).replace(".", "").split()
+                   if len(t) >= 2 and t.isalpha()}
+    if (len(q) < 3 or not any(c.isalpha() for c in q)) and q not in name_tokens:
         return []
     subs = [p for p in players if fold(p["player"]) == q]
     if not subs:
@@ -702,13 +725,32 @@ def cmd_draft(args, players):
     # the sequence had to be improvised live (audit F36). Snake attribution
     # re-derives positionally, so `my:` markers are optional in a complete
     # in-order paste. The prior board survives in draft_state.json.bak.
+    resync_prior = None
     if args.draft_cmd == "resync":
+        # Audit 2026-08-10 (R4-F01, critical): resync saves twice in one
+        # command, so the one-generation .bak ended up holding the WIPED
+        # board while the message promised the prior one survived — an empty
+        # paste destroyed a live draft irrecoverably. The prior board now
+        # goes to a dedicated one-shot file BEFORE anything is cleared, an
+        # empty paste is refused outright, and the 3-correction rollback
+        # snapshot is the PRE-wipe board, so a halted resync restores the
+        # original board instead of an empty one.
+        segs = [s for s in (args.picks or "").split(";") if s.strip()]
+        if not segs:
+            sys.exit("RESYNC refused: 0 parsed names in the paste — nothing "
+                     "was cleared and the board is untouched. Paste the "
+                     "room's pick list, semicolon-separated.")
+        resync_prior = [dict(pk) for pk in state["picks"]]
+        pre_path = STATE_PATH + ".pre-resync"
+        with open(pre_path, "w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2)
         prior = len(state["picks"])
         state["picks"] = []
         save_state(state)
         print(f"RESYNC: cleared {prior} logged pick(s); rebuilding from the "
-              f"paste ({os.path.abspath(STATE_PATH)}.bak holds the prior "
-              "board).")
+              f"paste. Prior board saved to {os.path.abspath(pre_path)} — "
+              f"restore with: cp {os.path.abspath(pre_path)} "
+              f"{os.path.abspath(STATE_PATH)}")
         args.draft_cmd = "turn"
 
     picks = state["picks"]
@@ -876,7 +918,11 @@ def cmd_draft(args, players):
         import re
         errors = []
         corrections = 0
-        snapshot = [dict(pk) for pk in picks]  # rollback point (drift halt)
+        # Rollback point for the 3-correction drift halt. During a resync the
+        # snapshot is the PRE-wipe board (R4-F01): a halted resync must
+        # restore the original board, not the freshly-emptied one.
+        snapshot = (resync_prior if resync_prior is not None
+                    else [dict(pk) for pk in picks])
         max_pick = teams * state["size"]
         for raw in [s.strip() for s in (args.picks or "").split(";") if s.strip()]:
             m = re.match(r"^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$", raw, re.I)
@@ -1161,6 +1207,14 @@ def build_parser():
     fr.add_argument("--force", action="store_true",
                     help="stamp even if the pool validator finds missing names "
                          "or rosters are unverified (state the reason in --note)")
+    pc = fr.add_mutually_exclusive_group()
+    pc.add_argument("--pool-changes", metavar="DESC",
+                    help="assert this pull CHANGED data/players.csv, and why "
+                         "(build gate 4 reads this, R4-F22)")
+    pc.add_argument("--no-pool-changes", action="store_true",
+                    help="deliberately assert this pull changed nothing in "
+                         "data/players.csv (the quiet-day path; a keyword in "
+                         "the prose note no longer counts)")
 
     d = sub.add_parser("draft", help="live draft tracker")
     dsub = d.add_subparsers(dest="draft_cmd", required=True)

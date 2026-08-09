@@ -159,6 +159,11 @@ def main():
         "mismatches": mismatches,
         "unmatched_count": len(unmatched),
         "unmatched": unmatched[:40],
+        # R4-F05 (2026-08-10): the bypass must live in the ARTIFACT, not the
+        # exit code — build_deck's gate 1b reads this field, so the exemption
+        # is recorded, auditable, and deliberate rather than a flag that
+        # changed nothing downstream.
+        "allow_unmatched": allow_unmatched,
     }
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2)

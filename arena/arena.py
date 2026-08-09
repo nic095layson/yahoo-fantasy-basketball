@@ -189,7 +189,7 @@ def market_ranks(pool):
         # vets. Division mirrors the intent below zero.
         if "rookie-proj" in note:
             s = s * 1.15 if s > 0 else s / 1.15
-        if "risk" in note:
+        if "risk" in hoops.note_tag(note):  # leading tag only (R4-F23)
             s = s * 0.95 if s > 0 else s / 0.95
         return s
     ordered = sorted(pool, key=lambda p: -mscore(p))
@@ -208,7 +208,7 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng, mkt=None):
     team_ct, rec_ct = {}, 0
     for p in roster:
         team_ct[p["team"]] = team_ct.get(p["team"], 0) + 1
-        if "recovery" in (p.get("note") or "").lower():
+        if "recovery" in hoops.note_tag(p.get("note")):  # R4-F23
             rec_ct += 1
     scarce = {}
     if params["scarcity_w"]:
@@ -269,7 +269,7 @@ def pick_for(params, pool, roster, my_ranks, rnd, rng, mkt=None):
         injury_note = "inj" in note or note.startswith("out-")
         if params["risk"] != "upside":
             av = hoops.availability(p)
-            if params["rec_compound"] and "recovery" in note:
+            if params["rec_compound"] and "recovery" in hoops.note_tag(note):
                 av *= 0.85 if rec_ct == 1 else (0.7 if rec_ct >= 2 else 1.0)
             s = s * av if s > 0 else s
         if params["value_exp"] != 1.0:
@@ -334,8 +334,7 @@ def weekly_availability(p):
     # Leading tag only, risk before recovery (audit 2026-08-09, F16 — mirrors
     # hoops.availability). Substring-matching the whole note made
     # "inj-achilles-risk (recovery on track)" score as a 0.60 recovery tier.
-    note = (p.get("note") or "").lower()
-    tag = re.split(r"[\s(]", note, 1)[0]
+    tag = hoops.note_tag(p.get("note"))
     if tag.endswith("-recovery"):
         return 0.60
     if tag.endswith("-risk") or tag in ("risk", "inj-risk"):

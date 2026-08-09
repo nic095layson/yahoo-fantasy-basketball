@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 """Does the corrected bench weight change who wins? (audit item A1)
 
-    python3 arena/mocks/bench_weight_study.py            # ~5 min
-    python3 arena/mocks/bench_weight_study.py --quick    # ~40s, N=1500
+    python3 arena/mocks/bench_weight_study.py            # full, ~9 min
+    python3 arena/mocks/bench_weight_study.py --quick    # ~3 min, N=1500
+                                                         # (phase 1 always
+                                                         # runs at committed N)
+
+Output goes to arena/results/bench_weight_study[_quick][_seedsX-Y-Z]_out.json.
+A --quick run is tagged so it can NEVER overwrite the committed full-N
+evidence artifact (R4-F24: a round-4 auditor clobbered the committed E24
+evidence by following this docstring's own regenerate instruction), and any
+run refuses to overwrite an existing output whose config differs.
 
 WHAT THIS MEASURES. Every mock in the ledger was graded with
 `arena.BENCH_WEIGHT = 0.15` — the assumption that a roster's 11th-13th players
@@ -96,7 +104,24 @@ def main():
     args = ap.parse_args()
     n = 1500 if args.quick else 6000
     seeds = ([int(x) for x in args.seeds.split(",")] if args.seeds else SEEDS)
-    tag = "" if not args.seeds else "_seeds" + args.seeds.replace(",", "-")
+    tag = ("_quick" if args.quick else "")
+    if args.seeds:
+        tag += "_seeds" + args.seeds.replace(",", "-")
+    # Overwrite guard (R4-F24) — checked BEFORE any simulation so a refusal
+    # costs seconds, not minutes.
+    dest = f"arena/results/bench_weight_study{tag}_out.json"
+    if os.path.exists(dest):
+        try:
+            existing = json.load(open(dest))
+        except ValueError:
+            existing = {}
+        if (existing.get("seasons_per_seed") != n
+                or existing.get("seeds") != seeds):
+            sys.exit(f"refusing to overwrite {dest}: it holds a run at "
+                     f"seasons_per_seed={existing.get('seasons_per_seed')} "
+                     f"seeds={existing.get('seeds')}, this invocation is "
+                     f"n={n} seeds={seeds}. Delete the file deliberately if "
+                     "you mean to replace it.")
 
     players = hoops.zscores(hoops.load_players())
     byname = {p["player"]: p for p in players}
@@ -157,7 +182,6 @@ def main():
             "room_seats_reordered": moved,
             "champ_by_slot_shipped": c0, "champ_by_slot_measured": c1,
         }
-    dest = f"arena/results/bench_weight_study{tag}_out.json"
     with open(dest, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2)
     print(f"\nwrote {dest}")
