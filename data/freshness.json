@@ -1,9 +1,13 @@
 {
-  "date": "2026-08-05",
-  "note": "Daily sweep 08-04\u219208-05: zero confirmed roster changes (32 queries, watchlist + general). New flags: Klay Thompson DAL trade/buyout exploration; Kawhi probe EXPANDED (2nd endorsement deal); Watson suitors now MIL/CLE/ATL/LAC; Harden-CLE resolution expected this week; Butler early-Feb return framing sourced (GP review next pull); Cole Anthony\u2192NBL [LIKELY, 1 source \u2014 pool exit pending 2nd source]. UI: category-rank heat grading shipped (owner request).",
+  "date": "2026-08-09",
+  "note": "Colophon re-author rebuild, same day: Data paragraph updated to the 8/9 refresh (245 rows, Cole Anthony NBL exit) and the Kawhi probe expansion; pool byte-identical to this morning's 245-row build.",
+  "pool_changes": {
+    "changed": false,
+    "note": ""
+  },
   "rosters_verified": {
-    "date": "2026-08-05",
+    "date": "2026-08-09",
     "mode": "fallback-partial",
-    "sources": "scripts/verify_rosters.py"
+    "sources": "verify_rosters.py (fallback; evidence authored 2026-08-09)"
   }
 }

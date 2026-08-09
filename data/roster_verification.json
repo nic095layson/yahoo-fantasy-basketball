@@ -1,11 +1,14 @@
 {
-  "date": "2026-08-05",
+  "date": "2026-08-09",
+  "checked_at": "2026-08-09",
+  "evidence_date": "2026-08-09",
   "mode": "fallback-partial",
-  "source": "Full 226-player per-player verification grind, 2026-07-23; maintained by daily news sweeps. 2026-08-04 sweep: zero pool changes overnight (Harden still in CLE talks, DeRozan/Beal unsigned; CLE eyeing DeRozan per ESPN). Prior 2026-08-03 sweep: Sochan -> POR (Shams, 8/1, one-year vet-min non-guaranteed camp deal). Harden (CLE talks), DeRozan (waived by SAC), Beal (opted out) all still unsigned FA. Sources: ESPN/NBC Sports/Hoops Rumors free-agency trackers + RotoWire NBA news, 2026-08-03.",
+  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-09 sweep (4 queries, watchlist + transactions Aug 5-9): Cole Anthony OFFICIALLY to NBL Melbourne United (announced 8/5 \u2014 ESPN/Yahoo/Basketnews; one-year deal) -> removed from MIL and from the pool, the pending 2nd source from the 08-05 note now satisfied. Confirmed UNCHANGED: Harden (CLE multi-year track, terms not agreed, still FA), DeRozan (waived by SAC; linked MIA/DET/TOR/GSW/DEN/CLE/WAS, no club), Beal (opted out; MIA keeping tabs per Miami Herald), Klay (DAL shopping him; MIA waiting on buyout; open to LA), Kawhi (LAC; probe EXPANDED \u2014 second company Daktronics per Pablo Torres; ESPN: could run into 2027), Watson (DEN RFA; LAC sign-and-trade interest, MIL TPE without a first), Sochan (POR camp deal), Butler (GSW, Jan-26 ACL recovery, excluded). Minor moves below pool relevance: Lonnie Walker IV->DEN (8/5), Jamarion Sharp two-way LAC (8/6), Sean Pedulla waived LAC (8/7), Dillon Brooks PHX extension (no role change). Sources: ESPN, NBC Sports, Hoops Rumors, ClutchPoints, TSN, Spotrac transaction log.",
   "teams_covered": 30,
-  "pool_size": 246,
-  "checked": 246,
+  "pool_size": 245,
+  "checked": 245,
   "mismatches": [],
   "unmatched_count": 0,
-  "unmatched": []
+  "unmatched": [],
+  "allow_unmatched": false
 }
