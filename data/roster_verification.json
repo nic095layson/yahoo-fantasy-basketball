@@ -1,11 +1,14 @@
 {
   "date": "2026-08-10",
+  "checked_at": "2026-08-10",
+  "evidence_date": "2026-08-10",
   "mode": "fallback-partial",
-  "source": "Full 226-player per-player verification grind, 2026-07-23; maintained by daily news sweeps. 2026-08-04 sweep: zero pool changes overnight (Harden still in CLE talks, DeRozan/Beal unsigned; CLE eyeing DeRozan per ESPN). Prior 2026-08-03 sweep: Sochan -> POR (Shams, 8/1, one-year vet-min non-guaranteed camp deal). Harden (CLE talks), DeRozan (waived by SAC), Beal (opted out) all still unsigned FA. Sources: ESPN/NBC Sports/Hoops Rumors free-agency trackers + RotoWire NBA news, 2026-08-03.",
+  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-10 sweep (10 queries, watchlist + transactions + injury wire, window Aug 5-10, owner-requested pull): ZERO placement changes \u2014 the 8/9 state re-confirmed. Cole Anthony's NBL Melbourne United exit re-verified against the official NBL announcement (nbl.com.au) on top of ESPN/Yahoo/Basketnews. Confirmed UNCHANGED: Harden ('fully expected' to re-sign CLE per Shams, open to 3-year spread, waiting on offseason dominoes \u2014 still FA), DeRozan (turned 37 this week; linked MIA/DET/TOR/GSW/DEN/CLE/WAS, no club), Beal (opted out; MIA in touch with his reps), Westbrook (unsigned), Klay (DAL shopping him, NOT discussing a buyout per 8/8 reporting \u2014 LAL/MIA interest, ~$17.5M expiring), Kawhi (LAC; probe could stretch into 2027, negotiated settlement the likely outcome, TOR trade still on league hold), Watson (RFA; sign-and-trade talks CLE/MIL/LAC; DEN over the second apron after signing Lonnie Walker IV 8/5, new DEN deal unlikely), Butler (GSW, ACL surgery 2/9, return framing ~Feb 2027, excluded), LeBron (officially PHI, re-verified). Minor moves below pool relevance: Lonnie Walker IV->DEN (8/5), Dillon Brooks PHX extension 3yr/$73M (8/8, no role change), Naji Marshall DAL extension (8/2), Gary Payton II re-signed GSW (7/31). No new fantasy-relevant injuries in the window (Dejounte Murray hand mention 8/5 is season-preview framing, achilles-risk tag unchanged). Sources: ESPN, NBA.com, Yahoo Sports, Hoops Rumors, NBC Sports, CBS Sports, RotoBaller, NBL.com.au, Spotrac.",
   "teams_covered": 30,
   "pool_size": 245,
   "checked": 245,
   "mismatches": [],
   "unmatched_count": 0,
-  "unmatched": []
+  "unmatched": [],
+  "allow_unmatched": false
 }

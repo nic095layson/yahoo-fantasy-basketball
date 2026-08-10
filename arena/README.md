@@ -26,7 +26,7 @@ python3 arena/arena.py tournament --seasons 500 --generations 3
 
 **Live practice mode** (`live`): eleven arena personalities take the other
 seats and log their picks into the PRODUCTION draft state, pausing whenever
-it's your turn — so the normal `draft turn` confidence cards, flags, and
+it's your turn — so the normal `draft turn` calculated cards (adjusted values + flags — the confidence-% format was retired 2026-08-09), and
 rules fire exactly as they will on real draft night. Log your pick, re-run
 `live`, repeat. Post-draft, all production analysis (matrix/status/vs)
 works, and the arena's season simulator can grade the finished league.

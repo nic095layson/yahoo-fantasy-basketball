@@ -225,3 +225,93 @@ numbers — content unchanged)*
    pre-registered check is disclosed in the ship note itself, not
    discovered by the next audit.** The E18 original ±8 bar re-arms at the
    October real-ADP sync exactly as registered.
+
+## 2026-08-09 — Round-3 audit: four lessons from 66 verified findings
+
+15. **A gate that reads a date the gated script wrote is not a gate.** The
+    three-gate publish pipeline was walked end to end having done zero
+    research — `verify_rosters.py` wrote `date.today()` unconditionally,
+    `hoops.py` and `build_deck.py` checked that self-written date, and the run
+    ended in "safe to publish" with the deck header rendering "fresh today".
+    It was not hypothetical: during the audit itself an agent ran the script
+    against the working tree and the only trace was
+    `data/roster_verification.json`'s date advancing 08-05 → 08-08. Nothing
+    warned; the file simply became a day's worth of "verified" (reverted before
+    commit). A second hole in the same shape: a pool row on no official roster
+    landed in `unmatched`, which was never a mismatch, so a fabricated team
+    (`Bronny James,ZZZ`) exited 0 and passed every gate — exempting exactly the
+    rows most likely to be wrong, the newly added ones. **Law: a verification
+    artifact must inherit the date of the EVIDENCE it checked, never the clock
+    of the process that checked it; and the check must be able to fail on the
+    rows nobody has seen before.** Fixed 2026-08-09 (A4): fallback mode
+    inherits `rosters_official.json`'s own date, unmatched rows hard-fail, the
+    build records a pool content hash, and the judgment layer is gated on
+    matching the pull date.
+
+16. **An append-only completeness law needs a retirement half.** The
+    `MUST_HAVE` rule forces each June draft class INTO the pool and never
+    retires the previous one. Six 2025-draftees still carried `rookie-proj`
+    into their second season, applying a ×1.15 market-hype multiplier worth
+    12–21 estimated-ADP slots — and nine of eleven 2025-class rows were still
+    byte-identical to the pre-debut October-2025 snapshot, their actual rookie
+    season never ingested. The owner found the instance (Dylan Harper); the
+    class was six more. **Law: any rule that adds members on a schedule must
+    state, in the same breath, what leaves and when — and enforce it
+    mechanically, or the pool accretes stale labels one draft class per year.**
+
+17. **Two surfaces with different objectives need a written precedence rule,
+    or the draft decides it at 45 seconds.** The deck sorted by punt-blind
+    blend50; `hoops.py` sorted by punt-aware `adj_value`; their #1s differed on
+    **19 of 26 owner turns** (mean Top-5 overlap 1.8/5), and nothing anywhere
+    said which governed a pick. The fix was not to sync them — it was to notice
+    that the deck already parses feeds, carries the same halts, autosaves, and
+    imports/exports the exact `draft_state.json` the CLI writes, i.e. it is a
+    superset. **Corollary: before building a parity treadmill between two
+    implementations, check whether one of them should stop having the
+    responsibility at all.**
+
+18. **A display that can only render one sign cannot report the opposite
+    fact.** The card's row-1 figure was a percentile gap — "lead +X" — which is
+    positive by construction. Replacing it with the margin in expected
+    categories won per week revealed that on **4 of 13 owner turns in mock 34
+    the card's #1 is WORSE than its own #2** on the weekly-categories metric,
+    with the punt-blind value half carrying the ordering. The old display had
+    not hidden this by accident; it was structurally incapable of showing it.
+    The same pass found the median mid-round margin is 0.007 cats/wk — most
+    turns are near-ties, which a 50–88% confidence band had obscured rather
+    than reported. **Law: when choosing what a number on a card means, ask what
+    it is incapable of saying. A quantity in real units can carry bad news; an
+    index normalised for display often cannot.**
+
+## 2026-08-10 — Round-4 audit: two lessons from 13 regressions
+
+19. **A fix-batch is code like any other — it ships with its own defects, and
+    the newest code is always the least-audited.** The 2026-08-09 batch that
+    closed 20 audit findings introduced 13 new ones, including a critical:
+    `resync`'s recovery promise was false (the one-generation `.bak` was
+    overwritten by resync's own second save, so the "backup" held the wiped
+    board), the degenerate-feed guard silently unmatched seven real players
+    whose first names are two letters (CJ/GG/Ja/AJ/PJ/RJ/VJ), and two of the
+    new publish gates had never been observed failing — one was a deadlock
+    (its own prescribed bypass couldn't satisfy it), one was dead code (its
+    regex could never match the file it inspected). **Laws: (a) every fix
+    lands with a regression test that FAILED before the fix — red first, then
+    green; (b) a gate is untested until it has been seen red — every gate
+    suite must drive each gate to refusal AND acceptance
+    (`scripts/test_gates.py`); (c) a fixture's expected values must be
+    derived from intent, not recorded from the implementation — the parity
+    fixture had enshrined the two-letter bug by recording `'aj' → []` as the
+    expected answer.**
+
+20. **Committed evidence needs overwrite guards in the tools, not discipline
+    in the agents.** Three artifact-clobber incidents in two days, each by a
+    process explicitly instructed read-only: a verifier re-dated
+    `roster_verification.json` (round 3), an auditor's `--quick` run replaced
+    the committed 18,000-season E24 evidence with a 4× noisier file at the
+    same path, and a cadence run overwrote `cadence_intel.json` (round 4).
+    All three were caught by `git status` before commit — but catching is not
+    preventing. **Law: any tool that writes a committed evidence artifact
+    refuses to overwrite a file whose recorded config differs from the run's
+    (implemented in `bench_weight_study.py` 2026-08-10), and `git status`
+    runs before EVERY commit, treating any unexpected modification as an
+    incident to investigate, not noise to restore.**

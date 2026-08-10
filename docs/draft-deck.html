@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-08-10", "pool": 245, "verification": {"mode": "fallback-partial", "checked": 245, "teams_covered": 30}, "freshness_note": "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10. ONE pool change: Cole Anthony REMOVED \u2014 signed 1yr with NBL Melbourne United (2nd source \u2026"} -->
+<!-- build-manifest {"built": "2026-08-10", "pool": 245, "pool_sha256": "84b18e780243fff704bb175ec61c59bca39263daf9c2720178fec52e5a36683c", "verification_mode": "fallback-partial", "evidence_date": "2026-08-10", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 245, "teams_covered": 30}, "freshness_note": "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10: ZERO pool changes \u2014 the 8/9 state re-confirmed on a fresh watchlist + general sweep (10 \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -308,7 +308,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
                placeholder='Jokic; my:Wemby; 44- Herro'>
         <button class="primary" id="logBtn" type="button">Log</button>
       </div>
-      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For common surnames (White, Murray, Ball, Bridges, Sharpe…) feed first initial + surname: <code>D White</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
+      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
       <p class="eyebrow rosterhead" style="margin-top: var(--space-4)"><span id="myRosterTitle">Your roster</span><span id="myRosterFams"></span></p>
       <ul class="myroster" id="myRoster"></ul>
     </div>
@@ -405,8 +405,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 </section>
 
 <footer class="colophon">
-  <p><strong>Data.</strong> Pool refreshed 2026-08-10 under the roster validation lock — 246 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/3): Jeremy Sochan signs with Portland — one year at the veteran minimum, non-guaranteed, a camp deal (reported 8/1), so he moves FA→POR with no change to his projection. Harden's Cleveland return remains agreed-but-unsigned by design; DeRozan (waived by Sacramento), Beal (opted out), and Westbrook are still true free agents. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD pending the league investigation (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 246-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because every punt-<em>declaring</em> policy tested −5 to −11pp. Mock opponents are 9 value-drafters + 2 market seats, so discounted vets leave mock boards early and stars fall further than real rooms. The judgment layer (per-player adjustments, ~marked estimates) is authored fresh at each daily republish and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Data.</strong> Pool refreshed 2026-08-10 under the roster validation lock — 245 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/10, owner-requested): zero pool changes — the sweep re-confirmed the 8/9 state. Cole Anthony left the pool 8/9 for the NBL's Melbourne United; Butler's exclusion was re-graded against fresh reporting (ACL surgery 2/9, return framing now ~Feb 2027 — exclusion stands); Harden is 'fully expected' to re-sign in CLE (Shams) but remains unsigned; DeRozan (turned 37 this week, seven teams linked, no club), Beal, and Westbrook are still true free agents; Klay is being shopped by Dallas with NO buyout in discussion (8/8); Watson's sign-and-trade market narrowed to CLE/MIL/LAC after Denver crossed the second apron signing Lonnie Walker IV (8/5); LeBron-to-PHI re-verified. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD — the probe EXPANDED 8/8 (second company, Daktronics) and could run into 2027 (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 245-player pool; projections, not live stats.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until October ADP replaces the proxy. The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -624,9 +624,14 @@ function teamOfPick(n, teams) {
   return rnd % 2 === 0 ? idx + 1 : teams - idx;
 }
 function myNextPick(state) {
-  let n = state.picks.length;
-  while (teamOfPick(n, state.teams) !== state.slot) n++;
-  return n + 1;
+  /* Bounded by the draft's true length (F52's JS half, R4-F36): the
+     unbounded walk showed a phantom "your next: #164" in a 156-pick
+     league once the owner's last pick was in. Returns null when none
+     remain; consumers render "draft complete". */
+  const last = state.teams * state.size;
+  for (let n = state.picks.length; n < last; n++)
+    if (teamOfPick(n, state.teams) === state.slot) return n + 1;
+  return null;
 }
 
 /* difflib.SequenceMatcher ratio (no junk; names are short, autojunk moot) */
@@ -665,20 +670,53 @@ function seqRatio(a, b) {
   return a.length + b.length ? (2 * m) / (a.length + b.length) : 1;
 }
 
+/* Port of hoops.fold / hoops.surname_key (audit 2026-08-09, F27/F22).
+   fold strips diacritics so a feed pasted from Yahoo/ESPN ("Jokić",
+   "Şengün") matches the ASCII pool; surnameKey ignores a trailing suffix so
+   "jr" is not the fuzzy key for the pool's 14 suffixed players. */
+const NAME_SUFFIXES = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
+let _nameTokens = null, _nameTokensN = -1;
+/* Leading tag of a note — the machine-readable half (R4-F23: five
+   substring parsers survived A17; all note consumers now share this). */
+function tagOf(note) { return (note || "").toLowerCase().split(/[\s(]/)[0]; }
+function fold(s) {
+  return s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "");
+}
+function surnameKey(name) {
+  const parts = fold(name).replace(/\./g, "").split(" ")
+    .filter(t => t && !NAME_SUFFIXES.has(t));
+  return parts.length ? parts[parts.length - 1] : "";
+}
+
 /* Port of hoops.match_candidates: exact > nickname > exact word > substring
    > fuzzy surname (first letter must agree, ratio >= 0.8). */
 function matchCandidates(players, query) {
-  let q = query.trim().toLowerCase();
+  let q = fold(query.trim());
   q = NICKNAMES[q] || q;
-  let subs = players.filter(p => p.n.toLowerCase() === q);
+  /* Degenerate segments never match (F02): a lone '.', '-' or an empty
+     "my:" reached the substring stage and logged the best remaining player
+     as a confirmed pick. Nicknames resolve first, so kd/ad/og/zu survive.
+     Real name tokens are exempt (R4-F06, 2026-08-10): CJ/GG/Ja/AJ/PJ/RJ/VJ
+     are actual first names in the pool and the bare guard rejected all
+     seven. Token set built lazily — PLAYERS loads after this block parses. */
+  if (q.length < 3 || !/[a-z]/.test(q)) {
+    if (_nameTokens === null || _nameTokensN !== players.length) {
+      _nameTokens = new Set();
+      for (const p of players)
+        for (const t of fold(p.n).replace(/\./g, "").split(" "))
+          if (t.length >= 2 && /^[a-z]+$/.test(t)) _nameTokens.add(t);
+      _nameTokensN = players.length;
+    }
+    if (!_nameTokens.has(q)) return [];
+  }
+  let subs = players.filter(p => fold(p.n) === q);
   if (!subs.length)
-    subs = players.filter(p => p.n.toLowerCase().replace(/\./g, "").split(" ").includes(q));
+    subs = players.filter(p => fold(p.n).replace(/\./g, "").split(" ").includes(q));
   if (!subs.length)
-    subs = players.filter(p => p.n.toLowerCase().includes(q));
+    subs = players.filter(p => fold(p.n).includes(q));
   if (!subs.length) {
     subs = players.filter(p => {
-      const parts = p.n.toLowerCase().replace(/\./g, "").split(" ");
-      const last = parts[parts.length - 1];
+      const last = surnameKey(p.n);
       return q[0] === last[0] && seqRatio(q, last) >= 0.8;
     });
   }
@@ -859,7 +897,7 @@ function marketRanks(pool) {
     /* sign-aware (2026-07-30): plain product inverted below zero —
        hype must RAISE negative-score rookies, risk must LOWER vets */
     if (note.includes("rookie-proj")) v = v > 0 ? v * 1.15 : v / 1.15;
-    if (note.includes("risk")) v = v > 0 ? v * 0.95 : v / 0.95;
+    if (tagOf(note).includes("risk")) v = v > 0 ? v * 0.95 : v / 0.95;
     return v;
   };
   const model = new Map([...pool].sort((a, b) => mscore(b) - mscore(a))
@@ -1004,9 +1042,15 @@ const DECW_CV = { "PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55,
   "ST": 0.70, "BLK": 0.75, "TO": 0.50 };
 const PCT_MIX_INFL = 1.15, DECW_ALPHA = 0.5;
 function weeklyAvail(p) {
-  const note = (p.note || "").toLowerCase();
-  if (note.includes("recovery")) return 0.60;
-  if (note.includes("risk")) return 0.75;
+  /* Leading tag only, risk before recovery (audit 2026-08-09, F16 — mirrors
+     hoops.availability / arena.weekly_availability). Substring-matching the
+     whole note scored "inj-achilles-risk (recovery on track)" as a 0.60
+     recovery tier; all four re-entered returnees carry that note shape. */
+  const tag = tagOf(p.note);
+  if (tag.endsWith("-recovery")) return 0.60;
+  if (tag.endsWith("-risk") || tag === "risk" || tag === "inj-risk") return 0.75;
+  if (tag.includes("recovery")) return 0.60;
+  if (tag.includes("risk")) return 0.75;
   return 0.88;
 }
 /* Instrument v2 (2026-08-05): daily-fill start rates. Yahoo lineups are set
@@ -1127,11 +1171,28 @@ function pctRanks(vals) {
 function decwScores(pool, mine, oppRosters) {
   const vals = pool.map(p => adjValue(p, new Set()));
   const opp = oppRosters.filter(r => r.length).map(teamWeekModel);
-  if (!opp.length) return vals.map((v, i) => ({ p: pool[i], ds: v }));
+  if (!opp.length) {
+    /* Empty board: percentile-rank so `ds` is on the same [0,1] scale the
+       blended branch produces (audit 2026-08-09, F20). Returning raw adjValue
+       made the pick-#1 card render "lead +57.2 🚀" and a tooltip reading
+       "ΔECW-blend 1100.3 … as pool percentiles" — 11x above the top of its own
+       declared scale — while firing the standout threshold unconditionally and
+       making the coin-flip threshold unreachable. In LIVE mode this rendered
+       for every seat until the first opponent pick was entered. pctRanks is
+       monotone in adjValue, so the ORDER is unchanged. */
+    const pv0 = pctRanks(vals);
+    return pool.map((p, i) => ({ p, ds: pv0[i], decw: null }));
+  }
   const base = mine.length ? pwinsTotal(teamWeekModel(mine), opp) : 0;
   const decw = pool.map(p => pwinsTotal(teamWeekModel([...mine, p]), opp) - base);
   const pd = pctRanks(decw), pv = pctRanks(vals);
-  return pool.map((p, i) => ({ p, ds: DECW_ALPHA * pd[i] + (1 - DECW_ALPHA) * pv[i] }));
+  /* decw is carried through in its own unit — expected categories won per
+     week against the room's current rosters. The card reports THAT number
+     rather than a confidence percentage (owner directive 2026-08-09): the
+     percentile blend orders the list, the cats/wk figure says what the
+     choice is worth. */
+  return pool.map((p, i) => ({ p, decw: decw[i],
+    ds: DECW_ALPHA * pd[i] + (1 - DECW_ALPHA) * pv[i] }));
 }
 function normCdf(x) {
   const ax = Math.abs(x) / Math.SQRT2;
@@ -1152,7 +1213,7 @@ function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng, teams = 1
   let recCt = 0;
   for (const p of roster) {
     teamCt[p.t] = (teamCt[p.t] || 0) + 1;
-    if ((p.note || "").toLowerCase().includes("recovery")) recCt++;
+    if (tagOf(p.note).includes("recovery")) recCt++;
   }
   const scarce = {};
   if (params.scarcity_w) {
@@ -1206,7 +1267,7 @@ function strategyScores(name, pool, roster, myRanks, rnd, rounds, rng, teams = 1
     const injuryNote = note.includes("inj") || note.startsWith("out-");
     if (params.risk !== "upside") {
       let av = p.av;
-      if (params.rec_compound && note.includes("recovery"))
+      if (params.rec_compound && tagOf(note).includes("recovery"))
         av *= recCt === 1 ? 0.85 : (recCt >= 2 ? 0.7 : 1.0);
       s = s > 0 ? s * av : s;
     }
@@ -1266,7 +1327,7 @@ const PLAYERS = [{"n":"Nikola Jokic","t":"DEN","p":"C","note":"","av":1.0,"z":{"
    added to the council score; `why` is the rationale shown on the card.
    Grounded in the 2026-07-28 refresh research (re-dated at each republish alongside JUDGMENT.date). */
 const JUDGMENT = {
-  date: "2026-07-28",
+  date: "2026-08-10",
   /* Value-on-the-board knobs (tuned at each republish).
      Board slides — players available past their rank on OUR no-punt
      pre-draft board — earn a capped score bonus: real 9-cat value is
@@ -1282,25 +1343,26 @@ const JUDGMENT = {
     "Anfernee Simons": { adj: -0.15, why: "Two more mouths in the PHI backcourt \u2014 LeBron 7/24, KCP 7/25. Direction likely, magnitude speculative; a trade out of the logjam is just as plausible." },
     "VJ Edgecombe": { adj: -0.10, why: "Second-year wing squeezed by the same PHI logjam \u2014 rotation minutes now contested by LeBron and KCP; first trim candidate if camp reporting firms up." },
     "Jalen Brunson": { adj: -0.15, why: "July 7 wrist surgery, cast ~6 weeks \u2014 expected ready for October; ramp-up risk only, not availability risk." },
-    "Kawhi Leonard": { adj: -0.20, why: "Toronto trade still on league hold (fact-finding done 7/25, NBA reviewing) \u2014 destination limbo stacks situation risk on the standing injury tag; could execute any time after a ruling." },
+    "Kawhi Leonard": { adj: -0.20, why: "Toronto trade still on league hold — the probe EXPANDED 8/8 (second company, Daktronics) and ESPN reports it could run into 2027, though a pre-camp resolution would let the trade through. Destination limbo stacks sit-risk on age risk." },
     "Alex Caruso": { adj: 0.05, why: "OKC wing minutes open post-Dort (7/19) \u2014 modest upside lean while the rotation math settles; no reprice yet." },
     /* Unsigned free agents: projections assume a role no team has
        committed to yet — destination discount until they sign. */
     "Jonathan Kuminga": { adj: -0.30, why: "Unsigned \u2014 ATL holds his rights per late-July reporting (the GSW-vs-ATL discrepancy resolves to ATL); LAL sign-and-trade talks stalled. Role unknowable until he lands. Carried FA rather than ATL: rights-held but never on ATL\u2019s floor \u2014 unlike the rostered RFAs below." },
-    "DeMar DeRozan": { adj: -0.25, why: "Unsigned; MIA now viewed as the top landing spot with 'huge progress' reported toward signing him and Beal (late 7/26). A contender bench role would cut his shot volume hard." },
+    "DeMar DeRozan": { adj: -0.25, why: "Still unsigned 8/10 — the late-July MIA momentum cooled; linked to MIA/DET/TOR/GSW/DEN/CLE/WAS with no club, and he turned 37 this week. A contender bench role would cut his shot volume hard." },
     "Cam Thomas": { adj: -0.30, why: "Waived twice last season, still unsigned. His volume-scorer profile needs a green light no team has offered." },
-    "Bradley Beal": { adj: -0.25, why: "Unsigned after six games and hip-fracture surgery \u2014 MIA progress reported alongside DeRozan (7/26), but health and minutes stay open questions." },
+    "Bradley Beal": { adj: -0.25, why: "Unsigned after six games and hip-fracture surgery; MIA still keeping tabs (Miami Herald, 8/6) but no deal. Health and destination both open." },
     "Russell Westbrook": { adj: -0.20, why: "Unsigned; MIA looked live after missing LeBron but is 'not aggressively pursuing' (7/26) \u2014 vet-minimum market, destination unknown." },
     "Jaden Ivey": { adj: -0.20, why: "Waived in March (knee), unsigned \u2014 health and destination both open questions." },
-    "Jeremy Sochan": { adj: -0.15, why: "Unsigned after a limited NYK title-run role." },
+    "Jeremy Sochan": { adj: -0.15, why: "POR camp deal — one year, vet minimum, NON-guaranteed (agreed 8/1). A camp cut returns him to FA; the discount is roster-spot risk, not role risk." },
     "Lonzo Ball": { adj: -0.15, why: "Waived, unsigned; injury history stacks on destination risk." },
-    "James Harden": { adj: -0.10, why: "Unsigned on paper \u2014 $42.3M option declined 6/29 with a 2-3yr CLE framework already worked out; the LeBron wait ended 7/24, signing expected imminently. Paperwork gap, not a destination question." },
+    "James Harden": { adj: -0.10, why: "Unsigned on paper — 'fully expected' to re-sign in CLE (Shams), open to spreading the money over 3 years, both sides waiting on the last offseason dominoes. Priced as a Cav; the discount is signing-drag risk only." },
     /* Restricted free agents: team retains rights, but standoffs carry
        ramp/route risk the roster listing hides. */
-    "Bennedict Mathurin": { adj: -0.15, why: "RFA frozen by the Kawhi investigation (7/26) \u2014 re-sign, qualifying offer, or sign-and-trade all land differently for usage." },
+    "Bennedict Mathurin": { adj: -0.15, why: "RFA still frozen by the Kawhi probe — now EXPANDED (second funneling company, Daktronics, reported 8/8; ESPN: could run into 2027). Re-sign, qualifying offer, or sign-and-trade all land differently." },
     "Jalen Duren": { adj: -0.10, why: "RFA standoff could run into August; DET expected to keep him, but the delay is ramp risk." },
-    "Peyton Watson": { adj: -0.10, why: "RFA unsigned; DEN expected to match, sign-and-trade suitors circling." },
+    "Peyton Watson": { adj: -0.10, why: "RFA unsigned; sign-and-trade talks live with CLE/MIL/LAC, and DEN crossed the second apron signing Lonnie Walker IV (8/5) — a new DEN deal now looks unlikely, destination genuinely open (8/10)." },
     /* Contract-signal reads the stat line can't see yet. */
+    "Klay Thompson": { adj: -0.10, why: "DAL shopping him and NOT discussing a buyout (8/8) — with LAL/MIA interest they want assets back, and at ~$17.5M expiring he's tradeable. Role and team both unsettled." },
     "Gary Trent Jr.": { adj: 0.10, why: "4yr/$64M on a rebuild says MIL plans a much bigger role than last season's 8.1 ppg \u2014 the league's probe of the deal is fantasy noise." },
     "Neemias Queta": { adj: 0.05, why: "4yr/$56M extension after 75 starts \u2014 the incumbent in the Boston center timeshare until Robinson proves durability." },
   },
@@ -1315,7 +1377,7 @@ const JUDGMENT = {
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-08-10"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10. ONE pool change: Cole Anthony REMOVED \u2014 signed 1yr with NBL Melbourne United (2nd source obtained: official NBL announcement + Hoops Rumors/Yahoo/Basketnews; pool exit rule satisfied). Butler GP review resolved: acl-recovery tag retained \u2014 return framing now ~Feb 2027 (surgery 2/9, timetable updated 'early next season'), recovery = excluded from boards, treatment already correct. Flags carried: Harden FA (Shams: fully expected to re-sign CLE, multiyear, waiting on dominoes); Klay DAL (no buyout talks per 8/8 reports, trade exploration continues, LAL/MIA interest); Kawhi probe may stretch into 2027, settlement likely, TOR trade still on league hold; Watson sign-and-trade talks narrowed to CLE/MIL/LAC (DEN over 2nd apron after Lonnie Walker IV 1yr signing 8/5). LeBron\u2192PHI re-confirmed. No new fantasy-relevant injuries in window. NOTE: pool change invalidates arena baselines (September re-baseline rule applies).";
+  const BUILD_NOTE = "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10: ZERO pool changes \u2014 the 8/9 state re-confirmed on a fresh watchlist + general sweep (10 queries). Cole Anthony's NBL exit (8/9) re-verified against the official NBL announcement; Butler exclusion re-graded (ACL surgery 2/9, return ~Feb 2027 \u2014 stands); Harden 'fully expected' to re-sign CLE (Shams) but unsigned; DeRozan (37 this week)/Beal/Westbrook still true FAs; Klay: DAL shopping, NO buyout discussions (8/8); Watson sign-and-trade narrowed to CLE/MIL/LAC, DEN over 2nd apron after Lonnie Walker IV (8/5); Kawhi probe may run into 2027, TOR trade still on hold; LeBron\u2192PHI re-verified. JUDGMENT re-authored same pass (5 entries refreshed).";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -2209,7 +2271,8 @@ const JUDGMENT = {
     }
     const onClock = teamOfPick(n, st.teams);
     /* countdown under the feed title (owner request 2026-07-23) */
-    const until = myNextPick(st) - (n + 1);
+    const nxt = myNextPick(st);
+    const until = nxt === null ? 0 : nxt - (n + 1);
     $("feedCountdown").textContent =
       until === 0 ? "(you're on the clock)" : `(${until} until your pick)`;
     const mine = buildRosters(st, PLAYERS)[st.slot];
@@ -2218,7 +2281,8 @@ const JUDGMENT = {
       el("span", "", `Pick #${n + 1} · R${Math.floor(n / st.teams) + 1}/${st.size}`),
       el("span", onClock === st.slot ? "onclock you" : "onclock",
         onClock === st.slot ? "YOU are on the clock" : `Seat ${onClock} on the clock`),
-      el("span", "", `your next: #${myNextPick(st)}`),
+      el("span", "", myNextPick(st) === null
+        ? "draft complete" : `your next: #${myNextPick(st)}`),
       el("span", "", `your roster: ${mine.length}/${st.size}`),
       el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"),
       el("span", "", `${availablePool(st, PLAYERS).length} available`)
@@ -2327,7 +2391,8 @@ const JUDGMENT = {
       if (rival)
         meta.append(el("span", "", `top rival Seat ${rival}: you lead ${edge.length}/${kept.length} kept`));
       const read = draftDone() ? null : archetypeRead(
-        st, mine, availablePool(st, PLAYERS), ranks, myNextPick(st), MKT_RANK);
+        st, mine, availablePool(st, PLAYERS), ranks,
+        myNextPick(st) ?? st.teams * st.size, MKT_RANK);
       if (read) {
         const t = el("button", "target" + (read.urgent ? " urgent" : ""),
           `${read.boardOnly ? "BOARD LEAN" : "TARGET"}: ${read.label}` + (read.urgent ? " — act now" : (read.wait ? " — can wait" : "")));
@@ -2430,7 +2495,7 @@ const JUDGMENT = {
     STRATEGIES.council = saved;
     /* Judgment layer + board-slide bonus: additive adjustments on the
        council's shortlist, each with a visible rationale. */
-    const pickNo = draftDone() ? 0 : myNextPick(st);
+    const pickNo = draftDone() ? 0 : (myNextPick(st) ?? 0);
     /* ΔECW blend ordering (E9 ship 2026-08-04, findings_2026-08-04_decw_
        round2.md): the Top-5 ORDER is the validated blend50 score at every
        seat — replacing the composite fs sort AND the slot-1-3 gradient
@@ -2444,13 +2509,16 @@ const JUDGMENT = {
         .map(pk => PLAYERS.find(q => q.n === pk.player)).filter(Boolean);
       if (r.length) oppRosters.push(r);
     }
-    const dsMap = new Map(decwScores(pool, mine, oppRosters).map(x => [x.p.n, x.ds]));
+    const dsAll = decwScores(pool, mine, oppRosters);
+    const dsMap = new Map(dsAll.map(x => [x.p.n, x.ds]));
+    const ecwMap = new Map(dsAll.map(x => [x.p.n, x.decw]));
     const scoredAll = councilTop.map(r => {
       const j = JUDGMENT.players[r.p.n];
       const v = slideBonus(r.p, pickNo);
       return { ...r, adj: j ? j.adj : 0, why: j ? j.why : "",
                slide: v.slide, boardRank: v.rank, vbonus: v.bonus,
                ds: dsMap.get(r.p.n) ?? -1,
+               decw: ecwMap.get(r.p.n) ?? null,
                fs: r.s + (j ? j.adj : 0) + v.bonus };
     }).sort((a, b) => b.ds - a.ds ||
       (a.p.n < b.p.n ? 1 : a.p.n > b.p.n ? -1 : 0));
@@ -2482,22 +2550,18 @@ const JUDGMENT = {
         }
       }
     }
-    /* Coin-flip tag: top two within 0.25z of composite score (the owner's
-       "~5 points" rule expressed in raw score, no invented slope). */
-    /* Thresholds rate-matched to blend units on the 182 ledger turns
-       (2026-08-04): coin-flip 0.011 preserves the old ~64% fire rate,
-       standout 0.035 the old ~2%. September recalibrates on fresh data. */
-    const coinFlip = scored.length > 1 && scored[0].ds - scored[1].ds <= 0.011;
-    /* Standout tag (owner ask 2026-07-28, from the mock-8 post-mortem where
-       a 6.3-point runaway was passed over silently): the coin flip's mirror —
-       when #1's lead is a runaway, say so. Threshold 1.5, calibrated twice:
-       65 owner turns across the five uploaded mocks (fires 3/65, all true
-       runaways at 4.2-6.3; next gap 0.65) and an adversarial 312-turn
-       replay (fires 6/312, all >= 2.18 — a 1.0 cut would also catch a
-       marginal 1.02). Punt mode reshapes gaps but showed no spurious fire
-       at 1.5 (one genuine FT%-punt runaway at 1.98). Glyph is 🚀, NOT ⭐ —
-       the star already means "market star" in the strip above. */
-    const standout = scored.length > 1 && scored[0].ds - scored[1].ds >= 0.035;
+    /* The coin-flip and standout tags are RETIRED (owner directive
+       2026-08-09). They were percentile-gap thresholds rate-matched to a
+       confidence display that no longer exists, and the skill carried a
+       SECOND, unrelated coin-flip rule computed from hand-authored
+       percentages \u2014 two surfaces disagreeing turn by turn about the same
+       word. The row-1 margin in cats/wk states the same thing in a unit,
+       without a threshold to calibrate: a 0.004 margin and a 0.31 margin
+       are self-evidently different decisions. Re-deriving a threshold on
+       the cats/wk scale is a September item, gated on the punted mocks
+       per E21. Kept: noRoom, which reports that turn-1 has no room to
+       measure a marginal category against at all. */
+    const noRoom = !oppRosters.length;
     const alBox = $("adviceline");
     if (alBox) { alBox.classList.add("hidden"); alBox.textContent = ""; }
     let adviceChip = null;
@@ -2550,22 +2614,30 @@ const JUDGMENT = {
       }
       let vSpan = null;
       const fRec = fitZ(p, recoFw);
-      /* Score number demoted (owner concision pass 2026-08-05): rank order
-         already encodes it. Row 1 shows the decision-relevant part \u2014 the
-         lead over #2 \u2014 with runaway/coin-flip folded in; raw percentiles
-         live in the tooltip. */
-      const lead = i === 0 && scored.length > 1 ? (scored[0].ds - scored[1].ds) * 100 : null;
-      const sc = el("span", "sc", lead === null ? "" : `lead +${lead.toFixed(1)}`);
-      if (i === 0 && standout) { sc.style.color = "var(--accent)"; sc.textContent += " \ud83d\ude80"; }
-      if (i === 0 && coinFlip) { sc.style.color = "var(--muted)"; sc.textContent = `coin flip (+${lead.toFixed(1)})`; }
+      /* Owner directive 2026-08-09: the confidence figure is REMOVED. It had
+         no calibration procedure and no anchor \u2014 across the only 45
+         recorded cards the top candidate never left a 50-88 band and the
+         scale's own "95% = no contest" end was reached zero times \u2014 and
+         it read as a probability it was not. The row now reports the marginal
+         value of the choice in the unit the league is actually scored in:
+         expected categories won per week against the room's CURRENT rosters.
+         That number needs no calibration; it IS the quantity. A negative
+         row-1 margin is shown as such \u2014 it says the blend's value half,
+         not the weekly model, is carrying the ordering at this turn. */
+      const myEcw = scored[i].decw;
+      const refEcw = i === 0 ? (scored[1] ? scored[1].decw : null) : scored[0].decw;
+      const dEcw = (myEcw == null || refEcw == null) ? null : myEcw - refEcw;
+      const sc = el("span", "sc", dEcw === null ? ""
+        : `${dEcw >= 0 ? "+" : "\u2212"}${Math.abs(dEcw).toFixed(3)} cats/wk`);
+      if (i > 0) sc.style.color = "var(--muted)";
       if (i === 0 && p.av < 1 && fRec.raw > 0) sc.textContent += "*";
-      sc.dataset.tip = `ΔECW-blend ${(scored[i].ds * 100).toFixed(1)} — 50% marginal expected-cats-won vs the room's CURRENT rosters + 50% balanced 9-cat value (punt-blind by design \u2014 punt-steered orderings measured \u22123.8 to \u221211pp), both as pool percentiles (validated 2026-08-04: +11.6pp mean, 0 winner regressions across 14 replayed drafts). Informational: council ${s.toFixed(2)}` +
-        (scored[i].adj ? ` · judgment ${fmtZ(scored[i].adj, 2)}` : "") +
-        (i === 0 && scored.length > 1 ? ` · lead over #2: ${((scored[0].ds - scored[1].ds) * 100).toFixed(1)}` : "") +
-        (i > 0 ? ` · gap to #1: −${((scored[0].ds - scored[i].ds) * 100).toFixed(1)}` : "");
-      /* coin-flip / standout name-flags folded into the row-1 lead
-         display (owner concision pass 2026-08-05) \u2014 same signals, one
-         surface, tooltips unchanged. */
+      sc.dataset.tip = (myEcw == null
+        ? "No opponent has drafted yet, so there is no room to measure marginal categories against \u2014 the ordering here is pure 9-cat value."
+        : `Marginal expected categories won per week from adding this player, measured against the room's CURRENT rosters: ${myEcw >= 0 ? "+" : "\u2212"}${Math.abs(myEcw).toFixed(3)}. `
+          + (i === 0 ? "The figure on the row is the margin over #2."
+                     : "The figure on the row is the deficit to #1.")
+          + ` Ordering is the blend50 score (${(scored[i].ds * 100).toFixed(1)} of 100): 50% percentile of this \u0394ECW + 50% percentile of balanced 9-cat value, punt-blind by design \u2014 punt-steered orderings measured \u22123.8 to \u221211pp. Validated 2026-08-04: +11.6pp mean, 0 winner regressions across 14 replayed drafts. Informational: council ${s.toFixed(2)}`) +
+        (scored[i].adj ? ` \u00b7 judgment ${fmtZ(scored[i].adj, 2)}` : "");
       /* Concise breakdown line (owner spec 2026-07-30): council/slide
          numbers + the player's plus-cats; rationale detail lives in the
          line's tooltip and the score tooltip. */
@@ -2666,7 +2738,13 @@ const JUDGMENT = {
       } else {
         const top0 = scored[0].p;
         txt = `Take ${top0.n}`;
-        txt += standout ? " \u2014 clear of the field" : coinFlip ? " \u2014 coin flip with #2, either is fine" : " \u2014 best week-win blend";
+        /* Calculated, not editorialised (owner directive 2026-08-09): the
+           advice line reports the measured margin rather than grading it
+           with a word. */
+        const m0 = scored[0].decw, m1 = scored[1] ? scored[1].decw : null;
+        txt += noRoom || m0 == null || m1 == null
+          ? " \u2014 top of the 9-cat value board; no opponent roster to measure a marginal category against yet"
+          : ` \u2014 ${m0 - m1 >= 0 ? "+" : "\u2212"}${Math.abs(m0 - m1).toFixed(3)} expected categories per week over ${scored[1].p.n}`;
         if (adviceChip) {
           const pm = adviceChip.match(/~\d+%/);
           if (adviceChip.includes("BUY NOW")) txt += pm ? `; only ${pm[0]} chance he survives to your next turn` : "; the shelf is nearly empty";

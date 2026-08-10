@@ -9,7 +9,7 @@ The arena's sole purpose is testing the system's draft analysis and league simul
 
 ## Procedure
 
-0. **Live practice** ("draft against the bots", "practice draft"): `python3 arena/arena.py live --slot N` — eleven personalities fill the other seats and write into the production draft state, pausing at the user's turns; present the standard confidence card there (production `draft turn` flow, mirror protocol, all owner rules), log the user's pick, re-run `live`. This is the 11-managers-plus-user mode.
+0. **Live practice** ("draft against the bots", "practice draft"): `python3 arena/arena.py live --slot N` — eleven personalities fill the other seats and write into the production draft state, pausing at the user's turns; present the standard §3 calculated card there — the fantasy-basketball SKILL's format: adjusted values in stated units, flags, one committed recommendation, NO confidence percentages (retired 2026-08-09) — via the production `draft turn` flow, mirror protocol, all owner rules, log the user's pick, re-run `live`. This is the 11-managers-plus-user mode.
 1. **Slot adaptation**: `python3 arena/arena.py slots` (champ% per strategy x draft slot; best-per-slot table) and `python3 arena/arena.py cadence [--slot N]` (average tier/position drain between a slot's consecutive turns — the snake's 16-pick/6-pick rhythm). Both write JSON intel to `arena/results/` for draft-night use. Re-run after any strategy change.
 2. **Run**: `python3 arena/arena.py tournament --seasons 200 --seed <n>` (~2s). Vary seeds across runs; one seed is one sample, not a conclusion.
 3. **Read the board**: championship% is the metric that matters; playoff% shows floor. Slot rotation already removes draft-position luck.

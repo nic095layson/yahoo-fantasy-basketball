@@ -16,7 +16,31 @@
     {
       "id": 3,
       "prompt": "Who won the NBA Finals last month?",
-      "expected_output": "Skill does NOT fire — real-NBA question, not fantasy. No hoops.py call; answer normally (web search if available).",
+      "expected_output": "Skill does NOT fire \u2014 real-NBA question, not fantasy. No hoops.py call; answer normally (web search if available).",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "[mid-draft, feed ends on another team's pick] Jokic; Wemby; SGA; my:Luka; Cade Cunningham; Trae Young",
+      "expected_output": "Exactly ONE command: `draft turn \"...\" --expect N`. Mirror lines relayed verbatim for the picks that are not the user's. Because the feed ends on someone else's pick, no candidate card is presented (mirror lines only, per the response protocol). Any \u26a0 line the engine emits \u2014 WIDE MATCH, snake desync, UNKNOWN banner \u2014 is relayed, not swallowed. No extra best/matrix/status calls, no web search, no CSV edit.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "SYNC",
+      "expected_output": "Runs `draft status --tail 6` (one command). Reports picks-logged count, the last 3-6 picks with their pick numbers and teams, and the user's next pick number. Surfaces any UNKNOWN placeholders by pick number. No analysis, no candidate card.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "RESYNC: Jokic; Wemby; SGA; my:Luka; Cade Cunningham; Trae Young; Anthony Edwards",
+      "expected_output": "Runs `draft resync \"<the pasted list>\"` \u2014 NOT `draft init --force` followed by a feed, and never a hand-rebuilt state file. Confirms how many picks were cleared and how many were rebuilt, echoes the reconciliation, and states that the prior board is preserved in draft_state.json.bak. Snake attribution re-derives positionally, so my: markers are optional in a complete in-order paste.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "[mid-draft, the user IS on the clock after this feed] my:Luka was my last pick; here's the room since: Sabonis; Bam Adebayo; Chet Holmgren",
+      "expected_output": "One command (draft turn \"...\" --expect N). Because the user is on the clock, the reply is the calculated card per SKILL \u00a73: candidates with the card's adjusted val in stated units, injury * relayed, rule-triggered flags in brackets, one committed recommendation with the deciding quantity named. NO percentages, confidence scores, or adjectives standing in for them. The deck on the owner's screen governs ordering; if the session's punt-aware order disagrees with what the owner reads out, say which governs (the deck) and why in one clause. If the deck is unreachable, say the fallback board is in use.",
       "files": []
     }
   ]

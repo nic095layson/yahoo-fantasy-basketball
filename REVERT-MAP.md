@@ -10,7 +10,7 @@ relevant files) and republishes to the standing artifact URL.
 
 | Layer | Switch | Effect |
 |---|---|---|
-| Slot-gated gradient ordering | set `GRAD_SLOTS = 0` in `arena/arena.py` AND `docs/draft-deck.html` (one constant each) | gradient ordering off everywhere; composite ordering unaffected |
+| Slot-gated gradient ordering | set `GRAD_SLOTS = 0` in `arena/arena.py` AND `docs/draft-deck.html` (one constant each) | **STALE, corrected 2026-08-09 (audit F59):** since the E9 blend50 ship the deck's Top-5 ordering is governed solely by `ds` — `GRAD_SLOTS = 0` now affects the ARENA and the deck's `fs`/tooltip metadata only, NOT the shipped card order. To change the card order use the decw-ordering kill switch below. |
 | Single-🎯 system-pick marker | remove the `isRec`/`tgOnPin` marks in the Top-5 loop + pinned row | marker gone; ordering untouched |
 | Strengths/Weaknesses header | remove the `#swline` render block in renderDecision | header gone |
 | Market-timing chips / ladder | display blocks in the app script, all marked | display-only by construction |
