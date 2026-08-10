@@ -1,8 +1,8 @@
 {
-  "date": "2026-08-05",
-  "note": "Daily sweep 08-04\u219208-05: zero confirmed roster changes (32 queries, watchlist + general). New flags: Klay Thompson DAL trade/buyout exploration; Kawhi probe EXPANDED (2nd endorsement deal); Watson suitors now MIL/CLE/ATL/LAC; Harden-CLE resolution expected this week; Butler early-Feb return framing sourced (GP review next pull); Cole Anthony\u2192NBL [LIKELY, 1 source \u2014 pool exit pending 2nd source]. UI: category-rank heat grading shipped (owner request).",
+  "date": "2026-08-10",
+  "note": "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10. ONE pool change: Cole Anthony REMOVED \u2014 signed 1yr with NBL Melbourne United (2nd source obtained: official NBL announcement + Hoops Rumors/Yahoo/Basketnews; pool exit rule satisfied). Butler GP review resolved: acl-recovery tag retained \u2014 return framing now ~Feb 2027 (surgery 2/9, timetable updated 'early next season'), recovery = excluded from boards, treatment already correct. Flags carried: Harden FA (Shams: fully expected to re-sign CLE, multiyear, waiting on dominoes); Klay DAL (no buyout talks per 8/8 reports, trade exploration continues, LAL/MIA interest); Kawhi probe may stretch into 2027, settlement likely, TOR trade still on league hold; Watson sign-and-trade talks narrowed to CLE/MIL/LAC (DEN over 2nd apron after Lonnie Walker IV 1yr signing 8/5). LeBron\u2192PHI re-confirmed. No new fantasy-relevant injuries in window. NOTE: pool change invalidates arena baselines (September re-baseline rule applies).",
   "rosters_verified": {
-    "date": "2026-08-05",
+    "date": "2026-08-10",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }
