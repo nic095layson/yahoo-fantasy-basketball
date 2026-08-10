@@ -2776,13 +2776,24 @@ const JUDGMENT = {
         li.append(el("span", "rk", "→"));
         const tnm = el("span", "nm", (tgOnPin ? "🎯 " : "") + tp.n + ", " + tp.p);
         if (tgOnPin) tnm.dataset.tip = `🎯 system pick — urgent structural need: best ${readR.fam} in reach with the shelf nearly empty (the override class the mock ledger grades positive)`;
-        li.append(tnm, el("span", "sc", row.ds >= 0 ? (row.ds * 100).toFixed(1) : fmtZ(row.fs, 2)));
+        /* One unit per card (owner-reported 2026-08-10: "92.1" beside
+           "±0.015 cats/wk"): the pinned row reports its ΔECW margin against
+           #1 exactly like rows 2–5; blend-score points live in the tooltip. */
+        const tEcw = (row.decw == null || !scored.length || scored[0].decw == null)
+          ? null : row.decw - scored[0].decw;
+        const tsc = el("span", "sc", tEcw === null ? ""
+          : `${tEcw >= 0 ? "+" : "−"}${Math.abs(tEcw).toFixed(3)} cats/wk`);
+        tsc.style.color = "var(--muted)";
+        tsc.dataset.tip = row.decw == null
+          ? "No opponent has drafted yet, so there is no room to measure marginal categories against — the pin is structural."
+          : `Same unit as the rows above: marginal expected categories won per week vs the room's CURRENT rosters, shown as this player's margin against #1 on the card. The pin itself is structural (${readR.fam} shelf), not a score claim. Informational: blend50 ${(row.ds * 100).toFixed(1)} of 100 vs #1 ${(scored[0].ds * 100).toFixed(1)}.`;
+        li.append(tnm, tsc);
         li.append(el("span", "meta",
           `TARGET ${readR.label} — best ${readR.fam} in reach · ` +
           (readR.urgent
             ? `shelf: ${readR.shelfCount} left in the room's next 2 rounds — act now`
             : (readR.shelfCount !== null ? `shelf: ${readR.shelfCount} in window` : "build need")) +
-          ` · score gap to #1: ${((scored[0].ds - row.ds) * 100).toFixed(1)}`));
+          ` · #${scoredAll.indexOf(row) + 1} on the card's blend`));
         const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
         take.type = "button";
         take.addEventListener("click", () => {
