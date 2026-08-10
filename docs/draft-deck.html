@@ -344,7 +344,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span class="ctl">Show</span>
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
       <span class="ctl">Lens</span>
-      <select id="bestSort" autocomplete="off"><option value="" hidden>cat lens active</option><option value="val">Balanced val</option><option value="fit">Fit z (my roster)</option><option value="mkt" selected>Mkt rank (room price)</option></select>
+      <select id="bestSort" autocomplete="off"><option value="" hidden>cat lens active</option><option value="val">Balanced val</option><option value="decw">ΔECW (cats/wk)</option><option value="fit">Fit z (my roster)</option><option value="mkt" selected>Mkt rank (room price)</option></select>
       <button type="button" id="bestReset" title="clear position, search, show, lens, and cat filters">Reset</button>
       <span class="small" id="bestSummary"></span>
     </div>
@@ -356,7 +356,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
           <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to make this the lens (clears cat filters).">Val</th>
-          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking is blend50 and build-agnostic by design (punt-steered orderings measured negative; arena-codified 2026-07-28, blend50 2026-08-04). Click to make this the lens (clears cat filters).">Fit</th>
+          <th scope="col" id="thRoster" data-sort="decw" title="ΔECW — marginal expected categories won per week if YOU add this player, measured against the room's current rosters: the same unit the decision card reports (owner swap 2026-08-10, replacing the Fit column after it inflated a mis-shaped star). Availability is priced in; punt-blind like the card. Blank until an opponent has drafted. Choosing the Fit lens swaps this column to Fit z (swing-weighted). Click to make this the lens (clears cat filters).">ΔECW</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -366,7 +366,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
       <span>TO inverted (+ = fewer turnovers)</span>
       <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
-      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — a reading lens; the Top-5 ranking is blend50, build-agnostic by design</span>
+      <span><strong>ΔECW</strong> = marginal cats/week for YOUR roster vs the room's current rosters — the card's own unit; blank until an opponent drafts. The Fit lens (swing-weighted z: locked ×0.35, lost ×0.45, punted ×0) swaps the column to Fit — both are reading lenses; the Top-5 ranking stays blend50, build-agnostic by design</span>
       <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
     </div>
   </div>
@@ -2869,6 +2869,24 @@ const JUDGMENT = {
      primary lens (picking it supersedes everything); the 9 cat headers
      stack into a combined-z cat lens, up to 3, removable via × chips. */
   let bestState = { pos: "", q: "", top: 25, lens: "mkt", cats: [], drill: null }; /* Mkt default 2026-08-04; drill 2026-08-05 */
+  /* Pool-wide ΔECW (owner swap 2026-08-10: the ΔECW column replaced Fit
+     after Fit inflated a mis-shaped star): the same decwScores the card
+     runs, memoized on the pick list so search keystrokes and filter
+     changes never re-run the weekly model. */
+  let decwMemo = { key: null, map: null };
+  function poolDecw(st) {
+    const key = st.slot + "|" + st.picks.map(pk => pk.player).join("|");
+    if (decwMemo.key === key) return decwMemo.map;
+    const rosters = buildRosters(st, PLAYERS);
+    const mine = rosters[st.slot];
+    const opp = [];
+    for (let t = 1; t <= st.teams; t++)
+      if (t !== st.slot && rosters[t] && rosters[t].length) opp.push(rosters[t]);
+    const map = new Map(decwScores(availablePool(st, PLAYERS), mine, opp)
+      .map(x => [x.p.n, x.decw]));
+    decwMemo = { key, map };
+    return map;
+  }
   let catCapWarn = false; /* one-shot: a blocked 4th cat selection prompts */
   let draftedNote = "";
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
@@ -2978,6 +2996,12 @@ const JUDGMENT = {
     const fw = fitWeights(punt, ranksB, mineB.length, st.teams);
     const fitOf = new Map(pool.map(p => [p.n, fitZ(p, fw)]));
     const cats = bestState.cats, lens = bestState.lens;
+    const dm = poolDecw(st);
+    /* The roster column is ΔECW under every lens except Fit, where it
+       shows Fit z — you never sort by an invisible metric. */
+    const rosterKey = lens === "fit" ? "fit" : "decw";
+    const thR = $("thRoster");
+    if (thR) { thR.textContent = rosterKey === "fit" ? "Fit" : "ΔECW"; thR.dataset.sort = rosterKey; }
     if (bestState.drill && !cats.includes(bestState.drill)) bestState.drill = null;
     const drill = bestState.drill;
     const catSum = p => cats.reduce((s, c) => s + p.z[c], 0);
@@ -2986,6 +3010,7 @@ const JUDGMENT = {
         ? (a, b) => (b.z[drill] - a.z[drill]) || (catSum(b) - catSum(a)) /* drilled cat, combined as tiebreak */
         : (a, b) => catSum(b) - catSum(a)) /* combined selected-cat z */
       : lens === "fit" ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
+      : lens === "decw" ? (a, b) => (dm.get(b.n) ?? -1e9) - (dm.get(a.n) ?? -1e9)
       : lens === "mkt" ? (a, b) => (MKT_RANK.get(a.n) || 999) - (MKT_RANK.get(b.n) || 999)
       : (a, b) => adjValue(b, punt) - adjValue(a, punt));  /* val */
     for (const th of $("bestHead").querySelectorAll("th"))
@@ -3065,14 +3090,25 @@ const JUDGMENT = {
       tr.append(tdM, tdR, tdN, el("td", "l team", p.t), el("td", "l pos", p.p));
       const tdV = el("td", "val", fmtVal(p, punt));
       tr.append(tdV);
-      const f = fitOf.get(p.n);
-      const tdF = el("td", "val", fmtZ(f.adj, 2) + (p.av < 1 && f.raw > 0 ? "*" : ""));
-      tdF.style.color = "var(--accent)";
-      tdF.dataset.tip = ranksB
-        ? `swing-weighted for your roster: locked (≤${rankTiers(st.teams).locked}) ×0.35, lost (≥${rankTiers(st.teams).lostFrom}) ×0.45, punt ×0` +
-          (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
-        : `roster < 2 — fit z equals balanced value for now`;
-      tr.append(tdF);
+      if (rosterKey === "fit") {
+        const f = fitOf.get(p.n);
+        const tdF = el("td", "val", fmtZ(f.adj, 2) + (p.av < 1 && f.raw > 0 ? "*" : ""));
+        tdF.style.color = "var(--accent)";
+        tdF.dataset.tip = ranksB
+          ? `swing-weighted for your roster: locked (≤${rankTiers(st.teams).locked}) ×0.35, lost (≥${rankTiers(st.teams).lostFrom}) ×0.45, punt ×0` +
+            (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
+          : `roster < 2 — fit z equals balanced value for now`;
+        tr.append(tdF);
+      } else {
+        const d = dm.get(p.n);
+        const tdD = el("td", "val", d == null ? "—"
+          : `${d >= 0 ? "+" : "−"}${Math.abs(d).toFixed(3)}`);
+        tdD.style.color = "var(--accent)";
+        tdD.dataset.tip = d == null
+          ? "No opponent roster to measure against yet — ΔECW starts once an opponent has drafted; balanced value carries the early board."
+          : `Marginal expected categories won per week if YOU add ${p.n}, measured vs the room's current rosters — the card's own unit (availability priced in; punt-blind like the card). Fit z is still available under Lens.`;
+        tr.append(tdD);
+      }
       for (const c of CATS) {
         const z = p.z[c];
         const td = el("td", "z" + (z < 0 ? " neg" : ""), fmtZ(z, 1));
