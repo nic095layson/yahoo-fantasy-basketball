@@ -1,0 +1,807 @@
+{
+ "21": {
+  "mock": "21",
+  "owner_slot": 4,
+  "punt": [],
+  "seeds": [
+   101,
+   103,
+   107
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    148
+   ],
+   "resil": [
+    100,
+    148
+   ]
+  },
+  "top1_diverge_turns": [
+   124,
+   141,
+   148
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 27.194,
+    "playoff": 91.928,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.13,
+    "ecw_std": 5.054,
+    "ecw_slf": 5.092,
+    "roster": [
+     "Nikola Jokic",
+     "Jayson Tatum",
+     "Kevin Durant",
+     "Cooper Flagg",
+     "Walker Kessler",
+     "Coby White",
+     "Immanuel Quickley",
+     "Norman Powell",
+     "Isaiah Hartenstein",
+     "DeMar DeRozan",
+     "Aaron Nesmith",
+     "Tobias Harris",
+     "De'Anthony Melton"
+    ]
+   },
+   "shipped": {
+    "champ": 45.856,
+    "playoff": 99.761,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.22,
+    "ecw_std": 5.548,
+    "ecw_slf": 5.398,
+    "roster": [
+     "Nikola Jokic",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Coby White",
+     "Jalen Suggs",
+     "Naz Reid",
+     "Jaden McDaniels",
+     "Jerami Grant",
+     "Yaxel Lendeborg",
+     "Wendell Carter Jr.",
+     "Jeremy Sochan"
+    ],
+    "swaps": [
+     [
+      28,
+      "Jayson Tatum",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Walker Kessler",
+      "Payton Pritchard"
+     ],
+     [
+      76,
+      "Immanuel Quickley",
+      "Jalen Suggs"
+     ],
+     [
+      93,
+      "Norman Powell",
+      "Naz Reid"
+     ],
+     [
+      100,
+      "Isaiah Hartenstein",
+      "Jaden McDaniels"
+     ],
+     [
+      117,
+      "DeMar DeRozan",
+      "Jerami Grant"
+     ],
+     [
+      124,
+      "Aaron Nesmith",
+      "Yaxel Lendeborg"
+     ],
+     [
+      141,
+      "Tobias Harris",
+      "Wendell Carter Jr."
+     ],
+     [
+      148,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      21,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 18.544,
+    "playoff": 87.367,
+    "finish": 2,
+    "seasons": 18000,
+    "kept_z": 6.69,
+    "ecw_std": 4.946,
+    "ecw_slf": 4.87,
+    "roster": [
+     "Nikola Jokic",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Coby White",
+     "Jalen Suggs",
+     "Naz Reid",
+     "Jaden McDaniels",
+     "Jerami Grant",
+     "Ryan Rollins",
+     "Ayo Dosunmu",
+     "Kelly Oubre Jr."
+    ],
+    "swaps": [
+     [
+      28,
+      "Jayson Tatum",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Walker Kessler",
+      "Payton Pritchard"
+     ],
+     [
+      76,
+      "Immanuel Quickley",
+      "Jalen Suggs"
+     ],
+     [
+      93,
+      "Norman Powell",
+      "Naz Reid"
+     ],
+     [
+      100,
+      "Isaiah Hartenstein",
+      "Jaden McDaniels"
+     ],
+     [
+      117,
+      "DeMar DeRozan",
+      "Jerami Grant"
+     ],
+     [
+      124,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      141,
+      "Tobias Harris",
+      "Ayo Dosunmu"
+     ],
+     [
+      148,
+      "De'Anthony Melton",
+      "Kelly Oubre Jr."
+     ]
+    ],
+    "noop_swaps": [
+     [
+      21,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ]
+    ]
+   }
+  }
+ },
+ "24": {
+  "mock": "24",
+  "owner_slot": 1,
+  "punt": [],
+  "seeds": [
+   101,
+   103,
+   107
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    48,
+    96
+   ],
+   "resil": [
+    48,
+    96
+   ]
+  },
+  "top1_diverge_turns": [
+   144,
+   145
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 29.433,
+    "playoff": 92.389,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.26,
+    "ecw_std": 5.059,
+    "ecw_slf": 5.15,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Jaren Jackson Jr.",
+     "Jalen Brunson",
+     "Bam Adebayo",
+     "LeBron James",
+     "Jalen Suggs",
+     "Deni Avdija",
+     "Nikola Vucevic",
+     "Cameron Boozer",
+     "Jerami Grant",
+     "De'Anthony Melton",
+     "Jared McCain"
+    ]
+   },
+   "shipped": {
+    "champ": 32.028,
+    "playoff": 95.061,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 6.63,
+    "ecw_std": 5.13,
+    "ecw_slf": 5.008,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Kyle Filipowski",
+     "Jeremy Sochan",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      121,
+      "Jerami Grant",
+      "Kyle Filipowski"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ],
+     [
+      145,
+      "Jared McCain",
+      "Tobias Harris"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      72,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      96,
+      "Deni Avdija",
+      "Nikola Vucevic"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 8.856,
+    "playoff": 61.0,
+    "finish": 6,
+    "seasons": 18000,
+    "kept_z": 6.14,
+    "ecw_std": 4.641,
+    "ecw_slf": 4.496,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Darius Garland",
+     "Jalen Suggs",
+     "Mikal Bridges",
+     "Nikola Vucevic",
+     "Norman Powell",
+     "Ryan Rollins",
+     "Andrew Nembhard",
+     "Jared McCain",
+     "Kelly Oubre Jr."
+    ],
+    "swaps": [
+     [
+      25,
+      "Jaren Jackson Jr.",
+      "Desmond Bane"
+     ],
+     [
+      49,
+      "Bam Adebayo",
+      "Darius Garland"
+     ],
+     [
+      73,
+      "LeBron James",
+      "Mikal Bridges"
+     ],
+     [
+      97,
+      "Deni Avdija",
+      "Norman Powell"
+     ],
+     [
+      120,
+      "Cameron Boozer",
+      "Ryan Rollins"
+     ],
+     [
+      121,
+      "Jerami Grant",
+      "Andrew Nembhard"
+     ],
+     [
+      145,
+      "De'Anthony Melton",
+      "Kelly Oubre Jr."
+     ]
+    ],
+    "noop_swaps": [
+     [
+      72,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      96,
+      "Deni Avdija",
+      "Nikola Vucevic"
+     ],
+     [
+      144,
+      "De'Anthony Melton",
+      "Jared McCain"
+     ]
+    ]
+   }
+  }
+ },
+ "34": {
+  "mock": "34",
+  "owner_slot": 8,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "PTS"
+  ],
+  "seeds": [
+   101,
+   103,
+   107
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    17,
+    65
+   ],
+   "resil": [
+    17,
+    65,
+    104,
+    152
+   ]
+  },
+  "top1_diverge_turns": [
+   128,
+   137,
+   152
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 9.5,
+    "playoff": 67.2,
+    "finish": 4,
+    "seasons": 18000,
+    "kept_z": 15.9,
+    "ecw_std": 4.63,
+    "ecw_slf": 4.652,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Bam Adebayo",
+     "Pascal Siakam",
+     "Kel'el Ware",
+     "Kon Knueppel",
+     "Herbert Jones",
+     "Jalen Green",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Daniel Gafford"
+    ]
+   },
+   "shipped": {
+    "champ": 0.017,
+    "playoff": 1.939,
+    "finish": 12,
+    "seasons": 18000,
+    "kept_z": 23.82,
+    "ecw_std": 3.95,
+    "ecw_slf": 3.869,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Ivica Zubac",
+     "Myles Turner",
+     "Kel'el Ware",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Daniel Gafford",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Jusuf Nurkic"
+    ],
+    "swaps": [
+     [
+      8,
+      "Tyrese Haliburton",
+      "Anthony Edwards"
+     ],
+     [
+      41,
+      "Dyson Daniels",
+      "Onyeka Okongwu"
+     ],
+     [
+      56,
+      "Bam Adebayo",
+      "Ivica Zubac"
+     ],
+     [
+      65,
+      "Pascal Siakam",
+      "Myles Turner"
+     ],
+     [
+      89,
+      "Kon Knueppel",
+      "Jalen Duren"
+     ],
+     [
+      104,
+      "Herbert Jones",
+      "Rudy Gobert"
+     ],
+     [
+      152,
+      "Jalen Green",
+      "Jusuf Nurkic"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      32,
+      "Dyson Daniels",
+      "OG Anunoby"
+     ],
+     [
+      113,
+      "Jalen Green",
+      "Daniel Gafford"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 9.683,
+    "playoff": 72.989,
+    "finish": 4,
+    "seasons": 18000,
+    "kept_z": 16.82,
+    "ecw_std": 4.699,
+    "ecw_slf": 4.428,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Ivica Zubac",
+     "Myles Turner",
+     "Kel'el Ware",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Daniel Gafford",
+     "Santi Aldama",
+     "Brandin Podziemski",
+     "Jalen Green"
+    ],
+    "swaps": [
+     [
+      8,
+      "Tyrese Haliburton",
+      "Anthony Edwards"
+     ],
+     [
+      41,
+      "Dyson Daniels",
+      "Onyeka Okongwu"
+     ],
+     [
+      56,
+      "Bam Adebayo",
+      "Ivica Zubac"
+     ],
+     [
+      65,
+      "Pascal Siakam",
+      "Myles Turner"
+     ],
+     [
+      89,
+      "Kon Knueppel",
+      "Jalen Duren"
+     ],
+     [
+      104,
+      "Herbert Jones",
+      "Rudy Gobert"
+     ],
+     [
+      137,
+      "Wendell Carter Jr.",
+      "Brandin Podziemski"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      32,
+      "Dyson Daniels",
+      "OG Anunoby"
+     ],
+     [
+      113,
+      "Jalen Green",
+      "Daniel Gafford"
+     ]
+    ]
+   }
+  }
+ },
+ "39": {
+  "mock": "39",
+  "owner_slot": 4,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "TO"
+  ],
+  "seeds": [
+   101,
+   103,
+   107
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    21,
+    28,
+    148
+   ],
+   "resil": [
+    21,
+    28,
+    124,
+    148
+   ]
+  },
+  "top1_diverge_turns": [
+   124
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 34.961,
+    "playoff": 94.533,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 26.84,
+    "ecw_std": 4.994,
+    "ecw_slf": 4.991,
+    "roster": [
+     "Luka Doncic",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Amen Thompson",
+     "Alperen Sengun",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Ausar Thompson",
+     "Ryan Rollins",
+     "Bilal Coulibaly",
+     "Daniel Gafford",
+     "RJ Barrett"
+    ]
+   },
+   "shipped": {
+    "champ": 6.472,
+    "playoff": 47.828,
+    "finish": 8,
+    "seasons": 18000,
+    "kept_z": 7.85,
+    "ecw_std": 4.463,
+    "ecw_slf": 4.385,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Ryan Rollins",
+     "Daniel Gafford",
+     "Tobias Harris",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      141,
+      "Bilal Coulibaly",
+      "Tobias Harris"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      124,
+      "Bilal Coulibaly",
+      "Daniel Gafford"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 31.122,
+    "playoff": 92.55,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.41,
+    "ecw_std": 4.958,
+    "ecw_slf": 4.711,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Ryan Rollins",
+     "Aaron Nesmith",
+     "Daniel Gafford",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      124,
+      "Bilal Coulibaly",
+      "Aaron Nesmith"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ],
+    "noop_swaps": []
+   }
+  }
+ }
+}

@@ -1,0 +1,418 @@
+[
+ {
+  "pickNo": 4,
+  "actual": "Luka Doncic",
+  "shipped": [
+   {
+    "n": "Luka Doncic",
+    "pos": "PG,SG",
+    "ds": 1
+   },
+   {
+    "n": "Tyrese Maxey",
+    "pos": "PG,SG",
+    "ds": 0.9895
+   },
+   {
+    "n": "Karl-Anthony Towns",
+    "pos": "C,PF",
+    "ds": 0.9895
+   },
+   {
+    "n": "Tyrese Haliburton",
+    "pos": "PG",
+    "ds": 0.9852
+   },
+   {
+    "n": "Anthony Edwards",
+    "pos": "SG,SF",
+    "ds": 0.9789
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 21,
+  "actual": "Giannis Antetokounmpo",
+  "shipped": [
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9977
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.9977
+   },
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9841
+   },
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 0.9682
+   },
+   {
+    "n": "Jaren Jackson Jr.",
+    "pos": "PF,C",
+    "ds": 0.9636
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 28,
+  "actual": "Trae Young",
+  "shipped": [
+   {
+    "n": "Derrick White",
+    "pos": "PG,SG",
+    "ds": 0.9953
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.9953
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9883
+   },
+   {
+    "n": "Dyson Daniels",
+    "pos": "SG",
+    "ds": 0.9812
+   },
+   {
+    "n": "Josh Giddey",
+    "pos": "PG,SG",
+    "ds": 0.9742
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 45,
+  "actual": "Amen Thompson",
+  "shipped": [
+   {
+    "n": "Amen Thompson",
+    "pos": "PG,SF",
+    "ds": 1
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9923
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9847
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9796
+   },
+   {
+    "n": "Jakob Poeltl",
+    "pos": "C",
+    "ds": 0.9745
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 52,
+  "actual": "Alperen Sengun",
+  "shipped": [
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9841
+   },
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 0.9709
+   },
+   {
+    "n": "Cameron Johnson",
+    "pos": "SF",
+    "ds": 0.9709
+   },
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9683
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 69,
+  "actual": "Tari Eason",
+  "shipped": [
+   {
+    "n": "Tari Eason",
+    "pos": "PF",
+    "ds": 0.9971
+   },
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9826
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9767
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9738
+   },
+   {
+    "n": "Mikal Bridges",
+    "pos": "SF",
+    "ds": 0.9709
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 76,
+  "actual": "Jarrett Allen",
+  "shipped": [
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9939
+   },
+   {
+    "n": "Mikal Bridges",
+    "pos": "SF",
+    "ds": 0.9848
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9848
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9697
+   },
+   {
+    "n": "Naz Reid",
+    "pos": "PF,C",
+    "ds": 0.9515
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 93,
+  "actual": "Jalen Duren",
+  "shipped": [
+   {
+    "n": "Jalen Duren",
+    "pos": "C",
+    "ds": 0.9966
+   },
+   {
+    "n": "Herbert Jones",
+    "pos": "SF",
+    "ds": 0.9865
+   },
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 0.9865
+   },
+   {
+    "n": "Rudy Gobert",
+    "pos": "C",
+    "ds": 0.9696
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9595
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 100,
+  "actual": "Ausar Thompson",
+  "shipped": [
+   {
+    "n": "Cason Wallace",
+    "pos": "PG,SG",
+    "ds": 1
+   },
+   {
+    "n": "Herbert Jones",
+    "pos": "SF",
+    "ds": 0.9929
+   },
+   {
+    "n": "PJ Washington",
+    "pos": "PF,C",
+    "ds": 0.9504
+   },
+   {
+    "n": "Ausar Thompson",
+    "pos": "SF",
+    "ds": 0.9504
+   },
+   {
+    "n": "Aaron Gordon",
+    "pos": "PF",
+    "ds": 0.9468
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 117,
+  "actual": "Ryan Rollins",
+  "shipped": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 0.9919
+   },
+   {
+    "n": "Ryan Rollins",
+    "pos": "PG,SG",
+    "ds": 0.9677
+   },
+   {
+    "n": "Andrew Nembhard",
+    "pos": "PG",
+    "ds": 0.9637
+   },
+   {
+    "n": "Yaxel Lendeborg",
+    "pos": "PF",
+    "ds": 0.9516
+   },
+   {
+    "n": "Bilal Coulibaly",
+    "pos": "SG,SF",
+    "ds": 0.9355
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 124,
+  "actual": "Bilal Coulibaly",
+  "shipped": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Yaxel Lendeborg",
+    "pos": "PF",
+    "ds": 0.9744
+   },
+   {
+    "n": "Matas Buzelis",
+    "pos": "SF,PF",
+    "ds": 0.9615
+   },
+   {
+    "n": "Andrew Nembhard",
+    "pos": "PG",
+    "ds": 0.9573
+   },
+   {
+    "n": "Aaron Nesmith",
+    "pos": "SF,PF",
+    "ds": 0.953
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 141,
+  "actual": "Daniel Gafford",
+  "shipped": [
+   {
+    "n": "Daniel Gafford",
+    "pos": "C",
+    "ds": 1
+   },
+   {
+    "n": "Tobias Harris",
+    "pos": "PF",
+    "ds": 0.95
+   },
+   {
+    "n": "Jeremy Sochan",
+    "pos": "PF",
+    "ds": 0.95
+   },
+   {
+    "n": "Keon Ellis",
+    "pos": "SG",
+    "ds": 0.925
+   },
+   {
+    "n": "Kelly Oubre Jr.",
+    "pos": "SF,SG",
+    "ds": 0.925
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 148,
+  "actual": "RJ Barrett",
+  "shipped": [
+   {
+    "n": "Keon Ellis",
+    "pos": "SG",
+    "ds": 0.9892
+   },
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.9624
+   },
+   {
+    "n": "Jeremy Sochan",
+    "pos": "PF",
+    "ds": 0.957
+   },
+   {
+    "n": "Ayo Dosunmu",
+    "pos": "SG",
+    "ds": 0.957
+   },
+   {
+    "n": "Anthony Black",
+    "pos": "PG,SG",
+    "ds": 0.871
+   }
+  ],
+  "rnd": 13
+ }
+]

@@ -1,0 +1,174 @@
+{
+ "25": {
+  "mock": "25",
+  "owner_slot": 2,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   8
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 25.061,
+    "playoff": 89.578,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Kevin Durant",
+     "Jayson Tatum",
+     "Darius Garland",
+     "Josh Hart",
+     "LeBron James",
+     "Michael Porter Jr.",
+     "Jaden McDaniels",
+     "Aaron Gordon",
+     "John Collins",
+     "Aaron Nesmith",
+     "Al Horford",
+     "D'Angelo Russell"
+    ]
+   },
+   "v1cards": {
+    "champ": 30.617,
+    "playoff": 93.272,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Tari Eason",
+     "Michael Porter Jr.",
+     "Jalen Suggs",
+     "Jaden McDaniels",
+     "PJ Washington",
+     "CJ McCollum",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      23,
+      "Kevin Durant",
+      "Jamal Murray"
+     ],
+     [
+      26,
+      "Jayson Tatum",
+      "Desmond Bane"
+     ],
+     [
+      47,
+      "Darius Garland",
+      "Jalen Brunson"
+     ],
+     [
+      50,
+      "Josh Hart",
+      "Tari Eason"
+     ],
+     [
+      74,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      98,
+      "Aaron Gordon",
+      "PJ Washington"
+     ],
+     [
+      119,
+      "John Collins",
+      "CJ McCollum"
+     ],
+     [
+      122,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      146,
+      "Al Horford",
+      "Jared McCain"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 21.578,
+    "playoff": 84.628,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Jamal Murray",
+     "Desmond Bane",
+     "Jalen Brunson",
+     "Tari Eason",
+     "Michael Porter Jr.",
+     "Jalen Suggs",
+     "PJ Washington",
+     "Immanuel Quickley",
+     "CJ McCollum",
+     "Ryan Rollins",
+     "D'Angelo Russell",
+     "Jared McCain"
+    ],
+    "swaps": [
+     [
+      23,
+      "Kevin Durant",
+      "Jamal Murray"
+     ],
+     [
+      26,
+      "Jayson Tatum",
+      "Desmond Bane"
+     ],
+     [
+      47,
+      "Darius Garland",
+      "Jalen Brunson"
+     ],
+     [
+      50,
+      "Josh Hart",
+      "Tari Eason"
+     ],
+     [
+      74,
+      "LeBron James",
+      "Jalen Suggs"
+     ],
+     [
+      95,
+      "Jaden McDaniels",
+      "PJ Washington"
+     ],
+     [
+      98,
+      "Aaron Gordon",
+      "Immanuel Quickley"
+     ],
+     [
+      119,
+      "John Collins",
+      "CJ McCollum"
+     ],
+     [
+      122,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      146,
+      "Al Horford",
+      "Jared McCain"
+     ]
+    ]
+   }
+  }
+ }
+}

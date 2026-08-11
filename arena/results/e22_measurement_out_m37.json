@@ -1,0 +1,210 @@
+{
+ "37": {
+  "mock": "37",
+  "owner_slot": 2,
+  "punt": [
+   "FT%",
+   "TO",
+   "3PTM"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    2
+   ],
+   "resil": [
+    2
+   ]
+  },
+  "top1_diverge_turns": [
+   122,
+   146
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 19.039,
+    "playoff": 82.189,
+    "finish": 3,
+    "seasons": 18000,
+    "kept_z": 26.65,
+    "ecw_std": 4.829,
+    "ecw_slf": 4.993,
+    "roster": [
+     "Nikola Jokic",
+     "James Harden",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Zion Williamson",
+     "Alex Sarr",
+     "Ausar Thompson",
+     "Jalen Green",
+     "Bilal Coulibaly",
+     "Daniel Gafford",
+     "Derik Queen"
+    ]
+   },
+   "shipped": {
+    "champ": 11.839,
+    "playoff": 75.422,
+    "finish": 4,
+    "seasons": 18000,
+    "kept_z": 3.39,
+    "ecw_std": 4.663,
+    "ecw_slf": 4.639,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Myles Turner",
+     "Tari Eason",
+     "Brook Lopez",
+     "Christian Braun",
+     "Donovan Clingan",
+     "Herbert Jones",
+     "Jalen Green",
+     "Daniel Gafford",
+     "Jeremy Sochan",
+     "Derik Queen"
+    ],
+    "swaps": [
+     [
+      2,
+      "Nikola Jokic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      23,
+      "James Harden",
+      "Chet Holmgren"
+     ],
+     [
+      26,
+      "Giannis Antetokounmpo",
+      "Derrick White"
+     ],
+     [
+      47,
+      "Trae Young",
+      "Myles Turner"
+     ],
+     [
+      71,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      74,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      95,
+      "Alex Sarr",
+      "Donovan Clingan"
+     ],
+     [
+      98,
+      "Ausar Thompson",
+      "Herbert Jones"
+     ],
+     [
+      143,
+      "Bilal Coulibaly",
+      "Jeremy Sochan"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      122,
+      "Bilal Coulibaly",
+      "Daniel Gafford"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 12.517,
+    "playoff": 75.639,
+    "finish": 4,
+    "seasons": 18000,
+    "kept_z": 0.09,
+    "ecw_std": 4.667,
+    "ecw_slf": 4.686,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Myles Turner",
+     "Tari Eason",
+     "Brook Lopez",
+     "Christian Braun",
+     "Donovan Clingan",
+     "Herbert Jones",
+     "Jalen Green",
+     "Matas Buzelis",
+     "Daniel Gafford",
+     "Alex Caruso"
+    ],
+    "swaps": [
+     [
+      2,
+      "Nikola Jokic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      23,
+      "James Harden",
+      "Chet Holmgren"
+     ],
+     [
+      26,
+      "Giannis Antetokounmpo",
+      "Derrick White"
+     ],
+     [
+      47,
+      "Trae Young",
+      "Myles Turner"
+     ],
+     [
+      71,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      74,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      95,
+      "Alex Sarr",
+      "Donovan Clingan"
+     ],
+     [
+      98,
+      "Ausar Thompson",
+      "Herbert Jones"
+     ],
+     [
+      122,
+      "Bilal Coulibaly",
+      "Matas Buzelis"
+     ],
+     [
+      146,
+      "Derik Queen",
+      "Alex Caruso"
+     ]
+    ],
+    "noop_swaps": []
+   }
+  }
+ }
+}

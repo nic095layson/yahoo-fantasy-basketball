@@ -1,0 +1,150 @@
+{
+ "mock": 47,
+ "owner_slot": 10,
+ "declared_punt": [
+  "FT%",
+  "3PTM",
+  "TO"
+ ],
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "seasons_per_seed": 6000,
+ "table": [
+  {
+   "slot": 1,
+   "champ_pct": 26.52,
+   "playoff_pct": 88.17,
+   "ecw_per_week": 4.945,
+   "kept_total_9cat": 4.05,
+   "kept_total_owner_punt": 2.16
+  },
+  {
+   "slot": 2,
+   "champ_pct": 11.35,
+   "playoff_pct": 70.19,
+   "ecw_per_week": 4.715,
+   "kept_total_9cat": 2.08,
+   "kept_total_owner_punt": -4.83
+  },
+  {
+   "slot": 3,
+   "champ_pct": 9.2,
+   "playoff_pct": 62.58,
+   "ecw_per_week": 4.637,
+   "kept_total_9cat": 1.9,
+   "kept_total_owner_punt": -0.87
+  },
+  {
+   "slot": 4,
+   "champ_pct": 10.18,
+   "playoff_pct": 63.89,
+   "ecw_per_week": 4.682,
+   "kept_total_9cat": 0.72,
+   "kept_total_owner_punt": 4.37
+  },
+  {
+   "slot": 5,
+   "champ_pct": 1.65,
+   "playoff_pct": 23.82,
+   "ecw_per_week": 4.253,
+   "kept_total_9cat": -3.98,
+   "kept_total_owner_punt": -2.33
+  },
+  {
+   "slot": 6,
+   "champ_pct": 0.08,
+   "playoff_pct": 2.53,
+   "ecw_per_week": 3.886,
+   "kept_total_9cat": -7.37,
+   "kept_total_owner_punt": -13.21
+  },
+  {
+   "slot": 7,
+   "champ_pct": 14.77,
+   "playoff_pct": 77.09,
+   "ecw_per_week": 4.755,
+   "kept_total_9cat": 3.77,
+   "kept_total_owner_punt": 6.22
+  },
+  {
+   "slot": 8,
+   "champ_pct": 5.52,
+   "playoff_pct": 48.42,
+   "ecw_per_week": 4.479,
+   "kept_total_9cat": 1.35,
+   "kept_total_owner_punt": -2.78
+  },
+  {
+   "slot": 9,
+   "champ_pct": 1.1,
+   "playoff_pct": 19.62,
+   "ecw_per_week": 4.145,
+   "kept_total_9cat": 2.24,
+   "kept_total_owner_punt": -6.4
+  },
+  {
+   "slot": 10,
+   "champ_pct": 12.49,
+   "playoff_pct": 68.78,
+   "ecw_per_week": 4.715,
+   "kept_total_9cat": -5.41,
+   "kept_total_owner_punt": 24.5
+  },
+  {
+   "slot": 11,
+   "champ_pct": 5.51,
+   "playoff_pct": 52.04,
+   "ecw_per_week": 4.507,
+   "kept_total_9cat": 1.68,
+   "kept_total_owner_punt": -8.44
+  },
+  {
+   "slot": 12,
+   "champ_pct": 1.64,
+   "playoff_pct": 22.86,
+   "ecw_per_week": 4.282,
+   "kept_total_9cat": -5.79,
+   "kept_total_owner_punt": -4.63
+  }
+ ],
+ "owner_cat_ranks": {
+  "FG%": 1,
+  "FT%": 12,
+  "3PTM": 12,
+  "PTS": 2,
+  "REB": 1,
+  "AST": 6,
+  "ST": 2,
+  "BLK": 3,
+  "TO": 12
+ },
+ "owner_cat_z": {
+  "FG%": 5.88,
+  "FT%": -14.71,
+  "3PTM": -8.85,
+  "PTS": 3.92,
+  "REB": 6.39,
+  "AST": 1.41,
+  "ST": 3.68,
+  "BLK": 3.21,
+  "TO": -6.34
+ },
+ "owner_roster": [
+  "Cade Cunningham",
+  "Kyrie Irving",
+  "Giannis Antetokounmpo",
+  "Cooper Flagg",
+  "Alperen Sengun",
+  "Paul George",
+  "Zion Williamson",
+  "Paolo Banchero",
+  "Bilal Coulibaly",
+  "Rudy Gobert",
+  "Kelly Oubre Jr.",
+  "Ausar Thompson",
+  "Neemias Queta"
+ ]
+}

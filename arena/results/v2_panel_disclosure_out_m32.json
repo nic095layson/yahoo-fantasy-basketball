@@ -1,0 +1,159 @@
+{
+ "32": {
+  "mock": "32",
+  "owner_slot": 10,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 6.6,
+    "playoff": 51.628,
+    "finish": 5,
+    "seasons": 18000,
+    "roster": [
+     "Cade Cunningham",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Paolo Banchero",
+     "Joel Embiid",
+     "Myles Turner",
+     "Zion Williamson",
+     "Dylan Harper",
+     "Rudy Gobert",
+     "Cason Wallace",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ]
+   },
+   "v1cards": {
+    "champ": 0.422,
+    "playoff": 15.367,
+    "finish": 12,
+    "seasons": 18000,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Rudy Gobert",
+     "Keon Ellis",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Tyrese Haliburton"
+     ],
+     [
+      15,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Dyson Daniels"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Reed Sheppard"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      111,
+      "Dylan Harper",
+      "Keon Ellis"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 3.406,
+    "playoff": 43.261,
+    "finish": 8,
+    "seasons": 18000,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Rudy Gobert",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Daniel Gafford",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Tyrese Haliburton"
+     ],
+     [
+      15,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Dyson Daniels"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Reed Sheppard"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Dylan Harper",
+      "Daniel Gafford"
+     ]
+    ]
+   }
+  }
+ }
+}

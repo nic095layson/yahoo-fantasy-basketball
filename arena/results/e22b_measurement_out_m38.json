@@ -1,0 +1,75 @@
+{
+ "38": {
+  "mock": "38",
+  "owner_slot": 3,
+  "trigger_turns": [
+   [
+    10,
+    "C"
+   ],
+   [
+    11,
+    "F"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 29.172,
+   "playoff": 91.989,
+   "finish": 1,
+   "seasons": 18000,
+   "roster": [
+    "Shai Gilgeous-Alexander",
+    "Chet Holmgren",
+    "Derrick White",
+    "Onyeka Okongwu",
+    "Cameron Johnson",
+    "Jakob Poeltl",
+    "Christian Braun",
+    "Nikola Vucevic",
+    "Cason Wallace",
+    "Daniel Gafford",
+    "Aaron Nesmith",
+    "Ausar Thompson",
+    "Tobias Harris"
+   ],
+   "swaps": [
+    [
+     3,
+     "Luka Doncic",
+     "Shai Gilgeous-Alexander"
+    ],
+    [
+     27,
+     "Jamal Murray",
+     "Derrick White"
+    ],
+    [
+     46,
+     "Josh Hart",
+     "Onyeka Okongwu"
+    ],
+    [
+     51,
+     "Reed Sheppard",
+     "Cameron Johnson"
+    ],
+    [
+     94,
+     "Alex Sarr",
+     "Nikola Vucevic"
+    ],
+    [
+     123,
+     "Cameron Boozer",
+     "Aaron Nesmith"
+    ],
+    [
+     147,
+     "Derik Queen",
+     "Tobias Harris"
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "31": {
+  "mock": "31",
+  "owner_slot": 9,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   12,
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 13.539,
+    "playoff": 76.478,
+    "finish": 3,
+    "seasons": 18000,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Cooper Flagg",
+     "Alperen Sengun",
+     "Zion Williamson",
+     "Paolo Banchero",
+     "Dylan Harper",
+     "Darryn Peterson",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "Isaiah Collier"
+    ]
+   },
+   "v1cards": {
+    "champ": 15.889,
+    "playoff": 81.817,
+    "finish": 3,
+    "seasons": 18000,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Jamal Murray",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "Isaiah Collier"
+    ],
+    "swaps": [
+     [
+      16,
+      "Giannis Antetokounmpo",
+      "Jamal Murray"
+     ],
+     [
+      33,
+      "Trae Young",
+      "Dyson Daniels"
+     ],
+     [
+      40,
+      "Cooper Flagg",
+      "OG Anunoby"
+     ],
+     [
+      57,
+      "Alperen Sengun",
+      "Reed Sheppard"
+     ],
+     [
+      64,
+      "Zion Williamson",
+      "Tari Eason"
+     ],
+     [
+      81,
+      "Paolo Banchero",
+      "Jarrett Allen"
+     ],
+     [
+      88,
+      "Dylan Harper",
+      "Jalen Duren"
+     ],
+     [
+      105,
+      "Darryn Peterson",
+      "Rudy Gobert"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 18.933,
+    "playoff": 85.85,
+    "finish": 3,
+    "seasons": 18000,
+    "roster": [
+     "Karl-Anthony Towns",
+     "Jamal Murray",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Rudy Gobert",
+     "Donovan Clingan",
+     "Ausar Thompson",
+     "Daniel Gafford",
+     "Isaiah Collier"
+    ],
+    "swaps": [
+     [
+      16,
+      "Giannis Antetokounmpo",
+      "Jamal Murray"
+     ],
+     [
+      33,
+      "Trae Young",
+      "Dyson Daniels"
+     ],
+     [
+      40,
+      "Cooper Flagg",
+      "OG Anunoby"
+     ],
+     [
+      57,
+      "Alperen Sengun",
+      "Reed Sheppard"
+     ],
+     [
+      64,
+      "Zion Williamson",
+      "Tari Eason"
+     ],
+     [
+      81,
+      "Paolo Banchero",
+      "Jarrett Allen"
+     ],
+     [
+      88,
+      "Dylan Harper",
+      "Jalen Duren"
+     ],
+     [
+      105,
+      "Darryn Peterson",
+      "Rudy Gobert"
+     ],
+     [
+      136,
+      "Nic Claxton",
+      "Daniel Gafford"
+     ]
+    ]
+   }
+  }
+ }
+}

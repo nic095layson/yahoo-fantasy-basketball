@@ -1,0 +1,232 @@
+{
+ "22": {
+  "mock": "22",
+  "owner_slot": 11,
+  "punt": [
+   "REB",
+   "BLK",
+   "FG%"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    35,
+    62,
+    86
+   ],
+   "resil": [
+    35,
+    62,
+    86
+   ]
+  },
+  "top1_diverge_turns": [],
+  "arms": {
+   "baseline": {
+    "champ": 0.217,
+    "playoff": 6.944,
+    "finish": 11,
+    "seasons": 18000,
+    "kept_z": 17.68,
+    "ecw_std": 4.051,
+    "ecw_slf": 3.93,
+    "roster": [
+     "Anthony Edwards",
+     "Cade Cunningham",
+     "Trae Young",
+     "OG Anunoby",
+     "Coby White",
+     "Lauri Markkanen",
+     "LeBron James",
+     "Immanuel Quickley",
+     "Kon Knueppel",
+     "Jabari Smith Jr.",
+     "D'Angelo Russell",
+     "Kyle Kuzma",
+     "Anfernee Simons"
+    ]
+   },
+   "shipped": {
+    "champ": 6.139,
+    "playoff": 59.661,
+    "finish": 7,
+    "seasons": 18000,
+    "kept_z": -26.18,
+    "ecw_std": 4.544,
+    "ecw_slf": 4.441,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "Josh Giddey",
+     "Cooper Flagg",
+     "Kel'el Ware",
+     "Jarrett Allen",
+     "Josh Hart",
+     "Donovan Clingan",
+     "Jabari Smith Jr.",
+     "John Collins",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Neemias Queta"
+    ],
+    "swaps": [
+     [
+      14,
+      "Cade Cunningham",
+      "Evan Mobley"
+     ],
+     [
+      35,
+      "Trae Young",
+      "Josh Giddey"
+     ],
+     [
+      38,
+      "OG Anunoby",
+      "Cooper Flagg"
+     ],
+     [
+      59,
+      "Coby White",
+      "Kel'el Ware"
+     ],
+     [
+      62,
+      "Lauri Markkanen",
+      "Jarrett Allen"
+     ],
+     [
+      83,
+      "LeBron James",
+      "Josh Hart"
+     ],
+     [
+      86,
+      "Immanuel Quickley",
+      "Donovan Clingan"
+     ],
+     [
+      110,
+      "Kon Knueppel",
+      "John Collins"
+     ],
+     [
+      131,
+      "D'Angelo Russell",
+      "Santi Aldama"
+     ],
+     [
+      134,
+      "Kyle Kuzma",
+      "Wendell Carter Jr."
+     ],
+     [
+      155,
+      "Anfernee Simons",
+      "Neemias Queta"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      107,
+      "Kon Knueppel",
+      "Jabari Smith Jr."
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 6.139,
+    "playoff": 59.661,
+    "finish": 7,
+    "seasons": 18000,
+    "kept_z": -26.18,
+    "ecw_std": 4.544,
+    "ecw_slf": 4.441,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "Josh Giddey",
+     "Cooper Flagg",
+     "Kel'el Ware",
+     "Jarrett Allen",
+     "Josh Hart",
+     "Donovan Clingan",
+     "Jabari Smith Jr.",
+     "John Collins",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Neemias Queta"
+    ],
+    "swaps": [
+     [
+      14,
+      "Cade Cunningham",
+      "Evan Mobley"
+     ],
+     [
+      35,
+      "Trae Young",
+      "Josh Giddey"
+     ],
+     [
+      38,
+      "OG Anunoby",
+      "Cooper Flagg"
+     ],
+     [
+      59,
+      "Coby White",
+      "Kel'el Ware"
+     ],
+     [
+      62,
+      "Lauri Markkanen",
+      "Jarrett Allen"
+     ],
+     [
+      83,
+      "LeBron James",
+      "Josh Hart"
+     ],
+     [
+      86,
+      "Immanuel Quickley",
+      "Donovan Clingan"
+     ],
+     [
+      110,
+      "Kon Knueppel",
+      "John Collins"
+     ],
+     [
+      131,
+      "D'Angelo Russell",
+      "Santi Aldama"
+     ],
+     [
+      134,
+      "Kyle Kuzma",
+      "Wendell Carter Jr."
+     ],
+     [
+      155,
+      "Anfernee Simons",
+      "Neemias Queta"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      107,
+      "Kon Knueppel",
+      "Jabari Smith Jr."
+     ]
+    ]
+   }
+  }
+ }
+}

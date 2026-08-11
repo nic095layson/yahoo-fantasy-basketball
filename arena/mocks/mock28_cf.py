@@ -4,6 +4,9 @@ Pairwise legal swaps only (alt drafted strictly later). 6000 seasons x seeds [11
 Sequential arms (the ECW-greedy bundle) are applied IN PICK ORDER against a running
 board, because a swap can displace a player whom a later swap then targets.
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, random, math
 
 os.chdir("/home/user/yahoo-fantasy-basketball")

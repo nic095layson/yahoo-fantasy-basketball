@@ -1,6 +1,9 @@
 """Mock 27 counterfactuals — parametrized: `python3 mock27_cf.py ARM_NAME [ARM_NAME...]`
 with no args runs every arm. Pairwise legal swaps only (alt must be drafted AFTER
 the owner pick it replaces). 6000 seasons x seeds [11,23]."""
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, random
 
 os.chdir("/home/user/yahoo-fantasy-basketball")

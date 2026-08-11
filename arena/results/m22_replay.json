@@ -1,0 +1,1065 @@
+[
+ {
+  "pickNo": 11,
+  "rosterN": 0,
+  "roster": [],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Anthony Edwards",
+  "shipped": [
+   {
+    "n": "Anthony Edwards",
+    "pos": "SG,SF",
+    "ds": 1,
+    "fs": 5.15,
+    "bench": false
+   },
+   {
+    "n": "Cade Cunningham",
+    "pos": "PG",
+    "ds": 0.9891,
+    "fs": 3.56,
+    "bench": false
+   },
+   {
+    "n": "Jalen Johnson",
+    "pos": "SF,PF",
+    "ds": 0.9848,
+    "fs": 0.73,
+    "bench": false
+   },
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9848,
+    "fs": -1.13,
+    "bench": false
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.9696,
+    "fs": 3.19,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Donovan Mitchell",
+    "pos": "SG",
+    "ds": 1
+   },
+   {
+    "n": "Jamal Murray",
+    "pos": "PG",
+    "ds": 0.9935
+   },
+   {
+    "n": "Anthony Edwards",
+    "pos": "SG,SF",
+    "ds": 0.9935
+   },
+   {
+    "n": "Stephen Curry",
+    "pos": "PG",
+    "ds": 0.9848
+   },
+   {
+    "n": "Trae Young",
+    "pos": "PG",
+    "ds": 0.9761
+   }
+  ],
+  "rnd": 1
+ },
+ {
+  "pickNo": 14,
+  "rosterN": 1,
+  "roster": [
+   "Anthony Edwards[SG,SF]"
+  ],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Cade Cunningham",
+  "shipped": [
+   {
+    "n": "Evan Mobley",
+    "pos": "PF,C",
+    "ds": 0.9956,
+    "fs": -1.08,
+    "bench": false
+   },
+   {
+    "n": "Cade Cunningham",
+    "pos": "PG",
+    "ds": 0.9934,
+    "fs": 3.58,
+    "bench": false
+   },
+   {
+    "n": "Chet Holmgren",
+    "pos": "PF,C",
+    "ds": 0.9868,
+    "fs": -0.72,
+    "bench": false
+   },
+   {
+    "n": "Jalen Williams",
+    "pos": "SG,SF",
+    "ds": 0.9714,
+    "fs": 2.84,
+    "bench": false
+   },
+   {
+    "n": "Domantas Sabonis",
+    "pos": "C,PF",
+    "ds": 0.9648,
+    "fs": -2.06,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jamal Murray",
+    "pos": "PG",
+    "ds": 0.9956
+   },
+   {
+    "n": "Trae Young",
+    "pos": "PG",
+    "ds": 0.989
+   },
+   {
+    "n": "Donovan Mitchell",
+    "pos": "SG",
+    "ds": 0.989
+   },
+   {
+    "n": "Austin Reaves",
+    "pos": "SG,PG",
+    "ds": 0.9824
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.978
+   }
+  ],
+  "rnd": 2
+ },
+ {
+  "pickNo": 35,
+  "rosterN": 2,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]"
+  ],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Trae Young",
+  "shipped": [
+   {
+    "n": "Josh Giddey",
+    "pos": "PG,SG",
+    "ds": 0.9951,
+    "fs": 1.28,
+    "bench": false
+   },
+   {
+    "n": "Franz Wagner",
+    "pos": "SF,PF",
+    "ds": 0.9951,
+    "fs": 3.08,
+    "bench": false
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9927,
+    "fs": 2.59,
+    "bench": false
+   },
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9806,
+    "fs": 0.36,
+    "bench": false
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9782,
+    "fs": -1.06,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Trae Young",
+    "pos": "PG",
+    "ds": 1
+   },
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 0.9951
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9903
+   },
+   {
+    "n": "Jalen Brunson",
+    "pos": "PG",
+    "ds": 0.9854
+   },
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 0.9806
+   }
+  ],
+  "rnd": 3
+ },
+ {
+  "pickNo": 38,
+  "rosterN": 3,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]"
+  ],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "OG Anunoby",
+  "shipped": [
+   {
+    "n": "Cooper Flagg",
+    "pos": "SF,PF",
+    "ds": 0.9877,
+    "fs": 0.39,
+    "bench": false
+   },
+   {
+    "n": "Onyeka Okongwu",
+    "pos": "C",
+    "ds": 0.9852,
+    "fs": -1.03,
+    "bench": false
+   },
+   {
+    "n": "OG Anunoby",
+    "pos": "SF",
+    "ds": 0.9828,
+    "fs": 2.77,
+    "bench": false
+   },
+   {
+    "n": "Myles Turner",
+    "pos": "C",
+    "ds": 0.9631,
+    "fs": -1.33,
+    "bench": false
+   },
+   {
+    "n": "Franz Wagner",
+    "pos": "SF,PF",
+    "ds": 0.9631,
+    "fs": 3.28,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Darius Garland",
+    "pos": "PG",
+    "ds": 1
+   },
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 0.9877
+   },
+   {
+    "n": "Payton Pritchard",
+    "pos": "PG",
+    "ds": 0.9852
+   },
+   {
+    "n": "Jordan Poole",
+    "pos": "PG,SG",
+    "ds": 0.9803
+   },
+   {
+    "n": "Brandon Miller",
+    "pos": "SF",
+    "ds": 0.9778
+   }
+  ],
+  "rnd": 4
+ },
+ {
+  "pickNo": 59,
+  "rosterN": 4,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]"
+  ],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Coby White",
+  "shipped": [
+   {
+    "n": "Kel'el Ware",
+    "pos": "C",
+    "ds": 0.9835,
+    "fs": -3.87,
+    "bench": false
+   },
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9808,
+    "fs": -1.65,
+    "bench": false
+   },
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 0.9753,
+    "fs": 2.85,
+    "bench": false
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9753,
+    "fs": -3.83,
+    "bench": false
+   },
+   {
+    "n": "Cameron Johnson",
+    "pos": "SF",
+    "ds": 0.9615,
+    "fs": 2.38,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 0.9973
+   },
+   {
+    "n": "Jordan Poole",
+    "pos": "PG,SG",
+    "ds": 0.9945
+   },
+   {
+    "n": "Coby White",
+    "pos": "PG,SG",
+    "ds": 0.9918
+   },
+   {
+    "n": "Immanuel Quickley",
+    "pos": "PG",
+    "ds": 0.9808
+   },
+   {
+    "n": "Nickeil Alexander-Walker",
+    "pos": "SG,SF",
+    "ds": 0.9753
+   }
+  ],
+  "rnd": 5
+ },
+ {
+  "pickNo": 62,
+  "rosterN": 5,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]"
+  ],
+  "nC": 0,
+  "nBig": 0,
+  "benched": [],
+  "actual": "Lauri Markkanen",
+  "shipped": [
+   {
+    "n": "Kel'el Ware",
+    "pos": "C",
+    "ds": 0.9804,
+    "fs": -3.85,
+    "bench": false
+   },
+   {
+    "n": "Jarrett Allen",
+    "pos": "C",
+    "ds": 0.9804,
+    "fs": -3.63,
+    "bench": false
+   },
+   {
+    "n": "Brook Lopez",
+    "pos": "C",
+    "ds": 0.9804,
+    "fs": -1.63,
+    "bench": false
+   },
+   {
+    "n": "Christian Braun",
+    "pos": "SG",
+    "ds": 0.9553,
+    "fs": 0.42,
+    "bench": false
+   },
+   {
+    "n": "Jalen Suggs",
+    "pos": "PG,SG",
+    "ds": 0.9525,
+    "fs": 1.83,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Reed Sheppard",
+    "pos": "PG,SG",
+    "ds": 1
+   },
+   {
+    "n": "Jordan Poole",
+    "pos": "PG,SG",
+    "ds": 0.9944
+   },
+   {
+    "n": "Immanuel Quickley",
+    "pos": "PG",
+    "ds": 0.9832
+   },
+   {
+    "n": "Nickeil Alexander-Walker",
+    "pos": "SG,SF",
+    "ds": 0.9777
+   },
+   {
+    "n": "Jalen Suggs",
+    "pos": "PG,SG",
+    "ds": 0.9777
+   }
+  ],
+  "rnd": 6
+ },
+ {
+  "pickNo": 83,
+  "rosterN": 6,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]",
+   "Lauri Markkanen[PF,C]"
+  ],
+  "nC": 1,
+  "nBig": 1,
+  "benched": [],
+  "actual": "LeBron James",
+  "shipped": [
+   {
+    "n": "Josh Hart",
+    "pos": "SG,SF",
+    "ds": 0.9905,
+    "fs": -0.39,
+    "bench": false
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9842,
+    "fs": -5.5,
+    "bench": false
+   },
+   {
+    "n": "Jordan Poole",
+    "pos": "PG,SG",
+    "ds": 0.9778,
+    "fs": 2.59,
+    "bench": false
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9778,
+    "fs": -4.28,
+    "bench": false
+   },
+   {
+    "n": "Herbert Jones",
+    "pos": "SF",
+    "ds": 0.9715,
+    "fs": 0.67,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jordan Poole",
+    "pos": "PG,SG",
+    "ds": 1
+   },
+   {
+    "n": "Immanuel Quickley",
+    "pos": "PG",
+    "ds": 0.9937
+   },
+   {
+    "n": "D'Angelo Russell",
+    "pos": "PG",
+    "ds": 0.9747
+   },
+   {
+    "n": "Malik Monk",
+    "pos": "SG,PG",
+    "ds": 0.9684
+   },
+   {
+    "n": "Cam Thomas",
+    "pos": "SG",
+    "ds": 0.9684
+   }
+  ],
+  "rnd": 7
+ },
+ {
+  "pickNo": 86,
+  "rosterN": 7,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]",
+   "Lauri Markkanen[PF,C]",
+   "LeBron James[SF,PF]"
+  ],
+  "nC": 1,
+  "nBig": 2,
+  "benched": [],
+  "actual": "Immanuel Quickley",
+  "shipped": [
+   {
+    "n": "Josh Hart",
+    "pos": "SG,SF",
+    "ds": 0.9935,
+    "fs": -0.21,
+    "bench": false
+   },
+   {
+    "n": "Donovan Clingan",
+    "pos": "C",
+    "ds": 0.9935,
+    "fs": -5.5,
+    "bench": false
+   },
+   {
+    "n": "Isaiah Hartenstein",
+    "pos": "C",
+    "ds": 0.9871,
+    "fs": -4.28,
+    "bench": false
+   },
+   {
+    "n": "Deni Avdija",
+    "pos": "SF,PF",
+    "ds": 0.9677,
+    "fs": -0.9,
+    "bench": false
+   },
+   {
+    "n": "Naz Reid",
+    "pos": "PF,C",
+    "ds": 0.9645,
+    "fs": -1.13,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Immanuel Quickley",
+    "pos": "PG",
+    "ds": 1
+   },
+   {
+    "n": "D'Angelo Russell",
+    "pos": "PG",
+    "ds": 0.9806
+   },
+   {
+    "n": "Norman Powell",
+    "pos": "SG",
+    "ds": 0.971
+   },
+   {
+    "n": "Malik Monk",
+    "pos": "SG,PG",
+    "ds": 0.971
+   },
+   {
+    "n": "Cam Thomas",
+    "pos": "SG",
+    "ds": 0.9677
+   }
+  ],
+  "rnd": 8
+ },
+ {
+  "pickNo": 107,
+  "rosterN": 8,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]",
+   "Lauri Markkanen[PF,C]",
+   "LeBron James[SF,PF]",
+   "Immanuel Quickley[PG]"
+  ],
+  "nC": 1,
+  "nBig": 2,
+  "benched": [],
+  "actual": "Kon Knueppel",
+  "shipped": [
+   {
+    "n": "Jabari Smith Jr.",
+    "pos": "PF,C",
+    "ds": 0.9739,
+    "fs": -1.74,
+    "bench": false
+   },
+   {
+    "n": "John Collins",
+    "pos": "PF,C",
+    "ds": 0.9515,
+    "fs": -2.31,
+    "bench": false
+   },
+   {
+    "n": "Kyle Filipowski",
+    "pos": "C",
+    "ds": 0.9291,
+    "fs": -2.98,
+    "bench": false
+   },
+   {
+    "n": "VJ Edgecombe",
+    "pos": "SG",
+    "ds": 0.903,
+    "fs": 0.17,
+    "bench": true
+   },
+   {
+    "n": "Quentin Grimes",
+    "pos": "SG,SF",
+    "ds": 0.903,
+    "fs": 0.33,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "D'Angelo Russell",
+    "pos": "PG",
+    "ds": 0.9067
+   },
+   {
+    "n": "VJ Edgecombe",
+    "pos": "SG",
+    "ds": 0.8955
+   },
+   {
+    "n": "CJ McCollum",
+    "pos": "PG,SG",
+    "ds": 0.8955
+   },
+   {
+    "n": "Kon Knueppel",
+    "pos": "SG",
+    "ds": 0.8881
+   },
+   {
+    "n": "Quentin Grimes",
+    "pos": "SG,SF",
+    "ds": 0.8843
+   }
+  ],
+  "rnd": 9
+ },
+ {
+  "pickNo": 110,
+  "rosterN": 9,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]",
+   "Lauri Markkanen[PF,C]",
+   "LeBron James[SF,PF]",
+   "Immanuel Quickley[PG]",
+   "Kon Knueppel[SG]"
+  ],
+  "nC": 1,
+  "nBig": 2,
+  "benched": [
+   "Kon Knueppel"
+  ],
+  "actual": "Jabari Smith Jr.",
+  "shipped": [
+   {
+    "n": "Jabari Smith Jr.",
+    "pos": "PF,C",
+    "ds": 0.9809,
+    "fs": -1.62,
+    "bench": false
+   },
+   {
+    "n": "John Collins",
+    "pos": "PF,C",
+    "ds": 0.958,
+    "fs": -2.31,
+    "bench": false
+   },
+   {
+    "n": "Kyle Filipowski",
+    "pos": "C",
+    "ds": 0.9351,
+    "fs": -2.98,
+    "bench": false
+   },
+   {
+    "n": "VJ Edgecombe",
+    "pos": "SG",
+    "ds": 0.9084,
+    "fs": 0.35,
+    "bench": true
+   },
+   {
+    "n": "Quentin Grimes",
+    "pos": "SG,SF",
+    "ds": 0.9084,
+    "fs": 0.51,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "D'Angelo Russell",
+    "pos": "PG",
+    "ds": 0.9122
+   },
+   {
+    "n": "VJ Edgecombe",
+    "pos": "SG",
+    "ds": 0.9008
+   },
+   {
+    "n": "CJ McCollum",
+    "pos": "PG,SG",
+    "ds": 0.9008
+   },
+   {
+    "n": "Quentin Grimes",
+    "pos": "SG,SF",
+    "ds": 0.8893
+   },
+   {
+    "n": "Keyonte George",
+    "pos": "PG,SG",
+    "ds": 0.874
+   }
+  ],
+  "rnd": 10
+ },
+ {
+  "pickNo": 131,
+  "rosterN": 10,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]",
+   "Lauri Markkanen[PF,C]",
+   "LeBron James[SF,PF]",
+   "Immanuel Quickley[PG]",
+   "Kon Knueppel[SG]",
+   "Jabari Smith Jr.[PF,C]"
+  ],
+  "nC": 2,
+  "nBig": 3,
+  "benched": [
+   "Kon Knueppel"
+  ],
+  "actual": "D'Angelo Russell",
+  "shipped": [
+   {
+    "n": "Santi Aldama",
+    "pos": "PF,C",
+    "ds": 0.9636,
+    "fs": -2.19,
+    "bench": false
+   },
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9409,
+    "fs": -3.74,
+    "bench": false
+   },
+   {
+    "n": "Dereck Lively II",
+    "pos": "C",
+    "ds": 0.9182,
+    "fs": -6.02,
+    "bench": false
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9136,
+    "fs": -6.2,
+    "bench": false
+   },
+   {
+    "n": "Cameron Boozer",
+    "pos": "PF",
+    "ds": 0.9045,
+    "fs": -3.28,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "D'Angelo Russell",
+    "pos": "PG",
+    "ds": 0.9091
+   },
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.8864
+   },
+   {
+    "n": "Anfernee Simons",
+    "pos": "PG,SG",
+    "ds": 0.8773
+   },
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.8773
+   },
+   {
+    "n": "Jose Alvarado",
+    "pos": "PG",
+    "ds": 0.8727
+   }
+  ],
+  "rnd": 11
+ },
+ {
+  "pickNo": 134,
+  "rosterN": 11,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]",
+   "Lauri Markkanen[PF,C]",
+   "LeBron James[SF,PF]",
+   "Immanuel Quickley[PG]",
+   "Kon Knueppel[SG]",
+   "Jabari Smith Jr.[PF,C]",
+   "D'Angelo Russell[PG]"
+  ],
+  "nC": 2,
+  "nBig": 3,
+  "benched": [
+   "Kon Knueppel",
+   "D'Angelo Russell"
+  ],
+  "actual": "Kyle Kuzma",
+  "shipped": [
+   {
+    "n": "Santi Aldama",
+    "pos": "PF,C",
+    "ds": 0.9626,
+    "fs": -2.13,
+    "bench": false
+   },
+   {
+    "n": "Wendell Carter Jr.",
+    "pos": "C",
+    "ds": 0.9439,
+    "fs": -3.74,
+    "bench": false
+   },
+   {
+    "n": "Mitchell Robinson",
+    "pos": "C",
+    "ds": 0.9159,
+    "fs": -6.2,
+    "bench": false
+   },
+   {
+    "n": "Dereck Lively II",
+    "pos": "C",
+    "ds": 0.9159,
+    "fs": -6.02,
+    "bench": false
+   },
+   {
+    "n": "Cameron Boozer",
+    "pos": "PF",
+    "ds": 0.9065,
+    "fs": -3.1,
+    "bench": true
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Alex Caruso",
+    "pos": "PG",
+    "ds": 0.8925
+   },
+   {
+    "n": "Jared McCain",
+    "pos": "SG",
+    "ds": 0.8879
+   },
+   {
+    "n": "Anfernee Simons",
+    "pos": "PG,SG",
+    "ds": 0.8879
+   },
+   {
+    "n": "Jose Alvarado",
+    "pos": "PG",
+    "ds": 0.8785
+   },
+   {
+    "n": "Jrue Holiday",
+    "pos": "PG",
+    "ds": 0.8692
+   }
+  ],
+  "rnd": 12
+ },
+ {
+  "pickNo": 155,
+  "rosterN": 12,
+  "roster": [
+   "Anthony Edwards[SG,SF]",
+   "Cade Cunningham[PG]",
+   "Trae Young[PG]",
+   "OG Anunoby[SF]",
+   "Coby White[PG,SG]",
+   "Lauri Markkanen[PF,C]",
+   "LeBron James[SF,PF]",
+   "Immanuel Quickley[PG]",
+   "Kon Knueppel[SG]",
+   "Jabari Smith Jr.[PF,C]",
+   "D'Angelo Russell[PG]",
+   "Kyle Kuzma[PF]"
+  ],
+  "nC": 2,
+  "nBig": 4,
+  "benched": [
+   "Kon Knueppel",
+   "D'Angelo Russell",
+   "Kyle Kuzma"
+  ],
+  "actual": "Anfernee Simons",
+  "shipped": [
+   {
+    "n": "Derik Queen",
+    "pos": "C",
+    "ds": 0.9826,
+    "fs": -4.19,
+    "bench": false
+   },
+   {
+    "n": "Neemias Queta",
+    "pos": "C",
+    "ds": 0.9709,
+    "fs": -6.46,
+    "bench": false
+   },
+   {
+    "n": "Jusuf Nurkic",
+    "pos": "C",
+    "ds": 0.9535,
+    "fs": -4.61,
+    "bench": false
+   },
+   {
+    "n": "Deandre Ayton",
+    "pos": "C",
+    "ds": 0.9419,
+    "fs": -4.8,
+    "bench": false
+   },
+   {
+    "n": "Moussa Diabate",
+    "pos": "C",
+    "ds": 0.9186,
+    "fs": -6.07,
+    "bench": false
+   }
+  ],
+  "puntAware": [
+   {
+    "n": "Jose Alvarado",
+    "pos": "PG",
+    "ds": 0.907
+   },
+   {
+    "n": "Anfernee Simons",
+    "pos": "PG,SG",
+    "ds": 0.907
+   },
+   {
+    "n": "Rob Dillingham",
+    "pos": "PG",
+    "ds": 0.8721
+   },
+   {
+    "n": "Bogdan Bogdanovic",
+    "pos": "SG,SF",
+    "ds": 0.8663
+   },
+   {
+    "n": "Dennis Schroder",
+    "pos": "PG",
+    "ds": 0.8488
+   }
+  ],
+  "rnd": 13
+ }
+]

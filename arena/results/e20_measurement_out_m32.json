@@ -1,0 +1,299 @@
+{
+ "32": {
+  "mock": "32",
+  "owner_slot": 10,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "ST"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [],
+   "puntAware": [
+    111
+   ]
+  },
+  "arms": {
+   "baseline": {
+    "champ": 4.106,
+    "playoff": 38.989,
+    "finish": 9,
+    "seasons": 18000,
+    "kept_z": 11.07,
+    "roster": [
+     "Cade Cunningham",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Paolo Banchero",
+     "Joel Embiid",
+     "Myles Turner",
+     "Zion Williamson",
+     "Dylan Harper",
+     "Rudy Gobert",
+     "Cason Wallace",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ]
+   },
+   "shipped": {
+    "champ": 0.006,
+    "playoff": 1.778,
+    "finish": 12,
+    "seasons": 18000,
+    "kept_z": 1.23,
+    "roster": [
+     "Tyrese Haliburton",
+     "Evan Mobley",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Reed Sheppard",
+     "Tari Eason",
+     "Christian Braun",
+     "Cason Wallace",
+     "Rudy Gobert",
+     "Keon Ellis",
+     "Ausar Thompson",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Tyrese Haliburton"
+     ],
+     [
+      15,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Dyson Daniels"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Reed Sheppard"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      111,
+      "Dylan Harper",
+      "Keon Ellis"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      87,
+      "Dylan Harper",
+      "Cason Wallace"
+     ]
+    ]
+   },
+   "puntAware": {
+    "champ": 0.0,
+    "playoff": 0.183,
+    "finish": 12,
+    "seasons": 18000,
+    "kept_z": 37.1,
+    "roster": [
+     "Giannis Antetokounmpo",
+     "Ivica Zubac",
+     "Jalen Duren",
+     "Amen Thompson",
+     "Jarrett Allen",
+     "Walker Kessler",
+     "Rudy Gobert",
+     "Isaiah Hartenstein",
+     "Donovan Clingan",
+     "Jaden Ivey",
+     "Nic Claxton",
+     "Yaxel Lendeborg",
+     "Anthony Black"
+    ],
+    "swaps": [
+     [
+      15,
+      "Cade Cunningham",
+      "Ivica Zubac"
+     ],
+     [
+      34,
+      "Cooper Flagg",
+      "Jalen Duren"
+     ],
+     [
+      39,
+      "Paolo Banchero",
+      "Amen Thompson"
+     ],
+     [
+      58,
+      "Joel Embiid",
+      "Jarrett Allen"
+     ],
+     [
+      63,
+      "Myles Turner",
+      "Walker Kessler"
+     ],
+     [
+      87,
+      "Dylan Harper",
+      "Isaiah Hartenstein"
+     ],
+     [
+      106,
+      "Zion Williamson",
+      "Donovan Clingan"
+     ],
+     [
+      111,
+      "Cason Wallace",
+      "Jaden Ivey"
+     ],
+     [
+      130,
+      "Ausar Thompson",
+      "Nic Claxton"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      10,
+      "Cade Cunningham",
+      "Giannis Antetokounmpo"
+     ],
+     [
+      82,
+      "Zion Williamson",
+      "Rudy Gobert"
+     ]
+    ]
+   },
+   "placebo_draws": [
+    {
+     "champ": 0.756,
+     "playoff": 19.928,
+     "finish": 9,
+     "seasons": 18000,
+     "kept_z": -4.4,
+     "roster": [
+      "Chet Holmgren",
+      "Austin Reaves",
+      "Zach LaVine",
+      "Payton Pritchard",
+      "Fred VanVleet",
+      "Nickeil Alexander-Walker",
+      "Kyle Filipowski",
+      "Dylan Harper",
+      "Rudy Gobert",
+      "Wendell Carter Jr.",
+      "Ausar Thompson",
+      "Yaxel Lendeborg",
+      "Anthony Black"
+     ],
+     "swap_turns": [
+      10,
+      15,
+      34,
+      39,
+      58,
+      63,
+      82,
+      111
+     ]
+    },
+    {
+     "champ": 1.0,
+     "playoff": 18.517,
+     "finish": 10,
+     "seasons": 18000,
+     "kept_z": -2.86,
+     "roster": [
+      "Desmond Bane",
+      "Dyson Daniels",
+      "Reed Sheppard",
+      "Kristaps Porzingis",
+      "Nickeil Alexander-Walker",
+      "Michael Porter Jr.",
+      "Kon Knueppel",
+      "Dylan Harper",
+      "Rudy Gobert",
+      "Donovan Clingan",
+      "Ausar Thompson",
+      "Yaxel Lendeborg",
+      "Anthony Black"
+     ],
+     "swap_turns": [
+      10,
+      15,
+      34,
+      39,
+      58,
+      63,
+      82,
+      111
+     ]
+    },
+    {
+     "champ": 0.206,
+     "playoff": 6.144,
+     "finish": 11,
+     "seasons": 18000,
+     "kept_z": -4.79,
+     "roster": [
+      "Jalen Brunson",
+      "Jalen Williams",
+      "Zach LaVine",
+      "Bam Adebayo",
+      "Josh Hart",
+      "Christian Braun",
+      "VJ Edgecombe",
+      "Dylan Harper",
+      "Rudy Gobert",
+      "AJ Dybantsa",
+      "Ausar Thompson",
+      "Yaxel Lendeborg",
+      "Anthony Black"
+     ],
+     "swap_turns": [
+      10,
+      15,
+      34,
+      39,
+      58,
+      63,
+      82,
+      111
+     ]
+    }
+   ],
+   "placebo_mean_champ": 0.654
+  },
+  "placebo_matched_to": "shipped"
+ }
+}

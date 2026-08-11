@@ -1,0 +1,180 @@
+{
+ "37": {
+  "mock": "37",
+  "owner_slot": 2,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   10,
+   13
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 29.689,
+    "playoff": 91.756,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Nikola Jokic",
+     "James Harden",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Zion Williamson",
+     "Alex Sarr",
+     "Ausar Thompson",
+     "Jalen Green",
+     "Bilal Coulibaly",
+     "Daniel Gafford",
+     "Derik Queen"
+    ]
+   },
+   "v1cards": {
+    "champ": 12.65,
+    "playoff": 75.167,
+    "finish": 4,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Myles Turner",
+     "Tari Eason",
+     "Brook Lopez",
+     "Christian Braun",
+     "Donovan Clingan",
+     "Herbert Jones",
+     "Jalen Green",
+     "Daniel Gafford",
+     "Jeremy Sochan",
+     "Derik Queen"
+    ],
+    "swaps": [
+     [
+      2,
+      "Nikola Jokic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      23,
+      "James Harden",
+      "Chet Holmgren"
+     ],
+     [
+      26,
+      "Giannis Antetokounmpo",
+      "Derrick White"
+     ],
+     [
+      47,
+      "Trae Young",
+      "Myles Turner"
+     ],
+     [
+      71,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      74,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      95,
+      "Alex Sarr",
+      "Donovan Clingan"
+     ],
+     [
+      98,
+      "Ausar Thompson",
+      "Herbert Jones"
+     ],
+     [
+      143,
+      "Bilal Coulibaly",
+      "Jeremy Sochan"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 12.972,
+    "playoff": 76.1,
+    "finish": 4,
+    "seasons": 18000,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Myles Turner",
+     "Tari Eason",
+     "Brook Lopez",
+     "Christian Braun",
+     "Donovan Clingan",
+     "Herbert Jones",
+     "Daniel Gafford",
+     "Matas Buzelis",
+     "Jeremy Sochan",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      2,
+      "Nikola Jokic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      23,
+      "James Harden",
+      "Chet Holmgren"
+     ],
+     [
+      26,
+      "Giannis Antetokounmpo",
+      "Derrick White"
+     ],
+     [
+      47,
+      "Trae Young",
+      "Myles Turner"
+     ],
+     [
+      71,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      74,
+      "Zion Williamson",
+      "Christian Braun"
+     ],
+     [
+      95,
+      "Alex Sarr",
+      "Donovan Clingan"
+     ],
+     [
+      98,
+      "Ausar Thompson",
+      "Herbert Jones"
+     ],
+     [
+      122,
+      "Bilal Coulibaly",
+      "Matas Buzelis"
+     ],
+     [
+      143,
+      "Jalen Green",
+      "Jeremy Sochan"
+     ],
+     [
+      146,
+      "Derik Queen",
+      "Keon Ellis"
+     ]
+    ]
+   }
+  }
+ }
+}

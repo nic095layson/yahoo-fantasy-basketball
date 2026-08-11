@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-08-09", "pool": 245, "pool_sha256": "84b18e780243fff704bb175ec61c59bca39263daf9c2720178fec52e5a36683c", "verification_mode": "fallback-partial", "evidence_date": "2026-08-09", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 245, "teams_covered": 30}, "freshness_note": "Colophon re-author rebuild, same day: Data paragraph updated to the 8/9 refresh (245 rows, Cole Anthony NBL exit) and the Kawhi probe expansion; pool \u2026"} -->
+<!-- build-manifest {"built": "2026-08-10", "pool": 245, "pool_sha256": "84b18e780243fff704bb175ec61c59bca39263daf9c2720178fec52e5a36683c", "verification_mode": "fallback-partial", "evidence_date": "2026-08-10", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 245, "teams_covered": 30}, "freshness_note": "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10: ZERO pool changes \u2014 the 8/9 state re-confirmed on a fresh watchlist + general sweep (10 \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -101,13 +101,17 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 .toolbar { margin: 0 0 var(--space-2); }
 .toolbar #exportBtn { margin-left: auto; }
 .card.feedcard { display: flex; flex-direction: column; }
-.feedcard .mirror { flex: 1 1 120px; min-height: 120px; max-height: none; }
+/* Pick log shows ~6 rows — the last few picks (owner request 2026-08-05:
+   the full-height log read as a wall of text). Whole history stays in the
+   box; scroll up for it. border-box, so padding+border ride in the calc. */
+.feedcard .mirror { flex: 0 1 auto; min-height: 0;
+  max-height: calc(6 * var(--leading-body) * var(--text-sm) + 2 * var(--space-2) + 2px); }
 
 /* Feed console */
 .feedrow { display: flex; gap: var(--space-2); margin-bottom: var(--space-2); }
 .feedrow input { flex: 1; font-family: var(--font-data); }
 .hint { font-size: var(--text-sm); color: var(--muted); margin: 0 0 var(--space-2); }
-.mirror { font-family: var(--font-data); font-size: var(--text-sm); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
+.mirror { font-family: var(--font-data); font-size: var(--text-sm); line-height: var(--leading-body); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
 .mirror .warn { color: var(--status-risk); }
 .mirror .halt { color: var(--status-out); font-weight: var(--weight-bold); }
 .btnrow { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
@@ -126,6 +130,7 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 #swline .lead { display: inline-block; min-width: 7.5em; color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 #swline .cats { font-family: var(--font-data); }
 ol.recos .tm { font-family: var(--font-data); font-size: var(--text-sm); color: var(--muted); letter-spacing: 0.04em; }
+ol.recos .tmpos { font-family: var(--font-data); font-size: var(--text-sm); color: var(--ink); letter-spacing: 0.04em; margin-left: var(--space-3); font-weight: var(--weight-medium); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
 .hcenter { text-align: center; text-transform: uppercase; }
 #bestReset { font: inherit; font-size: var(--text-sm); padding: 0 var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink-2); cursor: pointer; }
@@ -303,7 +308,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
                placeholder='Jokic; my:Wemby; 44- Herro'>
         <button class="primary" id="logBtn" type="button">Log</button>
       </div>
-      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>.</p>
+      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
       <p class="eyebrow rosterhead" style="margin-top: var(--space-4)"><span id="myRosterTitle">Your roster</span><span id="myRosterFams"></span></p>
       <ul class="myroster" id="myRoster"></ul>
     </div>
@@ -333,13 +338,13 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
   <div id="pane-best" role="tabpanel" aria-labelledby="tab-best">
     <div class="controls">
       <span class="ctl">Pos</span>
-      <select id="bestPos"><option value="">All</option><option>PG</option><option>SG</option><option value="G">G</option><option>SF</option><option>PF</option><option value="F">F</option><option>C</option></select>
+      <select id="bestPos"><option value="">All</option><option>PG</option><option>SG</option><option value="G">G</option><option>SF</option><option>PF</option><option value="F">F</option><option value="G+F" title="dual-eligible: covers a guard AND a forward slot">G/F</option><option value="F+C" title="dual-eligible: covers a forward slot AND center">F/C</option><option>C</option></select>
       <span class="ctl">Find</span>
       <input type="search" id="bestQ" placeholder="player name" autocomplete="off">
       <span class="ctl">Show</span>
       <select id="bestTop"><option value="12">Top 12</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="9999">Everyone</option></select>
       <span class="ctl">Lens</span>
-      <select id="bestSort" autocomplete="off"><option value="" hidden>cat lens active</option><option value="val">Balanced val</option><option value="fit">Fit z (my roster)</option><option value="mkt" selected>Mkt rank (room price)</option></select>
+      <select id="bestSort" autocomplete="off"><option value="" hidden>cat lens active</option><option value="val">Balanced val</option><option value="decw">ΔECW (cats/wk)</option><option value="fit">Fit z (my roster)</option><option value="mkt" selected>Mkt rank (room price)</option></select>
       <button type="button" id="bestReset" title="clear position, search, show, lens, and cat filters">Reset</button>
       <span class="small" id="bestSummary"></span>
     </div>
@@ -351,7 +356,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
           <th class="l" scope="col">#</th><th class="l" scope="col">Player</th>
           <th class="l" scope="col">Team</th><th class="l" scope="col">Pos</th>
           <th scope="col" data-sort="val" title="Injury-adjusted 9-cat z total. Click to make this the lens (clears cat filters).">Val</th>
-          <th scope="col" data-sort="fit" title="Swing-weighted marginal z for YOUR roster — punted cats ×0, locked cats ×0.35, lost cats ×0.45 (thresholds scale with league size), swing cats full. Activates once you have 2+ picks; recomputed every pick. A display lens only — the Top-5 ranking is blend50 and build-agnostic by design (punt-steered orderings measured negative; arena-codified 2026-07-28, blend50 2026-08-04). Click to make this the lens (clears cat filters).">Fit</th>
+          <th scope="col" id="thRoster" data-sort="decw" title="ΔECW — marginal expected categories won per week if YOU add this player, measured against the room's current rosters: the same unit the decision card reports (owner swap 2026-08-10, replacing the Fit column after it inflated a mis-shaped star). Availability is priced in; punt-blind like the card. Blank until an opponent has drafted. Choosing the Fit lens swaps this column to Fit z (swing-weighted). Click to make this the lens (clears cat filters).">ΔECW</th>
         </tr></thead>
         <tbody id="bestRows"></tbody>
       </table>
@@ -361,7 +366,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <span><span class="sw neg"></span>below pool average · intensity scales with |z|</span>
       <span>TO inverted (+ = fewer turnovers)</span>
       <span><span class="flag risk">▲</span> injury risk (×0.78 applied only when value is positive — marked *)</span>
-      <span><strong>Fit</strong> = swing-weighted z for YOUR roster (locked ×0.35, lost ×0.45, punted ×0; from your 3rd pick) — a reading lens; the Top-5 ranking is blend50, build-agnostic by design</span>
+      <span><strong>ΔECW</strong> = marginal cats/week for YOUR roster vs the room's current rosters — the card's own unit; blank until an opponent drafts. The Fit lens (swing-weighted z: locked ×0.35, lost ×0.45, punted ×0) swaps the column to Fit — both are reading lenses; the Top-5 ranking stays blend50, build-agnostic by design</span>
       <span>Click a row to stage that pick for the on-clock team (<code>my:</code> when it's your turn) — Log confirms</span>
     </div>
   </div>
@@ -400,8 +405,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 </section>
 
 <footer class="colophon">
-  <p><strong>Data.</strong> Pool refreshed 2026-08-09 under the roster validation lock — 245 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/9): Cole Anthony leaves the pool for the NBL's Melbourne United (one-year deal, official 8/5 — the 8/5 note's pending second source, now satisfied). Confirmed unchanged in the same sweep: Harden's Cleveland return is still agreed-but-unsigned (1–2yr track, terms open); DeRozan (waived by Sacramento, linked to seven teams, no club), Beal (opted out; MIA keeping tabs), and Westbrook are still true free agents; Klay is being shopped by Dallas with Miami waiting on a buyout; Watson's RFA market has LAC sign-and-trade interest. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD — the probe EXPANDED 8/8 (second company, Daktronics) and could run into 2027 (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 245-player pool; projections, not live stats.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported). The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until October ADP replaces the proxy. The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Data.</strong> Pool refreshed 2026-08-10 under the roster validation lock — 245 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches). This refresh (8/10, owner-requested): zero pool changes — the sweep re-confirmed the 8/9 state. Cole Anthony left the pool 8/9 for the NBL's Melbourne United; Butler's exclusion was re-graded against fresh reporting (ACL surgery 2/9, return framing now ~Feb 2027 — exclusion stands); Harden is 'fully expected' to re-sign in CLE (Shams) but remains unsigned; DeRozan (turned 37 this week, seven teams linked, no club), Beal, and Westbrook are still true free agents; Klay is being shopped by Dallas with NO buyout in discussion (8/8); Watson's sign-and-trade market narrowed to CLE/MIL/LAC after Denver crossed the second apron signing Lonnie Walker IV (8/5); LeBron-to-PHI re-verified. Carried forward: Draymond Green re-signed with GSW (one year, $27.7M, 7/28); LeBron James is officially a 76er (signed 7/26) with Caldwell-Pope alongside via the Memphis buyout — the PHI logjam is the board's biggest uncertainty cluster; Valančiūnas left the pool for EuroLeague Žalgiris (7/15); 20 draftable names (Grant, Caruso, Dort, the rookie tail) were ported from the sibling draft-kit's verified projections. Recovery re-entries: Haliburton, Lillard, Kyrie, and VanVleet are confirmed on track for opening day and carry first-season-back risk tags; Butler, Adams, Moody, and DiVincenzo remain excluded. Kawhi's Toronto trade is ON HOLD — the probe EXPANDED 8/8 (second company, Daktronics) and could run into 2027 (stays LAC). The Mkt column is an estimated real-draft position from the market model (points-volume bias, rookie-hype pins) built from 9-cat draft research; mock rooms draft with research-informed personas. Values are z-scores over this 245-player pool; projections, not live stats.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported); the same read also pins a sixth row under the Top-5 when its family made none of them — <em>LAST CALL</em> when urgent (the 🎯 moves onto it: take it over the Top-5) or <em>DEPTH WATCH</em> when informational (the 🎯 above stays the pick), named 2026-08-10 on owner request. The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until October ADP replaces the proxy. The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
 </footer>
 </div>
 
@@ -777,7 +782,7 @@ function processFeed(state, players, feed) {
     const n = picks.length;
     const slot = mine ? state.slot : teamOfPick(n, state.teams);
     if (mine && teamOfPick(n, state.teams) !== state.slot)
-      say(`⚠ my: pick at #${n + 1}, but the snake says T${teamOfPick(n, state.teams)} is on the clock — logging to YOUR team anyway; Undo if that was T${teamOfPick(n, state.teams)}'s pick`, "warn");
+      say(`⚠ my: pick at #${n + 1}, but the snake says Seat ${teamOfPick(n, state.teams)} is on the clock — logging to YOUR team anyway; Undo if that was Seat ${teamOfPick(n, state.teams)}'s pick`, "warn");
     const allC = matchCandidates(players, name);
     const cands = allC.filter(c => !taken.has(c.n));
     const exact = cands.filter(c => c.n.toLowerCase() === name.trim().toLowerCase());
@@ -793,7 +798,7 @@ function processFeed(state, players, feed) {
       taken.add(p.n);
       const you = slot === state.slot ? " (YOU)" : "";
       const losers = cands.filter(c => c !== p).slice(0, 2).map(c => c.n);
-      say(`  ✓ (R${Math.floor(n / state.teams) + 1}) #${n + 1}: ${p.n} → T${slot}${you}` +
+      say(`  ✓ (R${Math.floor(n / state.teams) + 1}) #${n + 1}: ${p.n} → Seat ${slot}${you}` +
           (losers.length ? `  (assumed over ${losers.join(", ")})` : ""));
     } else if (allC.length) {
       say(`⚠ skipped "${name}": already off the board (no pick logged)`, "warn");
@@ -1048,13 +1053,84 @@ function weeklyAvail(p) {
   if (tag.includes("risk")) return 0.75;
   return 0.88;
 }
+/* Instrument v2 (2026-08-05): daily-fill start rates. Yahoo lineups are set
+   DAILY — every started game counts 100%, bench games count 0, and a bench
+   player backfills any eligible open slot on his game days (owner-league
+   ground truth; measured ~99.4% of a 13-man roster's played games start —
+   the old static 10x1.0 + 3x0.15 weekly lineup underweighted bench ~6.5x,
+   arena/mocks/daily_lineup_mc.py). Port of arena.daily_fill_weights;
+   dfHash verified bit-identical to arena.df_hash (72/72 vectors). */
+const DF_K = 32;
+const DF_DAY_W = [1.3, 0.7, 1.4, 0.8, 1.5, 0.9, 1.4];
+function dfHash(str, k, salt) {
+  let h = 2166136261 ^ Math.imul(k, 2654435761) ^ Math.imul(salt, 2246822519);
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  h ^= h >>> 15; h = Math.imul(h, 2246822507);
+  h ^= h >>> 13; h = Math.imul(h, 3266489909);
+  return ((h ^= h >>> 16) >>> 0) / 4294967296;
+}
+function dailyFillWeights(roster) {
+  const val = new Map();
+  for (const p of roster) {
+    let v = 0;
+    for (const c of CATS) v += p.z[c];
+    val.set(p.n, v);
+  }
+  const started = new Map(), played = new Map();
+  for (const p of roster) { started.set(p.n, 0); played.set(p.n, 0); }
+  for (let k = 0; k < DF_K; k++) {
+    const byDay = [[], [], [], [], [], [], []];
+    for (const p of roster) {
+      const u = dfHash(p.n, k, 1);
+      const g = u < 0.08 ? 2 : u < 0.63 ? 3 : u < 0.98 ? 4 : 5;
+      const days = [0, 1, 2, 3, 4, 5, 6];
+      const a = weeklyAvail(p);
+      for (let j = 0; j < g; j++) {
+        const u2 = dfHash(p.n, k, 10 + j);
+        let tot = 0;
+        for (const d of days) tot += DF_DAY_W[d];
+        const r = u2 * tot;
+        let acc = 0, pick = days[days.length - 1];
+        for (const d of days) {
+          acc += DF_DAY_W[d];
+          if (r < acc) { pick = d; break; }
+        }
+        days.splice(days.indexOf(pick), 1);
+        if (dfHash(p.n, k, 20 + pick) < a) {
+          played.set(p.n, played.get(p.n) + 1);
+          byDay[pick].push(p);
+        }
+      }
+    }
+    for (let d = 0; d < 7; d++) {
+      const cands = [...byDay[d]].sort((x, y) =>
+        val.get(y.n) - val.get(x.n) || (x.n < y.n ? -1 : x.n > y.n ? 1 : 0));
+      const open = [...LINEUP_SLOTS];
+      for (const p of cands) {
+        const pos = positionsOf(p);
+        let idx = open.findIndex(sl => sl !== null && sl.some(b => pos.includes(b)));
+        if (idx === -1) idx = open.findIndex(sl => sl === null);
+        if (idx !== -1) { open.splice(idx, 1); started.set(p.n, started.get(p.n) + 1); }
+      }
+    }
+  }
+  const w = new Map();
+  for (const p of roster) {
+    const pl = played.get(p.n);
+    w.set(p.n, pl ? started.get(p.n) / pl : 1.0);
+  }
+  return w;
+}
 function teamWeekModel(roster) {
   const mu = {}, va = {};
   for (const c of CATS) { mu[c] = 0; va[c] = 0; }
-  const lw = lineupWeights(roster);
+  const lw = dailyFillWeights(roster);
   let fgMk = 0, fgAt = 0, ftMk = 0, ftAt = 0;
   for (const p of roster) {
-    const w = lw.get(p.n) ?? 0.15;
+    const w = lw.get(p.n) ?? 1.0;
     const a = weeklyAvail(p);
     const g = 3.5 * a, gVar = 3.5 * a * (1 - a);
     for (const c in COUNT_IDX) {
@@ -1251,7 +1327,7 @@ const PLAYERS = [{"n":"Nikola Jokic","t":"DEN","p":"C","note":"","av":1.0,"z":{"
    added to the council score; `why` is the rationale shown on the card.
    Grounded in the 2026-07-28 refresh research (re-dated at each republish alongside JUDGMENT.date). */
 const JUDGMENT = {
-  date: "2026-08-09",
+  date: "2026-08-10",
   /* Value-on-the-board knobs (tuned at each republish).
      Board slides — players available past their rank on OUR no-punt
      pre-draft board — earn a capped score bonus: real 9-cat value is
@@ -1272,21 +1348,21 @@ const JUDGMENT = {
     /* Unsigned free agents: projections assume a role no team has
        committed to yet — destination discount until they sign. */
     "Jonathan Kuminga": { adj: -0.30, why: "Unsigned \u2014 ATL holds his rights per late-July reporting (the GSW-vs-ATL discrepancy resolves to ATL); LAL sign-and-trade talks stalled. Role unknowable until he lands. Carried FA rather than ATL: rights-held but never on ATL\u2019s floor \u2014 unlike the rostered RFAs below." },
-    "DeMar DeRozan": { adj: -0.25, why: "Still unsigned 8/9 — the late-July MIA momentum cooled; now linked to MIA/DET/TOR/GSW/DEN/CLE/WAS with no club. A contender bench role would cut his shot volume hard." },
+    "DeMar DeRozan": { adj: -0.25, why: "Still unsigned 8/10 — the late-July MIA momentum cooled; linked to MIA/DET/TOR/GSW/DEN/CLE/WAS with no club, and he turned 37 this week. A contender bench role would cut his shot volume hard." },
     "Cam Thomas": { adj: -0.30, why: "Waived twice last season, still unsigned. His volume-scorer profile needs a green light no team has offered." },
     "Bradley Beal": { adj: -0.25, why: "Unsigned after six games and hip-fracture surgery; MIA still keeping tabs (Miami Herald, 8/6) but no deal. Health and destination both open." },
     "Russell Westbrook": { adj: -0.20, why: "Unsigned; MIA looked live after missing LeBron but is 'not aggressively pursuing' (7/26) \u2014 vet-minimum market, destination unknown." },
     "Jaden Ivey": { adj: -0.20, why: "Waived in March (knee), unsigned \u2014 health and destination both open questions." },
     "Jeremy Sochan": { adj: -0.15, why: "POR camp deal — one year, vet minimum, NON-guaranteed (agreed 8/1). A camp cut returns him to FA; the discount is roster-spot risk, not role risk." },
     "Lonzo Ball": { adj: -0.15, why: "Waived, unsigned; injury history stacks on destination risk." },
-    "James Harden": { adj: -0.10, why: "Unsigned on paper — CLE return on a lucrative 1-2yr deal is the reported track (8/8), terms not yet agreed. Priced as a Cav; the discount is signing-drag risk only." },
+    "James Harden": { adj: -0.10, why: "Unsigned on paper — 'fully expected' to re-sign in CLE (Shams), open to spreading the money over 3 years, both sides waiting on the last offseason dominoes. Priced as a Cav; the discount is signing-drag risk only." },
     /* Restricted free agents: team retains rights, but standoffs carry
        ramp/route risk the roster listing hides. */
     "Bennedict Mathurin": { adj: -0.15, why: "RFA still frozen by the Kawhi probe — now EXPANDED (second funneling company, Daktronics, reported 8/8; ESPN: could run into 2027). Re-sign, qualifying offer, or sign-and-trade all land differently." },
     "Jalen Duren": { adj: -0.10, why: "RFA standoff could run into August; DET expected to keep him, but the delay is ramp risk." },
-    "Peyton Watson": { adj: -0.10, why: "RFA unsigned; DEN expected to match, but LAC sign-and-trade interest and a MIL trade exception (no first attached) keep the destination live (8/8)." },
+    "Peyton Watson": { adj: -0.10, why: "RFA unsigned; sign-and-trade talks live with CLE/MIL/LAC, and DEN crossed the second apron signing Lonnie Walker IV (8/5) — a new DEN deal now looks unlikely, destination genuinely open (8/10)." },
     /* Contract-signal reads the stat line can't see yet. */
-    "Klay Thompson": { adj: -0.10, why: "DAL shopping him (8/7); MIA wants him but is waiting on a buyout rather than trading; open to LA. Role and team both unsettled." },
+    "Klay Thompson": { adj: -0.10, why: "DAL shopping him and NOT discussing a buyout (8/8) — with LAL/MIA interest they want assets back, and at ~$17.5M expiring he's tradeable. Role and team both unsettled." },
     "Gary Trent Jr.": { adj: 0.10, why: "4yr/$64M on a rebuild says MIL plans a much bigger role than last season's 8.1 ppg \u2014 the league's probe of the deal is fantasy noise." },
     "Neemias Queta": { adj: 0.05, why: "4yr/$56M extension after 75 starts \u2014 the incumbent in the Boston center timeshare until Robinson proves durability." },
   },
@@ -1299,9 +1375,9 @@ const JUDGMENT = {
   const $ = id => document.getElementById(id);
 
   /* ---------- header stamp + fresh-data-pull ---------- */
-  const BUILD_PULL = "2026-08-09"; // freshness stamp date; rewritten at each republish
+  const BUILD_PULL = "2026-08-10"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "Colophon re-author rebuild, same day: Data paragraph updated to the 8/9 refresh (245 rows, Cole Anthony NBL exit) and the Kawhi probe expansion; pool byte-identical to this morning's 245-row build.";
+  const BUILD_NOTE = "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10: ZERO pool changes \u2014 the 8/9 state re-confirmed on a fresh watchlist + general sweep (10 queries). Cole Anthony's NBL exit (8/9) re-verified against the official NBL announcement; Butler exclusion re-graded (ACL surgery 2/9, return ~Feb 2027 \u2014 stands); Harden 'fully expected' to re-sign CLE (Shams) but unsigned; DeRozan (37 this week)/Beal/Westbrook still true FAs; Klay: DAL shopping, NO buyout discussions (8/8); Watson sign-and-trade narrowed to CLE/MIL/LAC, DEN over 2nd apron after Lonnie Walker IV (8/5); Kawhi probe may run into 2027, TOR trade still on hold; LeBron\u2192PHI re-verified. JUDGMENT re-authored same pass (5 entries refreshed).";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -1384,6 +1460,14 @@ const JUDGMENT = {
     $("echo").textContent = `${t} teams × ${s} rounds = ${t * s} total picks (last pick #${t * s})`;
   }
   for (const id of ["cfgTeams", "cfgSize", "cfgSlot"]) $(id).addEventListener("input", refreshEcho);
+  /* Setup memory (owner request 2026-08-05): pre-fill "Your slot" with the
+     value the last draft was started with. Own key, so Reset draft (which
+     clears the deck state) never forgets the slot. */
+  const SETUP_KEY = "draftdeck.setup.v1";
+  try {
+    const s = JSON.parse(localStorage.getItem(SETUP_KEY));
+    if (s && +s.slot >= 1) $("cfgSlot").value = +s.slot;
+  } catch (e) { /* absent or corrupt: keep the HTML default */ }
   refreshEcho();
 
   let mockMode = false;
@@ -1407,6 +1491,8 @@ const JUDGMENT = {
     if (!(size >= 1)) return setupError("Rounds must be 1 or more.");
     if (!(slot >= 1 && slot <= teams)) return setupError(`Your slot must be between 1 and ${teams}.`);
     setupError(null);
+    resetBestView();  /* new draft starts on the default Mkt view (2026-08-06) */
+    try { localStorage.setItem(SETUP_KEY, JSON.stringify({ slot })); } catch (e) { /* private mode */ }
     deck = {
       state: { teams, slot, size, punt: CATS.filter(c => setupPunt.has(c)), picks: [] },
       mode: mockMode ? "mock" : "live",
@@ -1434,7 +1520,7 @@ const JUDGMENT = {
     log(`Draft started: ${teams} teams × ${size} rounds = ${teams * size} picks; you are Team ${slot}` +
         (deck.state.punt.length ? `; punting ${deck.state.punt.join(", ")}` : "") +
         (mockMode ? " · MOCK — your 11 league-mates hold the other seats" : " · LIVE"));
-    if (mockMode) log(`Cast: ${mockCastFor().map(([s, n]) => `T${s}:${n}`).join(" ")}`);
+    if (mockMode) log(`Cast: ${mockCastFor().map(([s, n]) => `Seat ${s}: ${n}`).join("  ")}`);
     save(); enterDraft();
     if (mockMode) advanceAI();
     renderAll();
@@ -1502,7 +1588,7 @@ const JUDGMENT = {
       const p = scored[0].p;
       st.picks.push({ player: p.n, slot });
       rosters[slot].push(p);
-      log(`  ✓ (R${Math.floor(n / st.teams) + 1}) #${n + 1}: ${p.n} → T${slot} (${name})`);
+      log(`  ✓ (R${Math.floor(n / st.teams) + 1}) #${n + 1}: ${p.n} → Seat ${slot} (${name})`);
       moved = true;
     }
     deck.rngState = rng.state;
@@ -1518,9 +1604,16 @@ const JUDGMENT = {
   /* ---------- feed ---------- */
   $("logBtn").addEventListener("click", runFeed);
   $("feed").addEventListener("keydown", e => { if (e.key === "Enter") runFeed(); });
+  /* Per-pick input memory (owner request 2026-08-05): in a mock run the
+     text sent at each overall pick number is kept on the saved deck, so
+     returning to that pick (undo, reload) restores it into the box.
+     feedMemFill tracks what this code auto-filled — a value the user has
+     typed or edited is never overwritten. */
+  let feedMemFill = "";
   function runFeed() {
     const feed = $("feed").value.trim();
     if (!feed) return;
+    if (deck.mode === "mock") (deck.inputs = deck.inputs || {})[deck.state.picks.length + 1] = feed;
     const res = processFeed(deck.state, PLAYERS, feed);
     for (const l of res.lines) log(l.t, l.cls);
     $("feed").value = "";
@@ -1532,7 +1625,7 @@ const JUDGMENT = {
     const picks = deck.state.picks;
     if (!picks.length) return;
     const last = picks.pop();
-    log(`  ↶ undid: ${last.player} (T${last.slot})`);
+    log(`  ↶ undid: ${last.player} (Seat ${last.slot})`);
     save(); renderAll();
   });
   $("advanceBtn").addEventListener("click", () => { advanceAI(); renderAll(); });
@@ -1550,6 +1643,7 @@ const JUDGMENT = {
       btn.classList.remove("danger");
       $("feed").value = "";
       $("mirror").innerHTML = "";
+      resetBestView();
       $("draft").classList.add("hidden");
       $("setup").classList.remove("hidden");
       return;
@@ -1566,7 +1660,12 @@ const JUDGMENT = {
   /* ---------- export / import ---------- */
   function engineState() {
     const { teams, slot, size, punt, picks } = deck.state;
-    return JSON.stringify({ teams, slot, size, punt, picks }, null, 2);
+    /* cast exported 2026-08-06 (owner asked for per-manager opponent
+       analysis and the file had no way to say who sat where). Additive:
+       every consumer reads named fields, so older harnesses ignore it. */
+    const out = { teams, slot, size, punt, picks };
+    if (deck.mode === "mock") out.cast = mockCastFor();
+    return JSON.stringify(out, null, 2);
   }
   $("exportBtn").addEventListener("click", async () => {
     const data = engineState();
@@ -1798,6 +1897,14 @@ const JUDGMENT = {
       /* owner request 2026-07-30: show the overall number of YOUR next pick */
       const nx = myFuturePicks(deck.state, 1)[0];
       $("feedTitle").textContent = nx ? `Your pick #${nx}` : "Your pick";
+      const fb = $("feed");
+      const onClock = !draftDone() &&
+        teamOfPick(deck.state.picks.length, deck.state.teams) === deck.state.slot;
+      const mem = onClock ? (deck.inputs || {})[deck.state.picks.length + 1] : undefined;
+      if (!fb.value || fb.value === feedMemFill) {
+        fb.value = mem || "";
+        feedMemFill = fb.value;
+      }
     }
     renderStrip(); renderMirror(); renderMyRoster(); renderPuntAnalyzer(); renderCoherence(); renderBuildRead();
     renderDecision(); renderBest();
@@ -2039,7 +2146,7 @@ const JUDGMENT = {
         if (swings.length)
           lines.push([
             ["k", "Swing"],
-            ["why", ` vs top rival T${rival}: ${swings.map(r => `${r.c} (${r.m.toFixed(1)})`).join(", ")} — closest flips to beat them`],
+            ["why", ` vs top rival Seat ${rival}: ${swings.map(r => `${r.c} (${r.m.toFixed(1)})`).join(", ")} — closest flips to beat them`],
           ]);
       }
     }
@@ -2173,7 +2280,7 @@ const JUDGMENT = {
     strip.append(
       el("span", "", `Pick #${n + 1} · R${Math.floor(n / st.teams) + 1}/${st.size}`),
       el("span", onClock === st.slot ? "onclock you" : "onclock",
-        onClock === st.slot ? "YOU are on the clock" : `T${onClock} on the clock`),
+        onClock === st.slot ? "YOU are on the clock" : `Seat ${onClock} on the clock`),
       el("span", "", myNextPick(st) === null
         ? "draft complete" : `your next: #${myNextPick(st)}`),
       el("span", "", `your roster: ${mine.length}/${st.size}`),
@@ -2196,14 +2303,18 @@ const JUDGMENT = {
 
   function renderMirror() {
     const m = $("mirror");
+    /* Full history stays in the box (owner request 2026-07-23), but only the
+       last few rows are visible. Stay pinned to the newest line UNLESS the
+       reader has scrolled up into history — then hold their place, so a
+       re-render doesn't yank them back down mid-read. */
+    const atBottom = !(m.scrollHeight - m.scrollTop - m.clientHeight > 24);
+    const prevTop = m.scrollTop;
     m.innerHTML = "";
-    /* full history, scrollable (owner request 2026-07-23); the box stays
-       pinned to the newest line via scrollTop below */
     for (const l of deck.log) {
       const d = el("div", l.cls, l.t);
       m.appendChild(d);
     }
-    m.scrollTop = m.scrollHeight;
+    m.scrollTop = atBottom ? m.scrollHeight : prevTop;
   }
 
   function renderDecision() {
@@ -2245,6 +2356,15 @@ const JUDGMENT = {
         w = `⚠ declared punt (${st.punt.join(", ")}): punt-declaring measured −5 to −11pp vs soft-punting (G1a, CRN) — the Soft Punt line advises concessions without zero-weighting.`;
       }
       flags.appendChild(el("p", "flagline", w));
+      /* E20 truth line (measured 2026-08-05, owner-authorized run): the
+         declared punt does NOT enter the Top-5 ordering, and the measured
+         punt-aware alternative FAILED its bar (1-of-5 punted mocks vs the
+         incumbent, never above baseline, ~= random swaps). Display truth,
+         not a defect notice. */
+      flags.appendChild(el("p", "flagline",
+        "\u24d8 The declared punt shapes panels and warnings, NOT the Top-5 ordering. " +
+        "This is measured, not an oversight: a punt-aware ordering failed 1-of-5 punted mocks " +
+        "vs the incumbent and never beat drafting as-is (E20, 2026-08-05)."));
     }
     const unfilled = unfilledSlots(mine);
     const remaining = st.size - mine.length;
@@ -2269,7 +2389,7 @@ const JUDGMENT = {
       }
       const edge = rival ? kept.filter(c => totals[st.slot][c] > totals[rival][c]) : [];
       if (rival)
-        meta.append(el("span", "", `top rival T${rival}: you lead ${edge.length}/${kept.length} kept`));
+        meta.append(el("span", "", `top rival Seat ${rival}: you lead ${edge.length}/${kept.length} kept`));
       const read = draftDone() ? null : archetypeRead(
         st, mine, availablePool(st, PLAYERS), ranks,
         myNextPick(st) ?? st.teams * st.size, MKT_RANK);
@@ -2407,6 +2527,29 @@ const JUDGMENT = {
        are common at the top (percentile quantization) and the parity gate
        requires deterministic agreement */
     const scored = scoredAll.slice(0, 5);
+    /* Lineup-capacity truth line (owner-reported 2026-08-05: "it wouldn't
+       routinely have me load up on 5 or 6 C's"). E22/E22b measured both
+       reordering fixes and both failed their registered bars, so the card
+       keeps its validated ordering and NAMES the trap instead. Startable
+       ceilings come from the lineup layout: C = C·C·Util·Util = 4;
+       G = PG·SG·G·Util·Util = 5; F = SF·PF·F·Util·Util = 5. Fires only
+       when the card is ≥4/5 one family AND the roster already holds that
+       family's ceiling. */
+    if (scored.length === 5) {
+      const famOf = p => { const s = new Set(); for (const t of positionsOf(p)) s.add(t === "C" ? "C" : (t === "PG" || t === "SG") ? "G" : "F"); return s; };
+      const CAP = { C: 4, G: 5, F: 5 };
+      const FNAME = { C: "center", G: "guard", F: "forward" };
+      const SLOTS_TXT = { C: "C·C·Util·Util", G: "PG·SG·G·Util·Util", F: "SF·PF·F·Util·Util" };
+      for (const f of ["C", "F", "G"]) {
+        const nCard = scored.filter(r => famOf(r.p).has(f)).length;
+        const nMine = mine.filter(p => famOf(p).has(f)).length;
+        if (nCard >= 4 && nMine >= CAP[f]) {
+          flags.appendChild(el("p", "flagline",
+            `⚠ LINEUP CAP: ${nCard} of these 5 are ${FNAME[f]}-eligible and you already roster ${nMine} — at most ${CAP[f]} can start on a given day (${SLOTS_TXT[f]}), so another would ride your bench whenever they're all healthy`));
+          break;
+        }
+      }
+    }
     /* The coin-flip and standout tags are RETIRED (owner directive
        2026-08-09). They were percentile-gap thresholds rate-matched to a
        confidence display that no longer exists, and the skill carried a
@@ -2459,7 +2602,10 @@ const JUDGMENT = {
       const li = document.createElement("li");
       li.append(el("span", "rk", String(i + 1)));
       const isRec = i === 0 && !tgOnPin;
-      const nm = el("span", "nm", (isRec ? "🎯 " : "") + p.n + ", " + p.p);
+      /* Position moved off the name and onto the team line (owner-reported
+         2026-08-06): long names truncate with an ellipsis and took the
+         eligibility string with them ("Ausar T…" hid SF,PF). */
+      const nm = el("span", "nm", (isRec ? "🎯 " : "") + p.n);
       if (isRec) nm.dataset.tip = "🎯 system pick — top blend50 score: 50% marginal expected-cats-won vs this room + 50% balanced value (deliberately punt-blind; your punt's numbers ride the blue chip). An urgent structural TARGET can take this marker instead.";
       if (p.av > 0 && p.av < 1) {
         const fl = el("span", "flag risk", "▲");
@@ -2502,14 +2648,17 @@ const JUDGMENT = {
         .sort((a, b) => p.z[b] - p.z[a]).slice(0, 3);
       /* Machinery numbers (council/judgment/slide) demoted to the tooltip
          (owner concision pass 2026-08-05). */
-      let line = (plus.length ? `+${plus.join(" +")}` : "");
+      const cardMkt = MKT_RANK.get(p.n);
+      let line = [cardMkt ? `Mkt ${cardMkt}` : "", plus.length ? `+${plus.join(" +")}` : ""]
+        .filter(Boolean).join("   ");
       if ((teamCt2[p.t] || 0) >= 2) line += `   [would be 3rd ${p.t}]`;
       if (p.note && p.av === 1) line += `   [${p.note}]`;
       const ml = el("span", "meta", line);
       ml.dataset.tip = `${bits.join(" · ")} · val ${fmtVal(p, punt)} (injury-adjusted 9-cat z)` +
         (scored[i].why ? ` · ⚖ ${scored[i].why}` : "") +
         (scored[i].vbonus ? ` · ⚡ board #${scored[i].boardRank} still available at your #${pickNo} — slid ${scored[i].slide}` : "") +
-        (plus.length ? ` · plus-cats = strongest z (≥ +0.5), capped at 3` : "");
+        (plus.length ? ` · plus-cats = strongest z (≥ +0.5), capped at 3` : "") +
+        (cardMkt ? ` · Mkt = market model's estimated real-draft position (same number as the Best-available Mkt column)` : "");
       li.append(ml);
       /* Dual-lens chip (owner redesign 2026-08-05): when a punt is
          declared, show this candidate under YOUR punt beside the
@@ -2573,6 +2722,7 @@ const JUDGMENT = {
       });
       const tags = el("span", "tags");
       tags.append(el("span", "tm", p.t));
+      tags.append(el("span", "tmpos", p.p));
       li.append(nm, tags, sc, take);
       if (vSpan) li.append(vSpan); /* bottom-right, under the button (owner spec) */
       if (i === 0 && vSpan) adviceChip = vSpan.textContent;
@@ -2622,17 +2772,35 @@ const JUDGMENT = {
       if (tp && row) {
         const li = document.createElement("li");
         li.style.borderStyle = "dashed";
-        li.style.borderColor = "var(--accent)";
+        /* Two named states (owner ask 2026-08-10, "name it something more
+           precise"): LAST CALL = urgent, the 🎯 moves here — take it over
+           the Top-5; DEPTH WATCH = informational, the 🎯 above stays the
+           pick. Border echoes it: accent when it's the pick, hairline when
+           it's a note. */
+        li.style.borderColor = readR.urgent ? "var(--accent)" : "var(--line)";
         li.append(el("span", "rk", "→"));
         const tnm = el("span", "nm", (tgOnPin ? "🎯 " : "") + tp.n + ", " + tp.p);
-        if (tgOnPin) tnm.dataset.tip = `🎯 system pick — urgent structural need: best ${readR.fam} in reach with the shelf nearly empty (the override class the mock ledger grades positive)`;
-        li.append(tnm, el("span", "sc", row.ds >= 0 ? (row.ds * 100).toFixed(1) : fmtZ(row.fs, 2)));
+        tnm.dataset.tip = tgOnPin
+          ? `🎯 system pick — LAST CALL: best ${readR.fam} in reach with the shelf nearly empty (the override class the mock ledger grades positive). This turn it outranks the Top-5.`
+          : `DEPTH WATCH — your build still wants a ${readR.fam} and none made the Top-5. This is the best one in reach and how fast that shelf is moving. Informational only: the 🎯 above is still the pick.`;
+        /* One unit per card (owner-reported 2026-08-10: "92.1" beside
+           "±0.015 cats/wk"): the pinned row reports its ΔECW margin against
+           #1 exactly like rows 2–5; blend-score points live in the tooltip. */
+        const tEcw = (row.decw == null || !scored.length || scored[0].decw == null)
+          ? null : row.decw - scored[0].decw;
+        const tsc = el("span", "sc", tEcw === null ? ""
+          : `${tEcw >= 0 ? "+" : "−"}${Math.abs(tEcw).toFixed(3)} cats/wk`);
+        tsc.style.color = "var(--muted)";
+        tsc.dataset.tip = row.decw == null
+          ? "No opponent has drafted yet, so there is no room to measure marginal categories against — the pin is structural."
+          : `Same unit as the rows above: marginal expected categories won per week vs the room's CURRENT rosters, shown as this player's margin against #1 on the card. The pin itself is structural (${readR.fam} shelf), not a score claim. Informational: blend50 ${(row.ds * 100).toFixed(1)} of 100 vs #1 ${(scored[0].ds * 100).toFixed(1)}.`;
+        li.append(tnm, tsc);
         li.append(el("span", "meta",
-          `TARGET ${readR.label} — best ${readR.fam} in reach · ` +
           (readR.urgent
-            ? `shelf: ${readR.shelfCount} left in the room's next 2 rounds — act now`
-            : (readR.shelfCount !== null ? `shelf: ${readR.shelfCount} in window` : "build need")) +
-          ` · score gap to #1: ${((scored[0].ds - row.ds) * 100).toFixed(1)}`));
+            ? `LAST CALL ${readR.label} — take over the Top-5 · ${readR.fam} shelf: ${readR.shelfCount} left in the room's next 2 rounds`
+            : `DEPTH WATCH ${readR.label} — best ${readR.fam} in reach, info only (🎯 above is the pick)` +
+              (readR.shelfCount !== null ? ` · shelf: ${readR.shelfCount} in window` : "")) +
+          ` · #${scoredAll.indexOf(row) + 1} on the card's blend`));
         const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
         take.type = "button";
         take.addEventListener("click", () => {
@@ -2701,6 +2869,24 @@ const JUDGMENT = {
      primary lens (picking it supersedes everything); the 9 cat headers
      stack into a combined-z cat lens, up to 3, removable via × chips. */
   let bestState = { pos: "", q: "", top: 25, lens: "mkt", cats: [], drill: null }; /* Mkt default 2026-08-04; drill 2026-08-05 */
+  /* Pool-wide ΔECW (owner swap 2026-08-10: the ΔECW column replaced Fit
+     after Fit inflated a mis-shaped star): the same decwScores the card
+     runs, memoized on the pick list so search keystrokes and filter
+     changes never re-run the weekly model. */
+  let decwMemo = { key: null, map: null };
+  function poolDecw(st) {
+    const key = st.slot + "|" + st.picks.map(pk => pk.player).join("|");
+    if (decwMemo.key === key) return decwMemo.map;
+    const rosters = buildRosters(st, PLAYERS);
+    const mine = rosters[st.slot];
+    const opp = [];
+    for (let t = 1; t <= st.teams; t++)
+      if (t !== st.slot && rosters[t] && rosters[t].length) opp.push(rosters[t]);
+    const map = new Map(decwScores(availablePool(st, PLAYERS), mine, opp)
+      .map(x => [x.p.n, x.decw]));
+    decwMemo = { key, map };
+    return map;
+  }
   let catCapWarn = false; /* one-shot: a blocked 4th cat selection prompts */
   let draftedNote = "";
   $("bestPos").addEventListener("change", e => { bestState.pos = e.target.value; renderBest(); });
@@ -2729,11 +2915,22 @@ const JUDGMENT = {
     bestState.cats = []; bestState.drill = null; /* the primary lens supersedes cat filters */
     renderBest();
   });
-  $("bestReset").addEventListener("click", () => {
+  /* Pool view defaults. bestState is module-level, so without an explicit
+     reset a lens set in one draft (e.g. the TARGET chip switches to Fit)
+     silently carried into the NEXT draft — owner-reported 2026-08-06:
+     "started a new draft and the pool was not sorted by MKT". Called from
+     the clear-filters button, Start draft, and Reset draft. */
+  function resetBestView() {
     bestState = { pos: "", q: "", top: 25, lens: "mkt", cats: [], drill: null };
     draftedNote = "";
-    $("bestPos").value = ""; $("bestQ").value = "";
-    $("bestTop").value = "25"; $("bestSort").value = "mkt";
+    if ($("bestPos")) $("bestPos").value = "";
+    if ($("bestQ")) $("bestQ").value = "";
+    if ($("bestTop")) $("bestTop").value = "25";
+    if ($("bestSort")) $("bestSort").value = "mkt";
+  }
+  globalThis.__resetBestView = resetBestView;
+  $("bestReset").addEventListener("click", () => {
+    resetBestView();
     renderBest();
   });
   $("bestSort").value = bestState.lens; /* re-sync after Firefox autofill */
@@ -2783,13 +2980,28 @@ const JUDGMENT = {
       bestHeadBuilt = true;
     }
     let pool = availablePool(st, PLAYERS);
-    if (bestState.pos) pool = pool.filter(p => p.p.toUpperCase().includes(bestState.pos));
+    if (bestState.pos) pool = pool.filter(p => {
+      /* G+F / F+C (owner add 2026-08-05): dual-eligibility — the player
+         covers BOTH families' lineup slots. Plain values stay substring. */
+      if (bestState.pos === "G+F" || bestState.pos === "F+C") {
+        const f = familiesOf(p);
+        return bestState.pos === "G+F" ? f.includes("G") && f.includes("F")
+                                       : f.includes("F") && f.includes("C");
+      }
+      return p.p.toUpperCase().includes(bestState.pos);
+    });
     /* fit weights — recomputed from the live board every render */
     const mineB = buildRosters(st, PLAYERS)[st.slot];
     const ranksB = mineB.length >= 2 ? categoryRanks(st, PLAYERS).ranks : null;
     const fw = fitWeights(punt, ranksB, mineB.length, st.teams);
     const fitOf = new Map(pool.map(p => [p.n, fitZ(p, fw)]));
     const cats = bestState.cats, lens = bestState.lens;
+    const dm = poolDecw(st);
+    /* The roster column is ΔECW under every lens except Fit, where it
+       shows Fit z — you never sort by an invisible metric. */
+    const rosterKey = lens === "fit" ? "fit" : "decw";
+    const thR = $("thRoster");
+    if (thR) { thR.textContent = rosterKey === "fit" ? "Fit" : "ΔECW"; thR.dataset.sort = rosterKey; }
     if (bestState.drill && !cats.includes(bestState.drill)) bestState.drill = null;
     const drill = bestState.drill;
     const catSum = p => cats.reduce((s, c) => s + p.z[c], 0);
@@ -2798,6 +3010,7 @@ const JUDGMENT = {
         ? (a, b) => (b.z[drill] - a.z[drill]) || (catSum(b) - catSum(a)) /* drilled cat, combined as tiebreak */
         : (a, b) => catSum(b) - catSum(a)) /* combined selected-cat z */
       : lens === "fit" ? (a, b) => fitOf.get(b.n).adj - fitOf.get(a.n).adj
+      : lens === "decw" ? (a, b) => (dm.get(b.n) ?? -1e9) - (dm.get(a.n) ?? -1e9)
       : lens === "mkt" ? (a, b) => (MKT_RANK.get(a.n) || 999) - (MKT_RANK.get(b.n) || 999)
       : (a, b) => adjValue(b, punt) - adjValue(a, punt));  /* val */
     for (const th of $("bestHead").querySelectorAll("th"))
@@ -2877,14 +3090,25 @@ const JUDGMENT = {
       tr.append(tdM, tdR, tdN, el("td", "l team", p.t), el("td", "l pos", p.p));
       const tdV = el("td", "val", fmtVal(p, punt));
       tr.append(tdV);
-      const f = fitOf.get(p.n);
-      const tdF = el("td", "val", fmtZ(f.adj, 2) + (p.av < 1 && f.raw > 0 ? "*" : ""));
-      tdF.style.color = "var(--accent)";
-      tdF.dataset.tip = ranksB
-        ? `swing-weighted for your roster: locked (≤${rankTiers(st.teams).locked}) ×0.35, lost (≥${rankTiers(st.teams).lostFrom}) ×0.45, punt ×0` +
-          (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
-        : `roster < 2 — fit z equals balanced value for now`;
-      tr.append(tdF);
+      if (rosterKey === "fit") {
+        const f = fitOf.get(p.n);
+        const tdF = el("td", "val", fmtZ(f.adj, 2) + (p.av < 1 && f.raw > 0 ? "*" : ""));
+        tdF.style.color = "var(--accent)";
+        tdF.dataset.tip = ranksB
+          ? `swing-weighted for your roster: locked (≤${rankTiers(st.teams).locked}) ×0.35, lost (≥${rankTiers(st.teams).lostFrom}) ×0.45, punt ×0` +
+            (unknownCount(st) ? ` — ⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)` : "")
+          : `roster < 2 — fit z equals balanced value for now`;
+        tr.append(tdF);
+      } else {
+        const d = dm.get(p.n);
+        const tdD = el("td", "val", d == null ? "—"
+          : `${d >= 0 ? "+" : "−"}${Math.abs(d).toFixed(3)}`);
+        tdD.style.color = "var(--accent)";
+        tdD.dataset.tip = d == null
+          ? "No opponent roster to measure against yet — ΔECW starts once an opponent has drafted; balanced value carries the early board."
+          : `Marginal expected categories won per week if YOU add ${p.n}, measured vs the room's current rosters — the card's own unit (availability priced in; punt-blind like the card). Fit z is still available under Lens.`;
+        tr.append(tdD);
+      }
       for (const c of CATS) {
         const z = p.z[c];
         const td = el("td", "z" + (z < 0 ? " neg" : ""), fmtZ(z, 1));
@@ -2908,7 +3132,7 @@ const JUDGMENT = {
     for (let s = 1; s <= st.teams; s++) {
       const th = document.createElement("th");
       th.scope = "col"; th.className = "l";
-      th.textContent = s === st.slot ? `T${s} YOU` : `T${s}`;
+      th.textContent = s === st.slot ? `Seat ${s} YOU` : `Seat ${s}`;
       hr.appendChild(th);
     }
     head.appendChild(hr);
@@ -2923,7 +3147,7 @@ const JUDGMENT = {
         const idx = r % 2 === 0 ? r * st.teams + (col - 1) : r * st.teams + (st.teams - col);
         const pk = byPick[idx];
         const td = el("td", "l" + (col === st.slot ? " player" : ""), pk ? pk.player : "·");
-        if (pk) td.dataset.tip = `#${idx + 1} → T${pk.slot}`;
+        if (pk) td.dataset.tip = `#${idx + 1} → Seat ${pk.slot}`;
         tr.appendChild(td);
       }
       rows.appendChild(tr);
@@ -2969,7 +3193,7 @@ const JUDGMENT = {
     for (let s = 1; s <= st.teams; s++) {
       const tr = document.createElement("tr");
       if (s === st.slot) tr.className = "you";
-      tr.appendChild(el("td", "l player", s === st.slot ? `T${s} YOU` : `T${s}`));
+      tr.appendChild(el("td", "l player", s === st.slot ? `Seat ${s} YOU` : `Seat ${s}`));
       for (const c of CATS) {
         const v = totals[s][c];
         const td = el("td", "z" + (v < 0 ? " neg" : ""), fmtZ(v, 1));

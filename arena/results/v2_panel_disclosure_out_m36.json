@@ -1,0 +1,120 @@
+{
+ "36": {
+  "mock": "36",
+  "owner_slot": 1,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   10,
+   12
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 30.783,
+    "playoff": 92.65,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Giannis Antetokounmpo",
+     "James Harden",
+     "Reed Sheppard",
+     "Alperen Sengun",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Aaron Nesmith",
+     "Andrew Nembhard",
+     "Keon Ellis",
+     "Al Horford"
+    ]
+   },
+   "v1cards": {
+    "champ": 29.106,
+    "playoff": 94.25,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "Reed Sheppard",
+     "Cameron Johnson",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Aaron Nesmith",
+     "Andrew Nembhard",
+     "Keon Ellis",
+     "Al Horford"
+    ],
+    "swaps": [
+     [
+      24,
+      "Giannis Antetokounmpo",
+      "Desmond Bane"
+     ],
+     [
+      25,
+      "James Harden",
+      "Derrick White"
+     ],
+     [
+      49,
+      "Alperen Sengun",
+      "Cameron Johnson"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 27.783,
+    "playoff": 93.989,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "Reed Sheppard",
+     "Cameron Johnson",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Andrew Nembhard",
+     "Santi Aldama",
+     "Brandin Podziemski",
+     "Al Horford"
+    ],
+    "swaps": [
+     [
+      24,
+      "Giannis Antetokounmpo",
+      "Desmond Bane"
+     ],
+     [
+      25,
+      "James Harden",
+      "Derrick White"
+     ],
+     [
+      49,
+      "Alperen Sengun",
+      "Cameron Johnson"
+     ],
+     [
+      121,
+      "Aaron Nesmith",
+      "Santi Aldama"
+     ],
+     [
+      144,
+      "Keon Ellis",
+      "Brandin Podziemski"
+     ]
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "21": {
+  "mock": "21",
+  "owner_slot": 4,
+  "trigger_turns": [
+   [
+    12,
+    "F"
+   ]
+  ],
+  "card_identical_to_shipped": false,
+  "arm": {
+   "champ": 20.083,
+   "playoff": 88.833,
+   "finish": 2,
+   "seasons": 18000,
+   "roster": [
+    "Nikola Jokic",
+    "Kevin Durant",
+    "Derrick White",
+    "Cooper Flagg",
+    "Payton Pritchard",
+    "Coby White",
+    "Jalen Suggs",
+    "Naz Reid",
+    "Jaden McDaniels",
+    "Jerami Grant",
+    "Yaxel Lendeborg",
+    "Ayo Dosunmu",
+    "Jeremy Sochan"
+   ],
+   "swaps": [
+    [
+     28,
+     "Jayson Tatum",
+     "Derrick White"
+    ],
+    [
+     52,
+     "Walker Kessler",
+     "Payton Pritchard"
+    ],
+    [
+     76,
+     "Immanuel Quickley",
+     "Jalen Suggs"
+    ],
+    [
+     93,
+     "Norman Powell",
+     "Naz Reid"
+    ],
+    [
+     100,
+     "Isaiah Hartenstein",
+     "Jaden McDaniels"
+    ],
+    [
+     117,
+     "DeMar DeRozan",
+     "Jerami Grant"
+    ],
+    [
+     124,
+     "Aaron Nesmith",
+     "Yaxel Lendeborg"
+    ],
+    [
+     141,
+     "Tobias Harris",
+     "Ayo Dosunmu"
+    ],
+    [
+     148,
+     "De'Anthony Melton",
+     "Jeremy Sochan"
+    ]
+   ]
+  }
+ }
+}

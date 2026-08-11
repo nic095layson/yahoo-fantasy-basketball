@@ -1,0 +1,14 @@
+{
+ "35": {
+  "mock": "35",
+  "owner_slot": 12,
+  "trigger_turns": [
+   [
+    10,
+    "F"
+   ]
+  ],
+  "card_identical_to_shipped": true,
+  "arm": "== shipped (no simulation needed)"
+ }
+}

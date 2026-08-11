@@ -6,6 +6,9 @@ arena/data/states/draft_state_mock32.json and the output JSON is committed
 next to the results. Fresh clone + `python3 arena/mocks/season_sim_mock32.py`
 regenerates every number quoted in the mock-31 debrief and LEDGER row.
 """
+
+import os as _os_epoch
+_os_epoch.environ.setdefault("ARENA_WEEK_MODEL", "static")  # v1-epoch harness: regenerates pre-2026-08-05 instrument numbers
 import sys, os, json, random
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))

@@ -1,0 +1,327 @@
+{
+ "22": {
+  "mock": "22",
+  "owner_slot": 11,
+  "punt": [
+   "REB",
+   "BLK",
+   "FG%"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    35,
+    62,
+    86
+   ],
+   "puntAware": [
+    155
+   ]
+  },
+  "arms": {
+   "baseline": {
+    "champ": 0.217,
+    "playoff": 6.944,
+    "finish": 11,
+    "seasons": 18000,
+    "kept_z": 17.68,
+    "roster": [
+     "Anthony Edwards",
+     "Cade Cunningham",
+     "Trae Young",
+     "OG Anunoby",
+     "Coby White",
+     "Lauri Markkanen",
+     "LeBron James",
+     "Immanuel Quickley",
+     "Kon Knueppel",
+     "Jabari Smith Jr.",
+     "D'Angelo Russell",
+     "Kyle Kuzma",
+     "Anfernee Simons"
+    ]
+   },
+   "shipped": {
+    "champ": 6.139,
+    "playoff": 59.661,
+    "finish": 7,
+    "seasons": 18000,
+    "kept_z": -26.18,
+    "roster": [
+     "Anthony Edwards",
+     "Evan Mobley",
+     "Josh Giddey",
+     "Cooper Flagg",
+     "Kel'el Ware",
+     "Jarrett Allen",
+     "Josh Hart",
+     "Donovan Clingan",
+     "Jabari Smith Jr.",
+     "John Collins",
+     "Santi Aldama",
+     "Wendell Carter Jr.",
+     "Neemias Queta"
+    ],
+    "swaps": [
+     [
+      14,
+      "Cade Cunningham",
+      "Evan Mobley"
+     ],
+     [
+      35,
+      "Trae Young",
+      "Josh Giddey"
+     ],
+     [
+      38,
+      "OG Anunoby",
+      "Cooper Flagg"
+     ],
+     [
+      59,
+      "Coby White",
+      "Kel'el Ware"
+     ],
+     [
+      62,
+      "Lauri Markkanen",
+      "Jarrett Allen"
+     ],
+     [
+      83,
+      "LeBron James",
+      "Josh Hart"
+     ],
+     [
+      86,
+      "Immanuel Quickley",
+      "Donovan Clingan"
+     ],
+     [
+      110,
+      "Kon Knueppel",
+      "John Collins"
+     ],
+     [
+      131,
+      "D'Angelo Russell",
+      "Santi Aldama"
+     ],
+     [
+      134,
+      "Kyle Kuzma",
+      "Wendell Carter Jr."
+     ],
+     [
+      155,
+      "Anfernee Simons",
+      "Neemias Queta"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      107,
+      "Kon Knueppel",
+      "Jabari Smith Jr."
+     ]
+    ]
+   },
+   "puntAware": {
+    "champ": 0.0,
+    "playoff": 0.0,
+    "finish": 12,
+    "seasons": 18000,
+    "kept_z": 28.3,
+    "roster": [
+     "Donovan Mitchell",
+     "Jamal Murray",
+     "Trae Young",
+     "Darius Garland",
+     "Reed Sheppard",
+     "Jordan Poole",
+     "Immanuel Quickley",
+     "D'Angelo Russell",
+     "VJ Edgecombe",
+     "CJ McCollum",
+     "Alex Caruso",
+     "Jared McCain",
+     "Anfernee Simons"
+    ],
+    "swaps": [
+     [
+      11,
+      "Anthony Edwards",
+      "Donovan Mitchell"
+     ],
+     [
+      14,
+      "Cade Cunningham",
+      "Jamal Murray"
+     ],
+     [
+      38,
+      "OG Anunoby",
+      "Darius Garland"
+     ],
+     [
+      59,
+      "Coby White",
+      "Reed Sheppard"
+     ],
+     [
+      62,
+      "Lauri Markkanen",
+      "Jordan Poole"
+     ],
+     [
+      107,
+      "Kon Knueppel",
+      "VJ Edgecombe"
+     ],
+     [
+      110,
+      "Jabari Smith Jr.",
+      "CJ McCollum"
+     ],
+     [
+      131,
+      "LeBron James",
+      "Alex Caruso"
+     ],
+     [
+      134,
+      "Kyle Kuzma",
+      "Jared McCain"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      83,
+      "LeBron James",
+      "Immanuel Quickley"
+     ],
+     [
+      86,
+      "LeBron James",
+      "D'Angelo Russell"
+     ]
+    ]
+   },
+   "placebo_draws": [
+    {
+     "champ": 3.094,
+     "playoff": 41.494,
+     "finish": 6,
+     "seasons": 18000,
+     "kept_z": -15.88,
+     "roster": [
+      "Anthony Edwards",
+      "Desmond Bane",
+      "Cooper Flagg",
+      "Alperen Sengun",
+      "Jalen Duren",
+      "Pascal Siakam",
+      "Nikola Vucevic",
+      "RJ Barrett",
+      "Kon Knueppel",
+      "Ausar Thompson",
+      "Jaden Ivey",
+      "Collin Sexton",
+      "Neemias Queta"
+     ],
+     "swap_turns": [
+      14,
+      35,
+      38,
+      59,
+      62,
+      83,
+      86,
+      110,
+      131,
+      134,
+      155
+     ]
+    },
+    {
+     "champ": 0.0,
+     "playoff": 0.539,
+     "finish": 12,
+     "seasons": 18000,
+     "kept_z": -19.63,
+     "roster": [
+      "Anthony Edwards",
+      "Jaren Jackson Jr.",
+      "Zion Williamson",
+      "Cameron Johnson",
+      "Kel'el Ware",
+      "Joel Embiid",
+      "Daniel Gafford",
+      "Jaden McDaniels",
+      "Kon Knueppel",
+      "DeMar DeRozan",
+      "Ayo Dosunmu",
+      "Dereck Lively II",
+      "Neemias Queta"
+     ],
+     "swap_turns": [
+      14,
+      35,
+      38,
+      59,
+      62,
+      83,
+      86,
+      110,
+      131,
+      134,
+      155
+     ]
+    },
+    {
+     "champ": 0.6,
+     "playoff": 18.1,
+     "finish": 10,
+     "seasons": 18000,
+     "kept_z": -1.14,
+     "roster": [
+      "Anthony Edwards",
+      "De'Aaron Fox",
+      "Onyeka Okongwu",
+      "Alperen Sengun",
+      "Dejounte Murray",
+      "Jordan Poole",
+      "Aaron Gordon",
+      "Jalen Green",
+      "Kon Knueppel",
+      "Aaron Nesmith",
+      "De'Anthony Melton",
+      "Ace Bailey",
+      "Neemias Queta"
+     ],
+     "swap_turns": [
+      14,
+      35,
+      38,
+      59,
+      62,
+      83,
+      86,
+      110,
+      131,
+      134,
+      155
+     ]
+    }
+   ],
+   "placebo_mean_champ": 1.231
+  },
+  "placebo_matched_to": "shipped"
+ }
+}

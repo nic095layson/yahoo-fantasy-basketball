@@ -1,0 +1,156 @@
+{
+ "36": {
+  "mock": "36",
+  "owner_slot": 1,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "TO"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    72,
+    145
+   ],
+   "resil": [
+    72
+   ]
+  },
+  "top1_diverge_turns": [
+   121,
+   144
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 31.178,
+    "playoff": 93.411,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 6.66,
+    "ecw_std": 5.059,
+    "ecw_slf": 4.99,
+    "roster": [
+     "Victor Wembanyama",
+     "Giannis Antetokounmpo",
+     "James Harden",
+     "Reed Sheppard",
+     "Alperen Sengun",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Aaron Nesmith",
+     "Andrew Nembhard",
+     "Keon Ellis",
+     "Al Horford"
+    ]
+   },
+   "shipped": {
+    "champ": 27.661,
+    "playoff": 93.867,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": -10.12,
+    "ecw_std": 4.979,
+    "ecw_slf": 4.875,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "Reed Sheppard",
+     "Cameron Johnson",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Aaron Nesmith",
+     "Andrew Nembhard",
+     "Keon Ellis",
+     "Al Horford"
+    ],
+    "swaps": [
+     [
+      24,
+      "Giannis Antetokounmpo",
+      "Desmond Bane"
+     ],
+     [
+      25,
+      "James Harden",
+      "Derrick White"
+     ],
+     [
+      49,
+      "Alperen Sengun",
+      "Cameron Johnson"
+     ]
+    ],
+    "noop_swaps": []
+   },
+   "resil": {
+    "champ": 27.306,
+    "playoff": 93.406,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": -10.37,
+    "ecw_std": 4.967,
+    "ecw_slf": 4.96,
+    "roster": [
+     "Victor Wembanyama",
+     "Desmond Bane",
+     "Derrick White",
+     "Reed Sheppard",
+     "Cameron Johnson",
+     "Mikal Bridges",
+     "Christian Braun",
+     "Cason Wallace",
+     "Nikola Vucevic",
+     "Aaron Nesmith",
+     "Matas Buzelis",
+     "Al Horford",
+     "Ace Bailey"
+    ],
+    "swaps": [
+     [
+      24,
+      "Giannis Antetokounmpo",
+      "Desmond Bane"
+     ],
+     [
+      25,
+      "James Harden",
+      "Derrick White"
+     ],
+     [
+      49,
+      "Alperen Sengun",
+      "Cameron Johnson"
+     ],
+     [
+      121,
+      "Andrew Nembhard",
+      "Matas Buzelis"
+     ],
+     [
+      145,
+      "Keon Ellis",
+      "Ace Bailey"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      144,
+      "Keon Ellis",
+      "Al Horford"
+     ]
+    ]
+   }
+  }
+ }
+}

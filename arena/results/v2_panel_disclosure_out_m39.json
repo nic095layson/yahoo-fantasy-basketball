@@ -1,0 +1,154 @@
+{
+ "39": {
+  "mock": "39",
+  "owner_slot": 4,
+  "instrument": "v2 daily-fill",
+  "top1_diverge_rounds": [
+   10
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 40.75,
+    "playoff": 97.256,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Giannis Antetokounmpo",
+     "Trae Young",
+     "Amen Thompson",
+     "Alperen Sengun",
+     "Tari Eason",
+     "Jarrett Allen",
+     "Jalen Duren",
+     "Ausar Thompson",
+     "Ryan Rollins",
+     "Bilal Coulibaly",
+     "Daniel Gafford",
+     "RJ Barrett"
+    ]
+   },
+   "v1cards": {
+    "champ": 26.689,
+    "playoff": 89.8,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Ryan Rollins",
+     "Daniel Gafford",
+     "Tobias Harris",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      141,
+      "Bilal Coulibaly",
+      "Tobias Harris"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ]
+   },
+   "v2cards": {
+    "champ": 24.311,
+    "playoff": 88.422,
+    "finish": 1,
+    "seasons": 18000,
+    "roster": [
+     "Luka Doncic",
+     "Evan Mobley",
+     "Derrick White",
+     "Amen Thompson",
+     "Onyeka Okongwu",
+     "Tari Eason",
+     "Brook Lopez",
+     "Jalen Duren",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Yaxel Lendeborg",
+     "Tobias Harris",
+     "Keon Ellis"
+    ],
+    "swaps": [
+     [
+      21,
+      "Giannis Antetokounmpo",
+      "Evan Mobley"
+     ],
+     [
+      28,
+      "Trae Young",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Alperen Sengun",
+      "Onyeka Okongwu"
+     ],
+     [
+      76,
+      "Jarrett Allen",
+      "Brook Lopez"
+     ],
+     [
+      100,
+      "Ausar Thompson",
+      "Cason Wallace"
+     ],
+     [
+      124,
+      "Bilal Coulibaly",
+      "Yaxel Lendeborg"
+     ],
+     [
+      141,
+      "Ryan Rollins",
+      "Tobias Harris"
+     ],
+     [
+      148,
+      "RJ Barrett",
+      "Keon Ellis"
+     ]
+    ]
+   }
+  }
+ }
+}

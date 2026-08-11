@@ -1,0 +1,185 @@
+{
+ "38": {
+  "mock": "38",
+  "owner_slot": 3,
+  "punt": [
+   "FT%",
+   "3PTM",
+   "PTS"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    147
+   ],
+   "resil": []
+  },
+  "top1_diverge_turns": [
+   123,
+   142,
+   147
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 16.456,
+    "playoff": 75.244,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 18.23,
+    "ecw_std": 4.733,
+    "ecw_slf": 4.786,
+    "roster": [
+     "Luka Doncic",
+     "Jamal Murray",
+     "Chet Holmgren",
+     "Josh Hart",
+     "Reed Sheppard",
+     "Jakob Poeltl",
+     "Christian Braun",
+     "Alex Sarr",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Cameron Boozer",
+     "Ausar Thompson",
+     "Derik Queen"
+    ]
+   },
+   "shipped": {
+    "champ": 29.456,
+    "playoff": 92.028,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 19.19,
+    "ecw_std": 4.957,
+    "ecw_slf": 4.806,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Onyeka Okongwu",
+     "Cameron Johnson",
+     "Jakob Poeltl",
+     "Christian Braun",
+     "Nikola Vucevic",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Cameron Boozer",
+     "Ausar Thompson",
+     "Tobias Harris"
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      27,
+      "Jamal Murray",
+      "Derrick White"
+     ],
+     [
+      46,
+      "Josh Hart",
+      "Onyeka Okongwu"
+     ],
+     [
+      51,
+      "Reed Sheppard",
+      "Cameron Johnson"
+     ],
+     [
+      94,
+      "Alex Sarr",
+      "Nikola Vucevic"
+     ],
+     [
+      147,
+      "Derik Queen",
+      "Tobias Harris"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      22,
+      "Jamal Murray",
+      "Chet Holmgren"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 34.244,
+    "playoff": 95.344,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 16.47,
+    "ecw_std": 5.045,
+    "ecw_slf": 4.668,
+    "roster": [
+     "Shai Gilgeous-Alexander",
+     "Chet Holmgren",
+     "Derrick White",
+     "Onyeka Okongwu",
+     "Cameron Johnson",
+     "Jakob Poeltl",
+     "Christian Braun",
+     "Nikola Vucevic",
+     "Cason Wallace",
+     "Daniel Gafford",
+     "Aaron Nesmith",
+     "Wendell Carter Jr.",
+     "Derik Queen"
+    ],
+    "swaps": [
+     [
+      3,
+      "Luka Doncic",
+      "Shai Gilgeous-Alexander"
+     ],
+     [
+      27,
+      "Jamal Murray",
+      "Derrick White"
+     ],
+     [
+      46,
+      "Josh Hart",
+      "Onyeka Okongwu"
+     ],
+     [
+      51,
+      "Reed Sheppard",
+      "Cameron Johnson"
+     ],
+     [
+      94,
+      "Alex Sarr",
+      "Nikola Vucevic"
+     ],
+     [
+      123,
+      "Cameron Boozer",
+      "Aaron Nesmith"
+     ],
+     [
+      142,
+      "Ausar Thompson",
+      "Wendell Carter Jr."
+     ]
+    ],
+    "noop_swaps": [
+     [
+      22,
+      "Jamal Murray",
+      "Chet Holmgren"
+     ]
+    ]
+   }
+  }
+ }
+}

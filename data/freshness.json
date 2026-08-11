@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-09",
-  "note": "Colophon re-author rebuild, same day: Data paragraph updated to the 8/9 refresh (245 rows, Cole Anthony NBL exit) and the Kawhi probe expansion; pool byte-identical to this morning's 245-row build.",
+  "date": "2026-08-10",
+  "note": "Fresh pull 2026-08-10 (owner request), sweep window 08-05\u219208-10: ZERO pool changes \u2014 the 8/9 state re-confirmed on a fresh watchlist + general sweep (10 queries). Cole Anthony's NBL exit (8/9) re-verified against the official NBL announcement; Butler exclusion re-graded (ACL surgery 2/9, return ~Feb 2027 \u2014 stands); Harden 'fully expected' to re-sign CLE (Shams) but unsigned; DeRozan (37 this week)/Beal/Westbrook still true FAs; Klay: DAL shopping, NO buyout discussions (8/8); Watson sign-and-trade narrowed to CLE/MIL/LAC, DEN over 2nd apron after Lonnie Walker IV (8/5); Kawhi probe may run into 2027, TOR trade still on hold; LeBron\u2192PHI re-verified. JUDGMENT re-authored same pass (5 entries refreshed).",
   "pool_changes": {
     "changed": false,
     "note": ""
   },
   "rosters_verified": {
-    "date": "2026-08-09",
+    "date": "2026-08-10",
     "mode": "fallback-partial",
-    "sources": "verify_rosters.py (fallback; evidence authored 2026-08-09)"
+    "sources": "scripts/verify_rosters.py"
   }
 }

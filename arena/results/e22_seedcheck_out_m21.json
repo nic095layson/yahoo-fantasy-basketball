@@ -1,0 +1,209 @@
+{
+ "21": {
+  "mock": "21",
+  "owner_slot": 4,
+  "punt": [],
+  "seeds": [
+   101,
+   103,
+   107
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [
+    148
+   ],
+   "resil": [
+    100,
+    148
+   ]
+  },
+  "top1_diverge_turns": [
+   124,
+   141,
+   148
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 27.194,
+    "playoff": 91.928,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.13,
+    "ecw_std": 5.054,
+    "ecw_slf": 5.092,
+    "roster": [
+     "Nikola Jokic",
+     "Jayson Tatum",
+     "Kevin Durant",
+     "Cooper Flagg",
+     "Walker Kessler",
+     "Coby White",
+     "Immanuel Quickley",
+     "Norman Powell",
+     "Isaiah Hartenstein",
+     "DeMar DeRozan",
+     "Aaron Nesmith",
+     "Tobias Harris",
+     "De'Anthony Melton"
+    ]
+   },
+   "shipped": {
+    "champ": 45.856,
+    "playoff": 99.761,
+    "finish": 1,
+    "seasons": 18000,
+    "kept_z": 7.22,
+    "ecw_std": 5.548,
+    "ecw_slf": 5.398,
+    "roster": [
+     "Nikola Jokic",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Coby White",
+     "Jalen Suggs",
+     "Naz Reid",
+     "Jaden McDaniels",
+     "Jerami Grant",
+     "Yaxel Lendeborg",
+     "Wendell Carter Jr.",
+     "Jeremy Sochan"
+    ],
+    "swaps": [
+     [
+      28,
+      "Jayson Tatum",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Walker Kessler",
+      "Payton Pritchard"
+     ],
+     [
+      76,
+      "Immanuel Quickley",
+      "Jalen Suggs"
+     ],
+     [
+      93,
+      "Norman Powell",
+      "Naz Reid"
+     ],
+     [
+      100,
+      "Isaiah Hartenstein",
+      "Jaden McDaniels"
+     ],
+     [
+      117,
+      "DeMar DeRozan",
+      "Jerami Grant"
+     ],
+     [
+      124,
+      "Aaron Nesmith",
+      "Yaxel Lendeborg"
+     ],
+     [
+      141,
+      "Tobias Harris",
+      "Wendell Carter Jr."
+     ],
+     [
+      148,
+      "De'Anthony Melton",
+      "Jeremy Sochan"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      21,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 18.544,
+    "playoff": 87.367,
+    "finish": 2,
+    "seasons": 18000,
+    "kept_z": 6.69,
+    "ecw_std": 4.946,
+    "ecw_slf": 4.87,
+    "roster": [
+     "Nikola Jokic",
+     "Kevin Durant",
+     "Derrick White",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Coby White",
+     "Jalen Suggs",
+     "Naz Reid",
+     "Jaden McDaniels",
+     "Jerami Grant",
+     "Ryan Rollins",
+     "Ayo Dosunmu",
+     "Kelly Oubre Jr."
+    ],
+    "swaps": [
+     [
+      28,
+      "Jayson Tatum",
+      "Derrick White"
+     ],
+     [
+      52,
+      "Walker Kessler",
+      "Payton Pritchard"
+     ],
+     [
+      76,
+      "Immanuel Quickley",
+      "Jalen Suggs"
+     ],
+     [
+      93,
+      "Norman Powell",
+      "Naz Reid"
+     ],
+     [
+      100,
+      "Isaiah Hartenstein",
+      "Jaden McDaniels"
+     ],
+     [
+      117,
+      "DeMar DeRozan",
+      "Jerami Grant"
+     ],
+     [
+      124,
+      "Aaron Nesmith",
+      "Ryan Rollins"
+     ],
+     [
+      141,
+      "Tobias Harris",
+      "Ayo Dosunmu"
+     ],
+     [
+      148,
+      "De'Anthony Melton",
+      "Kelly Oubre Jr."
+     ]
+    ],
+    "noop_swaps": [
+     [
+      21,
+      "Jayson Tatum",
+      "Kevin Durant"
+     ]
+    ]
+   }
+  }
+ }
+}

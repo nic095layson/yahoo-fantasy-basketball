@@ -1,0 +1,185 @@
+{
+ "35": {
+  "mock": "35",
+  "owner_slot": 12,
+  "punt": [
+   "FT%",
+   "AST",
+   "3PTM"
+  ],
+  "seeds": [
+   11,
+   23,
+   47
+  ],
+  "seasons_per_arm": 18000,
+  "ties_at_top": {
+   "shipped": [],
+   "resil": [
+    133
+   ]
+  },
+  "top1_diverge_turns": [
+   132,
+   133,
+   156
+  ],
+  "arms": {
+   "baseline": {
+    "champ": 7.111,
+    "playoff": 54.728,
+    "finish": 6,
+    "seasons": 18000,
+    "kept_z": 15.72,
+    "ecw_std": 4.542,
+    "ecw_slf": 4.429,
+    "roster": [
+     "Evan Mobley",
+     "Giannis Antetokounmpo",
+     "Cooper Flagg",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "VJ Edgecombe",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Ausar Thompson",
+     "Nic Claxton",
+     "RJ Barrett"
+    ]
+   },
+   "shipped": {
+    "champ": 7.706,
+    "playoff": 59.144,
+    "finish": 6,
+    "seasons": 18000,
+    "kept_z": 8.72,
+    "ecw_std": 4.561,
+    "ecw_slf": 4.567,
+    "roster": [
+     "Evan Mobley",
+     "Donovan Mitchell",
+     "Amen Thompson",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Aaron Gordon",
+     "Aaron Nesmith",
+     "Nic Claxton",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Giannis Antetokounmpo",
+      "Donovan Mitchell"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      109,
+      "VJ Edgecombe",
+      "Aaron Gordon"
+     ],
+     [
+      132,
+      "Ausar Thompson",
+      "Aaron Nesmith"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      84,
+      "VJ Edgecombe",
+      "Brook Lopez"
+     ],
+     [
+      85,
+      "VJ Edgecombe",
+      "Cason Wallace"
+     ],
+     [
+      108,
+      "VJ Edgecombe",
+      "Toumani Camara"
+     ]
+    ]
+   },
+   "resil": {
+    "champ": 6.872,
+    "playoff": 57.194,
+    "finish": 6,
+    "seasons": 18000,
+    "kept_z": 3.98,
+    "ecw_std": 4.542,
+    "ecw_slf": 4.321,
+    "roster": [
+     "Evan Mobley",
+     "Donovan Mitchell",
+     "Amen Thompson",
+     "Payton Pritchard",
+     "Tari Eason",
+     "Lauri Markkanen",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Toumani Camara",
+     "Aaron Gordon",
+     "Keon Ellis",
+     "Jrue Holiday",
+     "RJ Barrett"
+    ],
+    "swaps": [
+     [
+      13,
+      "Giannis Antetokounmpo",
+      "Donovan Mitchell"
+     ],
+     [
+      36,
+      "Cooper Flagg",
+      "Amen Thompson"
+     ],
+     [
+      109,
+      "VJ Edgecombe",
+      "Aaron Gordon"
+     ],
+     [
+      132,
+      "Ausar Thompson",
+      "Keon Ellis"
+     ],
+     [
+      133,
+      "Nic Claxton",
+      "Jrue Holiday"
+     ]
+    ],
+    "noop_swaps": [
+     [
+      84,
+      "VJ Edgecombe",
+      "Brook Lopez"
+     ],
+     [
+      85,
+      "VJ Edgecombe",
+      "Cason Wallace"
+     ],
+     [
+      108,
+      "VJ Edgecombe",
+      "Toumani Camara"
+     ]
+    ]
+   }
+  }
+ }
+}
