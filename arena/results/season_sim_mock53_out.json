@@ -1,0 +1,146 @@
+{
+ "mock": 53,
+ "owner_slot": 5,
+ "declared_punt": [],
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "seasons_per_seed": 6000,
+ "table": [
+  {
+   "slot": 1,
+   "champ_pct": 4.98,
+   "playoff_pct": 46.06,
+   "ecw_per_week": 4.445,
+   "kept_total_9cat": -0.11,
+   "kept_total_owner_punt": -0.11
+  },
+  {
+   "slot": 2,
+   "champ_pct": 10.81,
+   "playoff_pct": 63.97,
+   "ecw_per_week": 4.613,
+   "kept_total_9cat": 9.14,
+   "kept_total_owner_punt": 9.14
+  },
+  {
+   "slot": 3,
+   "champ_pct": 9.0,
+   "playoff_pct": 59.48,
+   "ecw_per_week": 4.6,
+   "kept_total_9cat": -0.53,
+   "kept_total_owner_punt": -0.53
+  },
+  {
+   "slot": 4,
+   "champ_pct": 10.89,
+   "playoff_pct": 62.66,
+   "ecw_per_week": 4.677,
+   "kept_total_9cat": -3.89,
+   "kept_total_owner_punt": -3.89
+  },
+  {
+   "slot": 5,
+   "champ_pct": 28.71,
+   "playoff_pct": 90.69,
+   "ecw_per_week": 4.962,
+   "kept_total_9cat": 7.65,
+   "kept_total_owner_punt": 7.65
+  },
+  {
+   "slot": 6,
+   "champ_pct": 4.3,
+   "playoff_pct": 41.04,
+   "ecw_per_week": 4.398,
+   "kept_total_9cat": -1.22,
+   "kept_total_owner_punt": -1.22
+  },
+  {
+   "slot": 7,
+   "champ_pct": 3.24,
+   "playoff_pct": 34.86,
+   "ecw_per_week": 4.332,
+   "kept_total_9cat": -2.09,
+   "kept_total_owner_punt": -2.09
+  },
+  {
+   "slot": 8,
+   "champ_pct": 11.63,
+   "playoff_pct": 66.16,
+   "ecw_per_week": 4.656,
+   "kept_total_9cat": -3.04,
+   "kept_total_owner_punt": -3.04
+  },
+  {
+   "slot": 9,
+   "champ_pct": 5.61,
+   "playoff_pct": 48.7,
+   "ecw_per_week": 4.49,
+   "kept_total_9cat": 3.08,
+   "kept_total_owner_punt": 3.08
+  },
+  {
+   "slot": 10,
+   "champ_pct": 1.68,
+   "playoff_pct": 21.86,
+   "ecw_per_week": 4.206,
+   "kept_total_9cat": -1.36,
+   "kept_total_owner_punt": -1.36
+  },
+  {
+   "slot": 11,
+   "champ_pct": 0.29,
+   "playoff_pct": 5.86,
+   "ecw_per_week": 3.996,
+   "kept_total_9cat": -7.76,
+   "kept_total_owner_punt": -7.76
+  },
+  {
+   "slot": 12,
+   "champ_pct": 8.87,
+   "playoff_pct": 58.66,
+   "ecw_per_week": 4.625,
+   "kept_total_9cat": -4.96,
+   "kept_total_owner_punt": -4.96
+  }
+ ],
+ "owner_cat_ranks": {
+  "FG%": 1,
+  "FT%": 11,
+  "3PTM": 10,
+  "PTS": 11,
+  "REB": 7,
+  "AST": 10,
+  "ST": 3,
+  "BLK": 3,
+  "TO": 1
+ },
+ "owner_cat_z": {
+  "FG%": 7.71,
+  "FT%": -2.0,
+  "3PTM": -2.28,
+  "PTS": -2.96,
+  "REB": -1.42,
+  "AST": -3.75,
+  "ST": 2.25,
+  "BLK": 2.07,
+  "TO": 8.02
+ },
+ "owner_roster": [
+  "Shai Gilgeous-Alexander",
+  "Giannis Antetokounmpo",
+  "Derrick White",
+  "Onyeka Okongwu",
+  "Reed Sheppard",
+  "Tari Eason",
+  "Christian Braun",
+  "Nikola Vucevic",
+  "Jaden McDaniels",
+  "Ryan Rollins",
+  "Aaron Nesmith",
+  "Daniel Gafford",
+  "Keon Ellis"
+ ]
+}

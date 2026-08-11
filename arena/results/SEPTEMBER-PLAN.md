@@ -391,3 +391,33 @@ stash/drop/trade questions must state IL+ economics — a recovery player
 eligible for the 2 IL+ slots costs zero active spots, so board absence is
 never droppability; (2) F26's availability-adjusted trade delta ships before
 the season starts (engine change: September window).
+
+## 9. Added 2026-08-10 — the coherence question (APPEND-ONLY, lesson 14)
+
+### 9.1 E26 — coherence A/B (registered from mocks 49–53, same-day quintet)
+
+Five same-day rooms produced: declared+judgment wins (m49 24.94, m51
+21.45-tie), declared autopilot win (m50 26.64), and — the surprise —
+frameless AUTOPILOT scoring 15.66 (m52, 2nd) and 28.71 (m53, 1st, the
+second-best standard-room result in the ledger) where frameless
+JUDGMENT-heavy drafts had scored 6.43 (m42) and 2.59 (m46).
+
+**Hypothesis to test (registered before any counterfactual run):
+coherence, not declaration per se, is the load-bearing variable. Two
+roads reach it: (a) declared frame + early judgment inside it; (b) card
+autopilot (the punt-blind blend50 builds its own concession). The
+failure mode is judgment-heavy drafting with no declared frame.**
+
+Pre-registered design: from the four frameless states (m42/46/52/53),
+run counterfactual card-autopilot arms for m42/m46 (replace owner picks
+with card #1 at each turn, bots replayed identically) and
+judgment-shaped arms for m52/m53 seats via the room driver. Bar,
+registered now: the hypothesis survives if autopilot arms from the
+m42/m46 seats land ≥2× their as-drafted champ%, AND the m52/m53
+autopilot results are not degraded by the arm swap machinery
+(consistency check). Baselines regenerated on the September pool before
+any comparison (the quintet is 245-pool epoch; m42/46 are 246-pool).
+
+Status: REGISTERED 2026-08-10, not run (freeze: measure-only would be
+allowed, but the arms need the September re-baseline first to compare
+across pool epochs honestly).
