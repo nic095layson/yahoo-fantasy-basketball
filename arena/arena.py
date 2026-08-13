@@ -166,6 +166,111 @@ def lineup_weights(roster):
     return weights
 
 
+# --------------------------------------------------------------------------
+# DAILY-FILL start rates (instrument v2, 2026-08-05; re-landed 2026-08-13)
+# --------------------------------------------------------------------------
+# Yahoo lineups are set DAILY — every started game counts 100%, bench games
+# count 0, and a bench player backfills any eligible open slot on his game
+# days (owner-league ground truth; measured ~99.4% of a 13-man roster's
+# played games start). The static weekly `lineup_weights` model above —
+# 10 starters x 1.0 + 3 bench x BENCH_WEIGHT — underweighted the bench by
+# ~6.5x, which is what let a mis-shaped star inflate against the card.
+#
+# `lineup_weights` is UNCHANGED and still used by the pick engine
+# (slots_left / trial); only `team_week_model` reads the daily-fill weights.
+#
+# This is the Python half of the deck's `dailyFillWeights`. The two must stay
+# bit-identical or `check_parity.py` fails: `df_hash` mirrors JS `dfHash`
+# exactly (FNV-1a-style mix under Math.imul semantics), and the day draw,
+# availability gate, candidate ordering, and slot-claim rule all mirror the
+# deck one-for-one. Both are exercised by check_parity's df_hash vector
+# check and by the card-ordering comparison.
+DF_K = 32
+DF_DAY_W = (1.3, 0.7, 1.4, 0.8, 1.5, 0.9, 1.4)
+_U32 = 0xFFFFFFFF
+
+
+def _imul(a, b):
+    """JS Math.imul: 32-bit multiply. Bit patterns are kept unsigned here —
+    identical to JS's signed int32 result under XOR/shift/multiply."""
+    return (a * b) & _U32
+
+
+def df_hash(s, k, salt):
+    """Deterministic [0,1) draw keyed on (player name, trial, salt).
+    Bit-identical to the deck's dfHash. Iterates UTF-16 code units so
+    non-ASCII names hash the same as JS String.charCodeAt."""
+    h = (2166136261 ^ _imul(k, 2654435761) ^ _imul(salt, 2246822519)) & _U32
+    buf = s.encode("utf-16-le")
+    for i in range(0, len(buf), 2):
+        h = (h ^ (buf[i] | (buf[i + 1] << 8))) & _U32
+        h = _imul(h, 16777619)
+    h = (h ^ (h >> 15)) & _U32
+    h = _imul(h, 2246822507)
+    h = (h ^ (h >> 13)) & _U32
+    h = _imul(h, 3266489909)
+    h = (h ^ (h >> 16)) & _U32
+    return h / 4294967296
+
+
+def daily_fill_weights(roster):
+    """Monte-Carlo daily-fill start rate per player: started/played across
+    DF_K simulated weeks. Returns id->weight (1.0 for a player who never
+    played, matching the deck's `?? 1.0`)."""
+    val = {p["player"]: sum(p["z"][c] for c in CATS) for p in roster}
+    started = {id(p): 0 for p in roster}
+    played = {id(p): 0 for p in roster}
+    for k in range(DF_K):
+        by_day = [[] for _ in range(7)]
+        for p in roster:
+            name = p["player"]
+            u = df_hash(name, k, 1)
+            g = 2 if u < 0.08 else 3 if u < 0.63 else 4 if u < 0.98 else 5
+            days = [0, 1, 2, 3, 4, 5, 6]
+            a = weekly_availability(p)
+            for j in range(g):
+                u2 = df_hash(name, k, 10 + j)
+                tot = 0.0
+                for d in days:
+                    tot += DF_DAY_W[d]
+                r = u2 * tot
+                acc = 0.0
+                pick = days[-1]
+                for d in days:
+                    acc += DF_DAY_W[d]
+                    if r < acc:
+                        pick = d
+                        break
+                days.remove(pick)
+                if df_hash(name, k, 20 + pick) < a:
+                    played[id(p)] += 1
+                    by_day[pick].append(p)
+        for d in range(7):
+            cands = sorted(by_day[d],
+                           key=lambda p: (-val[p["player"]], p["player"]))
+            open_slots = list(LINEUP_SLOTS)
+            for p in cands:
+                pos = positions_of(p)
+                idx = -1
+                for i, sl in enumerate(open_slots):
+                    if sl is not None and any(b in pos for b in sl):
+                        idx = i
+                        break
+                if idx == -1:
+                    for i, sl in enumerate(open_slots):
+                        if sl is None:
+                            idx = i
+                            break
+                if idx != -1:
+                    open_slots.pop(idx)
+                    started[id(p)] += 1
+    weights = {}
+    for p in roster:
+        pl = played[id(p)]
+        weights[id(p)] = started[id(p)] / pl if pl else 1.0
+    return weights
+
+
 # Market (ADP) model — how ordinary drafters price players, per 9-cat draft
 # research (2026-07-23): points-volume bias, efficiency/TO myopia, rookie
 # hype (~2-round premium), name value for recovering stars (no availability
@@ -347,16 +452,18 @@ def weekly_availability(p):
 
 
 def team_week_model(roster):
-    """Per-category weekly (mu, var). Only STARTERS players count fully;
-    deep bench is discounted. Counting-stat variance = compound-sum
+    """Per-category weekly (mu, var). Each player's contribution is scaled by
+    his DAILY-FILL start rate (started/played across DF_K simulated weeks),
+    which replaced the static 10-starters + 3-bench weighting on 2026-08-05
+    (re-landed with its deck half 2026-08-13). Counting-stat variance = compound-sum
     E[G]*Var[X] + Var[G]*E[X]^2 with category-specific per-game CV and
     availability-tier game-count variance Var[G] = 3.5*a*(1-a)."""
     mu = {c: 0.0 for c in CATS}
     var = {c: 0.0 for c in CATS}
-    lw = lineup_weights(roster)
+    lw = daily_fill_weights(roster)
     fg_mk = fg_at = ft_mk = ft_at = 0.0
     for p in roster:
-        w = lw[id(p)]
+        w = lw.get(id(p), 1.0)
         a = weekly_availability(p)
         g = 3.5 * a
         g_var = 3.5 * a * (1 - a)
