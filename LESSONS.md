@@ -315,3 +315,47 @@ numbers — content unchanged)*
     (implemented in `bench_weight_study.py` 2026-08-10), and `git status`
     runs before EVERY commit, treating any unexpected modification as an
     incident to investigate, not noise to restore.**
+
+## 2026-08-13 — The orphaned 8/10 republish (a third unlanded-work incident)
+
+21. **A published artifact is a write path into production that git never
+    sees.** The 2026-08-13 Fresh Deck Pull went to republish the deck and
+    found the live artifact serving a **2026-08-10 build that existed nowhere
+    in this repo's history**. It was not junk: it carried the daily-fill
+    lineup model (`dailyFillWeights`, `DF_K = 32`) that replaced the static
+    10-starters + 3-bench weighting, and the owner-requested Fit → ΔECW
+    column. Its Python half never landed either, so the orphaned JS
+    disagreed with `arena.team_week_model` by **20 card orderings** — while
+    that same page's Logic paragraph still told the reader it was "verified
+    against engine output at build time." The page had been lying about
+    itself for three days, and no gate in either repo could have caught it,
+    because every gate runs against the repo and the drift was *outside* it.
+
+    This is the third instance of one failure mode: 7/24 (a pull that never
+    landed, lesson 10), 7/27 (the deck serving a stale pool, lesson 11), and
+    now a republish whose source never reached git. Lessons 10 and 11 both
+    concluded "the repo is the only persistent layer." That was aspiration,
+    not description: the artifact is *also* persistent, it is the surface the
+    owner actually drafts from, and it can be written without the repo's
+    knowledge. **Laws: (a) before republishing, FETCH the live artifact and
+    diff it against the local build — if the published manifest is newer than
+    the repo's, stop and reconcile before overwriting, because publishing is
+    destructive to whatever is already there; (b) a republish is only done
+    when the exact bytes published are committed; (c) when a cross-surface
+    conflict has no safe default — here, regress the owner's model or ship an
+    unverifiable one — it is an owner decision, not an agent's.**
+
+22. **A "port of X" comment is a claim, and unclaimed claims rot.** The
+    orphaned JS documented itself as a "Port of `arena.daily_fill_weights`;
+    dfHash verified bit-identical to `arena.df_hash` (72/72 vectors)".
+    Neither function existed in the repo — the comment described code that
+    was never committed, so the strongest available evidence that the two
+    halves agreed was a sentence. When the model was re-landed (2026-08-13),
+    `df_hash`/`daily_fill_weights` went into `arena/arena.py` and the 72
+    vectors became a real check in `check_parity.py`, driven red first by
+    mutating one FNV constant (89 disagreements) before being accepted green
+    — lesson 19(a)/(b) applied to a hash. The vectors are literal strings
+    rather than pool members so roster churn cannot silently empty the check,
+    and one is non-ASCII to exercise the UTF-16 path that a pure-ASCII pool
+    would never reach. **Law: a cross-language port is verified by vectors in
+    the gate, never by a comment asserting it was verified once.**

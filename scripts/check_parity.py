@@ -81,7 +81,7 @@ def main():
     mod = os.path.join(tmp, "deck.mjs")
     with open(mod, "w", encoding="utf-8") as f:
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
-export const api = { PLAYERS, matchCandidates, decwScores, adjValue, CATS };
+export const api = { PLAYERS, matchCandidates, decwScores, adjValue, CATS, dfHash };
 """)
 
     # ---- what the Python side says -------------------------------------
@@ -102,9 +102,21 @@ export const api = { PLAYERS, matchCandidates, decwScores, adjValue, CATS };
         if fn.endswith(".json"):
             states[fn] = json.load(open(os.path.join(sdir, fn), encoding="utf-8"))
 
+    # df_hash vectors. The daily-fill model's every draw keys on this hash, so
+    # a one-bit divergence silently reshuffles start rates on both sides —
+    # exactly the drift that stranded the 8/10 build. Vectors are literal
+    # strings, not pool members, so the check survives roster churn; the last
+    # one is deliberately non-ASCII to exercise the UTF-16 code-unit path
+    # (JS charCodeAt vs Python ord) that a pure-ASCII pool would never reach.
+    DF_NAMES = ["Nikola Jokic", "D'Angelo Russell", "Jaren Jackson Jr.",
+                "Alperen Sengun", "Luka Doncic", "Jonas Valančiūnas"]
+    df_vectors = [[s, k, salt] for s in DF_NAMES
+                  for k in (0, 1, 31) for salt in (1, 10, 20, 26)]
+
     fixture = os.path.join(tmp, "in.json")
     with open(fixture, "w", encoding="utf-8") as f:
-        json.dump({"queries": QUERIES, "states": states}, f)
+        json.dump({"queries": QUERIES, "states": states,
+                   "dfvectors": df_vectors}, f)
 
     # ---- what the deck says --------------------------------------------
     driver = os.path.join(tmp, "run.mjs")
@@ -120,6 +132,7 @@ for (const p of api.PLAYERS)
                   val_punt: api.adjValue(p, new Set(["FT%", "TO"])) });
 for (const q of inp.queries)
   out.match[q] = api.matchCandidates(api.PLAYERS, q).map(x => x.n).sort();
+out.dfhash = inp.dfvectors.map(([s, k, salt]) => api.dfHash(s, k, salt));
 const by = new Map(api.PLAYERS.map(p => [p.n, p]));
 const teamOf = (n, T) => { const r = Math.floor(n / T), i = n % T;
   return r % 2 === 0 ? i + 1 : T - i; };
@@ -179,6 +192,20 @@ process.stdout.write(JSON.stringify(out));
     for q in QUERIES:
         if js["match"].get(q, []) != py_match[q]:
             fails.append(f"match({q!r}): deck {js['match'].get(q)} vs py {py_match[q]}")
+
+    # df_hash must be BIT-identical, not merely close: it drives a threshold
+    # comparison (u < 0.08, dfHash(...) < a), so an epsilon of drift flips a
+    # game-day or an availability gate and reshuffles the whole model.
+    js_df = js.get("dfhash")
+    if js_df is None or len(js_df) != len(df_vectors):
+        fails.append("df_hash: the deck exported no vectors — dfHash missing "
+                     "from the engine block or not in the api export")
+    else:
+        for (s, k, salt), jv in zip(df_vectors, js_df):
+            pv = arena.df_hash(s, k, salt)
+            if pv != jv:
+                fails.append(f"df_hash({s!r},{k},{salt}): deck {jv!r} vs "
+                             f"py {pv!r} — NOT bit-identical")
 
     # Python-side ordering, built from arena.team_week_model — the module the
     # deck's engine block declares itself an exact port of. This is the check
@@ -250,6 +277,10 @@ process.stdout.write(JSON.stringify(out));
     print(f"pool rows compared      : {len(py_pool)}")
     print(f"z-score cells compared  : {len(py_pool) * len(hoops.CATS)}")
     print(f"name fixtures compared  : {len(QUERIES)}")
+    # Never assert bit-identity on a run that just disproved it.
+    _df_ok = not any(f.startswith("df_hash") for f in fails)
+    print(f"df_hash vectors compared: {len(df_vectors)}"
+          + (" (bit-identical)" if _df_ok else " — DIVERGED"))
     print(f"card orderings compared : {turns} owner turns across "
           f"{len(js['orders'])} committed states")
     if args.verbose:
