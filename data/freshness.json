@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-09",
-  "note": "Colophon re-author rebuild, same day: Data paragraph updated to the 8/9 refresh (245 rows, Cole Anthony NBL exit) and the Kawhi probe expansion; pool byte-identical to this morning's 245-row build.",
+  "date": "2026-08-13",
+  "note": "Fresh Deck Pull 2026-08-13 (window 08-09 -> 08-13): Westbrook retired 8/12 -> out-retired; Sochan role-repriced (team landed 8/1, reprice did not). verify_rosters 245/245 clean. Research channel limited to web search \u2014 sports-domain WebFetch blocked by egress policy.",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "Russell Westbrook tagged out-retired (announced 8/12) \u2014 leaves every board; Jeremy Sochan repriced from a starter line to bench minutes on his non-guaranteed POR camp deal. 245 rows, no additions or removals."
   },
   "rosters_verified": {
-    "date": "2026-08-09",
+    "date": "2026-08-13",
     "mode": "fallback-partial",
-    "sources": "verify_rosters.py (fallback; evidence authored 2026-08-09)"
+    "sources": "scripts/verify_rosters.py"
   }
 }
