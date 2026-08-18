@@ -1,12 +1,12 @@
 {
-  "date": "2026-08-13",
-  "note": "Fresh Deck Pull 2026-08-13 + same-day re-land of the 2026-08-05 daily-fill model. Data unchanged since this morning's pull (Westbrook out-retired, Sochan repriced; 245 rows, verify_rosters 245/245). This republish is a CODE change: the daily-fill start-rate model and the Fit->DECW column, orphaned on the 8/10 artifact, are now landed in git with their Python half (arena.daily_fill_weights) and parity is EXACT across 5 states.",
+  "date": "2026-08-18",
+  "note": "Fresh Deck Pull 2026-08-18 (window 8/13->8/18, both planes). POOL: Dennis Schroder CLE->CHA and Tre Mann CHA->CLE (one trade, reported 8/15, cash to CHA) \u2014 Schroder repriced DOWN from Cleveland lead ball-handler to Charlotte backup PG behind Coby White; Mann given an assist bump only for inheriting Cleveland's only backup-PG job. Bradley Beal FA->LAC, 2yr/$13.2M re-sign reported 8/13, repriced to a bench-guard line. JUDGMENT re-authored 8/18: Beal moved off the unsigned list (-0.25 -> -0.05), Duren widened to -0.15 on the max standoff, Kawhi HELD at -0.20 against two-sided 8/17 news, Ivey's card corrected (waived for conduct, not a knee), Cam Thomas's 8/13 cannot-verify flag CLOSED, new cards for Schroder and Mann. Draft-kit plane: zero row edits \u2014 none of these three are in its 220-row pool; five FA rows re-verified, board byte-identical. CHANNEL LIMIT: sports-domain WebFetch still egress-blocked (re-tested); search-derived evidence only.",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "Schroder CLE->CHA + repriced, Tre Mann CHA->CLE, Beal FA->LAC + repriced"
   },
   "rosters_verified": {
-    "date": "2026-08-13",
+    "date": "2026-08-18",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }
