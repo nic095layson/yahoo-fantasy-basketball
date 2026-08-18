@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-13",
-  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-13 sweep (Fresh Deck Pull, window 2026-08-09 -> 2026-08-13 for this plane; the draft-kit plane's window was 2026-07-27 -> 2026-08-13). RESEARCH CHANNEL LIMIT: WebFetch to every sports domain (nba.com, ESPN, RealGM, Spotrac, HoopsRumors, Yahoo, CBS, RotoWire) was blocked by the environment egress policy this run; all claims below come from web SEARCH results (headline + dated summary + outlet URL), not fetched article bodies. CHANGED: Russell Westbrook RETIRED, announced 2026-08-12 after 18 seasons (NBA.com, NBC Sports, Yahoo, Chicago Sun-Times 8/12, Al Jazeera + KGOU 8/13) -> row kept per the out-retired convention (hoops.py:151), availability 0.0, excluded from all boards. Jeremy Sochan role-repriced to bench minutes (team landed 8/1 but the role-reprice never did; non-guaranteed camp deal, crowded POR frontcourt) - placement POR unchanged. Confirmed UNCHANGED: Harden (CLE framework + terms reported ~2yr/$75M but UNSIGNED as of 8/13, still FA), DeRozan (still unsigned; MIA favored), Kuminga (still unsigned; market described as 'a mess' in Aug reporting), Beal (still unsigned), Lonzo Ball (FA), Brogdon (out-retired since 2025-10-15 - re-checked, correctly tagged, NOT a defect), Kawhi (still LAC; fact-finding complete, trade still on hold, resolution expected before camp per 8/10 reporting; sanction may go to an arbitrator), RFAs Duren/Mathurin/Watson all still unsigned mid-August. Draymond GSW (7/28) already carried. Minor moves below pool relevance: KCP->PHI 1yr/$3.88M (8/5), Dillon Brooks PHX extension (8/8, no role change), Andre Jackson Jr->TOR (8/4), Naji Marshall DAL extension (8/2), Johni Broome PHI->LAC (7/28). Sources: NBA.com, NBC Sports, Yahoo Sports, ESPN, Hoops Rumors, Chicago Sun-Times, Al Jazeera, KGOU, Basketnews, Blazer's Edge.",
+  "date": "2026-08-18",
+  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-18 sweep (Fresh Deck Pull, window 2026-08-13 -> 2026-08-18, both planes). RESEARCH CHANNEL LIMIT (unchanged from 2026-08-13): WebFetch to every sports domain (nba.com, ESPN, RealGM, Spotrac, HoopsRumors, Yahoo, CBS, RotoWire, basketball-reference) is still blocked by the environment egress policy; re-tested this run on hoopsrumors.com and nba.com, both EGRESS_BLOCKED. All claims below come from web SEARCH results (headline + dated summary + outlet URL), not fetched article bodies. CHANGED: (1) Dennis Schroder CLE -> CHA and Tre Mann CHA -> CLE, one trade reported 2026-08-15, Cleveland also sending cash (ESPN, NBA.com, CBS Sports, Spectrum News, ClutchPoints, Fear The Sword). Schroder role-repriced DOWN: he was Cleveland's lead ball-handler alongside Mitchell and lands in Charlotte as the backup PG behind Coby White. Mann given a direction-only assist bump: he replaces the traded Schroder as Cleveland's only true backup PG (Strus and Merrill are off-guards). (2) Bradley Beal FA -> LAC, two years / $13.2M with a player option, reported 2026-08-13 after he declined his $5.6M option (ESPN, NBC Sports, RealGM, Yahoo, Last Word On Basketball). Repriced to a bench-guard line: that AAV and the Garland/Mathurin guard room do not describe a starter, and he played 6 games in 2025-26. CONFIRMED UNCHANGED: Harden (still FA; Cleveland 'in constant communication', resolution expected soon, no signing as of 8/18 - HoopsHype 8/14, HoopsHype FA rankings 8/16), DeRozan (still FA), Kuminga (still FA; LAL sign-and-trade reported leading, MIN and CLE also in), Cam Thomas (still FA - dated reporting this window explicitly has him unsigned, which CLOSES the 2026-08-13 cannot-verify item), Jaden Ivey (still FA - waived by CHI 2026-03-30 for conduct, no signing found in four searches across two pulls; contract-tracker evidence only, weakest label carried), Lonzo Ball (FA), Westbrook and Brogdon (out-retired), Kawhi (still LAC; 8/17 ESPN reported the probe found no evidence Ballmer funneled money, the league publicly disputed that report, inquiry narrowed to the sponsor-introduction question, trade still on hold, mid-September Board of Governors meeting the next checkpoint), Haliburton (100% cleared per his own 8/12 remarks, opener set 10/21 vs NOP; held at the first-season-back risk tag - see the after-report), RFAs Duren / Mathurin / Watson all still unsigned and all three standoffs now reported at an impasse. Minor moves below pool relevance: Trendon Watford -> NOP 1yr/$2.9M (8/17), Haywood Highsmith re-signs PHX 1yr (8/17). Sources: ESPN, NBA.com, CBS Sports, NBC Sports, HoopsHype, Hoops Rumors, RealGM, Yahoo Sports, Spectrum News, ClutchPoints, Fear The Sword, Forbes, Marco News, Front Office Sports, Blazer's Edge, Yardbarker, Last Word On Basketball.",
   "teams": {
     "LAC": [
       "Kawhi Leonard",
@@ -8,15 +8,16 @@
       "Brook Lopez",
       "Bennedict Mathurin",
       "Rui Hachimura",
-      "Derrick Jones Jr"
+      "Derrick Jones Jr",
+      "Bradley Beal"
     ],
     "CLE": [
       "Donovan Mitchell",
       "Evan Mobley",
       "Jarrett Allen",
-      "Dennis Schroder",
       "Max Strus",
-      "Sam Merrill"
+      "Sam Merrill",
+      "Tre Mann"
     ],
     "TOR": [
       "Brandon Ingram",
@@ -77,7 +78,6 @@
     ],
     "CHA": [
       "Naz Reid",
-      "Tre Mann",
       "Grayson Allen",
       "Royce O'Neale",
       "Coby White",
@@ -85,7 +85,8 @@
       "Brandon Miller",
       "Dorian Finney-Smith",
       "Moussa Diabate",
-      "Hannes Steinbach"
+      "Hannes Steinbach",
+      "Dennis Schroder"
     ],
     "BKN": [
       "Julius Randle",
