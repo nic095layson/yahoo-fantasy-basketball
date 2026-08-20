@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-18",
-  "note": "Fresh Deck Pull 2026-08-18 (window 8/13->8/18, both planes). POOL: Dennis Schroder CLE->CHA and Tre Mann CHA->CLE (one trade, reported 8/15, cash to CHA) \u2014 Schroder repriced DOWN from Cleveland lead ball-handler to Charlotte backup PG behind Coby White; Mann given an assist bump only for inheriting Cleveland's only backup-PG job. Bradley Beal FA->LAC, 2yr/$13.2M re-sign reported 8/13, repriced to a bench-guard line. JUDGMENT re-authored 8/18: Beal moved off the unsigned list (-0.25 -> -0.05), Duren widened to -0.15 on the max standoff, Kawhi HELD at -0.20 against two-sided 8/17 news, Ivey's card corrected (waived for conduct, not a knee), Cam Thomas's 8/13 cannot-verify flag CLOSED, new cards for Schroder and Mann. Draft-kit plane: zero row edits \u2014 none of these three are in its 220-row pool; five FA rows re-verified, board byte-identical. CHANNEL LIMIT: sports-domain WebFetch still egress-blocked (re-tested); search-derived evidence only.",
+  "date": "2026-08-20",
+  "note": "Fresh Deck Pull 2026-08-20 (window 8/18->8/20, both planes). One five-team trade reported 8/19 (Shams Charania, multi-outlet): Peyton Watson DEN->CLE by sign-and-trade on 4yr/$88M with a player option and 7.5% trade kicker, repriced UP from an unresolved-RFA line to Cleveland's projected starting SF next to Harden/Mitchell/Mobley/Allen (14.6/4.9/2.1 in 54 games for DEN last season); Max Strus CLE->LAC with the line HELD because the LA reporting is two-sided (start next to Garland vs reserve behind Ingram) - uncertainty sent to the judgment layer per the role-reprice law; Tre Mann CLE->WAS, his second trade in four days, with the 8/18 assist bump REVERTED 4.6->4.2 because that bump was conditioned on a Cleveland backup-PG job he no longer has (he sits behind Trae Young and Bub Carrington). Cam Whitmore WAS->CLE and Julian Reese WAS->DEN are not deck-pool rows; Whitmore is a draft-kit row and was repriced there. JUDGMENT re-authored 8/20: Watson's RFA card replaced with a signed-and-moved card (-0.05), new Max Strus card (-0.10), Tre Mann widened -0.05 -> -0.15, HARDEN's blocker CLEARED (-0.10 -> -0.05: his stated precondition of Cleveland landing a wing is satisfied, deal reported imminent at ~$30M/yr, still unsigned), Kuminga's CLE route constrained by Cleveland's new first-apron hard cap, Mathurin noted for Strus's arrival in the LAC backcourt, Kawhi HELD at -0.20 a second time after re-checking the 'grows in scope' and 'urgent meeting' headlines (both resolve to already-logged facts). CHANNEL LIMIT: all sports domains still egress-blocked, re-tested this run by WebFetch AND raw curl (incl. site.api.espn.com, basketball-reference.com, statmuse.com, realgm.com); search-derived evidence only.",
   "pool_changes": {
     "changed": true,
-    "note": "Schroder CLE->CHA + repriced, Tre Mann CHA->CLE, Beal FA->LAC + repriced"
+    "note": "Peyton Watson DEN->CLE + role-repriced UP to CLE starting SF; Max Strus CLE->LAC (line held, judgment adj); Tre Mann CLE->WAS + 8/18 assist bump reverted 4.6->4.2"
   },
   "rosters_verified": {
-    "date": "2026-08-18",
+    "date": "2026-08-20",
     "mode": "fallback-partial",
-    "sources": "scripts/verify_rosters.py"
+    "sources": "scripts/verify_rosters.py (fallback-partial, data/rosters_official.json re-authored 2026-08-20); dated search results from ESPN, NBA.com, Yahoo Sports, CBS Sports, NBC Sports, RealGM, Hoops Rumors, SI, Bullets Forever, News5 Cleveland, Last Word On Basketball"
   }
 }
