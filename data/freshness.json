@@ -1,13 +1,13 @@
 {
   "date": "2026-08-21",
-  "note": "Later-8/21 pull. Net-new vs the morning pull: the DeRozan signing, which broke after it ran. CHANNEL CHANGE (verified by raw curl, not assumed): the owner's network reconfiguration reached this session \u2014 statdunk.com, hashtagbasketball.com and www.basketball-reference.com now return 200. That unblocks the market-data work order AND DATA-PULL section 3's fetched-base-rate requirement, so four carried pool gaps closed on the kit plane (Peyton Watson, Deandre Ayton, Cedric Coward, Al Horford). site.api.espn.com and www.nba.com still 403; realgm/hoopsrumors unreachable; verification stays fallback-partial.",
+  "note": "Engine build (work order step 5): marketRanks now consumes real ADP (data/market_adp.json, 172 players from Hashtag consensus) instead of the circular z-derived proxy; players without ADP fall back to the proxy. data/players.csv unchanged \u2014 this is an engine + market-data change, not a pool change.",
   "pool_changes": {
-    "changed": true,
-    "note": "1 row: DeMar DeRozan FA->DEN (1yr/$3.9M, reported 8/21 after the morning pull) + bench-veteran reprice (fga 16.5->12.5, pts 21.5->16.0)"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-08-21",
     "mode": "fallback-partial",
-    "sources": "scripts/verify_rosters.py (fallback-partial, 245/245, 0 mismatches, 2026-08-21); ESPN + HoopsHype 8/21 for the DeRozan signing; channel re-verified by raw curl this session"
+    "sources": "scripts/verify_rosters.py (fallback-partial, 245/245, 0 mismatches, 2026-08-21); no roster change this build"
   }
 }
