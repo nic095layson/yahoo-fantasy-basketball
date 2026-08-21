@@ -46,6 +46,20 @@ _spec.loader.exec_module(hoops)
 hoops.DATA_PATH = DATA  # arena reads its own frozen snapshot
 
 CATS = hoops.CATS
+
+# Real ADP for market_ranks (work order step 5, 2026-08-21): the same
+# room-price map the deck injects as `const ADP`, so market_ranks agrees
+# with the deck's marketRanks cross-language. Read-only load; honours the
+# isolation contract (arena never writes the production system). Empty when
+# the file is absent, which reproduces the pre-ADP proxy behaviour exactly.
+def _load_adp():
+    try:
+        with open(os.path.join(REPO, "data", "market_adp.json")) as _f:
+            return json.load(_f)
+    except (OSError, ValueError):
+        return {}
+
+ADP = _load_adp()
 BASE_POS = ("PG", "SG", "SF", "PF", "C")
 TEAMS, ROUNDS = 12, 13   # 13-slot league codified 2026-07-12 (was 15; re-based 2026-07-28)
 WEEKS, PLAYOFF_TEAMS = 18, 6
@@ -284,7 +298,16 @@ MKT_PIN = {"Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
 
 
 def market_ranks(pool):
-    """1-based estimated real-draft rank for every pool player."""
+    """1-based estimated real-draft rank: real ADP leads, z-proxy fills the tail.
+
+    Work order step 5 (2026-08-21): the market model consulted its OWN z-scores
+    (~0.9 correlated with the value board by construction), so it could never
+    tell the room disagreed with us. It now leads with real Hashtag consensus
+    ADP (module-level ADP, injected into the deck as `const ADP`), falling back
+    to the z-derived proxy only for players the feed does not cover. Mirrors the
+    deck's marketRanks exactly (locked by scripts/check_parity.py). Empty ADP
+    reproduces the pre-ADP proxy output verbatim.
+    """
     def mscore(p):
         s = sum(p["z"][c] * MKT_W[c] for c in CATS)
         note = (p.get("note") or "").lower()
@@ -297,10 +320,19 @@ def market_ranks(pool):
         if "risk" in hoops.note_tag(note):  # leading tag only (R4-F23)
             s = s * 0.95 if s > 0 else s / 0.95
         return s
+    # proxy fallback (unchanged z-model + MKT_PIN)
     ordered = sorted(pool, key=lambda p: -mscore(p))
     model = {p["player"]: i + 1 for i, p in enumerate(ordered)}
     eff = {n: min(r, MKT_PIN.get(n, r)) for n, r in model.items()}
-    final = sorted(model, key=lambda n: (eff[n], model[n]))
+    proxy_ranked = sorted(model, key=lambda n: (eff[n], model[n]))
+    proxy_rank = {n: i + 1 for i, n in enumerate(proxy_ranked)}
+    # ADP-primary: real room price leads; the proxy tail follows. Real ADP
+    # overrides MKT_PIN (measured price beats a hand pin). Ties broken by proxy
+    # rank so the ordering is identical to the deck's marketRanks.
+    adp_players = sorted((p["player"] for p in pool if p["player"] in ADP),
+                         key=lambda n: (ADP[n], proxy_rank[n]))
+    rest = [n for n in proxy_ranked if n not in ADP]
+    final = adp_players + rest
     return {n: i + 1 for i, n in enumerate(final)}
 
 

@@ -81,7 +81,7 @@ def main():
     mod = os.path.join(tmp, "deck.mjs")
     with open(mod, "w", encoding="utf-8") as f:
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
-export const api = { PLAYERS, matchCandidates, decwScores, adjValue, CATS, dfHash };
+export const api = { PLAYERS, matchCandidates, decwScores, adjValue, CATS, dfHash, marketRanks };
 """)
 
     # ---- what the Python side says -------------------------------------
@@ -133,6 +133,7 @@ for (const p of api.PLAYERS)
 for (const q of inp.queries)
   out.match[q] = api.matchCandidates(api.PLAYERS, q).map(x => x.n).sort();
 out.dfhash = inp.dfvectors.map(([s, k, salt]) => api.dfHash(s, k, salt));
+out.mkt = Object.fromEntries(api.marketRanks(api.PLAYERS.filter(p => p.av > 0)));
 const by = new Map(api.PLAYERS.map(p => [p.n, p]));
 const teamOf = (n, T) => { const r = Math.floor(n / T), i = n % T;
   return r % 2 === 0 ? i + 1 : T - i; };
@@ -207,6 +208,27 @@ process.stdout.write(JSON.stringify(out));
                 fails.append(f"df_hash({s!r},{k},{salt}): deck {jv!r} vs "
                              f"py {pv!r} — NOT bit-identical")
 
+    # marketRanks parity (added 2026-08-21 with the ADP change): the
+    # market model must agree cross-language exactly. It was previously
+    # uncovered — decwScores/dfHash/pool never invoke it — so a mirror
+    # drift would have shipped silently. This is the red-first net for
+    # the ADP-primary rewrite.
+    py_mkt = arena.market_ranks([p for p in players
+                                 if hoops.availability(p) > 0])
+    js_mkt = js.get("mkt") or {}
+    if set(js_mkt) != set(py_mkt):
+        oj = sorted(set(js_mkt) - set(py_mkt))[:5]
+        op = sorted(set(py_mkt) - set(js_mkt))[:5]
+        fails.append(f"market_ranks membership: deck-only {oj} py-only {op}")
+    else:
+        mdiffs = [(n, js_mkt[n], py_mkt[n]) for n in py_mkt
+                  if js_mkt[n] != py_mkt[n]]
+        if mdiffs:
+            mdiffs.sort(key=lambda t: abs(t[1] - t[2]), reverse=True)
+            fails.append("market_ranks: %d rank disagreement(s), worst: %s"
+                         % (len(mdiffs), ", ".join(f"{n} deck{a}/py{b}"
+                            for n, a, b in mdiffs[:5])))
+
     # Python-side ordering, built from arena.team_week_model — the module the
     # deck's engine block declares itself an exact port of. This is the check
     # that matters: the ordering IS what the card shows.
@@ -277,6 +299,7 @@ process.stdout.write(JSON.stringify(out));
     print(f"pool rows compared      : {len(py_pool)}")
     print(f"z-score cells compared  : {len(py_pool) * len(hoops.CATS)}")
     print(f"name fixtures compared  : {len(QUERIES)}")
+    print(f"market ranks compared   : {len(py_mkt)}")
     # Never assert bit-identity on a run that just disproved it.
     _df_ok = not any(f.startswith("df_hash") for f in fails)
     print(f"df_hash vectors compared: {len(df_vectors)}"

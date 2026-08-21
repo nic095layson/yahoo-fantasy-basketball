@@ -179,10 +179,21 @@ def main():
     } for p in players]
     data = json.dumps(pool, separators=(",", ":"))
 
+    # real ADP (work order step 5, 2026-08-21): the room price that
+    # replaces the circular z-derived proxy inside marketRanks. Keyed by
+    # deck player name; players without an ADP fall back to the proxy.
+    # Source: data/market_adp.json (scripts/build_market_adp.py).
+    adp_path = os.path.join(ROOT, "data", "market_adp.json")
+    adp_map = json.load(open(adp_path)) if os.path.exists(adp_path) else {}
+    adp_data = json.dumps(adp_map, separators=(",", ":"))
+
     html = open(DECK, encoding="utf-8").read()
     html, n1 = re.subn(r"const PLAYERS = \[.*?\];",
                        "const PLAYERS = " + data + ";", html, count=1,
                        flags=re.S)
+    html, nadp = re.subn(r"const ADP = \{.*?\};",
+                         "const ADP = " + adp_data + ";", html, count=1,
+                         flags=re.S)
     html, n2 = re.subn(r'const BUILD_PULL = "[^"]*";',
                        f'const BUILD_PULL = "{fresh["date"]}";', html, count=1)
     # what the last sweep changed, shown by the Daily-sweep button panel
@@ -196,9 +207,9 @@ def main():
     # prose date is soft-synced (narrative text, shape may change)
     html, n3 = re.subn(r"Pool refreshed \d{4}-\d{2}-\d{2}",
                        f"Pool refreshed {fresh['date']}", html, count=1)
-    if not (n1 == 1 and n2 == 1 and n2b == 1):
+    if not (n1 == 1 and n2 == 1 and n2b == 1 and nadp == 1):
         fail(f"injection anchors not found (players={n1}, build_pull={n2}, "
-             f"build_note={n2b}) — deck markup drifted; do not hand-edit "
+             f"build_note={n2b}, adp={nadp}) — deck markup drifted; do not hand-edit "
              "anchors")
     if n3 == 0:
         print("note: footer prose date anchor not found (soft sync skipped)")
@@ -233,6 +244,8 @@ def main():
         fail("post-write integrity check failed — BUILD_PULL not synced")
     if f"const BUILD_NOTE = {note};" not in back:
         fail("post-write integrity check failed — BUILD_NOTE not synced")
+    if f"const ADP = {adp_data};" not in back:
+        fail("post-write integrity check failed — ADP not synced")
 
     print(f"deck built: {len(pool)} players · pull {fresh['date']} · "
           f"pool {pool_hash[:12]} · injection round-trip OK")
