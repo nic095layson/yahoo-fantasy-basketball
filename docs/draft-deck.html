@@ -101,6 +101,15 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 .toolbar { margin: 0 0 var(--space-2); }
 .toolbar #exportBtn { margin-left: auto; }
 .card.feedcard { display: flex; flex-direction: column; }
+/* Feed-card title row: centered title flanked by equal side slots — Undo sits
+   right (owner request 2026-08-24), the left slot is reserved for the pending
+   Insert-at-# control. */
+.feedhead { display: flex; align-items: center; gap: var(--space-2); }
+.feedhead .feedhead-side { flex: 1 1 0; min-width: 0; display: flex; }
+.feedhead .feedhead-right { justify-content: flex-end; }
+.feedhead #feedTitle { flex: 0 0 auto; margin: 0; }
+#feedCountdown { color: var(--muted); }
+#feedCountdown.onclocknow { color: var(--accent); font-weight: var(--weight-bold); }
 /* Pick log shows ~6 rows — the last few picks (owner request 2026-08-05:
    the full-height log read as a wall of text). Whole history stays in the
    box; scroll up for it. border-box, so padding+border ride in the calc. */
@@ -290,7 +299,6 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 <section id="draft" class="hidden">
   <div class="btnrow toolbar">
     <button class="ghost" id="advanceBtn" type="button">Advance AI picks</button>
-    <button class="ghost" id="undoBtn" type="button">Undo last pick</button>
     <button class="ghost" id="exportBtn" type="button">Export draft_state.json</button>
     <button class="ghost" id="copyBtn" type="button">Copy state JSON</button>
     <button class="ghost" id="resetBtn" type="button">Reset draft</button>
@@ -301,8 +309,12 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     <div class="card feedcard">
       <p class="eyebrow">Pick-by-pick</p>
       <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
-      <h2 id="feedTitle" class="hcenter" style="margin-top: var(--space-4)">Pick feed</h2>
-      <p id="feedCountdown" class="hcenter" style="margin: 0 0 var(--space-1); color: var(--muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums;"></p>
+      <div class="feedhead" style="margin-top: var(--space-4)">
+        <span class="feedhead-side" id="feedHeadLeft"></span>
+        <h2 id="feedTitle" class="hcenter">Pick feed</h2>
+        <span class="feedhead-side feedhead-right"><button class="ghost" id="undoBtn" type="button">Undo last pick</button></span>
+      </div>
+      <p id="feedCountdown" class="hcenter" style="margin: 0 0 var(--space-1); font-size: var(--text-sm); font-variant-numeric: tabular-nums;"></p>
       <div class="feedrow">
         <input type="text" id="feed" autocomplete="off" spellcheck="false"
                placeholder='Jokic; my:Wemby; 44- Herro'>
@@ -2265,6 +2277,7 @@ const JUDGMENT = {
     const strip = $("strip");
     if (draftDone()) {
       $("feedCountdown").textContent = "(draft complete)";
+      $("feedCountdown").classList.remove("onclocknow");
       strip.innerHTML = "";
       strip.append(el("span", "", `Draft complete — ${total} picks`),
         el("span", "you", `your roster: Team ${st.slot}`),
@@ -2275,8 +2288,14 @@ const JUDGMENT = {
     /* countdown under the feed title (owner request 2026-07-23) */
     const nxt = myNextPick(st);
     const until = nxt === null ? 0 : nxt - (n + 1);
-    $("feedCountdown").textContent =
-      until === 0 ? "(you're on the clock)" : `(${until} until your pick)`;
+    const fc = $("feedCountdown");
+    if (until === 0) {           /* the owner's own pick — bold + accent highlight */
+      fc.innerHTML = "(you're on the clock)";
+      fc.classList.add("onclocknow");
+    } else {                     /* someone else on the clock — bold just the count */
+      fc.innerHTML = `(<strong>${until}</strong> until your pick)`;
+      fc.classList.remove("onclocknow");
+    }
     const mine = buildRosters(st, PLAYERS)[st.slot];
     strip.innerHTML = "";
     strip.append(
