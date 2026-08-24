@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-18",
-  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-18 sweep (Fresh Deck Pull, window 2026-08-13 -> 2026-08-18, both planes). RESEARCH CHANNEL LIMIT (unchanged from 2026-08-13): WebFetch to every sports domain (nba.com, ESPN, RealGM, Spotrac, HoopsRumors, Yahoo, CBS, RotoWire, basketball-reference) is still blocked by the environment egress policy; re-tested this run on hoopsrumors.com and nba.com, both EGRESS_BLOCKED. All claims below come from web SEARCH results (headline + dated summary + outlet URL), not fetched article bodies. CHANGED: (1) Dennis Schroder CLE -> CHA and Tre Mann CHA -> CLE, one trade reported 2026-08-15, Cleveland also sending cash (ESPN, NBA.com, CBS Sports, Spectrum News, ClutchPoints, Fear The Sword). Schroder role-repriced DOWN: he was Cleveland's lead ball-handler alongside Mitchell and lands in Charlotte as the backup PG behind Coby White. Mann given a direction-only assist bump: he replaces the traded Schroder as Cleveland's only true backup PG (Strus and Merrill are off-guards). (2) Bradley Beal FA -> LAC, two years / $13.2M with a player option, reported 2026-08-13 after he declined his $5.6M option (ESPN, NBC Sports, RealGM, Yahoo, Last Word On Basketball). Repriced to a bench-guard line: that AAV and the Garland/Mathurin guard room do not describe a starter, and he played 6 games in 2025-26. CONFIRMED UNCHANGED: Harden (still FA; Cleveland 'in constant communication', resolution expected soon, no signing as of 8/18 - HoopsHype 8/14, HoopsHype FA rankings 8/16), DeRozan (still FA), Kuminga (still FA; LAL sign-and-trade reported leading, MIN and CLE also in), Cam Thomas (still FA - dated reporting this window explicitly has him unsigned, which CLOSES the 2026-08-13 cannot-verify item), Jaden Ivey (still FA - waived by CHI 2026-03-30 for conduct, no signing found in four searches across two pulls; contract-tracker evidence only, weakest label carried), Lonzo Ball (FA), Westbrook and Brogdon (out-retired), Kawhi (still LAC; 8/17 ESPN reported the probe found no evidence Ballmer funneled money, the league publicly disputed that report, inquiry narrowed to the sponsor-introduction question, trade still on hold, mid-September Board of Governors meeting the next checkpoint), Haliburton (100% cleared per his own 8/12 remarks, opener set 10/21 vs NOP; held at the first-season-back risk tag - see the after-report), RFAs Duren / Mathurin / Watson all still unsigned and all three standoffs now reported at an impasse. Minor moves below pool relevance: Trendon Watford -> NOP 1yr/$2.9M (8/17), Haywood Highsmith re-signs PHX 1yr (8/17). Sources: ESPN, NBA.com, CBS Sports, NBC Sports, HoopsHype, Hoops Rumors, RealGM, Yahoo Sports, Spectrum News, ClutchPoints, Fear The Sword, Forbes, Marco News, Front Office Sports, Blazer's Edge, Yardbarker, Last Word On Basketball.",
+  "date": "2026-08-21",
+  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-21 sweep (Fresh Deck Pull, window 2026-08-20 -> 2026-08-21, both planes). RESEARCH CHANNEL LIMIT (unchanged, re-tested this run by raw curl): basketball-reference.com, nba.com and site.api.espn.com all return no route / EGRESS_BLOCKED. Web SEARCH works. All claims rest on dated search results, not fetched article bodies. CHANGED: (1) James Harden FA -> CLE. He agreed on 2026-08-20 to a three-year / $97M deal to remain in Cleveland, with a 2028-29 player option and a trade kicker (ESPN, Washington Post/AP, Yahoo Sports, Eurohoops, Blazer's Edge, ClutchPoints, The Source). This CLOSES the highest-alert open item carried from the 2026-08-20 pull: his stated precondition was Cleveland landing a wing, they landed Peyton Watson on 8/19, and he signed the next day. Projection HELD - his line was already priced as a Cavalier and there is no named mechanism to move it: Cleveland's guard room lost both Schroder (CHA, 8/15) and Tre Mann (WAS, 8/19), which raises his ball-handling load, but he turns 37 on 8/26, which argues the other way. Those offset; no reprice. Note the 8/20 reporting of 'at most two guaranteed years' proved WRONG - the deal is three years. NOT IN THE DECK POOL, no deck edit (kit-plane action taken instead): Cam Whitmore. Cleveland is reportedly weighing a WAIVE-AND-STRETCH of his $5.4M contract across three years (~$1.8M/yr cap hold) to fit Harden under the first apron it became hard-capped at via the Watson sign-and-trade - Chris Fedor (cleveland.com) and Bobby Marks (ESPN), relayed by NBC Sports, HoopsHype, RealGM, SI/Cavaliers and Yahoo on 8/21. He is reported as not expected to play a game in Cleveland. This VINDICATES the 8/20 decision not to add him to the deck pool, taken 24 hours earlier on the grounds that a fringe-rotation wing with an uncleared blood clot was not top-245 draftable. CONFIRMED UNCHANGED: DeRozan, Kuminga, Cam Thomas and Jaden Ivey all still FA (four FA rows now, not five) - re-verified 8/21; Cleveland's interest in Kuminga and DeRozan is now effectively closed by the hard cap plus Harden's $97M, and Washington has newly joined the DeRozan interest list alongside Miami and Denver. Kawhi still LAC, trade still frozen, no status change for the THIRD consecutive pull - the only in-window item is the NBA publicly pushing back on the 8/17 ESPN report, which was already recorded 8/18. Haliburton held. Duren and Mathurin RFA standoffs open. CHECKED AND DATED OUT OF WINDOW, no edit: Alex Sarr's fractured right foot surgery is 2026-06-16 (Shams/ESPN) and is already encoded on his row as inj-foot-risk; Brandon Ingram's heel and Josh Giddey's ankle are May 2026, dismissed for the third time; Nikola Topic's lumbar microdiscectomy is not a pool row. Mark Williams: FIFTH consecutive pull with no in-window news - every result is still from the 2025-26 season and playoffs. Sources: ESPN, NBA.com, Washington Post/AP, Yahoo Sports, CBS Sports, NBC Sports, RealGM, HoopsHype, Hoops Rumors, Sports Illustrated (Cavaliers), Eurohoops, Blazer's Edge, ClutchPoints, Bleacher Report, Fadeaway World, Forbes.",
   "teams": {
     "LAC": [
       "Kawhi Leonard",
@@ -9,15 +9,16 @@
       "Bennedict Mathurin",
       "Rui Hachimura",
       "Derrick Jones Jr",
-      "Bradley Beal"
+      "Bradley Beal",
+      "Max Strus"
     ],
     "CLE": [
       "Donovan Mitchell",
       "Evan Mobley",
       "Jarrett Allen",
-      "Max Strus",
       "Sam Merrill",
-      "Tre Mann"
+      "Peyton Watson",
+      "James Harden"
     ],
     "TOR": [
       "Brandon Ingram",
@@ -38,7 +39,8 @@
       "Tre Johnson",
       "Bilal Coulibaly",
       "Kyshawn George",
-      "Khris Middleton"
+      "Khris Middleton",
+      "Tre Mann"
     ],
     "UTA": [
       "Jaren Jackson Jr.",
@@ -197,7 +199,6 @@
       "Jamal Murray",
       "Cameron Johnson",
       "Aaron Gordon",
-      "Peyton Watson",
       "Christian Braun",
       "Julian Strawther"
     ],
