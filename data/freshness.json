@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "note": "UI: Log box now names the pick + seat you're entering each turn \u2014 'Pick N \u2014 Team (seat / name)'; feed-syntax help relocated to the page footer. (Same-day: feed-grammar robustness \u2014 space-separated pick #, team-tag & Last,First pastes.) Display-only; no data change.",
+  "note": "Colophon truth fix: footer 'Data'/'Logic' now state the current 254-row pool (was stale at 245); +note that 9 completeness players were added after the 8/18 pull. Display-only; no data change.",
   "pool_changes": {
     "changed": false,
     "note": ""
