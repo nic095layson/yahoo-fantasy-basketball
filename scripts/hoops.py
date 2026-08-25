@@ -382,7 +382,7 @@ NICKNAMES = {
     "sga": "shai gilgeous-alexander", "kat": "karl-anthony towns",
     "jjj": "jaren jackson", "dame": "damian lillard",
     "ant": "anthony edwards", "melo": "lamelo ball",
-    "pg13": "paul george", "joker": "nikola jokic",
+    "pg13": "paul george", "pg": "paul george", "joker": "nikola jokic",
     "the joker": "nikola jokic", "spida": "donovan mitchell",
     "greek freak": "giannis", "book": "devin booker",
     "klaw": "kawhi leonard", "wemby": "wembanyama",
@@ -431,6 +431,11 @@ def match_candidates(players, query):
     P-ayton Pritchard, and 'Hart' hits Josh Hart, not Hartenstein."""
     import difflib
     q = fold(query.strip())
+    # draft_state_48 follow-up: pasted names often carry a trailing team tag
+    # — "Mikal Bridges (PHX)", "Wembanyama (SAS)" — from Yahoo/ESPN/Sleeper.
+    # Strip a trailing parenthetical so the paste still resolves; keep the
+    # original if the parens were the whole string.
+    q = re.sub(r"\s*\([^)]*\)\s*$", "", q).strip() or q
     q = NICKNAMES.get(q, q)
     # Degenerate segments never match (audit 2026-08-09, F02). A lone '.',
     # '-', apostrophe, or an empty `my:` used to reach the substring stage,
@@ -475,6 +480,12 @@ def match_candidates(players, query):
                     q, [last], n=1, cutoff=0.8):
                 hits.add(p["player"])
         subs = [p for p in players if p["player"] in hits]
+    if not subs and "," in q:
+        # Yahoo player tables sort "Last, First" — "Bridges, Mikal". As a
+        # final fallback, swap a single comma-separated pair and retry.
+        parts = [s.strip() for s in q.split(",")]
+        if len(parts) == 2 and all(parts):
+            subs = match_candidates(players, parts[1] + " " + parts[0])
     return subs
 
 
@@ -1006,7 +1017,12 @@ def cmd_draft(args, players):
                     continue
                 taken = {pk["player"] for pk in picks}  # tail shifted — rebuild taken set
                 continue
-            m = re.match(r"^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$", raw, re.I)
+            # A leading pick number may be separated from the name by a
+            # punctuation mark OR just whitespace: "44- Herro", "44 Herro",
+            # "pick 75 Mikal Bridges" all mean pick N. Space-only used to fall
+            # through as a literal, unmatchable query — draft_state_48: typing
+            # "75 Mikal Bridges" logged five straight UNKNOWNs mid-draft.
+            m = re.match(r"^(?:pick\s*)?#?(\d+)(?:\s*[-—.,:]\s*|\s+)(.+)$", raw, re.I)
             num, body = (int(m.group(1)), m.group(2).strip()) if m else (None, raw)
             mine = body.lower().startswith("my:")
             name = body[3:].strip() if mine else body

@@ -326,6 +326,46 @@ def main():
               run(st, "draft", "turn", "Jokic; Trae Young", "--top", "0"),
               must_have=["skipped", "already off the board"])
 
+        # draft_state_48: a pick number separated from the name by a SPACE
+        # (not a punctuation mark) must be read as pick N, not swallowed into an
+        # unmatchable query. "75 Mikal Bridges" logged five straight UNKNOWNs
+        # mid-draft and could not be recovered.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("space-separated pick number appends the named player",
+              run(st, "draft", "turn", "4 Mikal Bridges", "--top", "0"),
+              must_have=["#4", "Mikal Bridges"], must_not=["UNKNOWN"])
+        # ...and it corrects an already-logged UNKNOWN the same way "N- Name"
+        # would (the exact recovery the owner tried and could not get).
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA; Nobody McNobody", "--top", "0")
+        check("space-separated number corrects a logged UNKNOWN",
+              run(st, "draft", "turn", "4 Mikal Bridges", "--top", "0"),
+              must_have=["#4", "Mikal Bridges"])
+        # punctuation separators and plain appends are unchanged.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("'N- Name' punctuation separator still corrects",
+              run(st, "draft", "turn", "3- Anthony Davis", "--top", "0"),
+              must_have=["#3", "Anthony Davis"])
+        check("a bare 'PG' resolves to Paul George",
+              run(st, "draft", "turn", "PG", "--top", "0"),
+              must_have=["Paul George"], must_not=["UNKNOWN"])
+        # draft_state_48 follow-up (feed-grammar coverage probe): the two other
+        # natural pastes a stressed human produces must resolve, not log UNKNOWN.
+        # (a) a trailing team tag copied from Yahoo/ESPN/Sleeper, and
+        # (b) Yahoo's "Last, First" player-table sort order.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("a pasted name with a trailing team tag resolves",
+              run(st, "draft", "turn", "Mikal Bridges (PHX)", "--top", "0"),
+              must_have=["Mikal Bridges"], must_not=["UNKNOWN"])
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("a 'Last, First' pasted name resolves",
+              run(st, "draft", "turn", "Bridges, Mikal", "--top", "0"),
+              must_have=["Mikal Bridges"], must_not=["UNKNOWN"])
+
         # Speed rule: the live turn card must stay well inside the 45s clock.
         fresh(st)
         sys.path.insert(0, HERE)

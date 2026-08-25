@@ -58,6 +58,11 @@ QUERIES = [
     # R4-F06: real two-letter first-name tokens must resolve; the original
     # fixture recorded 'aj' -> [] as the EXPECTED answer, blessing the bug.
     "aj", "cj", "gg", "ja", "pj", "rj", "vj",
+    # draft_state_48 follow-up (feed-grammar coverage probe): trailing team
+    # tags and Yahoo "Last, First" order must resolve identically in both
+    # engines. Includes the combined paste and the ambiguous-surname case.
+    "Mikal Bridges (PHX)", "Wembanyama (SAS)", "Jokić (DEN)",
+    "Bridges, Mikal", "George, Paul", "Bridges, Miles (CHA)", "Bridges,",
 ]
 
 
