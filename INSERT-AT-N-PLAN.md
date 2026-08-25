@@ -1,8 +1,17 @@
 # Design plan — `Insert at #` (insert-and-shift a missed pick)
 
-**Status: PLAN for owner approval. No feature code written yet.** This documents the
-design, the full system-integrity analysis, and a phased build, so implementation
-cannot trigger a cascade. Authored 2026-08-24.
+**Status: IMPLEMENTED 2026-08-24** per the owner's four decisions — (1) both triggers
+(control + `N+` feed token), (2) both engines (JS deck + `hoops.py`), (3) refuse-and-route
+to RESYNC on keeper/trade boards, (4) RESYNC also added to the deck toolbar. This document
+is the design + full system-integrity analysis it was built from; verification below.
+Authored 2026-08-24 (plan), implemented same day.
+
+**Verification (2026-08-24):** `scripts/hoops.py insert` + `N+` turn token; `insertPick`
++ control + `N+` token + RESYNC button in `docs/draft-deck.html`. `test_draft.py` 39/39
+(11 new insert/token cases), `test_gates.py` 10/10, `check_parity.py` EXACT MATCH, a
+JS≡Python `insertPick` cross-check PASS (identical `picks` on mid-insert / append /
+no-match), `node --check` clean, injected pool byte-identical. Live-deck republish still
+needs a data-pull-gated `build_deck.py` run (§9).
 
 ## 1. Problem & why it is needed
 

@@ -301,7 +301,13 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     <button class="ghost" id="advanceBtn" type="button">Advance AI picks</button>
     <button class="ghost" id="exportBtn" type="button">Export draft_state.json</button>
     <button class="ghost" id="copyBtn" type="button">Copy state JSON</button>
+    <button class="ghost" id="resyncBtn" type="button">Resync</button>
     <button class="ghost" id="resetBtn" type="button">Reset draft</button>
+  </div>
+  <div class="feedrow hidden" id="resyncBar" style="margin: 0 0 var(--space-2);">
+    <input type="text" id="resyncPaste"
+           placeholder="RESYNC — paste the FULL pick list in draft order (semicolons); rebuilds the whole board">
+    <button class="primary" id="resyncGo" type="button">Rebuild board</button>
   </div>
   <div class="statusstrip" id="strip" aria-live="polite"></div>
 
@@ -310,7 +316,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
       <p class="eyebrow">Pick-by-pick</p>
       <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
       <div class="feedhead" style="margin-top: var(--space-4)">
-        <span class="feedhead-side" id="feedHeadLeft"></span>
+        <span class="feedhead-side" id="feedHeadLeft"><button class="ghost" id="insertToggle" type="button">Insert at #…</button></span>
         <h2 id="feedTitle" class="hcenter">Pick feed</h2>
         <span class="feedhead-side feedhead-right"><button class="ghost" id="undoBtn" type="button">Undo last pick</button></span>
       </div>
@@ -320,7 +326,12 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
                placeholder='Jokic; my:Wemby; 44- Herro'>
         <button class="primary" id="logBtn" type="button">Log</button>
       </div>
-      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap. Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
+      <div class="feedrow hidden" id="insertBar">
+        <input type="number" id="insNum" min="1" placeholder="#" style="flex: 0 0 4.5em;">
+        <input type="text" id="insName" placeholder="missed player — inserts at # and shifts the rest down">
+        <button class="primary" id="insBtn" type="button">Insert</button>
+      </div>
+      <p class="hint">Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap; <code>108+ Queta</code> <em>inserts</em> a missed pick at #108 and shifts the rest down (or use the Insert-at-# button). Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
       <p class="eyebrow rosterhead" style="margin-top: var(--space-4)"><span id="myRosterTitle">Your roster</span><span id="myRosterFams"></span></p>
       <ul class="myroster" id="myRoster"></ul>
     </div>
@@ -749,6 +760,16 @@ function processFeed(state, players, feed) {
   let corrections = 0;
 
   for (const raw of feed.split(";").map(s => s.trim()).filter(Boolean)) {
+    const mi = raw.match(/^(?:pick\s*)?#?(\d+)\s*\+\s*(.+)$/);  // insert token: "108+ Queta"
+    if (mi) {
+      const ibody = mi[2].trim();
+      const iname = ibody.toLowerCase().startsWith("my:") ? ibody.slice(3).trim() : ibody;
+      const r = insertPick(state, players, parseInt(mi[1], 10), iname);
+      for (const l of r.lines) say(l.t, l.cls);
+      taken.clear();
+      for (const pk of picks) taken.add(pk.player);  // tail shifted — rebuild taken
+      continue;
+    }
     const m = raw.match(/^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$/i);
     let num = m ? parseInt(m[1], 10) : null;
     let body = m ? m[2].trim() : raw;
@@ -820,6 +841,46 @@ function processFeed(state, players, feed) {
     }
   }
   return { lines, halted: false };
+}
+
+/* Insert a MISSED pick at 1-indexed P and shift #P..end down one, recomputing
+   snake slots positionally. Port of hoops.py insert_pick. Mutates state.picks;
+   returns {lines, ok}. Everything downstream (rosters, category ranks, board,
+   survival) re-derives from state.picks, so a canonical picks array is the whole
+   job. Refuse-and-route to RESYNC on any keeper/trade (non-snake) board. */
+function insertPick(state, players, P, name) {
+  const picks = state.picks;
+  const teams = state.teams;
+  const maxp = teams * state.size;
+  const fail = t => ({ lines: [{ t, cls: "warn" }], ok: false });
+  if (!(Number.isInteger(P) && P >= 1 && P <= maxp))
+    return fail(`⚠ insert #${P}: out of range (1-${maxp}).`);
+  if (picks.length >= maxp)
+    return fail(`⚠ insert: draft is full (${maxp} picks) — nothing to insert; correct a slot with "N- Name", or RESYNC.`);
+  if (P > picks.length + 1)
+    return fail(`⚠ insert #${P}: only ${picks.length} pick(s) logged — insert at #${picks.length + 1} or earlier (no mid-air gaps), or RESYNC.`);
+  const manual = picks.map((pk, i) => pk.slot !== teamOfPick(i, teams) ? i + 1 : 0).filter(Boolean);
+  if (manual.length)
+    return fail(`⚠ insert refused: pick(s) ${manual.join(", ")} carry a non-snake slot (keeper/trade/out-of-order); a positional re-shift would corrupt them. Rebuild with RESYNC.`);
+  let resolved;
+  if (name.toUpperCase().startsWith("UNKNOWN")) {
+    resolved = name;
+  } else {
+    const cands = matchCandidates(players, name);
+    if (!cands.length) resolved = `UNKNOWN #${P}`;
+    else if (cands.length > 1)
+      return fail(`⚠ insert: ambiguous "${name}": ${cands.slice(0, 6).map(c => c.n).join(", ")}. Be more specific.`);
+    else if (picks.some(pk => pk.player === cands[0].n))
+      return fail(`⚠ insert: ${cands[0].n} is already off the board — nothing inserted.`);
+    else resolved = cands[0].n;
+  }
+  const idx = P - 1;
+  picks.splice(idx, 0, { player: resolved, slot: teamOfPick(idx, teams) });
+  for (let i = idx; i < picks.length; i++) picks[i].slot = teamOfPick(i, teams);
+  const shifted = picks.length - 1 - idx;
+  const tail = shifted
+    ? `; #${P}–#${picks.length - 1} → #${P + 1}–#${picks.length} (${shifted} shifted, slots recomputed)` : "";
+  return { lines: [{ t: `  ✎ inserted ${resolved} at #${P} → Seat ${picks[idx].slot}${tail}`, cls: "" }], ok: true };
 }
 
 function buildRosters(state, players) {
@@ -1670,6 +1731,60 @@ const JUDGMENT = {
       btn.classList.remove("danger");
     }, 4000);
   });
+
+  /* ---------- insert-at-# (owner feature 2026-08-24) ---------- */
+  $("insertToggle").addEventListener("click", () => {
+    const bar = $("insertBar");
+    bar.classList.toggle("hidden");
+    if (!bar.classList.contains("hidden")) $("insNum").focus();
+  });
+  function runInsert() {
+    const P = parseInt($("insNum").value, 10);
+    const name = $("insName").value.trim();
+    if (!name || !Number.isInteger(P)) {
+      log("Insert needs a pick # and a player name.", "warn");
+      return;
+    }
+    const r = insertPick(deck.state, PLAYERS, P, name);
+    for (const l of r.lines) log(l.t, l.cls);
+    if (r.ok) {
+      $("insNum").value = "";
+      $("insName").value = "";
+      $("insertBar").classList.add("hidden");
+      save();
+      renderAll();
+    }
+  }
+  $("insBtn").addEventListener("click", runInsert);
+  $("insName").addEventListener("keydown", e => { if (e.key === "Enter") runInsert(); });
+
+  /* ---------- resync (port of hoops.py resync; the deck lacked it) ---------- */
+  $("resyncBtn").addEventListener("click", () => {
+    const bar = $("resyncBar");
+    bar.classList.toggle("hidden");
+    if (!bar.classList.contains("hidden")) $("resyncPaste").focus();
+  });
+  function runResync() {
+    const paste = $("resyncPaste").value.trim();
+    const segs = paste.split(";").map(s => s.trim()).filter(Boolean);
+    if (!segs.length) {
+      log("RESYNC refused: paste is empty — nothing cleared, the board is untouched.", "warn");
+      return;
+    }
+    try { localStorage.setItem(LS_KEY + ":preresync", JSON.stringify(deck.state)); } catch (e) {}
+    const prior = deck.state.picks.length;
+    deck.state.picks = [];                       // wipe, then rebuild positionally from the paste
+    const res = processFeed(deck.state, PLAYERS, paste);
+    log(`RESYNC: cleared ${prior} pick(s); rebuilt ${deck.state.picks.length} from the paste. ` +
+        `Prior board saved in this browser (${LS_KEY}:preresync).`, "warn");
+    for (const l of res.lines) log(l.t, l.cls);
+    $("resyncPaste").value = "";
+    $("resyncBar").classList.add("hidden");
+    save();
+    renderAll();
+  }
+  $("resyncGo").addEventListener("click", runResync);
+  $("resyncPaste").addEventListener("keydown", e => { if (e.key === "Enter") runResync(); });
 
   /* ---------- export / import ---------- */
   function engineState() {
