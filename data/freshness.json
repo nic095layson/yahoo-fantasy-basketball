@@ -1,13 +1,13 @@
 {
   "date": "2026-08-25",
-  "note": "Colophon truth fix: footer 'Data'/'Logic' now state the current 254-row pool (was stale at 245); +note that 9 completeness players were added after the 8/18 pull. Display-only; no data change.",
+  "note": "Live-mock-49 decision sheet: +Tim Hardaway Jr. (MIA) to pool (drafted #148 by a real room); apostrophe-insensitive matching ('Dayron' resolves Day'Ron); namesake tiebreak prefers draftable players ('Sharpe' -> Day'Ron, not injury-excluded Shaedon); Yahoo generation-suffix retry ('Jimmy Butler III'); deck stale-UNKNOWN nudge.",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "+1 row: Tim Hardaway Jr. (MIA, SG/SF), authored projection calibrated to in-pool comps (Klay Thompson, Gary Trent Jr., Duncan Robinson)"
   },
   "rosters_verified": {
     "date": "2026-08-25",
     "mode": "fallback-partial",
-    "sources": "no roster change this pass; pool identical to last publish (eed45b60)"
+    "sources": "THJ->MIA per live-mock-49 Yahoo recap (drafted MIA - SG,SF); rest unchanged from 2026-08-25 ledger"
   }
 }

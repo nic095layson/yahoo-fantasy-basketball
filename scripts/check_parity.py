@@ -63,6 +63,11 @@ QUERIES = [
     # engines. Includes the combined paste and the ambiguous-surname case.
     "Mikal Bridges (PHX)", "Wembanyama (SAS)", "Jokić (DEN)",
     "Bridges, Mikal", "George, Paul", "Bridges, Miles (CHA)", "Bridges,",
+    # draft_state_49: apostrophe-insensitive fold, generation-suffix retry,
+    # and the THJ pool addition must agree in both engines.
+    "Dayron Sharpe", "dayron", "Day'Ron Sharpe", "Sharpe", "Kelel Ware",
+    "DeAaron Fox", "DAngelo Russell", "ONeale", "Jimmy Butler III",
+    "Tim Hardaway Jr.", "Hardaway", "Hardaway Jr., Tim",
 ]
 
 
