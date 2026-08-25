@@ -277,10 +277,14 @@ def main():
         out = run(st, "draft", "turn", "White", "--top", "0")
         check("ambiguity still auto-resolves with its flag", out,
               must_have=["Derrick White", "assumed over"])
-        check("lesson 2 surname-collision halts on the second White",
-              run(st, "draft", "turn", "White", "--top", "0",
-                  expect_fail=True),
-              must_have=["HALTED", "already drafted"])
+        # draft_state_46 fix: the best namesake (Derrick) is now drafted, so a
+        # bare "White" resolves to the LAST one still available (Coby) instead
+        # of halting — the "George at pick 109" repair. Old lesson 2 halted
+        # here; that halt is what buried the owner mid-draft.
+        check("bare surname resolves to the last available namesake",
+              run(st, "draft", "turn", "White", "--top", "0"),
+              must_have=["Coby White", "already drafted"],
+              must_not=["HALTED"])
         out = run(st, "draft", "turn",
                   "1- Trae Young; 2- Bam Adebayo; 3- Alperen Sengun",
                   "--top", "0", expect_fail=True)
@@ -292,6 +296,32 @@ def main():
               " ".join(names),
               must_have=["Nikola Jokic", "Victor Wembanyama",
                          "Shai Gilgeous-Alexander"])
+        # ...but with 2+ namesakes still available AND the best one drafted, a
+        # bare surname stays a HALT — genuine ambiguity, the Coby/Dejounte
+        # scar. Jalen Williams is the top Williams; drafting him leaves Mark
+        # and Ziaire, so "Williams" cannot be auto-resolved.
+        fresh(st)
+        run(st, "draft", "turn", "Jalen Williams", "--top", "0")
+        check("surname collision still halts when 2+ namesakes remain",
+              run(st, "draft", "turn", "Williams", "--top", "0",
+                  expect_fail=True),
+              must_have=["HALTED", "already drafted"])
+        # first-name prefix + surname now resolves what the hint promised, and
+        # the draft_state_46 scenario end-to-end: two Georges gone, "George"
+        # lands the third.
+        fresh(st)
+        run(st, "draft", "turn", "Paul George; Keyonte George", "--top", "0")
+        check("prefix+surname resolves a shared surname (Ky George)",
+              run(st, "draft", "turn", "Ky George", "--top", "0"),
+              must_have=["Kyshawn George"], must_not=["HALTED", "ambiguous"])
+        fresh(st)
+        run(st, "draft", "turn", "Paul George; Keyonte George", "--top", "0")
+        check("bare surname lands the last George (draft_state_46 #109)",
+              run(st, "draft", "turn", "George", "--top", "0"),
+              must_have=["Kyshawn George", "already drafted"],
+              must_not=["HALTED"])
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Trae Young", "--top", "0")
         check("a re-sent drafted name is skipped, never double-logged",
               run(st, "draft", "turn", "Jokic; Trae Young", "--top", "0"),
               must_have=["skipped", "already off the board"])

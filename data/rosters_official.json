@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-25 sweep (Fresh Deck Pull, window 2026-08-21 -> 2026-08-25, both planes). RESEARCH CHANNEL LIMIT (unchanged, re-tested this run): basketball-reference.com, nba.com and site.api.espn.com return no route / EGRESS_BLOCKED; verify_rosters.py direct ESPN pull 403s. Web SEARCH works; all claims rest on dated search results, not fetched article bodies. CHANGED: (1) DeMar DeRozan FA -> DEN. Signed a one-year / $3.88M minimum with Denver as wing depth, reported 8/21 (ESPN, NBA.com, NBC Sports, Hoops Rumors, HoopsHype, Sports Illustrated). Projection HELD - reduced usage under Jokic vs. the bench-scorer minutes Denver specifically sought roughly offset; minutes flagged to reprice once preseason role clarifies. (2) Klay Thompson DAL -> MIA. Waived by Dallas via buyout 8/21, cleared waivers, signed a two-year / $11.48M deal with Miami (2027-28 player option), reported 8/23 (NBA.com, ESPN, Yahoo Sports, Bleacher Report, NBC Sports Bay Area). Projection HELD - floor-spacer role unchanged next to Giannis. (3) Shaedon Sharpe: tagged knee-recovery (torn meniscus, ~6-month timeline, expected back ~late Feb 2027), reported 8/24 (NBC Sports, Yahoo Sports, Bleacher Report, Sports Illustrated, Blazer's Edge). This ZEROES his availability and REMOVES him from the draftable board (owner rule: -recovery -> 0.0); he stays POR, no roster move. CONFIRMED UNCHANGED (FA re-verified 8/25, no in-window signing): Kuminga, Cam Thomas, Jaden Ivey - three FA rows now, not four. Kawhi still LAC, trade still frozen, mid-September Board of Governors the next checkpoint (unchanged). Whitmore medical clearance still unresolved (not a deck row). CHECKED AND DATED OUT OF WINDOW, no edit: Mark Williams (SIXTH consecutive quiet pull), Alex Sarr foot (June surgery, already inj-foot-risk). Sources: ESPN, NBA.com, NBC Sports, NBC Sports Bay Area, Yahoo Sports, Bleacher Report, Hoops Rumors, HoopsHype, Sports Illustrated, Blazer's Edge.",
+  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-25 pool-completion pass: added 9 players that a live mock (draft_state_46) drafted but the pool lacked, each with a 2026-27 line built from researched 2025-26 production. ADDED: Ty Jerome (MEM, ESPN/CBS gamelog), Saddiq Bey (NOP, NBA.com/ESPN), Ajay Mitchell (OKC, ESPN), Collin Gillespie (PHX, ESPN/CBS), Maxime Raynaud (SAC, NBA.com/SI, All-Rookie 2nd Team), Collin Murray-Boyles (TOR, ESPN/RaptorsHQ, All-Rookie 2nd Team), Sandro Mamukelashvili (LAL, ESPN/CBS), Paul Reed (DET, ESPN/CBS), Keaton Wallace (LAC per the league recap; the recap garbled the name to 'Wagler' and some sources list ATL - flagged). RESEARCH CHANNEL LIMIT: site.api.espn.com direct pull still 403s; web SEARCH works and every line rests on dated 2025-26 box-score reporting. No transactions this pass; the 2026-08-25 data-pull deltas (DeRozan->DEN, Klay->MIA, Sharpe knee-recovery) stand unchanged.",
   "teams": {
     "LAC": [
       "Kawhi Leonard",
@@ -10,7 +10,8 @@
       "Rui Hachimura",
       "Derrick Jones Jr",
       "Bradley Beal",
-      "Max Strus"
+      "Max Strus",
+      "Keaton Wallace"
     ],
     "CLE": [
       "Donovan Mitchell",
@@ -27,7 +28,8 @@
       "Jakob Poeltl",
       "Immanuel Quickley",
       "RJ Barrett",
-      "Trayce Jackson-Davis"
+      "Trayce Jackson-Davis",
+      "Collin Murray-Boyles"
     ],
     "WAS": [
       "Anthony Davis",
@@ -129,7 +131,8 @@
       "GG Jackson",
       "Quinten Post",
       "Jerami Grant",
-      "Taylor Hendricks"
+      "Taylor Hendricks",
+      "Ty Jerome"
     ],
     "SAC": [
       "Darius Acuff Jr.",
@@ -138,7 +141,8 @@
       "Malik Monk",
       "Nique Clifford",
       "Keegan Murray",
-      "De'Andre Hunter"
+      "De'Andre Hunter",
+      "Maxime Raynaud"
     ],
     "LAL": [
       "Collin Sexton",
@@ -149,7 +153,8 @@
       "Quentin Grimes",
       "Walker Kessler",
       "Austin Reaves",
-      "Jarred Vanderbilt"
+      "Jarred Vanderbilt",
+      "Sandro Mamukelashvili"
     ],
     "DAL": [
       "Zaccharie Risacher",
@@ -181,7 +186,8 @@
       "Jordan Hawkins",
       "Trey Murphy III",
       "Herbert Jones",
-      "Derik Queen"
+      "Derik Queen",
+      "Saddiq Bey"
     ],
     "NYK": [
       "Jalen Brunson",
@@ -218,7 +224,8 @@
       "Cason Wallace",
       "Jalen Williams",
       "Alex Caruso",
-      "Jared McCain"
+      "Jared McCain",
+      "Ajay Mitchell"
     ],
     "MIA": [
       "Giannis Antetokounmpo",
@@ -247,7 +254,8 @@
       "Jalen Duren",
       "Ausar Thompson",
       "Ron Holland",
-      "Duncan Robinson"
+      "Duncan Robinson",
+      "Paul Reed"
     ],
     "HOU": [
       "Kevin Durant",
@@ -268,7 +276,8 @@
       "Miles Bridges",
       "Khaman Maluach",
       "Jalen Green",
-      "Dillon Brooks"
+      "Dillon Brooks",
+      "Collin Gillespie"
     ],
     "PHI": [
       "Tyrese Maxey",

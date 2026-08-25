@@ -454,6 +454,18 @@ def match_candidates(players, query):
                 if q in fold(p["player"]).replace(".", "").split()]
     if not subs:
         subs = [p for p in players if q in fold(p["player"])]
+    if not subs:  # first-name prefix + surname: "d white" -> Derrick White,
+        # "ky george" -> Kyshawn George. The tool's own shared-surname hint
+        # ("first initial + surname") relied on this and silently matched
+        # nothing before (draft_state_46). Surname is exact and the first name
+        # must start with the prefix, so it stays specific: "d white" is
+        # Derrick, never Coby.
+        toks = q.split()
+        if len(toks) == 2:
+            pre, sur = toks
+            subs = [p for p in players
+                    if surname_key(p["player"]) == sur
+                    and fold(p["player"]).split()[0].startswith(pre)]
     if not subs:  # typo fallback: fuzzy, SURNAME-only, first letter must
         # agree (Collins never becomes Rollins; Siakim still finds Siakam)
         hits = set()
@@ -1062,11 +1074,15 @@ def cmd_draft(args, players):
             exact = [c for c in cands
                      if c["player"].lower() == name.strip().lower()]
             best_all = max(all_c, key=adj_value) if all_c else None
-            if cands and not exact and best_all and \
+            if len(cands) > 1 and not exact and best_all and \
                     best_all["player"] in taken:
-                # Surname collision: the name's best match is already
-                # drafted. Logging a lesser candidate caused the Coby/
-                # Dejounte misattributions — HALT so numbering stays true.
+                # Surname collision with 2+ still AVAILABLE: the best match is
+                # drafted and more than one namesake remains, so we can't tell
+                # which — logging a lesser candidate caused the Coby/Dejounte
+                # misattributions. HALT so numbering stays true. When exactly
+                # one namesake is left it is unambiguous (see below), so a bare
+                # "George" after two Georges are gone logs the third instead of
+                # halting (draft_state_46: pick 109 died on this).
                 save_state(state)
                 alts = ", ".join(c["player"] for c in cands[:3])
                 sys.exit(f"⚠ HALTED at {name!r}: best match "
@@ -1081,11 +1097,17 @@ def cmd_draft(args, players):
                 you = " (YOU)" if slot == myslot else ""
                 note = ""
                 losers = [c["player"] for c in cands if c is not p]
+                gone = [c["player"] for c in all_c
+                        if c["player"] in taken and c["player"] != p["player"]]
                 if losers:
                     more = f" +{len(losers) - 2} more" if len(losers) > 2 else ""
                     note = f"  (assumed over {', '.join(losers[:2])}{more})"
                     if len(cands) > 4:  # audit F02: a broad query still
                         note += "  ⚠ WIDE MATCH — verify"  # resolves, loudly
+                elif gone and not exact:
+                    # resolved a shared surname to the last one still available
+                    note = (f"  (only {p['player'].split()[0]} left; "
+                            f"{', '.join(gone[:2])} already drafted)")
                 print(f"  ✓ #{n + 1} R{n // teams + 1}: {p['player']} → "
                       f"T{slot}{you}{note}")
             elif all_c:
