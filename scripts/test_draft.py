@@ -176,6 +176,67 @@ def main():
               out + f" [picks_after={n_after}]",
               must_have=["RESYNC refused", "[picks_after=7]"])
 
+        # INSERT-AT-N (owner feature 2026-08-24): insert a MISSED pick at #P and
+        # shift #P..end down one, recomputing snake slots. Everything downstream
+        # re-derives from state["picks"], so a canonical picks array is the job.
+        fresh(st)
+        run(st, "draft", "turn",
+            "Jokic; Wemby; Luka; SGA; Anthony Edwards; Tyrese Haliburton",
+            "--top", "0")
+        out = run(st, "draft", "insert", "3", "Cade Cunningham")
+        picks = _json.load(open(st))["picks"]
+        check("INSERT echoes the inserted player and the shift", out,
+              must_have=["inserted Cade Cunningham at #3", "shifted"])
+        check("INSERT places the new pick at #3 and shifts the tail",
+              f"#3={picks[2]['player']} #4={picks[3]['player']} n={len(picks)}",
+              must_have=["#3=Cade Cunningham", "#4=Luka Doncic", "n=7"])
+        check("INSERT recomputes snake slots positionally",
+              "slots_ok=" + str(all(picks[i]["slot"] == i + 1 for i in range(7))),
+              must_have=["slots_ok=True"])
+        check("INSERT leaves picks before P untouched",
+              f"#1={picks[0]['player']} #2={picks[1]['player']}",
+              must_have=["#1=Nikola Jokic", "#2=Victor Wembanyama"])
+        pre = st + ".pre-insert"
+        prior = (_json.load(open(pre)) if os.path.isfile(pre) else {}).get("picks", [])
+        check("INSERT saves a pre-insert recovery file holding the prior board",
+              f"exists={os.path.isfile(pre)} picks={len(prior)}",
+              must_have=["exists=True", "picks=6"])
+        out = run(st, "draft", "insert", "999", "Jrue Holiday", expect_fail=True)
+        check("INSERT refuses an out-of-range position", out,
+              must_have=["out of range"])
+        out = run(st, "draft", "insert", "2", "Nikola Jokic", expect_fail=True)
+        check("INSERT refuses an already-drafted player", out,
+              must_have=["already off the board"])
+        out = run(st, "draft", "insert", "2", "Zzzq Nobody Nomatch")
+        check("INSERT logs an UNKNOWN placeholder on no match", out,
+              must_have=["UNKNOWN"])
+        # keeper / non-snake board → refuse and route to RESYNC
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; Luka", "--top", "0")
+        _s = _json.load(open(st)); _s["picks"][1]["slot"] = 9
+        _json.dump(_s, open(st, "w"))
+        out = run(st, "draft", "insert", "2", "Jrue Holiday", expect_fail=True)
+        check("INSERT refuses a keeper/non-snake board, routing to RESYNC", out,
+              must_have=["non-snake slot", "resync"])
+        # full draft → refuse
+        fresh(st)
+        _s = _json.load(open(st))
+        _s["picks"] = [{"player": f"UNKNOWN #{i + 1}", "slot": (i % 12) + 1}
+                       for i in range(156)]
+        _json.dump(_s, open(st, "w"))
+        out = run(st, "draft", "insert", "5", "Jrue Holiday", expect_fail=True)
+        check("INSERT refuses when the draft is full", out,
+              must_have=["draft is full"])
+        # both-triggers: the "N+ Name" token inserts inside a turn feed too
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; Luka; SGA", "--top", "0")
+        out = run(st, "draft", "turn", "3+ Cade Cunningham", "--top", "0")
+        _p = _json.load(open(st))["picks"]
+        check("INSERT token 'N+ Name' inserts and shifts in a turn feed",
+              out + f" #3={_p[2]['player']} #4={_p[3]['player']} n={len(_p)}",
+              must_have=["inserted Cade Cunningham at #3", "#3=Cade Cunningham",
+                         "#4=Luka Doncic", "n=5"])
+
         # R4-F06 — two-letter real first names must resolve; the <3-char
         # guard shipped rejecting CJ/GG/Ja/AJ/PJ/RJ/VJ as degenerate.
         fresh(st)

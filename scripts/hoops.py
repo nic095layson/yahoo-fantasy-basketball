@@ -698,6 +698,51 @@ def my_category_ranks(state, players):
             for cat in CATS}, totals
 
 
+def insert_pick(state, players, P, name):
+    """Insert a MISSED pick at 1-indexed #P and shift #P..end down one,
+    recomputing snake slots positionally. Mutates state['picks'] and returns an
+    echo string. Raises ValueError(msg) on any refuse condition. Everything
+    downstream (rosters, category ranks, board) re-derives from state['picks'],
+    so a canonical picks array is the whole job. Owner decisions 2026-08-24:
+    refuse-and-route to RESYNC on any keeper/trade (non-snake) board; callers
+    snapshot before calling."""
+    picks = state["picks"]
+    teams = state["teams"]
+    maxp = teams * state["size"]
+    if not 1 <= P <= maxp:
+        raise ValueError(f"insert #{P} out of range (1-{maxp}).")
+    if len(picks) >= maxp:
+        raise ValueError(f"draft is full ({maxp} picks) — nothing to insert; fix "
+                         'a slot with draft fix N "Name", or RESYNC.')
+    if P > len(picks) + 1:
+        raise ValueError(f"insert #{P}: only {len(picks)} pick(s) logged — insert "
+                         f"at #{len(picks) + 1} or earlier (no mid-air gaps), or RESYNC.")
+    manual = [i + 1 for i, pk in enumerate(picks)
+              if pk["slot"] != team_of_pick(i, teams)]
+    if manual:
+        raise ValueError(f"insert refused: pick(s) {manual} carry a non-snake slot "
+                         "(keeper/trade/out-of-order); a positional re-shift would "
+                         'corrupt them. Rebuild with: draft resync "<full list>".')
+    if name.upper().startswith("UNKNOWN"):
+        resolved = name
+    elif not match_candidates(players, name):
+        resolved = f"UNKNOWN #{P}"
+    else:
+        try:
+            resolved = match_player(players, name,
+                                    taken={pk["player"] for pk in picks})["player"]
+        except SystemExit as e:            # match_player exits on ambiguous/taken
+            raise ValueError(str(e))
+    idx = P - 1
+    picks.insert(idx, {"player": resolved, "slot": team_of_pick(idx, teams)})
+    for i in range(idx, len(picks)):       # re-derive snake slots for the shifted tail
+        picks[i]["slot"] = team_of_pick(i, teams)
+    shifted = len(picks) - 1 - idx
+    tail = (f"; #{P}–#{len(picks) - 1} → #{P + 1}–#{len(picks)} "
+            f"({shifted} shifted, slots recomputed)") if shifted else ""
+    return f"✎ inserted {resolved} at #{P} → Team {picks[idx]['slot']}{tail}"
+
+
 def cmd_draft(args, players):
     if args.draft_cmd == "init":
         if os.path.isfile(STATE_PATH) and not args.force:
@@ -823,6 +868,19 @@ def cmd_draft(args, players):
         print(f"✎ #{args.number}: {old['player']} → {p['player']} "
               f"(T{picks[idx]['slot']})")
 
+    elif args.draft_cmd == "insert":
+        prior = [dict(pk) for pk in picks]   # snapshot the pre-insert board
+        try:
+            msg = insert_pick(state, players, args.number, args.player)
+        except ValueError as e:
+            sys.exit(str(e))                 # refused: nothing changed, no snapshot written
+        pre_path = STATE_PATH + ".pre-insert"
+        with open(pre_path, "w", encoding="utf-8") as f:
+            json.dump({**state, "picks": prior}, f, indent=2)
+        save_state(state)
+        print(f"{msg}. Prior board saved to {os.path.abspath(pre_path)} "
+              f"(restore: cp {os.path.abspath(pre_path)} {os.path.abspath(STATE_PATH)}).")
+
     elif args.draft_cmd == "best":
         pool = [p for p in players
                 if p["player"] not in taken and availability(p) > 0]
@@ -925,6 +983,17 @@ def cmd_draft(args, players):
                     else [dict(pk) for pk in picks])
         max_pick = teams * state["size"]
         for raw in [s.strip() for s in (args.picks or "").split(";") if s.strip()]:
+            mi = re.match(r"^(?:pick\s*)?#?(\d+)\s*\+\s*(.+)$", raw)  # insert token: "108+ Queta"
+            if mi:
+                ibody = mi.group(2).strip()
+                iname = ibody[3:].strip() if ibody.lower().startswith("my:") else ibody
+                try:
+                    print("  " + insert_pick(state, players, int(mi.group(1)), iname))
+                except ValueError as e:
+                    errors.append(str(e))
+                    continue
+                taken = {pk["player"] for pk in picks}  # tail shifted — rebuild taken set
+                continue
             m = re.match(r"^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$", raw, re.I)
             num, body = (int(m.group(1)), m.group(2).strip()) if m else (None, raw)
             mine = body.lower().startswith("my:")
@@ -1240,6 +1309,12 @@ def build_parser():
     df.add_argument("number", type=int, help="pick number to correct")
     df.add_argument("player")
     df.add_argument("--slot", type=int, help="also reassign the team slot")
+
+    din = dsub.add_parser("insert",
+                          help='insert a MISSED pick and shift the rest down: '
+                               'insert 108 "Queta"')
+    din.add_argument("number", type=int, help="1-indexed position to insert at")
+    din.add_argument("player")
 
     db = dsub.add_parser("best", help="best available, need-annotated")
     db.add_argument("--pos")
