@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-08-25", "pool": 254, "pool_sha256": "eed45b60f978f68854e878f93c60bbcb8cd29d88cd36420337a4386e0d81ec45", "verification_mode": "fallback-partial", "evidence_date": "2026-08-25", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 254, "teams_covered": 30}, "freshness_note": "Pool completion: +9 players from draft_state_46 (Ty Jerome, Saddiq Bey, Ajay Mitchell, Collin Gillespie, Maxime Raynaud, Collin Murray-Boyles, Sandro \u2026"} -->
+<!-- build-manifest {"built": "2026-08-25", "pool": 254, "pool_sha256": "eed45b60f978f68854e878f93c60bbcb8cd29d88cd36420337a4386e0d81ec45", "verification_mode": "fallback-partial", "evidence_date": "2026-08-25", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 254, "teams_covered": 30}, "freshness_note": "Feed-grammar robustness (draft_state_48 + coverage probe): space-separated pick numbers ('75 Mikal Bridges') parse as pick N; trailing team tags ('Bridges \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -451,7 +451,7 @@ const NICKNAMES = {
   "sga": "shai gilgeous-alexander", "kat": "karl-anthony towns",
   "jjj": "jaren jackson", "dame": "damian lillard",
   "ant": "anthony edwards", "melo": "lamelo ball",
-  "pg13": "paul george", "joker": "nikola jokic",
+  "pg13": "paul george", "pg": "paul george", "joker": "nikola jokic",
   "the joker": "nikola jokic", "spida": "donovan mitchell",
   "greek freak": "giannis", "book": "devin booker",
   "klaw": "kawhi leonard", "wemby": "wembanyama",
@@ -715,6 +715,11 @@ function surnameKey(name) {
    > fuzzy surname (first letter must agree, ratio >= 0.8). */
 function matchCandidates(players, query) {
   let q = fold(query.trim());
+  /* draft_state_48 follow-up: pasted names often carry a trailing team tag
+     — "Mikal Bridges (PHX)", "Wembanyama (SAS)" — from Yahoo/ESPN/Sleeper.
+     Strip a trailing parenthetical so the paste still resolves; keep the
+     original if the parens were the whole string. */
+  q = q.replace(/\s*\([^)]*\)\s*$/, "").trim() || q;
   q = NICKNAMES[q] || q;
   /* Degenerate segments never match (F02): a lone '.', '-' or an empty
      "my:" reached the substring stage and logged the best remaining player
@@ -754,6 +759,13 @@ function matchCandidates(players, query) {
       return q[0] === last[0] && seqRatio(q, last) >= 0.8;
     });
   }
+  if (!subs.length && q.includes(",")) {
+    /* Yahoo player tables sort "Last, First" — "Bridges, Mikal". As a final
+       fallback, swap a single comma-separated pair and retry. */
+    const parts = q.split(",").map(s => s.trim());
+    if (parts.length === 2 && parts[0] && parts[1])
+      subs = matchCandidates(players, parts[1] + " " + parts[0]);
+  }
   return subs;
 }
 
@@ -781,7 +793,12 @@ function processFeed(state, players, feed) {
       for (const pk of picks) taken.add(pk.player);  // tail shifted — rebuild taken
       continue;
     }
-    const m = raw.match(/^(?:pick\s*)?#?(\d+)\s*[-—.,:]\s*(.+)$/i);
+    // A leading pick number may be separated from the name by a punctuation
+    // mark OR just whitespace: "44- Herro", "44 Herro", "pick 75 Mikal Bridges"
+    // all mean pick N. Space-only used to fall through as a literal query that
+    // never matched — draft_state_48: "75 Mikal Bridges" logged five straight
+    // UNKNOWNs mid-draft.
+    const m = raw.match(/^(?:pick\s*)?#?(\d+)(?:\s*[-—.,:]\s*|\s+)(.+)$/i);
     let num = m ? parseInt(m[1], 10) : null;
     let body = m ? m[2].trim() : raw;
     const mine = body.toLowerCase().startsWith("my:");
@@ -1475,7 +1492,7 @@ const JUDGMENT = {
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-08-25"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "Pool completion: +9 players from draft_state_46 (Ty Jerome, Saddiq Bey, Ajay Mitchell, Collin Gillespie, Maxime Raynaud, Collin Murray-Boyles, Sandro Mamukelashvili, Paul Reed, Keaton Wallace); resolver: last-available namesake + prefix-surname";
+  const BUILD_NOTE = "Feed-grammar robustness (draft_state_48 + coverage probe): space-separated pick numbers ('75 Mikal Bridges') parse as pick N; trailing team tags ('Bridges (PHX)') and Yahoo 'Last, First' order now resolve; +pg nickname. Code+tests only, no data change.";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }

@@ -1,13 +1,13 @@
 {
   "date": "2026-08-25",
-  "note": "Pool completion: +9 players from draft_state_46 (Ty Jerome, Saddiq Bey, Ajay Mitchell, Collin Gillespie, Maxime Raynaud, Collin Murray-Boyles, Sandro Mamukelashvili, Paul Reed, Keaton Wallace); resolver: last-available namesake + prefix-surname",
+  "note": "Feed-grammar robustness (draft_state_48 + coverage probe): space-separated pick numbers ('75 Mikal Bridges') parse as pick N; trailing team tags ('Bridges (PHX)') and Yahoo 'Last, First' order now resolve; +pg nickname. Code+tests only, no data change.",
   "pool_changes": {
-    "changed": true,
-    "note": "+9 rows (245->254): missing mock-drafted players added with 2025-26-sourced 2026-27 lines"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-08-25",
     "mode": "fallback-partial",
-    "sources": "Web-researched 2025-26 box scores per added player; verify_rosters.py fallback-partial 254/254 vs rosters_official.json (ESPN 403)"
+    "sources": "no roster change this pass; pool identical to last publish (eed45b60)"
   }
 }
