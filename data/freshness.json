@@ -1,13 +1,13 @@
 {
   "date": "2026-08-25",
-  "note": "Window 8/21->8/25: DeRozan FA->DEN + line repriced DOWN (recovered from later-8/21 live build), Klay DAL->MIA (8/23), Shaedon Sharpe knee-recovery (8/24, excluded)",
+  "note": "Pool completion: +9 players from draft_state_46 (Ty Jerome, Saddiq Bey, Ajay Mitchell, Collin Gillespie, Maxime Raynaud, Collin Murray-Boyles, Sandro Mamukelashvili, Paul Reed, Keaton Wallace); resolver: last-available namesake + prefix-surname",
   "pool_changes": {
     "changed": true,
-    "note": "DeRozan repriced DOWN to Denver third-option role (21.5->16.0 ppg); Sharpe availability->0 (knee-recovery), removed from board; Klay team-label only"
+    "note": "+9 rows (245->254): missing mock-drafted players added with 2025-26-sourced 2026-27 lines"
   },
   "rosters_verified": {
     "date": "2026-08-25",
     "mode": "fallback-partial",
-    "sources": "Web-search transaction sweep 8/21-8/25, 2+ sources per tier-mover; verify_rosters.py fallback-partial 245/245 vs rosters_official.json (ESPN/NBA/BBRef egress-blocked/403)"
+    "sources": "Web-researched 2025-26 box scores per added player; verify_rosters.py fallback-partial 254/254 vs rosters_official.json (ESPN 403)"
   }
 }
