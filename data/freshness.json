@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-21",
-  "note": "Fresh Deck Pull 2026-08-21 (window 8/20->8/21, both planes). ONE signing: James Harden FA -> CLE, three years / $97M with a 2028-29 player option and a trade kicker, agreed 2026-08-20 (ESPN, WaPo/AP, Yahoo, Eurohoops). This CLOSES the highest-alert item carried from 8/20 - his precondition was Cleveland landing a wing, they landed Peyton Watson on 8/19, he signed the next day. Line HELD: already priced as a Cav; losing both Schroder and Mann raises his ball-handling load while turning 37 on 8/26 argues the other way, and those offset. The 8/20 reporting of 'at most two guaranteed years' proved wrong - it is three. Kit plane: Harden relabeled CLE, and Cam Whitmore's GP cut 68 -> 30 on an in-window report that Cleveland is weighing a waive-and-stretch and that he is not expected to play a game there (Fedor/Marks via NBC, HoopsHype, RealGM, SI, Yahoo, 8/21) - which vindicates yesterday's decision not to add him to THIS pool. JUDGMENT re-authored 8/21: Harden's card rebased from signing-drag to age-37 load management, Kuminga's and DeRozan's CLE routes closed by the hard cap plus Harden's deal, DeRozan gains WAS interest, Kawhi HELD at -0.20 for the third consecutive pull. Mark Williams: fifth quiet pull, discount still unexamined since 7/27. Alex Sarr's foot surgery re-dated to 2026-06-16 and correctly already encoded - no edit. CHANNEL LIMIT: sports domains still egress-blocked, re-tested by raw curl.",
+  "date": "2026-08-25",
+  "note": "Window 8/21->8/25: DeRozan FA->DEN + line repriced DOWN (recovered from later-8/21 live build), Klay DAL->MIA (8/23), Shaedon Sharpe knee-recovery (8/24, excluded)",
   "pool_changes": {
     "changed": true,
-    "note": "James Harden FA->CLE (3yr/$97M agreed 8/20); projection held - already priced as a Cavalier, no named mechanism"
+    "note": "DeRozan repriced DOWN to Denver third-option role (21.5->16.0 ppg); Sharpe availability->0 (knee-recovery), removed from board; Klay team-label only"
   },
   "rosters_verified": {
-    "date": "2026-08-21",
+    "date": "2026-08-25",
     "mode": "fallback-partial",
-    "sources": "scripts/verify_rosters.py (fallback-partial, data/rosters_official.json re-authored 2026-08-21); dated search results from ESPN, Washington Post/AP, Yahoo Sports, NBC Sports, RealGM, HoopsHype, SI/Cavaliers, Eurohoops"
+    "sources": "Web-search transaction sweep 8/21-8/25, 2+ sources per tier-mover; verify_rosters.py fallback-partial 245/245 vs rosters_official.json (ESPN/NBA/BBRef egress-blocked/403)"
   }
 }
