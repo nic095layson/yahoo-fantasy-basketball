@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "note": "Feed-grammar robustness (draft_state_48 + coverage probe): space-separated pick numbers ('75 Mikal Bridges') parse as pick N; trailing team tags ('Bridges (PHX)') and Yahoo 'Last, First' order now resolve; +pg nickname. Code+tests only, no data change.",
+  "note": "UI: Log box now names the pick + seat you're entering each turn \u2014 'Pick N \u2014 Team (seat / name)'; feed-syntax help relocated to the page footer. (Same-day: feed-grammar robustness \u2014 space-separated pick #, team-tag & Last,First pastes.) Display-only; no data change.",
   "pool_changes": {
     "changed": false,
     "note": ""
