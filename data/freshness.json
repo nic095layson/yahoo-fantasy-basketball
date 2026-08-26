@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-25",
-  "note": "Live-mock-49 decision sheet: +Tim Hardaway Jr. (MIA) to pool (drafted #148 by a real room); apostrophe-insensitive matching ('Dayron' resolves Day'Ron); namesake tiebreak prefers draftable players ('Sharpe' -> Day'Ron, not injury-excluded Shaedon); Yahoo generation-suffix retry ('Jimmy Butler III'); deck stale-UNKNOWN nudge.",
+  "date": "2026-08-26",
+  "note": "Data pull 2026-08-26 (window 8/25->8/26): NO roster changes \u2014 sweep ran, zero placements moved. Repaired a malformed pool row: Shaedon Sharpe's injury note had an unquoted comma, so the deck was PUBLISHING it truncated at 'torn meniscus 8/24'; now quoted and complete. load_players() gained a guard that fails loudly on any comma-split row. JUDGMENT re-authored 8/26 (Kawhi 5th hold, Kuminga now UFA, Ivey corroborated, Brunson ~7wk post-op, Lonzo held).",
   "pool_changes": {
     "changed": true,
-    "note": "+1 row: Tim Hardaway Jr. (MIA, SG/SF), authored projection calibrated to in-pool comps (Klay Thompson, Gary Trent Jr., Duncan Robinson)"
+    "note": "1 row repaired, no data values changed: Shaedon Sharpe's note field quoted so its commas stop overflowing into DictReader's restkey (note was published truncated). Stats, team, and the knee-recovery availability-0 tag all unchanged."
   },
   "rosters_verified": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "mode": "fallback-partial",
-    "sources": "THJ->MIA per live-mock-49 Yahoo recap (drafted MIA - SG,SF); rest unchanged from 2026-08-25 ledger"
+    "sources": "255/255 checked vs rosters_official.json re-authored 2026-08-26; no placements moved in window"
   }
 }

@@ -227,6 +227,17 @@ def load_players():
     with open(DATA_PATH, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     for i, r in enumerate(rows, 2):  # row 1 is the header
+        # An unquoted comma inside `note` silently overflows into DictReader's
+        # restkey: the 2026-08-25 pull wrote Sharpe's "…8/24, ~6mo, ret ~late
+        # Feb 2027)" bare, and the deck then PUBLISHED the note truncated at
+        # the first comma (found by the 2026-08-26 pull). availability() reads
+        # the leading tag, so the math never moved and nothing else caught it.
+        # Fail loudly instead: a row with extra fields is malformed, always.
+        if r.get(None):
+            sys.exit(f"data/players.csv row {i} ({r.get('player') or '?'}): "
+                     f"{len(r[None])} extra field(s) {r[None]!r} — a comma "
+                     "inside a cell (usually `note` or `pos`) needs the cell "
+                     'quoted: "knee-recovery (8/24, ~6mo)". Fix that row.')
         for k in NUMERIC_COLS:
             try:
                 r[k] = float(r[k])

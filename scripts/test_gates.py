@@ -103,6 +103,27 @@ def main():
     check("R4-F22 gate 4 armed: unchanged pool + no-changes flag still builds",
           out, must_have=["safe to publish"], want_exit=0, got_exit=rc)
 
+    # ---------- 2026-08-26 pull: malformed row (unquoted comma) ----------
+    # An unquoted comma in `note` overflowed into DictReader's restkey and the
+    # deck PUBLISHED Sharpe's note truncated at that comma. availability()
+    # reads the leading tag only, so the math never moved and no gate caught it.
+    pool_path = os.path.join(repo, "data", "players.csv")
+    saved = open(pool_path, encoding="utf-8").read()
+    with open(pool_path, "a") as f:
+        f.write("Comma Guy,ZZZ,PG,0.42,5.0,0.8,1.0,0.5,4.0,1.5,1.5,"
+                "0.4,0.1,0.8,knee-recovery (8/24, ~6mo)\n")
+    out, rc = run(repo, "scripts/hoops.py", "validate")
+    check("a comma-split row fails loudly instead of truncating a note", out,
+          must_have=["Comma Guy", "extra field"], want_exit=1, got_exit=rc)
+    with open(pool_path, "w", encoding="utf-8") as f:  # same row, quoted
+        f.write(saved + 'Comma Guy,ZZZ,PG,0.42,5.0,0.8,1.0,0.5,4.0,1.5,1.5,'
+                '0.4,0.1,0.8,"knee-recovery (8/24, ~6mo)"\n')
+    out, rc = run(repo, "scripts/hoops.py", "validate")
+    check("the same row QUOTED loads with its note intact", out,
+          must_not=["extra field"])
+    with open(pool_path, "w", encoding="utf-8") as f:
+        f.write(saved)
+
     # ---------- R4-F05/R3: unmatched rows and the recorded bypass -------
     with open(os.path.join(repo, "data", "players.csv"), "a") as f:
         f.write("Testy McTest,ZZZ,PG,0.42,5.0,0.8,1.0,0.5,4.0,1.5,1.5,"
