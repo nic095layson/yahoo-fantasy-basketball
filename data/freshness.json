@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-25",
-  "note": "Live-mock-49 decision sheet: +Tim Hardaway Jr. (MIA) to pool (drafted #148 by a real room); apostrophe-insensitive matching ('Dayron' resolves Day'Ron); namesake tiebreak prefers draftable players ('Sharpe' -> Day'Ron, not injury-excluded Shaedon); Yahoo generation-suffix retry ('Jimmy Butler III'); deck stale-UNKNOWN nudge.",
+  "date": "2026-08-26",
+  "note": "Data pull 2026-08-26 (window 8/25->8/26). TRANSACTION: Bennedict Mathurin LAC -> NOP (2yr/$16M + player option, reported 8/26; LAC to rescind the $8.8M qualifying offer). Missed by the first sweep, caught on owner challenge, applied same-pull. Line HELD (no sourced role yet); JUDGMENT rebased off resolved RFA-route risk onto rotation-role risk. Also: repaired a malformed pool row (Sharpe's note was publishing truncated) and gated the class in load_players().",
   "pool_changes": {
     "changed": true,
-    "note": "+1 row: Tim Hardaway Jr. (MIA, SG/SF), authored projection calibrated to in-pool comps (Klay Thompson, Gary Trent Jr., Duncan Robinson)"
+    "note": "1 team change (Bennedict Mathurin LAC -> NOP, stats held) + 1 row repaired (Sharpe note quoted, no values changed)"
   },
   "rosters_verified": {
-    "date": "2026-08-25",
+    "date": "2026-08-26",
     "mode": "fallback-partial",
-    "sources": "THJ->MIA per live-mock-49 Yahoo recap (drafted MIA - SG,SF); rest unchanged from 2026-08-25 ledger"
+    "sources": "255/255 checked vs rosters_official.json re-authored 2026-08-26; one placement moved (Mathurin LAC->NOP), sourced ESPN/NBA.com/HoopsRumors 8/26"
   }
 }

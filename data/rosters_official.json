@@ -1,12 +1,11 @@
 {
- "date": "2026-08-25",
- "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-25 pool-completion pass: added 9 players that a live mock (draft_state_46) drafted but the pool lacked, each with a 2026-27 line built from researched 2025-26 production. ADDED: Ty Jerome (MEM, ESPN/CBS gamelog), Saddiq Bey (NOP, NBA.com/ESPN), Ajay Mitchell (OKC, ESPN), Collin Gillespie (PHX, ESPN/CBS), Maxime Raynaud (SAC, NBA.com/SI, All-Rookie 2nd Team), Collin Murray-Boyles (TOR, ESPN/RaptorsHQ, All-Rookie 2nd Team), Sandro Mamukelashvili (LAL, ESPN/CBS), Paul Reed (DET, ESPN/CBS), Keaton Wallace (LAC per the league recap; the recap garbled the name to 'Wagler' and some sources list ATL - flagged). RESEARCH CHANNEL LIMIT: site.api.espn.com direct pull still 403s; web SEARCH works and every line rests on dated 2025-26 box-score reporting. No transactions this pass; the 2026-08-25 data-pull deltas (DeRozan->DEN, Klay->MIA, Sharpe knee-recovery) stand unchanged. 2026-08-25 live-mock-49 pass: +Tim Hardaway Jr. (MIA), drafted pick 148 in a 12-human room but absent from the pool.",
+ "date": "2026-08-26",
+ "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-25 pool-completion pass: added 9 players that a live mock (draft_state_46) drafted but the pool lacked, each with a 2026-27 line built from researched 2025-26 production. ADDED: Ty Jerome (MEM, ESPN/CBS gamelog), Saddiq Bey (NOP, NBA.com/ESPN), Ajay Mitchell (OKC, ESPN), Collin Gillespie (PHX, ESPN/CBS), Maxime Raynaud (SAC, NBA.com/SI, All-Rookie 2nd Team), Collin Murray-Boyles (TOR, ESPN/RaptorsHQ, All-Rookie 2nd Team), Sandro Mamukelashvili (LAL, ESPN/CBS), Paul Reed (DET, ESPN/CBS), Keaton Wallace (LAC per the league recap; the recap garbled the name to 'Wagler' and some sources list ATL - flagged). RESEARCH CHANNEL LIMIT: site.api.espn.com direct pull still 403s; web SEARCH works and every line rests on dated 2025-26 box-score reporting. No transactions this pass; the 2026-08-25 data-pull deltas (DeRozan->DEN, Klay->MIA, Sharpe knee-recovery) stand unchanged. 2026-08-25 live-mock-49 pass: +Tim Hardaway Jr. (MIA), drafted pick 148 in a 12-human room but absent from the pool. 2026-08-26 pull (window 8/25->8/26, 1 day): transactions + injury sweep run (Spotrac/ESPN/NBA.com transaction trackers, HoopsRumors, RotoWire via dated web search; direct page fetches to sports domains remain blocked by the environment egress policy, so claims rest on dated search results). NO roster changes in window - zero placements moved. Only in-window transaction found: Brandon Williams -> GSW (1yr/$2.63M, 8/25, two independent sources); he is on NO pool row in either plane and has no consensus-top-120 or live-room draft evidence, so he is watchlisted, NOT added. FA rows re-verified still unsigned: Kuminga (now UFA - ATL declined the $24.3M option), Cam Thomas, Jaden Ivey, Lonzo Ball. Kawhi trade still on league hold (5th consecutive). CORRECTION within the same 2026-08-26 pull: Bennedict Mathurin LAC -> NOP. He agreed to two years / $16M with a player option in New Orleans, reported 8/26 (ESPN/Shams, NBA.com, HoopsRumors, Fox8, Bleacher Report). His reps asked the Clippers to withdraw the $8.8M qualifying offer so he could sign outright rather than via offer sheet or sign-and-trade; Jake Fischer reports LAC has not formally withdrawn it yet but will work with him to facilitate the move. Applied under the standing 'agreed to terms is final' rule. The first sweep of this pull MISSED this transaction - it was caught on owner challenge and applied in the same pull.",
  "teams": {
   "LAC": [
    "Kawhi Leonard",
    "Darius Garland",
    "Brook Lopez",
-   "Bennedict Mathurin",
    "Rui Hachimura",
    "Derrick Jones Jr",
    "Bradley Beal",
@@ -187,7 +186,8 @@
    "Trey Murphy III",
    "Herbert Jones",
    "Derik Queen",
-   "Saddiq Bey"
+   "Saddiq Bey",
+   "Bennedict Mathurin"
   ],
   "NYK": [
    "Jalen Brunson",
