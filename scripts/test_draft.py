@@ -365,6 +365,40 @@ def main():
         check("a 'Last, First' pasted name resolves",
               run(st, "draft", "turn", "Bridges, Mikal", "--top", "0"),
               must_have=["Mikal Bridges"], must_not=["UNKNOWN"])
+        # draft_state_49, pick 81: apostrophes fold away — the room types
+        # "Dayron", the pool spells Day'Ron. Both the full apostrophe-less
+        # name and the bare first name must resolve.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("apostrophe-less 'Dayron Sharpe' resolves",
+              run(st, "draft", "turn", "Dayron Sharpe", "--top", "0"),
+              must_have=["Day'Ron Sharpe"], must_not=["UNKNOWN"])
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("bare 'Dayron' resolves",
+              run(st, "draft", "turn", "Dayron", "--top", "0"),
+              must_have=["Day'Ron Sharpe"], must_not=["UNKNOWN"])
+        # draft_state_49 F4: the namesake tiebreak must prefer a DRAFTABLE
+        # player — bare "Sharpe" means healthy Day'Ron, never availability-0
+        # Shaedon (knee-recovery), and says who it skipped.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("bare 'Sharpe' assumes the draftable namesake",
+              run(st, "draft", "turn", "Sharpe", "--top", "0"),
+              must_have=["Day'Ron Sharpe", "injury-excluded"])
+        # draft_state_49 F5: Yahoo's suffix form must survive a verbatim paste.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("Yahoo 'Jimmy Butler III' suffix form resolves",
+              run(st, "draft", "turn", "Jimmy Butler III", "--top", "0"),
+              must_have=["Jimmy Butler"], must_not=["UNKNOWN"])
+        # draft_state_49, pick 148: THJ was drafted by a real room; the pool
+        # must carry him.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; SGA", "--top", "0")
+        check("Tim Hardaway Jr. is in the pool and resolves",
+              run(st, "draft", "turn", "Tim Hardaway Jr.", "--top", "0"),
+              must_have=["Tim Hardaway Jr."], must_not=["UNKNOWN"])
 
         # Speed rule: the live turn card must stay well inside the 45s clock.
         fresh(st)

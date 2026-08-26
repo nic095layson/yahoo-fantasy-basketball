@@ -407,8 +407,13 @@ def fold(s):
     as available. Both pools are pure ASCII, so folding changes nothing for
     names already in them.
     """
+    # Apostrophes are also folded away (draft_state_49, pick 81): the owner's
+    # room types "Dayron Sharpe" / "Dayron"; the pool spells Day'Ron. Both
+    # straight and typographic marks are stripped so query and name meet on
+    # "dayron sharpe". Hyphens stay: removing them would merge "Karl-Anthony"
+    # into one token and make bare "Alexander" newly ambiguous (SGA vs NAW).
     return "".join(c for c in unicodedata.normalize("NFKD", s.lower())
-                   if not unicodedata.combining(c))
+                   if not unicodedata.combining(c) and c not in "'’`")
 
 
 def surname_key(name):
@@ -486,6 +491,13 @@ def match_candidates(players, query):
         parts = [s.strip() for s in q.split(",")]
         if len(parts) == 2 and all(parts):
             subs = match_candidates(players, parts[1] + " " + parts[0])
+    if not subs:
+        # Yahoo appends generation suffixes the pool may not carry
+        # ("Jimmy Butler III" vs pool "Jimmy Butler", draft_state_49).
+        # Strip a trailing suffix token and retry once.
+        toks = q.split()
+        if len(toks) > 1 and toks[-1].rstrip(".") in NAME_SUFFIXES:
+            subs = match_candidates(players, " ".join(toks[:-1]))
     return subs
 
 
@@ -1087,6 +1099,16 @@ def cmd_draft(args, players):
             # candidate is who gets drafted at this point; flag the guess.
             all_c = match_candidates(players, name)
             cands = [c for c in all_c if c["player"] not in taken]
+            # Namesake tiebreak prefers a DRAFTABLE player (draft_state_49):
+            # bare "Sharpe" must mean healthy Day'Ron, never availability-0
+            # Shaedon — an injured star's adj_value floors at 0, which still
+            # outranks a healthy sub-replacement namesake's negative total.
+            # Filter only when a draftable candidate exists, so injured
+            # players stay reachable by fuller name.
+            benched = [c["player"] for c in cands if availability(c) <= 0]
+            alive = [c for c in cands if availability(c) > 0]
+            if alive:
+                cands = alive
             exact = [c for c in cands
                      if c["player"].lower() == name.strip().lower()]
             best_all = max(all_c, key=adj_value) if all_c else None
@@ -1120,6 +1142,10 @@ def cmd_draft(args, players):
                     note = f"  (assumed over {', '.join(losers[:2])}{more})"
                     if len(cands) > 4:  # audit F02: a broad query still
                         note += "  ⚠ WIDE MATCH — verify"  # resolves, loudly
+                if benched and not exact:
+                    # say who the injury filter skipped, so the assumption
+                    # stays as loud as an assumed-over
+                    note += f"  ({', '.join(benched[:2])} skipped: injury-excluded)"
                 elif gone and not exact:
                     # resolved a shared surname to the last one still available
                     note = (f"  (only {p['player'].split()[0]} left; "
