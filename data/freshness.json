@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-26",
-  "note": "Data pull 2026-08-26 (window 8/25->8/26). TRANSACTION: Bennedict Mathurin LAC -> NOP (2yr/$16M + player option, reported 8/26; LAC to rescind the $8.8M qualifying offer). Missed by the first sweep, caught on owner challenge, applied same-pull. Line HELD (no sourced role yet); JUDGMENT rebased off resolved RFA-route risk onto rotation-role risk. Also: repaired a malformed pool row (Sharpe's note was publishing truncated) and gated the class in load_players().",
+  "date": "2026-08-27",
+  "note": "Data pull 2026-08-27 (window 8/26->8/27). TRANSACTION: Jonathan Kuminga FA -> MIN (2yr/$13M + player option, agreed 8/26; ESPN/Shams via agent Aaron Turner). His JUDGMENT discount COLLAPSES -0.30 -> -0.05: destination and role are both resolved, and Shams names him a starter alongside Edwards, LaMelo, McDaniels and Gobert - which CONFIRMS the starter-shaped line rather than moving it, so the line is HELD. Jalen Duren narrowed -0.15 -> -0.08: still unsigned, but Fischer (8/25-8/27, multi-outlet) has DET on track for ~4yr/$160M, so the QO-year scenario recedes. Kawhi 6th consecutive hold; Cam Thomas, Ivey, Lonzo re-verified unsigned. Pool stays 255 rows - Kuminga was already a row.",
   "pool_changes": {
     "changed": true,
-    "note": "1 team change (Bennedict Mathurin LAC -> NOP, stats held) + 1 row repaired (Sharpe note quoted, no values changed)"
+    "note": "1 team change (Jonathan Kuminga FA -> MIN, stats held under a sourced starter role)"
   },
   "rosters_verified": {
-    "date": "2026-08-26",
+    "date": "2026-08-27",
     "mode": "fallback-partial",
-    "sources": "255/255 checked vs rosters_official.json re-authored 2026-08-26; one placement moved (Mathurin LAC->NOP), sourced ESPN/NBA.com/HoopsRumors 8/26"
+    "sources": "255/255 checked vs rosters_official.json re-authored 2026-08-27; Kuminga relabeled FA->MIN, sourced ESPN/NBA.com/NBC Sports 8/26"
   }
 }
