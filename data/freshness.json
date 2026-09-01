@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-27",
-  "note": "Data pull 2026-08-27 (window 8/26->8/27). TRANSACTION: Jonathan Kuminga FA -> MIN (2yr/$13M + player option, agreed 8/26; ESPN/Shams via agent Aaron Turner). His JUDGMENT discount COLLAPSES -0.30 -> -0.05: destination and role are both resolved, and Shams names him a starter alongside Edwards, LaMelo, McDaniels and Gobert - which CONFIRMS the starter-shaped line rather than moving it, so the line is HELD. Jalen Duren narrowed -0.15 -> -0.08: still unsigned, but Fischer (8/25-8/27, multi-outlet) has DET on track for ~4yr/$160M, so the QO-year scenario recedes. Kawhi 6th consecutive hold; Cam Thomas, Ivey, Lonzo re-verified unsigned. Pool stays 255 rows - Kuminga was already a row.",
+  "date": "2026-09-01",
+  "note": "Data pull 2026-09-01 (window 8/27->9/1, 5 days). NO roster changes - zero placements moved. Kawhi Leonard WIDENED -0.20 -> -0.25, the first non-hold in seven re-checks: ESPN now reports the Clippers inquiry could run into 2027 with no timetable, against the carried 'resolution within six weeks' framing, plus a second alleged conduit (Daktronics). The widening prices the HORIZON, not the verdict - an unresolved trade running into the season moves TWO pool rows mid-season (Kawhi, Ingram). Mathurin's qualifying offer was formally withdrawn by LAC 8/29, closing that watchlist item. Duren still unsigned and still tracking ~4yr/$160M; Cam Thomas, Ivey, Lonzo still unsigned; Sochan verified still POR. SEPTEMBER TRIGGER: SEPTEMBER-PLAN.md fires today, but its precondition SS1.2 (September consensus ADP) and SS1.2b (owner-uploaded projection datasets) are both unavailable - ADP sources are egress-blocked and no datasets have been uploaded. Feature freeze therefore HOLDS; no pre-registered experiment bar was consumed.",
   "pool_changes": {
-    "changed": true,
-    "note": "1 team change (Jonathan Kuminga FA -> MIN, stats held under a sourced starter role)"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
-    "date": "2026-08-27",
+    "date": "2026-09-01",
     "mode": "fallback-partial",
-    "sources": "255/255 checked vs rosters_official.json re-authored 2026-08-27; Kuminga relabeled FA->MIN, sourced ESPN/NBA.com/NBC Sports 8/26"
+    "sources": "255/255 checked vs rosters_official.json re-authored 2026-09-01; no placements moved this window"
   }
 }
