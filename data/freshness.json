@@ -1,13 +1,13 @@
 {
-  "date": "2026-09-01",
-  "note": "Data pull 2026-09-01 (window 8/27->9/1, 5 days). NO roster changes - zero placements moved. Kawhi Leonard WIDENED -0.20 -> -0.25, the first non-hold in seven re-checks: ESPN now reports the Clippers inquiry could run into 2027 with no timetable, against the carried 'resolution within six weeks' framing, plus a second alleged conduit (Daktronics). The widening prices the HORIZON, not the verdict - an unresolved trade running into the season moves TWO pool rows mid-season (Kawhi, Ingram). Mathurin's qualifying offer was formally withdrawn by LAC 8/29, closing that watchlist item. Duren still unsigned and still tracking ~4yr/$160M; Cam Thomas, Ivey, Lonzo still unsigned; Sochan verified still POR. SEPTEMBER TRIGGER: SEPTEMBER-PLAN.md fires today, but its precondition SS1.2 (September consensus ADP) and SS1.2b (owner-uploaded projection datasets) are both unavailable - ADP sources are egress-blocked and no datasets have been uploaded. Feature freeze therefore HOLDS; no pre-registered experiment bar was consumed.",
+  "date": "2026-09-08",
+  "note": "2026-09-08 fixes-adoption audit (owner: 'Implement all fixes... full system audit... if all checks green, merge'). Pool unchanged since the amendment build (c98cf4f39840). Adopted this session: F1 scripts/judgment_open_items.py (open-item enumeration + receipts contract + team watch set + --tags inventory), F2 kit report/check_report.py (publication gate), F3 team-shadow sweep, F4 build_deck gate 6 (colophon truth: counts + narrated pull), F5 zero-trade anomaly rule, F6 returner-vs-tag diff -- protocol text in kit DATA-PULL.md sections 0/2/5/7. Day's data state carried forward: Kawhi trade unexecuted (2nd hold), Murray inj-achilles-risk, Hawkins NOP->MEM, Mathurin -0.10, Simmons watchlisted SAC.",
   "pool_changes": {
     "changed": false,
     "note": ""
   },
   "rosters_verified": {
-    "date": "2026-09-01",
+    "date": "2026-09-08",
     "mode": "fallback-partial",
-    "sources": "255/255 checked vs rosters_official.json re-authored 2026-09-01; no placements moved this window"
+    "sources": "scripts/verify_rosters.py"
   }
 }
