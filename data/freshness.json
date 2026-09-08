@@ -1,9 +1,9 @@
 {
   "date": "2026-09-08",
-  "note": "2026-09-08 pull (window 09-02 -> 09-08, 6 days, sweep widened). QUIET: zero placements moved, no projection changes, players.csv byte-identical. Headline non-event: the Kawhi Leonard trade to Toronto is STILL not formally executed six days after the 9/2 league ruling lifted the hold -- as of 9/7 still 'expected to finalize in the next couple of days'. Leonard (LAC), Ingram (TOR), Dick (TOR) held for a second pull. In-window signings (Ben Simmons -> LAC 9/4; Paul Reed DET guarantee; Tacko Fall, John Butler Jr., Kobe Stewart, Grant Nelson) touch no pool row. Duren still unsigned, Oct 1 QO deadline 23 days out. No injury exclusion changes. JUDGMENT re-dated 2026-09-08; Kawhi and Duren cards rebased, both HELD at -0.08.",
+  "note": "2026-09-08 pull, AMENDED TWICE same day on owner challenge. (1) Kawhi trade still unexecuted; Leonard/Ingram/Dick held a 2nd pull. (2) Jamal Murray wrongly certified untagged-correct -> now inj-achilles-risk 0.78 (ruptured right Achilles 2025-26; Dejounte anchor); kit GP 66->62. (3) OWNER-REPORTED MISS: four-player NOP-MEM trade reported 9/8 (Hawkins + Peavy + 2nd + swap to MEM for AJ Johnson + Taj Gibson, clearing ~$5.7M to officially complete the Mathurin signing) -> Jordan Hawkins NOP->MEM, Mathurin narrowed -0.15->-0.10 on the first sourced role mechanism since his signing. (4) Ben Simmons signed with SACRAMENTO not the Clippers (garbled summary relayed single-sourced); no row, watchlist corrected.",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "2 rows: Jamal Murray (DEN) note cell tagged inj-achilles-risk (availability 1.0 -> 0.78); Jordan Hawkins team NOP -> MEM with trade note (9/8 four-player deal). Zero stat changes."
   },
   "rosters_verified": {
     "date": "2026-09-08",
