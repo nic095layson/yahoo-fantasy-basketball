@@ -1,9 +1,9 @@
 {
   "date": "2026-09-08",
-  "note": "2026-09-08 pull, AMENDED TWICE same day on owner challenge. (1) Kawhi trade still unexecuted; Leonard/Ingram/Dick held a 2nd pull. (2) Jamal Murray wrongly certified untagged-correct -> now inj-achilles-risk 0.78 (ruptured right Achilles 2025-26; Dejounte anchor); kit GP 66->62. (3) OWNER-REPORTED MISS: four-player NOP-MEM trade reported 9/8 (Hawkins + Peavy + 2nd + swap to MEM for AJ Johnson + Taj Gibson, clearing ~$5.7M to officially complete the Mathurin signing) -> Jordan Hawkins NOP->MEM, Mathurin narrowed -0.15->-0.10 on the first sourced role mechanism since his signing. (4) Ben Simmons signed with SACRAMENTO not the Clippers (garbled summary relayed single-sourced); no row, watchlist corrected.",
+  "note": "2026-09-08 fixes-adoption audit (owner: 'Implement all fixes... full system audit... if all checks green, merge'). Pool unchanged since the amendment build (c98cf4f39840). Adopted this session: F1 scripts/judgment_open_items.py (open-item enumeration + receipts contract + team watch set + --tags inventory), F2 kit report/check_report.py (publication gate), F3 team-shadow sweep, F4 build_deck gate 6 (colophon truth: counts + narrated pull), F5 zero-trade anomaly rule, F6 returner-vs-tag diff -- protocol text in kit DATA-PULL.md sections 0/2/5/7. Day's data state carried forward: Kawhi trade unexecuted (2nd hold), Murray inj-achilles-risk, Hawkins NOP->MEM, Mathurin -0.10, Simmons watchlisted SAC.",
   "pool_changes": {
-    "changed": true,
-    "note": "2 rows: Jamal Murray (DEN) note cell tagged inj-achilles-risk (availability 1.0 -> 0.78); Jordan Hawkins team NOP -> MEM with trade note (9/8 four-player deal). Zero stat changes."
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-09-08",

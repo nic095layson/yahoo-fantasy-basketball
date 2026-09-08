@@ -7,6 +7,9 @@ BEFORE any data reaches docs/draft-deck.html:
           (scripts/verify_rosters.py artifact)
   gate 2  freshness stamped TODAY with the verification recorded
   gate 3  pool completeness (MUST_HAVE) validates
+  gate 4  the pool moved, or the stamp deliberately asserts it didn't
+  gate 5  the JUDGMENT layer is re-authored and dated with this pull
+  gate 6  the colophon prose does not contradict the build (F4/D-S6)
 
 Only then: regenerate the embedded pool from data/players.csv, inject it,
 machine-sync the deck's data-pull stamp from freshness.json, and verify the
@@ -159,6 +162,46 @@ def main():
         fail(f"JUDGMENT names absent from the pool: {orphans[:5]} — an "
              "entry for an undraftable player renders a rationale for a "
              "row that does not exist.")
+
+    # gate 6: the colophon must not contradict the build (fix F4 / D-S6,
+    # adopted 2026-09-08). The "Data." paragraph is hand-authored prose that
+    # renders as the deck's own account of its freshness — and it drifted
+    # silently on two consecutive pulls: on 9/2 it still narrated the 8/18
+    # pull, counted 254 rows against a 255-row pool, and claimed a trade was
+    # "still ON HOLD" the day the hold lifted. Every computed surface was
+    # correct while the page's prose lied. Checked here, before any write:
+    #   a) every row-count-shaped token in the paragraph ("N rows", "N/N"
+    #      with 3+ digits, "N-player pool") equals the actual pool size;
+    #   b) the paragraph narrates THIS pull ("This refresh (M/D" must match
+    #      the freshness date) — the "Pool refreshed" date is machine-synced
+    #      below and is deliberately not gated here.
+    colo = re.search(r"<p><strong>Data\.</strong>.*?</p>", deck_src, re.S)
+    if not colo:
+        fail("colophon paragraph (<p><strong>Data.</strong>…) not found — "
+             "deck markup drifted; do not hand-edit anchors")
+    colo_text = colo.group(0)
+    n_pool = len(players_raw)
+    bad_counts = []
+    for pat, label in ((r"\b(\d+) rows\b", "rows"),
+                       (r"\b(\d{3,})/(\d{3,})\b", "N/N"),
+                       (r"\b(\d+)-player pool\b", "-player pool")):
+        for mm in re.finditer(pat, colo_text):
+            for g in mm.groups():
+                if int(g) != n_pool:
+                    bad_counts.append(f"'{mm.group(0)}' ({label})")
+    if bad_counts:
+        fail(f"colophon count(s) contradict the {n_pool}-row pool: "
+             f"{', '.join(bad_counts[:4])} — rewrite the Data paragraph for "
+             "this pull (gate 6, F4/D-S6: prose drifts silently while every "
+             "computed surface stays correct).")
+    fy, fmo, fd = fresh["date"].split("-")
+    want = f"This refresh ({int(fmo)}/{int(fd)}"
+    if want not in colo_text:
+        got = re.search(r"This refresh \(([^,)]*)", colo_text)
+        fail(f"colophon narrates the wrong pull — expected \"{want}…\" for "
+             f"the {fresh['date']} stamp, found "
+             f"\"This refresh ({got.group(1) if got else '<absent>'}…\". "
+             "Rewrite the Data paragraph for this window (gate 6, F4/D-S6).")
 
     # build the embedded pool
     players = hoops.zscores(players_raw)

@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-09-08", "pool": 255, "pool_sha256": "c98cf4f3984018011ac94f5cc9461b6606ac29bcd2e2c677076c746b5ff5b3d0", "verification_mode": "fallback-partial", "evidence_date": "2026-09-08", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 255, "teams_covered": 30}, "freshness_note": "2026-09-08 pull, AMENDED TWICE same day on owner challenge. (1) Kawhi trade still unexecuted; Leonard/Ingram/Dick held a 2nd pull. (2) Jamal Murray wrongly \u2026"} -->
+<!-- build-manifest {"built": "2026-09-08", "pool": 255, "pool_sha256": "c98cf4f3984018011ac94f5cc9461b6606ac29bcd2e2c677076c746b5ff5b3d0", "verification_mode": "fallback-partial", "evidence_date": "2026-09-08", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 255, "teams_covered": 30}, "freshness_note": "2026-09-08 fixes-adoption audit (owner: 'Implement all fixes... full system audit... if all checks green, merge'). Pool unchanged since the amendment build \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -1513,7 +1513,7 @@ const JUDGMENT = {
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-09-08"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "2026-09-08 pull, AMENDED TWICE same day on owner challenge. (1) Kawhi trade still unexecuted; Leonard/Ingram/Dick held a 2nd pull. (2) Jamal Murray wrongly certified untagged-correct -> now inj-achilles-risk 0.78 (ruptured right Achilles 2025-26; Dejounte anchor); kit GP 66->62. (3) OWNER-REPORTED MISS: four-player NOP-MEM trade reported 9/8 (Hawkins + Peavy + 2nd + swap to MEM for AJ Johnson + Taj Gibson, clearing ~$5.7M to officially complete the Mathurin signing) -> Jordan Hawkins NOP->MEM, Mathurin narrowed -0.15->-0.10 on the first sourced role mechanism since his signing. (4) Ben Simmons signed with SACRAMENTO not the Clippers (garbled summary relayed single-sourced); no row, watchlist corrected.";
+  const BUILD_NOTE = "2026-09-08 fixes-adoption audit (owner: 'Implement all fixes... full system audit... if all checks green, merge'). Pool unchanged since the amendment build (c98cf4f39840). Adopted this session: F1 scripts/judgment_open_items.py (open-item enumeration + receipts contract + team watch set + --tags inventory), F2 kit report/check_report.py (publication gate), F3 team-shadow sweep, F4 build_deck gate 6 (colophon truth: counts + narrated pull), F5 zero-trade anomaly rule, F6 returner-vs-tag diff -- protocol text in kit DATA-PULL.md sections 0/2/5/7. Day's data state carried forward: Kawhi trade unexecuted (2nd hold), Murray inj-achilles-risk, Hawkins NOP->MEM, Mathurin -0.10, Simmons watchlisted SAC.";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
