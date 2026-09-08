@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-02",
-  "note": "2026-09-02 pull (window 09-01 -> 09-02, 1 day). NBA announced findings and penalties in the Clippers/Kawhi Leonard cap-circumvention investigation: 5 first-rounders (2029-2033) forfeited, $30M fine, Ballmer and Zucker suspended 1 year, Frank 6 months; Leonard NOT suspended, contract NOT voided, pays $700K. League hold on the Kawhi-to-Toronto trade LIFTED. No placements moved: the trade is cleared but not confirmed executed by two independent sources, so Leonard (LAC), Ingram (TOR) and Dick (TOR) were held and their note cells re-stated. JUDGMENT: Kawhi COLLAPSED -0.25 -> -0.08 (yesterday's 'runs into 2027' widening retracted), Duren held at -0.08 on rebased 9/1 reporting ($5M apart, Oct 1 QO deadline), Mathurin held at -0.15 with the superseded QO line removed.",
+  "date": "2026-09-08",
+  "note": "2026-09-08 fixes-adoption audit (owner: 'Implement all fixes... full system audit... if all checks green, merge'). Pool unchanged since the amendment build (c98cf4f39840). Adopted this session: F1 scripts/judgment_open_items.py (open-item enumeration + receipts contract + team watch set + --tags inventory), F2 kit report/check_report.py (publication gate), F3 team-shadow sweep, F4 build_deck gate 6 (colophon truth: counts + narrated pull), F5 zero-trade anomaly rule, F6 returner-vs-tag diff -- protocol text in kit DATA-PULL.md sections 0/2/5/7. Day's data state carried forward: Kawhi trade unexecuted (2nd hold), Murray inj-achilles-risk, Hawkins NOP->MEM, Mathurin -0.10, Simmons watchlisted SAC.",
   "pool_changes": {
-    "changed": true,
-    "note": "note cells only, 3 rows, zero team/stat changes: Kawhi Leonard (LAC), Brandon Ingram (TOR) and Gradey Dick (TOR) each had 'trade-agreed ... (league hold)' restated as '(league hold LIFTED 2026-09-02, awaiting execution)' after the NBA closed the Clippers investigation. Leading availability tags unchanged (Kawhi inj-risk 0.78; Ingram and Dick trade-agreed 1.0)."
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
-    "date": "2026-09-02",
+    "date": "2026-09-08",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }

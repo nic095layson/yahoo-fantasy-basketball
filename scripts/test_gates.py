@@ -86,6 +86,28 @@ def redate_judgment(repo):
     open(p, "w", encoding="utf-8").write(s2)
 
 
+def set_colophon_count(repo, n):
+    """Gate 6: a test that mutates the pool size must keep the colophon
+    truthful — the same discipline the gate enforces on real pulls."""
+    p = os.path.join(repo, "docs", "draft-deck.html")
+    s = open(p, encoding="utf-8").read()
+    s = re.sub(r"\b\d+ rows\b", f"{n} rows", s)
+    s = re.sub(r"\b\d{3,}/\d{3,}\b", f"{n}/{n}", s)
+    s = re.sub(r"\b\d+-player pool\b", f"{n}-player pool", s)
+    open(p, "w", encoding="utf-8").write(s)
+
+
+def redate_colophon(repo):
+    """Gate 6 (F4/D-S6) requires the colophon to narrate today's pull."""
+    today = datetime.date.today()
+    p = os.path.join(repo, "docs", "draft-deck.html")
+    s = open(p, encoding="utf-8").read()
+    s2 = re.sub(r"This refresh \(\d{1,2}/\d{1,2}",
+                f"This refresh ({today.month}/{today.day}", s, count=1)
+    assert "This refresh (" in s2, "colophon refresh anchor not found"
+    open(p, "w", encoding="utf-8").write(s2)
+
+
 def main():
     print("publish-gate regression suite\n")
     today = datetime.date.today().isoformat()
@@ -94,6 +116,7 @@ def main():
     repo = fresh_copy()
     prime(repo, pool_changes=["--no-pool-changes"])
     redate_judgment(repo)
+    redate_colophon(repo)
     out, rc = run(repo, "scripts/build_deck.py")
     check("baseline: honest quiet-day build succeeds", out,
           must_have=["safe to publish"], want_exit=0, got_exit=rc)
@@ -142,6 +165,7 @@ def main():
                   "--note", "gate-suite: Testy added",
                   "--pool-changes", "added Testy McTest")
     assert rc == 0, out[:400]
+    set_colophon_count(repo, 256)  # pool grew by Testy; gate 6 checks prose
     out, rc = run(repo, "scripts/build_deck.py")
     check("R4-F05 gate 1b accepts the RECORDED bypass, loudly", out,
           must_have=["safe to publish", "Testy McTest"],
@@ -167,12 +191,14 @@ def main():
     repo2 = fresh_copy()
     prime(repo2)  # stamp WITHOUT any pool_changes flag
     redate_judgment(repo2)
+    redate_colophon(repo2)
     out, rc = run(repo2, "scripts/build_deck.py")
     check("R4-F22 no pool_changes assertion -> build refuses (no silent skip)",
           out, must_have=["pool_changes", "BUILD REFUSED"],
           want_exit=1, got_exit=rc)
     prime(repo2, pool_changes=["--no-pool-changes"])
     redate_judgment(repo2)
+    redate_colophon(repo2)
     out, rc = run(repo2, "scripts/build_deck.py")
     assert rc == 0, out[:400]
     # now claim changes happened while the pool is byte-identical
@@ -189,6 +215,38 @@ def main():
     out, rc = run(repo2, "scripts/build_deck.py")
     check("R4-F22 the word 'quiet' in prose no longer publishes", out,
           must_have=["BUILD REFUSED"], want_exit=1, got_exit=rc)
+
+    # ---------- F4/D-S6 (2026-09-08): gate 6 colophon truth checks ------
+    # The Data paragraph drifted two consecutive pulls (narrated the 8/18
+    # pull, counted 254 rows against a 255-row pool, claimed a lifted hold
+    # was still on). Gate 6 must refuse a count that contradicts the pool
+    # and a narration of the wrong pull — and accept the corrected page.
+    repo4 = fresh_copy()
+    prime(repo4, pool_changes=["--no-pool-changes"])
+    redate_judgment(repo4)
+    redate_colophon(repo4)
+    p4 = os.path.join(repo4, "docs", "draft-deck.html")
+    saved4 = open(p4, encoding="utf-8").read()
+    n_rows = saved4.count("\n") and len(  # actual pool size, from the CSV
+        open(os.path.join(repo4, "data", "players.csv"),
+             encoding="utf-8").read().strip().splitlines()) - 1
+    wrong = saved4.replace(f"{n_rows} rows", f"{n_rows - 1} rows", 1)
+    assert wrong != saved4, "colophon row-count token not found"
+    open(p4, "w", encoding="utf-8").write(wrong)
+    out, rc = run(repo4, "scripts/build_deck.py")
+    check("F4 gate 6: colophon row count contradicting the pool is REFUSED",
+          out, must_have=["colophon count", str(n_rows - 1)],
+          want_exit=1, got_exit=rc)
+    stale = re.sub(r"This refresh \(\d{1,2}/\d{1,2}",
+                   "This refresh (1/1", saved4, count=1)
+    open(p4, "w", encoding="utf-8").write(stale)
+    out, rc = run(repo4, "scripts/build_deck.py")
+    check("F4 gate 6: colophon narrating the WRONG pull is REFUSED", out,
+          must_have=["narrates the wrong pull"], want_exit=1, got_exit=rc)
+    open(p4, "w", encoding="utf-8").write(saved4)
+    out, rc = run(repo4, "scripts/build_deck.py")
+    check("F4 gate 6: the corrected colophon builds", out,
+          must_have=["safe to publish"], want_exit=0, got_exit=rc)
 
     # ---------- R4-F24: --quick must not clobber committed evidence -----
     repo3 = fresh_copy()
