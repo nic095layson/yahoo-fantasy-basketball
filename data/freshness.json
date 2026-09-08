@@ -1,13 +1,13 @@
 {
-  "date": "2026-09-01",
-  "note": "Data pull 2026-09-01 (window 8/27->9/1, 5 days). NO roster changes - zero placements moved. Kawhi Leonard WIDENED -0.20 -> -0.25, the first non-hold in seven re-checks: ESPN now reports the Clippers inquiry could run into 2027 with no timetable, against the carried 'resolution within six weeks' framing, plus a second alleged conduit (Daktronics). The widening prices the HORIZON, not the verdict - an unresolved trade running into the season moves TWO pool rows mid-season (Kawhi, Ingram). Mathurin's qualifying offer was formally withdrawn by LAC 8/29, closing that watchlist item. Duren still unsigned and still tracking ~4yr/$160M; Cam Thomas, Ivey, Lonzo still unsigned; Sochan verified still POR. SEPTEMBER TRIGGER: SEPTEMBER-PLAN.md fires today, but its precondition SS1.2 (September consensus ADP) and SS1.2b (owner-uploaded projection datasets) are both unavailable - ADP sources are egress-blocked and no datasets have been uploaded. Feature freeze therefore HOLDS; no pre-registered experiment bar was consumed.",
+  "date": "2026-09-02",
+  "note": "2026-09-02 pull (window 09-01 -> 09-02, 1 day). NBA announced findings and penalties in the Clippers/Kawhi Leonard cap-circumvention investigation: 5 first-rounders (2029-2033) forfeited, $30M fine, Ballmer and Zucker suspended 1 year, Frank 6 months; Leonard NOT suspended, contract NOT voided, pays $700K. League hold on the Kawhi-to-Toronto trade LIFTED. No placements moved: the trade is cleared but not confirmed executed by two independent sources, so Leonard (LAC), Ingram (TOR) and Dick (TOR) were held and their note cells re-stated. JUDGMENT: Kawhi COLLAPSED -0.25 -> -0.08 (yesterday's 'runs into 2027' widening retracted), Duren held at -0.08 on rebased 9/1 reporting ($5M apart, Oct 1 QO deadline), Mathurin held at -0.15 with the superseded QO line removed.",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "note cells only, 3 rows, zero team/stat changes: Kawhi Leonard (LAC), Brandon Ingram (TOR) and Gradey Dick (TOR) each had 'trade-agreed ... (league hold)' restated as '(league hold LIFTED 2026-09-02, awaiting execution)' after the NBA closed the Clippers investigation. Leading availability tags unchanged (Kawhi inj-risk 0.78; Ingram and Dick trade-agreed 1.0)."
   },
   "rosters_verified": {
-    "date": "2026-09-01",
+    "date": "2026-09-02",
     "mode": "fallback-partial",
-    "sources": "255/255 checked vs rosters_official.json re-authored 2026-09-01; no placements moved this window"
+    "sources": "scripts/verify_rosters.py"
   }
 }
