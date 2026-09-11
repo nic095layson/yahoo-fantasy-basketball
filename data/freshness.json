@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-08",
-  "note": "2026-09-08 fixes-adoption audit (owner: 'Implement all fixes... full system audit... if all checks green, merge'). Pool unchanged since the amendment build (c98cf4f39840). Adopted this session: F1 scripts/judgment_open_items.py (open-item enumeration + receipts contract + team watch set + --tags inventory), F2 kit report/check_report.py (publication gate), F3 team-shadow sweep, F4 build_deck gate 6 (colophon truth: counts + narrated pull), F5 zero-trade anomaly rule, F6 returner-vs-tag diff -- protocol text in kit DATA-PULL.md sections 0/2/5/7. Day's data state carried forward: Kawhi trade unexecuted (2nd hold), Murray inj-achilles-risk, Hawkins NOP->MEM, Mathurin -0.10, Simmons watchlisted SAC.",
+  "date": "2026-09-11",
+  "note": "2026-09-11 pull (window 09-08 -> 09-11, 3 days; first under F1-F6). MARK WILLIAMS OUT EXTENDED: left shoulder labrum torn in an offseason workout, surgery 9/10, no timetable -> shoulder-recovery exclusion (availability 0.0), Maluach/Ighodaro the named beneficiaries (watch, not repriced). Mathurin repriced to the sourced NOP bench role (line rescaled; judgment -0.10 -> -0.05). Kawhi UNEXECUTED a 3rd pull -- cause sourced: Clippers front-office vacuum (Ballmer/Frank suspended); all parties confident pre-camp; held -0.08, row LAC. Duren leaning to the $9.6M QO per 9/10 reporting; held -0.08. Sochan widened -0.15 -> -0.20 (SI: likeliest Blazers cut). Zero placements moved. Receipts complete for all 8 flagged items; team-shadow sweep run; Simmons-LAC ledger garble refuted a 2nd time (SAC confirmed).",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "2 rows, zero team changes: Mark Williams (PHX) note inj-risk -> shoulder-recovery (torn labrum surgery 2026-09-10) = availability 0.78 -> 0.0, excluded; Bennedict Mathurin (NOP) volume stats rescaled to the sourced bench role and note set to bench-role."
   },
   "rosters_verified": {
-    "date": "2026-09-08",
+    "date": "2026-09-11",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }
