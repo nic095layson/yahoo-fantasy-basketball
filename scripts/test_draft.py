@@ -298,12 +298,32 @@ def main():
                          "Shai Gilgeous-Alexander"])
         # ...but with 2+ namesakes still available AND the best one drafted, a
         # bare surname stays a HALT — genuine ambiguity, the Coby/Dejounte
-        # scar. Jalen Williams is the top Williams; drafting him leaves Mark
-        # and Ziaire, so "Williams" cannot be auto-resolved.
+        # scar. 2026-09-11: the fixture used to hard-code the Williams trio,
+        # and Mark Williams' shoulder-recovery exclusion silently reduced the
+        # draftable namesakes to one — the injury-aware resolver then
+        # CORRECTLY auto-resolved and the case failed on a stale premise, not
+        # a bug. The surname is now chosen at runtime: any surname with 3+
+        # DRAFTABLE holders (draft the best, 2+ ambiguous remain) keeps the
+        # case immune to future pool-health changes.
+        import collections as _c
+        import csv as _csv
+        _by_sur = _c.defaultdict(list)
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import hoops as _hoops
+        for _p in _hoops.load_players():
+            if _hoops.availability(_p) > 0 and " " in _p["player"]:
+                _toks = [t for t in _p["player"].split()
+                         if t.rstrip(".").lower() not in _hoops.NAME_SUFFIXES]
+                if len(_toks) >= 2:
+                    _by_sur[_toks[-1]].append(_p["player"])
+        _sur, _names = next((k, v) for k, v in
+                            sorted(_by_sur.items(), key=lambda kv: -len(kv[1]))
+                            if len(v) >= 3)
         fresh(st)
-        run(st, "draft", "turn", "Jalen Williams", "--top", "0")
-        check("surname collision still halts when 2+ namesakes remain",
-              run(st, "draft", "turn", "Williams", "--top", "0",
+        run(st, "draft", "turn", _names[0], "--top", "0")
+        check(f"surname collision still halts when 2+ namesakes remain "
+              f"({_sur} x{len(_names)})",
+              run(st, "draft", "turn", _sur, "--top", "0",
                   expect_fail=True),
               must_have=["HALTED", "already drafted"])
         # first-name prefix + surname now resolves what the hint promised, and
