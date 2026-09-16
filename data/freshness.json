@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-11",
-  "note": "2026-09-11 pull (window 09-08 -> 09-11, 3 days; first under F1-F6). MARK WILLIAMS OUT EXTENDED: left shoulder labrum torn in an offseason workout, surgery 9/10, no timetable -> shoulder-recovery exclusion (availability 0.0), Maluach/Ighodaro the named beneficiaries (watch, not repriced). Mathurin repriced to the sourced NOP bench role (line rescaled; judgment -0.10 -> -0.05). Kawhi UNEXECUTED a 3rd pull -- cause sourced: Clippers front-office vacuum (Ballmer/Frank suspended); all parties confident pre-camp; held -0.08, row LAC. Duren leaning to the $9.6M QO per 9/10 reporting; held -0.08. Sochan widened -0.15 -> -0.20 (SI: likeliest Blazers cut). Zero placements moved. Receipts complete for all 8 flagged items; team-shadow sweep run; Simmons-LAC ledger garble refuted a 2nd time (SAC confirmed).",
+  "date": "2026-09-15",
+  "note": "2026-09-15 pull (window 09-11 -> 09-15, 4 days). THE KAWHI TRADE EXECUTED 9/14 (Raptors announcement via CBC + 5 more outlets): Kawhi Leonard LAC -> TOR, Brandon Ingram TOR -> LAC (heel-monitor note added), Gradey Dick TOR -> LAC; lines held pending camp roles; Kawhi judgment -0.08 -> -0.05 (resolved), Ingram card added at -0.05. Duren QO branch firming (Forbes 9/12, Last Word 9/14; $200M+ ask); held -0.08. MEM cuts still reported-not-executed; DLo/Hawkins/Kris Murray rows hold. FA trio unsigned. No injury changes. OWNER INPUT: real draft set for 2026-10-14 7 PM owner-local -> recorded in league_intel section 9 item 8; Oct-12 Routine timing stands, T-1 targets Oct 13. Receipts complete for all flagged items.",
   "pool_changes": {
     "changed": true,
-    "note": "2 rows, zero team changes: Mark Williams (PHX) note inj-risk -> shoulder-recovery (torn labrum surgery 2026-09-10) = availability 0.78 -> 0.0, excluded; Bennedict Mathurin (NOP) volume stats rescaled to the sourced bench role and note set to bench-role."
+    "note": "3 rows, all team changes from the executed 9/14 trade: Kawhi Leonard LAC->TOR, Brandon Ingram TOR->LAC, Gradey Dick TOR->LAC. Notes updated to 'traded ... (executed)'; Ingram gains the queued heel-monitor clause. Zero stat changes; availability tags unchanged (Kawhi inj-risk 0.78 leads his note)."
   },
   "rosters_verified": {
-    "date": "2026-09-11",
+    "date": "2026-09-15",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }

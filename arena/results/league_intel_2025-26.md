@@ -140,7 +140,12 @@ the #1 seed no shelter.
    rule stands; no stash-drafting logic will be added.
 7. **No keepers** — full redraft.
 8. **Real draft: October, the week before the NBA season opens.** September
-   is regimen-building; date TBD.
+   is regimen-building. **DATE SET (owner, 2026-09-15): Tuesday, October 14
+   at 7:00 PM** (owner-local; timezone not stated — confirm before draft
+   night). The Oct-12 Routine fires two days before it, inside its ~10-day
+   threshold as designed; §8.5's T-1 draft-eve Routine (created by the
+   October session before closing) should target Oct 13. Slot still TBD —
+   send it the moment Yahoo assigns it.
 9. **Snake confirmed**; slot TBD.
 10. **Live deck use on draft day confirmed** — the mock workflow is the
     real workflow.
