@@ -6,6 +6,7 @@ import json, os, sys
 SP = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SP)
 import mock51_retro as R
+SP = R.SP  # outputs live in arena/results, not beside the scripts
 
 players = R.load_pool("v23")
 ros, _, _ = R.rosters_upto(players, len(R.PICKS))

@@ -168,5 +168,8 @@ and both `deckcard` runs were re-executed from the landed copies on
 2026-09-21 and reproduced the session outputs **byte-identically**;
 `m51_hindsight.json`, `m51_forecast.json` and `m51_arms.json` are the session
 run's outputs copied in (their scripts are landed, the ~30-minute re-run was
-not repeated). `mock51_extra.py` prints its findings to stdout (no JSON) and
-was re-run from the landed copy.
+not repeated). `mock51_extra.py` prints its findings to stdout (no JSON); its first
+landed copy crashed on an output-directory path (fixed in this branch's second
+commit) and was then re-run from the fixed landed copy, reproducing the
+session figures (48 rows, Brier 0.646; ties 2/13 and 6/13; Embiid −0.171;
+ADP-model Brier 0.260).

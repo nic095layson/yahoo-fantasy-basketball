@@ -11,6 +11,7 @@ import sys, os, json, math, csv, statistics
 SP = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SP)
 import mock51_retro as R
+SP = R.SP  # outputs live in arena/results, not beside the scripts
 hoops, arena = R.hoops, R.arena
 CATS = R.CATS
 PICKS = R.PICKS
