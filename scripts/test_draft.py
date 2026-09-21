@@ -99,6 +99,37 @@ def main():
               must_have=["Jaren Jackson Jr.", "Porter Jr.",
                          "Dereck Lively II"])
 
+        # S1 (mock-51 #134/#152/#154) — an explicit correction carrying a
+        # FULL name that matches no pool row logs VERBATIM as a not-in-pool
+        # pick; opponent picks must never require pool membership.
+        fresh(st)
+        run(st, "draft", "turn", "Nikola Jokic; Victor Wembanyama", "--top", "0")
+        out = run(st, "draft", "turn", "1- Javon Small", "--top", "0")
+        check("S1 full-name fix with no pool row logs verbatim", out,
+              must_have=["Javon Small", "not in pool"],
+              must_not=["No player matching"])
+        out = run(st, "draft", "turn", "Chet Holmgren", "--top", "0")
+        check("S1 engine still deals turns after a verbatim pick", out,
+              must_have=["Chet Holmgren"])
+
+        # S1 guard — a single-token no-match stays refused (typo path);
+        # verbatim logging must not swallow one-word garbage.
+        fresh(st)
+        run(st, "draft", "turn", "Nikola Jokic", "--top", "0")
+        out = run(st, "draft", "turn", "1- Zzyzx", "--top", "0")
+        check("S1 single-token no-match is still refused", out,
+              must_have=["No player matching"],
+              must_not=["Zzyzx [not in pool"])
+
+        # S5 (mock-51 #140) — when the ONLY candidate is injury-excluded the
+        # pick still logs, with heads-up wording instead of the
+        # self-contradicting "skipped" annotation.
+        fresh(st)
+        out = run(st, "draft", "turn", "Butler", "--top", "0")
+        check("S5 sole-excluded candidate logs with heads-up wording", out,
+              must_have=["Jimmy Butler", "injury-excluded on this board"],
+              must_not=["skipped: injury-excluded"])
+
         # F31 — the correction echo must show the OLD name on the left
         fresh(st)
         run(st, "draft", "turn", "Jokic; Wemby; SGA; my:Luka", "--top", "0")

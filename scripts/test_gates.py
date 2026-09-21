@@ -165,7 +165,12 @@ def main():
                   "--note", "gate-suite: Testy added",
                   "--pool-changes", "added Testy McTest")
     assert rc == 0, out[:400]
-    set_colophon_count(repo, 256)  # pool grew by Testy; gate 6 checks prose
+    # pool grew by Testy; gate 6 checks prose. Count at RUNTIME, never a
+    # literal — a hardcoded size stales the moment the real pool changes
+    # (2026-09-21: pool 255 -> 264 broke the old `256`; same class as the
+    # test_draft surname fixture that staled on the Mark Williams exclusion).
+    n_pool = sum(1 for _ in open(os.path.join(repo, "data", "players.csv"))) - 1
+    set_colophon_count(repo, n_pool)
     out, rc = run(repo, "scripts/build_deck.py")
     check("R4-F05 gate 1b accepts the RECORDED bypass, loudly", out,
           must_have=["safe to publish", "Testy McTest"],
@@ -256,6 +261,25 @@ def main():
     out, rc = run(repo3, "arena/mocks/bench_weight_study.py", "--quick")
     check("R4-F24 --quick refuses to overwrite mismatched evidence, fast",
           out, must_have=["refus"], want_exit=1, got_exit=rc)
+
+    # ---------- 2026-09-21 pull: unicode in a pool note ------------------
+    # json.dumps escapes non-ASCII to \uXXXX; a raw re.subn replacement
+    # template rejects that ("bad escape \u"). Seen RED on the live 9/21
+    # build (the Doncic em-dash note crashed the PLAYERS injection); the fix
+    # is the callable-replacement pattern build_deck already uses for
+    # BUILD_NOTE. This case pins it.
+    repo4 = fresh_copy()
+    pl = os.path.join(repo4, "data", "players.csv")
+    rows = open(pl, encoding="utf-8").read().splitlines()
+    rows[-1] = rows[-1].rsplit(",", 1)[0] + ",\u00e9-note \u2014 unicode survives injection"
+    open(pl, "w", encoding="utf-8").write("\n".join(rows) + "\n")
+    prime(repo4, pool_changes=["--pool-changes", "unicode-note regression case"])
+    redate_judgment(repo4)
+    redate_colophon(repo4)
+    out, rc = run(repo4, "scripts/build_deck.py")
+    check("non-ASCII pool note survives the PLAYERS injection", out,
+          must_have=["safe to publish"], must_not=["bad escape"],
+          want_exit=0, got_exit=rc)
 
     print()
     if FAILURES:

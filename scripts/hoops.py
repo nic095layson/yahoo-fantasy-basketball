@@ -1062,6 +1062,28 @@ def cmd_draft(args, players):
                 try:
                     p = match_player(players, name, taken=others)
                 except SystemExit as e:
+                    msg = str(e)
+                    if msg.startswith("No player matching") and \
+                            len(name.split()) >= 2:
+                        # mock-51 #134/#154: a FULL name with no pool row is
+                        # an opponent's real pick, not a typo — log VERBATIM;
+                        # only owner-side recommendations need pool data.
+                        corrections += 1
+                        if corrections >= 3:
+                            state["picks"] = snapshot
+                            save_state(state)
+                            sys.exit(f"⚠ HALTED at {raw!r}: 3+ corrections "
+                                     "in one batch suggests numbering drift, "
+                                     "not fixes. NO changes from this batch "
+                                     "were applied. Run `draft status`, "
+                                     "verify against the draft room, then "
+                                     "resend the whole batch.")
+                        picks[idx]["player"] = name
+                        taken.discard(old)
+                        taken.add(name)
+                        print(f"  ✎ #{num} corrected: {old} → {name} "
+                              "[not in pool — logged verbatim]")
+                        continue
                     errors.append(f"fix #{num}: {e}")
                     continue
                 if p["player"] == picks[idx]["player"]:
@@ -1154,9 +1176,16 @@ def cmd_draft(args, players):
                     if len(cands) > 4:  # audit F02: a broad query still
                         note += "  ⚠ WIDE MATCH — verify"  # resolves, loudly
                 if benched and not exact:
-                    # say who the injury filter skipped, so the assumption
-                    # stays as loud as an assumed-over
-                    note += f"  ({', '.join(benched[:2])} skipped: injury-excluded)"
+                    if p["player"] in benched:
+                        # every candidate was excluded: the room's pick still
+                        # logs — flag the exclusion, don't claim a skip
+                        note += (f"  (heads-up: {p['player']} is "
+                                 "injury-excluded on this board)")
+                    else:
+                        # say who the injury filter skipped, so the assumption
+                        # stays as loud as an assumed-over
+                        note += (f"  ({', '.join(benched[:2])} "
+                                 "skipped: injury-excluded)")
                 elif gone and not exact:
                     # resolved a shared surname to the last one still available
                     note = (f"  (only {p['player'].split()[0]} left; "
