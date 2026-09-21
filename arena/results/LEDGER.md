@@ -42,8 +42,11 @@ is computed here from artifacts, with its membership criteria stated.**
 | 32 | 10 | 4.11 | 39.0 | 9 | 12 | ECW 4.450; declared 3-cat punt (FT%/3PM/ST) — punt INVERTED for the drafted roster (ST kept-rank 3 punted, TO rank 11 kept; single-swap punt-TO worth +6.5 kept-z); five balanced-board picks inside the punt frame (`season_sim_mock32.py`) |
 | 33 | 10 | 11.37 | 64.4 | 3 | 7 | ECW 4.650; balanced, NO punt declared — best owner mock since m26; board rank 7 vs finish 3 (ECW out-predicts kept-total again, m29 pattern); implied punt FT%/PTS/REB kept-z +6.50 (`season_sim_mock33.py`) |
 | 34 | 8 | 9.52 | 68.1 | 4 | 12 | ECW 4.630; declared 3-cat punt (FT%/3PTM/PTS) — board rank **1** of 12 (+4.67). AST fell to an UNDECLARED 4th punt (kept-cat pwin 0.202, clustered with the punted cats' 0.144-0.171). Punt-box defect measured here: shipped Top-5 byte-identical 26/26 turns with the punt declared vs cleared (`decwScores` is punt-blind); full card-follow 0.008% vs as-drafted 9.52%. Analyzed as "31", then "33", pre-merge; renumbered 34 (a parallel session claimed 31/32/33). Draft fingerprint: slot 8, punt FT%/3PTM/PTS, state md5 4afb5778. (`season_sim_mock33.py`, `mock33_cf.py`) |
+| 51 | 10 | **55.03** | 99.8 | 1 | 1 | ECW 5.610; first LIVE public Yahoo room from the REAL slot 10 — random humans, not the cast (opponent-quality caveat, owner directive 2026-08-25: excluded from the superlatives below). No punt declared at the start; the advisor's FULL TILT (AST+FT%) was taken after #46 and retargeted three times. Two live-drafted names were poolless on the deck used (fixed in the 9/21 tune-up). Highest number in this table, but the room's next-best seat simulates at 11.6% — the field, not the roster, is half the story. Follow-card arm 63.47%; single-swap misses Turner #82 (+7.3pp) and Lopez #154 (+8.4pp), both card-recommended at the time (`mock51_retro.py`, `debrief_2026-09-21_mock51_slot10.md`) |
 
-Verified superlatives: best champ% = m24; worst = m23; best playoff% =
+Mock 51 (55.03%) is excluded from the superlatives: a random public room, not the league cast, per the 2026-08-25 directive.
+
+Verified superlatives (cast rooms): best champ% = m24; worst = m23; best playoff% =
 m25; m21 was the best at the time it was drafted. **Streak facts:** the
 only consecutive 1st-place pair is m24→m25. Mocks 22 and 23 (11th, 12th)
 sit between m21 and m24 — there has never been a three-draft winning run.
