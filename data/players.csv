@@ -2,7 +2,7 @@ player,team,pos,fg_pct,fga,ft_pct,fta,tpm,pts,reb,ast,stl,blk,tov,note
 Nikola Jokic,DEN,C,0.580,17.8,0.810,6.4,1.4,29.0,12.4,10.4,1.7,0.7,3.2,
 Victor Wembanyama,SAS,C,0.490,19.8,0.845,6.2,2.7,26.5,12.5,4.0,1.2,4.0,3.4,
 Shai Gilgeous-Alexander,OKC,PG,0.520,21.5,0.895,8.6,2.2,32.5,5.1,6.5,1.8,0.9,2.5,
-Luka Doncic,LAL,"PG,SG",0.470,22.5,0.800,9.0,3.8,33.5,8.5,8.5,1.5,0.4,3.8,
+Luka Doncic,LAL,"PG,SG",0.470,22.5,0.800,9.0,3.8,33.5,8.5,8.5,1.5,0.4,3.8,hamstring-monitor (Gr2 Apr 2026; cleared 5/28; self-declared 100% Sept — informational; no multiplier)
 Giannis Antetokounmpo,MIA,"PF,C",0.598,19.2,0.630,9.6,0.3,30.8,11.7,6.3,0.9,1.1,3.2,
 Anthony Davis,WAS,"PF,C",0.515,17.0,0.775,6.8,0.9,24.0,11.8,3.4,1.2,2.1,2.0,inj-risk
 Cade Cunningham,DET,PG,0.475,21.5,0.850,6.8,2.2,27.5,6.3,9.4,1.1,0.7,4.2,
@@ -51,11 +51,11 @@ Rudy Gobert,MIN,C,0.665,6.8,0.680,4.0,0.0,12.2,10.8,1.9,0.8,1.4,1.6,
 Jarrett Allen,CLE,C,0.700,8.5,0.720,3.5,0.0,13.8,9.8,2.0,0.9,0.9,1.4,
 Walker Kessler,LAL,C,0.660,7.8,0.630,2.6,0.0,11.8,12.0,1.8,0.5,2.4,1.6,inj-shoulder-risk (first season back)
 Myles Turner,MIL,C,0.480,11.0,0.775,2.2,2.2,13.8,6.2,1.6,0.8,1.9,1.4,
-Deandre Ayton,WAS,C,0.565,9.0,0.760,1.8,0.1,11.0,7.8,1.5,0.7,0.8,1.5,
+Deandre Ayton,WAS,C,0.565,9.0,0.760,1.8,0.1,11.0,7.8,1.5,0.7,0.8,1.5,backup-watch (WAS projected five lists Sarr at C; role unsettled)
 Mark Williams,PHX,C,0.580,10.2,0.795,4.2,0.0,15.5,10.4,2.6,0.7,1.2,2.3,shoulder-recovery (torn labrum surgery 2026-09-10; out extended; no timetable)
 Kristaps Porzingis,GSW,C,0.485,13.6,0.810,4.2,2.0,19.8,6.9,2.2,0.7,1.5,1.6,inj-risk
 Joel Embiid,PHI,C,0.450,15.0,0.825,7.5,1.4,24.0,8.3,4.5,0.8,0.9,3.3,inj-risk
-Nikola Vucevic,ORL,C,0.530,10.8,0.815,1.6,1.5,13.5,7.8,2.6,0.7,0.6,1.4,
+Nikola Vucevic,ORL,C,0.530,10.5,0.800,2.0,1.1,13.0,7.5,2.4,0.6,0.6,1.4,bench-role (backup/sixth man behind Wendell Carter; synced 9/21)
 Jakob Poeltl,TOR,C,0.625,8.8,0.690,2.7,0.0,14.5,9.7,2.8,1.2,1.2,1.9,
 Onyeka Okongwu,ATL,C,0.560,11.5,0.780,2.8,1.7,15.0,7.8,3.0,0.8,1.1,1.5,
 Kel'el Ware,MIL,C,0.575,10.0,0.700,2.0,0.8,14.5,10.5,1.5,0.6,1.4,1.5,
@@ -99,13 +99,13 @@ Immanuel Quickley,TOR,PG,0.425,13.8,0.870,3.1,2.6,17.5,3.6,6.0,1.0,0.1,2.1,
 Jalen Suggs,ORL,"PG,SG",0.420,13.0,0.860,3.2,2.3,17.0,4.2,4.0,1.6,0.8,2.6,
 Stephon Castle,SAS,"PG,SG",0.440,14.5,0.730,4.6,1.2,16.5,4.0,4.8,1.0,0.4,2.4,
 Scoot Henderson,POR,PG,0.430,10.0,0.790,2.5,1.4,11.5,3.0,4.5,1.0,0.3,2.3,
-Reed Sheppard,HOU,"PG,SG",0.445,12.5,0.830,2.2,2.7,15.5,3.2,5.4,1.5,0.5,2.0,
+Reed Sheppard,HOU,"PG,SG",0.450,10.0,0.860,2.1,2.2,12.5,3.0,3.9,1.2,0.4,1.5,bench-role (VanVleet healthy; role recompressed per 9/16 research; synced 9/21)
 Andrew Nembhard,IND,PG,0.470,11.0,0.800,2.4,1.3,12.5,3.2,6.8,1.2,0.4,2.2,
 Kevin Porter Jr.,MIL,"PG,SG",0.455,11.8,0.780,2.8,1.6,14.5,4.2,5.0,1.1,0.4,2.4,
 Ryan Rollins,MIL,"PG,SG",0.460,10.5,0.800,2.2,1.5,13.0,3.8,5.0,1.3,0.4,1.9,
 Dylan Harper,SAS,PG,0.455,12.5,0.760,3.8,1.4,15.5,4.2,5.0,1.3,0.4,2.5,
 VJ Edgecombe,PHI,SG,0.445,13.8,0.785,3.6,1.9,17.0,4.6,3.8,1.4,0.5,2.1,
-Keyonte George,UTA,"PG,SG",0.425,14.5,0.825,3.6,2.7,17.5,3.6,5.8,0.8,0.2,2.7,
+Keyonte George,UTA,"PG,SG",0.445,15.5,0.830,4.5,2.9,20.5,3.8,5.8,0.9,0.1,2.9,
 Isaiah Collier,UTA,PG,0.465,10.5,0.720,2.8,0.8,12.5,3.6,7.0,1.2,0.2,2.9,
 Jaden Ivey,FA,SG,0.460,13.5,0.750,4.0,2.1,18.0,4.2,4.2,0.9,0.5,2.4,
 Cason Wallace,OKC,"PG,SG",0.480,8.5,0.800,1.5,1.4,11.0,3.5,3.4,1.7,0.5,1.1,
@@ -159,7 +159,7 @@ Aaron Nesmith,IND,"SF,PF",0.480,9.5,0.850,2.2,1.9,13.0,4.8,1.5,0.9,0.6,1.1,
 Bennedict Mathurin,NOP,"SG,SF",0.460,10.0,0.835,3.9,1.2,13.9,4.5,1.7,0.6,0.3,1.6,bench-role (NOP rotation reporting 9/9-9/11; sixth-man scoring punch)
 Pascal Siakam,IND,PF,0.520,15.8,0.745,4.2,1.5,20.5,7.0,3.5,0.9,0.5,1.8,
 Obi Toppin,IND,PF,0.510,9.0,0.780,1.6,1.5,12.5,4.5,1.8,0.6,0.5,1.2,
-Julius Randle,BKN,PF,0.485,13.8,0.810,4.7,1.4,19.0,7.2,4.8,0.7,0.3,2.8,
+Julius Randle,BKN,PF,0.475,17.0,0.780,6.5,1.6,22.5,8.0,5.5,0.8,0.3,3.2,
 Jonathan Kuminga,MIN,PF,0.460,13.0,0.680,4.6,1.0,16.0,4.8,2.4,0.9,0.5,1.9,
 Draymond Green,GSW,"PF,C",0.440,7.8,0.690,2.0,1.2,9.2,6.0,5.5,1.4,1.0,2.3,re-signed 1yr $27.7M (agreed 7/28)
 Jabari Smith Jr.,HOU,"PF,C",0.455,11.5,0.790,2.6,2.0,14.5,7.5,1.5,0.7,0.9,1.3,
@@ -186,12 +186,12 @@ Isaiah Stewart,MEM,"PF,C",0.500,6.5,0.720,1.8,0.7,9.0,7.0,1.5,0.6,1.1,1.1,
 Ausar Thompson,DET,SF,0.540,9.0,0.660,2.8,0.2,11.0,5.5,2.6,1.7,0.9,1.5,
 Ron Holland,DET,"SF,PF",0.470,9.5,0.700,2.6,0.6,12.0,4.5,2.2,1.1,0.5,1.6,
 Tobias Harris,SAS,PF,0.470,11.0,0.820,2.4,1.2,13.5,5.9,2.2,0.8,0.6,1.2,
-Duncan Robinson,DET,"SG,SF",0.435,9.0,0.850,1.6,2.2,12.0,2.6,2.4,0.6,0.2,1.3,
+Duncan Robinson,DET,"SG,SF",0.435,9.0,0.850,1.6,2.2,12.0,2.6,2.4,0.6,0.2,1.3,starter-watch (DET wing crowd; 3PM specialist)
 Caris LeVert,MIL,"SG,SF",0.445,9.0,0.780,2.2,1.3,11.0,3.2,3.2,0.9,0.3,1.5,
 De'Andre Hunter,SAC,"SF,PF",0.465,11.0,0.830,2.8,2.0,15.0,4.2,1.6,0.7,0.4,1.3,inj-eye-risk (retinal surgery Feb)
 Max Strus,LAC,"SG,SF",0.440,9.5,0.800,1.4,2.3,12.5,3.8,2.4,0.7,0.3,1.2,
 Sam Merrill,CLE,SG,0.430,8.0,0.840,1.2,2.2,10.5,2.6,2.0,0.7,0.2,1.0,
-Ochai Agbaji,BKN,"SG,SF",0.470,8.5,0.740,1.4,1.5,10.5,3.8,1.8,0.9,0.5,1.1,
+Ochai Agbaji,NYK,"SG,SF",0.470,8.5,0.740,1.4,1.5,10.5,3.8,1.8,0.9,0.5,1.1,camp-deal (Exhibit 9 non-guaranteed 2026-09-16; five names for ~one NYK spot)
 Jaime Jaquez Jr.,MIL,"SF,PF",0.475,10.5,0.760,2.8,0.7,13.0,5.0,3.2,1.0,0.3,1.7,
 Nikola Jovic,MIA,"PF,SF",0.455,9.5,0.800,2.0,1.5,12.0,4.5,3.0,0.8,0.4,1.6,
 Bogdan Bogdanovic,HOU,"SG,SF",0.435,10.5,0.820,1.6,2.2,13.0,3.2,3.2,1.0,0.3,1.6,
@@ -253,4 +253,13 @@ Saddiq Bey,NOP,"PF,SF",0.45,13.5,0.84,2.6,2.4,17.0,5.5,2.5,0.9,0.4,1.5,
 Maxime Raynaud,SAC,C,0.555,7.5,0.72,1.6,1.0,9.5,6.0,1.2,0.5,0.6,1.3,
 Collin Gillespie,PHX,"PG,SG",0.418,10.5,0.875,1.6,2.8,12.5,4.0,4.6,1.2,0.2,1.6,
 Paul Reed,DET,"C,PF",0.6,5.5,0.68,1.8,0.1,7.5,4.5,1.2,0.9,0.9,0.9,
-Keaton Wallace,LAC,SG,0.43,5.5,0.81,1.0,1.1,6.5,2.3,2.8,0.8,0.2,1.1,
+Keaton Wagler,LAC,SG,0.430,13.5,0.820,3.5,2.3,16.5,3.8,3.8,0.9,0.3,2.4,rookie (No. 5 pick; projected opening-night starter)
+Adem Bona,PHI,C,0.630,4.0,0.630,2.4,0.0,5.5,4.8,0.9,0.6,1.3,0.9,foot-sprain-monitor (left foot sprain 9/17 FIBA; back within ~2 wks of camp)
+Julian Champagnie,SAS,"SF,PF",0.440,8.0,0.830,1.4,2.1,10.5,4.3,1.5,0.9,0.4,0.9,bench-role (behind Tobias Harris; 3yr commitment)
+Allen Graves,TOR,PF,0.450,5.5,0.780,1.2,1.2,7.0,4.2,1.2,0.7,0.6,0.8,rookie (No. 19 pick; second unit)
+Tre Jones,CHI,"PG,SG",0.475,10.0,0.815,2.6,0.9,12.5,3.3,5.0,1.1,0.2,1.4,backup-role (CHI primary backup PG; live-drafted in mock-51 while poolless)
+Robert Williams III,POR,C,0.691,4.2,0.660,0.9,0.1,6.5,6.8,1.0,0.6,1.5,0.8,inj-risk (chronic availability; deep POR C rotation)
+AJ Green,MIL,SG,0.440,8.0,0.850,1.0,2.5,10.5,2.5,1.5,0.5,0.2,0.6,
+Joan Beringer,MIN,C,0.610,4.5,0.640,1.8,0.0,6.0,5.0,0.8,0.5,1.4,0.9,bench-role (primary backup C behind Gobert post-Reid)
+Isaiah Joe,DET,SG,0.435,8.5,0.880,1.6,2.8,11.5,2.6,1.4,0.7,0.2,0.8,bench-role (DET second shooter next to Robinson)
+Jay Huff,IND,C,0.520,5.5,0.780,1.2,1.3,7.5,3.8,0.8,0.4,1.3,0.7,bench-role (backup C behind Zubac)

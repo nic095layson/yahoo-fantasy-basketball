@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-15",
-  "note": "2026-09-15 pull (window 09-11 -> 09-15, 4 days). THE KAWHI TRADE EXECUTED 9/14 (Raptors announcement via CBC + 5 more outlets): Kawhi Leonard LAC -> TOR, Brandon Ingram TOR -> LAC (heel-monitor note added), Gradey Dick TOR -> LAC; lines held pending camp roles; Kawhi judgment -0.08 -> -0.05 (resolved), Ingram card added at -0.05. Duren QO branch firming (Forbes 9/12, Last Word 9/14; $200M+ ask); held -0.08. MEM cuts still reported-not-executed; DLo/Hawkins/Kris Murray rows hold. FA trio unsigned. No injury changes. OWNER INPUT: real draft set for 2026-10-14 7 PM owner-local -> recorded in league_intel section 9 item 8; Oct-12 Routine timing stands, T-1 targets Oct 13. Receipts complete for all flagged items.",
+  "date": "2026-09-21",
+  "note": "2026-09-21 pull + tune-up (window 9/15-9/21): zero incumbent placements moved except Agbaji BKN->NYK Exhibit 9; Brunson judgment narrowed -0.15->-0.05; Doncic hamstring-monitor note; resolver verbatim not-in-pool fix (S1) + heads-up wording (S5)",
   "pool_changes": {
     "changed": true,
-    "note": "3 rows, all team changes from the executed 9/14 trade: Kawhi Leonard LAC->TOR, Brandon Ingram TOR->LAC, Gradey Dick TOR->LAC. Notes updated to 'traded ... (executed)'; Ingram gains the queued heel-monitor clause. Zero stat changes; availability tags unchanged (Kawhi inj-risk 0.78 leads his note)."
+    "note": "Wallace REMOVED (2yr Maccabi Tel Aviv, club+EuroLeague official); ADDED 10: Wagler, Bona, Champagnie, Graves, Tre Jones, Robert Williams III, AJ Green, Beringer, Isaiah Joe, Huff (mock-51 room-coverage + owner-approved tune-up); 4 line syncs to 9/16 role research (Sheppard, Vucevic, Keyonte George, Randle); pool 255 -> 264"
   },
   "rosters_verified": {
-    "date": "2026-09-15",
+    "date": "2026-09-21",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }

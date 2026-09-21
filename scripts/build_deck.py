@@ -223,8 +223,10 @@ def main():
     data = json.dumps(pool, separators=(",", ":"))
 
     html = open(DECK, encoding="utf-8").read()
+    # callable replacement: the JSON escapes non-ASCII to \uXXXX, which a
+    # raw template would reject ("bad escape") — same fix as BUILD_NOTE below
     html, n1 = re.subn(r"const PLAYERS = \[.*?\];",
-                       "const PLAYERS = " + data + ";", html, count=1,
+                       lambda m: "const PLAYERS = " + data + ";", html, count=1,
                        flags=re.S)
     html, n2 = re.subn(r'const BUILD_PULL = "[^"]*";',
                        f'const BUILD_PULL = "{fresh["date"]}";', html, count=1)
