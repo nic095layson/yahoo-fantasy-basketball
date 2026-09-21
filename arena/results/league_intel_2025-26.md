@@ -144,9 +144,21 @@ the #1 seed no shelter.
    at 7:00 PM** (owner-local; timezone not stated — confirm before draft
    night). The Oct-12 Routine fires two days before it, inside its ~10-day
    threshold as designed; §8.5's T-1 draft-eve Routine (created by the
-   October session before closing) should target Oct 13. Slot still TBD —
-   send it the moment Yahoo assigns it.
-9. **Snake confirmed**; slot TBD.
+   October session before closing) should target Oct 13.
+   **FINAL DRAFT ORDER (owner, 2026-09-20) — the owner picks #10 of 12:**
+   1 Oblena · 2 Noah · 3 Will · 4 Robby · 5 Kyle · 6 Martin · 7 John ·
+   8 JCo · 9 Kevin · **10 OWNER** · 11 Cayas · 12 Hegi.
+   Slot-10 snake picks (13 rounds): **10, 15, 34, 39, 58, 63, 82, 87,
+   106, 111, 130, 135, 154** — paired picks at every turn (only Cayas and
+   Hegi pick twice between them), then 19-pick waits. Seat deltas vs the
+   state_50 mock (owner drafted slot 5 there): Oblena and Cayas keep
+   their seats; Hegi 2→12, Kyle 3→5, Noah 4→2, John 6→7, Martin 7→6,
+   Robby 8→4, JCo 9→8, Kevin 10→9, Will 12→3. Kevin picks immediately
+   before the owner every odd round; Cayas + Hegi bracket the owner's
+   turn pairs. October prep re-runs seat strategy for slot 10 (the
+   state_50 punt clinic was a slot-5 rehearsal — D50-1 still open).
+9. **Snake confirmed**; **slot 10 of 12 (owner, 2026-09-20)** — order in
+   item 8.
 10. **Live deck use on draft day confirmed** — the mock workflow is the
     real workflow.
 11. **Same 11 managers return.** E17's measured reach profiles carry over
