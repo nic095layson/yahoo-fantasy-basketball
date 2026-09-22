@@ -21,6 +21,16 @@ of the corresponding `draft_state_N.json` to reproduce.
 
 ## Files
 
+- `live_retro.py <mock> <stage>`, `live_deckcard.py <mock> <deck> <out> [--punt-log]`,
+  `live_advisor.py <mock> <deck> <out>`, `live_survival.py <mock> <deckcard.json> <out> [more…]`,
+  `live_debrief.py <mock> <out.md>` — the live-room grading set (2026-09-22), generalized
+  from the mock-51 scripts below to a mock-number argument, tolerant of poolless opponent
+  picks (a human drafts a name the pool lacks: that seat plays short, the names are recorded).
+  `live_retro.py 51 final|replay|hindsight` reproduces `m51_*.json` byte-for-byte; mock 52's
+  outputs are `m52_*.json` and `debrief_2026-09-22_mock52_slot10.md`. Per-mock config
+  (pools drafted against, the punt box as the owner drove it, click moments) sits at the top
+  of `live_retro.py` / `live_deckcard.py` / `live_advisor.py`.
+
 - `season_sim_mock27.py` — headline simulation. Rebuilds all 12 rosters from
   the uploaded draft state, runs `arena.simulate_seasons` at 6,000 seasons ×
   seeds [11, 23, 47], and reports champ%/playoff%/kept-total per team plus

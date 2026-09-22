@@ -1,0 +1,1622 @@
+[
+ {
+  "pick": 10,
+  "punt": [],
+  "actual": "Jayson Tatum",
+  "actualCardRank": 15,
+  "actualSurv": 0.529,
+  "actualMkt": 7,
+  "actualValRank": 19,
+  "nextTurn": 15,
+  "priceWin": 33,
+  "shelfNow": {
+   "G": 14,
+   "F": 11,
+   "C": 4
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Karl-Anthony Towns",
+    "t": "NYK",
+    "pos": "C,PF",
+    "ds": 0.9959,
+    "decw": 4.2614,
+    "val": 4.018,
+    "mkt": 8,
+    "valRank": 6,
+    "surv": 0.14,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Jalen Johnson",
+    "t": "ATL",
+    "pos": "SF,PF",
+    "ds": 0.9878,
+    "decw": 4.2967,
+    "val": 3.012,
+    "mkt": 11,
+    "valRank": 14,
+    "surv": 0.42,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Evan Mobley",
+    "t": "CLE",
+    "pos": "PF,C",
+    "ds": 0.9878,
+    "decw": 4.1576,
+    "val": 3.265,
+    "mkt": 37,
+    "valRank": 11,
+    "surv": 0.381,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Tyrese Haliburton",
+    "t": "IND",
+    "pos": "PG",
+    "ds": 0.9878,
+    "decw": 4.0888,
+    "val": 3.801,
+    "mkt": 15,
+    "valRank": 7,
+    "surv": 0.195,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Anthony Davis",
+    "t": "WAS",
+    "pos": "PF,C",
+    "ds": 0.9858,
+    "decw": 4.046,
+    "val": 4.236,
+    "mkt": 10,
+    "valRank": 5,
+    "surv": 0.125,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": null,
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 5,
+   "FT%": 8,
+   "3PTM": 7,
+   "PTS": 10,
+   "REB": 7,
+   "AST": 9,
+   "ST": 9,
+   "BLK": 5,
+   "TO": 1
+  }
+ },
+ {
+  "pick": 15,
+  "punt": [],
+  "actual": "Donovan Mitchell",
+  "actualCardRank": 8,
+  "actualSurv": 0.01,
+  "actualMkt": 14,
+  "actualValRank": 15,
+  "nextTurn": 34,
+  "priceWin": 38,
+  "shelfNow": {
+   "G": 14,
+   "F": 12,
+   "C": 5
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Evan Mobley",
+    "t": "CLE",
+    "pos": "PF,C",
+    "ds": 0.9938,
+    "decw": 2.236,
+    "val": 3.265,
+    "mkt": 37,
+    "valRank": 11,
+    "surv": 0.021,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Karl-Anthony Towns",
+    "t": "NYK",
+    "pos": "C,PF",
+    "ds": 0.9938,
+    "decw": 2.1788,
+    "val": 4.018,
+    "mkt": 8,
+    "valRank": 6,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Chet Holmgren",
+    "t": "OKC",
+    "pos": "PF,C",
+    "ds": 0.9855,
+    "decw": 2.16,
+    "val": 3.264,
+    "mkt": 44,
+    "valRank": 12,
+    "surv": 0.023,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Anthony Davis",
+    "t": "WAS",
+    "pos": "PF,C",
+    "ds": 0.9813,
+    "decw": 2.0906,
+    "val": 4.236,
+    "mkt": 10,
+    "valRank": 5,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Derrick White",
+    "t": "BOS",
+    "pos": "PG,SG",
+    "ds": 0.9772,
+    "decw": 2.1813,
+    "val": 2.192,
+    "mkt": 40,
+    "valRank": 22,
+    "surv": 0.104,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": null,
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 10,
+   "FT%": 7,
+   "3PTM": 3,
+   "PTS": 8,
+   "REB": 4,
+   "AST": 8,
+   "ST": 9,
+   "BLK": 10,
+   "TO": 5
+  }
+ },
+ {
+  "pick": 34,
+  "punt": [],
+  "actual": "Anthony Davis",
+  "actualCardRank": 1,
+  "actualSurv": 0.01,
+  "actualMkt": 10,
+  "actualValRank": 5,
+  "nextTurn": 39,
+  "priceWin": 57,
+  "shelfNow": {
+   "G": 18,
+   "F": 12,
+   "C": 3
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Anthony Davis",
+    "t": "WAS",
+    "pos": "PF,C",
+    "ds": 1,
+    "decw": 1.6558,
+    "val": 4.236,
+    "mkt": 10,
+    "valRank": 5,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Jalen Williams",
+    "t": "OKC",
+    "pos": "SG,SF",
+    "ds": 0.9887,
+    "decw": 1.515,
+    "val": 2.62,
+    "mkt": 26,
+    "valRank": 17,
+    "surv": 0.013,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Derrick White",
+    "t": "BOS",
+    "pos": "PG,SG",
+    "ds": 0.9865,
+    "decw": 1.574,
+    "val": 2.192,
+    "mkt": 40,
+    "valRank": 22,
+    "surv": 0.032,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Dyson Daniels",
+    "t": "ATL",
+    "pos": "SG",
+    "ds": 0.982,
+    "decw": 1.4127,
+    "val": 3.337,
+    "mkt": 47,
+    "valRank": 10,
+    "surv": 0.022,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "OG Anunoby",
+    "t": "NYK",
+    "pos": "SF",
+    "ds": 0.9775,
+    "decw": 1.4519,
+    "val": 2.027,
+    "mkt": 54,
+    "valRank": 26,
+    "surv": 0.088,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Dyson Daniels",
+   "urgent": false,
+   "label": "Two-way playmaking G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 10,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 9,
+   "AST": 9,
+   "ST": 7,
+   "BLK": 11,
+   "TO": 3
+  }
+ },
+ {
+  "pick": 39,
+  "punt": [],
+  "actual": "Kyrie Irving",
+  "actualCardRank": 5,
+  "actualSurv": 0.01,
+  "actualMkt": 18,
+  "actualValRank": 16,
+  "nextTurn": 58,
+  "priceWin": 62,
+  "shelfNow": {
+   "G": 18,
+   "F": 12,
+   "C": 3
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Jalen Williams",
+    "t": "OKC",
+    "pos": "SG,SF",
+    "ds": 0.9931,
+    "decw": 1.3915,
+    "val": 2.62,
+    "mkt": 26,
+    "valRank": 17,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Derrick White",
+    "t": "BOS",
+    "pos": "PG,SG",
+    "ds": 0.9908,
+    "decw": 1.4103,
+    "val": 2.192,
+    "mkt": 40,
+    "valRank": 22,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Dyson Daniels",
+    "t": "ATL",
+    "pos": "SG",
+    "ds": 0.9862,
+    "decw": 1.2974,
+    "val": 3.337,
+    "mkt": 47,
+    "valRank": 10,
+    "surv": 0.016,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Desmond Bane",
+    "t": "ORL",
+    "pos": "SG,SF",
+    "ds": 0.9839,
+    "decw": 1.3532,
+    "val": 2.099,
+    "mkt": 36,
+    "valRank": 23,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Kyrie Irving",
+    "t": "DAL",
+    "pos": "PG,SG",
+    "ds": 0.9793,
+    "decw": 1.2503,
+    "val": 2.745,
+    "mkt": 18,
+    "valRank": 16,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Dyson Daniels",
+   "urgent": false,
+   "label": "Steals-first G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 9,
+   "FT%": 7,
+   "3PTM": 3,
+   "PTS": 4,
+   "REB": 4,
+   "AST": 11,
+   "ST": 6,
+   "BLK": 4,
+   "TO": 2
+  }
+ },
+ {
+  "pick": 58,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Franz Wagner",
+  "actualCardRank": 1,
+  "actualSurv": 0.01,
+  "actualMkt": 27,
+  "actualValRank": 29,
+  "nextTurn": 63,
+  "priceWin": 81,
+  "shelfNow": {
+   "G": 19,
+   "F": 11,
+   "C": 1
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Franz Wagner",
+    "t": "ORL",
+    "pos": "SF,PF",
+    "ds": 0.9949,
+    "decw": 1.2381,
+    "val": 1.889,
+    "mkt": 27,
+    "valRank": 29,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Dyson Daniels",
+    "t": "ATL",
+    "pos": "SG",
+    "ds": 0.9949,
+    "decw": 1.2173,
+    "val": 3.337,
+    "mkt": 47,
+    "valRank": 10,
+    "surv": 0.013,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "OG Anunoby",
+    "t": "NYK",
+    "pos": "SF",
+    "ds": 0.9949,
+    "decw": 1.2323,
+    "val": 2.027,
+    "mkt": 54,
+    "valRank": 26,
+    "surv": 0.017,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Payton Pritchard",
+    "t": "BOS",
+    "pos": "PG",
+    "ds": 0.9848,
+    "decw": 1.1785,
+    "val": 1.154,
+    "mkt": 41,
+    "valRank": 37,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Darius Garland",
+    "t": "LAC",
+    "pos": "PG",
+    "ds": 0.9773,
+    "decw": 1.1597,
+    "val": 0.853,
+    "mkt": 45,
+    "valRank": 42,
+    "surv": 0.012,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "C",
+   "best": "Kristaps Porzingis",
+   "urgent": true,
+   "label": "Shot-block C",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": "Kristaps Porzingis",
+  "tgOnPin": false,
+  "withheld": "availability 0.78",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 9,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 5,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 2
+  }
+ },
+ {
+  "pick": 63,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Dyson Daniels",
+  "actualCardRank": 2,
+  "actualSurv": 0.01,
+  "actualMkt": 47,
+  "actualValRank": 10,
+  "nextTurn": 82,
+  "priceWin": 86,
+  "shelfNow": {
+   "G": 20,
+   "F": 12,
+   "C": 2
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "OG Anunoby",
+    "t": "NYK",
+    "pos": "SF",
+    "ds": 0.9974,
+    "decw": 1.0715,
+    "val": 2.027,
+    "mkt": 54,
+    "valRank": 26,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Dyson Daniels",
+    "t": "ATL",
+    "pos": "SG",
+    "ds": 0.9948,
+    "decw": 1.049,
+    "val": 3.337,
+    "mkt": 47,
+    "valRank": 10,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Payton Pritchard",
+    "t": "BOS",
+    "pos": "PG",
+    "ds": 0.9793,
+    "decw": 1.0049,
+    "val": 1.154,
+    "mkt": 41,
+    "valRank": 37,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Jakob Poeltl",
+    "t": "TOR",
+    "pos": "C",
+    "ds": 0.9741,
+    "decw": 1.0352,
+    "val": 0.606,
+    "mkt": 89,
+    "valRank": 47,
+    "surv": 0.021,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Myles Turner",
+    "t": "MIL",
+    "pos": "C",
+    "ds": 0.9741,
+    "decw": 1.0673,
+    "val": 0.508,
+    "mkt": 86,
+    "valRank": 54,
+    "surv": 0.021,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "C",
+   "best": "Kristaps Porzingis",
+   "urgent": true,
+   "label": "Shot-block C",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 9,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 1,
+   "REB": 6,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 3
+  }
+ },
+ {
+  "pick": 82,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Jakob Poeltl",
+  "actualCardRank": 1,
+  "actualSurv": 0.021,
+  "actualMkt": 89,
+  "actualValRank": 47,
+  "nextTurn": 87,
+  "priceWin": 105,
+  "shelfNow": {
+   "G": 24,
+   "F": 10,
+   "C": 3
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Jakob Poeltl",
+    "t": "TOR",
+    "pos": "C",
+    "ds": 0.9885,
+    "decw": 0.9515,
+    "val": 0.606,
+    "mkt": 89,
+    "valRank": 47,
+    "surv": 0.021,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Myles Turner",
+    "t": "MIL",
+    "pos": "C",
+    "ds": 0.9856,
+    "decw": 1.0106,
+    "val": 0.508,
+    "mkt": 86,
+    "valRank": 54,
+    "surv": 0.02,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Kristaps Porzingis",
+    "t": "GSW",
+    "pos": "C",
+    "ds": 0.9828,
+    "decw": 0.9103,
+    "val": 0.885,
+    "mkt": 61,
+    "valRank": 40,
+    "surv": 0.011,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Brook Lopez",
+    "t": "LAC",
+    "pos": "C",
+    "ds": 0.9799,
+    "decw": 0.9823,
+    "val": 0.126,
+    "mkt": 108,
+    "valRank": 58,
+    "surv": 0.022,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Cameron Johnson",
+    "t": "DEN",
+    "pos": "SF",
+    "ds": 0.977,
+    "decw": 0.9177,
+    "val": 0.54,
+    "mkt": 66,
+    "valRank": 51,
+    "surv": 0.014,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "C",
+   "best": "Kristaps Porzingis",
+   "urgent": false,
+   "label": "Shot-block C",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 10,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 8,
+   "AST": 6,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 5
+  }
+ },
+ {
+  "pick": 87,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Myles Turner",
+  "actualCardRank": 2,
+  "actualSurv": 0.016,
+  "actualMkt": 86,
+  "actualValRank": 54,
+  "nextTurn": 106,
+  "priceWin": 110,
+  "shelfNow": {
+   "G": 22,
+   "F": 13,
+   "C": 4
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Cameron Johnson",
+    "t": "DEN",
+    "pos": "SF",
+    "ds": 0.9882,
+    "decw": 0.8431,
+    "val": 0.54,
+    "mkt": 66,
+    "valRank": 51,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Myles Turner",
+    "t": "MIL",
+    "pos": "C",
+    "ds": 0.9882,
+    "decw": 0.8754,
+    "val": 0.508,
+    "mkt": 86,
+    "valRank": 54,
+    "surv": 0.016,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Kristaps Porzingis",
+    "t": "GSW",
+    "pos": "C",
+    "ds": 0.9882,
+    "decw": 0.8045,
+    "val": 0.885,
+    "mkt": 61,
+    "valRank": 40,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Brook Lopez",
+    "t": "LAC",
+    "pos": "C",
+    "ds": 0.9822,
+    "decw": 0.8627,
+    "val": 0.126,
+    "mkt": 108,
+    "valRank": 58,
+    "surv": 0.021,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Christian Braun",
+    "t": "DEN",
+    "pos": "SG",
+    "ds": 0.9704,
+    "decw": 0.786,
+    "val": 0.508,
+    "mkt": 101,
+    "valRank": 53,
+    "surv": 0.02,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Ja Morant",
+   "urgent": false,
+   "label": "Shooting G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 7,
+   "FT%": 6,
+   "3PTM": 8,
+   "PTS": 3,
+   "REB": 3,
+   "AST": 7,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 5
+  }
+ },
+ {
+  "pick": 106,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Miles Bridges",
+  "actualCardRank": 4,
+  "actualSurv": 0.016,
+  "actualMkt": 58,
+  "actualValRank": 78,
+  "nextTurn": 111,
+  "priceWin": 129,
+  "shelfNow": {
+   "G": 22,
+   "F": 13,
+   "C": 4
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Cameron Johnson",
+    "t": "DEN",
+    "pos": "SF",
+    "ds": 0.9967,
+    "decw": 0.8409,
+    "val": 0.54,
+    "mkt": 66,
+    "valRank": 51,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Christian Braun",
+    "t": "DEN",
+    "pos": "SG",
+    "ds": 0.9867,
+    "decw": 0.7793,
+    "val": 0.508,
+    "mkt": 101,
+    "valRank": 53,
+    "surv": 0.019,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Brook Lopez",
+    "t": "LAC",
+    "pos": "C",
+    "ds": 0.98,
+    "decw": 0.7689,
+    "val": 0.126,
+    "mkt": 108,
+    "valRank": 58,
+    "surv": 0.02,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Miles Bridges",
+    "t": "PHX",
+    "pos": "SF,PF",
+    "ds": 0.9767,
+    "decw": 0.8317,
+    "val": -0.389,
+    "mkt": 58,
+    "valRank": 78,
+    "surv": 0.016,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Tari Eason",
+    "t": "HOU",
+    "pos": "PF",
+    "ds": 0.9733,
+    "decw": 0.7376,
+    "val": 0.729,
+    "mkt": 88,
+    "valRank": 44,
+    "surv": 0.015,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Jordan Poole",
+   "urgent": false,
+   "label": "Shooting G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 8,
+   "FT%": 6,
+   "3PTM": 8,
+   "PTS": 3,
+   "REB": 3,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 2,
+   "TO": 3
+  }
+ },
+ {
+  "pick": 111,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Cameron Johnson",
+  "actualCardRank": 1,
+  "actualSurv": 0.01,
+  "actualMkt": 66,
+  "actualValRank": 51,
+  "nextTurn": 130,
+  "priceWin": 134,
+  "shelfNow": {
+   "G": 21,
+   "F": 14,
+   "C": 4
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Cameron Johnson",
+    "t": "DEN",
+    "pos": "SF",
+    "ds": 0.9966,
+    "decw": 0.7707,
+    "val": 0.54,
+    "mkt": 66,
+    "valRank": 51,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Christian Braun",
+    "t": "DEN",
+    "pos": "SG",
+    "ds": 0.9897,
+    "decw": 0.7174,
+    "val": 0.508,
+    "mkt": 101,
+    "valRank": 53,
+    "surv": 0.014,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Brook Lopez",
+    "t": "LAC",
+    "pos": "C",
+    "ds": 0.9793,
+    "decw": 0.6995,
+    "val": 0.126,
+    "mkt": 108,
+    "valRank": 58,
+    "surv": 0.016,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Jordan Poole",
+    "t": "NOP",
+    "pos": "PG,SG",
+    "ds": 0.9655,
+    "decw": 0.6799,
+    "val": -0.426,
+    "mkt": 51,
+    "valRank": 79,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Collin Gillespie",
+    "t": "PHX",
+    "pos": "PG,SG",
+    "ds": 0.9586,
+    "decw": 0.7008,
+    "val": -1.132,
+    "mkt": 104,
+    "valRank": 94,
+    "surv": 0.035,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Jordan Poole",
+   "urgent": false,
+   "label": "Playmaking G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 9,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 2,
+   "REB": 3,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 6
+  }
+ },
+ {
+  "pick": 130,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Jordan Poole",
+  "actualCardRank": 3,
+  "actualSurv": 0.01,
+  "actualMkt": 51,
+  "actualValRank": 79,
+  "nextTurn": 135,
+  "priceWin": 153,
+  "shelfNow": {
+   "G": 24,
+   "F": 13,
+   "C": 6
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Christian Braun",
+    "t": "DEN",
+    "pos": "SG",
+    "ds": 0.9961,
+    "decw": 0.7105,
+    "val": 0.508,
+    "mkt": 101,
+    "valRank": 53,
+    "surv": 0.013,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "Tari Eason",
+    "t": "HOU",
+    "pos": "PF",
+    "ds": 0.9921,
+    "decw": 0.6705,
+    "val": 0.729,
+    "mkt": 88,
+    "valRank": 44,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Jordan Poole",
+    "t": "NOP",
+    "pos": "PG,SG",
+    "ds": 0.9724,
+    "decw": 0.6622,
+    "val": -0.426,
+    "mkt": 51,
+    "valRank": 79,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Collin Gillespie",
+    "t": "PHX",
+    "pos": "PG,SG",
+    "ds": 0.9685,
+    "decw": 0.6825,
+    "val": -1.132,
+    "mkt": 104,
+    "valRank": 94,
+    "surv": 0.019,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "PJ Washington",
+    "t": "DAL",
+    "pos": "PF,C",
+    "ds": 0.9685,
+    "decw": 0.6674,
+    "val": -1.037,
+    "mkt": 109,
+    "valRank": 91,
+    "surv": 0.016,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Jordan Poole",
+   "urgent": false,
+   "label": "Shooting G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 8,
+   "FT%": 4,
+   "3PTM": 5,
+   "PTS": 2,
+   "REB": 3,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 5
+  }
+ },
+ {
+  "pick": 135,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "Tari Eason",
+  "actualCardRank": 3,
+  "actualSurv": 0.01,
+  "actualMkt": 88,
+  "actualValRank": 44,
+  "nextTurn": 154,
+  "priceWin": 158,
+  "shelfNow": {
+   "G": 26,
+   "F": 15,
+   "C": 6
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Christian Braun",
+    "t": "DEN",
+    "pos": "SG",
+    "ds": 0.9959,
+    "decw": 0.6079,
+    "val": 0.508,
+    "mkt": 101,
+    "valRank": 53,
+    "surv": 0.01,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "PJ Washington",
+    "t": "DAL",
+    "pos": "PF,C",
+    "ds": 0.9754,
+    "decw": 0.5863,
+    "val": -1.037,
+    "mkt": 109,
+    "valRank": 91,
+    "surv": 0.011,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Tari Eason",
+    "t": "HOU",
+    "pos": "PF",
+    "ds": 0.9713,
+    "decw": 0.5673,
+    "val": 0.729,
+    "mkt": 88,
+    "valRank": 44,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Collin Gillespie",
+    "t": "PHX",
+    "pos": "PG,SG",
+    "ds": 0.9631,
+    "decw": 0.58,
+    "val": -1.132,
+    "mkt": 104,
+    "valRank": 94,
+    "surv": 0.01,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Draymond Green",
+    "t": "GSW",
+    "pos": "PF,C",
+    "ds": 0.9508,
+    "decw": 0.5955,
+    "val": -1.686,
+    "mkt": 120,
+    "valRank": 115,
+    "surv": 0.05,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Cam Thomas",
+   "urgent": false,
+   "label": "Playmaking G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 9,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 6,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 9
+  }
+ },
+ {
+  "pick": 154,
+  "punt": [
+   "FG%",
+   "TO"
+  ],
+  "actual": "PJ Washington",
+  "actualCardRank": 2,
+  "actualSurv": null,
+  "actualMkt": 109,
+  "actualValRank": 91,
+  "nextTurn": null,
+  "priceWin": 177,
+  "shelfNow": {
+   "G": 27,
+   "F": 17,
+   "C": 3
+  },
+  "rows": [
+   {
+    "rank": 1,
+    "n": "Christian Braun",
+    "t": "DEN",
+    "pos": "SG",
+    "ds": 1,
+    "decw": 0.5682,
+    "val": 0.508,
+    "mkt": 101,
+    "valRank": 53,
+    "surv": null,
+    "chip": null,
+    "target": true
+   },
+   {
+    "rank": 2,
+    "n": "PJ Washington",
+    "t": "DAL",
+    "pos": "PF,C",
+    "ds": 0.9856,
+    "decw": 0.5352,
+    "val": -1.037,
+    "mkt": 109,
+    "valRank": 91,
+    "surv": null,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 3,
+    "n": "Malik Monk",
+    "t": "SAC",
+    "pos": "SG,PG",
+    "ds": 0.9663,
+    "decw": 0.5281,
+    "val": -1.591,
+    "mkt": 84,
+    "valRank": 108,
+    "surv": null,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 4,
+    "n": "Quentin Grimes",
+    "t": "LAL",
+    "pos": "SG,SF",
+    "ds": 0.9567,
+    "decw": 0.5024,
+    "val": -1.229,
+    "mkt": 85,
+    "valRank": 97,
+    "surv": null,
+    "chip": null,
+    "target": false
+   },
+   {
+    "rank": 5,
+    "n": "Saddiq Bey",
+    "t": "NOP",
+    "pos": "PF,SF",
+    "ds": 0.9471,
+    "decw": 0.5015,
+    "val": -1.237,
+    "mkt": 98,
+    "valRank": 98,
+    "surv": null,
+    "chip": null,
+    "target": false
+   }
+  ],
+  "read": {
+   "fam": "G",
+   "best": "Cam Thomas",
+   "urgent": false,
+   "label": "Playmaking G",
+   "lastCall": null,
+   "keys": [
+    "label",
+    "fam",
+    "tip",
+    "urgent",
+    "wait",
+    "shelfCount",
+    "best",
+    "boardOnly"
+   ]
+  },
+  "readErr": null,
+  "pinTarget": null,
+  "tgOnPin": false,
+  "withheld": "",
+  "engine": {
+   "rankCard": true,
+   "pinDecision": true,
+   "survivalDisplay": false
+  },
+  "ranks": {
+   "FG%": 9,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 6,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 9
+  }
+ }
+]

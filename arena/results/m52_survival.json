@@ -1,0 +1,637 @@
+{
+ "mock": 52,
+ "this_room": {
+  "rows": 50,
+  "mean_pred": 0.043,
+  "realized": 0.7,
+  "alive": 35,
+  "brier": 0.655,
+  "by_chip": {
+   "BUY NOW": {
+    "n": 47,
+    "mean_pred": 0.028,
+    "alive": 33
+   },
+   "BUY NOW(shelf)": {
+    "n": 1,
+    "mean_pred": 0.021,
+    "alive": 1
+   },
+   "TOSS-UP": {
+    "n": 1,
+    "mean_pred": 0.381,
+    "alive": 1
+   },
+   "None": {
+    "n": 1,
+    "mean_pred": 0.42,
+    "alive": 0
+   }
+  },
+  "survivors_called_le_2pct": [
+   "#15 Anthony Davis (0.01)",
+   "#34 Jalen Williams (0.01)",
+   "#39 Dyson Daniels (0.02)",
+   "#58 Dyson Daniels (0.01)",
+   "#58 OG Anunoby (0.02)",
+   "#58 Payton Pritchard (0.01)",
+   "#82 Myles Turner (0.02)",
+   "#82 Kristaps Porzingis (0.01)",
+   "#82 Cameron Johnson (0.01)",
+   "#87 Cameron Johnson (0.01)",
+   "#87 Christian Braun (0.02)",
+   "#106 Cameron Johnson (0.01)",
+   "#106 Christian Braun (0.02)",
+   "#106 Brook Lopez (0.02)",
+   "#106 Tari Eason (0.01)",
+   "#111 Christian Braun (0.01)",
+   "#111 Jordan Poole (0.01)",
+   "#130 Christian Braun (0.01)",
+   "#130 Tari Eason (0.01)",
+   "#130 PJ Washington (0.02)",
+   "#130 Collin Gillespie (0.02)",
+   "#135 Christian Braun (0.01)",
+   "#135 PJ Washington (0.01)"
+  ]
+ },
+ "rows": [
+  {
+   "mock": 52,
+   "pick": 10,
+   "n": "Karl-Anthony Towns",
+   "pred": 0.14,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 8,
+   "valRank": 6
+  },
+  {
+   "mock": 52,
+   "pick": 10,
+   "n": "Tyrese Haliburton",
+   "pred": 0.195,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 15,
+   "valRank": 7
+  },
+  {
+   "mock": 52,
+   "pick": 10,
+   "n": "Jalen Johnson",
+   "pred": 0.42,
+   "alive": false,
+   "chip": null,
+   "mkt": 11,
+   "valRank": 14
+  },
+  {
+   "mock": 52,
+   "pick": 10,
+   "n": "Evan Mobley",
+   "pred": 0.381,
+   "alive": true,
+   "chip": "TOSS-UP",
+   "mkt": 37,
+   "valRank": 11
+  },
+  {
+   "mock": 52,
+   "pick": 10,
+   "n": "Anthony Davis",
+   "pred": 0.125,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 10,
+   "valRank": 5
+  },
+  {
+   "mock": 52,
+   "pick": 15,
+   "n": "Karl-Anthony Towns",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 8,
+   "valRank": 6
+  },
+  {
+   "mock": 52,
+   "pick": 15,
+   "n": "Evan Mobley",
+   "pred": 0.021,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 37,
+   "valRank": 11
+  },
+  {
+   "mock": 52,
+   "pick": 15,
+   "n": "Chet Holmgren",
+   "pred": 0.023,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 44,
+   "valRank": 12
+  },
+  {
+   "mock": 52,
+   "pick": 15,
+   "n": "Anthony Davis",
+   "pred": 0.01,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 10,
+   "valRank": 5
+  },
+  {
+   "mock": 52,
+   "pick": 15,
+   "n": "Derrick White",
+   "pred": 0.104,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 40,
+   "valRank": 22
+  },
+  {
+   "mock": 52,
+   "pick": 34,
+   "n": "Jalen Williams",
+   "pred": 0.013,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 26,
+   "valRank": 17
+  },
+  {
+   "mock": 52,
+   "pick": 34,
+   "n": "Derrick White",
+   "pred": 0.032,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 40,
+   "valRank": 22
+  },
+  {
+   "mock": 52,
+   "pick": 34,
+   "n": "Dyson Daniels",
+   "pred": 0.022,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 47,
+   "valRank": 10
+  },
+  {
+   "mock": 52,
+   "pick": 34,
+   "n": "OG Anunoby",
+   "pred": 0.088,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 54,
+   "valRank": 26
+  },
+  {
+   "mock": 52,
+   "pick": 39,
+   "n": "Jalen Williams",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 26,
+   "valRank": 17
+  },
+  {
+   "mock": 52,
+   "pick": 39,
+   "n": "Derrick White",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 40,
+   "valRank": 22
+  },
+  {
+   "mock": 52,
+   "pick": 39,
+   "n": "Dyson Daniels",
+   "pred": 0.016,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 47,
+   "valRank": 10
+  },
+  {
+   "mock": 52,
+   "pick": 39,
+   "n": "Desmond Bane",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 36,
+   "valRank": 23
+  },
+  {
+   "mock": 52,
+   "pick": 58,
+   "n": "Dyson Daniels",
+   "pred": 0.013,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 47,
+   "valRank": 10
+  },
+  {
+   "mock": 52,
+   "pick": 58,
+   "n": "OG Anunoby",
+   "pred": 0.017,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 54,
+   "valRank": 26
+  },
+  {
+   "mock": 52,
+   "pick": 58,
+   "n": "Payton Pritchard",
+   "pred": 0.01,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 41,
+   "valRank": 37
+  },
+  {
+   "mock": 52,
+   "pick": 58,
+   "n": "Darius Garland",
+   "pred": 0.012,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 45,
+   "valRank": 42
+  },
+  {
+   "mock": 52,
+   "pick": 63,
+   "n": "OG Anunoby",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 54,
+   "valRank": 26
+  },
+  {
+   "mock": 52,
+   "pick": 63,
+   "n": "Payton Pritchard",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 41,
+   "valRank": 37
+  },
+  {
+   "mock": 52,
+   "pick": 63,
+   "n": "Jakob Poeltl",
+   "pred": 0.021,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 89,
+   "valRank": 47
+  },
+  {
+   "mock": 52,
+   "pick": 63,
+   "n": "Myles Turner",
+   "pred": 0.021,
+   "alive": true,
+   "chip": "BUY NOW(shelf)",
+   "mkt": 86,
+   "valRank": 54
+  },
+  {
+   "mock": 52,
+   "pick": 82,
+   "n": "Myles Turner",
+   "pred": 0.02,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 86,
+   "valRank": 54
+  },
+  {
+   "mock": 52,
+   "pick": 82,
+   "n": "Kristaps Porzingis",
+   "pred": 0.011,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 61,
+   "valRank": 40
+  },
+  {
+   "mock": 52,
+   "pick": 82,
+   "n": "Brook Lopez",
+   "pred": 0.022,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 108,
+   "valRank": 58
+  },
+  {
+   "mock": 52,
+   "pick": 82,
+   "n": "Cameron Johnson",
+   "pred": 0.014,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 66,
+   "valRank": 51
+  },
+  {
+   "mock": 52,
+   "pick": 87,
+   "n": "Cameron Johnson",
+   "pred": 0.01,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 66,
+   "valRank": 51
+  },
+  {
+   "mock": 52,
+   "pick": 87,
+   "n": "Kristaps Porzingis",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 61,
+   "valRank": 40
+  },
+  {
+   "mock": 52,
+   "pick": 87,
+   "n": "Brook Lopez",
+   "pred": 0.021,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 108,
+   "valRank": 58
+  },
+  {
+   "mock": 52,
+   "pick": 87,
+   "n": "Christian Braun",
+   "pred": 0.02,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 101,
+   "valRank": 53
+  },
+  {
+   "mock": 52,
+   "pick": 106,
+   "n": "Cameron Johnson",
+   "pred": 0.01,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 66,
+   "valRank": 51
+  },
+  {
+   "mock": 52,
+   "pick": 106,
+   "n": "Christian Braun",
+   "pred": 0.019,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 101,
+   "valRank": 53
+  },
+  {
+   "mock": 52,
+   "pick": 106,
+   "n": "Brook Lopez",
+   "pred": 0.02,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 108,
+   "valRank": 58
+  },
+  {
+   "mock": 52,
+   "pick": 106,
+   "n": "Tari Eason",
+   "pred": 0.015,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 88,
+   "valRank": 44
+  },
+  {
+   "mock": 52,
+   "pick": 111,
+   "n": "Christian Braun",
+   "pred": 0.014,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 101,
+   "valRank": 53
+  },
+  {
+   "mock": 52,
+   "pick": 111,
+   "n": "Brook Lopez",
+   "pred": 0.016,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 108,
+   "valRank": 58
+  },
+  {
+   "mock": 52,
+   "pick": 111,
+   "n": "Jordan Poole",
+   "pred": 0.01,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 51,
+   "valRank": 79
+  },
+  {
+   "mock": 52,
+   "pick": 111,
+   "n": "Collin Gillespie",
+   "pred": 0.035,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 104,
+   "valRank": 94
+  },
+  {
+   "mock": 52,
+   "pick": 130,
+   "n": "Christian Braun",
+   "pred": 0.013,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 101,
+   "valRank": 53
+  },
+  {
+   "mock": 52,
+   "pick": 130,
+   "n": "Tari Eason",
+   "pred": 0.01,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 88,
+   "valRank": 44
+  },
+  {
+   "mock": 52,
+   "pick": 130,
+   "n": "PJ Washington",
+   "pred": 0.016,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 109,
+   "valRank": 91
+  },
+  {
+   "mock": 52,
+   "pick": 130,
+   "n": "Collin Gillespie",
+   "pred": 0.019,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 104,
+   "valRank": 94
+  },
+  {
+   "mock": 52,
+   "pick": 135,
+   "n": "Christian Braun",
+   "pred": 0.01,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 101,
+   "valRank": 53
+  },
+  {
+   "mock": 52,
+   "pick": 135,
+   "n": "PJ Washington",
+   "pred": 0.011,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 109,
+   "valRank": 91
+  },
+  {
+   "mock": 52,
+   "pick": 135,
+   "n": "Collin Gillespie",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 104,
+   "valRank": 94
+  },
+  {
+   "mock": 52,
+   "pick": 135,
+   "n": "Draymond Green",
+   "pred": 0.05,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 120,
+   "valRank": 115
+  }
+ ],
+ "pooled": {
+  "rows": 98,
+  "mean_pred": 0.044,
+  "realized": 0.694,
+  "alive": 68,
+  "brier": 0.651,
+  "by_chip": {
+   "BUY NOW": {
+    "n": 93,
+    "mean_pred": 0.028,
+    "alive": 65
+   },
+   "BUY NOW(shelf)": {
+    "n": 1,
+    "mean_pred": 0.021,
+    "alive": 1
+   },
+   "TOSS-UP": {
+    "n": 1,
+    "mean_pred": 0.381,
+    "alive": 1
+   },
+   "None": {
+    "n": 3,
+    "mean_pred": 0.435,
+    "alive": 1
+   }
+  },
+  "survivors_called_le_2pct": [
+   "#15 Anthony Davis (0.01)",
+   "#34 Jalen Williams (0.01)",
+   "#39 Dyson Daniels (0.02)",
+   "#58 Dyson Daniels (0.01)",
+   "#58 OG Anunoby (0.02)",
+   "#58 Payton Pritchard (0.01)",
+   "#82 Myles Turner (0.02)",
+   "#82 Kristaps Porzingis (0.01)",
+   "#82 Cameron Johnson (0.01)",
+   "#87 Cameron Johnson (0.01)",
+   "#87 Christian Braun (0.02)",
+   "#106 Cameron Johnson (0.01)",
+   "#106 Christian Braun (0.02)",
+   "#106 Brook Lopez (0.02)",
+   "#106 Tari Eason (0.01)",
+   "#111 Christian Braun (0.01)",
+   "#111 Jordan Poole (0.01)",
+   "#130 Christian Braun (0.01)",
+   "#130 Tari Eason (0.01)",
+   "#130 PJ Washington (0.02)",
+   "#130 Collin Gillespie (0.02)",
+   "#135 Christian Braun (0.01)",
+   "#135 PJ Washington (0.01)",
+   "#15 Anthony Davis (0.01)",
+   "#39 OG Anunoby (0.02)",
+   "#58 Payton Pritchard (0.01)",
+   "#58 Damian Lillard (0.01)",
+   "#63 Cameron Johnson (0.01)",
+   "#63 Reed Sheppard (0.02)",
+   "#82 Myles Turner (0.02)",
+   "#82 Cameron Johnson (0.01)",
+   "#82 Kristaps Porzingis (0.01)",
+   "#87 Cameron Johnson (0.01)",
+   "#87 Jakob Poeltl (0.02)",
+   "#106 Jakob Poeltl (0.02)",
+   "#106 Christian Braun (0.02)",
+   "#106 Brook Lopez (0.02)",
+   "#106 Tari Eason (0.01)",
+   "#111 Brook Lopez (0.02)",
+   "#111 Tari Eason (0.01)",
+   "#111 Christian Braun (0.01)",
+   "#111 Nikola Vucevic (0.02)",
+   "#130 Christian Braun (0.01)",
+   "#130 Brook Lopez (0.02)",
+   "#130 Nikola Vucevic (0.02)",
+   "#130 Jordan Poole (0.01)",
+   "#135 Brook Lopez (0.01)"
+  ]
+ }
+}
