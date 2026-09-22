@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-25 pool-completion pass: added 9 players that a live mock (draft_state_46) drafted but the pool lacked, each with a 2026-27 line built from researched 2025-26 production. ADDED: Ty Jerome (MEM, ESPN/CBS gamelog), Saddiq Bey (NOP, NBA.com/ESPN), Ajay Mitchell (OKC, ESPN), Collin Gillespie (PHX, ESPN/CBS), Maxime Raynaud (SAC, NBA.com/SI, All-Rookie 2nd Team), Collin Murray-Boyles (TOR, ESPN/RaptorsHQ, All-Rookie 2nd Team), Sandro Mamukelashvili (LAL, ESPN/CBS), Paul Reed (DET, ESPN/CBS), Keaton Wallace (LAC per the league recap; the recap garbled the name to 'Wagler' and some sources list ATL - flagged). RESEARCH CHANNEL LIMIT: site.api.espn.com direct pull still 403s; web SEARCH works and every line rests on dated 2025-26 box-score reporting. No transactions this pass; the 2026-08-25 data-pull deltas (DeRozan->DEN, Klay->MIA, Sharpe knee-recovery) stand unchanged. 2026-08-25 live-mock-49 pass: +Tim Hardaway Jr. (MIA), drafted pick 148 in a 12-human room but absent from the pool. 2026-08-26 pull (window 8/25->8/26, 1 day): transactions + injury sweep run (Spotrac/ESPN/NBA.com transaction trackers, HoopsRumors, RotoWire via dated web search; direct page fetches to sports domains remain blocked by the environment egress policy, so claims rest on dated search results). NO roster changes in window - zero placements moved. Only in-window transaction found: Brandon Williams -> GSW (1yr/$2.63M, 8/25, two independent sources); he is on NO pool row in either plane and has no consensus-top-120 or live-room draft evidence, so he is watchlisted, NOT added. FA rows re-verified still unsigned: Kuminga (now UFA - ATL declined the $24.3M option), Cam Thomas, Jaden Ivey, Lonzo Ball. Kawhi trade still on league hold (5th consecutive). CORRECTION within the same 2026-08-26 pull: Bennedict Mathurin LAC -> NOP. He agreed to two years / $16M with a player option in New Orleans, reported 8/26 (ESPN/Shams, NBA.com, HoopsRumors, Fox8, Bleacher Report). His reps asked the Clippers to withdraw the $8.8M qualifying offer so he could sign outright rather than via offer sheet or sign-and-trade; Jake Fischer reports LAC has not formally withdrawn it yet but will work with him to facilitate the move. Applied under the standing 'agreed to terms is final' rule. The first sweep of this pull MISSED this transaction - it was caught on owner challenge and applied in the same pull. 2026-08-27 pull: Jonathan Kuminga FA -> MIN. Two years / $13M with a player option, agreed 8/26, agent Aaron Turner to ESPN (Shams); corroborated by NBA.com, NBC Sports Bay Area, Bleacher Report, OpenCourt. Shams names the role directly: he 'will be a starter alongside Anthony Edwards, LaMelo Ball, Jaden McDaniels and Rudy Gobert.' He chose MIN over LAL/CHI/POR, bypassing a similar starting role at $12M+/yr over three years in LA for a shorter deal and more control of his future. 2026-09-01 pull: no placements moved. Sweep verified Mathurin still NOP (LAC formally withdrew the $8.8M qualifying offer 8/29 per RealGM/HoopsRumors, completing the mechanism) and Sochan still POR on the non-guaranteed camp deal (an aggregator summary had garbled his former Knicks tenure as a current signing). Konchar/Cody Williams/Josh Green trade and the two MIA two-ways touch no row in either plane. 2026-09-02 pull: no placements moved, but the biggest news of the offseason landed. The NBA announced its findings and penalties in the Clippers/Kawhi Leonard cap-circumvention investigation on 2026-09-02 (NBA Communications release; CNN, Deseret News, Sportico, CP24, BlogTO, Globe and Mail, Bleacher Report, all 9/2): LAC forfeits five first-round picks 2029-2033 and is fined $30M; Ballmer and Gillian Zucker suspended one year, Lawrence Frank six months; Leonard himself NOT suspended, contract NOT voided, ordered to pay $700K. That lifts the league hold on the June 30 Toronto trade (Leonard to TOR for Brandon Ingram, Gradey Dick, unprotected 2031 and 2033 firsts, a 2027 swap, 2030 and 2033 seconds). The three affected rows (Leonard LAC, Ingram TOR, Dick TOR) were RE-VERIFIED AND HELD, not moved: outlet reporting on 9/2 describes the trade as cleared and expected to be unpaused, and the only claim that it was 'officially completed' is a single aggregator social post, which does not meet the two-independent-source bar for a team change. Their note fields now record the hold as LIFTED and the trade as awaiting execution. Expect these placements to move next pull. 2026-09-08 pull (window 09-02 -> 09-08, 6 days, sweep widened): no placements moved. The Kawhi Leonard trade to Toronto is STILL not formally executed six days after the league hold was lifted -- as of 2026-09-07 it was still described as finalizing 'in the next couple of days' and still appears on HoopsRumors' list of significant transactions yet to be finalized, and CBS Sports' player note still reads 'although the trade isn't yet finalized'. Leonard (LAC), Ingram (TOR) and Dick (TOR) therefore HELD for a second straight pull; their existing note cells ('league hold LIFTED 2026-09-02, awaiting execution') remain accurate and were not churned. In-window transactions checked, none touching a pool row: Ben Simmons -> LAC (1yr/$3.52M, 9/4) is on no row and has no consensus-top-120 or live-room draft evidence, so watchlisted not added, matching the Brandon Williams precedent of 8/26; Paul Reed's DET salary became fully guaranteed (9/4), same team, no sourced role change; Tacko Fall (PHI 9/1), John Butler Jr. (MIL), Kobe Stewart (CHA Exhibit 10) and Grant Nelson (BKN two-way) touch no row. Duren still unsigned, still ~$5M/yr apart, Oct 1 QO deadline now 23 days out. Cam Thomas, Ivey and Lonzo still unsigned; Whitmore confirmed UFA by a third independent source and correctly absent. Injury sweep: no exclusion changes -- Jamal Murray and Domantas Sabonis are full go for camp and neither carries a tag here; Butler, Adams, Moody, Sharpe and DiVincenzo stay excluded. Mark Williams' foot is an 11th quiet pull. Noted gap: Ingram's 2026-05-08 right-heel surgery (spur removal, expected ready for camp) carries no monitor tag on his row; outside this window and availability-neutral, flagged for the pull that rewrites his row on trade execution. SAME-DAY AMENDMENT (2026-09-08, owner integrity challenge): the pull's first version certified Jamal Murray's untagged row as correct. Wrong. TSN's and ESPN's 2026-27 injury-returns coverage has him returning from a RUPTURED RIGHT ACHILLES (2025-26; returned post-All-Star-break, ~14 games), and the board's own convention tags every Achilles returnee (Haliburton, Lillard, Dejounte Murray) inj-achilles-risk at 0.78. Jamal Murray is now tagged inj-achilles-risk (first season back); kit GP 66 -> 62 to match the Dejounte Murray anchor (identical injury and games-played profile). Team unchanged (DEN), so no placement moved. Sabonis (Feb meniscus, full go) deliberately NOT tagged - different injury class - flagged for owner overrule. SECOND SAME-DAY AMENDMENT (2026-09-08, owner-reported miss): four-player NOP-MEM trade REPORTED 2026-09-08 -- Pelicans send Jordan Hawkins, Micah Peavy, a future second and a second-round swap to Memphis for AJ Johnson and Taj Gibson, clearing ~$5.7M so New Orleans can OFFICIALLY complete Bennedict Mathurin's two-year/$16M signing (HoopsRumors 'Pelicans, Grizzlies Complete Four-Player Trade'; ESPN La Crosse 9/8; Daily Memphian; BVM 9/8; Yahoo/Yardbarker trade grades -- multi-source, dated). Row change: Jordan Hawkins NOP -> MEM (his only plane is the deck). Peavy, AJ Johnson and Taj Gibson are on no row in either plane. Mathurin stays NOP; his judgment discount narrows -0.15 -> -0.10 on the first sourced role mechanism since the signing (a named backcourt competitor subtracted). Also corrected: Ben Simmons signed with SACRAMENTO (1yr/~$3.5M, announced 9/4, AP/NBA.com/ABC/Kings Herald), NOT the Clippers as the original sweep summary garbled; he sat out all of 2025-26 (back/leg), remains on no pool row, watchlisted with the correct team. 2026-09-11 pull (window 09-08 -> 09-11, 3 days; first pull under the F1-F6 protocol): NO placements moved. All 8 flagged open items searched with receipts; team-shadow sweep run over CHI/DET/LAC/MEM/NOP/NYK/POR. Mark Williams (PHX) tore his left shoulder labrum in an offseason workout, surgery 2026-09-10, out extended with no timetable (wire/AOL + ESPN injury ledger + Valley of the Suns + Bright Side of the Sun) -> shoulder-recovery exclusion, team unchanged. Mathurin repriced to the bench role NOP rotation coverage now describes (SI/Yahoo/FanSided 9/9-9/11), team unchanged. Kawhi trade UNEXECUTED a third pull; sourced cause is the Clippers' front-office vacuum (Ballmer/Frank suspensions); all parties confident pre-camp; rows held again. Taj Gibson waived by NOP 9/9 (confirms the 9/8 trade processed; no row). DeRozan DEN deal formally signed 9/8 (agreed 8/21; row already DEN). MEM crunch watch: four of Hawkins/Peavy/DLo/Clayton/Kris Murray to be waived per Fischer -- Hawkins and DLo are deck rows, nothing executed yet. Ben Simmons ledger garble (LAC) resurfaced and refuted again: he is SAC on a non-guaranteed deal (NBA.com, HoopsRumors, B/R, SI Kings). 2026-09-15 pull (window 09-11 -> 09-15, 4 days): THE KAWHI TRADE EXECUTED. Owner reported it settled; verified official Monday 2026-09-14 across six independent outlets (CBC with the Raptors' announcement and GM Bobby Webster's statement; SI Raptors; HoopsRumors 'Clippers, Raptors Complete Kawhi Leonard Trade'; BVM 9/14; The Sporting Tribune 9/14; Yardbarker/heavy). Terms as agreed June 30: Leonard to TORONTO for Brandon Ingram, Gradey Dick, unprotected 2031 and 2033 firsts, a 2027 swap, 2030 and 2033 seconds. THREE placements moved: Kawhi Leonard LAC -> TOR; Brandon Ingram TOR -> LAC (his queued heel-monitor note added: right heel spur removed 2026-05-08, expected ready for camp); Gradey Dick TOR -> LAC. Lines held on all three pending camp role reporting. Also in window: Duren QO branch firming (Forbes 9/12, Last Word 9/14; ask now $200M+ vs ~$190M offered); MEM cuts still pending (DLo/Hawkins/Kris Murray/Clayton speculation only, no waiver executed - rows hold); FA trio still unsigned; no injury changes. OWNER INPUT RECORDED: the real draft is 2026-10-14 at 7 PM (owner-local; timezone unconfirmed) - written to league_intel per SEPTEMBER-PLAN 8.5. 2026-09-21 pull (window 09-15 -> 09-21, 6 days) + system tune-up pool-maintenance pass: ZERO placements moved among incumbent rows except Ochai Agbaji BKN -> NYK on a non-guaranteed Exhibit 9 camp deal signed 2026-09-16 (Yahoo, HoopsRumors, Yardbarker, BVM; Brown/Wiseman/Agbaji/Konchar/Eubanks fighting for ~one spot). All 7 flagged open items searched with receipts: Duren HELD, QO branch now dominant (Yahoo x2, HoopsHype 9/10, BVM, Eastern Herald 9/13; ask $40M+/yr vs ~$35M; reported SAC trade interest single-source); Sochan HELD on the POR camp deal, fighting for the last two spots; Cam Thomas, Ivey (waived by CHI in March, conduct-detrimental) and Lonzo all still unsigned; Brunson wrist 80-85 percent, no restrictions expected for 9/28 camp (judgment narrowed -0.15 -> -0.05); Mathurin checkpoint held, crowded-rotation questions persist. Injury sweep vs F6 inventory: Luka Doncic added hamstring-monitor NOTE only (Gr2 Apr 2026, cleared 5/28 per ESPN/McMenamin, self-declared 100 percent; Sabonis-class, no multiplier); Adem Bona left foot sprain 9/17 at FIBA qualifiers, back within ~2 weeks of camp (Inquirer, RotoWire, NBC Sports) — note on his new row, kit GP 72 -> 70; a Kuzma-Lakers-China stress-reaction item was identified as a RESURFACED 2019 STORY (garble instance; Kuzma is MIL everywhere current, played through 2025-26 Achilles tendon issues — watchlisted). MEM cuts STILL reported-not-executed (Fischer: Clayton/DLo/Hawkins/Kris Murray; Hawkins may stick) — rows hold. Kawhi: camp opens 9/29 Quebec City; 2yr/$126M extension talks reported advanced (Eastern Herald 9/20, single-source; cp24 9/17 presser on record). POOL-MAINTENANCE (draft_51 root-cause + owner-approved tune-up): REMOVED Keaton Wallace (two-year Maccabi Tel Aviv deal, club+EuroLeague official, HR, RealGM — pool exit precedent); ADDED 10 rows so the pool covers what live rooms draft (mock-51 drafted Tre Jones and Julian Champagnie while both were poolless): Wagler (LAC No. 5 pick, projected starter — clippers.com, SI), Bona (PHI backup C — PhillyVoice, RotoWire), Champagnie (SAS 3yr/$45M — PtR, Yahoo), Graves (TOR No. 19 pick — TSN, SI, B/R), Tre Jones (CHI backup PG — SI, Yahoo, RotoWire), Robert Williams III (POR C rotation — Blazers coverage), AJ Green (MIL, room ADP 73), Beringer (MIN backup C post-Reid — SI, Canis Hoopus), Isaiah Joe (DET — SI x2), Huff (IND backup C — Yahoo, Fieldhouse Files). Line syncs deck<-kit for the 9/16 role re-derivations: Sheppard (bench), Vucevic (bench), Keyonte George (breakout+dilution), Randle (BKN focal). Ayton and Duncan Robinson rows already present; role notes added (WAS five lists Sarr at C — Ayton backup-watch). Window transactions otherwise Exhibit 9/10 camp bodies only (NYK spree 9/16; IND/WAS/LAL E10s 9/19) touching no other row. New-name watch: Javon Small (MEM), Yang Hansen (POR). 2026-09-22 pull (window 09-21 -> 09-22, 1 day): NO placements moved. Sweep: Spotrac/ESPN transaction ledgers (9/21: Jaden Bradley TOR two-way converted to a 4yr/$9.26M standard deal; D.J. Armstrong CHA Exhibit 10; 9/20: Ogi Agbim GSW Exhibit 10, Bez Mbeng waived by CHA - none on a row in either plane), zero trades in a one-day window (ledger-shaped query cited); 7 flagged receipts; team shadows CHI/DET/NOP/NYK/POR/SAC; injury sweep vs the F6 tag inventory found no new returner or setback on a row. Duren: Detroit RAISED its offer Monday 9/21 to five years / $200M fully guaranteed with no options (Shams/ESPN via Yahoo x3, HoopsHype 9/21, CBS Sports, Yardbarker, ClutchPoints); reported rejected, may skip media day or the start of camp; the $9.6M QO branch stands, Oct 1 deadline nine days out - HELD. Kawhi: TOR extension talks 'advanced' per Fischer/Stein Line, now multi-outlet (Hoops Rumors, RotoWire, RealGM, CBS, NBC Sports, Yardbarker; Eastern Herald 9/20) - up to 2yr/$126M eligible; row unchanged. Brunson camp-ready (RotoWire/ESPN Goodwill). GARBLE LOG (7th and 8th instances): 'Lakers sign Jaden Ivey' ($4M and $6.5M variants) is FAKE per heavy.com and EssentiallySports fact-checks (satire and social accounts; no reporter, no team); 'Lonzo Ball agrees to a vet-min with MIN / PHI' is likewise social-only with no outlet - both remain unsigned free agents. Cam Thomas still unsigned (SI Nets, Yardbarker). Sochan vs Micah Potter for the last POR spot (Rip City Project, KGW). Mathurin bench line holds (SI Pelicans: six ball-needers). MEM cut-down still reported-not-executed (7th pull). Carried from the same-day pool-gap research (dated 9/18-9/21, none on a deck row): Nicolas Batum retired 9/21 (Hoops Rumors, ESPN); Cam Whitmore signed a DEN two-way 9/18 (Hoops Rumors, SI) - the KIT row moves CLE->DEN in the same-day pool-completion pass; Jonas Valanciunas waived by DEN in July, signed with Zalgiris.",
+  "source": "Per-player verification maintained by daily news sweeps; base grind 2026-07-23. 2026-08-25 pool-completion pass: added 9 players that a live mock (draft_state_46) drafted but the pool lacked, each with a 2026-27 line built from researched 2025-26 production. ADDED: Ty Jerome (MEM, ESPN/CBS gamelog), Saddiq Bey (NOP, NBA.com/ESPN), Ajay Mitchell (OKC, ESPN), Collin Gillespie (PHX, ESPN/CBS), Maxime Raynaud (SAC, NBA.com/SI, All-Rookie 2nd Team), Collin Murray-Boyles (TOR, ESPN/RaptorsHQ, All-Rookie 2nd Team), Sandro Mamukelashvili (LAL, ESPN/CBS), Paul Reed (DET, ESPN/CBS), Keaton Wallace (LAC per the league recap; the recap garbled the name to 'Wagler' and some sources list ATL - flagged). RESEARCH CHANNEL LIMIT: site.api.espn.com direct pull still 403s; web SEARCH works and every line rests on dated 2025-26 box-score reporting. No transactions this pass; the 2026-08-25 data-pull deltas (DeRozan->DEN, Klay->MIA, Sharpe knee-recovery) stand unchanged. 2026-08-25 live-mock-49 pass: +Tim Hardaway Jr. (MIA), drafted pick 148 in a 12-human room but absent from the pool. 2026-08-26 pull (window 8/25->8/26, 1 day): transactions + injury sweep run (Spotrac/ESPN/NBA.com transaction trackers, HoopsRumors, RotoWire via dated web search; direct page fetches to sports domains remain blocked by the environment egress policy, so claims rest on dated search results). NO roster changes in window - zero placements moved. Only in-window transaction found: Brandon Williams -> GSW (1yr/$2.63M, 8/25, two independent sources); he is on NO pool row in either plane and has no consensus-top-120 or live-room draft evidence, so he is watchlisted, NOT added. FA rows re-verified still unsigned: Kuminga (now UFA - ATL declined the $24.3M option), Cam Thomas, Jaden Ivey, Lonzo Ball. Kawhi trade still on league hold (5th consecutive). CORRECTION within the same 2026-08-26 pull: Bennedict Mathurin LAC -> NOP. He agreed to two years / $16M with a player option in New Orleans, reported 8/26 (ESPN/Shams, NBA.com, HoopsRumors, Fox8, Bleacher Report). His reps asked the Clippers to withdraw the $8.8M qualifying offer so he could sign outright rather than via offer sheet or sign-and-trade; Jake Fischer reports LAC has not formally withdrawn it yet but will work with him to facilitate the move. Applied under the standing 'agreed to terms is final' rule. The first sweep of this pull MISSED this transaction - it was caught on owner challenge and applied in the same pull. 2026-08-27 pull: Jonathan Kuminga FA -> MIN. Two years / $13M with a player option, agreed 8/26, agent Aaron Turner to ESPN (Shams); corroborated by NBA.com, NBC Sports Bay Area, Bleacher Report, OpenCourt. Shams names the role directly: he 'will be a starter alongside Anthony Edwards, LaMelo Ball, Jaden McDaniels and Rudy Gobert.' He chose MIN over LAL/CHI/POR, bypassing a similar starting role at $12M+/yr over three years in LA for a shorter deal and more control of his future. 2026-09-01 pull: no placements moved. Sweep verified Mathurin still NOP (LAC formally withdrew the $8.8M qualifying offer 8/29 per RealGM/HoopsRumors, completing the mechanism) and Sochan still POR on the non-guaranteed camp deal (an aggregator summary had garbled his former Knicks tenure as a current signing). Konchar/Cody Williams/Josh Green trade and the two MIA two-ways touch no row in either plane. 2026-09-02 pull: no placements moved, but the biggest news of the offseason landed. The NBA announced its findings and penalties in the Clippers/Kawhi Leonard cap-circumvention investigation on 2026-09-02 (NBA Communications release; CNN, Deseret News, Sportico, CP24, BlogTO, Globe and Mail, Bleacher Report, all 9/2): LAC forfeits five first-round picks 2029-2033 and is fined $30M; Ballmer and Gillian Zucker suspended one year, Lawrence Frank six months; Leonard himself NOT suspended, contract NOT voided, ordered to pay $700K. That lifts the league hold on the June 30 Toronto trade (Leonard to TOR for Brandon Ingram, Gradey Dick, unprotected 2031 and 2033 firsts, a 2027 swap, 2030 and 2033 seconds). The three affected rows (Leonard LAC, Ingram TOR, Dick TOR) were RE-VERIFIED AND HELD, not moved: outlet reporting on 9/2 describes the trade as cleared and expected to be unpaused, and the only claim that it was 'officially completed' is a single aggregator social post, which does not meet the two-independent-source bar for a team change. Their note fields now record the hold as LIFTED and the trade as awaiting execution. Expect these placements to move next pull. 2026-09-08 pull (window 09-02 -> 09-08, 6 days, sweep widened): no placements moved. The Kawhi Leonard trade to Toronto is STILL not formally executed six days after the league hold was lifted -- as of 2026-09-07 it was still described as finalizing 'in the next couple of days' and still appears on HoopsRumors' list of significant transactions yet to be finalized, and CBS Sports' player note still reads 'although the trade isn't yet finalized'. Leonard (LAC), Ingram (TOR) and Dick (TOR) therefore HELD for a second straight pull; their existing note cells ('league hold LIFTED 2026-09-02, awaiting execution') remain accurate and were not churned. In-window transactions checked, none touching a pool row: Ben Simmons -> LAC (1yr/$3.52M, 9/4) is on no row and has no consensus-top-120 or live-room draft evidence, so watchlisted not added, matching the Brandon Williams precedent of 8/26; Paul Reed's DET salary became fully guaranteed (9/4), same team, no sourced role change; Tacko Fall (PHI 9/1), John Butler Jr. (MIL), Kobe Stewart (CHA Exhibit 10) and Grant Nelson (BKN two-way) touch no row. Duren still unsigned, still ~$5M/yr apart, Oct 1 QO deadline now 23 days out. Cam Thomas, Ivey and Lonzo still unsigned; Whitmore confirmed UFA by a third independent source and correctly absent. Injury sweep: no exclusion changes -- Jamal Murray and Domantas Sabonis are full go for camp and neither carries a tag here; Butler, Adams, Moody, Sharpe and DiVincenzo stay excluded. Mark Williams' foot is an 11th quiet pull. Noted gap: Ingram's 2026-05-08 right-heel surgery (spur removal, expected ready for camp) carries no monitor tag on his row; outside this window and availability-neutral, flagged for the pull that rewrites his row on trade execution. SAME-DAY AMENDMENT (2026-09-08, owner integrity challenge): the pull's first version certified Jamal Murray's untagged row as correct. Wrong. TSN's and ESPN's 2026-27 injury-returns coverage has him returning from a RUPTURED RIGHT ACHILLES (2025-26; returned post-All-Star-break, ~14 games), and the board's own convention tags every Achilles returnee (Haliburton, Lillard, Dejounte Murray) inj-achilles-risk at 0.78. Jamal Murray is now tagged inj-achilles-risk (first season back); kit GP 66 -> 62 to match the Dejounte Murray anchor (identical injury and games-played profile). Team unchanged (DEN), so no placement moved. Sabonis (Feb meniscus, full go) deliberately NOT tagged - different injury class - flagged for owner overrule. SECOND SAME-DAY AMENDMENT (2026-09-08, owner-reported miss): four-player NOP-MEM trade REPORTED 2026-09-08 -- Pelicans send Jordan Hawkins, Micah Peavy, a future second and a second-round swap to Memphis for AJ Johnson and Taj Gibson, clearing ~$5.7M so New Orleans can OFFICIALLY complete Bennedict Mathurin's two-year/$16M signing (HoopsRumors 'Pelicans, Grizzlies Complete Four-Player Trade'; ESPN La Crosse 9/8; Daily Memphian; BVM 9/8; Yahoo/Yardbarker trade grades -- multi-source, dated). Row change: Jordan Hawkins NOP -> MEM (his only plane is the deck). Peavy, AJ Johnson and Taj Gibson are on no row in either plane. Mathurin stays NOP; his judgment discount narrows -0.15 -> -0.10 on the first sourced role mechanism since the signing (a named backcourt competitor subtracted). Also corrected: Ben Simmons signed with SACRAMENTO (1yr/~$3.5M, announced 9/4, AP/NBA.com/ABC/Kings Herald), NOT the Clippers as the original sweep summary garbled; he sat out all of 2025-26 (back/leg), remains on no pool row, watchlisted with the correct team. 2026-09-11 pull (window 09-08 -> 09-11, 3 days; first pull under the F1-F6 protocol): NO placements moved. All 8 flagged open items searched with receipts; team-shadow sweep run over CHI/DET/LAC/MEM/NOP/NYK/POR. Mark Williams (PHX) tore his left shoulder labrum in an offseason workout, surgery 2026-09-10, out extended with no timetable (wire/AOL + ESPN injury ledger + Valley of the Suns + Bright Side of the Sun) -> shoulder-recovery exclusion, team unchanged. Mathurin repriced to the bench role NOP rotation coverage now describes (SI/Yahoo/FanSided 9/9-9/11), team unchanged. Kawhi trade UNEXECUTED a third pull; sourced cause is the Clippers' front-office vacuum (Ballmer/Frank suspensions); all parties confident pre-camp; rows held again. Taj Gibson waived by NOP 9/9 (confirms the 9/8 trade processed; no row). DeRozan DEN deal formally signed 9/8 (agreed 8/21; row already DEN). MEM crunch watch: four of Hawkins/Peavy/DLo/Clayton/Kris Murray to be waived per Fischer -- Hawkins and DLo are deck rows, nothing executed yet. Ben Simmons ledger garble (LAC) resurfaced and refuted again: he is SAC on a non-guaranteed deal (NBA.com, HoopsRumors, B/R, SI Kings). 2026-09-15 pull (window 09-11 -> 09-15, 4 days): THE KAWHI TRADE EXECUTED. Owner reported it settled; verified official Monday 2026-09-14 across six independent outlets (CBC with the Raptors' announcement and GM Bobby Webster's statement; SI Raptors; HoopsRumors 'Clippers, Raptors Complete Kawhi Leonard Trade'; BVM 9/14; The Sporting Tribune 9/14; Yardbarker/heavy). Terms as agreed June 30: Leonard to TORONTO for Brandon Ingram, Gradey Dick, unprotected 2031 and 2033 firsts, a 2027 swap, 2030 and 2033 seconds. THREE placements moved: Kawhi Leonard LAC -> TOR; Brandon Ingram TOR -> LAC (his queued heel-monitor note added: right heel spur removed 2026-05-08, expected ready for camp); Gradey Dick TOR -> LAC. Lines held on all three pending camp role reporting. Also in window: Duren QO branch firming (Forbes 9/12, Last Word 9/14; ask now $200M+ vs ~$190M offered); MEM cuts still pending (DLo/Hawkins/Kris Murray/Clayton speculation only, no waiver executed - rows hold); FA trio still unsigned; no injury changes. OWNER INPUT RECORDED: the real draft is 2026-10-14 at 7 PM (owner-local; timezone unconfirmed) - written to league_intel per SEPTEMBER-PLAN 8.5. 2026-09-21 pull (window 09-15 -> 09-21, 6 days) + system tune-up pool-maintenance pass: ZERO placements moved among incumbent rows except Ochai Agbaji BKN -> NYK on a non-guaranteed Exhibit 9 camp deal signed 2026-09-16 (Yahoo, HoopsRumors, Yardbarker, BVM; Brown/Wiseman/Agbaji/Konchar/Eubanks fighting for ~one spot). All 7 flagged open items searched with receipts: Duren HELD, QO branch now dominant (Yahoo x2, HoopsHype 9/10, BVM, Eastern Herald 9/13; ask $40M+/yr vs ~$35M; reported SAC trade interest single-source); Sochan HELD on the POR camp deal, fighting for the last two spots; Cam Thomas, Ivey (waived by CHI in March, conduct-detrimental) and Lonzo all still unsigned; Brunson wrist 80-85 percent, no restrictions expected for 9/28 camp (judgment narrowed -0.15 -> -0.05); Mathurin checkpoint held, crowded-rotation questions persist. Injury sweep vs F6 inventory: Luka Doncic added hamstring-monitor NOTE only (Gr2 Apr 2026, cleared 5/28 per ESPN/McMenamin, self-declared 100 percent; Sabonis-class, no multiplier); Adem Bona left foot sprain 9/17 at FIBA qualifiers, back within ~2 weeks of camp (Inquirer, RotoWire, NBC Sports) — note on his new row, kit GP 72 -> 70; a Kuzma-Lakers-China stress-reaction item was identified as a RESURFACED 2019 STORY (garble instance; Kuzma is MIL everywhere current, played through 2025-26 Achilles tendon issues — watchlisted). MEM cuts STILL reported-not-executed (Fischer: Clayton/DLo/Hawkins/Kris Murray; Hawkins may stick) — rows hold. Kawhi: camp opens 9/29 Quebec City; 2yr/$126M extension talks reported advanced (Eastern Herald 9/20, single-source; cp24 9/17 presser on record). POOL-MAINTENANCE (draft_51 root-cause + owner-approved tune-up): REMOVED Keaton Wallace (two-year Maccabi Tel Aviv deal, club+EuroLeague official, HR, RealGM — pool exit precedent); ADDED 10 rows so the pool covers what live rooms draft (mock-51 drafted Tre Jones and Julian Champagnie while both were poolless): Wagler (LAC No. 5 pick, projected starter — clippers.com, SI), Bona (PHI backup C — PhillyVoice, RotoWire), Champagnie (SAS 3yr/$45M — PtR, Yahoo), Graves (TOR No. 19 pick — TSN, SI, B/R), Tre Jones (CHI backup PG — SI, Yahoo, RotoWire), Robert Williams III (POR C rotation — Blazers coverage), AJ Green (MIL, room ADP 73), Beringer (MIN backup C post-Reid — SI, Canis Hoopus), Isaiah Joe (DET — SI x2), Huff (IND backup C — Yahoo, Fieldhouse Files). Line syncs deck<-kit for the 9/16 role re-derivations: Sheppard (bench), Vucevic (bench), Keyonte George (breakout+dilution), Randle (BKN focal). Ayton and Duncan Robinson rows already present; role notes added (WAS five lists Sarr at C — Ayton backup-watch). Window transactions otherwise Exhibit 9/10 camp bodies only (NYK spree 9/16; IND/WAS/LAL E10s 9/19) touching no other row. New-name watch: Javon Small (MEM), Yang Hansen (POR). 2026-09-22 pull (window 09-21 -> 09-22, 1 day): NO placements moved. Sweep: Spotrac/ESPN transaction ledgers (9/21: Jaden Bradley TOR two-way converted to a 4yr/$9.26M standard deal; D.J. Armstrong CHA Exhibit 10; 9/20: Ogi Agbim GSW Exhibit 10, Bez Mbeng waived by CHA - none on a row in either plane), zero trades in a one-day window (ledger-shaped query cited); 7 flagged receipts; team shadows CHI/DET/NOP/NYK/POR/SAC; injury sweep vs the F6 tag inventory found no new returner or setback on a row. Duren: Detroit RAISED its offer Monday 9/21 to five years / $200M fully guaranteed with no options (Shams/ESPN via Yahoo x3, HoopsHype 9/21, CBS Sports, Yardbarker, ClutchPoints); reported rejected, may skip media day or the start of camp; the $9.6M QO branch stands, Oct 1 deadline nine days out - HELD. Kawhi: TOR extension talks 'advanced' per Fischer/Stein Line, now multi-outlet (Hoops Rumors, RotoWire, RealGM, CBS, NBC Sports, Yardbarker; Eastern Herald 9/20) - up to 2yr/$126M eligible; row unchanged. Brunson camp-ready (RotoWire/ESPN Goodwill). GARBLE LOG (7th and 8th instances): 'Lakers sign Jaden Ivey' ($4M and $6.5M variants) is FAKE per heavy.com and EssentiallySports fact-checks (satire and social accounts; no reporter, no team); 'Lonzo Ball agrees to a vet-min with MIN / PHI' is likewise social-only with no outlet - both remain unsigned free agents. Cam Thomas still unsigned (SI Nets, Yardbarker). Sochan vs Micah Potter for the last POR spot (Rip City Project, KGW). Mathurin bench line holds (SI Pelicans: six ball-needers). MEM cut-down still reported-not-executed (7th pull). Carried from the same-day pool-gap research (dated 9/18-9/21, none on a deck row): Nicolas Batum retired 9/21 (Hoops Rumors, ESPN); Cam Whitmore signed a DEN two-way 9/18 (Hoops Rumors, SI) - the KIT row moves CLE->DEN in the same-day pool-completion pass; Jonas Valanciunas waived by DEN in July, signed with Zalgiris. 2026-09-22 POOL-COMPLETION (owner: 'Research and Add all missing players to your internal database'): the 9/22 Yahoo top-300 paste carried 76 names the kit lacked and 66 the deck lacked; every one researched this session with two dated outlets (kit scratch ledger adds/research.jsonl; the first outlet URL is the kit provenance row). ADDED 66 deck rows at Yahoo's team label, each line the Hashtag 8/24 per-game line scaled to the researched 2026-27 role ([ESTIMATED]): Bronny James (LAL), Aday Mara (OKC), Luke Kennard (PHX), Johni Broome (LAC), Aaron Wiggins (ATL), Brayden Burries (MIL), Daniss Jenkins (DET), Oso Ighodaro (PHX), Scotty Pippen Jr. (MEM), Miles McBride (NYK), T.J. McConnell (IND), Jalen Smith (CHI), Kris Dunn (LAC), Max Christie (DAL), Ryan Kalkbrenner (CHA), Noah Clowney (BKN), Luke Kornet (SAS), Jake LaRavia (LAL), Dylan Cardwell (SAC), Jaxson Hayes (UTA), Kevin Huerter (DET), Tony Bradley (ATL), Isaiah Jackson (LAC), Jaylon Tyson (CLE), Jarace Walker (IND), Ja'Kobe Walter (TOR), Jordan Goodwin (PHX), Jaylin Williams (OKC), Moritz Wagner (BKN), Kobe Sanders (LAC), Cam Spencer (MEM), Karlo Matkovic (NOP), Baylor Scheierman (BOS), Gui Santos (GSW), Justin Champagnie (WAS), Javonte Green (DET), Harrison Barnes (SAS), Precious Achiuwa (SAC), Gary Payton II (GSW), Bruce Brown (NYK), Dominick Barlow (PHI), Jamal Shead (TOR), John Konchar (NYK), Jonas Valanciunas (FA), Dru Smith (MIA), Pelle Larsson (MIA), Vit Krejci (POR), Jock Landale (ATL), Dean Wade (PHI), Isaac Okoro (CHI), Brandon Williams (GSW), Ryan Dunn (PHX), Nicolas Batum (FA), Mouhamed Gueye (ATL), Simone Fontecchio (MIA), Kentavious Caldwell-Pope (PHI), Marvin Bagley III (DEN), Terance Mann (BKN), Will Richard (GSW), Luka Garza (BOS), Jordan Walsh (BOS), Bones Hyland (MIN), Craig Porter Jr. (CLE), Sion James (CHA), Mike Conley (BOS), Ben Sheppard (IND). Placements verified per row: Batum RETIRED 9/21 (Hoops Rumors, ESPN) and Valanciunas WAIVED by DEN in July / signed Zalgiris (RealGM, Hoops Rumors) enter as FA rows with out-* tags for resolver coverage; Bruce Brown and Konchar are NYK Exhibit 9 camp bodies (Yahoo, Hoops Rumors); Gueye fractured his left foot (out to start, inj-foot-risk); Mara and Burries are 2026 first-round rookies (rookie-proj). Whitmore (kit-only) moved CLE -> DEN on the 9/18 two-way (Hoops Rumors, SI).",
   "teams": {
     "LAC": [
       "Darius Garland",
@@ -11,7 +11,11 @@
       "Max Strus",
       "Brandon Ingram",
       "Gradey Dick",
-      "Keaton Wagler"
+      "Keaton Wagler",
+      "Johni Broome",
+      "Kris Dunn",
+      "Isaiah Jackson",
+      "Kobe Sanders"
     ],
     "CLE": [
       "Donovan Mitchell",
@@ -19,7 +23,9 @@
       "Jarrett Allen",
       "Sam Merrill",
       "Peyton Watson",
-      "James Harden"
+      "James Harden",
+      "Jaylon Tyson",
+      "Craig Porter Jr."
     ],
     "TOR": [
       "Scottie Barnes",
@@ -29,7 +35,9 @@
       "Trayce Jackson-Davis",
       "Collin Murray-Boyles",
       "Kawhi Leonard",
-      "Allen Graves"
+      "Allen Graves",
+      "Ja'Kobe Walter",
+      "Jamal Shead"
     ],
     "WAS": [
       "Anthony Davis",
@@ -42,7 +50,8 @@
       "Bilal Coulibaly",
       "Kyshawn George",
       "Khris Middleton",
-      "Tre Mann"
+      "Tre Mann",
+      "Justin Champagnie"
     ],
     "UTA": [
       "Jaren Jackson Jr.",
@@ -52,7 +61,8 @@
       "Isaiah Collier",
       "Ace Bailey",
       "Lauri Markkanen",
-      "Kyle Filipowski"
+      "Kyle Filipowski",
+      "Jaxson Hayes"
     ],
     "IND": [
       "Ivica Zubac",
@@ -62,7 +72,10 @@
       "Aaron Nesmith",
       "Pascal Siakam",
       "Obi Toppin",
-      "Jay Huff"
+      "Jay Huff",
+      "T.J. McConnell",
+      "Jarace Walker",
+      "Ben Sheppard"
     ],
     "BOS": [
       "Neemias Queta",
@@ -71,7 +84,11 @@
       "Mitchell Robinson",
       "Jayson Tatum",
       "Payton Pritchard",
-      "Sam Hauser"
+      "Sam Hauser",
+      "Baylor Scheierman",
+      "Luka Garza",
+      "Jordan Walsh",
+      "Mike Conley"
     ],
     "CHI": [
       "Nic Claxton",
@@ -80,7 +97,9 @@
       "Norman Powell",
       "Matas Buzelis",
       "Rob Dillingham",
-      "Tre Jones"
+      "Tre Jones",
+      "Jalen Smith",
+      "Isaac Okoro"
     ],
     "CHA": [
       "Naz Reid",
@@ -92,7 +111,9 @@
       "Dorian Finney-Smith",
       "Moussa Diabate",
       "Hannes Steinbach",
-      "Dennis Schroder"
+      "Dennis Schroder",
+      "Ryan Kalkbrenner",
+      "Sion James"
     ],
     "BKN": [
       "Julius Randle",
@@ -100,7 +121,10 @@
       "Day'Ron Sharpe",
       "Egor Demin",
       "Keon Ellis",
-      "Michael Porter Jr."
+      "Michael Porter Jr.",
+      "Noah Clowney",
+      "Moritz Wagner",
+      "Terance Mann"
     ],
     "MIN": [
       "Anthony Edwards",
@@ -111,7 +135,8 @@
       "Ayo Dosunmu",
       "Terrence Shannon Jr",
       "Jonathan Kuminga",
-      "Joan Beringer"
+      "Joan Beringer",
+      "Bones Hyland"
     ],
     "POR": [
       "Ja Morant",
@@ -123,7 +148,8 @@
       "Shaedon Sharpe",
       "Toumani Camara",
       "Jeremy Sochan",
-      "Robert Williams III"
+      "Robert Williams III",
+      "Vit Krejci"
     ],
     "MEM": [
       "Cameron Boozer",
@@ -137,7 +163,9 @@
       "Jerami Grant",
       "Taylor Hendricks",
       "Ty Jerome",
-      "Jordan Hawkins"
+      "Jordan Hawkins",
+      "Scotty Pippen Jr.",
+      "Cam Spencer"
     ],
     "SAC": [
       "Darius Acuff Jr.",
@@ -147,7 +175,9 @@
       "Nique Clifford",
       "Keegan Murray",
       "De'Andre Hunter",
-      "Maxime Raynaud"
+      "Maxime Raynaud",
+      "Dylan Cardwell",
+      "Precious Achiuwa"
     ],
     "LAL": [
       "Collin Sexton",
@@ -159,7 +189,9 @@
       "Walker Kessler",
       "Austin Reaves",
       "Jarred Vanderbilt",
-      "Sandro Mamukelashvili"
+      "Sandro Mamukelashvili",
+      "Bronny James",
+      "Jake LaRavia"
     ],
     "DAL": [
       "Zaccharie Risacher",
@@ -169,7 +201,8 @@
       "Daniel Gafford",
       "Dereck Lively II",
       "Kyrie Irving",
-      "PJ Washington"
+      "PJ Washington",
+      "Max Christie"
     ],
     "GSW": [
       "Stephen Curry",
@@ -180,7 +213,11 @@
       "De'Anthony Melton",
       "Al Horford",
       "Yaxel Lendeborg",
-      "Draymond Green"
+      "Draymond Green",
+      "Gui Santos",
+      "Gary Payton II",
+      "Brandon Williams",
+      "Will Richard"
     ],
     "NOP": [
       "Zion Williamson",
@@ -192,7 +229,8 @@
       "Herbert Jones",
       "Derik Queen",
       "Saddiq Bey",
-      "Bennedict Mathurin"
+      "Bennedict Mathurin",
+      "Karlo Matkovic"
     ],
     "NYK": [
       "Jalen Brunson",
@@ -203,7 +241,10 @@
       "Josh Hart",
       "Landry Shamet",
       "Jordan Clarkson",
-      "Ochai Agbaji"
+      "Ochai Agbaji",
+      "Miles McBride",
+      "Bruce Brown",
+      "John Konchar"
     ],
     "DEN": [
       "Nikola Jokic",
@@ -212,7 +253,8 @@
       "Aaron Gordon",
       "Christian Braun",
       "Julian Strawther",
-      "DeMar DeRozan"
+      "DeMar DeRozan",
+      "Marvin Bagley III"
     ],
     "SAS": [
       "Victor Wembanyama",
@@ -222,7 +264,9 @@
       "Tobias Harris",
       "Dylan Harper",
       "Keldon Johnson",
-      "Julian Champagnie"
+      "Julian Champagnie",
+      "Luke Kornet",
+      "Harrison Barnes"
     ],
     "OKC": [
       "Chet Holmgren",
@@ -232,7 +276,9 @@
       "Jalen Williams",
       "Alex Caruso",
       "Jared McCain",
-      "Ajay Mitchell"
+      "Ajay Mitchell",
+      "Aday Mara",
+      "Jaylin Williams"
     ],
     "MIA": [
       "Giannis Antetokounmpo",
@@ -242,7 +288,10 @@
       "Nikola Jovic",
       "Davion Mitchell",
       "Klay Thompson",
-      "Tim Hardaway Jr."
+      "Tim Hardaway Jr.",
+      "Dru Smith",
+      "Pelle Larsson",
+      "Simone Fontecchio"
     ],
     "MIL": [
       "Tyler Herro",
@@ -255,7 +304,8 @@
       "Kyle Kuzma",
       "Ryan Rollins",
       "Kasparas Jakucionis",
-      "AJ Green"
+      "AJ Green",
+      "Brayden Burries"
     ],
     "DET": [
       "Cade Cunningham",
@@ -265,7 +315,10 @@
       "Ron Holland",
       "Duncan Robinson",
       "Paul Reed",
-      "Isaiah Joe"
+      "Isaiah Joe",
+      "Daniss Jenkins",
+      "Kevin Huerter",
+      "Javonte Green"
     ],
     "HOU": [
       "Kevin Durant",
@@ -287,7 +340,11 @@
       "Khaman Maluach",
       "Jalen Green",
       "Dillon Brooks",
-      "Collin Gillespie"
+      "Collin Gillespie",
+      "Luke Kennard",
+      "Oso Ighodaro",
+      "Jordan Goodwin",
+      "Ryan Dunn"
     ],
     "PHI": [
       "Tyrese Maxey",
@@ -296,7 +353,10 @@
       "Anfernee Simons",
       "VJ Edgecombe",
       "LeBron James",
-      "Adem Bona"
+      "Adem Bona",
+      "Dominick Barlow",
+      "Dean Wade",
+      "Kentavious Caldwell-Pope"
     ],
     "ORL": [
       "Franz Wagner",
@@ -319,7 +379,11 @@
       "Nickeil Alexander-Walker",
       "Gabe Vincent",
       "Luguentz Dort",
-      "Jalen Wilson"
+      "Jalen Wilson",
+      "Aaron Wiggins",
+      "Tony Bradley",
+      "Jock Landale",
+      "Mouhamed Gueye"
     ]
   }
 }
