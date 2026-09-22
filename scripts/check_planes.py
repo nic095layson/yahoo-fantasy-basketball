@@ -54,7 +54,8 @@ COLS = [("fgp", "fg_pct"), ("fga", "fga"), ("ftp", "ft_pct"), ("fta", "fta"), ("
         ("pts", "pts"), ("reb", "reb"), ("ast", "ast"), ("stl", "stl"), ("blk", "blk"), ("tov", "tov")]
 RAW_ORDER = ["tpm", "pts", "reb", "ast", "stl", "blk", "tov", "fg_pct", "fga", "ft_pct", "fta"]
 ALIASES = {"herb jones": "herbert jones", "cam johnson": "cameron johnson",
-           "nic claxton": "nicolas claxton", "alex sarr": "alexandre sarr"}
+           "nic claxton": "nicolas claxton", "alex sarr": "alexandre sarr",
+           "ron holland": "ronald holland"}  # Yahoo: "Ronald Holland II" (kit yahoo_market alias)
 
 
 def norm(name):
