@@ -58,7 +58,12 @@ ALIASES = {"herb jones": "herbert jones", "cam johnson": "cameron johnson",
 
 
 def norm(name):
+    """Twin of the kit's build_market.norm: accent-fold, lowercase, DROP . ' - ,
+    (so "P.J. Washington Jr." and "PJ Washington" both read pj washington — a
+    Yahoo spelling the 2026-09-22 rankings paste carries), then any other
+    punctuation to a space, strip a generational suffix."""
     s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
+    s = re.sub(r"[.'`,\u2019-]", "", s)
     s = re.sub(r"[^a-z0-9 ]", " ", s)
     s = " ".join(t for t in s.split() if t not in {"jr", "sr", "ii", "iii", "iv"})
     return ALIASES.get(s, s)
