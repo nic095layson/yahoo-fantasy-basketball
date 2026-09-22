@@ -14,6 +14,7 @@ relevant files) and republishes to the standing artifact URL.
 | Single-🎯 system-pick marker | remove the `isRec`/`tgOnPin` marks in the Top-5 loop + pinned row | marker gone; ordering untouched |
 | Strengths/Weaknesses header | remove the `#swline` render block in renderDecision | header gone |
 | Market-timing chips / ladder | display blocks in the app script, all marked | display-only by construction |
+| Yahoo prices in the Mkt rank (F8, 2026-09-22) | remove the kit's `report/market/yahoo-*.csv` (or build with an empty kit market dir) and rebuild — the build drops `data/market-snapshot.csv` and both engines fall back to the internal model together | pre-F8 Mkt: the points-volume proxy + rookie pins |
 
 **Display surfaces RETIRED 2026-07-30 (owner: noise)** — all removed in
 commits `d2e930d` (archetype tags + roster census) and the simplification

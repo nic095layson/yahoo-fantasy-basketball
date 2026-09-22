@@ -13,6 +13,9 @@ BEFORE any data reaches docs/draft-deck.html:
   gate 7  the kit and deck planes agree where they must (F7, 2026-09-21):
           team, exclusion class, spelling, and re-derivation propagation
           (scripts/check_planes.py; waivers/bypass recorded in the manifest)
+  F8      Yahoo prices (ADP, else XRank) from the kit's newest paste are baked
+          into each PLAYERS row as `mkt` (scripts/market_prices.py); a spelling
+          that strands a top-board name refuses; no file falls back, loudly
 
 Only then: regenerate the embedded pool from data/players.csv, inject it,
 machine-sync the deck's data-pull stamp from freshness.json, and verify the
@@ -248,9 +251,43 @@ def main():
     # build the embedded pool
     players = hoops.zscores(players_raw)
     archetypes.prime(players, hoops.availability)
+
+    # F8 (2026-09-22): Yahoo's price into the Mkt rank — owner decision
+    # 2026-09-21, the 8/21 work order's gated step 5. ADP where Yahoo lists
+    # one, else XRank, from the kit's newest report/market/yahoo-*.csv; the
+    # internal model orders only the unpriced tail (engine marketRanks and
+    # its twin arena.market_ranks, parity item 6).
+    import market_prices
+    yfile = market_prices.newest_yahoo_file()
+    if yfile is None:
+        print("  no Yahoo price file in the kit (report/market/yahoo-YYYY-MM-DD.csv) — "
+              "the Mkt rank falls back to the internal model for every row")
+        market_manifest = None
+        for p in players:
+            p["_mkt"] = p["_mktsrc"] = None
+    else:
+        prices = market_prices.load_yahoo(yfile)
+        mdate = market_prices.file_date(yfile)
+        n_priced, n_unpriced = market_prices.join(players, prices)
+        top = sorted(players, key=lambda p: -hoops.adj_value(p))[:market_prices.DRIFT_TOP]
+        joined = {market_prices.norm(p["player"]) for p in players if p.get("_mkt") is not None}
+        stranded = market_prices.drift(top, prices, joined)
+        if stranded:
+            fail(f"the price file strands {len(stranded)} top-board name(s) on a spelling: "
+                 f"{'; '.join(stranded[:4])} — fix the paste's spelling or add an alias "
+                 "(F8; a silently unpriced star is the survival-model failure of mock 51)")
+        age = market_prices.age_days(mdate)
+        if age > market_prices.STALE_DAYS:
+            print(f"  WARNING: price file {os.path.basename(yfile)} is {age} days old — "
+                  "paste a fresh Yahoo list before the draft")
+        print(f"  market: {os.path.basename(yfile)} — priced {n_priced}/{len(players)} rows "
+              f"(Yahoo ADP else XRank), {age} days old")
+        market_manifest = {"file": os.path.basename(yfile), "date": mdate,
+                           "priced": n_priced, "of": len(players), "age_days": age}
     pool = [{
         "n": p["player"], "t": p["team"], "p": p["pos"].replace('"', ""),
         "note": p.get("note") or "", "av": hoops.availability(p),
+        "mkt": p.get("_mkt"), "mktsrc": p.get("_mktsrc"),  # F8: Yahoo price or null
         "z": {c: round(p["z"][c], 6) for c in hoops.CATS},
         # raw per-game stats (E9 ship 2026-08-04): the ΔECW weekly model
         # consumes raw rates, not z — order: tpm,pts,reb,ast,stl,blk,tov,
@@ -300,6 +337,7 @@ def main():
                          "checked": ver.get("checked"),
                          "teams_covered": ver.get("teams_covered")},
         "planes": planes_manifest,
+        "market": market_manifest,
         "freshness_note": (lambda n: n if len(n) <= 160
                            else n[:160].rsplit(" ", 1)[0] + " \u2026")(
                               fresh.get("note") or ""),
@@ -335,6 +373,12 @@ def main():
     # lines this build was checked against
     if planes_kit_path:
         check_planes.write_snapshot(planes_kit_path)
+    # F8: the Python twin reads the prices this build baked (parity item 6);
+    # an unpriced build removes the snapshot so both sides fall back together
+    if yfile is not None:
+        market_prices.write_snapshot(players, mdate)
+    elif os.path.exists(market_prices.SNAPSHOT):
+        os.remove(market_prices.SNAPSHOT)
     print("safe to publish docs/draft-deck.html")
 
 
