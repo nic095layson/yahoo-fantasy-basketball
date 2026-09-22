@@ -1,0 +1,500 @@
+{
+ "v22": {
+  "missing": [
+   "Tre Jones",
+   "Julian Champagnie"
+  ],
+  "ecw": {
+   "1": 4.5863,
+   "2": 4.7914,
+   "3": 4.6835,
+   "4": 4.5448,
+   "5": 4.5349,
+   "6": 4.343,
+   "7": 4.8766,
+   "8": 4.4725,
+   "9": 3.9382,
+   "10": 5.2995,
+   "11": 3.811,
+   "12": 4.1185
+  },
+  "ecw_rank": 1,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 1,
+   "REB": 4,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 2,
+   "TO": 4
+  },
+  "cat_rank_seasonshape": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "per_opp": {
+   "1": {
+    "name": "Team 1",
+    "exp_cats": 4.854,
+    "cats": {
+     "FG%": 0.602,
+     "FT%": 0.719,
+     "3PTM": 0.706,
+     "PTS": 0.658,
+     "REB": 0.148,
+     "AST": 0.145,
+     "ST": 0.887,
+     "BLK": 0.132,
+     "TO": 0.856
+    }
+   },
+   "2": {
+    "name": "Bonani",
+    "exp_cats": 5.016,
+    "cats": {
+     "FG%": 0.477,
+     "FT%": 0.493,
+     "3PTM": 0.683,
+     "PTS": 0.501,
+     "REB": 0.28,
+     "AST": 0.012,
+     "ST": 0.883,
+     "BLK": 0.867,
+     "TO": 0.82
+    }
+   },
+   "3": {
+    "name": "steven",
+    "exp_cats": 5.17,
+    "cats": {
+     "FG%": 0.601,
+     "FT%": 0.63,
+     "3PTM": 0.544,
+     "PTS": 0.28,
+     "REB": 0.692,
+     "AST": 0.031,
+     "ST": 0.742,
+     "BLK": 0.769,
+     "TO": 0.88
+    }
+   },
+   "4": {
+    "name": "donkeanu",
+    "exp_cats": 5.167,
+    "cats": {
+     "FG%": 0.696,
+     "FT%": 0.8,
+     "3PTM": 0.783,
+     "PTS": 0.695,
+     "REB": 0.076,
+     "AST": 0.028,
+     "ST": 0.807,
+     "BLK": 0.429,
+     "TO": 0.854
+    }
+   },
+   "5": {
+    "name": "Daniel",
+    "exp_cats": 4.861,
+    "cats": {
+     "FG%": 0.14,
+     "FT%": 0.897,
+     "3PTM": 0.996,
+     "PTS": 0.778,
+     "REB": 0.146,
+     "AST": 0.23,
+     "ST": 0.679,
+     "BLK": 0.623,
+     "TO": 0.37
+    }
+   },
+   "6": {
+    "name": "Jeff",
+    "exp_cats": 5.554,
+    "cats": {
+     "FG%": 0.745,
+     "FT%": 0.598,
+     "3PTM": 0.406,
+     "PTS": 0.493,
+     "REB": 0.879,
+     "AST": 0.019,
+     "ST": 0.767,
+     "BLK": 0.808,
+     "TO": 0.838
+    }
+   },
+   "7": {
+    "name": "dnd",
+    "exp_cats": 4.999,
+    "cats": {
+     "FG%": 0.823,
+     "FT%": 0.482,
+     "3PTM": 0.369,
+     "PTS": 0.409,
+     "REB": 0.76,
+     "AST": 0.008,
+     "ST": 0.712,
+     "BLK": 0.482,
+     "TO": 0.955
+    }
+   },
+   "8": {
+    "name": "Akis",
+    "exp_cats": 5.386,
+    "cats": {
+     "FG%": 0.683,
+     "FT%": 0.7,
+     "3PTM": 0.495,
+     "PTS": 0.266,
+     "REB": 0.813,
+     "AST": 0.018,
+     "ST": 0.78,
+     "BLK": 0.738,
+     "TO": 0.892
+    }
+   },
+   "9": {
+    "name": "San",
+    "exp_cats": 5.829,
+    "cats": {
+     "FG%": 0.589,
+     "FT%": 0.7,
+     "3PTM": 0.576,
+     "PTS": 0.602,
+     "REB": 0.682,
+     "AST": 0.458,
+     "ST": 0.882,
+     "BLK": 0.61,
+     "TO": 0.729
+    }
+   },
+   "11": {
+    "name": "andrew",
+    "exp_cats": 5.805,
+    "cats": {
+     "FG%": 0.743,
+     "FT%": 0.521,
+     "3PTM": 0.413,
+     "PTS": 0.823,
+     "REB": 0.836,
+     "AST": 0.093,
+     "ST": 0.901,
+     "BLK": 0.884,
+     "TO": 0.59
+    }
+   },
+   "12": {
+    "name": "Sen",
+    "exp_cats": 5.654,
+    "cats": {
+     "FG%": 0.687,
+     "FT%": 0.553,
+     "3PTM": 0.636,
+     "PTS": 0.693,
+     "REB": 0.693,
+     "AST": 0.28,
+     "ST": 0.79,
+     "BLK": 0.653,
+     "TO": 0.668
+    }
+   }
+  },
+  "seasonshape_wins": {
+   "1": 6,
+   "2": 4,
+   "3": 7,
+   "4": 6,
+   "5": 5,
+   "6": 6,
+   "7": 4,
+   "8": 6,
+   "9": 8,
+   "11": 7,
+   "12": 8
+  },
+  "exp_winning_weeks": 11,
+  "seasonshape_winning": 9,
+  "roster": [
+   "Anthony Edwards",
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Reed Sheppard",
+   "Kristaps Porzingis",
+   "Cameron Johnson",
+   "Jakob Poeltl",
+   "Tari Eason",
+   "Christian Braun"
+  ]
+ },
+ "v23": {
+  "missing": [],
+  "ecw": {
+   "1": 4.5056,
+   "2": 4.6203,
+   "3": 4.6446,
+   "4": 4.4621,
+   "5": 4.4707,
+   "6": 4.2391,
+   "7": 4.7687,
+   "8": 4.3737,
+   "9": 3.8501,
+   "10": 5.6098,
+   "11": 4.4303,
+   "12": 4.0251
+  },
+  "ecw_rank": 1,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 5,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 3,
+   "REB": 5,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 2,
+   "TO": 2
+  },
+  "cat_rank_seasonshape": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 3,
+   "REB": 5,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 2
+  },
+  "per_opp": {
+   "1": {
+    "name": "Team 1",
+    "exp_cats": 5.161,
+    "cats": {
+     "FG%": 0.589,
+     "FT%": 0.731,
+     "3PTM": 0.815,
+     "PTS": 0.744,
+     "REB": 0.237,
+     "AST": 0.138,
+     "ST": 0.918,
+     "BLK": 0.152,
+     "TO": 0.838
+    }
+   },
+   "2": {
+    "name": "Bonani",
+    "exp_cats": 5.45,
+    "cats": {
+     "FG%": 0.463,
+     "FT%": 0.511,
+     "3PTM": 0.826,
+     "PTS": 0.607,
+     "REB": 0.419,
+     "AST": 0.012,
+     "ST": 0.921,
+     "BLK": 0.893,
+     "TO": 0.798
+    }
+   },
+   "3": {
+    "name": "steven",
+    "exp_cats": 5.522,
+    "cats": {
+     "FG%": 0.598,
+     "FT%": 0.667,
+     "3PTM": 0.659,
+     "PTS": 0.319,
+     "REB": 0.783,
+     "AST": 0.023,
+     "ST": 0.784,
+     "BLK": 0.805,
+     "TO": 0.883
+    }
+   },
+   "4": {
+    "name": "donkeanu",
+    "exp_cats": 5.467,
+    "cats": {
+     "FG%": 0.685,
+     "FT%": 0.81,
+     "3PTM": 0.871,
+     "PTS": 0.777,
+     "REB": 0.137,
+     "AST": 0.025,
+     "ST": 0.852,
+     "BLK": 0.475,
+     "TO": 0.835
+    }
+   },
+   "5": {
+    "name": "Daniel",
+    "exp_cats": 5.08,
+    "cats": {
+     "FG%": 0.131,
+     "FT%": 0.904,
+     "3PTM": 0.999,
+     "PTS": 0.845,
+     "REB": 0.237,
+     "AST": 0.222,
+     "ST": 0.737,
+     "BLK": 0.669,
+     "TO": 0.336
+    }
+   },
+   "6": {
+    "name": "Jeff",
+    "exp_cats": 5.908,
+    "cats": {
+     "FG%": 0.734,
+     "FT%": 0.611,
+     "3PTM": 0.539,
+     "PTS": 0.592,
+     "REB": 0.939,
+     "AST": 0.018,
+     "ST": 0.818,
+     "BLK": 0.84,
+     "TO": 0.818
+    }
+   },
+   "7": {
+    "name": "dnd",
+    "exp_cats": 5.42,
+    "cats": {
+     "FG%": 0.815,
+     "FT%": 0.495,
+     "3PTM": 0.501,
+     "PTS": 0.503,
+     "REB": 0.857,
+     "AST": 0.007,
+     "ST": 0.768,
+     "BLK": 0.526,
+     "TO": 0.947
+    }
+   },
+   "8": {
+    "name": "Akis",
+    "exp_cats": 5.751,
+    "cats": {
+     "FG%": 0.671,
+     "FT%": 0.713,
+     "3PTM": 0.628,
+     "PTS": 0.35,
+     "REB": 0.894,
+     "AST": 0.016,
+     "ST": 0.829,
+     "BLK": 0.774,
+     "TO": 0.877
+    }
+   },
+   "9": {
+    "name": "San",
+    "exp_cats": 6.204,
+    "cats": {
+     "FG%": 0.575,
+     "FT%": 0.712,
+     "3PTM": 0.703,
+     "PTS": 0.694,
+     "REB": 0.798,
+     "AST": 0.45,
+     "ST": 0.915,
+     "BLK": 0.656,
+     "TO": 0.701
+    }
+   },
+   "11": {
+    "name": "andrew",
+    "exp_cats": 5.724,
+    "cats": {
+     "FG%": 0.719,
+     "FT%": 0.526,
+     "3PTM": 0.445,
+     "PTS": 0.714,
+     "REB": 0.839,
+     "AST": 0.021,
+     "ST": 0.85,
+     "BLK": 0.899,
+     "TO": 0.711
+    }
+   },
+   "12": {
+    "name": "Sen",
+    "exp_cats": 6.022,
+    "cats": {
+     "FG%": 0.675,
+     "FT%": 0.566,
+     "3PTM": 0.754,
+     "PTS": 0.776,
+     "REB": 0.808,
+     "AST": 0.271,
+     "ST": 0.837,
+     "BLK": 0.697,
+     "TO": 0.637
+    }
+   }
+  },
+  "seasonshape_wins": {
+   "1": 6,
+   "2": 6,
+   "3": 7,
+   "4": 6,
+   "5": 5,
+   "6": 8,
+   "7": 7,
+   "8": 7,
+   "9": 8,
+   "11": 7,
+   "12": 8
+  },
+  "exp_winning_weeks": 11,
+  "seasonshape_winning": 11,
+  "roster": [
+   "Anthony Edwards",
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Reed Sheppard",
+   "Kristaps Porzingis",
+   "Cameron Johnson",
+   "Jakob Poeltl",
+   "Tari Eason",
+   "Christian Braun",
+   "Julian Champagnie"
+  ]
+ }
+}

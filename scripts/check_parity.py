@@ -91,7 +91,7 @@ def main():
     mod = os.path.join(tmp, "deck.mjs")
     with open(mod, "w", encoding="utf-8") as f:
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
-export const api = { PLAYERS, matchCandidates, decwScores, marketRanks, adjValue, CATS, dfHash };
+export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash };
 """)
 
     # ---- what the Python side says -------------------------------------
@@ -162,9 +162,7 @@ for (const [name, st] of Object.entries(inp.states)) {
     const mine = ros.get(st.slot) || [];
     const opp = [...ros.entries()].filter(([s]) => s !== st.slot).map(([, r]) => r);
     const pool = api.PLAYERS.filter(p => !taken.has(p.n) && p.av > 0);
-    return api.decwScores(pool, mine, opp)
-      .sort((a, b) => b.ds - a.ds || (a.p.n < b.p.n ? 1 : a.p.n > b.p.n ? -1 : 0))
-      .slice(0, 5).map(x => x.p.n);
+    return api.rankCard(api.decwScores(pool, mine, opp)).slice(0, 5).map(x => x.p.n);
   });
 }
 process.stdout.write(JSON.stringify(out));
@@ -283,14 +281,21 @@ process.stdout.write(JSON.stringify(out));
             models = [arena.team_week_model(r) for r in opp if r]
             if not models:
                 ds = _pct(vals)
+                decw = None
             else:
                 base = _pwins(arena.team_week_model(mine), models) if mine else 0.0
                 decw = [_pwins(arena.team_week_model(mine + [p]), models) - base
                         for p in pool]
                 pd, pv = _pct(decw), _pct(vals)
                 ds = [0.5 * pd[i] + 0.5 * pv[i] for i in range(len(pool))]
+            # card order = blend50 desc, then ΔECW desc, then name desc — the
+            # twin of the deck's rankCard (D51R-2, 2026-09-21: exact blend ties
+            # are structural and were decided by name at 2/13 owner turns of
+            # mock 51 on the deck drafted against, 6/13 on the current one)
             ranked = sorted(range(len(pool)),
-                            key=lambda i: (-ds[i], [-ord(ch) for ch in pool[i]["player"]]))
+                            key=lambda i: (-ds[i],
+                                           -(decw[i] if decw is not None else 0.0),
+                                           [-ord(ch) for ch in pool[i]["player"]]))
             rows.append([pool[i]["player"] for i in ranked[:5]])
         py_orders[name] = rows
 
