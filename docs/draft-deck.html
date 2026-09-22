@@ -171,6 +171,8 @@ ol.recos .tmpos { font-family: var(--font-data); font-size: var(--text-sm); colo
 .puntline .cat.heat { --hi: 0; background: color-mix(in srgb, var(--heat-pos) calc(var(--hi) * var(--heat-max)), var(--surface)); }
 .puntline .cat.heat.neg { background: color-mix(in srgb, var(--heat-neg) calc(var(--hi) * var(--heat-max)), var(--surface)); }
 .deckmeta button.fulltilt, #deckmeta button.fulltilt { font: inherit; font-size: var(--text-base); font-weight: var(--weight-bold); padding: var(--space-1) var(--space-3); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; letter-spacing: 0.03em; }
+#deckmeta p.puntread { font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--status-risk); margin: var(--space-1) 0; max-width: none; }
+#deckmeta p.puntread.clear { color: var(--accent); }
 .puntline button.adopt { font: inherit; font-size: var(--text-sm); font-weight: var(--weight-bold); padding: 0 var(--space-2); border: 1px solid var(--accent-fill); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); cursor: pointer; }
 .buildread { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); margin: var(--space-3) 0 0; font-size: var(--text-sm); }
 .buildread p { margin: 0 0 var(--space-1); max-width: none; }
@@ -428,7 +430,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-09-21 under the roster validation lock — 264 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches, 264/264). <strong>This refresh (9/21, window 9/15–9/21): zero placements moved — and the system tune-up landed.</strong> The only incumbent row touched is Ochai Agbaji (BKN → NYK, non-guaranteed Exhibit 9 camp deal 9/16 — five names for about one Knicks spot). The 264-player pool now covers what live rooms actually draft: mock-51 drafted two names this board could not log, so ten rows joined (Wagler, Bona, Champagnie, Graves, Tre Jones, Robert Williams III, AJ Green, Beringer, Isaiah Joe, Huff — each with dated multi-outlet role sourcing) and Keaton Wallace left the pool on his two-year Maccabi Tel Aviv deal (club + EuroLeague official). Four lines synced to the 9/16 role research (Sheppard and Vučević to bench shapes, Keyonte George and Randle to their bigger roles). Brunson's judgment narrowed to −0.05 (wrist 80-85%, no camp restrictions expected); Duren HELD at −0.08 with the $9.6M qualifying-offer branch now dominant and the Oct 1 deadline ten days out; Dončić carries a new hamstring-monitor note (Gr2 April, cleared 5/28, self-declared 100% — informational only, Sabonis-class). MEM cuts remain reported-not-executed; camp opens league-wide 9/28-9/30, Raptors 9/29 in Quebec City. The live-draft resolver now logs an opponent's pick VERBATIM when the named player has no pool row (the mock-51 fix): only YOUR recommendations need pool data.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers and the 🚌 wait-chain are <em>suspended</em> (2026-09-21) pending a refit on live-room ADP — the room-mix survival model behind them was fit on value-drafting mock seats and, in the first live human room from the real seat, read BUY NOW on 46 of 48 scored rows while 32 of those players survived to the next turn (mock 51 retro); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty — since 2026-09-21 only if that player carries no availability multiplier and sits within 0.05 cats/week of the #1's ΔECW (mock 51 retro: the override had pinned a 0.78-availability center 0.14 cats/week behind a hindsight-best #1); exact blend ties order by ΔECW before name (same retro: 2 of 13 turns on the deck drafted against were decided alphabetically); a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported); the same read also pins a sixth row under the Top-5 when its family made none of them — <em>LAST CALL</em> when urgent (the 🎯 moves onto it: take it over the Top-5) or <em>DEPTH WATCH</em> when informational (the 🎯 above stays the pick), named 2026-08-10 on owner request. The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until October ADP replaces the proxy. The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers and the 🚌 wait-chain are <em>suspended</em> (2026-09-21) pending a refit on live-room ADP — the room-mix survival model behind them was fit on value-drafting mock seats and, in the first live human room from the real seat, read BUY NOW on 46 of 48 scored rows while 32 of those players survived to the next turn (mock 51 retro); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty — since 2026-09-21 only if that player carries no availability multiplier and sits within 0.05 cats/week of the #1's ΔECW (mock 51 retro: the override had pinned a 0.78-availability center 0.14 cats/week behind a hindsight-best #1); exact blend ties order by ΔECW before name (same retro: 2 of 13 turns on the deck drafted against were decided alphabetically); a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported); the same read also pins a sixth row under the Top-5 when its family made none of them — <em>LAST CALL</em> when urgent (the 🎯 moves onto it: take it over the Top-5) or <em>DEPTH WATCH</em> when informational (the 🎯 above stays the pick), named 2026-08-10 on owner request. The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster) — since 2026-09-21 it and the punt advisor read the <em>room</em>: expected weekly category wins from the same weekly model the card scores with, not 13-man z-sum ranks (mock 51 retro: the old read proposed punting turnovers while the roster was beating 76% of the room in them), a lean must hold on two consecutive owner turns before the advisor says the word, and both are <em>advice only</em> — no button writes the punt box (the FULL TILT / Adopt / Retarget buttons sit behind <code>PUNT_BUTTONS</code>, off). The style/archetype layer runs internally (TARGET) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until October ADP replaces the proxy. The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
   <p class="hint"><strong>Feed syntax.</strong> Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap; <code>108+ Queta</code> <em>inserts</em> a missed pick at #108 and shifts the rest down (or use the Insert-at-# button). Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
 </footer>
 </div>
@@ -1396,6 +1398,98 @@ function survivalChip(ps, dying) {
   if (ps < 0.40) return "TOSS-UP";
   return null;
 }
+/* D51R-3 (mock 51 retro, 2026-09-21). The punt advisor is ADVICE ONLY and
+   reads the ROOM. Its three surfaces — the FULL TILT pivot on the decision
+   card, the Build read's Adopt button, the coherence strip's Retarget —
+   used to write the punt box from 13-man z-sum ranks; in mock 51 they
+   proposed punting TO on a roster that was beating 76% of the room in it
+   (2nd of 12 by the weekly model) because the z-sum rank read it 11th.
+   All three now advise in words from catWinProb — the same weekly category
+   model the card's ΔECW half scores with — need the lean on PUNT_TURNS
+   consecutive owner turns before they say "punt" (hysteresis: enter at
+   PUNT_LOW, leave above PUNT_EXIT), and never write the punt box. Kill
+   switch: PUNT_BUTTONS = true restores the buttons; every write still
+   routes through adoptPunt in the app block, which is dead while false. */
+const PUNT_BUTTONS = false;
+const PUNT_LOW = 0.25;   // a kept cat leans punt when it beats <= this share of the room in a week
+const PUNT_EXIT = 0.35;  // ... and stays leaning until it beats more than this share (hysteresis)
+const PUNT_TURNS = 2;    // consecutive owner turns the lean must hold before the advisor says "punt"
+const PUNT_WIN = 0.55;   // a kept cat counts as winnable at >= this share of the room
+const PUNT_PATH = 0.70;  // clear-path rule (unchanged since 2026-07-27): >= 70% of the kept set winnable
+function catWinProb(mine, oppRosters) {
+  /* Per category, the mean over opponents of P(this roster wins the week)
+     from teamWeekModel — the per-cat decomposition of pwinsTotal (TO
+     inverted). null before any opponent has a pick or with no roster. */
+  const opp = (oppRosters || []).filter(r => r && r.length).map(teamWeekModel);
+  if (!opp.length || !mine || !mine.length) return null;
+  const m = teamWeekModel(mine);
+  const out = {};
+  for (const c of CATS) {
+    let t = 0;
+    for (const om of opp) {
+      const d = (m.mu[c] - om.mu[c]) / (Math.sqrt(m.va[c] + om.va[c]) || 1e-9);
+      const p = normCdf(d);
+      t += c === "TO" ? 1 - p : p;
+    }
+    out[c] = t / opp.length;
+  }
+  return out;
+}
+function winPath(pw, kept, list) {
+  const keptAfter = kept.filter(c => !list.includes(c));
+  const winnable = keptAfter.filter(c => (pw[c] ?? 0) >= PUNT_WIN);
+  const pct = keptAfter.length ? winnable.length / keptAfter.length : 0;
+  return { keptAfter, winnable, pct, clear: list.length > 0 && pct >= PUNT_PATH };
+}
+function puntRead(pw, kept, seen, tick = true) {
+  /* {lean, punt, seen, advise, keptAfter, winnable, pct, clear}. seen =
+     consecutive owner turns each cat has leaned (persisted by the app at
+     the owner's turn only; tick=false reads without counting). lean = up
+     to 3 kept cats leaning, weakest first; punt = the ones that have
+     leaned PUNT_TURNS+ turns; the path is measured on punt when advising,
+     on lean while watching. */
+  const prev = seen || {};
+  if (!pw) return { lean: [], punt: [], seen: prev, advise: false, keptAfter: kept.slice(), winnable: [], pct: 0, clear: false };
+  const next = {};
+  const leaning = [];
+  for (const c of kept) {
+    const p = pw[c];
+    if (p == null) continue;
+    const was = prev[c] || 0;
+    if (p <= PUNT_LOW || (was > 0 && p < PUNT_EXIT)) { next[c] = tick ? was + 1 : was; leaning.push(c); }
+  }
+  leaning.sort((a, b) => pw[a] - pw[b] || CATS.indexOf(a) - CATS.indexOf(b));
+  const lean = leaning.slice(0, 3);
+  const punt = lean.filter(c => (next[c] || 0) >= PUNT_TURNS);
+  const advise = punt.length > 0;
+  const path = winPath(pw, kept, advise ? punt : lean);
+  return { lean, punt, seen: next, advise, ...path };
+}
+function coherenceRead(pw, punt) {
+  /* Declared punt vs the room. out = the punted category this roster
+     beats the most of the room in; inn = the kept category it beats the
+     least, only if that one is genuinely lost (<= PUNT_EXIT) — otherwise
+     null: the advice is a smaller box, never a swap onto a category the
+     roster is winning (mock 51 #154: the sum-of-wins metric first tried
+     here proposed punting PTS, z-rank 1, beating 54% of the room, because
+     the declared TO was beating 78%). State reads off pw[out]: inverted
+     when the roster beats >= half the room in a punted category, drifting
+     when the category is merely not lost (> PUNT_EXIT), aligned when every
+     punted category is lost. delta = expected weekly cat wins the change
+     returns (pw[out] − pw[inn], or pw[out] when dropping). null with no
+     punt declared or no room to read. */
+  if (!pw || !punt || !punt.length) return null;
+  const kept = CATS.filter(c => !punt.includes(c));
+  const declared = kept.reduce((t, c) => t + (pw[c] ?? 0), 0);
+  const out = [...punt].sort((a, b) => (pw[b] ?? 0) - (pw[a] ?? 0) || CATS.indexOf(a) - CATS.indexOf(b))[0];
+  const weakest = [...kept].sort((a, b) => (pw[a] ?? 1) - (pw[b] ?? 1) || CATS.indexOf(a) - CATS.indexOf(b))[0];
+  const inn = weakest != null && (pw[weakest] ?? 1) <= PUNT_EXIT ? weakest : null;
+  const pOut = pw[out] ?? 0;
+  const state = pOut >= 0.5 ? "inverted" : pOut > PUNT_EXIT ? "drifting" : "aligned";
+  const alt = punt.filter(c => c !== out).concat(inn ? [inn] : []);
+  const delta = pOut - (inn ? (pw[inn] ?? 0) : 0);
+  return { declared, best: { alt, v: declared + delta, out, inn }, delta, state };
+}
 function normCdf(x) {
   const ax = Math.abs(x) / Math.SQRT2;
   const t = 1 / (1 + 0.3275911 * ax);
@@ -2176,58 +2270,74 @@ const JUDGMENT = {
      DRAFTED (raw kept-z sums — the same math the mock post-mortems grade
      by). Display + declaration only: the advice ranking never reads the
      punt box, by measured design. */
+  /* D51R-3: the ONLY write path the advisor has into the punt box. Dead
+     while PUNT_BUTTONS is false (advice-only until the owner trusts it);
+     the setup chips are the owner's own declaration and do not come here. */
+  function adoptPunt(list, why) {
+    if (!PUNT_BUTTONS) return;
+    deck.state.punt = [...new Set(list)];
+    log(why);
+    save(); renderAll();
+  }
+  function oppRostersOf(rosters, st) {
+    const opp = [];
+    for (let s = 1; s <= st.teams; s++)
+      if (s !== st.slot && rosters[s] && rosters[s].length) opp.push(rosters[s]);
+    return opp;
+  }
+  const winShare = v => `${Math.round(v * 100)}%`;
+
   function renderCoherence() {
     const box = $("coherence");
     if (!box) return;
     box.className = "hidden";
     box.textContent = "";
     const st = deck.state;
-    const mineP = st.picks.filter(pk => pk.slot === st.slot && !pk.player.startsWith("UNKNOWN"))
-      .map(pk => PLAYERS.find(q => q.n === pk.player)).filter(Boolean);
+    const rosters = buildRosters(st, PLAYERS);
+    const mineP = rosters[st.slot] || [];
     if (!st.punt.length || mineP.length < 3) return;
-    const keptSum = arr => {
-      const ps = new Set(arr);
-      return mineP.reduce((t, q) => t + totalValue(q, ps), 0);
-    };
-    const declared = keptSum(st.punt);
-    let best = null;
-    for (const out of st.punt)
-      for (const inn of CATS.filter(c => !st.punt.includes(c))) {
-        const alt = st.punt.filter(c => c !== out).concat(inn);
-        const v = keptSum(alt);
-        if (!best || v > best.v) best = { alt, v, out, inn };
-      }
-    const delta = best.v - declared;
-    const state = delta > 2 ? "inverted" : delta > 0.75 ? "drifting" : "aligned";
+    /* Room-relative since 2026-09-21 (D51R-3): expected weekly category
+       wins from catWinProb, not roster-fit z. Mock 51's box (FT%+TO) read
+       ON TARGET by z while the roster was beating 76% of the room in TO
+       and 6% in AST. */
+    const pw = catWinProb(mineP, oppRostersOf(rosters, st));
+    const coh = coherenceRead(pw, st.punt);
+    if (!coh) return;
+    const { declared, best, delta, state } = coh;
     box.className = "coherence " + state;
     const keptCats = CATS.filter(c => !st.punt.includes(c));
     const head = el("span", "state",
-      state === "inverted" ? "\u26a0 WRONG TARGETS" : state === "drifting" ? "\u25c7 OFF TARGET" : "\u2713 ON TARGET");
-    head.dataset.tip = "Checks your declared TARGETS (the categories you kept) against the roster you have actually drafted \u2014 roster fit = z summed over targeted cats, compared against every single-swap alternative. Declaration steers analysis only; the advice list stays build-agnostic either way.";
+      state === "inverted" ? "⚠ WRONG TARGETS" : state === "drifting" ? "◇ OFF TARGET" : "✓ ON TARGET");
+    head.dataset.tip = "Checks your declared TARGETS (the categories you kept) against the roster you have actually drafted, in this room: expected weekly category wins = the share of opponents this roster beats in each kept category (the card's own weekly model), summed, compared against every single-swap alternative. Declaration steers the punt box; this strip only reads it. Advice only since 2026-09-21 (mock 51 retro): it never writes the punt box — change the chips yourself if you agree.";
     box.append(head);
     box.append(el("p", "",
-      `Targeting ${keptCats.join("\u00b7")} (punting ${st.punt.join("\u00b7")}) \u00b7 roster fit ${fmtZ(declared, 1)}` +
-      (state === "aligned" ? " \u2014 the best target set for this roster." : "")));
-    if (state !== "aligned") {
+      `Targeting ${keptCats.join("·")} (punting ${st.punt.join("·")}) · expected weekly cat wins ${declared.toFixed(2)} of ${keptCats.length}` +
+      (state === "aligned" ? " — the best target set for this roster in this room." : "")));
+    if (state !== "aligned" && best) {
       box.append(el("p", "",
-        `This roster fits better targeting ${best.out} \u2014 punt ${best.inn} instead: fit ${fmtZ(best.v, 1)} (+${delta.toFixed(1)})`));
-      const b = el("button", "swapbtn", `Retarget: ${best.out} in \u00b7 punt ${best.inn}`);
-      b.type = "button";
-      b.addEventListener("click", () => {
-        deck.state.punt = best.alt;
-        log(`Retargeted: now targeting ${CATS.filter(c => !best.alt.includes(c)).join(", ")} (punting ${best.alt.join(", ")}) \u2014 +${delta.toFixed(1)} roster fit.`);
-        save(); renderAll();
-      });
-      box.append(b);
+        `Punting ${best.out} though this roster beats ${winShare(pw[best.out])} of the room in it` +
+        (best.inn
+          ? ` while ${best.inn} (beats ${winShare(pw[best.inn])}) is kept — target ${best.out}, punt ${best.inn} instead: ${best.v.toFixed(2)} (+${delta.toFixed(2)} cats/week).`
+          : ` and nothing kept is lost — a smaller punt box (drop ${best.out}) fits this roster: ${best.v.toFixed(2)} (+${delta.toFixed(2)} cats/week).`) +
+        " Advice only — the punt box stays yours."));
+      if (PUNT_BUTTONS) {
+        const b = el("button", "swapbtn", `Retarget: ${best.out} in · punt ${best.inn}`);
+        b.type = "button";
+        b.addEventListener("click", () => adoptPunt(best.alt,
+          `Retargeted: now targeting ${CATS.filter(c => !best.alt.includes(c)).join(", ")} (punting ${best.alt.join(", ")}) — +${delta.toFixed(2)} expected weekly cat wins.`));
+        box.append(b);
+      }
     }
   }
 
   /* Punt Analyzer — one running line at the top of the decision card.
-     States: forming (roster < 2) → lean detected (kept cat sunk to 10th+,
-     PUNT BUILD button pivots the whole system) → punt active (kept
-     strengths + weakest kept to watch). */
-  /* When the strip detects a firm, clear-path lean, the full-tilt pivot
-     button renders in the decision-card meta space (owner request). */
+     States: forming (roster < 2) → lean detected (a kept cat losing to
+     most of the room; the decision card says so in words) → punt active
+     (kept strengths + weakest kept to watch). */
+  /* D51R-3: leanState carries the room-relative read (puntRead) plus the
+     per-cat win shares; renderDecision renders it as advice text. The
+     consecutive-turn counter (st.leanSeen) advances only when the owner is
+     on the clock and the pick count has moved (st.leanSeenAt). */
   let leanState = null;
 
   function renderPuntAnalyzer() {
@@ -2237,7 +2347,8 @@ const JUDGMENT = {
     box.classList.remove("lean");
     const lead = el("span", "lead", "Build");
     box.append(lead);
-    const mine = buildRosters(st, PLAYERS)[st.slot];
+    const rosters = buildRosters(st, PLAYERS);
+    const mine = rosters[st.slot];
     const punt = new Set(st.punt);
     const tiers = rankTiers(st.teams);
     /* Category rank strip (owner request 2026-07-23): the nine cats across,
@@ -2245,6 +2356,7 @@ const JUDGMENT = {
        Chip color IS the analysis: green locked, red drifted, × punted. */
     const haveRanks = mine.length >= 2;
     const ranks = haveRanks ? categoryRanks(st, PLAYERS).ranks : null;
+    const pw = haveRanks ? catWinProb(mine, oppRostersOf(rosters, st)) : null;
     if (unknownCount(st) && haveRanks)
       lead.dataset.tip = `⚠ ranks exclude ${unknownCount(st)} UNKNOWN pick(s)`;
     const row1 = el("div", "catrow", "");
@@ -2264,31 +2376,30 @@ const JUDGMENT = {
         if (r <= tiers.locked) chip.classList.add("good");
         else if (r >= tiers.lostFrom) chip.classList.add("bad");
         /* Heat grading (owner request 2026-08-05): chip background scales
-           blue (strong) \u2192 beige (neutral) \u2192 red (weak) with rank,
+           blue (strong) → beige (neutral) → red (weak) with rank,
            mirroring the board cells' validated color-mix mechanism. */
         const mid = (st.teams + 1) / 2;
         chip.classList.add("heat");
         if (r > mid) chip.classList.add("neg");
         chip.style.setProperty("--hi", (Math.abs(mid - r) / (mid - 1)).toFixed(3));
-        chip.dataset.tip = `${c}: rank ${r} of ${st.teams} vs the field right now`;
+        chip.dataset.tip = `${c}: rank ${r} of ${st.teams} vs the field right now` +
+          (pw ? ` · beats ${winShare(pw[c])} of the room in a typical week (the card's weekly model)` : "");
       }
       row1.append(chip);
     });
     box.append(row1);
     leanState = null;
-    if (!haveRanks || st.punt.length) return;
-    /* Punt governance unchanged behind the strip: firm-evidence gate +
-       70% clear-path rule decide when the pivot button appears. */
+    if (!haveRanks || st.punt.length || !pw || mine.length < 4) return;
+    /* Punt read behind the strip (D51R-3): room-relative, counted per
+       owner turn, advice-only — the decision card says the words. */
     const kept = CATS.filter(c => !punt.has(c));
-    const drift = mine.length >= 4
-      ? kept.filter(c => ranks[c] >= tiers.lostFrom)
-          .sort((a, b) => ranks[b] - ranks[a]).slice(0, 3)
-      : [];
-    if (!drift.length) return;
+    const n = st.picks.length;
+    const tick = !draftDone() && teamOfPick(n, st.teams) === st.slot && st.leanSeenAt !== n;
+    const read = puntRead(pw, kept, st.leanSeen || {}, tick);
+    if (tick) { st.leanSeen = read.seen; st.leanSeenAt = n; save(); }
+    if (!read.lean.length) return;
     box.classList.add("lean");
-    const firm = drift.length >= 2 || ranks[drift[0]] >= st.teams;
-    const path = puntPath(ranks, kept, drift, st.teams);
-    if (firm && path.clear) leanState = { drift, path };
+    leanState = { read, pw };
   }
 
   /* Live build intelligence — recomputed on every pick. Four reads, one
@@ -2298,7 +2409,8 @@ const JUDGMENT = {
     const box = $("buildread");
     box.innerHTML = "";
     box.classList.add("hidden");
-    const mine = buildRosters(st, PLAYERS)[st.slot];
+    const rosters = buildRosters(st, PLAYERS);
+    const mine = rosters[st.slot];
     if (mine.length < 3) return;
     const punt = new Set(st.punt);
     const kept = CATS.filter(c => !punt.has(c));
@@ -2343,29 +2455,31 @@ const JUDGMENT = {
       ]);
     }
 
-    /* 2. Implicit punt drift (roster >= 5): kept cats ranked 10th+ */
+    /* 2. Implicit punt drift (roster >= 5): kept cats losing to most of
+       the room — room-relative since 2026-09-21 (D51R-3), read from the
+       same puntRead the decision card advises from; advice only. */
     let adoptList = [];
     if (mine.length >= 5) {
-      const drift = kept.filter(c => ranks[c] >= rankTiers(st.teams).lostFrom)
-        .sort((a, b) => ranks[b] - ranks[a] || totals[st.slot][a] - totals[st.slot][b]);
+      const pw = catWinProb(mine, oppRostersOf(rosters, st));
+      const drift = pw ? puntRead(pw, kept, st.leanSeen || {}, false).lean : [];
       if (drift.length) {
         /* never suggest beyond a 3-category punt total */
         adoptList = drift.slice(0, Math.max(0, 3 - st.punt.length));
-        /* clear-path rule: adoption offered only when >= 70% of the
-           prospective kept set is winnable */
-        const path = adoptList.length ? puntPath(ranks, kept, adoptList, st.teams) : null;
-        const offer = adoptList.length && path.clear;
+        /* clear-path rule: a punt is advised only when >= 70% of the
+           prospective kept set is winnable (beats >= 55% of the room) */
+        const path = adoptList.length ? winPath(pw, kept, adoptList) : null;
+        const offer = !!(adoptList.length && path.clear);
         const named = drift.slice(0, 2);
         const rest = drift.slice(2);
         const line = [
           ["k", "Drift"],
-          ["why", ` drafting like a punt of ${named.map(c => `${c} (${ranks[c]}/${st.teams})`).join(", ")}` +
+          ["why", ` drafting like a punt of ${named.map(c => `${c} (beats ${winShare(pw[c])} of the room)`).join(", ")}` +
             (rest.length ? ` — ${rest.join(", ")} also weak but salvageable` : "") +
             (!adoptList.length ? " — already punting " + st.punt.length + "; trade for these instead of punting deeper."
-              : offer ? ` — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); formalize it and the Top 5 turns punt-coherent.`
+              : offer ? ` — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); advice only — set it in the punt box yourself if you agree, and the Top 5 turns punt-coherent.`
                       : ` — no clear path yet (${path.winnable.length}/${path.keptAfter.length} kept winnable, need ≥70%); build strengths or commit pre-draft — mid-draft pivots measured net-negative in the arena (2026-07-27 study).`)],
         ];
-        if (offer) line.push(["adopt", adoptList]);
+        if (offer && PUNT_BUTTONS) line.push(["adopt", adoptList]);
         lines.push(line);
       }
     }
@@ -2421,11 +2535,8 @@ const JUDGMENT = {
         if (cls === "adopt") {
           const b = el("button", "adopt", `Adopt punt ${val.join(", ")}`);
           b.type = "button";
-          b.addEventListener("click", () => {
-            deck.state.punt = [...new Set([...deck.state.punt, ...val])];
-            log(`Punt adopted: ${deck.state.punt.join(", ")} — recommendations are now punt-coherent.`);
-            save(); renderAll();
-          });
+          b.addEventListener("click", () => adoptPunt([...deck.state.punt, ...val],
+            `Punt adopted: ${[...new Set([...deck.state.punt, ...val])].join(", ")} — recommendations are now punt-coherent.`));
           p.append(b);
         } else p.append(el("span", cls, val));
       }
@@ -2618,16 +2729,30 @@ const JUDGMENT = {
     /* pick #, roster count, weakest, and vs-field ranks now live in the
        category rank strip and grid — this space belongs to the pivot. */
     if (leanState) {
-      const { drift, path } = leanState;
-      const b = el("button", "adopt fulltilt", `PUNT BUILD → ${drift.join("·")} — FULL TILT`);
-      b.type = "button";
-      b.dataset.tip = `clear path: ${path.winnable.length}/${path.keptAfter.length} kept cats winnable (≥70%) — pivots every board to the punt`;
-      b.addEventListener("click", () => {
-        deck.state.punt = drift;
-        log(`PUNT BUILD adopted: ${drift.join(", ")} — clear path (${path.winnable.length}/${path.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`);
-        save(); renderAll();
-      });
-      meta.append(b);
+      /* D51R-3: advice in words, never a write. The FULL TILT button lives
+         behind PUNT_BUTTONS (off) and would route through adoptPunt. */
+      const { read, pw } = leanState;
+      const path = `${read.winnable.length}/${read.keptAfter.length} kept cats winnable (beat ≥${Math.round(PUNT_WIN * 100)}% of the room; need ${Math.round(PUNT_PATH * 100)}%)`;
+      const named = list => list.map(c => `${c} (beats ${winShare(pw[c])})`).join(", ");
+      let text, cls = "puntread";
+      if (!read.advise) {
+        text = `Punt read — ${named(read.lean)} losing to most of the room; watching, not advising (a lean must hold ${PUNT_TURNS} of your turns in a row). ${path}.`;
+      } else if (read.clear) {
+        cls += " clear";
+        text = `Punt read — ${named(read.punt)} lost for ${PUNT_TURNS}+ of your turns and a punt has a clear path: ${path}. Advice only — set the punt box yourself if you agree.`;
+      } else {
+        text = `Punt read — ${named(read.punt)} lost for ${PUNT_TURNS}+ of your turns, but no clear path: ${path}. Build strengths instead of declaring.`;
+      }
+      const p = el("p", cls, text);
+      p.dataset.tip = "Room-relative punt read (D51R-3, 2026-09-21): each category's share of the room this roster beats in a typical week, from the same weekly model the card's ΔECW half uses — not the 13-man z-sum rank, which in mock 51 read TO as 11th while the roster was beating 76% of the room in it. Never writes the punt box.";
+      meta.append(p);
+      if (PUNT_BUTTONS && read.advise && read.clear) {
+        const b = el("button", "adopt fulltilt", `PUNT BUILD → ${read.punt.join("·")} — FULL TILT`);
+        b.type = "button";
+        b.addEventListener("click", () => adoptPunt(read.punt,
+          `PUNT BUILD adopted: ${read.punt.join(", ")} — clear path (${read.winnable.length}/${read.keptAfter.length} kept winnable); strategy pivoted punt-coherent.`));
+        meta.append(b);
+      }
     }
     /* Declared-punt warning (mock-22 lesson, 2026-07-31): the clear-path
        gate protects the PUNT BUILD button, but a hand-set punt box had

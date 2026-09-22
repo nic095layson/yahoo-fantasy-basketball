@@ -1,0 +1,3946 @@
+{
+ "summary": {
+  "owner_turns": 88,
+  "states": 8,
+  "consts": {
+   "PUNT_BUTTONS": false,
+   "PUNT_LOW": 0.25,
+   "PUNT_EXIT": 0.35,
+   "PUNT_TURNS": 2,
+   "PUNT_WIN": 0.55,
+   "PUNT_PATH": 0.7
+  },
+  "old": {
+   "turns_with_pivot_advice": 1,
+   "proposals": 25,
+   "pivot_proposals": 1,
+   "coherence_proposals": 24,
+   "on_top4_zsum": 1,
+   "on_winning_majority_pw": 7,
+   "examples_winning": [
+    "draft_state_50.json #44 coherence: punt TO (z-rank 2, beats 0.80 of the room)",
+    "draft_state_50.json #68 coherence: punt TO (z-rank 8, beats 0.61 of the room)",
+    "draft_state_50.json #77 coherence: punt TO (z-rank 6, beats 0.60 of the room)",
+    "draft_state_50.json #92 coherence: punt TO (z-rank 9, beats 0.55 of the room)",
+    "draft_state_50.json #116 coherence: punt TO (z-rank 8, beats 0.60 of the room)",
+    "draft_state_50.json #125 coherence: punt TO (z-rank 7, beats 0.56 of the room)",
+    "draft_state_50.json #140 coherence: punt TO (z-rank 7, beats 0.65 of the room)"
+   ],
+   "examples_top4": [
+    "draft_state_50.json #44 coherence: punt TO (z-rank 2, beats 0.80 of the room)"
+   ],
+   "fulltilt_turns": 0,
+   "adopt_offer_turns": 1
+  },
+  "new": {
+   "turns_with_pivot_advice": 8,
+   "proposals": 34,
+   "pivot_proposals": 18,
+   "coherence_proposals": 16,
+   "on_top4_zsum": 0,
+   "on_winning_majority_pw": 0,
+   "examples_winning": [],
+   "examples_top4": [],
+   "coherence_drop_advice": 8,
+   "watching_turns_no_advice": 3,
+   "advised_turns_clear": 0,
+   "advised_turns_no_clear_path": 8
+  },
+  "by_state": {
+   "draft_state_50.json": {
+    "turns": 11,
+    "old_pivot": 0,
+    "new_advise": 0,
+    "old_coh_swap": 9,
+    "new_coh_swap": 4
+   },
+   "draft_state_51.json": {
+    "turns": 11,
+    "old_pivot": 1,
+    "new_advise": 0,
+    "old_coh_swap": 1,
+    "new_coh_swap": 9
+   },
+   "draft_state_mock31.json": {
+    "turns": 11,
+    "old_pivot": 0,
+    "new_advise": 0,
+    "old_coh_swap": 0,
+    "new_coh_swap": 1
+   },
+   "draft_state_mock32.json": {
+    "turns": 11,
+    "old_pivot": 0,
+    "new_advise": 0,
+    "old_coh_swap": 10,
+    "new_coh_swap": 3
+   },
+   "draft_state_mock33.json": {
+    "turns": 11,
+    "old_pivot": 0,
+    "new_advise": 0,
+    "old_coh_swap": 0,
+    "new_coh_swap": 0
+   },
+   "draft_state_mock34.json": {
+    "turns": 11,
+    "old_pivot": 0,
+    "new_advise": 0,
+    "old_coh_swap": 3,
+    "new_coh_swap": 0
+   },
+   "draft_state_mock41.json": {
+    "turns": 11,
+    "old_pivot": 0,
+    "new_advise": 0,
+    "old_coh_swap": 1,
+    "new_coh_swap": 7
+   },
+   "draft_state_mock42.json": {
+    "turns": 11,
+    "old_pivot": 0,
+    "new_advise": 8,
+    "old_coh_swap": 0,
+    "new_coh_swap": 0
+   }
+  }
+ },
+ "rows": [
+  {
+   "state": "draft_state_50.json",
+   "pick": 29,
+   "roster": 2,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 4,
+    "REB": 2,
+    "AST": 8,
+    "ST": 11,
+    "BLK": 5,
+    "TO": 6
+   },
+   "pw": {
+    "FG%": 0.736,
+    "FT%": 0.086,
+    "3PTM": 0.127,
+    "PTS": 0.478,
+    "REB": 0.687,
+    "AST": 0.37,
+    "ST": 0.25,
+    "BLK": 0.49,
+    "TO": 0.6
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 44,
+   "roster": 3,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 6,
+    "REB": 2,
+    "AST": 10,
+    "ST": 12,
+    "BLK": 2,
+    "TO": 2
+   },
+   "pw": {
+    "FG%": 0.747,
+    "FT%": 0.091,
+    "3PTM": 0.109,
+    "PTS": 0.307,
+    "REB": 0.778,
+    "AST": 0.134,
+    "ST": 0.121,
+    "BLK": 0.778,
+    "TO": 0.802
+   },
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 5.88
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "ST",
+    "delta": 0.186
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 53,
+   "roster": 4,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 12,
+    "3PTM": 11,
+    "PTS": 3,
+    "REB": 2,
+    "AST": 4,
+    "ST": 11,
+    "BLK": 3,
+    "TO": 10
+   },
+   "pw": {
+    "FG%": 0.61,
+    "FT%": 0.159,
+    "3PTM": 0.161,
+    "PTS": 0.505,
+    "REB": 0.721,
+    "AST": 0.522,
+    "ST": 0.237,
+    "BLK": 0.727,
+    "TO": 0.459
+   },
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 9.82
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "ST",
+    "delta": 0.268
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 68,
+   "roster": 5,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 12,
+    "3PTM": 10,
+    "PTS": 7,
+    "REB": 3,
+    "AST": 3,
+    "ST": 11,
+    "BLK": 4,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.553,
+    "FT%": 0.203,
+    "3PTM": 0.221,
+    "PTS": 0.308,
+    "REB": 0.442,
+    "AST": 0.446,
+    "ST": 0.232,
+    "BLK": 0.646,
+    "TO": 0.608
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 8.04
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "ST",
+    "delta": 0.076
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 77,
+   "roster": 6,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 12,
+    "3PTM": 10,
+    "PTS": 7,
+    "REB": 3,
+    "AST": 7,
+    "ST": 11,
+    "BLK": 2,
+    "TO": 6
+   },
+   "pw": {
+    "FG%": 0.577,
+    "FT%": 0.197,
+    "3PTM": 0.267,
+    "PTS": 0.351,
+    "REB": 0.563,
+    "AST": 0.412,
+    "ST": 0.251,
+    "BLK": 0.818,
+    "TO": 0.602
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 6.36
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "PTS",
+    "inn": "ST",
+    "delta": 0.101
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 92,
+   "roster": 7,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 5,
+    "REB": 3,
+    "AST": 3,
+    "ST": 9,
+    "BLK": 2,
+    "TO": 9
+   },
+   "pw": {
+    "FG%": 0.635,
+    "FT%": 0.145,
+    "3PTM": 0.143,
+    "PTS": 0.363,
+    "REB": 0.469,
+    "AST": 0.441,
+    "ST": 0.221,
+    "BLK": 0.77,
+    "TO": 0.549
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 9.32
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "PTS",
+    "inn": "ST",
+    "delta": 0.141
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 101,
+   "roster": 8,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 5,
+    "REB": 2,
+    "AST": 4,
+    "ST": 10,
+    "BLK": 2,
+    "TO": 9
+   },
+   "pw": {
+    "FG%": 0.762,
+    "FT%": 0.127,
+    "3PTM": 0.084,
+    "PTS": 0.4,
+    "REB": 0.709,
+    "AST": 0.484,
+    "ST": 0.255,
+    "BLK": 0.839,
+    "TO": 0.474
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 8.09
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "PTS",
+    "inn": "ST",
+    "delta": 0.145
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 116,
+   "roster": 9,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 6,
+    "REB": 4,
+    "AST": 4,
+    "ST": 8,
+    "BLK": 2,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.77,
+    "FT%": 0.137,
+    "3PTM": 0.065,
+    "PTS": 0.291,
+    "REB": 0.545,
+    "AST": 0.426,
+    "ST": 0.325,
+    "BLK": 0.781,
+    "TO": 0.598
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 5.48
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "ST",
+    "delta": -0.034
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 125,
+   "roster": 10,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 8,
+    "REB": 1,
+    "AST": 5,
+    "ST": 8,
+    "BLK": 1,
+    "TO": 7
+   },
+   "pw": {
+    "FG%": 0.832,
+    "FT%": 0.119,
+    "3PTM": 0.046,
+    "PTS": 0.329,
+    "REB": 0.75,
+    "AST": 0.416,
+    "ST": 0.366,
+    "BLK": 0.853,
+    "TO": 0.56
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 3.78
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": null,
+    "delta": 0.329
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 140,
+   "roster": 11,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 8,
+    "REB": 1,
+    "AST": 8,
+    "ST": 5,
+    "BLK": 1,
+    "TO": 7
+   },
+   "pw": {
+    "FG%": 0.86,
+    "FT%": 0.105,
+    "3PTM": 0.016,
+    "PTS": 0.249,
+    "REB": 0.727,
+    "AST": 0.296,
+    "ST": 0.417,
+    "BLK": 0.865,
+    "TO": 0.65
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "drifting",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": 1.73
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "AST",
+    "delta": -0.047
+   }
+  },
+  {
+   "state": "draft_state_50.json",
+   "pick": 149,
+   "roster": 12,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 8,
+    "REB": 1,
+    "AST": 7,
+    "ST": 6,
+    "BLK": 1,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.862,
+    "FT%": 0.11,
+    "3PTM": 0.026,
+    "PTS": 0.284,
+    "REB": 0.743,
+    "AST": 0.402,
+    "ST": 0.47,
+    "BLK": 0.853,
+    "TO": 0.624
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "TO",
+    "delta": -0.05
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": null,
+    "delta": 0.284
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 34,
+   "roster": 2,
+   "punt": [],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 6,
+    "3PTM": 1,
+    "PTS": 4,
+    "REB": 4,
+    "AST": 12,
+    "ST": 9,
+    "BLK": 7,
+    "TO": 7
+   },
+   "pw": {
+    "FG%": 0.492,
+    "FT%": 0.578,
+    "3PTM": 0.548,
+    "PTS": 0.275,
+    "REB": 0.48,
+    "AST": 0.041,
+    "ST": 0.198,
+    "BLK": 0.307,
+    "TO": 0.691
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 39,
+   "roster": 3,
+   "punt": [],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 8,
+    "3PTM": 6,
+    "PTS": 2,
+    "REB": 2,
+    "AST": 12,
+    "ST": 9,
+    "BLK": 2,
+    "TO": 6
+   },
+   "pw": {
+    "FG%": 0.553,
+    "FT%": 0.482,
+    "3PTM": 0.538,
+    "PTS": 0.559,
+    "REB": 0.772,
+    "AST": 0.065,
+    "ST": 0.379,
+    "BLK": 0.684,
+    "TO": 0.585
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 58,
+   "roster": 4,
+   "punt": [
+    "FT%",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 8,
+    "PTS": 5,
+    "REB": 3,
+    "AST": 12,
+    "ST": 1,
+    "BLK": 2,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.564,
+    "FT%": 0.405,
+    "3PTM": 0.305,
+    "PTS": 0.288,
+    "REB": 0.624,
+    "AST": 0.06,
+    "ST": 0.663,
+    "BLK": 0.554,
+    "TO": 0.761
+   },
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": -0.21
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": "AST",
+    "delta": 0.701
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 63,
+   "roster": 5,
+   "punt": [
+    "FT%",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 7,
+    "PTS": 3,
+    "REB": 3,
+    "AST": 12,
+    "ST": 1,
+    "BLK": 2,
+    "TO": 2
+   },
+   "pw": {
+    "FG%": 0.545,
+    "FT%": 0.41,
+    "3PTM": 0.485,
+    "PTS": 0.48,
+    "REB": 0.695,
+    "AST": 0.064,
+    "ST": 0.839,
+    "BLK": 0.685,
+    "TO": 0.704
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "drifting",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": 0.78
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": "AST",
+    "delta": 0.64
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 82,
+   "roster": 6,
+   "punt": [
+    "TO",
+    "FG%"
+   ],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 6,
+    "3PTM": 3,
+    "PTS": 2,
+    "REB": 4,
+    "AST": 9,
+    "ST": 1,
+    "BLK": 4,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.467,
+    "FT%": 0.578,
+    "3PTM": 0.513,
+    "PTS": 0.402,
+    "REB": 0.447,
+    "AST": 0.144,
+    "ST": 0.725,
+    "BLK": 0.5,
+    "TO": 0.754
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FG%",
+    "inn": "AST",
+    "delta": -0.29
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": "AST",
+    "delta": 0.609
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 87,
+   "roster": 7,
+   "punt": [
+    "TO",
+    "FG%"
+   ],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 6,
+    "3PTM": 4,
+    "PTS": 3,
+    "REB": 4,
+    "AST": 9,
+    "ST": 1,
+    "BLK": 4,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.444,
+    "FT%": 0.593,
+    "3PTM": 0.641,
+    "PTS": 0.494,
+    "REB": 0.486,
+    "AST": 0.231,
+    "ST": 0.819,
+    "BLK": 0.544,
+    "TO": 0.678
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FG%",
+    "inn": "AST",
+    "delta": -0.66
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": "AST",
+    "delta": 0.447
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 106,
+   "roster": 8,
+   "punt": [
+    "TO",
+    "FG%"
+   ],
+   "ranks": {
+    "FG%": 8,
+    "FT%": 3,
+    "3PTM": 4,
+    "PTS": 2,
+    "REB": 5,
+    "AST": 10,
+    "ST": 1,
+    "BLK": 3,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.453,
+    "FT%": 0.636,
+    "3PTM": 0.56,
+    "PTS": 0.379,
+    "REB": 0.39,
+    "AST": 0.13,
+    "ST": 0.673,
+    "BLK": 0.544,
+    "TO": 0.814
+   },
+   "old_adopt": true,
+   "old_adopt_set": [
+    "AST"
+   ],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FG%",
+    "inn": "AST",
+    "delta": 0.39
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": "AST",
+    "delta": 0.683
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 111,
+   "roster": 9,
+   "punt": [
+    "TO",
+    "FG%"
+   ],
+   "ranks": {
+    "FG%": 8,
+    "FT%": 1,
+    "3PTM": 1,
+    "PTS": 2,
+    "REB": 5,
+    "AST": 9,
+    "ST": 1,
+    "BLK": 4,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.441,
+    "FT%": 0.688,
+    "3PTM": 0.754,
+    "PTS": 0.581,
+    "REB": 0.426,
+    "AST": 0.222,
+    "ST": 0.749,
+    "BLK": 0.552,
+    "TO": 0.728
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": "AST",
+    "delta": 0.72
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": "AST",
+    "delta": 0.507
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 130,
+   "roster": 10,
+   "punt": [
+    "TO",
+    "AST"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 2,
+    "3PTM": 3,
+    "PTS": 2,
+    "REB": 4,
+    "AST": 10,
+    "ST": 1,
+    "BLK": 2,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.54,
+    "FT%": 0.647,
+    "3PTM": 0.572,
+    "PTS": 0.475,
+    "REB": 0.49,
+    "AST": 0.134,
+    "ST": 0.704,
+    "BLK": 0.596,
+    "TO": 0.787
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": "FG%",
+    "delta": -1.47
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.787
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 135,
+   "roster": 11,
+   "punt": [
+    "TO",
+    "AST"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 2,
+    "3PTM": 3,
+    "PTS": 4,
+    "REB": 4,
+    "AST": 10,
+    "ST": 1,
+    "BLK": 2,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.542,
+    "FT%": 0.632,
+    "3PTM": 0.647,
+    "PTS": 0.605,
+    "REB": 0.637,
+    "AST": 0.151,
+    "ST": 0.84,
+    "BLK": 0.7,
+    "TO": 0.717
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": "FG%",
+    "delta": -0.86
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.717
+   }
+  },
+  {
+   "state": "draft_state_51.json",
+   "pick": 154,
+   "roster": 12,
+   "punt": [
+    "TO",
+    "AST"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 2,
+    "3PTM": 3,
+    "PTS": 1,
+    "REB": 4,
+    "AST": 10,
+    "ST": 1,
+    "BLK": 2,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.622,
+    "FT%": 0.651,
+    "3PTM": 0.577,
+    "PTS": 0.535,
+    "REB": 0.554,
+    "AST": 0.105,
+    "ST": 0.784,
+    "BLK": 0.636,
+    "TO": 0.782
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": "3PTM",
+    "delta": 0.24
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.782
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 33,
+   "roster": 2,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 3,
+    "REB": 1,
+    "AST": 11,
+    "ST": 11,
+    "BLK": 5,
+    "TO": 6
+   },
+   "pw": {
+    "FG%": 0.866,
+    "FT%": 0.082,
+    "3PTM": 0.043,
+    "PTS": 0.363,
+    "REB": 0.82,
+    "AST": 0.15,
+    "ST": 0.16,
+    "BLK": 0.539,
+    "TO": 0.65
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 40,
+   "roster": 3,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 2,
+    "REB": 1,
+    "AST": 6,
+    "ST": 11,
+    "BLK": 6,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.703,
+    "FT%": 0.165,
+    "3PTM": 0.124,
+    "PTS": 0.627,
+    "REB": 0.81,
+    "AST": 0.565,
+    "ST": 0.323,
+    "BLK": 0.482,
+    "TO": 0.268
+   },
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "ST",
+    "delta": -0.42
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": "ST",
+    "delta": -0.055
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 57,
+   "roster": 4,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 12,
+    "3PTM": 11,
+    "PTS": 4,
+    "REB": 1,
+    "AST": 7,
+    "ST": 9,
+    "BLK": 5,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.678,
+    "FT%": 0.176,
+    "3PTM": 0.08,
+    "PTS": 0.414,
+    "REB": 0.793,
+    "AST": 0.414,
+    "ST": 0.299,
+    "BLK": 0.533,
+    "TO": 0.41
+   },
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "BLK",
+    "delta": -1.37
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "TO",
+    "inn": "ST",
+    "delta": 0.111
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 64,
+   "roster": 5,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 3,
+    "REB": 1,
+    "AST": 7,
+    "ST": 8,
+    "BLK": 5,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.675,
+    "FT%": 0.135,
+    "3PTM": 0.064,
+    "PTS": 0.607,
+    "REB": 0.916,
+    "AST": 0.598,
+    "ST": 0.445,
+    "BLK": 0.627,
+    "TO": 0.229
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "BLK",
+    "delta": -3.06
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.229
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 81,
+   "roster": 6,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 2,
+    "REB": 1,
+    "AST": 4,
+    "ST": 8,
+    "BLK": 4,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.746,
+    "FT%": 0.099,
+    "3PTM": 0.012,
+    "PTS": 0.543,
+    "REB": 0.872,
+    "AST": 0.557,
+    "ST": 0.35,
+    "BLK": 0.549,
+    "TO": 0.273
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "BLK",
+    "delta": -5.16
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.273
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 88,
+   "roster": 7,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 1,
+    "AST": 2,
+    "ST": 8,
+    "BLK": 4,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.678,
+    "FT%": 0.097,
+    "3PTM": 0.027,
+    "PTS": 0.801,
+    "REB": 0.914,
+    "AST": 0.725,
+    "ST": 0.416,
+    "BLK": 0.584,
+    "TO": 0.117
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "ST",
+    "delta": -4.64
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.117
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 105,
+   "roster": 8,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 1,
+    "AST": 1,
+    "ST": 6,
+    "BLK": 7,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.639,
+    "FT%": 0.099,
+    "3PTM": 0.03,
+    "PTS": 0.68,
+    "REB": 0.845,
+    "AST": 0.713,
+    "ST": 0.407,
+    "BLK": 0.499,
+    "TO": 0.161
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "BLK",
+    "delta": -4.81
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.161
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 112,
+   "roster": 9,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 1,
+    "AST": 1,
+    "ST": 6,
+    "BLK": 7,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.596,
+    "FT%": 0.115,
+    "3PTM": 0.061,
+    "PTS": 0.807,
+    "REB": 0.835,
+    "AST": 0.84,
+    "ST": 0.519,
+    "BLK": 0.464,
+    "TO": 0.07
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "BLK",
+    "delta": -3.79
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.115
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 129,
+   "roster": 10,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 1,
+    "AST": 2,
+    "ST": 5,
+    "BLK": 4,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.63,
+    "FT%": 0.114,
+    "3PTM": 0.021,
+    "PTS": 0.688,
+    "REB": 0.867,
+    "AST": 0.696,
+    "ST": 0.412,
+    "BLK": 0.61,
+    "TO": 0.136
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "ST",
+    "delta": -6.42
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.136
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 136,
+   "roster": 11,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 2,
+    "REB": 1,
+    "AST": 2,
+    "ST": 5,
+    "BLK": 4,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.671,
+    "FT%": 0.097,
+    "3PTM": 0.014,
+    "PTS": 0.745,
+    "REB": 0.906,
+    "AST": 0.743,
+    "ST": 0.58,
+    "BLK": 0.688,
+    "TO": 0.097
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "ST",
+    "delta": -9.86
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.097
+   }
+  },
+  {
+   "state": "draft_state_mock31.json",
+   "pick": 153,
+   "roster": 12,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "TO"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 2,
+    "REB": 1,
+    "AST": 4,
+    "ST": 5,
+    "BLK": 3,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.711,
+    "FT%": 0.082,
+    "3PTM": 0.004,
+    "PTS": 0.63,
+    "REB": 0.92,
+    "AST": 0.64,
+    "ST": 0.523,
+    "BLK": 0.763,
+    "TO": 0.158
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": "ST",
+    "delta": -10.89
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "TO",
+    "inn": null,
+    "delta": 0.158
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 34,
+   "roster": 2,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 3,
+    "REB": 4,
+    "AST": 4,
+    "ST": 11,
+    "BLK": 4,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.746,
+    "FT%": 0.127,
+    "3PTM": 0.03,
+    "PTS": 0.359,
+    "REB": 0.508,
+    "AST": 0.51,
+    "ST": 0.162,
+    "BLK": 0.54,
+    "TO": 0.491
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 39,
+   "roster": 3,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 3,
+    "REB": 4,
+    "AST": 6,
+    "ST": 10,
+    "BLK": 4,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.692,
+    "FT%": 0.132,
+    "3PTM": 0.101,
+    "PTS": 0.586,
+    "REB": 0.763,
+    "AST": 0.613,
+    "ST": 0.417,
+    "BLK": 0.699,
+    "TO": 0.299
+   },
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 5.2
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 0.118
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 58,
+   "roster": 4,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 2,
+    "AST": 6,
+    "ST": 11,
+    "BLK": 4,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.627,
+    "FT%": 0.121,
+    "3PTM": 0.045,
+    "PTS": 0.469,
+    "REB": 0.667,
+    "AST": 0.479,
+    "ST": 0.223,
+    "BLK": 0.604,
+    "TO": 0.376
+   },
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 6.12
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "ST",
+    "inn": null,
+    "delta": 0.223
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 63,
+   "roster": 5,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 2,
+    "AST": 5,
+    "ST": 11,
+    "BLK": 4,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.587,
+    "FT%": 0.153,
+    "3PTM": 0.099,
+    "PTS": 0.724,
+    "REB": 0.823,
+    "AST": 0.61,
+    "ST": 0.265,
+    "BLK": 0.693,
+    "TO": 0.204
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 6.9
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 0.061
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 82,
+   "roster": 6,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 1,
+    "AST": 6,
+    "ST": 12,
+    "BLK": 2,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.58,
+    "FT%": 0.166,
+    "3PTM": 0.063,
+    "PTS": 0.501,
+    "REB": 0.647,
+    "AST": 0.393,
+    "ST": 0.139,
+    "BLK": 0.755,
+    "TO": 0.351
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "3PTM",
+    "inn": "TO",
+    "delta": 5.69
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.166
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 87,
+   "roster": 7,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 1,
+    "AST": 4,
+    "ST": 12,
+    "BLK": 2,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.65,
+    "FT%": 0.116,
+    "3PTM": 0.051,
+    "PTS": 0.722,
+    "REB": 0.826,
+    "AST": 0.574,
+    "ST": 0.231,
+    "BLK": 0.825,
+    "TO": 0.196
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 7.01
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 0.035
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 106,
+   "roster": 8,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 1,
+    "REB": 1,
+    "AST": 3,
+    "ST": 12,
+    "BLK": 4,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.617,
+    "FT%": 0.121,
+    "3PTM": 0.028,
+    "PTS": 0.589,
+    "REB": 0.598,
+    "AST": 0.575,
+    "ST": 0.223,
+    "BLK": 0.704,
+    "TO": 0.229
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 8.14
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "ST",
+    "inn": "TO",
+    "delta": -0.007
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 111,
+   "roster": 9,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 2,
+    "REB": 1,
+    "AST": 4,
+    "ST": 12,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.696,
+    "FT%": 0.103,
+    "3PTM": 0.026,
+    "PTS": 0.683,
+    "REB": 0.89,
+    "AST": 0.607,
+    "ST": 0.286,
+    "BLK": 0.817,
+    "TO": 0.174
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 6.6
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 0.113
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 130,
+   "roster": 10,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 2,
+    "REB": 1,
+    "AST": 3,
+    "ST": 7,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.708,
+    "FT%": 0.114,
+    "3PTM": 0.011,
+    "PTS": 0.523,
+    "REB": 0.68,
+    "AST": 0.521,
+    "ST": 0.329,
+    "BLK": 0.73,
+    "TO": 0.303
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 6.97
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 0.026
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 135,
+   "roster": 11,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 3,
+    "REB": 2,
+    "AST": 4,
+    "ST": 4,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.726,
+    "FT%": 0.103,
+    "3PTM": 0.012,
+    "PTS": 0.597,
+    "REB": 0.811,
+    "AST": 0.585,
+    "ST": 0.549,
+    "BLK": 0.797,
+    "TO": 0.256
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 7.89
+   },
+   "new_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 0.293
+   }
+  },
+  {
+   "state": "draft_state_mock32.json",
+   "pick": 154,
+   "roster": 12,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "ST"
+   ],
+   "ranks": {
+    "FG%": 1,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 4,
+    "REB": 1,
+    "AST": 3,
+    "ST": 3,
+    "BLK": 2,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.762,
+    "FT%": 0.101,
+    "3PTM": 0.003,
+    "PTS": 0.47,
+    "REB": 0.775,
+    "AST": 0.456,
+    "ST": 0.472,
+    "BLK": 0.776,
+    "TO": 0.353
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "inverted",
+    "out": "ST",
+    "inn": "TO",
+    "delta": 6.65
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "ST",
+    "inn": null,
+    "delta": 0.472
+   }
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 34,
+   "roster": 2,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 10,
+    "PTS": 7,
+    "REB": 5,
+    "AST": 1,
+    "ST": 8,
+    "BLK": 5,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.519,
+    "FT%": 0.407,
+    "3PTM": 0.125,
+    "PTS": 0.212,
+    "REB": 0.398,
+    "AST": 0.598,
+    "ST": 0.258,
+    "BLK": 0.405,
+    "TO": 0.452
+   }
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 39,
+   "roster": 3,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 9,
+    "3PTM": 10,
+    "PTS": 8,
+    "REB": 6,
+    "AST": 4,
+    "ST": 5,
+    "BLK": 5,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.51,
+    "FT%": 0.415,
+    "3PTM": 0.366,
+    "PTS": 0.42,
+    "REB": 0.564,
+    "AST": 0.612,
+    "ST": 0.567,
+    "BLK": 0.624,
+    "TO": 0.393
+   }
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 58,
+   "roster": 4,
+   "punt": [],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 11,
+    "3PTM": 11,
+    "PTS": 9,
+    "REB": 4,
+    "AST": 5,
+    "ST": 5,
+    "BLK": 3,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.52,
+    "FT%": 0.391,
+    "3PTM": 0.129,
+    "PTS": 0.207,
+    "REB": 0.54,
+    "AST": 0.393,
+    "ST": 0.447,
+    "BLK": 0.655,
+    "TO": 0.554
+   },
+   "old_lean": [
+    "FT%",
+    "3PTM"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "new_lean": [
+    "3PTM",
+    "PTS"
+   ],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "2/7",
+   "new_seen": {
+    "3PTM": 1,
+    "PTS": 1
+   }
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 63,
+   "roster": 5,
+   "punt": [],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 8,
+    "3PTM": 10,
+    "PTS": 8,
+    "REB": 4,
+    "AST": 10,
+    "ST": 8,
+    "BLK": 3,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.483,
+    "FT%": 0.462,
+    "3PTM": 0.385,
+    "PTS": 0.414,
+    "REB": 0.677,
+    "AST": 0.401,
+    "ST": 0.553,
+    "BLK": 0.716,
+    "TO": 0.489
+   },
+   "old_lean": [
+    "3PTM",
+    "AST"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "3/9",
+   "new_seen": {}
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 82,
+   "roster": 6,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 8,
+    "3PTM": 9,
+    "PTS": 8,
+    "REB": 6,
+    "AST": 9,
+    "ST": 8,
+    "BLK": 4,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.486,
+    "FT%": 0.506,
+    "3PTM": 0.329,
+    "PTS": 0.281,
+    "REB": 0.362,
+    "AST": 0.318,
+    "ST": 0.397,
+    "BLK": 0.579,
+    "TO": 0.653
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "2/9",
+   "new_seen": {}
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 87,
+   "roster": 7,
+   "punt": [],
+   "ranks": {
+    "FG%": 8,
+    "FT%": 8,
+    "3PTM": 3,
+    "PTS": 8,
+    "REB": 9,
+    "AST": 10,
+    "ST": 8,
+    "BLK": 5,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.48,
+    "FT%": 0.512,
+    "3PTM": 0.595,
+    "PTS": 0.511,
+    "REB": 0.376,
+    "AST": 0.358,
+    "ST": 0.528,
+    "BLK": 0.555,
+    "TO": 0.545
+   },
+   "old_lean": [
+    "AST"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "2/9",
+   "new_seen": {}
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 106,
+   "roster": 8,
+   "punt": [],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 8,
+    "3PTM": 8,
+    "PTS": 8,
+    "REB": 6,
+    "AST": 10,
+    "ST": 7,
+    "BLK": 5,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.613,
+    "FT%": 0.466,
+    "3PTM": 0.35,
+    "PTS": 0.335,
+    "REB": 0.427,
+    "AST": 0.263,
+    "ST": 0.392,
+    "BLK": 0.53,
+    "TO": 0.637
+   },
+   "old_lean": [
+    "AST"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "2/9",
+   "new_seen": {}
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 111,
+   "roster": 9,
+   "punt": [],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 8,
+    "3PTM": 9,
+    "PTS": 8,
+    "REB": 8,
+    "AST": 10,
+    "ST": 5,
+    "BLK": 7,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.606,
+    "FT%": 0.477,
+    "3PTM": 0.446,
+    "PTS": 0.413,
+    "REB": 0.459,
+    "AST": 0.376,
+    "ST": 0.618,
+    "BLK": 0.563,
+    "TO": 0.594
+   },
+   "old_lean": [
+    "AST"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "4/9",
+   "new_seen": {}
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 130,
+   "roster": 10,
+   "punt": [],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 8,
+    "3PTM": 9,
+    "PTS": 9,
+    "REB": 9,
+    "AST": 7,
+    "ST": 3,
+    "BLK": 5,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.589,
+    "FT%": 0.468,
+    "3PTM": 0.331,
+    "PTS": 0.257,
+    "REB": 0.33,
+    "AST": 0.38,
+    "ST": 0.59,
+    "BLK": 0.54,
+    "TO": 0.646
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "3/9",
+   "new_seen": {}
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 135,
+   "roster": 11,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 8,
+    "3PTM": 9,
+    "PTS": 8,
+    "REB": 11,
+    "AST": 7,
+    "ST": 2,
+    "BLK": 5,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.555,
+    "FT%": 0.472,
+    "3PTM": 0.462,
+    "PTS": 0.348,
+    "REB": 0.389,
+    "AST": 0.559,
+    "ST": 0.687,
+    "BLK": 0.589,
+    "TO": 0.539
+   },
+   "old_lean": [
+    "REB"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "4/9",
+   "new_seen": {}
+  },
+  {
+   "state": "draft_state_mock33.json",
+   "pick": 154,
+   "roster": 12,
+   "punt": [],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 9,
+    "3PTM": 11,
+    "PTS": 9,
+    "REB": 6,
+    "AST": 6,
+    "ST": 2,
+    "BLK": 2,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.621,
+    "FT%": 0.392,
+    "3PTM": 0.255,
+    "PTS": 0.22,
+    "REB": 0.419,
+    "AST": 0.423,
+    "ST": 0.608,
+    "BLK": 0.665,
+    "TO": 0.646
+   },
+   "old_lean": [
+    "3PTM"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS"
+   ],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "4/8",
+   "new_seen": {
+    "PTS": 1
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 32,
+   "roster": 2,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 12,
+    "3PTM": 10,
+    "PTS": 12,
+    "REB": 8,
+    "AST": 8,
+    "ST": 8,
+    "BLK": 4,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.682,
+    "FT%": 0.295,
+    "3PTM": 0.164,
+    "PTS": 0.071,
+    "REB": 0.251,
+    "AST": 0.313,
+    "ST": 0.276,
+    "BLK": 0.621,
+    "TO": 0.955
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 41,
+   "roster": 3,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 11,
+    "3PTM": 12,
+    "PTS": 12,
+    "REB": 7,
+    "AST": 7,
+    "ST": 1,
+    "BLK": 3,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.66,
+    "FT%": 0.202,
+    "3PTM": 0.125,
+    "PTS": 0.057,
+    "REB": 0.345,
+    "AST": 0.352,
+    "ST": 0.748,
+    "BLK": 0.676,
+    "TO": 0.933
+   },
+   "old_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "REB",
+    "delta": -0.31
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "REB",
+    "delta": -0.143
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 56,
+   "roster": 4,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 11,
+    "3PTM": 10,
+    "PTS": 12,
+    "REB": 8,
+    "AST": 8,
+    "ST": 1,
+    "BLK": 4,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.641,
+    "FT%": 0.226,
+    "3PTM": 0.155,
+    "PTS": 0.04,
+    "REB": 0.264,
+    "AST": 0.216,
+    "ST": 0.739,
+    "BLK": 0.643,
+    "TO": 0.965
+   },
+   "old_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "REB",
+    "delta": 0.56
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": 0.01
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 65,
+   "roster": 5,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 11,
+    "3PTM": 11,
+    "PTS": 12,
+    "REB": 7,
+    "AST": 8,
+    "ST": 1,
+    "BLK": 4,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.64,
+    "FT%": 0.228,
+    "3PTM": 0.123,
+    "PTS": 0.074,
+    "REB": 0.461,
+    "AST": 0.283,
+    "ST": 0.808,
+    "BLK": 0.704,
+    "TO": 0.931
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "REB",
+    "delta": -1.38
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": -0.055
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 80,
+   "roster": 6,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 11,
+    "3PTM": 10,
+    "PTS": 12,
+    "REB": 4,
+    "AST": 8,
+    "ST": 1,
+    "BLK": 5,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.664,
+    "FT%": 0.219,
+    "3PTM": 0.104,
+    "PTS": 0.078,
+    "REB": 0.444,
+    "AST": 0.272,
+    "ST": 0.731,
+    "BLK": 0.601,
+    "TO": 0.937
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "AST",
+    "delta": -0.78
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": -0.053
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 89,
+   "roster": 7,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 12,
+    "REB": 3,
+    "AST": 8,
+    "ST": 2,
+    "BLK": 3,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.726,
+    "FT%": 0.198,
+    "3PTM": 0.104,
+    "PTS": 0.131,
+    "REB": 0.706,
+    "AST": 0.258,
+    "ST": 0.722,
+    "BLK": 0.721,
+    "TO": 0.919
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "AST",
+    "delta": -0.02
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": -0.06
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 104,
+   "roster": 8,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 11,
+    "3PTM": 10,
+    "PTS": 11,
+    "REB": 3,
+    "AST": 8,
+    "ST": 2,
+    "BLK": 5,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.677,
+    "FT%": 0.26,
+    "3PTM": 0.182,
+    "PTS": 0.086,
+    "REB": 0.547,
+    "AST": 0.224,
+    "ST": 0.673,
+    "BLK": 0.612,
+    "TO": 0.948
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "AST",
+    "delta": 0.02
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": 0.036
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 113,
+   "roster": 9,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 9,
+    "PTS": 12,
+    "REB": 4,
+    "AST": 9,
+    "ST": 1,
+    "BLK": 6,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.649,
+    "FT%": 0.28,
+    "3PTM": 0.215,
+    "PTS": 0.125,
+    "REB": 0.531,
+    "AST": 0.262,
+    "ST": 0.788,
+    "BLK": 0.633,
+    "TO": 0.927
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "PTS",
+    "inn": "AST",
+    "delta": -0.45
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": 0.018
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 128,
+   "roster": 10,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 9,
+    "PTS": 11,
+    "REB": 7,
+    "AST": 9,
+    "ST": 2,
+    "BLK": 6,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.587,
+    "FT%": 0.337,
+    "3PTM": 0.298,
+    "PTS": 0.158,
+    "REB": 0.415,
+    "AST": 0.212,
+    "ST": 0.729,
+    "BLK": 0.552,
+    "TO": 0.908
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "drifting",
+    "out": "3PTM",
+    "inn": "AST",
+    "delta": 0.81
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": 0.124
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 137,
+   "roster": 11,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 11,
+    "3PTM": 9,
+    "PTS": 11,
+    "REB": 3,
+    "AST": 9,
+    "ST": 2,
+    "BLK": 6,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.589,
+    "FT%": 0.335,
+    "3PTM": 0.342,
+    "PTS": 0.215,
+    "REB": 0.548,
+    "AST": 0.226,
+    "ST": 0.721,
+    "BLK": 0.599,
+    "TO": 0.9
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "drifting",
+    "out": "3PTM",
+    "inn": "AST",
+    "delta": 1.36
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "3PTM",
+    "inn": "AST",
+    "delta": 0.116
+   }
+  },
+  {
+   "state": "draft_state_mock34.json",
+   "pick": 152,
+   "roster": 12,
+   "punt": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 11,
+    "3PTM": 9,
+    "PTS": 11,
+    "REB": 2,
+    "AST": 10,
+    "ST": 2,
+    "BLK": 5,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.631,
+    "FT%": 0.32,
+    "3PTM": 0.271,
+    "PTS": 0.16,
+    "REB": 0.656,
+    "AST": 0.165,
+    "ST": 0.667,
+    "BLK": 0.624,
+    "TO": 0.923
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "drifting",
+    "out": "3PTM",
+    "inn": "AST",
+    "delta": 1.27
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": 0.155
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 25,
+   "roster": 2,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 10,
+    "FT%": 6,
+    "3PTM": 6,
+    "PTS": 7,
+    "REB": 2,
+    "AST": 7,
+    "ST": 6,
+    "BLK": 1,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.382,
+    "FT%": 0.535,
+    "3PTM": 0.613,
+    "PTS": 0.538,
+    "REB": 0.812,
+    "AST": 0.58,
+    "ST": 0.562,
+    "BLK": 0.942,
+    "TO": 0.176
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 48,
+   "roster": 3,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 4,
+    "REB": 1,
+    "AST": 7,
+    "ST": 11,
+    "BLK": 1,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.663,
+    "FT%": 0.209,
+    "3PTM": 0.105,
+    "PTS": 0.342,
+    "REB": 0.755,
+    "AST": 0.344,
+    "ST": 0.185,
+    "BLK": 0.887,
+    "TO": 0.418
+   },
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "3PTM",
+    "delta": -3.44
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "TO",
+    "inn": "3PTM",
+    "delta": 0.314
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 49,
+   "roster": 4,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 12,
+    "3PTM": 10,
+    "PTS": 2,
+    "REB": 1,
+    "AST": 7,
+    "ST": 9,
+    "BLK": 1,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.608,
+    "FT%": 0.205,
+    "3PTM": 0.382,
+    "PTS": 0.758,
+    "REB": 0.917,
+    "AST": 0.588,
+    "ST": 0.458,
+    "BLK": 0.913,
+    "TO": 0.163
+   },
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "ST",
+    "delta": -4.33
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.205
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 72,
+   "roster": 5,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 12,
+    "3PTM": 10,
+    "PTS": 5,
+    "REB": 2,
+    "AST": 6,
+    "ST": 7,
+    "BLK": 2,
+    "TO": 9
+   },
+   "pw": {
+    "FG%": 0.569,
+    "FT%": 0.247,
+    "3PTM": 0.235,
+    "PTS": 0.367,
+    "REB": 0.56,
+    "AST": 0.424,
+    "ST": 0.296,
+    "BLK": 0.82,
+    "TO": 0.414
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "FG%",
+    "delta": -3.99
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "TO",
+    "inn": "3PTM",
+    "delta": 0.179
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 73,
+   "roster": 6,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 11,
+    "3PTM": 4,
+    "PTS": 3,
+    "REB": 4,
+    "AST": 6,
+    "ST": 5,
+    "BLK": 2,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.503,
+    "FT%": 0.3,
+    "3PTM": 0.59,
+    "PTS": 0.688,
+    "REB": 0.688,
+    "AST": 0.608,
+    "ST": 0.55,
+    "BLK": 0.852,
+    "TO": 0.178
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "FG%",
+    "delta": -1.7
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.3
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 96,
+   "roster": 7,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 11,
+    "3PTM": 6,
+    "PTS": 4,
+    "REB": 5,
+    "AST": 6,
+    "ST": 5,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.453,
+    "FT%": 0.343,
+    "3PTM": 0.455,
+    "PTS": 0.488,
+    "REB": 0.467,
+    "AST": 0.502,
+    "ST": 0.404,
+    "BLK": 0.749,
+    "TO": 0.253
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "FG%",
+    "delta": -1.8
+   },
+   "new_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.343
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 97,
+   "roster": 8,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 9,
+    "FT%": 10,
+    "3PTM": 2,
+    "PTS": 3,
+    "REB": 5,
+    "AST": 6,
+    "ST": 6,
+    "BLK": 3,
+    "TO": 12
+   },
+   "pw": {
+    "FG%": 0.392,
+    "FT%": 0.37,
+    "3PTM": 0.743,
+    "PTS": 0.75,
+    "REB": 0.626,
+    "AST": 0.623,
+    "ST": 0.566,
+    "BLK": 0.776,
+    "TO": 0.119
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "FG%",
+    "delta": 0.14
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.37
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 120,
+   "roster": 9,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 9,
+    "FT%": 8,
+    "3PTM": 2,
+    "PTS": 3,
+    "REB": 5,
+    "AST": 6,
+    "ST": 3,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.39,
+    "FT%": 0.404,
+    "3PTM": 0.598,
+    "PTS": 0.537,
+    "REB": 0.323,
+    "AST": 0.522,
+    "ST": 0.54,
+    "BLK": 0.69,
+    "TO": 0.226
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "FG%",
+    "delta": 0.61
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "FT%",
+    "inn": "REB",
+    "delta": 0.081
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 121,
+   "roster": 10,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 11,
+    "FT%": 9,
+    "3PTM": 2,
+    "PTS": 2,
+    "REB": 6,
+    "AST": 6,
+    "ST": 3,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.37,
+    "FT%": 0.394,
+    "3PTM": 0.757,
+    "PTS": 0.767,
+    "REB": 0.521,
+    "AST": 0.616,
+    "ST": 0.701,
+    "BLK": 0.75,
+    "TO": 0.108
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "drifting",
+    "out": "FT%",
+    "inn": "FG%",
+    "delta": 0.87
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.394
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 144,
+   "roster": 11,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 10,
+    "FT%": 10,
+    "3PTM": 3,
+    "PTS": 3,
+    "REB": 5,
+    "AST": 6,
+    "ST": 2,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.407,
+    "FT%": 0.401,
+    "3PTM": 0.573,
+    "PTS": 0.601,
+    "REB": 0.428,
+    "AST": 0.472,
+    "ST": 0.558,
+    "BLK": 0.723,
+    "TO": 0.214
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "FG%",
+    "delta": -0.15
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.401
+   }
+  },
+  {
+   "state": "draft_state_mock41.json",
+   "pick": 145,
+   "roster": 12,
+   "punt": [
+    "TO",
+    "FT%"
+   ],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 11,
+    "3PTM": 6,
+    "PTS": 4,
+    "REB": 5,
+    "AST": 7,
+    "ST": 4,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.495,
+    "FT%": 0.376,
+    "3PTM": 0.573,
+    "PTS": 0.71,
+    "REB": 0.687,
+    "AST": 0.516,
+    "ST": 0.63,
+    "BLK": 0.852,
+    "TO": 0.164
+   },
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "old_coh": {
+    "state": "aligned",
+    "out": "FT%",
+    "inn": "AST",
+    "delta": -3.1
+   },
+   "new_coh": {
+    "state": "drifting",
+    "out": "FT%",
+    "inn": null,
+    "delta": 0.376
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 31,
+   "roster": 2,
+   "punt": [],
+   "ranks": {
+    "FG%": 2,
+    "FT%": 10,
+    "3PTM": 10,
+    "PTS": 12,
+    "REB": 6,
+    "AST": 7,
+    "ST": 8,
+    "BLK": 3,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.677,
+    "FT%": 0.293,
+    "3PTM": 0.206,
+    "PTS": 0.092,
+    "REB": 0.29,
+    "AST": 0.315,
+    "ST": 0.276,
+    "BLK": 0.68,
+    "TO": 0.937
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 42,
+   "roster": 3,
+   "punt": [],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 11,
+    "3PTM": 11,
+    "PTS": 12,
+    "REB": 7,
+    "AST": 8,
+    "ST": 1,
+    "BLK": 3,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.657,
+    "FT%": 0.204,
+    "3PTM": 0.124,
+    "PTS": 0.05,
+    "REB": 0.298,
+    "AST": 0.303,
+    "ST": 0.72,
+    "BLK": 0.666,
+    "TO": 0.952
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 55,
+   "roster": 4,
+   "punt": [],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 10,
+    "3PTM": 11,
+    "PTS": 12,
+    "REB": 9,
+    "AST": 3,
+    "ST": 2,
+    "BLK": 5,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.512,
+    "FT%": 0.338,
+    "3PTM": 0.172,
+    "PTS": 0.101,
+    "REB": 0.216,
+    "AST": 0.58,
+    "ST": 0.713,
+    "BLK": 0.52,
+    "TO": 0.729
+   },
+   "old_lean": [
+    "PTS",
+    "3PTM",
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "new_lean": [
+    "PTS",
+    "3PTM",
+    "REB"
+   ],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "3/6",
+   "new_seen": {
+    "3PTM": 1,
+    "PTS": 1,
+    "REB": 1
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 66,
+   "roster": 5,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 11,
+    "3PTM": 11,
+    "PTS": 12,
+    "REB": 5,
+    "AST": 2,
+    "ST": 1,
+    "BLK": 4,
+    "TO": 7
+   },
+   "pw": {
+    "FG%": 0.537,
+    "FT%": 0.238,
+    "3PTM": 0.109,
+    "PTS": 0.153,
+    "REB": 0.397,
+    "AST": 0.685,
+    "ST": 0.726,
+    "BLK": 0.576,
+    "TO": 0.652
+   },
+   "old_lean": [
+    "PTS",
+    "FT%",
+    "3PTM"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "3PTM",
+    "PTS",
+    "FT%"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "3PTM",
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "4/7",
+   "new_seen": {
+    "FT%": 1,
+    "3PTM": 2,
+    "PTS": 2
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 79,
+   "roster": 6,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 11,
+    "3PTM": 12,
+    "PTS": 12,
+    "REB": 6,
+    "AST": 4,
+    "ST": 2,
+    "BLK": 3,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.526,
+    "FT%": 0.249,
+    "3PTM": 0.126,
+    "PTS": 0.12,
+    "REB": 0.395,
+    "AST": 0.576,
+    "ST": 0.681,
+    "BLK": 0.739,
+    "TO": 0.691
+   },
+   "old_lean": [
+    "3PTM",
+    "PTS",
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS",
+    "3PTM",
+    "FT%"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "PTS",
+    "3PTM",
+    "FT%"
+   ],
+   "new_clear": false,
+   "new_path": "4/6",
+   "new_seen": {
+    "FT%": 2,
+    "3PTM": 3,
+    "PTS": 3
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 90,
+   "roster": 7,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 12,
+    "3PTM": 12,
+    "PTS": 10,
+    "REB": 6,
+    "AST": 3,
+    "ST": 2,
+    "BLK": 3,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.461,
+    "FT%": 0.216,
+    "3PTM": 0.177,
+    "PTS": 0.285,
+    "REB": 0.475,
+    "AST": 0.664,
+    "ST": 0.683,
+    "BLK": 0.731,
+    "TO": 0.534
+   },
+   "old_lean": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "3PTM",
+    "FT%",
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "3PTM",
+    "FT%",
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "3/6",
+   "new_seen": {
+    "FT%": 3,
+    "3PTM": 4,
+    "PTS": 4
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 103,
+   "roster": 8,
+   "punt": [],
+   "ranks": {
+    "FG%": 9,
+    "FT%": 12,
+    "3PTM": 10,
+    "PTS": 8,
+    "REB": 6,
+    "AST": 2,
+    "ST": 2,
+    "BLK": 3,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.411,
+    "FT%": 0.259,
+    "3PTM": 0.291,
+    "PTS": 0.338,
+    "REB": 0.411,
+    "AST": 0.643,
+    "ST": 0.664,
+    "BLK": 0.673,
+    "TO": 0.481
+   },
+   "old_lean": [
+    "FT%",
+    "3PTM"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "FT%",
+    "3PTM",
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "3/6",
+   "new_seen": {
+    "FT%": 4,
+    "3PTM": 5,
+    "PTS": 5
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 114,
+   "roster": 9,
+   "punt": [],
+   "ranks": {
+    "FG%": 9,
+    "FT%": 11,
+    "3PTM": 9,
+    "PTS": 4,
+    "REB": 7,
+    "AST": 2,
+    "ST": 2,
+    "BLK": 3,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.402,
+    "FT%": 0.272,
+    "3PTM": 0.33,
+    "PTS": 0.503,
+    "REB": 0.489,
+    "AST": 0.775,
+    "ST": 0.641,
+    "BLK": 0.596,
+    "TO": 0.315
+   },
+   "old_lean": [
+    "FT%",
+    "TO"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "FT%",
+    "3PTM"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "FT%",
+    "3PTM"
+   ],
+   "new_clear": false,
+   "new_path": "3/7",
+   "new_seen": {
+    "FT%": 5,
+    "3PTM": 6
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 127,
+   "roster": 10,
+   "punt": [],
+   "ranks": {
+    "FG%": 8,
+    "FT%": 11,
+    "3PTM": 9,
+    "PTS": 4,
+    "REB": 5,
+    "AST": 3,
+    "ST": 3,
+    "BLK": 3,
+    "TO": 9
+   },
+   "pw": {
+    "FG%": 0.425,
+    "FT%": 0.29,
+    "3PTM": 0.306,
+    "PTS": 0.484,
+    "REB": 0.556,
+    "AST": 0.656,
+    "ST": 0.569,
+    "BLK": 0.633,
+    "TO": 0.409
+   },
+   "old_lean": [
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "FT%",
+    "3PTM"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "FT%",
+    "3PTM"
+   ],
+   "new_clear": false,
+   "new_path": "4/7",
+   "new_seen": {
+    "FT%": 6,
+    "3PTM": 7
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 138,
+   "roster": 11,
+   "punt": [],
+   "ranks": {
+    "FG%": 8,
+    "FT%": 11,
+    "3PTM": 9,
+    "PTS": 5,
+    "REB": 3,
+    "AST": 3,
+    "ST": 4,
+    "BLK": 3,
+    "TO": 9
+   },
+   "pw": {
+    "FG%": 0.432,
+    "FT%": 0.297,
+    "3PTM": 0.317,
+    "PTS": 0.522,
+    "REB": 0.609,
+    "AST": 0.618,
+    "ST": 0.554,
+    "BLK": 0.712,
+    "TO": 0.396
+   },
+   "old_lean": [
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "FT%",
+    "3PTM"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "FT%",
+    "3PTM"
+   ],
+   "new_clear": false,
+   "new_path": "4/7",
+   "new_seen": {
+    "FT%": 7,
+    "3PTM": 8
+   }
+  },
+  {
+   "state": "draft_state_mock42.json",
+   "pick": 151,
+   "roster": 12,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 11,
+    "3PTM": 8,
+    "PTS": 6,
+    "REB": 6,
+    "AST": 4,
+    "ST": 3,
+    "BLK": 3,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.435,
+    "FT%": 0.319,
+    "3PTM": 0.356,
+    "PTS": 0.467,
+    "REB": 0.517,
+    "AST": 0.572,
+    "ST": 0.604,
+    "BLK": 0.688,
+    "TO": 0.472
+   },
+   "old_lean": [
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_fulltilt_set": [],
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "FT%"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "FT%"
+   ],
+   "new_clear": false,
+   "new_path": "3/8",
+   "new_seen": {
+    "FT%": 8
+   }
+  }
+ ]
+}

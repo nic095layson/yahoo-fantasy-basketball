@@ -13,6 +13,11 @@ and pins three behaviours the retro found wrong or undefined:
           mock32 #63 kept)
   D51R-1  survivalChip: nothing renders while SURVIVAL_DISPLAY is off, and
           the app block's chip / 🚌 paths are gated by it
+  D51R-3  punt advisor, advice-only and room-relative: catWinProb /
+          puntRead (hysteresis: PUNT_TURNS consecutive owner turns) /
+          coherenceRead read the weekly model, not z-sum ranks; PUNT_BUTTONS
+          is off and no app-block button assigns deck.state.punt (the one
+          write path, adoptPunt, returns while the switch is off)
 
 Exit 0 and `CARD: all N cases passed` only if every case holds.
 """
@@ -60,7 +65,11 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
   SURVIVAL_DISPLAY: typeof SURVIVAL_DISPLAY === "undefined" ? null : SURVIVAL_DISPLAY,
-  PIN_MAX_GAP: typeof PIN_MAX_GAP === "undefined" ? null : PIN_MAX_GAP };
+  PIN_MAX_GAP: typeof PIN_MAX_GAP === "undefined" ? null : PIN_MAX_GAP,
+  catWinProb: typeof catWinProb === "function" ? catWinProb : null,
+  puntRead: typeof puntRead === "function" ? puntRead : null,
+  coherenceRead: typeof coherenceRead === "function" ? coherenceRead : null,
+  PUNT_BUTTONS: typeof PUNT_BUTTONS === "undefined" ? null : PUNT_BUTTONS };
 """)
     probes = [("draft_state_51.json", 58), ("draft_state_mock32.json", 34), ("draft_state_mock32.json", 63)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
@@ -100,6 +109,27 @@ if (api.pinDecision && api.rankCard) {
     out.pins.push({ fn, pickNo, urgent: !!(r && r.urgent), pin: pinRaw ? pinRaw.n : null, av: pinRaw ? pinRaw.av : null,
                     tgOnPin: d.tgOnPin, withheld: d.withheld, top1: scored[0].p.n });
   }
+}
+out.advisor = { present: { catWinProb: !!api.catWinProb, puntRead: !!api.puntRead, coherenceRead: !!api.coherenceRead }, PUNT_BUTTONS: api.PUNT_BUTTONS };
+if (api.puntRead && api.coherenceRead && api.catWinProb) {
+  /* mock-51 #58 shape: AST dead, TO the roster's 2nd-best category in the room */
+  const pw = { "FG%": 0.56, "FT%": 0.40, "3PTM": 0.31, "PTS": 0.29, "REB": 0.62, "AST": 0.06, "ST": 0.66, "BLK": 0.55, "TO": 0.76 };
+  const kept = [...api.CATS ?? ["FG%", "FT%", "3PTM", "PTS", "REB", "AST", "ST", "BLK", "TO"]];
+  const r1 = api.puntRead(pw, kept, {});
+  const r2 = api.puntRead(pw, kept, r1.seen);
+  out.advisor.turn1 = { lean: r1.lean, advise: r1.advise, clear: r1.clear, seen: r1.seen };
+  out.advisor.turn2 = { lean: r2.lean, advise: r2.advise, clear: r2.clear, winnable: r2.winnable, keptAfter: r2.keptAfter };
+  const pwLate = { ...pw, "FG%": 0.43, "FT%": 0.68, "3PTM": 0.79, "PTS": 0.63, "REB": 0.44, "AST": 0.28, "ST": 0.78, "BLK": 0.57, "TO": 0.68 };
+  out.advisor.late = api.puntRead(pwLate, kept, r2.seen);
+  out.advisor.coh63 = api.coherenceRead(pw, ["FT%", "TO"]);
+  out.advisor.cohNone = api.coherenceRead(pw, []);
+  /* real roster at mock-51 #58: win probabilities from the engine's own weekly model */
+  const st0 = inp.states["draft_state_51.json"]; const n = 57;
+  const st = { teams: st0.teams, slot: st0.slot, size: st0.size, punt: [], picks: st0.picks.slice(0, n) };
+  const rosters = api.buildRosters(st, api.PLAYERS); const mine = rosters[st.slot] || [];
+  const opp = []; for (let s = 1; s <= st.teams; s++) if (s !== st.slot && rosters[s] && rosters[s].length) opp.push(rosters[s]);
+  const real = api.catWinProb(mine, opp);
+  out.advisor.real58 = real ? Object.fromEntries(Object.entries(real).map(([c, v]) => [c, +v.toFixed(2)])) : null;
 }
 process.stdout.write(JSON.stringify(out));
 """.replace("__MOD__", mod).replace("__FIXTURE__", fixture))
@@ -144,6 +174,39 @@ process.stdout.write(JSON.stringify(out));
     case("D51R-4 the app's sixth row styles LAST CALL off the gated decision, not readR.urgent",
          'li.style.borderColor = tgOnPin ?' in app and "(tgOnPin\n            ? `LAST CALL" in app,
          "sixth row still keys off readR.urgent")
+
+    # ---- D51R-3 punt advisor: advice-only, room-relative, with hysteresis
+    adv = js.get("advisor", {})
+    pres = adv.get("present", {})
+    case("D51R-3 catWinProb / puntRead / coherenceRead exist in the engine block",
+         all(pres.get(k) for k in ("catWinProb", "puntRead", "coherenceRead")), f"present {pres}")
+    case("D51R-3 PUNT_BUTTONS is defined and false (advice-only)", adv.get("PUNT_BUTTONS") is False,
+         f"got {adv.get('PUNT_BUTTONS')}")
+    t1, t2 = adv.get("turn1", {}), adv.get("turn2", {})
+    case("D51R-3 a category losing most of the room leans punt; TO at 0.76 never does",
+         t1.get("lean") == ["AST"], f"got {t1.get('lean')}")
+    case("D51R-3 hysteresis: no advice on the first losing turn, advice on the second",
+         t1.get("advise") is False and t2.get("advise") is True, f"turn1 {t1.get('advise')} turn2 {t2.get('advise')}")
+    case("D51R-3 clear path is room-relative: 5/8 kept winnable at #58-shape is NOT clear, 6/8 late IS",
+         t2.get("clear") is False and adv.get("late", {}).get("clear") is True,
+         f"#58 clear {t2.get('clear')} ({t2.get('winnable')}) late clear {adv.get('late', {}).get('clear')}")
+    coh = adv.get("coh63") or {}
+    case("D51R-3 coherence on the mock-51 punt box (FT%+TO) reads WRONG TARGETS: keep TO, punt AST",
+         coh.get("state") == "inverted" and (coh.get("best") or {}).get("out") == "TO" and (coh.get("best") or {}).get("inn") == "AST",
+         f"got {coh}")
+    case("D51R-3 coherence with no punt declared is null", adv.get("cohNone", "x") is None, f"got {adv.get('cohNone')}")
+    real = adv.get("real58")
+    case("D51R-3 the engine's own weekly model at mock-51 #58: AST <= 0.25, TO >= 0.55",
+         bool(real) and real.get("AST", 1) <= 0.25 and real.get("TO", 0) >= 0.55, f"got {real}")
+    app2 = html[html.find('<script id="engine">') + 1:]
+    case("D51R-3 no advisor button writes the punt box (FULL TILT / Retarget / Adopt assignments gone)",
+         "deck.state.punt = drift;" not in app2 and "deck.state.punt = best.alt;" not in app2
+         and "deck.state.punt = [...new Set([...deck.state.punt, ...val])];" not in app2,
+         "an advisor assignment to deck.state.punt remains")
+    m = re.search(r"function adoptPunt\(list, why\) \{\s*if \(!PUNT_BUTTONS\) return;", app2)
+    case("D51R-3 adoptPunt is the advisor's only write path and returns while PUNT_BUTTONS is off",
+         bool(m) and app2.count("adoptPunt(") == 4 and 'el("button", "adopt fulltilt"' in app2 and "if (PUNT_BUTTONS && read.advise && read.clear)" in app2,
+         f"guard {bool(m)}, adoptPunt call sites {app2.count('adoptPunt(')} (want 4 = definition + 3 buttons)")
 
     print()
     if FAILS:
