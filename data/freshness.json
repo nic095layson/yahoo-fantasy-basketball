@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-21",
-  "note": "2026-09-21 pull + tune-up (window 9/15-9/21): zero incumbent placements moved except Agbaji BKN->NYK Exhibit 9; Brunson judgment narrowed -0.15->-0.05; Doncic hamstring-monitor note; resolver verbatim not-in-pool fix (S1) + heads-up wording (S5)",
+  "date": "2026-09-22",
+  "note": "2026-09-22 pull (window 9/21-9/22, 1 day): zero placements moved (Spotrac/ESPN ledgers, 7 receipts, CHI/DET/NOP/NYK/POR/SAC shadows, injury sweep vs F6). Duren: DET offer raised 9/21 to 5yr/$200M fully guaranteed, reported rejected, QO branch stands - HELD -0.08. Kawhi extension talks advanced (multi-outlet). Ivey-Lakers and Lonzo-MIN social posts = fakes (fact-checked), both still FA. This build carries F8 (Yahoo 9/22 ADP-else-XRank baked into Mkt) and D51R-3 (advice-only punt advisor) from PRs 34-38.",
   "pool_changes": {
-    "changed": true,
-    "note": "Wallace REMOVED (2yr Maccabi Tel Aviv, club+EuroLeague official); ADDED 10: Wagler, Bona, Champagnie, Graves, Tre Jones, Robert Williams III, AJ Green, Beringer, Isaiah Joe, Huff (mock-51 room-coverage + owner-approved tune-up); 4 line syncs to 9/16 role research (Sheppard, Vucevic, Keyonte George, Randle); pool 255 -> 264"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
-    "date": "2026-09-21",
+    "date": "2026-09-22",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }

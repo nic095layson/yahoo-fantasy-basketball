@@ -93,7 +93,12 @@ if (api.survivalChip) out.chips = [api.survivalChip(0.01, []), api.survivalChip(
 out.pins = [];
 if (api.pinDecision && api.rankCard) {
   const { PLAYERS } = api;
-  const MKT_RANK = api.marketRanks([...PLAYERS].filter(p => p.av > 0));
+  /* F8 (2026-09-22): the build now bakes Yahoo prices into PLAYERS[].mkt and marketRanks
+     orders priced rows by that price. These three probes were authored against the
+     internal market model (the only ordering on 2026-09-21), and their urgency reads
+     depend on it — so they run with the prices stripped, keeping the fixtures fixed
+     across every future Yahoo paste. The priced ordering itself is F8's own test. */
+  const MKT_RANK = api.marketRanks([...PLAYERS].filter(p => p.av > 0).map(p => ({ ...p, mkt: null, mktsrc: null })));
   for (const [fn, pickNo] of inp.probes) {
     const st0 = inp.states[fn]; const n = pickNo - 1;
     const st = { teams: st0.teams, slot: st0.slot, size: st0.size, punt: st0.punt || [], picks: st0.picks.slice(0, n) };  /* the read depends on the declared punt */
