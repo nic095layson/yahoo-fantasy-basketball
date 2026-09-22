@@ -10,6 +10,9 @@ BEFORE any data reaches docs/draft-deck.html:
   gate 4  the pool moved, or the stamp deliberately asserts it didn't
   gate 5  the JUDGMENT layer is re-authored and dated with this pull
   gate 6  the colophon prose does not contradict the build (F4/D-S6)
+  gate 7  the kit and deck planes agree where they must (F7, 2026-09-21):
+          team, exclusion class, spelling, and re-derivation propagation
+          (scripts/check_planes.py; waivers/bypass recorded in the manifest)
 
 Only then: regenerate the embedded pool from data/players.csv, inject it,
 machine-sync the deck's data-pull stamp from freshness.json, and verify the
@@ -41,6 +44,19 @@ def fail(msg):
 
 
 def main():
+    # F7 flags (2026-09-21): --planes-waive "Name: reason" (repeatable) and
+    # --no-plane-check REASON. Both are recorded in the build manifest —
+    # the R4-F05 lesson: a bypass that only changes an exit code is a deadlock.
+    argv = sys.argv[1:]
+    waivers, no_planes = [], None
+    i = 0
+    while i < len(argv):
+        if argv[i] == "--planes-waive" and i + 1 < len(argv):
+            waivers.append(argv[i + 1]); i += 2
+        elif argv[i] == "--no-plane-check" and i + 1 < len(argv):
+            no_planes = argv[i + 1]; i += 2
+        else:
+            fail(f"unknown argument {argv[i]!r}")
     today = datetime.date.today().isoformat()
 
     # gate 1: roster verification, today, clean
@@ -203,6 +219,32 @@ def main():
              f"\"This refresh ({got.group(1) if got else '<absent>'}…\". "
              "Rewrite the Data paragraph for this window (gate 6, F4/D-S6).")
 
+    # gate 7: cross-plane consistency (F7, adopted 2026-09-21 — mock 51 retro
+    # T7; owner decision: REFUSE). The kit and the deck are two planes with
+    # different pools and different lines by design; what must agree for
+    # every player both carry is team, exclusion class, spelling, and that a
+    # line which moved on one plane since the last build moved on the other
+    # (Sheppard: the kit's 9/16 bench downgrade never reached the deck and
+    # the owner drafted him off the stale row). scripts/check_planes.py.
+    import check_planes
+    planes_kit_path = None
+    if no_planes is not None:
+        print(f"  plane check bypassed (recorded in the manifest): {no_planes}")
+        planes_manifest = {"bypassed": no_planes}
+    else:
+        planes, planes_kit_path = check_planes.run(waivers=waivers)
+        if planes is None:
+            fail(f"kit checkout not found at {planes_kit_path} — gate 7 compares the "
+                 "planes; set KIT_REPO, or record a bypass with --no-plane-check REASON")
+        check_planes.report(planes)
+        if planes["mismatches"]:
+            fail(f"the planes disagree on {planes['mismatches']} item(s) above (gate 7, "
+                 "F7) — carry the change to the other plane, or waive by name with "
+                 "--planes-waive \"Name: reason\" (recorded in the manifest)")
+        planes_manifest = {"kit_sha256": planes["kit_sha256"][:12],
+                           "shared": planes["shared"], "waived": planes["waived"],
+                           "propagation_armed": planes["snapshot"]}
+
     # build the embedded pool
     players = hoops.zscores(players_raw)
     archetypes.prime(players, hoops.availability)
@@ -257,6 +299,7 @@ def main():
         "verification": {"mode": ver.get("mode"),
                          "checked": ver.get("checked"),
                          "teams_covered": ver.get("teams_covered")},
+        "planes": planes_manifest,
         "freshness_note": (lambda n: n if len(n) <= 160
                            else n[:160].rsplit(" ", 1)[0] + " \u2026")(
                               fresh.get("note") or ""),
@@ -288,6 +331,10 @@ def main():
     else:
         print(f"  verification direct-complete: {ver.get('checked')}/{len(pool)} "
               "rows against all 30 official rosters")
+    # F7: the kit side of 'since the last build' is the snapshot of the kit
+    # lines this build was checked against
+    if planes_kit_path:
+        check_planes.write_snapshot(planes_kit_path)
     print("safe to publish docs/draft-deck.html")
 
 

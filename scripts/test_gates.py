@@ -42,9 +42,11 @@ def check(name, out, must_have=(), must_not=(), want_exit=None, got_exit=None):
         print(f"  ok    {name}")
 
 
-def run(cwd, *args):
+def run(cwd, *args, kit=None):
+    env = dict(os.environ)
+    env["KIT_REPO"] = kit or os.path.join(os.path.dirname(cwd), "kit")  # F7
     r = subprocess.run([sys.executable, *args], capture_output=True,
-                       text=True, cwd=cwd)
+                       text=True, cwd=cwd, env=env)
     return r.stdout + r.stderr, r.returncode
 
 
@@ -55,7 +57,37 @@ def fresh_copy():
         ".git", "results", "__pycache__"))
     # arena/results + mocks excluded for speed; recreate what the tools need
     os.makedirs(os.path.join(dst, "arena", "results"), exist_ok=True)
+    # F7/F8: the committed snapshots belong to the REAL kit; the synthesized
+    # kit beside this copy defines its own baseline on its first build
+    for snap in ("kit-snapshot.csv", "market-snapshot.csv"):
+        try:
+            os.remove(os.path.join(dst, "data", snap))
+        except FileNotFoundError:
+            pass
+    fake_kit(dst)
     return dst
+
+
+def fake_kit(repo):
+    """F7: a kit checkout beside the repo copy whose projection lines equal the
+    pool's and whose GP encodes the deck's exclusion class — the state in which
+    the cross-plane gate must pass. Cases mutate it to see the gate fire."""
+    import csv
+    kit = os.path.join(os.path.dirname(repo), "kit")
+    os.makedirs(os.path.join(kit, "report"), exist_ok=True)
+    with open(os.path.join(repo, "data", "players.csv"), encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    with open(os.path.join(kit, "report", "projections-2026-27.csv"), "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["name", "team", "pos", "gp", "mpg", "fgp", "fga", "ftp", "fta",
+                    "tpm", "pts", "reb", "ast", "stl", "blk", "tov"])
+        for r in rows:
+            tag = re.split(r"[\s(]", (r.get("note") or "").lower(), 1)[0]
+            excluded = tag.startswith("out-") or (not tag.endswith("-risk") and "recovery" in tag)
+            w.writerow([r["player"], r["team"], r["pos"], 15 if excluded else 72, 30,
+                        r["fg_pct"], r["fga"], r["ft_pct"], r["fta"], r["tpm"], r["pts"],
+                        r["reb"], r["ast"], r["stl"], r["blk"], r["tov"]])
+    return kit
 
 
 def prime(repo, pool_changes=None):
@@ -280,6 +312,62 @@ def main():
     check("non-ASCII pool note survives the PLAYERS injection", out,
           must_have=["safe to publish"], must_not=["bad escape"],
           want_exit=0, got_exit=rc)
+
+    # ---------- F7 (2026-09-21): cross-plane consistency gate ------------
+    # Mock 51: the kit's 9/16 bench downgrade of Sheppard never reached the
+    # deck; the owner drafted him off the stale row. The gate refuses on team,
+    # exclusion class, spelling drift, and a line that moved on one plane
+    # since the last build without moving on the other (waivable by name,
+    # recorded in the manifest). Lines otherwise differ by design.
+    repo7 = fresh_copy()
+    prime(repo7, pool_changes=["--no-pool-changes"])
+    redate_judgment(repo7)
+    redate_colophon(repo7)
+    proj7 = os.path.join(os.path.dirname(repo7), "kit", "report", "projections-2026-27.csv")
+    deck7 = os.path.join(repo7, "docs", "draft-deck.html")
+    out, rc = run(repo7, "scripts/build_deck.py")
+    check("F7 baseline: kit lines equal the pool -> builds and reports the planes", out,
+          must_have=["safe to publish", "planes:"], want_exit=0, got_exit=rc)
+    check("F7 baseline wrote data/kit-snapshot.csv",
+          "present" if os.path.exists(os.path.join(repo7, "data", "kit-snapshot.csv")) else "absent",
+          must_have=["present"])
+    orig7 = open(proj7, encoding="utf-8").read()
+    open(proj7, "w", encoding="utf-8").write(orig7.replace("Nikola Jokic,DEN,", "Nikola Jokic,LAL,", 1))
+    out, rc = run(repo7, "scripts/build_deck.py")
+    check("F7 team mismatch is REFUSED by name", out,
+          must_have=["BUILD REFUSED", "Nikola Jokic", "team"], want_exit=1, got_exit=rc)
+    rows7 = orig7.splitlines()
+    j = next(i for i, l in enumerate(rows7) if l.startswith("Nikola Jokic,"))
+    parts = rows7[j].split(",")
+    parts[3] = "10"
+    rows7[j] = ",".join(parts)
+    open(proj7, "w", encoding="utf-8").write("\n".join(rows7) + "\n")
+    out, rc = run(repo7, "scripts/build_deck.py")
+    check("F7 exclusion-class mismatch (kit GP 10, deck playable) is REFUSED", out,
+          must_have=["BUILD REFUSED", "Nikola Jokic", "exclusion"], want_exit=1, got_exit=rc)
+    parts[3] = "72"
+    parts[10] = "35.0"  # pts: the kit re-derives a line the deck never received
+    rows7[j] = ",".join(parts)
+    open(proj7, "w", encoding="utf-8").write("\n".join(rows7) + "\n")
+    out, rc = run(repo7, "scripts/build_deck.py")
+    check("F7 a kit re-derivation not carried to the deck is REFUSED (the Sheppard case)", out,
+          must_have=["BUILD REFUSED", "Nikola Jokic", "pts"], want_exit=1, got_exit=rc)
+    out, rc = run(repo7, "scripts/build_deck.py", "--planes-waive", "Nikola Jokic: gate-suite waiver")
+    check("F7 the same re-derivation with a recorded waiver builds", out,
+          must_have=["safe to publish", "waived"], want_exit=0, got_exit=rc)
+    m7 = re.search(r"<!-- build-manifest (\{.*?\}) -->", open(deck7, encoding="utf-8").read())
+    check("F7 the waiver is recorded in the build manifest", m7.group(1) if m7 else "",
+          must_have=["Nikola Jokic"])
+    out, rc = run(repo7, "scripts/build_deck.py", kit=os.path.join(os.path.dirname(repo7), "no-such-kit"))
+    check("F7 a missing kit checkout is REFUSED", out,
+          must_have=["BUILD REFUSED", "kit"], want_exit=1, got_exit=rc)
+    out, rc = run(repo7, "scripts/build_deck.py", "--no-plane-check", "gate-suite: kit unavailable",
+                  kit=os.path.join(os.path.dirname(repo7), "no-such-kit"))
+    check("F7 a recorded bypass builds and the manifest carries it", out,
+          must_have=["safe to publish", "bypass"], want_exit=0, got_exit=rc)
+    m7 = re.search(r"<!-- build-manifest (\{.*?\}) -->", open(deck7, encoding="utf-8").read())
+    check("F7 the bypass reason is in the manifest", m7.group(1) if m7 else "",
+          must_have=["kit unavailable"])
 
     print()
     if FAILURES:
