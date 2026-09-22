@@ -1,0 +1,240 @@
+{
+ "as_drafted": {
+  "champ": 55.033,
+  "playoff": 99.82,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#39:Derrick White": {
+  "champ": 56.061,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#58:Myles Turner": {
+  "champ": 55.983,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#63:Payton Pritchard": {
+  "champ": 57.85,
+  "playoff": 99.9,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#82:Myles Turner": {
+  "champ": 62.339,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#87:Myles Turner": {
+  "champ": 58.139,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#106:Brook Lopez": {
+  "champ": 57.183,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "swap#111:Brook Lopez": {
+  "champ": 56.428,
+  "playoff": 99.92,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "swap#130:Brook Lopez": {
+  "champ": 57.406,
+  "playoff": 99.92,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "swap#135:Brook Lopez": {
+  "champ": 58.111,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "swap#154:Brook Lopez": {
+  "champ": 63.417,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 63.472,
+  "playoff": 100.0,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Myles Turner"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ]
+  ]
+ },
+ "combo_turner82_lopez154": {
+  "champ": 67.383,
+  "playoff": 100.0,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Myles Turner"
+   ],
+   [
+    154,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "combo_turner82_lopez154_pritchard63": {
+  "champ": 69.656,
+  "playoff": 100.0,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Myles Turner"
+   ],
+   [
+    154,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "_board_rank": 1,
+ "_kept_total": {
+  "1": 1.165,
+  "2": -1.195,
+  "3": -2.866,
+  "4": -8.089,
+  "5": 2.326,
+  "6": -7.548,
+  "7": 0.222,
+  "8": -7.188,
+  "9": -14.789,
+  "10": 19.875,
+  "11": -5.723,
+  "12": -11.135
+ },
+ "_as_drafted_by_seat": {
+  "1": [
+   5.567,
+   58.44
+  ],
+  "2": [
+   6.739,
+   66.46
+  ],
+  "3": [
+   6.8,
+   66.02
+  ],
+  "4": [
+   3.506,
+   49.54
+  ],
+  "5": [
+   3.728,
+   49.95
+  ],
+  "6": [
+   1.328,
+   27.84
+  ],
+  "7": [
+   11.578,
+   77.78
+  ],
+  "8": [
+   2.172,
+   38.21
+  ],
+  "9": [
+   0.167,
+   6.06
+  ],
+  "10": [
+   55.033,
+   99.82
+  ],
+  "11": [
+   2.939,
+   45.82
+  ],
+  "12": [
+   0.444,
+   14.06
+  ]
+ }
+}
