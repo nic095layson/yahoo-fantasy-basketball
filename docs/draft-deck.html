@@ -658,6 +658,25 @@ function myNextPick(state) {
     if (teamOfPick(n, state.teams) === state.slot) return n + 1;
   return null;
 }
+/* M53 (2026-09-22, mock 53 retro): the ONE read of the clock every surface
+   renders from. The countdown under the feed title used to compute
+   `until = next === null ? 0 : next - (n + 1)` and print "(you're on the
+   clock)" whenever until was 0 — so once the owner's 13th pick was in and
+   myNextPick returned null, it said YOU'RE ON THE CLOCK for every remaining
+   pick (the owner met it right after an Insert-at-# episode and read it as
+   the insert breaking the deck; the strip beside it was right all along).
+   phase: "done" (draft full) · "you" (owner on the clock) · "none-left"
+   (draft running, owner's roster full) · "wait" (until > 0).
+   Twin: hoops.clock_read (parity item 8). */
+function clockRead(state) {
+  const n = state.picks.length, total = state.teams * state.size;
+  if (n >= total) return { phase: "done", onClock: false, seat: null, next: null, until: null, pick: null };
+  const seat = teamOfPick(n, state.teams);
+  const next = myNextPick(state);
+  if (seat === state.slot) return { phase: "you", onClock: true, seat, next, until: 0, pick: n + 1 };
+  if (next === null) return { phase: "none-left", onClock: false, seat, next: null, until: null, pick: n + 1 };
+  return { phase: "wait", onClock: false, seat, next, until: next - (n + 1), pick: n + 1 };
+}
 
 /* difflib.SequenceMatcher ratio (no junk; names are short, autojunk moot) */
 function _matchingBlocks(a, b) {
@@ -2004,6 +2023,12 @@ const JUDGMENT = {
       $("insertBar").classList.add("hidden");
       save();
       renderAll();
+    } else {
+      /* M53 (2026-09-22): a refused insert (ambiguous name, out of range) used to
+         log its warning without re-rendering — the line surfaced only on the
+         next action. Show it now. */
+      save();
+      renderMirror();
     }
   }
   $("insBtn").addEventListener("click", runInsert);
@@ -2655,7 +2680,8 @@ const JUDGMENT = {
         el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"));
       return;
     }
-    const onClock = teamOfPick(n, st.teams);
+    const clock = clockRead(st);   /* M53: one engine read for the clock (see clockRead) */
+    const onClock = clock.seat;
     /* feed placeholder names the pick + seat you're entering each turn
        (owner request): "Pick 8 — Team (8 / Marcus)". The manager name shows
        only when known — your own seat (YOU) or a named mock cast — otherwise
@@ -2667,16 +2693,18 @@ const JUDGMENT = {
       if (nm) seatWho = `${onClock} / ${nm}`;
     }
     $("feed").placeholder = `Pick ${n + 1} — Team (${seatWho})`;
-    /* countdown under the feed title (owner request 2026-07-23) */
-    const nxt = myNextPick(st);
-    const until = nxt === null ? 0 : nxt - (n + 1);
+    /* countdown under the feed title (owner request 2026-07-23; M53 fix
+       2026-09-22: rendered from clockRead's phase — "none-left" is no longer
+       mistaken for "on the clock") */
     const fc = $("feedCountdown");
-    if (until === 0) {           /* the owner's own pick — bold + accent highlight */
+    fc.classList.remove("onclocknow");
+    if (clock.phase === "you") {          /* the owner's own pick — bold + accent highlight */
       fc.innerHTML = "(you're on the clock)";
       fc.classList.add("onclocknow");
-    } else {                     /* someone else on the clock — bold just the count */
-      fc.innerHTML = `(<strong>${until}</strong> until your pick)`;
-      fc.classList.remove("onclocknow");
+    } else if (clock.phase === "none-left") {
+      fc.innerHTML = `(your roster is full — <strong>${total - n}</strong> pick${total - n === 1 ? "" : "s"} left in the draft)`;
+    } else {                              /* someone else on the clock — bold just the count */
+      fc.innerHTML = `(<strong>${clock.until}</strong> until your pick)`;
     }
     const mine = buildRosters(st, PLAYERS)[st.slot];
     strip.innerHTML = "";
@@ -2684,8 +2712,8 @@ const JUDGMENT = {
       el("span", "", `Pick #${n + 1} · R${Math.floor(n / st.teams) + 1}/${st.size}`),
       el("span", onClock === st.slot ? "onclock you" : "onclock",
         onClock === st.slot ? "YOU are on the clock" : `Seat ${onClock} on the clock`),
-      el("span", "", myNextPick(st) === null
-        ? "draft complete" : `your next: #${myNextPick(st)}`),
+      el("span", "", clock.next === null
+        ? "no picks left for you" : `your next: #${clock.next}`),
       el("span", "", `your roster: ${mine.length}/${st.size}`),
       el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"),
       el("span", "", `${availablePool(st, PLAYERS).length} available`)

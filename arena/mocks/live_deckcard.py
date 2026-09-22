@@ -25,6 +25,8 @@ PUNT_TIMELINES = {
     # mock 52: FULL TILT (FG%+AST) and an immediate Retarget to FG%+TO, both
     # right after the owner's #39; no later change logged
     52: [(0, []), (39, ["FG%", "TO"])],
+    # mock 53: no punt declared and no advisor click in the tool log
+    53: [(0, [])],
 }
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 if html_path.startswith("rev:"):

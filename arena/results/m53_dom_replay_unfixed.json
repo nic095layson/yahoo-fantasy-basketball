@@ -1,0 +1,3706 @@
+{
+ "summary": {
+  "deck": "docs/draft-deck.html",
+  "events": 169,
+  "echoMisses": 1,
+  "clockMismatches": 169,
+  "pageErrors": 0,
+  "finalPicks": 156,
+  "firstMismatch": {
+   "k": 0,
+   "op": "feed",
+   "text": "Nikola Jokic",
+   "P": null,
+   "expect": "#1: Nikola Jokic → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #1: Nikola Jokic → Seat 1"
+   ],
+   "nPicks": 1,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #2 · R1/13 Seat 2 on the clock your next: #10 your roster: 0/13 no punt 319 available",
+   "newErrors": []
+  }
+ },
+ "rows": [
+  {
+   "k": 0,
+   "op": "feed",
+   "text": "Nikola Jokic",
+   "P": null,
+   "expect": "#1: Nikola Jokic → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #1: Nikola Jokic → Seat 1"
+   ],
+   "nPicks": 1,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #2 · R1/13 Seat 2 on the clock your next: #10 your roster: 0/13 no punt 319 available",
+   "newErrors": []
+  },
+  {
+   "k": 1,
+   "op": "feed",
+   "text": "Shai Gilgeous-Alexander",
+   "P": null,
+   "expect": "#2: Shai Gilgeous-Alexander → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #2: Shai Gilgeous-Alexander → Seat 2"
+   ],
+   "nPicks": 2,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #3 · R1/13 Seat 3 on the clock your next: #10 your roster: 0/13 no punt 318 available",
+   "newErrors": []
+  },
+  {
+   "k": 2,
+   "op": "feed",
+   "text": "Luka Doncic",
+   "P": null,
+   "expect": "#3: Luka Doncic → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #3: Luka Doncic → Seat 3"
+   ],
+   "nPicks": 3,
+   "countdown": "(6 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(6 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #4 · R1/13 Seat 4 on the clock your next: #10 your roster: 0/13 no punt 317 available",
+   "newErrors": []
+  },
+  {
+   "k": 3,
+   "op": "feed",
+   "text": "Victor Wembanyama",
+   "P": null,
+   "expect": "#4: Victor Wembanyama → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #4: Victor Wembanyama → Seat 4"
+   ],
+   "nPicks": 4,
+   "countdown": "(5 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(5 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #5 · R1/13 Seat 5 on the clock your next: #10 your roster: 0/13 no punt 316 available",
+   "newErrors": []
+  },
+  {
+   "k": 4,
+   "op": "feed",
+   "text": "Jalen Johnson",
+   "P": null,
+   "expect": "#5: Jalen Johnson → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #5: Jalen Johnson → Seat 5"
+   ],
+   "nPicks": 5,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #6 · R1/13 Seat 6 on the clock your next: #10 your roster: 0/13 no punt 315 available",
+   "newErrors": []
+  },
+  {
+   "k": 5,
+   "op": "feed",
+   "text": "Anthony Edwards",
+   "P": null,
+   "expect": "#6: Anthony Edwards → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #6: Anthony Edwards → Seat 6"
+   ],
+   "nPicks": 6,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #7 · R1/13 Seat 7 on the clock your next: #10 your roster: 0/13 no punt 314 available",
+   "newErrors": []
+  },
+  {
+   "k": 6,
+   "op": "feed",
+   "text": "Giannis Antetokounmpo",
+   "P": null,
+   "expect": "#7: Giannis Antetokounmpo → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #7: Giannis Antetokounmpo → Seat 7"
+   ],
+   "nPicks": 7,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #8 · R1/13 Seat 8 on the clock your next: #10 your roster: 0/13 no punt 313 available",
+   "newErrors": []
+  },
+  {
+   "k": 7,
+   "op": "feed",
+   "text": "Cade Cunningham",
+   "P": null,
+   "expect": "#8: Cade Cunningham → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #8: Cade Cunningham → Seat 8"
+   ],
+   "nPicks": 8,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #9 · R1/13 Seat 9 on the clock your next: #10 your roster: 0/13 no punt 312 available",
+   "newErrors": []
+  },
+  {
+   "k": 8,
+   "op": "feed",
+   "text": "Tyrese Maxey",
+   "P": null,
+   "expect": "#9: Tyrese Maxey → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #9: Tyrese Maxey → Seat 9"
+   ],
+   "nPicks": 9,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #10 · R1/13 YOU are on the clock your next: #10 your roster: 0/13 no punt 311 available",
+   "newErrors": []
+  },
+  {
+   "k": 9,
+   "op": "feed",
+   "text": "Jayson Tatum",
+   "P": null,
+   "expect": "#10: Jayson Tatum → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #10: Jayson Tatum → Seat 10 (YOU)"
+   ],
+   "nPicks": 10,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #11 · R1/13 Seat 11 on the clock your next: #15 your roster: 1/13 no punt 310 available",
+   "newErrors": []
+  },
+  {
+   "k": 10,
+   "op": "feed",
+   "text": "Cooper Flagg",
+   "P": null,
+   "expect": "#11: Cooper Flagg → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #11: Cooper Flagg → Seat 11"
+   ],
+   "nPicks": 11,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #12 · R1/13 Seat 12 on the clock your next: #15 your roster: 1/13 no punt 309 available",
+   "newErrors": []
+  },
+  {
+   "k": 11,
+   "op": "feed",
+   "text": "Donovan Mitchell",
+   "P": null,
+   "expect": "#12: Donovan Mitchell → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R1) #12: Donovan Mitchell → Seat 12"
+   ],
+   "nPicks": 12,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #13 · R2/13 Seat 12 on the clock your next: #15 your roster: 1/13 no punt 308 available",
+   "newErrors": []
+  },
+  {
+   "k": 12,
+   "op": "feed",
+   "text": "Scottie Barnes",
+   "P": null,
+   "expect": "#13: Scottie Barnes → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #13: Scottie Barnes → Seat 12"
+   ],
+   "nPicks": 13,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #14 · R2/13 Seat 11 on the clock your next: #15 your roster: 1/13 no punt 307 available",
+   "newErrors": []
+  },
+  {
+   "k": 13,
+   "op": "feed",
+   "text": "Tyrese Haliburton",
+   "P": null,
+   "expect": "#14: Tyrese Haliburton → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #14: Tyrese Haliburton → Seat 11"
+   ],
+   "nPicks": 14,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #15 · R2/13 YOU are on the clock your next: #15 your roster: 1/13 no punt 306 available",
+   "newErrors": []
+  },
+  {
+   "k": 14,
+   "op": "feed",
+   "text": "Karl-Anthony Towns",
+   "P": null,
+   "expect": "#15: Karl-Anthony Towns → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #15: Karl-Anthony Towns → Seat 10 (YOU)"
+   ],
+   "nPicks": 15,
+   "countdown": "(18 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(18 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #16 · R2/13 Seat 9 on the clock your next: #34 your roster: 2/13 no punt 305 available",
+   "newErrors": []
+  },
+  {
+   "k": 15,
+   "op": "feed",
+   "text": "Jamal Murray",
+   "P": null,
+   "expect": "#16: Jamal Murray → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #16: Jamal Murray → Seat 9"
+   ],
+   "nPicks": 16,
+   "countdown": "(17 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(17 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #17 · R2/13 Seat 8 on the clock your next: #34 your roster: 2/13 no punt 304 available",
+   "newErrors": []
+  },
+  {
+   "k": 16,
+   "op": "feed",
+   "text": "Trae Young",
+   "P": null,
+   "expect": "#17: Trae Young → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #17: Trae Young → Seat 8"
+   ],
+   "nPicks": 17,
+   "countdown": "(16 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(16 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #18 · R2/13 Seat 7 on the clock your next: #34 your roster: 2/13 no punt 303 available",
+   "newErrors": []
+  },
+  {
+   "k": 17,
+   "op": "feed",
+   "text": "Alperen Sengun",
+   "P": null,
+   "expect": "#18: Alperen Sengun → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #18: Alperen Sengun → Seat 7"
+   ],
+   "nPicks": 18,
+   "countdown": "(15 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(15 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #19 · R2/13 Seat 6 on the clock your next: #34 your roster: 2/13 no punt 302 available",
+   "newErrors": []
+  },
+  {
+   "k": 18,
+   "op": "feed",
+   "text": "Austin Reaves",
+   "P": null,
+   "expect": "#19: Austin Reaves → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #19: Austin Reaves → Seat 6"
+   ],
+   "nPicks": 19,
+   "countdown": "(14 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(14 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #20 · R2/13 Seat 5 on the clock your next: #34 your roster: 2/13 no punt 301 available",
+   "newErrors": []
+  },
+  {
+   "k": 19,
+   "op": "feed",
+   "text": "Kevin Durant",
+   "P": null,
+   "expect": "#20: Kevin Durant → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #20: Kevin Durant → Seat 5"
+   ],
+   "nPicks": 20,
+   "countdown": "(13 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(13 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #21 · R2/13 Seat 4 on the clock your next: #34 your roster: 2/13 no punt 300 available",
+   "newErrors": []
+  },
+  {
+   "k": 20,
+   "op": "feed",
+   "text": "Stephen Curry",
+   "P": null,
+   "expect": "#21: Stephen Curry → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #21: Stephen Curry → Seat 4"
+   ],
+   "nPicks": 21,
+   "countdown": "(12 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(12 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #22 · R2/13 Seat 3 on the clock your next: #34 your roster: 2/13 no punt 299 available",
+   "newErrors": []
+  },
+  {
+   "k": 21,
+   "op": "feed",
+   "text": "LaMelo Ball",
+   "P": null,
+   "expect": "#22: LaMelo Ball → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #22: LaMelo Ball → Seat 3"
+   ],
+   "nPicks": 22,
+   "countdown": "(11 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(11 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #23 · R2/13 Seat 2 on the clock your next: #34 your roster: 2/13 no punt 298 available",
+   "newErrors": []
+  },
+  {
+   "k": 22,
+   "op": "feed",
+   "text": "Chet Holmgren",
+   "P": null,
+   "expect": "#23: Chet Holmgren → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #23: Chet Holmgren → Seat 2"
+   ],
+   "nPicks": 23,
+   "countdown": "(10 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(10 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #24 · R2/13 Seat 1 on the clock your next: #34 your roster: 2/13 no punt 297 available",
+   "newErrors": []
+  },
+  {
+   "k": 23,
+   "op": "feed",
+   "text": "Devin Booker",
+   "P": null,
+   "expect": "#24: Devin Booker → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R2) #24: Devin Booker → Seat 1"
+   ],
+   "nPicks": 24,
+   "countdown": "(9 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(9 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #25 · R3/13 Seat 1 on the clock your next: #34 your roster: 2/13 no punt 296 available",
+   "newErrors": []
+  },
+  {
+   "k": 24,
+   "op": "feed",
+   "text": "James Harden",
+   "P": null,
+   "expect": "#25: James Harden → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #25: James Harden → Seat 1"
+   ],
+   "nPicks": 25,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #26 · R3/13 Seat 2 on the clock your next: #34 your roster: 2/13 no punt 295 available",
+   "newErrors": []
+  },
+  {
+   "k": 25,
+   "op": "feed",
+   "text": "Jalen Brunson",
+   "P": null,
+   "expect": "#26: Jalen Brunson → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #26: Jalen Brunson → Seat 2"
+   ],
+   "nPicks": 26,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #27 · R3/13 Seat 3 on the clock your next: #34 your roster: 2/13 no punt 294 available",
+   "newErrors": []
+  },
+  {
+   "k": 26,
+   "op": "feed",
+   "text": "Bam Adebayo",
+   "P": null,
+   "expect": "#27: Bam Adebayo → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #27: Bam Adebayo → Seat 3"
+   ],
+   "nPicks": 27,
+   "countdown": "(6 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(6 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #28 · R3/13 Seat 4 on the clock your next: #34 your roster: 2/13 no punt 293 available",
+   "newErrors": []
+  },
+  {
+   "k": 27,
+   "op": "feed",
+   "text": "Josh Giddey",
+   "P": null,
+   "expect": "#28: Josh Giddey → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #28: Josh Giddey → Seat 4"
+   ],
+   "nPicks": 28,
+   "countdown": "(5 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(5 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #29 · R3/13 Seat 5 on the clock your next: #34 your roster: 2/13 no punt 292 available",
+   "newErrors": []
+  },
+  {
+   "k": 28,
+   "op": "feed",
+   "text": "Jaylen Brown",
+   "P": null,
+   "expect": "#29: Jaylen Brown → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #29: Jaylen Brown → Seat 5"
+   ],
+   "nPicks": 29,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #30 · R3/13 Seat 6 on the clock your next: #34 your roster: 2/13 no punt 291 available",
+   "newErrors": []
+  },
+  {
+   "k": 29,
+   "op": "feed",
+   "text": "Amen Thompson",
+   "P": null,
+   "expect": "#30: Amen Thompson → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #30: Amen Thompson → Seat 6"
+   ],
+   "nPicks": 30,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #31 · R3/13 Seat 7 on the clock your next: #34 your roster: 2/13 no punt 290 available",
+   "newErrors": []
+  },
+  {
+   "k": 30,
+   "op": "feed",
+   "text": "Domantas Sabonis",
+   "P": null,
+   "expect": "#31: Domantas Sabonis → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #31: Domantas Sabonis → Seat 7"
+   ],
+   "nPicks": 31,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #32 · R3/13 Seat 8 on the clock your next: #34 your roster: 2/13 no punt 289 available",
+   "newErrors": []
+  },
+  {
+   "k": 31,
+   "op": "feed",
+   "text": "Kawhi Leonard",
+   "P": null,
+   "expect": "#32: Kawhi Leonard → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #32: Kawhi Leonard → Seat 8"
+   ],
+   "nPicks": 32,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #33 · R3/13 Seat 9 on the clock your next: #34 your roster: 2/13 no punt 288 available",
+   "newErrors": []
+  },
+  {
+   "k": 32,
+   "op": "feed",
+   "text": "Walker Kessler",
+   "P": null,
+   "expect": "#33: Walker Kessler → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #33: Walker Kessler → Seat 9"
+   ],
+   "nPicks": 33,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #34 · R3/13 YOU are on the clock your next: #34 your roster: 2/13 no punt 287 available",
+   "newErrors": []
+  },
+  {
+   "k": 33,
+   "op": "feed",
+   "text": "Evan Mobley",
+   "P": null,
+   "expect": "#34: Evan Mobley → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #34: Evan Mobley → Seat 10 (YOU)"
+   ],
+   "nPicks": 34,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #35 · R3/13 Seat 11 on the clock your next: #39 your roster: 3/13 no punt 286 available",
+   "newErrors": []
+  },
+  {
+   "k": 34,
+   "op": "feed",
+   "text": "Jalen Duren",
+   "P": null,
+   "expect": "#35: Jalen Duren → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #35: Jalen Duren → Seat 11"
+   ],
+   "nPicks": 35,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #36 · R3/13 Seat 12 on the clock your next: #39 your roster: 3/13 no punt 285 available",
+   "newErrors": []
+  },
+  {
+   "k": 35,
+   "op": "feed",
+   "text": "Lauri Markkanen",
+   "P": null,
+   "expect": "#36: Lauri Markkanen → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R3) #36: Lauri Markkanen → Seat 12"
+   ],
+   "nPicks": 36,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #37 · R4/13 Seat 12 on the clock your next: #39 your roster: 3/13 no punt 284 available",
+   "newErrors": []
+  },
+  {
+   "k": 36,
+   "op": "feed",
+   "text": "Trey Murphy III",
+   "P": null,
+   "expect": "#37: Trey Murphy III → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #37: Trey Murphy III → Seat 12"
+   ],
+   "nPicks": 37,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #38 · R4/13 Seat 11 on the clock your next: #39 your roster: 3/13 no punt 283 available",
+   "newErrors": []
+  },
+  {
+   "k": 37,
+   "op": "feed",
+   "text": "Kon Knueppel",
+   "P": null,
+   "expect": "#38: Kon Knueppel → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #38: Kon Knueppel → Seat 11"
+   ],
+   "nPicks": 38,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #39 · R4/13 YOU are on the clock your next: #39 your roster: 3/13 no punt 282 available",
+   "newErrors": []
+  },
+  {
+   "k": 38,
+   "op": "feed",
+   "text": "Jalen",
+   "P": null,
+   "expect": "HALTED at \"Jalen\"",
+   "echoOK": true,
+   "fresh": [
+    "⚠ HALTED at \"Jalen\": best match Jalen Johnson is already drafted. If you meant Jalen Williams, Jalen Green, Jalen Suggs, resend the REST of this feed using the fuller name. Nothing after this name was logged."
+   ],
+   "nPicks": 38,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #39 · R4/13 YOU are on the clock your next: #39 your roster: 3/13 no punt 282 available",
+   "newErrors": []
+  },
+  {
+   "k": 39,
+   "op": "feed",
+   "text": "Jalen Williams",
+   "P": null,
+   "expect": "#39: Jalen Williams → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #39: Jalen Williams → Seat 10 (YOU)"
+   ],
+   "nPicks": 39,
+   "countdown": "(18 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(18 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #40 · R4/13 Seat 9 on the clock your next: #58 your roster: 4/13 no punt 281 available",
+   "newErrors": []
+  },
+  {
+   "k": 40,
+   "op": "feed",
+   "text": "Paolo Banchero",
+   "P": null,
+   "expect": "#40: Paolo Banchero → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #40: Paolo Banchero → Seat 9"
+   ],
+   "nPicks": 40,
+   "countdown": "(17 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(17 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #41 · R4/13 Seat 8 on the clock your next: #58 your roster: 4/13 no punt 280 available",
+   "newErrors": []
+  },
+  {
+   "k": 41,
+   "op": "feed",
+   "text": "Kel'el Ware",
+   "P": null,
+   "expect": "#41: Kel'el Ware → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #41: Kel'el Ware → Seat 8"
+   ],
+   "nPicks": 41,
+   "countdown": "(16 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(16 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #42 · R4/13 Seat 7 on the clock your next: #58 your roster: 4/13 no punt 279 available",
+   "newErrors": []
+  },
+  {
+   "k": 42,
+   "op": "feed",
+   "text": "Brandon Miller",
+   "P": null,
+   "expect": "#42: Brandon Miller → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #42: Brandon Miller → Seat 7"
+   ],
+   "nPicks": 42,
+   "countdown": "(15 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(15 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #43 · R4/13 Seat 6 on the clock your next: #58 your roster: 4/13 no punt 278 available",
+   "newErrors": []
+  },
+  {
+   "k": 43,
+   "op": "feed",
+   "text": "Donovan Clingan",
+   "P": null,
+   "expect": "#43: Donovan Clingan → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #43: Donovan Clingan → Seat 6"
+   ],
+   "nPicks": 43,
+   "countdown": "(14 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(14 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #44 · R4/13 Seat 5 on the clock your next: #58 your roster: 4/13 no punt 277 available",
+   "newErrors": []
+  },
+  {
+   "k": 44,
+   "op": "feed",
+   "text": "Derrick White",
+   "P": null,
+   "expect": "#44: Derrick White → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #44: Derrick White → Seat 5"
+   ],
+   "nPicks": 44,
+   "countdown": "(13 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(13 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #45 · R4/13 Seat 4 on the clock your next: #58 your roster: 4/13 no punt 276 available",
+   "newErrors": []
+  },
+  {
+   "k": 45,
+   "op": "feed",
+   "text": "LeBron James",
+   "P": null,
+   "expect": "#45: LeBron James → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #45: LeBron James → Seat 4"
+   ],
+   "nPicks": 45,
+   "countdown": "(12 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(12 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #46 · R4/13 Seat 3 on the clock your next: #58 your roster: 4/13 no punt 275 available",
+   "newErrors": []
+  },
+  {
+   "k": 46,
+   "op": "feed",
+   "text": "Anthony Davis",
+   "P": null,
+   "expect": "#46: Anthony Davis → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #46: Anthony Davis → Seat 3"
+   ],
+   "nPicks": 46,
+   "countdown": "(11 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(11 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #47 · R4/13 Seat 2 on the clock your next: #58 your roster: 4/13 no punt 274 available",
+   "newErrors": []
+  },
+  {
+   "k": 47,
+   "op": "feed",
+   "text": "Jaren Jackson Jr.",
+   "P": null,
+   "expect": "#47: Jaren Jackson Jr. → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #47: Jaren Jackson Jr. → Seat 2"
+   ],
+   "nPicks": 47,
+   "countdown": "(10 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(10 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #48 · R4/13 Seat 1 on the clock your next: #58 your roster: 4/13 no punt 273 available",
+   "newErrors": []
+  },
+  {
+   "k": 48,
+   "op": "feed",
+   "text": "Desmond Bane",
+   "P": null,
+   "expect": "#48: Desmond Bane → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R4) #48: Desmond Bane → Seat 1"
+   ],
+   "nPicks": 48,
+   "countdown": "(9 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(9 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #49 · R5/13 Seat 1 on the clock your next: #58 your roster: 4/13 no punt 272 available",
+   "newErrors": []
+  },
+  {
+   "k": 49,
+   "op": "feed",
+   "text": "Deni Avdija",
+   "P": null,
+   "expect": "#49: Deni Avdija → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #49: Deni Avdija → Seat 1"
+   ],
+   "nPicks": 49,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #50 · R5/13 Seat 2 on the clock your next: #58 your roster: 4/13 no punt 271 available",
+   "newErrors": []
+  },
+  {
+   "k": 50,
+   "op": "feed",
+   "text": "Franz Wagner",
+   "P": null,
+   "expect": "#50: Franz Wagner → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #50: Franz Wagner → Seat 2"
+   ],
+   "nPicks": 50,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #51 · R5/13 Seat 3 on the clock your next: #58 your roster: 4/13 no punt 270 available",
+   "newErrors": []
+  },
+  {
+   "k": 51,
+   "op": "feed",
+   "text": "Pascal Siakam",
+   "P": null,
+   "expect": "#51: Pascal Siakam → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #51: Pascal Siakam → Seat 3"
+   ],
+   "nPicks": 51,
+   "countdown": "(6 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(6 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #52 · R5/13 Seat 4 on the clock your next: #58 your roster: 4/13 no punt 269 available",
+   "newErrors": []
+  },
+  {
+   "k": 52,
+   "op": "feed",
+   "text": "Kyrie Irving",
+   "P": null,
+   "expect": "#52: Kyrie Irving → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #52: Kyrie Irving → Seat 4"
+   ],
+   "nPicks": 52,
+   "countdown": "(5 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(5 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #53 · R5/13 Seat 5 on the clock your next: #58 your roster: 4/13 no punt 268 available",
+   "newErrors": []
+  },
+  {
+   "k": 53,
+   "op": "feed",
+   "text": "Ivica Zubac",
+   "P": null,
+   "expect": "#53: Ivica Zubac → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #53: Ivica Zubac → Seat 5"
+   ],
+   "nPicks": 53,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #54 · R5/13 Seat 6 on the clock your next: #58 your roster: 4/13 no punt 267 available",
+   "newErrors": []
+  },
+  {
+   "k": 54,
+   "op": "feed",
+   "text": "Onyeka Okongwu",
+   "P": null,
+   "expect": "#54: Onyeka Okongwu → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #54: Onyeka Okongwu → Seat 6"
+   ],
+   "nPicks": 54,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #55 · R5/13 Seat 7 on the clock your next: #58 your roster: 4/13 no punt 266 available",
+   "newErrors": []
+  },
+  {
+   "k": 55,
+   "op": "feed",
+   "text": "Matas Buzelis",
+   "P": null,
+   "expect": "#55: Matas Buzelis → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #55: Matas Buzelis → Seat 7"
+   ],
+   "nPicks": 55,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #56 · R5/13 Seat 8 on the clock your next: #58 your roster: 4/13 no punt 265 available",
+   "newErrors": []
+  },
+  {
+   "k": 56,
+   "op": "feed",
+   "text": "Michael Porter Jr.",
+   "P": null,
+   "expect": "#56: Michael Porter Jr. → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #56: Michael Porter Jr. → Seat 8"
+   ],
+   "nPicks": 56,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #57 · R5/13 Seat 9 on the clock your next: #58 your roster: 4/13 no punt 264 available",
+   "newErrors": []
+  },
+  {
+   "k": 57,
+   "op": "feed",
+   "text": "Keyonte George",
+   "P": null,
+   "expect": "#57: Keyonte George → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #57: Keyonte George → Seat 9"
+   ],
+   "nPicks": 57,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #58 · R5/13 YOU are on the clock your next: #58 your roster: 4/13 no punt 263 available",
+   "newErrors": []
+  },
+  {
+   "k": 58,
+   "op": "feed",
+   "text": "Damian Lillard",
+   "P": null,
+   "expect": "#58: Damian Lillard → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #58: Damian Lillard → Seat 10 (YOU)"
+   ],
+   "nPicks": 58,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #59 · R5/13 Seat 11 on the clock your next: #63 your roster: 5/13 no punt 262 available",
+   "newErrors": []
+  },
+  {
+   "k": 59,
+   "op": "feed",
+   "text": "Naz Reid",
+   "P": null,
+   "expect": "#59: Naz Reid → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #59: Naz Reid → Seat 11"
+   ],
+   "nPicks": 59,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #60 · R5/13 Seat 12 on the clock your next: #63 your roster: 5/13 no punt 261 available",
+   "newErrors": []
+  },
+  {
+   "k": 60,
+   "op": "feed",
+   "text": "Nickeil Alexander-Walker",
+   "P": null,
+   "expect": "#60: Nickeil Alexander-Walker → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R5) #60: Nickeil Alexander-Walker → Seat 12"
+   ],
+   "nPicks": 60,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #61 · R6/13 Seat 12 on the clock your next: #63 your roster: 5/13 no punt 260 available",
+   "newErrors": []
+  },
+  {
+   "k": 61,
+   "op": "feed",
+   "text": "Dyson Daniels",
+   "P": null,
+   "expect": "#61: Dyson Daniels → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #61: Dyson Daniels → Seat 12"
+   ],
+   "nPicks": 61,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #62 · R6/13 Seat 11 on the clock your next: #63 your roster: 5/13 no punt 259 available",
+   "newErrors": []
+  },
+  {
+   "k": 62,
+   "op": "feed",
+   "text": "Alex Sarr",
+   "P": null,
+   "expect": "#62: Alex Sarr → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #62: Alex Sarr → Seat 11"
+   ],
+   "nPicks": 62,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #63 · R6/13 YOU are on the clock your next: #63 your roster: 5/13 no punt 258 available",
+   "newErrors": []
+  },
+  {
+   "k": 63,
+   "op": "feed",
+   "text": "OG Anunoby",
+   "P": null,
+   "expect": "#63: OG Anunoby → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #63: OG Anunoby → Seat 10 (YOU)"
+   ],
+   "nPicks": 63,
+   "countdown": "(18 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(18 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #64 · R6/13 Seat 9 on the clock your next: #82 your roster: 6/13 no punt 257 available",
+   "newErrors": []
+  },
+  {
+   "k": 64,
+   "op": "feed",
+   "text": "Dejounte Murray",
+   "P": null,
+   "expect": "#64: Dejounte Murray → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #64: Dejounte Murray → Seat 9"
+   ],
+   "nPicks": 64,
+   "countdown": "(17 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(17 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #65 · R6/13 Seat 8 on the clock your next: #82 your roster: 6/13 no punt 256 available",
+   "newErrors": []
+  },
+  {
+   "k": 65,
+   "op": "feed",
+   "text": "Darius Garland",
+   "P": null,
+   "expect": "#65: Darius Garland → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #65: Darius Garland → Seat 8"
+   ],
+   "nPicks": 65,
+   "countdown": "(16 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(16 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #66 · R6/13 Seat 7 on the clock your next: #82 your roster: 6/13 no punt 255 available",
+   "newErrors": []
+  },
+  {
+   "k": 66,
+   "op": "feed",
+   "text": "Cameron Boozer",
+   "P": null,
+   "expect": "#66: Cameron Boozer → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #66: Cameron Boozer → Seat 7"
+   ],
+   "nPicks": 66,
+   "countdown": "(15 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(15 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #67 · R6/13 Seat 6 on the clock your next: #82 your roster: 6/13 no punt 254 available",
+   "newErrors": []
+  },
+  {
+   "k": 67,
+   "op": "feed",
+   "text": "Brandon Ingram",
+   "P": null,
+   "expect": "#67: Brandon Ingram → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #67: Brandon Ingram → Seat 6"
+   ],
+   "nPicks": 67,
+   "countdown": "(14 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(14 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #68 · R6/13 Seat 5 on the clock your next: #82 your roster: 6/13 no punt 253 available",
+   "newErrors": []
+  },
+  {
+   "k": 68,
+   "op": "feed",
+   "text": "Joel Embiid",
+   "P": null,
+   "expect": "#68: Joel Embiid → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #68: Joel Embiid → Seat 5"
+   ],
+   "nPicks": 68,
+   "countdown": "(13 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(13 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #69 · R6/13 Seat 4 on the clock your next: #82 your roster: 6/13 no punt 252 available",
+   "newErrors": []
+  },
+  {
+   "k": 69,
+   "op": "feed",
+   "text": "Jarrett Allen",
+   "P": null,
+   "expect": "#69: Jarrett Allen → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #69: Jarrett Allen → Seat 4"
+   ],
+   "nPicks": 69,
+   "countdown": "(12 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(12 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #70 · R6/13 Seat 3 on the clock your next: #82 your roster: 6/13 no punt 251 available",
+   "newErrors": []
+  },
+  {
+   "k": 70,
+   "op": "feed",
+   "text": "Rudy Gobert",
+   "P": null,
+   "expect": "#70: Rudy Gobert → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #70: Rudy Gobert → Seat 3"
+   ],
+   "nPicks": 70,
+   "countdown": "(11 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(11 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #71 · R6/13 Seat 2 on the clock your next: #82 your roster: 6/13 no punt 250 available",
+   "newErrors": []
+  },
+  {
+   "k": 71,
+   "op": "feed",
+   "text": "Payton Pritchard",
+   "P": null,
+   "expect": "#71: Payton Pritchard → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #71: Payton Pritchard → Seat 2"
+   ],
+   "nPicks": 71,
+   "countdown": "(10 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(10 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #72 · R6/13 Seat 1 on the clock your next: #82 your roster: 6/13 no punt 249 available",
+   "newErrors": []
+  },
+  {
+   "k": 72,
+   "op": "feed",
+   "text": "Zach Edey",
+   "P": null,
+   "expect": "#72: Zach Edey → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R6) #72: Zach Edey → Seat 1"
+   ],
+   "nPicks": 72,
+   "countdown": "(9 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(9 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #73 · R7/13 Seat 1 on the clock your next: #82 your roster: 6/13 no punt 248 available",
+   "newErrors": []
+  },
+  {
+   "k": 73,
+   "op": "feed",
+   "text": "Tyler Herro",
+   "P": null,
+   "expect": "#73: Tyler Herro → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #73: Tyler Herro → Seat 1"
+   ],
+   "nPicks": 73,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #74 · R7/13 Seat 2 on the clock your next: #82 your roster: 6/13 no punt 247 available",
+   "newErrors": []
+  },
+  {
+   "k": 74,
+   "op": "feed",
+   "text": "Mikal Bridges",
+   "P": null,
+   "expect": "#74: Mikal Bridges → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #74: Mikal Bridges → Seat 2"
+   ],
+   "nPicks": 74,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #75 · R7/13 Seat 3 on the clock your next: #82 your roster: 6/13 no punt 246 available",
+   "newErrors": []
+  },
+  {
+   "k": 75,
+   "op": "feed",
+   "text": "Zion Williamson",
+   "P": null,
+   "expect": "#75: Zion Williamson → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #75: Zion Williamson → Seat 3"
+   ],
+   "nPicks": 75,
+   "countdown": "(6 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(6 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #76 · R7/13 Seat 4 on the clock your next: #82 your roster: 6/13 no punt 245 available",
+   "newErrors": []
+  },
+  {
+   "k": 76,
+   "op": "feed",
+   "text": "Ryan Rollins",
+   "P": null,
+   "expect": "#76: Ryan Rollins → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #76: Ryan Rollins → Seat 4"
+   ],
+   "nPicks": 76,
+   "countdown": "(5 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(5 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #77 · R7/13 Seat 5 on the clock your next: #82 your roster: 6/13 no punt 244 available",
+   "newErrors": []
+  },
+  {
+   "k": 77,
+   "op": "feed",
+   "text": "De'Aaron Fox",
+   "P": null,
+   "expect": "#77: De'Aaron Fox → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #77: De'Aaron Fox → Seat 5"
+   ],
+   "nPicks": 77,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #78 · R7/13 Seat 6 on the clock your next: #82 your roster: 6/13 no punt 243 available",
+   "newErrors": []
+  },
+  {
+   "k": 78,
+   "op": "feed",
+   "text": "Julius Randle",
+   "P": null,
+   "expect": "#78: Julius Randle → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #78: Julius Randle → Seat 6"
+   ],
+   "nPicks": 78,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #79 · R7/13 Seat 7 on the clock your next: #82 your roster: 6/13 no punt 242 available",
+   "newErrors": []
+  },
+  {
+   "k": 79,
+   "op": "feed",
+   "text": "VJ Edgecombe",
+   "P": null,
+   "expect": "#79: VJ Edgecombe → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #79: VJ Edgecombe → Seat 7"
+   ],
+   "nPicks": 79,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #80 · R7/13 Seat 8 on the clock your next: #82 your roster: 6/13 no punt 241 available",
+   "newErrors": []
+  },
+  {
+   "k": 80,
+   "op": "feed",
+   "text": "Caleb Wilson",
+   "P": null,
+   "expect": "#80: Caleb Wilson → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #80: Caleb Wilson → Seat 8"
+   ],
+   "nPicks": 80,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #81 · R7/13 Seat 9 on the clock your next: #82 your roster: 6/13 no punt 240 available",
+   "newErrors": []
+  },
+  {
+   "k": 81,
+   "op": "feed",
+   "text": "Stephon Castle",
+   "P": null,
+   "expect": "#81: Stephon Castle → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #81: Stephon Castle → Seat 9"
+   ],
+   "nPicks": 81,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #82 · R7/13 YOU are on the clock your next: #82 your roster: 6/13 no punt 239 available",
+   "newErrors": []
+  },
+  {
+   "k": 82,
+   "op": "feed",
+   "text": "Immanuel Quickley",
+   "P": null,
+   "expect": "#82: Immanuel Quickley → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #82: Immanuel Quickley → Seat 10 (YOU)"
+   ],
+   "nPicks": 82,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #83 · R7/13 Seat 11 on the clock your next: #87 your roster: 7/13 no punt 238 available",
+   "newErrors": []
+  },
+  {
+   "k": 83,
+   "op": "feed",
+   "text": "Derik Queen",
+   "P": null,
+   "expect": "#83: Derik Queen → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #83: Derik Queen → Seat 11"
+   ],
+   "nPicks": 83,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #84 · R7/13 Seat 12 on the clock your next: #87 your roster: 7/13 no punt 237 available",
+   "newErrors": []
+  },
+  {
+   "k": 84,
+   "op": "feed",
+   "text": "Paul George",
+   "P": null,
+   "expect": "#84: Paul George → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R7) #84: Paul George → Seat 12"
+   ],
+   "nPicks": 84,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #85 · R8/13 Seat 12 on the clock your next: #87 your roster: 7/13 no punt 236 available",
+   "newErrors": []
+  },
+  {
+   "k": 85,
+   "op": "feed",
+   "text": "Cedric Coward",
+   "P": null,
+   "expect": "#85: Cedric Coward → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #85: Cedric Coward → Seat 12"
+   ],
+   "nPicks": 85,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #86 · R8/13 Seat 11 on the clock your next: #87 your roster: 7/13 no punt 235 available",
+   "newErrors": []
+  },
+  {
+   "k": 86,
+   "op": "feed",
+   "text": "Myles Turner",
+   "P": null,
+   "expect": "#86: Myles Turner → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #86: Myles Turner → Seat 11"
+   ],
+   "nPicks": 86,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #87 · R8/13 YOU are on the clock your next: #87 your roster: 7/13 no punt 234 available",
+   "newErrors": []
+  },
+  {
+   "k": 87,
+   "op": "insert",
+   "text": "White",
+   "P": 86,
+   "expect": "insert: ambiguous \"White\"",
+   "echoOK": false,
+   "fresh": [],
+   "nPicks": 86,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #87 · R8/13 YOU are on the clock your next: #87 your roster: 7/13 no punt 234 available",
+   "newErrors": []
+  },
+  {
+   "k": 88,
+   "op": "insert",
+   "text": "Coby White",
+   "P": 86,
+   "expect": "inserted Coby White at #86 → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "⚠ insert: ambiguous \"White\": Derrick White, Coby White. Be more specific.",
+    "✎ inserted Coby White at #86 → Seat 11; #86–#86 → #87–#87 (1 shifted, slots recomputed)"
+   ],
+   "nPicks": 87,
+   "countdown": "(18 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(18 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #88 · R8/13 Seat 9 on the clock your next: #106 your roster: 8/13 no punt 233 available",
+   "newErrors": []
+  },
+  {
+   "k": 89,
+   "op": "feed",
+   "text": "Norman Powell",
+   "P": null,
+   "expect": "#88: Norman Powell → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #88: Norman Powell → Seat 9"
+   ],
+   "nPicks": 88,
+   "countdown": "(17 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(17 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #89 · R8/13 Seat 8 on the clock your next: #106 your roster: 8/13 no punt 232 available",
+   "newErrors": []
+  },
+  {
+   "k": 90,
+   "op": "feed",
+   "text": "Day'Ron Sharpe",
+   "P": null,
+   "expect": "#89: Day'Ron Sharpe → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #89: Day'Ron Sharpe → Seat 8"
+   ],
+   "nPicks": 89,
+   "countdown": "(16 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(16 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #90 · R8/13 Seat 7 on the clock your next: #106 your roster: 8/13 no punt 231 available",
+   "newErrors": []
+  },
+  {
+   "k": 91,
+   "op": "feed",
+   "text": "Jaden McDaniels",
+   "P": null,
+   "expect": "#90: Jaden McDaniels → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #90: Jaden McDaniels → Seat 7"
+   ],
+   "nPicks": 90,
+   "countdown": "(15 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(15 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #91 · R8/13 Seat 6 on the clock your next: #106 your roster: 8/13 no punt 230 available",
+   "newErrors": []
+  },
+  {
+   "k": 92,
+   "op": "feed",
+   "text": "Nic Claxton",
+   "P": null,
+   "expect": "#91: Nic Claxton → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #91: Nic Claxton → Seat 6"
+   ],
+   "nPicks": 91,
+   "countdown": "(14 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(14 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #92 · R8/13 Seat 5 on the clock your next: #106 your roster: 8/13 no punt 229 available",
+   "newErrors": []
+  },
+  {
+   "k": 93,
+   "op": "feed",
+   "text": "Ausar Thompson",
+   "P": null,
+   "expect": "#92: Ausar Thompson → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #92: Ausar Thompson → Seat 5"
+   ],
+   "nPicks": 92,
+   "countdown": "(13 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(13 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #93 · R8/13 Seat 4 on the clock your next: #106 your roster: 8/13 no punt 228 available",
+   "newErrors": []
+  },
+  {
+   "k": 94,
+   "op": "feed",
+   "text": "Andrew Wiggins",
+   "P": null,
+   "expect": "#93: Andrew Wiggins → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #93: Andrew Wiggins → Seat 4"
+   ],
+   "nPicks": 93,
+   "countdown": "(12 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(12 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #94 · R8/13 Seat 3 on the clock your next: #106 your roster: 8/13 no punt 227 available",
+   "newErrors": []
+  },
+  {
+   "k": 95,
+   "op": "feed",
+   "text": "AJ Dybantsa",
+   "P": null,
+   "expect": "#94: AJ Dybantsa → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #94: AJ Dybantsa → Seat 3"
+   ],
+   "nPicks": 94,
+   "countdown": "(11 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(11 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #95 · R8/13 Seat 2 on the clock your next: #106 your roster: 8/13 no punt 226 available",
+   "newErrors": []
+  },
+  {
+   "k": 96,
+   "op": "feed",
+   "text": "Zach LaVine",
+   "P": null,
+   "expect": "#95: Zach LaVine → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #95: Zach LaVine → Seat 2"
+   ],
+   "nPicks": 95,
+   "countdown": "(10 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(10 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #96 · R8/13 Seat 1 on the clock your next: #106 your roster: 8/13 no punt 225 available",
+   "newErrors": []
+  },
+  {
+   "k": 97,
+   "op": "feed",
+   "text": "Dylan Harper",
+   "P": null,
+   "expect": "#96: Dylan Harper → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R8) #96: Dylan Harper → Seat 1"
+   ],
+   "nPicks": 96,
+   "countdown": "(9 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(9 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #97 · R9/13 Seat 1 on the clock your next: #106 your roster: 8/13 no punt 224 available",
+   "newErrors": []
+  },
+  {
+   "k": 98,
+   "op": "feed",
+   "text": "Jabari Smith Jr.",
+   "P": null,
+   "expect": "#97: Jabari Smith Jr. → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #97: Jabari Smith Jr. → Seat 1"
+   ],
+   "nPicks": 97,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #98 · R9/13 Seat 2 on the clock your next: #106 your roster: 8/13 no punt 223 available",
+   "newErrors": []
+  },
+  {
+   "k": 99,
+   "op": "feed",
+   "text": "Miles Bridges",
+   "P": null,
+   "expect": "#98: Miles Bridges → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #98: Miles Bridges → Seat 2"
+   ],
+   "nPicks": 98,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #99 · R9/13 Seat 3 on the clock your next: #106 your roster: 8/13 no punt 222 available",
+   "newErrors": []
+  },
+  {
+   "k": 100,
+   "op": "feed",
+   "text": "Kristaps Porzingis",
+   "P": null,
+   "expect": "#99: Kristaps Porzingis → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #99: Kristaps Porzingis → Seat 3"
+   ],
+   "nPicks": 99,
+   "countdown": "(6 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(6 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #100 · R9/13 Seat 4 on the clock your next: #106 your roster: 8/13 no punt 221 available",
+   "newErrors": []
+  },
+  {
+   "k": 101,
+   "op": "feed",
+   "text": "Josh Hart",
+   "P": null,
+   "expect": "#100: Josh Hart → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #100: Josh Hart → Seat 4"
+   ],
+   "nPicks": 100,
+   "countdown": "(5 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(5 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #101 · R9/13 Seat 5 on the clock your next: #106 your roster: 8/13 no punt 220 available",
+   "newErrors": []
+  },
+  {
+   "k": 102,
+   "op": "feed",
+   "text": "Toumani Camara",
+   "P": null,
+   "expect": "#101: Toumani Camara → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #101: Toumani Camara → Seat 5"
+   ],
+   "nPicks": 101,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #102 · R9/13 Seat 6 on the clock your next: #106 your roster: 8/13 no punt 219 available",
+   "newErrors": []
+  },
+  {
+   "k": 103,
+   "op": "feed",
+   "text": "Isaiah Hartenstein",
+   "P": null,
+   "expect": "#102: Isaiah Hartenstein → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #102: Isaiah Hartenstein → Seat 6"
+   ],
+   "nPicks": 102,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #103 · R9/13 Seat 7 on the clock your next: #106 your roster: 8/13 no punt 218 available",
+   "newErrors": []
+  },
+  {
+   "k": 104,
+   "op": "feed",
+   "text": "Darryn Peterson",
+   "P": null,
+   "expect": "#103: Darryn Peterson → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #103: Darryn Peterson → Seat 7"
+   ],
+   "nPicks": 103,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #104 · R9/13 Seat 8 on the clock your next: #106 your roster: 8/13 no punt 217 available",
+   "newErrors": []
+  },
+  {
+   "k": 105,
+   "op": "feed",
+   "text": "Ty Jerome",
+   "P": null,
+   "expect": "#104: Ty Jerome → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #104: Ty Jerome → Seat 8"
+   ],
+   "nPicks": 104,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #105 · R9/13 Seat 9 on the clock your next: #106 your roster: 8/13 no punt 216 available",
+   "newErrors": []
+  },
+  {
+   "k": 106,
+   "op": "feed",
+   "text": "Jusuf Nurkic",
+   "P": null,
+   "expect": "#105: Jusuf Nurkic → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #105: Jusuf Nurkic → Seat 9"
+   ],
+   "nPicks": 105,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #106 · R9/13 YOU are on the clock your next: #106 your roster: 8/13 no punt 215 available",
+   "newErrors": []
+  },
+  {
+   "k": 107,
+   "op": "feed",
+   "text": "Jakob Poeltl",
+   "P": null,
+   "expect": "#106: Jakob Poeltl → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #106: Jakob Poeltl → Seat 10 (YOU)"
+   ],
+   "nPicks": 106,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #107 · R9/13 Seat 11 on the clock your next: #111 your roster: 9/13 no punt 214 available",
+   "newErrors": []
+  },
+  {
+   "k": 108,
+   "op": "feed",
+   "text": "Ja Morant",
+   "P": null,
+   "expect": "#107: Ja Morant → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #107: Ja Morant → Seat 11"
+   ],
+   "nPicks": 107,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #108 · R9/13 Seat 12 on the clock your next: #111 your roster: 9/13 no punt 213 available",
+   "newErrors": []
+  },
+  {
+   "k": 109,
+   "op": "feed",
+   "text": "Jalen Suggs",
+   "P": null,
+   "expect": "#108: Jalen Suggs → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R9) #108: Jalen Suggs → Seat 12"
+   ],
+   "nPicks": 108,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #109 · R10/13 Seat 12 on the clock your next: #111 your roster: 9/13 no punt 212 available",
+   "newErrors": []
+  },
+  {
+   "k": 110,
+   "op": "feed",
+   "text": "Collin Murray-Boyles",
+   "P": null,
+   "expect": "#109: Collin Murray-Boyles → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #109: Collin Murray-Boyles → Seat 12"
+   ],
+   "nPicks": 109,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #110 · R10/13 Seat 11 on the clock your next: #111 your roster: 9/13 no punt 211 available",
+   "newErrors": []
+  },
+  {
+   "k": 111,
+   "op": "feed",
+   "text": "Neemias Queta",
+   "P": null,
+   "expect": "#110: Neemias Queta → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #110: Neemias Queta → Seat 11"
+   ],
+   "nPicks": 110,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #111 · R10/13 YOU are on the clock your next: #111 your roster: 9/13 no punt 210 available",
+   "newErrors": []
+  },
+  {
+   "k": 112,
+   "op": "feed",
+   "text": "Reed Sheppard",
+   "P": null,
+   "expect": "#111: Reed Sheppard → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #111: Reed Sheppard → Seat 10 (YOU)"
+   ],
+   "nPicks": 111,
+   "countdown": "(18 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(18 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #112 · R10/13 Seat 9 on the clock your next: #130 your roster: 10/13 no punt 209 available",
+   "newErrors": []
+  },
+  {
+   "k": 113,
+   "op": "feed",
+   "text": "Peyton Watson",
+   "P": null,
+   "expect": "#112: Peyton Watson → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #112: Peyton Watson → Seat 9"
+   ],
+   "nPicks": 112,
+   "countdown": "(17 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(17 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #113 · R10/13 Seat 8 on the clock your next: #130 your roster: 10/13 no punt 208 available",
+   "newErrors": []
+  },
+  {
+   "k": 114,
+   "op": "feed",
+   "text": "John Collins",
+   "P": null,
+   "expect": "#113: John Collins → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #113: John Collins → Seat 8"
+   ],
+   "nPicks": 113,
+   "countdown": "(16 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(16 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #114 · R10/13 Seat 7 on the clock your next: #130 your roster: 10/13 no punt 207 available",
+   "newErrors": []
+  },
+  {
+   "k": 115,
+   "op": "feed",
+   "text": "Ajay Mitchell",
+   "P": null,
+   "expect": "#114: Ajay Mitchell → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #114: Ajay Mitchell → Seat 7"
+   ],
+   "nPicks": 114,
+   "countdown": "(15 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(15 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #115 · R10/13 Seat 6 on the clock your next: #130 your roster: 10/13 no punt 206 available",
+   "newErrors": []
+  },
+  {
+   "k": 116,
+   "op": "feed",
+   "text": "Andrew Nembhard",
+   "P": null,
+   "expect": "#115: Andrew Nembhard → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #115: Andrew Nembhard → Seat 6"
+   ],
+   "nPicks": 115,
+   "countdown": "(14 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(14 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #116 · R10/13 Seat 5 on the clock your next: #130 your roster: 10/13 no punt 205 available",
+   "newErrors": []
+  },
+  {
+   "k": 117,
+   "op": "feed",
+   "text": "Khaman Maluach",
+   "P": null,
+   "expect": "#116: Khaman Maluach → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #116: Khaman Maluach → Seat 5"
+   ],
+   "nPicks": 116,
+   "countdown": "(13 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(13 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #117 · R10/13 Seat 4 on the clock your next: #130 your roster: 10/13 no punt 204 available",
+   "newErrors": []
+  },
+  {
+   "k": 118,
+   "op": "feed",
+   "text": "Aaron Gordon",
+   "P": null,
+   "expect": "#117: Aaron Gordon → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #117: Aaron Gordon → Seat 4"
+   ],
+   "nPicks": 117,
+   "countdown": "(12 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(12 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #118 · R10/13 Seat 3 on the clock your next: #130 your roster: 10/13 no punt 203 available",
+   "newErrors": []
+  },
+  {
+   "k": 119,
+   "op": "feed",
+   "text": "CJ McCollum",
+   "P": null,
+   "expect": "#118: CJ McCollum → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #118: CJ McCollum → Seat 3"
+   ],
+   "nPicks": 118,
+   "countdown": "(11 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(11 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #119 · R10/13 Seat 2 on the clock your next: #130 your roster: 10/13 no punt 202 available",
+   "newErrors": []
+  },
+  {
+   "k": 120,
+   "op": "feed",
+   "text": "Sandro Mamukelashvili",
+   "P": null,
+   "expect": "#119: Sandro Mamukelashvili → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #119: Sandro Mamukelashvili → Seat 2"
+   ],
+   "nPicks": 119,
+   "countdown": "(10 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(10 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #120 · R10/13 Seat 1 on the clock your next: #130 your roster: 10/13 no punt 201 available",
+   "newErrors": []
+  },
+  {
+   "k": 121,
+   "op": "feed",
+   "text": "Maxime Raynaud",
+   "P": null,
+   "expect": "#120: Maxime Raynaud → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R10) #120: Maxime Raynaud → Seat 1"
+   ],
+   "nPicks": 120,
+   "countdown": "(9 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(9 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #121 · R11/13 Seat 1 on the clock your next: #130 your roster: 10/13 no punt 200 available",
+   "newErrors": []
+  },
+  {
+   "k": 122,
+   "op": "feed",
+   "text": "Mitchell",
+   "P": null,
+   "expect": "HALTED at \"Mitchell\"",
+   "echoOK": true,
+   "fresh": [
+    "⚠ HALTED at \"Mitchell\": best match Donovan Mitchell is already drafted. If you meant Mitchell Robinson, Davion Mitchell, resend the REST of this feed using the fuller name. Nothing after this name was logged."
+   ],
+   "nPicks": 120,
+   "countdown": "(9 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(9 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #121 · R11/13 Seat 1 on the clock your next: #130 your roster: 10/13 no punt 200 available",
+   "newErrors": []
+  },
+  {
+   "k": 123,
+   "op": "feed",
+   "text": "Davion Mitchell",
+   "P": null,
+   "expect": "#121: Davion Mitchell → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #121: Davion Mitchell → Seat 1"
+   ],
+   "nPicks": 121,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #122 · R11/13 Seat 2 on the clock your next: #130 your roster: 10/13 no punt 199 available",
+   "newErrors": []
+  },
+  {
+   "k": 124,
+   "op": "feed",
+   "text": "Ayo Dosunmu",
+   "P": null,
+   "expect": "#122: Ayo Dosunmu → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #122: Ayo Dosunmu → Seat 2"
+   ],
+   "nPicks": 122,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #123 · R11/13 Seat 3 on the clock your next: #130 your roster: 10/13 no punt 198 available",
+   "newErrors": []
+  },
+  {
+   "k": 125,
+   "op": "feed",
+   "text": "Brandin Podziemski",
+   "P": null,
+   "expect": "#123: Brandin Podziemski → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #123: Brandin Podziemski → Seat 3"
+   ],
+   "nPicks": 123,
+   "countdown": "(6 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(6 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #124 · R11/13 Seat 4 on the clock your next: #130 your roster: 10/13 no punt 197 available",
+   "newErrors": []
+  },
+  {
+   "k": 126,
+   "op": "feed",
+   "text": "Kyshawn George",
+   "P": null,
+   "expect": "#124: Kyshawn George → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #124: Kyshawn George → Seat 4"
+   ],
+   "nPicks": 124,
+   "countdown": "(5 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(5 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #125 · R11/13 Seat 5 on the clock your next: #130 your roster: 10/13 no punt 196 available",
+   "newErrors": []
+  },
+  {
+   "k": 127,
+   "op": "feed",
+   "text": "KPH",
+   "P": null,
+   "expect": "#125: UNKNOWN",
+   "echoOK": true,
+   "fresh": [
+    "⚠ (R11) #125: UNKNOWN (\"KPH\": no match) — fix with: 125- Name"
+   ],
+   "nPicks": 125,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #126 · R11/13 Seat 6 on the clock your next: #130 your roster: 10/13 no punt 196 available ⚠ 1 UNKNOWN — ranks exclude them; fix with n- Name",
+   "newErrors": []
+  },
+  {
+   "k": 128,
+   "op": "feed",
+   "text": "Kevin Porter Jr.",
+   "P": null,
+   "expect": "#126: Kevin Porter Jr. → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #126: Kevin Porter Jr. → Seat 6"
+   ],
+   "nPicks": 126,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #127 · R11/13 Seat 7 on the clock your next: #130 your roster: 10/13 no punt 195 available ⚠ 1 UNKNOWN — ranks exclude them; fix with n- Name",
+   "newErrors": []
+  },
+  {
+   "k": 129,
+   "op": "feed",
+   "text": "125- Kpj",
+   "P": null,
+   "expect": "fix #125: no available player matching",
+   "echoOK": true,
+   "fresh": [
+    "⚠ fix #125: no available player matching \"Kpj\""
+   ],
+   "nPicks": 126,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #127 · R11/13 Seat 7 on the clock your next: #130 your roster: 10/13 no punt 195 available ⚠ 1 UNKNOWN — ranks exclude them; fix with n- Name",
+   "newErrors": []
+  },
+  {
+   "k": 130,
+   "op": "feed",
+   "text": "125- KpJ",
+   "P": null,
+   "expect": "fix #125: no available player matching",
+   "echoOK": true,
+   "fresh": [
+    "⚠ fix #125: no available player matching \"KpJ\""
+   ],
+   "nPicks": 126,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #127 · R11/13 Seat 7 on the clock your next: #130 your roster: 10/13 no punt 195 available ⚠ 1 UNKNOWN — ranks exclude them; fix with n- Name",
+   "newErrors": []
+  },
+  {
+   "k": 131,
+   "op": "undo",
+   "text": null,
+   "P": null,
+   "expect": "undid: Kevin Porter Jr. (Seat 6)",
+   "echoOK": true,
+   "fresh": [
+    "↶ undid: Kevin Porter Jr. (Seat 6)"
+   ],
+   "nPicks": 125,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #126 · R11/13 Seat 6 on the clock your next: #130 your roster: 10/13 no punt 196 available ⚠ 1 UNKNOWN — ranks exclude them; fix with n- Name",
+   "newErrors": []
+  },
+  {
+   "k": 132,
+   "op": "feed",
+   "text": "125- Kevin Porter Jr.",
+   "P": null,
+   "expect": "#125 corrected: UNKNOWN #125 → Kevin Porter Jr.",
+   "echoOK": true,
+   "fresh": [
+    "✎ #125 corrected: UNKNOWN #125 → Kevin Porter Jr."
+   ],
+   "nPicks": 125,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #126 · R11/13 Seat 6 on the clock your next: #130 your roster: 10/13 no punt 195 available",
+   "newErrors": []
+  },
+  {
+   "k": 133,
+   "op": "feed",
+   "text": "Devin Vassell",
+   "P": null,
+   "expect": "#126: Devin Vassell → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #126: Devin Vassell → Seat 6"
+   ],
+   "nPicks": 126,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #127 · R11/13 Seat 7 on the clock your next: #130 your roster: 10/13 no punt 194 available",
+   "newErrors": []
+  },
+  {
+   "k": 134,
+   "op": "feed",
+   "text": "Mitchell Robinson",
+   "P": null,
+   "expect": "#127: Mitchell Robinson → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #127: Mitchell Robinson → Seat 7"
+   ],
+   "nPicks": 127,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #128 · R11/13 Seat 8 on the clock your next: #130 your roster: 10/13 no punt 193 available",
+   "newErrors": []
+  },
+  {
+   "k": 135,
+   "op": "feed",
+   "text": "Keegan Murray",
+   "P": null,
+   "expect": "#128: Keegan Murray → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #128: Keegan Murray → Seat 8"
+   ],
+   "nPicks": 128,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #129 · R11/13 Seat 9 on the clock your next: #130 your roster: 10/13 no punt 192 available",
+   "newErrors": []
+  },
+  {
+   "k": 136,
+   "op": "feed",
+   "text": "Yendeborg",
+   "P": null,
+   "expect": "#129: UNKNOWN",
+   "echoOK": true,
+   "fresh": [
+    "⚠ (R11) #129: UNKNOWN (\"Yendeborg\": no match) — fix with: 129- Name"
+   ],
+   "nPicks": 129,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #130 · R11/13 YOU are on the clock your next: #130 your roster: 10/13 no punt 192 available ⚠ 1 UNKNOWN — ranks exclude them; fix with n- Name",
+   "newErrors": []
+  },
+  {
+   "k": 137,
+   "op": "feed",
+   "text": "129- Yaxel Lendeborg",
+   "P": null,
+   "expect": "#129 corrected: UNKNOWN #129 → Yaxel Lendeborg",
+   "echoOK": true,
+   "fresh": [
+    "✎ #129 corrected: UNKNOWN #129 → Yaxel Lendeborg"
+   ],
+   "nPicks": 129,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #130 · R11/13 YOU are on the clock your next: #130 your roster: 10/13 no punt 191 available",
+   "newErrors": []
+  },
+  {
+   "k": 138,
+   "op": "feed",
+   "text": "Herbert Jones",
+   "P": null,
+   "expect": "#130: Herbert Jones → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #130: Herbert Jones → Seat 10 (YOU)"
+   ],
+   "nPicks": 130,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #131 · R11/13 Seat 11 on the clock your next: #135 your roster: 11/13 no punt 190 available",
+   "newErrors": []
+  },
+  {
+   "k": 139,
+   "op": "undo",
+   "text": null,
+   "P": null,
+   "expect": "undid: Herbert Jones (Seat 10)",
+   "echoOK": true,
+   "fresh": [
+    "↶ undid: Herbert Jones (Seat 10)"
+   ],
+   "nPicks": 129,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #130 · R11/13 YOU are on the clock your next: #130 your roster: 10/13 no punt 191 available",
+   "newErrors": []
+  },
+  {
+   "k": 140,
+   "op": "feed",
+   "text": "Tre Jones",
+   "P": null,
+   "expect": "#130: Tre Jones → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #130: Tre Jones → Seat 10 (YOU)"
+   ],
+   "nPicks": 130,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #131 · R11/13 Seat 11 on the clock your next: #135 your roster: 11/13 no punt 190 available",
+   "newErrors": []
+  },
+  {
+   "k": 141,
+   "op": "feed",
+   "text": "RJ Barrett",
+   "P": null,
+   "expect": "#131: RJ Barrett → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #131: RJ Barrett → Seat 11"
+   ],
+   "nPicks": 131,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #132 · R11/13 Seat 12 on the clock your next: #135 your roster: 11/13 no punt 189 available",
+   "newErrors": []
+  },
+  {
+   "k": 142,
+   "op": "feed",
+   "text": "Jalen Green",
+   "P": null,
+   "expect": "#132: Jalen Green → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R11) #132: Jalen Green → Seat 12"
+   ],
+   "nPicks": 132,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #133 · R12/13 Seat 12 on the clock your next: #135 your roster: 11/13 no punt 188 available",
+   "newErrors": []
+  },
+  {
+   "k": 143,
+   "op": "feed",
+   "text": "Cason Wallace",
+   "P": null,
+   "expect": "#133: Cason Wallace → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #133: Cason Wallace → Seat 12"
+   ],
+   "nPicks": 133,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #134 · R12/13 Seat 11 on the clock your next: #135 your roster: 11/13 no punt 187 available",
+   "newErrors": []
+  },
+  {
+   "k": 144,
+   "op": "feed",
+   "text": "Fred VanVleet",
+   "P": null,
+   "expect": "#134: Fred VanVleet → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #134: Fred VanVleet → Seat 11"
+   ],
+   "nPicks": 134,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #135 · R12/13 YOU are on the clock your next: #135 your roster: 11/13 no punt 186 available",
+   "newErrors": []
+  },
+  {
+   "k": 145,
+   "op": "feed",
+   "text": "Cameron Johnson",
+   "P": null,
+   "expect": "#135: Cameron Johnson → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #135: Cameron Johnson → Seat 10 (YOU)"
+   ],
+   "nPicks": 135,
+   "countdown": "(18 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(18 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #136 · R12/13 Seat 9 on the clock your next: #154 your roster: 12/13 no punt 185 available",
+   "newErrors": []
+  },
+  {
+   "k": 146,
+   "op": "feed",
+   "text": "Jaime Jaquez Jr.",
+   "P": null,
+   "expect": "#136: Jaime Jaquez Jr. → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #136: Jaime Jaquez Jr. → Seat 9"
+   ],
+   "nPicks": 136,
+   "countdown": "(17 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(17 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #137 · R12/13 Seat 8 on the clock your next: #154 your roster: 12/13 no punt 184 available",
+   "newErrors": []
+  },
+  {
+   "k": 147,
+   "op": "feed",
+   "text": "Tari Eason",
+   "P": null,
+   "expect": "#137: Tari Eason → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #137: Tari Eason → Seat 8"
+   ],
+   "nPicks": 137,
+   "countdown": "(16 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(16 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #138 · R12/13 Seat 7 on the clock your next: #154 your roster: 12/13 no punt 183 available",
+   "newErrors": []
+  },
+  {
+   "k": 148,
+   "op": "feed",
+   "text": "Collin Gillespie",
+   "P": null,
+   "expect": "#138: Collin Gillespie → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #138: Collin Gillespie → Seat 7"
+   ],
+   "nPicks": 138,
+   "countdown": "(15 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(15 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #139 · R12/13 Seat 6 on the clock your next: #154 your roster: 12/13 no punt 182 available",
+   "newErrors": []
+  },
+  {
+   "k": 149,
+   "op": "feed",
+   "text": "Jrue Holiday",
+   "P": null,
+   "expect": "#139: Jrue Holiday → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #139: Jrue Holiday → Seat 6"
+   ],
+   "nPicks": 139,
+   "countdown": "(14 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(14 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #140 · R12/13 Seat 5 on the clock your next: #154 your roster: 12/13 no punt 181 available",
+   "newErrors": []
+  },
+  {
+   "k": 150,
+   "op": "feed",
+   "text": "Jimmy Butler",
+   "P": null,
+   "expect": "#140: Jimmy Butler → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #140: Jimmy Butler → Seat 5"
+   ],
+   "nPicks": 140,
+   "countdown": "(13 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(13 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #141 · R12/13 Seat 4 on the clock your next: #154 your roster: 12/13 no punt 181 available",
+   "newErrors": []
+  },
+  {
+   "k": 151,
+   "op": "feed",
+   "text": "Paul Reed",
+   "P": null,
+   "expect": "#141: Paul Reed → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #141: Paul Reed → Seat 4"
+   ],
+   "nPicks": 141,
+   "countdown": "(12 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(12 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #142 · R12/13 Seat 3 on the clock your next: #154 your roster: 12/13 no punt 180 available",
+   "newErrors": []
+  },
+  {
+   "k": 152,
+   "op": "feed",
+   "text": "Wendell Carter Jr.",
+   "P": null,
+   "expect": "#142: Wendell Carter Jr. → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #142: Wendell Carter Jr. → Seat 3"
+   ],
+   "nPicks": 142,
+   "countdown": "(11 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(11 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #143 · R12/13 Seat 2 on the clock your next: #154 your roster: 12/13 no punt 179 available",
+   "newErrors": []
+  },
+  {
+   "k": 153,
+   "op": "feed",
+   "text": "Draymond Green",
+   "P": null,
+   "expect": "#143: Draymond Green → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #143: Draymond Green → Seat 2"
+   ],
+   "nPicks": 143,
+   "countdown": "(10 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(10 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #144 · R12/13 Seat 1 on the clock your next: #154 your roster: 12/13 no punt 178 available",
+   "newErrors": []
+  },
+  {
+   "k": 154,
+   "op": "feed",
+   "text": "Christian Braun",
+   "P": null,
+   "expect": "#144: Christian Braun → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R12) #144: Christian Braun → Seat 1"
+   ],
+   "nPicks": 144,
+   "countdown": "(9 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(9 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #145 · R13/13 Seat 1 on the clock your next: #154 your roster: 12/13 no punt 177 available",
+   "newErrors": []
+  },
+  {
+   "k": 155,
+   "op": "feed",
+   "text": "Nikola Vucevic",
+   "P": null,
+   "expect": "#145: Nikola Vucevic → Seat 1",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #145: Nikola Vucevic → Seat 1"
+   ],
+   "nPicks": 145,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #146 · R13/13 Seat 2 on the clock your next: #154 your roster: 12/13 no punt 176 available",
+   "newErrors": []
+  },
+  {
+   "k": 156,
+   "op": "feed",
+   "text": "PJ Washington",
+   "P": null,
+   "expect": "#146: PJ Washington → Seat 2",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #146: PJ Washington → Seat 2"
+   ],
+   "nPicks": 146,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #147 · R13/13 Seat 3 on the clock your next: #154 your roster: 12/13 no punt 175 available",
+   "newErrors": []
+  },
+  {
+   "k": 157,
+   "op": "undo",
+   "text": null,
+   "P": null,
+   "expect": "undid: PJ Washington (Seat 2)",
+   "echoOK": true,
+   "fresh": [
+    "↶ undid: PJ Washington (Seat 2)"
+   ],
+   "nPicks": 145,
+   "countdown": "(8 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(8 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #146 · R13/13 Seat 2 on the clock your next: #154 your roster: 12/13 no punt 176 available",
+   "newErrors": []
+  },
+  {
+   "k": 158,
+   "op": "insert",
+   "text": "Bobby Portis",
+   "P": 142,
+   "expect": "inserted Bobby Portis at #142 → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✎ inserted Bobby Portis at #142 → Seat 3; #142–#145 → #143–#146 (4 shifted, slots recomputed)"
+   ],
+   "nPicks": 146,
+   "countdown": "(7 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(7 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #147 · R13/13 Seat 3 on the clock your next: #154 your roster: 12/13 no punt 175 available",
+   "newErrors": []
+  },
+  {
+   "k": 159,
+   "op": "feed",
+   "text": "Moussa Diabate",
+   "P": null,
+   "expect": "#147: Moussa Diabate → Seat 3",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #147: Moussa Diabate → Seat 3"
+   ],
+   "nPicks": 147,
+   "countdown": "(6 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(6 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #148 · R13/13 Seat 4 on the clock your next: #154 your roster: 12/13 no punt 174 available",
+   "newErrors": []
+  },
+  {
+   "k": 160,
+   "op": "feed",
+   "text": "Saddiq Bey",
+   "P": null,
+   "expect": "#148: Saddiq Bey → Seat 4",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #148: Saddiq Bey → Seat 4"
+   ],
+   "nPicks": 148,
+   "countdown": "(5 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(5 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #149 · R13/13 Seat 5 on the clock your next: #154 your roster: 12/13 no punt 173 available",
+   "newErrors": []
+  },
+  {
+   "k": 161,
+   "op": "feed",
+   "text": "Aaron Nesmith",
+   "P": null,
+   "expect": "#149: Aaron Nesmith → Seat 5",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #149: Aaron Nesmith → Seat 5"
+   ],
+   "nPicks": 149,
+   "countdown": "(4 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(4 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #150 · R13/13 Seat 6 on the clock your next: #154 your roster: 12/13 no punt 172 available",
+   "newErrors": []
+  },
+  {
+   "k": 162,
+   "op": "feed",
+   "text": "Tobias Harris",
+   "P": null,
+   "expect": "#150: Tobias Harris → Seat 6",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #150: Tobias Harris → Seat 6"
+   ],
+   "nPicks": 150,
+   "countdown": "(3 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(3 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #151 · R13/13 Seat 7 on the clock your next: #154 your roster: 12/13 no punt 171 available",
+   "newErrors": []
+  },
+  {
+   "k": 163,
+   "op": "feed",
+   "text": "Jeremiah Fears",
+   "P": null,
+   "expect": "#151: Jeremiah Fears → Seat 7",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #151: Jeremiah Fears → Seat 7"
+   ],
+   "nPicks": 151,
+   "countdown": "(2 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(2 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #152 · R13/13 Seat 8 on the clock your next: #154 your roster: 12/13 no punt 170 available",
+   "newErrors": []
+  },
+  {
+   "k": 164,
+   "op": "feed",
+   "text": "Herbert Jones",
+   "P": null,
+   "expect": "#152: Herbert Jones → Seat 8",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #152: Herbert Jones → Seat 8"
+   ],
+   "nPicks": 152,
+   "countdown": "(1 UNTIL YOUR PICK)",
+   "onclockClass": false,
+   "expected": "(1 until your pick)",
+   "clockOK": false,
+   "strip": "Pick #153 · R13/13 Seat 9 on the clock your next: #154 your roster: 12/13 no punt 169 available",
+   "newErrors": []
+  },
+  {
+   "k": 165,
+   "op": "feed",
+   "text": "Dillon Brooks",
+   "P": null,
+   "expect": "#153: Dillon Brooks → Seat 9",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #153: Dillon Brooks → Seat 9"
+   ],
+   "nPicks": 153,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(you're on the clock)",
+   "clockOK": false,
+   "strip": "Pick #154 · R13/13 YOU are on the clock your next: #154 your roster: 12/13 no punt 168 available",
+   "newErrors": []
+  },
+  {
+   "k": 166,
+   "op": "feed",
+   "text": "PJ Washington",
+   "P": null,
+   "expect": "#154: PJ Washington → Seat 10",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #154: PJ Washington → Seat 10 (YOU)"
+   ],
+   "nPicks": 154,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(no picks left for you)",
+   "clockOK": false,
+   "strip": "Pick #155 · R13/13 Seat 11 on the clock draft complete your roster: 13/13 no punt 167 available",
+   "newErrors": []
+  },
+  {
+   "k": 167,
+   "op": "feed",
+   "text": "Anthony Black",
+   "P": null,
+   "expect": "#155: Anthony Black → Seat 11",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #155: Anthony Black → Seat 11"
+   ],
+   "nPicks": 155,
+   "countdown": "(YOU'RE ON THE CLOCK)",
+   "onclockClass": true,
+   "expected": "(no picks left for you)",
+   "clockOK": false,
+   "strip": "Pick #156 · R13/13 Seat 12 on the clock draft complete your roster: 13/13 no punt 166 available",
+   "newErrors": []
+  },
+  {
+   "k": 168,
+   "op": "feed",
+   "text": "Ace Bailey",
+   "P": null,
+   "expect": "#156: Ace Bailey → Seat 12",
+   "echoOK": true,
+   "fresh": [
+    "✓ (R13) #156: Ace Bailey → Seat 12"
+   ],
+   "nPicks": 156,
+   "countdown": "(DRAFT COMPLETE)",
+   "onclockClass": false,
+   "expected": "(draft complete)",
+   "clockOK": false,
+   "strip": "Draft complete — 156 picks your roster: Team 10 no punt",
+   "newErrors": []
+  }
+ ],
+ "finalState": {
+  "teams": 12,
+  "slot": 10,
+  "size": 13,
+  "punt": [],
+  "picks": [
+   {
+    "player": "Nikola Jokic",
+    "slot": 1
+   },
+   {
+    "player": "Shai Gilgeous-Alexander",
+    "slot": 2
+   },
+   {
+    "player": "Luka Doncic",
+    "slot": 3
+   },
+   {
+    "player": "Victor Wembanyama",
+    "slot": 4
+   },
+   {
+    "player": "Jalen Johnson",
+    "slot": 5
+   },
+   {
+    "player": "Anthony Edwards",
+    "slot": 6
+   },
+   {
+    "player": "Giannis Antetokounmpo",
+    "slot": 7
+   },
+   {
+    "player": "Cade Cunningham",
+    "slot": 8
+   },
+   {
+    "player": "Tyrese Maxey",
+    "slot": 9
+   },
+   {
+    "player": "Jayson Tatum",
+    "slot": 10
+   },
+   {
+    "player": "Cooper Flagg",
+    "slot": 11
+   },
+   {
+    "player": "Donovan Mitchell",
+    "slot": 12
+   },
+   {
+    "player": "Scottie Barnes",
+    "slot": 12
+   },
+   {
+    "player": "Tyrese Haliburton",
+    "slot": 11
+   },
+   {
+    "player": "Karl-Anthony Towns",
+    "slot": 10
+   },
+   {
+    "player": "Jamal Murray",
+    "slot": 9
+   },
+   {
+    "player": "Trae Young",
+    "slot": 8
+   },
+   {
+    "player": "Alperen Sengun",
+    "slot": 7
+   },
+   {
+    "player": "Austin Reaves",
+    "slot": 6
+   },
+   {
+    "player": "Kevin Durant",
+    "slot": 5
+   },
+   {
+    "player": "Stephen Curry",
+    "slot": 4
+   },
+   {
+    "player": "LaMelo Ball",
+    "slot": 3
+   },
+   {
+    "player": "Chet Holmgren",
+    "slot": 2
+   },
+   {
+    "player": "Devin Booker",
+    "slot": 1
+   },
+   {
+    "player": "James Harden",
+    "slot": 1
+   },
+   {
+    "player": "Jalen Brunson",
+    "slot": 2
+   },
+   {
+    "player": "Bam Adebayo",
+    "slot": 3
+   },
+   {
+    "player": "Josh Giddey",
+    "slot": 4
+   },
+   {
+    "player": "Jaylen Brown",
+    "slot": 5
+   },
+   {
+    "player": "Amen Thompson",
+    "slot": 6
+   },
+   {
+    "player": "Domantas Sabonis",
+    "slot": 7
+   },
+   {
+    "player": "Kawhi Leonard",
+    "slot": 8
+   },
+   {
+    "player": "Walker Kessler",
+    "slot": 9
+   },
+   {
+    "player": "Evan Mobley",
+    "slot": 10
+   },
+   {
+    "player": "Jalen Duren",
+    "slot": 11
+   },
+   {
+    "player": "Lauri Markkanen",
+    "slot": 12
+   },
+   {
+    "player": "Trey Murphy III",
+    "slot": 12
+   },
+   {
+    "player": "Kon Knueppel",
+    "slot": 11
+   },
+   {
+    "player": "Jalen Williams",
+    "slot": 10
+   },
+   {
+    "player": "Paolo Banchero",
+    "slot": 9
+   },
+   {
+    "player": "Kel'el Ware",
+    "slot": 8
+   },
+   {
+    "player": "Brandon Miller",
+    "slot": 7
+   },
+   {
+    "player": "Donovan Clingan",
+    "slot": 6
+   },
+   {
+    "player": "Derrick White",
+    "slot": 5
+   },
+   {
+    "player": "LeBron James",
+    "slot": 4
+   },
+   {
+    "player": "Anthony Davis",
+    "slot": 3
+   },
+   {
+    "player": "Jaren Jackson Jr.",
+    "slot": 2
+   },
+   {
+    "player": "Desmond Bane",
+    "slot": 1
+   },
+   {
+    "player": "Deni Avdija",
+    "slot": 1
+   },
+   {
+    "player": "Franz Wagner",
+    "slot": 2
+   },
+   {
+    "player": "Pascal Siakam",
+    "slot": 3
+   },
+   {
+    "player": "Kyrie Irving",
+    "slot": 4
+   },
+   {
+    "player": "Ivica Zubac",
+    "slot": 5
+   },
+   {
+    "player": "Onyeka Okongwu",
+    "slot": 6
+   },
+   {
+    "player": "Matas Buzelis",
+    "slot": 7
+   },
+   {
+    "player": "Michael Porter Jr.",
+    "slot": 8
+   },
+   {
+    "player": "Keyonte George",
+    "slot": 9
+   },
+   {
+    "player": "Damian Lillard",
+    "slot": 10
+   },
+   {
+    "player": "Naz Reid",
+    "slot": 11
+   },
+   {
+    "player": "Nickeil Alexander-Walker",
+    "slot": 12
+   },
+   {
+    "player": "Dyson Daniels",
+    "slot": 12
+   },
+   {
+    "player": "Alex Sarr",
+    "slot": 11
+   },
+   {
+    "player": "OG Anunoby",
+    "slot": 10
+   },
+   {
+    "player": "Dejounte Murray",
+    "slot": 9
+   },
+   {
+    "player": "Darius Garland",
+    "slot": 8
+   },
+   {
+    "player": "Cameron Boozer",
+    "slot": 7
+   },
+   {
+    "player": "Brandon Ingram",
+    "slot": 6
+   },
+   {
+    "player": "Joel Embiid",
+    "slot": 5
+   },
+   {
+    "player": "Jarrett Allen",
+    "slot": 4
+   },
+   {
+    "player": "Rudy Gobert",
+    "slot": 3
+   },
+   {
+    "player": "Payton Pritchard",
+    "slot": 2
+   },
+   {
+    "player": "Zach Edey",
+    "slot": 1
+   },
+   {
+    "player": "Tyler Herro",
+    "slot": 1
+   },
+   {
+    "player": "Mikal Bridges",
+    "slot": 2
+   },
+   {
+    "player": "Zion Williamson",
+    "slot": 3
+   },
+   {
+    "player": "Ryan Rollins",
+    "slot": 4
+   },
+   {
+    "player": "De'Aaron Fox",
+    "slot": 5
+   },
+   {
+    "player": "Julius Randle",
+    "slot": 6
+   },
+   {
+    "player": "VJ Edgecombe",
+    "slot": 7
+   },
+   {
+    "player": "Caleb Wilson",
+    "slot": 8
+   },
+   {
+    "player": "Stephon Castle",
+    "slot": 9
+   },
+   {
+    "player": "Immanuel Quickley",
+    "slot": 10
+   },
+   {
+    "player": "Derik Queen",
+    "slot": 11
+   },
+   {
+    "player": "Paul George",
+    "slot": 12
+   },
+   {
+    "player": "Cedric Coward",
+    "slot": 12
+   },
+   {
+    "player": "Coby White",
+    "slot": 11
+   },
+   {
+    "player": "Myles Turner",
+    "slot": 10
+   },
+   {
+    "player": "Norman Powell",
+    "slot": 9
+   },
+   {
+    "player": "Day'Ron Sharpe",
+    "slot": 8
+   },
+   {
+    "player": "Jaden McDaniels",
+    "slot": 7
+   },
+   {
+    "player": "Nic Claxton",
+    "slot": 6
+   },
+   {
+    "player": "Ausar Thompson",
+    "slot": 5
+   },
+   {
+    "player": "Andrew Wiggins",
+    "slot": 4
+   },
+   {
+    "player": "AJ Dybantsa",
+    "slot": 3
+   },
+   {
+    "player": "Zach LaVine",
+    "slot": 2
+   },
+   {
+    "player": "Dylan Harper",
+    "slot": 1
+   },
+   {
+    "player": "Jabari Smith Jr.",
+    "slot": 1
+   },
+   {
+    "player": "Miles Bridges",
+    "slot": 2
+   },
+   {
+    "player": "Kristaps Porzingis",
+    "slot": 3
+   },
+   {
+    "player": "Josh Hart",
+    "slot": 4
+   },
+   {
+    "player": "Toumani Camara",
+    "slot": 5
+   },
+   {
+    "player": "Isaiah Hartenstein",
+    "slot": 6
+   },
+   {
+    "player": "Darryn Peterson",
+    "slot": 7
+   },
+   {
+    "player": "Ty Jerome",
+    "slot": 8
+   },
+   {
+    "player": "Jusuf Nurkic",
+    "slot": 9
+   },
+   {
+    "player": "Jakob Poeltl",
+    "slot": 10
+   },
+   {
+    "player": "Ja Morant",
+    "slot": 11
+   },
+   {
+    "player": "Jalen Suggs",
+    "slot": 12
+   },
+   {
+    "player": "Collin Murray-Boyles",
+    "slot": 12
+   },
+   {
+    "player": "Neemias Queta",
+    "slot": 11
+   },
+   {
+    "player": "Reed Sheppard",
+    "slot": 10
+   },
+   {
+    "player": "Peyton Watson",
+    "slot": 9
+   },
+   {
+    "player": "John Collins",
+    "slot": 8
+   },
+   {
+    "player": "Ajay Mitchell",
+    "slot": 7
+   },
+   {
+    "player": "Andrew Nembhard",
+    "slot": 6
+   },
+   {
+    "player": "Khaman Maluach",
+    "slot": 5
+   },
+   {
+    "player": "Aaron Gordon",
+    "slot": 4
+   },
+   {
+    "player": "CJ McCollum",
+    "slot": 3
+   },
+   {
+    "player": "Sandro Mamukelashvili",
+    "slot": 2
+   },
+   {
+    "player": "Maxime Raynaud",
+    "slot": 1
+   },
+   {
+    "player": "Davion Mitchell",
+    "slot": 1
+   },
+   {
+    "player": "Ayo Dosunmu",
+    "slot": 2
+   },
+   {
+    "player": "Brandin Podziemski",
+    "slot": 3
+   },
+   {
+    "player": "Kyshawn George",
+    "slot": 4
+   },
+   {
+    "player": "Kevin Porter Jr.",
+    "slot": 5
+   },
+   {
+    "player": "Devin Vassell",
+    "slot": 6
+   },
+   {
+    "player": "Mitchell Robinson",
+    "slot": 7
+   },
+   {
+    "player": "Keegan Murray",
+    "slot": 8
+   },
+   {
+    "player": "Yaxel Lendeborg",
+    "slot": 9
+   },
+   {
+    "player": "Tre Jones",
+    "slot": 10
+   },
+   {
+    "player": "RJ Barrett",
+    "slot": 11
+   },
+   {
+    "player": "Jalen Green",
+    "slot": 12
+   },
+   {
+    "player": "Cason Wallace",
+    "slot": 12
+   },
+   {
+    "player": "Fred VanVleet",
+    "slot": 11
+   },
+   {
+    "player": "Cameron Johnson",
+    "slot": 10
+   },
+   {
+    "player": "Jaime Jaquez Jr.",
+    "slot": 9
+   },
+   {
+    "player": "Tari Eason",
+    "slot": 8
+   },
+   {
+    "player": "Collin Gillespie",
+    "slot": 7
+   },
+   {
+    "player": "Jrue Holiday",
+    "slot": 6
+   },
+   {
+    "player": "Jimmy Butler",
+    "slot": 5
+   },
+   {
+    "player": "Paul Reed",
+    "slot": 4
+   },
+   {
+    "player": "Bobby Portis",
+    "slot": 3
+   },
+   {
+    "player": "Wendell Carter Jr.",
+    "slot": 2
+   },
+   {
+    "player": "Draymond Green",
+    "slot": 1
+   },
+   {
+    "player": "Christian Braun",
+    "slot": 1
+   },
+   {
+    "player": "Nikola Vucevic",
+    "slot": 2
+   },
+   {
+    "player": "Moussa Diabate",
+    "slot": 3
+   },
+   {
+    "player": "Saddiq Bey",
+    "slot": 4
+   },
+   {
+    "player": "Aaron Nesmith",
+    "slot": 5
+   },
+   {
+    "player": "Tobias Harris",
+    "slot": 6
+   },
+   {
+    "player": "Jeremiah Fears",
+    "slot": 7
+   },
+   {
+    "player": "Herbert Jones",
+    "slot": 8
+   },
+   {
+    "player": "Dillon Brooks",
+    "slot": 9
+   },
+   {
+    "player": "PJ Washington",
+    "slot": 10
+   },
+   {
+    "player": "Anthony Black",
+    "slot": 11
+   },
+   {
+    "player": "Ace Bailey",
+    "slot": 12
+   }
+  ],
+  "leanSeen": {},
+  "leanSeenAt": 153
+ },
+ "errors": []
+}
