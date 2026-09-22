@@ -52,6 +52,10 @@ TOL_VAL = 1e-5    # 9-cat value sums: 9x the rounding bound, with headroom
 # item 7 (D51R-1R, 2026-09-22): the survival model behind the chips and the
 # wait-chain — deck survivalProb vs hoops.survival_prob over one vector of
 # (price, pick) pairs: interior, both clamps, null/zero price, price at pick.
+# item 8 (M53, 2026-09-22): the clock read on the mock-53 board at the picks that
+# matter — the owner's turns either side of both inserts, the owner's last pick,
+# the two picks after it (the bug: "none-left" is not "on the clock"), the end.
+CLOCK_VEC = [0, 9, 10, 86, 87, 88, 145, 146, 153, 154, 155, 156]
 SURV_VEC = [[60, 40], [5, 150], [None, 40], [120, 100], [200, 30], [1, 1], [300, 156],
             [45.5, 46], [8, 2], [0, 5], [101.2, 106], [264, 13]]
 QUERIES = [
@@ -96,7 +100,7 @@ def main():
     mod = os.path.join(tmp, "deck.mjs")
     with open(mod, "w", encoding="utf-8") as f:
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
-export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash, survivalProb };
+export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash, survivalProb, clockRead };
 """)
 
     # ---- what the Python side says -------------------------------------
@@ -131,7 +135,7 @@ export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks
     fixture = os.path.join(tmp, "in.json")
     with open(fixture, "w", encoding="utf-8") as f:
         json.dump({"queries": QUERIES, "states": states,
-                   "dfvectors": df_vectors, "survvec": SURV_VEC}, f)
+                   "dfvectors": df_vectors, "survvec": SURV_VEC, "clockvec": CLOCK_VEC}, f)
 
     # ---- what the deck says --------------------------------------------
     driver = os.path.join(tmp, "run.mjs")
@@ -151,6 +155,7 @@ out.dfhash = inp.dfvectors.map(([s, k, salt]) => api.dfHash(s, k, salt));
 out.market = [...api.marketRanks(api.PLAYERS.filter(p => p.av > 0)).entries()].sort((a, b) => a[1] - b[1]).map(e => e[0]);
 out.priced = api.PLAYERS.filter(p => p.av > 0 && p.mkt != null).length;
 out.surv = inp.survvec.map(([p, n]) => api.survivalProb(p, n));
+out.clock = {}; { const st0 = inp.states["draft_state_53.json"]; if (st0) for (const n of inp.clockvec) out.clock[n] = api.clockRead({ teams: st0.teams, slot: st0.slot, size: st0.size, punt: [], picks: st0.picks.slice(0, n) }); }
 const by = new Map(api.PLAYERS.map(p => [p.n, p]));
 const teamOf = (n, T) => { const r = Math.floor(n / T), i = n % T;
   return r % 2 === 0 ? i + 1 : T - i; };
@@ -241,6 +246,18 @@ process.stdout.write(JSON.stringify(out));
     n_priced_py = sum(1 for p in avail if snap and snap.get(p['player']) is not None)
     if js.get("priced") != n_priced_py:
         fails.append(f"market prices: deck has {js.get('priced')} priced rows, snapshot {n_priced_py}")
+
+    # item 8 (M53, 2026-09-22): clock read, field-identical on the mock-53 board.
+    st53 = states.get("draft_state_53.json")
+    js_clock = js.get("clock") or {}
+    if st53 is None:
+        fails.append("clock: draft_state_53.json missing — item 8 has no board")
+    else:
+        for n in CLOCK_VEC:
+            pv = hoops.clock_read({"teams": st53["teams"], "slot": st53["slot"], "size": st53["size"], "punt": [], "picks": st53["picks"][:n]})
+            jv = js_clock.get(str(n))
+            if jv != pv:
+                fails.append(f"clock_read at {n} logged: deck {jv!r} vs py {pv!r}")
 
     # item 7 (D51R-1R, 2026-09-22): survival probabilities, bit-identical.
     js_surv = js.get("surv")
@@ -334,6 +351,7 @@ process.stdout.write(JSON.stringify(out));
     print(f"df_hash vectors compared: {len(df_vectors)}"
           + (" (bit-identical)" if _df_ok else " — DIVERGED"))
     print(f"survival probs compared : {len(SURV_VEC)} (bit-identical)")
+    print(f"clock reads compared    : {len(CLOCK_VEC)} (field-identical)")
     print(f"card orderings compared : {turns} owner turns across "
           f"{len(js['orders'])} committed states")
     print(f"market ranks compared   : {len(py_market)} (priced {n_priced_py})")

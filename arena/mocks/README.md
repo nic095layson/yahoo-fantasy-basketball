@@ -31,6 +31,8 @@ of the corresponding `draft_state_N.json` to reproduce.
   (pools drafted against, the punt box as the owner drove it, click moments) sits at the top
   of `live_retro.py` / `live_deckcard.py` / `live_advisor.py`.
 
+- **Insert-at-# integrity (mock 53, 2026-09-22).** `insert_integrity.py <deck.html> <events.json> <truth.json> <out.json>` replays the owner's whole tool log (feeds, halts, UNKNOWN fixes, undos, inserts) through the deck ENGINE headlessly, builds the same board from scratch in the Yahoo recap's order, and compares picks/seats, every roster, every seat's category ranks, the category matrix and the ΔECW card at all owner turns; it also runs `hoops.insert_pick` on the exact pre-insert boards. `live_replay_dom.mjs <deck.html> <events.json> <out.json>` drives the REAL page in headless Chromium (Playwright, pre-installed at /opt/pw-browsers) through the same events, asserting each echo line and recording the on-the-clock text and page errors after every event — the reproduction of the countdown bug the fix closes. Results: `m53_insert_integrity.json`, `m53_dom_replay_unfixed.json`, `m53_dom_replay.json`.
+
 - `season_sim_mock27.py` — headline simulation. Rebuilds all 12 rosters from
   the uploaded draft state, runs `arena.simulate_seasons` at 6,000 seasons ×
   seeds [11, 23, 47], and reports champ%/playoff%/kept-total per team plus

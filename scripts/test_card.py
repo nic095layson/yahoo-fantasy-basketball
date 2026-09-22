@@ -67,6 +67,7 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
   survivalProb: typeof survivalProb === "function" ? survivalProb : null,
+  clockRead: typeof clockRead === "function" ? clockRead : null,
   SURVIVAL_DISPLAY: typeof SURVIVAL_DISPLAY === "undefined" ? null : SURVIVAL_DISPLAY,
   PIN_MAX_GAP: typeof PIN_MAX_GAP === "undefined" ? null : PIN_MAX_GAP,
   catWinProb: typeof catWinProb === "function" ? catWinProb : null,
@@ -76,6 +77,7 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
 """)
     probes = [("draft_state_51.json", 58), ("draft_state_mock32.json", 34), ("draft_state_mock32.json", 63)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
+    states["draft_state_53.json"] = json.load(open(os.path.join(STATES, "draft_state_53.json"), encoding="utf-8"))
     fixture = os.path.join(tmp, "in.json")
     json.dump({"states": states, "probes": probes}, open(fixture, "w"))
     driver = os.path.join(tmp, "run.mjs")
@@ -118,6 +120,15 @@ if (api.pinDecision && api.rankCard) {
     out.pins.push({ fn, pickNo, urgent: !!(r && r.urgent), pin: pinRaw ? pinRaw.n : null, av: pinRaw ? pinRaw.av : null,
                     tgOnPin: d.tgOnPin, withheld: d.withheld, top1: scored[0].p.n });
   }
+}
+/* M53 (2026-09-22): the countdown under the feed title read "(you're on the clock)" for
+   every pick after the owner's 13th — myNextPick() is null there and the app treated
+   "no next pick" as "until = 0". clockRead is the engine's single read of the clock. */
+out.clock = null;
+if (api.clockRead) {
+  const st0 = inp.states["draft_state_53.json"];
+  const at = n => api.clockRead({ teams: st0.teams, slot: st0.slot, size: st0.size, punt: [], picks: st0.picks.slice(0, n) });
+  out.clock = { p86: at(86), p87: at(87), p153: at(153), p154: at(154), p155: at(155), p156: at(156) };
 }
 out.advisor = { present: { catWinProb: !!api.catWinProb, puntRead: !!api.puntRead, coherenceRead: !!api.coherenceRead }, PUNT_BUTTONS: api.PUNT_BUTTONS };
 if (api.puntRead && api.coherenceRead && api.catWinProb) {
@@ -169,6 +180,25 @@ process.stdout.write(JSON.stringify(out));
         ok = p is not None and p["urgent"] and p["tgOnPin"] == tg and (frag in (p["withheld"] or ""))
         case(f"D51R-4 {key[0]} #{key[1]}: urgent pin {'kept' if tg else 'withheld'}"
              + (f" ({frag})" if frag else ""), ok, f"got {p}")
+
+    # ---- M53 clock read (2026-09-22): one engine read for "who is on the clock / your next"
+    ck = js.get("clock")
+    case("M53 clockRead exported from the engine", ck is not None, "clockRead absent")
+    case("M53 clockRead #87 (86 logged): YOU on the clock, next #87, until 0",
+         ck is not None and ck["p86"]["onClock"] and ck["p86"]["next"] == 87 and ck["p86"]["until"] == 0 and ck["p86"]["phase"] == "you", f"got {ck and ck['p86']}")
+    case("M53 clockRead #88 (87 logged, after the Coby White insert): seat 9, 18 until #106",
+         ck is not None and not ck["p87"]["onClock"] and ck["p87"]["seat"] == 9 and ck["p87"]["next"] == 106 and ck["p87"]["until"] == 18 and ck["p87"]["phase"] == "wait", f"got {ck and ck['p87']}")
+    case("M53 clockRead #154 (153 logged): YOU on the clock for the last owner pick",
+         ck is not None and ck["p153"]["onClock"] and ck["p153"]["phase"] == "you", f"got {ck and ck['p153']}")
+    case("M53 clockRead #155 (154 logged): NOT on the clock — no owner pick left, phase none-left (the bug)",
+         ck is not None and not ck["p154"]["onClock"] and ck["p154"]["next"] is None and ck["p154"]["phase"] == "none-left" and ck["p154"]["seat"] == 11, f"got {ck and ck['p154']}")
+    case("M53 clockRead #156 (155 logged): still none-left, seat 12",
+         ck is not None and not ck["p155"]["onClock"] and ck["p155"]["phase"] == "none-left" and ck["p155"]["seat"] == 12, f"got {ck and ck['p155']}")
+    case("M53 clockRead after #156: phase done",
+         ck is not None and ck["p156"]["phase"] == "done" and not ck["p156"]["onClock"], f"got {ck and ck['p156']}")
+    app = html[html.find('<script id="engine">') + 1:]
+    case("M53 the app's countdown renders from clockRead, not from until === 0",
+         "clockRead(st)" in app and 'nxt === null ? 0' not in app, "renderStrip still derives the countdown from until === 0")
 
     # ---- D51R-1R survival refit (2026-09-22): display back on, price-only model
     case("D51R-1R SURVIVAL_DISPLAY is defined and true", js.get("SURVIVAL_DISPLAY") is True,

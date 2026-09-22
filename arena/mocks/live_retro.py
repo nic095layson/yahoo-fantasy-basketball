@@ -30,7 +30,12 @@ import hoops  # noqa: E402
 import arena  # noqa: E402  (its own hoops instance reads the frozen snapshot; unused here)
 
 CATS = hoops.CATS
-POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": DECK + "/data/players.csv"}
+POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv", "v25": DECK + "/data/players.csv"}
+# v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
+# (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
+# 330 rows on 2026-09-22, so it is regenerated from git like v22).
+# v25 = data/players.csv as of the 2026-09-22 pool completion (mock 53).
+V23_REV = "f724435"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -39,10 +44,12 @@ MOCKS = {
     # git; "v23" = data/players.csv as of the 9/21 pull, sha c1f87ac1db09)
     51: dict(tags=("v22", "v23"), v22_rev="e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b"),
     52: dict(tags=("v23",)),
+    53: dict(tags=("v25",)),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
 TAGS = CFG["tags"]
+GRADE_TAG = TAGS[-1]   # the pool the grading stages run on: the deck the owner drafted against (mock 53: v25)
 STATE = DECK + f"/arena/data/states/draft_state_{MOCK}.json"
 state = json.load(open(STATE, encoding="utf-8"))
 TEAMS, SLOT, SIZE = state["teams"], state["slot"], state["size"]
@@ -54,6 +61,11 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     import subprocess
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
+                                capture_output=True, text=True, check=True).stdout)
+if not os.path.exists(POOLS["v23"]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
+    import subprocess
+    with open(POOLS["v23"], "w", encoding="utf-8") as _f:
+        _f.write(subprocess.run(["git", "-C", DECK, "show", V23_REV + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
 CAST = {s: nm for s, nm in state.get("cast", [])}
 
@@ -298,7 +310,8 @@ def final_swap_eval(players, ros_final, n, alt, actual, order_idx):
     return statistics.mean(per.values()), sum(1 for v in per.values() if v > 4.5)
 
 
-def stage_hindsight(tag="v23"):
+def stage_hindsight(tag=None):
+    tag = tag or GRADE_TAG
     players = load_pool(tag)
     byn = {p["player"]: p for p in players}
     ros_final, _, missing = rosters_upto(players, len(PICKS))
@@ -312,7 +325,7 @@ def stage_hindsight(tag="v23"):
     base_ecw, base_w = statistics.mean(per0.values()), sum(1 for v in per0.values() if v > 4.5)
     print(f"as-drafted ({tag}): ECW {base_ecw:.4f}, winning weeks {base_w}/11")
     replay = json.load(open(SP + f"/m{MOCK}_replay.json"))
-    cards = {t["pick"]: t for t in replay["v23"]}
+    cards = {t["pick"]: t for t in replay[tag]}
     cards22 = {t["pick"]: t for t in replay.get("v22", [])}
     out = dict(base_ecw=base_ecw, base_w=base_w, turns=[])
     for n in OWNER_IDX:
@@ -381,7 +394,8 @@ def spearman(a, b):
     return num / den
 
 
-def stage_forecast(tag="v23", K=12):
+def stage_forecast(tag=None, K=12):
+    tag = tag or GRADE_TAG
     players = load_pool(tag)
     hs = json.load(open(SP + f"/m{MOCK}_hindsight.json"))
     hs_turns = {t["pick"]: t for t in hs["turns"]}
@@ -486,7 +500,8 @@ def apply_swaps(players, swaps):
     return ros, picks
 
 
-def stage_arms(tag="v23"):
+def stage_arms(tag=None):
+    tag = tag or GRADE_TAG
     players = load_pool(tag)
     hs = json.load(open(SP + f"/m{MOCK}_hindsight.json"))
     arms = {"as_drafted": []}

@@ -728,6 +728,21 @@ def my_next_pick(state):
     return None
 
 
+def clock_read(state):
+    """M53 (2026-09-22): the one read of the clock — twin of the deck engine's
+    clockRead (parity item 8). phase: done / you / none-left / wait."""
+    n, total = len(state["picks"]), state["teams"] * state["size"]
+    if n >= total:
+        return {"phase": "done", "onClock": False, "seat": None, "next": None, "until": None, "pick": None}
+    seat = team_of_pick(n, state["teams"])
+    nxt = my_next_pick(state)
+    if seat == state["slot"]:
+        return {"phase": "you", "onClock": True, "seat": seat, "next": nxt, "until": 0, "pick": n + 1}
+    if nxt is None:
+        return {"phase": "none-left", "onClock": False, "seat": seat, "next": None, "until": None, "pick": n + 1}
+    return {"phase": "wait", "onClock": False, "seat": seat, "next": nxt, "until": nxt - (n + 1), "pick": n + 1}
+
+
 def next_pick_label(state):
     n = my_next_pick(state)
     return f"#{n}" if n else "— none left, draft complete"
