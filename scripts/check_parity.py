@@ -91,7 +91,7 @@ def main():
     mod = os.path.join(tmp, "deck.mjs")
     with open(mod, "w", encoding="utf-8") as f:
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
-export const api = { PLAYERS, matchCandidates, decwScores, rankCard, adjValue, CATS, dfHash };
+export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash };
 """)
 
     # ---- what the Python side says -------------------------------------
@@ -143,6 +143,8 @@ for (const p of api.PLAYERS)
 for (const q of inp.queries)
   out.match[q] = api.matchCandidates(api.PLAYERS, q).map(x => x.n).sort();
 out.dfhash = inp.dfvectors.map(([s, k, salt]) => api.dfHash(s, k, salt));
+out.market = [...api.marketRanks(api.PLAYERS.filter(p => p.av > 0)).entries()].sort((a, b) => a[1] - b[1]).map(e => e[0]);
+out.priced = api.PLAYERS.filter(p => p.av > 0 && p.mkt != null).length;
 const by = new Map(api.PLAYERS.map(p => [p.n, p]));
 const teamOf = (n, T) => { const r = Math.floor(n / T), i = n % T;
   return r % 2 === 0 ? i + 1 : T - i; };
@@ -214,6 +216,25 @@ process.stdout.write(JSON.stringify(out));
             if pv != jv:
                 fails.append(f"df_hash({s!r},{k},{salt}): deck {jv!r} vs "
                              f"py {pv!r} — NOT bit-identical")
+
+    # item 6 (F8, 2026-09-22): market ranks — the deck's marketRanks over its
+    # baked Yahoo prices vs arena.market_ranks over data/market-snapshot.csv.
+    # The ORDER is what the Mkt column, the TARGET shelf and the mock
+    # personas consume, so the order has to match, priced and unpriced.
+    import market_prices
+    snap = market_prices.load_snapshot()
+    avail = [p for p in players if hoops.availability(p) > 0]
+    mr = arena.market_ranks(avail, snap)
+    py_market = sorted(mr, key=mr.get)
+    js_market = js.get("market")
+    if js_market is None:
+        fails.append("market ranks: the deck exported no ordering — marketRanks missing from the api export")
+    elif js_market != py_market:
+        first = next((i for i, (a, b) in enumerate(zip(js_market, py_market)) if a != b), min(len(js_market), len(py_market)))
+        fails.append(f"market ranks diverge at #{first + 1}: deck {js_market[first:first + 3]} vs py {py_market[first:first + 3]}")
+    n_priced_py = sum(1 for p in avail if snap and snap.get(p['player']) is not None)
+    if js.get("priced") != n_priced_py:
+        fails.append(f"market prices: deck has {js.get('priced')} priced rows, snapshot {n_priced_py}")
 
     # Python-side ordering, built from arena.team_week_model — the module the
     # deck's engine block declares itself an exact port of. This is the check
@@ -298,6 +319,7 @@ process.stdout.write(JSON.stringify(out));
           + (" (bit-identical)" if _df_ok else " — DIVERGED"))
     print(f"card orderings compared : {turns} owner turns across "
           f"{len(js['orders'])} committed states")
+    print(f"market ranks compared   : {len(py_market)} (priced {n_priced_py})")
     if args.verbose:
         for name, orders in js["orders"].items():
             print(f"  {name}: {len(orders)} turns, #1s = "

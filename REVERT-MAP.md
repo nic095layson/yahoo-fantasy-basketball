@@ -18,6 +18,7 @@ relevant files) and republishes to the standing artifact URL.
 | Urgent-TARGET 🎯 gate (D51R-4) | `PIN_MAX_GAP = Infinity` and delete the `pin.av < 1` line in `pinDecision` (engine block) | pre-2026-09-21 behaviour: any urgent read takes the 🎯 |
 | ΔECW tie-break (D51R-2) | remove the middle clause of `rankCard` (engine block) AND the middle key of the ordering in `scripts/check_parity.py` — both, or parity fails | name-only tie-break |
 | Punt advisor advice-only + room-relative read (D51R-3, 2026-09-21) | `PUNT_BUTTONS = true` in the deck's engine block restores the FULL TILT / Adopt / Retarget buttons (every write routes through `adoptPunt` in the app block, dead while the switch is false); the room-relative read (catWinProb / puntRead / coherenceRead) has no switch — revert the introducing commit to get the 13-man z-sum drift and coherence back | buttons back, advice text stays; measured on the 8 committed states (`arena/results/m51_punt_advice_effect.json`): the old advisor proposed punting a category the roster was beating ≥50% of the room in on 7 turns (all TO, state 50, 55–80%), the new one on 0 |
+| Yahoo prices in the Mkt rank (F8, 2026-09-22) | remove the kit's `report/market/yahoo-*.csv` (or build with an empty kit market dir) and rebuild — the build drops `data/market-snapshot.csv` and both engines fall back to the internal model together | pre-F8 Mkt: the points-volume proxy + rookie pins |
 
 **Display surfaces RETIRED 2026-07-30 (owner: noise)** — all removed in
 commits `d2e930d` (archetype tags + roster census) and the simplification

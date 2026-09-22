@@ -283,8 +283,15 @@ MKT_PIN = {"Cooper Flagg": 18, "AJ Dybantsa": 30, "Darryn Peterson": 55,
            "Mikel Brown Jr.": 95}
 
 
-def market_ranks(pool):
-    """1-based estimated real-draft rank for every pool player."""
+def market_ranks(pool, prices=None):
+    """1-based estimated real-draft rank for every pool player.
+
+    With `prices` ({player name: Yahoo ADP or XRank}, the deck build's
+    data/market-snapshot.csv — F8, 2026-09-22) priced players rank by price
+    (ties: model score, then name) and the unpriced tail follows in model
+    order with the rookie pins applied only there. Without prices — the
+    arena's frozen 2025 snapshot, which must never see 2026 prices — the
+    model + pins, unchanged. Twin of the deck's marketRanks (parity item 6)."""
     def mscore(p):
         s = sum(p["z"][c] * MKT_W[c] for c in CATS)
         note = (p.get("note") or "").lower()
@@ -299,9 +306,16 @@ def market_ranks(pool):
         return s
     ordered = sorted(pool, key=lambda p: -mscore(p))
     model = {p["player"]: i + 1 for i, p in enumerate(ordered)}
-    eff = {n: min(r, MKT_PIN.get(n, r)) for n, r in model.items()}
-    final = sorted(model, key=lambda n: (eff[n], model[n]))
-    return {n: i + 1 for i, n in enumerate(final)}
+    if not prices:
+        eff = {n: min(r, MKT_PIN.get(n, r)) for n, r in model.items()}
+        final = sorted(model, key=lambda n: (eff[n], model[n]))
+        return {n: i + 1 for i, n in enumerate(final)}
+    priced = [n for n in model if prices.get(n) is not None]
+    unpriced = [n for n in model if prices.get(n) is None]
+    priced.sort(key=lambda n: (prices[n], model[n], n))
+    eff = {n: min(model[n], MKT_PIN.get(n, model[n])) for n in unpriced}
+    unpriced.sort(key=lambda n: (eff[n], model[n]))
+    return {n: i + 1 for i, n in enumerate(priced + unpriced)}
 
 
 def pick_for(params, pool, roster, my_ranks, rnd, rng, mkt=None):

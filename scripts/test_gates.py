@@ -87,6 +87,14 @@ def fake_kit(repo):
             w.writerow([r["player"], r["team"], r["pos"], 15 if excluded else 72, 30,
                         r["fg_pct"], r["fga"], r["ft_pct"], r["fta"], r["tpm"], r["pts"],
                         r["reb"], r["ast"], r["stl"], r["blk"], r["tov"]])
+    # F8: a Yahoo price file — ADP for the first 150 pool rows, XRank only
+    # for the next 50, nothing for the rest (the unpriced tail)
+    os.makedirs(os.path.join(kit, "report", "market"), exist_ok=True)
+    with open(os.path.join(kit, "report", "market", "yahoo-2026-09-15.csv"), "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["player", "team", "pos", "xrank", "adp"])
+        for i, r in enumerate(rows[:200]):
+            w.writerow([r["player"], r["team"], r["pos"], i + 1, (i + 1) if i < 150 else ""])
     return kit
 
 
@@ -368,6 +376,52 @@ def main():
     m7 = re.search(r"<!-- build-manifest (\{.*?\}) -->", open(deck7, encoding="utf-8").read())
     check("F7 the bypass reason is in the manifest", m7.group(1) if m7 else "",
           must_have=["kit unavailable"])
+
+    # ---------- F8 (2026-09-22): Yahoo prices into the Mkt rank -----------
+    # Owner decision 2026-09-21 ("use Yahoo Mkt price"); the 8/21 work order's
+    # gated step 5. The build bakes ADP-else-XRank from the kit's newest paste,
+    # writes data/market-snapshot.csv for the Python twin, records the file in
+    # the manifest, refuses when a spelling strands a top-board name, warns on
+    # a stale file, and falls back to the internal model loudly with no file.
+    repo8 = fresh_copy()
+    prime(repo8, pool_changes=["--no-pool-changes"])
+    redate_judgment(repo8)
+    redate_colophon(repo8)
+    yfile = os.path.join(os.path.dirname(repo8), "kit", "report", "market", "yahoo-2026-09-15.csv")
+    deck8 = os.path.join(repo8, "docs", "draft-deck.html")
+    snap8 = os.path.join(repo8, "data", "market-snapshot.csv")
+    manifest8 = lambda: (re.search(r"<!-- build-manifest (\{.*?\}) -->", open(deck8, encoding="utf-8").read()) or re.search("()", "")).group(1)
+    out, rc = run(repo8, "scripts/build_deck.py")
+    check("F8 baseline: the build bakes Yahoo prices and reports the file", out,
+          must_have=["safe to publish", "market: yahoo-2026-09-15.csv"], want_exit=0, got_exit=rc)
+    check("F8 manifest records the price file and the priced count", manifest8(),
+          must_have=["yahoo-2026-09-15", '"priced": 200'])
+    check("F8 snapshot written with the 200 priced rows",
+          str(sum(1 for _ in open(snap8, encoding="utf-8")) - 1) if os.path.exists(snap8) else "absent",
+          must_have=["200"])
+    out, rc = run(repo8, "scripts/check_parity.py")
+    check("F8 parity item 6: market ranks agree in the built copy, PRICED", out,
+          must_have=["PARITY: EXACT MATCH", "market ranks compared"], must_not=["(priced 0)"],
+          want_exit=0, got_exit=rc)
+    y8 = open(yfile, encoding="utf-8").read()
+    open(yfile, "w", encoding="utf-8").write(y8.replace("Nikola Jokic,", "Nik Jokic,", 1))
+    out, rc = run(repo8, "scripts/build_deck.py")
+    check("F8 a price-file spelling that strands a top-board name is REFUSED", out,
+          must_have=["BUILD REFUSED", "Jokic"], want_exit=1, got_exit=rc)
+    open(yfile, "w", encoding="utf-8").write(y8)
+    stale8 = yfile.replace("2026-09-15", "2026-01-01")
+    os.rename(yfile, stale8)
+    out, rc = run(repo8, "scripts/build_deck.py")
+    check("F8 a stale price file warns and still builds", out,
+          must_have=["safe to publish", "days old"], want_exit=0, got_exit=rc)
+    os.rename(stale8, yfile)
+    os.remove(yfile)
+    out, rc = run(repo8, "scripts/build_deck.py")
+    check("F8 no price file: builds on the internal model, loudly", out,
+          must_have=["safe to publish", "no Yahoo price file"], want_exit=0, got_exit=rc)
+    check("F8 no price file: manifest records market null and the snapshot is gone",
+          manifest8() + (" snapshot-absent" if not os.path.exists(snap8) else " snapshot-present"),
+          must_have=['"market": null', "snapshot-absent"])
 
     print()
     if FAILURES:
