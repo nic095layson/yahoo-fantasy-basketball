@@ -76,9 +76,12 @@ for p in costly:
     L.append(f"- **#{p} {h['actual']}** (card #{t['actualCardRank']}, availability {hoops.availability(pl) if pl else '?'}, note `{pl.get('note', '')}`): "
              f"{h['n_better']} of {h['n_legal']} legal alternatives grade higher — " + "; ".join(f"{r['n']} {r['gain']:+.3f} (drafted #{r['drafted_at']} by {r['drafted_by']})" for r in h["top"][:3]) + ".")
 pins = [(p, dc[p]) for p in turns if dc[p]["pinTarget"]]
+last_call = [f"#{p} {t['pinTarget']}" for p, t in pins if t["tgOnPin"]]
+withheld = [f"#{p} {t['pinTarget']} ({t['withheld']})" for p, t in pins if not t["tgOnPin"] and t["withheld"]]
+depth = [f"#{p} {t['pinTarget']}" for p, t in pins if not t["tgOnPin"] and not t["withheld"]]
 L.append("")
-L.append(f"Urgent TARGET pins: {len([1 for p, t in pins if t['tgOnPin']])} took the 🎯, {len([1 for p, t in pins if not t['tgOnPin']])} withheld "
-         f"({'; '.join(f'#{p} {t[chr(112)+chr(105)+chr(110)+chr(84)+chr(97)+chr(114)+chr(103)+chr(101)+chr(116)]}: {t[chr(119)+chr(105)+chr(116)+chr(104)+chr(104)+chr(101)+chr(108)+chr(100)]}' for p, t in pins if not t['tgOnPin']) or '—'}).")
+L.append(f"Sixth-row pins: LAST CALL took the 🎯 at {len(last_call)} turn(s) ({', '.join(last_call) or '—'}); urgent pin withheld by the D51R-4 gate at "
+         f"{len(withheld)} ({', '.join(withheld) or '—'}); DEPTH WATCH (informational) at {len(depth)} ({', '.join(depth) or '—'}).")
 L.append(""); L.append("## Punt advisor (room-relative read, D51R-3)"); L.append("")
 leans = [x for x in adv if x["moment"] == "pre" and x.get("new_lean")]
 L.append(f"Box empty all draft. Room-relative lean at {len(leans)} of {len([x for x in adv if x['moment'] == 'pre'])} owner turns: "

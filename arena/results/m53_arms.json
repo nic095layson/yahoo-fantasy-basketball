@@ -1,0 +1,139 @@
+{
+ "as_drafted": {
+  "champ": 38.528,
+  "playoff": 99.29,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#10:Chet Holmgren": {
+  "champ": 46.256,
+  "playoff": 99.72,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#39:Anthony Davis": {
+  "champ": 39.178,
+  "playoff": 99.47,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Anthony Davis"
+   ]
+  ]
+ },
+ "swap#58:Payton Pritchard": {
+  "champ": 43.139,
+  "playoff": 99.52,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#82:Ja Morant": {
+  "champ": 40.544,
+  "playoff": 99.53,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Ja Morant"
+   ]
+  ]
+ },
+ "swap#111:Christian Braun": {
+  "champ": 42.211,
+  "playoff": 99.65,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Christian Braun"
+   ]
+  ]
+ },
+ "swap#130:Christian Braun": {
+  "champ": 44.233,
+  "playoff": 99.8,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Christian Braun"
+   ]
+  ]
+ },
+ "swap#135:Brook Lopez": {
+  "champ": 38.711,
+  "playoff": 99.34,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "swap#154:Brook Lopez": {
+  "champ": 41.678,
+  "playoff": 99.58,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 55.594,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Anthony Davis"
+   ],
+   [
+    15,
+    "Derrick White"
+   ],
+   [
+    34,
+    "Karl-Anthony Towns"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Tari Eason"
+   ],
+   [
+    87,
+    "Christian Braun"
+   ],
+   [
+    106,
+    "Myles Turner"
+   ],
+   [
+    111,
+    "Jakob Poeltl"
+   ],
+   [
+    130,
+    "Immanuel Quickley"
+   ]
+  ]
+ }
+}
