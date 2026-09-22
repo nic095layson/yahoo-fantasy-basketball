@@ -368,6 +368,32 @@ def availability(p):
     return 1.0
 
 
+SURV_K, SURV_FLOOR = 0.30, 8
+
+
+def _norm_cdf_as(x):
+    """Abramowitz-Stegun 7.1.26 erf, the deck engine's normCdf verbatim, so
+    survival_prob is bit-identical to the JS (parity item 7)."""
+    ax = abs(x) / math.sqrt(2)
+    t = 1 / (1 + 0.3275911 * ax)
+    poly = t * (0.254829592 + t * (-0.284496736 + t * (1.421413741 +
+           t * (-1.453152027 + t * 1.061405429))))
+    erf = 1 - poly * math.exp(-ax * ax)
+    return 0.5 * (1 + (-erf if x < 0 else erf))
+
+
+def survival_prob(price, pick_n):
+    """D51R-1R (2026-09-22): P(a player priced at `price` — Yahoo ADP, else
+    XRank, else the market-rank position — is still on the board at pick
+    `pick_n`) = Phi((price - N) / max(8, 0.30 * price)), clamped to
+    [0.01, 0.99]; None without a price. Twin of the deck engine's
+    survivalProb; fit record in arena/results/survival_refit_2026-09-22.json."""
+    if price is None or pick_n is None or not price > 0 or not pick_n > 0:
+        return None
+    s = (price - pick_n) / max(SURV_FLOOR, SURV_K * price)
+    return min(0.99, max(0.01, _norm_cdf_as(s)))
+
+
 def adj_value(p, punt=()):
     """Injury-adjusted value used for ranking boards (never boosts negatives)."""
     tv = total_value(p, punt)

@@ -4,7 +4,7 @@ way check_parity.py does it) at every owner turn of a live mock and emit the
 card as that deck computes it: Top-5 in the deck's own order (rankCard when
 the engine exports it, else the pre-2026-09-21 blend50-then-name order),
 ΔECW, the archetype TARGET read and its 🎯 pin (pinDecision when exported),
-market rank, and the survival model reproduced verbatim from the DOM source
+market rank, and the survival model — the engine's survivalProb when the deck exports it (D51R-1R), else the room-mix blend reproduced verbatim from the DOM source
 (the raw survival probability is always recorded; the chip follows the
 deck's survivalChip when exported, so a deck with SURVIVAL_DISPLAY off
 renders none).
@@ -52,6 +52,7 @@ export const api = { PLAYERS, CATS, adjValue, decwScores, archetypeRead, categor
   rankCard: typeof rankCard === "function" ? rankCard : null,
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
+  survivalProb: typeof survivalProb === "function" ? survivalProb : null,
   SURVIVAL_DISPLAY: typeof SURVIVAL_DISPLAY === "undefined" ? null : SURVIVAL_DISPLAY };
 """)
 fixture = os.path.join(tmp, "in.json")
@@ -82,7 +83,15 @@ function survPhi(rank, pickN) {
   const phi = 0.5 * (1 + (s < 0 ? -erf : erf));
   return Math.min(0.99, Math.max(0.01, phi));
 }
+/* D51R-1R (2026-09-22): a deck that exports survivalProb prices survival off the
+   baked Yahoo price (else the market-rank position); older decks keep the
+   room-mix blend reproduced above, so pre-refit cards replay unchanged. */
+const byName = new Map(PLAYERS.map(p => [p.n, p]));
 function survivalP(name, pickN) {
+  if (api.survivalProb) {
+    const p = byName.get(name);
+    return api.survivalProb(p && p.mkt != null ? p.mkt : MKT_RANK.get(name), pickN);
+  }
   const pv = survPhi(VAL_RANK.get(name), pickN), pm = survPhi(MKT_RANK.get(name), pickN);
   return Math.min(0.99, Math.max(0.01, Math.pow(pv, SURV_W_VAL) * Math.pow(pm, SURV_W_MKT)));
 }

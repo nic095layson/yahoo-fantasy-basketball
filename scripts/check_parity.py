@@ -49,6 +49,11 @@ import arena  # noqa: E402
 TOL_Z = 1e-6      # per-category z: the rounding bound itself
 TOL_VAL = 1e-5    # 9-cat value sums: 9x the rounding bound, with headroom
 
+# item 7 (D51R-1R, 2026-09-22): the survival model behind the chips and the
+# wait-chain — deck survivalProb vs hoops.survival_prob over one vector of
+# (price, pick) pairs: interior, both clamps, null/zero price, price at pick.
+SURV_VEC = [[60, 40], [5, 150], [None, 40], [120, 100], [200, 30], [1, 1], [300, 156],
+            [45.5, 46], [8, 2], [0, 5], [101.2, 106], [264, 13]]
 QUERIES = [
     "Nikola Jokic", "Jokic", "jokic", "Nikola Jokić", "Jokić", "Dončić",
     "Şengün", "Porziņģis", "Vučević", "sga", "kd", "ad", "og", "zu", "kat",
@@ -91,7 +96,7 @@ def main():
     mod = os.path.join(tmp, "deck.mjs")
     with open(mod, "w", encoding="utf-8") as f:
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
-export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash };
+export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash, survivalProb };
 """)
 
     # ---- what the Python side says -------------------------------------
@@ -126,7 +131,7 @@ export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks
     fixture = os.path.join(tmp, "in.json")
     with open(fixture, "w", encoding="utf-8") as f:
         json.dump({"queries": QUERIES, "states": states,
-                   "dfvectors": df_vectors}, f)
+                   "dfvectors": df_vectors, "survvec": SURV_VEC}, f)
 
     # ---- what the deck says --------------------------------------------
     driver = os.path.join(tmp, "run.mjs")
@@ -145,6 +150,7 @@ for (const q of inp.queries)
 out.dfhash = inp.dfvectors.map(([s, k, salt]) => api.dfHash(s, k, salt));
 out.market = [...api.marketRanks(api.PLAYERS.filter(p => p.av > 0)).entries()].sort((a, b) => a[1] - b[1]).map(e => e[0]);
 out.priced = api.PLAYERS.filter(p => p.av > 0 && p.mkt != null).length;
+out.surv = inp.survvec.map(([p, n]) => api.survivalProb(p, n));
 const by = new Map(api.PLAYERS.map(p => [p.n, p]));
 const teamOf = (n, T) => { const r = Math.floor(n / T), i = n % T;
   return r % 2 === 0 ? i + 1 : T - i; };
@@ -236,6 +242,16 @@ process.stdout.write(JSON.stringify(out));
     if js.get("priced") != n_priced_py:
         fails.append(f"market prices: deck has {js.get('priced')} priced rows, snapshot {n_priced_py}")
 
+    # item 7 (D51R-1R, 2026-09-22): survival probabilities, bit-identical.
+    js_surv = js.get("surv")
+    if js_surv is None:
+        fails.append("survival: the deck exported no survivalProb")
+    else:
+        for (price, n), jv in zip(SURV_VEC, js_surv):
+            pv = hoops.survival_prob(price, n)
+            if (pv is None) != (jv is None) or (pv is not None and abs(pv - jv) > 1e-12):
+                fails.append(f"survival_prob({price},{n}): deck {jv!r} vs py {pv!r} — NOT bit-identical")
+
     # Python-side ordering, built from arena.team_week_model — the module the
     # deck's engine block declares itself an exact port of. This is the check
     # that matters: the ordering IS what the card shows.
@@ -317,6 +333,7 @@ process.stdout.write(JSON.stringify(out));
     _df_ok = not any(f.startswith("df_hash") for f in fails)
     print(f"df_hash vectors compared: {len(df_vectors)}"
           + (" (bit-identical)" if _df_ok else " — DIVERGED"))
+    print(f"survival probs compared : {len(SURV_VEC)} (bit-identical)")
     print(f"card orderings compared : {turns} owner turns across "
           f"{len(js['orders'])} committed states")
     print(f"market ranks compared   : {len(py_market)} (priced {n_priced_py})")

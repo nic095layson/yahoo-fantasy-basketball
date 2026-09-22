@@ -1,0 +1,245 @@
+{
+ "date": "2026-09-22",
+ "decision": "D51R-1R",
+ "rows": {
+  "pooled": 98,
+  "mock51": 48,
+  "mock52": 50,
+  "alive": 68
+ },
+ "inputs": {
+  "deckcards": [
+   "m51_deckcard_v22.json",
+   "m52_deckcard_v23.json"
+  ],
+  "price_file": "kit report/market/yahoo-2026-09-22.csv (ADP else XRank; used for both rooms \u2014 mock 51 drafted 9/21 against the 9/15 paste's room, an assumption recorded here)",
+  "harness": "arena/mocks/live_survival.py rows_for"
+ },
+ "model": "P(alive at N) = Phi((price - N) / max(SURV_FLOOR, SURV_K * price)), clamp [0.01, 0.99]",
+ "chosen": {
+  "SURV_K": 0.3,
+  "SURV_FLOOR": 8,
+  "why": "best pooled Brier in the (k, floor) grid without an offset; the +5 offset variant gains 0.003 and was not taken (n=98, one fewer parameter)"
+ },
+ "shipped_room_mix": {
+  "brier": 0.6506,
+  "buy_rows": 94,
+  "buy_survived": 66
+ },
+ "constant_base_rate_brier": 0.2124,
+ "untuned_k020_floor8_brier": 0.1951,
+ "pooled": {
+  "brier": 0.1923,
+  "buy": {
+   "n": 15,
+   "gone": 10
+  },
+  "toss": {
+   "n": 21,
+   "gone": 11
+  },
+  "quiet": {
+   "n": 43,
+   "alive": 40
+  },
+  "calibration": [
+   {
+    "band": "[0.0,0.2)",
+    "n": 15,
+    "mean_pred": 0.136,
+    "realized": 0.333
+   },
+   {
+    "band": "[0.2,0.4)",
+    "n": 21,
+    "mean_pred": 0.334,
+    "realized": 0.476
+   },
+   {
+    "band": "[0.4,0.6)",
+    "n": 19,
+    "mean_pred": 0.485,
+    "realized": 0.684
+   },
+   {
+    "band": "[0.6,0.8)",
+    "n": 30,
+    "mean_pred": 0.674,
+    "realized": 0.9
+   },
+   {
+    "band": "[0.8,1.0)",
+    "n": 13,
+    "mean_pred": 0.89,
+    "realized": 1.0
+   }
+  ]
+ },
+ "grid_best": [
+  [
+   0.1923,
+   0.3,
+   8
+  ],
+  [
+   0.1925,
+   0.25,
+   8
+  ],
+  [
+   0.1926,
+   0.3,
+   4
+  ],
+  [
+   0.1927,
+   0.25,
+   6
+  ],
+  [
+   0.1927,
+   0.3,
+   10
+  ],
+  [
+   0.1929,
+   0.3,
+   6
+  ],
+  [
+   0.1934,
+   0.25,
+   4
+  ],
+  [
+   0.1934,
+   0.25,
+   10
+  ]
+ ],
+ "leave_one_room_out": [
+  {
+   "fit_on": 51,
+   "k": 0.3,
+   "floor": 8,
+   "fit_brier": 0.2056,
+   "test_on": 52,
+   "test_brier": 0.1795,
+   "test_base_rate_brier": 0.21,
+   "test_shipped_brier": 0.6552
+  },
+  {
+   "fit_on": 52,
+   "k": 0.25,
+   "floor": 8,
+   "fit_brier": 0.1791,
+   "test_on": 51,
+   "test_brier": 0.2065,
+   "test_base_rate_brier": 0.2148,
+   "test_shipped_brier": 0.6457
+  }
+ ],
+ "per_room": {
+  "51": {
+   "brier": 0.2056,
+   "buy": {
+    "n": 7,
+    "gone": 4
+   },
+   "toss": {
+    "n": 11,
+    "gone": 6
+   },
+   "quiet": {
+    "n": 23,
+    "alive": 21
+   },
+   "calibration": [
+    {
+     "band": "[0.0,0.2)",
+     "n": 7,
+     "mean_pred": 0.138,
+     "realized": 0.429
+    },
+    {
+     "band": "[0.2,0.4)",
+     "n": 11,
+     "mean_pred": 0.343,
+     "realized": 0.455
+    },
+    {
+     "band": "[0.4,0.6)",
+     "n": 7,
+     "mean_pred": 0.479,
+     "realized": 0.571
+    },
+    {
+     "band": "[0.6,0.8)",
+     "n": 17,
+     "mean_pred": 0.677,
+     "realized": 0.882
+    },
+    {
+     "band": "[0.8,1.0)",
+     "n": 6,
+     "mean_pred": 0.894,
+     "realized": 1.0
+    }
+   ]
+  },
+  "52": {
+   "brier": 0.1795,
+   "buy": {
+    "n": 8,
+    "gone": 6
+   },
+   "toss": {
+    "n": 10,
+    "gone": 5
+   },
+   "quiet": {
+    "n": 20,
+    "alive": 19
+   },
+   "calibration": [
+    {
+     "band": "[0.0,0.2)",
+     "n": 8,
+     "mean_pred": 0.135,
+     "realized": 0.25
+    },
+    {
+     "band": "[0.2,0.4)",
+     "n": 10,
+     "mean_pred": 0.325,
+     "realized": 0.5
+    },
+    {
+     "band": "[0.4,0.6)",
+     "n": 12,
+     "mean_pred": 0.488,
+     "realized": 0.75
+    },
+    {
+     "band": "[0.6,0.8)",
+     "n": 13,
+     "mean_pred": 0.67,
+     "realized": 0.923
+    },
+    {
+     "band": "[0.8,1.0)",
+     "n": 7,
+     "mean_pred": 0.888,
+     "realized": 1.0
+    }
+   ]
+  }
+ },
+ "acceptance": {
+  "pooled_brier_beats_base_rate": true,
+  "loro_beats_room_base_rate_both_directions": true,
+  "buy_gone_rate_ge_0.80_original_bar": false,
+  "quiet_survival_ge_0.80": true,
+  "ship_decision": "RE-ENABLE with the measured rates stated on the chip tooltip and colophon: BUY NOW = two in three, TOSS-UP = coin flip, quiet = 40/43. Re-fit after the next live room."
+ }
+}
