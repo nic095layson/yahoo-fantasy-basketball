@@ -57,6 +57,13 @@ def fresh_copy():
         ".git", "results", "__pycache__"))
     # arena/results + mocks excluded for speed; recreate what the tools need
     os.makedirs(os.path.join(dst, "arena", "results"), exist_ok=True)
+    # F7/F8: the committed snapshots belong to the REAL kit; the synthesized
+    # kit beside this copy defines its own baseline on its first build
+    for snap in ("kit-snapshot.csv", "market-snapshot.csv"):
+        try:
+            os.remove(os.path.join(dst, "data", snap))
+        except FileNotFoundError:
+            pass
     fake_kit(dst)
     return dst
 
