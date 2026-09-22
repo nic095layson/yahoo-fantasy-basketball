@@ -428,7 +428,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-09-21 under the roster validation lock — 264 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches, 264/264). <strong>This refresh (9/21, window 9/15–9/21): zero placements moved — and the system tune-up landed.</strong> The only incumbent row touched is Ochai Agbaji (BKN → NYK, non-guaranteed Exhibit 9 camp deal 9/16 — five names for about one Knicks spot). The 264-player pool now covers what live rooms actually draft: mock-51 drafted two names this board could not log, so ten rows joined (Wagler, Bona, Champagnie, Graves, Tre Jones, Robert Williams III, AJ Green, Beringer, Isaiah Joe, Huff — each with dated multi-outlet role sourcing) and Keaton Wallace left the pool on his two-year Maccabi Tel Aviv deal (club + EuroLeague official). Four lines synced to the 9/16 role research (Sheppard and Vučević to bench shapes, Keyonte George and Randle to their bigger roles). Brunson's judgment narrowed to −0.05 (wrist 80-85%, no camp restrictions expected); Duren HELD at −0.08 with the $9.6M qualifying-offer branch now dominant and the Oct 1 deadline ten days out; Dončić carries a new hamstring-monitor note (Gr2 April, cleared 5/28, self-declared 100% — informational only, Sabonis-class). MEM cuts remain reported-not-executed; camp opens league-wide 9/28-9/30, Raptors 9/29 in Quebec City. The live-draft resolver now logs an opponent's pick VERBATIM when the named player has no pool row (the mock-51 fix): only YOUR recommendations need pool data.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers flag players unlikely to survive to your next pick under a room-mix survival model — value-drafting seats blended with market seats, recalibrated 2026-08-03 after the market-only model marked 24/24 doomed players quiet in mock 30 (no marker = calibrated safe-to-wait: 96% measured survival; September ADP sharpens the market half); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty; a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported); the same read also pins a sixth row under the Top-5 when its family made none of them — <em>LAST CALL</em> when urgent (the 🎯 moves onto it: take it over the Top-5) or <em>DEPTH WATCH</em> when informational (the 🎯 above stays the pick), named 2026-08-10 on owner request. The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until October ADP replaces the proxy. The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers and the 🚌 wait-chain are <em>suspended</em> (2026-09-21) pending a refit on live-room ADP — the room-mix survival model behind them was fit on value-drafting mock seats and, in the first live human room from the real seat, read BUY NOW on 46 of 48 scored rows while 32 of those players survived to the next turn (mock 51 retro); the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty — since 2026-09-21 only if that player carries no availability multiplier and sits within 0.05 cats/week of the #1's ΔECW (mock 51 retro: the override had pinned a 0.78-availability center 0.14 cats/week behind a hindsight-best #1); exact blend ties order by ΔECW before name (same retro: 2 of 13 turns on the deck drafted against were decided alphabetically); a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported); the same read also pins a sixth row under the Top-5 when its family made none of them — <em>LAST CALL</em> when urgent (the 🎯 moves onto it: take it over the Top-5) or <em>DEPTH WATCH</em> when informational (the 🎯 above stays the pick), named 2026-08-10 on owner request. The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; display + declaration only; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster). The style/archetype layer runs internally (TARGET, punt analyzer) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until October ADP replaces the proxy. The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
   <p class="hint"><strong>Feed syntax.</strong> Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap; <code>108+ Queta</code> <em>inserts</em> a missed pick at #108 and shifts the rest down (or use the Insert-at-# button). Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
 </footer>
 </div>
@@ -1346,6 +1346,55 @@ function decwScores(pool, mine, oppRosters) {
      choice is worth. */
   return pool.map((p, i) => ({ p, decw: decw[i],
     ds: DECW_ALPHA * pd[i] + (1 - DECW_ALPHA) * pv[i] }));
+}
+
+/* ---- Card governance (mock 51 retro, 2026-09-21 —
+   arena/results/debrief_2026-09-21_mock51_slot10.md; owner decisions
+   D51R-1/2/4). Pure functions so scripts/test_card.py can pin them. ---- */
+/* D51R-1 kill switch. The room-mix survival model was fit on arena bot rooms
+   (9/11 value drafters). In the first live human room from the real seat it
+   read BUY NOW on 46 of 48 scored Top-5 rows at a mean 2.8% predicted
+   survival while 32 of those 46 players were still there at the owner's
+   next turn (Brier 0.646). Chips and the 🚌 wait-chain stay hidden until the
+   model is refit on live-room ADP; the math stays for the harnesses. */
+const SURVIVAL_DISPLAY = false;
+/* D51R-4. An URGENT structural TARGET may take the 🎯 off the card's #1 only
+   when the pinned player carries no availability multiplier AND sits within
+   this many cats/week of #1's ΔECW. Measured on the 8 committed states: 3
+   urgent pins — state_51 #58 (av 0.78, 0.142 behind: withheld), mock32 #34
+   (0.187 behind: withheld), mock32 #63 (0.040 behind: kept). */
+const PIN_MAX_GAP = 0.05;
+function rankCard(rows) {
+  /* Card order: blend50 desc, then ΔECW desc, then name desc. Exact blend
+     ties are structural — percentile quantization scores ranks {1,2} and
+     {2,1} in the two halves identically — and mock 51 had 2 of 13 owner
+     turns on the deck drafted against (6 of 13 on the current one) decided
+     by the name tie-break. ΔECW is the card's own unit and the row already
+     prints it; name stays last for determinism. Twin: the ordering key in
+     scripts/check_parity.py — change both or parity fails. */
+  return [...rows].sort((a, b) => b.ds - a.ds
+    || ((a.decw == null || b.decw == null) ? 0 : b.decw - a.decw)
+    || (a.p.n < b.p.n ? 1 : a.p.n > b.p.n ? -1 : 0));
+}
+function pinDecision(readR, scored, pin, decwOf) {
+  /* {pinTarget, tgOnPin, withheld} — withheld names why an urgent read did
+     not take the 🎯 (the pinned row still renders, as DEPTH WATCH). */
+  if (!pin) return { pinTarget: null, tgOnPin: false, withheld: "" };
+  if (!readR || !readR.urgent) return { pinTarget: pin, tgOnPin: false, withheld: "" };
+  if (pin.av < 1) return { pinTarget: pin, tgOnPin: false, withheld: `availability ${pin.av}` };
+  const d0 = scored.length ? scored[0].decw : null;
+  const d1 = decwOf(pin.n);
+  if (d0 != null && d1 != null && d0 - d1 > PIN_MAX_GAP)
+    return { pinTarget: pin, tgOnPin: false,
+             withheld: `${(d0 - d1).toFixed(3)} cats/wk behind #1 (limit ${PIN_MAX_GAP})` };
+  return { pinTarget: pin, tgOnPin: true, withheld: "" };
+}
+function survivalChip(ps, dying) {
+  if (!SURVIVAL_DISPLAY) return null;
+  if (dying.length) return "BUY NOW";
+  if (ps <= 0.20) return "BUY NOW";
+  if (ps < 0.40) return "TOSS-UP";
+  return null;
 }
 function normCdf(x) {
   const ax = Math.abs(x) / Math.SQRT2;
@@ -2750,7 +2799,7 @@ const JUDGMENT = {
     const dsAll = decwScores(pool, mine, oppRosters);
     const dsMap = new Map(dsAll.map(x => [x.p.n, x.ds]));
     const ecwMap = new Map(dsAll.map(x => [x.p.n, x.decw]));
-    const scoredAll = councilTop.map(r => {
+    const scoredAll = rankCard(councilTop.map(r => {
       const j = JUDGMENT.players[r.p.n];
       const v = slideBonus(r.p, pickNo);
       return { ...r, adj: j ? j.adj : 0, why: j ? j.why : "",
@@ -2758,12 +2807,10 @@ const JUDGMENT = {
                ds: dsMap.get(r.p.n) ?? -1,
                decw: ecwMap.get(r.p.n) ?? null,
                fs: r.s + (j ? j.adj : 0) + v.bonus };
-    }).sort((a, b) => b.ds - a.ds ||
-      (a.p.n < b.p.n ? 1 : a.p.n > b.p.n ? -1 : 0));
-    /* tie-break = name DESCENDING, matching the validated python reference
-       (decw_card_v2 sorts (score, name) tuples reversed) — exact blend ties
-       are common at the top (percentile quantization) and the parity gate
-       requires deterministic agreement */
+    }));
+    /* order = rankCard (engine block): blend50 desc, ΔECW desc, name desc
+       (D51R-2, 2026-09-21) — exact blend ties are structural and the parity
+       gate requires deterministic agreement; twin in scripts/check_parity.py */
     const scored = scoredAll.slice(0, 5);
     /* Lineup-capacity truth line (owner-reported 2026-08-05: "it wouldn't
        routinely have me load up on 5 or 6 C's"). E22/E22b measured both
@@ -2831,10 +2878,14 @@ const JUDGMENT = {
        marker instead. That is the exact override class the mock ledger
        grades positive (m13/m18/m19 interior CFs). */
     const readR = draftDone() ? null : archetypeRead(st, mine, pool, ranks, pickNo, MKT_RANK);
-    const pinTarget = readR && readR.fam && readR.best &&
+    const pinRaw = readR && readR.fam && readR.best &&
       !scored.some(r => familiesOf(r.p).includes(readR.fam))
       ? PLAYERS.find(p => p.n === readR.best) : null;
-    const tgOnPin = !!(pinTarget && readR.urgent);
+    /* D51R-4 gate (engine pinDecision, 2026-09-21): an urgent read takes the
+       🎯 only at availability 1.0 and within PIN_MAX_GAP cats/wk of #1. */
+    const pinRead = pinDecision(readR, scored, pinRaw, nm => ecwMap.get(nm) ?? null);
+    const pinTarget = pinRead.pinTarget;
+    const tgOnPin = pinRead.tgOnPin;
     for (let i = 0; i < scored.length; i++) {
       const { p, s } = scored[i];
       const li = document.createElement("li");
@@ -2927,17 +2978,17 @@ const JUDGMENT = {
         /* CAN WAIT (ps ≥ 0.60) retired from DISPLAY 2026-07-31 (owner):
            a quiet card means safe to wait. The survival math still fuels
            the 🚌 ladder and the TARGET shelf counts. */
-        let chip = null, why;
-        if (dying.length) {
+        let chip = survivalChip(ps, dying), why;  /* D51R-1: null while SURVIVAL_DISPLAY is off */
+        if (chip && dying.length) {
           chip = "BUY NOW"; why = `${dying.map(f => `${f} shelf: ${shelfNow[f]} in window`).join(", ")} — scarcity beats price`;
         /* Thresholds re-fit to the room-mix model's measured bands
            (2026-08-03 calibration, 840 obs): p<=0.20 leaves 95% of the
            time (BUY), 0.20-0.40 is a genuine coin flip (55% gone: TOSS),
            p>=0.40 survives ~90% (quiet). The old 0.40/0.60 cuts sat in
            the blend's coin-flip zone and dragged BUY precision to 77%. */
-        } else if (ps <= 0.20) {
+        } else if (chip === "BUY NOW") {
           chip = "BUY NOW"; why = `room read — only ~${Math.round(ps * 100)}% chance he survives to your #${nextTurn}`;
-        } else if (ps < 0.40) {
+        } else if (chip === "TOSS-UP") {
           chip = "TOSS-UP"; why = `room read — ~${Math.round(ps * 100)}% chance he survives to your #${nextTurn}`;
         }
         if (chip) {
@@ -3015,7 +3066,7 @@ const JUDGMENT = {
            the Top-5; DEPTH WATCH = informational, the 🎯 above stays the
            pick. Border echoes it: accent when it's the pick, hairline when
            it's a note. */
-        li.style.borderColor = readR.urgent ? "var(--accent)" : "var(--line)";
+        li.style.borderColor = tgOnPin ? "var(--accent)" : "var(--line)";
         li.append(el("span", "rk", "→"));
         const tnm = el("span", "nm", (tgOnPin ? "🎯 " : "") + tp.n + ", " + tp.p);
         tnm.dataset.tip = tgOnPin
@@ -3034,10 +3085,11 @@ const JUDGMENT = {
           : `Same unit as the rows above: marginal expected categories won per week vs the room's CURRENT rosters, shown as this player's margin against #1 on the card. The pin itself is structural (${readR.fam} shelf), not a score claim. Informational: blend50 ${(row.ds * 100).toFixed(1)} of 100 vs #1 ${(scored[0].ds * 100).toFixed(1)}.`;
         li.append(tnm, tsc);
         li.append(el("span", "meta",
-          (readR.urgent
+          (tgOnPin
             ? `LAST CALL ${readR.label} — take over the Top-5 · ${readR.fam} shelf: ${readR.shelfCount} left in the room's next 2 rounds`
             : `DEPTH WATCH ${readR.label} — best ${readR.fam} in reach, info only (🎯 above is the pick)` +
-              (readR.shelfCount !== null ? ` · shelf: ${readR.shelfCount} in window` : "")) +
+              (readR.shelfCount !== null ? ` · shelf: ${readR.shelfCount} in window` : "") +
+              (pinRead.withheld ? ` · urgent read withheld: ${pinRead.withheld}` : "")) +
           ` · #${scoredAll.indexOf(row) + 1} on the card's blend`));
         const take = el("button", "ghost take", deck.mode === "mock" ? "Draft them" : "Stage pick");
         take.type = "button";
@@ -3066,7 +3118,7 @@ const JUDGMENT = {
        C11, 2026-07-31): at m23's fire state the chain claimed ~95%
        survival for a big that vanished in 4 picks — the survival model
        is the component that fails in exactly these states. */
-    if (ladderFam && laterPicks.length && !st.driftLatch) {
+    if (SURVIVAL_DISPLAY && ladderFam && laterPicks.length && !st.driftLatch) {  /* D51R-1 */
       const famAll = [...pool]
         .filter(q => familiesOf(q).includes(ladderFam) && adjValue(q, punt) > 0)
         .sort((a, b) => adjValue(b, punt) - adjValue(a, punt));
