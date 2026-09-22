@@ -11,7 +11,9 @@ and pins three behaviours the retro found wrong or undefined:
           1.0 and within PIN_MAX_GAP cats/week of #1 — measured on the
           committed states (state_51 #58 blocked, mock32 #34 blocked,
           mock32 #63 kept)
-  D51R-1  survivalChip: nothing renders while SURVIVAL_DISPLAY is off, and
+  D51R-1R survival refit (2026-09-22): SURVIVAL_DISPLAY is back on, survivalProb
+          is the price-only model Phi((price - N) / max(8, 0.30 * price)) on the
+          baked Yahoo price, chips BUY NOW <= 0.20 / TOSS-UP < 0.40; and
           the app block's chip / 🚌 paths are gated by it
   D51R-3  punt advisor, advice-only and room-relative: catWinProb /
           puntRead (hysteresis: PUNT_TURNS consecutive owner turns) /
@@ -64,6 +66,7 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   rankCard: typeof rankCard === "function" ? rankCard : null,
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
+  survivalProb: typeof survivalProb === "function" ? survivalProb : null,
   SURVIVAL_DISPLAY: typeof SURVIVAL_DISPLAY === "undefined" ? null : SURVIVAL_DISPLAY,
   PIN_MAX_GAP: typeof PIN_MAX_GAP === "undefined" ? null : PIN_MAX_GAP,
   catWinProb: typeof catWinProb === "function" ? catWinProb : null,
@@ -89,7 +92,8 @@ if (api.rankCard) {
   out.tie = api.rankCard(rows).map(r => r.p.n);
   out.tieNull = api.rankCard([{ p: { n: "Aaron" }, ds: 0.9, decw: null }, { p: { n: "Zed" }, ds: 0.9, decw: null }]).map(r => r.p.n);
 }
-if (api.survivalChip) out.chips = [api.survivalChip(0.01, []), api.survivalChip(0.5, ["C"]), api.survivalChip(0.3, [])];
+if (api.survivalChip) out.chips = [api.survivalChip(0.01, []), api.survivalChip(0.5, ["C"]), api.survivalChip(0.3, []), api.survivalChip(0.7, [])];
+out.surv = api.survivalProb ? [api.survivalProb(60, 40), api.survivalProb(5, 150), api.survivalProb(null, 40), api.survivalProb(120, 100), api.survivalProb(200, 30)] : null;
 out.pins = [];
 if (api.pinDecision && api.rankCard) {
   const { PLAYERS } = api;
@@ -166,12 +170,25 @@ process.stdout.write(JSON.stringify(out));
         case(f"D51R-4 {key[0]} #{key[1]}: urgent pin {'kept' if tg else 'withheld'}"
              + (f" ({frag})" if frag else ""), ok, f"got {p}")
 
-    # ---- D51R-1 survival display off
-    case("D51R-1 SURVIVAL_DISPLAY is defined and false", js.get("SURVIVAL_DISPLAY") is False,
+    # ---- D51R-1R survival refit (2026-09-22): display back on, price-only model
+    case("D51R-1R SURVIVAL_DISPLAY is defined and true", js.get("SURVIVAL_DISPLAY") is True,
          f"got {js.get('SURVIVAL_DISPLAY')}")
-    case("D51R-1 survivalChip renders nothing while the display is off",
-         js.get("chips") == [None, None, None], f"got {js.get('chips')}")
+    case("D51R-1R survivalChip: BUY NOW <= 0.20, dying shelf forces BUY NOW, TOSS-UP < 0.40, nothing above",
+         js.get("chips") == ["BUY NOW", "BUY NOW", "TOSS-UP", None], f"got {js.get('chips')}")
+    sv = js.get("surv")
+    import math as _m
+    def _phi(x): return 0.5 * (1 + _m.erf(x / _m.sqrt(2)))
+    exp60 = _phi((60 - 40) / max(8, 0.30 * 60))
+    case("D51R-1R survivalProb exported: Phi((price - N) / max(8, 0.30 * price)) at (60, 40)",
+         sv is not None and abs(sv[0] - exp60) < 1e-6, f"got {sv} want {exp60:.6f}")
+    case("D51R-1R survivalProb clamps to [0.01, 0.99] and is null without a price",
+         sv is not None and sv[1] == 0.01 and sv[2] is None and sv[4] == 0.99 and abs(sv[3] - _phi(20 / 36)) < 1e-6,
+         f"got {sv}")
     app = html[html.find('<script id="engine">') + 1:]
+    case("D51R-1R the app's survivalP prices off the baked Yahoo price before the market-rank position",
+         "p.mkt != null ? p.mkt : MKT_RANK.get(" in app, "survivalP does not read PLAYERS[].mkt first")
+    case("D51R-1R the room-mix blend is gone from the app (no VAL_RANK survival path)",
+         "SURV_W_VAL" not in app and "survPhi(" not in app, "old blend constants still present")
     case("D51R-1 the app's chip path consults survivalChip", "let chip = survivalChip(" in app,
          "chip block still hard-codes the thresholds")
     case("D51R-1 the 🚌 wait-chain is gated by SURVIVAL_DISPLAY",
