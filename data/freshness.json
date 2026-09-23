@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-22",
-  "note": "2026-09-22 pool completion + v25 (same-day second build): +66 rows from the owner's 9/22 Yahoo top-300 paste (every name researched, two dated outlets; kit carries the same lines) - pool 264 -> 330; survival chips back on the price-only refit (D51R-1R, Brier 0.192 vs 0.651 on the two live rooms); Yahoo 9/22 prices baked (F8). Pull window 9/21-9/22 unchanged from the v24 stamp: zero incumbent placements moved; Duren HELD -0.08 after the $200M offer; Ivey/Lonzo social signings are fakes.",
+  "date": "2026-09-23",
+  "note": "2026-09-23 pull (window 9/22-9/23): Hawks-Hornets trade 9/22 - Hield ATL->CHA, Finney-Smith CHA->ATL (lines held); F6 catch: Steven Adams cleared as a full camp participant (Udoka, 9/22 Rockets media day) - ankle-recovery exclusion -> inj-ankle-risk 0.78; Ingram heel status unclear per Windhorst (note only; media day 9/28); Kawhi 2yr/$115M extension agreed 9/22 (row unchanged); Duren HELD -0.08 (QO branch, Oct 1); Cam Thomas/Ivey/Lonzo still unsigned; MEM cuts still not executed.",
   "pool_changes": {
     "changed": true,
-    "note": "ADDED 66 rows (264 -> 330), all Yahoo top-300 names the deck lacked, at Yahoo's team/positions with Hashtag-8/24 lines scaled to researched roles: Batum + Valanciunas as FA out-* rows, Gueye inj-foot-risk, Bruce Brown + Konchar camp-deal, Mara/Burries/Broome rookie-proj; zero incumbent rows changed."
+    "note": "MOVED 2 placements (Hield ATL->CHA, Finney-Smith CHA->ATL, 9/22 trade); RETAGGED Steven Adams ankle-recovery -> inj-ankle-risk (cleared for camp, first season back); NOTE Ingram heel status unclear; 330 rows, no adds or removals."
   },
   "rosters_verified": {
-    "date": "2026-09-22",
+    "date": "2026-09-23",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }

@@ -71,7 +71,7 @@ Nic Claxton,CHI,C,0.565,9.0,0.580,2.4,0.1,11.0,8.2,2.4,0.9,1.5,1.7,
 Alex Sarr,WAS,"C,PF",0.430,12.5,0.700,2.8,1.4,15.0,7.5,2.8,0.9,1.6,1.9,"inj-foot-risk (June surgery, expected ready)"
 Khaman Maluach,PHX,C,0.560,6.5,0.650,1.8,0.1,9.0,7.5,0.8,0.4,1.4,1.2,rookie-proj
 Yves Missi,NOP,C,0.560,7.5,0.620,2.2,0.0,10.0,8.5,1.5,0.6,1.3,1.4,
-Steven Adams,HOU,C,0.580,4.5,0.550,1.8,0.0,6.5,8.5,1.5,0.5,0.7,1.0,ankle-recovery (out indefinitely)
+Steven Adams,HOU,C,0.580,4.5,0.550,1.8,0.0,6.5,8.5,1.5,0.5,0.7,1.0,inj-ankle-risk (first season back; Grade 3 sprain + Jan 2026 surgery; cleared as a full camp participant at the 9/22 media day per Udoka)
 Clint Capela,HOU,C,0.590,6.0,0.600,1.8,0.0,8.0,8.0,1.0,0.6,1.0,1.1,
 Wendell Carter Jr.,ORL,C,0.525,9.0,0.740,2.6,0.9,12.0,8.5,2.4,0.7,0.7,1.6,
 Goga Bitadze,ORL,C,0.570,6.0,0.650,1.6,0.1,8.5,7.0,1.8,0.7,1.2,1.3,
@@ -83,7 +83,7 @@ Damian Lillard,POR,PG,0.435,17.5,0.920,6.5,3.0,24.0,4.2,7.0,1.0,0.3,2.9,inj-achi
 Fred VanVleet,HOU,PG,0.374,12.5,0.810,2.3,2.5,14.1,3.7,5.6,1.6,0.6,1.6,inj-acl-risk (first season back)
 Dejounte Murray,NOP,PG,0.410,15.0,0.790,3.6,2.0,17.0,5.8,6.5,1.8,0.4,2.8,inj-achilles-risk (14 games last season)
 Paul George,BOS,"SF,PF",0.435,13.5,0.810,2.8,2.2,16.0,5.2,4.2,1.7,0.5,2.4,inj-risk
-Brandon Ingram,LAC,SF,0.470,16.8,0.845,4.8,1.9,22.0,5.5,5.0,0.9,0.6,2.8,traded LAC 2026-09-14 (executed); heel-monitor (right heel spur removed 2026-05-08; expected ready for camp)
+Brandon Ingram,LAC,SF,0.470,16.8,0.845,4.8,1.9,22.0,5.5,5.0,0.9,0.6,2.8,traded LAC 2026-09-14 (executed); heel-monitor (right heel spur removed 2026-05-08; status UNCLEAR pre-camp per ESPN's Windhorst — update expected at media day 9/28)
 Zach LaVine,SAC,"SG,SF",0.505,16.5,0.840,3.8,3.0,22.5,4.5,4.0,0.8,0.2,2.6,
 DeMar DeRozan,DEN,SF,0.475,12.5,0.845,4.2,0.8,16.0,3.4,3.6,0.8,0.5,1.7,
 Jalen Green,PHX,SG,0.430,17.8,0.830,5.0,3.0,21.5,4.4,3.5,0.9,0.3,2.6,
@@ -119,7 +119,7 @@ Moses Moody,GSW,"SG,SF",0.440,9.5,0.820,2.0,1.8,12.0,3.2,1.8,0.8,0.4,1.1,patella
 De'Anthony Melton,GSW,"PG,SG",0.420,9.0,0.780,1.6,1.7,10.5,3.6,3.2,1.5,0.4,1.5,inj-risk
 Keon Ellis,BKN,SG,0.465,8.0,0.830,1.5,1.7,10.5,2.8,2.2,1.4,0.5,1.0,
 Gradey Dick,LAC,"SG,SF",0.440,12.0,0.830,2.6,2.2,15.0,3.6,2.0,0.8,0.3,1.5,traded LAC 2026-09-14 (executed)
-Buddy Hield,ATL,"SG,SF",0.430,9.5,0.820,1.2,2.4,11.5,3.0,1.8,0.7,0.2,1.2,
+Buddy Hield,CHA,"SG,SF",0.430,9.5,0.820,1.2,2.4,11.5,3.0,1.8,0.7,0.2,1.2,traded CHA 2026-09-22 (ATL sent Hield + Ryan Nembhard + cash for Finney-Smith); bench shooter role
 Gary Trent Jr.,MIL,"SG,SF",0.430,9.8,0.830,1.2,2.3,12.0,2.6,1.5,1.0,0.2,1.0,
 Jordan Hawkins,MEM,SG,0.420,10.5,0.850,2.0,2.2,13.0,2.8,1.8,0.8,0.2,1.5,traded MEM 2026-09-08 (four-player NOP-MEM deal clearing room to complete the Mathurin signing)
 Collin Sexton,LAL,"PG,SG",0.470,12.5,0.830,3.4,1.7,16.5,3.0,4.4,0.9,0.1,2.3,
@@ -153,7 +153,7 @@ RJ Barrett,TOR,SF,0.465,15.5,0.630,5.0,1.6,20.5,6.2,5.2,0.9,0.3,2.7,
 Deni Avdija,POR,"SF,PF",0.480,13.0,0.790,4.8,1.7,17.8,7.4,4.2,1.1,0.6,2.7,
 Shaedon Sharpe,POR,SG,0.455,12.0,0.790,2.8,1.9,15.0,3.8,2.6,0.8,0.4,1.8,"knee-recovery (torn meniscus 8/24, ~6mo, ret ~late Feb 2027)"
 Toumani Camara,POR,"SF,PF",0.460,9.0,0.720,2.0,1.5,11.8,5.9,2.3,1.5,0.7,1.5,
-Dorian Finney-Smith,CHA,"SF,PF",0.430,7.5,0.760,1.2,1.6,9.5,4.4,1.5,0.7,0.5,1.0,
+Dorian Finney-Smith,ATL,"SF,PF",0.430,7.5,0.760,1.2,1.6,9.5,4.4,1.5,0.7,0.5,1.0,traded ATL 2026-09-22 (for Hield + Nembhard + cash; a day after Veesaar's torn ACL); reserve PF competing for a rotation spot
 Kelly Oubre Jr.,IND,"SF,SG",0.450,12.0,0.750,3.0,1.5,15.0,5.5,1.8,1.2,0.6,1.7,
 Aaron Nesmith,IND,"SF,PF",0.480,9.5,0.850,2.2,1.9,13.0,4.8,1.5,0.9,0.6,1.1,
 Bennedict Mathurin,NOP,"SG,SF",0.460,10.0,0.835,3.9,1.2,13.9,4.5,1.7,0.6,0.3,1.6,bench-role (NOP rotation reporting 9/9-9/11; sixth-man scoring punch)
