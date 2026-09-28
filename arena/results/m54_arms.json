@@ -1,0 +1,111 @@
+{
+ "as_drafted": {
+  "champ": 49.356,
+  "playoff": 99.73,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#34:Derrick White": {
+  "champ": 50.567,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#39:Derrick White": {
+  "champ": 52.706,
+  "playoff": 99.89,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#58:Tyler Herro": {
+  "champ": 48.622,
+  "playoff": 99.73,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ]
+ },
+ "swap#63:Tyler Herro": {
+  "champ": 48.789,
+  "playoff": 99.71,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Tyler Herro"
+   ]
+  ]
+ },
+ "swap#82:Coby White": {
+  "champ": 52.961,
+  "playoff": 99.87,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Coby White"
+   ]
+  ]
+ },
+ "swap#130:Christian Braun": {
+  "champ": 48.694,
+  "playoff": 99.74,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Christian Braun"
+   ]
+  ]
+ },
+ "swap#135:Christian Braun": {
+  "champ": 56.933,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Christian Braun"
+   ]
+  ]
+ },
+ "swap#154:Brook Lopez": {
+  "champ": 53.25,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Brook Lopez"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 60.106,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    135,
+    "Christian Braun"
+   ]
+  ]
+ }
+}

@@ -76,3 +76,13 @@ is on the author. See LEDGER §3.
   logs the warning and Undo takes it back, and no page error fired. Record:
   `arena/results/veto_dom_check_2026-09-28.json` (mock 51 at #63, where
   Porziņģis had been the 5th row).
+- **Mock 54 (2026-09-28, slot 10).** Graded with the live-room set on its own pool tag
+  (`live_retro.MOCKS[54]`, v28 — `data/players.csv` as of the 9/28 pull build, pinned to git rev
+  b150541 and regenerated as `m54_players_v28.csv` when missing; v25 is now pinned the same way to
+  rev 2e217f9 as `m53_players_v25.csv`, because the live file moved on 9/23 and 9/28). The deck card
+  is replayed from the deck the owner drafted against (`live_deckcard.py 54 rev:b150541:docs/draft-deck.html`,
+  pre-veto); `MOCKS[54]` sets no `veto`, so the replay is the card the owner saw. Outputs `m54_*.json`;
+  `m54_tool_vs_truth.json` is the owner's tool log replayed into its final board and diffed against
+  Yahoo's recap (13 positions off after an UNKNOWN was followed by a fresh feed instead of a
+  `N- Name` fix); `live_debrief_generic.py` renders that diff as a "Tool-state integrity" section
+  whenever the file exists, and its survival and limits wording is now room-generic.
