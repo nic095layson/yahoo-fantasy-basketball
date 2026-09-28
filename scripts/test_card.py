@@ -15,6 +15,14 @@ and pins three behaviours the retro found wrong or undefined:
           is the price-only model Phi((price - N) / max(8, 0.30 * price)) on the
           baked Yahoo price, chips BUY NOW <= 0.20 / TOSS-UP < 0.40; and
           the app block's chip / 🚌 paths are gated by it
+  D54-2   UNKNOWN follow-up (2026-09-28): an unresolved name keeps its raw
+          text; the next resolving name that matches that text fixes the
+          UNKNOWN in place, a non-matching name logs as a new pick with a
+          warning, a gap placeholder never auto-fixes; the strip names every
+          open UNKNOWN
+  D54-1   card-gap echo: a my: pick that is not the 🎯 states its card rank
+          and gap (live hint under the feed + the log line)
+  D54-3   dead-category trap line on the advisor read
   VETO    owner veto list (executive decision 2026-09-28): JUDGMENT.doNotDraft
           names never enter YOUR candidate pool (card / 🎯 / LAST CALL) while
           the room, the resolver, rosters, matrix, category ranks and the mock
@@ -67,6 +75,7 @@ def main():
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
 export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRosters,
   availablePool, marketRanks, myNextPick, familiesOf, teamOfPick,
+  processFeed: typeof processFeed === "function" ? processFeed : null,
   rankCard: typeof rankCard === "function" ? rankCard : null,
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
@@ -180,6 +189,17 @@ if (inp.veto && inp.veto.length) {
   out.veto = { raw5: raw.slice(0, 5), own5: own.slice(0, 5), rawMinusVeto5: raw.filter(nm => !V.has(nm)).slice(0, 5),
                poolN: pool.length, ownN: pool.filter(p => !V.has(p.n)).length, vetoAvail: pool.filter(p => V.has(p.n)).length,
                holder: holder ? +holder[0] : null, ownerSlot53, ranksCats: Object.keys(ranks87 || {}).length };
+}
+/* D54-2 (2026-09-28): UNKNOWN follow-up in the engine's feed parser. */
+out.unk = null;
+if (api.processFeed) {
+  const fresh = () => ({ teams: 12, slot: 10, size: 13, punt: [], picks: [] });
+  const snap = st => st.picks.map(pk => [pk.player, pk.slot, pk.raw ?? null]);
+  const s1 = fresh(); const r1 = api.processFeed(s1, api.PLAYERS, "Nikola Jokic; mamy"); const afterUnk = snap(s1);
+  const r2 = api.processFeed(s1, api.PLAYERS, "Sandro Mamukelashvili"); const afterFix = snap(s1);
+  const s2 = fresh(); const r3 = api.processFeed(s2, api.PLAYERS, "Nikola Jokic; LavineWiggins; Jabari Smith Jr.");
+  const s3 = fresh(); api.processFeed(s3, api.PLAYERS, "3- Luka Doncic"); const r4 = api.processFeed(s3, api.PLAYERS, "Nikola Jokic");
+  out.unk = { afterUnk, afterFix, fixLines: r2.lines.map(l => l.t), s2: snap(s2), s2Lines: r3.lines.map(l => [l.t, l.cls]), s3: snap(s3) };
 }
 process.stdout.write(JSON.stringify(out));
 """.replace("__MOD__", mod).replace("__FIXTURE__", fixture))
@@ -318,6 +338,36 @@ process.stdout.write(JSON.stringify(out));
     case("VETO hoops.py reads the same list from the deck (do_not_draft twin)",
          hasattr(hoops, "do_not_draft") and hoops.do_not_draft() == set(veto or []),
          f"got {getattr(hoops, 'do_not_draft', lambda: None)()}")
+
+    # ---- D54-2 UNKNOWN follow-up (2026-09-28)
+    u = js.get("unk")
+    case("D54-2 processFeed exported from the engine", u is not None, "processFeed absent")
+    case("D54-2 an unresolved name logs UNKNOWN with its raw text kept",
+         bool(u) and len(u["afterUnk"]) == 2 and u["afterUnk"][1][0] == "UNKNOWN #2" and u["afterUnk"][1][2] == "mamy",
+         f"got {u and u['afterUnk']}")
+    case("D54-2 the next resolving name that matches the unknown text fixes it in place (same seat, no new pick)",
+         bool(u) and len(u["afterFix"]) == 2 and u["afterFix"][1][0] == "Sandro Mamukelashvili" and u["afterFix"][1][1] == 2
+         and any("fixed: UNKNOWN" in t for t in u["fixLines"]),
+         f"got {u and (u['afterFix'], u['fixLines'])}")
+    case("D54-2 a non-matching name after an UNKNOWN logs as a new pick and warns that the UNKNOWN is still open",
+         bool(u) and len(u["s2"]) == 3 and u["s2"][1][0] == "UNKNOWN #2" and u["s2"][2][0] == "Jabari Smith Jr."
+         and any("still UNKNOWN" in t and cls == "warn" for t, cls in u["s2Lines"]),
+         f"got {u and (u['s2'], u['s2Lines'])}")
+    case("D54-2 a gap placeholder never auto-fixes",
+         bool(u) and len(u["s3"]) == 4 and u["s3"][0][0] == "UNKNOWN #1" and u["s3"][1][0] == "UNKNOWN #2" and u["s3"][3][0] == "Nikola Jokic",
+         f"got {u and u['s3']}")
+    app4 = html[html.find('<script id="app">') + 1:]
+    case("D54-2 the strip names every open UNKNOWN with the fix syntax", "UNKNOWN open" in app4, "strip badge absent")
+    has_hint, has_gap, has_line = 'id="feedHint"' in html, "function cardGapText" in app4, "off the card:" in app4
+    case("D54-1 a my: pick off the card gets its rank and gap under the feed and in the log line",
+         has_hint and has_gap and has_line, f"feedHint {has_hint}, cardGapText {has_gap}, log line {has_line}")
+    case("D54-3 the advisor read names the dead-category trap against the 🎯",
+         "is dead" in app4 and "don't reach" in app4, "trap sentence absent")
+    sys.path.insert(0, HERE)
+    import hoops as _h  # noqa: E402
+    case("D54-2 hoops.py carries the unknown_matches twin (mamy → Mamukelashvili yes; LavineWiggins → Jabari Smith Jr. no)",
+         hasattr(_h, "unknown_matches") and _h.unknown_matches("mamy", "Sandro Mamukelashvili") and not _h.unknown_matches("LavineWiggins", "Jabari Smith Jr."),
+         "unknown_matches missing or wrong")
 
     print()
     if FAILS:

@@ -86,3 +86,16 @@ is on the author. See LEDGER §3.
   Yahoo's recap (13 positions off after an UNKNOWN was followed by a fresh feed instead of a
   `N- Name` fix); `live_debrief_generic.py` renders that diff as a "Tool-state integrity" section
   whenever the file exists, and its survival and limits wording is now room-generic.
+- **D54 fixes (2026-09-28).** `d54_dom_check.mjs <deck.html> <events.json> <truth.json> <state.json> <out.json>`
+  drives the real page in headless Chromium: (A) replays the owner's mock-54 tool log
+  (`arena/data/events/m54_tool_events.json`, built from the log's feeds, raw UNKNOWN texts,
+  inserts, undos and numbered fixes) through the feed box and diffs the resulting board
+  against Yahoo's recap — with the D54-2 auto-fix the 13-position drift collapses to the one
+  UNKNOWN the owner never fixed (#97), the still-open warning fires and the strip names it;
+  (B) imports the recap at 129 picks, feeds #130–#134 so the advisor's two-turn hysteresis
+  runs as it did live, types `my: Ajay Mitchell` and reads the card-gap hint (D54-1), logs it
+  and reads the log line, and reads the dead-category trap sentence (D54-3). Record:
+  `arena/results/d54_dom_check_2026-09-28.json`. `punt_arms.py <mock> <from_pick> <CATS> [--veto]`
+  is the paired championship test behind D54-3: as drafted vs follow-card from pick N vs a
+  punt-STEERED follow-card (kept-cats-only value and ΔECW), per-seed, with the bar registered in
+  the output (`m54_punt_arms.json`, `m54_punt_arms_veto.json`).

@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-09-28", "pool": 330, "pool_sha256": "9d11cb45ee1e9c27f354f1e23d676dccd9e7b15b18ff69857a56dc09342d7881", "verification_mode": "fallback-partial", "evidence_date": "2026-09-28", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 330, "teams_covered": 30}, "planes": {"kit_sha256": "73777f918d28", "shared": 308, "waived": [], "propagation_armed": true}, "market": {"file": "yahoo-2026-09-22.csv", "date": "2026-09-22", "priced": 296, "of": 330, "age_days": 6}, "freshness_note": "2026-09-28 second build (v29) \u2014 owner veto layer: Kristaps Porzingis is DO NOT DRAFT via JUDGMENT.doNotDraft (never on YOUR card / pin / LAST CALL; stays in \u2026"} -->
+<!-- build-manifest {"built": "2026-09-28", "pool": 330, "pool_sha256": "9d11cb45ee1e9c27f354f1e23d676dccd9e7b15b18ff69857a56dc09342d7881", "verification_mode": "fallback-partial", "evidence_date": "2026-09-28", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 330, "teams_covered": 30}, "planes": {"kit_sha256": "73777f918d28", "shared": 308, "waived": [], "propagation_armed": true}, "market": {"file": "yahoo-2026-09-22.csv", "date": "2026-09-22", "priced": 296, "of": 330, "age_days": 6}, "freshness_note": "2026-09-28 third build (v30) \u2014 three live-room lessons from mock 54: a my: pick off the card shows its card rank and gap under the feed and on the log line \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -328,6 +328,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
                placeholder='type the pick for the seat on the clock'>
         <button class="primary" id="logBtn" type="button">Log</button>
       </div>
+      <p class="hint" id="feedHint" style="margin: 0 0 var(--space-1); min-height: 1.2em;" aria-live="polite"></p>
       <div class="feedrow hidden" id="insertBar">
         <input type="number" id="insNum" min="1" placeholder="#" style="flex: 0 0 4.5em;">
         <input type="text" id="insName" placeholder="missed player — inserts at # and shifts the rest down">
@@ -430,7 +431,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
 <footer class="colophon">
   <p><strong>Data.</strong> Pool refreshed 2026-09-28 under the roster validation lock — 330 rows, every placement cross-checked against the NBA/ESPN-sourced evidence ledger (zero mismatches, 330/330). This refresh (9/28, window 9/23–9/28, ending on league-wide media day): four placements moved. Chicago sent Rob Dillingham to Charlotte for Buddy Hield and cash (reported 9/26–9/27) — Hield’s second trade in five days after Atlanta sent him to Charlotte on 9/22; both lines held on bench roles. Memphis waived D’Angelo Russell on 9/25 and the Clippers waived Johni Broome on 9/24; both rows now read FA, and Russell carries a destination discount until he signs. A correction: Jamal Murray’s Achilles risk tag, added 9/8, is removed — he played 75 games in 2025-26; the ruptured-Achilles profile belonged to Dejounte Murray and was pasted onto Jamal by a search summary. He rises from 27th to 19th on this board. Media day: Kristaps Porzingis is out indefinitely with an undisclosed health issue and will not travel to the Hawaii camp (no timeline; risk tag kept, new −0.10 card); Kon Knueppel strained a hamstring and misses the preseason, likely the first days of the season; Dereck Lively II is not cleared for camp; Santi Aldama is limited — notes only on those three. Jalen Brunson says he is fully cleared (card held at −0.05 through the first camp week). No heel status for Brandon Ingram had surfaced by run time; re-check at the Clippers’ Hawaii camp. Judgment: Duren skipped media day and cannot practice while unsigned — HELD at −0.08 with the qualifying-offer deadline Oct 1; Cam Thomas, Ivey and Lonzo still unsigned (Lonzo denied a 9/23 retirement report); Sochan still in Portland’s camp battle. Stephen Curry signed a two-year extension (row unchanged). The Mkt rank carries Yahoo’s own 9/22 ADP (XRank where Yahoo lists no ADP), baked in from the paste — 296 of the 330 rows priced, the internal model orders only the unpriced tail; a fresh Yahoo paste in early October replaces it. The ⏱ BUY NOW / TOSS-UP chips and the 🚌 wait-chain run on the price-only survival model refit on the live rooms (see Logic). The punt advisor is advice-only, room-relative with hysteresis. The live-draft resolver logs an opponent’s pick VERBATIM when the named player has no pool row: only YOUR recommendations need pool data.</p>
-  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers and the 🚌 wait-chain are back (<em>refit 2026-09-22</em>): the room-mix survival model behind them was fit on value-drafting mock seats and, across the first two live human rooms from the real seat, read BUY NOW on 93 of 98 scored rows while 65 of those players survived to the next turn (Brier 0.651; suspended 2026-09-21 in between) — the refit prices survival off Yahoo's own price alone (ADP, else XRank; Φ((price − N)/max(8, 0.30·price)); Brier 0.192 on the same rows, quiet rows survived 40 of 43, BUY NOW gone 10 of 15, TOSS-UP a coin flip), so read BUY NOW as two-in-three, not a certainty; the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty — since 2026-09-21 only if that player carries no availability multiplier and sits within 0.05 cats/week of the #1's ΔECW (mock 51 retro: the override had pinned a 0.78-availability center 0.14 cats/week behind a hindsight-best #1); exact blend ties order by ΔECW before name (same retro: 2 of 13 turns on the deck drafted against were decided alphabetically); a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported); the same read also pins a sixth row under the Top-5 when its family made none of them — <em>LAST CALL</em> when urgent (the 🎯 moves onto it: take it over the Top-5) or <em>DEPTH WATCH</em> when informational (the 🎯 above stays the pick), named 2026-08-10 on owner request. The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster) — since 2026-09-21 it and the punt advisor read the <em>room</em>: expected weekly category wins from the same weekly model the card scores with, not 13-man z-sum ranks (mock 51 retro: the old read proposed punting turnovers while the roster was beating 76% of the room in them), a lean must hold on two consecutive owner turns before the advisor says the word, and both are <em>advice only</em> — no button writes the punt box (the FULL TILT / Adopt / Retarget buttons sit behind <code>PUNT_BUTTONS</code>, off). The style/archetype layer runs internally (TARGET) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until a Yahoo price paste replaces the proxy (F8, 2026-09-22: the build bakes Yahoo ADP, else XRank, into the Mkt rank whenever the kit carries a paste; the header tooltip says which this build is). The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. An owner veto list (<code>JUDGMENT.doNotDraft</code>; 2026-09-28: Porziņģis, the owner's call) removes names from YOUR candidate pool only — the card, the 🎯 and the LAST CALL row never show them — while the room, the resolver, rosters, the matrix, category ranks and the mock AIs keep seeing them; the Best-available table marks them ⛔ DO NOT DRAFT and a my: pick of one logs a warning, not a refusal. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
+  <p><strong>Logic.</strong> The board, punt math, feed parsing, and council ruleset are ports of <code>scripts/hoops.py</code> / <code>arena/arena.py</code>, verified against engine output at build time; z-scores standardize over the draftable top-156 (replacement-anchored, codified 2026-07-30). Every layer beyond the composite ranking is <em>display-only and causally tested</em>: Strengths/Weaknesses are your live category ranks vs the field (🔒 = dominated); the ⏱ BUY NOW / TOSS-UP markers and the 🚌 wait-chain are back (<em>refit 2026-09-22</em>): the room-mix survival model behind them was fit on value-drafting mock seats and, across the first two live human rooms from the real seat, read BUY NOW on 93 of 98 scored rows while 65 of those players survived to the next turn (Brier 0.651; suspended 2026-09-21 in between) — the refit prices survival off Yahoo's own price alone (ADP, else XRank; Φ((price − N)/max(8, 0.30·price)); Brier 0.192 on the same rows, quiet rows survived 40 of 43, BUY NOW gone 10 of 15, TOSS-UP a coin flip), so read BUY NOW as two-in-three, not a certainty; the single 🎯 marks the system pick — the top blend50 score (50% marginal weekly-cats-won vs the room + 50% balanced value, deliberately punt-blind; per-player punt numbers ride the blue chips), or an urgent structural TARGET when a needed family's shelf is nearly empty — since 2026-09-21 only if that player carries no availability multiplier and sits within 0.05 cats/week of the #1's ΔECW (mock 51 retro: the override had pinned a 0.78-availability center 0.14 cats/week behind a hindsight-best #1); exact blend ties order by ΔECW before name (same retro: 2 of 13 turns on the deck drafted against were decided alphabetically); a TARGET label always reflects a roster need, while the same read renders as BOARD LEAN when it only describes what the board is offering (provenance split 2026-08-03, owner-reported); the same read also pins a sixth row under the Top-5 when its family made none of them — <em>LAST CALL</em> when urgent (the 🎯 moves onto it: take it over the Top-5) or <em>DEPTH WATCH</em> when informational (the 🎯 above stays the pick), named 2026-08-10 on owner request. The build-coherence strip checks your declared targets against every single-swap alternative on the roster as drafted (ON TARGET / OFF TARGET / WRONG TARGETS; added 2026-08-05 after mock 32 punted steals over a rank-3-steals roster) — since 2026-09-21 it and the punt advisor read the <em>room</em>: expected weekly category wins from the same weekly model the card scores with, not 13-man z-sum ranks (mock 51 retro: the old read proposed punting turnovers while the roster was beating 76% of the room in them), a lean must hold on two consecutive owner turns before the advisor says the word, and both are <em>advice only</em> — no button writes the punt box (the FULL TILT / Adopt / Retarget buttons sit behind <code>PUNT_BUTTONS</code>, off). The style/archetype layer runs internally (TARGET) and never prescribes the punt box, because punt-<em>declaring</em> measured −5 to −11pp on the original instrument (−3.1 to −6.4pp re-measured on the corrected bench weight, 2026-08-10 — direction survives at every calibration). Mock opponents are the 11 named league-mates (three-season behavioral profiles, E18); the synthetic market carries only ~0.45× the real board's divergence, so expect REAL rooms to produce deeper star falls than mocks until a Yahoo price paste replaces the proxy (F8, 2026-09-22: the build bakes Yahoo ADP, else XRank, into the Mkt rank whenever the kit carries a paste; the header tooltip says which this build is). The judgment layer (per-player adjustments, ~marked estimates) is re-authored with each republish — enforced by build gate 5, which refuses any build whose judgment date trails the pull — and never applied to the mock AIs. An owner veto list (<code>JUDGMENT.doNotDraft</code>; 2026-09-28: Porziņģis, the owner's call) removes names from YOUR candidate pool only — the card, the 🎯 and the LAST CALL row never show them — while the room, the resolver, rosters, the matrix, category ranks and the mock AIs keep seeing them; the Best-available table marks them ⛔ DO NOT DRAFT and a my: pick of one logs a warning, not a refusal. Three live-room lessons from mock 54 (2026-09-28): a my: pick that is not the 🎯 shows its card rank and gap under the feed as you type and on the log line — from round 9 on the card beat such picks 15 of 16 times across four rooms, so the owner's rule is to take the 🎯 there; the pick typed right after an UNKNOWN fixes that UNKNOWN in place when it matches the unknown text, otherwise it logs and the status strip keeps naming every open UNKNOWN until it is fixed; and when the advisor calls a category dead, the read names the reach it is warning against — the best remaining player in that category against the 🎯. Full evidence trail: <code>arena/results/</code>. Draft state autosaves in this browser; export <code>draft_state.json</code> for post-draft analysis.</p>
   <p class="hint"><strong>Feed syntax.</strong> Semicolons between picks, in draft order. Prefix yours with <code>my:</code>. A number corrects a logged pick (<code>44- Herro</code>) or back-fills a gap; <code>108+ Queta</code> <em>inserts</em> a missed pick at #108 and shifts the rest down (or use the Insert-at-# button). Nicknames and typos resolve. For shared surnames — this pool has 18, derived mechanically 2026-08-10: Johnson ×4; Williams, Thompson, Murray, George ×3; Mitchell, Jackson, Brown, White, Ball, Allen, Robinson, Sharpe, Green, Porter, Bridges, Jones, Wilson ×2 — feed first initial + surname: <code>D White</code>, <code>Jam Murray</code>. In a mock, the box remembers what you sent at each pick — undo back to a pick and your last input there is restored.</p>
 </footer>
 </div>
@@ -737,6 +738,19 @@ function surnameKey(name) {
 
 /* Port of hoops.match_candidates: exact > nickname > exact word > substring
    > fuzzy surname (first letter must agree, ratio >= 0.8). */
+/* D54-2 (2026-09-28, mock 54): does a newly resolved name look like the
+   player an UNKNOWN placeholder was trying to name? True when a token of the
+   name starts with the unknown text's first three letters, or the whole name
+   contains the unknown text — "mamy" → Mamukelashvili yes; "LavineWiggins"
+   → Jabari Smith Jr. no. Shared with hoops.unknown_matches. */
+function unknownMatches(raw, name) {
+  const r = fold(String(raw || "")).split(/\s+/).filter(Boolean);
+  const t = fold(String(name || "")).split(/\s+/).filter(Boolean);
+  if (!r.length || !t.length) return false;
+  const rj = r.join("");
+  if (rj.length >= 3 && t.join("").includes(rj)) return true;
+  return r.some(a => a.length >= 3 && t.some(b => b.startsWith(a.slice(0, 3))));
+}
 function matchCandidates(players, query) {
   let q = fold(query.trim());
   /* draft_state_48 follow-up: pasted names often carry a trailing team tag
@@ -875,7 +889,7 @@ function processFeed(state, players, feed) {
         say(`⚠ HALTED at "${raw}": 3+ corrections in one batch suggests numbering drift, not fixes. NO changes from this batch were applied. Verify against the draft room, then resend the whole batch.`, "halt");
         return { lines, halted: true };
       }
-      picks[idx].player = cands[0].n;
+      picks[idx].player = cands[0].n; delete picks[idx].raw;
       taken.delete(old); taken.add(cands[0].n);
       say(`  ✎ #${num} corrected: ${old} → ${cands[0].n}`);
       continue;
@@ -916,8 +930,26 @@ function processFeed(state, players, feed) {
     }
     if (cands.length) {
       const p = exact.length ? exact[0] : cands.reduce((a, b) => adjValue(b, noPunt) > adjValue(a, noPunt) ? b : a);
+      /* D54-2 (2026-09-28, mock 54): the pick typed right after an UNKNOWN is
+         usually the owner re-typing that same player. When the new name
+         matches the unknown's raw text, FIX the UNKNOWN in place instead of
+         logging pick n+1 — the drift that put eleven picks one seat late.
+         Otherwise log normally and say the UNKNOWN is still open. Gap
+         placeholders carry no raw text and never auto-fix; a numbered feed
+         is taken literally. */
+      const prevPick = picks.length ? picks[picks.length - 1] : null;
+      const prevOpen = prevPick && prevPick.player.startsWith("UNKNOWN") ? prevPick : null;
+      if (prevOpen && num === null && prevOpen.raw && unknownMatches(prevOpen.raw, p.n)) {
+        const k = picks.length, rawWas = prevOpen.raw;
+        prevOpen.player = p.n; delete prevOpen.raw;
+        taken.add(p.n);
+        say(`  ✎ #${k} fixed: UNKNOWN ("${rawWas}") → ${p.n} — matched the unknown text; "${k}- Name" to change`);
+        continue;
+      }
       picks.push({ player: p.n, slot });
       taken.add(p.n);
+      if (prevOpen)
+        say(`⚠ #${picks.length - 1} is still UNKNOWN${prevOpen.raw ? ` ("${prevOpen.raw}")` : ""} — fix with: ${picks.length - 1}- Name`, "warn");
       const you = slot === state.slot ? " (YOU)" : "";
       const losers = cands.filter(c => c !== p).slice(0, 2).map(c => c.n);
       const gone = allC.filter(c => taken.has(c.n) && c.n !== p.n).slice(0, 2).map(c => c.n);
@@ -931,7 +963,7 @@ function processFeed(state, players, feed) {
     } else if (allC.length) {
       say(`⚠ skipped "${name}": already off the board (no pick logged)`, "warn");
     } else {
-      picks.push({ player: `UNKNOWN #${n + 1}`, slot });
+      picks.push({ player: `UNKNOWN #${n + 1}`, slot, raw: name });
       say(`⚠ (R${Math.floor(n / state.teams) + 1}) #${n + 1}: UNKNOWN ("${name}": no match) — fix with: ${n + 1}- Name`, "warn");
     }
   }
@@ -1734,11 +1766,39 @@ const JUDGMENT = {
      table) keeps availablePool, so the room still sees them. */
   const VETO = new Set(JUDGMENT.doNotDraft || []);
   function ownerPool(st) { return availablePool(st, PLAYERS).filter(p => !VETO.has(p.n)); }
+  /* D54-1 (2026-09-28): the card as last rendered, so a my: pick can be
+     placed against it BEFORE it is logged — under the feed as you type and
+     on the log line. Across the four live rooms the card beat the owner's
+     round-9+ deviations 15 of 16 times (arena arms, mocks 51–54); the
+     owner's rule from D54-1: from round 9 on, take the 🎯. */
+  let LAST_CARD = null;
+  function cardGapText(name) {
+    if (!LAST_CARD || !LAST_CARD.rows.length) return null;
+    const top = LAST_CARD.rows[0];
+    const row = LAST_CARD.rows.find(r => r.n === name);
+    if (!row || row.rank === 1) return null;
+    const gap = Math.max(0, top.ds - row.ds).toFixed(3);
+    const late = LAST_CARD.pickNo > 8 * deck.state.teams ? " — round-9+ rule (D54-1): take the 🎯" : "";
+    return `off the card: ${name} ranks #${row.rank} (${gap} behind 🎯 ${top.n})${late}`;
+  }
+  function feedHint() {
+    const h = $("feedHint");
+    if (!h || !deck) return;
+    const v = $("feed").value.trim();
+    if (!v.toLowerCase().startsWith("my:")) { h.textContent = ""; return; }
+    const q = v.slice(3).trim();
+    if (q.length < 3) { h.textContent = ""; return; }
+    const taken = new Set(deck.state.picks.map(pk => pk.player));
+    const cands = matchCandidates(PLAYERS, q).filter(c => !taken.has(c.n));
+    const exact = cands.filter(c => c.n.toLowerCase() === q.toLowerCase());
+    const p = exact[0] || (cands.length === 1 ? cands[0] : null);
+    h.textContent = p ? (cardGapText(p.n) || `${p.n} is the 🎯`) : "";
+  }
 
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-09-28"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "2026-09-28 second build (v29) \u2014 owner veto layer: Kristaps Porzingis is DO NOT DRAFT via JUDGMENT.doNotDraft (never on YOUR card / pin / LAST CALL; stays in the pool for the room, the resolver, rosters, matrix and mock AIs; Best-available marks him; a my: pick warns). Pool unchanged from the v28 pull build (9d11cb45): Bulls-Hornets trade 9/26 (Hield CHA->CHI, Dillingham CHI->CHA), DLo + Broome waived, Jamal Murray tag removed (garble), media-day notes; see after-report-2026-09-28.";
+  const BUILD_NOTE = "2026-09-28 third build (v30) \u2014 three live-room lessons from mock 54: a my: pick off the card shows its card rank and gap under the feed and on the log line (round-9+ rule: take the pin); the pick typed right after an UNKNOWN fixes that UNKNOWN in place when it matches the unknown text, else logs with a warning, and the strip names every open UNKNOWN; the advisor's dead-category read names the reach it warns against. Pool unchanged from v28 (9d11cb45); veto (v29) unchanged. Arena: a punt-steered card from #63 on the mock-54 room scored -6.8 pp vs the unsteered card (0 of 3 seeds met the bar) - advisor stays advice-only.";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -1965,6 +2025,7 @@ const JUDGMENT = {
   /* ---------- feed ---------- */
   $("logBtn").addEventListener("click", runFeed);
   $("feed").addEventListener("keydown", e => { if (e.key === "Enter") runFeed(); });
+  $("feed").addEventListener("input", feedHint);
   /* Per-pick input memory (owner request 2026-08-05): in a mock run the
      text sent at each overall pick number is kept on the saved deck, so
      returning to that pick (undo, reload) restores it into the box.
@@ -1984,7 +2045,14 @@ const JUDGMENT = {
     for (const pk of deck.state.picks)
       if (pk.slot === deck.state.slot && VETO.has(pk.player) && !ownBefore.has(pk.player))
         log(`⚠ ${pk.player} is on your DO NOT DRAFT list (owner veto 2026-09-28) — logged as sent; Undo if that was not you`, "warn");
+    /* D54-1: an off-card my: pick states its card rank and gap on the log line */
+    for (const pk of deck.state.picks)
+      if (pk.slot === deck.state.slot && !ownBefore.has(pk.player)) {
+        const g = cardGapText(pk.player);
+        if (g) log(`⚠ ${g}`, "warn");
+      }
     $("feed").value = "";
+    if ($("feedHint")) $("feedHint").textContent = "";
     save();
     if (!res.halted && deck.mode === "mock") advanceAI();
     renderAll();
@@ -2701,6 +2769,8 @@ const JUDGMENT = {
       strip.append(el("span", "", `Draft complete — ${total} picks`),
         el("span", "you", `your roster: Team ${st.slot}`),
         el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"));
+      const ub = unknownBadge(st);
+      if (ub) strip.append(ub);   /* D54-2: an open UNKNOWN still hides a player after the last pick */
       return;
     }
     const clock = clockRead(st);   /* M53: one engine read for the clock (see clockRead) */
@@ -2741,21 +2811,22 @@ const JUDGMENT = {
       el("span", "", st.punt.length ? "punting " + st.punt.join(", ") : "no punt"),
       el("span", "", `${availablePool(st, PLAYERS).length} available`)
     );
+    const ub = unknownBadge(st);
+    if (ub) strip.append(ub);
+  }
+  /* D54-2 (2026-09-28, mock 54): #97 sat UNKNOWN for 59 picks — name EVERY
+     open one, every render (draft complete included), with the exact fix.
+     (draft_state_49 precedent: an UNKNOWN at pick 81 sat unfixed for 75
+     picks and the board treated that player as available the whole time.) */
+  function unknownBadge(st) {
     const unk = unknownCount(st);
-    if (unk) {
-      /* draft_state_49: an UNKNOWN at pick 81 sat unfixed for 75 picks and
-         the board treated that player as available the whole time. Name the
-         stale ones (>= 12 picks old) so they get fixed mid-draft. */
-      const stale = st.picks
-        .map((pk, i) => (pk.player.startsWith("UNKNOWN") && n - i >= 12) ? i + 1 : 0)
-        .filter(Boolean);
-      const nudge = stale.length
-        ? ` — pick ${stale.join(", ")} still unfixed: send ${stale[0]}- Name`
-        : "; fix with n- Name";
-      const w = el("span", "you", `⚠ ${unk} UNKNOWN — ranks exclude them${nudge}`);
-      w.style.color = "var(--status-risk)";
-      strip.append(w);
-    }
+    if (!unk) return null;
+    const open = st.picks
+      .map((pk, i) => pk.player.startsWith("UNKNOWN") ? i + 1 : 0)
+      .filter(Boolean);
+    const w = el("span", "you", `⚠ ${unk} UNKNOWN open: ${open.map(k => "#" + k).join(", ")} — fix with ${open[0]}- Name (ranks exclude them)`);
+    w.style.color = "var(--status-risk)";
+    return w;
   }
   function el(tag, cls, text) {
     const e = document.createElement(tag);
@@ -2781,6 +2852,7 @@ const JUDGMENT = {
   }
 
   function renderDecision() {
+    let advisorLine = null;  /* D54-3: the advised read, for the trap sentence once the 🎯 is known */
     const st = deck.state;
     const punt = new Set(st.punt);
     const kept = CATS.filter(c => !punt.has(c));
@@ -2811,6 +2883,7 @@ const JUDGMENT = {
       const p = el("p", cls, text);
       p.dataset.tip = "Room-relative punt read (D51R-3, 2026-09-21): each category's share of the room this roster beats in a typical week, from the same weekly model the card's ΔECW half uses — not the 13-man z-sum rank, which in mock 51 read TO as 11th while the roster was beating 76% of the room in it. Never writes the punt box.";
       meta.append(p);
+      advisorLine = read.advise ? { el: p, cats: read.punt } : null;
       if (PUNT_BUTTONS && read.advise && read.clear) {
         const b = el("button", "adopt fulltilt", `PUNT BUILD → ${read.punt.join("·")} — FULL TILT`);
         b.type = "button";
@@ -3002,6 +3075,20 @@ const JUDGMENT = {
        (D51R-2, 2026-09-21) — exact blend ties are structural and the parity
        gate requires deterministic agreement; twin in scripts/check_parity.py */
     const scored = scoredAll.slice(0, 5);
+    LAST_CARD = { pickNo, rows: scoredAll.map((r, i) => ({ n: r.p.n, rank: i + 1, ds: r.ds })) };  /* D54-1 */
+    /* D54-3 (2026-09-28): when the advisor calls a category dead, name the
+       trap in front of you — the best remaining player in that category vs
+       the 🎯 — so the advice reads "don't reach", not "punt". Mock 54 #135:
+       Ajay Mitchell (assists) over Braun cost 7.6 championship points. */
+    if (advisorLine && scored.length) {
+      const top = scored[0].p;
+      for (const c of advisorLine.cats) {
+        const best = pool.slice().sort((a, b) => b.z[c] - a.z[c])[0];
+        if (!best || best.n === top.n) continue;
+        const rk = scoredAll.findIndex(r => r.p.n === best.n) + 1;
+        advisorLine.el.textContent += ` ${c} is dead — don't reach: ${best.n} (best ${c} left, card #${rk || "—"}) does not beat 🎯 ${top.n}; the card already prices ${c}.`;
+      }
+    }
     /* Lineup-capacity truth line (owner-reported 2026-08-05: "it wouldn't
        routinely have me load up on 5 or 6 C's"). E22/E22b measured both
        reordering fixes and both failed their registered bars, so the card

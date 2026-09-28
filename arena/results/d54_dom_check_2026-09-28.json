@@ -1,0 +1,28 @@
+{
+ "deck": "docs/draft-deck.html",
+ "replay": {
+  "picks": 156,
+  "positionsDiffering": 1,
+  "diff": [
+   [
+    97,
+    "UNKNOWN #97",
+    "Andrew Wiggins"
+   ]
+  ],
+  "fixedLines": 1,
+  "stillOpenWarned": true,
+  "stripNamesOpen": true,
+  "strip": "Draft complete — 156 picks\nyour roster: Team 10\nno punt\n⚠ 1 UNKNOWN open: #97 — fix with 97- Name (ranks exclude them)"
+ },
+ "at135": {
+  "hint": "off the card: Ajay Mitchell ranks #33 (0.176 behind 🎯 Christian Braun) — round-9+ rule (D54-1): take the 🎯",
+  "hintOffCard": true,
+  "hintLateRule": true,
+  "logLine": true,
+  "trapSentence": true,
+  "advisorExcerpt": "AST is dead — don't reach: Isaiah Collier (best AST left, card #84) does not beat 🎯 Christian Braun; the card already prices AST."
+ },
+ "pageErrors": [],
+ "pass": true
+}

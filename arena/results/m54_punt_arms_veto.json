@@ -1,0 +1,70 @@
+{
+ "mock": 54,
+ "from_pick": 63,
+ "punt": [
+  "AST"
+ ],
+ "veto": [
+  "Kristaps Porzingis"
+ ],
+ "arms": {
+  "as_drafted": {
+   "champ": 49.356,
+   "playoff": 99.73,
+   "per_seed": {
+    "11": 49.733,
+    "23": 49.2,
+    "47": 49.133
+   },
+   "swaps": []
+  },
+  "follow_card_from63": {
+   "champ": 56.933,
+   "playoff": 99.94,
+   "per_seed": {
+    "11": 56.917,
+    "23": 57.167,
+    "47": 56.717
+   },
+   "swaps": [
+    [
+     130,
+     "Christian Braun"
+    ],
+    [
+     135,
+     "Tari Eason"
+    ]
+   ]
+  },
+  "follow_card_from63_puntAST": {
+   "champ": 47.978,
+   "playoff": 99.76,
+   "per_seed": {
+    "11": 47.433,
+    "23": 48.583,
+    "47": 47.917
+   },
+   "swaps": [
+    [
+     63,
+     "Jarrett Allen"
+    ],
+    [
+     111,
+     "Christian Braun"
+    ],
+    [
+     135,
+     "Aaron Nesmith"
+    ]
+   ]
+  }
+ },
+ "verdict": {
+  "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+  "seeds_meeting_bar": 0,
+  "steered_minus_unsteered_pp": -8.955,
+  "passes": false
+ }
+}
