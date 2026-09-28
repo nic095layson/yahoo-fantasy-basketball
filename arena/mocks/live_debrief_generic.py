@@ -13,6 +13,12 @@ sys.path.insert(0, REPO + "/scripts"); sys.path.insert(0, HERE)
 import hoops  # noqa: E402
 MOCK, OUT = int(sys.argv[1]), sys.argv[2]
 LABEL = sys.argv[3] if len(sys.argv) > 3 else "deck (current main)"
+import os as _os
+_RES = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "results")
+INSERT_NOTE = (f" incl. the tool's inserts, unknown-name fixes and undos — `m{MOCK}_insert_integrity.json`"
+               if _os.path.exists(_os.path.join(_RES, f"m{MOCK}_insert_integrity.json")) else "")
+_TVT = _os.path.join(_RES, f"m{MOCK}_tool_vs_truth.json")
+TOOL_VS_TRUTH = json.load(open(_TVT, encoding="utf-8")) if _os.path.exists(_TVT) else None
 R = os.path.join(REPO, "arena", "results")
 J = lambda name: json.load(open(os.path.join(R, f"m{MOCK}_{name}.json"), encoding="utf-8"))
 STATE = os.path.join(REPO, "arena", "data", "states", f"draft_state_{MOCK}.json")
@@ -37,8 +43,7 @@ turns = sorted(rep); H = {x["pick"]: x for x in hs["turns"]}
 def brier_base(rows, alive): p = alive / rows; return p * (1 - p) ** 2 + (1 - p) * p ** 2
 L = [f"# Mock {MOCK} debrief — slot {SLOT}, live public room, {LABEL}", ""]
 L.append(f"**Fingerprint.** owner slot {SLOT}, {len(state['picks'])} picks, Yahoo public mock; state `arena/data/states/draft_state_{MOCK}.json` "
-         f"(md5 `{md5}`), reconciled pick-by-pick against Yahoo's recap (156/156 incl. the tool's inserts, unknown-name fixes and undos — "
-         f"`m{MOCK}_insert_integrity.json`). Pool tag `{TAG}`; poolless names in this room: {', '.join(fin.get('missing', [])) or 'none'}. "
+         f"(md5 `{md5}`), reconciled pick-by-pick against Yahoo's recap ({len(state['picks'])}/{len(state['picks'])}{INSERT_NOTE}). Pool tag `{TAG}`; poolless names in this room: {', '.join(fin.get('missing', [])) or 'none'}. "
          f"Punt box: {'none declared' if not state.get('punt') else ', '.join(state['punt'])}.")
 L.append("")
 L.append("**Method.** Card reconstructed two ways at every owner turn (Python port `live_retro.py replay`; the deck's own JS under node, "
@@ -86,11 +91,11 @@ L.append(""); L.append("## Punt advisor (room-relative read, D51R-3)"); L.append
 leans = [x for x in adv if x["moment"] == "pre" and x.get("new_lean")]
 L.append(f"Box empty all draft. Room-relative lean at {len(leans)} of {len([x for x in adv if x['moment'] == 'pre'])} owner turns: "
          + ("; ".join(f"#{x['pick']} {'+'.join(x['new_lean'])}" + (" (advise)" if x.get("new_advise") else "") for x in leans) if leans else "none") + ".")
-L.append(""); L.append("## Survival chips — first out-of-sample room for the price-only refit (D51R-1R)"); L.append("")
+L.append(""); L.append("## Survival chips — out-of-sample room for the price-only refit (D51R-1R)"); L.append("")
 tr, po = sv["this_room"], sv["pooled"]
 L.append("| room | rows | mean predicted | realized | Brier | constant-base-rate Brier |"); L.append("|---|---|---|---|---|---|")
 L.append(f"| mock {MOCK} (out of sample) | {tr['rows']} | {tr['mean_pred']:.3f} | {tr['realized']:.3f} | **{tr['brier']:.3f}** | {brier_base(tr['rows'], tr['alive']):.3f} |")
-L.append(f"| pooled with mocks 51 + 52 (refit cards) | {po['rows']} | {po['mean_pred']:.3f} | {po['realized']:.3f} | {po['brier']:.3f} | {brier_base(po['rows'], po['alive']):.3f} |")
+L.append(f"| pooled with every earlier scored room | {po['rows']} | {po['mean_pred']:.3f} | {po['realized']:.3f} | {po['brier']:.3f} | {brier_base(po['rows'], po['alive']):.3f} |")
 L.append("")
 for lab, d in (("this room", tr), ("pooled", po)):
     bn, ts, qn = d["by_chip"].get("BUY NOW", {}), d["by_chip"].get("TOSS-UP", {}), d["by_chip"].get("None", {})
@@ -98,9 +103,19 @@ for lab, d in (("this room", tr), ("pooled", po)):
 L.append(""); L.append("## Championship arms (18,000 CRN seasons each)"); L.append(""); L.append("| arm | champ% | playoff% | rank | swaps |"); L.append("|---|---|---|---|---|")
 for k, a in sorted(arms.items(), key=lambda kv: -kv[1]["champ"]):
     L.append(f"| {k} | {a['champ']:.2f} | {a['playoff']:.2f} | {a['champ_rank']} | {', '.join(f'#{n} {x}' for n, x in a['swaps']) or '—'} |")
+if TOOL_VS_TRUTH:
+    tv = TOOL_VS_TRUTH
+    L.append(""); L.append("## Tool-state integrity — the deck's board vs Yahoo's recap"); L.append("")
+    L.append(f"The owner's tool log replayed into its final board ({len(tv['tool_final'])} picks) and diffed position by position against the recap: "
+             f"**{len(tv['diff'])} position(s) differ**; the owner's own roster is {'identical' if tv['owner_identical'] else 'NOT identical'}. "
+             f"Recap names missing from the tool board: {', '.join(tv['missing']) or 'none'}; tool names not in the recap: {', '.join(tv['extra']) or 'none'}.")
+    if tv["diff"]:
+        L.append(""); L.append("| # | tool board | Yahoo recap | seat |"); L.append("|---|---|---|---|")
+        for k, a, b, seat in tv["diff"]:
+            L.append(f"| {k} | {a} | {b} | {seat} |")
 L.append(""); L.append("## Limits"); L.append("")
 L.append("- Random public room, not the league cast: the field's weakness is in every denominator above.")
-L.append(f"- Lines are the current pool ({TAG}); the room may have drafted against the previous same-day build (v24) — identical prices, 66 fewer rows.")
+L.append(f"- Lines are the pool the room drafted against (tag `{TAG}`); a later same-day build can differ in judgment or veto, never in lines.")
 L.append("- Hindsight is single-swap on current lines: an upper bound on what a different pick was worth, not a strategy.")
 open(OUT, "w", encoding="utf-8").write("\n".join(L) + "\n")
 print(f"wrote {OUT}: champ {me['champ']:.2f}% rank {me['champ_rank']}; ECW {fin['ecw'][str(SLOT)]:.3f} rank {fin['ecw_rank']}; board rank {board_rank}; survival OOS Brier {tr['brier']:.3f} vs base {brier_base(tr['rows'], tr['alive']):.3f}")

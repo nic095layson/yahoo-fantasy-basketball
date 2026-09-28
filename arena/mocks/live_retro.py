@@ -30,12 +30,19 @@ import hoops  # noqa: E402
 import arena  # noqa: E402  (its own hoops instance reads the frozen snapshot; unused here)
 
 CATS = hoops.CATS
-POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv", "v25": DECK + "/data/players.csv"}
+POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
+         "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
-# v25 = data/players.csv as of the 2026-09-22 pool completion (mock 53).
+# v25 = data/players.csv as of the 2026-09-22 pool completion (mock 53; sha
+# c6d6b4fc61d9) — pinned to git rev 2e217f9 on 2026-09-28, because the live file
+# moved on 9/23 (Adams retag, Hield/Finney-Smith) and again on 9/28.
+# v28 = data/players.csv as of the 2026-09-28 pull build (mock 54; sha
+# 9d11cb45ee1e), pinned to rev b150541 the same way.
 V23_REV = "f724435"
+V25_REV = "2e217f9"
+V28_REV = "b150541"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -45,6 +52,10 @@ MOCKS = {
     51: dict(tags=("v22", "v23"), v22_rev="e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b"),
     52: dict(tags=("v23",)),
     53: dict(tags=("v25",)),
+    # mock 54 (2026-09-28, slot 10): drafted on the v28 pull deck BEFORE the
+    # owner veto landed (PR #45), so veto=False — the replay is the card the
+    # owner saw. Rooms drafted on v29+ set veto=True.
+    54: dict(tags=("v28",)),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -62,11 +73,12 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-if not os.path.exists(POOLS["v23"]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
-    import subprocess
-    with open(POOLS["v23"], "w", encoding="utf-8") as _f:
-        _f.write(subprocess.run(["git", "-C", DECK, "show", V23_REV + ":data/players.csv"],
-                                capture_output=True, text=True, check=True).stdout)
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV)):
+    if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
+        import subprocess
+        with open(POOLS[_tag], "w", encoding="utf-8") as _f:
+            _f.write(subprocess.run(["git", "-C", DECK, "show", _rev + ":data/players.csv"],
+                                    capture_output=True, text=True, check=True).stdout)
 CAST = {s: nm for s, nm in state.get("cast", [])}
 
 
