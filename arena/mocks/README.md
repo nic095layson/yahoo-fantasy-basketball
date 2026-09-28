@@ -69,3 +69,10 @@ is on the author. See LEDGER §3.
   z-sums. The simulator itself scores *lineup-weighted weekly means*; the two
   disagree in ~4 of 9 categories on a typical roster. See
   `debrief_2026-08-03_mock27_slot4.md`.
+- `veto_dom_check.mjs <deck.html> <draft_state.json> <out.json> [picksToKeep]`
+  (2026-09-28) drives the real page in headless Chromium: imports the state,
+  then asserts no `JUDGMENT.doNotDraft` name is on the decision card, the
+  Best-available table still lists it marked DO NOT DRAFT, a `my:` pick of it
+  logs the warning and Undo takes it back, and no page error fired. Record:
+  `arena/results/veto_dom_check_2026-09-28.json` (mock 51 at #63, where
+  Porziņģis had been the 5th row).

@@ -1,9 +1,9 @@
 {
   "date": "2026-09-28",
-  "note": "2026-09-28 pull (window 9/23-9/28): Bulls-Hornets trade 9/26 - Hield CHA->CHI (second trade in five days), Dillingham CHI->CHA (lines held); D'Angelo Russell waived by MEM 9/25 -> FA; Johni Broome waived by LAC 9/24 -> FA; Jamal Murray inj-achilles-risk tag REMOVED (75 GP in 2025-26 - the 9/8 tag was a Dejounte Murray garble; board 27->19); media day: Porzingis out indefinitely (undisclosed health issue, no timeline), Knueppel hamstring out for preseason, Lively not cleared for camp, Aldama limited - notes; Brunson says fully cleared; Ingram no status yet; Duren skipped media day, QO deadline Oct 1.",
+  "note": "2026-09-28 second build (v29) \u2014 owner veto layer: Kristaps Porzingis is DO NOT DRAFT via JUDGMENT.doNotDraft (never on YOUR card / pin / LAST CALL; stays in the pool for the room, the resolver, rosters, matrix and mock AIs; Best-available marks him; a my: pick warns). Pool unchanged from the v28 pull build (9d11cb45): Bulls-Hornets trade 9/26 (Hield CHA->CHI, Dillingham CHI->CHA), DLo + Broome waived, Jamal Murray tag removed (garble), media-day notes; see after-report-2026-09-28.",
   "pool_changes": {
-    "changed": true,
-    "note": "MOVED 4 placements (Hield CHA->CHI, Dillingham CHI->CHA, D'Angelo Russell MEM->FA, Johni Broome LAC->FA); RETAGGED Jamal Murray inj-achilles-risk -> untagged (garble correction); NOTES Porzingis, Knueppel, Lively, Aldama, Brunson, Ingram; 330 rows, no adds or removals."
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-09-28",

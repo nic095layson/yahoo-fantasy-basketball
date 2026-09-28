@@ -126,3 +126,32 @@ model only, keeps the named room): restore the three lines in `score()` —
 additive `s += rng.gauss(0, m.noise)` after the need bonus — and restore
 Noah/Kyle's prior MANAGERS entries. The full named-room kill switch above
 also covers this.
+
+### VETO — owner DO NOT DRAFT list (2026-09-28)
+
+**Change.** `JUDGMENT.doNotDraft` (judgment block; owner executive decision
+2026-09-28: Kristaps Porziņģis) names players the card must never recommend
+for OUR seat. The app builds YOUR candidates from `ownerPool(st)` —
+`availablePool` minus the list — at the decision card and the TARGET read;
+the Best-available table keeps the row and marks it ⛔ DO NOT DRAFT; a `my:`
+pick of a listed name logs a warning line (not a refusal). `hoops.py
+do_not_draft()` reads the same list from the deck for `draft best` / `draft
+turn`; `live_deckcard.py` applies whatever list the replayed deck carries;
+`live_retro.py` applies it only for mocks whose `MOCKS` entry sets
+`veto=True`. No engine function changed; parity EXACT; opponents' rosters,
+the matrix, category ranks, mock AI picks and the resolver are untouched.
+Evidence: `scripts/test_card.py` VETO cases (44/44), `test_draft.py` VETO
+cases (59/59), `arena/results/veto_dom_check_2026-09-28.json` (Chromium:
+mock 51 #63 card = Pritchard / Lillard / C. Johnson / Turner / Coby White,
+Porziņģis gone from the 5th row; marker, warning and Undo all observed; zero
+page errors).
+
+**Revert.** Set `doNotDraft: []` in the judgment block — every reader
+(app, hoops.py, both harnesses) treats an empty list as no veto. The
+`ownerPool` plumbing can stay; it is a no-op with an empty list. Full
+removal: restore `const pool = availablePool(st, PLAYERS);` at the card and
+`availablePool(st, PLAYERS)` in the TARGET read, delete the `VETO` /
+`ownerPool` lines, the Best-available marker block and the runFeed warning
+loop, `do_not_draft` / `owner_pool` in hoops.py (restore the two
+`[p for p in players if ... availability(p) > 0]` comprehensions), and the
+`veto` plumbing in the two harnesses; drop the VETO cases from both suites.

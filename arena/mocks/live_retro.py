@@ -115,7 +115,12 @@ def rosters_upto(players, upto):
 
 
 def avail_pool(players, taken):
-    return [p for p in players if p["player"] not in taken and hoops.availability(p) > 0]
+    # Owner veto (2026-09-28): applied to YOUR candidate pool only for mocks
+    # whose MOCKS entry sets veto=True (rooms drafted on a deck that carried
+    # JUDGMENT.doNotDraft). Earlier rooms replay the card the owner saw.
+    veto = hoops.do_not_draft() if CFG.get("veto") else set()
+    return [p for p in players if p["player"] not in taken and hoops.availability(p) > 0
+            and p["player"] not in veto]
 
 
 def card(players, upto):
