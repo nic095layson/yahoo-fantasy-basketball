@@ -89,6 +89,23 @@ def main():
               must_have=["#1 R1: Kristaps Porzingis", "Kristaps Porzingis"],
               must_not=["UNKNOWN"])
 
+        # D54-2 (2026-09-28) — UNKNOWN follow-up: the next name that matches
+        # the unknown text fixes it in place; a non-matching name logs as a
+        # new pick with a warning that the UNKNOWN is still open.
+        fresh(st)
+        out = run(st, "draft", "turn", "Nikola Jokic; mamy", "--top", "0")
+        check("D54-2 an unresolved name logs UNKNOWN", out,
+              must_have=["UNKNOWN", "mamy"])
+        out = run(st, "draft", "turn", "Sandro Mamukelashvili", "--top", "0")
+        out2 = run(st, "draft", "rosters")
+        check("D54-2 the next matching name fixes the UNKNOWN in place", out + out2,
+              must_have=["fixed: UNKNOWN", "Sandro Mamukelashvili"],
+              must_not=["#3 R1: Sandro Mamukelashvili", "UNKNOWN #2"])
+        fresh(st)
+        out = run(st, "draft", "turn", "Nikola Jokic; LavineWiggins; Jabari Smith Jr.", "--top", "0")
+        check("D54-2 a non-matching name after an UNKNOWN logs as a new pick and warns", out,
+              must_have=["#3 R1: Jabari Smith Jr.", "still UNKNOWN"])
+
         # F02 — but two-letter nicknames must still resolve
         fresh(st)
         out = run(st, "draft", "turn", "KD; AD; OG; Zu", "--top", "0")

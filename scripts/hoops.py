@@ -493,6 +493,22 @@ def surname_key(name):
     return parts[-1] if parts else ""
 
 
+def unknown_matches(raw, name):
+    """D54-2 (2026-09-28, mock 54): does a newly resolved name look like the
+    player an UNKNOWN placeholder was trying to name? True when a token of the
+    name starts with the unknown text's first three letters, or the whole name
+    contains the unknown text — "mamy" -> Mamukelashvili yes; "LavineWiggins"
+    -> Jabari Smith Jr. no. Twin of the deck engine's unknownMatches."""
+    r = [t for t in fold(str(raw or "")).split() if t]
+    t = [x for x in fold(str(name or "")).split() if x]
+    if not r or not t:
+        return False
+    rj = "".join(r)
+    if len(rj) >= 3 and rj in "".join(t):
+        return True
+    return any(len(a) >= 3 and any(b.startswith(a[:3]) for b in t) for a in r)
+
+
 def match_candidates(players, query):
     """All plausible matches for a name. Priority: exact full name >
     nickname > exact word (first/last name) > substring > fuzzy (typo
@@ -1146,6 +1162,7 @@ def cmd_draft(args, players):
                                      "verify against the draft room, then "
                                      "resend the whole batch.")
                         picks[idx]["player"] = name
+                        picks[idx].pop("raw", None)
                         taken.discard(old)
                         taken.add(name)
                         print(f"  ✎ #{num} corrected: {old} → {name} "
@@ -1166,6 +1183,7 @@ def cmd_draft(args, players):
                              "`draft status`, verify against the draft room, "
                              "then resend the whole batch.")
                 picks[idx]["player"] = p["player"]
+                picks[idx].pop("raw", None)
                 taken.discard(old)
                 taken.add(p["player"])
                 print(f"  ✎ #{num} corrected: {old} → {p['player']}")
@@ -1230,8 +1248,30 @@ def cmd_draft(args, players):
                          "logged.")
             if cands:
                 p = exact[0] if exact else max(cands, key=adj_value)
+                # D54-2 (2026-09-28, mock 54): the pick typed right after an
+                # UNKNOWN is usually the owner re-typing that same player —
+                # fix the UNKNOWN in place when the name matches its raw
+                # text; otherwise log and say the UNKNOWN is still open.
+                # Gap placeholders (no raw) never auto-fix; a numbered feed
+                # is taken literally. Twin of the deck engine's processFeed.
+                prev_open = picks[-1] if picks and \
+                    str(picks[-1]["player"]).upper().startswith("UNKNOWN") else None
+                if prev_open and num is None and prev_open.get("raw") and \
+                        unknown_matches(prev_open["raw"], p["player"]):
+                    k = len(picks)
+                    raw_was = prev_open.pop("raw")
+                    prev_open["player"] = p["player"]
+                    taken.add(p["player"])
+                    print(f"  ✎ #{k} fixed: UNKNOWN ({raw_was!r}) → "
+                          f"{p['player']} — matched the unknown text; "
+                          f"draft fix {k} \"Name\" to change")
+                    continue
                 picks.append({"player": p["player"], "slot": slot})
                 taken.add(p["player"])
+                if prev_open:
+                    errors.append(f"#{len(picks) - 1} is still UNKNOWN"
+                                  + (f" ({prev_open['raw']!r})" if prev_open.get("raw") else "")
+                                  + f" — fix with: draft fix {len(picks) - 1} \"Name\"")
                 you = " (YOU)" if slot == myslot else ""
                 note = ""
                 losers = [c["player"] for c in cands if c is not p]
@@ -1264,7 +1304,8 @@ def cmd_draft(args, players):
                 errors.append(f"skipped {name!r}: already off the board "
                               "(no pick logged)")
             else:
-                picks.append({"player": f"UNKNOWN #{n + 1}", "slot": slot})
+                picks.append({"player": f"UNKNOWN #{n + 1}", "slot": slot,
+                              "raw": name})
                 errors.append(f"#{n + 1} logged as UNKNOWN ({name!r}: no match)"
                               f" — fix with: draft fix {n + 1} \"Name\"")
         save_state(state)
