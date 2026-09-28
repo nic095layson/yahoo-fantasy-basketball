@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-23",
-  "note": "2026-09-23 pull (window 9/22-9/23): Hawks-Hornets trade 9/22 - Hield ATL->CHA, Finney-Smith CHA->ATL (lines held); F6 catch: Steven Adams cleared as a full camp participant (Udoka, 9/22 Rockets media day) - ankle-recovery exclusion -> inj-ankle-risk 0.78; Ingram heel status unclear per Windhorst (note only; media day 9/28); Kawhi 2yr/$115M extension agreed 9/22 (row unchanged); Duren HELD -0.08 (QO branch, Oct 1); Cam Thomas/Ivey/Lonzo still unsigned; MEM cuts still not executed.",
+  "date": "2026-09-28",
+  "note": "2026-09-28 pull (window 9/23-9/28): Bulls-Hornets trade 9/26 - Hield CHA->CHI (second trade in five days), Dillingham CHI->CHA (lines held); D'Angelo Russell waived by MEM 9/25 -> FA; Johni Broome waived by LAC 9/24 -> FA; Jamal Murray inj-achilles-risk tag REMOVED (75 GP in 2025-26 - the 9/8 tag was a Dejounte Murray garble; board 27->19); media day: Porzingis out indefinitely (undisclosed health issue, no timeline), Knueppel hamstring out for preseason, Lively not cleared for camp, Aldama limited - notes; Brunson says fully cleared; Ingram no status yet; Duren skipped media day, QO deadline Oct 1.",
   "pool_changes": {
     "changed": true,
-    "note": "MOVED 2 placements (Hield ATL->CHA, Finney-Smith CHA->ATL, 9/22 trade); RETAGGED Steven Adams ankle-recovery -> inj-ankle-risk (cleared for camp, first season back); NOTE Ingram heel status unclear; 330 rows, no adds or removals."
+    "note": "MOVED 4 placements (Hield CHA->CHI, Dillingham CHI->CHA, D'Angelo Russell MEM->FA, Johni Broome LAC->FA); RETAGGED Jamal Murray inj-achilles-risk -> untagged (garble correction); NOTES Porzingis, Knueppel, Lively, Aldama, Brunson, Ingram; 330 rows, no adds or removals."
   },
   "rosters_verified": {
-    "date": "2026-09-23",
+    "date": "2026-09-28",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }
