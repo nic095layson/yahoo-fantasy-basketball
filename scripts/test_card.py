@@ -15,6 +15,10 @@ and pins three behaviours the retro found wrong or undefined:
           is the price-only model Phi((price - N) / max(8, 0.30 * price)) on the
           baked Yahoo price, chips BUY NOW <= 0.20 / TOSS-UP < 0.40; and
           the app block's chip / 🚌 paths are gated by it
+  VETO    owner veto list (executive decision 2026-09-28): JUDGMENT.doNotDraft
+          names never enter YOUR candidate pool (card / 🎯 / LAST CALL) while
+          the room, the resolver, rosters, matrix, category ranks and the mock
+          AIs keep seeing them; hoops.py reads the same list from the deck
   D51R-3  punt advisor, advice-only and room-relative: catWinProb /
           puntRead (hysteresis: PUNT_TURNS consecutive owner turns) /
           coherenceRead read the weekly model, not z-sum ranks; PUNT_BUTTONS
@@ -79,7 +83,10 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
     states["draft_state_53.json"] = json.load(open(os.path.join(STATES, "draft_state_53.json"), encoding="utf-8"))
     fixture = os.path.join(tmp, "in.json")
-    json.dump({"states": states, "probes": probes}, open(fixture, "w"))
+    jblock = extract("judgment", html)
+    vm = re.search(r"doNotDraft:\s*\[(.*?)\]", jblock, re.S)
+    veto = re.findall(r'"([^"]+)"', vm.group(1)) if vm else None
+    json.dump({"states": states, "probes": probes, "veto": veto or []}, open(fixture, "w"))
     driver = os.path.join(tmp, "run.mjs")
     with open(driver, "w", encoding="utf-8") as f:
         f.write(r"""
@@ -150,6 +157,29 @@ if (api.puntRead && api.coherenceRead && api.catWinProb) {
   const opp = []; for (let s = 1; s <= st.teams; s++) if (s !== st.slot && rosters[s] && rosters[s].length) opp.push(rosters[s]);
   const real = api.catWinProb(mine, opp);
   out.advisor.real58 = real ? Object.fromEntries(Object.entries(real).map(([c, v]) => [c, +v.toFixed(2)])) : null;
+}
+/* VETO (owner decision 2026-09-28): the owner's card is rankCard over availablePool minus
+   JUDGMENT.doNotDraft; opponents' rosters and category ranks are untouched. */
+out.veto = null;
+if (inp.veto && inp.veto.length) {
+  const V = new Set(inp.veto);
+  const st0 = inp.states["draft_state_51.json"]; const n = 62;
+  const st = { teams: st0.teams, slot: st0.slot, size: st0.size, punt: [], picks: st0.picks.slice(0, n) };
+  const rosters = api.buildRosters(st, api.PLAYERS); const mine = rosters[st.slot] || [];
+  const opp = []; for (let s = 1; s <= st.teams; s++) if (s !== st.slot && rosters[s] && rosters[s].length) opp.push(rosters[s]);
+  const pool = api.availablePool(st, api.PLAYERS);
+  const raw = api.rankCard(api.decwScores(pool, mine, opp)).map(x => x.p.n);
+  const own = api.rankCard(api.decwScores(pool.filter(p => !V.has(p.n)), mine, opp)).map(x => x.p.n);
+  /* mock 53: seat 3 took Porzingis at #99 (in mock 51 the OWNER took him at #87 — the veto's origin story) */
+  const s53 = inp.states["draft_state_53.json"];
+  const st99 = { teams: s53.teams, slot: s53.slot, size: s53.size, punt: [], picks: s53.picks.slice(0, 99) };
+  const ros99 = api.buildRosters(st99, api.PLAYERS);
+  const holder = Object.entries(ros99).find(([s, r]) => (r || []).some(p => V.has(p.n)));
+  const ranks87 = api.categoryRanks(st99, api.PLAYERS).ranks;
+  const ownerSlot53 = s53.slot;
+  out.veto = { raw5: raw.slice(0, 5), own5: own.slice(0, 5), rawMinusVeto5: raw.filter(nm => !V.has(nm)).slice(0, 5),
+               poolN: pool.length, ownN: pool.filter(p => !V.has(p.n)).length, vetoAvail: pool.filter(p => V.has(p.n)).length,
+               holder: holder ? +holder[0] : null, ownerSlot53, ranksCats: Object.keys(ranks87 || {}).length };
 }
 process.stdout.write(JSON.stringify(out));
 """.replace("__MOD__", mod).replace("__FIXTURE__", fixture))
@@ -259,6 +289,35 @@ process.stdout.write(JSON.stringify(out));
     case("D51R-3 adoptPunt is the advisor's only write path and returns while PUNT_BUTTONS is off",
          bool(m) and app2.count("adoptPunt(") == 4 and 'el("button", "adopt fulltilt"' in app2 and "if (PUNT_BUTTONS && read.advise && read.clear)" in app2,
          f"guard {bool(m)}, adoptPunt call sites {app2.count('adoptPunt(')} (want 4 = definition + 3 buttons)")
+
+    # ---- VETO (owner decision 2026-09-28): DO NOT DRAFT list, owner-pool only
+    case("VETO JUDGMENT.doNotDraft lists Kristaps Porzingis",
+         bool(veto) and "Kristaps Porzingis" in veto, f"got {veto}")
+    case("VETO doNotDraft precedes the players block (gate 5 reads players: as the last key)",
+         bool(vm) and jblock.find("doNotDraft") < jblock.find("players: {"), "doNotDraft missing or after players:")
+    vt = js.get("veto")
+    case("VETO mock 51 #63: the owner card is the unfiltered card minus the veto list, and never names a vetoed player",
+         bool(vt) and vt["own5"] == vt["rawMinusVeto5"] and not any(nm in (veto or []) for nm in vt["own5"]),
+         f"got {vt}")
+    case("VETO the owner pool is exactly the available pool minus the available vetoed names",
+         bool(vt) and vt["ownN"] == vt["poolN"] - vt["vetoAvail"] and vt["vetoAvail"] >= 1, f"got {vt}")
+    case("VETO mock 53 #99: an opponent's roster (seat 3) still holds the vetoed player and category ranks still compute",
+         bool(vt) and vt["holder"] == 3 and vt["holder"] != vt["ownerSlot53"] and vt["ranksCats"] == 9,
+         f"got {vt}")
+    app3 = html[html.find('<script id="app">') + 1:]
+    case("VETO the app builds YOUR candidates from ownerPool (availablePool minus JUDGMENT.doNotDraft)",
+         "function ownerPool(st)" in app3 and "JUDGMENT.doNotDraft" in app3
+         and "const pool = ownerPool(st);" in app3 and app3.count("ownerPool(st)") >= 3,
+         f"ownerPool defined {'function ownerPool(st)' in app3}, call sites {app3.count('ownerPool(st)')}")
+    case("VETO the Best-available table keeps the vetoed row and marks it DO NOT DRAFT",
+         "DO NOT DRAFT" in app3 and "VETO.has(p.n)" in app3, "marker absent")
+    case("VETO a my: pick of a vetoed name logs a warning, not a refusal",
+         "on your DO NOT DRAFT list" in app3, "warn absent")
+    sys.path.insert(0, HERE)
+    import hoops  # noqa: E402
+    case("VETO hoops.py reads the same list from the deck (do_not_draft twin)",
+         hasattr(hoops, "do_not_draft") and hoops.do_not_draft() == set(veto or []),
+         f"got {getattr(hoops, 'do_not_draft', lambda: None)()}")
 
     print()
     if FAILS:

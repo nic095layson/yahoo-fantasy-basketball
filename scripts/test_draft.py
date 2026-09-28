@@ -76,6 +76,19 @@ def main():
               must_have=["UNKNOWN"],
               must_not=["Victor Wembanyama → T4"])
 
+        # VETO (owner decision 2026-09-28) — the DO NOT DRAFT list never enters
+        # YOUR candidate list, but the room can still draft the player and he
+        # still counts on that roster.
+        fresh(st)
+        out = run(st, "draft", "best", "--top", "400")
+        check("VETO draft best never lists a DO NOT DRAFT name", out,
+              must_not=["Kristaps Porzingis"])
+        out = run(st, "draft", "turn", "Kristaps Porzingis", "--top", "0")
+        out2 = run(st, "draft", "rosters")
+        check("VETO an opponent's pick of the vetoed name still logs and counts", out + out2,
+              must_have=["#1 R1: Kristaps Porzingis", "Kristaps Porzingis"],
+              must_not=["UNKNOWN"])
+
         # F02 — but two-letter nicknames must still resolve
         fresh(st)
         out = run(st, "draft", "turn", "KD; AD; OG; Zu", "--top", "0")

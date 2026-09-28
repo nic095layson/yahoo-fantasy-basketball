@@ -58,7 +58,12 @@ export const api = { PLAYERS, CATS, adjValue, decwScores, archetypeRead, categor
   SURVIVAL_DISPLAY: typeof SURVIVAL_DISPLAY === "undefined" ? null : SURVIVAL_DISPLAY };
 """)
 fixture = os.path.join(tmp, "in.json")
-json.dump({"state": state, "puntTimeline": PUNT_TIMELINE, "puntLog": punt_log}, open(fixture, "w"))
+# Owner veto (2026-09-28): the deck this harness replays decides — a deck whose
+# JUDGMENT carries doNotDraft filters YOUR candidates exactly as its app does;
+# older decks (rev:sha) carry no list and replay unchanged.
+_vm = re.search(r"doNotDraft:\s*\[(.*?)\]", extract("judgment"), re.S) if re.search(r'<script id="judgment">', html) else None
+VETO = re.findall(r'"([^"]+)"', _vm.group(1)) if _vm else []
+json.dump({"state": state, "puntTimeline": PUNT_TIMELINE, "puntLog": punt_log, "veto": VETO}, open(fixture, "w"))
 driver = os.path.join(tmp, "run.mjs")
 with open(driver, "w", encoding="utf-8") as f:
     f.write(r"""
@@ -108,7 +113,8 @@ for (const n of turns) {
   const mine = rosters[st.slot] || [];
   const oppRosters = [];
   for (let s = 1; s <= st.teams; s++) if (s !== st.slot && rosters[s] && rosters[s].length) oppRosters.push(rosters[s]);
-  const pool = api.availablePool(st, PLAYERS);
+  const VETO = new Set(inp.veto || []);  /* owner veto: YOUR candidates only (2026-09-28) */
+  const pool = api.availablePool(st, PLAYERS).filter(p => !VETO.has(p.n));
   const raw = api.decwScores(pool, mine, oppRosters);
   const dsAll = api.rankCard ? api.rankCard(raw)
     : [...raw].sort((a, b) => b.ds - a.ds || (a.p.n < b.p.n ? 1 : a.p.n > b.p.n ? -1 : 0));

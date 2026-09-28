@@ -325,6 +325,33 @@ def note_tag(note):
     return re.split(r"[\s(]", (note or "").lower(), 1)[0]
 
 
+
+DECK_HTML = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                         "docs", "draft-deck.html")
+
+
+def do_not_draft():
+    """Owner veto list (executive decision 2026-09-28). Single source of truth
+    is the deck's JUDGMENT block — `doNotDraft: ["Name", ...]` — so the CLI
+    card, the retro harnesses and the page agree. Names never enter YOUR
+    candidate pool; every other reader (rosters, matrix, category ranks, the
+    resolver, mock AIs) keeps seeing them. Empty when the deck is absent."""
+    try:
+        with open(DECK_HTML, encoding="utf-8") as f:
+            src = f.read()
+    except OSError:
+        return set()
+    m = re.search(r"doNotDraft:\s*\[(.*?)\]", src, re.S)
+    return set(re.findall(r'"([^"]+)"', m.group(1))) if m else set()
+
+
+def owner_pool(players, taken):
+    """Available players for YOUR card: undrafted, playable, not vetoed."""
+    veto = do_not_draft()
+    return [p for p in players
+            if p["player"] not in taken and availability(p) > 0
+            and p["player"] not in veto]
+
 def availability(p):
     """Injury multiplier from the note column (owner's rule).
 
@@ -969,8 +996,7 @@ def cmd_draft(args, players):
               f"(restore: cp {os.path.abspath(pre_path)} {os.path.abspath(STATE_PATH)}).")
 
     elif args.draft_cmd == "best":
-        pool = [p for p in players
-                if p["player"] not in taken and availability(p) > 0]
+        pool = owner_pool(players, taken)  # owner veto applied (2026-09-28)
         if args.pos:
             pool = [p for p in pool if args.pos.upper() in p["pos"].upper()]
         override = parse_punt(args.punt) if args.punt else punt
@@ -1254,8 +1280,7 @@ def cmd_draft(args, players):
             totals = roster_totals(mine_r)
             weakest = sorted(kept, key=lambda c: totals[c])[:2]
 
-        pool = [p for p in players
-                if p["player"] not in taken and availability(p) > 0]
+        pool = owner_pool(players, taken)  # owner veto applied (2026-09-28)
         if args.pos:
             pool = [p for p in pool if args.pos.upper() in p["pos"].upper()]
         pool.sort(key=lambda p: -adj_value(p, override))
