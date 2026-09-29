@@ -1,0 +1,146 @@
+{
+ "as_drafted": {
+  "champ": 29.339,
+  "playoff": 97.69,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Chet Holmgren": {
+  "champ": 36.8,
+  "playoff": 99.02,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#34:Anthony Davis": {
+  "champ": 29.85,
+  "playoff": 97.83,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Anthony Davis"
+   ]
+  ]
+ },
+ "swap#39:Anthony Davis": {
+  "champ": 30.261,
+  "playoff": 98.06,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Anthony Davis"
+   ]
+  ]
+ },
+ "swap#58:Payton Pritchard": {
+  "champ": 33.778,
+  "playoff": 98.42,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#82:Ja Morant": {
+  "champ": 31.672,
+  "playoff": 98.34,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Ja Morant"
+   ]
+  ]
+ },
+ "swap#87:Miles Bridges": {
+  "champ": 31.011,
+  "playoff": 98.04,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Miles Bridges"
+   ]
+  ]
+ },
+ "swap#111:Devin Vassell": {
+  "champ": 31.094,
+  "playoff": 98.26,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Devin Vassell"
+   ]
+  ]
+ },
+ "swap#130:Draymond Green": {
+  "champ": 34.211,
+  "playoff": 98.69,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Draymond Green"
+   ]
+  ]
+ },
+ "swap#135:Malik Monk": {
+  "champ": 32.339,
+  "playoff": 98.39,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Malik Monk"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 45.017,
+  "playoff": 99.79,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Haliburton"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Kristaps Porzingis"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ],
+   [
+    130,
+    "Collin Gillespie"
+   ],
+   [
+    135,
+    "Herbert Jones"
+   ]
+  ]
+ }
+}
