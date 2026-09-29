@@ -31,7 +31,8 @@ import arena  # noqa: E402  (its own hoops instance reads the frozen snapshot; u
 
 CATS = hoops.CATS
 POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
-         "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv"}
+         "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv",
+         "v31": SP + "/m56_players_v31.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -43,6 +44,10 @@ POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
 V23_REV = "f724435"
 V25_REV = "2e217f9"
 V28_REV = "b150541"
+# v31 = data/players.csv as of the 2026-09-29 pull build (mock 56; sha
+# c0bf82bf4d39), pinned to rev e2b45ed (deck v31 main; v32 = 7878165 carries the
+# same pool byte-for-byte — only the resolver's dot-folding changed).
+V31_REV = "e2b45ed"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -61,6 +66,10 @@ MOCKS = {
     # 28266d8) — the veto was live, so veto=True. Lines = v28 (players.csv
     # byte-unchanged b150541 -> 28266d8). room="cast": not a public room.
     55: dict(tags=("v28",), veto=True, room="cast"),
+    # mock 56 (2026-09-29, slot 10): public Yahoo room, drafted on deck v31/v32
+    # (same pool, same engine; the veto live) — the owner's stated "how I would
+    # actually want to draft": Haliburton / Lillard / Kyrie at the point.
+    56: dict(tags=("v31",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -78,7 +87,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:

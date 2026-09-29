@@ -1,0 +1,555 @@
+{
+ "mock": 56,
+ "this_room": {
+  "rows": 50,
+  "mean_pred": 0.496,
+  "realized": 0.72,
+  "alive": 36,
+  "brier": 0.232,
+  "by_chip": {
+   "BUY NOW": {
+    "n": 9,
+    "mean_pred": 0.102,
+    "alive": 5
+   },
+   "TOSS-UP": {
+    "n": 11,
+    "mean_pred": 0.312,
+    "alive": 6
+   },
+   "None": {
+    "n": 30,
+    "mean_pred": 0.681,
+    "alive": 25
+   }
+  },
+  "survivors_called_le_2pct": []
+ },
+ "rows": [
+  {
+   "mock": 56,
+   "pick": 10,
+   "n": "Tyrese Maxey",
+   "pred": 0.234,
+   "alive": true,
+   "chip": "TOSS-UP",
+   "mkt": 7,
+   "valRank": 8
+  },
+  {
+   "mock": 56,
+   "pick": 10,
+   "n": "Jalen Johnson",
+   "pred": 0.377,
+   "alive": false,
+   "chip": "TOSS-UP",
+   "mkt": 11,
+   "valRank": 14
+  },
+  {
+   "mock": 56,
+   "pick": 10,
+   "n": "Tyrese Haliburton",
+   "pred": 0.637,
+   "alive": true,
+   "chip": null,
+   "mkt": 16,
+   "valRank": 7
+  },
+  {
+   "mock": 56,
+   "pick": 10,
+   "n": "Anthony Davis",
+   "pred": 0.977,
+   "alive": true,
+   "chip": null,
+   "mkt": 37,
+   "valRank": 5
+  },
+  {
+   "mock": 56,
+   "pick": 15,
+   "n": "Tyrese Maxey",
+   "pred": 0.01,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 7,
+   "valRank": 8
+  },
+  {
+   "mock": 56,
+   "pick": 15,
+   "n": "Jamal Murray",
+   "pred": 0.042,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 18,
+   "valRank": 19
+  },
+  {
+   "mock": 56,
+   "pick": 15,
+   "n": "Derrick White",
+   "pred": 0.819,
+   "alive": true,
+   "chip": null,
+   "mkt": 45,
+   "valRank": 23
+  },
+  {
+   "mock": 56,
+   "pick": 15,
+   "n": "Jalen Williams",
+   "pred": 0.755,
+   "alive": false,
+   "chip": null,
+   "mkt": 44,
+   "valRank": 18
+  },
+  {
+   "mock": 56,
+   "pick": 34,
+   "n": "Chet Holmgren",
+   "pred": 0.056,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 25,
+   "valRank": 11
+  },
+  {
+   "mock": 56,
+   "pick": 34,
+   "n": "Anthony Davis",
+   "pred": 0.436,
+   "alive": false,
+   "chip": null,
+   "mkt": 37,
+   "valRank": 5
+  },
+  {
+   "mock": 56,
+   "pick": 34,
+   "n": "Derrick White",
+   "pred": 0.711,
+   "alive": true,
+   "chip": null,
+   "mkt": 45,
+   "valRank": 23
+  },
+  {
+   "mock": 56,
+   "pick": 34,
+   "n": "OG Anunoby",
+   "pred": 0.914,
+   "alive": true,
+   "chip": null,
+   "mkt": 65,
+   "valRank": 27
+  },
+  {
+   "mock": 56,
+   "pick": 39,
+   "n": "Derrick White",
+   "pred": 0.213,
+   "alive": false,
+   "chip": "TOSS-UP",
+   "mkt": 45,
+   "valRank": 23
+  },
+  {
+   "mock": 56,
+   "pick": 39,
+   "n": "Desmond Bane",
+   "pred": 0.379,
+   "alive": false,
+   "chip": "TOSS-UP",
+   "mkt": 51,
+   "valRank": 24
+  },
+  {
+   "mock": 56,
+   "pick": 39,
+   "n": "OG Anunoby",
+   "pred": 0.657,
+   "alive": true,
+   "chip": null,
+   "mkt": 65,
+   "valRank": 27
+  },
+  {
+   "mock": 56,
+   "pick": 39,
+   "n": "Payton Pritchard",
+   "pred": 0.81,
+   "alive": true,
+   "chip": null,
+   "mkt": 80,
+   "valRank": 37
+  },
+  {
+   "mock": 56,
+   "pick": 58,
+   "n": "Payton Pritchard",
+   "pred": 0.747,
+   "alive": true,
+   "chip": null,
+   "mkt": 80,
+   "valRank": 37
+  },
+  {
+   "mock": 56,
+   "pick": 58,
+   "n": "Darius Garland",
+   "pred": 0.525,
+   "alive": false,
+   "chip": null,
+   "mkt": 62,
+   "valRank": 42
+  },
+  {
+   "mock": 56,
+   "pick": 58,
+   "n": "Tyler Herro",
+   "pred": 0.584,
+   "alive": true,
+   "chip": null,
+   "mkt": 66,
+   "valRank": 43
+  },
+  {
+   "mock": 56,
+   "pick": 58,
+   "n": "Myles Turner",
+   "pred": 0.887,
+   "alive": true,
+   "chip": null,
+   "mkt": 100,
+   "valRank": 52
+  },
+  {
+   "mock": 56,
+   "pick": 63,
+   "n": "Payton Pritchard",
+   "pred": 0.444,
+   "alive": false,
+   "chip": null,
+   "mkt": 80,
+   "valRank": 37
+  },
+  {
+   "mock": 56,
+   "pick": 63,
+   "n": "Tyler Herro",
+   "pred": 0.233,
+   "alive": false,
+   "chip": "TOSS-UP",
+   "mkt": 66,
+   "valRank": 43
+  },
+  {
+   "mock": 56,
+   "pick": 63,
+   "n": "Cameron Johnson",
+   "pred": 0.821,
+   "alive": true,
+   "chip": null,
+   "mkt": 136,
+   "valRank": 50
+  },
+  {
+   "mock": 56,
+   "pick": 63,
+   "n": "Myles Turner",
+   "pred": 0.716,
+   "alive": true,
+   "chip": null,
+   "mkt": 100,
+   "valRank": 52
+  },
+  {
+   "mock": 56,
+   "pick": 63,
+   "n": "Jakob Poeltl",
+   "pred": 0.861,
+   "alive": true,
+   "chip": null,
+   "mkt": 187,
+   "valRank": 47
+  },
+  {
+   "mock": 56,
+   "pick": 82,
+   "n": "Tari Eason",
+   "pred": 0.825,
+   "alive": true,
+   "chip": null,
+   "mkt": 183,
+   "valRank": 44
+  },
+  {
+   "mock": 56,
+   "pick": 82,
+   "n": "Myles Turner",
+   "pred": 0.657,
+   "alive": true,
+   "chip": null,
+   "mkt": 100,
+   "valRank": 52
+  },
+  {
+   "mock": 56,
+   "pick": 82,
+   "n": "Cameron Johnson",
+   "pred": 0.78,
+   "alive": true,
+   "chip": null,
+   "mkt": 136,
+   "valRank": 50
+  },
+  {
+   "mock": 56,
+   "pick": 82,
+   "n": "Brook Lopez",
+   "pred": 0.675,
+   "alive": true,
+   "chip": null,
+   "mkt": 103,
+   "valRank": 58
+  },
+  {
+   "mock": 56,
+   "pick": 87,
+   "n": "Myles Turner",
+   "pred": 0.407,
+   "alive": true,
+   "chip": null,
+   "mkt": 100,
+   "valRank": 52
+  },
+  {
+   "mock": 56,
+   "pick": 87,
+   "n": "Tari Eason",
+   "pred": 0.659,
+   "alive": true,
+   "chip": null,
+   "mkt": 183,
+   "valRank": 44
+  },
+  {
+   "mock": 56,
+   "pick": 87,
+   "n": "Christian Braun",
+   "pred": 0.659,
+   "alive": true,
+   "chip": null,
+   "mkt": 184,
+   "valRank": 54
+  },
+  {
+   "mock": 56,
+   "pick": 87,
+   "n": "Brook Lopez",
+   "pred": 0.43,
+   "alive": true,
+   "chip": null,
+   "mkt": 103,
+   "valRank": 58
+  },
+  {
+   "mock": 56,
+   "pick": 106,
+   "n": "Tari Eason",
+   "pred": 0.607,
+   "alive": true,
+   "chip": null,
+   "mkt": 183,
+   "valRank": 44
+  },
+  {
+   "mock": 56,
+   "pick": 106,
+   "n": "Brook Lopez",
+   "pred": 0.367,
+   "alive": true,
+   "chip": "TOSS-UP",
+   "mkt": 103,
+   "valRank": 58
+  },
+  {
+   "mock": 56,
+   "pick": 106,
+   "n": "Christian Braun",
+   "pred": 0.608,
+   "alive": true,
+   "chip": null,
+   "mkt": 184,
+   "valRank": 54
+  },
+  {
+   "mock": 56,
+   "pick": 106,
+   "n": "Miles Bridges",
+   "pred": 0.328,
+   "alive": true,
+   "chip": "TOSS-UP",
+   "mkt": 97,
+   "valRank": 77
+  },
+  {
+   "mock": 56,
+   "pick": 111,
+   "n": "Christian Braun",
+   "pred": 0.401,
+   "alive": true,
+   "chip": null,
+   "mkt": 184,
+   "valRank": 54
+  },
+  {
+   "mock": 56,
+   "pick": 111,
+   "n": "Miles Bridges",
+   "pred": 0.137,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 97,
+   "valRank": 77
+  },
+  {
+   "mock": 56,
+   "pick": 111,
+   "n": "Brook Lopez",
+   "pred": 0.166,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 103,
+   "valRank": 58
+  },
+  {
+   "mock": 56,
+   "pick": 111,
+   "n": "Jalen Suggs",
+   "pred": 0.285,
+   "alive": false,
+   "chip": "TOSS-UP",
+   "mkt": 130,
+   "valRank": 64
+  },
+  {
+   "mock": 56,
+   "pick": 130,
+   "n": "Christian Braun",
+   "pred": 0.349,
+   "alive": true,
+   "chip": "TOSS-UP",
+   "mkt": 184,
+   "valRank": 54
+  },
+  {
+   "mock": 56,
+   "pick": 130,
+   "n": "Brook Lopez",
+   "pred": 0.128,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 103,
+   "valRank": 58
+  },
+  {
+   "mock": 56,
+   "pick": 130,
+   "n": "Jordan Poole",
+   "pred": 0.773,
+   "alive": true,
+   "chip": null,
+   "mkt": 197,
+   "valRank": 79
+  },
+  {
+   "mock": 56,
+   "pick": 130,
+   "n": "PJ Washington",
+   "pred": 0.313,
+   "alive": true,
+   "chip": "TOSS-UP",
+   "mkt": 165,
+   "valRank": 91
+  },
+  {
+   "mock": 56,
+   "pick": 130,
+   "n": "Collin Gillespie",
+   "pred": 0.353,
+   "alive": true,
+   "chip": "TOSS-UP",
+   "mkt": 185,
+   "valRank": 94
+  },
+  {
+   "mock": 56,
+   "pick": 135,
+   "n": "Brook Lopez",
+   "pred": 0.039,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 103,
+   "valRank": 58
+  },
+  {
+   "mock": 56,
+   "pick": 135,
+   "n": "PJ Washington",
+   "pred": 0.153,
+   "alive": false,
+   "chip": "BUY NOW",
+   "mkt": 165,
+   "valRank": 91
+  },
+  {
+   "mock": 56,
+   "pick": 135,
+   "n": "Jordan Poole",
+   "pred": 0.649,
+   "alive": false,
+   "chip": null,
+   "mkt": 197,
+   "valRank": 79
+  },
+  {
+   "mock": 56,
+   "pick": 135,
+   "n": "Collin Gillespie",
+   "pred": 0.184,
+   "alive": true,
+   "chip": "BUY NOW",
+   "mkt": 185,
+   "valRank": 94
+  }
+ ],
+ "pooled": {
+  "rows": 303,
+  "mean_pred": 0.535,
+  "realized": 0.713,
+  "alive": 216,
+  "brier": 0.196,
+  "by_chip": {
+   "BUY NOW": {
+    "n": 45,
+    "mean_pred": 0.131,
+    "alive": 17
+   },
+   "TOSS-UP": {
+    "n": 59,
+    "mean_pred": 0.331,
+    "alive": 31
+   },
+   "None": {
+    "n": 199,
+    "mean_pred": 0.687,
+    "alive": 168
+   }
+  },
+  "survivors_called_le_2pct": []
+ }
+}
