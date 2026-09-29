@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-09-29", "pool": 330, "pool_sha256": "c0bf82bf4d392bb1c8cac416c01459f08068fb5b08a37d299d66a401e46d5535", "verification_mode": "fallback-partial", "evidence_date": "2026-09-29", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 330, "teams_covered": 30}, "planes": {"kit_sha256": "89fccd9ae8b2", "shared": 308, "waived": ["Brandon Ingram: kit GP 64->48 for the partial-Achilles absence disclosed 9/28; the deck carries it as the inj-achilles-risk multiplier (no GP column)", "Rob Dillingham: kit GP 66->50 for the 9/28 waiver; the deck carries the FA relabel, a note and a judgment card (no GP column)"], "propagation_armed": true}, "market": {"file": "yahoo-2026-09-22.csv", "date": "2026-09-22", "priced": 296, "of": 330, "age_days": 7}, "freshness_note": "2026-09-29 pull (window 9/28\u20139/29, media day into the first camp day) \u2014 one placement moved: Rob Dillingham waived by Charlotte 9/28, two days after the Hield \u2026"} -->
+<!-- build-manifest {"built": "2026-09-29", "pool": 330, "pool_sha256": "c0bf82bf4d392bb1c8cac416c01459f08068fb5b08a37d299d66a401e46d5535", "verification_mode": "fallback-partial", "evidence_date": "2026-09-29", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 330, "teams_covered": 30}, "planes": {"kit_sha256": "89fccd9ae8b2", "shared": 308, "waived": [], "propagation_armed": true}, "market": {"file": "yahoo-2026-09-22.csv", "date": "2026-09-22", "priced": 296, "of": 330, "age_days": 7}, "freshness_note": "2026-09-29 same-day rebuild (D53-4): the feed resolver folds dots \u2014 Yahoo's 'P.J. Washington' and a typed 'TJ McConnell' now resolve in both planes; no data \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -727,8 +727,12 @@ function tagOf(note) { return (note || "").toLowerCase().split(/[\s(]/)[0]; }
 function fold(s) {
   /* Apostrophes fold away too (draft_state_49, pick 81): "Dayron" must meet
      "Day'Ron". Hyphens stay — removing them would make bare "Alexander"
-     newly ambiguous (SGA vs NAW). */
-  return s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/['’`]/g, "");
+     newly ambiguous (SGA vs NAW). Dots fold away as well (D53-4, mock 53,
+     executed 2026-09-29): Yahoo pastes "P.J. Washington" where the pool has
+     "PJ Washington", and the pool's "T.J. McConnell" must meet a typed "TJ";
+     the replace(/\./g, "") calls downstream are now no-ops, kept for
+     symmetry with hoops.py. */
+  return s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/['’`.]/g, "");
 }
 function surnameKey(name) {
   const parts = fold(name).replace(/\./g, "").split(" ")
@@ -1799,7 +1803,7 @@ const JUDGMENT = {
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-09-29"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "2026-09-29 pull (window 9/28\u20139/29, media day into the first camp day) \u2014 one placement moved: Rob Dillingham waived by Charlotte 9/28, two days after the Hield trade, row now FA. Brandon Ingram's partially torn Achilles (found at the May heel surgery, disclosed 9/28) \u2014 out for the start of the season, tagged inj-achilles-risk (\u00d70.78), kit GP 64\u219248. Duren skipped the camp opening (QO deadline 10/1), Brunson fully cleared, Porzingis 'hopefully back soon', Beal misses the start of camp (knee). Pool 330 rows.";
+  const BUILD_NOTE = "2026-09-29 same-day rebuild (D53-4): the feed resolver folds dots \u2014 Yahoo's 'P.J. Washington' and a typed 'TJ McConnell' now resolve in both planes; no data change (pool 330 rows, evidence dated 2026-09-29).";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }

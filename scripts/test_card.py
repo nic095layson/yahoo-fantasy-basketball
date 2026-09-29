@@ -76,6 +76,7 @@ def main():
 export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRosters,
   availablePool, marketRanks, myNextPick, familiesOf, teamOfPick,
   processFeed: typeof processFeed === "function" ? processFeed : null,
+  matchCandidates: typeof matchCandidates === "function" ? matchCandidates : null,
   rankCard: typeof rankCard === "function" ? rankCard : null,
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
@@ -200,6 +201,13 @@ if (api.processFeed) {
   const s2 = fresh(); const r3 = api.processFeed(s2, api.PLAYERS, "Nikola Jokic; LavineWiggins; Jabari Smith Jr.");
   const s3 = fresh(); api.processFeed(s3, api.PLAYERS, "3- Luka Doncic"); const r4 = api.processFeed(s3, api.PLAYERS, "Nikola Jokic");
   out.unk = { afterUnk, afterFix, fixLines: r2.lines.map(l => l.t), s2: snap(s2), s2Lines: r3.lines.map(l => [l.t, l.cls]), s3: snap(s3) };
+}
+/* D53-4 (mock 53, executed 2026-09-29): Yahoo's dotted spellings resolve in the feed. */
+out.dots = null;
+if (api.matchCandidates) {
+  const names = q => api.matchCandidates(api.PLAYERS, q).map(p => p.n);
+  out.dots = { pj: names("P.J. Washington"), tj: names("TJ McConnell"),
+               pjPlain: names("PJ Washington"), tjDot: names("T.J. McConnell"), lone: names(".") };
 }
 process.stdout.write(JSON.stringify(out));
 """.replace("__MOD__", mod).replace("__FIXTURE__", fixture))
@@ -379,6 +387,22 @@ process.stdout.write(JSON.stringify(out));
     case("D54-2 hoops.py carries the unknown_matches twin (mamy → Mamukelashvili yes; LavineWiggins → Jabari Smith Jr. no)",
          hasattr(_h, "unknown_matches") and _h.unknown_matches("mamy", "Sandro Mamukelashvili") and not _h.unknown_matches("LavineWiggins", "Jabari Smith Jr."),
          "unknown_matches missing or wrong")
+
+    # ---- D53-4 dot-folding in the feed resolver (mock 53 ask, executed 2026-09-29):
+    # the pool spells "PJ Washington" and "T.J. McConnell"; Yahoo pastes "P.J."
+    # and rooms type "TJ". fold() kept dots, so both crossings failed every stage.
+    dots = js.get("dots")
+    case("D53-4 JS resolver folds dots: 'P.J. Washington' → PJ Washington, 'TJ McConnell' → T.J. McConnell",
+         bool(dots) and dots["pj"] == ["PJ Washington"] and dots["tj"] == ["T.J. McConnell"], f"got {dots}")
+    case("D53-4 JS resolver: the pool's own spellings still resolve and a lone '.' still matches nothing",
+         bool(dots) and dots["pjPlain"] == ["PJ Washington"] and dots["tjDot"] == ["T.J. McConnell"] and dots["lone"] == [],
+         f"got {dots}")
+    _pl = _h.load_players()
+    _mc = lambda q: [p["player"] for p in _h.match_candidates(_pl, q)]
+    case("D53-4 hoops.match_candidates twin folds dots the same way",
+         _mc("P.J. Washington") == ["PJ Washington"] and _mc("TJ McConnell") == ["T.J. McConnell"]
+         and _mc("PJ Washington") == ["PJ Washington"] and _mc(".") == [],
+         f"got {_mc('P.J. Washington')}, {_mc('TJ McConnell')}, {_mc('PJ Washington')}, {_mc('.')}")
 
     print()
     if FAILS:
