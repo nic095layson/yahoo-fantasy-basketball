@@ -8,9 +8,17 @@ and pins three behaviours the retro found wrong or undefined:
 
   D51R-2  rankCard: exact blend ties order by ΔECW before name
   D51R-4  pinDecision: the urgent TARGET takes the 🎯 only at availability
-          1.0 and within PIN_MAX_GAP cats/week of #1 — measured on the
-          committed states (state_51 #58 blocked, mock32 #34 blocked,
-          mock32 #63 kept)
+          1.0 and within PIN_MAX_GAP cats/week of #1. Originally measured on
+          the committed states (state_51 #58 blocked, mock32 #34 blocked,
+          mock32 #63 kept). Re-pointed 2026-09-29: the D-M1 position sync
+          (every Yahoo-matched row now carries Yahoo's official eligibility)
+          filled the family shelves, so those three turns no longer produce
+          an urgent read at all — a scan of all 13 committed states x owner
+          turns finds 3 urgent reads, all withheld on availability (state_54
+          #34 JJJ 0.78, mock41 #72 Zion 0.78, state_50 #68 no pin). The
+          availability branch stays measured on state_54 #34; the behind /
+          kept / non-urgent branches are pinned by calling the gate directly
+          (it is a pure function of the read, the card and the pin)
   D51R-1R survival refit (2026-09-22): SURVIVAL_DISPLAY is back on, survivalProb
           is the price-only model Phi((price - N) / max(8, 0.30 * price)) on the
           baked Yahoo price, chips BUY NOW <= 0.20 / TOSS-UP < 0.40; and
@@ -89,9 +97,10 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   coherenceRead: typeof coherenceRead === "function" ? coherenceRead : null,
   PUNT_BUTTONS: typeof PUNT_BUTTONS === "undefined" ? null : PUNT_BUTTONS };
 """)
-    probes = [("draft_state_51.json", 58), ("draft_state_mock32.json", 34), ("draft_state_mock32.json", 63)]
+    probes = [("draft_state_54.json", 34)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
-    states["draft_state_53.json"] = json.load(open(os.path.join(STATES, "draft_state_53.json"), encoding="utf-8"))
+    for fn in ("draft_state_51.json", "draft_state_53.json"):  # advisor / veto / clock probes below
+        states[fn] = json.load(open(os.path.join(STATES, fn), encoding="utf-8"))
     fixture = os.path.join(tmp, "in.json")
     jblock = extract("judgment", html)
     vm = re.search(r"doNotDraft:\s*\[(.*?)\]", jblock, re.S)
@@ -137,6 +146,16 @@ if (api.pinDecision && api.rankCard) {
     out.pins.push({ fn, pickNo, urgent: !!(r && r.urgent), pin: pinRaw ? pinRaw.n : null, av: pinRaw ? pinRaw.av : null,
                     tgOnPin: d.tgOnPin, withheld: d.withheld, top1: scored[0].p.n });
   }
+  /* 2026-09-29: the behind / kept / non-urgent branches have no committed example
+     under the Yahoo-synced pool (see the docstring), so the gate is called directly:
+     #1 at ΔECW 0.60; the pin at 0.50 (0.100 behind), 0.56 (0.040 behind), or av 0.78. */
+  const readU = { urgent: true, fam: "C", best: "Pin" }, readQ = { urgent: false, fam: "C", best: "Pin" };
+  const top = [{ p: { n: "Top" }, ds: 0.9, decw: 0.60 }];
+  const at = v => nm => (nm === "Pin" ? v : null);
+  out.pinUnit = { avail: api.pinDecision(readU, top, { n: "Pin", av: 0.78 }, at(0.56)),
+                  behind: api.pinDecision(readU, top, { n: "Pin", av: 1 }, at(0.50)),
+                  kept: api.pinDecision(readU, top, { n: "Pin", av: 1 }, at(0.56)),
+                  quiet: api.pinDecision(readQ, top, { n: "Pin", av: 1 }, at(0.56)) };
 }
 /* M53 (2026-09-22): the countdown under the feed title read "(you're on the clock)" for
    every pick after the owner's 13th — myNextPick() is null there and the app treated
@@ -229,15 +248,26 @@ process.stdout.write(JSON.stringify(out));
     # ---- D51R-4 pin gate
     case("D51R-4 pinDecision exists in the engine block", pres["pinDecision"], "pinDecision absent")
     case("D51R-4 PIN_MAX_GAP is 0.05 cats/wk", js.get("PIN_MAX_GAP") == 0.05, f"got {js.get('PIN_MAX_GAP')}")
-    want = {("draft_state_51.json", 58): (False, "availability"),
-            ("draft_state_mock32.json", 34): (False, "behind"),
-            ("draft_state_mock32.json", 63): (True, "")}
+    want = {("draft_state_54.json", 34): (False, "availability")}
     got = {(p["fn"], p["pickNo"]): p for p in js.get("pins", [])}
     for key, (tg, frag) in want.items():
         p = got.get(key)
         ok = p is not None and p["urgent"] and p["tgOnPin"] == tg and (frag in (p["withheld"] or ""))
         case(f"D51R-4 {key[0]} #{key[1]}: urgent pin {'kept' if tg else 'withheld'}"
              + (f" ({frag})" if frag else ""), ok, f"got {p}")
+    pu = js.get("pinUnit") or {}
+    case("D51R-4 gate: urgent pin at availability 0.78 is withheld (availability)",
+         pu.get("avail", {}).get("tgOnPin") is False and "availability 0.78" in (pu.get("avail", {}).get("withheld") or ""),
+         f"got {pu.get('avail')}")
+    case("D51R-4 gate: urgent pin 0.100 cats/wk behind #1 is withheld (behind, limit 0.05)",
+         pu.get("behind", {}).get("tgOnPin") is False and "0.100 cats/wk behind #1" in (pu.get("behind", {}).get("withheld") or ""),
+         f"got {pu.get('behind')}")
+    case("D51R-4 gate: urgent pin at availability 1.0 and 0.040 behind is kept (🎯 on the pin)",
+         pu.get("kept", {}).get("tgOnPin") is True and (pu.get("kept", {}).get("withheld") or "") == "",
+         f"got {pu.get('kept')}")
+    case("D51R-4 gate: a non-urgent read never takes the 🎯 and names no reason",
+         pu.get("quiet", {}).get("tgOnPin") is False and (pu.get("quiet", {}).get("withheld") or "") == "",
+         f"got {pu.get('quiet')}")
 
     # ---- M53 clock read (2026-09-22): one engine read for "who is on the clock / your next"
     ck = js.get("clock")
