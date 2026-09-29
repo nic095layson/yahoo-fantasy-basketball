@@ -36,6 +36,7 @@ function writeOut() {
     pass: failed.length === 0 && errors.length === 0 && !harnessCrash, pageErrors: errors, notes, failures: failed, all: A };
   fs.writeFileSync(outPath, JSON.stringify(out, null, 1));
   console.log(JSON.stringify({ assertions: A.length, failed: failed.length, pageErrors: errors.length, crash: !!harnessCrash, pass: out.pass, failures: failed.map(f => f.id) }));
+  process.exitCode = out.pass ? 0 : 1;   /* a gate, not a report: DATA-PULL.md §7 step 5b (owner decision D6, 2026-09-29) */
 }
 async function newPage() {
   const ctx = await browser.newContext({ acceptDownloads: true });

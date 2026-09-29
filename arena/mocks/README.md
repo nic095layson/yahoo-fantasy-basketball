@@ -99,7 +99,19 @@ is on the author. See LEDGER §3.
   rosters vs totalValue, head-to-head vs rosterTotals, Mkt column vs marketRanks, the card's top-5
   vs rankCard(decwScores) over the owner pool at every owner turn). Result:
   `arena/results/full_dom_check_2026-09-29.json`; report: kit
-  `report/after-reports/after-report-2026-09-29-validation.md`.
+  `report/after-reports/after-report-2026-09-29-validation.md`. Since 2026-09-29 it is a
+  GATE (owner decision D6): exit 1 on any failed assertion or page error, run on every built
+  page before it is republished (kit DATA-PULL.md §7 step 5b).
+- **Third implementation of the weekly model (2026-09-29, owner decision D5).**
+  `decw_reference.mjs <deck.html> <states_dir> <out.json>` dumps the engine's own ΔECW, blend
+  score and rankCard ordering for EVERY candidate at every committed owner turn (the parity
+  gate's 143), the owner's roster model (mu/var and daily-fill start rates) at each, and the
+  dfHash parity vectors; `decw_third.py <deck.html> <states_dir> <reference.json> <out.json>
+  [--approx-cdf]` is a from-specification Python implementation of the whole chain (hash,
+  daily fill, weekly model, category-win probabilities, percentile blend, card sort) that
+  imports neither arena.py nor hoops.py and never executes the page, compared against that
+  dump. Two runs: exact Φ (math.erf) to show the model agrees, and the engine's polynomial
+  Φ to show the numbers agree to floating-point. Results in `arena/results/decw_third_2026-09-29*.json`.
 - **D54 fixes (2026-09-28).** `d54_dom_check.mjs <deck.html> <events.json> <truth.json> <state.json> <out.json>`
   drives the real page in headless Chromium: (A) replays the owner's mock-54 tool log
   (`arena/data/events/m54_tool_events.json`, built from the log's feeds, raw UNKNOWN texts,

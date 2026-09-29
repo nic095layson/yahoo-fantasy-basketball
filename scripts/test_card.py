@@ -363,6 +363,17 @@ process.stdout.write(JSON.stringify(out));
          has_hint and has_gap and has_line, f"feedHint {has_hint}, cardGapText {has_gap}, log line {has_line}")
     case("D54-3 the advisor read names the dead-category trap against the 🎯",
          "is dead" in app4 and "don't reach" in app4, "trap sentence absent")
+    # V-D1/V-D2 (system validation 2026-09-29, owner: "Fix 1 and 2"): the two
+    # empty-input guards must render AND save the warning they log (the
+    # 127-assertion Chromium drive found both paths silent until the next
+    # action), and the sweep panel must count the pool, not a July literal.
+    import re as _re
+    ins_ok = _re.search(r'log\("Insert needs a pick # and a player name\.", "warn"\);\s*save\(\);\s*renderMirror\(\);\s*(/\*.*?\*/\s*)?return;', app4, _re.S) is not None
+    case("V-D1 empty Insert-at-# saves and renders its warning before returning", ins_ok, "guard lacks save(); renderMirror(); before return")
+    rs_ok = _re.search(r'log\("RESYNC refused: paste is empty[^"]*", "warn"\);\s*save\(\);\s*renderMirror\(\);\s*(/\*.*?\*/\s*)?return;', app4, _re.S) is not None
+    case("V-D1 empty Resync paste saves and renders its refusal before returning", rs_ok, "guard lacks save(); renderMirror(); before return")
+    case("V-D2 the Daily-sweep panel counts the pool (PLAYERS.length), not a literal 246",
+         "re-verifies all 246 placements" not in app4 and "re-verifies all ${PLAYERS.length} placements" in app4, "literal still present or PLAYERS.length missing")
     sys.path.insert(0, HERE)
     import hoops as _h  # noqa: E402
     case("D54-2 hoops.py carries the unknown_matches twin (mamy → Mamukelashvili yes; LavineWiggins → Jabari Smith Jr. no)",

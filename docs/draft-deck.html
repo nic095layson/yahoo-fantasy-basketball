@@ -1851,7 +1851,7 @@ const JUDGMENT = {
     ol.className = "small";
     for (const step of [
       copied ? "Paste it into Cowork (Claude) and send." : "Ask Cowork: “Daily sweep for the Draft Deck.”",
-      "Cowork sweeps the news, re-verifies all 246 placements, rebuilds through the fail-closed gates, and republishes this same URL (~10 min).",
+      `Cowork sweeps the news, re-verifies all ${PLAYERS.length} placements, rebuilds through the fail-closed gates, and republishes this same URL (~10 min).`,   /* V-D2 (2026-09-29): the pool size, not the July literal */
       "Hard-refresh this page (Ctrl/Cmd+Shift+R) — the stamp above should show today's date.",
     ]) {
       const li = document.createElement("li");
@@ -2104,6 +2104,7 @@ const JUDGMENT = {
     const name = $("insName").value.trim();
     if (!name || !Number.isInteger(P)) {
       log("Insert needs a pick # and a player name.", "warn");
+      save(); renderMirror();   /* V-D1 (2026-09-29): the guard used to return before rendering — the button looked dead */
       return;
     }
     const r = insertPick(deck.state, PLAYERS, P, name);
@@ -2136,6 +2137,7 @@ const JUDGMENT = {
     const segs = paste.split(";").map(s => s.trim()).filter(Boolean);
     if (!segs.length) {
       log("RESYNC refused: paste is empty — nothing cleared, the board is untouched.", "warn");
+      save(); renderMirror();   /* V-D1 (2026-09-29): same — show the refusal now, not on the next click */
       return;
     }
     try { localStorage.setItem(LS_KEY + ":preresync", JSON.stringify(deck.state)); } catch (e) {}
