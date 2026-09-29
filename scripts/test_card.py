@@ -30,7 +30,9 @@ and pins three behaviours the retro found wrong or undefined:
           open UNKNOWN
   D54-1   card-gap echo: a my: pick that is not the 🎯 states its card rank
           and gap (live hint under the feed + the log line)
-  D54-3   dead-category trap line on the advisor read
+  D54-3   dead-category trap line on the advisor read (reworded 2026-09-29 for
+          the 60-second clock: one line — "Don't reach for a lost category:
+          X (C, card #k) · … — none beats 🎯 T")
   VETO    owner veto list (executive decision 2026-09-28): JUDGMENT.doNotDraft
           names never enter YOUR candidate pool (card / 🎯 / LAST CALL) while
           the room, the resolver, rosters, matrix, category ranks and the mock
@@ -399,8 +401,8 @@ process.stdout.write(JSON.stringify(out));
     has_hint, has_gap, has_line = 'id="feedHint"' in html, "function cardGapText" in app4, "off the card:" in app4
     case("D54-1 a my: pick off the card gets its rank and gap under the feed and in the log line",
          has_hint and has_gap and has_line, f"feedHint {has_hint}, cardGapText {has_gap}, log line {has_line}")
-    case("D54-3 the advisor read names the dead-category trap against the 🎯",
-         "is dead" in app4 and "don't reach" in app4, "trap sentence absent")
+    case("D54-3 the advisor read names the dead-category trap against the 🎯 (one plain line since v34)",
+         "Don't reach for a lost category" in app4 and "none beats 🎯" in app4, "trap sentence absent")
     # V-D1/V-D2 (system validation 2026-09-29, owner: "Fix 1 and 2"): the two
     # empty-input guards must render AND save the warning they log (the
     # 127-assertion Chromium drive found both paths silent until the next

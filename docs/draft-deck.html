@@ -1,4 +1,4 @@
-<!-- build-manifest {"built": "2026-09-29", "pool": 334, "pool_sha256": "6efb01cd772b5bff0f1eac1d8f8e76d55b4b4ff18772d3e3ac930cbcfbff88f0", "verification_mode": "fallback-partial", "evidence_date": "2026-09-29", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 334, "teams_covered": 30}, "planes": {"kit_sha256": "a5041cfc963b", "shared": 314, "waived": [], "propagation_armed": true}, "market": {"file": "yahoo-2026-09-22.csv", "date": "2026-09-22", "priced": 296, "of": 334, "age_days": 7}, "freshness_note": "2026-09-29 re-derivation pass after the four-source market intake (owner: proceed on D-M1/D-M2/D-M4/D-M5): every Yahoo-matched row carries Yahoo's official \u2026"} -->
+<!-- build-manifest {"built": "2026-09-29", "pool": 334, "pool_sha256": "6efb01cd772b5bff0f1eac1d8f8e76d55b4b4ff18772d3e3ac930cbcfbff88f0", "verification_mode": "fallback-partial", "evidence_date": "2026-09-29", "unmatched": 0, "verification": {"mode": "fallback-partial", "checked": 334, "teams_covered": 30}, "planes": {"kit_sha256": "a5041cfc963b", "shared": 314, "waived": [], "propagation_armed": true}, "market": {"file": "yahoo-2026-09-22.csv", "date": "2026-09-22", "priced": 296, "of": 334, "age_days": 7}, "freshness_note": "2026-09-29 same-day rebuild (v34, owner: 60-second clock): concise decision card \u2014 advisor read in plain words on two lines, one-line \u2026"} -->
 <title>Draft Deck — Live 9-Cat Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -115,6 +115,14 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
    box; scroll up for it. border-box, so padding+border ride in the calc. */
 .feedcard .mirror { flex: 0 1 auto; min-height: 0;
   max-height: calc(6 * var(--leading-body) * var(--text-sm) + 2 * var(--space-2) + 2px); }
+/* Owner's turn made unmistakable (owner request 2026-09-29: "I sometimes don't
+   realize it is my turn and lose seconds off my pick clock"): an accent-fill
+   YOUR PICK banner on the feed card and a tinted, thick-bordered feed box,
+   on top of the strip's bold line and the countdown's accent, which stay. */
+.youbanner { margin: var(--space-3) 0 0; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); background: var(--accent-fill); color: var(--on-accent); font-weight: var(--weight-black); font-size: var(--text-lg); letter-spacing: 0.04em; text-align: center; text-transform: uppercase; }
+.feedcard.onclock { border-color: var(--accent-fill); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-fill) 35%, transparent); }
+.feedcard.onclock #feed { border: 2px solid var(--accent-fill); background: color-mix(in srgb, var(--accent-fill) 10%, var(--surface)); }
+@media (prefers-reduced-motion: no-preference) { .youbanner { animation: youpulse 0.9s ease-in-out 2; } @keyframes youpulse { 50% { filter: brightness(1.25); } } }
 
 /* Feed console */
 .feedrow { display: flex; gap: var(--space-2); margin-bottom: var(--space-2); }
@@ -138,6 +146,7 @@ button.ghost.stale { border-color: var(--status-risk); color: var(--status-risk)
 #swline p { margin: 0 0 var(--space-1); max-width: none; }
 #swline .lead { display: inline-block; min-width: 7.5em; color: var(--accent); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: 0.06em; }
 #swline .cats { font-family: var(--font-data); }
+#swline p.swone .lead { min-width: 0; margin-right: var(--space-1); }
 ol.recos .tm { font-family: var(--font-data); font-size: var(--text-sm); color: var(--muted); letter-spacing: 0.04em; }
 ol.recos .tmpos { font-family: var(--font-data); font-size: var(--text-sm); color: var(--ink); letter-spacing: 0.04em; margin-left: var(--space-3); font-weight: var(--weight-medium); }
 .puntline { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); background: var(--bar-track); border-radius: var(--radius-sm); padding: var(--space-1) var(--space-3); margin: 0 0 var(--space-3); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
@@ -317,6 +326,7 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
     <div class="card feedcard">
       <p class="eyebrow">Pick-by-pick</p>
       <div class="mirror" id="mirror" aria-live="polite" aria-label="Pick log"></div>
+      <div id="youBanner" class="youbanner hidden" role="status" aria-live="assertive"></div>
       <div class="feedhead" style="margin-top: var(--space-4)">
         <span class="feedhead-side" id="feedHeadLeft"><button class="ghost" id="insertToggle" type="button">Insert at #…</button></span>
         <h2 id="feedTitle" class="hcenter">Pick feed</h2>
@@ -340,10 +350,8 @@ footer.colophon { margin-top: var(--space-16); padding-top: var(--space-6); bord
 
     <div class="card">
       <h2 class="hcenter">Decision card</h2>
-      <p class="zoneline"><span class="zl">Your build</span><span title="Your declared build: what you're targeting and what you're punting. Category ranks and the coherence strip read it. Analysis only — never advice.">targets &amp; punts · analysis, not advice</span></p>
       <div class="puntline" id="puntline"></div>
       <div id="coherence" class="hidden"></div>
-      <p class="zoneline"><span class="zl">The card's advice</span><span title="Ranked by blend50: marginal expected weekly category wins vs these 11 rosters + balanced value. Deliberately ignores the punt box — every punt-steered ordering tested measured −3.8 to −11pp championship. Blue chips show each player's fit for YOUR targets.">build-agnostic · by design</span></p>
       <p class="adviceline hidden" id="adviceline"></p>
       <div class="deckmeta" id="deckmeta"></div>
       <div id="flags"></div>
@@ -1803,7 +1811,7 @@ const JUDGMENT = {
   /* ---------- header stamp + fresh-data-pull ---------- */
   const BUILD_PULL = "2026-09-29"; // freshness stamp date; rewritten at each republish
   // what the last sweep changed — rewritten at each republish
-  const BUILD_NOTE = "2026-09-29 re-derivation pass after the four-source market intake (owner: proceed on D-M1/D-M2/D-M4/D-M5): every Yahoo-matched row carries Yahoo's official 9/28 positions (104 changed); nine lines re-derived from Basketball-Reference 2025-26 rows plus two dated camp-role outlets each, Clifford repriced off his rookie projection; Simmons, Riley, Flemings and Zach Collins added with dated placements. No placement moved; evidence dated 2026-09-29.";
+  const BUILD_NOTE = "2026-09-29 same-day rebuild (v34, owner: 60-second clock): concise decision card \u2014 advisor read in plain words on two lines, one-line strengths/winnable/soft-punt row, zone labels gone; YOUR PICK banner and accent feed box on the owner's turn. No data change (pool 334 rows, evidence dated 2026-09-29).";
   function pullAge() {
     return Math.floor((new Date() - new Date(BUILD_PULL + "T00:00:00")) / 864e5);
   }
@@ -2763,6 +2771,16 @@ const JUDGMENT = {
       `G (${famN.G})  F (${famN.F})  C (${famN.C})`;
   }
 
+  /* Owner's turn made unmistakable (owner request 2026-09-29): the YOUR PICK
+     banner and the feed card's accent state. Display only; the strip's
+     "YOU are on the clock" and the countdown line are unchanged. */
+  function setOwnerTurn(on, pickNo) {
+    const yb = $("youBanner"), fcard = document.querySelector(".feedcard");
+    if (!yb || !fcard) return;
+    yb.classList.toggle("hidden", !on);
+    fcard.classList.toggle("onclock", !!on);
+    yb.textContent = on ? `\u25b6 YOUR PICK \u2014 #${pickNo}` : "";
+  }
   function renderStrip() {
     const st = deck.state;
     const n = st.picks.length;
@@ -2771,6 +2789,7 @@ const JUDGMENT = {
     if (draftDone()) {
       $("feedCountdown").textContent = "(draft complete)";
       $("feedCountdown").classList.remove("onclocknow");
+      setOwnerTurn(false, 0);
       $("feed").placeholder = "draft complete";
       strip.innerHTML = "";
       strip.append(el("span", "", `Draft complete — ${total} picks`),
@@ -2806,6 +2825,7 @@ const JUDGMENT = {
     } else {                              /* someone else on the clock — bold just the count */
       fc.innerHTML = `(<strong>${clock.until}</strong> until your pick)`;
     }
+    setOwnerTurn(clock.phase === "you", n + 1);
     const mine = buildRosters(st, PLAYERS)[st.slot];
     strip.innerHTML = "";
     strip.append(
@@ -2876,16 +2896,19 @@ const JUDGMENT = {
       /* D51R-3: advice in words, never a write. The FULL TILT button lives
          behind PUNT_BUTTONS (off) and would route through adoptPunt. */
       const { read, pw } = leanState;
-      const path = `${read.winnable.length}/${read.keptAfter.length} kept cats winnable (beat ≥${Math.round(PUNT_WIN * 100)}% of the room; need ${Math.round(PUNT_PATH * 100)}%)`;
-      const named = list => list.map(c => `${c} (beats ${winShare(pw[c])})`).join(", ");
+      /* Plain words (owner request 2026-09-29, 60-second clock): what is lost,
+         for how long, what a punt would leave you winning, and the verdict —
+         one line. Same weekly-model numbers as before (D51R-3). */
+      const k = read.keptAfter.length, w = read.winnable.length, need = Math.ceil(PUNT_PATH * k);
+      const shares = list => list.map((c, i) => `${winShare(pw[c])}${i ? "" : " of the room"} in ${c}`).join(", ");
       let text, cls = "puntread";
       if (!read.advise) {
-        text = `Punt read — ${named(read.lean)} losing to most of the room; watching, not advising (a lean must hold ${PUNT_TURNS} of your turns in a row). ${path}.`;
+        text = `Watching ${read.lean.join(", ")}: losing ${read.lean.length > 1 ? "them" : "it"} to most of the room this pick (you beat ${shares(read.lean)}). Becomes advice after ${PUNT_TURNS} of your picks in a row.`;
       } else if (read.clear) {
         cls += " clear";
-        text = `Punt read — ${named(read.punt)} lost for ${PUNT_TURNS}+ of your turns and a punt has a clear path: ${path}. Advice only — set the punt box yourself if you agree.`;
+        text = `Losing ${read.punt.join(", ")} to most of the room, ${PUNT_TURNS} picks running (you beat ${shares(read.punt)}). Punting them works: you'd be winning ${w} of the other ${k} categories (need ${need}). Your call — set the punt box if you agree.`;
       } else {
-        text = `Punt read — ${named(read.punt)} lost for ${PUNT_TURNS}+ of your turns, but no clear path: ${path}. Build strengths instead of declaring.`;
+        text = `Losing ${read.punt.join(", ")} to most of the room, ${PUNT_TURNS} picks running (you beat ${shares(read.punt)}). Don't punt them: you'd be winning only ${w} of the other ${k} categories (need ${need}). Keep taking the best player.`;
       }
       const p = el("p", cls, text);
       p.dataset.tip = "Room-relative punt read (D51R-3, 2026-09-21): each category's share of the room this roster beats in a typical week, from the same weekly model the card's ΔECW half uses — not the 13-man z-sum rank, which in mock 51 read TO as 11th while the roster was beating 76% of the room in it. Never writes the punt box.";
@@ -2995,51 +3018,33 @@ const JUDGMENT = {
       const lockAt = rankTiers(st.teams).locked;
       const byRank = kept.slice().sort((a, b) => ranks[a] - ranks[b]);
       const tag = c => (ranks[c] <= lockAt ? "🔒" : "") + c;
-      const swL = el("div", "swcol", ""), swR = el("div", "swcol", "");
-      const mkLine = (col, label, txt, tip) => {
-        const line = el("p", "", "");
-        line.append(el("span", "lead", label));
-        const sp = el("span", "cats", txt);
-        sp.dataset.tip = tip;
-        line.append(sp);
-        col.append(line);
-      };
+      /* Option A (owner 2026-09-29, 60-second clock): one line. The chip strip
+         above already shows every rank, so weaknesses are not repeated. */
       const rankTip = cs => cs.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") +
         ` — vs the field on current rosters, recomputed every pick; 🔒 = dominated (rank ≤ ${lockAt})`;
       const lostAt = rankTiers(st.teams).lostFrom;
-      /* Selection is by rank; DISPLAY is in the deck's canonical cat order
-         (owner spec 2026-07-31) so each cat holds a fixed position. */
       const ord = cs => CATS.filter(c => cs.includes(c));
       const s3 = ord(byRank.slice(0, 3)), w3 = ord(byRank.slice(-3));
-      /* Winnable = contested cats within reach: not in the strengths trio,
-         not in the weakness trio (audit fix 2026-07-31 — overlap made the
-         panel degenerate under a punt's 6-cat kept pool), not lost. */
-      const win3 = ord(byRank.filter(c =>
-        !s3.includes(c) && !w3.includes(c) && ranks[c] < lostAt).slice(0, 3));
-      mkLine(swL, "Strengths", s3.map(tag).join(" · "), rankTip(s3));
-      mkLine(swL, "Winnable", win3.length ? win3.map(tag).join(" · ") : "—",
-        win3.length
-          ? win3.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") +
-            ` — contested and within reach (rank < ${lostAt}): one good pick can flip these`
-          : `no contested cats in reach — everything is either a strength or effectively lost (rank ≥ ${lostAt})`);
-      mkLine(swR, "Weaknesses", w3.map(tag).join(" · "), rankTip(w3));
-      /* Soft punt (owner spec 2026-07-30): the concession diagnostic —
-         the cheapest cats to stop paying premiums for, given what the
-         room has drafted. Advisory ONLY: never zero-weight them — every
-         punt-DECLARING policy measured −5 to −11pp (G1a, CRN). */
-      /* Ranks appended per the calibration refutation (2026-07-31):
-         re-selecting which cats get named is provably degenerate here
-         (the only non-dead, non-Winnable cats are locked strengths),
-         so instead a dead concession is made to READ as the tautology
-         it is — "BLK 12/12" self-annotates. */
+      const win3 = ord(byRank.filter(c => !s3.includes(c) && !w3.includes(c) && ranks[c] < lostAt).slice(0, 3));
       const cheap = mine.length >= 4 ? cheapestConcessions(mine, st) : null;
-      const cheapFmt = cheap ? cheap.map(lbl =>
-        lbl.split("+").map(c => `${c} ${ranks[c]}/${st.teams}`).join(" + ")).join(" · ") : null;
-      mkLine(swR, "Soft punt", cheapFmt || "—",
+      const cheapFmt = cheap ? cheap.map(lbl => lbl.split("+").map(c => `${c} ${ranks[c]}/${st.teams}`).join(" + ")).join(" · ") : null;
+      const line = el("p", "swone", "");
+      const seg = (label, txt, tip) => {
+        line.append(el("span", "lead", label));
+        const sp = el("span", "cats", txt); sp.dataset.tip = tip; line.append(sp);
+      };
+      seg("Strong", s3.map(tag).join(" · "), rankTip(s3));
+      line.append(el("span", "", "  ·  "));
+      seg("Winnable", win3.length ? win3.map(tag).join(" · ") : "—",
+        win3.length
+          ? win3.map(c => `${c} rank ${ranks[c]}/${st.teams}`).join(" · ") + ` — contested and within reach (rank < ${lostAt}): one good pick can flip these`
+          : `no contested cats in reach — everything is either a strength or effectively lost (rank ≥ ${lostAt})`);
+      line.append(el("span", "", "  ·  "));
+      seg("Soft punt", cheap ? cheap[0].split("+").join(" + ") : "—",
         cheap
-          ? "cheapest cats to stop chasing (concession diagnostic: coverage gained elsewhere minus value already sunk, elasticity-weighted vs the room's live rosters). Stop paying premiums here — do NOT zero-weight or declare a punt: every punt-declaring policy measured −5 to −11pp (G1a, CRN)."
+          ? `${cheapFmt} — the cheapest cats to stop chasing (coverage gained elsewhere minus value already sunk, vs the room's live rosters). Advisory only: never zero-weight them`
           : "forms from your 4th pick — needs enough of the room's rosters to price concessions");
-      sw.append(swL, swR);
+      sw.append(line);
     }
     const recoFw = fitWeights(punt, ranks, mine.length, st.teams);
     const rng = makeRng(1); // council has zero noise; rng unused but required
@@ -3089,12 +3094,18 @@ const JUDGMENT = {
        Ajay Mitchell (assists) over Braun cost 7.6 championship points. */
     if (advisorLine && scored.length) {
       const top = scored[0].p;
+      const traps = [];
       for (const c of advisorLine.cats) {
         const best = pool.slice().sort((a, b) => b.z[c] - a.z[c])[0];
         if (!best || best.n === top.n) continue;
         const rk = scoredAll.findIndex(r => r.p.n === best.n) + 1;
-        advisorLine.el.textContent += ` ${c} is dead — don't reach: ${best.n} (best ${c} left, card #${rk || "—"}) does not beat 🎯 ${top.n}; the card already prices ${c}.`;
+        traps.push(`${best.n} (${c}, card #${rk || "—"})`);
       }
+      /* One line for all of them (owner request 2026-09-29): the category, the
+         best man left in it with his card rank, and the verdict. */
+      if (traps.length)
+        advisorLine.el.insertAdjacentElement("afterend",
+          el("p", "puntread", `Don't reach for a lost category: ${traps.join(" · ")} — none beats 🎯 ${top.n}; the card already priced those in.`));
     }
     /* Lineup-capacity truth line (owner-reported 2026-08-05: "it wouldn't
        routinely have me load up on 5 or 6 C's"). E22/E22b measured both
