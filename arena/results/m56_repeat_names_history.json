@@ -1,0 +1,432 @@
+{
+ "OG Anunoby": [
+  {
+   "mock": 51,
+   "pick": 58,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    58
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 52,
+   "pick": 74,
+   "seat": 2,
+   "owner": false,
+   "card1_turns": [
+    63
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 53,
+   "pick": 63,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    58,
+    63
+   ],
+   "top5_turns": 2
+  },
+  {
+   "mock": 54,
+   "pick": 58,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    58
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 55,
+   "pick": 47,
+   "seat": 2,
+   "owner": false,
+   "card1_turns": [
+    34
+   ],
+   "top5_turns": 2
+  },
+  {
+   "mock": 56,
+   "pick": 58,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    58
+   ],
+   "top5_turns": 3
+  }
+ ],
+ "Brook Lopez": [
+  {
+   "mock": 51,
+   "pick": null,
+   "seat": null,
+   "owner": false,
+   "card1_turns": [
+    154
+   ],
+   "top5_turns": 7
+  },
+  {
+   "mock": 52,
+   "pick": 116,
+   "seat": 5,
+   "owner": false,
+   "card1_turns": [],
+   "top5_turns": 4
+  },
+  {
+   "mock": 53,
+   "pick": null,
+   "seat": null,
+   "owner": false,
+   "card1_turns": [
+    154
+   ],
+   "top5_turns": 6
+  },
+  {
+   "mock": 54,
+   "pick": null,
+   "seat": null,
+   "owner": false,
+   "card1_turns": [
+    154
+   ],
+   "top5_turns": 7
+  },
+  {
+   "mock": 55,
+   "pick": 81,
+   "seat": 9,
+   "owner": false,
+   "card1_turns": [],
+   "top5_turns": 1
+  },
+  {
+   "mock": 56,
+   "pick": 154,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    154
+   ],
+   "top5_turns": 7
+  }
+ ],
+ "Cameron Johnson": [
+  {
+   "mock": 51,
+   "pick": 106,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    106
+   ],
+   "top5_turns": 5
+  },
+  {
+   "mock": 52,
+   "pick": 111,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    87,
+    106,
+    111
+   ],
+   "top5_turns": 4
+  },
+  {
+   "mock": 53,
+   "pick": 135,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    111,
+    130,
+    135
+   ],
+   "top5_turns": 5
+  },
+  {
+   "mock": 54,
+   "pick": 106,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    106
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 55,
+   "pick": 87,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    63,
+    82,
+    87
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 56,
+   "pick": 87,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    87
+   ],
+   "top5_turns": 3
+  }
+ ],
+ "Christian Braun": [
+  {
+   "mock": 51,
+   "pick": 135,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    135
+   ],
+   "top5_turns": 4
+  },
+  {
+   "mock": 52,
+   "pick": 156,
+   "seat": 12,
+   "owner": false,
+   "card1_turns": [
+    130,
+    135,
+    154
+   ],
+   "top5_turns": 6
+  },
+  {
+   "mock": 53,
+   "pick": 145,
+   "seat": 1,
+   "owner": false,
+   "card1_turns": [],
+   "top5_turns": 4
+  },
+  {
+   "mock": 54,
+   "pick": 145,
+   "seat": 1,
+   "owner": false,
+   "card1_turns": [
+    130,
+    135
+   ],
+   "top5_turns": 4
+  },
+  {
+   "mock": 55,
+   "pick": 111,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    111
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 56,
+   "pick": 135,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    130,
+    135
+   ],
+   "top5_turns": 5
+  }
+ ],
+ "Tari Eason": [
+  {
+   "mock": 51,
+   "pick": 130,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    130
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 52,
+   "pick": 135,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [],
+   "top5_turns": 3
+  },
+  {
+   "mock": 53,
+   "pick": 137,
+   "seat": 8,
+   "owner": false,
+   "card1_turns": [],
+   "top5_turns": 6
+  },
+  {
+   "mock": 54,
+   "pick": 130,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [],
+   "top5_turns": 4
+  },
+  {
+   "mock": 55,
+   "pick": 106,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    106
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 56,
+   "pick": 111,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    111
+   ],
+   "top5_turns": 4
+  }
+ ],
+ "Jakob Poeltl": [
+  {
+   "mock": 51,
+   "pick": 111,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    111
+   ],
+   "top5_turns": 4
+  },
+  {
+   "mock": 52,
+   "pick": 82,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    82
+   ],
+   "top5_turns": 2
+  },
+  {
+   "mock": 53,
+   "pick": 106,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    106
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 54,
+   "pick": 111,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    111
+   ],
+   "top5_turns": 4
+  },
+  {
+   "mock": 55,
+   "pick": 82,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [],
+   "top5_turns": 2
+  },
+  {
+   "mock": 56,
+   "pick": 82,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    82
+   ],
+   "top5_turns": 2
+  }
+ ],
+ "Myles Turner": [
+  {
+   "mock": 51,
+   "pick": 102,
+   "seat": 6,
+   "owner": false,
+   "card1_turns": [
+    82,
+    87
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 52,
+   "pick": 87,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [],
+   "top5_turns": 3
+  },
+  {
+   "mock": 53,
+   "pick": 87,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    82,
+    87
+   ],
+   "top5_turns": 3
+  },
+  {
+   "mock": 54,
+   "pick": 87,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    82,
+    87
+   ],
+   "top5_turns": 4
+  },
+  {
+   "mock": 55,
+   "pick": 71,
+   "seat": 2,
+   "owner": false,
+   "card1_turns": [],
+   "top5_turns": 1
+  },
+  {
+   "mock": 56,
+   "pick": 106,
+   "seat": 10,
+   "owner": true,
+   "card1_turns": [
+    106
+   ],
+   "top5_turns": 5
+  }
+ ]
+}

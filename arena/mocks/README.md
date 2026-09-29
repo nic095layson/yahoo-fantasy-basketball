@@ -134,3 +134,32 @@ is on the author. See LEDGER §3.
   `hoops.py draft resync` (156/156 names and seats match, no UNKNOWN). Deck card replayed from the deck
   drafted against (`live_deckcard.py 55 rev:28266d8:docs/draft-deck.html arena/results/m55_deckcard_v28.json`);
   survival pooled with the 51–54 deck cards. Stage order matters: `arms` reads `m55_hindsight.json`.
+- **Mock 56 (2026-09-29, slot 10).** Public Yahoo room drafted on deck v31/v32 (same pool, sha
+  `c0bf82bf4d39`, and the same engine — only the resolver's dot-folding differs between the two), the
+  owner's stated "how I would actually want to draft" (Haliburton / Lillard / Kyrie at the point).
+  `live_retro.MOCKS[56]` = `dict(tags=("v31",), veto=True)`; the v31 pool is pinned to rev `e2b45ed`
+  and regenerated as `m56_players_v31.csv` when missing. State rebuilt from Yahoo's recap with
+  `hoops.py draft resync` (156/156 "Last, First" lines resolved, no UNKNOWN, seats match the snake,
+  md5 `e5305ff3b4a1b5c04a18c65e2d67e56c`). Deck card replayed from the deck drafted against
+  (`live_deckcard.py 56 rev:e2b45ed:docs/draft-deck.html arena/results/m56_deckcard_v31.json`);
+  survival pooled with the 51–55 deck cards; `arms` reads `m56_hindsight.json`. Tool-state
+  integrity: the owner's tool log (`arena/data/events/m56_tool_events.json` — 162 feeds and one undo:
+  bare surnames where the echo said "assumed over" / "only X left" / "skipped", the four raw UNKNOWN
+  texts with their `N- Name` fixes, the #120 "Reed" undo, the "Mitchell" HALT) replayed through the
+  real page with `live_replay_dom.mjs` on BOTH the v31 and the v32 page: 163 events, 0 echo misses,
+  0 clock mismatches, 0 page errors, all 156 positions equal to the recap on both —
+  `arena/results/m56_tool_vs_truth.json`. **Repeat-name audit** (owner question, same day):
+  `repeat_names_audit.mjs <deck.html> <states_dir> <mock> <other mocks csv> <out.json> [watch names]`
+  re-ranks the available pool at every owner turn with the deck's own engine under the actual
+  roster, each other room's owner roster at that turn (substituted in and removed from any
+  opponent holding those men), an empty roster, and value-only / ΔECW-only orders, and records the
+  watch-list names' value, ΔECW and market ranks per turn — `m56_repeat_names_audit.json`; the
+  six-room draft-slot and card-🎯 history of the same names is `m56_repeat_names_history.json`.
+  Finding: the #1 changes at 9 of 13 turns under other rosters (11 of 13 against an empty roster);
+  the late-round SET of names recurs because rooms price them 30–80 slots below the deck's value
+  (kit report `after-report-2026-09-29-draft56.md` §7).
+- **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
+  `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
+  session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
+  launch dies with `SIGTRAP` before any event (three of three attempts; the browser's Unix-socket paths
+  exceed the socket path limit). The same command with `TMPDIR` unset passed every time (four of four).

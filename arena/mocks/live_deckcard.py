@@ -31,6 +31,8 @@ PUNT_TIMELINES = {
     54: [(0, [])],
     # mock 55: deck MOCK mode vs the league cast; no punt declared (recap shows none)
     55: [(0, [])],
+    # mock 56 (2026-09-29, public room): no punt declared, no advisor click in the tool log
+    56: [(0, [])],
 }
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 if html_path.startswith("rev:"):

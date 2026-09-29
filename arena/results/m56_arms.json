@@ -1,0 +1,93 @@
+{
+ "as_drafted": {
+  "champ": 54.939,
+  "playoff": 99.95,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#15:Tyrese Maxey": {
+  "champ": 59.956,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Tyrese Maxey"
+   ]
+  ]
+ },
+ "swap#39:Desmond Bane": {
+  "champ": 58.006,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Desmond Bane"
+   ]
+  ]
+ },
+ "swap#63:Tyler Herro": {
+  "champ": 57.706,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Tyler Herro"
+   ]
+  ]
+ },
+ "swap#87:Miles Bridges": {
+  "champ": 55.167,
+  "playoff": 99.91,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Miles Bridges"
+   ]
+  ]
+ },
+ "swap#106:Miles Bridges": {
+  "champ": 52.756,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Miles Bridges"
+   ]
+  ]
+ },
+ "swap#130:Jordan Poole": {
+  "champ": 58.594,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Jordan Poole"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 62.561,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    130,
+    "Jordan Poole"
+   ]
+  ]
+ }
+}
