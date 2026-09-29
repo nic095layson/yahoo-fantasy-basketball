@@ -1,0 +1,16 @@
+{
+ "deck": "docs/draft-deck.html",
+ "cdf": "approx (A-S 7.1.26)",
+ "dfhash_vectors": 72,
+ "dfhash_mismatches": [],
+ "roster_models": 144,
+ "roster_model_max_abs_diff": 0.0,
+ "fill_weight_mismatches": 0,
+ "turns": 156,
+ "turns_with_identical_full_ordering": 156,
+ "turns_with_identical_top5": 156,
+ "max_abs_decw_diff": 2.6645352591003757e-15,
+ "max_abs_blend_diff": 0.0,
+ "first_divergences": [],
+ "pass": true
+}

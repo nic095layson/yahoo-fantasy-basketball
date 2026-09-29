@@ -1,0 +1,1648 @@
+{
+ "deck": "docs/draft-deck.html",
+ "at": "2026-09-29T00:53:49.088Z",
+ "assertions": 127,
+ "failed": 0,
+ "harnessCrash": null,
+ "pass": true,
+ "pageErrors": [],
+ "notes": {
+  "clipboardGrant": "granted",
+  "sweepPanelPlacementsSentence": "re-verifies all 330 placements,",
+  "copyPath": "clipboard write + read-back verified",
+  "live": {
+   "substitutions": 5,
+   "targetSeen": 11,
+   "lastCallSeen": 0,
+   "ownerTurns": [
+    {
+     "n": 9,
+     "pickNo": 10,
+     "onClock": true,
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Evan Mobley",
+      "Anthony Davis",
+      "Jalen Williams"
+     ],
+     "pins": [
+      "Karl-Anthony Towns"
+     ],
+     "engineTop5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Evan Mobley",
+      "Anthony Davis",
+      "Jalen Williams"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Jalen Johnson ranks #2 (0.005 behind 🎯 Karl-Anthony Towns)",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 14,
+     "pickNo": 15,
+     "onClock": true,
+     "top5": [
+      "Jalen Johnson",
+      "Jamal Murray",
+      "Jalen Williams",
+      "Derrick White",
+      "Austin Reaves"
+     ],
+     "pins": [
+      "Jalen Johnson"
+     ],
+     "engineTop5": [
+      "Jalen Johnson",
+      "Jamal Murray",
+      "Jalen Williams",
+      "Derrick White",
+      "Austin Reaves"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Jamal Murray ranks #2 (0.005 behind 🎯 Jalen Johnson)",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 33,
+     "pickNo": 34,
+     "onClock": true,
+     "top5": [
+      "Jalen Williams",
+      "Derrick White",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Desmond Bane"
+     ],
+     "pins": [
+      "Jalen Williams"
+     ],
+     "engineTop5": [
+      "Jalen Williams",
+      "Derrick White",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Desmond Bane"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Derrick White ranks #2 (0.002 behind 🎯 Jalen Williams)",
+     "hintPin": true,
+     "targetLabel": "TARGET: Steals-first G — can wait",
+     "targetClickSetsFitLens": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 38,
+     "pickNo": 39,
+     "onClock": true,
+     "top5": [
+      "Derrick White",
+      "Desmond Bane",
+      "Franz Wagner",
+      "Kyrie Irving",
+      "OG Anunoby"
+     ],
+     "pins": [
+      "Derrick White"
+     ],
+     "engineTop5": [
+      "Derrick White",
+      "Desmond Bane",
+      "Franz Wagner",
+      "Kyrie Irving",
+      "OG Anunoby"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Desmond Bane ranks #2 (0.004 behind 🎯 Derrick White)",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 57,
+     "pickNo": 58,
+     "onClock": true,
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Tyler Herro",
+      "Darius Garland",
+      "Cameron Johnson"
+     ],
+     "pins": [
+      "OG Anunoby"
+     ],
+     "engineTop5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Tyler Herro",
+      "Darius Garland",
+      "Cameron Johnson"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Payton Pritchard ranks #2 (0.004 behind 🎯 OG Anunoby)",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 62,
+     "pickNo": 63,
+     "onClock": true,
+     "top5": [
+      "Payton Pritchard",
+      "Tyler Herro",
+      "Darius Garland",
+      "Cameron Johnson",
+      "De'Aaron Fox"
+     ],
+     "pins": [
+      "Payton Pritchard"
+     ],
+     "engineTop5": [
+      "Payton Pritchard",
+      "Tyler Herro",
+      "Darius Garland",
+      "Cameron Johnson",
+      "De'Aaron Fox"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Tyler Herro ranks #2 (0.002 behind 🎯 Payton Pritchard)",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 81,
+     "pickNo": 82,
+     "onClock": true,
+     "top5": [
+      "Jakob Poeltl",
+      "Myles Turner",
+      "Tari Eason",
+      "Cameron Johnson",
+      "Brook Lopez"
+     ],
+     "pins": [
+      "Jakob Poeltl"
+     ],
+     "engineTop5": [
+      "Jakob Poeltl",
+      "Myles Turner",
+      "Tari Eason",
+      "Cameron Johnson",
+      "Brook Lopez"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Myles Turner ranks #2 (0.006 behind 🎯 Jakob Poeltl)",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 86,
+     "pickNo": 87,
+     "onClock": true,
+     "top5": [
+      "Cameron Johnson",
+      "Coby White",
+      "Christian Braun",
+      "Myles Turner",
+      "Zach LaVine"
+     ],
+     "pins": [
+      "Cameron Johnson"
+     ],
+     "engineTop5": [
+      "Cameron Johnson",
+      "Coby White",
+      "Christian Braun",
+      "Myles Turner",
+      "Zach LaVine"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Coby White ranks #2 (0.013 behind 🎯 Cameron Johnson)",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 105,
+     "pickNo": 106,
+     "onClock": true,
+     "top5": [
+      "Myles Turner",
+      "Tari Eason",
+      "Christian Braun",
+      "Brook Lopez",
+      "Jordan Poole"
+     ],
+     "pins": [
+      "Myles Turner"
+     ],
+     "engineTop5": [
+      "Myles Turner",
+      "Tari Eason",
+      "Christian Braun",
+      "Brook Lopez",
+      "Jordan Poole"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Tari Eason ranks #2 (0.000 behind 🎯 Myles Turner) — round-9+ rule (D54-1): take the 🎯",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 110,
+     "pickNo": 111,
+     "onClock": true,
+     "top5": [
+      "Christian Braun",
+      "Tari Eason",
+      "Cason Wallace",
+      "Brook Lopez",
+      "Jordan Poole"
+     ],
+     "pins": [
+      "Christian Braun"
+     ],
+     "engineTop5": [
+      "Christian Braun",
+      "Tari Eason",
+      "Cason Wallace",
+      "Brook Lopez",
+      "Jordan Poole"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Tari Eason ranks #2 (0.000 behind 🎯 Christian Braun) — round-9+ rule (D54-1): take the 🎯",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 129,
+     "pickNo": 130,
+     "onClock": true,
+     "top5": [
+      "Tari Eason",
+      "Brook Lopez",
+      "Jordan Poole",
+      "PJ Washington",
+      "Jaden McDaniels"
+     ],
+     "pins": [
+      "Tari Eason"
+     ],
+     "engineTop5": [
+      "Tari Eason",
+      "Brook Lopez",
+      "Jordan Poole",
+      "PJ Washington",
+      "Jaden McDaniels"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Brook Lopez ranks #2 (0.005 behind 🎯 Tari Eason) — round-9+ rule (D54-1): take the 🎯",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 134,
+     "pickNo": 135,
+     "onClock": true,
+     "top5": [
+      "Brook Lopez",
+      "Jordan Poole",
+      "Fred VanVleet",
+      "Collin Gillespie",
+      "Malik Monk"
+     ],
+     "pins": [
+      "Brook Lopez"
+     ],
+     "engineTop5": [
+      "Brook Lopez",
+      "Jordan Poole",
+      "Fred VanVleet",
+      "Collin Gillespie",
+      "Malik Monk"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Jordan Poole ranks #2 (0.008 behind 🎯 Brook Lopez) — round-9+ rule (D54-1): take the 🎯",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    },
+    {
+     "n": 153,
+     "pickNo": 154,
+     "onClock": true,
+     "top5": [
+      "Jordan Poole",
+      "Malik Monk",
+      "Quentin Grimes",
+      "PJ Washington",
+      "Jerami Grant"
+     ],
+     "pins": [
+      "Jordan Poole"
+     ],
+     "engineTop5": [
+      "Jordan Poole",
+      "Malik Monk",
+      "Quentin Grimes",
+      "PJ Washington",
+      "Jerami Grant"
+     ],
+     "cardMatchesEngine": true,
+     "onePin": true,
+     "vetoAbsent": true,
+     "hintOffCard": true,
+     "hint2": "off the card: Malik Monk ranks #2 (0.012 behind 🎯 Jordan Poole) — round-9+ rule (D54-1): take the 🎯",
+     "hintPin": true,
+     "takeLabel": "Stage pick",
+     "takeStages": true,
+     "logged": true,
+     "noGapWarn": true,
+     "rosterShows": true
+    }
+   ]
+  }
+ },
+ "failures": [],
+ "all": [
+  {
+   "id": "S1.setup-visible",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.echo-default",
+   "ok": true,
+   "detail": "12 teams × 13 rounds = 156 total picks (last pick #156)"
+  },
+  {
+   "id": "S1.echo-updates-on-input",
+   "ok": true,
+   "detail": "10 teams × 13 rounds = 130 total picks (last pick #130)"
+  },
+  {
+   "id": "S1.invalid-teams",
+   "ok": true,
+   "detail": "Teams must be 2 or more."
+  },
+  {
+   "id": "S1.invalid-rounds",
+   "ok": true,
+   "detail": "Rounds must be 1 or more."
+  },
+  {
+   "id": "S1.invalid-slot",
+   "ok": true,
+   "detail": "Your slot must be between 1 and 12."
+  },
+  {
+   "id": "S1.invalid-start-stays-on-setup",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.mode-mock-pressed",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.mode-live-pressed",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.punt-chips-9",
+   "ok": true,
+   "detail": 9
+  },
+  {
+   "id": "S1.punt-chip-toggles-on",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.punt-chip-toggles-off",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.sweep-panel-opens",
+   "ok": true,
+   "detail": "⚠ Data is 1 day old — run the sweep before drafting.\n\nLast sweep (2026-09-28): 2026-09-28 third build (v30) — three live-room lessons from mock 54: a my: pick o"
+  },
+  {
+   "id": "S1.sweep-panel-names-last-sweep",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.sweep-panel-closes",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.import-button-opens-chooser",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.import-invalid-json",
+   "ok": true,
+   "detail": "That file isn't valid JSON."
+  },
+  {
+   "id": "S1.import-missing-keys",
+   "ok": true,
+   "detail": "Missing keys — expected {teams, slot, size, punt, picks}."
+  },
+  {
+   "id": "S1.import-valid-enters-draft",
+   "ok": true,
+   "detail": [
+    "Imported draft state: 156 picks, you are Team 10."
+   ]
+  },
+  {
+   "id": "S1.draft-complete-strip",
+   "ok": true,
+   "detail": "Draft complete — 156 picks your roster: Team 10 no punt"
+  },
+  {
+   "id": "S1.draft-complete-countdown",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.draft-complete-placeholder",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.draft-complete-card",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.draft-complete-roster-13",
+   "ok": true,
+   "detail": 13
+  },
+  {
+   "id": "S1.advance-hidden-in-live",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.export-download",
+   "ok": true,
+   "detail": {
+    "filename": "draft_state.json",
+    "picks": 156,
+    "keys": [
+     "teams",
+     "slot",
+     "size",
+     "punt",
+     "picks"
+    ]
+   }
+  },
+  {
+   "id": "S1.export-logged",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.reset-armed",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.reset-clears",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S1.reset-remembers-slot",
+   "ok": true,
+   "detail": "10"
+  },
+  {
+   "id": "S2.start-log",
+   "ok": true,
+   "detail": "Draft started: 12 teams × 13 rounds = 156 picks; you are Team 10 · LIVE"
+  },
+  {
+   "id": "S2.feed-title-live",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.advance-hidden",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.strip-pick1",
+   "ok": true,
+   "detail": {
+    "s": "Pick #1 · R1/13 Seat 1 on the clock your next: #10 your roster: 0/13 no punt 321 available",
+    "av": 321
+   }
+  },
+  {
+   "id": "S2.countdown-pick1",
+   "ok": true,
+   "detail": "(9 UNTIL YOUR PICK)"
+  },
+  {
+   "id": "S2.placeholder-pick1",
+   "ok": true,
+   "detail": "Pick 1 — Team (1)"
+  },
+  {
+   "id": "S2.enter-key-logs",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.turn#10",
+   "ok": true,
+   "detail": {
+    "n": 9,
+    "pickNo": 10,
+    "onClock": true,
+    "top5": [
+     "Karl-Anthony Towns",
+     "Jalen Johnson",
+     "Evan Mobley",
+     "Anthony Davis",
+     "Jalen Williams"
+    ],
+    "pins": [
+     "Karl-Anthony Towns"
+    ],
+    "engineTop5": [
+     "Karl-Anthony Towns",
+     "Jalen Johnson",
+     "Evan Mobley",
+     "Anthony Davis",
+     "Jalen Williams"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Jalen Johnson ranks #2 (0.005 behind 🎯 Karl-Anthony Towns)",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.turn#15",
+   "ok": true,
+   "detail": {
+    "n": 14,
+    "pickNo": 15,
+    "onClock": true,
+    "top5": [
+     "Jalen Johnson",
+     "Jamal Murray",
+     "Jalen Williams",
+     "Derrick White",
+     "Austin Reaves"
+    ],
+    "pins": [
+     "Jalen Johnson"
+    ],
+    "engineTop5": [
+     "Jalen Johnson",
+     "Jamal Murray",
+     "Jalen Williams",
+     "Derrick White",
+     "Austin Reaves"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Jamal Murray ranks #2 (0.005 behind 🎯 Jalen Johnson)",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.tab-boardtab",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.tab-rosters",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.tab-matrix",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.tab-vs",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.tab-best",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.grid-head",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.grid-rows",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.grid-snake",
+   "ok": true,
+   "detail": {
+    "r1c1": "Nikola Jokic",
+    "r2c12": "Cooper Flagg",
+    "r2c1": "Alperen Sengun"
+   }
+  },
+  {
+   "id": "S2.tooltip",
+   "ok": true,
+   "detail": {
+    "display": "block",
+    "text": "#1 → Seat 1"
+   }
+  },
+  {
+   "id": "S2.rosters-12",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "id": "S2.matrix",
+   "ok": true,
+   "detail": {
+    "bad": [],
+    "note": "Your rank: FG% 3/12  FT% 9/12  3PTM 10/12  PTS 10/12  REB 2/12  AST 11/12  ST 8/12  BLK 3/12  TO 9/12 · leading: FG%, REB, BLK · trailing: FT%, 3PTM, PTS, AST, TO"
+   }
+  },
+  {
+   "id": "S2.vs-options",
+   "ok": true,
+   "detail": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "11",
+    "12"
+   ]
+  },
+  {
+   "id": "S2.vs-table",
+   "ok": true,
+   "detail": {
+    "n": 9,
+    "bad": [],
+    "note": "Kept categories: you lead 3–6 vs Team 1",
+    "expNote": "Kept categories: you lead 3–6 vs Team 1",
+    "consistent": true
+   }
+  },
+  {
+   "id": "S2.row-click-stages",
+   "ok": true,
+   "detail": {
+    "feed": "Stephen Curry",
+    "firstRowName": "Stephen Curry"
+   }
+  },
+  {
+   "id": "S2.filter-pos-C",
+   "ok": true,
+   "detail": [
+    "PF,C",
+    "C,PF",
+    "PF,C"
+   ]
+  },
+  {
+   "id": "S2.filter-search",
+   "ok": true,
+   "detail": {
+    "q": "curr",
+    "n": 1
+   }
+  },
+  {
+   "id": "S2.search-enter-drafted",
+   "ok": true,
+   "detail": "297 available · matching “jokic”: 0 — Nikola Jokic — Drafted #1 (R1) by Team 1"
+  },
+  {
+   "id": "S2.veto-row-marked",
+   "ok": true,
+   "detail": [
+    "Kristaps Porzingis ⛔ DO NOT DRAFT▲"
+   ]
+  },
+  {
+   "id": "S2.show-12",
+   "ok": true,
+   "detail": 12
+  },
+  {
+   "id": "S2.lens-val-sorted",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.lens-decw-sorted",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.lens-fit-header",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.lens-mkt-sorted",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.mkt-column-matches-marketRanks",
+   "ok": true,
+   "detail": {
+    "checked": 25,
+    "bad": []
+   }
+  },
+  {
+   "id": "S2.cat-lens-PTS",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.cat-lens-3",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.cat-lens-cap",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.cat-lens-drill",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.cat-chip-remove",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.best-reset",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.undo",
+   "ok": true,
+   "detail": [
+    "↶ undid: Alperen Sengun (Seat 1)"
+   ]
+  },
+  {
+   "id": "S2.relog-after-undo",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.insert-bar-opens",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.insert-empty-warns",
+   "ok": true,
+   "detail": [
+    "Insert needs a pick # and a player name."
+   ]
+  },
+  {
+   "id": "S2.insert-empty-warn-visible-after-next-render",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.insert-shifts",
+   "ok": true,
+   "detail": {
+    "len": 25,
+    "p2": {
+     "player": "Stephen Curry",
+     "slot": 3
+    },
+    "p3": {
+     "player": "Luka Doncic",
+     "slot": 4
+    }
+   }
+  },
+  {
+   "id": "S2.resync-bar-opens",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.resync-empty-refused",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.resync-empty-refusal-visible-after-next-render",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.resync-rebuilds",
+   "ok": true,
+   "detail": [
+    "RESYNC refused: paste is empty — nothing cleared, the board is untouched.",
+    "RESYNC: cleared 25 pick(s); rebuilt 24 from the paste. Prior board saved in this browser (draftdeck.v1:preresync)."
+   ]
+  },
+  {
+   "id": "S2.numbered-fix",
+   "ok": true,
+   "detail": {
+    "player": "Stephen Curry",
+    "slot": 1
+   }
+  },
+  {
+   "id": "S2.numbered-fix-restore",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.copy-state",
+   "ok": true,
+   "detail": {
+    "copyLine": "State JSON copied to clipboard.",
+    "clipHead": "{\n  \"teams\": 12,\n  \"slot\": 10,\n  \"size\": 13,\n  \"punt\": [],\n "
+   }
+  },
+  {
+   "id": "S2.export-24",
+   "ok": true,
+   "detail": "draft_state.json"
+  },
+  {
+   "id": "S2.strip-at-24",
+   "ok": true,
+   "detail": {
+    "s": "Pick #26 · R3/13 Seat 2 on the clock your next: #34 your roster: 2/13 no punt 296 available",
+    "av": 296
+   }
+  },
+  {
+   "id": "S2.target-button-click",
+   "ok": true,
+   "detail": {
+    "label": "TARGET: Steals-first G — can wait",
+    "sort": "fit",
+    "pos": "G"
+   }
+  },
+  {
+   "id": "S2.turn#34",
+   "ok": true,
+   "detail": {
+    "n": 33,
+    "pickNo": 34,
+    "onClock": true,
+    "top5": [
+     "Jalen Williams",
+     "Derrick White",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Desmond Bane"
+    ],
+    "pins": [
+     "Jalen Williams"
+    ],
+    "engineTop5": [
+     "Jalen Williams",
+     "Derrick White",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Desmond Bane"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Derrick White ranks #2 (0.002 behind 🎯 Jalen Williams)",
+    "hintPin": true,
+    "targetLabel": "TARGET: Steals-first G — can wait",
+    "targetClickSetsFitLens": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.turn#39",
+   "ok": true,
+   "detail": {
+    "n": 38,
+    "pickNo": 39,
+    "onClock": true,
+    "top5": [
+     "Derrick White",
+     "Desmond Bane",
+     "Franz Wagner",
+     "Kyrie Irving",
+     "OG Anunoby"
+    ],
+    "pins": [
+     "Derrick White"
+    ],
+    "engineTop5": [
+     "Derrick White",
+     "Desmond Bane",
+     "Franz Wagner",
+     "Kyrie Irving",
+     "OG Anunoby"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Desmond Bane ranks #2 (0.004 behind 🎯 Derrick White)",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.strip-at-48",
+   "ok": true,
+   "detail": {
+    "s": "Pick #50 · R5/13 Seat 2 on the clock your next: #58 your roster: 4/13 no punt 272 available",
+    "av": 272
+   }
+  },
+  {
+   "id": "S2.turn#58",
+   "ok": true,
+   "detail": {
+    "n": 57,
+    "pickNo": 58,
+    "onClock": true,
+    "top5": [
+     "OG Anunoby",
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Johnson"
+    ],
+    "pins": [
+     "OG Anunoby"
+    ],
+    "engineTop5": [
+     "OG Anunoby",
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Johnson"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Payton Pritchard ranks #2 (0.004 behind 🎯 OG Anunoby)",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.turn#63",
+   "ok": true,
+   "detail": {
+    "n": 62,
+    "pickNo": 63,
+    "onClock": true,
+    "top5": [
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Johnson",
+     "De'Aaron Fox"
+    ],
+    "pins": [
+     "Payton Pritchard"
+    ],
+    "engineTop5": [
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Johnson",
+     "De'Aaron Fox"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Tyler Herro ranks #2 (0.002 behind 🎯 Payton Pritchard)",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.strip-at-72",
+   "ok": true,
+   "detail": {
+    "s": "Pick #74 · R7/13 Seat 2 on the clock your next: #82 your roster: 6/13 no punt 248 available",
+    "av": 248
+   }
+  },
+  {
+   "id": "S2.turn#82",
+   "ok": true,
+   "detail": {
+    "n": 81,
+    "pickNo": 82,
+    "onClock": true,
+    "top5": [
+     "Jakob Poeltl",
+     "Myles Turner",
+     "Tari Eason",
+     "Cameron Johnson",
+     "Brook Lopez"
+    ],
+    "pins": [
+     "Jakob Poeltl"
+    ],
+    "engineTop5": [
+     "Jakob Poeltl",
+     "Myles Turner",
+     "Tari Eason",
+     "Cameron Johnson",
+     "Brook Lopez"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Myles Turner ranks #2 (0.006 behind 🎯 Jakob Poeltl)",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.turn#87",
+   "ok": true,
+   "detail": {
+    "n": 86,
+    "pickNo": 87,
+    "onClock": true,
+    "top5": [
+     "Cameron Johnson",
+     "Coby White",
+     "Christian Braun",
+     "Myles Turner",
+     "Zach LaVine"
+    ],
+    "pins": [
+     "Cameron Johnson"
+    ],
+    "engineTop5": [
+     "Cameron Johnson",
+     "Coby White",
+     "Christian Braun",
+     "Myles Turner",
+     "Zach LaVine"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Coby White ranks #2 (0.013 behind 🎯 Cameron Johnson)",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.strip-at-96",
+   "ok": true,
+   "detail": {
+    "s": "Pick #98 · R9/13 Seat 2 on the clock your next: #106 your roster: 8/13 no punt 224 available",
+    "av": 224
+   }
+  },
+  {
+   "id": "S2.turn#106",
+   "ok": true,
+   "detail": {
+    "n": 105,
+    "pickNo": 106,
+    "onClock": true,
+    "top5": [
+     "Myles Turner",
+     "Tari Eason",
+     "Christian Braun",
+     "Brook Lopez",
+     "Jordan Poole"
+    ],
+    "pins": [
+     "Myles Turner"
+    ],
+    "engineTop5": [
+     "Myles Turner",
+     "Tari Eason",
+     "Christian Braun",
+     "Brook Lopez",
+     "Jordan Poole"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Tari Eason ranks #2 (0.000 behind 🎯 Myles Turner) — round-9+ rule (D54-1): take the 🎯",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.turn#111",
+   "ok": true,
+   "detail": {
+    "n": 110,
+    "pickNo": 111,
+    "onClock": true,
+    "top5": [
+     "Christian Braun",
+     "Tari Eason",
+     "Cason Wallace",
+     "Brook Lopez",
+     "Jordan Poole"
+    ],
+    "pins": [
+     "Christian Braun"
+    ],
+    "engineTop5": [
+     "Christian Braun",
+     "Tari Eason",
+     "Cason Wallace",
+     "Brook Lopez",
+     "Jordan Poole"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Tari Eason ranks #2 (0.000 behind 🎯 Christian Braun) — round-9+ rule (D54-1): take the 🎯",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.strip-at-120",
+   "ok": true,
+   "detail": {
+    "s": "Pick #122 · R11/13 Seat 2 on the clock your next: #130 your roster: 10/13 no punt 200 available",
+    "av": 200
+   }
+  },
+  {
+   "id": "S2.turn#130",
+   "ok": true,
+   "detail": {
+    "n": 129,
+    "pickNo": 130,
+    "onClock": true,
+    "top5": [
+     "Tari Eason",
+     "Brook Lopez",
+     "Jordan Poole",
+     "PJ Washington",
+     "Jaden McDaniels"
+    ],
+    "pins": [
+     "Tari Eason"
+    ],
+    "engineTop5": [
+     "Tari Eason",
+     "Brook Lopez",
+     "Jordan Poole",
+     "PJ Washington",
+     "Jaden McDaniels"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Brook Lopez ranks #2 (0.005 behind 🎯 Tari Eason) — round-9+ rule (D54-1): take the 🎯",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.turn#135",
+   "ok": true,
+   "detail": {
+    "n": 134,
+    "pickNo": 135,
+    "onClock": true,
+    "top5": [
+     "Brook Lopez",
+     "Jordan Poole",
+     "Fred VanVleet",
+     "Collin Gillespie",
+     "Malik Monk"
+    ],
+    "pins": [
+     "Brook Lopez"
+    ],
+    "engineTop5": [
+     "Brook Lopez",
+     "Jordan Poole",
+     "Fred VanVleet",
+     "Collin Gillespie",
+     "Malik Monk"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Jordan Poole ranks #2 (0.008 behind 🎯 Brook Lopez) — round-9+ rule (D54-1): take the 🎯",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.strip-at-144",
+   "ok": true,
+   "detail": {
+    "s": "Pick #146 · R13/13 Seat 2 on the clock your next: #154 your roster: 12/13 no punt 177 available",
+    "av": 177
+   }
+  },
+  {
+   "id": "S2.turn#154",
+   "ok": true,
+   "detail": {
+    "n": 153,
+    "pickNo": 154,
+    "onClock": true,
+    "top5": [
+     "Jordan Poole",
+     "Malik Monk",
+     "Quentin Grimes",
+     "PJ Washington",
+     "Jerami Grant"
+    ],
+    "pins": [
+     "Jordan Poole"
+    ],
+    "engineTop5": [
+     "Jordan Poole",
+     "Malik Monk",
+     "Quentin Grimes",
+     "PJ Washington",
+     "Jerami Grant"
+    ],
+    "cardMatchesEngine": true,
+    "onePin": true,
+    "vetoAbsent": true,
+    "hintOffCard": true,
+    "hint2": "off the card: Malik Monk ranks #2 (0.012 behind 🎯 Jordan Poole) — round-9+ rule (D54-1): take the 🎯",
+    "hintPin": true,
+    "takeLabel": "Stage pick",
+    "takeStages": true,
+    "logged": true,
+    "noGapWarn": true,
+    "rosterShows": true
+   }
+  },
+  {
+   "id": "S2.replay-complete",
+   "ok": true,
+   "detail": 156
+  },
+  {
+   "id": "S2.final-strip",
+   "ok": true,
+   "detail": "Draft complete — 156 picks your roster: Team 10 no punt"
+  },
+  {
+   "id": "S2.final-card",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.final-roster-13",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.owner-turns-13",
+   "ok": true,
+   "detail": 13
+  },
+  {
+   "id": "S2.card-matches-engine-all-turns",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "id": "S2.veto-never-on-card",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S2.hint-late-rule-from-round-9",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S3.start-log-punt",
+   "ok": true,
+   "detail": "Draft started: 12 teams × 13 rounds = 156 picks; you are Team 10; punting FT% · LIVE"
+  },
+  {
+   "id": "S3.strip-punt",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S3.matrix-punted-struck",
+   "ok": true,
+   "detail": {
+    "deco": "line-through",
+    "note": "Your rank: FG% 3/12  3PTM 3/12  PTS 4/12  REB 4/12  AST 3/12  ST 4/12  BLK 2/12  TO 1/12 · leading: FG%, 3PTM, PTS, REB, AST, ST, BLK, TO · trailing: – · punted: FT%"
+   }
+  },
+  {
+   "id": "S3.vs-punted-label",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S3.rosters-kept-excludes-punt",
+   "ok": true,
+   "detail": {
+    "exp": 10.177323999999999,
+    "got": 10.2
+   }
+  },
+  {
+   "id": "S4.start-log",
+   "ok": true,
+   "detail": [
+    "Draft started: 12 teams × 13 rounds = 156 picks; you are Team 10 · MOCK — your 11 league-mates hold the other seats",
+    "Cast: Seat 1: Will  Seat 2: JCo  Seat 3: John  Seat 4: Cayas  Seat 5: Oblena  Seat 6: Noah  Seat 7: Robby  Seat 8: Martin  Seat 9: Kevin  Seat 11: Hegi  Seat 12: Kyle"
+   ]
+  },
+  {
+   "id": "S4.auto-advance-to-owner",
+   "ok": true,
+   "detail": {
+    "n": 9,
+    "title": "YOUR PICK #10"
+   }
+  },
+  {
+   "id": "S4.cast-seated",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S4.take-label",
+   "ok": true,
+   "detail": "Draft them"
+  },
+  {
+   "id": "S4.draft-them-auto-advances",
+   "ok": true,
+   "detail": {
+    "n": 14,
+    "p9": {
+     "player": "Karl-Anthony Towns",
+     "slot": 10
+    }
+   }
+  },
+  {
+   "id": "S4.typed-pick-logs-and-advances",
+   "ok": true,
+   "detail": {
+    "n": 33,
+    "p14": {
+     "player": "Derrick White",
+     "slot": 10
+    }
+   }
+  },
+  {
+   "id": "S4.gap-warn-on-off-card-pick",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S4.undo-x19-back-to-owner-turn",
+   "ok": true,
+   "detail": {
+    "n": 14,
+    "feed": "my: Derrick White"
+   }
+  },
+  {
+   "id": "S4.undo-owner-pick",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S4.advance-button",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S4.mock-complete",
+   "ok": true,
+   "detail": {
+    "n": 156,
+    "guard": 12
+   }
+  },
+  {
+   "id": "S4.complete-log",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "id": "S4.export-has-cast",
+   "ok": true,
+   "detail": [
+    "teams",
+    "slot",
+    "size",
+    "punt",
+    "picks",
+    "cast"
+   ]
+  }
+ ]
+}

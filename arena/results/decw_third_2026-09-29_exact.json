@@ -1,0 +1,30 @@
+{
+ "deck": "docs/draft-deck.html",
+ "cdf": "exact (math.erf)",
+ "dfhash_vectors": 72,
+ "dfhash_mismatches": [],
+ "roster_models": 144,
+ "roster_model_max_abs_diff": 0.0,
+ "fill_weight_mismatches": 0,
+ "turns": 156,
+ "turns_with_identical_full_ordering": 155,
+ "turns_with_identical_top5": 156,
+ "max_abs_decw_diff": 3.123770420110361e-07,
+ "max_abs_blend_diff": 0.0019379844961240345,
+ "first_divergences": [
+  {
+   "state": "draft_state_54.json",
+   "pickNo": 63,
+   "firstDivergenceAt": 142,
+   "mine": [
+    "Ochai Agbaji",
+    "Justin Champagnie"
+   ],
+   "engine": [
+    "Sandro Mamukelashvili",
+    "Ochai Agbaji"
+   ]
+  }
+ ],
+ "pass": false
+}
