@@ -183,6 +183,7 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
     ok("S2.strip-pick1", /Pick #1 · R1\/13/.test(s) && /Seat 1 on the clock/.test(s) && /your next: #10/.test(s) && /your roster: 0\/13/.test(s) && /no punt/.test(s) && s.includes(`${av} available`), { s, av });
     ok("S2.countdown-pick1", (await page.locator("#feedCountdown").innerText()).trim().toLowerCase() === "(9 until your pick)", await page.locator("#feedCountdown").innerText());
     ok("S2.placeholder-pick1", (await page.getAttribute("#feed", "placeholder")) === "Pick 1 — Team (1)", await page.getAttribute("#feed", "placeholder"));
+    ok("S2.banner-hidden-when-not-you", await page.evaluate(() => { const b = document.getElementById("youBanner"); return !!b && b.classList.contains("hidden") && !document.querySelector(".feedcard.onclock"); }));
   }
   const ownerTurns = []; let substitutions = 0; let targetSeen = 0, targetClicked = false, lastCallSeen = 0;
   const veto = await page.evaluate(() => (typeof JUDGMENT !== "undefined" && JUDGMENT.doNotDraft) || []);
@@ -197,6 +198,19 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
       turn.onClock = /YOU are on the clock/.test(s) && (await page.locator("#feedCountdown").innerText()).trim().toLowerCase() === "(you're on the clock)"
         && (await page.locator("#feedCountdown").evaluate(el => el.classList.contains("onclocknow")))
         && (await page.getAttribute("#feed", "placeholder")) === `Pick ${n + 1} — Team (10 / YOU)`;
+      /* v34 (owner 2026-09-29): the owner's turn must be unmistakable — the YOUR PICK banner is shown
+         and the feed card is marked; and the card is concise — at most two advisor lines, the one-line
+         strengths row, no zone labels. Evaluated in-page so a missing element fails, never throws. */
+      turn.banner = await page.evaluate(() => {
+        const b = document.getElementById("youBanner"), f = document.querySelector(".feedcard");
+        return !!b && !b.classList.contains("hidden") && /YOUR PICK/.test(b.textContent) && !!f && f.classList.contains("onclock");
+      });
+      turn.concise = await page.evaluate(() => {
+        const sw = document.getElementById("swline");
+        return document.querySelectorAll("#deckmeta p.puntread").length <= 2
+          && (!sw || sw.classList.contains("hidden") || !!sw.querySelector("p.swone"))
+          && !document.querySelector("p.zoneline");
+      });
       const top5 = await topFive(page); const pins = await pinNames(page); const eng = await engineTop5(page);
       turn.top5 = top5; turn.pins = pins; turn.engineTop5 = eng;
       turn.cardMatchesEngine = JSON.stringify(top5) === JSON.stringify(eng);
@@ -238,7 +252,7 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
       turn.noGapWarn = !fresh.some(l => l.includes("off the card"));
       turn.rosterShows = (await page.locator("#myRoster").innerText()).includes(top5[0].split(" ").slice(-1)[0]);
       ownerTurns.push(turn);
-      ok(`S2.turn#${n + 1}`, turn.onClock && turn.cardMatchesEngine && turn.onePin && turn.vetoAbsent && turn.hintOffCard && turn.hintPin && turn.takeStages && turn.logged && turn.noGapWarn && turn.rosterShows, turn);
+      ok(`S2.turn#${n + 1}`, turn.onClock && turn.banner && turn.concise && turn.cardMatchesEngine && turn.onePin && turn.vetoAbsent && turn.hintOffCard && turn.hintPin && turn.takeStages && turn.logged && turn.noGapWarn && turn.rosterShows, turn);
     } else {
       let name = ST54.picks[n].player;
       if (before.some(pk => pk.player === name)) { name = await bestAvailByMkt(page); substitutions++; }
