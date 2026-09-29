@@ -1,0 +1,281 @@
+{
+ "as drafted": {
+  "ecw": 5.271,
+  "rank": 1,
+  "next": 5.052,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 1,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 9,
+   "ST": 3,
+   "BLK": 8,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 1,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 9,
+   "ST": 3,
+   "BLK": 8,
+   "TO": 5
+  },
+  "champ": 35.23,
+  "playoff": 97.29,
+  "champ_rank": 1,
+  "swaps": [],
+  "roster": [
+   "Jayson Tatum",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Kyrie Irving",
+   "Damian Lillard",
+   "OG Anunoby",
+   "Jakob Poeltl",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Devin Vassell",
+   "Quentin Grimes"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.678,
+  "rank": 1,
+  "next": 4.948,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 8,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 8,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 7,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 4,
+   "AST": 8,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 2
+  },
+  "champ": 52.96,
+  "playoff": 99.82,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Haliburton"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ]
+  ],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Derrick White",
+   "Payton Pritchard",
+   "OG Anunoby",
+   "Jakob Poeltl",
+   "Zach LaVine",
+   "Isaiah Hartenstein",
+   "Cason Wallace",
+   "PJ Washington",
+   "Devin Vassell",
+   "Quentin Grimes"
+  ]
+ },
+ "card at #39 only (Derrick White)": {
+  "ecw": 5.42,
+  "rank": 1,
+  "next": 4.947,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 8,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 3,
+   "AST": 9,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 9,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 3,
+   "AST": 8,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 4
+  },
+  "champ": 42.63,
+  "playoff": 98.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ],
+  "roster": [
+   "Jayson Tatum",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Derrick White",
+   "Damian Lillard",
+   "OG Anunoby",
+   "Jakob Poeltl",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Devin Vassell",
+   "Quentin Grimes"
+  ]
+ },
+ "card at #87 only (Miles Bridges)": {
+  "ecw": 5.365,
+  "rank": 1,
+  "next": 4.94,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 8,
+   "FT%": 1,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 8,
+   "ST": 3,
+   "BLK": 8,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 10,
+   "FT%": 1,
+   "3PTM": 2,
+   "PTS": 2,
+   "REB": 2,
+   "AST": 8,
+   "ST": 3,
+   "BLK": 9,
+   "TO": 5
+  },
+  "champ": 41.01,
+  "playoff": 98.36,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Miles Bridges"
+   ]
+  ],
+  "roster": [
+   "Jayson Tatum",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Kyrie Irving",
+   "Damian Lillard",
+   "OG Anunoby",
+   "Jakob Poeltl",
+   "Miles Bridges",
+   "Isaiah Hartenstein",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Devin Vassell",
+   "Quentin Grimes"
+  ]
+ },
+ "card at #39 and #87 (White, Bridges)": {
+  "ecw": 5.505,
+  "rank": 1,
+  "next": 4.845,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 9,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 8,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 10,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 2,
+   "AST": 8,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 5
+  },
+  "champ": 47.21,
+  "playoff": 99.34,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    87,
+    "Miles Bridges"
+   ]
+  ],
+  "roster": [
+   "Jayson Tatum",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Derrick White",
+   "Damian Lillard",
+   "OG Anunoby",
+   "Jakob Poeltl",
+   "Miles Bridges",
+   "Isaiah Hartenstein",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Devin Vassell",
+   "Quentin Grimes"
+  ]
+ }
+}

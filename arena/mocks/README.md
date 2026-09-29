@@ -170,6 +170,31 @@ is on the author. See LEDGER §3.
   Finding: the #1 changes at 9 of 13 turns under other rosters (11 of 13 against an empty roster);
   the late-round SET of names recurs because rooms price them 30–80 slots below the deck's value
   (kit report `after-report-2026-09-29-draft56.md` §7).
+- **Mock 57 (2026-09-29, slot 10).** Public Yahoo room, the owner's first on deck v34 (rev `0dfbe77`
+  — the concise card and YOUR PICK banner; data, engine and judgment blocks byte-identical to v33/`a3b4d31`,
+  so the v33 pool is this room's own pool). `live_retro.MOCKS[57]` = `dict(tags=("v33",), veto=True)`;
+  no punt declared (`PUNT_TIMELINES[57] = [(0, [])]`). State rebuilt from Yahoo's recap with `hoops.py
+  draft resync` (156/156 resolved, no UNKNOWN, seats match the snake, owner roster = the recap's "My
+  Team", md5 `de73d84f7f60ae858153f801f1319d59`). Deck card replayed from the deck drafted against
+  (`live_deckcard.py 57 rev:0dfbe77:docs/draft-deck.html arena/results/m57_deckcard_v33.json`);
+  `live_advisor.py` likewise; survival pooled with the 51–56 deck cards (`m57_survival.json`); `arms`
+  reads `m57_hindsight.json`; follow-the-card counterfactual rosters graded in
+  `m57_followcard_grade.json` (as drafted 35.23% / ECW 5.271 rank 1; follow-card self-consistent 52.96%
+  / 5.678; White at #39 alone 42.63%, Bridges at #87 alone 41.01%, both 47.21%). Tool-state integrity:
+  the owner's tool log (`arena/data/events/m57_tool_events.json` — 159 events: 154 direct feeds, the two
+  raw UNKNOWN texts "Gianis" and "Giffey" with their `6- Giannis Antetokounmpo` / `19- Josh Giddey`
+  fixes, the duplicate "OG" feed the deck skipped) replayed through the real v34 page with
+  `live_replay_dom.mjs`: 0 echo misses, 0 clock mismatches, 0 page errors, all 156 positions equal to
+  the recap, owner roster identical — `arena/results/m57_tool_vs_truth.json` (the D54 "#19 is still
+  UNKNOWN" reminder fired live when #20 was fed over the open #19). Repeat-name audit re-run with the
+  mock-56 watch list plus this room's late names (`m57_repeat_names_audit.json`): the #1 changes at 10 of
+  13 turns under other rooms' rosters (11 of 13 against an empty roster); Lopez, Cameron Johnson, Braun
+  and Eason made no Top-5 in this room. **Finding (data):** the draft room's recap shows FEWER positions
+  than the pool for 29 of the 156 drafted men (the pool copies Yahoo's 9/28 rankings-page paste; e.g.
+  Edwards PG,SG in the room vs PG,SF,SG in the pool) — kit report `after-report-2026-09-29-draft57.md`
+  §7, decision D57-1. The owner's roster-balance question (LEAN / LINEUP CAP flags vs the card) is
+  answered from the code in that report's §6; the deck's own `dailyFillWeights` on this roster starts
+  every man 99–100% of his game days under either position set.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
