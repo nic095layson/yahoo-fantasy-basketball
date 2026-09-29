@@ -127,7 +127,11 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
   await page.waitForFunction(() => document.getElementById("pullPanel").innerText.length > 0, null, { timeout: 3000 }).catch(() => {});   /* the panel fills after an awaited clipboard write */
   const panel = await page.locator("#pullPanel").innerText();
   ok("S1.sweep-panel-opens", !(await hidden(page, "#pullPanel")) && /Data is/.test(panel), panel.slice(0, 160));
-  ok("S1.sweep-panel-names-last-sweep", /Last sweep \(2026-09-28\)/.test(panel));
+  { /* the panel names the build's own pull date — read it from the build manifest, never hard-code it (v31 lesson, 2026-09-29) */
+    const built = (fs.readFileSync(html, "utf8").match(/<!-- build-manifest (\{[^\n]*\}) -->/) || [])[1];
+    const builtDate = built ? (JSON.parse(built).built || "") : "";
+    ok("S1.sweep-panel-names-last-sweep", builtDate !== "" && panel.includes(`Last sweep (${builtDate})`), { builtDate, panelHead: panel.slice(0, 120) });
+  }
   notes.sweepPanelPlacementsSentence = (panel.match(/re-verifies all [^,]+,/) || [""])[0];
   await page.click("#pullBtn");
   ok("S1.sweep-panel-closes", await hidden(page, "#pullPanel"));

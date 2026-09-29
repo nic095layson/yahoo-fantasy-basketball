@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-28",
-  "note": "2026-09-28 third build (v30) \u2014 three live-room lessons from mock 54: a my: pick off the card shows its card rank and gap under the feed and on the log line (round-9+ rule: take the pin); the pick typed right after an UNKNOWN fixes that UNKNOWN in place when it matches the unknown text, else logs with a warning, and the strip names every open UNKNOWN; the advisor's dead-category read names the reach it warns against. Pool unchanged from v28 (9d11cb45); veto (v29) unchanged. Arena: a punt-steered card from #63 on the mock-54 room scored -6.8 pp vs the unsteered card (0 of 3 seeds met the bar) - advisor stays advice-only.",
+  "date": "2026-09-29",
+  "note": "2026-09-29 pull (window 9/28\u20139/29, media day into the first camp day) \u2014 one placement moved: Rob Dillingham waived by Charlotte 9/28, two days after the Hield trade, row now FA. Brandon Ingram's partially torn Achilles (found at the May heel surgery, disclosed 9/28) \u2014 out for the start of the season, tagged inj-achilles-risk (\u00d70.78), kit GP 64\u219248. Duren skipped the camp opening (QO deadline 10/1), Brunson fully cleared, Porzingis 'hopefully back soon', Beal misses the start of camp (knee). Pool 330 rows.",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "Rob Dillingham CHA->FA (waived 9/28); Brandon Ingram tagged inj-achilles-risk (partial Achilles disclosed 9/28); notes refreshed for Beal, Lively, Kessler, Edey, Porzingis, Butler"
   },
   "rosters_verified": {
-    "date": "2026-09-28",
+    "date": "2026-09-29",
     "mode": "fallback-partial",
     "sources": "scripts/verify_rosters.py"
   }
