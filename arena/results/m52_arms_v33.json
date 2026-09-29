@@ -1,0 +1,128 @@
+{
+ "as_drafted": {
+  "champ": 23.672,
+  "playoff": 94.12,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Karl-Anthony Towns": {
+  "champ": 34.983,
+  "playoff": 97.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ]
+  ]
+ },
+ "swap#15:Karl-Anthony Towns": {
+  "champ": 28.933,
+  "playoff": 96.46,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Karl-Anthony Towns"
+   ]
+  ]
+ },
+ "swap#39:Derrick White": {
+  "champ": 28.25,
+  "playoff": 96.93,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#87:Isaiah Hartenstein": {
+  "champ": 24.033,
+  "playoff": 94.34,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Isaiah Hartenstein"
+   ]
+  ]
+ },
+ "swap#111:Malik Monk": {
+  "champ": 25.328,
+  "playoff": 94.83,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Malik Monk"
+   ]
+  ]
+ },
+ "swap#130:Devin Vassell": {
+  "champ": 40.517,
+  "playoff": 99.09,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Devin Vassell"
+   ]
+  ]
+ },
+ "swap#135:Collin Gillespie": {
+  "champ": 26.294,
+  "playoff": 95.68,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    135,
+    "Collin Gillespie"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 49.722,
+  "playoff": 99.95,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    87,
+    "Mikal Bridges"
+   ],
+   [
+    106,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Daniel Gafford"
+   ],
+   [
+    130,
+    "Collin Gillespie"
+   ],
+   [
+    135,
+    "Cason Wallace"
+   ]
+  ]
+ }
+}

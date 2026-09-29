@@ -155,6 +155,18 @@ is on the author. See LEDGER §3.
   opponent holding those men), an empty roster, and value-only / ΔECW-only orders, and records the
   watch-list names' value, ΔECW and market ranks per turn — `m56_repeat_names_audit.json`; the
   six-room draft-slot and card-🎯 history of the same names is `m56_repeat_names_history.json`.
+  **Re-calibration on v33 (2026-09-29, owner: "conduct re-calibration testing as well with these
+  new player rankings").** After the re-derivation pass (Yahoo official positions, nine lines
+  re-derived, four rows added; deck v33, rev `a3b4d31`, pool sha `6efb01cd772b`) every live room was
+  re-graded on the NEW pool without touching its own record: `live_retro.py <mock> <stage> --tag v33`
+  grades on `POOLS["v33"]` (`players_v33.csv`, regenerated from rev a3b4d31 when missing) and reads
+  and writes `m<mock>_<stage>_v33.json` beside the room's own files; `live_deckcard.py <mock>
+  rev:a3b4d31:docs/draft-deck.html arena/results/m<mock>_deckcard_v33.json` replays each room's
+  card on the v33 page; `live_survival.py 56 m56_deckcard_v33.json m56_survival_v33.json
+  m51…m55_deckcard_v33.json` pools the survival calibration across the six rooms on v33; and
+  `repeat_names_audit.mjs … arena/results/m56_repeat_names_audit_v33.json` re-runs the mock-56
+  audit on v33 with the same watch list. The before/after reading lives in the kit's
+  `report/after-reports/after-report-2026-09-29-final-check.md`.
   Finding: the #1 changes at 9 of 13 turns under other rosters (11 of 13 against an empty roster);
   the late-round SET of names recurs because rooms price them 30–80 slots below the deck's value
   (kit report `after-report-2026-09-29-draft56.md` §7).
