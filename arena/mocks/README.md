@@ -86,6 +86,20 @@ is on the author. See LEDGER §3.
   Yahoo's recap (13 positions off after an UNKNOWN was followed by a fresh feed instead of a
   `N- Name` fix); `live_debrief_generic.py` renders that diff as a "Tool-state integrity" section
   whenever the file exists, and its survival and limits wording is now room-generic.
+- **Full-control DOM check (system validation 2026-09-29).** `full_dom_check.mjs <deck.html> <draft_state_54.json> <out.json>`
+  drives the real page in headless Chromium through every interactive control it has — setup fields
+  and their echo, invalid-config refusals, LIVE/MOCK toggles, the nine punt chips, Daily sweep panel,
+  Import (chooser, invalid JSON, missing keys, a full 156-pick state), Export (download), Copy, the
+  two-click Reset, the feed (Log + Enter + numbered fix + live hint), Undo, Insert-at-#, Resync, all
+  five tabs, every Best-available filter / lens / header sort / cat chip / drill / row click, the
+  Take buttons, the TARGET button, the head-to-head select, the tooltip, a full LIVE replay of the
+  mock-54 room with the card's #1 taken at all 13 owner turns, a punt-declared room, and a full MOCK
+  room through "Draft them" — and cross-checks every number the page shows against the engine
+  functions the page itself carries (strip counts vs availablePool, matrix cells vs categoryRanks,
+  rosters vs totalValue, head-to-head vs rosterTotals, Mkt column vs marketRanks, the card's top-5
+  vs rankCard(decwScores) over the owner pool at every owner turn). Result:
+  `arena/results/full_dom_check_2026-09-29.json`; report: kit
+  `report/after-reports/after-report-2026-09-29-validation.md`.
 - **D54 fixes (2026-09-28).** `d54_dom_check.mjs <deck.html> <events.json> <truth.json> <state.json> <out.json>`
   drives the real page in headless Chromium: (A) replays the owner's mock-54 tool log
   (`arena/data/events/m54_tool_events.json`, built from the log's feeds, raw UNKNOWN texts,
