@@ -1,0 +1,250 @@
+{
+ "v33": {
+  "missing": [],
+  "ecw": {
+   "1": 4.658,
+   "2": 4.3304,
+   "3": 5.0522,
+   "4": 4.3577,
+   "5": 4.0124,
+   "6": 4.5443,
+   "7": 3.82,
+   "8": 4.4836,
+   "9": 4.1337,
+   "10": 5.2714,
+   "11": 4.7171,
+   "12": 4.6193
+  },
+  "ecw_rank": 1,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 1,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 9,
+   "ST": 3,
+   "BLK": 8,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 1,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 9,
+   "ST": 3,
+   "BLK": 8,
+   "TO": 5
+  },
+  "cat_rank_seasonshape": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 10,
+   "ST": 3,
+   "BLK": 8,
+   "TO": 4
+  },
+  "per_opp": {
+   "1": {
+    "name": "Darin",
+    "exp_cats": 5.195,
+    "cats": {
+     "FG%": 0.4,
+     "FT%": 0.6,
+     "3PTM": 0.851,
+     "PTS": 0.802,
+     "REB": 0.663,
+     "AST": 0.21,
+     "ST": 0.41,
+     "BLK": 0.721,
+     "TO": 0.539
+    }
+   },
+   "2": {
+    "name": "jordan",
+    "exp_cats": 5.404,
+    "cats": {
+     "FG%": 0.561,
+     "FT%": 0.709,
+     "3PTM": 0.708,
+     "PTS": 0.385,
+     "REB": 0.75,
+     "AST": 0.42,
+     "ST": 0.826,
+     "BLK": 0.162,
+     "TO": 0.883
+    }
+   },
+   "3": {
+    "name": "Kei",
+    "exp_cats": 4.696,
+    "cats": {
+     "FG%": 0.49,
+     "FT%": 0.501,
+     "3PTM": 0.49,
+     "PTS": 0.734,
+     "REB": 0.619,
+     "AST": 0.68,
+     "ST": 0.832,
+     "BLK": 0.161,
+     "TO": 0.189
+    }
+   },
+   "4": {
+    "name": "Nathan",
+    "exp_cats": 5.379,
+    "cats": {
+     "FG%": 0.381,
+     "FT%": 0.683,
+     "3PTM": 0.714,
+     "PTS": 0.659,
+     "REB": 0.584,
+     "AST": 0.533,
+     "ST": 0.901,
+     "BLK": 0.338,
+     "TO": 0.585
+    }
+   },
+   "5": {
+    "name": "Matan",
+    "exp_cats": 5.717,
+    "cats": {
+     "FG%": 0.54,
+     "FT%": 0.569,
+     "3PTM": 0.93,
+     "PTS": 0.903,
+     "REB": 0.8,
+     "AST": 0.19,
+     "ST": 0.792,
+     "BLK": 0.297,
+     "TO": 0.695
+    }
+   },
+   "6": {
+    "name": "Jeff",
+    "exp_cats": 5.15,
+    "cats": {
+     "FG%": 0.352,
+     "FT%": 0.848,
+     "3PTM": 0.953,
+     "PTS": 0.578,
+     "REB": 0.384,
+     "AST": 0.158,
+     "ST": 0.734,
+     "BLK": 0.43,
+     "TO": 0.714
+    }
+   },
+   "7": {
+    "name": "cnote",
+    "exp_cats": 5.935,
+    "cats": {
+     "FG%": 0.654,
+     "FT%": 0.642,
+     "3PTM": 0.675,
+     "PTS": 0.549,
+     "REB": 0.903,
+     "AST": 0.316,
+     "ST": 0.766,
+     "BLK": 0.641,
+     "TO": 0.789
+    }
+   },
+   "8": {
+    "name": "Kevin",
+    "exp_cats": 4.763,
+    "cats": {
+     "FG%": 0.239,
+     "FT%": 0.943,
+     "3PTM": 1.0,
+     "PTS": 0.995,
+     "REB": 0.373,
+     "AST": 0.52,
+     "ST": 0.291,
+     "BLK": 0.078,
+     "TO": 0.325
+    }
+   },
+   "9": {
+    "name": "Jake",
+    "exp_cats": 5.682,
+    "cats": {
+     "FG%": 0.607,
+     "FT%": 0.633,
+     "3PTM": 0.665,
+     "PTS": 0.464,
+     "REB": 0.951,
+     "AST": 0.096,
+     "ST": 0.726,
+     "BLK": 0.746,
+     "TO": 0.794
+    }
+   },
+   "11": {
+    "name": "Alwin",
+    "exp_cats": 5.081,
+    "cats": {
+     "FG%": 0.524,
+     "FT%": 0.687,
+     "3PTM": 0.525,
+     "PTS": 0.388,
+     "REB": 0.757,
+     "AST": 0.138,
+     "ST": 0.74,
+     "BLK": 0.47,
+     "TO": 0.851
+    }
+   },
+   "12": {
+    "name": "Yoann",
+    "exp_cats": 4.984,
+    "cats": {
+     "FG%": 0.507,
+     "FT%": 0.525,
+     "3PTM": 0.356,
+     "PTS": 0.346,
+     "REB": 0.969,
+     "AST": 0.257,
+     "ST": 0.853,
+     "BLK": 0.704,
+     "TO": 0.469
+    }
+   }
+  },
+  "seasonshape_wins": {
+   "1": 6,
+   "2": 6,
+   "3": 4,
+   "4": 7,
+   "5": 7,
+   "6": 5,
+   "7": 8,
+   "8": 3,
+   "9": 7,
+   "11": 5,
+   "12": 5
+  },
+  "exp_winning_weeks": 11,
+  "seasonshape_winning": 9,
+  "roster": [
+   "Jayson Tatum",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Kyrie Irving",
+   "Damian Lillard",
+   "OG Anunoby",
+   "Jakob Poeltl",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Devin Vassell",
+   "Quentin Grimes"
+  ]
+ }
+}

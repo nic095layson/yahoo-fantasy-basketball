@@ -76,6 +76,11 @@ MOCKS = {
     # (same pool, same engine; the veto live) — the owner's stated "how I would
     # actually want to draft": Haliburton / Lillard / Kyrie at the point.
     56: dict(tags=("v31",), veto=True),
+    # mock 57 (2026-09-29, slot 10): public Yahoo room drafted on deck v34 (rev
+    # 0dfbe77 — the concise card + YOUR PICK banner build; data, engine and
+    # judgment blocks byte-identical to v33/a3b4d31, so the v33 pool IS this
+    # room's own pool). The veto live. The owner's first room on the new layout.
+    57: dict(tags=("v33",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]

@@ -1,0 +1,3397 @@
+{
+ "deck": "docs/draft-deck.html",
+ "mock": 57,
+ "others": [
+  51,
+  52,
+  53,
+  54,
+  55,
+  56
+ ],
+ "veto": [
+  "Kristaps Porzingis"
+ ],
+ "turns": [
+  {
+   "pick": 10,
+   "actual": "Jayson Tatum",
+   "mine": [],
+   "card1": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson",
+    "Tyrese Haliburton",
+    "Anthony Davis",
+    "Chet Holmgren"
+   ],
+   "value1": "Anthony Davis",
+   "decw1": "Jalen Johnson",
+   "alt": {
+    "mock51": {
+     "mine": [],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Tyrese Haliburton",
+      "Anthony Davis",
+      "Chet Holmgren"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock52": {
+     "mine": [],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Tyrese Haliburton",
+      "Anthony Davis",
+      "Chet Holmgren"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Tyrese Haliburton",
+      "Anthony Davis",
+      "Chet Holmgren"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Tyrese Haliburton",
+      "Anthony Davis",
+      "Chet Holmgren"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Tyrese Haliburton",
+      "Anthony Davis",
+      "Chet Holmgren"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Tyrese Haliburton",
+      "Anthony Davis",
+      "Chet Holmgren"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "emptyRoster": {
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Tyrese Haliburton",
+      "Anthony Davis",
+      "Chet Holmgren"
+     ],
+     "rankOfActualCard1": 1
+    }
+   },
+   "watch": {
+    "OG Anunoby": {
+     "cardRank": 14,
+     "valueRank": 20,
+     "decwRank": 13,
+     "ds": 0.9506,
+     "decw": 3.957,
+     "mkt": 65,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Brook Lopez": {
+     "cardRank": 144,
+     "valueRank": 161,
+     "decwRank": 139,
+     "ds": 0.5255,
+     "decw": 3.1453,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Cameron Johnson": {
+     "cardRank": 106,
+     "valueRank": 93,
+     "decwRank": 115,
+     "ds": 0.672,
+     "decw": 3.2164,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Christian Braun": {
+     "cardRank": 110,
+     "valueRank": 85,
+     "decwRank": 127,
+     "ds": 0.6656,
+     "decw": 3.1844,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Tari Eason": {
+     "cardRank": 80,
+     "valueRank": 99,
+     "decwRank": 71,
+     "ds": 0.7325,
+     "decw": 3.4078,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Jakob Poeltl": {
+     "cardRank": 28,
+     "valueRank": 36,
+     "decwRank": 21,
+     "ds": 0.9124,
+     "decw": 3.7935,
+     "mkt": 190,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Myles Turner": {
+     "cardRank": 64,
+     "valueRank": 74,
+     "decwRank": 54,
+     "ds": 0.7994,
+     "decw": 3.5191,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 50,
+     "valueRank": 66,
+     "decwRank": 44,
+     "ds": 0.828,
+     "decw": 3.5992,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Collin Gillespie": {
+     "cardRank": 76,
+     "valueRank": 78,
+     "decwRank": 85,
+     "ds": 0.7436,
+     "decw": 3.3368,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "PJ Washington": {
+     "cardRank": 66,
+     "valueRank": 75,
+     "decwRank": 55,
+     "ds": 0.7962,
+     "decw": 3.5137,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Devin Vassell": {
+     "cardRank": 85,
+     "valueRank": 76,
+     "decwRank": 102,
+     "ds": 0.7197,
+     "decw": 3.2706,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Quentin Grimes": {
+     "cardRank": 90,
+     "valueRank": 82,
+     "decwRank": 103,
+     "ds": 0.7086,
+     "decw": 3.262,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Miles Bridges": {
+     "cardRank": 49,
+     "valueRank": 61,
+     "decwRank": 40,
+     "ds": 0.8424,
+     "decw": 3.6384,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 315
+    },
+    "Derrick White": {
+     "cardRank": 7,
+     "valueRank": 16,
+     "decwRank": 3,
+     "ds": 0.9729,
+     "decw": 4.1085,
+     "mkt": 45,
+     "av": 1,
+     "poolLeft": 315
+    }
+   }
+  },
+  {
+   "pick": 15,
+   "actual": "Karl-Anthony Towns",
+   "mine": [
+    "Jayson Tatum"
+   ],
+   "card1": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Anthony Davis"
+   ],
+   "value1": "Anthony Davis",
+   "decw1": "Jalen Johnson",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards"
+     ],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Chet Holmgren",
+      "Anthony Davis",
+      "Evan Mobley"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum"
+     ],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Chet Holmgren",
+      "Jalen Williams",
+      "Anthony Davis"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum"
+     ],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Chet Holmgren",
+      "Jalen Williams",
+      "Anthony Davis"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns"
+     ],
+     "card1": "Jalen Johnson",
+     "top5": [
+      "Jalen Johnson",
+      "Jamal Murray",
+      "Jalen Williams",
+      "Derrick White",
+      "James Harden"
+     ],
+     "rankOfActualCard1": null
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum"
+     ],
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Chet Holmgren",
+      "Jalen Williams",
+      "Anthony Davis"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns"
+     ],
+     "card1": "Jalen Johnson",
+     "top5": [
+      "Jalen Johnson",
+      "Jamal Murray",
+      "Jalen Williams",
+      "Derrick White",
+      "James Harden"
+     ],
+     "rankOfActualCard1": null
+    },
+    "emptyRoster": {
+     "card1": "Karl-Anthony Towns",
+     "top5": [
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Jalen Johnson",
+      "Chet Holmgren",
+      "Evan Mobley"
+     ],
+     "rankOfActualCard1": 1
+    }
+   },
+   "watch": {
+    "OG Anunoby": {
+     "cardRank": 10,
+     "valueRank": 16,
+     "decwRank": 9,
+     "ds": 0.9628,
+     "decw": 2.098,
+     "mkt": 65,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Brook Lopez": {
+     "cardRank": 149,
+     "valueRank": 156,
+     "decwRank": 145,
+     "ds": 0.5162,
+     "decw": 1.4737,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Cameron Johnson": {
+     "cardRank": 90,
+     "valueRank": 88,
+     "decwRank": 91,
+     "ds": 0.7136,
+     "decw": 1.6606,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Christian Braun": {
+     "cardRank": 77,
+     "valueRank": 80,
+     "decwRank": 77,
+     "ds": 0.7492,
+     "decw": 1.689,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Tari Eason": {
+     "cardRank": 92,
+     "valueRank": 94,
+     "decwRank": 87,
+     "ds": 0.7104,
+     "decw": 1.667,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Jakob Poeltl": {
+     "cardRank": 26,
+     "valueRank": 31,
+     "decwRank": 28,
+     "ds": 0.9078,
+     "decw": 1.8843,
+     "mkt": 190,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Myles Turner": {
+     "cardRank": 60,
+     "valueRank": 69,
+     "decwRank": 60,
+     "ds": 0.7945,
+     "decw": 1.7258,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 59,
+     "valueRank": 61,
+     "decwRank": 63,
+     "ds": 0.8026,
+     "decw": 1.7235,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Collin Gillespie": {
+     "cardRank": 84,
+     "valueRank": 73,
+     "decwRank": 96,
+     "ds": 0.7298,
+     "decw": 1.641,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "PJ Washington": {
+     "cardRank": 58,
+     "valueRank": 70,
+     "decwRank": 46,
+     "ds": 0.8155,
+     "decw": 1.8073,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Devin Vassell": {
+     "cardRank": 62,
+     "valueRank": 71,
+     "decwRank": 61,
+     "ds": 0.7896,
+     "decw": 1.7252,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Quentin Grimes": {
+     "cardRank": 69,
+     "valueRank": 77,
+     "decwRank": 65,
+     "ds": 0.7735,
+     "decw": 1.7226,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Miles Bridges": {
+     "cardRank": 41,
+     "valueRank": 56,
+     "decwRank": 26,
+     "ds": 0.8706,
+     "decw": 1.9097,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 310
+    },
+    "Derrick White": {
+     "cardRank": 6,
+     "valueRank": 12,
+     "decwRank": 2,
+     "ds": 0.9806,
+     "decw": 2.1864,
+     "mkt": 45,
+     "av": 1,
+     "poolLeft": 310
+    }
+   }
+  },
+  {
+   "pick": 34,
+   "actual": "Jalen Williams",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns"
+   ],
+   "card1": "Jalen Williams",
+   "top5": [
+    "Jalen Williams",
+    "Anthony Davis",
+    "Derrick White",
+    "Evan Mobley",
+    "Dyson Daniels"
+   ],
+   "value1": "Anthony Davis",
+   "decw1": "Derrick White",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns"
+     ],
+     "card1": "Jalen Williams",
+     "top5": [
+      "Jalen Williams",
+      "Anthony Davis",
+      "Evan Mobley",
+      "Dyson Daniels",
+      "Derrick White"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell"
+     ],
+     "card1": "Anthony Davis",
+     "top5": [
+      "Anthony Davis",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Derrick White",
+      "Dyson Daniels"
+     ],
+     "rankOfActualCard1": 3
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns"
+     ],
+     "card1": "Jalen Williams",
+     "top5": [
+      "Jalen Williams",
+      "Anthony Davis",
+      "Derrick White",
+      "Evan Mobley",
+      "Dyson Daniels"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson"
+     ],
+     "card1": "Jalen Williams",
+     "top5": [
+      "Jalen Williams",
+      "Derrick White",
+      "Dyson Daniels",
+      "Desmond Bane",
+      "OG Anunoby"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes"
+     ],
+     "card1": "Anthony Davis",
+     "top5": [
+      "Anthony Davis",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Derrick White",
+      "Dyson Daniels"
+     ],
+     "rankOfActualCard1": 3
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton"
+     ],
+     "card1": "Anthony Davis",
+     "top5": [
+      "Anthony Davis",
+      "Derrick White",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Dyson Daniels"
+     ],
+     "rankOfActualCard1": 4
+    },
+    "emptyRoster": {
+     "card1": "Anthony Davis",
+     "top5": [
+      "Anthony Davis",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "Onyeka Okongwu",
+      "Desmond Bane"
+     ],
+     "rankOfActualCard1": 21
+    }
+   },
+   "watch": {
+    "OG Anunoby": {
+     "cardRank": 6,
+     "valueRank": 9,
+     "decwRank": 4,
+     "ds": 0.981,
+     "decw": 1.4137,
+     "mkt": 65,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Brook Lopez": {
+     "cardRank": 122,
+     "valueRank": 137,
+     "decwRank": 108,
+     "ds": 0.581,
+     "decw": 0.9091,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Cameron Johnson": {
+     "cardRank": 73,
+     "valueRank": 69,
+     "decwRank": 78,
+     "ds": 0.75,
+     "decw": 0.9925,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Christian Braun": {
+     "cardRank": 71,
+     "valueRank": 61,
+     "decwRank": 82,
+     "ds": 0.7569,
+     "decw": 0.9854,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Tari Eason": {
+     "cardRank": 66,
+     "valueRank": 75,
+     "decwRank": 58,
+     "ds": 0.7741,
+     "decw": 1.0329,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Jakob Poeltl": {
+     "cardRank": 19,
+     "valueRank": 18,
+     "decwRank": 18,
+     "ds": 0.9414,
+     "decw": 1.2106,
+     "mkt": 190,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Myles Turner": {
+     "cardRank": 39,
+     "valueRank": 50,
+     "decwRank": 32,
+     "ds": 0.8621,
+     "decw": 1.1218,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 45,
+     "valueRank": 42,
+     "decwRank": 52,
+     "ds": 0.8414,
+     "decw": 1.0561,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Collin Gillespie": {
+     "cardRank": 53,
+     "valueRank": 54,
+     "decwRank": 55,
+     "ds": 0.8155,
+     "decw": 1.0387,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "PJ Washington": {
+     "cardRank": 44,
+     "valueRank": 51,
+     "decwRank": 40,
+     "ds": 0.8466,
+     "decw": 1.0981,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Devin Vassell": {
+     "cardRank": 49,
+     "valueRank": 52,
+     "decwRank": 51,
+     "ds": 0.8259,
+     "decw": 1.0578,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Quentin Grimes": {
+     "cardRank": 57,
+     "valueRank": 58,
+     "decwRank": 54,
+     "ds": 0.8103,
+     "decw": 1.048,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Miles Bridges": {
+     "cardRank": 28,
+     "valueRank": 37,
+     "decwRank": 23,
+     "ds": 0.9,
+     "decw": 1.1658,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 291
+    },
+    "Derrick White": {
+     "cardRank": 3,
+     "valueRank": 7,
+     "decwRank": 1,
+     "ds": 0.9897,
+     "decw": 1.4685,
+     "mkt": 45,
+     "av": 1,
+     "poolLeft": 291
+    }
+   }
+  },
+  {
+   "pick": 39,
+   "actual": "Kyrie Irving",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams"
+   ],
+   "card1": "Derrick White",
+   "top5": [
+    "Derrick White",
+    "Desmond Bane",
+    "OG Anunoby",
+    "Franz Wagner",
+    "Kyrie Irving"
+   ],
+   "value1": "Dyson Daniels",
+   "decw1": "Derrick White",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis"
+     ],
+     "card1": "Derrick White",
+     "top5": [
+      "Derrick White",
+      "Desmond Bane",
+      "Dyson Daniels",
+      "Franz Wagner",
+      "OG Anunoby"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis"
+     ],
+     "card1": "Derrick White",
+     "top5": [
+      "Derrick White",
+      "Desmond Bane",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Franz Wagner"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley"
+     ],
+     "card1": "Derrick White",
+     "top5": [
+      "Derrick White",
+      "Desmond Bane",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Kyrie Irving"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams"
+     ],
+     "card1": "Derrick White",
+     "top5": [
+      "Derrick White",
+      "Desmond Bane",
+      "Kyrie Irving",
+      "Payton Pritchard",
+      "Franz Wagner"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving"
+     ],
+     "card1": "Derrick White",
+     "top5": [
+      "Derrick White",
+      "Desmond Bane",
+      "OG Anunoby",
+      "Franz Wagner",
+      "Dyson Daniels"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley"
+     ],
+     "card1": "Derrick White",
+     "top5": [
+      "Derrick White",
+      "Desmond Bane",
+      "OG Anunoby",
+      "Kyrie Irving",
+      "Dyson Daniels"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "emptyRoster": {
+     "card1": "Kyrie Irving",
+     "top5": [
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Onyeka Okongwu",
+      "Jarrett Allen",
+      "Jakob Poeltl"
+     ],
+     "rankOfActualCard1": 8
+    }
+   },
+   "watch": {
+    "OG Anunoby": {
+     "cardRank": 3,
+     "valueRank": 5,
+     "decwRank": 4,
+     "ds": 0.9877,
+     "decw": 1.2711,
+     "mkt": 65,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Brook Lopez": {
+     "cardRank": 126,
+     "valueRank": 132,
+     "decwRank": 127,
+     "ds": 0.5491,
+     "decw": 0.8736,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Cameron Johnson": {
+     "cardRank": 63,
+     "valueRank": 64,
+     "decwRank": 59,
+     "ds": 0.7877,
+     "decw": 1.0229,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Christian Braun": {
+     "cardRank": 62,
+     "valueRank": 56,
+     "decwRank": 66,
+     "ds": 0.7895,
+     "decw": 1.0029,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Tari Eason": {
+     "cardRank": 73,
+     "valueRank": 70,
+     "decwRank": 83,
+     "ds": 0.7351,
+     "decw": 0.9657,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Jakob Poeltl": {
+     "cardRank": 21,
+     "valueRank": 13,
+     "decwRank": 29,
+     "ds": 0.9298,
+     "decw": 1.0894,
+     "mkt": 190,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Myles Turner": {
+     "cardRank": 37,
+     "valueRank": 45,
+     "decwRank": 37,
+     "ds": 0.8596,
+     "decw": 1.0621,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 52,
+     "valueRank": 37,
+     "decwRank": 69,
+     "ds": 0.8175,
+     "decw": 0.9932,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Collin Gillespie": {
+     "cardRank": 35,
+     "valueRank": 49,
+     "decwRank": 32,
+     "ds": 0.8614,
+     "decw": 1.0803,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "PJ Washington": {
+     "cardRank": 43,
+     "valueRank": 46,
+     "decwRank": 42,
+     "ds": 0.8491,
+     "decw": 1.0536,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Devin Vassell": {
+     "cardRank": 39,
+     "valueRank": 47,
+     "decwRank": 36,
+     "ds": 0.8579,
+     "decw": 1.0643,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Quentin Grimes": {
+     "cardRank": 41,
+     "valueRank": 53,
+     "decwRank": 34,
+     "ds": 0.8509,
+     "decw": 1.0699,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Miles Bridges": {
+     "cardRank": 23,
+     "valueRank": 32,
+     "decwRank": 17,
+     "ds": 0.9175,
+     "decw": 1.1491,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 286
+    },
+    "Derrick White": {
+     "cardRank": 1,
+     "valueRank": 3,
+     "decwRank": 1,
+     "ds": 0.9965,
+     "decw": 1.3985,
+     "mkt": 45,
+     "av": 1,
+     "poolLeft": 286
+    }
+   }
+  },
+  {
+   "pick": 58,
+   "actual": "Damian Lillard",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving"
+   ],
+   "card1": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Tyler Herro",
+    "Darius Garland",
+    "Jakob Poeltl"
+   ],
+   "value1": "OG Anunoby",
+   "decw1": "OG Anunoby",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "OG Anunoby",
+      "Tyler Herro",
+      "Damian Lillard",
+      "Darius Garland"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving"
+     ],
+     "card1": "OG Anunoby",
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Ivica Zubac",
+      "Jakob Poeltl",
+      "Tyler Herro"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams"
+     ],
+     "card1": "OG Anunoby",
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Tyler Herro",
+      "Darius Garland",
+      "Damian Lillard"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving"
+     ],
+     "card1": "OG Anunoby",
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Tyler Herro",
+      "Darius Garland",
+      "Damian Lillard"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane"
+     ],
+     "card1": "OG Anunoby",
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Ivica Zubac",
+      "Jakob Poeltl",
+      "Tyler Herro"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving"
+     ],
+     "card1": "OG Anunoby",
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Tyler Herro",
+      "Darius Garland",
+      "Damian Lillard"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "emptyRoster": {
+     "card1": "Jarrett Allen",
+     "top5": [
+      "Jarrett Allen",
+      "Damian Lillard",
+      "Darius Garland",
+      "Zach LaVine",
+      "Jakob Poeltl"
+     ],
+     "rankOfActualCard1": 17
+    }
+   },
+   "watch": {
+    "OG Anunoby": {
+     "cardRank": 1,
+     "valueRank": 1,
+     "decwRank": 1,
+     "ds": 1,
+     "decw": 1.2136,
+     "mkt": 65,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Brook Lopez": {
+     "cardRank": 100,
+     "valueRank": 113,
+     "decwRank": 87,
+     "ds": 0.6278,
+     "decw": 0.8294,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Cameron Johnson": {
+     "cardRank": 53,
+     "valueRank": 47,
+     "decwRank": 59,
+     "ds": 0.8045,
+     "decw": 0.9017,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Christian Braun": {
+     "cardRank": 49,
+     "valueRank": 40,
+     "decwRank": 63,
+     "ds": 0.8102,
+     "decw": 0.8903,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Tari Eason": {
+     "cardRank": 50,
+     "valueRank": 52,
+     "decwRank": 52,
+     "ds": 0.8083,
+     "decw": 0.9114,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Jakob Poeltl": {
+     "cardRank": 5,
+     "valueRank": 6,
+     "decwRank": 4,
+     "ds": 0.985,
+     "decw": 1.1124,
+     "mkt": 190,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Myles Turner": {
+     "cardRank": 20,
+     "valueRank": 30,
+     "decwRank": 13,
+     "ds": 0.9229,
+     "decw": 1.0467,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 22,
+     "valueRank": 24,
+     "decwRank": 22,
+     "ds": 0.9173,
+     "decw": 1.011,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Collin Gillespie": {
+     "cardRank": 30,
+     "valueRank": 34,
+     "decwRank": 31,
+     "ds": 0.8816,
+     "decw": 0.9592,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "PJ Washington": {
+     "cardRank": 26,
+     "valueRank": 31,
+     "decwRank": 24,
+     "ds": 0.9004,
+     "decw": 1.0011,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Devin Vassell": {
+     "cardRank": 31,
+     "valueRank": 32,
+     "decwRank": 34,
+     "ds": 0.8797,
+     "decw": 0.9546,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Quentin Grimes": {
+     "cardRank": 33,
+     "valueRank": 37,
+     "decwRank": 32,
+     "ds": 0.8741,
+     "decw": 0.9591,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Miles Bridges": {
+     "cardRank": 13,
+     "valueRank": 21,
+     "decwRank": 8,
+     "ds": 0.9492,
+     "decw": 1.0842,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 267
+    },
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 63,
+   "actual": "OG Anunoby",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard"
+   ],
+   "card1": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Jakob Poeltl",
+    "Ivica Zubac",
+    "De'Aaron Fox"
+   ],
+   "value1": "OG Anunoby",
+   "decw1": "OG Anunoby",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Darius Garland",
+      "Coby White",
+      "Zach LaVine",
+      "Mikal Bridges"
+     ],
+     "rankOfActualCard1": null
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner"
+     ],
+     "card1": "OG Anunoby",
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Jakob Poeltl",
+      "Darius Garland",
+      "Ivica Zubac"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard"
+     ],
+     "card1": "OG Anunoby",
+     "top5": [
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Darius Garland",
+      "De'Aaron Fox",
+      "Jalen Suggs"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Darius Garland",
+      "Coby White",
+      "Zach LaVine",
+      "De'Aaron Fox"
+     ],
+     "rankOfActualCard1": null
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "OG Anunoby",
+      "Darius Garland",
+      "De'Aaron Fox",
+      "Coby White"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Darius Garland",
+      "De'Aaron Fox",
+      "Coby White",
+      "Zach LaVine"
+     ],
+     "rankOfActualCard1": null
+    },
+    "emptyRoster": {
+     "card1": "Jarrett Allen",
+     "top5": [
+      "Jarrett Allen",
+      "Zach LaVine",
+      "Darius Garland",
+      "Coby White",
+      "Jakob Poeltl"
+     ],
+     "rankOfActualCard1": 16
+    }
+   },
+   "watch": {
+    "OG Anunoby": {
+     "cardRank": 1,
+     "valueRank": 1,
+     "decwRank": 1,
+     "ds": 1,
+     "decw": 1.1296,
+     "mkt": 65,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Brook Lopez": {
+     "cardRank": 93,
+     "valueRank": 108,
+     "decwRank": 79,
+     "ds": 0.6456,
+     "decw": 0.8108,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Cameron Johnson": {
+     "cardRank": 51,
+     "valueRank": 42,
+     "decwRank": 57,
+     "ds": 0.8142,
+     "decw": 0.865,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Christian Braun": {
+     "cardRank": 38,
+     "valueRank": 35,
+     "decwRank": 52,
+     "ds": 0.8372,
+     "decw": 0.8693,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Tari Eason": {
+     "cardRank": 41,
+     "valueRank": 47,
+     "decwRank": 43,
+     "ds": 0.8314,
+     "decw": 0.889,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Jakob Poeltl": {
+     "cardRank": 3,
+     "valueRank": 4,
+     "decwRank": 2,
+     "ds": 0.9923,
+     "decw": 1.0624,
+     "mkt": 190,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Myles Turner": {
+     "cardRank": 15,
+     "valueRank": 25,
+     "decwRank": 7,
+     "ds": 0.9425,
+     "decw": 1.0025,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 13,
+     "valueRank": 19,
+     "decwRank": 12,
+     "ds": 0.9444,
+     "decw": 0.9888,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Collin Gillespie": {
+     "cardRank": 24,
+     "valueRank": 29,
+     "decwRank": 26,
+     "ds": 0.8985,
+     "decw": 0.9167,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "PJ Washington": {
+     "cardRank": 20,
+     "valueRank": 26,
+     "decwRank": 15,
+     "ds": 0.9253,
+     "decw": 0.9741,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Devin Vassell": {
+     "cardRank": 26,
+     "valueRank": 27,
+     "decwRank": 32,
+     "ds": 0.8908,
+     "decw": 0.9034,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Quentin Grimes": {
+     "cardRank": 27,
+     "valueRank": 32,
+     "decwRank": 28,
+     "ds": 0.8889,
+     "decw": 0.9063,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Miles Bridges": {
+     "cardRank": 9,
+     "valueRank": 16,
+     "decwRank": 5,
+     "ds": 0.9636,
+     "decw": 1.0223,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 262
+    },
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 82,
+   "actual": "Jakob Poeltl",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby"
+   ],
+   "card1": "Jakob Poeltl",
+   "top5": [
+    "Jakob Poeltl",
+    "Payton Pritchard",
+    "Miles Bridges",
+    "Jalen Suggs",
+    "Coby White"
+   ],
+   "value1": "Payton Pritchard",
+   "decw1": "Jakob Poeltl",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Damian Lillard"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Jakob Poeltl",
+      "Zach LaVine",
+      "Miles Bridges",
+      "Coby White"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner",
+      "Dyson Daniels"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Jakob Poeltl",
+      "Miles Bridges",
+      "Coby White",
+      "Zach LaVine"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard",
+      "OG Anunoby"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Jakob Poeltl",
+      "Miles Bridges",
+      "Jalen Suggs",
+      "Coby White"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Payton Pritchard"
+     ],
+     "card1": "Jakob Poeltl",
+     "top5": [
+      "Jakob Poeltl",
+      "Miles Bridges",
+      "Jalen Suggs",
+      "Coby White",
+      "Zach LaVine"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan",
+      "De'Aaron Fox"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Coby White",
+      "Zach LaVine",
+      "Jakob Poeltl",
+      "Miles Bridges"
+     ],
+     "rankOfActualCard1": 4
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Damian Lillard"
+     ],
+     "card1": "Payton Pritchard",
+     "top5": [
+      "Payton Pritchard",
+      "Jakob Poeltl",
+      "Jalen Suggs",
+      "Zach LaVine",
+      "Miles Bridges"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "emptyRoster": {
+     "card1": "Zach LaVine",
+     "top5": [
+      "Zach LaVine",
+      "Jakob Poeltl",
+      "Coby White",
+      "Daniel Gafford",
+      "Aaron Gordon"
+     ],
+     "rankOfActualCard1": 2
+    }
+   },
+   "watch": {
+    "OG Anunoby": null,
+    "Brook Lopez": {
+     "cardRank": 73,
+     "valueRank": 89,
+     "decwRank": 56,
+     "ds": 0.7045,
+     "decw": 0.6971,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Cameron Johnson": {
+     "cardRank": 37,
+     "valueRank": 30,
+     "decwRank": 42,
+     "ds": 0.8554,
+     "decw": 0.7382,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Christian Braun": {
+     "cardRank": 32,
+     "valueRank": 23,
+     "decwRank": 41,
+     "ds": 0.8719,
+     "decw": 0.7404,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Tari Eason": {
+     "cardRank": 36,
+     "valueRank": 34,
+     "decwRank": 37,
+     "ds": 0.8574,
+     "decw": 0.7478,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Jakob Poeltl": {
+     "cardRank": 1,
+     "valueRank": 2,
+     "decwRank": 1,
+     "ds": 0.9979,
+     "decw": 0.941,
+     "mkt": 190,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Myles Turner": {
+     "cardRank": 8,
+     "valueRank": 13,
+     "decwRank": 4,
+     "ds": 0.969,
+     "decw": 0.8828,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 7,
+     "valueRank": 10,
+     "decwRank": 5,
+     "ds": 0.9731,
+     "decw": 0.876,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Collin Gillespie": {
+     "cardRank": 15,
+     "valueRank": 17,
+     "decwRank": 19,
+     "ds": 0.9298,
+     "decw": 0.7815,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "PJ Washington": {
+     "cardRank": 9,
+     "valueRank": 14,
+     "decwRank": 8,
+     "ds": 0.9587,
+     "decw": 0.8332,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Devin Vassell": {
+     "cardRank": 16,
+     "valueRank": 15,
+     "decwRank": 21,
+     "ds": 0.9298,
+     "decw": 0.7775,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Quentin Grimes": {
+     "cardRank": 18,
+     "valueRank": 20,
+     "decwRank": 20,
+     "ds": 0.9215,
+     "decw": 0.7806,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Miles Bridges": {
+     "cardRank": 3,
+     "valueRank": 7,
+     "decwRank": 3,
+     "ds": 0.9835,
+     "decw": 0.8905,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 243
+    },
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 87,
+   "actual": "Jaden McDaniels",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl"
+   ],
+   "card1": "Miles Bridges",
+   "top5": [
+    "Miles Bridges",
+    "Jalen Suggs",
+    "Isaiah Hartenstein",
+    "Myles Turner",
+    "Zach LaVine"
+   ],
+   "value1": "Zach LaVine",
+   "decw1": "Myles Turner",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Reed Sheppard"
+     ],
+     "card1": "Miles Bridges",
+     "top5": [
+      "Miles Bridges",
+      "Zach LaVine",
+      "Isaiah Hartenstein",
+      "Myles Turner",
+      "Jalen Suggs"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner",
+      "Dyson Daniels",
+      "Jakob Poeltl"
+     ],
+     "card1": "Zach LaVine",
+     "top5": [
+      "Zach LaVine",
+      "Miles Bridges",
+      "Jalen Suggs",
+      "Myles Turner",
+      "Isaiah Hartenstein"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard",
+      "OG Anunoby",
+      "Immanuel Quickley"
+     ],
+     "card1": "Miles Bridges",
+     "top5": [
+      "Miles Bridges",
+      "Jalen Suggs",
+      "Isaiah Hartenstein",
+      "Myles Turner",
+      "Zach LaVine"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Jaden McDaniels"
+     ],
+     "card1": "Miles Bridges",
+     "top5": [
+      "Miles Bridges",
+      "Isaiah Hartenstein",
+      "Jalen Suggs",
+      "Myles Turner",
+      "Zach LaVine"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan",
+      "De'Aaron Fox",
+      "Jakob Poeltl"
+     ],
+     "card1": "Zach LaVine",
+     "top5": [
+      "Zach LaVine",
+      "Miles Bridges",
+      "Jalen Suggs",
+      "Immanuel Quickley",
+      "Collin Gillespie"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Jakob Poeltl"
+     ],
+     "card1": "Zach LaVine",
+     "top5": [
+      "Zach LaVine",
+      "Miles Bridges",
+      "Jalen Suggs",
+      "Isaiah Hartenstein",
+      "PJ Washington"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "emptyRoster": {
+     "card1": "Zach LaVine",
+     "top5": [
+      "Zach LaVine",
+      "Daniel Gafford",
+      "Aaron Gordon",
+      "Christian Braun",
+      "Isaiah Hartenstein"
+     ],
+     "rankOfActualCard1": 47
+    }
+   },
+   "watch": {
+    "OG Anunoby": null,
+    "Brook Lopez": {
+     "cardRank": 62,
+     "valueRank": 85,
+     "decwRank": 45,
+     "ds": 0.73,
+     "decw": 0.6849,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Cameron Johnson": {
+     "cardRank": 29,
+     "valueRank": 27,
+     "decwRank": 34,
+     "ds": 0.8755,
+     "decw": 0.7112,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Christian Braun": {
+     "cardRank": 27,
+     "valueRank": 20,
+     "decwRank": 36,
+     "ds": 0.8861,
+     "decw": 0.7062,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Tari Eason": {
+     "cardRank": 31,
+     "valueRank": 30,
+     "decwRank": 32,
+     "ds": 0.8734,
+     "decw": 0.7118,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Jakob Poeltl": null,
+    "Myles Turner": {
+     "cardRank": 4,
+     "valueRank": 10,
+     "decwRank": 1,
+     "ds": 0.981,
+     "decw": 0.844,
+     "mkt": 100,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Isaiah Hartenstein": {
+     "cardRank": 3,
+     "valueRank": 7,
+     "decwRank": 3,
+     "ds": 0.9831,
+     "decw": 0.8197,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Collin Gillespie": {
+     "cardRank": 13,
+     "valueRank": 14,
+     "decwRank": 17,
+     "ds": 0.9388,
+     "decw": 0.739,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "PJ Washington": {
+     "cardRank": 6,
+     "valueRank": 11,
+     "decwRank": 6,
+     "ds": 0.9684,
+     "decw": 0.7938,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Devin Vassell": {
+     "cardRank": 16,
+     "valueRank": 12,
+     "decwRank": 22,
+     "ds": 0.9325,
+     "decw": 0.7303,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Quentin Grimes": {
+     "cardRank": 18,
+     "valueRank": 17,
+     "decwRank": 21,
+     "ds": 0.9241,
+     "decw": 0.7313,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Miles Bridges": {
+     "cardRank": 1,
+     "valueRank": 4,
+     "decwRank": 2,
+     "ds": 0.9916,
+     "decw": 0.8356,
+     "mkt": 97,
+     "av": 1,
+     "poolLeft": 238
+    },
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 106,
+   "actual": "Isaiah Hartenstein",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels"
+   ],
+   "card1": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Devin Vassell",
+    "Quentin Grimes"
+   ],
+   "value1": "Fred VanVleet",
+   "decw1": "Isaiah Hartenstein",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Reed Sheppard",
+      "Kristaps Porzingis"
+     ],
+     "card1": "Isaiah Hartenstein",
+     "top5": [
+      "Isaiah Hartenstein",
+      "PJ Washington",
+      "Devin Vassell",
+      "Saddiq Bey",
+      "Aaron Gordon"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner",
+      "Dyson Daniels",
+      "Jakob Poeltl",
+      "Myles Turner"
+     ],
+     "card1": "Isaiah Hartenstein",
+     "top5": [
+      "Isaiah Hartenstein",
+      "Collin Gillespie",
+      "Devin Vassell",
+      "PJ Washington",
+      "Saddiq Bey"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard",
+      "OG Anunoby",
+      "Immanuel Quickley",
+      "Myles Turner"
+     ],
+     "card1": "Isaiah Hartenstein",
+     "top5": [
+      "Isaiah Hartenstein",
+      "PJ Washington",
+      "Cason Wallace",
+      "Collin Gillespie",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Jaden McDaniels",
+      "Myles Turner"
+     ],
+     "card1": "Isaiah Hartenstein",
+     "top5": [
+      "Isaiah Hartenstein",
+      "PJ Washington",
+      "Cason Wallace",
+      "Aaron Gordon",
+      "Collin Gillespie"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan",
+      "De'Aaron Fox",
+      "Jakob Poeltl",
+      "Cameron Johnson"
+     ],
+     "card1": "Isaiah Hartenstein",
+     "top5": [
+      "Isaiah Hartenstein",
+      "Collin Gillespie",
+      "Devin Vassell",
+      "Cason Wallace",
+      "PJ Washington"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Jakob Poeltl",
+      "Cameron Johnson"
+     ],
+     "card1": "Isaiah Hartenstein",
+     "top5": [
+      "Isaiah Hartenstein",
+      "Collin Gillespie",
+      "PJ Washington",
+      "Cason Wallace",
+      "Devin Vassell"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "emptyRoster": {
+     "card1": "Daniel Gafford",
+     "top5": [
+      "Daniel Gafford",
+      "Aaron Gordon",
+      "Christian Braun",
+      "Isaiah Hartenstein",
+      "Cameron Johnson"
+     ],
+     "rankOfActualCard1": 4
+    }
+   },
+   "watch": {
+    "OG Anunoby": null,
+    "Brook Lopez": {
+     "cardRank": 54,
+     "valueRank": 69,
+     "decwRank": 43,
+     "ds": 0.7489,
+     "decw": 0.6555,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Cameron Johnson": {
+     "cardRank": 14,
+     "valueRank": 16,
+     "decwRank": 15,
+     "ds": 0.9338,
+     "decw": 0.7262,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Christian Braun": {
+     "cardRank": 20,
+     "valueRank": 12,
+     "decwRank": 28,
+     "ds": 0.9132,
+     "decw": 0.6974,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Tari Eason": {
+     "cardRank": 21,
+     "valueRank": 19,
+     "decwRank": 30,
+     "ds": 0.8927,
+     "decw": 0.6967,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Jakob Poeltl": null,
+    "Myles Turner": null,
+    "Isaiah Hartenstein": {
+     "cardRank": 1,
+     "valueRank": 4,
+     "decwRank": 1,
+     "ds": 0.9932,
+     "decw": 0.795,
+     "mkt": 116,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Collin Gillespie": {
+     "cardRank": 3,
+     "valueRank": 7,
+     "decwRank": 3,
+     "ds": 0.9817,
+     "decw": 0.7638,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "PJ Washington": {
+     "cardRank": 2,
+     "valueRank": 5,
+     "decwRank": 2,
+     "ds": 0.9886,
+     "decw": 0.7809,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Devin Vassell": {
+     "cardRank": 4,
+     "valueRank": 6,
+     "decwRank": 6,
+     "ds": 0.9772,
+     "decw": 0.7582,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Quentin Grimes": {
+     "cardRank": 5,
+     "valueRank": 10,
+     "decwRank": 4,
+     "ds": 0.9726,
+     "decw": 0.7606,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 220
+    },
+    "Miles Bridges": null,
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 111,
+   "actual": "Collin Gillespie",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein"
+   ],
+   "card1": "Collin Gillespie",
+   "top5": [
+    "Collin Gillespie",
+    "Devin Vassell",
+    "PJ Washington",
+    "Cason Wallace",
+    "Fred VanVleet"
+   ],
+   "value1": "Fred VanVleet",
+   "decw1": "Collin Gillespie",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Reed Sheppard",
+      "Kristaps Porzingis",
+      "Cameron Johnson"
+     ],
+     "card1": "PJ Washington",
+     "top5": [
+      "PJ Washington",
+      "Daniel Gafford",
+      "Saddiq Bey",
+      "Devin Vassell",
+      "Quentin Grimes"
+     ],
+     "rankOfActualCard1": 9
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner",
+      "Dyson Daniels",
+      "Jakob Poeltl",
+      "Myles Turner",
+      "Miles Bridges"
+     ],
+     "card1": "Collin Gillespie",
+     "top5": [
+      "Collin Gillespie",
+      "Devin Vassell",
+      "Quentin Grimes",
+      "Fred VanVleet",
+      "Saddiq Bey"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard",
+      "OG Anunoby",
+      "Immanuel Quickley",
+      "Myles Turner",
+      "Jakob Poeltl"
+     ],
+     "card1": "Cason Wallace",
+     "top5": [
+      "Cason Wallace",
+      "Collin Gillespie",
+      "Fred VanVleet",
+      "Devin Vassell",
+      "Quentin Grimes"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Jaden McDaniels",
+      "Myles Turner",
+      "Cameron Johnson"
+     ],
+     "card1": "PJ Washington",
+     "top5": [
+      "PJ Washington",
+      "Daniel Gafford",
+      "Cason Wallace",
+      "Collin Gillespie",
+      "Christian Braun"
+     ],
+     "rankOfActualCard1": 4
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan",
+      "De'Aaron Fox",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Tari Eason"
+     ],
+     "card1": "Collin Gillespie",
+     "top5": [
+      "Collin Gillespie",
+      "Devin Vassell",
+      "PJ Washington",
+      "Quentin Grimes",
+      "Cason Wallace"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Myles Turner"
+     ],
+     "card1": "Collin Gillespie",
+     "top5": [
+      "Collin Gillespie",
+      "Cason Wallace",
+      "Devin Vassell",
+      "PJ Washington",
+      "Quentin Grimes"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "emptyRoster": {
+     "card1": "Daniel Gafford",
+     "top5": [
+      "Daniel Gafford",
+      "Christian Braun",
+      "Cameron Johnson",
+      "Nikola Vucevic",
+      "Dereck Lively II"
+     ],
+     "rankOfActualCard1": 28
+    }
+   },
+   "watch": {
+    "OG Anunoby": null,
+    "Brook Lopez": {
+     "cardRank": 50,
+     "valueRank": 64,
+     "decwRank": 40,
+     "ds": 0.7617,
+     "decw": 0.5857,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "Cameron Johnson": {
+     "cardRank": 11,
+     "valueRank": 14,
+     "decwRank": 10,
+     "ds": 0.9486,
+     "decw": 0.6633,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "Christian Braun": {
+     "cardRank": 14,
+     "valueRank": 10,
+     "decwRank": 20,
+     "ds": 0.9346,
+     "decw": 0.6321,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "Tari Eason": {
+     "cardRank": 20,
+     "valueRank": 17,
+     "decwRank": 30,
+     "ds": 0.8949,
+     "decw": 0.6108,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "Jakob Poeltl": null,
+    "Myles Turner": null,
+    "Isaiah Hartenstein": null,
+    "Collin Gillespie": {
+     "cardRank": 1,
+     "valueRank": 6,
+     "decwRank": 1,
+     "ds": 0.9883,
+     "decw": 0.7001,
+     "mkt": 188,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "PJ Washington": {
+     "cardRank": 3,
+     "valueRank": 4,
+     "decwRank": 5,
+     "ds": 0.9836,
+     "decw": 0.679,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "Devin Vassell": {
+     "cardRank": 2,
+     "valueRank": 5,
+     "decwRank": 3,
+     "ds": 0.986,
+     "decw": 0.685,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "Quentin Grimes": {
+     "cardRank": 6,
+     "valueRank": 8,
+     "decwRank": 4,
+     "ds": 0.9766,
+     "decw": 0.6831,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 215
+    },
+    "Miles Bridges": null,
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 130,
+   "actual": "PJ Washington",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie"
+   ],
+   "card1": "PJ Washington",
+   "top5": [
+    "PJ Washington",
+    "Devin Vassell",
+    "Quentin Grimes",
+    "Herbert Jones",
+    "Malik Monk"
+   ],
+   "value1": "Herbert Jones",
+   "decw1": "Malik Monk",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Reed Sheppard",
+      "Kristaps Porzingis",
+      "Cameron Johnson",
+      "Jakob Poeltl"
+     ],
+     "card1": "PJ Washington",
+     "top5": [
+      "PJ Washington",
+      "Devin Vassell",
+      "Saddiq Bey",
+      "Malik Monk",
+      "Quentin Grimes"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner",
+      "Dyson Daniels",
+      "Jakob Poeltl",
+      "Myles Turner",
+      "Miles Bridges",
+      "Cameron Johnson"
+     ],
+     "card1": "PJ Washington",
+     "top5": [
+      "PJ Washington",
+      "Devin Vassell",
+      "Quentin Grimes",
+      "Malik Monk",
+      "Saddiq Bey"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard",
+      "OG Anunoby",
+      "Immanuel Quickley",
+      "Myles Turner",
+      "Jakob Poeltl",
+      "Reed Sheppard"
+     ],
+     "card1": "PJ Washington",
+     "top5": [
+      "PJ Washington",
+      "Devin Vassell",
+      "Quentin Grimes",
+      "Herbert Jones",
+      "Malik Monk"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Jaden McDaniels",
+      "Myles Turner",
+      "Cameron Johnson",
+      "Jakob Poeltl"
+     ],
+     "card1": "Devin Vassell",
+     "top5": [
+      "Devin Vassell",
+      "Quentin Grimes",
+      "PJ Washington",
+      "Malik Monk",
+      "Saddiq Bey"
+     ],
+     "rankOfActualCard1": 3
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan",
+      "De'Aaron Fox",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Tari Eason",
+      "Christian Braun"
+     ],
+     "card1": "PJ Washington",
+     "top5": [
+      "PJ Washington",
+      "Quentin Grimes",
+      "Devin Vassell",
+      "Saddiq Bey",
+      "Malik Monk"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Myles Turner",
+      "Tari Eason"
+     ],
+     "card1": "Quentin Grimes",
+     "top5": [
+      "Quentin Grimes",
+      "Devin Vassell",
+      "PJ Washington",
+      "Saddiq Bey",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 3
+    },
+    "emptyRoster": {
+     "card1": "Daniel Gafford",
+     "top5": [
+      "Daniel Gafford",
+      "Christian Braun",
+      "Cameron Johnson",
+      "Dereck Lively II",
+      "Nikola Vucevic"
+     ],
+     "rankOfActualCard1": 52
+    }
+   },
+   "watch": {
+    "OG Anunoby": null,
+    "Brook Lopez": {
+     "cardRank": 40,
+     "valueRank": 52,
+     "decwRank": 32,
+     "ds": 0.7897,
+     "decw": 0.6193,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 196
+    },
+    "Cameron Johnson": {
+     "cardRank": 8,
+     "valueRank": 8,
+     "decwRank": 10,
+     "ds": 0.959,
+     "decw": 0.6972,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 196
+    },
+    "Christian Braun": {
+     "cardRank": 11,
+     "valueRank": 7,
+     "decwRank": 15,
+     "ds": 0.9487,
+     "decw": 0.67,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 196
+    },
+    "Tari Eason": {
+     "cardRank": 16,
+     "valueRank": 11,
+     "decwRank": 22,
+     "ds": 0.9205,
+     "decw": 0.658,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 196
+    },
+    "Jakob Poeltl": null,
+    "Myles Turner": null,
+    "Isaiah Hartenstein": null,
+    "Collin Gillespie": null,
+    "PJ Washington": {
+     "cardRank": 1,
+     "valueRank": 2,
+     "decwRank": 2,
+     "ds": 0.9949,
+     "decw": 0.7372,
+     "mkt": 168,
+     "av": 1,
+     "poolLeft": 196
+    },
+    "Devin Vassell": {
+     "cardRank": 2,
+     "valueRank": 3,
+     "decwRank": 4,
+     "ds": 0.9872,
+     "decw": 0.7315,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 196
+    },
+    "Quentin Grimes": {
+     "cardRank": 3,
+     "valueRank": 5,
+     "decwRank": 3,
+     "ds": 0.9846,
+     "decw": 0.7367,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 196
+    },
+    "Miles Bridges": null,
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 135,
+   "actual": "Devin Vassell",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington"
+   ],
+   "card1": "Devin Vassell",
+   "top5": [
+    "Devin Vassell",
+    "Quentin Grimes",
+    "Herbert Jones",
+    "Malik Monk",
+    "Saddiq Bey"
+   ],
+   "value1": "Herbert Jones",
+   "decw1": "Malik Monk",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Reed Sheppard",
+      "Kristaps Porzingis",
+      "Cameron Johnson",
+      "Jakob Poeltl",
+      "Tari Eason"
+     ],
+     "card1": "Saddiq Bey",
+     "top5": [
+      "Saddiq Bey",
+      "Daniel Gafford",
+      "Devin Vassell",
+      "Malik Monk",
+      "Quentin Grimes"
+     ],
+     "rankOfActualCard1": 3
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner",
+      "Dyson Daniels",
+      "Jakob Poeltl",
+      "Myles Turner",
+      "Miles Bridges",
+      "Cameron Johnson",
+      "Jordan Poole"
+     ],
+     "card1": "Devin Vassell",
+     "top5": [
+      "Devin Vassell",
+      "Malik Monk",
+      "Saddiq Bey",
+      "Quentin Grimes",
+      "Daniel Gafford"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard",
+      "OG Anunoby",
+      "Immanuel Quickley",
+      "Myles Turner",
+      "Jakob Poeltl",
+      "Reed Sheppard",
+      "Tre Jones"
+     ],
+     "card1": "Quentin Grimes",
+     "top5": [
+      "Quentin Grimes",
+      "Devin Vassell",
+      "Saddiq Bey",
+      "Malik Monk",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Jaden McDaniels",
+      "Myles Turner",
+      "Cameron Johnson",
+      "Jakob Poeltl",
+      "Tari Eason"
+     ],
+     "card1": "Devin Vassell",
+     "top5": [
+      "Devin Vassell",
+      "Quentin Grimes",
+      "Malik Monk",
+      "Saddiq Bey",
+      "Christian Braun"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan",
+      "De'Aaron Fox",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Tari Eason",
+      "Christian Braun",
+      "Jordan Poole"
+     ],
+     "card1": "Devin Vassell",
+     "top5": [
+      "Devin Vassell",
+      "Quentin Grimes",
+      "Saddiq Bey",
+      "Malik Monk",
+      "Draymond Green"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Myles Turner",
+      "Tari Eason",
+      "Reed Sheppard"
+     ],
+     "card1": "Devin Vassell",
+     "top5": [
+      "Devin Vassell",
+      "Quentin Grimes",
+      "Malik Monk",
+      "Saddiq Bey",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "emptyRoster": {
+     "card1": "Daniel Gafford",
+     "top5": [
+      "Daniel Gafford",
+      "Christian Braun",
+      "Cameron Johnson",
+      "Dereck Lively II",
+      "Aaron Nesmith"
+     ],
+     "rankOfActualCard1": 23
+    }
+   },
+   "watch": {
+    "OG Anunoby": null,
+    "Brook Lopez": {
+     "cardRank": 36,
+     "valueRank": 48,
+     "decwRank": 29,
+     "ds": 0.8037,
+     "decw": 0.5538,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 192
+    },
+    "Cameron Johnson": {
+     "cardRank": 7,
+     "valueRank": 7,
+     "decwRank": 7,
+     "ds": 0.9686,
+     "decw": 0.6181,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 192
+    },
+    "Christian Braun": {
+     "cardRank": 9,
+     "valueRank": 6,
+     "decwRank": 12,
+     "ds": 0.9581,
+     "decw": 0.5977,
+     "mkt": 187,
+     "av": 1,
+     "poolLeft": 192
+    },
+    "Tari Eason": {
+     "cardRank": 14,
+     "valueRank": 10,
+     "decwRank": 23,
+     "ds": 0.9188,
+     "decw": 0.5686,
+     "mkt": 186,
+     "av": 1,
+     "poolLeft": 192
+    },
+    "Jakob Poeltl": null,
+    "Myles Turner": null,
+    "Isaiah Hartenstein": null,
+    "Collin Gillespie": null,
+    "PJ Washington": null,
+    "Devin Vassell": {
+     "cardRank": 1,
+     "valueRank": 2,
+     "decwRank": 2,
+     "ds": 0.9948,
+     "decw": 0.6454,
+     "mkt": 154,
+     "av": 1,
+     "poolLeft": 192
+    },
+    "Quentin Grimes": {
+     "cardRank": 2,
+     "valueRank": 4,
+     "decwRank": 3,
+     "ds": 0.9869,
+     "decw": 0.6448,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 192
+    },
+    "Miles Bridges": null,
+    "Derrick White": null
+   }
+  },
+  {
+   "pick": 154,
+   "actual": "Quentin Grimes",
+   "mine": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell"
+   ],
+   "card1": "Quentin Grimes",
+   "top5": [
+    "Quentin Grimes",
+    "Daniel Gafford",
+    "Malik Monk",
+    "Herbert Jones",
+    "Draymond Green"
+   ],
+   "value1": "Herbert Jones",
+   "decw1": "Malik Monk",
+   "alt": {
+    "mock51": {
+     "mine": [
+      "Anthony Edwards",
+      "Karl-Anthony Towns",
+      "Anthony Davis",
+      "Dyson Daniels",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Reed Sheppard",
+      "Kristaps Porzingis",
+      "Cameron Johnson",
+      "Jakob Poeltl",
+      "Tari Eason",
+      "Christian Braun"
+     ],
+     "card1": "Daniel Gafford",
+     "top5": [
+      "Daniel Gafford",
+      "Malik Monk",
+      "Quentin Grimes",
+      "Jerami Grant",
+      "Kyle Filipowski"
+     ],
+     "rankOfActualCard1": 3
+    },
+    "mock52": {
+     "mine": [
+      "Jayson Tatum",
+      "Donovan Mitchell",
+      "Anthony Davis",
+      "Kyrie Irving",
+      "Franz Wagner",
+      "Dyson Daniels",
+      "Jakob Poeltl",
+      "Myles Turner",
+      "Miles Bridges",
+      "Cameron Johnson",
+      "Jordan Poole",
+      "Tari Eason"
+     ],
+     "card1": "Malik Monk",
+     "top5": [
+      "Malik Monk",
+      "Quentin Grimes",
+      "Daniel Gafford",
+      "Draymond Green",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock53": {
+     "mine": [
+      "Jayson Tatum",
+      "Karl-Anthony Towns",
+      "Evan Mobley",
+      "Jalen Williams",
+      "Damian Lillard",
+      "OG Anunoby",
+      "Immanuel Quickley",
+      "Myles Turner",
+      "Jakob Poeltl",
+      "Reed Sheppard",
+      "Tre Jones",
+      "Cameron Johnson"
+     ],
+     "card1": "Malik Monk",
+     "top5": [
+      "Malik Monk",
+      "Quentin Grimes",
+      "Daniel Gafford",
+      "Draymond Green",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock54": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Jalen Johnson",
+      "Jalen Williams",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Payton Pritchard",
+      "Jaden McDaniels",
+      "Myles Turner",
+      "Cameron Johnson",
+      "Jakob Poeltl",
+      "Tari Eason",
+      "Ajay Mitchell"
+     ],
+     "card1": "Malik Monk",
+     "top5": [
+      "Malik Monk",
+      "Quentin Grimes",
+      "Daniel Gafford",
+      "Draymond Green",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 2
+    },
+    "mock55": {
+     "mine": [
+      "Jayson Tatum",
+      "Scottie Barnes",
+      "Kyrie Irving",
+      "Desmond Bane",
+      "Donovan Clingan",
+      "De'Aaron Fox",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Tari Eason",
+      "Christian Braun",
+      "Jordan Poole",
+      "Collin Gillespie"
+     ],
+     "card1": "Quentin Grimes",
+     "top5": [
+      "Quentin Grimes",
+      "Daniel Gafford",
+      "Draymond Green",
+      "Herbert Jones",
+      "Malik Monk"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "mock56": {
+     "mine": [
+      "Karl-Anthony Towns",
+      "Tyrese Haliburton",
+      "Evan Mobley",
+      "Kyrie Irving",
+      "OG Anunoby",
+      "Damian Lillard",
+      "Jakob Poeltl",
+      "Cameron Johnson",
+      "Myles Turner",
+      "Tari Eason",
+      "Reed Sheppard",
+      "Christian Braun"
+     ],
+     "card1": "Quentin Grimes",
+     "top5": [
+      "Quentin Grimes",
+      "Draymond Green",
+      "Malik Monk",
+      "Daniel Gafford",
+      "Herbert Jones"
+     ],
+     "rankOfActualCard1": 1
+    },
+    "emptyRoster": {
+     "card1": "Daniel Gafford",
+     "top5": [
+      "Daniel Gafford",
+      "Cameron Johnson",
+      "Aaron Nesmith",
+      "Dereck Lively II",
+      "Robert Williams III"
+     ],
+     "rankOfActualCard1": 31
+    }
+   },
+   "watch": {
+    "OG Anunoby": null,
+    "Brook Lopez": {
+     "cardRank": 25,
+     "valueRank": 36,
+     "decwRank": 20,
+     "ds": 0.8439,
+     "decw": 0.5945,
+     "mkt": 103,
+     "av": 1,
+     "poolLeft": 174
+    },
+    "Cameron Johnson": {
+     "cardRank": 7,
+     "valueRank": 4,
+     "decwRank": 9,
+     "ds": 0.9682,
+     "decw": 0.6454,
+     "mkt": 137,
+     "av": 1,
+     "poolLeft": 174
+    },
+    "Christian Braun": null,
+    "Tari Eason": null,
+    "Jakob Poeltl": null,
+    "Myles Turner": null,
+    "Isaiah Hartenstein": null,
+    "Collin Gillespie": null,
+    "PJ Washington": null,
+    "Devin Vassell": null,
+    "Quentin Grimes": {
+     "cardRank": 1,
+     "valueRank": 3,
+     "decwRank": 3,
+     "ds": 0.9884,
+     "decw": 0.6861,
+     "mkt": 191,
+     "av": 1,
+     "poolLeft": 174
+    },
+    "Miles Bridges": null,
+    "Derrick White": null
+   }
+  }
+ ]
+}
