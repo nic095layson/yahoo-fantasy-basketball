@@ -476,8 +476,12 @@ def fold(s):
     # straight and typographic marks are stripped so query and name meet on
     # "dayron sharpe". Hyphens stay: removing them would merge "Karl-Anthony"
     # into one token and make bare "Alexander" newly ambiguous (SGA vs NAW).
+    # Dots fold away as well (D53-4, mock 53, executed 2026-09-29): Yahoo
+    # pastes "P.J. Washington" where the pool has "PJ Washington", and the
+    # pool's "T.J. McConnell" must meet a typed "TJ". The .replace(".", "")
+    # calls downstream are now no-ops, kept for symmetry with the deck.
     return "".join(c for c in unicodedata.normalize("NFKD", s.lower())
-                   if not unicodedata.combining(c) and c not in "'’`")
+                   if not unicodedata.combining(c) and c not in "'’`.")
 
 
 def surname_key(name):
