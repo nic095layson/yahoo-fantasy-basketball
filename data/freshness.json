@@ -1,9 +1,9 @@
 {
   "date": "2026-09-29",
-  "note": "2026-09-29 same-day rebuild (D53-4): the feed resolver folds dots \u2014 Yahoo's 'P.J. Washington' and a typed 'TJ McConnell' now resolve in both planes; no data change (pool 330 rows, evidence dated 2026-09-29).",
+  "note": "2026-09-29 re-derivation pass after the four-source market intake (owner: proceed on D-M1/D-M2/D-M4/D-M5): every Yahoo-matched row carries Yahoo's official 9/28 positions (104 changed); nine lines re-derived from Basketball-Reference 2025-26 rows plus two dated camp-role outlets each, Clifford repriced off his rookie projection; Simmons, Riley, Flemings and Zach Collins added with dated placements. No placement moved; evidence dated 2026-09-29.",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "positions synced to Yahoo's official 9/28 eligibility on 104 rows; 10 lines repriced (Poole, Turner, Eason, Cameron Johnson, Braun, Lopez, Ware, Ingram, Mobley FT%, Clifford); 4 rows added (Simmons, Riley, Flemings, Zach Collins) -> 334 rows"
   },
   "rosters_verified": {
     "date": "2026-09-29",
