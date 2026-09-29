@@ -41,9 +41,13 @@ next_seat = next((v, s) for v, s in ecw_sorted if s != SLOT)
 tg = lambda t: t["pinTarget"] if t["tgOnPin"] else t["rows"][0]["n"]
 turns = sorted(rep); H = {x["pick"]: x for x in hs["turns"]}
 def brier_base(rows, alive): p = alive / rows; return p * (1 - p) ** 2 + (1 - p) * p ** 2
-L = [f"# Mock {MOCK} debrief — slot {SLOT}, live public room, {LABEL}", ""]
-L.append(f"**Fingerprint.** owner slot {SLOT}, {len(state['picks'])} picks, Yahoo public mock; state `arena/data/states/draft_state_{MOCK}.json` "
-         f"(md5 `{md5}`), reconciled pick-by-pick against Yahoo's recap ({len(state['picks'])}/{len(state['picks'])}{INSERT_NOTE}). Pool tag `{TAG}`; poolless names in this room: {', '.join(fin.get('missing', [])) or 'none'}. "
+ROOM = live_retro.CFG.get("room", "public")  # "public" = Yahoo public room (mocks 51-54); "cast" = the deck's MOCK mode vs the league cast
+ROOM_TITLE = "live public room" if ROOM == "public" else "deck MOCK mode vs the league cast"
+ROOM_SRC = "Yahoo public mock" if ROOM == "public" else "deck MOCK mode (11 modeled league-mates)"
+ROOM_RECON = "Yahoo's recap" if ROOM == "public" else "the deck's own recap"
+L = [f"# Mock {MOCK} debrief — slot {SLOT}, {ROOM_TITLE}, {LABEL}", ""]
+L.append(f"**Fingerprint.** owner slot {SLOT}, {len(state['picks'])} picks, {ROOM_SRC}; state `arena/data/states/draft_state_{MOCK}.json` "
+         f"(md5 `{md5}`), reconciled pick-by-pick against {ROOM_RECON} ({len(state['picks'])}/{len(state['picks'])}{INSERT_NOTE}). Pool tag `{TAG}`; poolless names in this room: {', '.join(fin.get('missing', [])) or 'none'}. "
          f"Punt box: {'none declared' if not state.get('punt') else ', '.join(state['punt'])}.")
 L.append("")
 L.append("**Method.** Card reconstructed two ways at every owner turn (Python port `live_retro.py replay`; the deck's own JS under node, "
@@ -57,7 +61,8 @@ L.append(f"| Season-shape H2H | wins {fin['seasonshape_winning']}/{TEAMS - 1} |"
 L.append(f"| Board rank (kept-total z-sum) | **{board_rank}** ({tot[SLOT]:+.2f}; next {board_next:+.2f}) |")
 cr = fin["cat_rank_weekly"]
 L.append("| Category rank, weekly model | " + " · ".join(f"{c} {'**' + str(cr[c]) + '**' if cr[c] in (1, TEAMS) or cr[c] >= 9 else cr[c]}" for c in CATS) + " |")
-L.append(""); L.append("Random public room: excluded from the LEDGER superlatives (owner directive 2026-08-25)."); L.append("")
+L.append(""); L.append("Random public room: excluded from the LEDGER superlatives (owner directive 2026-08-25)." if ROOM == "public" else
+         "League-cast mock: the opponents are the E18 behavioral models of the 11 league-mates, not the people — LEDGER-eligible."); L.append("")
 L.append("## Decision ledger — card vs owner vs hindsight"); L.append("")
 L.append("Card 🎯 = what the deck showed (blend50 #1, or the urgent TARGET pin when it took the 🎯). Hindsight = best legal single-swap "
          "alternative on current lines, ECW gain in cats/week; \"owner's own later pick\" = the card's #1 was a player the owner took later (screened).")
@@ -114,7 +119,8 @@ if TOOL_VS_TRUTH:
         for k, a, b, seat in tv["diff"]:
             L.append(f"| {k} | {a} | {b} | {seat} |")
 L.append(""); L.append("## Limits"); L.append("")
-L.append("- Random public room, not the league cast: the field's weakness is in every denominator above.")
+L.append("- Random public room, not the league cast: the field's weakness is in every denominator above." if ROOM == "public" else
+         "- The field is the model of the league (E18 personalities, the ~0.45x-divergence synthetic market), not the league: real rooms have produced deeper star falls than mocks.")
 L.append(f"- Lines are the pool the room drafted against (tag `{TAG}`); a later same-day build can differ in judgment or veto, never in lines.")
 L.append("- Hindsight is single-swap on current lines: an upper bound on what a different pick was worth, not a strategy.")
 open(OUT, "w", encoding="utf-8").write("\n".join(L) + "\n")

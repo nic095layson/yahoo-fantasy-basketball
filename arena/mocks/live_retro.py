@@ -56,6 +56,11 @@ MOCKS = {
     # owner veto landed (PR #45), so veto=False — the replay is the card the
     # owner saw. Rooms drafted on v29+ set veto=True.
     54: dict(tags=("v28",)),
+    # mock 55 (2026-09-28, slot 10): the deck's own MOCK mode against the 11
+    # modeled league-mates (E18 personalities), drafted on deck v30 (rev
+    # 28266d8) — the veto was live, so veto=True. Lines = v28 (players.csv
+    # byte-unchanged b150541 -> 28266d8). room="cast": not a public room.
+    55: dict(tags=("v28",), veto=True, room="cast"),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]

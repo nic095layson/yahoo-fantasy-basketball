@@ -113,3 +113,12 @@ is on the author. See LEDGER §3.
   is the paired championship test behind D54-3: as drafted vs follow-card from pick N vs a
   punt-STEERED follow-card (kept-cats-only value and ΔECW), per-seed, with the bar registered in
   the output (`m54_punt_arms.json`, `m54_punt_arms_veto.json`).
+- **Mock 55 (2026-09-28, slot 10).** The first room graded with this set that is NOT a public Yahoo room:
+  the deck's own MOCK mode against the 11 modeled league-mates, drafted on deck v30 (rev 28266d8, veto
+  live). `live_retro.MOCKS[55]` = `dict(tags=("v28",), veto=True, room="cast")` — lines are v28
+  (players.csv byte-unchanged b150541 → 28266d8); `room="cast"` switches `live_debrief_generic.py`'s
+  room wording (title, source, LEDGER eligibility, limits) — public rooms render unchanged (mock 54's
+  debrief regenerates byte-identical below the title). State rebuilt from the deck's recap with
+  `hoops.py draft resync` (156/156 names and seats match, no UNKNOWN). Deck card replayed from the deck
+  drafted against (`live_deckcard.py 55 rev:28266d8:docs/draft-deck.html arena/results/m55_deckcard_v28.json`);
+  survival pooled with the 51–54 deck cards. Stage order matters: `arms` reads `m55_hindsight.json`.

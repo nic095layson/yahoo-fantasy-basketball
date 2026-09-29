@@ -1,0 +1,142 @@
+{
+ "as_drafted": {
+  "champ": 16.094,
+  "playoff": 86.36,
+  "champ_rank": 3,
+  "swaps": []
+ },
+ "swap#10:Karl-Anthony Towns": {
+  "champ": 23.056,
+  "playoff": 93.93,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ]
+  ]
+ },
+ "swap#15:Evan Mobley": {
+  "champ": 21.483,
+  "playoff": 92.76,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    15,
+    "Evan Mobley"
+   ]
+  ]
+ },
+ "swap#34:Franz Wagner": {
+  "champ": 21.3,
+  "playoff": 92.43,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    34,
+    "Franz Wagner"
+   ]
+  ]
+ },
+ "swap#39:Franz Wagner": {
+  "champ": 17.967,
+  "playoff": 88.55,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    39,
+    "Franz Wagner"
+   ]
+  ]
+ },
+ "swap#58:Myles Turner": {
+  "champ": 19.661,
+  "playoff": 89.66,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    58,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#63:Myles Turner": {
+  "champ": 20.406,
+  "playoff": 91.22,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    63,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#111:PJ Washington": {
+  "champ": 17.433,
+  "playoff": 87.86,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    111,
+    "PJ Washington"
+   ]
+  ]
+ },
+ "swap#130:Saddiq Bey": {
+  "champ": 16.583,
+  "playoff": 87.17,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    130,
+    "Saddiq Bey"
+   ]
+  ]
+ },
+ "swap#135:Saddiq Bey": {
+  "champ": 17.728,
+  "playoff": 88.28,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    135,
+    "Saddiq Bey"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 37.289,
+  "playoff": 98.86,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "OG Anunoby"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Myles Turner"
+   ],
+   [
+    135,
+    "Herbert Jones"
+   ],
+   [
+    154,
+    "Collin Gillespie"
+   ]
+  ]
+ }
+}
