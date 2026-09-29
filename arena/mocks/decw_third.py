@@ -79,6 +79,43 @@ def df_hash(s, k, salt):
     return (h & M32) / 4294967296.0
 
 
+_SCHED = {}
+
+
+def schedule(p):
+    """A player's DF_K simulated weeks: the days he plays in each. Depends only on
+    his name and availability tier (every draw is a hash of name, week and
+    salt), so it is computed once per player and reused across rosters — the
+    same draws the engine makes, in the same order, just cached."""
+    key = (p["n"], weekly_avail(p))
+    if key in _SCHED:
+        return _SCHED[key]
+    a = key[1]
+    weeks = []
+    for k in range(DF_K):
+        u = df_hash(p["n"], k, 1)
+        g = 2 if u < 0.08 else 3 if u < 0.63 else 4 if u < 0.98 else 5
+        days = [0, 1, 2, 3, 4, 5, 6]
+        played_days = []
+        for j in range(g):
+            u2 = df_hash(p["n"], k, 10 + j)
+            tot = sum(DAY_W[d] for d in days)
+            r = u2 * tot
+            acc = 0.0
+            pick = days[-1]
+            for d in days:
+                acc += DAY_W[d]
+                if r < acc:
+                    pick = d
+                    break
+            days.remove(pick)
+            if df_hash(p["n"], k, 20 + pick) < a:
+                played_days.append(pick)
+        weeks.append(played_days)
+    _SCHED[key] = weeks
+    return weeks
+
+
 def daily_fill_weights(roster):
     """Start rate = started / played over DF_K simulated weeks: each week a player
     gets 2/3/4/5 games (8% / 55% / 35% / 2%), spread over the week's days by the
@@ -88,28 +125,13 @@ def daily_fill_weights(roster):
     val = {p["n"]: sum(p["z"][c] for c in CATS) for p in roster}
     started = {p["n"]: 0 for p in roster}
     played = {p["n"]: 0 for p in roster}
+    scheds = [(p, schedule(p)) for p in roster]
     for k in range(DF_K):
         by_day = [[] for _ in range(7)]
-        for p in roster:
-            u = df_hash(p["n"], k, 1)
-            g = 2 if u < 0.08 else 3 if u < 0.63 else 4 if u < 0.98 else 5
-            days = [0, 1, 2, 3, 4, 5, 6]
-            a = weekly_avail(p)
-            for j in range(g):
-                u2 = df_hash(p["n"], k, 10 + j)
-                tot = sum(DAY_W[d] for d in days)
-                r = u2 * tot
-                acc = 0.0
-                pick = days[-1]
-                for d in days:
-                    acc += DAY_W[d]
-                    if r < acc:
-                        pick = d
-                        break
-                days.remove(pick)
-                if df_hash(p["n"], k, 20 + pick) < a:
-                    played[p["n"]] += 1
-                    by_day[pick].append(p)
+        for p, weeks in scheds:
+            for pick in weeks[k]:
+                played[p["n"]] += 1
+                by_day[pick].append(p)
         for d in range(7):
             cands = sorted(by_day[d], key=lambda q: (-val[q["n"]], q["n"]))
             open_slots = list(LINEUP)
