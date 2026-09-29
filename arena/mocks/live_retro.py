@@ -32,7 +32,7 @@ import arena  # noqa: E402  (its own hoops instance reads the frozen snapshot; u
 CATS = hoops.CATS
 POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv",
-         "v31": SP + "/m56_players_v31.csv"}
+         "v31": SP + "/m56_players_v31.csv", "v33": SP + "/players_v33.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -48,6 +48,12 @@ V28_REV = "b150541"
 # c0bf82bf4d39), pinned to rev e2b45ed (deck v31 main; v32 = 7878165 carries the
 # same pool byte-for-byte — only the resolver's dot-folding changed).
 V31_REV = "e2b45ed"
+# v33 = data/players.csv after the 2026-09-29 re-derivation pass (Yahoo official
+# positions, nine lines re-derived, four rows added; sha 6efb01cd772b), pinned to
+# rev a3b4d31 (deck v33 main). Not any room's own pool: it is the RE-CALIBRATION
+# pool — `--tag v33` re-grades any mock on it and writes *_v33.json outputs beside
+# the room's own record, which stays graded on the pool it was drafted against.
+V33_REV = "a3b4d31"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -73,8 +79,14 @@ MOCKS = {
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
-TAGS = CFG["tags"]
+# --tag <pool>: re-grade this mock on another pool (the 2026-09-29 re-calibration on
+# v33). Every stage then reads and writes m<mock>_<stage>_<tag>.json, leaving the
+# room's own record untouched.
+_ti = sys.argv.index("--tag") if "--tag" in sys.argv else -1
+TAG_OVERRIDE = sys.argv[_ti + 1] if _ti >= 0 and _ti + 1 < len(sys.argv) else None
+TAGS = (TAG_OVERRIDE,) if TAG_OVERRIDE else CFG["tags"]
 GRADE_TAG = TAGS[-1]   # the pool the grading stages run on: the deck the owner drafted against (mock 53: v25)
+OUT_SUFFIX = f"_{TAG_OVERRIDE}" if TAG_OVERRIDE else ""
 STATE = DECK + f"/arena/data/states/draft_state_{MOCK}.json"
 state = json.load(open(STATE, encoding="utf-8"))
 TEAMS, SLOT, SIZE = state["teams"], state["slot"], state["size"]
@@ -87,7 +99,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:
@@ -246,7 +258,7 @@ def stage_replay():
             else:
                 print(f"#{t['pick']:>3} R{t['rnd']:>2}  actual {t['actual']:<24} NOT IN POOL")
             print(f"        top5: {top5}")
-    json.dump(out, open(SP + f"/m{MOCK}_replay.json", "w"), indent=1)
+    json.dump(out, open(SP + f"/m{MOCK}_replay{OUT_SUFFIX}.json", "w"), indent=1)
     return out
 
 
@@ -317,7 +329,7 @@ def stage_final():
               "-> winning weeks", out[tag]["exp_winning_weeks"], "/ 11")
         print("season-shape H2H cats won:", {CAST.get(o, o): w for o, w in ss_rec.items()},
               "-> wins", out[tag]["seasonshape_winning"], "/ 11")
-    json.dump(out, open(SP + f"/m{MOCK}_final.json", "w"), indent=1)
+    json.dump(out, open(SP + f"/m{MOCK}_final{OUT_SUFFIX}.json", "w"), indent=1)
     return out
 
 
@@ -355,7 +367,7 @@ def stage_hindsight(tag=None):
     per0 = {o: sum(pwin_cats(my0, om).values()) for o, om in base_models.items()}
     base_ecw, base_w = statistics.mean(per0.values()), sum(1 for v in per0.values() if v > 4.5)
     print(f"as-drafted ({tag}): ECW {base_ecw:.4f}, winning weeks {base_w}/11")
-    replay = json.load(open(SP + f"/m{MOCK}_replay.json"))
+    replay = json.load(open(SP + f"/m{MOCK}_replay{OUT_SUFFIX}.json"))
     cards = {t["pick"]: t for t in replay[tag]}
     cards22 = {t["pick"]: t for t in replay.get("v22", [])}
     out = dict(base_ecw=base_ecw, base_w=base_w, turns=[])
@@ -394,7 +406,7 @@ def stage_hindsight(tag=None):
             print(f"      {r['n']:<24} {r['pos']:<6} gain {r['gain']:+.4f} wins {r['wins']:>2}  "
                   f"card#{r['card_rank']:>3} val#{r['val_rank']:>3} v22card#{r['card_rank_v22']}  "
                   f"drafted {r['drafted_at']} by {r['drafted_by']}")
-    json.dump(out, open(SP + f"/m{MOCK}_hindsight.json", "w"), indent=1)
+    json.dump(out, open(SP + f"/m{MOCK}_hindsight{OUT_SUFFIX}.json", "w"), indent=1)
     return out
 
 
@@ -428,7 +440,7 @@ def spearman(a, b):
 def stage_forecast(tag=None, K=12):
     tag = tag or GRADE_TAG
     players = load_pool(tag)
-    hs = json.load(open(SP + f"/m{MOCK}_hindsight.json"))
+    hs = json.load(open(SP + f"/m{MOCK}_hindsight{OUT_SUFFIX}.json"))
     hs_turns = {t["pick"]: t for t in hs["turns"]}
     ros_final, _, _ = rosters_upto(players, len(PICKS))
     order_idx = {pk["player"]: i for i, pk in enumerate(PICKS)}
@@ -492,7 +504,7 @@ def stage_forecast(tag=None, K=12):
         print(f"#{n + 1:>3} {actual:<22} " + "  ".join(
             f"{lab}: #1 {rec[lab]['top1']} ({rec[lab]['top1_hgain']:+.3f}) rho {rec[lab]['rho']:+.2f}"
             for lab in orders))
-    json.dump(out, open(SP + f"/m{MOCK}_forecast.json", "w"), indent=1)
+    json.dump(out, open(SP + f"/m{MOCK}_forecast{OUT_SUFFIX}.json", "w"), indent=1)
     return out
 
 
@@ -534,7 +546,7 @@ def apply_swaps(players, swaps):
 def stage_arms(tag=None):
     tag = tag or GRADE_TAG
     players = load_pool(tag)
-    hs = json.load(open(SP + f"/m{MOCK}_hindsight.json"))
+    hs = json.load(open(SP + f"/m{MOCK}_hindsight{OUT_SUFFIX}.json"))
     arms = {"as_drafted": []}
     # single best hindsight swap per turn (positive gain only)
     for t in hs["turns"]:
@@ -588,7 +600,7 @@ def stage_arms(tag=None):
         results[name] = dict(champ=round(me[0], 3), playoff=round(me[1], 2), champ_rank=rank,
                              swaps=[(n + 1, a) for n, a in sw])
         print(f"{name:<40} champ {me[0]:6.3f}%  playoff {me[1]:5.2f}%  rank {rank}/12  swaps {results[name]['swaps']}")
-        json.dump(results, open(SP + f"/m{MOCK}_arms.json", "w"), indent=1)
+        json.dump(results, open(SP + f"/m{MOCK}_arms{OUT_SUFFIX}.json", "w"), indent=1)
     return results
 
 
@@ -596,6 +608,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("mock", type=int, choices=sorted(MOCKS))
     ap.add_argument("stage", choices=["replay", "final", "hindsight", "forecast", "arms"])
+    ap.add_argument("--tag", choices=sorted(POOLS), default=None,
+                    help="re-grade on this pool tag instead of the mock's own; outputs carry the _<tag> suffix")
     a = ap.parse_args()
     {"replay": stage_replay, "final": stage_final, "hindsight": stage_hindsight,
      "forecast": stage_forecast, "arms": stage_arms}[a.stage]()

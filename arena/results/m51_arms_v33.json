@@ -1,0 +1,131 @@
+{
+ "as_drafted": {
+  "champ": 39.783,
+  "playoff": 98.08,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#39:Derrick White": {
+  "champ": 41.394,
+  "playoff": 98.64,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#63:Payton Pritchard": {
+  "champ": 41.978,
+  "playoff": 98.59,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#82:Miles Bridges": {
+  "champ": 46.65,
+  "playoff": 99.35,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Miles Bridges"
+   ]
+  ]
+ },
+ "swap#87:Myles Turner": {
+  "champ": 40.672,
+  "playoff": 98.37,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#106:Ja Morant": {
+  "champ": 42.522,
+  "playoff": 98.74,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Ja Morant"
+   ]
+  ]
+ },
+ "swap#130:PJ Washington": {
+  "champ": 43.867,
+  "playoff": 98.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "PJ Washington"
+   ]
+  ]
+ },
+ "swap#135:PJ Washington": {
+  "champ": 45.467,
+  "playoff": 98.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "PJ Washington"
+   ]
+  ]
+ },
+ "swap#154:Kyle Filipowski": {
+  "champ": 45.028,
+  "playoff": 99.13,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 54.211,
+  "playoff": 99.84,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Ja Morant"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    106,
+    "Cason Wallace"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "Collin Gillespie"
+   ]
+  ]
+ }
+}
