@@ -4,24 +4,25 @@
  "punt": [
   "AST"
  ],
+ "veto": [],
  "arms": {
   "as_drafted": {
-   "champ": 49.356,
-   "playoff": 99.73,
+   "champ": 38.622,
+   "playoff": 99.98,
    "per_seed": {
-    "11": 49.733,
-    "23": 49.2,
-    "47": 49.133
+    "11": 39.567,
+    "23": 38.833,
+    "47": 37.467
    },
    "swaps": []
   },
   "follow_card_from63": {
-   "champ": 59.272,
-   "playoff": 99.97,
+   "champ": 48.744,
+   "playoff": 99.99,
    "per_seed": {
-    "11": 58.867,
-    "23": 59.283,
-    "47": 59.667
+    "11": 48.717,
+    "23": 49.15,
+    "47": 48.367
    },
    "swaps": [
     [
@@ -35,12 +36,12 @@
    ]
   },
   "follow_card_from63_puntAST": {
-   "champ": 52.494,
-   "playoff": 99.93,
+   "champ": 42.489,
+   "playoff": 99.99,
    "per_seed": {
-    "11": 51.95,
-    "23": 52.633,
-    "47": 52.9
+    "11": 42.617,
+    "23": 42.433,
+    "47": 42.417
    },
    "swaps": [
     [
@@ -61,7 +62,7 @@
  "verdict": {
   "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
   "seeds_meeting_bar": 0,
-  "steered_minus_unsteered_pp": -6.778,
+  "steered_minus_unsteered_pp": -6.255,
   "passes": false
  }
 }

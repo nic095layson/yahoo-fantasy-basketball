@@ -359,3 +359,26 @@ numbers — content unchanged)*
     and one is non-ASCII to exercise the UTF-16 path that a pure-ASCII pool
     would never reach. **Law: a cross-language port is verified by vectors in
     the gate, never by a comment asserting it was verified once.**
+
+## 2026-09-30 — E14 sat registered and unshipped for eight weeks (kit gap audit, D-G1)
+
+23. **A registered change with a deferred trigger and no date is a wish, and
+    every number it was known to distort keeps getting published.** The real
+    playoff bracket (8 of 12, no byes) was measured on 2026-08-04 — elite
+    rosters lose 4–6 pp of champ% under it — and registered as E14 "for the
+    September re-baseline". No re-baseline was ever scheduled, so
+    `arena.PLAYOFF_TEAMS` stayed 6 with byes through mocks 50–57 and every
+    debrief headline (mock 57's 35.23%) was on the bracket the league does
+    not play; the kit's 2026-09-30 gap audit found it by reading the constant.
+    Rules: (a) a registered item that changes a published number gets a
+    decision-sheet row with a default date, not a milestone name; (b) until it
+    ships, every report that quotes the number carries the caveat in the same
+    sentence; (c) the ship is red-first (`arena/test_bracket.py` failed 5/5 on
+    the old code) and proves identity with the measuring harness before any
+    re-run. (Shipped 2026-09-30; live rooms re-run and restated in
+    `arena/results/report_2026-09-30_bracket_restate.md`.) The re-run caught
+    a second instance of lesson 20's rule: `mock51_retro.py` mapped its "v23"
+    pool to the live `data/players.csv`, so its combo arms re-graded on the
+    v35 pool (67 → 34 percent, below the single swap they contain) until the
+    kept-total z-sum — bracket-independent — gave it away. A harness names a
+    frozen pool by revision or materialized file, never by the live path.

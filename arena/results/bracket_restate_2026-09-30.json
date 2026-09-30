@@ -1,0 +1,4234 @@
+{
+ "m51_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 55.033,
+    "playoff": 99.82,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 42.789,
+    "playoff": 99.96,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#39:Derrick White": {
+   "old": {
+    "champ": 56.061,
+    "playoff": 99.93,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 42.989,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#58:Myles Turner": {
+   "old": {
+    "champ": 55.983,
+    "playoff": 99.88,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Myles Turner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 43.783,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Myles Turner"
+     ]
+    ]
+   }
+  },
+  "swap#63:Payton Pritchard": {
+   "old": {
+    "champ": 57.85,
+    "playoff": 99.9,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Payton Pritchard"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 45.794,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Payton Pritchard"
+     ]
+    ]
+   }
+  },
+  "swap#82:Myles Turner": {
+   "old": {
+    "champ": 62.339,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Myles Turner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 50.844,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Myles Turner"
+     ]
+    ]
+   }
+  },
+  "swap#87:Myles Turner": {
+   "old": {
+    "champ": 58.139,
+    "playoff": 99.94,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Myles Turner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 46.217,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Myles Turner"
+     ]
+    ]
+   }
+  },
+  "swap#106:Brook Lopez": {
+   "old": {
+    "champ": 57.183,
+    "playoff": 99.93,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 45.172,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "swap#111:Brook Lopez": {
+   "old": {
+    "champ": 56.428,
+    "playoff": 99.92,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 43.772,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "swap#130:Brook Lopez": {
+   "old": {
+    "champ": 57.406,
+    "playoff": 99.92,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 45.167,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "swap#135:Brook Lopez": {
+   "old": {
+    "champ": 58.111,
+    "playoff": 99.93,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 45.767,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "swap#154:Brook Lopez": {
+   "old": {
+    "champ": 63.417,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 52.061,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 63.472,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Myles Turner"
+     ],
+     [
+      87,
+      "Josh Hart"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 51.439,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Myles Turner"
+     ],
+     [
+      87,
+      "Josh Hart"
+     ]
+    ]
+   }
+  },
+  "combo_turner82_lopez154": {
+   "old": {
+    "champ": 67.383,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Myles Turner"
+     ],
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 56.161,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Myles Turner"
+     ],
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "combo_turner82_lopez154_pritchard63": {
+   "old": {
+    "champ": 69.656,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Myles Turner"
+     ],
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 59.622,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Myles Turner"
+     ],
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  }
+ },
+ "m51_arms_v33.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 39.783,
+    "playoff": 98.08,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 29.722,
+    "playoff": 99.56,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#39:Derrick White": {
+   "old": {
+    "champ": 41.394,
+    "playoff": 98.64,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 31.0,
+    "playoff": 99.71,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#63:Payton Pritchard": {
+   "old": {
+    "champ": 41.978,
+    "playoff": 98.59,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Payton Pritchard"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 31.489,
+    "playoff": 99.71,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Payton Pritchard"
+     ]
+    ]
+   }
+  },
+  "swap#82:Miles Bridges": {
+   "old": {
+    "champ": 46.65,
+    "playoff": 99.35,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 35.972,
+    "playoff": 99.88,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#87:Myles Turner": {
+   "old": {
+    "champ": 40.672,
+    "playoff": 98.37,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Myles Turner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 30.867,
+    "playoff": 99.61,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Myles Turner"
+     ]
+    ]
+   }
+  },
+  "swap#106:Ja Morant": {
+   "old": {
+    "champ": 42.522,
+    "playoff": 98.74,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Ja Morant"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 31.672,
+    "playoff": 99.68,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Ja Morant"
+     ]
+    ]
+   }
+  },
+  "swap#130:PJ Washington": {
+   "old": {
+    "champ": 43.867,
+    "playoff": 98.83,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "PJ Washington"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 33.006,
+    "playoff": 99.74,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "PJ Washington"
+     ]
+    ]
+   }
+  },
+  "swap#135:PJ Washington": {
+   "old": {
+    "champ": 45.467,
+    "playoff": 98.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "PJ Washington"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 33.844,
+    "playoff": 99.79,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "PJ Washington"
+     ]
+    ]
+   }
+  },
+  "swap#154:Kyle Filipowski": {
+   "old": {
+    "champ": 45.028,
+    "playoff": 99.13,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Kyle Filipowski"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 34.028,
+    "playoff": 99.8,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Kyle Filipowski"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 54.211,
+    "playoff": 99.84,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Ja Morant"
+     ],
+     [
+      87,
+      "Josh Hart"
+     ],
+     [
+      106,
+      "Cason Wallace"
+     ],
+     [
+      130,
+      "PJ Washington"
+     ],
+     [
+      135,
+      "Collin Gillespie"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 42.067,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Ja Morant"
+     ],
+     [
+      87,
+      "Josh Hart"
+     ],
+     [
+      106,
+      "Cason Wallace"
+     ],
+     [
+      130,
+      "PJ Washington"
+     ],
+     [
+      135,
+      "Collin Gillespie"
+     ]
+    ]
+   }
+  }
+ },
+ "m52_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 47.944,
+    "playoff": 99.81,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 37.95,
+    "playoff": 99.96,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#10:Jalen Johnson": {
+   "old": {
+    "champ": 52.822,
+    "playoff": 99.9,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Jalen Johnson"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 43.822,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Jalen Johnson"
+     ]
+    ]
+   }
+  },
+  "swap#15:Derrick White": {
+   "old": {
+    "champ": 48.267,
+    "playoff": 99.83,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 38.7,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#34:Derrick White": {
+   "old": {
+    "champ": 47.583,
+    "playoff": 99.78,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 37.778,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#39:Derrick White": {
+   "old": {
+    "champ": 52.444,
+    "playoff": 99.91,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 42.522,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#58:Tyler Herro": {
+   "old": {
+    "champ": 47.578,
+    "playoff": 99.73,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 37.506,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   }
+  },
+  "swap#82:Isaiah Hartenstein": {
+   "old": {
+    "champ": 47.006,
+    "playoff": 99.75,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Isaiah Hartenstein"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 37.778,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Isaiah Hartenstein"
+     ]
+    ]
+   }
+  },
+  "swap#106:Brook Lopez": {
+   "old": {
+    "champ": 48.1,
+    "playoff": 99.79,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 38.706,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "swap#130:Christian Braun": {
+   "old": {
+    "champ": 49.528,
+    "playoff": 99.87,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 40.3,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "swap#135:Christian Braun": {
+   "old": {
+    "champ": 48.672,
+    "playoff": 99.83,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 38.5,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "swap#154:Christian Braun": {
+   "old": {
+    "champ": 48.417,
+    "playoff": 99.83,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 38.728,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 56.917,
+    "playoff": 99.96,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      39,
+      "Jalen Williams"
+     ],
+     [
+      58,
+      "OG Anunoby"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      106,
+      "Christian Braun"
+     ],
+     [
+      130,
+      "Miles Bridges"
+     ],
+     [
+      135,
+      "Cason Wallace"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 45.806,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      39,
+      "Jalen Williams"
+     ],
+     [
+      58,
+      "OG Anunoby"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      106,
+      "Christian Braun"
+     ],
+     [
+      130,
+      "Miles Bridges"
+     ],
+     [
+      135,
+      "Cason Wallace"
+     ]
+    ]
+   }
+  }
+ },
+ "m52_arms_v33.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 23.672,
+    "playoff": 94.12,
+    "champ_rank": 2,
+    "swaps": []
+   },
+   "new": {
+    "champ": 20.3,
+    "playoff": 98.26,
+    "champ_rank": 2,
+    "swaps": []
+   }
+  },
+  "swap#10:Karl-Anthony Towns": {
+   "old": {
+    "champ": 34.983,
+    "playoff": 97.96,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 27.861,
+    "playoff": 99.58,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   }
+  },
+  "swap#15:Karl-Anthony Towns": {
+   "old": {
+    "champ": 28.933,
+    "playoff": 96.46,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 23.772,
+    "playoff": 99.14,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   }
+  },
+  "swap#39:Derrick White": {
+   "old": {
+    "champ": 28.25,
+    "playoff": 96.93,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 23.45,
+    "playoff": 99.27,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#87:Isaiah Hartenstein": {
+   "old": {
+    "champ": 24.033,
+    "playoff": 94.34,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      87,
+      "Isaiah Hartenstein"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 20.983,
+    "playoff": 98.3,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      87,
+      "Isaiah Hartenstein"
+     ]
+    ]
+   }
+  },
+  "swap#111:Malik Monk": {
+   "old": {
+    "champ": 25.328,
+    "playoff": 94.83,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      111,
+      "Malik Monk"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 21.772,
+    "playoff": 98.53,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      111,
+      "Malik Monk"
+     ]
+    ]
+   }
+  },
+  "swap#130:Devin Vassell": {
+   "old": {
+    "champ": 40.517,
+    "playoff": 99.09,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Devin Vassell"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 31.389,
+    "playoff": 99.82,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Devin Vassell"
+     ]
+    ]
+   }
+  },
+  "swap#135:Collin Gillespie": {
+   "old": {
+    "champ": 26.294,
+    "playoff": 95.68,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      135,
+      "Collin Gillespie"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 21.994,
+    "playoff": 98.73,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      135,
+      "Collin Gillespie"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 49.722,
+    "playoff": 99.95,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      39,
+      "Jalen Williams"
+     ],
+     [
+      58,
+      "OG Anunoby"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      87,
+      "Mikal Bridges"
+     ],
+     [
+      106,
+      "Jalen Suggs"
+     ],
+     [
+      111,
+      "Daniel Gafford"
+     ],
+     [
+      130,
+      "Collin Gillespie"
+     ],
+     [
+      135,
+      "Cason Wallace"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 40.394,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      39,
+      "Jalen Williams"
+     ],
+     [
+      58,
+      "OG Anunoby"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      87,
+      "Mikal Bridges"
+     ],
+     [
+      106,
+      "Jalen Suggs"
+     ],
+     [
+      111,
+      "Daniel Gafford"
+     ],
+     [
+      130,
+      "Collin Gillespie"
+     ],
+     [
+      135,
+      "Cason Wallace"
+     ]
+    ]
+   }
+  }
+ },
+ "m53_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 38.528,
+    "playoff": 99.29,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 31.1,
+    "playoff": 99.95,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#10:Chet Holmgren": {
+   "old": {
+    "champ": 46.256,
+    "playoff": 99.72,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Chet Holmgren"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 36.956,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Chet Holmgren"
+     ]
+    ]
+   }
+  },
+  "swap#39:Anthony Davis": {
+   "old": {
+    "champ": 39.178,
+    "playoff": 99.47,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Anthony Davis"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 32.178,
+    "playoff": 99.96,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Anthony Davis"
+     ]
+    ]
+   }
+  },
+  "swap#58:Payton Pritchard": {
+   "old": {
+    "champ": 43.139,
+    "playoff": 99.52,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 34.056,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   }
+  },
+  "swap#82:Ja Morant": {
+   "old": {
+    "champ": 40.544,
+    "playoff": 99.53,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Ja Morant"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 33.817,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Ja Morant"
+     ]
+    ]
+   }
+  },
+  "swap#111:Christian Braun": {
+   "old": {
+    "champ": 42.211,
+    "playoff": 99.65,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 35.439,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "swap#130:Christian Braun": {
+   "old": {
+    "champ": 44.233,
+    "playoff": 99.8,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 36.939,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "swap#135:Brook Lopez": {
+   "old": {
+    "champ": 38.711,
+    "playoff": 99.34,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 32.078,
+    "playoff": 99.94,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "swap#154:Brook Lopez": {
+   "old": {
+    "champ": 41.678,
+    "playoff": 99.58,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 34.533,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 55.594,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Anthony Davis"
+     ],
+     [
+      15,
+      "Derrick White"
+     ],
+     [
+      34,
+      "Karl-Anthony Towns"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Tari Eason"
+     ],
+     [
+      87,
+      "Christian Braun"
+     ],
+     [
+      106,
+      "Myles Turner"
+     ],
+     [
+      111,
+      "Jakob Poeltl"
+     ],
+     [
+      130,
+      "Immanuel Quickley"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 46.144,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Anthony Davis"
+     ],
+     [
+      15,
+      "Derrick White"
+     ],
+     [
+      34,
+      "Karl-Anthony Towns"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Tari Eason"
+     ],
+     [
+      87,
+      "Christian Braun"
+     ],
+     [
+      106,
+      "Myles Turner"
+     ],
+     [
+      111,
+      "Jakob Poeltl"
+     ],
+     [
+      130,
+      "Immanuel Quickley"
+     ]
+    ]
+   }
+  }
+ },
+ "m53_arms_v33.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 29.339,
+    "playoff": 97.69,
+    "champ_rank": 2,
+    "swaps": []
+   },
+   "new": {
+    "champ": 24.578,
+    "playoff": 99.64,
+    "champ_rank": 2,
+    "swaps": []
+   }
+  },
+  "swap#10:Chet Holmgren": {
+   "old": {
+    "champ": 36.8,
+    "playoff": 99.02,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Chet Holmgren"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 29.828,
+    "playoff": 99.88,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Chet Holmgren"
+     ]
+    ]
+   }
+  },
+  "swap#34:Anthony Davis": {
+   "old": {
+    "champ": 29.85,
+    "playoff": 97.83,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      34,
+      "Anthony Davis"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 24.672,
+    "playoff": 99.62,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      34,
+      "Anthony Davis"
+     ]
+    ]
+   }
+  },
+  "swap#39:Anthony Davis": {
+   "old": {
+    "champ": 30.261,
+    "playoff": 98.06,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      39,
+      "Anthony Davis"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 24.911,
+    "playoff": 99.69,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      39,
+      "Anthony Davis"
+     ]
+    ]
+   }
+  },
+  "swap#58:Payton Pritchard": {
+   "old": {
+    "champ": 33.778,
+    "playoff": 98.42,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 27.483,
+    "playoff": 99.77,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   }
+  },
+  "swap#82:Ja Morant": {
+   "old": {
+    "champ": 31.672,
+    "playoff": 98.34,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Ja Morant"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 26.661,
+    "playoff": 99.78,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Ja Morant"
+     ]
+    ]
+   }
+  },
+  "swap#87:Miles Bridges": {
+   "old": {
+    "champ": 31.011,
+    "playoff": 98.04,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 25.994,
+    "playoff": 99.72,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#111:Devin Vassell": {
+   "old": {
+    "champ": 31.094,
+    "playoff": 98.26,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Devin Vassell"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 25.961,
+    "playoff": 99.78,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Devin Vassell"
+     ]
+    ]
+   }
+  },
+  "swap#130:Draymond Green": {
+   "old": {
+    "champ": 34.211,
+    "playoff": 98.69,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Draymond Green"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 28.222,
+    "playoff": 99.75,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Draymond Green"
+     ]
+    ]
+   }
+  },
+  "swap#135:Malik Monk": {
+   "old": {
+    "champ": 32.339,
+    "playoff": 98.39,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Malik Monk"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 27.011,
+    "playoff": 99.78,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Malik Monk"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 45.017,
+    "playoff": 99.79,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Tyrese Haliburton"
+     ],
+     [
+      34,
+      "Anthony Davis"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Kristaps Porzingis"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      111,
+      "Cason Wallace"
+     ],
+     [
+      130,
+      "Collin Gillespie"
+     ],
+     [
+      135,
+      "Herbert Jones"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 36.994,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Tyrese Haliburton"
+     ],
+     [
+      34,
+      "Anthony Davis"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      82,
+      "Kristaps Porzingis"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      111,
+      "Cason Wallace"
+     ],
+     [
+      130,
+      "Collin Gillespie"
+     ],
+     [
+      135,
+      "Herbert Jones"
+     ]
+    ]
+   }
+  }
+ },
+ "m54_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 49.356,
+    "playoff": 99.73,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 38.622,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#34:Derrick White": {
+   "old": {
+    "champ": 50.567,
+    "playoff": 99.83,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 40.033,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#39:Derrick White": {
+   "old": {
+    "champ": 52.706,
+    "playoff": 99.89,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 42.294,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#58:Tyler Herro": {
+   "old": {
+    "champ": 48.622,
+    "playoff": 99.73,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 38.644,
+    "playoff": 99.95,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   }
+  },
+  "swap#63:Tyler Herro": {
+   "old": {
+    "champ": 48.789,
+    "playoff": 99.71,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Tyler Herro"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 39.089,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Tyler Herro"
+     ]
+    ]
+   }
+  },
+  "swap#82:Coby White": {
+   "old": {
+    "champ": 52.961,
+    "playoff": 99.87,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Coby White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 42.283,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Coby White"
+     ]
+    ]
+   }
+  },
+  "swap#130:Christian Braun": {
+   "old": {
+    "champ": 48.694,
+    "playoff": 99.74,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 38.489,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "swap#135:Christian Braun": {
+   "old": {
+    "champ": 56.933,
+    "playoff": 99.94,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 46.294,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "swap#154:Brook Lopez": {
+   "old": {
+    "champ": 53.25,
+    "playoff": 99.88,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 42.15,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Brook Lopez"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 60.106,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 49.172,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   }
+  }
+ },
+ "m54_arms_v33.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 38.272,
+    "playoff": 98.35,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 29.711,
+    "playoff": 99.62,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#15:Chet Holmgren": {
+   "old": {
+    "champ": 41.217,
+    "playoff": 98.96,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Chet Holmgren"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 32.289,
+    "playoff": 99.84,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Chet Holmgren"
+     ]
+    ]
+   }
+  },
+  "swap#34:Derrick White": {
+   "old": {
+    "champ": 39.483,
+    "playoff": 98.63,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 30.861,
+    "playoff": 99.71,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#39:Derrick White": {
+   "old": {
+    "champ": 42.467,
+    "playoff": 99.32,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 32.722,
+    "playoff": 99.87,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#58:Tyler Herro": {
+   "old": {
+    "champ": 37.161,
+    "playoff": 98.02,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 28.344,
+    "playoff": 99.53,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   }
+  },
+  "swap#82:Miles Bridges": {
+   "old": {
+    "champ": 41.644,
+    "playoff": 98.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 32.028,
+    "playoff": 99.81,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      82,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#87:Miles Bridges": {
+   "old": {
+    "champ": 37.733,
+    "playoff": 98.25,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 29.128,
+    "playoff": 99.59,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#106:Devin Vassell": {
+   "old": {
+    "champ": 39.172,
+    "playoff": 98.61,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Devin Vassell"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 30.894,
+    "playoff": 99.72,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Devin Vassell"
+     ]
+    ]
+   }
+  },
+  "swap#130:Malik Monk": {
+   "old": {
+    "champ": 40.089,
+    "playoff": 98.63,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Malik Monk"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 30.933,
+    "playoff": 99.73,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Malik Monk"
+     ]
+    ]
+   }
+  },
+  "swap#135:Saddiq Bey": {
+   "old": {
+    "champ": 44.633,
+    "playoff": 99.33,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 34.778,
+    "playoff": 99.86,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 53.861,
+    "playoff": 99.92,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      82,
+      "Kristaps Porzingis"
+     ],
+     [
+      87,
+      "Coby White"
+     ],
+     [
+      106,
+      "Herbert Jones"
+     ],
+     [
+      130,
+      "Collin Gillespie"
+     ],
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 43.139,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      82,
+      "Kristaps Porzingis"
+     ],
+     [
+      87,
+      "Coby White"
+     ],
+     [
+      106,
+      "Herbert Jones"
+     ],
+     [
+      130,
+      "Collin Gillespie"
+     ],
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   }
+  }
+ },
+ "m54_punt_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 49.356,
+    "playoff": 99.73,
+    "per_seed": {
+     "11": 49.733,
+     "23": 49.2,
+     "47": 49.133
+    },
+    "swaps": []
+   },
+   "new": {
+    "champ": 38.622,
+    "playoff": 99.98,
+    "per_seed": {
+     "11": 39.567,
+     "23": 38.833,
+     "47": 37.467
+    },
+    "swaps": []
+   }
+  },
+  "follow_card_from63": {
+   "old": {
+    "champ": 59.272,
+    "playoff": 99.97,
+    "per_seed": {
+     "11": 58.867,
+     "23": 59.283,
+     "47": 59.667
+    },
+    "swaps": [
+     [
+      82,
+      "Kristaps Porzingis"
+     ],
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 48.744,
+    "playoff": 99.99,
+    "per_seed": {
+     "11": 48.717,
+     "23": 49.15,
+     "47": 48.367
+    },
+    "swaps": [
+     [
+      82,
+      "Kristaps Porzingis"
+     ],
+     [
+      135,
+      "Christian Braun"
+     ]
+    ]
+   }
+  },
+  "follow_card_from63_puntAST": {
+   "old": {
+    "champ": 52.494,
+    "playoff": 99.93,
+    "per_seed": {
+     "11": 51.95,
+     "23": 52.633,
+     "47": 52.9
+    },
+    "swaps": [
+     [
+      63,
+      "Kristaps Porzingis"
+     ],
+     [
+      82,
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Jaden McDaniels"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 42.489,
+    "playoff": 99.99,
+    "per_seed": {
+     "11": 42.617,
+     "23": 42.433,
+     "47": 42.417
+    },
+    "swaps": [
+     [
+      63,
+      "Kristaps Porzingis"
+     ],
+     [
+      82,
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Jaden McDaniels"
+     ]
+    ]
+   }
+  },
+  "verdict_old": {
+   "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+   "seeds_meeting_bar": 0,
+   "steered_minus_unsteered_pp": -6.778,
+   "passes": false
+  },
+  "verdict_new": {
+   "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+   "seeds_meeting_bar": 0,
+   "steered_minus_unsteered_pp": -6.255,
+   "passes": false
+  }
+ },
+ "m54_punt_arms_veto.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 49.356,
+    "playoff": 99.73,
+    "per_seed": {
+     "11": 49.733,
+     "23": 49.2,
+     "47": 49.133
+    },
+    "swaps": []
+   },
+   "new": {
+    "champ": 38.622,
+    "playoff": 99.98,
+    "per_seed": {
+     "11": 39.567,
+     "23": 38.833,
+     "47": 37.467
+    },
+    "swaps": []
+   }
+  },
+  "follow_card_from63": {
+   "old": {
+    "champ": 56.933,
+    "playoff": 99.94,
+    "per_seed": {
+     "11": 56.917,
+     "23": 57.167,
+     "47": 56.717
+    },
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Tari Eason"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 46.294,
+    "playoff": 99.99,
+    "per_seed": {
+     "11": 46.2,
+     "23": 47.1,
+     "47": 45.583
+    },
+    "swaps": [
+     [
+      130,
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Tari Eason"
+     ]
+    ]
+   }
+  },
+  "follow_card_from63_puntAST": {
+   "old": {
+    "champ": 47.978,
+    "playoff": 99.76,
+    "per_seed": {
+     "11": 47.433,
+     "23": 48.583,
+     "47": 47.917
+    },
+    "swaps": [
+     [
+      63,
+      "Jarrett Allen"
+     ],
+     [
+      111,
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Aaron Nesmith"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 38.539,
+    "playoff": 99.96,
+    "per_seed": {
+     "11": 38.317,
+     "23": 38.75,
+     "47": 38.55
+    },
+    "swaps": [
+     [
+      63,
+      "Jarrett Allen"
+     ],
+     [
+      111,
+      "Christian Braun"
+     ],
+     [
+      135,
+      "Aaron Nesmith"
+     ]
+    ]
+   }
+  },
+  "verdict_old": {
+   "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+   "seeds_meeting_bar": 0,
+   "steered_minus_unsteered_pp": -8.955,
+   "passes": false
+  },
+  "verdict_new": {
+   "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+   "seeds_meeting_bar": 0,
+   "steered_minus_unsteered_pp": -7.755,
+   "passes": false
+  }
+ },
+ "m55_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 16.094,
+    "playoff": 86.36,
+    "champ_rank": 3,
+    "swaps": []
+   },
+   "new": {
+    "champ": 15.689,
+    "playoff": 95.64,
+    "champ_rank": 3,
+    "swaps": []
+   }
+  },
+  "swap#10:Karl-Anthony Towns": {
+   "old": {
+    "champ": 23.056,
+    "playoff": 93.93,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 20.944,
+    "playoff": 98.57,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   }
+  },
+  "swap#15:Evan Mobley": {
+   "old": {
+    "champ": 21.483,
+    "playoff": 92.76,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      15,
+      "Evan Mobley"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 19.039,
+    "playoff": 98.07,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      15,
+      "Evan Mobley"
+     ]
+    ]
+   }
+  },
+  "swap#34:Franz Wagner": {
+   "old": {
+    "champ": 21.3,
+    "playoff": 92.43,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      34,
+      "Franz Wagner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 19.428,
+    "playoff": 97.87,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      34,
+      "Franz Wagner"
+     ]
+    ]
+   }
+  },
+  "swap#39:Franz Wagner": {
+   "old": {
+    "champ": 17.967,
+    "playoff": 88.55,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      39,
+      "Franz Wagner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 16.661,
+    "playoff": 96.52,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      39,
+      "Franz Wagner"
+     ]
+    ]
+   }
+  },
+  "swap#58:Myles Turner": {
+   "old": {
+    "champ": 19.661,
+    "playoff": 89.66,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      58,
+      "Myles Turner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 18.256,
+    "playoff": 96.88,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      58,
+      "Myles Turner"
+     ]
+    ]
+   }
+  },
+  "swap#63:Myles Turner": {
+   "old": {
+    "champ": 20.406,
+    "playoff": 91.22,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      63,
+      "Myles Turner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 17.739,
+    "playoff": 97.59,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      63,
+      "Myles Turner"
+     ]
+    ]
+   }
+  },
+  "swap#111:PJ Washington": {
+   "old": {
+    "champ": 17.433,
+    "playoff": 87.86,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      111,
+      "PJ Washington"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 16.306,
+    "playoff": 96.38,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      111,
+      "PJ Washington"
+     ]
+    ]
+   }
+  },
+  "swap#130:Saddiq Bey": {
+   "old": {
+    "champ": 16.583,
+    "playoff": 87.17,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      130,
+      "Saddiq Bey"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 15.828,
+    "playoff": 95.82,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      130,
+      "Saddiq Bey"
+     ]
+    ]
+   }
+  },
+  "swap#135:Saddiq Bey": {
+   "old": {
+    "champ": 17.728,
+    "playoff": 88.28,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 16.422,
+    "playoff": 96.23,
+    "champ_rank": 3,
+    "swaps": [
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 37.289,
+    "playoff": 98.86,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      15,
+      "Jamal Murray"
+     ],
+     [
+      34,
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      63,
+      "Myles Turner"
+     ],
+     [
+      135,
+      "Herbert Jones"
+     ],
+     [
+      154,
+      "Collin Gillespie"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 29.972,
+    "playoff": 99.86,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      15,
+      "Jamal Murray"
+     ],
+     [
+      34,
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      63,
+      "Myles Turner"
+     ],
+     [
+      135,
+      "Herbert Jones"
+     ],
+     [
+      154,
+      "Collin Gillespie"
+     ]
+    ]
+   }
+  }
+ },
+ "m55_arms_v33.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 1.644,
+    "playoff": 34.31,
+    "champ_rank": 8,
+    "swaps": []
+   },
+   "new": {
+    "champ": 3.017,
+    "playoff": 58.17,
+    "champ_rank": 8,
+    "swaps": []
+   }
+  },
+  "swap#10:Karl-Anthony Towns": {
+   "old": {
+    "champ": 3.783,
+    "playoff": 52.61,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 5.672,
+    "playoff": 76.07,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ]
+    ]
+   }
+  },
+  "swap#15:Anthony Davis": {
+   "old": {
+    "champ": 3.25,
+    "playoff": 47.07,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      15,
+      "Anthony Davis"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 4.85,
+    "playoff": 70.04,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      15,
+      "Anthony Davis"
+     ]
+    ]
+   }
+  },
+  "swap#34:Franz Wagner": {
+   "old": {
+    "champ": 2.989,
+    "playoff": 46.53,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      34,
+      "Franz Wagner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 4.678,
+    "playoff": 69.3,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      34,
+      "Franz Wagner"
+     ]
+    ]
+   }
+  },
+  "swap#39:Franz Wagner": {
+   "old": {
+    "champ": 2.189,
+    "playoff": 38.1,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      39,
+      "Franz Wagner"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 3.594,
+    "playoff": 61.73,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      39,
+      "Franz Wagner"
+     ]
+    ]
+   }
+  },
+  "swap#58:Payton Pritchard": {
+   "old": {
+    "champ": 2.678,
+    "playoff": 39.23,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 3.994,
+    "playoff": 63.22,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   }
+  },
+  "swap#63:Miles Bridges": {
+   "old": {
+    "champ": 1.989,
+    "playoff": 37.91,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      63,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 3.611,
+    "playoff": 61.89,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      63,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#82:Miles Bridges": {
+   "old": {
+    "champ": 1.733,
+    "playoff": 34.08,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      82,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 3.05,
+    "playoff": 57.68,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      82,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#87:Zach LaVine": {
+   "old": {
+    "champ": 3.428,
+    "playoff": 47.17,
+    "champ_rank": 6,
+    "swaps": [
+     [
+      87,
+      "Zach LaVine"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 4.956,
+    "playoff": 70.74,
+    "champ_rank": 6,
+    "swaps": [
+     [
+      87,
+      "Zach LaVine"
+     ]
+    ]
+   }
+  },
+  "swap#106:Draymond Green": {
+   "old": {
+    "champ": 2.461,
+    "playoff": 42.72,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      106,
+      "Draymond Green"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 4.261,
+    "playoff": 67.17,
+    "champ_rank": 7,
+    "swaps": [
+     [
+      106,
+      "Draymond Green"
+     ]
+    ]
+   }
+  },
+  "swap#111:Draymond Green": {
+   "old": {
+    "champ": 2.439,
+    "playoff": 42.71,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      111,
+      "Draymond Green"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 4.094,
+    "playoff": 66.98,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      111,
+      "Draymond Green"
+     ]
+    ]
+   }
+  },
+  "swap#130:Quentin Grimes": {
+   "old": {
+    "champ": 8.533,
+    "playoff": 67.18,
+    "champ_rank": 4,
+    "swaps": [
+     [
+      130,
+      "Quentin Grimes"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 9.328,
+    "playoff": 85.08,
+    "champ_rank": 4,
+    "swaps": [
+     [
+      130,
+      "Quentin Grimes"
+     ]
+    ]
+   }
+  },
+  "swap#135:Saddiq Bey": {
+   "old": {
+    "champ": 1.894,
+    "playoff": 36.96,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 3.144,
+    "playoff": 60.52,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      135,
+      "Saddiq Bey"
+     ]
+    ]
+   }
+  },
+  "swap#154:Herbert Jones": {
+   "old": {
+    "champ": 1.789,
+    "playoff": 36.5,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      154,
+      "Herbert Jones"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 3.272,
+    "playoff": 60.37,
+    "champ_rank": 8,
+    "swaps": [
+     [
+      154,
+      "Herbert Jones"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 26.406,
+    "playoff": 97.11,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      15,
+      "Jamal Murray"
+     ],
+     [
+      34,
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      63,
+      "Kristaps Porzingis"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      106,
+      "PJ Washington"
+     ],
+     [
+      111,
+      "Cason Wallace"
+     ],
+     [
+      130,
+      "Herbert Jones"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 22.439,
+    "playoff": 99.52,
+    "champ_rank": 2,
+    "swaps": [
+     [
+      10,
+      "Karl-Anthony Towns"
+     ],
+     [
+      15,
+      "Jamal Murray"
+     ],
+     [
+      34,
+      "OG Anunoby"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      63,
+      "Kristaps Porzingis"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      106,
+      "PJ Washington"
+     ],
+     [
+      111,
+      "Cason Wallace"
+     ],
+     [
+      130,
+      "Herbert Jones"
+     ]
+    ]
+   }
+  }
+ },
+ "m56_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 54.939,
+    "playoff": 99.95,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 43.661,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#15:Tyrese Maxey": {
+   "old": {
+    "champ": 59.956,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Tyrese Maxey"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 48.822,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Tyrese Maxey"
+     ]
+    ]
+   }
+  },
+  "swap#39:Desmond Bane": {
+   "old": {
+    "champ": 58.006,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Desmond Bane"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 46.756,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Desmond Bane"
+     ]
+    ]
+   }
+  },
+  "swap#63:Tyler Herro": {
+   "old": {
+    "champ": 57.706,
+    "playoff": 99.96,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Tyler Herro"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 46.339,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Tyler Herro"
+     ]
+    ]
+   }
+  },
+  "swap#87:Miles Bridges": {
+   "old": {
+    "champ": 55.167,
+    "playoff": 99.91,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 43.961,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#106:Miles Bridges": {
+   "old": {
+    "champ": 52.756,
+    "playoff": 99.88,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 41.978,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#130:Jordan Poole": {
+   "old": {
+    "champ": 58.594,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Jordan Poole"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 47.928,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "Jordan Poole"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 62.561,
+    "playoff": 99.99,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      130,
+      "Jordan Poole"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 52.583,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      130,
+      "Jordan Poole"
+     ]
+    ]
+   }
+  }
+ },
+ "m56_arms_v33.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 25.506,
+    "playoff": 93.99,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 20.583,
+    "playoff": 98.61,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#15:Anthony Davis": {
+   "old": {
+    "champ": 34.078,
+    "playoff": 97.31,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Anthony Davis"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 26.494,
+    "playoff": 99.58,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Anthony Davis"
+     ]
+    ]
+   }
+  },
+  "swap#34:Anthony Davis": {
+   "old": {
+    "champ": 26.544,
+    "playoff": 94.43,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Anthony Davis"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 21.183,
+    "playoff": 98.81,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Anthony Davis"
+     ]
+    ]
+   }
+  },
+  "swap#39:Chet Holmgren": {
+   "old": {
+    "champ": 33.506,
+    "playoff": 97.04,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Chet Holmgren"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 25.4,
+    "playoff": 99.56,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Chet Holmgren"
+     ]
+    ]
+   }
+  },
+  "swap#58:Tyler Herro": {
+   "old": {
+    "champ": 26.45,
+    "playoff": 94.04,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 20.044,
+    "playoff": 98.5,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Tyler Herro"
+     ]
+    ]
+   }
+  },
+  "swap#63:Tyler Herro": {
+   "old": {
+    "champ": 29.95,
+    "playoff": 95.67,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Tyler Herro"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 23.394,
+    "playoff": 99.12,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      63,
+      "Tyler Herro"
+     ]
+    ]
+   }
+  },
+  "swap#87:Miles Bridges": {
+   "old": {
+    "champ": 33.506,
+    "playoff": 97.44,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 26.089,
+    "playoff": 99.5,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#106:Miles Bridges": {
+   "old": {
+    "champ": 27.844,
+    "playoff": 95.22,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 21.522,
+    "playoff": 98.93,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      106,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#111:Miles Bridges": {
+   "old": {
+    "champ": 32.017,
+    "playoff": 96.96,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 23.861,
+    "playoff": 99.42,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#130:PJ Washington": {
+   "old": {
+    "champ": 30.122,
+    "playoff": 95.92,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "PJ Washington"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 23.483,
+    "playoff": 99.35,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      130,
+      "PJ Washington"
+     ]
+    ]
+   }
+  },
+  "swap#135:PJ Washington": {
+   "old": {
+    "champ": 29.8,
+    "playoff": 96.08,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "PJ Washington"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 23.622,
+    "playoff": 99.24,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "PJ Washington"
+     ]
+    ]
+   }
+  },
+  "swap#154:Kyle Filipowski": {
+   "old": {
+    "champ": 31.856,
+    "playoff": 97.13,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Kyle Filipowski"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 24.372,
+    "playoff": 99.5,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Kyle Filipowski"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 56.95,
+    "playoff": 99.98,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Chet Holmgren"
+     ],
+     [
+      39,
+      "Desmond Bane"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      106,
+      "Jalen Suggs"
+     ],
+     [
+      111,
+      "Miles Bridges"
+     ],
+     [
+      130,
+      "PJ Washington"
+     ],
+     [
+      135,
+      "Cason Wallace"
+     ],
+     [
+      154,
+      "Daniel Gafford"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 46.561,
+    "playoff": 100.0,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Chet Holmgren"
+     ],
+     [
+      39,
+      "Desmond Bane"
+     ],
+     [
+      63,
+      "Payton Pritchard"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      106,
+      "Jalen Suggs"
+     ],
+     [
+      111,
+      "Miles Bridges"
+     ],
+     [
+      130,
+      "PJ Washington"
+     ],
+     [
+      135,
+      "Cason Wallace"
+     ],
+     [
+      154,
+      "Daniel Gafford"
+     ]
+    ]
+   }
+  }
+ },
+ "m57_arms.json": {
+  "as_drafted": {
+   "old": {
+    "champ": 35.228,
+    "playoff": 97.29,
+    "champ_rank": 1,
+    "swaps": []
+   },
+   "new": {
+    "champ": 27.444,
+    "playoff": 99.3,
+    "champ_rank": 1,
+    "swaps": []
+   }
+  },
+  "swap#10:Chet Holmgren": {
+   "old": {
+    "champ": 45.061,
+    "playoff": 99.33,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Chet Holmgren"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 34.744,
+    "playoff": 99.85,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Chet Holmgren"
+     ]
+    ]
+   }
+  },
+  "swap#15:Jalen Johnson": {
+   "old": {
+    "champ": 35.117,
+    "playoff": 97.29,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Jalen Johnson"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 27.489,
+    "playoff": 99.24,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      15,
+      "Jalen Johnson"
+     ]
+    ]
+   }
+  },
+  "swap#34:Anthony Davis": {
+   "old": {
+    "champ": 39.289,
+    "playoff": 98.37,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Anthony Davis"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 30.489,
+    "playoff": 99.62,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      34,
+      "Anthony Davis"
+     ]
+    ]
+   }
+  },
+  "swap#39:Derrick White": {
+   "old": {
+    "champ": 42.628,
+    "playoff": 98.83,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 32.372,
+    "playoff": 99.78,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      39,
+      "Derrick White"
+     ]
+    ]
+   }
+  },
+  "swap#58:Payton Pritchard": {
+   "old": {
+    "champ": 37.561,
+    "playoff": 98.07,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 29.128,
+    "playoff": 99.49,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      58,
+      "Payton Pritchard"
+     ]
+    ]
+   }
+  },
+  "swap#87:Miles Bridges": {
+   "old": {
+    "champ": 41.011,
+    "playoff": 98.36,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 30.461,
+    "playoff": 99.61,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      87,
+      "Miles Bridges"
+     ]
+    ]
+   }
+  },
+  "swap#111:Draymond Green": {
+   "old": {
+    "champ": 35.978,
+    "playoff": 97.62,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Draymond Green"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 28.35,
+    "playoff": 99.33,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      111,
+      "Draymond Green"
+     ]
+    ]
+   }
+  },
+  "swap#135:Draymond Green": {
+   "old": {
+    "champ": 36.75,
+    "playoff": 97.76,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Draymond Green"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 28.683,
+    "playoff": 99.46,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      135,
+      "Draymond Green"
+     ]
+    ]
+   }
+  },
+  "swap#154:Draymond Green": {
+   "old": {
+    "champ": 36.011,
+    "playoff": 97.62,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Draymond Green"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 28.167,
+    "playoff": 99.43,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      154,
+      "Draymond Green"
+     ]
+    ]
+   }
+  },
+  "follow_card_selfconsistent": {
+   "old": {
+    "champ": 52.956,
+    "playoff": 99.82,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Tyrese Haliburton"
+     ],
+     [
+      34,
+      "Anthony Davis"
+     ],
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      111,
+      "Cason Wallace"
+     ]
+    ]
+   },
+   "new": {
+    "champ": 41.433,
+    "playoff": 99.97,
+    "champ_rank": 1,
+    "swaps": [
+     [
+      10,
+      "Tyrese Haliburton"
+     ],
+     [
+      34,
+      "Anthony Davis"
+     ],
+     [
+      39,
+      "Derrick White"
+     ],
+     [
+      58,
+      "Payton Pritchard"
+     ],
+     [
+      87,
+      "Zach LaVine"
+     ],
+     [
+      111,
+      "Cason Wallace"
+     ]
+    ]
+   }
+  }
+ }
+}

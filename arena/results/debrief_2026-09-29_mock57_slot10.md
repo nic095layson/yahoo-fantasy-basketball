@@ -63,6 +63,8 @@ Box empty all draft. Room-relative lean at 9 of 11 owner turns: #58 BLK+AST; #63
 
 ## Championship arms (18,000 CRN seasons each)
 
+> **Bracket restated 2026-09-30 (E14, kit gap audit D-G1).** The table below was produced on the arena's 6-team bracket with byes; the league plays 8 of 12 with no byes. Re-run on the real bracket, same seeds and swaps: as drafted 35.23% → **27.44%** champ, 97.29% → **99.30%** playoff, rank 1 → 1; follow_card_selfconsistent 52.96% → **41.43%**. Every arm, old vs new: `report_2026-09-30_bracket_restate.md`; the JSON beside this file (`m57_arms.json`) now holds the real-bracket numbers.
+
 | arm | champ% | playoff% | rank | swaps |
 |---|---|---|---|---|
 | follow_card_selfconsistent | 52.96 | 99.82 | 1 | #10 Tyrese Haliburton, #34 Anthony Davis, #39 Derrick White, #58 Payton Pritchard, #87 Zach LaVine, #111 Cason Wallace |

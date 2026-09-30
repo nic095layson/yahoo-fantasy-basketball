@@ -110,6 +110,11 @@ the #1 seed no shelter.
 
 - **E14** — adopt the real playoff format (8, no byes) at the September
   arena re-baseline; until then debriefs may dual-report via the harness.
+  **SHIPPED 2026-09-30 (kit gap audit D-G1):** `arena.PLAYOFF_TEAMS = 8`
+  and `arena.playoff_champion` (pair and draw order identical to
+  `format_delta.py`'s copy, verified); the live rooms' arms re-run and
+  restated old-vs-new in `report_2026-09-30_bracket_restate.md`. Nothing
+  fired the "September re-baseline" trigger for eight weeks — LESSONS 23.
 - **E15** — IL+ stash revaluation: 2 IL+ slots make recovery stashes ~free
   (the champion stashed Embiid; IM SO HORT drafted Tatum R13 as a pure
   stash). The recovery-exclusion rule (P3) was calibrated for a world with

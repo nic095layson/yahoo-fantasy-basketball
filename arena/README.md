@@ -38,9 +38,15 @@ A full tournament (12 drafts × 200 seasons × 12 strategies) takes ~2 seconds.
 Drafts are scored by **championships, not draft value**: each drafted league
 plays 18 weekly H2H category matchups (rosters become per-category weekly
 mean/variance models; injury notes reduce expected availability — recovery
-0.60, risk 0.75, healthy 0.88), top-6 make the playoffs (1-2 byes), and the
-bracket winner takes the title. Championship% aggregates over every draft
-slot, so no strategy benefits from slot luck.
+0.60, risk 0.75, healthy 0.88), **8 of 12 make the playoffs with no byes**
+(1v8, 4v5, 2v7, 3v6, fixed bracket, one week per round — the owner's real
+league; E14, shipped 2026-09-30, `arena.playoff_champion`; the Yahoo-default
+6-team bracket with byes for seeds 1-2 shipped from 2026-07 until then, so
+every champ% and playoff% recorded before 2026-09-30 is on that bracket —
+the live rooms were re-run, `arena/results/report_2026-09-30_bracket_restate.md`),
+and the bracket winner takes the title. Championship% aggregates over every
+draft slot, so no strategy benefits from slot luck. Bracket test:
+`python3 arena/test_bracket.py`.
 
 ## The twelve personalities
 

@@ -48,7 +48,9 @@ hoops.DATA_PATH = DATA  # arena reads its own frozen snapshot
 CATS = hoops.CATS
 BASE_POS = ("PG", "SG", "SF", "PF", "C")
 TEAMS, ROUNDS = 12, 13   # 13-slot league codified 2026-07-12 (was 15; re-based 2026-07-28)
-WEEKS, PLAYOFF_TEAMS = 18, 6
+WEEKS, PLAYOFF_TEAMS = 18, 8  # 8 of 12 qualify, no byes — the owner's real league
+# (E14: registered 2026-08-04 from league_intel_2025-26.md §1/§4, shipped 2026-09-30;
+#  the 6-team Yahoo-default bracket with byes shipped from 2026-07 until then)
 STARTERS = 13           # legacy cap (lineup_weights governs since 2026-07-23)
 BENCH_WEIGHT = 0.15
 # Per-game coefficient of variation by category: low-count stats are noisier.
@@ -446,7 +448,7 @@ def run_draft(order, pool_master, rng, param_overrides=None):
 
 
 # --------------------------------------------------------------------------
-# Season Monte Carlo — weekly H2H categories, fixed top-6 bracket
+# Season Monte Carlo — weekly H2H categories, fixed 8-team no-bye bracket (E14)
 # --------------------------------------------------------------------------
 
 def weekly_availability(p):
@@ -542,13 +544,24 @@ def simulate_seasons(rosters, seasons, rng):
         top = seeds[:PLAYOFF_TEAMS]
         for i in top:
             playoffs[i] += 1
-        # seeds 1-2 byes; 3v6, 4v5; FIXED bracket (Yahoo default, no reseed)
-        qf = [(top[2], top[5]), (top[3], top[4])]
-        w1 = [a if week_result(a, b) >= 5 else b for a, b in qf]
-        sf = [(top[0], w1[1]), (top[1], w1[0])]
-        w2 = [a if week_result(a, b) >= 5 else b for a, b in sf]
-        champs[w2[0] if week_result(*w2) >= 5 else w2[1]] += 1
+        champs[playoff_champion(top, week_result)] += 1
     return champs, playoffs
+
+
+def playoff_champion(top, week_result):
+    """The owner's league bracket: 8 seeds, no byes, FIXED (no reseed), one
+    week per round. Quarterfinals 1v8, 4v5, 2v7, 3v6; the 1/8 winner meets
+    the 4/5 winner and the 2/7 winner meets the 3/6 winner; final. `top` is
+    the seeds in order; week_result(a, b) returns the categories a wins of 9
+    (>= 5 advances a). Pair order and draw order are byte-for-byte the
+    calibration harness's (arena/mocks/format_delta.py, 2026-08-04), so its
+    measured deltas reproduce. Until 2026-09-30 this was the Yahoo-default
+    6-team bracket (seeds 1-2 byes; 3v6, 4v5) — see arena/test_bracket.py."""
+    qf = [(top[0], top[7]), (top[3], top[4]), (top[1], top[6]), (top[2], top[5])]
+    w1 = [a if week_result(a, b) >= 5 else b for a, b in qf]
+    sf = [(w1[0], w1[1]), (w1[2], w1[3])]
+    w2 = [a if week_result(a, b) >= 5 else b for a, b in sf]
+    return w2[0] if week_result(*w2) >= 5 else w2[1]
 
 
 # --------------------------------------------------------------------------

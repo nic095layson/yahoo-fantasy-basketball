@@ -75,6 +75,8 @@ undrafted by the room.
 
 ## Counterfactual arms (CRN-paired; SE ≈ 0.4pp at these rates)
 
+> **Bracket restated 2026-09-30 (E14, kit gap audit D-G1).** The table below was produced on the arena's 6-team bracket with byes; the league plays 8 of 12 with no byes. Re-run on the real bracket, same seeds and swaps: as drafted 55.03% → **42.79%** champ, 99.82% → **99.96%** playoff, rank 1 → 1; follow_card_selfconsistent 63.47% → **51.44%**. Every arm, old vs new: `report_2026-09-30_bracket_restate.md`; the JSON beside this file (`m51_arms.json`) now holds the real-bracket numbers.
+
 | arm | champ % | playoff % |
 |---|---|---|
 | as drafted | 55.03 | 99.82 |
