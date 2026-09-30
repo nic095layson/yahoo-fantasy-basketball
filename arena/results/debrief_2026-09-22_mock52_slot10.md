@@ -81,6 +81,8 @@ BUY NOW on 47 of 50 scored rows at a mean 0.028 predicted survival; 33 of those 
 
 ## Championship arms (18,000 CRN seasons each)
 
+> **Bracket restated 2026-09-30 (E14, kit gap audit D-G1).** The table below was produced on the arena's 6-team bracket with byes; the league plays 8 of 12 with no byes. Re-run on the real bracket, same seeds and swaps: as drafted 47.94% → **37.95%** champ, 99.81% → **99.96%** playoff, rank 1 → 1; follow_card_selfconsistent 56.92% → **45.81%**. Every arm, old vs new: `report_2026-09-30_bracket_restate.md`; the JSON beside this file (`m52_arms.json`) now holds the real-bracket numbers.
+
 | arm | champ% | playoff% | rank | swaps |
 |---|---|---|---|---|
 | follow_card_selfconsistent | 56.92 | 99.96 | 1 | #10 Karl-Anthony Towns, #39 Jalen Williams, #58 OG Anunoby, #63 Payton Pritchard, #106 Christian Braun, #130 Miles Bridges, #135 Cason Wallace |

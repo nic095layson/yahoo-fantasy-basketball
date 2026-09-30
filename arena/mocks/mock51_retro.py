@@ -24,7 +24,14 @@ import hoops  # noqa: E402
 import arena  # noqa: E402  (its own hoops instance reads the frozen snapshot; unused here)
 
 CATS = hoops.CATS
-POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": DECK + "/data/players.csv"}
+POOLS = {"v22": SP + "/m51_players_v22.csv",
+         # v23 pinned to the same materialized snapshot live_retro.py uses
+         # (rev f724435, arena/results/m52_players_v23.csv). Until 2026-09-30
+         # this read the LIVE data/players.csv, which was v23 on 2026-09-21
+         # and had drifted to v35 by the E14 bracket re-run — the combo arms
+         # re-graded on the wrong pool (kept-total 19.9 -> 14.5, a figure the
+         # bracket cannot move) before this pin caught it.
+         "v23": SP + "/m52_players_v23.csv"}
 # v22 = the pool the deck the owner drafted against was built from (data pull
 # 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git history.
 V22_REV = "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b"

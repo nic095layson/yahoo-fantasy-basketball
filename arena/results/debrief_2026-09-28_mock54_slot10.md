@@ -63,6 +63,8 @@ Box empty all draft. Room-relative lean at 9 of 11 owner turns: #58 AST; #63 AST
 
 ## Championship arms (18,000 CRN seasons each)
 
+> **Bracket restated 2026-09-30 (E14, kit gap audit D-G1).** The table below was produced on the arena's 6-team bracket with byes; the league plays 8 of 12 with no byes. Re-run on the real bracket, same seeds and swaps: as drafted 49.36% → **38.62%** champ, 99.73% → **99.98%** playoff, rank 1 → 1; follow_card_selfconsistent 60.11% → **49.17%**. Every arm, old vs new: `report_2026-09-30_bracket_restate.md`; the JSON beside this file (`m54_arms.json`) now holds the real-bracket numbers.
+
 | arm | champ% | playoff% | rank | swaps |
 |---|---|---|---|---|
 | follow_card_selfconsistent | 60.11 | 99.99 | 1 | #39 Derrick White, #135 Christian Braun |
