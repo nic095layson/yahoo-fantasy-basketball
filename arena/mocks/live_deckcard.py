@@ -35,6 +35,8 @@ PUNT_TIMELINES = {
     56: [(0, [])],
     # mock 57: no punt declared (none in the tool log or the owner's screenshot)
     57: [(0, [])],
+    # mock 58 (2026-09-30): the owner never touched the punt box.
+    58: [(0, [])],
 }
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 if html_path.startswith("rev:"):

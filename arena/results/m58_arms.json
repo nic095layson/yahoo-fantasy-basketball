@@ -1,0 +1,71 @@
+{
+ "as_drafted": {
+  "champ": 36.75,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#10:Tyrese Maxey": {
+  "champ": 38.506,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ]
+  ]
+ },
+ "swap#39:Derrick White": {
+  "champ": 40.811,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#135:Quentin Grimes": {
+  "champ": 37.789,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Quentin Grimes"
+   ]
+  ]
+ },
+ "swap#154:Kyle Filipowski": {
+  "champ": 36.361,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 40.894,
+  "playoff": 100.0,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ]
+  ]
+ }
+}

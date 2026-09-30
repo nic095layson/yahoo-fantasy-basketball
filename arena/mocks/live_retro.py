@@ -32,7 +32,8 @@ import arena  # noqa: E402  (its own hoops instance reads the frozen snapshot; u
 CATS = hoops.CATS
 POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv",
-         "v31": SP + "/m56_players_v31.csv", "v33": SP + "/players_v33.csv"}
+         "v31": SP + "/m56_players_v31.csv", "v33": SP + "/players_v33.csv",
+         "v35": SP + "/m58_players_v35.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -54,6 +55,10 @@ V31_REV = "e2b45ed"
 # pool — `--tag v33` re-grades any mock on it and writes *_v33.json outputs beside
 # the room's own record, which stays graded on the pool it was drafted against.
 V33_REV = "a3b4d31"
+# v35 = data/players.csv as of the 2026-09-30 daily-pull build (mock 58; sha
+# 3db2c63af0c3), pinned to rev 6426a59 (deck v35 main — the 9/30 pull plus the
+# role pass; the rookie intake the same evening moved the live file to v36).
+V35_REV = "6426a59"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -81,6 +86,10 @@ MOCKS = {
     # judgment blocks byte-identical to v33/a3b4d31, so the v33 pool IS this
     # room's own pool). The veto live. The owner's first room on the new layout.
     57: dict(tags=("v33",), veto=True),
+    # mock 58 (2026-09-30, slot 10): public Yahoo room drafted on deck v35 (rev
+    # 6426a59 — the 9/30 daily-pull build with the role pass; pool sha
+    # 3db2c63af0c3). The veto live; the owner's second room on the concise card.
+    58: dict(tags=("v35",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -104,7 +113,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:
@@ -569,7 +578,11 @@ def stage_arms(tag=None):
             if pk["player"] in byn:
                 ros[pk["slot"]].append(byn[pk["player"]])
         mine = ros[SLOT]; opp = [r for s, r in ros.items() if s != SLOT and r]
-        pool = [p for p in players if p["player"] not in taken and hoops.availability(p) > 0]
+        # Owner veto applied here too (fix 2026-09-30, mock 58: the chain had put a
+        # vetoed Porzingis at #82 because this pool skipped the filter avail_pool applies).
+        _veto = hoops.do_not_draft() if CFG.get("veto") else set()
+        pool = [p for p in players if p["player"] not in taken and hoops.availability(p) > 0
+                and p["player"] not in _veto]
         vals = [hoops.adj_value(p, ()) for p in pool]
         models = [arena.team_week_model(r) for r in opp]
         if not models:
