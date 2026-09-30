@@ -1,13 +1,13 @@
 {
   "date": "2026-09-30",
-  "note": "2026-09-30 daily pull, day two of training camps: the role pass the owner asked for (every no-role row the market ranks 40+ places above the board researched team by team), five starting-role re-derivations, Knicks camp moves, Russell to China; Duren's qualifying-offer deadline is 10/1",
+  "note": "Code-only rebuild the same evening: D-R5 advice sentence (owner-approved 2026-09-30) \u2014 the card names value as the reason when the \ud83c\udfaf trails the #2 on \u0394ECW; pool unchanged since the rookie-intake build bdb40833a6ac (five starter-minute re-derivations, Boozer twin, three notes)",
   "pool_changes": {
-    "changed": true,
-    "note": "2026-09-30 pull (camps day two): five lines re-derived to sourced starting roles on both planes (Nurkic, Clingan, Sharpe, Davion Mitchell to the 2025-26 B-Ref lines; Rollins toward his 2025-26 line with a share haircut), two team moves (Konchar NYK->FA waived 9/30; Tony Bradley ATL->NYK camp deal 9/30), D'Angelo Russell excluded (out-china, Shanghai Sharks 9/30), 39 dated role and status notes; Kawhi's kit games line 35->60 after the investigation closed 9/2 with no suspension"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-09-30",
     "mode": "fallback-partial",
-    "sources": "scripts/verify_rosters.py"
+    "sources": "scripts/verify_rosters.py (fallback-partial evidence, 2026-09-30)"
   }
 }
