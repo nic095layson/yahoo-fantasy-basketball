@@ -195,6 +195,32 @@ is on the author. See LEDGER §3.
   §7, decision D57-1. The owner's roster-balance question (LEAN / LINEUP CAP flags vs the card) is
   answered from the code in that report's §6; the deck's own `dailyFillWeights` on this roster starts
   every man 99–100% of his game days under either position set.
+- **Mock 58 (2026-09-30, slot 10).** Public Yahoo room, the owner's second on the concise card, drafted on
+  deck v35 (rev `6426a59` — the 9/30 daily-pull build with the role pass; pool sha `3db2c63af0c3`), the veto
+  live. `live_retro.MOCKS[58]` = `dict(tags=("v35",), veto=True)` (new pool tag `v35`, pinned to `6426a59`);
+  no punt declared (`PUNT_TIMELINES[58] = [(0, [])]`). State rebuilt from Yahoo's recap with `hoops.py draft
+  resync` (156/156 resolved, no UNKNOWN, seats match the snake, owner roster = the recap's "My Team", md5
+  `84547309be00afd40ed15adcd72ff367`). **First room graded on the league's real bracket** (E14 shipped the
+  same day; 8 of 12, no byes): as drafted 36.75% / ECW 5.667 rank 1 (next 4.932), favored 11/11; follow-card
+  self-consistent 40.89% / 5.744 (Maxey at #10, Jalen Williams at #39, LaVine at #82); Jalen Williams at #39
+  alone 40.17%, Derrick White at #39 (hindsight best, +0.119 cats/week) 40.81% — `m58_followcard_grade.json`,
+  `m58_arms.json`. Deck card replayed from the page drafted against (`live_deckcard.py 58
+  rev:6426a59:docs/draft-deck.html arena/results/m58_deckcard_v35.json`): 🎯 taken 9 of 13, every pick on the
+  Top-5; the four off-card picks were 0.006/0.009/0.017/0.005 behind. `live_advisor.py` likewise (no advice
+  at any turn; AST/PTS watched at #58, hysteresis held). Survival pooled with the 51–57 deck cards
+  (`m58_survival.json`: this room 48 rows, Brier 0.189 vs base 0.246; BUY NOW 2 of 8 survived, TOSS-UP 5 of
+  16, quiet 20 of 24). Tool-state integrity: the owner's tool log (`arena/data/events/m58_tool_events.json`
+  — 158 events: 155 direct feeds incl. fifteen shared-surname tokens, the UNKNOWN "Gianis" with its `6-
+  Giannis Antetokounmpo` fix, and the HALTED "Murray" feed the deck refused because Jamal Murray was already
+  drafted) replayed through the real v35 page with `live_replay_dom.mjs`: 0 echo misses, 0 clock mismatches,
+  0 page errors, all 156 positions equal to the recap, owner roster identical, four autosave reloads with no
+  drift — `arena/results/m58_tool_vs_truth.json`. Repeat-name audit (`m58_repeat_names_audit.json`): the #1
+  changes at 10 of 13 turns under other rooms' rosters (8 of 13 against an empty roster); of the mock-56
+  watch names only Braun reached a Top-5 (once). **Harness fix (2026-09-30):** `stage_arms` built its
+  follow-the-card chain from a pool that skipped the owner veto (the replay/hindsight pool applies it), so the
+  chain had a vetoed Porziņģis at #82; fixed, re-run; mocks 55–57's chains carried no vetoed name and stand.
+  **Finding (data):** 29 of 156 drafted men again show fewer positions in the draft room than the pool
+  (superset every time; kit report `after-report-2026-09-30-draft58.md` §7 — D-G3).
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

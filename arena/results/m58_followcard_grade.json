@@ -1,0 +1,161 @@
+{
+ "as drafted": {
+  "ecw": 5.667,
+  "rank": 1,
+  "next": 4.932,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 8,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 2,
+   "REB": 3,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 3
+  },
+  "champ": 36.75,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Kyrie Irving",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Miles Bridges",
+   "Jakob Poeltl",
+   "Ja Morant",
+   "PJ Washington",
+   "Collin Gillespie",
+   "Herbert Jones",
+   "Daniel Gafford"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.744,
+  "rank": 1,
+  "next": 4.928,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 1,
+   "REB": 6,
+   "AST": 8,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 5
+  },
+  "champ": 40.89,
+  "playoff": 100.0,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ]
+  ],
+  "roster": [
+   "Tyrese Maxey",
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Zach LaVine",
+   "Jakob Poeltl",
+   "Ja Morant",
+   "PJ Washington",
+   "Collin Gillespie",
+   "Herbert Jones",
+   "Daniel Gafford"
+  ]
+ },
+ "card at #39 only (Jalen Williams)": {
+  "ecw": 5.764,
+  "rank": 1,
+  "next": 4.924,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 7,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 4,
+   "REB": 2,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 4
+  },
+  "champ": 40.17,
+  "playoff": 99.99,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Jalen Williams"
+   ]
+  ],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Miles Bridges",
+   "Jakob Poeltl",
+   "Ja Morant",
+   "PJ Washington",
+   "Collin Gillespie",
+   "Herbert Jones",
+   "Daniel Gafford"
+  ]
+ }
+}
