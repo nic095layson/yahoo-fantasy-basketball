@@ -92,6 +92,7 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
   survivalProb: typeof survivalProb === "function" ? survivalProb : null,
   clockRead: typeof clockRead === "function" ? clockRead : null,
+  adviceText: typeof adviceText === "function" ? adviceText : null,
   SURVIVAL_DISPLAY: typeof SURVIVAL_DISPLAY === "undefined" ? null : SURVIVAL_DISPLAY,
   PIN_MAX_GAP: typeof PIN_MAX_GAP === "undefined" ? null : PIN_MAX_GAP,
   catWinProb: typeof catWinProb === "function" ? catWinProb : null,
@@ -123,6 +124,12 @@ if (api.rankCard) {
   out.tieNull = api.rankCard([{ p: { n: "Aaron" }, ds: 0.9, decw: null }, { p: { n: "Zed" }, ds: 0.9, decw: null }]).map(r => r.p.n);
 }
 if (api.survivalChip) out.chips = [api.survivalChip(0.01, []), api.survivalChip(0.5, ["C"]), api.survivalChip(0.3, []), api.survivalChip(0.7, [])];
+out.advice = api.adviceText ? [
+  api.adviceText("Chet Holmgren", "Jalen Williams", -0.017, 0.017, 25, false),
+  api.adviceText("Derrick White", "OG Anunoby", 0.070, 0.020, 45, false),
+  api.adviceText("OG Anunoby", "Payton Pritchard", -0.012, 0.012, null, false),
+  api.adviceText("Nikola Jokic", null, null, null, 1, true),
+  api.adviceText("Aaron", "Zed", 0.0, 0.0, 30, false)] : null;
 out.surv = api.survivalProb ? [api.survivalProb(60, 40), api.survivalProb(5, 150), api.survivalProb(null, 40), api.survivalProb(120, 100), api.survivalProb(200, 30)] : null;
 out.pins = [];
 if (api.pinDecision && api.rankCard) {
@@ -316,6 +323,31 @@ process.stdout.write(JSON.stringify(out));
     case("D51R-4 the app's sixth row styles LAST CALL off the gated decision, not readR.urgent",
          'li.style.borderColor = tgOnPin ?' in app and "(tgOnPin\n            ? `LAST CALL" in app,
          "sixth row still keys off readR.urgent")
+
+    # ---- D-R5 (owner-reported 2026-09-30): the advice sentence names the real reason
+    # when the 🎯 wins the blend on value while trailing the #2 on ΔECW
+    adv5 = js.get("advice")
+    case("D-R5 adviceText exists in the engine block", adv5 is not None, "adviceText absent")
+    a0 = (adv5 or [""])[0]
+    case("D-R5 negative gap: names value and the #2's better fit, never a minus-signed 'over'",
+         "the best value left (Mkt 25)" in a0 and "Jalen Williams fits this week's roster slightly better (+0.034 cats/wk) but ranks lower on value" in a0
+         and "expected categories per week over" not in a0 and "\u2212" not in a0 and "−" not in a0, f"got {a0!r}")
+    a1 = (adv5 or ["", ""])[1] if adv5 and len(adv5) > 1 else ""
+    case("D-R5 positive gap keeps the measured-margin sentence",
+         a1 == "Take Derrick White \u2014 +0.050 expected categories per week over OG Anunoby", f"got {a1!r}")
+    a2 = adv5[2] if adv5 and len(adv5) > 2 else ""
+    case("D-R5 negative gap without a price falls back to 'on the board'",
+         "the best value left on the board; Payton Pritchard fits" in a2 and "(Mkt" not in a2, f"got {a2!r}")
+    a3 = adv5[3] if adv5 and len(adv5) > 3 else ""
+    case("D-R5 no opponent roster yet keeps the value-board sentence",
+         a3 == "Take Nikola Jokic \u2014 top of the 9-cat value board; no opponent roster to measure a marginal category against yet", f"got {a3!r}")
+    a4 = adv5[4] if adv5 and len(adv5) > 4 else ""
+    case("D-R5 an exact ΔECW tie reads +0.000 over the #2 (unchanged)",
+         a4 == "Take Aaron \u2014 +0.000 expected categories per week over Zed", f"got {a4!r}")
+    app5 = html[html.find('<script id="engine">') + 1:]
+    case("D-R5 the app composes the sentence through adviceText",
+         "adviceText(top0.n" in app5 and "expected categories per week over ${scored[1].p.n}" not in app5,
+         "app block still composes the sentence inline")
 
     # ---- D51R-3 punt advisor: advice-only, room-relative, with hysteresis
     adv = js.get("advisor", {})
