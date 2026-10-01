@@ -638,12 +638,150 @@ def stage_arms(tag=None):
     return results
 
 
+# ---- D59-2 large (2026-10-01): the two-pick 🎯 against the D58-3 bar. Pre-registration:
+# arena/results/pair_experiment_2026-10-01_design.md. Driver: arena/mocks/pair_experiment.py.
+# The page revision the owner drafted against (README per room); its baked Yahoo price (F8)
+# is the survival price, else the internal market position the pre-F8 page used.
+PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
+            55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV}
+
+
+def _baked_prices(rev):
+    """{name: Yahoo price} baked into PLAYERS[].mkt at `rev`, or None when that page had none."""
+    import re as _re, subprocess, tempfile
+    html = subprocess.run(["git", "-C", DECK, "show", f"{rev}:docs/draft-deck.html"],
+                          capture_output=True, text=True, check=True).stdout
+    data = _re.search(r'<script id="data">(.*?)</script>', html, _re.S).group(1)
+    eng = _re.search(r'<script id="engine">(.*?)</script>', html, _re.S).group(1)
+    tmp = tempfile.mkdtemp(prefix="pairarms-"); path = os.path.join(tmp, "deck.mjs")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(data + "\n" + eng + "\nprocess.stdout.write(JSON.stringify(PLAYERS.map(p => [p.n, p.mkt == null ? null : p.mkt])));\n")
+    rows = json.loads(subprocess.run(["node", path], capture_output=True, text=True, check=True).stdout)
+    pr = {n: v for n, v in rows if v is not None}
+    return pr or None
+
+
+def look_through_next(n):
+    """The next owner pick index with an opponent pick before it (the page's lookThroughNextTurn)."""
+    later = [m for m in OWNER_IDX if m > n]
+    prev = n
+    for m in later:
+        if m > prev + 1:
+            return m
+        prev = m
+    return later[-1] if later else None
+
+
+def stage_pairarms(tag=None, seeds1=(11, 23, 47), seeds2=(5, 17, 29)):
+    tag = tag or GRADE_TAG
+    players = load_pool(tag)
+    byn = {p["player"]: p for p in players}
+    rev = PAGE_REV[MOCK]
+    baked = _baked_prices(rev)
+    mr = arena.market_ranks([p for p in players if hoops.availability(p) > 0]) if not baked else {}
+    price_of = (lambda name: baked.get(name)) if baked else (lambda name: mr.get(name))
+    _veto = hoops.do_not_draft() if CFG.get("veto") else set()
+
+    def card_at(picks_run, n):
+        taken = {pk["player"] for pk in picks_run[:n]}
+        ros = {s: [] for s in range(1, TEAMS + 1)}
+        for pk in picks_run[:n]:
+            if pk["player"] in byn:
+                ros[pk["slot"]].append(byn[pk["player"]])
+        mine = ros[SLOT]; opp = [r for s, r in ros.items() if s != SLOT and r]
+        pool = [p for p in players if p["player"] not in taken and hoops.availability(p) > 0
+                and p["player"] not in _veto]
+        vals = [hoops.adj_value(p, ()) for p in pool]
+        models = [arena.team_week_model(r) for r in opp]
+        if not models:
+            ds, decw = pct(vals), [None] * len(pool)
+        else:
+            base = pwins(arena.team_week_model(mine), models) if mine else 0.0
+            decw = [pwins(arena.team_week_model(mine + [p]), models) - base for p in pool]
+            pd, pv = pct(decw), pct(vals)
+            ds = [0.5 * pd[i] + 0.5 * pv[i] for i in range(len(pool))]
+        order = sorted(range(len(pool)), key=lambda i: (-ds[i], [-ord(ch) for ch in pool[i]["player"]]))
+        return dict(pool=pool, ds=ds, decw=decw, order=order, mine=mine, models=models)
+
+    def pair_pick(c, n):
+        top = c["order"][:5]
+        rows = [dict(n=c["pool"][i]["player"], decw=c["decw"][i]) for i in top]
+        nt = look_through_next(n)
+        if nt is None or not c["models"] or len(top) < 2:
+            return dict(idx=0, moved=False, why="no next turn / no room", rows=[r["n"] for r in rows], surv=[], next_turn=None, gain=0)
+        surv = [hoops.survival_prob(price_of(r["n"]), nt + 1) for r in rows]
+        mine, models = c["mine"], c["models"]
+        pi = [c["pool"][i] for i in top]
+        bI = [pwins(arena.team_week_model(mine + [pi[i]]), models) for i in range(len(top))]
+        given = lambda i, j: pwins(arena.team_week_model(mine + [pi[i], pi[j]]), models) - bI[i]
+        d = hoops.pair_decision(rows, surv, given)
+        d.update(surv=surv, next_turn=nt + 1, rows=[r["n"] for r in rows])
+        return d
+
+    def follow_chain(mode):
+        picks_run = [dict(pk) for pk in PICKS]; swaps, moves, reads = [], [], []
+        for n in OWNER_IDX:
+            c = card_at(picks_run, n)
+            cand = list(c["order"][:5])
+            if mode == "pair":
+                d = pair_pick(c, n)
+                reads.append(dict(pick=n + 1, moved=bool(d.get("moved")), idx=d.get("idx", 0), gain=round(d.get("gain") or 0, 4),
+                                  why=d.get("why"), rows=d.get("rows"), surv=[None if s is None else round(s, 3) for s in d.get("surv", [])],
+                                  next_turn=d.get("next_turn")))
+                if d.get("moved"):
+                    moves.append(reads[-1])
+                    cand = [cand[d["idx"]]] + [i for i in cand if i != cand[d["idx"]]]
+            actual = picks_run[n]["player"]
+            later = {pk["player"]: j for j, pk in enumerate(picks_run) if j > n}
+            chosen = None
+            for i in cand:
+                nm = c["pool"][i]["player"]
+                if nm == actual:
+                    chosen = None; break
+                j = later.get(nm)
+                if j is not None and picks_run[j]["slot"] != SLOT:
+                    chosen = (nm, j); break
+            if chosen:
+                nm, j = chosen
+                picks_run[n]["player"], picks_run[j]["player"] = nm, actual
+                swaps.append((n, nm))
+        return swaps, moves, reads
+
+    results = {}
+    chains = {"as_drafted": ([], [], []), "blend": follow_chain("blend"), "pair": follow_chain("pair")}
+    for name, (sw, mv, rd) in chains.items():
+        ros, _ = apply_swaps(players, sw)
+        for label, seeds in (("S1", seeds1), ("S2", seeds2)):
+            res = run_arm(ros, seeds=seeds)
+            me = res[SLOT]
+            results[f"{name}_{label}"] = dict(champ=round(me[0], 3), playoff=round(me[1], 2),
+                                              rank=1 + sum(1 for s in ros if s != SLOT and res[s][0] > me[0]))
+            print(f"{MOCK} {name:<10} {label} champ {me[0]:6.3f}%  playoff {me[1]:5.2f}%")
+        models = {s: arena.team_week_model(r) for s, r in ros.items()}
+        results[f"{name}_ecw"] = round(pwins(models[SLOT], [models[o] for o in ros if o != SLOT]), 3)
+        results[f"{name}_swaps"] = [(n + 1, a) for n, a in sw]
+        if name == "pair":
+            results["pair_moves"] = mv; results["pair_reads"] = rd
+    arms_path = SP + f"/m{MOCK}_arms{OUT_SUFFIX}.json"
+    blend_matches = None
+    if os.path.exists(arms_path):
+        rec = json.load(open(arms_path)).get("follow_card_selfconsistent", {}).get("swaps")
+        blend_matches = (rec is not None and [list(x) for x in results["blend_swaps"]] == [list(x) for x in rec])
+    out = dict(mock=MOCK, tag=tag, page_rev=rev,
+               price_source=("baked Yahoo price (F8) at the page revision" if baked else "internal market position (pre-F8 page)"),
+               seeds=dict(S1=list(seeds1), S2=list(seeds2)), seasons=6000, blend_matches_recorded_arms=blend_matches,
+               results=results)
+    json.dump(out, open(SP + f"/m{MOCK}_pairarms{OUT_SUFFIX}.json", "w"), indent=1)
+    print(f"{MOCK}: moves {len(chains['pair'][1])} of {len(OWNER_IDX)} turns; blend chain matches recorded arms: {blend_matches}")
+    return out
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("mock", type=int, choices=sorted(MOCKS))
-    ap.add_argument("stage", choices=["replay", "final", "hindsight", "forecast", "arms"])
+    ap.add_argument("stage", choices=["replay", "final", "hindsight", "forecast", "arms", "pairarms"])
     ap.add_argument("--tag", choices=sorted(POOLS), default=None,
                     help="re-grade on this pool tag instead of the mock's own; outputs carry the _<tag> suffix")
     a = ap.parse_args()
     {"replay": stage_replay, "final": stage_final, "hindsight": stage_hindsight,
-     "forecast": stage_forecast, "arms": stage_arms}[a.stage]()
+     "forecast": stage_forecast, "arms": stage_arms, "pairarms": stage_pairarms}[a.stage]()

@@ -106,7 +106,13 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   catWinProb: typeof catWinProb === "function" ? catWinProb : null,
   puntRead: typeof puntRead === "function" ? puntRead : null,
   coherenceRead: typeof coherenceRead === "function" ? coherenceRead : null,
-  PUNT_BUTTONS: typeof PUNT_BUTTONS === "undefined" ? null : PUNT_BUTTONS };
+  PUNT_BUTTONS: typeof PUNT_BUTTONS === "undefined" ? null : PUNT_BUTTONS,
+  pairDecision: typeof pairDecision === "function" ? pairDecision : null,
+  relabelLog: typeof relabelLog === "function" ? relabelLog : null,
+  insertPick: typeof insertPick === "function" ? insertPick : null,
+  PAIR_MIN_GAIN: typeof PAIR_MIN_GAIN === "undefined" ? null : PAIR_MIN_GAIN,
+  PAIR_WAIT_MIN: typeof PAIR_WAIT_MIN === "undefined" ? null : PAIR_WAIT_MIN,
+  PAIR_MARKER: typeof PAIR_MARKER === "undefined" ? null : PAIR_MARKER };
 """)
     probes = [("draft_state_mock31.json", 64)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
@@ -116,7 +122,57 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
     jblock = extract("judgment", html)
     vm = re.search(r"doNotDraft:\s*\[(.*?)\]", jblock, re.S)
     veto = re.findall(r'"([^"]+)"', vm.group(1)) if vm else None
-    json.dump({"states": states, "probes": probes, "veto": veto or []}, open(fixture, "w"))
+    # D59-2 (2026-10-01): two-pick 🎯 fixtures. "m59_82_v37" is the mock-59 #82 card the
+    # owner saw (m59_deckcard_v37.json: ΔECW and survival-to-#87 of the Top-5); the deep
+    # 🎯 Poeltl (Mkt 187, survival 0.829) must drop behind a scarcer near-equal row.
+    PAIR_FIXTURES = [
+        {"name": "m59_82_v37",
+         "rows": [{"n": "Jakob Poeltl", "decw": 0.9397}, {"n": "Zach LaVine", "decw": 0.9341},
+                  {"n": "Jalen Suggs", "decw": 0.9281}, {"n": "Miles Bridges", "decw": 0.9565},
+                  {"n": "Josh Hart", "decw": 0.9129}],
+         "surv": [0.829, 0.729, 0.765, 0.645, 0.623]},
+        # a deep 🎯 (survival 0.85) over a near-equal scarce row (0.35): the marker must move
+        {"name": "deep_vs_scarce",
+         "rows": [{"n": "Deep", "decw": 0.94}, {"n": "Scarce", "decw": 0.93}, {"n": "C", "decw": 0.90},
+                  {"n": "D", "decw": 0.88}, {"n": "E", "decw": 0.85}],
+         "surv": [0.85, 0.35, 0.30, 0.30, 0.30]},
+        # the pair prefers the BUY NOW row, but #1 is itself a coin flip (0.40): the guard holds
+        {"name": "near_guard",
+         "rows": [{"n": "A", "decw": 0.94}, {"n": "B", "decw": 0.935}, {"n": "C", "decw": 0.90},
+                  {"n": "D", "decw": 0.88}, {"n": "E", "decw": 0.85}],
+         "surv": [0.40, 0.05, 0.30, 0.30, 0.30]},
+        # mock-59 #39 shape: the 🎯 (Derrick White) is a near-price row at 0.213 — never demoted
+        {"name": "m59_39_near",
+         "rows": [{"n": "Derrick White", "decw": 1.4764}, {"n": "Desmond Bane", "decw": 1.40},
+                  {"n": "Kyrie Irving", "decw": 1.38}, {"n": "OG Anunoby", "decw": 1.30},
+                  {"n": "Franz Wagner", "decw": 1.28}],
+         "surv": [0.213, 0.35, 0.30, 0.56, 0.40]},
+        # near-identical survivals: whatever the pair arithmetic prefers, the gain is under PAIR_MIN_GAIN
+        {"name": "small_gain",
+         "rows": [{"n": "A", "decw": 0.940}, {"n": "B", "decw": 0.935}, {"n": "C", "decw": 0.90},
+                  {"n": "D", "decw": 0.88}, {"n": "E", "decw": 0.85}],
+         "surv": [0.70, 0.68, 0.66, 0.60, 0.60]},
+        # turn 1: no opponent roster, ΔECW null everywhere
+        {"name": "turn1",
+         "rows": [{"n": "A", "decw": None}, {"n": "B", "decw": None}], "surv": [0.5, 0.5]},
+        # the 🎯 has no survival read (no price, no market rank): never moved
+        {"name": "surv_null0",
+         "rows": [{"n": "A", "decw": 0.9}, {"n": "B", "decw": 0.89}], "surv": [None, 0.3]},
+    ]
+    # D59-1 (2026-10-01): history re-numbering after Insert-at-#. A 12-team room, owner
+    # seat 3 (so the shifted #3 lands on the owner): picks Jokic #1, Wemby #2, an UNKNOWN
+    # #3, then Luka inserted at #2 — the log must re-number, re-seat, mark (YOU), rename.
+    RELABEL_FIXTURE = {
+        "state": {"teams": 12, "slot": 3, "size": 13, "punt": [],
+                  "picks": [{"player": "Nikola Jokic", "slot": 1}, {"player": "Victor Wembanyama", "slot": 2},
+                            {"player": "UNKNOWN #3", "slot": 3, "raw": "zzz"}]},
+        "log": [{"t": "  ✓ (R1) #1: Nikola Jokic → Seat 1", "cls": "", "pick": 0, "kind": "pick", "note": ""},
+                {"t": "  ✓ (R1) #2: Victor Wembanyama → Seat 2", "cls": "", "pick": 1, "kind": "pick", "note": "  (assumed over X)"},
+                {"t": "⚠ (R1) #3: UNKNOWN (\"zzz\": no match) — fix with: 3- Name", "cls": "warn", "pick": 2, "kind": "unk", "raw": "zzz"},
+                {"t": "— your pick, #4 —", "cls": ""}],
+        "insertAt": 2, "insertName": "Luka Doncic"}
+    json.dump({"states": states, "probes": probes, "veto": veto or [],
+               "pairFixtures": PAIR_FIXTURES, "relabel": RELABEL_FIXTURE}, open(fixture, "w"))
     driver = os.path.join(tmp, "run.mjs")
     with open(driver, "w", encoding="utf-8") as f:
         f.write(r"""
@@ -244,6 +300,24 @@ if (api.matchCandidates) {
   const names = q => api.matchCandidates(api.PLAYERS, q).map(p => p.n);
   out.dots = { pj: names("P.J. Washington"), tj: names("TJ McConnell"),
                pjPlain: names("PJ Washington"), tjDot: names("T.J. McConnell"), lone: names(".") };
+}
+/* D59-2 (2026-10-01): two-pick 🎯 — pairDecision(rows, surv, decwGiven) with independence
+   (decwGiven(i, j) = rows[j].decw) so the Python twin reproduces the arithmetic exactly. */
+out.pair = null; out.PAIR_MIN_GAIN = api.PAIR_MIN_GAIN; out.PAIR_WAIT_MIN = api.PAIR_WAIT_MIN; out.PAIR_MARKER = api.PAIR_MARKER;
+if (api.pairDecision) {
+  out.pair = {};
+  for (const f of inp.pairFixtures) out.pair[f.name] = api.pairDecision(f.rows, f.surv, (i, j) => f.rows[j].decw);
+}
+/* D59-1 (2026-10-01): insertPick renames the shifted UNKNOWN; relabelLog re-numbers,
+   re-seats and (YOU)-marks the earlier history lines from the state. */
+out.relabel = null;
+if (api.relabelLog && api.insertPick) {
+  const F = inp.relabel; const st = JSON.parse(JSON.stringify(F.state));
+  const log = JSON.parse(JSON.stringify(F.log));
+  const r = api.insertPick(st, api.PLAYERS, F.insertAt, F.insertName);
+  const rl = api.relabelLog(log, st, F.insertAt - 1);
+  out.relabel = { ok: r.ok, echo: r.lines.map(l => l.t), picks: st.picks.map(pk => [pk.player, pk.slot, pk.raw ?? null]),
+                  lines: rl.log.map(e => [e.t, e.cls, e.pick ?? null]), movedOn: rl.movedOn, movedOff: rl.movedOff };
 }
 process.stdout.write(JSON.stringify(out));
 """.replace("__MOD__", mod).replace("__FIXTURE__", fixture))
@@ -475,6 +549,84 @@ process.stdout.write(JSON.stringify(out));
          _mc("P.J. Washington") == ["PJ Washington"] and _mc("TJ McConnell") == ["T.J. McConnell"]
          and _mc("PJ Washington") == ["PJ Washington"] and _mc(".") == [],
          f"got {_mc('P.J. Washington')}, {_mc('TJ McConnell')}, {_mc('PJ Washington')}, {_mc('.')}")
+
+    # ---- D59-2 (2026-10-01): the two-pick 🎯. The card's #1 is price-blind by design; when
+    # the room prices him far below his value he waits (target_wait: deep 🎯s still there at
+    # the next owner turn 4 of 5) while a near-equal scarce row is lost. pairDecision scores
+    # the next TWO owner turns: value now + the survival-weighted value of the best row left
+    # at the next turn, and moves the 🎯 marker (never the blend50 order) when the pair gain
+    # is at least PAIR_MIN_GAIN and the #1's own survival is at least PAIR_WAIT_MIN.
+    pr = js.get("pair")
+    case("D59-2 pairDecision exists in the engine block", pr is not None, "pairDecision absent")
+    case("D59-2 PAIR_MIN_GAIN 0.01 cats/wk and PAIR_WAIT_MIN 0.60 exported",
+         js.get("PAIR_MIN_GAIN") == 0.01 and js.get("PAIR_WAIT_MIN") == 0.60,
+         f"got {js.get('PAIR_MIN_GAIN')}, {js.get('PAIR_WAIT_MIN')}")
+    dv = (pr or {}).get("deep_vs_scarce") or {}
+    case("D59-2 a deep 🎯 (0.85) over a near-equal scarce row (0.35): the marker moves to the scarce row, the deep one is named next turn",
+         dv.get("moved") is True and dv.get("idx") == 1 and (dv.get("next") or {}).get("n") == "Deep" and (dv.get("gain") or 0) >= 0.01,
+         f"got {dv}")
+    m82 = (pr or {}).get("m59_82_v37") or {}
+    # The real #82 numbers: all five rows were deep (survival 0.62–0.83), so the pair arithmetic
+    # prefers Bridges-now by only 0.007 cats/wk — under PAIR_MIN_GAIN, no move. That is the
+    # §9b finding restated: at that turn nothing on the card was lost by waiting; the cost
+    # was taking none of the five. The fixture pins the arithmetic, not a wished-for move.
+    m82p = m82.get("pair") or []
+    case("D59-2 mock-59 #82 (v37 card): the pair arithmetic prefers Bridges-now by under 0.01 — the 🎯 stays on Poeltl, the reason names the gain",
+         m82.get("moved") is False and m82.get("idx") == 0 and len(m82p) == 5 and m82p.index(max(m82p)) == 3
+         and 0.005 < (m82.get("gain") or 0) < 0.01 and "pair gain" in str(m82.get("why")), f"got {m82}")
+    ng = (pr or {}).get("near_guard") or {}
+    case("D59-2 the pair prefers the BUY NOW row but #1 is a coin flip (0.40 < 0.60): never demoted, the reason names the guard",
+         ng.get("moved") is False and ng.get("idx") == 0 and (ng.get("gain") or 0) >= 0.01 and "0.60" in str(ng.get("why")), f"got {ng}")
+    near = (pr or {}).get("m59_39_near") or {}
+    case("D59-2 mock-59 #39 (Derrick White, survival 0.213): the 🎯 stays on #1",
+         near.get("moved") is False and near.get("idx") == 0, f"got {near}")
+    sg = (pr or {}).get("small_gain") or {}
+    case("D59-2 a pair gain under 0.01 cats/wk leaves the 🎯 on the #1", sg.get("moved") is False and sg.get("idx") == 0, f"got {sg}")
+    t1 = (pr or {}).get("turn1") or {}
+    case("D59-2 turn 1 (no ΔECW) never moves the 🎯", t1.get("moved") is False and t1.get("idx") == 0, f"got {t1}")
+    s0 = (pr or {}).get("surv_null0") or {}
+    case("D59-2 a 🎯 with no survival read is never demoted", s0.get("moved") is False and s0.get("idx") == 0, f"got {s0}")
+    twin_ok, twin_detail = False, "hoops.pair_decision missing"
+    if hasattr(_h, "pair_decision") and pr:
+        twin_ok, bad = True, []
+        for f in PAIR_FIXTURES:
+            py = _h.pair_decision(f["rows"], f["surv"], lambda i, j, rows=f["rows"]: rows[j]["decw"])
+            jsr = pr.get(f["name"]) or {}
+            pp, jp = py["pair"], jsr.get("pair")
+            same = (py["idx"] == jsr.get("idx") and py["moved"] == jsr.get("moved")
+                    and abs((py["gain"] or 0) - (jsr.get("gain") or 0)) < 1e-9
+                    and ((pp is None and jp is None) or (pp is not None and jp is not None and len(pp) == len(jp)
+                                                         and all(abs(a - b) < 1e-9 for a, b in zip(pp, jp)))))
+            if not same:
+                twin_ok = False; bad.append((f["name"], py, jsr))
+        twin_detail = f"differs on {bad[:1]}" if bad else ""
+    case("D59-2 hoops.pair_decision is the exact twin on every fixture (idx, moved, gain, pair values)", twin_ok, twin_detail)
+    case("D59-2 PAIR_MARKER is a boolean switch set by the pre-registered experiment, and the app honours it on the marker",
+         isinstance(js.get("PAIR_MARKER"), bool) and "(PAIR_MARKER ? pairRead.idx : 0)" in app4, f"got {js.get('PAIR_MARKER')}")
+    case("D59-2 the app composes the 🎯 and the advice sentence through pairDecision",
+         "pairDecision(" in app4 and "likely waits" in app4, "pairDecision not consumed by the app / no two-pick sentence")
+    # ---- D59-1 (2026-10-01): history box after Insert-at-#. Earlier lines are re-rendered
+    # from the state (number, seat, (YOU)), a shifted UNKNOWN is renamed to its new number in
+    # the state and the log, and a pick the shift moves onto the owner's seat is reported.
+    rl = js.get("relabel")
+    case("D59-1 relabelLog and insertPick exported from the engine", rl is not None, "relabelLog/insertPick absent")
+    case("D59-1 insertPick renames the shifted UNKNOWN to its new number in the state",
+         bool(rl) and rl.get("ok") and [pk[0] for pk in rl.get("picks", [])] == ["Nikola Jokic", "Luka Doncic", "Victor Wembanyama", "UNKNOWN #4"],
+         f"got {rl and rl.get('picks')}")
+    lines = [l[0] for l in (rl or {}).get("lines", [])]
+    case("D59-1 the earlier pick lines are re-numbered and re-seated from the state, notes kept",
+         len(lines) == 4 and lines[0] == "  ✓ (R1) #1: Nikola Jokic → Seat 1"
+         and lines[1] == "  ✓ (R1) #3: Victor Wembanyama → Seat 3 (YOU)  (assumed over X)", f"got {lines}")
+    case("D59-1 the UNKNOWN line reads its new number and fix syntax",
+         len(lines) == 4 and lines[2] == "⚠ (R1) #4: UNKNOWN (\"zzz\": no match) — fix with: 4- Name", f"got {lines}")
+    case("D59-1 a non-pick line is untouched and pick indices follow the shift",
+         len(lines) == 4 and lines[3] == "— your pick, #4 —" and [l[2] for l in rl["lines"]] == [0, 2, 3, None], f"got {rl and rl.get('lines')}")
+    case("D59-1 the pick the shift moved onto the owner's seat is reported (movedOn [2]), none moved off",
+         bool(rl) and rl.get("movedOn") == [2] and rl.get("movedOff") == [], f"got {rl and (rl.get('movedOn'), rl.get('movedOff'))}")
+    case("D59-1 the app re-labels the history after an insert and echoes the card as of now for a pick moved onto YOUR seat",
+         "relabelLog(" in app4 and "card as of now" in app4, "app does not consume relabelLog / no card-as-of-now echo")
+    case("D59-1 pick lines carry their pick index and kind so the re-render is mechanical",
+         'kind: "pick"' in app4 or "kind: \"pick\"" in app4 or 'kind:"pick"' in app4, "log entries carry no pick index")
 
     print()
     if FAILS:
