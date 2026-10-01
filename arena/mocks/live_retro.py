@@ -33,7 +33,8 @@ CATS = hoops.CATS
 POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv",
          "v31": SP + "/m56_players_v31.csv", "v33": SP + "/players_v33.csv",
-         "v35": SP + "/m58_players_v35.csv", "v37": SP + "/m59_players_v37.csv"}
+         "v35": SP + "/m58_players_v35.csv", "v37": SP + "/m59_players_v37.csv",
+         "v39": SP + "/m59_players_v39.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -64,6 +65,10 @@ V35_REV = "6426a59"
 # risk tag, the Alexander-Walker twin). The WO-1/WO-2 merge (f507496) changed
 # scripts only; the page and pool are byte-identical.
 V37_REV = "b3986f8"
+# v39 = data/players.csv after D-WO1-1 (d) on 2026-10-01 (thirteen wide lines made one
+# line on both planes; pool sha 1ecfb66bdcef). Not a room's own pool: the `--tag v39`
+# calibration re-grade of mock 59 (the 2026-10-01 integration check) runs on it.
+V39_REV = "bc908f6"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -124,7 +129,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV), ("v39", V39_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:

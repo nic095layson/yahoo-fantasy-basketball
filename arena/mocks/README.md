@@ -257,6 +257,30 @@ is on the author. See LEDGER §3.
   **Harness item (D59-5):** `live_retro.py`'s card port still breaks exact blend ties by name order (its
   pre-D51R-4 rule); the page breaks them by ΔECW. One turn here (#111: port Vassell, page Gillespie, blend
   0.9835 both); the report's §3 reads the page (`live_deckcard.py`), the owner took Gillespie (hindsight-best).
+- **Mock 59 re-graded on v39 (2026-10-01, calibration only).** D-WO1-1 (d), the owner's decision: the
+  thirteen wide kit-vs-deck lines made one line on both planes (deck rev `bc908f6`, pool sha `1ecfb66bdcef`,
+  `data/players.csv` md5 `85a682b6c556`; ten deck rows changed, the kit's three in the kit). The room's own
+  record stays v37's. New pool tag `v39` (`POOLS["v39"]`, `V39_REV = "bc908f6"`; not any room's own pool) and
+  `live_retro.py 59 <stage> --tag v39` wrote `m59_replay/final/hindsight/forecast/arms_v39.json` beside the
+  v37 files; the six counterfactual rosters in `m59_followcard_grade_v39.json`; the card replayed on the v39
+  page with `live_deckcard.py 59 docs/draft-deck.html arena/results/m59_deckcard_v39.json`. As drafted
+  20.38% → 15.21% / ECW 5.092 → 4.877 (rank 2 both; next 5.260 → 5.272), favored 10 → 10 of 11;
+  follow-card self-consistent 39.18% → 37.13% (Tyrese Maxey at #10, Derrick White at #39, Jarrett Allen at #63, Zach LaVine at #82, Josh Hart at #87, Sandro Mamukelashvili at #106, Cason Wallace at #111); White at #39 alone 27.14% → 21.26%; the
+  survival-aware pair 26.36% → 15.54%; Poeltl at #82 alone 23.06% → 13.28%; LaVine at #87 alone 23.32% →
+  17.82%. Card: 🎯 changes at 4 of 13 turns (#58 Anunoby → Pritchard, #82 Poeltl → LaVine, #106 Poeltl →
+  Lendeborg, #130 Vassell → Mamukelashvili); Lillard at #63 card #2 → #32 (his line 24.0 → 17.0 points);
+  Sharpe at #82 card #12 → #5; Kessler at #39 #47 → #39. Hindsight: Lillard at #63 legal rank 2 → 43
+  (Pritchard +0.265 cats/week there, +0.047 on v37); Edgecombe at #87 11 → 5; the #39 miss
+  +0.237 → +0.251. Forecast ρ, shipped card, mean of 13: 0.815 → 0.838. **Reading:** the deep-🎯
+  Poeltl of mocks 56–59 (D59-2) was partly the deck's own 14.5-point line, now 11.5 on both planes — Poeltl
+  at #82 alone grades below as drafted on v39 (13.28% vs 15.21%, rank 3) and the survival-aware
+  pair is a wash (15.54%); the D59-2 advice line rests on `target_wait.py`'s survival counts, which this
+  re-grade does not touch. **Test fixture:** `test_card.py`'s D51R-4
+  availability probe (state_54 #34) stopped producing an urgent read on the reconciled lines; the 9/29 pin
+  scan repeated on the v39 page (16 states × 208 owner turns: four urgent reads, three withheld on
+  availability) re-pointed it to mock31 #64 (Zion 0.78, un-vetoed) — 68 of 68. Planes gate after the sync:
+  lines 171 (was 184), propagation 0 with the thirteen rows waived by name (`--planes-waive`) at the v39
+  build and in `check_planes.py`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
