@@ -6,12 +6,10 @@
   "source": "site.api.espn.com (all 30 rosters)",
   "teams_covered": 30,
   "pool_size": 334,
-  "checked": 331,
+  "checked": 333,
   "mismatches": [],
-  "unmatched_count": 3,
+  "unmatched_count": 1,
   "unmatched": [
-    "Jimmy Butler",
-    "Ron Holland",
     "Tony Bradley"
   ],
   "allow_unmatched": true

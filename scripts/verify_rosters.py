@@ -12,6 +12,15 @@ Two modes:
                      Cowork refresh populates from NBA/ESPN-sourced
                      verification. Partial coverage, honestly marked.
 
+WO-2 (2026-10-01): a direct-mode run RE-AUTHORS the evidence file's teams
+from the live feed (date = today, a `reauthored` block records the source),
+so the fallback file mirrors the last live truth instead of only what the
+pulls wrote — it had carried Gabe Vincent on ATL for three months while he
+was unsigned. The `source` narrative is left alone. The name fold drops
+generational suffixes (ESPN lists 'Jimmy Butler III', 'Ronald Holland II')
+and carries the planes gate's aliases. HOOPS_VERIFY_OFFLINE (the gate suite)
+skips the fetch and therefore never re-authors.
+
 Writes data/roster_verification.json; `hoops.py freshness --stamp` HARD-FAILS
 unless that file is dated today with zero mismatches. Exit 1 on mismatches.
 """
@@ -35,10 +44,18 @@ ESPN_ABBR = {"GS": "GSW", "SA": "SAS", "NO": "NOP", "NY": "NYK",
              "UTAH": "UTA", "WSH": "WAS"}
 
 
+SUFFIXES = {"jr", "sr", "ii", "iii", "iv"}
+ALIASES = {"ron holland": "ronald holland", "herb jones": "herbert jones",
+           "cam johnson": "cameron johnson", "nic claxton": "nicolas claxton",
+           "alex sarr": "alexandre sarr"}  # twin of check_planes.ALIASES
+
+
 def norm(name):
     s = unicodedata.normalize("NFD", name)
     s = "".join(c for c in s if unicodedata.category(c) != "Mn")
-    return s.lower().replace(".", "").replace("'", "").replace("-", " ").strip()
+    s = s.lower().replace(".", "").replace("'", "").replace("-", " ").strip()
+    s = " ".join(t for t in s.split() if t not in SUFFIXES)  # WO-2: 'Jimmy Butler III' == 'Jimmy Butler'
+    return ALIASES.get(s, s)
 
 
 def load_pool():
@@ -101,6 +118,22 @@ def try_direct():
     return rosters
 
 
+def reauthor_evidence(rosters, today):
+    """WO-2: direct mode rewrites the evidence file's teams from the live feed.
+    The `source` narrative (the pulls' history) is preserved; `teams` and
+    `date` become the feed's; a `reauthored` block records when and from where."""
+    ev = {}
+    if os.path.exists(EVIDENCE):
+        ev = json.load(open(EVIDENCE, encoding="utf-8"))
+    ev["date"] = today
+    ev["teams"] = {abbr: sorted(names) for abbr, names in sorted(rosters.items())}
+    ev["reauthored"] = {"date": today, "source": "site.api.espn.com (all 30 rosters, direct-complete)",
+                        "rosters": len(rosters), "names": sum(len(v) for v in rosters.values())}
+    with open(EVIDENCE, "w", encoding="utf-8") as f:
+        json.dump(ev, f, ensure_ascii=False, indent=1)
+    return ev
+
+
 def load_fallback():
     if not os.path.exists(EVIDENCE):
         return None, None
@@ -120,6 +153,7 @@ def main():
     rosters = try_direct()
     if rosters is not None:
         mode, source = "direct-complete", "site.api.espn.com (all 30 rosters)"
+        reauthor_evidence(rosters, datetime.date.today().isoformat())
     else:
         rosters, ev = load_fallback()
         if rosters is None:

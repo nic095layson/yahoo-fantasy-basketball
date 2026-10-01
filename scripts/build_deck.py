@@ -50,14 +50,18 @@ def main():
     # F7 flags (2026-09-21): --planes-waive "Name: reason" (repeatable) and
     # --no-plane-check REASON. Both are recorded in the build manifest —
     # the R4-F05 lesson: a bypass that only changes an exit code is a deadlock.
+    # WO-1 (2026-10-01): --planes-lines-strict makes a differing stat line on a
+    # shared row a refusal instead of a warning — the final pre-draft build.
     argv = sys.argv[1:]
-    waivers, no_planes = [], None
+    waivers, no_planes, lines_strict = [], None, False
     i = 0
     while i < len(argv):
         if argv[i] == "--planes-waive" and i + 1 < len(argv):
             waivers.append(argv[i + 1]); i += 2
         elif argv[i] == "--no-plane-check" and i + 1 < len(argv):
             no_planes = argv[i + 1]; i += 2
+        elif argv[i] == "--planes-lines-strict":
+            lines_strict = True; i += 1
         else:
             fail(f"unknown argument {argv[i]!r}")
     today = datetime.date.today().isoformat()
@@ -235,7 +239,7 @@ def main():
         print(f"  plane check bypassed (recorded in the manifest): {no_planes}")
         planes_manifest = {"bypassed": no_planes}
     else:
-        planes, planes_kit_path = check_planes.run(waivers=waivers)
+        planes, planes_kit_path = check_planes.run(waivers=waivers, lines_strict=lines_strict)
         if planes is None:
             fail(f"kit checkout not found at {planes_kit_path} — gate 7 compares the "
                  "planes; set KIT_REPO, or record a bypass with --no-plane-check REASON")
@@ -243,10 +247,12 @@ def main():
         if planes["mismatches"]:
             fail(f"the planes disagree on {planes['mismatches']} item(s) above (gate 7, "
                  "F7) — carry the change to the other plane, or waive by name with "
-                 "--planes-waive \"Name: reason\" (recorded in the manifest)")
+                 "--planes-waive \"Name: reason\" (recorded in the manifest)"
+                 + ("; differing stat lines count under --planes-lines-strict" if lines_strict else ""))
         planes_manifest = {"kit_sha256": planes["kit_sha256"][:12],
                            "shared": planes["shared"], "waived": planes["waived"],
-                           "propagation_armed": planes["snapshot"]}
+                           "propagation_armed": planes["snapshot"],
+                           "lines": planes["lines_count"], "lines_strict": lines_strict}
 
     # build the embedded pool
     players = hoops.zscores(players_raw)
