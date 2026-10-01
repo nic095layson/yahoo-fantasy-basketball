@@ -33,7 +33,7 @@ CATS = hoops.CATS
 POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv",
          "v31": SP + "/m56_players_v31.csv", "v33": SP + "/players_v33.csv",
-         "v35": SP + "/m58_players_v35.csv"}
+         "v35": SP + "/m58_players_v35.csv", "v37": SP + "/m59_players_v37.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -59,6 +59,11 @@ V33_REV = "a3b4d31"
 # 3db2c63af0c3), pinned to rev 6426a59 (deck v35 main — the 9/30 pull plus the
 # role pass; the rookie intake the same evening moved the live file to v36).
 V35_REV = "6426a59"
+# v37 = data/players.csv as of the 2026-10-01 daily-pull build (mock 59; sha
+# 09fe6d433264), pinned to rev b3986f8 (deck v37 main: Vincent to FA, Morant's
+# risk tag, the Alexander-Walker twin). The WO-1/WO-2 merge (f507496) changed
+# scripts only; the page and pool are byte-identical.
+V37_REV = "b3986f8"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -90,6 +95,12 @@ MOCKS = {
     # 6426a59 — the 9/30 daily-pull build with the role pass; pool sha
     # 3db2c63af0c3). The veto live; the owner's second room on the concise card.
     58: dict(tags=("v35",), veto=True),
+    # mock 59 (2026-10-01, slot 10): public Yahoo room drafted on deck v37 (rev
+    # b3986f8 — the 10/01 daily-pull build; pool sha 09fe6d433264). The veto
+    # live; the owner's third room on the concise card, the first with four
+    # Insert-at-# corrections and an UNKNOWN left standing (Yang Hansen, no
+    # pool row).
+    59: dict(tags=("v37",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -113,7 +124,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:

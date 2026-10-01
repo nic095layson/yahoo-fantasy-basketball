@@ -221,6 +221,42 @@ is on the author. See LEDGER §3.
   chain had a vetoed Porziņģis at #82; fixed, re-run; mocks 55–57's chains carried no vetoed name and stand.
   **Finding (data):** 29 of 156 drafted men again show fewer positions in the draft room than the pool
   (superset every time; kit report `after-report-2026-09-30-draft58.md` §7 — D-G3).
+- **Mock 59 (2026-10-01, slot 10).** Public Yahoo room, the owner's third on the concise card, drafted on
+  deck v37 (rev `b3986f8` — the 10/01 daily-pull build; pool sha `09fe6d433264`, 334 rows), the veto live.
+  `live_retro.MOCKS[59]` = `dict(tags=("v37",), veto=True)` (new pool tag `v37`, pinned to `b3986f8`); no
+  punt declared (`PUNT_TIMELINES[59] = [(0, [])]`). State rebuilt from Yahoo's recap with `hoops.py draft
+  resync` (155 of 156 resolved; one UNKNOWN at #126, Yang Hansen, no pool row on either plane; seats match
+  the snake, owner roster = the recap's "My Team", md5 `0bfcbba343380d83e2436ed1125695d3`). **First live
+  room from the real seat not to finish first**: as drafted 20.38% / ECW 5.092 rank 2 (next
+  5.260), favored 10/11; follow-card self-consistent 39.18% / 5.660 (Tyrese Maxey at #10, Derrick White at #39, Jakob Poeltl at #63, Damian Lillard at #82, Miles Bridges at #87, Day'Ron Sharpe at #106);
+  Derrick White at #39 alone 27.14%; Poeltl at #82 alone 23.06%; the survival-aware pair (LaVine at
+  #82, Poeltl at #87) 26.36% — `m59_followcard_grade.json`, `m59_arms.json`. Deck card replayed from the
+  page drafted against (`live_deckcard.py 59 rev:b3986f8:docs/draft-deck.html arena/results/m59_deckcard_v37.json`):
+  🎯 taken 5 of 13, Top-5 row 9 of 13; four picks off the Top-5 (Kessler #39 card #47 0.164 behind, Sharpe #82
+  #12 0.048, Edgecombe #87 #20 0.078, Queta #106 #52 0.244); hindsight prices those turns at +0.237, +0.112,
+  +0.107 and +0.215 cats/week. `live_advisor.py`: ADVISE PTS·AST from #63 on (the two-turn hysteresis met at
+  the #63 pre-pick moment), the finish ranked 11th weekly in both; advice only. Survival pooled with the 51–58
+  deck cards (`m59_survival.json`: this room 52 rows, Brier 0.183 vs base 0.241; BUY NOW 2 of
+  6 survived, TOSS-UP 5 of 13, quiet 24 of 33). Tool-state integrity: the owner's tool log
+  (`arena/data/events/m59_tool_events.json` — 161 events: 156 feeds incl. sixteen shared-surname tokens, three
+  UNKNOWN feeds with two fixed by number, four Insert-at-# corrections (Jalen Green #97, Keegan Murray #118,
+  RJ Barrett #121, Rui Hachimura #128), the HALTED "Johnson" feed, one undo) replayed through the real v37
+  page with `live_replay_dom.mjs`: [] echo misses, 0 clock mismatches, [] page errors, all
+  156 positions equal to the recap, owner roster identical — `arena/results/m59_tool_vs_truth.json`.
+  **Finding (owner-visible):** the history box is static text, so after an insert the earlier lines keep
+  their old numbers and seats — two owner picks (Queta "#105 → Seat 9", Washington "#128 → Seat 8") never
+  read as the owner's and got no card echo, and the standing UNKNOWN keeps "#125" in its name at #126
+  (kit report `after-report-2026-10-01-draft59.md` §9a — D59-1, the owner's proposal). **Instrument added:**
+  `arena/mocks/target_wait.py` (owner's question: does the 🎯 wait?) — across mocks 56–59, 🎯s passed on
+  with a market rank 24+ slots below the pick were still there at the next owner turn 4 of 5 times
+  and two turns on 1 of 5; near-price 🎯s 5 of 10 and 0 of 9 —
+  `arena/results/target_wait_2026-10-01.json` (report §9b — D59-2). Repeat-name audit
+  (`m59_repeat_names_audit.json`): the #1 changes at 10 of 13 turns under other rooms' rosters (10 of 13
+  against an empty roster); Poeltl on the Top-5 at three turns, Braun at one. **Finding (data):** 28 of 155
+  drafted men show fewer positions in the draft room than the pool (superset every time; report §7 — D-G3).
+  **Harness item (D59-5):** `live_retro.py`'s card port still breaks exact blend ties by name order (its
+  pre-D51R-4 rule); the page breaks them by ΔECW. One turn here (#111: port Vassell, page Gillespie, blend
+  0.9835 both); the report's §3 reads the page (`live_deckcard.py`), the owner took Gillespie (hindsight-best).
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
