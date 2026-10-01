@@ -1,0 +1,149 @@
+{
+ "as_drafted": {
+  "champ": 20.378,
+  "playoff": 98.5,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Tyrese Maxey": {
+  "champ": 21.694,
+  "playoff": 98.72,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ]
+  ]
+ },
+ "swap#34:Derrick White": {
+  "champ": 21.489,
+  "playoff": 98.82,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#39:Derrick White": {
+  "champ": 27.144,
+  "playoff": 99.67,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#58:Payton Pritchard": {
+  "champ": 20.339,
+  "playoff": 98.39,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#63:Payton Pritchard": {
+  "champ": 22.2,
+  "playoff": 98.98,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#82:Miles Bridges": {
+  "champ": 22.789,
+  "playoff": 99.12,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Miles Bridges"
+   ]
+  ]
+ },
+ "swap#87:Zach LaVine": {
+  "champ": 23.317,
+  "playoff": 99.18,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Zach LaVine"
+   ]
+  ]
+ },
+ "swap#106:Jakob Poeltl": {
+  "champ": 26.533,
+  "playoff": 99.63,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Jakob Poeltl"
+   ]
+  ]
+ },
+ "swap#135:Saddiq Bey": {
+  "champ": 20.694,
+  "playoff": 98.52,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    135,
+    "Saddiq Bey"
+   ]
+  ]
+ },
+ "swap#154:Malik Monk": {
+  "champ": 20.133,
+  "playoff": 98.61,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Malik Monk"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 39.183,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Jakob Poeltl"
+   ],
+   [
+    82,
+    "Damian Lillard"
+   ],
+   [
+    87,
+    "Miles Bridges"
+   ],
+   [
+    106,
+    "Day'Ron Sharpe"
+   ]
+  ]
+ }
+}

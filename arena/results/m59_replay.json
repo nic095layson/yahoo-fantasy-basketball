@@ -1,0 +1,1837 @@
+{
+ "v37": [
+  {
+   "pick": 10,
+   "rnd": 1,
+   "actual": "Tyrese Haliburton",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Karl-Anthony Towns",
+     "t": "NYK",
+     "pos": "C,PF",
+     "ds": 0.9984,
+     "decw": 4.3046,
+     "val": 4.052,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Tyrese Maxey",
+     "t": "PHI",
+     "pos": "PG,SG",
+     "ds": 0.9936,
+     "decw": 4.1313,
+     "val": 3.579,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "Tyrese Haliburton",
+     "t": "IND",
+     "pos": "PG,SG",
+     "ds": 0.992,
+     "decw": 4.0824,
+     "val": 3.832,
+     "av": 0.78
+    },
+    {
+     "rank": 4,
+     "n": "Anthony Davis",
+     "t": "WAS",
+     "pos": "PF,C",
+     "ds": 0.992,
+     "decw": 4.049,
+     "val": 4.296,
+     "av": 0.78
+    },
+    {
+     "rank": 5,
+     "n": "Chet Holmgren",
+     "t": "OKC",
+     "pos": "PF,C",
+     "ds": 0.9824,
+     "decw": 4.0218,
+     "val": 3.375,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Jalen Williams",
+     "t": "OKC",
+     "pos": "PF,SF,SG",
+     "ds": 0.9744,
+     "decw": 4.0145,
+     "val": 2.651,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Derrick White",
+     "t": "BOS",
+     "pos": "PG,SG",
+     "ds": 0.9744,
+     "decw": 4.0983,
+     "val": 2.253,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Evan Mobley",
+     "t": "CLE",
+     "pos": "PF,C",
+     "ds": 0.9744,
+     "decw": 4.0526,
+     "val": 2.461,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 314,
+   "n_opp_with_picks": 9,
+   "missing_so_far": [],
+   "actual_ds_rank": 3,
+   "actual_val_rank": 3,
+   "actual_ds": 0.992,
+   "actual_decw": 4.0824,
+   "actual_val": 3.832,
+   "top1_gap_ds": 0.0064,
+   "top1_gap_decw": 0.2222,
+   "actual_decw_rank": 4
+  },
+  {
+   "pick": 15,
+   "rnd": 2,
+   "actual": "Karl-Anthony Towns",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Karl-Anthony Towns",
+     "t": "NYK",
+     "pos": "C,PF",
+     "ds": 0.9984,
+     "decw": 2.2304,
+     "val": 4.052,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Anthony Davis",
+     "t": "WAS",
+     "pos": "PF,C",
+     "ds": 0.9951,
+     "decw": 2.0649,
+     "val": 4.296,
+     "av": 0.78
+    },
+    {
+     "rank": 3,
+     "n": "Chet Holmgren",
+     "t": "OKC",
+     "pos": "PF,C",
+     "ds": 0.9935,
+     "decw": 2.0892,
+     "val": 3.375,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Tyrese Maxey",
+     "t": "PHI",
+     "pos": "PG,SG",
+     "ds": 0.9789,
+     "decw": 1.8615,
+     "val": 3.579,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Evan Mobley",
+     "t": "CLE",
+     "pos": "PF,C",
+     "ds": 0.9789,
+     "decw": 2.071,
+     "val": 2.461,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Kevin Durant",
+     "t": "HOU",
+     "pos": "PF,SF,SG",
+     "ds": 0.9773,
+     "decw": 1.9576,
+     "val": 2.497,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Jalen Williams",
+     "t": "OKC",
+     "pos": "PF,SF,SG",
+     "ds": 0.9724,
+     "decw": 1.8812,
+     "val": 2.651,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Derrick White",
+     "t": "BOS",
+     "pos": "PG,SG",
+     "ds": 0.9675,
+     "decw": 1.9277,
+     "val": 2.253,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 309,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 1,
+   "actual_val_rank": 2,
+   "actual_ds": 0.9984,
+   "actual_decw": 2.2304,
+   "actual_val": 4.052,
+   "top1_gap_ds": 0.0,
+   "top1_gap_decw": 0.0,
+   "actual_decw_rank": 1,
+   "my_zsum_ranks": {
+    "FG%": 7,
+    "FT%": 6,
+    "3PTM": 4,
+    "PTS": 12,
+    "REB": 12,
+    "AST": 3,
+    "ST": 5,
+    "BLK": 6,
+    "TO": 1
+   },
+   "base_ecw_partial": 3.8716,
+   "base_cat_p": {
+    "FG%": 0.416,
+    "FT%": 0.601,
+    "3PTM": 0.547,
+    "PTS": 0.094,
+    "REB": 0.034,
+    "AST": 0.53,
+    "ST": 0.393,
+    "BLK": 0.325,
+    "TO": 0.932
+   },
+   "card1_buys": {
+    "FG%": 0.094,
+    "FT%": -0.016,
+    "3PTM": 0.303,
+    "PTS": 0.703,
+    "REB": 0.796,
+    "AST": 0.24,
+    "ST": 0.328,
+    "BLK": 0.356,
+    "TO": -0.574
+   },
+   "actual_buys": {
+    "FG%": 0.094,
+    "FT%": -0.016,
+    "3PTM": 0.303,
+    "PTS": 0.703,
+    "REB": 0.796,
+    "AST": 0.24,
+    "ST": 0.328,
+    "BLK": 0.356,
+    "TO": -0.574
+   }
+  },
+  {
+   "pick": 34,
+   "rnd": 3,
+   "actual": "Jalen Williams",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Jalen Williams",
+     "t": "OKC",
+     "pos": "PF,SF,SG",
+     "ds": 0.9948,
+     "decw": 1.4738,
+     "val": 2.651,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Dyson Daniels",
+     "t": "ATL",
+     "pos": "PG,SF,SG",
+     "ds": 0.9931,
+     "decw": 1.3926,
+     "val": 3.356,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "Derrick White",
+     "t": "BOS",
+     "pos": "PG,SG",
+     "ds": 0.9931,
+     "decw": 1.4864,
+     "val": 2.253,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Kyrie Irving",
+     "t": "DAL",
+     "pos": "PG",
+     "ds": 0.9862,
+     "decw": 1.3182,
+     "val": 2.745,
+     "av": 0.78
+    },
+    {
+     "rank": 5,
+     "n": "OG Anunoby",
+     "t": "NYK",
+     "pos": "SF,PF",
+     "ds": 0.9844,
+     "decw": 1.4253,
+     "val": 2.057,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Desmond Bane",
+     "t": "ORL",
+     "pos": "SG,SF",
+     "ds": 0.9844,
+     "decw": 1.4126,
+     "val": 2.117,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Jaren Jackson Jr.",
+     "t": "UTA",
+     "pos": "PF,C",
+     "ds": 0.9792,
+     "decw": 1.2934,
+     "val": 2.329,
+     "av": 0.78
+    },
+    {
+     "rank": 8,
+     "n": "Domantas Sabonis",
+     "t": "SAC",
+     "pos": "C,PF",
+     "ds": 0.9775,
+     "decw": 1.2996,
+     "val": 2.123,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 290,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 1,
+   "actual_val_rank": 3,
+   "actual_ds": 0.9948,
+   "actual_decw": 1.4738,
+   "actual_val": 2.651,
+   "top1_gap_ds": 0.0,
+   "top1_gap_decw": 0.0,
+   "actual_decw_rank": 2,
+   "my_zsum_ranks": {
+    "FG%": 4,
+    "FT%": 7,
+    "3PTM": 5,
+    "PTS": 10,
+    "REB": 6,
+    "AST": 7,
+    "ST": 7,
+    "BLK": 7,
+    "TO": 1
+   },
+   "base_ecw_partial": 3.4723,
+   "base_cat_p": {
+    "FG%": 0.587,
+    "FT%": 0.571,
+    "3PTM": 0.345,
+    "PTS": 0.118,
+    "REB": 0.304,
+    "AST": 0.195,
+    "ST": 0.174,
+    "BLK": 0.267,
+    "TO": 0.91
+   },
+   "card1_buys": {
+    "FG%": -0.015,
+    "FT%": -0.057,
+    "3PTM": 0.25,
+    "PTS": 0.312,
+    "REB": 0.292,
+    "AST": 0.325,
+    "ST": 0.459,
+    "BLK": 0.214,
+    "TO": -0.305
+   },
+   "actual_buys": {
+    "FG%": -0.015,
+    "FT%": -0.057,
+    "3PTM": 0.25,
+    "PTS": 0.312,
+    "REB": 0.292,
+    "AST": 0.325,
+    "ST": 0.459,
+    "BLK": 0.214,
+    "TO": -0.305
+   }
+  },
+  {
+   "pick": 39,
+   "rnd": 4,
+   "actual": "Walker Kessler",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Derrick White",
+     "t": "BOS",
+     "pos": "PG,SG",
+     "ds": 0.9947,
+     "decw": 1.4764,
+     "val": 2.253,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Kyrie Irving",
+     "t": "DAL",
+     "pos": "PG",
+     "ds": 0.9894,
+     "decw": 1.3082,
+     "val": 2.745,
+     "av": 0.78
+    },
+    {
+     "rank": 3,
+     "n": "Desmond Bane",
+     "t": "ORL",
+     "pos": "SG,SF",
+     "ds": 0.9894,
+     "decw": 1.3878,
+     "val": 2.117,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "OG Anunoby",
+     "t": "NYK",
+     "pos": "SF,PF",
+     "ds": 0.9842,
+     "decw": 1.3655,
+     "val": 2.057,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Jaren Jackson Jr.",
+     "t": "UTA",
+     "pos": "PF,C",
+     "ds": 0.9824,
+     "decw": 1.278,
+     "val": 2.329,
+     "av": 0.78
+    },
+    {
+     "rank": 6,
+     "n": "Franz Wagner",
+     "t": "ORL",
+     "pos": "SF,PF",
+     "ds": 0.9824,
+     "decw": 1.3658,
+     "val": 1.891,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Domantas Sabonis",
+     "t": "SAC",
+     "pos": "C,PF",
+     "ds": 0.9824,
+     "decw": 1.3037,
+     "val": 2.123,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Onyeka Okongwu",
+     "t": "ATL",
+     "pos": "C",
+     "ds": 0.9771,
+     "decw": 1.3589,
+     "val": 1.39,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 285,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 46,
+   "actual_val_rank": 14,
+   "actual_ds": 0.831,
+   "actual_decw": 1.0212,
+   "actual_val": 0.759,
+   "top1_gap_ds": 0.1637,
+   "top1_gap_decw": 0.4551,
+   "actual_decw_rank": 84,
+   "my_zsum_ranks": {
+    "FG%": 4,
+    "FT%": 7,
+    "3PTM": 6,
+    "PTS": 9,
+    "REB": 6,
+    "AST": 5,
+    "ST": 2,
+    "BLK": 8,
+    "TO": 3
+   },
+   "base_ecw_partial": 4.4324,
+   "base_cat_p": {
+    "FG%": 0.585,
+    "FT%": 0.502,
+    "3PTM": 0.487,
+    "PTS": 0.283,
+    "REB": 0.483,
+    "AST": 0.412,
+    "ST": 0.534,
+    "BLK": 0.415,
+    "TO": 0.733
+   },
+   "card1_buys": {
+    "FG%": -0.067,
+    "FT%": 0.019,
+    "3PTM": 0.313,
+    "PTS": 0.412,
+    "REB": 0.21,
+    "AST": 0.328,
+    "ST": 0.218,
+    "BLK": 0.288,
+    "TO": -0.245
+   },
+   "actual_buys": {
+    "FG%": 0.114,
+    "FT%": -0.111,
+    "3PTM": 0.0,
+    "PTS": 0.234,
+    "REB": 0.374,
+    "AST": 0.105,
+    "ST": 0.103,
+    "BLK": 0.386,
+    "TO": -0.185
+   }
+  },
+  {
+   "pick": 58,
+   "rnd": 5,
+   "actual": "OG Anunoby",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "OG Anunoby",
+     "t": "NYK",
+     "pos": "SF,PF",
+     "ds": 0.9962,
+     "decw": 1.1298,
+     "val": 2.057,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Dyson Daniels",
+     "t": "ATL",
+     "pos": "PG,SF,SG",
+     "ds": 0.9962,
+     "decw": 1.1289,
+     "val": 3.356,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "Payton Pritchard",
+     "t": "BOS",
+     "pos": "PG,SG",
+     "ds": 0.9943,
+     "decw": 1.1504,
+     "val": 1.185,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Tyler Herro",
+     "t": "MIL",
+     "pos": "PG,SG",
+     "ds": 0.9868,
+     "decw": 1.1021,
+     "val": 0.781,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Damian Lillard",
+     "t": "POR",
+     "pos": "PG",
+     "ds": 0.9868,
+     "decw": 1.0384,
+     "val": 1.917,
+     "av": 0.78
+    },
+    {
+     "rank": 6,
+     "n": "De'Aaron Fox",
+     "t": "SAS",
+     "pos": "PG,SG",
+     "ds": 0.9774,
+     "decw": 1.0402,
+     "val": 0.358,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Michael Porter Jr.",
+     "t": "BKN",
+     "pos": "SF,PF",
+     "ds": 0.9717,
+     "decw": 0.9976,
+     "val": 0.103,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Zach LaVine",
+     "t": "SAC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9679,
+     "decw": 0.9958,
+     "val": 0.072,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 266,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 1,
+   "actual_val_rank": 2,
+   "actual_ds": 0.9962,
+   "actual_decw": 1.1298,
+   "actual_val": 2.057,
+   "top1_gap_ds": 0.0,
+   "top1_gap_decw": 0.0,
+   "actual_decw_rank": 2,
+   "my_zsum_ranks": {
+    "FG%": 1,
+    "FT%": 10,
+    "3PTM": 10,
+    "PTS": 11,
+    "REB": 2,
+    "AST": 8,
+    "ST": 7,
+    "BLK": 2,
+    "TO": 1
+   },
+   "base_ecw_partial": 3.7741,
+   "base_cat_p": {
+    "FG%": 0.717,
+    "FT%": 0.407,
+    "3PTM": 0.149,
+    "PTS": 0.092,
+    "REB": 0.46,
+    "AST": 0.158,
+    "ST": 0.249,
+    "BLK": 0.624,
+    "TO": 0.917
+   },
+   "card1_buys": {
+    "FG%": -0.034,
+    "FT%": 0.003,
+    "3PTM": 0.252,
+    "PTS": 0.208,
+    "REB": 0.202,
+    "AST": 0.104,
+    "ST": 0.356,
+    "BLK": 0.144,
+    "TO": -0.105
+   },
+   "actual_buys": {
+    "FG%": -0.034,
+    "FT%": 0.003,
+    "3PTM": 0.252,
+    "PTS": 0.208,
+    "REB": 0.202,
+    "AST": 0.104,
+    "ST": 0.356,
+    "BLK": 0.144,
+    "TO": -0.105
+   }
+  },
+  {
+   "pick": 63,
+   "rnd": 6,
+   "actual": "Damian Lillard",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Payton Pritchard",
+     "t": "BOS",
+     "pos": "PG,SG",
+     "ds": 0.9981,
+     "decw": 1.1488,
+     "val": 1.185,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Damian Lillard",
+     "t": "POR",
+     "pos": "PG",
+     "ds": 0.9981,
+     "decw": 1.0777,
+     "val": 1.917,
+     "av": 0.78
+    },
+    {
+     "rank": 3,
+     "n": "De'Aaron Fox",
+     "t": "SAS",
+     "pos": "PG,SG",
+     "ds": 0.9885,
+     "decw": 1.0524,
+     "val": 0.358,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Zach LaVine",
+     "t": "SAC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9827,
+     "decw": 1.029,
+     "val": 0.072,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Michael Porter Jr.",
+     "t": "BKN",
+     "pos": "SF,PF",
+     "ds": 0.9827,
+     "decw": 1.0124,
+     "val": 0.103,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Mikal Bridges",
+     "t": "NYK",
+     "pos": "PF,SF,SG",
+     "ds": 0.975,
+     "decw": 0.993,
+     "val": -0.108,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Jalen Suggs",
+     "t": "ORL",
+     "pos": "PG,SG",
+     "ds": 0.9673,
+     "decw": 0.9435,
+     "val": -0.047,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Pascal Siakam",
+     "t": "IND",
+     "pos": "C,PF,SF",
+     "ds": 0.9635,
+     "decw": 0.9741,
+     "val": -0.187,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 261,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 2,
+   "actual_val_rank": 1,
+   "actual_ds": 0.9981,
+   "actual_decw": 1.0777,
+   "actual_val": 1.917,
+   "top1_gap_ds": 0.0,
+   "top1_gap_decw": 0.0712,
+   "actual_decw_rank": 2,
+   "my_zsum_ranks": {
+    "FG%": 1,
+    "FT%": 10,
+    "3PTM": 7,
+    "PTS": 11,
+    "REB": 3,
+    "AST": 11,
+    "ST": 4,
+    "BLK": 2,
+    "TO": 1
+   },
+   "base_ecw_partial": 4.4975,
+   "base_cat_p": {
+    "FG%": 0.675,
+    "FT%": 0.428,
+    "3PTM": 0.352,
+    "PTS": 0.177,
+    "REB": 0.571,
+    "AST": 0.163,
+    "ST": 0.516,
+    "BLK": 0.729,
+    "TO": 0.885
+   },
+   "card1_buys": {
+    "FG%": -0.048,
+    "FT%": 0.026,
+    "3PTM": 0.375,
+    "PTS": 0.339,
+    "REB": 0.148,
+    "AST": 0.291,
+    "ST": 0.182,
+    "BLK": 0.029,
+    "TO": -0.192
+   },
+   "actual_buys": {
+    "FG%": -0.087,
+    "FT%": 0.141,
+    "3PTM": 0.272,
+    "PTS": 0.365,
+    "REB": 0.128,
+    "AST": 0.318,
+    "ST": 0.157,
+    "BLK": 0.036,
+    "TO": -0.252
+   }
+  },
+  {
+   "pick": 82,
+   "rnd": 7,
+   "actual": "Day'Ron Sharpe",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Jakob Poeltl",
+     "t": "TOR",
+     "pos": "C",
+     "ds": 0.9979,
+     "decw": 0.9397,
+     "val": 0.665,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Zach LaVine",
+     "t": "SAC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9938,
+     "decw": 0.9341,
+     "val": 0.072,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "Jalen Suggs",
+     "t": "ORL",
+     "pos": "PG,SG",
+     "ds": 0.9896,
+     "decw": 0.9281,
+     "val": -0.047,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Miles Bridges",
+     "t": "PHX",
+     "pos": "SF,PF",
+     "ds": 0.9876,
+     "decw": 0.9565,
+     "val": -0.377,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Josh Hart",
+     "t": "NYK",
+     "pos": "SG,SF",
+     "ds": 0.9813,
+     "decw": 0.9129,
+     "val": -0.24,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Isaiah Hartenstein",
+     "t": "OKC",
+     "pos": "C",
+     "ds": 0.9668,
+     "decw": 0.8725,
+     "val": -0.703,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Cason Wallace",
+     "t": "OKC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9627,
+     "decw": 0.858,
+     "val": -0.421,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Yaxel Lendeborg",
+     "t": "GSW",
+     "pos": "PF,SF",
+     "ds": 0.9523,
+     "decw": 0.8606,
+     "val": -0.825,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 242,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 13,
+   "actual_val_rank": 11,
+   "actual_ds": 0.9502,
+   "actual_decw": 0.8546,
+   "actual_val": -0.714,
+   "top1_gap_ds": 0.0477,
+   "top1_gap_decw": 0.0851,
+   "actual_decw_rank": 15,
+   "my_zsum_ranks": {
+    "FG%": 3,
+    "FT%": 5,
+    "3PTM": 6,
+    "PTS": 9,
+    "REB": 6,
+    "AST": 7,
+    "ST": 2,
+    "BLK": 2,
+    "TO": 2
+   },
+   "base_ecw_partial": 4.068,
+   "base_cat_p": {
+    "FG%": 0.581,
+    "FT%": 0.606,
+    "3PTM": 0.336,
+    "PTS": 0.166,
+    "REB": 0.33,
+    "AST": 0.236,
+    "ST": 0.354,
+    "BLK": 0.577,
+    "TO": 0.882
+   },
+   "card1_buys": {
+    "FG%": 0.098,
+    "FT%": -0.072,
+    "3PTM": 0.0,
+    "PTS": 0.183,
+    "REB": 0.343,
+    "AST": 0.132,
+    "ST": 0.229,
+    "BLK": 0.183,
+    "TO": -0.157
+   },
+   "actual_buys": {
+    "FG%": 0.052,
+    "FT%": -0.069,
+    "3PTM": 0.027,
+    "PTS": 0.145,
+    "REB": 0.334,
+    "AST": 0.142,
+    "ST": 0.264,
+    "BLK": 0.145,
+    "TO": -0.188
+   }
+  },
+  {
+   "pick": 87,
+   "rnd": 8,
+   "actual": "VJ Edgecombe",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Zach LaVine",
+     "t": "SAC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9979,
+     "decw": 0.8602,
+     "val": 0.072,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Jalen Suggs",
+     "t": "ORL",
+     "pos": "PG,SG",
+     "ds": 0.9915,
+     "decw": 0.7947,
+     "val": -0.047,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "Miles Bridges",
+     "t": "PHX",
+     "pos": "SF,PF",
+     "ds": 0.9852,
+     "decw": 0.8242,
+     "val": -0.377,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Josh Hart",
+     "t": "NYK",
+     "pos": "SG,SF",
+     "ds": 0.9682,
+     "decw": 0.7549,
+     "val": -0.24,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Devin Vassell",
+     "t": "SAS",
+     "pos": "SG,SF",
+     "ds": 0.964,
+     "decw": 0.7748,
+     "val": -1.031,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Collin Gillespie",
+     "t": "PHX",
+     "pos": "PG,SG",
+     "ds": 0.964,
+     "decw": 0.7805,
+     "val": -1.121,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Jakob Poeltl",
+     "t": "TOR",
+     "pos": "C",
+     "ds": 0.9619,
+     "decw": 0.7343,
+     "val": 0.665,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Cason Wallace",
+     "t": "OKC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9534,
+     "decw": 0.7375,
+     "val": -0.421,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 237,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 20,
+   "actual_val_rank": 20,
+   "actual_ds": 0.9195,
+   "actual_decw": 0.7324,
+   "actual_val": -1.278,
+   "top1_gap_ds": 0.0784,
+   "top1_gap_decw": 0.1278,
+   "actual_decw_rank": 20,
+   "my_zsum_ranks": {
+    "FG%": 3,
+    "FT%": 4,
+    "3PTM": 8,
+    "PTS": 10,
+    "REB": 4,
+    "AST": 7,
+    "ST": 2,
+    "BLK": 2,
+    "TO": 4
+   },
+   "base_ecw_partial": 4.6436,
+   "base_cat_p": {
+    "FG%": 0.625,
+    "FT%": 0.553,
+    "3PTM": 0.337,
+    "PTS": 0.223,
+    "REB": 0.6,
+    "AST": 0.313,
+    "ST": 0.561,
+    "BLK": 0.674,
+    "TO": 0.758
+   },
+   "card1_buys": {
+    "FG%": 0.009,
+    "FT%": 0.021,
+    "3PTM": 0.277,
+    "PTS": 0.348,
+    "REB": 0.124,
+    "AST": 0.19,
+    "ST": 0.129,
+    "BLK": 0.029,
+    "TO": -0.266
+   },
+   "actual_buys": {
+    "FG%": -0.058,
+    "FT%": -0.016,
+    "3PTM": 0.179,
+    "PTS": 0.261,
+    "REB": 0.126,
+    "AST": 0.181,
+    "ST": 0.205,
+    "BLK": 0.068,
+    "TO": -0.213
+   }
+  },
+  {
+   "pick": 106,
+   "rnd": 9,
+   "actual": "Neemias Queta",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Jakob Poeltl",
+     "t": "TOR",
+     "pos": "C",
+     "ds": 1.0,
+     "decw": 0.8288,
+     "val": 0.665,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Yaxel Lendeborg",
+     "t": "GSW",
+     "pos": "PF,SF",
+     "ds": 0.9839,
+     "decw": 0.7497,
+     "val": -0.825,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "PJ Washington",
+     "t": "DAL",
+     "pos": "C,PF,SF",
+     "ds": 0.9839,
+     "decw": 0.7505,
+     "val": -1.002,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Collin Gillespie",
+     "t": "PHX",
+     "pos": "PG,SG",
+     "ds": 0.9816,
+     "decw": 0.7538,
+     "val": -1.121,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Cason Wallace",
+     "t": "OKC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9747,
+     "decw": 0.7259,
+     "val": -0.421,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Devin Vassell",
+     "t": "SAS",
+     "pos": "SG,SF",
+     "ds": 0.9724,
+     "decw": 0.7397,
+     "val": -1.031,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Quentin Grimes",
+     "t": "LAL",
+     "pos": "SG,SF",
+     "ds": 0.9677,
+     "decw": 0.7439,
+     "val": -1.207,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Herbert Jones",
+     "t": "NOP",
+     "pos": "PF,SF,SG",
+     "ds": 0.9654,
+     "decw": 0.7177,
+     "val": -0.474,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 218,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 52,
+   "actual_val_rank": 56,
+   "actual_ds": 0.7558,
+   "actual_decw": 0.6135,
+   "actual_val": -2.864,
+   "top1_gap_ds": 0.2442,
+   "top1_gap_decw": 0.2153,
+   "actual_decw_rank": 52,
+   "my_zsum_ranks": {
+    "FG%": 2,
+    "FT%": 7,
+    "3PTM": 8,
+    "PTS": 10,
+    "REB": 6,
+    "AST": 7,
+    "ST": 2,
+    "BLK": 3,
+    "TO": 4
+   },
+   "base_ecw_partial": 4.1099,
+   "base_cat_p": {
+    "FG%": 0.592,
+    "FT%": 0.553,
+    "3PTM": 0.277,
+    "PTS": 0.153,
+    "REB": 0.398,
+    "AST": 0.233,
+    "ST": 0.507,
+    "BLK": 0.559,
+    "TO": 0.839
+   },
+   "card1_buys": {
+    "FG%": 0.089,
+    "FT%": -0.056,
+    "3PTM": 0.0,
+    "PTS": 0.158,
+    "REB": 0.307,
+    "AST": 0.12,
+    "ST": 0.188,
+    "BLK": 0.177,
+    "TO": -0.154
+   },
+   "actual_buys": {
+    "FG%": 0.08,
+    "FT%": -0.078,
+    "3PTM": 0.0,
+    "PTS": 0.108,
+    "REB": 0.276,
+    "AST": 0.058,
+    "ST": 0.099,
+    "BLK": 0.189,
+    "TO": -0.117
+   }
+  },
+  {
+   "pick": 111,
+   "rnd": 10,
+   "actual": "Collin Gillespie",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Devin Vassell",
+     "t": "SAS",
+     "pos": "SG,SF",
+     "ds": 0.9835,
+     "decw": 0.722,
+     "val": -1.031,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Collin Gillespie",
+     "t": "PHX",
+     "pos": "PG,SG",
+     "ds": 0.9835,
+     "decw": 0.7371,
+     "val": -1.121,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "Jakob Poeltl",
+     "t": "TOR",
+     "pos": "C",
+     "ds": 0.9764,
+     "decw": 0.6806,
+     "val": 0.665,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Cason Wallace",
+     "t": "OKC",
+     "pos": "PG,SF,SG",
+     "ds": 0.9741,
+     "decw": 0.6814,
+     "val": -0.421,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Quentin Grimes",
+     "t": "LAL",
+     "pos": "SG,SF",
+     "ds": 0.9717,
+     "decw": 0.7218,
+     "val": -1.207,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Fred VanVleet",
+     "t": "HOU",
+     "pos": "PG,SG",
+     "ds": 0.9717,
+     "decw": 0.6768,
+     "val": -0.2,
+     "av": 0.78
+    },
+    {
+     "rank": 7,
+     "n": "Saddiq Bey",
+     "t": "NOP",
+     "pos": "PF,SF",
+     "ds": 0.9646,
+     "decw": 0.712,
+     "val": -1.231,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Aaron Gordon",
+     "t": "DEN",
+     "pos": "PF,C",
+     "ds": 0.9646,
+     "decw": 0.6898,
+     "val": -1.168,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 213,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [],
+   "actual_ds_rank": 2,
+   "actual_val_rank": 8,
+   "actual_ds": 0.9835,
+   "actual_decw": 0.7371,
+   "actual_val": -1.121,
+   "top1_gap_ds": 0.0,
+   "top1_gap_decw": -0.0151,
+   "actual_decw_rank": 1,
+   "my_zsum_ranks": {
+    "FG%": 1,
+    "FT%": 8,
+    "3PTM": 9,
+    "PTS": 11,
+    "REB": 3,
+    "AST": 9,
+    "ST": 4,
+    "BLK": 2,
+    "TO": 2
+   },
+   "base_ecw_partial": 4.5078,
+   "base_cat_p": {
+    "FG%": 0.68,
+    "FT%": 0.476,
+    "3PTM": 0.226,
+    "PTS": 0.189,
+    "REB": 0.641,
+    "AST": 0.23,
+    "ST": 0.559,
+    "BLK": 0.733,
+    "TO": 0.774
+   },
+   "card1_buys": {
+    "FG%": -0.031,
+    "FT%": 0.004,
+    "3PTM": 0.206,
+    "PTS": 0.237,
+    "REB": 0.108,
+    "AST": 0.132,
+    "ST": 0.157,
+    "BLK": 0.047,
+    "TO": -0.137
+   },
+   "actual_buys": {
+    "FG%": -0.061,
+    "FT%": 0.022,
+    "3PTM": 0.242,
+    "PTS": 0.17,
+    "REB": 0.108,
+    "AST": 0.209,
+    "ST": 0.169,
+    "BLK": 0.025,
+    "TO": -0.147
+   }
+  },
+  {
+   "pick": 130,
+   "rnd": 11,
+   "actual": "PJ Washington",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Devin Vassell",
+     "t": "SAS",
+     "pos": "SG,SF",
+     "ds": 0.9871,
+     "decw": 0.7145,
+     "val": -1.031,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Yaxel Lendeborg",
+     "t": "GSW",
+     "pos": "PF,SF",
+     "ds": 0.9845,
+     "decw": 0.7027,
+     "val": -0.825,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "PJ Washington",
+     "t": "DAL",
+     "pos": "C,PF,SF",
+     "ds": 0.9845,
+     "decw": 0.7083,
+     "val": -1.002,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Saddiq Bey",
+     "t": "NOP",
+     "pos": "PF,SF",
+     "ds": 0.9794,
+     "decw": 0.7112,
+     "val": -1.231,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Herbert Jones",
+     "t": "NOP",
+     "pos": "PF,SF,SG",
+     "ds": 0.9794,
+     "decw": 0.6862,
+     "val": -0.474,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Aaron Gordon",
+     "t": "DEN",
+     "pos": "PF,C",
+     "ds": 0.9742,
+     "decw": 0.6955,
+     "val": -1.168,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Malik Monk",
+     "t": "SAC",
+     "pos": "SG,PG",
+     "ds": 0.9716,
+     "decw": 0.7166,
+     "val": -1.575,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Fred VanVleet",
+     "t": "HOU",
+     "pos": "PG,SG",
+     "ds": 0.9716,
+     "decw": 0.6688,
+     "val": -0.2,
+     "av": 0.78
+    }
+   ],
+   "n_pool": 195,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [
+    "UNKNOWN #126"
+   ],
+   "actual_ds_rank": 3,
+   "actual_val_rank": 4,
+   "actual_ds": 0.9845,
+   "actual_decw": 0.7083,
+   "actual_val": -1.002,
+   "top1_gap_ds": 0.0026,
+   "top1_gap_decw": 0.0062,
+   "actual_decw_rank": 4,
+   "my_zsum_ranks": {
+    "FG%": 3,
+    "FT%": 5,
+    "3PTM": 8,
+    "PTS": 10,
+    "REB": 5,
+    "AST": 8,
+    "ST": 2,
+    "BLK": 2,
+    "TO": 3
+   },
+   "base_ecw_partial": 4.2368,
+   "base_cat_p": {
+    "FG%": 0.619,
+    "FT%": 0.537,
+    "3PTM": 0.314,
+    "PTS": 0.138,
+    "REB": 0.48,
+    "AST": 0.233,
+    "ST": 0.499,
+    "BLK": 0.585,
+    "TO": 0.832
+   },
+   "card1_buys": {
+    "FG%": -0.027,
+    "FT%": 0.003,
+    "3PTM": 0.2,
+    "PTS": 0.181,
+    "REB": 0.122,
+    "AST": 0.13,
+    "ST": 0.162,
+    "BLK": 0.058,
+    "TO": -0.115
+   },
+   "actual_buys": {
+    "FG%": -0.017,
+    "FT%": -0.021,
+    "3PTM": 0.123,
+    "PTS": 0.139,
+    "REB": 0.212,
+    "AST": 0.102,
+    "ST": 0.162,
+    "BLK": 0.123,
+    "TO": -0.115
+   }
+  },
+  {
+   "pick": 135,
+   "rnd": 12,
+   "actual": "Yaxel Lendeborg",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Devin Vassell",
+     "t": "SAS",
+     "pos": "SG,SF",
+     "ds": 0.9895,
+     "decw": 0.7088,
+     "val": -1.031,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Saddiq Bey",
+     "t": "NOP",
+     "pos": "PF,SF",
+     "ds": 0.9842,
+     "decw": 0.7007,
+     "val": -1.231,
+     "av": 1.0
+    },
+    {
+     "rank": 3,
+     "n": "Fred VanVleet",
+     "t": "HOU",
+     "pos": "PG,SG",
+     "ds": 0.9816,
+     "decw": 0.6479,
+     "val": -0.2,
+     "av": 0.78
+    },
+    {
+     "rank": 4,
+     "n": "Malik Monk",
+     "t": "SAC",
+     "pos": "SG,PG",
+     "ds": 0.9763,
+     "decw": 0.7123,
+     "val": -1.575,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Yaxel Lendeborg",
+     "t": "GSW",
+     "pos": "PF,SF",
+     "ds": 0.9737,
+     "decw": 0.6462,
+     "val": -0.825,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Herbert Jones",
+     "t": "NOP",
+     "pos": "PF,SF,SG",
+     "ds": 0.9711,
+     "decw": 0.6356,
+     "val": -0.474,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Cameron Johnson",
+     "t": "DEN",
+     "pos": "PF,SF",
+     "ds": 0.9711,
+     "decw": 0.6787,
+     "val": -1.468,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Reed Sheppard",
+     "t": "HOU",
+     "pos": "PG,SG",
+     "ds": 0.9684,
+     "decw": 0.6488,
+     "val": -1.429,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 191,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [
+    "UNKNOWN #126"
+   ],
+   "actual_ds_rank": 5,
+   "actual_val_rank": 3,
+   "actual_ds": 0.9737,
+   "actual_decw": 0.6462,
+   "actual_val": -0.825,
+   "top1_gap_ds": 0.0158,
+   "top1_gap_decw": 0.0626,
+   "actual_decw_rank": 9,
+   "my_zsum_ranks": {
+    "FG%": 2,
+    "FT%": 6,
+    "3PTM": 8,
+    "PTS": 11,
+    "REB": 4,
+    "AST": 9,
+    "ST": 3,
+    "BLK": 2,
+    "TO": 2
+   },
+   "base_ecw_partial": 4.7651,
+   "base_cat_p": {
+    "FG%": 0.605,
+    "FT%": 0.514,
+    "3PTM": 0.403,
+    "PTS": 0.212,
+    "REB": 0.665,
+    "AST": 0.274,
+    "ST": 0.618,
+    "BLK": 0.699,
+    "TO": 0.774
+   },
+   "card1_buys": {
+    "FG%": -0.024,
+    "FT%": 0.004,
+    "3PTM": 0.208,
+    "PTS": 0.233,
+    "REB": 0.102,
+    "AST": 0.133,
+    "ST": 0.135,
+    "BLK": 0.048,
+    "TO": -0.13
+   },
+   "actual_buys": {
+    "FG%": 0.019,
+    "FT%": -0.023,
+    "3PTM": 0.079,
+    "PTS": 0.174,
+    "REB": 0.174,
+    "AST": 0.119,
+    "ST": 0.135,
+    "BLK": 0.099,
+    "TO": -0.13
+   }
+  },
+  {
+   "pick": 154,
+   "rnd": 13,
+   "actual": "Devin Vassell",
+   "actual_in_pool": true,
+   "top": [
+    {
+     "rank": 1,
+     "n": "Devin Vassell",
+     "t": "SAS",
+     "pos": "SG,SF",
+     "ds": 0.9942,
+     "decw": 0.6731,
+     "val": -1.031,
+     "av": 1.0
+    },
+    {
+     "rank": 2,
+     "n": "Fred VanVleet",
+     "t": "HOU",
+     "pos": "PG,SG",
+     "ds": 0.9912,
+     "decw": 0.6285,
+     "val": -0.2,
+     "av": 0.78
+    },
+    {
+     "rank": 3,
+     "n": "Malik Monk",
+     "t": "SAC",
+     "pos": "SG,PG",
+     "ds": 0.9854,
+     "decw": 0.682,
+     "val": -1.575,
+     "av": 1.0
+    },
+    {
+     "rank": 4,
+     "n": "Reed Sheppard",
+     "t": "HOU",
+     "pos": "PG,SG",
+     "ds": 0.9766,
+     "decw": 0.6208,
+     "val": -1.429,
+     "av": 1.0
+    },
+    {
+     "rank": 5,
+     "n": "Christian Braun",
+     "t": "DEN",
+     "pos": "PF,SF,SG",
+     "ds": 0.9766,
+     "decw": 0.6085,
+     "val": -1.303,
+     "av": 1.0
+    },
+    {
+     "rank": 6,
+     "n": "Jerami Grant",
+     "t": "MEM",
+     "pos": "SF,PF",
+     "ds": 0.9678,
+     "decw": 0.623,
+     "val": -1.632,
+     "av": 1.0
+    },
+    {
+     "rank": 7,
+     "n": "Cam Thomas",
+     "t": "FA",
+     "pos": "SG",
+     "ds": 0.962,
+     "decw": 0.6379,
+     "val": -1.855,
+     "av": 1.0
+    },
+    {
+     "rank": 8,
+     "n": "Jordan Goodwin",
+     "t": "PHX",
+     "pos": "PG,SG",
+     "ds": 0.9532,
+     "decw": 0.5779,
+     "val": -1.564,
+     "av": 1.0
+    }
+   ],
+   "n_pool": 172,
+   "n_opp_with_picks": 11,
+   "missing_so_far": [
+    "UNKNOWN #126"
+   ],
+   "actual_ds_rank": 1,
+   "actual_val_rank": 2,
+   "actual_ds": 0.9942,
+   "actual_decw": 0.6731,
+   "actual_val": -1.031,
+   "top1_gap_ds": 0.0,
+   "top1_gap_decw": 0.0,
+   "actual_decw_rank": 2,
+   "my_zsum_ranks": {
+    "FG%": 2,
+    "FT%": 7,
+    "3PTM": 9,
+    "PTS": 10,
+    "REB": 1,
+    "AST": 10,
+    "ST": 3,
+    "BLK": 3,
+    "TO": 1
+   },
+   "base_ecw_partial": 4.5027,
+   "base_cat_p": {
+    "FG%": 0.633,
+    "FT%": 0.51,
+    "3PTM": 0.318,
+    "PTS": 0.164,
+    "REB": 0.627,
+    "AST": 0.182,
+    "ST": 0.551,
+    "BLK": 0.674,
+    "TO": 0.844
+   },
+   "card1_buys": {
+    "FG%": -0.024,
+    "FT%": 0.005,
+    "3PTM": 0.193,
+    "PTS": 0.188,
+    "REB": 0.11,
+    "AST": 0.121,
+    "ST": 0.143,
+    "BLK": 0.048,
+    "TO": -0.111
+   },
+   "actual_buys": {
+    "FG%": -0.024,
+    "FT%": 0.005,
+    "3PTM": 0.193,
+    "PTS": 0.188,
+    "REB": 0.11,
+    "AST": 0.121,
+    "ST": 0.143,
+    "BLK": 0.048,
+    "TO": -0.111
+   }
+  }
+ ]
+}
