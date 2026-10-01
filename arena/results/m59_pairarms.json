@@ -1,0 +1,444 @@
+{
+ "mock": 59,
+ "tag": "v37",
+ "page_rev": "b3986f8",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 20.378,
+   "playoff": 98.5,
+   "rank": 2
+  },
+  "as_drafted_S2": {
+   "champ": 21.078,
+   "playoff": 98.49,
+   "rank": 2
+  },
+  "as_drafted_ecw": 5.092,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 39.183,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 39.7,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "blend_ecw": 5.66,
+  "blend_swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Jakob Poeltl"
+   ],
+   [
+    82,
+    "Damian Lillard"
+   ],
+   [
+    87,
+    "Miles Bridges"
+   ],
+   [
+    106,
+    "Day'Ron Sharpe"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 41.089,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 41.306,
+   "playoff": 99.99,
+   "rank": 1
+  },
+  "pair_ecw": 5.715,
+  "pair_swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Jakob Poeltl"
+   ],
+   [
+    87,
+    "Miles Bridges"
+   ],
+   [
+    106,
+    "Day'Ron Sharpe"
+   ],
+   [
+    111,
+    "Aaron Gordon"
+   ]
+  ],
+  "pair_moves": [
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0243,
+    "why": "Derrick White now, Jalen Williams next turn (62% to survive): +0.024 cats/wk over the pair",
+    "rows": [
+     "Jalen Williams",
+     "Derrick White",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Desmond Bane"
+    ],
+    "surv": [
+     0.619,
+     0.711,
+     0.889,
+     0.914,
+     0.812
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 63,
+    "moved": true,
+    "idx": 2,
+    "gain": 0.031,
+    "why": "Payton Pritchard now, Jarrett Allen next turn (32% to survive): +0.031 cats/wk over the pair",
+    "rows": [
+     "Jakob Poeltl",
+     "Jarrett Allen",
+     "Payton Pritchard",
+     "Michael Porter Jr.",
+     "Damian Lillard"
+    ],
+    "surv": [
+     0.861,
+     0.32,
+     0.444,
+     0.129,
+     0.273
+    ],
+    "next_turn": 82
+   }
+  ],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0486,
+    "why": "#1 survival 0.50 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Tyrese Maxey",
+     "Tyrese Haliburton",
+     "Anthony Davis",
+     "Chet Holmgren"
+    ],
+    "surv": [
+     0.5,
+     0.234,
+     0.637,
+     0.977,
+     0.921
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0008,
+    "why": "#1 survival 0.01 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Anthony Davis",
+     "Chet Holmgren",
+     "Evan Mobley",
+     "Kevin Durant"
+    ],
+    "surv": [
+     0.01,
+     0.613,
+     0.168,
+     0.337,
+     0.018
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0243,
+    "why": "Derrick White now, Jalen Williams next turn (62% to survive): +0.024 cats/wk over the pair",
+    "rows": [
+     "Jalen Williams",
+     "Derrick White",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Desmond Bane"
+    ],
+    "surv": [
+     0.619,
+     0.711,
+     0.889,
+     0.914,
+     0.812
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0146,
+    "why": "#1 survival 0.12 below 0.60 \u2014 take him now",
+    "rows": [
+     "Jalen Williams",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "Domantas Sabonis",
+     "Kyrie Irving"
+    ],
+    "surv": [
+     0.12,
+     0.577,
+     0.379,
+     0.01,
+     0.353
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0082,
+    "why": "#1 survival 0.56 below 0.60 \u2014 take him now",
+    "rows": [
+     "OG Anunoby",
+     "Dyson Daniels",
+     "Jakob Poeltl",
+     "Ivica Zubac",
+     "Payton Pritchard"
+    ],
+    "surv": [
+     0.56,
+     0.47,
+     0.946,
+     0.549,
+     0.747
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": true,
+    "idx": 2,
+    "gain": 0.031,
+    "why": "Payton Pritchard now, Jarrett Allen next turn (32% to survive): +0.031 cats/wk over the pair",
+    "rows": [
+     "Jakob Poeltl",
+     "Jarrett Allen",
+     "Payton Pritchard",
+     "Michael Porter Jr.",
+     "Damian Lillard"
+    ],
+    "surv": [
+     0.861,
+     0.32,
+     0.444,
+     0.129,
+     0.273
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Jakob Poeltl",
+     "Miles Bridges",
+     "Isaiah Hartenstein",
+     "Josh Hart",
+     "Rudy Gobert"
+    ],
+    "surv": [
+     0.829,
+     0.645,
+     0.719,
+     0.623,
+     0.267
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0322,
+    "why": "#1 survival 0.39 below 0.60 \u2014 take him now",
+    "rows": [
+     "Miles Bridges",
+     "Josh Hart",
+     "Isaiah Hartenstein",
+     "Zach LaVine",
+     "Jalen Suggs"
+    ],
+    "surv": [
+     0.391,
+     0.364,
+     0.491,
+     0.506,
+     0.561
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0012,
+    "why": "#1 survival 0.56 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Day'Ron Sharpe",
+     "PJ Washington",
+     "Cason Wallace",
+     "Daniel Gafford"
+    ],
+    "surv": [
+     0.561,
+     0.277,
+     0.576,
+     0.575,
+     0.456
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0112,
+    "why": "#1 survival 0.35 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "PJ Washington",
+     "Aaron Gordon",
+     "Cason Wallace",
+     "Collin Gillespie"
+    ],
+    "surv": [
+     0.348,
+     0.365,
+     0.303,
+     0.364,
+     0.406
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Yaxel Lendeborg",
+     "PJ Washington",
+     "Herbert Jones",
+     "Fred VanVleet",
+     "Devin Vassell"
+    ],
+    "surv": [
+     0.297,
+     0.313,
+     0.623,
+     0.333,
+     0.299
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Fred VanVleet",
+     "Devin Vassell",
+     "Christian Braun",
+     "Reed Sheppard"
+    ],
+    "surv": [
+     0.141,
+     0.168,
+     0.142,
+     0.181,
+     0.174
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Fred VanVleet",
+     "Devin Vassell",
+     "Malik Monk",
+     "Reed Sheppard",
+     "Christian Braun"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "deck": "docs/draft-deck.html",
+ "events": 161,
+ "lines": 174,
+ "checks": 19,
+ "failed": 0,
+ "pageErrors": 0,
+ "pass": true,
+ "detail": [
+  {
+   "what": "owner pick #10 Tyrese Haliburton reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R1) #10: Tyrese Haliburton → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #15 Karl-Anthony Towns reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R2) #15: Karl-Anthony Towns → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #34 Jalen Williams reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R3) #34: Jalen Williams → Seat 10 (YOU)  (assumed over Ziaire Williams, Robert Williams III)  (Mark Williams skipped: injury-excluded)"
+  },
+  {
+   "what": "owner pick #39 Walker Kessler reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R4) #39: Walker Kessler → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #58 OG Anunoby reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R5) #58: OG Anunoby → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #63 Damian Lillard reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R6) #63: Damian Lillard → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #82 Day'Ron Sharpe reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R7) #82: Day'Ron Sharpe → Seat 10 (YOU)  (Shaedon Sharpe skipped: injury-excluded)"
+  },
+  {
+   "what": "owner pick #87 VJ Edgecombe reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R8) #87: VJ Edgecombe → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #106 Neemias Queta reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R9) #106: Neemias Queta → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #111 Collin Gillespie reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R10) #111: Collin Gillespie → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #130 PJ Washington reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R11) #130: PJ Washington → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #135 Yaxel Lendeborg reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R12) #135: Yaxel Lendeborg → Seat 10 (YOU)"
+  },
+  {
+   "what": "owner pick #154 Devin Vassell reads its final number and (YOU)",
+   "ok": true,
+   "line": "✓ (R13) #154: Devin Vassell → Seat 10 (YOU)"
+  },
+  {
+   "what": "standing UNKNOWN at #126 reads its final number in the history",
+   "ok": true,
+   "line": "⚠ (R11) #126: UNKNOWN (\"Hansen\": no match) — fix with: 126- Name"
+  },
+  {
+   "what": "the status strip names the standing UNKNOWN by its final number (#126)",
+   "ok": true,
+   "line": "Draft complete — 156 picks your roster: Team 10 no punt ⚠ 1 UNKNOWN open: #126 — fix with 126- Name (ranks exclude them)"
+  },
+  {
+   "what": "insert echo for Jalen Green at #97 names the re-numbered range",
+   "ok": true,
+   "line": "✎ inserted Jalen Green at #97 → Seat 1; #97–#105 → #98–#106 (9 shifted, slots recomputed)"
+  },
+  {
+   "what": "insert echo for Keegan Murray at #118 names the re-numbered range",
+   "ok": true,
+   "line": "✎ inserted Keegan Murray at #118 → Seat 3; #118–#118 → #119–#119 (1 shifted, slots recomputed)"
+  },
+  {
+   "what": "insert echo for RJ Barrett at #121 names the re-numbered range",
+   "ok": true,
+   "line": "✎ inserted RJ Barrett at #121 → Seat 1; #121–#129 → #122–#130 (9 shifted, slots recomputed)"
+  },
+  {
+   "what": "insert echo for Rui Hachimura at #128 names the re-numbered range",
+   "ok": true,
+   "line": "✎ inserted Rui Hachimura at #128 → Seat 8; #128–#130 → #129–#131 (3 shifted, slots recomputed)"
+  }
+ ],
+ "errors": []
+}

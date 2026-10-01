@@ -271,6 +271,19 @@ def main():
         out = run(st, "draft", "insert", "2", "Zzzq Nobody Nomatch")
         check("INSERT logs an UNKNOWN placeholder on no match", out,
               must_have=["UNKNOWN"])
+        # D59-1 (2026-10-01, mock 59): a standing UNKNOWN shifted by an insert is renamed to
+        # its new number in the state, so the status strip, the roster list and the log agree.
+        fresh(st)
+        run(st, "draft", "turn", "Jokic; Wemby; Zzzq Nobody Nomatch; SGA", "--top", "0")
+        _b = _json.load(open(st))["picks"]
+        check("D59-1 setup: the no-match feed logged UNKNOWN #3",
+              f"#3={_b[2]['player']}", must_have=["#3=UNKNOWN #3"])
+        out = run(st, "draft", "insert", "2", "Luka Doncic")
+        _a = _json.load(open(st))["picks"]
+        check("D59-1 INSERT renames the shifted UNKNOWN to its new number (#3 → #4)",
+              f"#2={_a[1]['player']} #3={_a[2]['player']} #4={_a[3]['player']} n={len(_a)}",
+              must_have=["#2=Luka Doncic", "#3=Victor Wembanyama", "#4=UNKNOWN #4", "n=5"])
+        check("D59-1 INSERT echo names the re-numbered range", out, must_have=["inserted Luka Doncic at #2", "shifted"])
         # keeper / non-snake board → refuse and route to RESYNC
         fresh(st)
         run(st, "draft", "turn", "Jokic; Wemby; Luka", "--top", "0")

@@ -1,0 +1,375 @@
+{
+ "mock": 51,
+ "tag": "v23",
+ "page_rev": "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b",
+ "price_source": "internal market position (pre-F8 page)",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 42.789,
+   "playoff": 99.96,
+   "rank": 1
+  },
+  "as_drafted_S2": {
+   "champ": 43.272,
+   "playoff": 99.95,
+   "rank": 1
+  },
+  "as_drafted_ecw": 5.61,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 51.439,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 52.789,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "blend_ecw": 5.871,
+  "blend_swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Myles Turner"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 51.439,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 52.789,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "pair_ecw": 5.871,
+  "pair_swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Myles Turner"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ]
+  ],
+  "pair_moves": [],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0433,
+    "why": "#1 survival 0.19 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Anthony Edwards",
+     "Jalen Johnson",
+     "Tyrese Haliburton",
+     "Evan Mobley"
+    ],
+    "surv": [
+     0.191,
+     0.106,
+     0.309,
+     0.5,
+     0.976
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0233,
+    "why": "#1 survival 0.01 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Evan Mobley",
+     "Anthony Davis",
+     "Chet Holmgren",
+     "Jalen Williams"
+    ],
+    "surv": [
+     0.01,
+     0.607,
+     0.01,
+     0.776,
+     0.159
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.1141,
+    "why": "#1 survival 0.01 below 0.60 \u2014 take him now",
+    "rows": [
+     "Anthony Davis",
+     "Derrick White",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "James Harden"
+    ],
+    "surv": [
+     0.01,
+     0.533,
+     0.715,
+     0.823,
+     0.01
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Derrick White",
+     "Desmond Bane",
+     "Dyson Daniels",
+     "Kyrie Irving",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.067,
+     0.021,
+     0.218,
+     0.01,
+     0.402
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.033,
+    "why": "#1 survival 0.29 below 0.60 \u2014 take him now",
+    "rows": [
+     "OG Anunoby",
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Damian Lillard",
+     "Tari Eason"
+    ],
+    "surv": [
+     0.289,
+     0.037,
+     0.01,
+     0.01,
+     0.828
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Payton Pritchard",
+     "Damian Lillard",
+     "Christian Braun",
+     "De'Aaron Fox",
+     "Cameron Johnson"
+    ],
+    "surv": [
+     0.01,
+     0.01,
+     0.735,
+     0.01,
+     0.21
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0284,
+    "why": "#1 survival 0.52 below 0.60 \u2014 take him now",
+    "rows": [
+     "Tari Eason",
+     "Jakob Poeltl",
+     "Christian Braun",
+     "Myles Turner",
+     "Cameron Johnson"
+    ],
+    "surv": [
+     0.515,
+     0.53,
+     0.678,
+     0.485,
+     0.144
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0316,
+    "why": "#1 survival 0.26 below 0.60 \u2014 take him now",
+    "rows": [
+     "Jakob Poeltl",
+     "Tari Eason",
+     "Christian Braun",
+     "Cameron Johnson",
+     "Josh Hart"
+    ],
+    "surv": [
+     0.262,
+     0.248,
+     0.434,
+     0.022,
+     0.335
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0304,
+    "why": "#1 survival 0.19 below 0.60 \u2014 take him now",
+    "rows": [
+     "Tari Eason",
+     "Cameron Johnson",
+     "Christian Braun",
+     "Jakob Poeltl",
+     "Ja Morant"
+    ],
+    "surv": [
+     0.192,
+     0.012,
+     0.371,
+     0.205,
+     0.01
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Jakob Poeltl",
+     "Tari Eason",
+     "Christian Braun",
+     "Ja Morant",
+     "Brook Lopez"
+    ],
+    "surv": [
+     0.062,
+     0.056,
+     0.169,
+     0.01,
+     0.249
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0298,
+    "why": "#1 survival 0.04 below 0.60 \u2014 take him now",
+    "rows": [
+     "Tari Eason",
+     "Christian Braun",
+     "Brook Lopez",
+     "Cason Wallace",
+     "Jordan Poole"
+    ],
+    "surv": [
+     0.038,
+     0.131,
+     0.202,
+     0.47,
+     0.01
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Christian Braun",
+     "Brook Lopez",
+     "Herbert Jones",
+     "Collin Gillespie",
+     "Jordan Poole"
+    ],
+    "surv": [
+     0.04,
+     0.078,
+     0.21,
+     0.055,
+     0.01
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Brook Lopez",
+     "Jordan Poole",
+     "Quentin Grimes",
+     "Malik Monk",
+     "Jerami Grant"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}

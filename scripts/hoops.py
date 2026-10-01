@@ -421,6 +421,60 @@ def survival_prob(price, pick_n):
     return min(0.99, max(0.01, _norm_cdf_as(s)))
 
 
+PAIR_MIN_GAIN, PAIR_WAIT_MIN = 0.01, 0.60
+
+
+def pair_decision(rows, surv, decw_given):
+    """D59-2 (2026-10-01): the two-pick 🎯, twin of the deck engine's pairDecision
+    (scripts/test_card.py checks the two agree on every fixture). rows = the Top-K
+    card rows in blend order, dicts with "n" and "decw"; surv[i] = P(row i survives to
+    the look-through next owner turn) or None; decw_given(i, j) = ΔECW of row j with
+    row i already on the roster. Returns {idx, moved, gain, pair, next, why}: the row
+    the 🎯 marker sits on (never a re-ordering), moved only when the pair gains at
+    least PAIR_MIN_GAIN over row 0 and row 0's own survival is at least PAIR_WAIT_MIN.
+    Same arithmetic, same operation order as the JS so the floats agree bit for bit."""
+    K = len(rows)
+
+    def none(why):
+        return dict(idx=0, moved=False, gain=0, pair=None, next=None, why=why)
+    if K < 2:
+        return none("one row")
+    if any(r["decw"] is None for r in rows):
+        return none("no ΔECW (no opponent roster yet)")
+    if surv[0] is None:
+        return none("no survival read on #1")
+    pair, first = [None] * K, [None] * K
+    for i in range(K):
+        others = [(j, decw_given(i, j), surv[j]) for j in range(K) if j != i and surv[j] is not None]
+        others.sort(key=lambda o: (-o[1], o[0]))
+        E, rem = 0, 1
+        for j, v, sj in others:
+            E += rem * sj * v
+            rem *= 1 - sj
+        if others:
+            E += rem * others[-1][1]
+        pair[i] = rows[i]["decw"] + E
+        first[i] = others[0] if others else None
+    best = 0
+    for i in range(1, K):
+        if pair[i] > pair[best] + 1e-12:
+            best = i
+    gain = pair[best] - pair[0]
+    if best == 0:
+        return dict(idx=0, moved=False, gain=0, pair=pair, next=None, why="#1 is the best pair")
+    if surv[0] < PAIR_WAIT_MIN:
+        return dict(idx=0, moved=False, gain=gain, pair=pair, next=None,
+                    why=f"#1 survival {surv[0]:.2f} below {PAIR_WAIT_MIN:.2f} — take him now")
+    if gain < PAIR_MIN_GAIN:
+        return dict(idx=0, moved=False, gain=gain, pair=pair, next=None,
+                    why=f"pair gain {gain:.3f} below {PAIR_MIN_GAIN}")
+    f = first[best]
+    nxt = dict(n=rows[f[0]]["n"], s=f[2], idx=f[0]) if f else None
+    return dict(idx=best, moved=True, gain=gain, pair=pair, next=nxt,
+                why=f"{rows[best]['n']} now, {rows[f[0]]['n'] if f else '—'} next turn "
+                    f"({round(f[2] * 100) if f else 0}% to survive): +{gain:.3f} cats/wk over the pair")
+
+
 def adj_value(p, punt=()):
     """Injury-adjusted value used for ranking boards (never boosts negatives)."""
     tv = total_value(p, punt)
@@ -871,6 +925,12 @@ def insert_pick(state, players, P, name):
     picks.insert(idx, {"player": resolved, "slot": team_of_pick(idx, teams)})
     for i in range(idx, len(picks)):       # re-derive snake slots for the shifted tail
         picks[i]["slot"] = team_of_pick(i, teams)
+    # D59-1 (2026-10-01, mock 59): a standing UNKNOWN placeholder the shift moves is renamed
+    # to its new number so the state, the strip and the history agree (Hansen stayed
+    # "UNKNOWN #125" at #126 after the #121 insert). Twin: the deck's insertPick.
+    for i in range(idx + 1, len(picks)):
+        if re.fullmatch(r"UNKNOWN #\d+", picks[i]["player"]):
+            picks[i]["player"] = f"UNKNOWN #{i + 1}"
     shifted = len(picks) - 1 - idx
     tail = (f"; #{P}–#{len(picks) - 1} → #{P + 1}–#{len(picks)} "
             f"({shifted} shifted, slots recomputed)") if shifted else ""
