@@ -26,6 +26,14 @@ never disagree, for every player BOTH planes carry:
      by build_deck after each passing build); the deck side is the pool the
      published deck currently embeds.
 
+  5. stat-line drift (WO-1, 2026-10-01) — every shared row whose per-game
+     line differs between the planes is REPORTED (184 of 314 on 2026-10-01;
+     Lillard 17.0 vs 24.0 pts, Dončić 30.0 vs 33.5 among them). A warning by
+     default, because the planes carried different baselines by design;
+     --lines-strict counts them as mismatches (the final pre-draft build),
+     --lines-report PATH writes the full list as JSON. The preseason refresh
+     writes one line to both planes; this is what keeps it that way.
+
 Positions are not compared (Yahoo eligibility strings vs the kit's listing
 differ by design). Exit 0 = clean, 1 = mismatches, 2 = kit not found.
 """
@@ -123,19 +131,24 @@ def same(a, b, tol=1e-9):
     return all(abs(a[k] - b[k]) <= tol for k in a)
 
 
-def compare(kit, pool, prev_deck, snapshot, waivers):
+def compare(kit, pool, prev_deck, snapshot, waivers, lines_strict=False):
     shared = sorted(set(kit) & set(pool))
     kit_only = sorted(set(kit) - set(pool))
     deck_only = sorted(set(pool) - set(kit))
     res = {"shared": len(shared), "kit_only": [kit[n]["name"] for n in kit_only],
            "deck_only": [pool[n]["player"] for n in deck_only],
            "team": [], "exclusion": [], "drift": [], "propagation": [], "waived": [],
+           "lines": [], "lines_strict": bool(lines_strict),
            "snapshot": snapshot is not None}
     waived_names = {norm(w.split(":", 1)[0]) for w in waivers}
     for n in shared:
         k, d = kit[n], pool[n]
         if k["team"].strip().upper() != d["team"].strip().upper():
             res["team"].append(f"{d['player']}: kit {k['team']} vs deck {d['team']}")
+        kl, dl = kit_line(k), deck_line(d)
+        ld = {c: [kl[c], dl[c]] for c in kl if abs(kl[c] - dl[c]) > 1e-9}
+        if ld:
+            res["lines"].append({"player": d["player"], "team": d["team"], "diff": ld})
         kit_excl = float(k["gp"]) <= EXCL_GP
         deck_excl = hoops.availability(d) == 0.0
         if kit_excl != deck_excl:
@@ -164,7 +177,9 @@ def compare(kit, pool, prev_deck, snapshot, waivers):
     for n in deck_only:
         if key(n) in ko:
             res["drift"].append(f"kit '{kit[ko[key(n)]]['name']}' vs deck '{pool[n]['player']}' — one-plane on both sides, same surname + initial: a spelling, not two players")
-    res["mismatches"] = len(res["team"]) + len(res["exclusion"]) + len(res["drift"]) + len(res["propagation"])
+    res["lines_count"] = len(res["lines"])
+    res["mismatches"] = (len(res["team"]) + len(res["exclusion"]) + len(res["drift"]) + len(res["propagation"])
+                         + (len(res["lines"]) if lines_strict else 0))
     return res
 
 
@@ -175,14 +190,28 @@ def write_snapshot(kit_path, dest=SNAPSHOT):
     return hashlib.sha256(data).hexdigest()
 
 
-def run(kit_dir=KIT_DEFAULT, waivers=(), pool_path=POOL, deck_html=DECK_HTML, snapshot_path=SNAPSHOT):
+def run(kit_dir=KIT_DEFAULT, waivers=(), pool_path=POOL, deck_html=DECK_HTML, snapshot_path=SNAPSHOT,
+        lines_strict=False):
     kit, kit_path = load_kit(kit_dir)
     if kit is None:
         return None, kit_path
-    res = compare(kit, load_pool(pool_path), load_deck_prev(deck_html), load_snapshot(snapshot_path), list(waivers))
+    res = compare(kit, load_pool(pool_path), load_deck_prev(deck_html), load_snapshot(snapshot_path), list(waivers),
+                  lines_strict=lines_strict)
     res["kit_path"] = kit_path
     res["kit_sha256"] = hashlib.sha256(open(kit_path, "rb").read()).hexdigest()
+    res["pool_sha256"] = hashlib.sha256(open(pool_path, "rb").read()).hexdigest()
     return res, kit_path
+
+
+def write_lines_report(res, path):
+    """The full stat-line drift list as JSON (WO-1): date, both input hashes, every differing row."""
+    import datetime
+    out = {"date": datetime.date.today().isoformat(), "kit_sha256": res.get("kit_sha256", "")[:12],
+           "pool_sha256": res.get("pool_sha256", "")[:12], "shared": res["shared"],
+           "lines_count": res["lines_count"], "rows": res["lines"]}
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=1)
+    return out
 
 
 def report(res):
@@ -195,6 +224,14 @@ def report(res):
             print(f"  {k}: {m}")
     for w in res["waived"]:
         print(f"  waived: {w}")
+    if res.get("lines"):
+        tag = "REFUSED by --lines-strict" if res.get("lines_strict") else "WARNING; --lines-strict refuses"
+        print(f"  lines {len(res['lines'])}: shared row(s) carry a differing stat line ({tag})")
+        for row in res["lines"][:8]:
+            what = ", ".join(f"{c} {v[0]} vs {v[1]}" for c, v in row["diff"].items())
+            print(f"    lines: {row['player']} — kit vs deck: {what}")
+        if len(res["lines"]) > 8:
+            print(f"    lines: … +{len(res['lines']) - 8} more (--lines-report PATH writes the full list)")
 
 
 def main():
@@ -203,6 +240,8 @@ def main():
     ap.add_argument("--waive", action="append", default=[], help='"Name: reason" (repeatable)')
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--write-snapshot", action="store_true")
+    ap.add_argument("--lines-strict", action="store_true", help="count differing stat lines as mismatches (final build)")
+    ap.add_argument("--lines-report", metavar="PATH", help="write the full differing-lines list as JSON")
     a = ap.parse_args()
     if a.write_snapshot:
         _, kit_path = load_kit(a.kit)
@@ -210,10 +249,13 @@ def main():
             sys.exit(f"PLANES: kit not found at {kit_path}")
         print(f"snapshot written: {write_snapshot(kit_path)[:12]}")
         return
-    res, kit_path = run(a.kit, a.waive)
+    res, kit_path = run(a.kit, a.waive, lines_strict=a.lines_strict)
     if res is None:
         print(f"PLANES: kit not found at {kit_path} (set KIT_REPO or --kit)")
         sys.exit(2)
+    if a.lines_report:
+        out = write_lines_report(res, a.lines_report)
+        print(f"lines report written: {a.lines_report} ({out['lines_count']} of {out['shared']} shared rows differ)")
     if a.json:
         print(json.dumps(res, indent=1))
     else:

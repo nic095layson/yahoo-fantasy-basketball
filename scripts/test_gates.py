@@ -111,9 +111,18 @@ def prime(repo, pool_changes=None):
     d["date"] = today
     json.dump(d, open(ev, "w"), indent=2)
     out, rc = run(repo, "scripts/verify_rosters.py")
+    note = "gate-suite prime"
+    if rc != 0 and "mismatches: 0" in out and "UNMATCHED (" in out:
+        # WO-2 (2026-10-01): the evidence file now mirrors ESPN's live feed, so
+        # a pool row the feed has not posted yet (a day-old camp signee) is
+        # UNMATCHED here too, never a mismatch. The real pull exempts such
+        # rows by name with --allow-unmatched and says so in the stamp note;
+        # the prime walks the same path. A MISMATCH still fails the prime.
+        out, rc = run(repo, "scripts/verify_rosters.py", "--allow-unmatched")
+        note += " (unmatched rows exempted by name, 0 mismatches)"
     assert rc == 0, out[:400]
     args = ["scripts/hoops.py", "freshness", "--stamp",
-            "--rosters-verified", "test", "--note", "gate-suite prime"]
+            "--rosters-verified", "test", "--note", note]
     if pool_changes is not None:
         args += pool_changes
     return run(repo, *args)
@@ -197,8 +206,10 @@ def main():
         f.write("Testy McTest,ZZZ,PG,0.42,5.0,0.8,1.0,0.5,4.0,1.5,1.5,"
                 "0.4,0.1,0.8,\n")
     out, rc = run(repo, "scripts/verify_rosters.py")
+    # WO-2: the count is no longer always 1 (a camp signee the feed lacks is
+    # unmatched too); the case tests that an unmatched row hard-fails.
     check("R4-F05 unmatched row without the flag still hard-fails", out,
-          must_have=["UNMATCHED (1): Testy McTest"], want_exit=1, got_exit=rc)
+          must_have=["UNMATCHED (", "Testy McTest"], want_exit=1, got_exit=rc)
     out, rc = run(repo, "scripts/verify_rosters.py", "--allow-unmatched")
     ver = json.load(open(os.path.join(repo, "data",
                                       "roster_verification.json")))
@@ -371,6 +382,21 @@ def main():
     m7 = re.search(r"<!-- build-manifest (\{.*?\}) -->", open(deck7, encoding="utf-8").read())
     check("F7 the waiver is recorded in the build manifest", m7.group(1) if m7 else "",
           must_have=["Nikola Jokic"])
+    # ---------- WO-1 (2026-10-01): stat-line drift between the planes -----
+    # The kit's Jokic line now differs from the pool's (pts 35.0 vs the pool's)
+    # and both snapshots carry it, so propagation is clean. Lines differ by
+    # design (184 of 314 shared rows on 2026-10-01, Lillard 17.0 vs 24.0 pts
+    # among them), so the gate REPORTS them as a warning and counts them in
+    # the manifest; --planes-lines-strict (the final build) refuses.
+    out, rc = run(repo7, "scripts/build_deck.py")
+    check("WO-1 a differing stat line is REPORTED as a warning and the build still passes", out,
+          must_have=["safe to publish", "lines 1", "Nikola Jokic"], want_exit=0, got_exit=rc)
+    m7 = re.search(r"<!-- build-manifest (\{.*?\}) -->", open(deck7, encoding="utf-8").read())
+    check("WO-1 the manifest carries the differing-lines count", m7.group(1) if m7 else "",
+          must_have=['"lines": 1'])
+    out, rc = run(repo7, "scripts/build_deck.py", "--planes-lines-strict")
+    check("WO-1 --planes-lines-strict REFUSES on the same line", out,
+          must_have=["BUILD REFUSED", "lines", "Nikola Jokic"], want_exit=1, got_exit=rc)
     out, rc = run(repo7, "scripts/build_deck.py", kit=os.path.join(os.path.dirname(repo7), "no-such-kit"))
     check("F7 a missing kit checkout is REFUSED", out,
           must_have=["BUILD REFUSED", "kit"], want_exit=1, got_exit=rc)
