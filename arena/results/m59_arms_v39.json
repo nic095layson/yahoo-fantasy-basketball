@@ -1,0 +1,153 @@
+{
+ "as_drafted": {
+  "champ": 15.211,
+  "playoff": 95.51,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Tyrese Maxey": {
+  "champ": 15.717,
+  "playoff": 96.29,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ]
+  ]
+ },
+ "swap#34:Derrick White": {
+  "champ": 15.539,
+  "playoff": 96.23,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#39:Derrick White": {
+  "champ": 21.261,
+  "playoff": 98.87,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ]
+ },
+ "swap#58:Payton Pritchard": {
+  "champ": 15.106,
+  "playoff": 95.55,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    58,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#63:Payton Pritchard": {
+  "champ": 22.172,
+  "playoff": 99.0,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#82:Zach LaVine": {
+  "champ": 17.589,
+  "playoff": 96.98,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Zach LaVine"
+   ]
+  ]
+ },
+ "swap#87:Zach LaVine": {
+  "champ": 17.817,
+  "playoff": 97.32,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Zach LaVine"
+   ]
+  ]
+ },
+ "swap#106:Aaron Gordon": {
+  "champ": 17.811,
+  "playoff": 97.76,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Aaron Gordon"
+   ]
+  ]
+ },
+ "swap#130:Aaron Gordon": {
+  "champ": 14.594,
+  "playoff": 95.39,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    130,
+    "Aaron Gordon"
+   ]
+  ]
+ },
+ "swap#135:Sandro Mamukelashvili": {
+  "champ": 15.489,
+  "playoff": 95.74,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 37.133,
+  "playoff": 99.95,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Jarrett Allen"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ]
+  ]
+ }
+}

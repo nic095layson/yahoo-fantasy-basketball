@@ -1,13 +1,13 @@
 {
   "date": "2026-10-01",
-  "note": "Owner inputs 10/01: fresh Yahoo draft-analysis paste (300 names, 188 with ADP) -> Mkt prices and positions; no roster or line change; verification from this morning's direct-complete ESPN run stands",
+  "note": "D-WO1-1 (d): thirteen wide lines reconciled across the planes; no roster, tag or judgment change; verification re-run direct-complete this evening",
   "pool_changes": {
     "changed": true,
-    "note": "2026-10-01 second build (owner inputs, WO-4): position eligibility on 54 rows set to Yahoo's draft-analysis list of 10/01 \u2014 the draft room's own display, which mocks 57-59 showed and the pool's 9/28 rankings-page set did not (D-G3; diff in the kit's report/market/positions_sync_2026-10-01.json); Mkt price source moves to yahoo-2026-10-01.csv (F8)"
+    "note": "2026-10-01 third build (D-WO1-1 option d, owner decision): one line on both planes for the thirteen wide rows \u2014 the deck adopts the kit's line on ten (Lillard, Flagg, Grimes, Coward, Mamukelashvili, Dick, Poeltl, Porter Jr., Monk, Bridges) and the kit adopts the deck's on three (Simons, Doncic, Barrett); the plane nearer Hashtag's 9/30 projection on points wins, RotoBaller 9/29 the second outlet; diff in the kit's report/lines_sync_2026-10-01.json"
   },
   "rosters_verified": {
     "date": "2026-10-01",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete (site.api.espn.com, 30 rosters, 0 mismatches on 331/334, 2026-10-01); --allow-unmatched for 3 rows: Jimmy Butler = ESPN 'Jimmy Butler III' (GSW), Ron Holland = ESPN 'Ronald Holland II' (DET), Tony Bradley = NYK camp deal 9/30 not yet on ESPN's feed (RealGM, Hoops Wire, BVM)"
+    "sources": "scripts/verify_rosters.py direct-complete re-run 2026-10-01 evening (site.api.espn.com, 30 rosters, 0 mismatches on 333/334); --allow-unmatched for Tony Bradley = NYK camp deal 9/30 not yet on ESPN's feed (RealGM, Hoops Wire, BVM)"
   }
 }

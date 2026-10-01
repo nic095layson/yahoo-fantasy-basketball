@@ -1,0 +1,337 @@
+{
+ "as drafted": {
+  "ecw": 4.877,
+  "rank": 2,
+  "next": 5.272,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 9,
+   "3PTM": 8,
+   "PTS": 11,
+   "REB": 4,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 8,
+   "3PTM": 9,
+   "PTS": 11,
+   "REB": 3,
+   "AST": 10,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 15.21,
+  "playoff": 95.51,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Walker Kessler",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Day'Ron Sharpe",
+   "VJ Edgecombe",
+   "Neemias Queta",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.548,
+  "rank": 1,
+  "next": 5.173,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 8,
+   "TO": 1
+  },
+  "champ": 37.13,
+  "playoff": 99.95,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    63,
+    "Jarrett Allen"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ]
+  ],
+  "roster": [
+   "Tyrese Maxey",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Jarrett Allen",
+   "Zach LaVine",
+   "Josh Hart",
+   "Sandro Mamukelashvili",
+   "Cason Wallace",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "card at #39 only (Derrick White)": {
+  "ecw": 5.129,
+  "rank": 2,
+  "next": 5.268,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 7,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 11,
+   "REB": 7,
+   "AST": 8,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 10,
+   "REB": 7,
+   "AST": 8,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 21.26,
+  "playoff": 98.87,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Derrick White"
+   ]
+  ],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Day'Ron Sharpe",
+   "VJ Edgecombe",
+   "Neemias Queta",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "card at #87 only (Zach LaVine)": {
+  "ecw": 4.979,
+  "rank": 2,
+  "next": 5.273,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 7,
+   "3PTM": 6,
+   "PTS": 11,
+   "REB": 4,
+   "AST": 11,
+   "ST": 6,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 7,
+   "3PTM": 6,
+   "PTS": 11,
+   "REB": 3,
+   "AST": 10,
+   "ST": 6,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 17.82,
+  "playoff": 97.32,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Zach LaVine"
+   ]
+  ],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Walker Kessler",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Day'Ron Sharpe",
+   "Zach LaVine",
+   "Neemias Queta",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "survival-aware: LaVine #82, Poeltl #87": {
+  "ecw": 4.915,
+  "rank": 2,
+  "next": 5.287,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 9,
+   "3PTM": 5,
+   "PTS": 11,
+   "REB": 3,
+   "AST": 12,
+   "ST": 7,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 9,
+   "3PTM": 6,
+   "PTS": 11,
+   "REB": 2,
+   "AST": 11,
+   "ST": 6,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 15.54,
+  "playoff": 96.22,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Jakob Poeltl"
+   ]
+  ],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Walker Kessler",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Zach LaVine",
+   "Jakob Poeltl",
+   "Neemias Queta",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "card at #82 only (Jakob Poeltl)": {
+  "ecw": 4.804,
+  "rank": 3,
+  "next": 5.275,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 9,
+   "3PTM": 8,
+   "PTS": 11,
+   "REB": 4,
+   "AST": 12,
+   "ST": 5,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 9,
+   "3PTM": 9,
+   "PTS": 11,
+   "REB": 3,
+   "AST": 11,
+   "ST": 5,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 13.28,
+  "playoff": 93.31,
+  "champ_rank": 3,
+  "swaps": [
+   [
+    82,
+    "Jakob Poeltl"
+   ]
+  ],
+  "roster": [
+   "Tyrese Haliburton",
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Walker Kessler",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Jakob Poeltl",
+   "VJ Edgecombe",
+   "Neemias Queta",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ }
+}
