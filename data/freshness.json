@@ -1,13 +1,13 @@
 {
-  "date": "2026-09-30",
-  "note": "Code-only rebuild the same evening: D-R5 advice sentence (owner-approved 2026-09-30) \u2014 the card names value as the reason when the \ud83c\udfaf trails the #2 on \u0394ECW; pool unchanged since the rookie-intake build bdb40833a6ac (five starter-minute re-derivations, Boozer twin, three notes)",
+  "date": "2026-10-01",
+  "note": "Daily pull 09-30 -> 10-01: no trades; Vincent placement corrected to FA on ESPN's live rosters (first direct-complete verification); Duren unsigned on QO deadline day; Morant risk tag; Alexander-Walker reprice; eleven judgment cards re-dated and held",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "2026-10-01 pull: Gabe Vincent ATL->FA (ESPN live rosters direct 10/1 + Yahoo/Heavy/Soaring Down South: unsigned since 6/30); Alexander-Walker line re-derived to the 2025-26 B-Ref line at 31 minutes on two starting-role outlets (D-30-2; kit twin); Morant inj-risk tag on 20 of 82 games last season (D58-1); dated notes on VanVleet (D-BV2), Porter Jr., Duren (deadline day), Rollins, Black, Curry, Knueppel, Embiid, Shead"
   },
   "rosters_verified": {
-    "date": "2026-09-30",
-    "mode": "fallback-partial",
-    "sources": "scripts/verify_rosters.py (fallback-partial evidence, 2026-09-30)"
+    "date": "2026-10-01",
+    "mode": "direct-complete",
+    "sources": "scripts/verify_rosters.py direct-complete (site.api.espn.com, 30 rosters, 0 mismatches on 331/334, 2026-10-01); --allow-unmatched for 3 rows: Jimmy Butler = ESPN 'Jimmy Butler III' (GSW), Ron Holland = ESPN 'Ronald Holland II' (DET), Tony Bradley = NYK camp deal 9/30 not yet on ESPN's feed (RealGM, Hoops Wire, BVM)"
   }
 }

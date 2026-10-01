@@ -19,6 +19,7 @@ import datetime
 import json
 import os
 import sys
+import time
 import unicodedata
 import urllib.request
 
@@ -61,6 +62,14 @@ def try_direct():
     policy denial, so an intermittent network fault silently downgraded the
     run to the evidence-file mode behind one advisory line.
     """
+    if os.environ.get("HOOPS_VERIFY_OFFLINE"):
+        # The gate suite pins itself to the evidence-file mode: its cases
+        # mutate data/rosters_official.json to make the gates fire, which the
+        # live feed would ignore. Set by scripts/test_gates.py only (2026-10-01,
+        # the first day site.api.espn.com answered from this environment).
+        print("verify_rosters: HOOPS_VERIFY_OFFLINE set — direct ESPN pull "
+              "skipped on request; evidence-file mode", file=sys.stderr)
+        return None
     try:
         teams = fetch_json(ESPN_TEAMS)
     except Exception as e:
@@ -72,7 +81,22 @@ def try_direct():
     for e in entries:
         t = e["team"]
         abbr = ESPN_ABBR.get(t["abbreviation"], t["abbreviation"])
-        data = fetch_json(ESPN_ROSTER.format(tid=t["id"]))
+        # Per-team fetches ride the same proxy; on 2026-10-01 a TLS handshake
+        # timed out mid-loop and escaped as a traceback (the gate suite's
+        # second run). Three tries with backoff, then REPORT and fall back —
+        # the same contract as the first fetch (F01: reported, not swallowed).
+        data, last = None, None
+        for attempt in range(3):
+            try:
+                data = fetch_json(ESPN_ROSTER.format(tid=t["id"]))
+                break
+            except Exception as exc:
+                last = exc
+                time.sleep(2 * (attempt + 1))
+        if data is None:
+            print(f"verify_rosters: direct ESPN pull failed on {abbr} after 3 tries — "
+                  f"{type(last).__name__}: {last}; evidence-file mode", file=sys.stderr)
+            return None
         rosters[abbr] = [a["displayName"] for a in data.get("athletes", [])]
     return rosters
 

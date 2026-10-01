@@ -10,7 +10,7 @@ satisfy it. A gate that has never been seen red is untested by definition —
 this suite runs every gate to refusal AND to acceptance in a scratch copy of
 the repo. Case IDs reference `analysis_2026-08-10_findings_table.md`.
 
-Runs offline (ESPN is expected blocked → verify runs fallback-partial).
+Runs offline: HOOPS_VERIFY_OFFLINE pins verify to the evidence file (ESPN's feed may answer since 2026-10-01; the cases need the file).
 Repo files are never touched; everything happens in a temp copy. ~60s.
 """
 import datetime
@@ -45,6 +45,11 @@ def check(name, out, must_have=(), must_not=(), want_exit=None, got_exit=None):
 def run(cwd, *args, kit=None):
     env = dict(os.environ)
     env["KIT_REPO"] = kit or os.path.join(os.path.dirname(cwd), "kit")  # F7
+    # The suite's cases mutate the evidence file to make the gates fire, so
+    # verify must read it, not ESPN's live feed — which first answered from
+    # this environment on 2026-10-01 and left the suite red twice (three
+    # suffix-form rows unmatched, then a mid-loop TLS timeout).
+    env["HOOPS_VERIFY_OFFLINE"] = "1"
     r = subprocess.run([sys.executable, *args], capture_output=True,
                        text=True, cwd=cwd, env=env)
     return r.stdout + r.stderr, r.returncode

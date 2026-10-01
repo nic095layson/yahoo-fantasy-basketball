@@ -19,9 +19,9 @@ Domantas Sabonis,SAC,"C,PF",0.585,13.8,0.750,4.5,0.7,19.5,13.5,6.2,0.8,0.5,3.0,
 Alperen Sengun,HOU,"C,PF",0.500,16.0,0.700,5.6,0.5,20.5,10.5,5.2,1.2,0.9,2.8,
 Jalen Brunson,NYK,PG,0.485,18.8,0.825,6.6,2.4,26.5,3.0,7.2,0.9,0.1,2.6,"wrist-surgery-monitor (says fully cleared 9/24); practiced 9/29 at the first official camp practice (SNY, BVM)"
 Trae Young,WAS,PG,0.415,17.0,0.870,6.2,2.4,23.5,3.2,9.8,1.3,0.2,4.2,
-Ja Morant,POR,PG,0.455,18.0,0.820,6.2,1.8,23.5,4.2,7.5,1.3,0.3,3.4,
+Ja Morant,POR,PG,0.455,18.0,0.820,6.2,1.8,23.5,4.2,7.5,1.3,0.3,3.4,"inj-risk (20 of 82 games in 2025-26 — calf, elbow and a suspension, 19.5 / 3.3 / 8.1 in 28.4 mpg; 79 appearances over the last three seasons — Basketball-Reference game log, Hoops Rumors Trail Blazers Notes 9/2026, SI Blazers; says he hopes to play every game; day-two camp practice 10/1 — Blazer's Edge). Tag added 2026-10-01 (D58-1): the kit's 60-game line was already the price; the weekly model now expects fewer games"
 Jaren Jackson Jr.,UTA,"PF,C",0.495,16.5,0.790,5.4,2.0,23.5,6.0,2.2,1.3,1.6,1.9,inj-knee-risk (PVNS surgery)
-Stephen Curry,GSW,PG,0.450,18.2,0.930,4.5,4.3,24.0,4.3,5.9,1.0,0.4,2.8,inj-risk
+Stephen Curry,GSW,PG,0.450,18.2,0.930,4.5,4.3,24.0,4.3,5.9,1.0,0.4,2.8,"inj-risk; 9/29: knee 'feeling great, no issues at all', a management plan with select back-to-backs off (NBC Sports Bay Area, Heavy, Yahoo)"
 Bam Adebayo,MIA,"C,PF",0.490,13.0,0.770,3.6,0.8,16.5,9.8,3.8,1.3,0.8,2.1,
 Cooper Flagg,DAL,"PF,SF,SG",0.468,14.8,0.790,4.3,1.6,17.8,7.8,4.2,1.4,1.1,2.5,
 Scottie Barnes,TOR,"C,PF,SF,SG",0.450,17.0,0.760,5.0,1.3,20.5,8.0,6.0,1.5,1.1,2.9,
@@ -46,7 +46,7 @@ Darius Garland,LAC,PG,0.470,15.6,0.875,3.5,2.9,20.5,2.9,6.8,1.2,0.1,2.6,
 Josh Giddey,CHI,"PG,SG,SF",0.470,14.5,0.810,3.2,1.8,16.5,8.5,7.8,1.3,0.7,3.0,
 Dyson Daniels,ATL,"PG,SF,SG",0.495,12.5,0.610,2.2,1.1,14.5,6.0,4.5,3.0,0.7,1.9,
 Devin Vassell,SAS,"SG,SF",0.465,13.5,0.805,2.4,2.4,16.8,4.0,3.0,1.1,0.4,1.5,
-Jalen Duren,DET,C,0.690,8.5,0.700,3.3,0.0,12.5,10.5,2.8,0.7,1.2,1.9,"rfa-holdout: prepared to accept the $9.6M qualifying offer by the 10/1 deadline absent a long-term deal (Stein via Yahoo 9/29-30, Detroit Jock City); Detroit could extend the deadline to March 1, no indication it will"
+Jalen Duren,DET,C,0.690,8.5,0.700,3.3,0.0,12.5,10.5,2.8,0.7,1.2,1.9,"rfa-holdout: deadline day 10/1 — unsigned, left off Detroit's camp roster, the fully guaranteed 5yr/$200M offer reported rejected, the $9.6M qualifying-offer decision due 11:59 pm ET (NBC Sports, Yahoo, Hoops Rumors 9/30-10/1); Stein 9/29: prepared to accept the QO absent a deal; Detroit could extend the deadline to March 1, no indication it will"
 Rudy Gobert,MIN,C,0.665,6.8,0.680,4.0,0.0,12.2,10.8,1.9,0.8,1.4,1.6,
 Jarrett Allen,CLE,C,0.700,8.5,0.720,3.5,0.0,13.8,9.8,2.0,0.9,0.9,1.4,
 Walker Kessler,LAL,C,0.660,7.8,0.630,2.6,0.0,11.8,12.0,1.8,0.5,2.4,1.6,"inj-shoulder-risk (first season back; fully cleared for all basketball activity per Pelinka at the 9/28 media day — NBC Sports, CBS)"
@@ -54,7 +54,7 @@ Myles Turner,MIL,C,0.460,9.5,0.770,2.6,2.0,12.5,5.8,1.5,0.7,1.7,1.3,"repriced 20
 Deandre Ayton,WAS,C,0.565,9.0,0.760,1.8,0.1,11.0,7.8,1.5,0.7,0.8,1.5,backup-watch (WAS projected five lists Sarr at C; role unsettled)
 Mark Williams,PHX,C,0.580,10.2,0.795,4.2,0.0,15.5,10.4,2.6,0.7,1.2,2.3,"shoulder-recovery (torn labrum surgery 2026-09-10; about five months, a February return targeted, no set timetable — ESPN, NBA.com, Yahoo, Hoops Wire)"
 Kristaps Porzingis,GSW,"PF,C",0.485,13.6,0.810,4.2,2.0,19.8,6.9,2.2,0.7,1.5,1.6,"inj-risk; out indefinitely pre-camp with an undisclosed health issue, will not travel to Hawaii camp (Dunleavy 9/28, no timeline; 'hopefully back soon', not ruled out for the season start — NBC Sports, NBA.com, Hoops Rumors); 9/30: ruled out through the first camp week, misses at least four practices and the 10/4 preseason opener (NBC Sports, Yahoo, SI)"
-Joel Embiid,PHI,C,0.450,15.0,0.825,7.5,1.4,24.0,8.3,4.5,0.8,0.9,3.3,inj-risk
+Joel Embiid,PHI,C,0.450,15.0,0.825,7.5,1.4,24.0,8.3,4.5,0.8,0.9,3.3,"inj-risk; 9/29: full participant at the opening practice, no restrictions per Nurse; a back-to-back plan with LeBron being mapped (NBC Sports Philadelphia, Heavy, SI 76ers)"
 Nikola Vucevic,ORL,C,0.530,10.5,0.800,2.0,1.1,13.0,7.5,2.4,0.6,0.6,1.4,bench-role (backup/sixth man behind Wendell Carter; synced 9/21)
 Jakob Poeltl,TOR,C,0.625,8.8,0.690,2.7,0.0,14.5,9.7,2.8,1.2,1.2,1.9,
 Onyeka Okongwu,ATL,C,0.560,11.5,0.780,2.8,1.7,15.0,7.8,3.0,0.8,1.1,1.5,
@@ -80,7 +80,7 @@ Tyrese Haliburton,IND,"PG,SG",0.473,15.5,0.851,3.2,3.0,18.6,3.5,9.2,1.4,0.7,1.6,
 Jayson Tatum,BOS,"SF,PF",0.452,18.1,0.812,6.5,3.2,26.8,8.7,6.0,1.1,0.5,2.9,inj-achilles-risk
 Kyrie Irving,DAL,PG,0.473,16.7,0.916,4.0,2.7,24.7,4.8,4.6,1.3,0.5,2.1,inj-acl-risk (first season back)
 Damian Lillard,POR,PG,0.435,17.5,0.920,6.5,3.0,24.0,4.2,7.0,1.0,0.3,2.9,inj-achilles-risk (first season back)
-Fred VanVleet,HOU,"PG,SG",0.374,12.5,0.810,2.3,2.5,14.1,3.7,5.6,1.6,0.6,1.6,inj-acl-risk (first season back)
+Fred VanVleet,HOU,"PG,SG",0.374,12.5,0.810,2.3,2.5,14.1,3.7,5.6,1.6,0.6,1.6,"inj-acl-risk (first season back); 10/1: fully cleared, five-on-five scrimmages for weeks, practiced Wednesday 9/30; no back-to-backs to open the season, minutes limit set by camp progress per Udoka (CBS Sports, The Dream Shake, Yahoo, RotoWire) — D-BV2"
 Dejounte Murray,NOP,"PG,SG",0.410,15.0,0.790,3.6,2.0,17.0,5.8,6.5,1.8,0.4,2.8,inj-achilles-risk (14 games last season)
 Paul George,BOS,"SF,PF",0.435,13.5,0.810,2.8,2.2,16.0,5.2,4.2,1.7,0.5,2.4,"inj-risk; 9/29: 'my body has naturally healed', no restrictions reported at camp (Yahoo, NBA.com, CelticsBlog)"
 Brandon Ingram,LAC,"SG,SF,PF",0.465,15.0,0.820,4.2,1.7,19.0,5.3,3.9,0.8,0.6,2.3,"inj-achilles-risk (partially torn left Achilles found and repaired at the 2026-05 heel surgery, disclosed at the 9/28 media day — ESPN, NBA.com, NBC LA; out for the start of the season, no team timetable, reporting points at Nov–early Dec; 'week-by-week', not participating in camp much) Line repriced 2026-09-29: post-Achilles ramp in a Garland-led offense, assists to the 2025-26 Toronto level (77 GP / 21.5 / 5.6 / 3.7 - B-Ref; ESPN, NBA.com).; 9/30: Redden — a partial tear runs about six months less rehab than a full one; 'week-by-week', on the floor a little in camp (ESPN, NBA.com, Washington Times)"
@@ -101,8 +101,8 @@ Stephon Castle,SAS,"PG,SG",0.440,14.5,0.730,4.6,1.2,16.5,4.0,4.8,1.0,0.4,2.4,
 Scoot Henderson,POR,"PG,SG",0.430,10.0,0.790,2.5,1.4,11.5,3.0,4.5,1.0,0.3,2.3,
 Reed Sheppard,HOU,"PG,SG",0.450,10.0,0.860,2.1,2.2,12.5,3.0,3.9,1.2,0.4,1.5,bench-role (VanVleet healthy; role recompressed per 9/16 research; synced 9/21)
 Andrew Nembhard,IND,"PG,SG",0.470,11.0,0.800,2.4,1.3,12.5,3.2,6.8,1.2,0.4,2.2,"role 9/30: starter (Circle City Spin day-one, SI Pacers)"
-Kevin Porter Jr.,MIL,"PG,SG",0.455,11.8,0.780,2.8,1.6,14.5,4.2,5.0,1.1,0.4,2.4,
-Ryan Rollins,MIL,"PG,SG",0.465,12.5,0.800,2.2,1.9,15.5,4.2,5.2,1.4,0.4,1.9,"starting-PG battle with Kevin Porter Jr (SI Bucks, Yahoo camp preview); repriced 2026-09-30 toward the 2025-26 line (17.3 / 4.6 / 5.6 / 1.5 in 32.1 mpg on 47/40 — Yahoo, SI) with a share haircut"
+Kevin Porter Jr.,MIL,"PG,SG",0.455,11.8,0.780,2.8,1.6,14.5,4.2,5.0,1.1,0.4,2.4,"starting-PG battle with Ryan Rollins (SI Bucks, Yahoo camp preview 9/30); 10/1: undecided, Rollins listed first on the camp depth chart (RealGM) — row noted 2026-10-01 after the 9/30 report wrongly said the deck had no Porter row (D-30-1 closed)"
+Ryan Rollins,MIL,"PG,SG",0.465,12.5,0.800,2.2,1.9,15.5,4.2,5.2,1.4,0.4,1.9,"starting-PG battle with Kevin Porter Jr (SI Bucks, Yahoo camp preview); repriced 2026-09-30 toward the 2025-26 line (17.3 / 4.6 / 5.6 / 1.5 in 32.1 mpg on 47/40 — Yahoo, SI) with a share haircut; 10/1: battle undecided; listed first on the camp depth chart (RealGM), the starter debate still live (SI Bucks)"
 Dylan Harper,SAS,"PG,SG",0.455,12.5,0.760,3.8,1.4,15.5,4.2,5.0,1.3,0.4,2.5,"role 9/30: starter or first guard in with Fox and Castle, Johnson rotating lineups (Yahoo, CBS Sports, Air Alamo)"
 VJ Edgecombe,PHI,"PG,SG",0.445,13.8,0.785,3.6,1.9,17.0,4.6,3.8,1.4,0.5,2.1,
 Keyonte George,UTA,"PG,SG",0.445,15.5,0.830,4.5,2.9,20.5,3.8,5.8,0.9,0.1,2.9,"role 9/30: starter (SI Jazz, Hoops Rumors)"
@@ -113,7 +113,7 @@ Bub Carrington,WAS,"PG,SG",0.420,11.5,0.810,2.0,1.8,13.0,4.2,4.8,0.9,0.3,2.1,
 Jeremiah Fears,NOP,"PG,SG",0.430,12.0,0.750,3.4,1.2,14.0,3.2,5.2,1.1,0.2,2.8,rookie-proj
 Egor Demin,BKN,"PG,SG",0.420,10.5,0.760,1.8,1.5,11.5,4.0,5.5,1.0,0.3,2.5,"rookie-proj; starting-guard projection (Yahoo Nets camp breakdown, TalkBasket); non-surgical plantar fasciitis procedure this offseason, participation monitored (Yahoo, CBS)"
 Tre Johnson,WAS,"PG,SF,SG",0.435,12.5,0.840,2.6,2.1,15.0,3.2,2.8,0.8,0.3,1.9,rookie-proj
-Kon Knueppel,CHA,"SF,SG",0.455,12.8,0.855,2.9,2.6,16.5,4.2,3.6,0.9,0.3,1.7,"hamstring-monitor (left hamstring strain 9/25: out for preseason, likely misses the start of the season, re-eval first week)"
+Kon Knueppel,CHA,"SF,SG",0.455,12.8,0.855,2.9,2.6,16.5,4.2,3.6,0.9,0.3,1.7,"hamstring-monitor (left hamstring strain 9/25: out for preseason, likely misses the start of the season, re-eval first week); 10/1: hamstring pain gone, rebuilding strength, no five-on-five yet; re-evaluation the week of 10/19, the 10/21 opener undecided per Peterson (Yahoo, NBC Sports)"
 Brandin Podziemski,GSW,"SG,PG",0.450,10.5,0.800,1.8,1.8,12.5,4.8,4.0,1.0,0.3,1.8,
 Moses Moody,GSW,"SG,SF",0.440,9.5,0.820,2.0,1.8,12.0,3.2,1.8,0.8,0.4,1.1,patellar-recovery (no return timeline)
 De'Anthony Melton,GSW,"PG,SG",0.420,9.0,0.780,1.6,1.7,10.5,3.6,3.2,1.5,0.4,1.5,inj-risk
@@ -129,8 +129,8 @@ Malcolm Brogdon,FA,PG,0.440,9.0,0.870,2.0,1.4,11.5,3.4,4.0,0.7,0.2,1.6,out-retir
 Lonzo Ball,FA,PG,0.420,8.5,0.750,1.2,1.8,10.0,4.6,5.0,1.4,0.6,2.0,inj-risk
 Jose Alvarado,NYK,PG,0.430,7.0,0.810,1.2,1.3,8.5,2.2,3.5,1.5,0.2,1.3,
 Payton Pritchard,BOS,"PG,SG",0.465,15.0,0.850,2.2,3.8,19.0,4.2,5.5,1.0,0.2,2.0,
-Anthony Black,ORL,"PG,SG,SF",0.455,9.5,0.760,2.4,1.1,11.5,3.4,4.2,1.2,0.5,1.8,"role 9/30: sixth man, 20-25 mpg; first up if Suggs misses time (SI Magic, Orlando Magic Daily)"
-Nickeil Alexander-Walker,ATL,"PG,SG",0.445,15.5,0.800,3.0,3.0,19.5,3.4,3.8,1.3,0.5,2.0,
+Anthony Black,ORL,"PG,SG,SF",0.455,9.5,0.760,2.4,1.1,11.5,3.4,4.2,1.2,0.5,1.8,"role 9/30: sixth man, 20-25 mpg; first up if Suggs misses time (SI Magic, Orlando Magic Daily); 10/1: minor ankle sprain from the voluntary workouts, day-to-day, limited at the start of camp (Sweeney via HoopsHype 9/30, SI Magic, RotoBaller)"
+Nickeil Alexander-Walker,ATL,"PG,SG",0.455,13.5,0.890,3.4,2.8,18.4,3.0,3.3,1.2,0.5,1.9,"starting-SG role (NBA.com season preview 9/22 — Zillgitt; SI Hawks projected lineup; Dort the alternative per SI Hawks' camp position battles); repriced 2026-10-01 to the 2025-26 B-Ref game-log line (78 GP / 33.3 mpg / 20.8 pts / 3.2 3PM / 3.4 reb / 3.7 ast / 1.3 stl / .459 FG / .902 FT) at 31 minutes with a share haircut for McCollum, Dort and Wiggins — the kit carries the same line (D-30-2)"
 Mikal Bridges,NYK,"PF,SF,SG",0.500,14.8,0.815,2.2,2.2,18.0,3.4,3.8,1.0,0.5,1.5,
 OG Anunoby,NYK,"SF,PF",0.480,13.5,0.805,2.5,2.3,18.5,5.0,2.3,1.6,0.9,1.4,
 Trey Murphy III,NOP,"PF,SF,SG",0.460,15.5,0.885,3.9,3.1,22.0,5.3,3.7,1.1,0.7,2.1,inj-shoulder-risk (season ended early)
@@ -201,7 +201,7 @@ Trayce Jackson-Davis,TOR,"PF,C",0.610,5.5,0.650,1.6,0.0,8.0,6.5,1.8,0.6,1.0,1.1,
 Quinten Post,MEM,C,0.450,7.5,0.790,1.2,1.7,9.5,5.0,1.8,0.5,0.6,1.1,
 Jeremy Sochan,POR,PF,0.535,6.3,0.720,1.9,0.3,8.0,4.5,2.1,0.7,0.4,1.3,camp-deal non-gtd (agreed 8/1; role repriced to bench minutes 2026-08-13)
 Corey Kispert,ATL,"SF,SG",0.450,9.0,0.820,1.6,1.9,11.5,3.0,1.8,0.6,0.3,1.1,
-Gabe Vincent,ATL,PG,0.420,7.5,0.820,1.4,1.6,9.5,2.0,2.8,0.8,0.2,1.2,
+Gabe Vincent,FA,PG,0.420,7.5,0.820,1.4,1.6,9.5,2.0,2.8,0.8,0.2,1.2,"unsigned free agent — contract expired 2026-06-30 after the deadline trade to Atlanta; on none of ESPN's 30 live rosters (site.api.espn.com, direct check 2026-10-01); turned down a Knicks camp offer, waiting for a guaranteed deal (Yahoo, Heavy, Soaring Down South; Spotrac FA list). The pool carried him on ATL since the February trade — a placement error the fallback evidence file never caught; corrected 2026-10-01"
 Dalton Knecht,LAL,"SG,SF",0.450,10.0,0.800,1.6,2.1,13.0,3.2,1.5,0.6,0.3,1.2,
 Tristan da Silva,ORL,"SF,PF",0.450,8.5,0.800,1.6,1.4,10.5,4.2,2.2,0.7,0.3,1.2,
 Tre Mann,WAS,"PG,SG",0.430,10.0,0.810,2.0,1.8,12.5,3.0,4.2,0.9,0.2,1.9,
@@ -304,7 +304,7 @@ Precious Achiuwa,SAC,"PF,C",0.519,6.9,0.566,1.5,0.3,8.4,6.0,1.1,0.8,0.7,0.8,benc
 Gary Payton II,GSW,"SG,SF",0.580,5.0,0.677,0.5,0.4,6.7,3.2,1.5,0.9,0.3,0.7,"bench-role (re-signed 1yr minimum; specialist depth; 73 GP, 7.5/3.6 in 1)"
 Bruce Brown,NYK,"PG,SG",0.450,4.8,0.720,0.8,0.7,5.5,2.5,1.8,0.6,0.2,0.8,"camp-deal (NYK Exhibit 9, non-guaranteed; five names for ~one spot)"
 Dominick Barlow,PHI,"PF,C",0.538,4.5,0.703,1.5,0.3,6.1,3.7,1.0,0.7,0.6,0.6,"bench-role (regular rotation big; 59 starts, 7.7/4.8/1.2/0.9 stl in 23.8)"
-Jamal Shead,TOR,PG,0.386,6.1,0.781,1.1,1.0,6.6,1.6,4.6,0.8,0.2,1.4,bench-role (primary backup PG behind Quickley; team option exercised; 82)
+Jamal Shead,TOR,PG,0.386,6.1,0.781,1.1,1.0,6.6,1.6,4.6,0.8,0.2,1.4,"bench-role (primary backup PG behind Quickley; team option exercised; 82); extension 3yr/$24M agreed 10/1, contract only (ESPN/Shams, TSN, NBC Sports)"
 John Konchar,FA,"SG,SF",0.465,2.1,0.760,0.4,0.4,2.7,2.8,1.2,0.9,0.4,0.4,"waived by NYK 2026-09-30 (personal matter, mutual parting — Hoops Rumors, RealGM, BVM); unsigned free agent"
 Jonas Valanciunas,FA,C,0.550,7.0,0.800,2.8,0.2,10.0,7.5,1.5,0.4,0.6,1.4,out-europe (waived by DEN July 2026; signed Zalgiris — Yahoo still lists DEN)
 Dru Smith,MIA,"PG,SG",0.430,4.3,0.824,1.3,0.6,5.4,2.3,2.2,1.3,0.3,0.8,"bench-role (salary guaranteed; defensive PG option; 70 GP, 5.6/2.5/2.6/1)"
