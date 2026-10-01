@@ -96,6 +96,13 @@ reality; the 8/4 chip recalibration (fit to value-bot rooms) likely
 overcorrects for the real draft. Registered as E17 (refit `MOCK_CAST` /
 survival blend to these measured reach profiles).
 
+**Re-paste check (2026-10-01).** The owner pasted the 2025-26 draft again (13 rounds × 12 with
+team names and the team→manager map), kept verbatim as `arena/data/league_draft_2025-26_raw_2026-10-01.txt`
+(md5 `195e819bed615b1a088e8b3b25e24d0a`). Compared pick by pick with `arena/draft_boards.json["2025-26"]`:
+156 of 156 picks, seats and team names agree; the one spelling difference is pick #128, "Bobby Portis Jr."
+in the paste against "Bobby Portis" on the stored board (same man). The manager map agrees on all twelve
+teams ("Robert" for the stored "Robby"). Nothing re-derives.
+
 ## 6. Owner profile (2025-26)
 
 Drafted from **slot 4**: SGA, Brunson, JJJ, Jamal Murray, OG, Porziņģis,

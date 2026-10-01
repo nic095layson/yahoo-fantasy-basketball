@@ -1,9 +1,9 @@
 {
   "date": "2026-10-01",
-  "note": "Daily pull 09-30 -> 10-01: no trades; Vincent placement corrected to FA on ESPN's live rosters (first direct-complete verification); Duren unsigned on QO deadline day; Morant risk tag; Alexander-Walker reprice; eleven judgment cards re-dated and held",
+  "note": "Owner inputs 10/01: fresh Yahoo draft-analysis paste (300 names, 188 with ADP) -> Mkt prices and positions; no roster or line change; verification from this morning's direct-complete ESPN run stands",
   "pool_changes": {
     "changed": true,
-    "note": "2026-10-01 pull: Gabe Vincent ATL->FA (ESPN live rosters direct 10/1 + Yahoo/Heavy/Soaring Down South: unsigned since 6/30); Alexander-Walker line re-derived to the 2025-26 B-Ref line at 31 minutes on two starting-role outlets (D-30-2; kit twin); Morant inj-risk tag on 20 of 82 games last season (D58-1); dated notes on VanVleet (D-BV2), Porter Jr., Duren (deadline day), Rollins, Black, Curry, Knueppel, Embiid, Shead"
+    "note": "2026-10-01 second build (owner inputs, WO-4): position eligibility on 54 rows set to Yahoo's draft-analysis list of 10/01 \u2014 the draft room's own display, which mocks 57-59 showed and the pool's 9/28 rankings-page set did not (D-G3; diff in the kit's report/market/positions_sync_2026-10-01.json); Mkt price source moves to yahoo-2026-10-01.csv (F8)"
   },
   "rosters_verified": {
     "date": "2026-10-01",
