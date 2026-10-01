@@ -1,0 +1,391 @@
+{
+ "mock": 57,
+ "tag": "v33",
+ "page_rev": "0dfbe77",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 27.444,
+   "playoff": 99.3,
+   "rank": 1
+  },
+  "as_drafted_S2": {
+   "champ": 27.3,
+   "playoff": 99.26,
+   "rank": 1
+  },
+  "as_drafted_ecw": 5.271,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 41.433,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 41.761,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "blend_ecw": 5.678,
+  "blend_swaps": [
+   [
+    10,
+    "Tyrese Haliburton"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 41.433,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 41.761,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "pair_ecw": 5.678,
+  "pair_swaps": [
+   [
+    10,
+    "Tyrese Haliburton"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ]
+  ],
+  "pair_moves": [],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0489,
+    "why": "#1 survival 0.50 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Tyrese Haliburton",
+     "Jalen Johnson",
+     "Anthony Davis",
+     "Chet Holmgren"
+    ],
+    "surv": [
+     0.5,
+     0.637,
+     0.377,
+     0.977,
+     0.921
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Chet Holmgren",
+     "Anthony Davis",
+     "Jalen Johnson",
+     "Evan Mobley"
+    ],
+    "surv": [
+     0.01,
+     0.168,
+     0.613,
+     0.01,
+     0.337
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0109,
+    "why": "#1 survival 0.44 below 0.60 \u2014 take him now",
+    "rows": [
+     "Anthony Davis",
+     "Jalen Williams",
+     "Derrick White",
+     "Evan Mobley",
+     "Dyson Daniels"
+    ],
+    "surv": [
+     0.436,
+     0.619,
+     0.711,
+     0.166,
+     0.889
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Derrick White",
+     "Desmond Bane",
+     "OG Anunoby",
+     "Kyrie Irving",
+     "Dyson Daniels"
+    ],
+    "surv": [
+     0.213,
+     0.379,
+     0.657,
+     0.353,
+     0.577
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "OG Anunoby",
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Darius Garland",
+     "Damian Lillard"
+    ],
+    "surv": [
+     0.56,
+     0.747,
+     0.584,
+     0.525,
+     0.621
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "OG Anunoby",
+     "Darius Garland",
+     "Jakob Poeltl",
+     "De'Aaron Fox",
+     "Damian Lillard"
+    ],
+    "surv": [
+     0.21,
+     0.178,
+     0.861,
+     0.468,
+     0.273
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0009,
+    "why": "pair gain 0.001 below 0.01",
+    "rows": [
+     "Jakob Poeltl",
+     "Damian Lillard",
+     "Miles Bridges",
+     "Jalen Suggs",
+     "Coby White"
+    ],
+    "surv": [
+     0.829,
+     0.199,
+     0.645,
+     0.765,
+     0.515
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Zach LaVine",
+     "Miles Bridges",
+     "Jalen Suggs",
+     "Isaiah Hartenstein",
+     "Cason Wallace"
+    ],
+    "surv": [
+     0.506,
+     0.391,
+     0.561,
+     0.491,
+     0.63
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Isaiah Hartenstein",
+     "PJ Washington",
+     "Cason Wallace",
+     "Collin Gillespie",
+     "Herbert Jones"
+    ],
+    "surv": [
+     0.428,
+     0.576,
+     0.575,
+     0.611,
+     0.802
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Cason Wallace",
+     "Collin Gillespie",
+     "Herbert Jones",
+     "Fred VanVleet",
+     "Devin Vassell"
+    ],
+    "surv": [
+     0.364,
+     0.406,
+     0.665,
+     0.385,
+     0.351
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0021,
+    "why": "#1 survival 0.30 below 0.60 \u2014 take him now",
+    "rows": [
+     "Devin Vassell",
+     "Quentin Grimes",
+     "PJ Washington",
+     "Herbert Jones",
+     "Malik Monk"
+    ],
+    "surv": [
+     0.299,
+     0.361,
+     0.313,
+     0.623,
+     0.879
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Devin Vassell",
+     "Quentin Grimes",
+     "Saddiq Bey",
+     "Herbert Jones",
+     "Malik Monk"
+    ],
+    "surv": [
+     0.142,
+     0.191,
+     0.186,
+     0.455,
+     0.807
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Quentin Grimes",
+     "Malik Monk",
+     "Herbert Jones",
+     "Draymond Green",
+     "Cameron Johnson"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}

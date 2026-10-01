@@ -1,0 +1,240 @@
+{
+ "date": "2026-10-01",
+ "design": "pair_experiment_2026-10-01_design.md",
+ "rooms": [
+  {
+   "mock": 51,
+   "tag": "v23",
+   "price_source": "internal market position (pre-F8 page)",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    42.789,
+    43.272
+   ],
+   "blend": [
+    51.439,
+    52.789
+   ],
+   "pair": [
+    51.439,
+    52.789
+   ],
+   "blend_ecw": 5.871,
+   "pair_ecw": 5.871,
+   "moves": [],
+   "chains_identical": true
+  },
+  {
+   "mock": 52,
+   "tag": "v23",
+   "price_source": "internal market position (pre-F8 page)",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    37.95,
+    37.778
+   ],
+   "blend": [
+    45.806,
+    46.183
+   ],
+   "pair": [
+    45.806,
+    46.183
+   ],
+   "blend_ecw": 5.846,
+   "pair_ecw": 5.846,
+   "moves": [],
+   "chains_identical": true
+  },
+  {
+   "mock": 53,
+   "tag": "v25",
+   "price_source": "baked Yahoo price (F8) at the page revision",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    31.1,
+    31.667
+   ],
+   "blend": [
+    46.144,
+    47.078
+   ],
+   "pair": [
+    43.111,
+    42.906
+   ],
+   "blend_ecw": 5.892,
+   "pair_ecw": 5.845,
+   "moves": [
+    [
+     15,
+     "Jalen Williams",
+     "Austin Reaves",
+     0.0451
+    ],
+    [
+     58,
+     "Payton Pritchard",
+     "OG Anunoby",
+     0.0102
+    ]
+   ],
+   "chains_identical": false
+  },
+  {
+   "mock": 54,
+   "tag": "v28",
+   "price_source": "baked Yahoo price (F8) at the page revision",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    38.622,
+    39.494
+   ],
+   "blend": [
+    49.172,
+    49.394
+   ],
+   "pair": [
+    49.172,
+    49.394
+   ],
+   "blend_ecw": 5.804,
+   "pair_ecw": 5.804,
+   "moves": [
+    [
+     34,
+     "Jalen Williams",
+     "Derrick White",
+     0.0147
+    ]
+   ],
+   "chains_identical": false
+  },
+  {
+   "mock": 56,
+   "tag": "v31",
+   "price_source": "baked Yahoo price (F8) at the page revision",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    43.661,
+    44.067
+   ],
+   "blend": [
+    52.583,
+    52.5
+   ],
+   "pair": [
+    52.583,
+    52.5
+   ],
+   "blend_ecw": 5.942,
+   "pair_ecw": 5.942,
+   "moves": [
+    [
+     82,
+     "Tari Eason",
+     "Jakob Poeltl",
+     0.0606
+    ]
+   ],
+   "chains_identical": true
+  },
+  {
+   "mock": 57,
+   "tag": "v33",
+   "price_source": "baked Yahoo price (F8) at the page revision",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    27.444,
+    27.3
+   ],
+   "blend": [
+    41.433,
+    41.761
+   ],
+   "pair": [
+    41.433,
+    41.761
+   ],
+   "blend_ecw": 5.678,
+   "pair_ecw": 5.678,
+   "moves": [],
+   "chains_identical": true
+  },
+  {
+   "mock": 58,
+   "tag": "v35",
+   "price_source": "baked Yahoo price (F8) at the page revision",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    36.75,
+    36.739
+   ],
+   "blend": [
+    40.894,
+    40.294
+   ],
+   "pair": [
+    40.894,
+    40.294
+   ],
+   "blend_ecw": 5.744,
+   "pair_ecw": 5.744,
+   "moves": [],
+   "chains_identical": true
+  },
+  {
+   "mock": 59,
+   "tag": "v37",
+   "price_source": "baked Yahoo price (F8) at the page revision",
+   "blend_matches_recorded_arms": true,
+   "as_drafted": [
+    20.378,
+    21.078
+   ],
+   "blend": [
+    39.183,
+    39.7
+   ],
+   "pair": [
+    41.089,
+    41.306
+   ],
+   "blend_ecw": 5.66,
+   "pair_ecw": 5.715,
+   "moves": [
+    [
+     34,
+     "Jalen Williams",
+     "Derrick White",
+     0.0243
+    ],
+    [
+     63,
+     "Jakob Poeltl",
+     "Payton Pritchard",
+     0.031
+    ]
+   ],
+   "chains_identical": false
+  }
+ ],
+ "means": {
+  "as_drafted_S1": 34.837,
+  "as_drafted_S2": 35.174,
+  "blend_S1": 45.832,
+  "blend_S2": 46.212,
+  "pair_S1": 45.691,
+  "pair_S2": 45.892
+ },
+ "moved_turns": 6,
+ "per_room": {
+  "pair_better_S1": 1,
+  "pair_worse_S1": 1,
+  "pair_better_S2": 1,
+  "pair_worse_S2": 1,
+  "identical": 5
+ },
+ "bar_holds": false,
+ "verdict": "BAR FAILED \u2014 PAIR_MARKER false, advice only"
+}

@@ -1,0 +1,386 @@
+{
+ "mock": 54,
+ "tag": "v28",
+ "page_rev": "b150541",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 38.622,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "as_drafted_S2": {
+   "champ": 39.494,
+   "playoff": 99.99,
+   "rank": 1
+  },
+  "as_drafted_ecw": 5.552,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 49.172,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 49.394,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "blend_ecw": 5.804,
+  "blend_swaps": [
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    135,
+    "Christian Braun"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 49.172,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 49.394,
+   "playoff": 100.0,
+   "rank": 1
+  },
+  "pair_ecw": 5.804,
+  "pair_swaps": [
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    135,
+    "Christian Braun"
+   ]
+  ],
+  "pair_moves": [
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0147,
+    "why": "Derrick White now, Jalen Williams next turn (62% to survive): +0.015 cats/wk over the pair",
+    "rows": [
+     "Jalen Williams",
+     "Derrick White",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.619,
+     0.711,
+     0.889,
+     0.812,
+     0.914
+    ],
+    "next_turn": 39
+   }
+  ],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0708,
+    "why": "#1 survival 0.50 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Jalen Johnson",
+     "Evan Mobley",
+     "Anthony Davis",
+     "Chet Holmgren"
+    ],
+    "surv": [
+     0.5,
+     0.377,
+     0.953,
+     0.977,
+     0.921
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0442,
+    "why": "#1 survival 0.01 below 0.60 \u2014 take him now",
+    "rows": [
+     "Jalen Johnson",
+     "Jamal Murray",
+     "Jalen Williams",
+     "Derrick White",
+     "Austin Reaves"
+    ],
+    "surv": [
+     0.01,
+     0.042,
+     0.755,
+     0.819,
+     0.065
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0147,
+    "why": "Derrick White now, Jalen Williams next turn (62% to survive): +0.015 cats/wk over the pair",
+    "rows": [
+     "Jalen Williams",
+     "Derrick White",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.619,
+     0.711,
+     0.889,
+     0.812,
+     0.914
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0026,
+    "why": "#1 survival 0.12 below 0.60 \u2014 take him now",
+    "rows": [
+     "Jalen Williams",
+     "Desmond Bane",
+     "OG Anunoby",
+     "Kyrie Irving",
+     "Franz Wagner"
+    ],
+    "surv": [
+     0.12,
+     0.379,
+     0.657,
+     0.353,
+     0.39
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "OG Anunoby",
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Johnson"
+    ],
+    "surv": [
+     0.56,
+     0.747,
+     0.584,
+     0.525,
+     0.93
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Payton Pritchard",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Johnson",
+     "De'Aaron Fox"
+    ],
+    "surv": [
+     0.444,
+     0.233,
+     0.178,
+     0.821,
+     0.468
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0044,
+    "why": "pair gain 0.004 below 0.01",
+    "rows": [
+     "Jakob Poeltl",
+     "Tari Eason",
+     "Myles Turner",
+     "Cameron Johnson",
+     "Brook Lopez"
+    ],
+    "surv": [
+     0.829,
+     0.825,
+     0.657,
+     0.78,
+     0.675
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Cameron Johnson",
+     "Jakob Poeltl",
+     "Myles Turner",
+     "Christian Braun",
+     "Kristaps Porzingis"
+    ],
+    "surv": [
+     0.584,
+     0.666,
+     0.407,
+     0.659,
+     0.436
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0074,
+    "why": "pair gain 0.007 below 0.01",
+    "rows": [
+     "Jakob Poeltl",
+     "Cameron Johnson",
+     "Tari Eason",
+     "Christian Braun",
+     "Jordan Poole"
+    ],
+    "surv": [
+     0.614,
+     0.526,
+     0.607,
+     0.608,
+     0.886
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Jakob Poeltl",
+     "Tari Eason",
+     "Christian Braun",
+     "Brook Lopez",
+     "PJ Washington"
+    ],
+    "surv": [
+     0.409,
+     0.4,
+     0.401,
+     0.166,
+     0.365
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0343,
+    "why": "#1 survival 0.35 below 0.60 \u2014 take him now",
+    "rows": [
+     "Tari Eason",
+     "Christian Braun",
+     "Jordan Poole",
+     "Brook Lopez",
+     "Cason Wallace"
+    ],
+    "surv": [
+     0.348,
+     0.349,
+     0.773,
+     0.128,
+     0.312
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Christian Braun",
+     "Jordan Poole",
+     "Brook Lopez",
+     "Collin Gillespie",
+     "Fred VanVleet"
+    ],
+    "surv": [
+     0.181,
+     0.649,
+     0.039,
+     0.184,
+     0.168
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Jordan Poole",
+     "Brook Lopez",
+     "Malik Monk",
+     "Quentin Grimes",
+     "PJ Washington"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}

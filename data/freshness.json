@@ -1,13 +1,13 @@
 {
   "date": "2026-10-01",
-  "note": "D-WO1-1 (d): thirteen wide lines reconciled across the planes; no roster, tag or judgment change; verification re-run direct-complete this evening",
+  "note": "Deck v40 (D59-1, D59-2): the history box re-numbers, re-seats and marks (YOU) after an Insert-at-# and renames a shifted UNKNOWN on both planes; the two-pick target read (pairDecision, hoops.pair_decision twin) ships as advice only \u2014 the pre-registered eight-room replay did not clear the D58-3 bar; no pool, roster, tag or judgment change",
   "pool_changes": {
-    "changed": true,
-    "note": "2026-10-01 third build (D-WO1-1 option d, owner decision): one line on both planes for the thirteen wide rows \u2014 the deck adopts the kit's line on ten (Lillard, Flagg, Grimes, Coward, Mamukelashvili, Dick, Poeltl, Porter Jr., Monk, Bridges) and the kit adopts the deck's on three (Simons, Doncic, Barrett); the plane nearer Hashtag's 9/30 projection on points wins, RotoBaller 9/29 the second outlet; diff in the kit's report/lines_sync_2026-10-01.json"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-10-01",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete re-run 2026-10-01 evening (site.api.espn.com, 30 rosters, 0 mismatches on 333/334); --allow-unmatched for Tony Bradley = NYK camp deal 9/30 not yet on ESPN's feed (RealGM, Hoops Wire, BVM)"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-01 evening stands (site.api.espn.com, 30 rosters, 0 mismatches on 333/334; Tony Bradley exemption) \u2014 no roster row touched by this deck version"
   }
 }

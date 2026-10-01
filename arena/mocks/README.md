@@ -281,6 +281,28 @@ is on the author. See LEDGER §3.
   availability) re-pointed it to mock31 #64 (Zion 0.78, un-vetoed) — 68 of 68. Planes gate after the sync:
   lines 171 (was 184), propagation 0 with the thirteen rows waived by name (`--planes-waive`) at the v39
   build and in `check_planes.py`.
+- **Deck v40 (2026-10-01, D59-1 + D59-2).** Owner proposals from mock 59, red-first on both planes.
+  **D59-1** — `insertPick` (page) and `hoops.insert_pick` rename a shifted standing UNKNOWN to its new
+  number; history pick lines carry {pick, kind, note|raw} and the engine's `relabelLog` re-renders
+  every earlier line from the state after a shift (number, seat, "(YOU)"), reporting picks moved onto /
+  off the owner's seat so the app (`applyShift`) can echo the card as of now. New harness
+  `history_dom_check.mjs <deck.html> <events.json> <state.json> <out.json>` drives the real page through a
+  tool log and asserts the FINAL history: on v39 mock 59's Queta "#105 → Seat 9", Washington "#128 →
+  Seat 8" and "UNKNOWN #125" failed; on v40 19 of 19 checks pass, 0 page errors
+  (`history_dom_check_2026-10-01_v40.json`). Undo of an insert is not built (D40-3). **D59-2** — the
+  two-pick 🎯: engine `pairDecision(rows, surv, decwGiven)` scores pair_i = ΔECW_i + Σ_j s_j·Π(1−s_k)·
+  ΔECW(j|i) + residual over the Top-5 and moves the MARKER (never the blend50 order) when the gain ≥
+  `PAIR_MIN_GAIN` 0.01 and row 1's survival ≥ `PAIR_WAIT_MIN` 0.60; `hoops.pair_decision` is the twin
+  (test_card parity on five fixtures); `PAIR_MARKER` switches marker vs advice-only. **Pre-registered
+  experiment** (`pair_experiment_2026-10-01_design.md`, written first; `live_retro.py <mock> pairarms`
+  per room — survival priced off the page the owner drafted against, baked Yahoo price else the pre-F8
+  market position; `pair_experiment.py` aggregates → `pair_experiment_2026-10-01.json`): eight public
+  rooms (51, 52, 53, 54, 56, 57, 58, 59), blend-🎯 chain vs two-pick-🎯 chain, strict pairwise, real
+  bracket, 6,000 seasons × seed sets (11, 23, 47) and (5, 17, 29). Mean title odds blend 45.83 /
+  46.21 vs pair 45.69 / 45.89; marker moved at 6 turns (mock 53 #15: Austin Reaves now instead of Jalen Williams (+0.045); mock 53 #58: OG Anunoby now instead of Payton Pritchard (+0.010); mock 54 #34: Derrick White now instead of Jalen Williams (+0.015); mock 56 #82: Jakob Poeltl now instead of Tari Eason (+0.061); mock 59 #34: Derrick White now instead of Jalen Williams (+0.024); mock 59 #63: Payton Pritchard now instead of Jakob Poeltl (+0.031));
+  per room pair better 1/1, worse 1/1, identical 5; the blend chain reproduced every
+  room's recorded arms. **Verdict: BAR FAILED — PAIR_MARKER false, advice only** → v40 ships `PAIR_MARKER = false`. Mock 59's #82 by
+  the rule: Bridges-now better by 0.007, under the bar — all five rows were deep (§9b restated).
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
