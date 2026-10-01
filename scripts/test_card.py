@@ -18,7 +18,15 @@ and pins three behaviours the retro found wrong or undefined:
           #34 JJJ 0.78, mock41 #72 Zion 0.78, state_50 #68 no pin). The
           availability branch stays measured on state_54 #34; the behind /
           kept / non-urgent branches are pinned by calling the gate directly
-          (it is a pure function of the read, the card and the pin)
+          (it is a pure function of the read, the card and the pin).
+          Re-pointed again 2026-10-01: D-WO1-1 (d) made thirteen wide lines
+          one line on both planes (Poeltl 14.5 -> 11.5 points among them) and
+          state_54 #34 stopped producing an urgent read. The same scan on the
+          v39 page (16 committed states x 208 owner turns) finds 4 urgent
+          reads: state_52 #63 (no pin), state_57 #39 and state_58 #63
+          (Porzingis 0.78, withheld; vetoed on the owner's pool since 9/28),
+          mock31 #64 (Zion 0.78, withheld). The availability branch now
+          measures on mock31 #64, the un-vetoed example.
   D51R-1R survival refit (2026-09-22): SURVIVAL_DISPLAY is back on, survivalProb
           is the price-only model Phi((price - N) / max(8, 0.30 * price)) on the
           baked Yahoo price, chips BUY NOW <= 0.20 / TOSS-UP < 0.40; and
@@ -100,7 +108,7 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   coherenceRead: typeof coherenceRead === "function" ? coherenceRead : null,
   PUNT_BUTTONS: typeof PUNT_BUTTONS === "undefined" ? null : PUNT_BUTTONS };
 """)
-    probes = [("draft_state_54.json", 34)]
+    probes = [("draft_state_mock31.json", 64)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
     for fn in ("draft_state_51.json", "draft_state_53.json"):  # advisor / veto / clock probes below
         states[fn] = json.load(open(os.path.join(STATES, fn), encoding="utf-8"))
@@ -257,7 +265,7 @@ process.stdout.write(JSON.stringify(out));
     # ---- D51R-4 pin gate
     case("D51R-4 pinDecision exists in the engine block", pres["pinDecision"], "pinDecision absent")
     case("D51R-4 PIN_MAX_GAP is 0.05 cats/wk", js.get("PIN_MAX_GAP") == 0.05, f"got {js.get('PIN_MAX_GAP')}")
-    want = {("draft_state_54.json", 34): (False, "availability")}
+    want = {("draft_state_mock31.json", 64): (False, "availability")}
     got = {(p["fn"], p["pickNo"]): p for p in js.get("pins", [])}
     for key, (tg, frag) in want.items():
         p = got.get(key)
