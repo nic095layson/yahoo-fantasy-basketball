@@ -1,13 +1,13 @@
 {
   "date": "2026-10-02",
-  "note": "refreshed",
+  "note": "refreshed (second pull of 10/2)",
   "pool_changes": {
     "changed": true,
-    "note": "2026-10-02 pull: Dereck Lively II re-tagged foot-recovery (excluded) \u2014 the D-RT3 default from the 10/01 sheet applied at this pull because he is still not cleared (Mavs Moneyball/ESPN, CBS, Yahoo); kit twin GP 25. Dated notes on Duren (deadline passed, outcome unreported), Konchar (Knicks stint 9/15-9/30), Herro (full participant after an April foot procedure), Bona, Mikel Brown Jr., Beal, Knueppel. No placement moved; no trades in the window (Basketball-Reference 2026-27 transactions, direct)"
+    "note": "2026-10-02 second pull (Friday morning): Jalen Duren re-signed \u2014 the fully guaranteed 5yr/$200M deal agreed about 90 minutes before the 10/1 qualifying-offer deadline (Shams Charania and Chris Haynes via NBA.com 10/2, Yahoo, Hoops Rumors, ClickOnDetroit); holdout note and judgment card retired, contract only. Dated notes on Lendeborg (starts the 10/4 preseason opener), Isaiah Jackson / Brook Lopez / Max Strus (the Clippers' camp first unit), Dru Smith (calf, a couple of weeks), Mikel Brown Jr. (not cleared for contact), Rollins (Jenkins rotating starting groups). No placement, tag or line moved; no trades in the window (Basketball-Reference 2026-27 transactions, direct)"
   },
   "rosters_verified": {
     "date": "2026-10-02",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-02 (site.api.espn.com, all 30 rosters); --allow-unmatched for Tony Bradley (NYK Exhibit 9 deal 9/30 \u2014 Hoops Rumors, Yardbarker, Daily Knicks \u2014 not yet on ESPN's feed)"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-02, second pull (site.api.espn.com, all 30 rosters); --allow-unmatched for Tony Bradley (NYK Exhibit 9 deal 9/30 \u2014 Hoops Rumors, Yardbarker, Daily Knicks \u2014 not yet on ESPN's feed)"
   }
 }
