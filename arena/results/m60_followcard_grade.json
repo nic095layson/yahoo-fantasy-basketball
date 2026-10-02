@@ -1,0 +1,693 @@
+{
+ "as drafted": {
+  "ecw": 5.419,
+  "rank": 1,
+  "next": 4.935,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 6,
+   "REB": 8,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 33.02,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": [],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.676,
+  "rank": 1,
+  "next": 4.933,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 6,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 43.14,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Mikal Bridges"
+   ],
+   [
+    106,
+    "Daniel Gafford"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Jamal Murray",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Zach LaVine",
+   "Mikal Bridges",
+   "Daniel Gafford",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "card at #15 only (Jalen Williams up, Durant to #34)": {
+  "ecw": 5.419,
+  "rank": 1,
+  "next": 4.935,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 6,
+   "REB": 8,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 33.02,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jalen Williams"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Jalen Williams",
+   "Kevin Durant",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "card at #106 only (PJ Washington up, Murray-Boyles to #130)": {
+  "ecw": 5.419,
+  "rank": 1,
+  "next": 4.935,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 6,
+   "REB": 8,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 33.02,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "PJ Washington"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Collin Murray-Boyles",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "advice line at #15 (Jamal Murray now; Derrick White came at #39 as drafted)": {
+  "ecw": 5.411,
+  "rank": 1,
+  "next": 4.939,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 8,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 6,
+   "REB": 10,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 9,
+   "TO": 2
+  },
+  "champ": 32.31,
+  "playoff": 99.74,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Jamal Murray",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 5.493,
+  "rank": 1,
+  "next": 4.926,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 8,
+   "3PTM": 3,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 8,
+   "3PTM": 4,
+   "PTS": 8,
+   "REB": 4,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "champ": 35.98,
+  "playoff": 99.89,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Chet Holmgren",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Anthony Davis at #34": {
+  "ecw": 5.495,
+  "rank": 1,
+  "next": 4.934,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 2,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 5,
+   "REB": 1,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 2
+  },
+  "champ": 36.63,
+  "playoff": 99.91,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Anthony Davis"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Anthony Davis at #39": {
+  "ecw": 5.419,
+  "rank": 1,
+  "next": 4.939,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 7,
+   "3PTM": 6,
+   "PTS": 2,
+   "REB": 2,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 7,
+   "3PTM": 6,
+   "PTS": 5,
+   "REB": 1,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "champ": 35.09,
+  "playoff": 99.82,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Anthony Davis"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Anthony Davis",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Zach LaVine at #82": {
+  "ecw": 5.423,
+  "rank": 1,
+  "next": 4.937,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 1,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 7
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 4
+  },
+  "champ": 33.91,
+  "playoff": 99.85,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Zach LaVine"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Zach LaVine",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Isaiah Hartenstein at #87": {
+  "ecw": 5.456,
+  "rank": 1,
+  "next": 4.926,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 7,
+   "3PTM": 4,
+   "PTS": 4,
+   "REB": 4,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 7,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 4,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 2
+  },
+  "champ": 34.77,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Isaiah Hartenstein"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Isaiah Hartenstein",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Daniel Gafford at #106": {
+  "ecw": 5.6,
+  "rank": 1,
+  "next": 4.927,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 2
+  },
+  "champ": 39.49,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Daniel Gafford"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Daniel Gafford",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Kyle Filipowski at #135": {
+  "ecw": 5.429,
+  "rank": 1,
+  "next": 4.935,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 33.36,
+  "playoff": 99.84,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Kyle Filipowski"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Kyle Filipowski",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Kyle Filipowski at #154": {
+  "ecw": 5.438,
+  "rank": 1,
+  "next": 4.931,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 7,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 2,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 7,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 3,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 2
+  },
+  "champ": 34.04,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Derrick White",
+   "Dyson Daniels",
+   "Tyler Herro",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Collin Murray-Boyles",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Kyle Filipowski"
+  ]
+ }
+}
