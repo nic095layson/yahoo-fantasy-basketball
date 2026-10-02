@@ -1,0 +1,6316 @@
+{
+ "date": "2026-10-01",
+ "decision": "D40-2",
+ "window": 60,
+ "ranks": 199,
+ "picks": 156,
+ "matched": 154,
+ "unmatched": [
+  {
+   "pick": 139,
+   "player": "Nikola Jovi\u0107",
+   "manager": "Kyle"
+  },
+  {
+   "pick": 155,
+   "player": "Jayson Tatum",
+   "manager": "Cayas"
+  }
+ ],
+ "owner_turns": [
+  4,
+  21,
+  28,
+  45,
+  52,
+  69,
+  76,
+  93,
+  100,
+  117,
+  124,
+  141,
+  148
+ ],
+ "shipped": {
+  "k": 0.3,
+  "floor": 8
+ },
+ "main": {
+  "rows": 719,
+  "realized": 0.821,
+  "base_rate_brier": 0.1472,
+  "shipped_brier": 0.145,
+  "grid_best": [
+   [
+    0.1397,
+    0.2,
+    16
+   ],
+   [
+    0.1401,
+    0.15,
+    16
+   ],
+   [
+    0.1401,
+    0.2,
+    12
+   ],
+   [
+    0.1405,
+    0.2,
+    10
+   ],
+   [
+    0.1407,
+    0.15,
+    12
+   ],
+   [
+    0.1412,
+    0.2,
+    8
+   ]
+  ],
+  "loto": [
+   {
+    "turn": 4,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.0895,
+    "shipped_brier": 0.0785
+   },
+   {
+    "turn": 21,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.0785,
+    "shipped_brier": 0.0813
+   },
+   {
+    "turn": 28,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.1052,
+    "shipped_brier": 0.1121
+   },
+   {
+    "turn": 45,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.0977,
+    "shipped_brier": 0.1082
+   },
+   {
+    "turn": 52,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.1516,
+    "shipped_brier": 0.1616
+   },
+   {
+    "turn": 69,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.0955,
+    "shipped_brier": 0.1106
+   },
+   {
+    "turn": 76,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.1288,
+    "shipped_brier": 0.1448
+   },
+   {
+    "turn": 93,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.1072,
+    "shipped_brier": 0.1237
+   },
+   {
+    "turn": 100,
+    "k": 0.15,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.2089,
+    "shipped_brier": 0.2009
+   },
+   {
+    "turn": 117,
+    "k": 0.2,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.1533,
+    "shipped_brier": 0.1624
+   },
+   {
+    "turn": 124,
+    "k": 0.15,
+    "floor": 16,
+    "n": 60,
+    "test_brier": 0.2255,
+    "shipped_brier": 0.2182
+   },
+   {
+    "turn": 141,
+    "k": 0.15,
+    "floor": 16,
+    "n": 59,
+    "test_brier": 0.2582,
+    "shipped_brier": 0.2391
+   }
+  ],
+  "loto_fit_brier": 0.1417,
+  "loto_shipped_brier": 0.1451,
+  "bands_shipped": [
+   {
+    "band": "[0,0.2)",
+    "n": 53,
+    "mean_pred": 0.087,
+    "realized": 0.396
+   },
+   {
+    "band": "[0.2,0.4)",
+    "n": 69,
+    "mean_pred": 0.306,
+    "realized": 0.522
+   },
+   {
+    "band": "[0.4,0.6)",
+    "n": 116,
+    "mean_pred": 0.514,
+    "realized": 0.741
+   },
+   {
+    "band": "[0.6,0.8)",
+    "n": 240,
+    "mean_pred": 0.713,
+    "realized": 0.875
+   },
+   {
+    "band": "[0.8,1.0)",
+    "n": 241,
+    "mean_pred": 0.893,
+    "realized": 0.983
+   }
+  ],
+  "bands_best": [
+   {
+    "band": "[0,0.2)",
+    "n": 58,
+    "mean_pred": 0.105,
+    "realized": 0.534
+   },
+   {
+    "band": "[0.2,0.4)",
+    "n": 70,
+    "mean_pred": 0.307,
+    "realized": 0.414
+   },
+   {
+    "band": "[0.4,0.6)",
+    "n": 92,
+    "mean_pred": 0.509,
+    "realized": 0.75
+   },
+   {
+    "band": "[0.6,0.8)",
+    "n": 151,
+    "mean_pred": 0.711,
+    "realized": 0.815
+   },
+   {
+    "band": "[0.8,1.0)",
+    "n": 348,
+    "mean_pred": 0.913,
+    "realized": 0.971
+   }
+  ],
+  "chips_shipped": {
+   "BUY NOW (<=0.20)": {
+    "n": 53,
+    "alive": 21,
+    "mean_pred": 0.087
+   },
+   "TOSS-UP (0.20-0.40)": {
+    "n": 69,
+    "alive": 36,
+    "mean_pred": 0.306
+   },
+   "quiet (>=0.60)": {
+    "n": 481,
+    "alive": 447,
+    "mean_pred": 0.803
+   }
+  },
+  "deep_rows": {
+   "n": 434,
+   "alive": 407,
+   "mean_pred": 0.813
+  }
+ },
+ "rows_main": [
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Giannis Antetokounmpo",
+   "rank": 5,
+   "drafted_at": 5,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Cade Cunningham",
+   "rank": 6,
+   "drafted_at": 8,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Anthony Edwards",
+   "rank": 7,
+   "drafted_at": 6,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Devin Booker",
+   "rank": 8,
+   "drafted_at": 10,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Trae Young",
+   "rank": 9,
+   "drafted_at": 11,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "James Harden",
+   "rank": 10,
+   "drafted_at": 15,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Anthony Davis",
+   "rank": 11,
+   "drafted_at": 9,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Stephen Curry",
+   "rank": 12,
+   "drafted_at": 17,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Kevin Durant",
+   "rank": 13,
+   "drafted_at": 20,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Karl-Anthony Towns",
+   "rank": 14,
+   "drafted_at": 7,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Donovan Mitchell",
+   "rank": 15,
+   "drafted_at": 18,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Tyrese Maxey",
+   "rank": 16,
+   "drafted_at": 16,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Evan Mobley",
+   "rank": 17,
+   "drafted_at": 19,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Amen Thompson",
+   "rank": 18,
+   "drafted_at": 22,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jalen Brunson",
+   "rank": 19,
+   "drafted_at": 21,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Alperen Sengun",
+   "rank": 20,
+   "drafted_at": 23,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Chet Holmgren",
+   "rank": 21,
+   "drafted_at": 31,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jalen Johnson",
+   "rank": 22,
+   "drafted_at": 27,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "LaMelo Ball",
+   "rank": 23,
+   "drafted_at": 32,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jaylen Brown",
+   "rank": 24,
+   "drafted_at": 36,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Scottie Barnes",
+   "rank": 25,
+   "drafted_at": 33,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Josh Giddey",
+   "rank": 26,
+   "drafted_at": 24,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jaren Jackson Jr.",
+   "rank": 27,
+   "drafted_at": 28,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jalen Williams",
+   "rank": 28,
+   "drafted_at": 14,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Pascal Siakam",
+   "rank": 29,
+   "drafted_at": 41,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jamal Murray",
+   "rank": 30,
+   "drafted_at": 45,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Derrick White",
+   "rank": 31,
+   "drafted_at": 38,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Bam Adebayo",
+   "rank": 32,
+   "drafted_at": 13,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Franz Wagner",
+   "rank": 33,
+   "drafted_at": 35,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Domantas Sabonis",
+   "rank": 34,
+   "drafted_at": 12,
+   "alive": false
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "LeBron James",
+   "rank": 35,
+   "drafted_at": 26,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Ivica Zubac",
+   "rank": 36,
+   "drafted_at": 43,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "De'Aaron Fox",
+   "rank": 37,
+   "drafted_at": 59,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Desmond Bane",
+   "rank": 38,
+   "drafted_at": 50,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Trey Murphy III",
+   "rank": 39,
+   "drafted_at": 40,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Paolo Banchero",
+   "rank": 40,
+   "drafted_at": 39,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Kawhi Leonard",
+   "rank": 41,
+   "drafted_at": 76,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Zion Williamson",
+   "rank": 42,
+   "drafted_at": 25,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Dyson Daniels",
+   "rank": 43,
+   "drafted_at": 30,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Myles Turner",
+   "rank": 44,
+   "drafted_at": 42,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Kristaps Porzingis",
+   "rank": 45,
+   "drafted_at": 69,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Joel Embiid",
+   "rank": 46,
+   "drafted_at": 75,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Ja Morant",
+   "rank": 47,
+   "drafted_at": 48,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Austin Reaves",
+   "rank": 48,
+   "drafted_at": 29,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Deni Avdija",
+   "rank": 49,
+   "drafted_at": 53,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Brandon Miller",
+   "rank": 50,
+   "drafted_at": 44,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jimmy Butler III",
+   "rank": 51,
+   "drafted_at": 47,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Lauri Markkanen",
+   "rank": 52,
+   "drafted_at": 54,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Cooper Flagg",
+   "rank": 53,
+   "drafted_at": 34,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jalen Duren",
+   "rank": 54,
+   "drafted_at": 46,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Miles Bridges",
+   "rank": 55,
+   "drafted_at": 57,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Nikola Vucevic",
+   "rank": 56,
+   "drafted_at": 62,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Darius Garland",
+   "rank": 57,
+   "drafted_at": 71,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "DeMar DeRozan",
+   "rank": 58,
+   "drafted_at": 65,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Walker Kessler",
+   "rank": 59,
+   "drafted_at": 66,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jarrett Allen",
+   "rank": 60,
+   "drafted_at": 37,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Zach LaVine",
+   "rank": 61,
+   "drafted_at": 60,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Jordan Poole",
+   "rank": 62,
+   "drafted_at": 79,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Coby White",
+   "rank": 63,
+   "drafted_at": 55,
+   "alive": true
+  },
+  {
+   "turn": 4,
+   "next": 21,
+   "name": "Payton Pritchard",
+   "rank": 64,
+   "drafted_at": 56,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Amen Thompson",
+   "rank": 18,
+   "drafted_at": 22,
+   "alive": false
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Alperen Sengun",
+   "rank": 20,
+   "drafted_at": 23,
+   "alive": false
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Chet Holmgren",
+   "rank": 21,
+   "drafted_at": 31,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jalen Johnson",
+   "rank": 22,
+   "drafted_at": 27,
+   "alive": false
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "LaMelo Ball",
+   "rank": 23,
+   "drafted_at": 32,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jaylen Brown",
+   "rank": 24,
+   "drafted_at": 36,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Scottie Barnes",
+   "rank": 25,
+   "drafted_at": 33,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Josh Giddey",
+   "rank": 26,
+   "drafted_at": 24,
+   "alive": false
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jaren Jackson Jr.",
+   "rank": 27,
+   "drafted_at": 28,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Pascal Siakam",
+   "rank": 29,
+   "drafted_at": 41,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jamal Murray",
+   "rank": 30,
+   "drafted_at": 45,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Derrick White",
+   "rank": 31,
+   "drafted_at": 38,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Franz Wagner",
+   "rank": 33,
+   "drafted_at": 35,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "LeBron James",
+   "rank": 35,
+   "drafted_at": 26,
+   "alive": false
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Ivica Zubac",
+   "rank": 36,
+   "drafted_at": 43,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "De'Aaron Fox",
+   "rank": 37,
+   "drafted_at": 59,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Desmond Bane",
+   "rank": 38,
+   "drafted_at": 50,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Trey Murphy III",
+   "rank": 39,
+   "drafted_at": 40,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Paolo Banchero",
+   "rank": 40,
+   "drafted_at": 39,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Kawhi Leonard",
+   "rank": 41,
+   "drafted_at": 76,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Zion Williamson",
+   "rank": 42,
+   "drafted_at": 25,
+   "alive": false
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Dyson Daniels",
+   "rank": 43,
+   "drafted_at": 30,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Myles Turner",
+   "rank": 44,
+   "drafted_at": 42,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Kristaps Porzingis",
+   "rank": 45,
+   "drafted_at": 69,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Joel Embiid",
+   "rank": 46,
+   "drafted_at": 75,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Ja Morant",
+   "rank": 47,
+   "drafted_at": 48,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Austin Reaves",
+   "rank": 48,
+   "drafted_at": 29,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Deni Avdija",
+   "rank": 49,
+   "drafted_at": 53,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Brandon Miller",
+   "rank": 50,
+   "drafted_at": 44,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jimmy Butler III",
+   "rank": 51,
+   "drafted_at": 47,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Lauri Markkanen",
+   "rank": 52,
+   "drafted_at": 54,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Cooper Flagg",
+   "rank": 53,
+   "drafted_at": 34,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jalen Duren",
+   "rank": 54,
+   "drafted_at": 46,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Miles Bridges",
+   "rank": 55,
+   "drafted_at": 57,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Nikola Vucevic",
+   "rank": 56,
+   "drafted_at": 62,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Darius Garland",
+   "rank": 57,
+   "drafted_at": 71,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "DeMar DeRozan",
+   "rank": 58,
+   "drafted_at": 65,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Walker Kessler",
+   "rank": 59,
+   "drafted_at": 66,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jarrett Allen",
+   "rank": 60,
+   "drafted_at": 37,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Zach LaVine",
+   "rank": 61,
+   "drafted_at": 60,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jordan Poole",
+   "rank": 62,
+   "drafted_at": 79,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Coby White",
+   "rank": 63,
+   "drafted_at": 55,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Payton Pritchard",
+   "rank": 64,
+   "drafted_at": 56,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Deandre Ayton",
+   "rank": 65,
+   "drafted_at": 49,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Julius Randle",
+   "rank": 66,
+   "drafted_at": 64,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Brandon Ingram",
+   "rank": 67,
+   "drafted_at": 51,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Isaiah Hartenstein",
+   "rank": 69,
+   "drafted_at": 94,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Andrew Nembhard",
+   "rank": 70,
+   "drafted_at": 70,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Rudy Gobert",
+   "rank": 71,
+   "drafted_at": 74,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Cam Thomas",
+   "rank": 72,
+   "drafted_at": 83,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Jalen Green",
+   "rank": 73,
+   "drafted_at": 61,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "OG Anunoby",
+   "rank": 74,
+   "drafted_at": 52,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Ausar Thompson",
+   "rank": 75,
+   "drafted_at": 58,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Immanuel Quickley",
+   "rank": 76,
+   "drafted_at": 72,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Michael Porter Jr.",
+   "rank": 77,
+   "drafted_at": 80,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Mikal Bridges",
+   "rank": 78,
+   "drafted_at": 90,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Paul George",
+   "rank": 79,
+   "drafted_at": 86,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Christian Braun",
+   "rank": 80,
+   "drafted_at": 85,
+   "alive": true
+  },
+  {
+   "turn": 21,
+   "next": 28,
+   "name": "Shaedon Sharpe",
+   "rank": 81,
+   "drafted_at": 67,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Chet Holmgren",
+   "rank": 21,
+   "drafted_at": 31,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "LaMelo Ball",
+   "rank": 23,
+   "drafted_at": 32,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jaylen Brown",
+   "rank": 24,
+   "drafted_at": 36,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Scottie Barnes",
+   "rank": 25,
+   "drafted_at": 33,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Pascal Siakam",
+   "rank": 29,
+   "drafted_at": 41,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jamal Murray",
+   "rank": 30,
+   "drafted_at": 45,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Derrick White",
+   "rank": 31,
+   "drafted_at": 38,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Franz Wagner",
+   "rank": 33,
+   "drafted_at": 35,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Ivica Zubac",
+   "rank": 36,
+   "drafted_at": 43,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "De'Aaron Fox",
+   "rank": 37,
+   "drafted_at": 59,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Desmond Bane",
+   "rank": 38,
+   "drafted_at": 50,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Trey Murphy III",
+   "rank": 39,
+   "drafted_at": 40,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Paolo Banchero",
+   "rank": 40,
+   "drafted_at": 39,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Kawhi Leonard",
+   "rank": 41,
+   "drafted_at": 76,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Dyson Daniels",
+   "rank": 43,
+   "drafted_at": 30,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Myles Turner",
+   "rank": 44,
+   "drafted_at": 42,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Kristaps Porzingis",
+   "rank": 45,
+   "drafted_at": 69,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Joel Embiid",
+   "rank": 46,
+   "drafted_at": 75,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Ja Morant",
+   "rank": 47,
+   "drafted_at": 48,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Austin Reaves",
+   "rank": 48,
+   "drafted_at": 29,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Deni Avdija",
+   "rank": 49,
+   "drafted_at": 53,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Brandon Miller",
+   "rank": 50,
+   "drafted_at": 44,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jimmy Butler III",
+   "rank": 51,
+   "drafted_at": 47,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Lauri Markkanen",
+   "rank": 52,
+   "drafted_at": 54,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Cooper Flagg",
+   "rank": 53,
+   "drafted_at": 34,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jalen Duren",
+   "rank": 54,
+   "drafted_at": 46,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Miles Bridges",
+   "rank": 55,
+   "drafted_at": 57,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Nikola Vucevic",
+   "rank": 56,
+   "drafted_at": 62,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Darius Garland",
+   "rank": 57,
+   "drafted_at": 71,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "DeMar DeRozan",
+   "rank": 58,
+   "drafted_at": 65,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Walker Kessler",
+   "rank": 59,
+   "drafted_at": 66,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jarrett Allen",
+   "rank": 60,
+   "drafted_at": 37,
+   "alive": false
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Zach LaVine",
+   "rank": 61,
+   "drafted_at": 60,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jordan Poole",
+   "rank": 62,
+   "drafted_at": 79,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Coby White",
+   "rank": 63,
+   "drafted_at": 55,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Payton Pritchard",
+   "rank": 64,
+   "drafted_at": 56,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Deandre Ayton",
+   "rank": 65,
+   "drafted_at": 49,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Julius Randle",
+   "rank": 66,
+   "drafted_at": 64,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Brandon Ingram",
+   "rank": 67,
+   "drafted_at": 51,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Isaiah Hartenstein",
+   "rank": 69,
+   "drafted_at": 94,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Andrew Nembhard",
+   "rank": 70,
+   "drafted_at": 70,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Rudy Gobert",
+   "rank": 71,
+   "drafted_at": 74,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Cam Thomas",
+   "rank": 72,
+   "drafted_at": 83,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jalen Green",
+   "rank": 73,
+   "drafted_at": 61,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "OG Anunoby",
+   "rank": 74,
+   "drafted_at": 52,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Ausar Thompson",
+   "rank": 75,
+   "drafted_at": 58,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Immanuel Quickley",
+   "rank": 76,
+   "drafted_at": 72,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Michael Porter Jr.",
+   "rank": 77,
+   "drafted_at": 80,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Mikal Bridges",
+   "rank": 78,
+   "drafted_at": 90,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Paul George",
+   "rank": 79,
+   "drafted_at": 86,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Christian Braun",
+   "rank": 80,
+   "drafted_at": 85,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Shaedon Sharpe",
+   "rank": 81,
+   "drafted_at": 67,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Matas Buzelis",
+   "rank": 82,
+   "drafted_at": 77,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "John Collins",
+   "rank": 83,
+   "drafted_at": 78,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Bennedict Mathurin",
+   "rank": 84,
+   "drafted_at": 63,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Anfernee Simons",
+   "rank": 86,
+   "drafted_at": 91,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Jakob Poeltl",
+   "rank": 87,
+   "drafted_at": 81,
+   "alive": true
+  },
+  {
+   "turn": 28,
+   "next": 45,
+   "name": "Mark Williams",
+   "rank": 88,
+   "drafted_at": 68,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "De'Aaron Fox",
+   "rank": 37,
+   "drafted_at": 59,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Desmond Bane",
+   "rank": 38,
+   "drafted_at": 50,
+   "alive": false
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Kawhi Leonard",
+   "rank": 41,
+   "drafted_at": 76,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Kristaps Porzingis",
+   "rank": 45,
+   "drafted_at": 69,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Joel Embiid",
+   "rank": 46,
+   "drafted_at": 75,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Ja Morant",
+   "rank": 47,
+   "drafted_at": 48,
+   "alive": false
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Deni Avdija",
+   "rank": 49,
+   "drafted_at": 53,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Jimmy Butler III",
+   "rank": 51,
+   "drafted_at": 47,
+   "alive": false
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Lauri Markkanen",
+   "rank": 52,
+   "drafted_at": 54,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Jalen Duren",
+   "rank": 54,
+   "drafted_at": 46,
+   "alive": false
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Miles Bridges",
+   "rank": 55,
+   "drafted_at": 57,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Nikola Vucevic",
+   "rank": 56,
+   "drafted_at": 62,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Darius Garland",
+   "rank": 57,
+   "drafted_at": 71,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "DeMar DeRozan",
+   "rank": 58,
+   "drafted_at": 65,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Walker Kessler",
+   "rank": 59,
+   "drafted_at": 66,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Zach LaVine",
+   "rank": 61,
+   "drafted_at": 60,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Jordan Poole",
+   "rank": 62,
+   "drafted_at": 79,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Coby White",
+   "rank": 63,
+   "drafted_at": 55,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Payton Pritchard",
+   "rank": 64,
+   "drafted_at": 56,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Deandre Ayton",
+   "rank": 65,
+   "drafted_at": 49,
+   "alive": false
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Julius Randle",
+   "rank": 66,
+   "drafted_at": 64,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Brandon Ingram",
+   "rank": 67,
+   "drafted_at": 51,
+   "alive": false
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Isaiah Hartenstein",
+   "rank": 69,
+   "drafted_at": 94,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Andrew Nembhard",
+   "rank": 70,
+   "drafted_at": 70,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Rudy Gobert",
+   "rank": 71,
+   "drafted_at": 74,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Cam Thomas",
+   "rank": 72,
+   "drafted_at": 83,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Jalen Green",
+   "rank": 73,
+   "drafted_at": 61,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "OG Anunoby",
+   "rank": 74,
+   "drafted_at": 52,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Ausar Thompson",
+   "rank": 75,
+   "drafted_at": 58,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Immanuel Quickley",
+   "rank": 76,
+   "drafted_at": 72,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Michael Porter Jr.",
+   "rank": 77,
+   "drafted_at": 80,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Mikal Bridges",
+   "rank": 78,
+   "drafted_at": 90,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Paul George",
+   "rank": 79,
+   "drafted_at": 86,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Christian Braun",
+   "rank": 80,
+   "drafted_at": 85,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Shaedon Sharpe",
+   "rank": 81,
+   "drafted_at": 67,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Matas Buzelis",
+   "rank": 82,
+   "drafted_at": 77,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "John Collins",
+   "rank": 83,
+   "drafted_at": 78,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Bennedict Mathurin",
+   "rank": 84,
+   "drafted_at": 63,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Anfernee Simons",
+   "rank": 86,
+   "drafted_at": 91,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Jakob Poeltl",
+   "rank": 87,
+   "drafted_at": 81,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Mark Williams",
+   "rank": 88,
+   "drafted_at": 68,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Toumani Camara",
+   "rank": 89,
+   "drafted_at": 97,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Josh Hart",
+   "rank": 90,
+   "drafted_at": 88,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Alex Sarr",
+   "rank": 91,
+   "drafted_at": 73,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Donovan Clingan",
+   "rank": 92,
+   "drafted_at": 93,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Tari Eason",
+   "rank": 93,
+   "drafted_at": 100,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Jalen Suggs",
+   "rank": 94,
+   "drafted_at": 118,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Naz Reid",
+   "rank": 95,
+   "drafted_at": 87,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Devin Vassell",
+   "rank": 97,
+   "drafted_at": 84,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Bradley Beal",
+   "rank": 98,
+   "drafted_at": 109,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Cameron Johnson",
+   "rank": 99,
+   "drafted_at": 99,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Kel'el Ware",
+   "rank": 100,
+   "drafted_at": 89,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Onyeka Okongwu",
+   "rank": 101,
+   "drafted_at": 92,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Tobias Harris",
+   "rank": 102,
+   "drafted_at": 112,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "CJ McCollum",
+   "rank": 103,
+   "drafted_at": 115,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Andrew Wiggins",
+   "rank": 104,
+   "drafted_at": 96,
+   "alive": true
+  },
+  {
+   "turn": 45,
+   "next": 52,
+   "name": "Jrue Holiday",
+   "rank": 105,
+   "drafted_at": 95,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "De'Aaron Fox",
+   "rank": 37,
+   "drafted_at": 59,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Kawhi Leonard",
+   "rank": 41,
+   "drafted_at": 76,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Kristaps Porzingis",
+   "rank": 45,
+   "drafted_at": 69,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Joel Embiid",
+   "rank": 46,
+   "drafted_at": 75,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Deni Avdija",
+   "rank": 49,
+   "drafted_at": 53,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Lauri Markkanen",
+   "rank": 52,
+   "drafted_at": 54,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Miles Bridges",
+   "rank": 55,
+   "drafted_at": 57,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Nikola Vucevic",
+   "rank": 56,
+   "drafted_at": 62,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Darius Garland",
+   "rank": 57,
+   "drafted_at": 71,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "DeMar DeRozan",
+   "rank": 58,
+   "drafted_at": 65,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Walker Kessler",
+   "rank": 59,
+   "drafted_at": 66,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Zach LaVine",
+   "rank": 61,
+   "drafted_at": 60,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Jordan Poole",
+   "rank": 62,
+   "drafted_at": 79,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Coby White",
+   "rank": 63,
+   "drafted_at": 55,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Payton Pritchard",
+   "rank": 64,
+   "drafted_at": 56,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Julius Randle",
+   "rank": 66,
+   "drafted_at": 64,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Isaiah Hartenstein",
+   "rank": 69,
+   "drafted_at": 94,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Andrew Nembhard",
+   "rank": 70,
+   "drafted_at": 70,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Rudy Gobert",
+   "rank": 71,
+   "drafted_at": 74,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Cam Thomas",
+   "rank": 72,
+   "drafted_at": 83,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Jalen Green",
+   "rank": 73,
+   "drafted_at": 61,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Ausar Thompson",
+   "rank": 75,
+   "drafted_at": 58,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Immanuel Quickley",
+   "rank": 76,
+   "drafted_at": 72,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Michael Porter Jr.",
+   "rank": 77,
+   "drafted_at": 80,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Mikal Bridges",
+   "rank": 78,
+   "drafted_at": 90,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Paul George",
+   "rank": 79,
+   "drafted_at": 86,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Christian Braun",
+   "rank": 80,
+   "drafted_at": 85,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Shaedon Sharpe",
+   "rank": 81,
+   "drafted_at": 67,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Matas Buzelis",
+   "rank": 82,
+   "drafted_at": 77,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "John Collins",
+   "rank": 83,
+   "drafted_at": 78,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Bennedict Mathurin",
+   "rank": 84,
+   "drafted_at": 63,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Anfernee Simons",
+   "rank": 86,
+   "drafted_at": 91,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Jakob Poeltl",
+   "rank": 87,
+   "drafted_at": 81,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Mark Williams",
+   "rank": 88,
+   "drafted_at": 68,
+   "alive": false
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Toumani Camara",
+   "rank": 89,
+   "drafted_at": 97,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Josh Hart",
+   "rank": 90,
+   "drafted_at": 88,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Alex Sarr",
+   "rank": 91,
+   "drafted_at": 73,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Donovan Clingan",
+   "rank": 92,
+   "drafted_at": 93,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Tari Eason",
+   "rank": 93,
+   "drafted_at": 100,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Jalen Suggs",
+   "rank": 94,
+   "drafted_at": 118,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Naz Reid",
+   "rank": 95,
+   "drafted_at": 87,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Devin Vassell",
+   "rank": 97,
+   "drafted_at": 84,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Bradley Beal",
+   "rank": 98,
+   "drafted_at": 109,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Cameron Johnson",
+   "rank": 99,
+   "drafted_at": 99,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Kel'el Ware",
+   "rank": 100,
+   "drafted_at": 89,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Onyeka Okongwu",
+   "rank": 101,
+   "drafted_at": 92,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Tobias Harris",
+   "rank": 102,
+   "drafted_at": 112,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "CJ McCollum",
+   "rank": 103,
+   "drafted_at": 115,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Andrew Wiggins",
+   "rank": 104,
+   "drafted_at": 96,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Jrue Holiday",
+   "rank": 105,
+   "drafted_at": 95,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "D'Angelo Russell",
+   "rank": 107,
+   "drafted_at": 119,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Kevin Porter Jr.",
+   "rank": 108,
+   "drafted_at": 120,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Herbert Jones",
+   "rank": 109,
+   "drafted_at": 117,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Santi Aldama",
+   "rank": 110,
+   "drafted_at": 102,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Nic Claxton",
+   "rank": 111,
+   "drafted_at": 98,
+   "alive": true
+  },
+  {
+   "turn": 52,
+   "next": 69,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Kawhi Leonard",
+   "rank": 41,
+   "drafted_at": 76,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Joel Embiid",
+   "rank": 46,
+   "drafted_at": 75,
+   "alive": false
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Darius Garland",
+   "rank": 57,
+   "drafted_at": 71,
+   "alive": false
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Jordan Poole",
+   "rank": 62,
+   "drafted_at": 79,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Isaiah Hartenstein",
+   "rank": 69,
+   "drafted_at": 94,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Andrew Nembhard",
+   "rank": 70,
+   "drafted_at": 70,
+   "alive": false
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Rudy Gobert",
+   "rank": 71,
+   "drafted_at": 74,
+   "alive": false
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Cam Thomas",
+   "rank": 72,
+   "drafted_at": 83,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Immanuel Quickley",
+   "rank": 76,
+   "drafted_at": 72,
+   "alive": false
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Michael Porter Jr.",
+   "rank": 77,
+   "drafted_at": 80,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Mikal Bridges",
+   "rank": 78,
+   "drafted_at": 90,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Paul George",
+   "rank": 79,
+   "drafted_at": 86,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Christian Braun",
+   "rank": 80,
+   "drafted_at": 85,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Matas Buzelis",
+   "rank": 82,
+   "drafted_at": 77,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "John Collins",
+   "rank": 83,
+   "drafted_at": 78,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Anfernee Simons",
+   "rank": 86,
+   "drafted_at": 91,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Jakob Poeltl",
+   "rank": 87,
+   "drafted_at": 81,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Toumani Camara",
+   "rank": 89,
+   "drafted_at": 97,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Josh Hart",
+   "rank": 90,
+   "drafted_at": 88,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Alex Sarr",
+   "rank": 91,
+   "drafted_at": 73,
+   "alive": false
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Donovan Clingan",
+   "rank": 92,
+   "drafted_at": 93,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Tari Eason",
+   "rank": 93,
+   "drafted_at": 100,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Jalen Suggs",
+   "rank": 94,
+   "drafted_at": 118,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Naz Reid",
+   "rank": 95,
+   "drafted_at": 87,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Devin Vassell",
+   "rank": 97,
+   "drafted_at": 84,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Bradley Beal",
+   "rank": 98,
+   "drafted_at": 109,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Cameron Johnson",
+   "rank": 99,
+   "drafted_at": 99,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Kel'el Ware",
+   "rank": 100,
+   "drafted_at": 89,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Onyeka Okongwu",
+   "rank": 101,
+   "drafted_at": 92,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Tobias Harris",
+   "rank": 102,
+   "drafted_at": 112,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "CJ McCollum",
+   "rank": 103,
+   "drafted_at": 115,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Andrew Wiggins",
+   "rank": 104,
+   "drafted_at": 96,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Jrue Holiday",
+   "rank": 105,
+   "drafted_at": 95,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "D'Angelo Russell",
+   "rank": 107,
+   "drafted_at": 119,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Kevin Porter Jr.",
+   "rank": 108,
+   "drafted_at": 120,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Herbert Jones",
+   "rank": 109,
+   "drafted_at": 117,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Santi Aldama",
+   "rank": 110,
+   "drafted_at": 102,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Nic Claxton",
+   "rank": 111,
+   "drafted_at": 98,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Donte DiVincenzo",
+   "rank": 113,
+   "drafted_at": 141,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "RJ Barrett",
+   "rank": 114,
+   "drafted_at": 82,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Dennis Schroder",
+   "rank": 115,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Keyonte George",
+   "rank": 116,
+   "drafted_at": 106,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Dereck Lively II",
+   "rank": 117,
+   "drafted_at": 111,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Ace Bailey",
+   "rank": 118,
+   "drafted_at": 127,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Reed Sheppard",
+   "rank": 119,
+   "drafted_at": 110,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Keegan Murray",
+   "rank": 120,
+   "drafted_at": 154,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Jaylen Wells",
+   "rank": 121,
+   "drafted_at": 138,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Jaden McDaniels",
+   "rank": 122,
+   "drafted_at": 113,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Chris Paul",
+   "rank": 123,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Russell Westbrook III",
+   "rank": 124,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Lonzo Ball",
+   "rank": 125,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Quentin Grimes",
+   "rank": 126,
+   "drafted_at": 137,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Brandin Podziemski",
+   "rank": 127,
+   "drafted_at": 116,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Stephon Castle",
+   "rank": 128,
+   "drafted_at": 130,
+   "alive": true
+  },
+  {
+   "turn": 69,
+   "next": 76,
+   "name": "Bobby Portis Jr.",
+   "rank": 129,
+   "drafted_at": 128,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jordan Poole",
+   "rank": 62,
+   "drafted_at": 79,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Isaiah Hartenstein",
+   "rank": 69,
+   "drafted_at": 94,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Cam Thomas",
+   "rank": 72,
+   "drafted_at": 83,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Michael Porter Jr.",
+   "rank": 77,
+   "drafted_at": 80,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Mikal Bridges",
+   "rank": 78,
+   "drafted_at": 90,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Paul George",
+   "rank": 79,
+   "drafted_at": 86,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Christian Braun",
+   "rank": 80,
+   "drafted_at": 85,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Matas Buzelis",
+   "rank": 82,
+   "drafted_at": 77,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "John Collins",
+   "rank": 83,
+   "drafted_at": 78,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Anfernee Simons",
+   "rank": 86,
+   "drafted_at": 91,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jakob Poeltl",
+   "rank": 87,
+   "drafted_at": 81,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Toumani Camara",
+   "rank": 89,
+   "drafted_at": 97,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Josh Hart",
+   "rank": 90,
+   "drafted_at": 88,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Donovan Clingan",
+   "rank": 92,
+   "drafted_at": 93,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Tari Eason",
+   "rank": 93,
+   "drafted_at": 100,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jalen Suggs",
+   "rank": 94,
+   "drafted_at": 118,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Naz Reid",
+   "rank": 95,
+   "drafted_at": 87,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Devin Vassell",
+   "rank": 97,
+   "drafted_at": 84,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Bradley Beal",
+   "rank": 98,
+   "drafted_at": 109,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Cameron Johnson",
+   "rank": 99,
+   "drafted_at": 99,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Kel'el Ware",
+   "rank": 100,
+   "drafted_at": 89,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Onyeka Okongwu",
+   "rank": 101,
+   "drafted_at": 92,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Tobias Harris",
+   "rank": 102,
+   "drafted_at": 112,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "CJ McCollum",
+   "rank": 103,
+   "drafted_at": 115,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Andrew Wiggins",
+   "rank": 104,
+   "drafted_at": 96,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jrue Holiday",
+   "rank": 105,
+   "drafted_at": 95,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "D'Angelo Russell",
+   "rank": 107,
+   "drafted_at": 119,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Kevin Porter Jr.",
+   "rank": 108,
+   "drafted_at": 120,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Herbert Jones",
+   "rank": 109,
+   "drafted_at": 117,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Santi Aldama",
+   "rank": 110,
+   "drafted_at": 102,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Nic Claxton",
+   "rank": 111,
+   "drafted_at": 98,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Donte DiVincenzo",
+   "rank": 113,
+   "drafted_at": 141,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "RJ Barrett",
+   "rank": 114,
+   "drafted_at": 82,
+   "alive": false
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Dennis Schroder",
+   "rank": 115,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Keyonte George",
+   "rank": 116,
+   "drafted_at": 106,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Dereck Lively II",
+   "rank": 117,
+   "drafted_at": 111,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Ace Bailey",
+   "rank": 118,
+   "drafted_at": 127,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Reed Sheppard",
+   "rank": 119,
+   "drafted_at": 110,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Keegan Murray",
+   "rank": 120,
+   "drafted_at": 154,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jaylen Wells",
+   "rank": 121,
+   "drafted_at": 138,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jaden McDaniels",
+   "rank": 122,
+   "drafted_at": 113,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Chris Paul",
+   "rank": 123,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Russell Westbrook III",
+   "rank": 124,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Lonzo Ball",
+   "rank": 125,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Quentin Grimes",
+   "rank": 126,
+   "drafted_at": 137,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Brandin Podziemski",
+   "rank": 127,
+   "drafted_at": 116,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Stephon Castle",
+   "rank": 128,
+   "drafted_at": 130,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Bobby Portis Jr.",
+   "rank": 129,
+   "drafted_at": 128,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Aaron Gordon",
+   "rank": 130,
+   "drafted_at": 105,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Aaron Nesmith",
+   "rank": 131,
+   "drafted_at": 121,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jaden Ivey",
+   "rank": 132,
+   "drafted_at": 101,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Malik Monk",
+   "rank": 133,
+   "drafted_at": 134,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Jonathan Kuminga",
+   "rank": 134,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Brook Lopez",
+   "rank": 135,
+   "drafted_at": 124,
+   "alive": true
+  },
+  {
+   "turn": 76,
+   "next": 93,
+   "name": "Yves Missi",
+   "rank": 136,
+   "drafted_at": 103,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Isaiah Hartenstein",
+   "rank": 69,
+   "drafted_at": 94,
+   "alive": false
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Toumani Camara",
+   "rank": 89,
+   "drafted_at": 97,
+   "alive": false
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Tari Eason",
+   "rank": 93,
+   "drafted_at": 100,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jalen Suggs",
+   "rank": 94,
+   "drafted_at": 118,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Bradley Beal",
+   "rank": 98,
+   "drafted_at": 109,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Cameron Johnson",
+   "rank": 99,
+   "drafted_at": 99,
+   "alive": false
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Tobias Harris",
+   "rank": 102,
+   "drafted_at": 112,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "CJ McCollum",
+   "rank": 103,
+   "drafted_at": 115,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Andrew Wiggins",
+   "rank": 104,
+   "drafted_at": 96,
+   "alive": false
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jrue Holiday",
+   "rank": 105,
+   "drafted_at": 95,
+   "alive": false
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "D'Angelo Russell",
+   "rank": 107,
+   "drafted_at": 119,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Kevin Porter Jr.",
+   "rank": 108,
+   "drafted_at": 120,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Herbert Jones",
+   "rank": 109,
+   "drafted_at": 117,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Santi Aldama",
+   "rank": 110,
+   "drafted_at": 102,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Nic Claxton",
+   "rank": 111,
+   "drafted_at": 98,
+   "alive": false
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Donte DiVincenzo",
+   "rank": 113,
+   "drafted_at": 141,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Dennis Schroder",
+   "rank": 115,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Keyonte George",
+   "rank": 116,
+   "drafted_at": 106,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Dereck Lively II",
+   "rank": 117,
+   "drafted_at": 111,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Ace Bailey",
+   "rank": 118,
+   "drafted_at": 127,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Reed Sheppard",
+   "rank": 119,
+   "drafted_at": 110,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Keegan Murray",
+   "rank": 120,
+   "drafted_at": 154,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jaylen Wells",
+   "rank": 121,
+   "drafted_at": 138,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jaden McDaniels",
+   "rank": 122,
+   "drafted_at": 113,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Chris Paul",
+   "rank": 123,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Russell Westbrook III",
+   "rank": 124,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Lonzo Ball",
+   "rank": 125,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Quentin Grimes",
+   "rank": 126,
+   "drafted_at": 137,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Brandin Podziemski",
+   "rank": 127,
+   "drafted_at": 116,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Stephon Castle",
+   "rank": 128,
+   "drafted_at": 130,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Bobby Portis Jr.",
+   "rank": 129,
+   "drafted_at": 128,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Aaron Gordon",
+   "rank": 130,
+   "drafted_at": 105,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Aaron Nesmith",
+   "rank": 131,
+   "drafted_at": 121,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jaden Ivey",
+   "rank": 132,
+   "drafted_at": 101,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Malik Monk",
+   "rank": 133,
+   "drafted_at": 134,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jonathan Kuminga",
+   "rank": 134,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Brook Lopez",
+   "rank": 135,
+   "drafted_at": 124,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Yves Missi",
+   "rank": 136,
+   "drafted_at": 103,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Cason Wallace",
+   "rank": 137,
+   "drafted_at": 125,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Daniel Gafford",
+   "rank": 138,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Kyshawn George",
+   "rank": 139,
+   "drafted_at": 123,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Wendell Carter Jr.",
+   "rank": 140,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Klay Thompson",
+   "rank": 141,
+   "drafted_at": 114,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jeremy Sochan",
+   "rank": 142,
+   "drafted_at": 129,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jabari Smith Jr.",
+   "rank": 143,
+   "drafted_at": 107,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Davion Mitchell",
+   "rank": 144,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Dylan Harper",
+   "rank": 145,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Jerami Grant",
+   "rank": 146,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Ty Jerome",
+   "rank": 147,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Kyle Kuzma",
+   "rank": 148,
+   "drafted_at": 122,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "P.J. Washington Jr.",
+   "rank": 149,
+   "drafted_at": 135,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Kyle Filipowski",
+   "rank": 150,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Scoot Henderson",
+   "rank": 151,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Isaiah Collier",
+   "rank": 152,
+   "drafted_at": 147,
+   "alive": true
+  },
+  {
+   "turn": 93,
+   "next": 100,
+   "name": "Zaccharie Risacher",
+   "rank": 153,
+   "drafted_at": 132,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Tyler Herro",
+   "rank": 68,
+   "drafted_at": 104,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jalen Suggs",
+   "rank": 94,
+   "drafted_at": 118,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Bradley Beal",
+   "rank": 98,
+   "drafted_at": 109,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Tobias Harris",
+   "rank": 102,
+   "drafted_at": 112,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "CJ McCollum",
+   "rank": 103,
+   "drafted_at": 115,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "D'Angelo Russell",
+   "rank": 107,
+   "drafted_at": 119,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Kevin Porter Jr.",
+   "rank": 108,
+   "drafted_at": 120,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Herbert Jones",
+   "rank": 109,
+   "drafted_at": 117,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Santi Aldama",
+   "rank": 110,
+   "drafted_at": 102,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Donte DiVincenzo",
+   "rank": 113,
+   "drafted_at": 141,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Dennis Schroder",
+   "rank": 115,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Keyonte George",
+   "rank": 116,
+   "drafted_at": 106,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Dereck Lively II",
+   "rank": 117,
+   "drafted_at": 111,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Ace Bailey",
+   "rank": 118,
+   "drafted_at": 127,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Reed Sheppard",
+   "rank": 119,
+   "drafted_at": 110,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Keegan Murray",
+   "rank": 120,
+   "drafted_at": 154,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jaylen Wells",
+   "rank": 121,
+   "drafted_at": 138,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jaden McDaniels",
+   "rank": 122,
+   "drafted_at": 113,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Chris Paul",
+   "rank": 123,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Russell Westbrook III",
+   "rank": 124,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Lonzo Ball",
+   "rank": 125,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Quentin Grimes",
+   "rank": 126,
+   "drafted_at": 137,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Brandin Podziemski",
+   "rank": 127,
+   "drafted_at": 116,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Stephon Castle",
+   "rank": 128,
+   "drafted_at": 130,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Bobby Portis Jr.",
+   "rank": 129,
+   "drafted_at": 128,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Aaron Gordon",
+   "rank": 130,
+   "drafted_at": 105,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Aaron Nesmith",
+   "rank": 131,
+   "drafted_at": 121,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jaden Ivey",
+   "rank": 132,
+   "drafted_at": 101,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Malik Monk",
+   "rank": 133,
+   "drafted_at": 134,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jonathan Kuminga",
+   "rank": 134,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Brook Lopez",
+   "rank": 135,
+   "drafted_at": 124,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Yves Missi",
+   "rank": 136,
+   "drafted_at": 103,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Cason Wallace",
+   "rank": 137,
+   "drafted_at": 125,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Daniel Gafford",
+   "rank": 138,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Kyshawn George",
+   "rank": 139,
+   "drafted_at": 123,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Wendell Carter Jr.",
+   "rank": 140,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Klay Thompson",
+   "rank": 141,
+   "drafted_at": 114,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jeremy Sochan",
+   "rank": 142,
+   "drafted_at": 129,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jabari Smith Jr.",
+   "rank": 143,
+   "drafted_at": 107,
+   "alive": false
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Davion Mitchell",
+   "rank": 144,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Dylan Harper",
+   "rank": 145,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jerami Grant",
+   "rank": 146,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Ty Jerome",
+   "rank": 147,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Kyle Kuzma",
+   "rank": 148,
+   "drafted_at": 122,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "P.J. Washington Jr.",
+   "rank": 149,
+   "drafted_at": 135,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Kyle Filipowski",
+   "rank": 150,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Scoot Henderson",
+   "rank": 151,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Isaiah Collier",
+   "rank": 152,
+   "drafted_at": 147,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Zaccharie Risacher",
+   "rank": 153,
+   "drafted_at": 132,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "De'Andre Hunter",
+   "rank": 154,
+   "drafted_at": 136,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Yang Hansen",
+   "rank": 155,
+   "drafted_at": 131,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Jay Huff",
+   "rank": 156,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "VJ Edgecombe",
+   "rank": 157,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Dejounte Murray",
+   "rank": 158,
+   "drafted_at": 143,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "T.J. McConnell",
+   "rank": 159,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 100,
+   "next": 117,
+   "name": "Cole Anthony",
+   "rank": 160,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Jalen Suggs",
+   "rank": 94,
+   "drafted_at": 118,
+   "alive": false
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "D'Angelo Russell",
+   "rank": 107,
+   "drafted_at": 119,
+   "alive": false
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Kevin Porter Jr.",
+   "rank": 108,
+   "drafted_at": 120,
+   "alive": false
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Donte DiVincenzo",
+   "rank": 113,
+   "drafted_at": 141,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Dennis Schroder",
+   "rank": 115,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Ace Bailey",
+   "rank": 118,
+   "drafted_at": 127,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Keegan Murray",
+   "rank": 120,
+   "drafted_at": 154,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Jaylen Wells",
+   "rank": 121,
+   "drafted_at": 138,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Chris Paul",
+   "rank": 123,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Russell Westbrook III",
+   "rank": 124,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Lonzo Ball",
+   "rank": 125,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Quentin Grimes",
+   "rank": 126,
+   "drafted_at": 137,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Stephon Castle",
+   "rank": 128,
+   "drafted_at": 130,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Bobby Portis Jr.",
+   "rank": 129,
+   "drafted_at": 128,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Aaron Nesmith",
+   "rank": 131,
+   "drafted_at": 121,
+   "alive": false
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Malik Monk",
+   "rank": 133,
+   "drafted_at": 134,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Jonathan Kuminga",
+   "rank": 134,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Brook Lopez",
+   "rank": 135,
+   "drafted_at": 124,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Cason Wallace",
+   "rank": 137,
+   "drafted_at": 125,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Daniel Gafford",
+   "rank": 138,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Kyshawn George",
+   "rank": 139,
+   "drafted_at": 123,
+   "alive": false
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Wendell Carter Jr.",
+   "rank": 140,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Jeremy Sochan",
+   "rank": 142,
+   "drafted_at": 129,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Davion Mitchell",
+   "rank": 144,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Dylan Harper",
+   "rank": 145,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Jerami Grant",
+   "rank": 146,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Ty Jerome",
+   "rank": 147,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Kyle Kuzma",
+   "rank": 148,
+   "drafted_at": 122,
+   "alive": false
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "P.J. Washington Jr.",
+   "rank": 149,
+   "drafted_at": 135,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Kyle Filipowski",
+   "rank": 150,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Scoot Henderson",
+   "rank": 151,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Isaiah Collier",
+   "rank": 152,
+   "drafted_at": 147,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Zaccharie Risacher",
+   "rank": 153,
+   "drafted_at": 132,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "De'Andre Hunter",
+   "rank": 154,
+   "drafted_at": 136,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Yang Hansen",
+   "rank": 155,
+   "drafted_at": 131,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Jay Huff",
+   "rank": 156,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "VJ Edgecombe",
+   "rank": 157,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Dejounte Murray",
+   "rank": 158,
+   "drafted_at": 143,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "T.J. McConnell",
+   "rank": 159,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Cole Anthony",
+   "rank": 160,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Bilal Coulibaly",
+   "rank": 161,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Bub Carrington",
+   "rank": 162,
+   "drafted_at": 151,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Jared McCain",
+   "rank": 163,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Ayo Dosunmu",
+   "rank": 164,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Kyrie Irving",
+   "rank": 165,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Scotty Pippen Jr.",
+   "rank": 166,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Cam Whitmore",
+   "rank": 167,
+   "drafted_at": 145,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Collin Sexton",
+   "rank": 168,
+   "drafted_at": 133,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Taylor Hendricks",
+   "rank": 169,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Tyus Jones",
+   "rank": 170,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Kon Knueppel",
+   "rank": 171,
+   "drafted_at": 149,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Anthony Black",
+   "rank": 172,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Keon Ellis",
+   "rank": 173,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Sam Hauser",
+   "rank": 174,
+   "drafted_at": 144,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Tre Johnson",
+   "rank": 175,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 117,
+   "next": 124,
+   "name": "Gradey Dick",
+   "rank": 176,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Norman Powell",
+   "rank": 85,
+   "drafted_at": 126,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Donte DiVincenzo",
+   "rank": 113,
+   "drafted_at": 141,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Dennis Schroder",
+   "rank": 115,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Ace Bailey",
+   "rank": 118,
+   "drafted_at": 127,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Keegan Murray",
+   "rank": 120,
+   "drafted_at": 154,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Jaylen Wells",
+   "rank": 121,
+   "drafted_at": 138,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Chris Paul",
+   "rank": 123,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Russell Westbrook III",
+   "rank": 124,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Lonzo Ball",
+   "rank": 125,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Quentin Grimes",
+   "rank": 126,
+   "drafted_at": 137,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Stephon Castle",
+   "rank": 128,
+   "drafted_at": 130,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Bobby Portis Jr.",
+   "rank": 129,
+   "drafted_at": 128,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Malik Monk",
+   "rank": 133,
+   "drafted_at": 134,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Jonathan Kuminga",
+   "rank": 134,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Cason Wallace",
+   "rank": 137,
+   "drafted_at": 125,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Daniel Gafford",
+   "rank": 138,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Wendell Carter Jr.",
+   "rank": 140,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Jeremy Sochan",
+   "rank": 142,
+   "drafted_at": 129,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Davion Mitchell",
+   "rank": 144,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Dylan Harper",
+   "rank": 145,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Jerami Grant",
+   "rank": 146,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Ty Jerome",
+   "rank": 147,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "P.J. Washington Jr.",
+   "rank": 149,
+   "drafted_at": 135,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Kyle Filipowski",
+   "rank": 150,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Scoot Henderson",
+   "rank": 151,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Isaiah Collier",
+   "rank": 152,
+   "drafted_at": 147,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Zaccharie Risacher",
+   "rank": 153,
+   "drafted_at": 132,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "De'Andre Hunter",
+   "rank": 154,
+   "drafted_at": 136,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Yang Hansen",
+   "rank": 155,
+   "drafted_at": 131,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Jay Huff",
+   "rank": 156,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "VJ Edgecombe",
+   "rank": 157,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Dejounte Murray",
+   "rank": 158,
+   "drafted_at": 143,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "T.J. McConnell",
+   "rank": 159,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Cole Anthony",
+   "rank": 160,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Bilal Coulibaly",
+   "rank": 161,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Bub Carrington",
+   "rank": 162,
+   "drafted_at": 151,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Jared McCain",
+   "rank": 163,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Ayo Dosunmu",
+   "rank": 164,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Kyrie Irving",
+   "rank": 165,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Scotty Pippen Jr.",
+   "rank": 166,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Cam Whitmore",
+   "rank": 167,
+   "drafted_at": 145,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Collin Sexton",
+   "rank": 168,
+   "drafted_at": 133,
+   "alive": false
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Taylor Hendricks",
+   "rank": 169,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Tyus Jones",
+   "rank": 170,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Kon Knueppel",
+   "rank": 171,
+   "drafted_at": 149,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Anthony Black",
+   "rank": 172,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Keon Ellis",
+   "rank": 173,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Sam Hauser",
+   "rank": 174,
+   "drafted_at": 144,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Tre Johnson",
+   "rank": 175,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Gradey Dick",
+   "rank": 176,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Alex Caruso",
+   "rank": 178,
+   "drafted_at": 146,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Luguentz Dort",
+   "rank": 179,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Jordan Clarkson",
+   "rank": 180,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Gary Trent Jr.",
+   "rank": 181,
+   "drafted_at": 148,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Egor Demin",
+   "rank": 182,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Obi Toppin",
+   "rank": 183,
+   "drafted_at": 156,
+   "alive": true
+  },
+  {
+   "turn": 124,
+   "next": 141,
+   "name": "Aaron Wiggins",
+   "rank": 184,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Draymond Green",
+   "rank": 96,
+   "drafted_at": 152,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Zach Edey",
+   "rank": 106,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Nickeil Alexander-Walker",
+   "rank": 112,
+   "drafted_at": 150,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Dennis Schroder",
+   "rank": 115,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Keegan Murray",
+   "rank": 120,
+   "drafted_at": 154,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Chris Paul",
+   "rank": 123,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Russell Westbrook III",
+   "rank": 124,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Lonzo Ball",
+   "rank": 125,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Jonathan Kuminga",
+   "rank": 134,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Daniel Gafford",
+   "rank": 138,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Wendell Carter Jr.",
+   "rank": 140,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Davion Mitchell",
+   "rank": 144,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Dylan Harper",
+   "rank": 145,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Jerami Grant",
+   "rank": 146,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Ty Jerome",
+   "rank": 147,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Kyle Filipowski",
+   "rank": 150,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Scoot Henderson",
+   "rank": 151,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Isaiah Collier",
+   "rank": 152,
+   "drafted_at": 147,
+   "alive": false
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Jay Huff",
+   "rank": 156,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "VJ Edgecombe",
+   "rank": 157,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Dejounte Murray",
+   "rank": 158,
+   "drafted_at": 143,
+   "alive": false
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "T.J. McConnell",
+   "rank": 159,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Cole Anthony",
+   "rank": 160,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Bilal Coulibaly",
+   "rank": 161,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Bub Carrington",
+   "rank": 162,
+   "drafted_at": 151,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Jared McCain",
+   "rank": 163,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Ayo Dosunmu",
+   "rank": 164,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Kyrie Irving",
+   "rank": 165,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Scotty Pippen Jr.",
+   "rank": 166,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Cam Whitmore",
+   "rank": 167,
+   "drafted_at": 145,
+   "alive": false
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Taylor Hendricks",
+   "rank": 169,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Tyus Jones",
+   "rank": 170,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Kon Knueppel",
+   "rank": 171,
+   "drafted_at": 149,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Anthony Black",
+   "rank": 172,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Keon Ellis",
+   "rank": 173,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Sam Hauser",
+   "rank": 174,
+   "drafted_at": 144,
+   "alive": false
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Tre Johnson",
+   "rank": 175,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Gradey Dick",
+   "rank": 176,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Alex Caruso",
+   "rank": 178,
+   "drafted_at": 146,
+   "alive": false
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Luguentz Dort",
+   "rank": 179,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Jordan Clarkson",
+   "rank": 180,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Gary Trent Jr.",
+   "rank": 181,
+   "drafted_at": 148,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Egor Demin",
+   "rank": 182,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Obi Toppin",
+   "rank": 183,
+   "drafted_at": 156,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Aaron Wiggins",
+   "rank": 184,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Kelly Oubre Jr.",
+   "rank": 185,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Khris Middleton",
+   "rank": 186,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Caris LeVert",
+   "rank": 187,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Peyton Watson",
+   "rank": 189,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Noah Clowney",
+   "rank": 190,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Moses Moody",
+   "rank": 191,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Buddy Hield",
+   "rank": 192,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Khaman Maluach",
+   "rank": 193,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Ryan Kalkbrenner",
+   "rank": 194,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Max Strus",
+   "rank": 195,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Royce O'Neale",
+   "rank": 196,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Grant Williams",
+   "rank": 197,
+   "drafted_at": null,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Jaime Jaquez Jr.",
+   "rank": 198,
+   "drafted_at": 153,
+   "alive": true
+  },
+  {
+   "turn": 141,
+   "next": 148,
+   "name": "Rui Hachimura",
+   "rank": 199,
+   "drafted_at": 142,
+   "alive": false
+  }
+ ],
+ "narrow": {
+  "rows": 365,
+  "realized": 0.685,
+  "base_rate_brier": 0.2158,
+  "shipped_brier": 0.2337,
+  "grid_best": [
+   [
+    0.2281,
+    0.5,
+    4
+   ],
+   [
+    0.2281,
+    0.5,
+    6
+   ],
+   [
+    0.2283,
+    0.5,
+    8
+   ],
+   [
+    0.2288,
+    0.5,
+    10
+   ],
+   [
+    0.2292,
+    0.5,
+    12
+   ],
+   [
+    0.2297,
+    0.4,
+    4
+   ]
+  ],
+  "loto": [
+   {
+    "turn": 4,
+    "k": 0.5,
+    "floor": 16,
+    "n": 30,
+    "test_brier": 0.1718,
+    "shipped_brier": 0.1553
+   },
+   {
+    "turn": 21,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.168,
+    "shipped_brier": 0.1615
+   },
+   {
+    "turn": 28,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.1899,
+    "shipped_brier": 0.1899
+   },
+   {
+    "turn": 45,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.2108,
+    "shipped_brier": 0.2084
+   },
+   {
+    "turn": 52,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.2514,
+    "shipped_brier": 0.257
+   },
+   {
+    "turn": 69,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.2156,
+    "shipped_brier": 0.201
+   },
+   {
+    "turn": 76,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.2253,
+    "shipped_brier": 0.2208
+   },
+   {
+    "turn": 93,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.2215,
+    "shipped_brier": 0.2125
+   },
+   {
+    "turn": 100,
+    "k": 0.5,
+    "floor": 4,
+    "n": 30,
+    "test_brier": 0.262,
+    "shipped_brier": 0.2787
+   },
+   {
+    "turn": 117,
+    "k": 0.5,
+    "floor": 4,
+    "n": 31,
+    "test_brier": 0.2486,
+    "shipped_brier": 0.2539
+   },
+   {
+    "turn": 124,
+    "k": 0.5,
+    "floor": 4,
+    "n": 31,
+    "test_brier": 0.2871,
+    "shipped_brier": 0.3188
+   },
+   {
+    "turn": 141,
+    "k": 0.5,
+    "floor": 4,
+    "n": 33,
+    "test_brier": 0.3006,
+    "shipped_brier": 0.3334
+   }
+  ],
+  "loto_fit_brier": 0.2294,
+  "loto_shipped_brier": 0.2326,
+  "bands_shipped": [
+   {
+    "band": "[0,0.2)",
+    "n": 53,
+    "mean_pred": 0.087,
+    "realized": 0.396
+   },
+   {
+    "band": "[0.2,0.4)",
+    "n": 69,
+    "mean_pred": 0.306,
+    "realized": 0.522
+   },
+   {
+    "band": "[0.4,0.6)",
+    "n": 116,
+    "mean_pred": 0.514,
+    "realized": 0.741
+   },
+   {
+    "band": "[0.6,0.8)",
+    "n": 101,
+    "mean_pred": 0.68,
+    "realized": 0.832
+   },
+   {
+    "band": "[0.8,1.0)",
+    "n": 26,
+    "mean_pred": 0.866,
+    "realized": 0.885
+   }
+  ],
+  "bands_best": [
+   {
+    "band": "[0,0.2)",
+    "n": 32,
+    "mean_pred": 0.091,
+    "realized": 0.281
+   },
+   {
+    "band": "[0.2,0.4)",
+    "n": 66,
+    "mean_pred": 0.319,
+    "realized": 0.53
+   },
+   {
+    "band": "[0.4,0.6)",
+    "n": 187,
+    "mean_pred": 0.515,
+    "realized": 0.727
+   },
+   {
+    "band": "[0.6,0.8)",
+    "n": 77,
+    "mean_pred": 0.67,
+    "realized": 0.87
+   },
+   {
+    "band": "[0.8,1.0)",
+    "n": 3,
+    "mean_pred": 0.81,
+    "realized": 1.0
+   }
+  ],
+  "chips_shipped": {
+   "BUY NOW (<=0.20)": {
+    "n": 53,
+    "alive": 21,
+    "mean_pred": 0.087
+   },
+   "TOSS-UP (0.20-0.40)": {
+    "n": 69,
+    "alive": 36,
+    "mean_pred": 0.306
+   },
+   "quiet (>=0.60)": {
+    "n": 127,
+    "alive": 107,
+    "mean_pred": 0.718
+   }
+  },
+  "deep_rows": {
+   "n": 80,
+   "alive": 67,
+   "mean_pred": 0.72
+  }
+ },
+ "league_profile": {
+  "matched_picks": 154,
+  "mean_pick_minus_rank": -3.6,
+  "median": -1.0,
+  "reaches_24plus": 17,
+  "falls_24plus": 11,
+  "by_manager": {
+   "Cayas": {
+    "n": 12,
+    "mean": -2.1,
+    "reaches_24plus": 2
+   },
+   "David": {
+    "n": 13,
+    "mean": 4.3,
+    "reaches_24plus": 1
+   },
+   "Hegi": {
+    "n": 13,
+    "mean": -8.2,
+    "reaches_24plus": 1
+   },
+   "JCo": {
+    "n": 13,
+    "mean": -5,
+    "reaches_24plus": 2
+   },
+   "John": {
+    "n": 13,
+    "mean": -7.1,
+    "reaches_24plus": 2
+   },
+   "Kevin": {
+    "n": 13,
+    "mean": 8.6,
+    "reaches_24plus": 0
+   },
+   "Kyle": {
+    "n": 12,
+    "mean": 5.5,
+    "reaches_24plus": 0
+   },
+   "Martin": {
+    "n": 13,
+    "mean": -1.2,
+    "reaches_24plus": 1
+   },
+   "Noah": {
+    "n": 13,
+    "mean": -6.5,
+    "reaches_24plus": 1
+   },
+   "Oblena": {
+    "n": 13,
+    "mean": -1,
+    "reaches_24plus": 2
+   },
+   "Robby": {
+    "n": 13,
+    "mean": -16.5,
+    "reaches_24plus": 3
+   },
+   "Will": {
+    "n": 13,
+    "mean": -13.2,
+    "reaches_24plus": 2
+   }
+  }
+ },
+ "decision_rule": {
+  "rule": "propose league parameters only if leave-one-turn-out Brier beats the shipped parameters by >= 0.01",
+  "loto_fit": 0.1417,
+  "loto_shipped": 0.1451,
+  "propose": false
+ }
+}

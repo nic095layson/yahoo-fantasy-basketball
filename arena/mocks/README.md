@@ -303,6 +303,21 @@ is on the author. See LEDGER §3.
   per room pair better 1/1, worse 1/1, identical 5; the blend chain reproduced every
   room's recorded arms. **Verdict: BAR FAILED — PAIR_MARKER false, advice only** → v40 ships `PAIR_MARKER = false`. Mock 59's #82 by
   the rule: Bridges-now better by 0.007, under the bar — all five rows were deep (§9b restated).
+- **The survival model against the owner's own league (2026-10-01, D40-2).** Owner upload: Yahoo's
+  pre-draft analyst ranks for 2025-26 (Dan Titus 10/16, 199 names) — kept verbatim as
+  `arena/data/league_predraft_ranks_2025-26_raw_2026-10-01.txt` (the rank cell equals the row number).
+  `league_survival.py <out.json>` joins them to `draft_boards.json["2025-26"]` (154 of 156 picks match;
+  Tatum and Jović sit outside the top 199), builds rows at the owner's thirteen turns (every ranked man
+  still on the board within 60 ranks of the pick, predicted to the next owner turn with the engine's
+  own `survival_prob` form and `_norm_cdf_as`), and scores the shipped parameters against a (k, floor)
+  grid, leave-one-turn-out and the base rate — `arena/results/league_survival_2025-26.json`. Result:
+  719 rows, realized 0.821; Brier shipped 0.1450 vs base 0.1472 vs best fit 0.1397 (k 0.20, floor 16);
+  LOTO 0.1417 vs 0.1451 — under the 0.01 bar fixed before the run, so the shipped parameters stay. The
+  model is too pessimistic at every band in this league (quiet rows survived 447 of 481, BUY NOW 21 of
+  53, men 24+ ranks below the pick 407 of 434); in the 30-rank window it is worse than the base rate
+  (0.2337 vs 0.2158). League profile: median pick minus rank −1; Robby (−16.5) and Will (−13.2) reach,
+  the owner (+4.3) and Kevin (+8.6) take value as it falls. Kit report
+  `after-report-2026-10-01-league-survival.md`; decisions D-LS-1..3.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
