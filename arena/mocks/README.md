@@ -318,6 +318,40 @@ is on the author. See LEDGER §3.
   (0.2337 vs 0.2158). League profile: median pick minus rank −1; Robby (−16.5) and Will (−13.2) reach,
   the owner (+4.3) and Kevin (+8.6) take value as it falls. Kit report
   `after-report-2026-10-01-league-survival.md`; decisions D-LS-1..3.
+- **Mock 60 (2026-10-02, slot 10).** Public Yahoo room, the owner's fourth on the concise card and the first with
+  the D59-1 re-numbered history and the D59-2 advice line live, drafted on deck v42 (rev `6ae36ab` — the Friday-morning
+  second-pull build; pool sha `75a4994b4a59`, 334 rows; v41's values identical), the veto live. `live_retro.MOCKS[60]`
+  = `dict(tags=("v42",), veto=True)` (new pool tag `v42`, pinned to `6ae36ab`; `PAGE_REV[60]`); no punt declared
+  (`PUNT_TIMELINES[60] = [(0, [])]`). State rebuilt from Yahoo's recap with `hoops.py draft resync` (156 of 156
+  resolved, no UNKNOWN; seats match the snake, owner roster = the recap's "My Team", md5 `9023d2d25d41be108230a1a90f77c3fc`).
+  **Back to first from the real seat, the card followed at 11 of 13 turns**: as drafted 33.02% / ECW 5.419
+  rank 1 (next 4.935), favored 11/11; follow-card self-consistent 43.14% / 5.676 (Jamal Murray at #15, Anthony Davis at #34, Payton Pritchard at #63, Zach LaVine at #82, Mikal Bridges at #87, Daniel Gafford at #106);
+  Gafford at #106 alone 39.49%; the advice line's roster (Murray at #15, White at #39 as drafted) 32.31% —
+  `m60_followcard_grade.json`, `m60_arms.json`. Deck card replayed from the page drafted against
+  (`live_deckcard.py 60 rev:6ae36ab:docs/draft-deck.html arena/results/m60_deckcard_v42.json`): 🎯 taken 11 of 13, Top-5
+  row 11 of 13; two picks off the card — Durant at #15 (card #6, 0.015 behind Jalen Williams, who waited to #34; hindsight
+  5th of 296) and Murray-Boyles at #106 (card #87, 0.405 behind PJ Washington, who waited to #130; hindsight 58th of 212,
+  Gafford +0.181 cats/week, +6.47 title points). **D59-2's first live room** (`m60_advice_reads.json`, the pair
+  twin on the page's rows): the advice fired once, at #15 — "Jamal Murray now, Derrick White next turn (82% to survive):
+  +0.039" — silent at every other turn for the stated reason; the pair rule replayed as the marker moved it at two turns
+  and finished at the blend chain's own numbers (5.676, 43.14%) — advice-only verdict holds. **Wording
+  defect (D60-3):** the twin's sentence names the highest-ΔECW partner regardless of survival (on the port's rows: "Kevin
+  Durant next turn (1% to survive)"). `live_advisor.py`: the room-relative advisor never advised (0 of 23 moments); the
+  finish is the most balanced of the nine rooms (nothing worse than 9th weekly). Survival pooled with the 51–59 deck
+  cards (`m60_survival.json`: this room 50 rows, Brier 0.175 vs base 0.236 — the best out-of-sample room yet; BUY NOW
+  2 of 7 survived, TOSS-UP 5 of 13, quiet 24 of 30). Tool-state integrity: the owner's tool log
+  (`arena/data/events/m60_tool_events.json` — 156 events: 155 feeds incl. fourteen shared-surname tokens, one
+  Insert-at-# correction (Derik Queen #95), no UNKNOWN, no halt, no undo; a page resume after #47 replayed as one session)
+  replayed through the real v42 page with `live_replay_dom.mjs`: 0 echo misses, 0 clock mismatches,
+  0 page errors, all 156 positions equal to the recap, owner roster identical — `m60_tool_vs_truth.json`; D59-1's
+  re-numbering did on the live page what the mock-59 report asked for. **Finding (data):** the draft room's position
+  display matched the pool on all 156 drafted men — the first room since the 10/01 position sync (D-ADP-3; D-G3 closable,
+  D60-4). **Harness item (D59-5, re-put as D60-1):** the port's name-order tie-break differs from the page at four turns
+  here (#15 rank 5 vs 6; the 🎯 at #106, #130, #154). Target-wait with this room added (`target_wait_2026-10-02.json`):
+  deep 🎯s passed on were still there at the next owner turn 6 of 7 times, two turns on 2 of 7;
+  near-price 5 of 10 and 0 of 9. Repeat-name audit (`m60_repeat_names_audit.json`): the #1 changes at 12
+  of 13 turns under other rooms' rosters (12 of 13 against an empty roster); Gafford on the Top-5 at two turns, Braun
+  at one, Poeltl at none. Debrief `debrief_2026-10-02_mock60_slot10.md`; kit report `after-report-2026-10-02-draft60.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

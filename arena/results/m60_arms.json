@@ -1,0 +1,127 @@
+{
+ "as_drafted": {
+  "champ": 33.017,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#15:Chet Holmgren": {
+  "champ": 35.978,
+  "playoff": 99.89,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#34:Anthony Davis": {
+  "champ": 36.633,
+  "playoff": 99.91,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Anthony Davis"
+   ]
+  ]
+ },
+ "swap#39:Anthony Davis": {
+  "champ": 35.089,
+  "playoff": 99.82,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Anthony Davis"
+   ]
+  ]
+ },
+ "swap#82:Zach LaVine": {
+  "champ": 33.906,
+  "playoff": 99.85,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Zach LaVine"
+   ]
+  ]
+ },
+ "swap#87:Isaiah Hartenstein": {
+  "champ": 34.772,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Isaiah Hartenstein"
+   ]
+  ]
+ },
+ "swap#106:Daniel Gafford": {
+  "champ": 39.494,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Daniel Gafford"
+   ]
+  ]
+ },
+ "swap#135:Kyle Filipowski": {
+  "champ": 33.356,
+  "playoff": 99.84,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "swap#154:Kyle Filipowski": {
+  "champ": 34.044,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 43.144,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Mikal Bridges"
+   ],
+   [
+    106,
+    "Daniel Gafford"
+   ]
+  ]
+ }
+}
