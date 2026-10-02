@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-01",
-  "note": "Deck v40 (D59-1, D59-2): the history box re-numbers, re-seats and marks (YOU) after an Insert-at-# and renames a shifted UNKNOWN on both planes; the two-pick target read (pairDecision, hoops.pair_decision twin) ships as advice only \u2014 the pre-registered eight-room replay did not clear the D58-3 bar; no pool, roster, tag or judgment change",
+  "date": "2026-10-02",
+  "note": "refreshed",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "2026-10-02 pull: Dereck Lively II re-tagged foot-recovery (excluded) \u2014 the D-RT3 default from the 10/01 sheet applied at this pull because he is still not cleared (Mavs Moneyball/ESPN, CBS, Yahoo); kit twin GP 25. Dated notes on Duren (deadline passed, outcome unreported), Konchar (Knicks stint 9/15-9/30), Herro (full participant after an April foot procedure), Bona, Mikel Brown Jr., Beal, Knueppel. No placement moved; no trades in the window (Basketball-Reference 2026-27 transactions, direct)"
   },
   "rosters_verified": {
-    "date": "2026-10-01",
+    "date": "2026-10-02",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-01 evening stands (site.api.espn.com, 30 rosters, 0 mismatches on 333/334; Tony Bradley exemption) \u2014 no roster row touched by this deck version"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-02 (site.api.espn.com, all 30 rosters); --allow-unmatched for Tony Bradley (NYK Exhibit 9 deal 9/30 \u2014 Hoops Rumors, Yardbarker, Daily Knicks \u2014 not yet on ESPN's feed)"
   }
 }

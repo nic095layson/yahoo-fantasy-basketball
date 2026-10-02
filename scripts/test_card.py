@@ -398,6 +398,12 @@ process.stdout.write(JSON.stringify(out));
          "p.mkt != null ? p.mkt : MKT_RANK.get(" in app, "survivalP does not read PLAYERS[].mkt first")
     case("D51R-1R the room-mix blend is gone from the app (no VAL_RANK survival path)",
          "SURV_W_VAL" not in app and "survPhi(" not in app, "old blend constants still present")
+    # ---- D-LS-2 (2026-10-02): the chip tooltip states the owner's league's realized bands from
+    # arena/results/league_survival_2025-26.json (BUY NOW rows survived 21 of 53, TOSS-UP 36 of 69,
+    # quiet 447 of 481 at the owner's seat last season) so the words match the room he drafts in.
+    case("D-LS-2 the chip tooltip carries the owner's league's realized survival bands (21 of 53 · 36 of 69 · 447 of 481)",
+         "In your league last season" in app and "21 of 53" in app and "36 of 69" in app and "447 of 481" in app,
+         "league bands absent from the chip tooltip")
     case("D51R-1 the app's chip path consults survivalChip", "let chip = survivalChip(" in app,
          "chip block still hard-codes the thresholds")
     case("D51R-1 the 🚌 wait-chain is gated by SURVIVAL_DISPLAY",
