@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-05",
-  "note": "refreshed",
+  "date": "2026-10-06",
+  "note": "2026-10-06 daily pull: five preseason box scores (10/5) read from ESPN's feed before the sweep; Strus to foot-recovery on the diagnosis (D-1005-2 default); Broome to MIL (signed 10/6, exempted by name); Acuff Jr. research on the sheet (D-1006-1); no line changed",
   "pool_changes": {
     "changed": true,
-    "note": "2026-10-05 pull (window 10/2 16:00 UTC to 10/5; the first with preseason box scores \u2014 TOR-MIA 10/3, UTA-DEN and LAC-GSW 10/4, read from ESPN's feed): one row added, Yang Hansen (POR, third-string C; the D59-3 default applied \u2014 a public room drafted him with no pool row; line [ESTIMATED] from his 2025-26 base, kit twin identical). Twenty dated notes: Hawkins (waived by MEM per ESPN/Shams, NBC Sports, Hoops Rumors \u2014 still on ESPN's roster feed, placement moves when it reflects), Strus (left the opener after 5 min, right foot, testing pending), Claxton (hamstring, out for the preseason), Tobias Harris (calf strain, out for the preseason, questionable for the opener), Lendeborg (started at SF), Isaiah Jackson (started at C) / Lopez (7 min off the bench), Beal (did not play, knee), Kawhi and Porzingis (sat), Jamal Murray (sat, personal), Jaren Jackson Jr. (started, first game since the PVNS surgery), Filipowski (DNP), Edey, Simmons, Bona, Brown Jr., Duren (held out of or doubtful for openers), Knueppel and Black (trending up). No placement, tag or line changed on an existing row; no trades in the window (Basketball-Reference 2026-27 transactions, direct)"
+    "note": "2026-10-06 pull (window 10/5 18:35 UTC to 10/6; five more preseason box scores read from ESPN's feed \u2014 ATL-MEM, DET-PHX, PHI-NYK, MIL-MIN, SAC-LAL, all 10/5): one tier change, Max Strus to foot-recovery (the D-1005-2 default applied on the diagnosis \u2014 partial tear of the right plantar fascia, re-evaluated in four weeks, out for the start of the season; ESPN, NBA.com, Hoops Rumors), kit GP 25 as the twin; one placement, Johni Broome FA to MIL (signed 10/6 \u2014 RotoWire, CBS Sports, Hoops Rumors; exempted by name until ESPN's feed lists him). Hawkins: Basketball-Reference's ledger now carries the 10/2 waiver but ESPN's feed still lists him, placement held under the lock (D-1005-4). 52 dated notes: Acuff Jr. (started at PG, 27 min, the most of any Kings starter; line held pending WO-5 \u2014 D-1006-1), Rollins (started at PG, Porter first sub), Jerome (started over Pippen Jr.), Reed (started at C, Duren out), Edgecombe, Boozer, Flemings, Alexander-Walker, Herro, Turner/Ware, Clifford, Raynaud, Cardwell; held out: Embiid, Maxey, LeBron, Simmons, Monk, Keegan Murray, Reaves, Kessler, Sexton, Edey, Duren, Dort, McCollum; Coby White (calf strain, out for the preseason \u2014 NBA.com, SI Hornets; D-1006-2); Suggs (illness), Brown Jr., Black, Dru Smith, Lively, Knueppel, Beal, Kawhi. No line changed; no trades in the window (Basketball-Reference 2026-27 transactions, direct)"
   },
   "rosters_verified": {
-    "date": "2026-10-05",
+    "date": "2026-10-06",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-05 (site.api.espn.com, all 30 rosters); --allow-unmatched for Tony Bradley (NYK Exhibit 9 deal 9/30 \u2014 Hoops Rumors, Yardbarker, Daily Knicks \u2014 not yet on ESPN's feed)"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-06 (site.api.espn.com, all 30 rosters); --allow-unmatched for Johni Broome (signed by Milwaukee 2026-10-06 per RotoWire, CBS Sports, Hoops Rumors, Yahoo, Heavy; not yet on ESPN's feed at the 10/6 direct check); Tony Bradley now on ESPN's Knicks feed, exemption lapsed"
   }
 }
