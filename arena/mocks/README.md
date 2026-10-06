@@ -383,6 +383,30 @@ is on the author. See LEDGER §3.
   3 of 9; near-price 5 of 11 and 0 of 10. Repeat-name audit (`m61_repeat_names_audit.json`): the #1 changes at 10
   of 13 turns under other rooms' rosters (11 of 13 against an empty roster); Gafford on the Top-5 at one turn, Braun at one, Poeltl at
   none. Debrief `debrief_2026-10-06_mock61_slot10.md`; kit report `after-report-2026-10-06-draft61.md`.
+- **Mock 62 (2026-10-06, slot 10).** The deck's own MOCK mode against the 11 league-mates — the first room on the REAL
+  2026-27 seating (JUDGMENT.draftOrder, owner directive 2026-10-06: Oblena, Noah, Will, Robby, Kyle, Martin, John, JCo,
+  Kevin, owner at 10, Cayas, Hegi), drafted on deck v46 (rev `441bba6`; pool sha `48456b3b18ff` = the v44 pool with the
+  10/6 prices baked), the veto live. `live_retro.MOCKS[62]` = `dict(tags=("v44",), veto=True, room="cast")`; `PAGE_REV[62]
+  = "441bba6"`; no punt declared (`PUNT_TIMELINES[62] = [(0, [])]`). State = the owner's exported draft state verbatim
+  (156 picks, every name a pool row, snake-consistent, `cast` = the real order; md5 `f185f50d5dcbe3f0ba7108e314837677`);
+  no recap and no tool log exist for a MOCK, so no DOM replay. **The card followed at 13 of 13 turns — the first
+  thirteen-for-thirteen room**: as drafted 18.05% / ECW 4.987 rank 2 (next 5.284), favored 10/11
+  (`m62_followcard_grade.json`, `m62_arms.json`; the retro port's follow-card chain differs only by the D60-1 tie-break at #130/#135 and grades 18.22%). Deck card
+  replayed from the v46 page (`live_deckcard.py 62 rev:441bba6:docs/draft-deck.html arena/results/m62_deckcard_v44.json`):
+  🎯 taken 13 of 13. Hindsight's largest single swap: Chet Holmgren at #15 (+0.103 cats/week). **The advice line's
+  third live room** (`m62_advice_reads.json`): fired at four turns (#15, #34, #39, #82) — its first room with more than one — and the
+  owner took the 🎯 each time; the 'now' men as single swaps grade -0.10 / +1.30 / -1.76 / +1.48 title points, all four together
+  +1.44; the pair rule replayed as the marker finished at 17.49% against the blend chain's 18.22% (seed set 1).
+  Survival pooled with the 51–61 deck cards (`m62_survival.json`: this room 48 rows, Brier 0.196, mean predicted
+  0.577 vs realized 0.521 — the chips ran optimistic against the cast; BUY NOW 0 of 4 survived, TOSS-UP
+  3 of 9, quiet 22 of 35). **Cast fidelity** (`m62_cast_fidelity.json`, new): the market-leaning profiles
+  (Noah, Robby, Hegi) drafted market fallers and sat behind on value, the value-leaning ones (Oblena, Kevin, Martin, Cayas)
+  ahead on value; Kevin took eight guards; loyalty fired on 11 of the 17 loyalty names still on the board at the manager's
+  turn. Target-wait with this room added (`target_wait_2026-10-06b.json`): deep 🎯s passed on were still there at the next owner
+  turn 8 of 10 times (no 🎯 was passed here — every turn is `taken_now`). Repeat-name audit
+  (`m62_repeat_names_audit.json`): the #1 changes at 12 of 13 turns under other rooms' rosters (11 of 13 against an
+  empty roster); Gafford on the Top-5 at two turns (taken at #135), Braun at two, Poeltl at none. Debrief
+  `debrief_2026-10-06_mock62_slot10.md`; kit report `after-report-2026-10-06-draft62.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

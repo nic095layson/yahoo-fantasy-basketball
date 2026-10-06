@@ -1,0 +1,637 @@
+{
+ "as drafted (the card's \ud83c\udfaf at all 13 turns)": {
+  "ecw": 4.987,
+  "rank": 2,
+  "next": 5.284,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 7,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 6,
+   "ST": 6,
+   "BLK": 7,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 7,
+   "3PTM": 2,
+   "PTS": 8,
+   "REB": 5,
+   "AST": 7,
+   "ST": 8,
+   "BLK": 8,
+   "TO": 3
+  },
+  "champ": 18.05,
+  "playoff": 94.91,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 4.941,
+  "rank": 2,
+  "next": 5.148,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 10,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 5,
+   "ST": 3,
+   "BLK": 10,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 10,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 7,
+   "REB": 9,
+   "AST": 5,
+   "ST": 3,
+   "BLK": 10,
+   "TO": 4
+  },
+  "champ": 18.22,
+  "playoff": 93.91,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    130,
+    "Herbert Jones"
+   ],
+   [
+    135,
+    "Collin Gillespie"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Cam Thomas"
+  ]
+ },
+ "advice at #15: Desmond Bane for Jalen Williams (the 'now' man; Bane went #33)": {
+  "ecw": 4.971,
+  "rank": 2,
+  "next": 5.28,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 6,
+   "REB": 3,
+   "AST": 6,
+   "ST": 9,
+   "BLK": 8,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 5,
+   "AST": 7,
+   "ST": 10,
+   "BLK": 9,
+   "TO": 3
+  },
+  "champ": 17.95,
+  "playoff": 94.73,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Desmond Bane"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Desmond Bane",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "advice at #34: Franz Wagner for OG Anunoby (Wagner went #38)": {
+  "ecw": 5.004,
+  "rank": 2,
+  "next": 5.271,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 5,
+   "ST": 9,
+   "BLK": 9,
+   "TO": 9
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 5,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 5,
+   "ST": 10,
+   "BLK": 9,
+   "TO": 9
+  },
+  "champ": 19.35,
+  "playoff": 95.52,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Franz Wagner"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "Franz Wagner",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "advice at #39: Onyeka Okongwu for Payton Pritchard (Okongwu went #42)": {
+  "ecw": 4.912,
+  "rank": 2,
+  "next": 5.291,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 8,
+   "3PTM": 8,
+   "PTS": 8,
+   "REB": 1,
+   "AST": 8,
+   "ST": 8,
+   "BLK": 5,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 8,
+   "3PTM": 8,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 10,
+   "ST": 10,
+   "BLK": 5,
+   "TO": 3
+  },
+  "champ": 16.29,
+  "playoff": 93.76,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Onyeka Okongwu"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "advice at #82: Myles Turner for Yaxel Lendeborg (Turner went #92)": {
+  "ecw": 5.019,
+  "rank": 2,
+  "next": 5.298,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 7,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 7,
+   "ST": 8,
+   "BLK": 5,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 7,
+   "3PTM": 1,
+   "PTS": 8,
+   "REB": 6,
+   "AST": 8,
+   "ST": 10,
+   "BLK": 6,
+   "TO": 3
+  },
+  "champ": 19.53,
+  "playoff": 96.08,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Myles Turner",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "the four advice 'now' men together (#15 Bane, #34 Wagner, #39 Okongwu, #82 Turner)": {
+  "ecw": 4.993,
+  "rank": 2,
+  "next": 5.285,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 1,
+   "AST": 6,
+   "ST": 11,
+   "BLK": 2,
+   "TO": 7
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 7,
+   "ST": 11,
+   "BLK": 4,
+   "TO": 5
+  },
+  "champ": 19.49,
+  "playoff": 96.03,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Desmond Bane"
+   ],
+   [
+    34,
+    "Franz Wagner"
+   ],
+   [
+    39,
+    "Onyeka Okongwu"
+   ],
+   [
+    82,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Desmond Bane",
+   "Franz Wagner",
+   "Onyeka Okongwu",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Myles Turner",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 5.09,
+  "rank": 2,
+  "next": 5.279,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 8,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 1,
+   "AST": 9,
+   "ST": 10,
+   "BLK": 2,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 8,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 11,
+   "ST": 10,
+   "BLK": 3,
+   "TO": 2
+  },
+  "champ": 21.74,
+  "playoff": 97.56,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Chet Holmgren",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Dyson Daniels at #34": {
+  "ecw": 5.018,
+  "rank": 2,
+  "next": 5.275,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 10,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 7
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 10,
+   "3PTM": 6,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 9,
+   "TO": 5
+  },
+  "champ": 20.16,
+  "playoff": 95.97,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Dyson Daniels"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Rudy Gobert at #63": {
+  "ecw": 4.995,
+  "rank": 2,
+  "next": 5.288,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 9,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 7,
+   "ST": 5,
+   "BLK": 7,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 9,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 5,
+   "AST": 7,
+   "ST": 8,
+   "BLK": 7,
+   "TO": 3
+  },
+  "champ": 18.36,
+  "playoff": 94.99,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Rudy Gobert"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Rudy Gobert",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Myles Turner at #82": {
+  "ecw": 5.019,
+  "rank": 2,
+  "next": 5.298,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 7,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 7,
+   "ST": 8,
+   "BLK": 5,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 7,
+   "3PTM": 1,
+   "PTS": 8,
+   "REB": 6,
+   "AST": 8,
+   "ST": 10,
+   "BLK": 6,
+   "TO": 3
+  },
+  "champ": 19.53,
+  "playoff": 96.08,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Myles Turner",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Myles Turner at #87": {
+  "ecw": 5.013,
+  "rank": 2,
+  "next": 5.287,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 7,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 6,
+   "ST": 8,
+   "BLK": 2,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 7,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 5,
+   "AST": 7,
+   "ST": 10,
+   "BLK": 4,
+   "TO": 5
+  },
+  "champ": 19.36,
+  "playoff": 95.78,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Myles Turner",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ }
+}

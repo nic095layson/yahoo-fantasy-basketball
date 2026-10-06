@@ -1,0 +1,961 @@
+{
+ "engine": {
+  "catWinProb": true,
+  "puntRead": true,
+  "coherenceRead": true
+ },
+ "rows": [
+  {
+   "pick": 15,
+   "moment": "post",
+   "roster": 2,
+   "punt": [],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 12,
+    "3PTM": 11,
+    "PTS": 8,
+    "REB": 5,
+    "AST": 4,
+    "ST": 1,
+    "BLK": 2,
+    "TO": 11
+   },
+   "pw": {
+    "FG%": 0.535,
+    "FT%": 0.297,
+    "3PTM": 0.634,
+    "PTS": 0.834,
+    "REB": 0.874,
+    "AST": 0.902,
+    "ST": 0.881,
+    "BLK": 0.802,
+    "TO": 0.123
+   }
+  },
+  {
+   "pick": 34,
+   "moment": "pre",
+   "roster": 2,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 9,
+    "PTS": 11,
+    "REB": 6,
+    "AST": 7,
+    "ST": 3,
+    "BLK": 3,
+    "TO": 8
+   },
+   "pw": {
+    "FG%": 0.546,
+    "FT%": 0.331,
+    "3PTM": 0.114,
+    "PTS": 0.123,
+    "REB": 0.347,
+    "AST": 0.326,
+    "ST": 0.405,
+    "BLK": 0.399,
+    "TO": 0.702
+   }
+  },
+  {
+   "pick": 34,
+   "moment": "post",
+   "roster": 3,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 9,
+    "PTS": 11,
+    "REB": 8,
+    "AST": 7,
+    "ST": 1,
+    "BLK": 3,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.525,
+    "FT%": 0.343,
+    "3PTM": 0.456,
+    "PTS": 0.449,
+    "REB": 0.564,
+    "AST": 0.452,
+    "ST": 0.774,
+    "BLK": 0.677,
+    "TO": 0.51
+   }
+  },
+  {
+   "pick": 39,
+   "moment": "pre",
+   "roster": 3,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 9,
+    "PTS": 11,
+    "REB": 8,
+    "AST": 7,
+    "ST": 1,
+    "BLK": 4,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.526,
+    "FT%": 0.34,
+    "3PTM": 0.365,
+    "PTS": 0.307,
+    "REB": 0.446,
+    "AST": 0.345,
+    "ST": 0.693,
+    "BLK": 0.573,
+    "TO": 0.628
+   }
+  },
+  {
+   "pick": 39,
+   "moment": "post",
+   "roster": 4,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 9,
+    "3PTM": 3,
+    "PTS": 11,
+    "REB": 8,
+    "AST": 7,
+    "ST": 1,
+    "BLK": 9,
+    "TO": 4
+   },
+   "pw": {
+    "FG%": 0.489,
+    "FT%": 0.371,
+    "3PTM": 0.811,
+    "PTS": 0.702,
+    "REB": 0.63,
+    "AST": 0.702,
+    "ST": 0.857,
+    "BLK": 0.622,
+    "TO": 0.353
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "3/8",
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "6/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 58,
+   "moment": "pre",
+   "roster": 4,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 9,
+    "3PTM": 4,
+    "PTS": 11,
+    "REB": 8,
+    "AST": 6,
+    "ST": 2,
+    "BLK": 7,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.45,
+    "FT%": 0.402,
+    "3PTM": 0.543,
+    "PTS": 0.174,
+    "REB": 0.191,
+    "AST": 0.345,
+    "ST": 0.545,
+    "BLK": 0.28,
+    "TO": 0.746
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/8",
+   "new_lean": [
+    "PTS",
+    "REB"
+   ],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "1/7",
+   "new_seen": {
+    "PTS": 1,
+    "REB": 1
+   }
+  },
+  {
+   "pick": 58,
+   "moment": "post",
+   "roster": 5,
+   "punt": [],
+   "ranks": {
+    "FG%": 9,
+    "FT%": 7,
+    "3PTM": 3,
+    "PTS": 6,
+    "REB": 8,
+    "AST": 4,
+    "ST": 2,
+    "BLK": 10,
+    "TO": 7
+   },
+   "pw": {
+    "FG%": 0.397,
+    "FT%": 0.492,
+    "3PTM": 0.837,
+    "PTS": 0.604,
+    "REB": 0.365,
+    "AST": 0.667,
+    "ST": 0.699,
+    "BLK": 0.333,
+    "TO": 0.394
+   },
+   "old_lean": [
+    "BLK"
+   ],
+   "old_fulltilt": false,
+   "old_path": "3/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "4/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 63,
+   "moment": "pre",
+   "roster": 5,
+   "punt": [],
+   "ranks": {
+    "FG%": 8,
+    "FT%": 7,
+    "3PTM": 3,
+    "PTS": 7,
+    "REB": 9,
+    "AST": 4,
+    "ST": 3,
+    "BLK": 10,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.408,
+    "FT%": 0.5,
+    "3PTM": 0.779,
+    "PTS": 0.489,
+    "REB": 0.255,
+    "AST": 0.594,
+    "ST": 0.618,
+    "BLK": 0.285,
+    "TO": 0.508
+   },
+   "old_lean": [
+    "BLK"
+   ],
+   "old_fulltilt": false,
+   "old_path": "3/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "REB"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "REB"
+   ],
+   "new_clear": false,
+   "new_path": "3/8",
+   "new_seen": {
+    "REB": 2
+   }
+  },
+  {
+   "pick": 63,
+   "moment": "post",
+   "roster": 6,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 9,
+    "3PTM": 5,
+    "PTS": 11,
+    "REB": 7,
+    "AST": 5,
+    "ST": 3,
+    "BLK": 9,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.476,
+    "FT%": 0.436,
+    "3PTM": 0.779,
+    "PTS": 0.689,
+    "REB": 0.665,
+    "AST": 0.77,
+    "ST": 0.75,
+    "BLK": 0.537,
+    "TO": 0.341
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "1/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "5/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 82,
+   "moment": "pre",
+   "roster": 6,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 9,
+    "3PTM": 5,
+    "PTS": 10,
+    "REB": 7,
+    "AST": 4,
+    "ST": 5,
+    "BLK": 8,
+    "TO": 5
+   },
+   "pw": {
+    "FG%": 0.502,
+    "FT%": 0.446,
+    "3PTM": 0.498,
+    "PTS": 0.218,
+    "REB": 0.343,
+    "AST": 0.446,
+    "ST": 0.447,
+    "BLK": 0.308,
+    "TO": 0.687
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "1/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS",
+    "REB"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "REB"
+   ],
+   "new_clear": false,
+   "new_path": "1/8",
+   "new_seen": {
+    "PTS": 1,
+    "REB": 3
+   }
+  },
+  {
+   "pick": 82,
+   "moment": "post",
+   "roster": 7,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 9,
+    "3PTM": 8,
+    "PTS": 11,
+    "REB": 6,
+    "AST": 6,
+    "ST": 5,
+    "BLK": 7,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.528,
+    "FT%": 0.411,
+    "3PTM": 0.595,
+    "PTS": 0.423,
+    "REB": 0.613,
+    "AST": 0.585,
+    "ST": 0.643,
+    "BLK": 0.506,
+    "TO": 0.529
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "1/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "4/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 87,
+   "moment": "pre",
+   "roster": 7,
+   "punt": [],
+   "ranks": {
+    "FG%": 7,
+    "FT%": 9,
+    "3PTM": 7,
+    "PTS": 11,
+    "REB": 5,
+    "AST": 6,
+    "ST": 5,
+    "BLK": 7,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.526,
+    "FT%": 0.412,
+    "3PTM": 0.52,
+    "PTS": 0.33,
+    "REB": 0.532,
+    "AST": 0.522,
+    "ST": 0.576,
+    "BLK": 0.46,
+    "TO": 0.602
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "1/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "2/8",
+   "new_seen": {
+    "PTS": 2
+   }
+  },
+  {
+   "pick": 87,
+   "moment": "post",
+   "roster": 8,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 6,
+    "PTS": 12,
+    "REB": 5,
+    "AST": 9,
+    "ST": 5,
+    "BLK": 8,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.546,
+    "FT%": 0.391,
+    "3PTM": 0.697,
+    "PTS": 0.562,
+    "REB": 0.746,
+    "AST": 0.633,
+    "ST": 0.715,
+    "BLK": 0.576,
+    "TO": 0.501
+   },
+   "old_lean": [
+    "PTS",
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_path": "1/7",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "6/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 106,
+   "moment": "pre",
+   "roster": 8,
+   "punt": [],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 9,
+    "3PTM": 7,
+    "PTS": 11,
+    "REB": 5,
+    "AST": 8,
+    "ST": 6,
+    "BLK": 9,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.573,
+    "FT%": 0.429,
+    "3PTM": 0.451,
+    "PTS": 0.171,
+    "REB": 0.427,
+    "AST": 0.357,
+    "ST": 0.451,
+    "BLK": 0.317,
+    "TO": 0.79
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "2/8",
+   "new_seen": {
+    "PTS": 3
+   }
+  },
+  {
+   "pick": 106,
+   "moment": "post",
+   "roster": 9,
+   "punt": [],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 10,
+    "3PTM": 7,
+    "PTS": 12,
+    "REB": 5,
+    "AST": 8,
+    "ST": 6,
+    "BLK": 9,
+    "TO": 2
+   },
+   "pw": {
+    "FG%": 0.556,
+    "FT%": 0.409,
+    "3PTM": 0.587,
+    "PTS": 0.364,
+    "REB": 0.665,
+    "AST": 0.476,
+    "ST": 0.624,
+    "BLK": 0.475,
+    "TO": 0.653
+   },
+   "old_lean": [
+    "PTS",
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/7",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "5/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 111,
+   "moment": "pre",
+   "roster": 9,
+   "punt": [],
+   "ranks": {
+    "FG%": 4,
+    "FT%": 10,
+    "3PTM": 8,
+    "PTS": 12,
+    "REB": 5,
+    "AST": 7,
+    "ST": 6,
+    "BLK": 9,
+    "TO": 2
+   },
+   "pw": {
+    "FG%": 0.552,
+    "FT%": 0.414,
+    "3PTM": 0.535,
+    "PTS": 0.3,
+    "REB": 0.584,
+    "AST": 0.429,
+    "ST": 0.577,
+    "BLK": 0.43,
+    "TO": 0.7
+   },
+   "old_lean": [
+    "PTS",
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/7",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "4/8",
+   "new_seen": {
+    "PTS": 4
+   }
+  },
+  {
+   "pick": 111,
+   "moment": "post",
+   "roster": 10,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 9,
+    "3PTM": 6,
+    "PTS": 12,
+    "REB": 5,
+    "AST": 9,
+    "ST": 6,
+    "BLK": 9,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.514,
+    "FT%": 0.439,
+    "3PTM": 0.739,
+    "PTS": 0.576,
+    "REB": 0.754,
+    "AST": 0.563,
+    "ST": 0.703,
+    "BLK": 0.504,
+    "TO": 0.555
+   },
+   "old_lean": [
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "1/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "6/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 130,
+   "moment": "pre",
+   "roster": 10,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 10,
+    "3PTM": 5,
+    "PTS": 9,
+    "REB": 6,
+    "AST": 10,
+    "ST": 6,
+    "BLK": 8,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.534,
+    "FT%": 0.444,
+    "3PTM": 0.534,
+    "PTS": 0.229,
+    "REB": 0.501,
+    "AST": 0.28,
+    "ST": 0.458,
+    "BLK": 0.344,
+    "TO": 0.796
+   },
+   "old_lean": [
+    "FT%",
+    "AST"
+   ],
+   "old_fulltilt": false,
+   "old_path": "1/7",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "1/8",
+   "new_seen": {
+    "PTS": 5
+   }
+  },
+  {
+   "pick": 130,
+   "moment": "post",
+   "roster": 11,
+   "punt": [],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 9,
+    "3PTM": 3,
+    "PTS": 11,
+    "REB": 7,
+    "AST": 9,
+    "ST": 6,
+    "BLK": 11,
+    "TO": 2
+   },
+   "pw": {
+    "FG%": 0.484,
+    "FT%": 0.469,
+    "3PTM": 0.757,
+    "PTS": 0.405,
+    "REB": 0.634,
+    "AST": 0.495,
+    "ST": 0.632,
+    "BLK": 0.38,
+    "TO": 0.662
+   },
+   "old_lean": [
+    "PTS",
+    "BLK"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/7",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "4/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 135,
+   "moment": "pre",
+   "roster": 11,
+   "punt": [],
+   "ranks": {
+    "FG%": 6,
+    "FT%": 9,
+    "3PTM": 4,
+    "PTS": 11,
+    "REB": 6,
+    "AST": 8,
+    "ST": 5,
+    "BLK": 10,
+    "TO": 2
+   },
+   "pw": {
+    "FG%": 0.491,
+    "FT%": 0.463,
+    "3PTM": 0.7,
+    "PTS": 0.335,
+    "REB": 0.568,
+    "AST": 0.455,
+    "ST": 0.578,
+    "BLK": 0.343,
+    "TO": 0.713
+   },
+   "old_lean": [
+    "PTS",
+    "BLK"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/7",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "4/8",
+   "new_seen": {
+    "PTS": 6
+   }
+  },
+  {
+   "pick": 135,
+   "moment": "post",
+   "roster": 12,
+   "punt": [],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 10,
+    "3PTM": 6,
+    "PTS": 12,
+    "REB": 6,
+    "AST": 11,
+    "ST": 7,
+    "BLK": 6,
+    "TO": 1
+   },
+   "pw": {
+    "FG%": 0.587,
+    "FT%": 0.424,
+    "3PTM": 0.697,
+    "PTS": 0.486,
+    "REB": 0.788,
+    "AST": 0.531,
+    "ST": 0.645,
+    "BLK": 0.631,
+    "TO": 0.619
+   },
+   "old_lean": [
+    "PTS",
+    "AST",
+    "FT%"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/6",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "6/9",
+   "new_seen": {}
+  },
+  {
+   "pick": 154,
+   "moment": "pre",
+   "roster": 12,
+   "punt": [],
+   "ranks": {
+    "FG%": 3,
+    "FT%": 10,
+    "3PTM": 4,
+    "PTS": 10,
+    "REB": 3,
+    "AST": 8,
+    "ST": 7,
+    "BLK": 7,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.593,
+    "FT%": 0.434,
+    "3PTM": 0.536,
+    "PTS": 0.215,
+    "REB": 0.548,
+    "AST": 0.334,
+    "ST": 0.425,
+    "BLK": 0.46,
+    "TO": 0.793
+   },
+   "old_lean": [
+    "FT%",
+    "PTS"
+   ],
+   "old_fulltilt": false,
+   "old_path": "4/7",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [
+    "PTS"
+   ],
+   "new_advise": true,
+   "new_set": [
+    "PTS"
+   ],
+   "new_clear": false,
+   "new_path": "2/8",
+   "new_seen": {
+    "PTS": 7
+   }
+  },
+  {
+   "pick": 154,
+   "moment": "post",
+   "roster": 13,
+   "punt": [],
+   "ranks": {
+    "FG%": 5,
+    "FT%": 8,
+    "3PTM": 3,
+    "PTS": 8,
+    "REB": 5,
+    "AST": 8,
+    "ST": 10,
+    "BLK": 8,
+    "TO": 3
+   },
+   "pw": {
+    "FG%": 0.536,
+    "FT%": 0.514,
+    "3PTM": 0.738,
+    "PTS": 0.548,
+    "REB": 0.667,
+    "AST": 0.504,
+    "ST": 0.523,
+    "BLK": 0.491,
+    "TO": 0.572
+   },
+   "old_lean": [
+    "ST"
+   ],
+   "old_fulltilt": false,
+   "old_path": "2/8",
+   "old_adopt": false,
+   "old_adopt_set": [],
+   "new_lean": [],
+   "new_advise": false,
+   "new_set": [],
+   "new_clear": false,
+   "new_path": "3/9",
+   "new_seen": {}
+  }
+ ]
+}
