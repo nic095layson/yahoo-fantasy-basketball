@@ -477,6 +477,11 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
   ok("S4.start-log", m0[0].endsWith("· MOCK — your 11 league-mates hold the other seats") && m0[1].startsWith("Cast: Seat 1:"), m0.slice(0, 2));
   ok("S4.auto-advance-to-owner", (await picksOf(page)).length === 9 && (await page.locator("#feedTitle").innerText()).toLowerCase() === "your pick #10" && !(await hidden(page, "#advanceBtn")), { n: (await picksOf(page)).length, title: await page.locator("#feedTitle").innerText() });
   ok("S4.cast-seated", (await stateOf(page)).state.cast.length === 11);
+  /* owner directive 2026-10-06 (final for the 10/14 draft): a MOCK from slot 10 seats the 11 league-mates in the
+     league's REAL 2026-27 draft order, not a per-draft shuffle; the start log names the source */
+  const REAL_ORDER = [[1, "Oblena"], [2, "Noah"], [3, "Will"], [4, "Robby"], [5, "Kyle"], [6, "Martin"], [7, "John"], [8, "JCo"], [9, "Kevin"], [11, "Cayas"], [12, "Hegi"]];
+  ok("S4.cast-real-order", JSON.stringify((await stateOf(page)).state.cast) === JSON.stringify(REAL_ORDER), (await stateOf(page)).state.cast);
+  ok("S4.cast-log-source", m0[1].startsWith("Cast: Seat 1: Oblena  Seat 2: Noah") && m0[1].includes("real 2026-27 draft order"), m0[1]);
   const take = page.locator("#recos li .take").first();
   ok("S4.take-label", (await take.innerText()) === "Draft them", await take.innerText());
   const t5 = await topFive(page);
