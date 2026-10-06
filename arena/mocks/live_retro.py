@@ -122,6 +122,10 @@ MOCKS = {
     # mock 61 (2026-10-06, slot 10): public Yahoo room drafted on deck 2026-10-06 daily-pull build (deck v44) (rev 583435c; pool sha 48456b3b18ff).
     # The veto live; the owner's fifth room on the concise card; one UNKNOWN fix (#5), one undo (#137), no insert.
     61: dict(tags=("v44",), veto=True),
+    # mock 62 (2026-10-06, slot 10): the deck's own MOCK mode against the 11 league-mates in the league's
+    # REAL 2026-27 draft order (the first room on that seating), drafted on deck v46 (rev 441bba6; pool
+    # sha 48456b3b18ff — the v44 pool, with the 10/6 Yahoo prices baked). room="cast": not a public room.
+    62: dict(tags=("v44",), veto=True, room="cast"),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -660,7 +664,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6"}
 
 
 def _baked_prices(rev):
