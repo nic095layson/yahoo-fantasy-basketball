@@ -34,7 +34,8 @@ POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v25": SP + "/m53_players_v25.csv", "v28": SP + "/m54_players_v28.csv",
          "v31": SP + "/m56_players_v31.csv", "v33": SP + "/players_v33.csv",
          "v35": SP + "/m58_players_v35.csv", "v37": SP + "/m59_players_v37.csv",
-         "v39": SP + "/m59_players_v39.csv", "v42": SP + "/m60_players_v42.csv"}
+         "v39": SP + "/m59_players_v39.csv", "v42": SP + "/m60_players_v42.csv",
+         "v44": SP + "/m61_players_v44.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -73,6 +74,9 @@ V39_REV = "bc908f6"
 # pinned to rev 6ae36ab (deck v42 main). Every VALUE is byte-identical to v41 (c6ee976): the
 # 10/2 second pull changed notes only, so a room drafted on either page grades the same here.
 V42_REV = "6ae36ab"
+# v44 = data/players.csv as of the 2026-10-06 daily-pull build (deck v44) (mock 61; pool sha 48456b3b18ff),
+# pinned to rev 583435c.
+V44_REV = "583435c"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -115,6 +119,9 @@ MOCKS = {
     # The veto live; the owner's fourth room on the concise card, the first with the D59-1
     # re-numbered history and the D59-2 advice line live; one Insert-at-# (Derik Queen #95).
     60: dict(tags=("v42",), veto=True),
+    # mock 61 (2026-10-06, slot 10): public Yahoo room drafted on deck 2026-10-06 daily-pull build (deck v44) (rev 583435c; pool sha 48456b3b18ff).
+    # The veto live; the owner's fifth room on the concise card; one UNKNOWN fix (#5), one undo (#137), no insert.
+    61: dict(tags=("v44",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -138,7 +145,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV), ("v39", V39_REV), ("v42", V42_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV), ("v39", V39_REV), ("v42", V42_REV), ("v44", V44_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:
@@ -653,7 +660,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab"}
+    60: "6ae36ab", 61: V44_REV}
 
 
 def _baked_prices(rev):

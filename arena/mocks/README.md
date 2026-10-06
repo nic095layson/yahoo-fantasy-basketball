@@ -336,7 +336,8 @@ is on the author. See LEDGER §3.
   +0.039" — silent at every other turn for the stated reason; the pair rule replayed as the marker moved it at two turns
   and finished at the blend chain's own numbers (5.676, 43.14%) — advice-only verdict holds. **Wording
   defect (D60-3):** the twin's sentence names the highest-ΔECW partner regardless of survival (on the port's rows: "Kevin
-  Durant next turn (1% to survive)"). `live_advisor.py`: the room-relative advisor never advised (0 of 23 moments); the
+  Durant next turn (1% to survive)"). `live_advisor.py`: the room-relative advisor read an assists lean at three owner turns and advised at two (#63, #82 — `m60_advisor.json` new_advise;
+  this line said "never advised" until the mock-61 grade re-read the file on 2026-10-06); the
   finish is the most balanced of the nine rooms (nothing worse than 9th weekly). Survival pooled with the 51–59 deck
   cards (`m60_survival.json`: this room 50 rows, Brier 0.175 vs base 0.236 — the best out-of-sample room yet; BUY NOW
   2 of 7 survived, TOSS-UP 5 of 13, quiet 24 of 30). Tool-state integrity: the owner's tool log
@@ -352,6 +353,36 @@ is on the author. See LEDGER §3.
   near-price 5 of 10 and 0 of 9. Repeat-name audit (`m60_repeat_names_audit.json`): the #1 changes at 12
   of 13 turns under other rooms' rosters (12 of 13 against an empty roster); Gafford on the Top-5 at two turns, Braun
   at one, Poeltl at none. Debrief `debrief_2026-10-02_mock60_slot10.md`; kit report `after-report-2026-10-02-draft60.md`.
+- **Mock 61 (2026-10-06, slot 10).** Public Yahoo room, the owner's fifth on the concise card, drafted on deck v44 (rev `583435c`
+  — the 2026-10-06 daily-pull build; pool sha `48456b3b18ff`, 335 rows), the veto live. Page identified by replay: the owner's four
+  "off the card" echoes reproduce on the v44 pool at three decimals (0.237 / 0.363 / 0.228 / 0.019) and two of them miss on v43's
+  (0.364, 0.226); v45 (same pool, 10/6 prices) was published after the room closed. `live_retro.MOCKS[61]` = `dict(tags=("v44",), veto=True)`
+  (new pool tag `v44`, pinned to `583435c`; `PAGE_REV[61]`); no punt declared (`PUNT_TIMELINES[61] = [(0, [])]`). State rebuilt from
+  Yahoo's recap with `hoops.py draft resync` (156 of 156 resolved, no UNKNOWN; seats match the snake, owner roster = the recap's "My Team",
+  md5 `051fee6c1160f7fc75452b08fc3826dc`). **Second from the real seat, the card followed at 9 of 13 turns**: as drafted 16.66% / ECW 4.940
+  rank 2 (next 5.366, seat 4), favored 10/11; follow-card self-consistent 34.49% / 5.513 (Jarrett Allen at #63, Zach LaVine at #82, Isaiah Hartenstein at #87, Sandro Mamukelashvili at #106, Cason Wallace at #111, Yaxel Lendeborg at #130, Saddiq Bey at #135);
+  the card at the four off-card turns alone 30.99% — `m61_followcard_grade.json`, `m61_arms.json`. Deck card replayed from the page
+  drafted against (`live_deckcard.py 61 rev:583435c:docs/draft-deck.html arena/results/m61_deckcard_v44.json`): 🎯 taken 9 of 13, Top-5
+  row 10 of 13; four picks off the card, none of the 🎯s recovered later — Lillard at #63 (card #65, 0.237 behind Jarrett Allen, who went #72;
+  hindsight 68th of 252, Herro +0.329 cats/week, +9.07 title points; the 🎯 +4.35), Murray-Boyles at #106 (card #79, 0.363
+  behind Lendeborg; +4.81), Davion Mitchell at #111 (card #48, 0.227 behind Lendeborg, who lasted to #133; +4.03), Herbert Jones at #135
+  (card #4, 0.019 behind Mamukelashvili; +0.23). **The advice line's second live room** (`m61_advice_reads.json`, the pair twin on the
+  page's rows and the port's): fired at no turn — the 🎯 under the 0.60 wait floor at five turns, the best pair at seven; the pair rule
+  replayed as the marker finished at 34.49% against the blend chain's 34.49% (seed set 1) — advice-only verdict holds.
+  `live_advisor.py`: see the debrief's advisor line (the room-relative read spoke only at the last pick). Survival pooled with the 51–60
+  deck cards (`m61_survival.json`: this room 51 rows, Brier 0.168 vs base 0.248 — the best out-of-sample room yet; BUY NOW
+  1 of 7 survived, TOSS-UP 6 of 14, quiet 21 of 30). Tool-state integrity: the owner's tool log
+  (`arena/data/events/m61_tool_events.json` — 159 events: 158 feeds incl. sixteen shared-token feeds (thirteen surnames, three first names:
+  Jalen, Miles, Tre), one UNKNOWN feed ("Gianis" at #5) fixed with "5- Giannis Antetokounmpo", one undo at #137, no insert, no halt; a page
+  reload after #156 with nothing to replay) replayed through the real v44 page with `live_replay_dom.mjs`: 0 echo misses,
+  0 clock mismatches, 0 page errors, all 156 positions equal to the recap, owner roster identical — `m61_tool_vs_truth.json`.
+  **Finding (data):** the draft room's position display matched the pool on all 156 drafted men, teams too — the second room running
+  (D60-4 stands). **Harness item (D60-1, re-put as D61-3):** the port's name-order tie-break differs from the page at six turns here
+  (#63 rank 66 vs 65, #111 47 vs 48, the 🎯 at #130, the Top-5 order at #39, #106, #154). Target-wait with this room added
+  (`target_wait_2026-10-06.json`): deep 🎯s passed on were still there at the next owner turn 8 of 10 times, two turns on
+  3 of 9; near-price 5 of 11 and 0 of 10. Repeat-name audit (`m61_repeat_names_audit.json`): the #1 changes at 10
+  of 13 turns under other rooms' rosters (11 of 13 against an empty roster); Gafford on the Top-5 at one turn, Braun at one, Poeltl at
+  none. Debrief `debrief_2026-10-06_mock61_slot10.md`; kit report `after-report-2026-10-06-draft61.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

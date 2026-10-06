@@ -1,0 +1,865 @@
+{
+ "as drafted": {
+  "ecw": 4.94,
+  "rank": 2,
+  "next": 5.366,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 11,
+   "REB": 11,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 11,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 1
+  },
+  "champ": 16.66,
+  "playoff": 95.97,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.513,
+  "rank": 1,
+  "next": 5.326,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 3,
+   "REB": 3,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 6,
+   "REB": 3,
+   "AST": 12,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 1
+  },
+  "champ": 34.49,
+  "playoff": 99.91,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Jarrett Allen"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ],
+   [
+    130,
+    "Yaxel Lendeborg"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Jarrett Allen",
+   "Zach LaVine",
+   "Isaiah Hartenstein",
+   "Sandro Mamukelashvili",
+   "Cason Wallace",
+   "Yaxel Lendeborg",
+   "Saddiq Bey",
+   "Devin Vassell"
+  ]
+ },
+ "card at #63 only (Jarrett Allen for Lillard; Allen went #72)": {
+  "ecw": 5.114,
+  "rank": 2,
+  "next": 5.374,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 8,
+   "3PTM": 6,
+   "PTS": 11,
+   "REB": 6,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 7,
+   "PTS": 12,
+   "REB": 7,
+   "AST": 12,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 21.01,
+  "playoff": 98.47,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Jarrett Allen"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Jarrett Allen",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "card at #106 only (Yaxel Lendeborg for Murray-Boyles; Lendeborg went #133)": {
+  "ecw": 5.145,
+  "rank": 2,
+  "next": 5.368,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 11,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 11,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 1
+  },
+  "champ": 21.47,
+  "playoff": 98.53,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Yaxel Lendeborg"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Yaxel Lendeborg",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "card at #111 only (Yaxel Lendeborg for Davion Mitchell; Lendeborg went #133)": {
+  "ecw": 5.116,
+  "rank": 2,
+  "next": 5.371,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 7,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 9,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 20.69,
+  "playoff": 98.35,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Yaxel Lendeborg"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "card at #135 only (Sandro Mamukelashvili for Herbert Jones; Mamukelashvili went #142)": {
+  "ecw": 4.973,
+  "rank": 2,
+  "next": 5.365,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 10,
+   "AST": 9,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 11,
+   "AST": 9,
+   "ST": 5,
+   "BLK": 7,
+   "TO": 1
+  },
+  "champ": 16.89,
+  "playoff": 96.37,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "card at all four off-card turns (#63 Allen, #106 Lendeborg, #111 Draymond Green, #135 Mamukelashvili)": {
+  "ecw": 5.436,
+  "rank": 1,
+  "next": 5.251,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 8,
+   "3PTM": 3,
+   "PTS": 7,
+   "REB": 3,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 8,
+   "3PTM": 4,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 12,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 30.99,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Jarrett Allen"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Draymond Green"
+   ],
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Jarrett Allen",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Yaxel Lendeborg",
+   "Draymond Green",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Jalen Johnson at #10": {
+  "ecw": 4.953,
+  "rank": 2,
+  "next": 5.381,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 5,
+   "3PTM": 1,
+   "PTS": 11,
+   "REB": 11,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 12,
+   "REB": 12,
+   "AST": 5,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 1
+  },
+  "champ": 16.46,
+  "playoff": 96.29,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 4.965,
+  "rank": 2,
+  "next": 5.249,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 6,
+   "PTS": 11,
+   "REB": 7,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 12,
+   "REB": 10,
+   "AST": 12,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 18.06,
+  "playoff": 96.71,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Chet Holmgren",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Tyler Herro at #58": {
+  "ecw": 4.956,
+  "rank": 2,
+  "next": 5.366,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 7,
+   "FT%": 1,
+   "3PTM": 1,
+   "PTS": 6,
+   "REB": 11,
+   "AST": 3,
+   "ST": 3,
+   "BLK": 8,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 1,
+   "3PTM": 1,
+   "PTS": 8,
+   "REB": 11,
+   "AST": 5,
+   "ST": 4,
+   "BLK": 8,
+   "TO": 4
+  },
+  "champ": 16.72,
+  "playoff": 95.69,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "Tyler Herro",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Tyler Herro at #63": {
+  "ecw": 5.269,
+  "rank": 2,
+  "next": 5.362,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 10,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 7,
+   "REB": 11,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 1
+  },
+  "champ": 25.73,
+  "playoff": 99.26,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Tyler Herro"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Tyler Herro",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Zach LaVine at #87": {
+  "ecw": 4.963,
+  "rank": 2,
+  "next": 5.316,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 7,
+   "REB": 11,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 8,
+   "REB": 11,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 8,
+   "TO": 2
+  },
+  "champ": 17.6,
+  "playoff": 95.95,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Zach LaVine"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Zach LaVine",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Draymond Green at #106": {
+  "ecw": 5.147,
+  "rank": 2,
+  "next": 5.153,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 9,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 11,
+   "REB": 11,
+   "AST": 5,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 10,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 11,
+   "AST": 6,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 2
+  },
+  "champ": 22.92,
+  "playoff": 98.6,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Draymond Green"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Draymond Green",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Yaxel Lendeborg at #111": {
+  "ecw": 5.116,
+  "rank": 2,
+  "next": 5.371,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 7,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 9,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 20.69,
+  "playoff": 98.35,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Yaxel Lendeborg"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Herbert Jones",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Draymond Green at #135": {
+  "ecw": 4.999,
+  "rank": 2,
+  "next": 5.352,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 11,
+   "REB": 11,
+   "AST": 6,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 12,
+   "REB": 11,
+   "AST": 7,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 17.11,
+  "playoff": 96.67,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    135,
+    "Draymond Green"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Draymond Green",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Kyle Filipowski at #154": {
+  "ecw": 4.965,
+  "rank": 2,
+  "next": 5.364,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 11,
+   "REB": 8,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 11,
+   "REB": 10,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 1
+  },
+  "champ": 16.66,
+  "playoff": 95.94,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Isaiah Hartenstein",
+   "Mikal Bridges",
+   "Collin Murray-Boyles",
+   "Davion Mitchell",
+   "PJ Washington",
+   "Herbert Jones",
+   "Kyle Filipowski"
+  ]
+ }
+}
