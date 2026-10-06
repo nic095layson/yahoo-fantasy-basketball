@@ -1,0 +1,1485 @@
+{
+ "deck": "deck v44 (rev 583435c; pool 48456b3b18ff) \u2014 the page the owner drafted against, replayed headless; proof: the owner's four 'off the card' echoes (#63 Lillard rank 65, 0.237 behind Jarrett Allen; #106 Murray-Boyles rank 79, 0.363 behind Lendeborg; #111 Davion Mitchell rank 48, 0.227 behind Lendeborg; #135 Herbert Jones rank 4, 0.019 behind Mamukelashvili) reproduce on the v44 pool at three decimals (m61_replay.json / m61_deckcard_v44.json); on the v43 pool two of the four gaps differ (0.364, 0.226); v45 shares v44's pool but was published after the room closed",
+ "tool_final": [
+  "Nikola Jokic",
+  "Victor Wembanyama",
+  "Luka Doncic",
+  "Shai Gilgeous-Alexander",
+  "Giannis Antetokounmpo",
+  "Jayson Tatum",
+  "Cade Cunningham",
+  "Anthony Edwards",
+  "Tyrese Maxey",
+  "Karl-Anthony Towns",
+  "Tyrese Haliburton",
+  "Scottie Barnes",
+  "Austin Reaves",
+  "Jalen Johnson",
+  "Donovan Mitchell",
+  "Cooper Flagg",
+  "Kevin Durant",
+  "Amen Thompson",
+  "Josh Giddey",
+  "Stephen Curry",
+  "Jamal Murray",
+  "Trae Young",
+  "Alperen Sengun",
+  "LaMelo Ball",
+  "Evan Mobley",
+  "Devin Booker",
+  "Bam Adebayo",
+  "Chet Holmgren",
+  "Jalen Brunson",
+  "Domantas Sabonis",
+  "Kawhi Leonard",
+  "Anthony Davis",
+  "James Harden",
+  "Jalen Williams",
+  "Trey Murphy III",
+  "Brandon Miller",
+  "Jaylen Brown",
+  "Donovan Clingan",
+  "Derrick White",
+  "Jalen Duren",
+  "Walker Kessler",
+  "Jaren Jackson Jr.",
+  "Paolo Banchero",
+  "Kyrie Irving",
+  "Lauri Markkanen",
+  "LeBron James",
+  "Keyonte George",
+  "Darius Garland",
+  "Nickeil Alexander-Walker",
+  "Desmond Bane",
+  "Deni Avdija",
+  "Onyeka Okongwu",
+  "Joel Embiid",
+  "Dejounte Murray",
+  "Franz Wagner",
+  "Dyson Daniels",
+  "Cameron Boozer",
+  "OG Anunoby",
+  "Naz Reid",
+  "Matas Buzelis",
+  "Kel'el Ware",
+  "Ivica Zubac",
+  "Damian Lillard",
+  "Kon Knueppel",
+  "Tyler Herro",
+  "Pascal Siakam",
+  "Julius Randle",
+  "Rudy Gobert",
+  "Michael Porter Jr.",
+  "Ryan Rollins",
+  "Alex Sarr",
+  "Jarrett Allen",
+  "Paul George",
+  "Brandon Ingram",
+  "Zach Edey",
+  "De'Aaron Fox",
+  "Ja Morant",
+  "Coby White",
+  "Payton Pritchard",
+  "Ausar Thompson",
+  "Josh Hart",
+  "Isaiah Hartenstein",
+  "Cedric Coward",
+  "Stephon Castle",
+  "Day'Ron Sharpe",
+  "Zion Williamson",
+  "Mikal Bridges",
+  "Jabari Smith Jr.",
+  "Immanuel Quickley",
+  "Dylan Harper",
+  "Nic Claxton",
+  "Caleb Wilson",
+  "Norman Powell",
+  "VJ Edgecombe",
+  "Jaden McDaniels",
+  "Derik Queen",
+  "Ayo Dosunmu",
+  "AJ Dybantsa",
+  "Andrew Wiggins",
+  "Zach LaVine",
+  "Jalen Suggs",
+  "Myles Turner",
+  "Miles Bridges",
+  "Peyton Watson",
+  "Ty Jerome",
+  "Collin Murray-Boyles",
+  "DeMar DeRozan",
+  "Brandin Podziemski",
+  "Neemias Queta",
+  "Jusuf Nurkic",
+  "Davion Mitchell",
+  "Wendell Carter Jr.",
+  "Keegan Murray",
+  "John Collins",
+  "CJ McCollum",
+  "Toumani Camara",
+  "Khaman Maluach",
+  "Kyshawn George",
+  "Daniel Gafford",
+  "Darryn Peterson",
+  "Quentin Grimes",
+  "Andrew Nembhard",
+  "Rui Hachimura",
+  "Jakob Poeltl",
+  "RJ Barrett",
+  "Aaron Gordon",
+  "Collin Gillespie",
+  "Kristaps Porzingis",
+  "Ajay Mitchell",
+  "PJ Washington",
+  "Cason Wallace",
+  "Jalen Green",
+  "Yaxel Lendeborg",
+  "Jonathan Kuminga",
+  "Herbert Jones",
+  "Saddiq Bey",
+  "Jrue Holiday",
+  "Egor Demin",
+  "Moussa Diabate",
+  "Cameron Johnson",
+  "Draymond Green",
+  "Sandro Mamukelashvili",
+  "Jaime Jaquez Jr.",
+  "Tre Jones",
+  "Yves Missi",
+  "Gui Santos",
+  "Dillon Brooks",
+  "Anthony Black",
+  "Pelle Larsson",
+  "Aaron Nesmith",
+  "Reed Sheppard",
+  "Fred VanVleet",
+  "Scoot Henderson",
+  "Devin Vassell",
+  "Tobias Harris",
+  "Jeremiah Fears"
+ ],
+ "diff": [],
+ "events": [
+  {
+   "k": 0,
+   "op": "feed",
+   "text": "Nikola Jokic",
+   "expect": "Nikola Jokic",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 1,
+   "op": "feed",
+   "text": "Victor Wembanyama",
+   "expect": "Victor Wembanyama",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 2,
+   "op": "feed",
+   "text": "Luka Doncic",
+   "expect": "Luka Doncic",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 3,
+   "op": "feed",
+   "text": "Shai Gilgeous-Alexander",
+   "expect": "Shai Gilgeous-Alexander",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 4,
+   "op": "feed",
+   "text": "Gianis",
+   "expect": "UNKNOWN",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 5,
+   "op": "feed",
+   "text": "5- Giannis Antetokounmpo",
+   "expect": "Giannis Antetokounmpo",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 6,
+   "op": "feed",
+   "text": "Jayson Tatum",
+   "expect": "Jayson Tatum",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 7,
+   "op": "feed",
+   "text": "Cade Cunningham",
+   "expect": "Cade Cunningham",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 8,
+   "op": "feed",
+   "text": "Anthony Edwards",
+   "expect": "Anthony Edwards",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 9,
+   "op": "feed",
+   "text": "Tyrese Maxey",
+   "expect": "Tyrese Maxey",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 10,
+   "op": "feed",
+   "text": "Karl-Anthony Towns",
+   "expect": "Karl-Anthony Towns",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 11,
+   "op": "feed",
+   "text": "Tyrese Haliburton",
+   "expect": "Tyrese Haliburton",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 12,
+   "op": "feed",
+   "text": "Barnes",
+   "expect": "Scottie Barnes",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 13,
+   "op": "feed",
+   "text": "Austin Reaves",
+   "expect": "Austin Reaves",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 14,
+   "op": "feed",
+   "text": "Jalen",
+   "expect": "Jalen Johnson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 15,
+   "op": "feed",
+   "text": "Donovan Mitchell",
+   "expect": "Donovan Mitchell",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 16,
+   "op": "feed",
+   "text": "Cooper Flagg",
+   "expect": "Cooper Flagg",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 17,
+   "op": "feed",
+   "text": "Kevin Durant",
+   "expect": "Kevin Durant",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 18,
+   "op": "feed",
+   "text": "Amen Thompson",
+   "expect": "Amen Thompson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 19,
+   "op": "feed",
+   "text": "Josh Giddey",
+   "expect": "Josh Giddey",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 20,
+   "op": "feed",
+   "text": "Stephen Curry",
+   "expect": "Stephen Curry",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 21,
+   "op": "feed",
+   "text": "Murray",
+   "expect": "Jamal Murray",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 22,
+   "op": "feed",
+   "text": "Trae Young",
+   "expect": "Trae Young",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 23,
+   "op": "feed",
+   "text": "Alperen Sengun",
+   "expect": "Alperen Sengun",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 24,
+   "op": "feed",
+   "text": "Ball",
+   "expect": "LaMelo Ball",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 25,
+   "op": "feed",
+   "text": "Evan Mobley",
+   "expect": "Evan Mobley",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 26,
+   "op": "feed",
+   "text": "Devin Booker",
+   "expect": "Devin Booker",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 27,
+   "op": "feed",
+   "text": "Bam Adebayo",
+   "expect": "Bam Adebayo",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 28,
+   "op": "feed",
+   "text": "Chet Holmgren",
+   "expect": "Chet Holmgren",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 29,
+   "op": "feed",
+   "text": "Jalen Brunson",
+   "expect": "Jalen Brunson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 30,
+   "op": "feed",
+   "text": "Domantas Sabonis",
+   "expect": "Domantas Sabonis",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 31,
+   "op": "feed",
+   "text": "Kawhi Leonard",
+   "expect": "Kawhi Leonard",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 32,
+   "op": "feed",
+   "text": "Anthony Davis",
+   "expect": "Anthony Davis",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 33,
+   "op": "feed",
+   "text": "James Harden",
+   "expect": "James Harden",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 34,
+   "op": "feed",
+   "text": "Jalen Williams",
+   "expect": "Jalen Williams",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 35,
+   "op": "feed",
+   "text": "Trey Murphy III",
+   "expect": "Trey Murphy III",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 36,
+   "op": "feed",
+   "text": "Brandon Miller",
+   "expect": "Brandon Miller",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 37,
+   "op": "feed",
+   "text": "Brown",
+   "expect": "Jaylen Brown",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 38,
+   "op": "feed",
+   "text": "Donovan Clingan",
+   "expect": "Donovan Clingan",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 39,
+   "op": "feed",
+   "text": "Derrick White",
+   "expect": "Derrick White",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 40,
+   "op": "feed",
+   "text": "Jalen Duren",
+   "expect": "Jalen Duren",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 41,
+   "op": "feed",
+   "text": "Walker Kessler",
+   "expect": "Walker Kessler",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 42,
+   "op": "feed",
+   "text": "Jaren Jackson Jr.",
+   "expect": "Jaren Jackson Jr.",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 43,
+   "op": "feed",
+   "text": "Paolo Banchero",
+   "expect": "Paolo Banchero",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 44,
+   "op": "feed",
+   "text": "Kyrie Irving",
+   "expect": "Kyrie Irving",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 45,
+   "op": "feed",
+   "text": "Lauri Markkanen",
+   "expect": "Lauri Markkanen",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 46,
+   "op": "feed",
+   "text": "LeBron James",
+   "expect": "LeBron James",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 47,
+   "op": "feed",
+   "text": "Keyonte George",
+   "expect": "Keyonte George",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 48,
+   "op": "feed",
+   "text": "Darius Garland",
+   "expect": "Darius Garland",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 49,
+   "op": "feed",
+   "text": "Nickeil Alexander-Walker",
+   "expect": "Nickeil Alexander-Walker",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 50,
+   "op": "feed",
+   "text": "Desmond Bane",
+   "expect": "Desmond Bane",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 51,
+   "op": "feed",
+   "text": "Deni Avdija",
+   "expect": "Deni Avdija",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 52,
+   "op": "feed",
+   "text": "Onyeka Okongwu",
+   "expect": "Onyeka Okongwu",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 53,
+   "op": "feed",
+   "text": "Joel Embiid",
+   "expect": "Joel Embiid",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 54,
+   "op": "feed",
+   "text": "Dejounte Murray",
+   "expect": "Dejounte Murray",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 55,
+   "op": "feed",
+   "text": "Wagner",
+   "expect": "Franz Wagner",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 56,
+   "op": "feed",
+   "text": "Dyson Daniels",
+   "expect": "Dyson Daniels",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 57,
+   "op": "feed",
+   "text": "Cameron Boozer",
+   "expect": "Cameron Boozer",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 58,
+   "op": "feed",
+   "text": "OG Anunoby",
+   "expect": "OG Anunoby",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 59,
+   "op": "feed",
+   "text": "Naz Reid",
+   "expect": "Naz Reid",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 60,
+   "op": "feed",
+   "text": "Matas Buzelis",
+   "expect": "Matas Buzelis",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 61,
+   "op": "feed",
+   "text": "Kel'el Ware",
+   "expect": "Kel'el Ware",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 62,
+   "op": "feed",
+   "text": "Ivica Zubac",
+   "expect": "Ivica Zubac",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 63,
+   "op": "feed",
+   "text": "Damian Lillard",
+   "expect": "Damian Lillard",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 64,
+   "op": "feed",
+   "text": "Kon Knueppel",
+   "expect": "Kon Knueppel",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 65,
+   "op": "feed",
+   "text": "Tyler Herro",
+   "expect": "Tyler Herro",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 66,
+   "op": "feed",
+   "text": "Pascal Siakam",
+   "expect": "Pascal Siakam",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 67,
+   "op": "feed",
+   "text": "Julius Randle",
+   "expect": "Julius Randle",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 68,
+   "op": "feed",
+   "text": "Rudy Gobert",
+   "expect": "Rudy Gobert",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 69,
+   "op": "feed",
+   "text": "Michael Porter Jr.",
+   "expect": "Michael Porter Jr.",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 70,
+   "op": "feed",
+   "text": "Ryan Rollins",
+   "expect": "Ryan Rollins",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 71,
+   "op": "feed",
+   "text": "Alex Sarr",
+   "expect": "Alex Sarr",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 72,
+   "op": "feed",
+   "text": "Allen",
+   "expect": "Jarrett Allen",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 73,
+   "op": "feed",
+   "text": "Paul George",
+   "expect": "Paul George",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 74,
+   "op": "feed",
+   "text": "Brandon Ingram",
+   "expect": "Brandon Ingram",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 75,
+   "op": "feed",
+   "text": "Zach Edey",
+   "expect": "Zach Edey",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 76,
+   "op": "feed",
+   "text": "De'Aaron Fox",
+   "expect": "De'Aaron Fox",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 77,
+   "op": "feed",
+   "text": "Ja Morant",
+   "expect": "Ja Morant",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 78,
+   "op": "feed",
+   "text": "White",
+   "expect": "Coby White",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 79,
+   "op": "feed",
+   "text": "Payton Pritchard",
+   "expect": "Payton Pritchard",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 80,
+   "op": "feed",
+   "text": "Ausar Thompson",
+   "expect": "Ausar Thompson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 81,
+   "op": "feed",
+   "text": "Josh Hart",
+   "expect": "Josh Hart",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 82,
+   "op": "feed",
+   "text": "Isaiah Hartenstein",
+   "expect": "Isaiah Hartenstein",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 83,
+   "op": "feed",
+   "text": "Cedric Coward",
+   "expect": "Cedric Coward",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 84,
+   "op": "feed",
+   "text": "Stephon Castle",
+   "expect": "Stephon Castle",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 85,
+   "op": "feed",
+   "text": "Sharpe",
+   "expect": "Day'Ron Sharpe",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 86,
+   "op": "feed",
+   "text": "Zion Williamson",
+   "expect": "Zion Williamson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 87,
+   "op": "feed",
+   "text": "Mikal Bridges",
+   "expect": "Mikal Bridges",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 88,
+   "op": "feed",
+   "text": "Jabari Smith Jr.",
+   "expect": "Jabari Smith Jr.",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 89,
+   "op": "feed",
+   "text": "Immanuel Quickley",
+   "expect": "Immanuel Quickley",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 90,
+   "op": "feed",
+   "text": "Dylan Harper",
+   "expect": "Dylan Harper",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 91,
+   "op": "feed",
+   "text": "Nic Claxton",
+   "expect": "Nic Claxton",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 92,
+   "op": "feed",
+   "text": "Wilson",
+   "expect": "Caleb Wilson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 93,
+   "op": "feed",
+   "text": "Norman Powell",
+   "expect": "Norman Powell",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 94,
+   "op": "feed",
+   "text": "VJ Edgecombe",
+   "expect": "VJ Edgecombe",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 95,
+   "op": "feed",
+   "text": "Jaden McDaniels",
+   "expect": "Jaden McDaniels",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 96,
+   "op": "feed",
+   "text": "Derik Queen",
+   "expect": "Derik Queen",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 97,
+   "op": "feed",
+   "text": "Ayo Dosunmu",
+   "expect": "Ayo Dosunmu",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 98,
+   "op": "feed",
+   "text": "AJ Dybantsa",
+   "expect": "AJ Dybantsa",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 99,
+   "op": "feed",
+   "text": "Wiggins",
+   "expect": "Andrew Wiggins",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 100,
+   "op": "feed",
+   "text": "Zach LaVine",
+   "expect": "Zach LaVine",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 101,
+   "op": "feed",
+   "text": "Jalen Suggs",
+   "expect": "Jalen Suggs",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 102,
+   "op": "feed",
+   "text": "Myles Turner",
+   "expect": "Myles Turner",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 103,
+   "op": "feed",
+   "text": "Miles",
+   "expect": "Miles Bridges",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 104,
+   "op": "feed",
+   "text": "Peyton Watson",
+   "expect": "Peyton Watson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 105,
+   "op": "feed",
+   "text": "Ty Jerome",
+   "expect": "Ty Jerome",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 106,
+   "op": "feed",
+   "text": "Collin Murray-Boyles",
+   "expect": "Collin Murray-Boyles",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 107,
+   "op": "feed",
+   "text": "DeMar DeRozan",
+   "expect": "DeMar DeRozan",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 108,
+   "op": "feed",
+   "text": "Brandin Podziemski",
+   "expect": "Brandin Podziemski",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 109,
+   "op": "feed",
+   "text": "Neemias Queta",
+   "expect": "Neemias Queta",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 110,
+   "op": "feed",
+   "text": "Jusuf Nurkic",
+   "expect": "Jusuf Nurkic",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 111,
+   "op": "feed",
+   "text": "Davion Mitchell",
+   "expect": "Davion Mitchell",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 112,
+   "op": "feed",
+   "text": "Wendell Carter Jr.",
+   "expect": "Wendell Carter Jr.",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 113,
+   "op": "feed",
+   "text": "Murray",
+   "expect": "Keegan Murray",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 114,
+   "op": "feed",
+   "text": "Collins",
+   "expect": "John Collins",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 115,
+   "op": "feed",
+   "text": "CJ McCollum",
+   "expect": "CJ McCollum",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 116,
+   "op": "feed",
+   "text": "Toumani Camara",
+   "expect": "Toumani Camara",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 117,
+   "op": "feed",
+   "text": "Khaman Maluach",
+   "expect": "Khaman Maluach",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 118,
+   "op": "feed",
+   "text": "Kyshawn George",
+   "expect": "Kyshawn George",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 119,
+   "op": "feed",
+   "text": "Daniel Gafford",
+   "expect": "Daniel Gafford",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 120,
+   "op": "feed",
+   "text": "Darryn Peterson",
+   "expect": "Darryn Peterson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 121,
+   "op": "feed",
+   "text": "Quentin Grimes",
+   "expect": "Quentin Grimes",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 122,
+   "op": "feed",
+   "text": "Andrew Nembhard",
+   "expect": "Andrew Nembhard",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 123,
+   "op": "feed",
+   "text": "Rui Hachimura",
+   "expect": "Rui Hachimura",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 124,
+   "op": "feed",
+   "text": "Jakob Poeltl",
+   "expect": "Jakob Poeltl",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 125,
+   "op": "feed",
+   "text": "RJ Barrett",
+   "expect": "RJ Barrett",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 126,
+   "op": "feed",
+   "text": "Aaron Gordon",
+   "expect": "Aaron Gordon",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 127,
+   "op": "feed",
+   "text": "Collin Gillespie",
+   "expect": "Collin Gillespie",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 128,
+   "op": "feed",
+   "text": "Kristaps Porzingis",
+   "expect": "Kristaps Porzingis",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 129,
+   "op": "feed",
+   "text": "Ajay Mitchell",
+   "expect": "Ajay Mitchell",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 130,
+   "op": "feed",
+   "text": "PJ Washington",
+   "expect": "PJ Washington",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 131,
+   "op": "feed",
+   "text": "Cason Wallace",
+   "expect": "Cason Wallace",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 132,
+   "op": "feed",
+   "text": "Jalen Green",
+   "expect": "Jalen Green",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 133,
+   "op": "feed",
+   "text": "Yaxel Lendeborg",
+   "expect": "Yaxel Lendeborg",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 134,
+   "op": "feed",
+   "text": "Jonathan Kuminga",
+   "expect": "Jonathan Kuminga",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 135,
+   "op": "feed",
+   "text": "Herbert Jones",
+   "expect": "Herbert Jones",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 136,
+   "op": "feed",
+   "text": "Saddiq Bey",
+   "expect": "Saddiq Bey",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 137,
+   "op": "feed",
+   "text": "Egor Demin",
+   "expect": "Egor Demin",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 138,
+   "op": "undo",
+   "text": null,
+   "expect": "undid",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 139,
+   "op": "feed",
+   "text": "Jrue Holiday",
+   "expect": "Jrue Holiday",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 140,
+   "op": "feed",
+   "text": "Egor Demin",
+   "expect": "Egor Demin",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 141,
+   "op": "feed",
+   "text": "Moussa Diabate",
+   "expect": "Moussa Diabate",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 142,
+   "op": "feed",
+   "text": "Cameron Johnson",
+   "expect": "Cameron Johnson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 143,
+   "op": "feed",
+   "text": "Draymond Green",
+   "expect": "Draymond Green",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 144,
+   "op": "feed",
+   "text": "Sandro Mamukelashvili",
+   "expect": "Sandro Mamukelashvili",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 145,
+   "op": "feed",
+   "text": "Jaime Jaquez Jr.",
+   "expect": "Jaime Jaquez Jr.",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 146,
+   "op": "feed",
+   "text": "Tre",
+   "expect": "Tre Jones",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 147,
+   "op": "feed",
+   "text": "Yves Missi",
+   "expect": "Yves Missi",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 148,
+   "op": "feed",
+   "text": "Gui Santos",
+   "expect": "Gui Santos",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 149,
+   "op": "feed",
+   "text": "Dillon Brooks",
+   "expect": "Dillon Brooks",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 150,
+   "op": "feed",
+   "text": "Anthony Black",
+   "expect": "Anthony Black",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 151,
+   "op": "feed",
+   "text": "Pelle Larsson",
+   "expect": "Pelle Larsson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 152,
+   "op": "feed",
+   "text": "Aaron Nesmith",
+   "expect": "Aaron Nesmith",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 153,
+   "op": "feed",
+   "text": "Sheppard",
+   "expect": "Reed Sheppard",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 154,
+   "op": "feed",
+   "text": "Fred VanVleet",
+   "expect": "Fred VanVleet",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 155,
+   "op": "feed",
+   "text": "Scoot Henderson",
+   "expect": "Scoot Henderson",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 156,
+   "op": "feed",
+   "text": "Devin Vassell",
+   "expect": "Devin Vassell",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 157,
+   "op": "feed",
+   "text": "Tobias Harris",
+   "expect": "Tobias Harris",
+   "echoOK": true,
+   "clockOK": true
+  },
+  {
+   "k": 158,
+   "op": "feed",
+   "text": "Jeremiah Fears",
+   "expect": "Jeremiah Fears",
+   "echoOK": true,
+   "clockOK": true
+  }
+ ],
+ "owner_identical": true,
+ "missing": [],
+ "extra": [],
+ "echo_misses": [],
+ "page_errors": [],
+ "clock_mismatches": 0,
+ "special_events": {
+  "unknown_feeds": [
+   "Gianis"
+  ],
+  "fixes": [
+   "5- Giannis Antetokounmpo"
+  ],
+  "inserts": [],
+  "halted": [],
+  "undo": 1,
+  "unknown_left_standing": [],
+  "shared_surname_tokens": [
+   "Barnes",
+   "Jalen",
+   "Murray",
+   "Ball",
+   "Brown",
+   "Wagner",
+   "Allen",
+   "White",
+   "Sharpe",
+   "Wilson",
+   "Wiggins",
+   "Miles",
+   "Murray",
+   "Collins",
+   "Tre",
+   "Sheppard"
+  ],
+  "undo_detail": "#137 Egor Demin logged for Seat 8, undone, Jrue Holiday logged at #137 for Seat 8, Demin re-logged at #138 for Seat 7 \u2014 the recap's order",
+  "resume_marker": "the owner's log ends with '\u2014 resumed: 156 picks logged \u2014' (a page reload after the draft completed; the state persisted) \u2014 nothing to replay"
+ },
+ "harness_summary": {
+  "deck": "/tmp/claude-0/-home-user-fantasy-basketball-2026-27/3cdbbd9b-02dd-585e-8d00-b8a370128fae/scratchpad/m61/page_v44.html",
+  "events": 159,
+  "echoMisses": 0,
+  "clockMismatches": 0,
+  "pageErrors": 0,
+  "finalPicks": 156,
+  "firstMismatch": null
+ },
+ "state_md5": "051fee6c1160f7fc75452b08fc3826dc",
+ "note": "159 events: 158 feeds (16 shared-token feeds resolved by the 'assumed over' / 'only X left' / 'skipped' rule \u2014 thirteen surnames and three first names: Jalen, Miles, Tre; one UNKNOWN feed, 'Gianis' at #5, fixed by '5- Giannis Antetokounmpo'), 1 undo (#137), no Insert-at-#, no halt. Truth = the Yahoo recap resolved by hoops.py draft resync (156/156)."
+}
