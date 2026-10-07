@@ -1,0 +1,440 @@
+{
+ "ex_ante": {
+  "real": {
+   "ecw": 5.476,
+   "champ": 36.83,
+   "playoff": 99.92
+  },
+  "rooms": [
+   {
+    "ecw": 5.552,
+    "champ": 34.57,
+    "playoff": 99.92,
+    "seed": 1000,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.797,
+    "champ": 45.25,
+    "playoff": 99.98,
+    "seed": 1001,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.847,
+    "champ": 47.73,
+    "playoff": 99.98,
+    "seed": 1002,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.542,
+    "champ": 35.02,
+    "playoff": 99.9,
+    "seed": 1003,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.542,
+    "champ": 35.02,
+    "playoff": 99.9,
+    "seed": 1004,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.527,
+    "champ": 35.87,
+    "playoff": 99.93,
+    "seed": 1005,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.815,
+    "champ": 45.87,
+    "playoff": 99.98,
+    "seed": 1006,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.774,
+    "champ": 44.42,
+    "playoff": 99.97,
+    "seed": 1007,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.513,
+    "champ": 34.85,
+    "playoff": 99.92,
+    "seed": 1008,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.85,
+    "champ": 45.6,
+    "playoff": 99.98,
+    "seed": 1009,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.802,
+    "champ": 45.03,
+    "playoff": 99.98,
+    "seed": 1010,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.847,
+    "champ": 47.73,
+    "playoff": 99.98,
+    "seed": 1011,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.565,
+    "champ": 36.82,
+    "playoff": 99.93,
+    "seed": 1012,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.781,
+    "champ": 44.37,
+    "playoff": 99.98,
+    "seed": 1013,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.639,
+    "champ": 40.1,
+    "playoff": 99.95,
+    "seed": 1014,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.583,
+    "champ": 36.55,
+    "playoff": 99.95,
+    "seed": 1015,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.826,
+    "champ": 45.87,
+    "playoff": 99.98,
+    "seed": 1016,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.788,
+    "champ": 45.05,
+    "playoff": 99.98,
+    "seed": 1017,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.819,
+    "champ": 46.67,
+    "playoff": 99.98,
+    "seed": 1018,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.69,
+    "champ": 41.17,
+    "playoff": 99.95,
+    "seed": 1019,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.847,
+    "champ": 47.73,
+    "playoff": 99.98,
+    "seed": 1020,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.847,
+    "champ": 47.73,
+    "playoff": 99.98,
+    "seed": 1021,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.741,
+    "champ": 41.43,
+    "playoff": 99.95,
+    "seed": 1022,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.733,
+    "champ": 43.52,
+    "playoff": 99.97,
+    "seed": 1023,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.726,
+    "champ": 42.3,
+    "playoff": 99.98,
+    "seed": 1024,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.797,
+    "champ": 45.25,
+    "playoff": 99.98,
+    "seed": 1025,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.802,
+    "champ": 45.03,
+    "playoff": 99.98,
+    "seed": 1026,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.797,
+    "champ": 45.25,
+    "playoff": 99.98,
+    "seed": 1027,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.679,
+    "champ": 39.53,
+    "playoff": 99.98,
+    "seed": 1028,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.683,
+    "champ": 40.4,
+    "playoff": 99.95,
+    "seed": 1029,
+    "opening": "Luka Doncic"
+   }
+  ]
+ },
+ "ex_post": {
+  "real": {
+   "ecw": 6.074,
+   "champ": 42.1,
+   "playoff": 100.0
+  },
+  "rooms": [
+   {
+    "ecw": 5.923,
+    "champ": 39.22,
+    "playoff": 100.0,
+    "seed": 1000,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 6.41,
+    "champ": 60.75,
+    "playoff": 100.0,
+    "seed": 1001,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.242,
+    "champ": 51.18,
+    "playoff": 100.0,
+    "seed": 1002,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.987,
+    "champ": 44.38,
+    "playoff": 100.0,
+    "seed": 1003,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.987,
+    "champ": 44.38,
+    "playoff": 100.0,
+    "seed": 1004,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 5.474,
+    "champ": 19.87,
+    "playoff": 99.93,
+    "seed": 1005,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 6.42,
+    "champ": 54.75,
+    "playoff": 100.0,
+    "seed": 1006,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.455,
+    "champ": 60.28,
+    "playoff": 100.0,
+    "seed": 1007,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.615,
+    "champ": 24.77,
+    "playoff": 99.95,
+    "seed": 1008,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 6.386,
+    "champ": 56.52,
+    "playoff": 100.0,
+    "seed": 1009,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.283,
+    "champ": 53.35,
+    "playoff": 100.0,
+    "seed": 1010,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.242,
+    "champ": 51.18,
+    "playoff": 100.0,
+    "seed": 1011,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.004,
+    "champ": 8.32,
+    "playoff": 96.1,
+    "seed": 1012,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 6.429,
+    "champ": 61.05,
+    "playoff": 100.0,
+    "seed": 1013,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.115,
+    "champ": 48.33,
+    "playoff": 100.0,
+    "seed": 1014,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.488,
+    "champ": 19.8,
+    "playoff": 99.88,
+    "seed": 1015,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 6.421,
+    "champ": 58.67,
+    "playoff": 100.0,
+    "seed": 1016,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.51,
+    "champ": 64.43,
+    "playoff": 100.0,
+    "seed": 1017,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.913,
+    "champ": 34.98,
+    "playoff": 99.98,
+    "seed": 1018,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.023,
+    "champ": 48.35,
+    "playoff": 100.0,
+    "seed": 1019,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 6.242,
+    "champ": 51.18,
+    "playoff": 100.0,
+    "seed": 1020,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.242,
+    "champ": 51.18,
+    "playoff": 100.0,
+    "seed": 1021,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 5.798,
+    "champ": 33.12,
+    "playoff": 100.0,
+    "seed": 1022,
+    "opening": "Luka Doncic"
+   },
+   {
+    "ecw": 6.197,
+    "champ": 49.25,
+    "playoff": 100.0,
+    "seed": 1023,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.444,
+    "champ": 62.17,
+    "playoff": 100.0,
+    "seed": 1024,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.41,
+    "champ": 60.75,
+    "playoff": 100.0,
+    "seed": 1025,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.283,
+    "champ": 53.35,
+    "playoff": 100.0,
+    "seed": 1026,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.41,
+    "champ": 60.75,
+    "playoff": 100.0,
+    "seed": 1027,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.307,
+    "champ": 53.3,
+    "playoff": 100.0,
+    "seed": 1028,
+    "opening": "Shai Gilgeous-Alexander"
+   },
+   {
+    "ecw": 6.169,
+    "champ": 56.3,
+    "playoff": 100.0,
+    "seed": 1029,
+    "opening": "Luka Doncic"
+   }
+  ]
+ }
+}

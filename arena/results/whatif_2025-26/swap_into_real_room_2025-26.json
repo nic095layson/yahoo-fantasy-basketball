@@ -1,0 +1,30 @@
+{
+ "ex_ante": {
+  "real": {
+   "ecw": 5.476,
+   "favored": 11,
+   "champ": 37.37,
+   "playoff": 99.95
+  },
+  "card": {
+   "ecw": 5.552,
+   "favored": 11,
+   "champ": 35.06,
+   "playoff": 99.91
+  }
+ },
+ "ex_post": {
+  "real": {
+   "ecw": 6.074,
+   "favored": 11,
+   "champ": 42.51,
+   "playoff": 100.0
+  },
+  "card": {
+   "ecw": 5.923,
+   "favored": 11,
+   "champ": 39.12,
+   "playoff": 100.0
+  }
+ }
+}
