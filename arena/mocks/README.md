@@ -452,6 +452,12 @@ is on the author. See LEDGER §3.
   before v48 replays unchanged); the pre-registered cast-bot experiment (`castsim_design_2026-10-07.md`, `castsim_n30_2026-10-07.json`):
   no variant shipped — V2 (XRank value axis) wins M1 (7.39 vs 12.07) and M2 (7.5 vs 10.43 consensus names left) but fails the M3 regression guard (Spearman 0.30 against the shipped reach ordering); V1/V3 do not improve M2; the bots stay V0. The defense artifacts: `dcast_realism_picks_2026-10-07.json`, `dcast_botdiag_m63_2026-10-07.json`,
   `dcast_lastseason_2026-10-07.json`, `dcast_card_effect_v48.json`.
+- **V4 shipped + D-CAST-2 first step (owner 2026-10-07 evening, 'implement all fixes').** The live tool was checked against the record first: in the ten human
+  rooms' deck cards (rounds 11–13, 30 owner turns) no unpriced row ever reached the Top-5 and the owner never took one — the late-card symptom was
+  cast-room-only. The D-CAST-3 follow-up (amendment 4 in `castsim_design_2026-10-07.md`, `castsim_n30_v4_2026-10-07.json`): the XRank value axis from
+  round 7 only — M1 9.29 vs 12.07, M2 7.2 vs 10.43, guard 1.0 — shipped as `BOT_XRANK_FROM = 7` in `managerScores` with `PLAYERS[].xr` baked
+  by the build (red-first in `test_card.py`, 99/99). Castle and Barrett re-derived on both planes from their 2025-26 lines (deck value rank Castle
+  248 → 171, Barrett 236 → 193); kit report `after-report-2026-10-07-fixes.md`. Deck v49.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

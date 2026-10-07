@@ -50,7 +50,12 @@ def load_yahoo(path):
                 except (TypeError, ValueError, KeyError):
                     continue
             if price is not None:
-                out[norm(r["player"])] = {"name": r["player"], "price": price, "source": source}
+                try:
+                    xr = float(r["xrank"])
+                except (TypeError, ValueError, KeyError):
+                    xr = None
+                # V4 (2026-10-07): the mock bots' late-round value axis is Yahoo's XRank itself
+                out[norm(r["player"])] = {"name": r["player"], "price": price, "source": source, "xrank": xr}
     return out
 
 
@@ -61,6 +66,7 @@ def join(players, prices):
         hit = prices.get(norm(p["player"]))
         p["_mkt"] = hit["price"] if hit else None
         p["_mktsrc"] = hit["source"] if hit else None
+        p["_xr"] = hit.get("xrank") if hit else None
         n += hit is not None
     return n, len(players) - n
 

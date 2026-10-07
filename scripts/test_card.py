@@ -114,7 +114,12 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   PAIR_WAIT_MIN: typeof PAIR_WAIT_MIN === "undefined" ? null : PAIR_WAIT_MIN,
   PAIR_MARKER: typeof PAIR_MARKER === "undefined" ? null : PAIR_MARKER,
   cardPool: typeof cardPool === "function" ? cardPool : null,
-  CARD_PRICED_FROM: typeof CARD_PRICED_FROM === "undefined" ? null : CARD_PRICED_FROM };
+  CARD_PRICED_FROM: typeof CARD_PRICED_FROM === "undefined" ? null : CARD_PRICED_FROM,
+  managerScores: typeof managerScores === "function" ? managerScores : null,
+  MANAGERS: typeof MANAGERS === "undefined" ? null : MANAGERS,
+  makeRng: typeof makeRng === "function" ? makeRng : null,
+  adjValue: typeof adjValue === "function" ? adjValue : null,
+  BOT_XRANK_FROM: typeof BOT_XRANK_FROM === "undefined" ? null : BOT_XRANK_FROM };
 """)
     probes = [("draft_state_mock31.json", 64)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
@@ -344,6 +349,20 @@ if (api.cardPool) {
   const four = api.PLAYERS.filter(p => p.av > 0 && p.mkt != null).slice(0, 4).concat(api.PLAYERS.filter(p => p.av > 0 && p.mkt == null).slice(0, 6));
   out.cast4.fallback = { n: four.length, kept: api.cardPool(four, 13).length };
 }
+/* D-CAST-3 / V4 (pre-registered and run 2026-10-07, castsim_n30_v4_2026-10-07.json): from round BOT_XRANK_FROM the
+   mock bots' VALUE axis is Yahoo's XRank where the build baked one (PLAYERS[].xr), the deck's value rank for the
+   rest; rounds 1-6 keep the shipped formula. Probed with a noise-free, value-only test manager on the full pool. */
+out.v4 = { present: !!api.managerScores && api.MANAGERS != null, from: api.BOT_XRANK_FROM,
+           xrRows: api.PLAYERS.filter(p => p.xr != null).length };
+if (api.managerScores && api.MANAGERS && api.makeRng) {
+  api.MANAGERS["_v4test"] = { adp_w: 0.0, val_w: 1.0, noise: 0, streamer: false, bias: {}, loyal: {} };
+  const pool = api.PLAYERS.filter(p => p.av > 0);
+  const byVal = [...pool].sort((a, b) => api.adjValue(b, new Set()) - api.adjValue(a, new Set()))[0].n;
+  const byXr = [...pool].filter(p => p.xr != null).sort((a, b) => a.xr - b.xr)[0]?.n ?? null;
+  const top = rnd => api.managerScores("_v4test", pool, [], rnd, 13, api.makeRng(1))[0].p.n;
+  out.v4.r6 = { top: top(6), byVal }; out.v4.r7 = { top: top(7), byXr };
+  out.v4.distinct = byVal !== byXr;
+}
 process.stdout.write(JSON.stringify(out));
 """.replace("__MOD__", mod).replace("__FIXTURE__", fixture))
     r = subprocess.run(["node", driver], capture_output=True, text=True)
@@ -367,6 +386,13 @@ process.stdout.write(JSON.stringify(out));
          r8.get("cpN") == r8.get("poolN") and r8.get("top") == r8.get("topAll"), f"got {r8}")
     case("D-CAST-4 fewer than five priced rows left: the whole pool stays",
          fb.get("n") == 10 and fb.get("kept") == 10, f"got {fb}")
+
+    # ---- D-CAST-3 / V4 (2026-10-07): the bots' value axis is Yahoo's XRank from round 7
+    v4 = js.get("v4") or {}
+    case("V4 BOT_XRANK_FROM is 7 and managerScores is exported", v4.get("from") == 7 and v4.get("present"), f"got {v4}")
+    case("V4 the build bakes PLAYERS[].xr for at least 240 rows", v4.get("xrRows", 0) >= 240, f"got {v4.get('xrRows')}")
+    case("V4 round 6: a value-only, noise-free manager takes the deck's top value", (v4.get("r6") or {}).get("top") is not None and v4["r6"]["top"] == v4["r6"]["byVal"], f"got {v4.get('r6')}")
+    case("V4 round 7: the same manager takes Yahoo's top XRank instead", (v4.get("r7") or {}).get("top") is not None and v4["r7"]["top"] == v4["r7"]["byXr"] and v4.get("distinct"), f"got {v4.get('r7')} distinct={v4.get('distinct')}")
 
     # ---- D51R-2 tie-break
     case("D51R-2 rankCard exists in the engine block", pres["rankCard"], "rankCard absent")
