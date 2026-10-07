@@ -141,6 +141,10 @@ MOCKS = {
     # mock 66 (2026-10-07 evening, slot 10): the first MOCK on v49 — the round-11 card rule, the V4 bots and the
     # Castle/Barrett lines all live; pool = data/players.csv at main 269c522 (m66_players_v49.csv). room="cast".
     66: dict(tags=("v49",), veto=True, room="cast"),
+    # mock 67 (2026-10-07, slot 10): public Yahoo room drafted on deck v49 (rev 269c522; pool = main 269c522's
+    # data/players.csv, the v49 tag). The veto live; the owner's first LIVE human room on the round-11 priced-only
+    # card and the re-derived Castle/Barrett lines; three Insert-at-#, two halts, four undos, one UNKNOWN fix.
+    67: dict(tags=("v49",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -680,7 +684,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522"}
 
 
 def _baked_prices(rev):

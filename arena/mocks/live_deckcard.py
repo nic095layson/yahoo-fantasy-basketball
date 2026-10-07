@@ -53,6 +53,8 @@ PUNT_TIMELINES = {
     65: [(0, [])],
     # mock 66 (2026-10-07 evening, the first MOCK on v49): no punt declared (state punt [])
     66: [(0, [])],
+    # mock 67 (2026-10-07, public room, LIVE mode): no punt declared, no advisor click in the tool log
+    67: [(0, [])],
 }
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 if html_path.startswith("rev:"):
@@ -78,6 +80,8 @@ with open(mod, "w", encoding="utf-8") as f:
 export const api = { PLAYERS, CATS, adjValue, decwScores, archetypeRead, categoryRanks,
   buildRosters, availablePool, marketRanks, myNextPick, familiesOf, teamOfPick, fitZ, teamWeekModel, pwinsTotal,
   rankCard: typeof rankCard === "function" ? rankCard : null,
+  cardPool: typeof cardPool === "function" ? cardPool : null,            /* D-CAST-4 (v48+): priced-only card from round CARD_PRICED_FROM */
+  CARD_PRICED_FROM: typeof CARD_PRICED_FROM === "undefined" ? null : CARD_PRICED_FROM,
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
   survivalProb: typeof survivalProb === "function" ? survivalProb : null,
@@ -141,14 +145,20 @@ for (const n of turns) {
   for (let s = 1; s <= st.teams; s++) if (s !== st.slot && rosters[s] && rosters[s].length) oppRosters.push(rosters[s]);
   const VETO = new Set(inp.veto || []);  /* owner veto: YOUR candidates only (2026-09-28) */
   const pool = api.availablePool(st, PLAYERS).filter(p => !VETO.has(p.n));
-  const raw = api.decwScores(pool, mine, oppRosters);
+  /* D-CAST-4 (mock 67 retro, 2026-10-07): the page ranks the card over cardPool(pool, round) — priced rows only
+     from round CARD_PRICED_FROM — and the off-card echo ranks a pick within that list; the harness replayed the
+     whole pool and put an unpriced man (Jordan Goodwin) on mock 67's #154 card. Pages without cardPool replay unchanged;
+     shelfNow stays on the whole pool, as on the page. */
+  const rnd = Math.floor(st.picks.length / st.teams) + 1;
+  const cardCands = api.cardPool ? api.cardPool(pool, rnd) : pool;
+  const raw = api.decwScores(cardCands, mine, oppRosters);
   const dsAll = api.rankCard ? api.rankCard(raw)
     : [...raw].sort((a, b) => b.ds - a.ds || (a.p.n < b.p.n ? 1 : a.p.n > b.p.n ? -1 : 0));
   const scored = dsAll.slice(0, 5);
   const { ranks } = api.categoryRanks(st, PLAYERS);
   const pickNo = api.myNextPick(st) ?? 0;
   let readR = null, readErr = null;
-  try { readR = api.archetypeRead(st, mine, pool, ranks, pickNo, MKT_RANK); } catch (e) { readErr = String(e); }
+  try { readR = api.archetypeRead(st, mine, cardCands, ranks, pickNo, MKT_RANK); } catch (e) { readErr = String(e); }
   const pinTarget = readR && readR.fam && readR.best && !scored.some(r => api.familiesOf(r.p).includes(readR.fam))
     ? PLAYERS.find(p => p.n === readR.best) : null;
   let tgOnPin = !!(pinTarget && readR && readR.urgent), withheld = "";
@@ -178,12 +188,15 @@ for (const n of turns) {
              val: +api.adjValue(r.p, new Set()).toFixed(3), mkt: mktR ?? null, valRank: VAL_RANK.get(r.p.n) ?? null,
              surv: ps == null ? null : +ps.toFixed(3), chip, target: (i === 0 && !tgOnPin) };
   });
+  /* loud guard: once the page's rule is in force and the candidate list is all priced, no replayed row may be unpriced */
+  if (api.cardPool && api.CARD_PRICED_FROM != null && rnd >= api.CARD_PRICED_FROM && cardCands.every(p => p.mkt != null))
+    for (const r of rows) { const pp = PLAYERS.find(p => p.n === r.n); if (!pp || pp.mkt == null) throw new Error(`unpriced row ${r.n} on the round-${rnd} card (D-CAST-4 rule bypassed)`); }
   const actual = st0.picks[n].player;
   const ai = dsAll.findIndex(x => x.p.n === actual);
   out.push({ pick: n + 1, punt, actual, actualCardRank: ai < 0 ? null : ai + 1,
              actualSurv: (ai < 0 || !nextTurn) ? null : +survivalP(actual, nextTurn).toFixed(3),
              actualMkt: MKT_RANK.get(actual) ?? null, actualValRank: VAL_RANK.get(actual) ?? null,
-             nextTurn, priceWin, shelfNow, rows,
+             nextTurn, priceWin, shelfNow, rows, cardFrom: api.CARD_PRICED_FROM ?? null, cardCands: cardCands.length, poolN: pool.length,
              read: readR ? { fam: readR.fam ?? null, best: readR.best ?? null, urgent: !!readR.urgent, label: readR.label ?? null,
                              lastCall: readR.lastCall ?? null, keys: Object.keys(readR) } : null,
              readErr, pinTarget: pinTarget ? pinTarget.n : null, tgOnPin, withheld,

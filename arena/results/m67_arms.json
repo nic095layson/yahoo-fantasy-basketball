@@ -1,0 +1,141 @@
+{
+ "as_drafted": {
+  "champ": 17.511,
+  "playoff": 97.12,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Chet Holmgren": {
+  "champ": 18.783,
+  "playoff": 97.69,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#15:Chet Holmgren": {
+  "champ": 22.161,
+  "playoff": 98.94,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#34:Domantas Sabonis": {
+  "champ": 18.817,
+  "playoff": 97.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Domantas Sabonis"
+   ]
+  ]
+ },
+ "swap#58:OG Anunoby": {
+  "champ": 17.778,
+  "playoff": 97.03,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "OG Anunoby"
+   ]
+  ]
+ },
+ "swap#82:De'Aaron Fox": {
+  "champ": 24.044,
+  "playoff": 99.34,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "De'Aaron Fox"
+   ]
+  ]
+ },
+ "swap#87:De'Aaron Fox": {
+  "champ": 23.95,
+  "playoff": 99.33,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "De'Aaron Fox"
+   ]
+  ]
+ },
+ "swap#106:Yaxel Lendeborg": {
+  "champ": 17.133,
+  "playoff": 96.74,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Yaxel Lendeborg"
+   ]
+  ]
+ },
+ "swap#111:Daniel Gafford": {
+  "champ": 22.583,
+  "playoff": 99.16,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Daniel Gafford"
+   ]
+  ]
+ },
+ "swap#135:Draymond Green": {
+  "champ": 18.556,
+  "playoff": 97.33,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    135,
+    "Draymond Green"
+   ]
+  ]
+ },
+ "swap#154:Kyle Filipowski": {
+  "champ": 18.25,
+  "playoff": 97.71,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 37.511,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "De'Aaron Fox"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ]
+  ]
+ }
+}
