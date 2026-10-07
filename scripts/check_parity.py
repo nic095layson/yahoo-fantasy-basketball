@@ -100,7 +100,9 @@ def main():
     mod = os.path.join(tmp, "deck.mjs")
     with open(mod, "w", encoding="utf-8") as f:
         f.write(extract("data", html) + "\n" + extract("engine", html) + """
-export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash, survivalProb, clockRead };
+export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks, adjValue, CATS, dfHash, survivalProb, clockRead,
+  cardPool: typeof cardPool === "function" ? cardPool : null,
+  CARD_PRICED_FROM: typeof CARD_PRICED_FROM === "undefined" ? null : CARD_PRICED_FROM };
 """)
 
     # ---- what the Python side says -------------------------------------
@@ -144,7 +146,7 @@ export const api = { PLAYERS, matchCandidates, decwScores, rankCard, marketRanks
 import { api } from "__MOD__";
 import fs from "node:fs";
 const inp = JSON.parse(fs.readFileSync("__FIXTURE__", "utf8"));
-const out = { pool: [], match: {}, orders: {} };
+const out = { pool: [], match: {}, orders: {}, card_from: api.CARD_PRICED_FROM };
 for (const p of api.PLAYERS)
   out.pool.push({ n: p.n, t: p.t, p: p.p, note: p.note, av: p.av, z: p.z,
                   val: api.adjValue(p, new Set()),
@@ -172,7 +174,9 @@ for (const [name, st] of Object.entries(inp.states)) {
     }
     const mine = ros.get(st.slot) || [];
     const opp = [...ros.entries()].filter(([s]) => s !== st.slot).map(([, r]) => r);
-    const pool = api.PLAYERS.filter(p => !taken.has(p.n) && p.av > 0);
+    const pool0 = api.PLAYERS.filter(p => !taken.has(p.n) && p.av > 0);
+    // D-CAST-4: the card's candidates are the priced rows from round CARD_PRICED_FROM
+    const pool = api.cardPool ? api.cardPool(pool0, Math.floor(upto / st.teams) + 1) : pool0;
     return api.rankCard(api.decwScores(pool, mine, opp)).slice(0, 5).map(x => x.p.n);
   });
 }
@@ -293,6 +297,16 @@ process.stdout.write(JSON.stringify(out));
         return out
 
     by_name = {p["player"]: p for p in players}
+    # D-CAST-4 (2026-10-07): from round CARD_PRICED_FROM the card's candidates are
+    # the priced rows (the deck's `mkt`, baked from the same Yahoo file that wrote
+    # data/market-snapshot.csv — parity item 6 already holds the two price sets
+    # identical); fewer than five priced rows left -> the whole pool. The constant
+    # is read from the page source and must agree with what the engine exported.
+    cm = re.search(r"const CARD_PRICED_FROM = (\d+);", html)
+    card_from = int(cm.group(1)) if cm else None
+    if card_from != js.get("card_from"):
+        fails.append(f"CARD_PRICED_FROM: page source {card_from!r} vs engine export {js.get('card_from')!r}")
+    snap_prices = market_prices.load_snapshot() or {}
     py_orders = {}
     for name, st in states.items():
         teams, slot = st["teams"], st["slot"]
@@ -310,6 +324,10 @@ process.stdout.write(JSON.stringify(out));
             opp = [r for s, r in ros.items() if s != slot]
             pool = [p for p in players
                     if p["player"] not in taken and hoops.availability(p) > 0]
+            if card_from is not None and upto // teams + 1 >= card_from:
+                priced = [p for p in pool if p["player"] in snap_prices]
+                if len(priced) >= 5:
+                    pool = priced
             vals = [hoops.adj_value(p, ()) for p in pool]
             models = [arena.team_week_model(r) for r in opp if r]
             if not models:

@@ -112,11 +112,13 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   insertPick: typeof insertPick === "function" ? insertPick : null,
   PAIR_MIN_GAIN: typeof PAIR_MIN_GAIN === "undefined" ? null : PAIR_MIN_GAIN,
   PAIR_WAIT_MIN: typeof PAIR_WAIT_MIN === "undefined" ? null : PAIR_WAIT_MIN,
-  PAIR_MARKER: typeof PAIR_MARKER === "undefined" ? null : PAIR_MARKER };
+  PAIR_MARKER: typeof PAIR_MARKER === "undefined" ? null : PAIR_MARKER,
+  cardPool: typeof cardPool === "function" ? cardPool : null,
+  CARD_PRICED_FROM: typeof CARD_PRICED_FROM === "undefined" ? null : CARD_PRICED_FROM };
 """)
     probes = [("draft_state_mock31.json", 64)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
-    for fn in ("draft_state_51.json", "draft_state_53.json"):  # advisor / veto / clock probes below
+    for fn in ("draft_state_51.json", "draft_state_53.json", "draft_state_63.json"):  # advisor / veto / clock / D-CAST-4 probes below
         states[fn] = json.load(open(os.path.join(STATES, fn), encoding="utf-8"))
     fixture = os.path.join(tmp, "in.json")
     jblock = extract("judgment", html)
@@ -319,6 +321,29 @@ if (api.relabelLog && api.insertPick) {
   out.relabel = { ok: r.ok, echo: r.lines.map(l => l.t), picks: st.picks.map(pk => [pk.player, pk.slot, pk.raw ?? null]),
                   lines: rl.log.map(e => [e.t, e.cls, e.pick ?? null]), movedOn: rl.movedOn, movedOff: rl.movedOff };
 }
+/* D-CAST-4 (owner 2026-10-07): from round CARD_PRICED_FROM the card's candidates are the priced rows (Yahoo ADP,
+   else XRank, baked by the build); fewer than five priced rows left -> the whole pool. Probed on mock 63 at the
+   owner's #154 (round 13) and #87 (round 8). */
+out.cast4 = { present: !!api.cardPool, from: api.CARD_PRICED_FROM };
+if (api.cardPool) {
+  const st = inp.states["draft_state_63.json"];
+  const by = new Map(api.PLAYERS.map(p => [p.n, p]));
+  const veto = new Set(["Kristaps Porzingis"]);
+  const probe = (upto) => {
+    const taken = new Set(st.picks.slice(0, upto).map(pk => pk.player)); const ros = new Map();
+    for (const pk of st.picks.slice(0, upto)) { const p = by.get(pk.player); if (p) { if (!ros.has(pk.slot)) ros.set(pk.slot, []); ros.get(pk.slot).push(p); } }
+    const mine = ros.get(st.slot) || []; const opp = [...ros.entries()].filter(([s]) => s !== st.slot).map(([, r]) => r);
+    const pool = api.PLAYERS.filter(p => !taken.has(p.n) && p.av > 0 && !veto.has(p.n));
+    const rnd = Math.floor(upto / st.teams) + 1; const cp = api.cardPool(pool, rnd);
+    const top = api.rankCard(api.decwScores(cp, mine, opp)).slice(0, 5).map(x => x.p.n);
+    const topAll = api.rankCard(api.decwScores(pool, mine, opp)).slice(0, 5).map(x => x.p.n);
+    return { rnd, poolN: pool.length, cpN: cp.length, unpricedInCp: cp.filter(p => p.mkt == null).length, top, topAll,
+             unpricedInTopAll: topAll.filter(n => by.get(n).mkt == null).length };
+  };
+  out.cast4.r13 = probe(153); out.cast4.r8 = probe(86);
+  const four = api.PLAYERS.filter(p => p.av > 0 && p.mkt != null).slice(0, 4).concat(api.PLAYERS.filter(p => p.av > 0 && p.mkt == null).slice(0, 6));
+  out.cast4.fallback = { n: four.length, kept: api.cardPool(four, 13).length };
+}
 process.stdout.write(JSON.stringify(out));
 """.replace("__MOD__", mod).replace("__FIXTURE__", fixture))
     r = subprocess.run(["node", driver], capture_output=True, text=True)
@@ -328,6 +353,20 @@ process.stdout.write(JSON.stringify(out));
         sys.exit(1)
     js = json.loads(r.stdout)
     pres = js["present"]
+
+    # ---- D-CAST-4 (owner 2026-10-07): priced-only card candidates from round 11
+    c4 = js.get("cast4") or {}
+    case("D-CAST-4 cardPool exists in the engine block", c4.get("present"), "cardPool absent")
+    case("D-CAST-4 CARD_PRICED_FROM is 11", c4.get("from") == 11, f"got {c4.get('from')}")
+    r13, r8, fb = c4.get("r13") or {}, c4.get("r8") or {}, c4.get("fallback") or {}
+    case("D-CAST-4 mock 63 #154 (round 13): the unfiltered Top-5 carried an unpriced row (the case this rule exists for)",
+         r13.get("unpricedInTopAll", 0) >= 1, f"got {r13}")
+    case("D-CAST-4 mock 63 #154: the card pool keeps no unpriced row and the Top-5 changes",
+         r13.get("unpricedInCp") == 0 and r13.get("cpN", 0) < r13.get("poolN", 0) and r13.get("top") != r13.get("topAll"), f"got {r13}")
+    case("D-CAST-4 mock 63 #87 (round 8): the card pool is the whole pool",
+         r8.get("cpN") == r8.get("poolN") and r8.get("top") == r8.get("topAll"), f"got {r8}")
+    case("D-CAST-4 fewer than five priced rows left: the whole pool stays",
+         fb.get("n") == 10 and fb.get("kept") == 10, f"got {fb}")
 
     # ---- D51R-2 tie-break
     case("D51R-2 rankCard exists in the engine block", pres["rankCard"], "rankCard absent")

@@ -76,7 +76,9 @@ async function engineTop5(page) {
     const rosters = buildRosters(st, PLAYERS);
     const mine = rosters[st.slot] || [];
     const opp = []; for (let s = 1; s <= st.teams; s++) if (s !== st.slot) opp.push(rosters[s] || []);
-    const pool = availablePool(st, PLAYERS).filter(p => !veto.has(p.n));
+    const pool0 = availablePool(st, PLAYERS).filter(p => !veto.has(p.n));
+    // D-CAST-4: priced-only candidates from round CARD_PRICED_FROM (the page's own cardPool)
+    const pool = typeof cardPool === "function" ? cardPool(pool0, Math.floor(st.picks.length / st.teams) + 1) : pool0;
     return rankCard(decwScores(pool, mine, opp)).slice(0, 5).map(x => x.p.n);
   });
 }
