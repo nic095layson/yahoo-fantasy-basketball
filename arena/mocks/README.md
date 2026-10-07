@@ -458,6 +458,21 @@ is on the author. See LEDGER §3.
   round 7 only — M1 9.29 vs 12.07, M2 7.2 vs 10.43, guard 1.0 — shipped as `BOT_XRANK_FROM = 7` in `managerScores` with `PLAYERS[].xr` baked
   by the build (red-first in `test_card.py`, 99/99). Castle and Barrett re-derived on both planes from their 2025-26 lines (deck value rank Castle
   248 → 171, Barrett 236 → 193); kit report `after-report-2026-10-07-fixes.md`. Deck v49.
+- **Mock 66 (2026-10-07 evening, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL seating, drafted on deck v49
+  (rev `269c522` — the first room with the round-11 priced-only card, the V4 bots and the re-derived Castle/Barrett lines; pool = that commit's
+  data/players.csv, frozen as `m66_players_v49.csv`), the veto live. `live_retro.MOCKS[66]` = `dict(tags=("v49",), veto=True, room="cast")`;
+  `PAGE_REV[66] = "269c522"`; no punt declared (`PUNT_TIMELINES[66] = [(0, [])]`). State = the owner's exported draft state verbatim (156 picks, every name
+  a pool row, snake-consistent, `cast` = the real order; md5 `8f2ee9dd30cc72e87ea4f6b98299e0d8`); no recap and no tool log exist for a MOCK, so no DOM replay.
+  **The card's 🎯 taken at 5 of 13 turns** — off the card at #10 Giannis Antetokounmpo (card #17), #15 Scottie Barnes (card #25), #34 Trae Young (card #16), #39 Dyson Daniels (card #4), #63 Paolo Banchero (card #13), #82 VJ Edgecombe (card #19), #106 Jalen Green (card #16), #135 Fred VanVleet (card #24):
+  as drafted 20.16% (rank 1) / ECW 5.013 rank 1 (next 4.887), favored 11/11 (`m66_followcard_grade.json`, `m66_arms.json`;
+  the retro port's self-consistent follow-card chain grades 34.93%). Deck card replayed from the v49 page (`live_deckcard.py 66 rev:269c522:docs/draft-deck.html`
+  `arena/results/m66_deckcard_v49.json`). Hindsight's largest single swap: Derrick White at #34 (+0.224 cats/week).
+  **The fixes' first out-of-sample room:** the late card (rounds 11–13) carried 0 unpriced rows; the cast drafted Stephon Castle #78 (Martin), RJ Barrett #112 (Kevin), Davion Mitchell #137 (JCo), Rui Hachimura #121 (Oblena), Dillon Brooks #133 (Hegi); undrafted: Saddiq Bey, Cam Thomas, Keaton Wagler.
+  **Advice line** (`m66_advice_reads.json`, page reading): fired at #34 (Derrick White now), #39 (Onyeka Okongwu now), #63 (Kel'el Ware now); the 'now' men as single swaps grade +6.47 / -0.13 / -1.29 title points, together +2.05; the pair rule replayed as the marker finished at 34.93% against the blend chain's 34.93% (seed set 1).
+  Survival pooled with the 51–65 deck cards (`m66_survival.json`: this room 55 rows, Brier 0.205, mean predicted 0.551 vs realized 0.673; BUY NOW 2 of 6 survived, TOSS-UP 7 of 11, quiet 28 of 38).
+  **Cast fidelity** (`m66_cast_fidelity.json`): loyalty fired on 10 of the 16 loyalty names drafted by anyone. Repeat-name audit (`m66_repeat_names_audit.json`): the #1 changes at
+  12 of 13 turns under other rooms' rosters (7 of 13 against an empty roster); Gafford on the Top-5 at 5 turn(s), Braun at 0, Poeltl at 0.
+  Debrief `debrief_2026-10-07_mock66_slot10.md`; kit report `after-report-2026-10-07-draft66.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

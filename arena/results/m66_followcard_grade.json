@@ -1,0 +1,1285 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 5 of 13 turns)": {
+  "ecw": 5.013,
+  "rank": 1,
+  "next": 4.887,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 7,
+   "AST": 1,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 8,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "champ": 20.16,
+  "playoff": 96.75,
+  "champ_rank": 1,
+  "swaps": [],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.507,
+  "rank": 1,
+  "next": 4.894,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 8,
+   "3PTM": 4,
+   "PTS": 8,
+   "REB": 5,
+   "AST": 4,
+   "ST": 2,
+   "BLK": 2,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 8,
+   "3PTM": 4,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 5,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 3
+  },
+  "champ": 34.93,
+  "playoff": 99.9,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Kevin Durant"
+   ],
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "Desmond Bane"
+   ],
+   [
+    63,
+    "De'Aaron Fox"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Cason Wallace"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Kevin Durant",
+   "Derrick White",
+   "Desmond Bane",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Jalen Suggs",
+   "Isaiah Hartenstein",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Cason Wallace",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #10: Jalen Johnson for Giannis Antetokounmpo (card #17; Jalen Johnson went #11)": {
+  "ecw": 5.055,
+  "rank": 1,
+  "next": 4.893,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 12,
+   "FT%": 9,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 8,
+   "AST": 1,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 12,
+   "FT%": 9,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 9,
+   "AST": 1,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "champ": 22.24,
+  "playoff": 97.81,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #15: Derrick White for Scottie Barnes (card #25; Derrick White went #35)": {
+  "ecw": 4.99,
+  "rank": 1,
+  "next": 4.909,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 9,
+   "AST": 2,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 11
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 2,
+   "REB": 9,
+   "AST": 2,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 11
+  },
+  "champ": 19.1,
+  "playoff": 96.43,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Derrick White"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Derrick White",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #34: Dyson Daniels for Trae Young (card #16; Dyson Daniels went #39)": {
+  "ecw": 5.013,
+  "rank": 1,
+  "next": 4.887,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 7,
+   "AST": 1,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 8,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "champ": 20.16,
+  "playoff": 96.75,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Dyson Daniels"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Dyson Daniels",
+   "Trae Young",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #39: OG Anunoby for Dyson Daniels (card #4; OG Anunoby went #51)": {
+  "ecw": 5.027,
+  "rank": 1,
+  "next": 4.887,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 7,
+   "AST": 2,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 12,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 9,
+   "AST": 2,
+   "ST": 3,
+   "BLK": 7,
+   "TO": 11
+  },
+  "champ": 19.75,
+  "playoff": 96.74,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "OG Anunoby"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #63: Zach LaVine for Paolo Banchero (card #13; Zach LaVine went #67)": {
+  "ecw": 4.949,
+  "rank": 1,
+  "next": 4.898,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 8,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 9,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 8,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 9,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 11
+  },
+  "champ": 18.35,
+  "playoff": 95.44,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Zach LaVine"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Zach LaVine",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #82: Coby White for VJ Edgecombe (card #19; Coby White went #87)": {
+  "ecw": 5.013,
+  "rank": 1,
+  "next": 4.887,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 7,
+   "AST": 1,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 8,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "champ": 20.16,
+  "playoff": 96.75,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Coby White"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "Coby White",
+   "VJ Edgecombe",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #106: PJ Washington for Jalen Green (card #16; PJ Washington went #111)": {
+  "ecw": 5.013,
+  "rank": 1,
+  "next": 4.887,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 7,
+   "AST": 1,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 8,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "champ": 20.16,
+  "playoff": 96.75,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "PJ Washington"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "PJ Washington",
+   "Jalen Green",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "\ud83c\udfaf at #135: Daniel Gafford for Fred VanVleet (card #24; Daniel Gafford went #154)": {
+  "ecw": 5.013,
+  "rank": 1,
+  "next": 4.887,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 7,
+   "AST": 1,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 8,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "champ": 20.16,
+  "playoff": 96.75,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Daniel Gafford"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Daniel Gafford",
+   "Fred VanVleet"
+  ]
+ },
+ "advice at #34: Derrick White for Dyson Daniels (the 'now' man; Derrick White went #35)": {
+  "ecw": 5.236,
+  "rank": 1,
+  "next": 4.893,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 10,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 9
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 5,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 8
+  },
+  "champ": 26.63,
+  "playoff": 99.07,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Derrick White",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "advice at #39: Onyeka Okongwu for OG Anunoby (the 'now' man; Onyeka Okongwu went #43)": {
+  "ecw": 5.041,
+  "rank": 1,
+  "next": 4.894,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 9,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 4,
+   "AST": 2,
+   "ST": 5,
+   "BLK": 6,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 5,
+   "AST": 2,
+   "ST": 5,
+   "BLK": 7,
+   "TO": 11
+  },
+  "champ": 20.03,
+  "playoff": 96.68,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Onyeka Okongwu"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "advice at #63: Kel'el Ware for Zach LaVine (the 'now' man; Kel'el Ware went #81)": {
+  "ecw": 4.995,
+  "rank": 1,
+  "next": 4.882,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 8,
+   "FT%": 12,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 8
+  },
+  "cat_rank_zsum": {
+   "FG%": 9,
+   "FT%": 11,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 7,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 8
+  },
+  "champ": 18.87,
+  "playoff": 95.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Kel'el Ware"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Kel'el Ware",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "the 3 advice 'now' men together (#34 White, #39 Okongwu, #63 Ware)": {
+  "ecw": 5.124,
+  "rank": 1,
+  "next": 4.894,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 6,
+   "REB": 4,
+   "AST": 9,
+   "ST": 7,
+   "BLK": 2,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 9,
+   "ST": 8,
+   "BLK": 2,
+   "TO": 3
+  },
+  "champ": 22.21,
+  "playoff": 98.03,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "Onyeka Okongwu"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Kel'el Ware",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #10": {
+  "ecw": 5.086,
+  "rank": 1,
+  "next": 4.894,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 12,
+   "FT%": 8,
+   "3PTM": 3,
+   "PTS": 6,
+   "REB": 9,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 9
+  },
+  "cat_rank_zsum": {
+   "FG%": 12,
+   "FT%": 8,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 9,
+   "AST": 4,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 8
+  },
+  "champ": 22.74,
+  "playoff": 97.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Chet Holmgren",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 5.194,
+  "rank": 1,
+  "next": 4.89,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 9,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 5,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 10
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 7,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 10
+  },
+  "champ": 25.88,
+  "playoff": 98.73,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Chet Holmgren",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Derrick White at #34": {
+  "ecw": 5.236,
+  "rank": 1,
+  "next": 4.893,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 10,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 9
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 5,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 8
+  },
+  "champ": 26.63,
+  "playoff": 99.07,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Derrick White",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Onyeka Okongwu at #39": {
+  "ecw": 5.041,
+  "rank": 1,
+  "next": 4.894,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 9,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 4,
+   "AST": 2,
+   "ST": 5,
+   "BLK": 6,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 5,
+   "AST": 2,
+   "ST": 5,
+   "BLK": 7,
+   "TO": 11
+  },
+  "champ": 20.03,
+  "playoff": 96.68,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Onyeka Okongwu"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Myles Turner at #63": {
+  "ecw": 5.017,
+  "rank": 1,
+  "next": 4.892,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 8,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 10
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 11,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 9,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 9
+  },
+  "champ": 20.01,
+  "playoff": 96.47,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Myles Turner",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Myles Turner at #82": {
+  "ecw": 5.15,
+  "rank": 1,
+  "next": 4.874,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 4,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 6,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 11
+  },
+  "champ": 24.26,
+  "playoff": 98.3,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "Myles Turner",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Myles Turner at #87": {
+  "ecw": 5.058,
+  "rank": 1,
+  "next": 4.879,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 4,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 5,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 11
+  },
+  "champ": 21.73,
+  "playoff": 97.23,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Myles Turner",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Sandro Mamukelashvili at #106": {
+  "ecw": 5.06,
+  "rank": 1,
+  "next": 4.894,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 7,
+   "FT%": 12,
+   "3PTM": 4,
+   "PTS": 3,
+   "REB": 4,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 10
+  },
+  "cat_rank_zsum": {
+   "FG%": 8,
+   "FT%": 12,
+   "3PTM": 5,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 10
+  },
+  "champ": 21.31,
+  "playoff": 97.13,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Sandro Mamukelashvili at #130": {
+  "ecw": 5.02,
+  "rank": 1,
+  "next": 4.893,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 8,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 11,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 9,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 11
+  },
+  "champ": 20.76,
+  "playoff": 96.78,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Fred VanVleet",
+   "Daniel Gafford"
+  ]
+ },
+ "hindsight single swap Sandro Mamukelashvili at #135": {
+  "ecw": 5.155,
+  "rank": 1,
+  "next": 4.874,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 4,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 12
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 5,
+   "AST": 2,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 11
+  },
+  "champ": 24.65,
+  "playoff": 98.45,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Scottie Barnes",
+   "Trae Young",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "VJ Edgecombe",
+   "Coby White",
+   "Jalen Green",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford"
+  ]
+ }
+}
