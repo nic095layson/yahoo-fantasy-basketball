@@ -1,0 +1,841 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 9 of 13 turns)": {
+  "ecw": 5.015,
+  "rank": 2,
+  "next": 5.129,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 9,
+   "AST": 5,
+   "ST": 8,
+   "BLK": 10,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 9,
+   "AST": 5,
+   "ST": 7,
+   "BLK": 10,
+   "TO": 3
+  },
+  "champ": 17.51,
+  "playoff": 97.12,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.669,
+  "rank": 1,
+  "next": 5.067,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 3,
+   "REB": 3,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 3,
+   "REB": 3,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 3
+  },
+  "champ": 37.51,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "De'Aaron Fox"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "OG Anunoby",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Zach LaVine",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "\ud83c\udfaf at #63: OG Anunoby for Ivica Zubac (card #2; OG Anunoby went #69)": {
+  "ecw": 4.98,
+  "rank": 2,
+  "next": 5.079,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 8,
+   "FT%": 1,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 12,
+   "AST": 5,
+   "ST": 4,
+   "BLK": 10,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 8,
+   "FT%": 1,
+   "3PTM": 1,
+   "PTS": 3,
+   "REB": 12,
+   "AST": 5,
+   "ST": 4,
+   "BLK": 10,
+   "TO": 3
+  },
+  "champ": 18.65,
+  "playoff": 97.44,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "OG Anunoby"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "OG Anunoby",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "\ud83c\udfaf at #82: De'Aaron Fox for Damian Lillard (card #41; De'Aaron Fox went #92)": {
+  "ecw": 5.255,
+  "rank": 1,
+  "next": 5.131,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 6,
+   "AST": 4,
+   "ST": 4,
+   "BLK": 10,
+   "TO": 7
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 8,
+   "AST": 4,
+   "ST": 4,
+   "BLK": 9,
+   "TO": 4
+  },
+  "champ": 24.04,
+  "playoff": 99.34,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "De'Aaron Fox"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "De'Aaron Fox",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "\ud83c\udfaf at #87: De'Aaron Fox for Dylan Harper (card #58; De'Aaron Fox went #92)": {
+  "ecw": 5.249,
+  "rank": 1,
+  "next": 5.129,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 3,
+   "REB": 7,
+   "AST": 4,
+   "ST": 5,
+   "BLK": 10,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 3,
+   "REB": 9,
+   "AST": 4,
+   "ST": 6,
+   "BLK": 10,
+   "TO": 4
+  },
+  "champ": 23.95,
+  "playoff": 99.33,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "De'Aaron Fox"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "De'Aaron Fox",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "\ud83c\udfaf at #111: PJ Washington for DeMar DeRozan (card #48; PJ Washington went #130)": {
+  "ecw": 5.015,
+  "rank": 2,
+  "next": 5.129,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 9,
+   "AST": 5,
+   "ST": 8,
+   "BLK": 10,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 9,
+   "AST": 5,
+   "ST": 7,
+   "BLK": 10,
+   "TO": 3
+  },
+  "champ": 17.51,
+  "playoff": 97.12,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "PJ Washington"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "PJ Washington",
+   "DeMar DeRozan",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #10": {
+  "ecw": 5.037,
+  "rank": 2,
+  "next": 5.041,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 10,
+   "AST": 5,
+   "ST": 8,
+   "BLK": 5,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 10,
+   "AST": 5,
+   "ST": 7,
+   "BLK": 5,
+   "TO": 3
+  },
+  "champ": 18.78,
+  "playoff": 97.69,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Chet Holmgren",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 5.178,
+  "rank": 1,
+  "next": 5.102,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 4,
+   "AST": 9,
+   "ST": 8,
+   "BLK": 5,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 9,
+   "ST": 8,
+   "BLK": 5,
+   "TO": 3
+  },
+  "champ": 22.16,
+  "playoff": 98.94,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Chet Holmgren",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Domantas Sabonis at #34": {
+  "ecw": 5.069,
+  "rank": 2,
+  "next": 5.136,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 4,
+   "ST": 10,
+   "BLK": 10,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 4,
+   "ST": 10,
+   "BLK": 10,
+   "TO": 4
+  },
+  "champ": 18.82,
+  "playoff": 97.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Domantas Sabonis"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Domantas Sabonis",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap OG Anunoby at #58": {
+  "ecw": 5.021,
+  "rank": 2,
+  "next": 5.103,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 9,
+   "AST": 8,
+   "ST": 4,
+   "BLK": 9,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 9,
+   "AST": 6,
+   "ST": 5,
+   "BLK": 9,
+   "TO": 3
+  },
+  "champ": 17.78,
+  "playoff": 97.03,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "OG Anunoby"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap De'Aaron Fox at #82": {
+  "ecw": 5.255,
+  "rank": 1,
+  "next": 5.131,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 6,
+   "AST": 4,
+   "ST": 4,
+   "BLK": 10,
+   "TO": 7
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 3,
+   "REB": 8,
+   "AST": 4,
+   "ST": 4,
+   "BLK": 9,
+   "TO": 4
+  },
+  "champ": 24.04,
+  "playoff": 99.34,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "De'Aaron Fox"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "De'Aaron Fox",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap De'Aaron Fox at #87": {
+  "ecw": 5.249,
+  "rank": 1,
+  "next": 5.129,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 3,
+   "REB": 7,
+   "AST": 4,
+   "ST": 5,
+   "BLK": 10,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 3,
+   "REB": 9,
+   "AST": 4,
+   "ST": 6,
+   "BLK": 10,
+   "TO": 4
+  },
+  "champ": 23.95,
+  "playoff": 99.33,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "De'Aaron Fox"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "De'Aaron Fox",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Yaxel Lendeborg at #106": {
+  "ecw": 5.023,
+  "rank": 2,
+  "next": 5.141,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 4,
+   "AST": 5,
+   "ST": 5,
+   "BLK": 7,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 7,
+   "REB": 5,
+   "AST": 5,
+   "ST": 6,
+   "BLK": 7,
+   "TO": 3
+  },
+  "champ": 17.13,
+  "playoff": 96.74,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Yaxel Lendeborg"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Daniel Gafford at #111": {
+  "ecw": 5.219,
+  "rank": 1,
+  "next": 5.138,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 6,
+   "ST": 8,
+   "BLK": 6,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 5,
+   "ST": 8,
+   "BLK": 6,
+   "TO": 3
+  },
+  "champ": 22.58,
+  "playoff": 99.16,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Daniel Gafford"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "Daniel Gafford",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Draymond Green at #135": {
+  "ecw": 5.027,
+  "rank": 2,
+  "next": 5.124,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 9,
+   "AST": 3,
+   "ST": 4,
+   "BLK": 10,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 2,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 9,
+   "AST": 3,
+   "ST": 5,
+   "BLK": 9,
+   "TO": 6
+  },
+  "champ": 18.56,
+  "playoff": 97.33,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    135,
+    "Draymond Green"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Draymond Green",
+   "Devin Vassell"
+  ]
+ },
+ "hindsight single swap Kyle Filipowski at #154": {
+  "ecw": 5.067,
+  "rank": 2,
+  "next": 5.137,
+  "favored": 9,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 5,
+   "ST": 9,
+   "BLK": 10,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 5,
+   "ST": 8,
+   "BLK": 10,
+   "TO": 3
+  },
+  "champ": 18.25,
+  "playoff": 97.71,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Jalen Williams",
+   "Derrick White",
+   "Desmond Bane",
+   "Ivica Zubac",
+   "Damian Lillard",
+   "Dylan Harper",
+   "Zach LaVine",
+   "DeMar DeRozan",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Kyle Filipowski"
+  ]
+ }
+}

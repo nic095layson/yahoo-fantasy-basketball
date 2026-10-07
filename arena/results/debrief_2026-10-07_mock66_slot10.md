@@ -34,7 +34,7 @@ Card 🎯 = what the deck showed (blend50 #1, or the urgent TARGET pin when it t
 | 106 | PJ Washington | Jalen Green | 16 | Sandro Mamukelashvili (+0.047) | 4/208 | +0.047 |
 | 111 | PJ Washington | PJ Washington | 1 | none | 0/204 | owner's own later pick |
 | 130 | Yaxel Lendeborg | Yaxel Lendeborg | 1 | Sandro Mamukelashvili (+0.008) | 2/109 | owner's own later pick |
-| 135 | Daniel Gafford | Fred VanVleet | 24 | Sandro Mamukelashvili (+0.142) | 24/105 | +0.142 |
+| 135 | Daniel Gafford | Fred VanVleet | 19 | Sandro Mamukelashvili (+0.142) | 24/105 | +0.142 |
 | 154 | Daniel Gafford | Daniel Gafford | 1 | none | 0/87 | owner's own later pick |
 
 Hindsight found **no better legal pick** at 3 turns (#58, #111, #154) and exactly one at 1 (#63). The owner took the card's #1 at 5 turns (#58, #87, #111, #130, #154) and a Top-5 row at 6 of 13.
@@ -43,9 +43,9 @@ Hindsight found **no better legal pick** at 3 turns (#58, #111, #154) and exactl
 
 - **#34 Trae Young** (card #16, availability 1.0, note ``): 35 of 274 legal alternatives grade higher — Derrick White +0.224 (drafted #35 by Cayas); Onyeka Okongwu +0.177 (drafted #43 by Martin); Desmond Bane +0.155 (drafted #40 by Kevin).
 - **#15 Scottie Barnes** (card #25, availability 1.0, note ``): 9 of 292 legal alternatives grade higher — Chet Holmgren +0.181 (drafted #19 by Martin); Anthony Davis +0.147 (drafted #27 by Will); Evan Mobley +0.137 (drafted #20 by Kyle).
-- **#135 Fred VanVleet** (card #24, availability 0.78, note `inj-acl-risk (first season back); 10/1: fully cleared, five-on-five scrimmages for weeks, practiced Wednesday 9/30; no back-to-backs to open the season, minutes limit set by camp progress per Udoka (CBS Sports, The Dream Shake, Yahoo, RotoWire) — D-BV2`): 24 of 105 legal alternatives grade higher — Sandro Mamukelashvili +0.142 (drafted #149 by Kyle); Kyle Filipowski +0.134 (drafted #None by None); Jakob Poeltl +0.097 (drafted #138 by John).
+- **#135 Fred VanVleet** (card #19, availability 0.78, note `inj-acl-risk (first season back); 10/1: fully cleared, five-on-five scrimmages for weeks, practiced Wednesday 9/30; no back-to-backs to open the season, minutes limit set by camp progress per Udoka (CBS Sports, The Dream Shake, Yahoo, RotoWire) — D-BV2`): 24 of 105 legal alternatives grade higher — Sandro Mamukelashvili +0.142 (drafted #149 by Kyle); Kyle Filipowski +0.134 (drafted #None by None); Jakob Poeltl +0.097 (drafted #138 by John).
 
-Sixth-row pins: LAST CALL took the 🎯 at 0 turn(s) (—); urgent pin withheld by the D51R-4 gate at 0 (—); DEPTH WATCH (informational) at 1 (#154 Herbert Jones).
+Sixth-row pins: LAST CALL took the 🎯 at 0 turn(s) (—); urgent pin withheld by the D51R-4 gate at 0 (—); DEPTH WATCH (informational) at 1 (#135 Fred VanVleet).
 
 ## Punt advisor (room-relative read, D51R-3)
 
@@ -55,11 +55,11 @@ Box empty all draft. Room-relative lean at 9 of 11 owner turns: #58 3PTM+FT%; #6
 
 | room | rows | mean predicted | realized | Brier | constant-base-rate Brier |
 |---|---|---|---|---|---|
-| mock 66 (out of sample) | 55 | 0.551 | 0.673 | **0.205** | 0.220 |
-| pooled with every earlier scored room | 807 | 0.479 | 0.625 | 0.250 | 0.234 |
+| mock 66 (out of sample) | 55 | 0.551 | 0.691 | **0.218** | 0.214 |
+| pooled with every earlier scored room | 807 | 0.479 | 0.626 | 0.251 | 0.234 |
 
-- this room: BUY NOW 6 rows, 4 gone; TOSS-UP 11 rows, 4 gone; quiet 38 rows, 28 survived.
-- pooled: BUY NOW 177 rows, 89 gone; TOSS-UP 161 rows, 88 gone; quiet 468 rows, 342 survived.
+- this room: BUY NOW 6 rows, 3 gone; TOSS-UP 11 rows, 4 gone; quiet 38 rows, 28 survived.
+- pooled: BUY NOW 177 rows, 88 gone; TOSS-UP 161 rows, 88 gone; quiet 468 rows, 342 survived.
 
 ## Championship arms (18,000 CRN seasons each)
 

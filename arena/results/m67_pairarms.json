@@ -1,0 +1,375 @@
+{
+ "mock": 67,
+ "tag": "v49",
+ "page_rev": "269c522",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 17.511,
+   "playoff": 97.12,
+   "rank": 2
+  },
+  "as_drafted_S2": {
+   "champ": 17.522,
+   "playoff": 97.16,
+   "rank": 2
+  },
+  "as_drafted_ecw": 5.015,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 37.511,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 37.722,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "blend_ecw": 5.669,
+  "blend_swaps": [
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "De'Aaron Fox"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 37.511,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 37.722,
+   "playoff": 99.97,
+   "rank": 1
+  },
+  "pair_ecw": 5.669,
+  "pair_swaps": [
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "De'Aaron Fox"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ]
+  ],
+  "pair_moves": [],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0641,
+    "why": "#1 survival 0.52 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Tyrese Maxey",
+     "Jalen Johnson",
+     "Tyrese Haliburton",
+     "Anthony Davis"
+    ],
+    "surv": [
+     0.525,
+     0.242,
+     0.349,
+     0.46,
+     0.985
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Tyrese Haliburton",
+     "Jalen Williams",
+     "Jamal Murray",
+     "Derrick White",
+     "Kevin Durant"
+    ],
+    "surv": [
+     0.01,
+     0.701,
+     0.049,
+     0.796,
+     0.013
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0138,
+    "why": "#1 survival 0.55 below 0.60 \u2014 take him now",
+    "rows": [
+     "Jalen Williams",
+     "Derrick White",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "Kyrie Irving"
+    ],
+    "surv": [
+     0.546,
+     0.676,
+     0.906,
+     0.809,
+     0.794
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Derrick White",
+     "Desmond Bane",
+     "OG Anunoby",
+     "Jaren Jackson Jr.",
+     "Onyeka Okongwu"
+    ],
+    "surv": [
+     0.173,
+     0.374,
+     0.684,
+     0.268,
+     0.425
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Desmond Bane",
+     "OG Anunoby",
+     "Payton Pritchard",
+     "Ivica Zubac",
+     "Tyler Herro"
+    ],
+    "surv": [
+     0.262,
+     0.592,
+     0.77,
+     0.506,
+     0.616
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0539,
+    "why": "#1 survival 0.24 below 0.60 \u2014 take him now",
+    "rows": [
+     "OG Anunoby",
+     "Payton Pritchard",
+     "Ivica Zubac",
+     "Michael Porter Jr.",
+     "Tyler Herro"
+    ],
+    "surv": [
+     0.241,
+     0.482,
+     0.162,
+     0.12,
+     0.267
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.035,
+    "why": "#1 survival 0.39 below 0.60 \u2014 take him now",
+    "rows": [
+     "De'Aaron Fox",
+     "Jalen Suggs",
+     "Josh Hart",
+     "Zach LaVine",
+     "Isaiah Hartenstein"
+    ],
+    "surv": [
+     0.389,
+     0.738,
+     0.621,
+     0.682,
+     0.709
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Isaiah Hartenstein",
+     "Josh Hart",
+     "Yaxel Lendeborg",
+     "Mikal Bridges",
+     "Sandro Mamukelashvili"
+    ],
+    "surv": [
+     0.477,
+     0.363,
+     0.61,
+     0.152,
+     0.645
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Zach LaVine",
+     "Yaxel Lendeborg",
+     "Sandro Mamukelashvili",
+     "PJ Washington",
+     "Saddiq Bey"
+    ],
+    "surv": [
+     0.376,
+     0.554,
+     0.592,
+     0.56,
+     0.598
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0242,
+    "why": "#1 survival 0.34 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Sandro Mamukelashvili",
+     "PJ Washington",
+     "Daniel Gafford",
+     "Herbert Jones"
+    ],
+    "surv": [
+     0.34,
+     0.382,
+     0.347,
+     0.429,
+     0.54
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.005,
+    "why": "#1 survival 0.33 below 0.60 \u2014 take him now",
+    "rows": [
+     "Sandro Mamukelashvili",
+     "PJ Washington",
+     "Daniel Gafford",
+     "Devin Vassell",
+     "Saddiq Bey"
+    ],
+    "surv": [
+     0.33,
+     0.296,
+     0.377,
+     0.286,
+     0.337
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Sandro Mamukelashvili",
+     "Saddiq Bey",
+     "Devin Vassell",
+     "Cameron Johnson",
+     "Christian Braun"
+    ],
+    "surv": [
+     0.166,
+     0.172,
+     0.132,
+     0.109,
+     0.169
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Devin Vassell",
+     "Jerami Grant",
+     "Kyle Filipowski",
+     "Christian Braun",
+     "Nikola Vucevic"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}
