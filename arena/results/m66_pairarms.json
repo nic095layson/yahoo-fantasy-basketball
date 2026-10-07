@@ -1,0 +1,438 @@
+{
+ "mock": 66,
+ "tag": "v49",
+ "page_rev": "269c522",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 20.156,
+   "playoff": 96.75,
+   "rank": 1
+  },
+  "as_drafted_S2": {
+   "champ": 20.461,
+   "playoff": 96.78,
+   "rank": 1
+  },
+  "as_drafted_ecw": 5.013,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 34.928,
+   "playoff": 99.9,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 35.461,
+   "playoff": 99.89,
+   "rank": 1
+  },
+  "blend_ecw": 5.507,
+  "blend_swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Kevin Durant"
+   ],
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "Desmond Bane"
+   ],
+   [
+    63,
+    "De'Aaron Fox"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Cason Wallace"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 34.928,
+   "playoff": 99.9,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 35.461,
+   "playoff": 99.89,
+   "rank": 1
+  },
+  "pair_ecw": 5.507,
+  "pair_swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Kevin Durant"
+   ],
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "Desmond Bane"
+   ],
+   [
+    63,
+    "De'Aaron Fox"
+   ],
+   [
+    82,
+    "Isaiah Hartenstein"
+   ],
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Cason Wallace"
+   ]
+  ],
+  "pair_moves": [
+   {
+    "pick": 82,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0204,
+    "why": "Isaiah Hartenstein now, Yaxel Lendeborg next turn (80% to survive): +0.020 cats/wk over the pair",
+    "rows": [
+     "Jalen Suggs",
+     "Isaiah Hartenstein",
+     "Day'Ron Sharpe",
+     "Yaxel Lendeborg",
+     "Jaden McDaniels"
+    ],
+    "surv": [
+     0.738,
+     0.709,
+     0.607,
+     0.796,
+     0.562
+    ],
+    "next_turn": 87
+   }
+  ],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Jalen Johnson",
+     "Jalen Williams",
+     "Kevin Durant",
+     "Donovan Mitchell",
+     "Anthony Davis"
+    ],
+    "surv": [
+     0.349,
+     0.982,
+     0.555,
+     0.431,
+     0.985
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Kevin Durant",
+     "Jamal Murray",
+     "Jalen Williams",
+     "Desmond Bane",
+     "Kyrie Irving"
+    ],
+    "surv": [
+     0.013,
+     0.049,
+     0.701,
+     0.883,
+     0.873
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Derrick White",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "Franz Wagner",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.676,
+     0.906,
+     0.809,
+     0.798,
+     0.921
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Desmond Bane",
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Franz Wagner",
+     "Payton Pritchard"
+    ],
+    "surv": [
+     0.374,
+     0.632,
+     0.684,
+     0.35,
+     0.827
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0054,
+    "why": "pair gain 0.005 below 0.01",
+    "rows": [
+     "Payton Pritchard",
+     "De'Aaron Fox",
+     "Jalen Suggs",
+     "Zach LaVine",
+     "Coby White"
+    ],
+    "surv": [
+     0.77,
+     0.763,
+     0.916,
+     0.897,
+     0.832
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0388,
+    "why": "#1 survival 0.47 below 0.60 \u2014 take him now",
+    "rows": [
+     "De'Aaron Fox",
+     "Josh Hart",
+     "Jalen Suggs",
+     "Isaiah Hartenstein",
+     "Day'Ron Sharpe"
+    ],
+    "surv": [
+     0.47,
+     0.686,
+     0.786,
+     0.761,
+     0.673
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0204,
+    "why": "Isaiah Hartenstein now, Yaxel Lendeborg next turn (80% to survive): +0.020 cats/wk over the pair",
+    "rows": [
+     "Jalen Suggs",
+     "Isaiah Hartenstein",
+     "Day'Ron Sharpe",
+     "Yaxel Lendeborg",
+     "Jaden McDaniels"
+    ],
+    "surv": [
+     0.738,
+     0.709,
+     0.607,
+     0.796,
+     0.562
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0139,
+    "why": "#1 survival 0.52 below 0.60 \u2014 take him now",
+    "rows": [
+     "Jalen Suggs",
+     "Yaxel Lendeborg",
+     "Day'Ron Sharpe",
+     "Sandro Mamukelashvili",
+     "Coby White"
+    ],
+    "surv": [
+     0.52,
+     0.61,
+     0.345,
+     0.645,
+     0.256
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0025,
+    "why": "#1 survival 0.55 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Sandro Mamukelashvili",
+     "PJ Washington",
+     "Daniel Gafford",
+     "Herbert Jones"
+    ],
+    "surv": [
+     0.554,
+     0.592,
+     0.56,
+     0.631,
+     0.716
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0092,
+    "why": "#1 survival 0.34 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "PJ Washington",
+     "Herbert Jones",
+     "Cason Wallace",
+     "Daniel Gafford"
+    ],
+    "surv": [
+     0.34,
+     0.347,
+     0.54,
+     0.368,
+     0.429
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0056,
+    "why": "#1 survival 0.29 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Herbert Jones",
+     "Daniel Gafford",
+     "Cason Wallace",
+     "Saddiq Bey"
+    ],
+    "surv": [
+     0.289,
+     0.49,
+     0.377,
+     0.317,
+     0.337
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0447,
+    "why": "#1 survival 0.31 below 0.60 \u2014 take him now",
+    "rows": [
+     "Herbert Jones",
+     "Cason Wallace",
+     "Saddiq Bey",
+     "Devin Vassell",
+     "Daniel Gafford"
+    ],
+    "surv": [
+     0.309,
+     0.155,
+     0.172,
+     0.132,
+     0.204
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Daniel Gafford",
+     "Herbert Jones",
+     "Saddiq Bey",
+     "Kyle Filipowski",
+     "Christian Braun"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}
