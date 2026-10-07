@@ -1,0 +1,512 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 13 of 13 turns)": {
+  "ecw": 5.169,
+  "rank": 1,
+  "next": 5.121,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 9,
+   "REB": 6,
+   "AST": 3,
+   "ST": 5,
+   "BLK": 4,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 10,
+   "REB": 7,
+   "AST": 3,
+   "ST": 6,
+   "BLK": 4,
+   "TO": 3
+  },
+  "champ": 23.33,
+  "playoff": 98.37,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.169,
+  "rank": 1,
+  "next": 5.121,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 9,
+   "REB": 6,
+   "AST": 3,
+   "ST": 5,
+   "BLK": 4,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 10,
+   "REB": 7,
+   "AST": 3,
+   "ST": 6,
+   "BLK": 4,
+   "TO": 3
+  },
+  "champ": 23.33,
+  "playoff": 98.37,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "advice at #58: Tyler Herro for Payton Pritchard (the 'now' man; Tyler Herro went #61)": {
+  "ecw": 5.173,
+  "rank": 1,
+  "next": 5.122,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 2,
+   "ST": 7,
+   "BLK": 4,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 7,
+   "AST": 2,
+   "ST": 6,
+   "BLK": 4,
+   "TO": 6
+  },
+  "champ": 23.71,
+  "playoff": 98.29,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Tyler Herro",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 5.229,
+  "rank": 1,
+  "next": 5.106,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 10,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 5,
+   "ST": 7,
+   "BLK": 2,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 10,
+   "3PTM": 5,
+   "PTS": 12,
+   "REB": 4,
+   "AST": 6,
+   "ST": 8,
+   "BLK": 2,
+   "TO": 2
+  },
+  "champ": 25.74,
+  "playoff": 99.16,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Chet Holmgren",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap OG Anunoby at #39": {
+  "ecw": 5.209,
+  "rank": 1,
+  "next": 5.031,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 7,
+   "FT%": 6,
+   "3PTM": 3,
+   "PTS": 7,
+   "REB": 6,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 9,
+   "REB": 11,
+   "AST": 3,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 3
+  },
+  "champ": 25.46,
+  "playoff": 98.7,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "OG Anunoby"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Tyler Herro at #58": {
+  "ecw": 5.173,
+  "rank": 1,
+  "next": 5.122,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 2,
+   "ST": 7,
+   "BLK": 4,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 7,
+   "AST": 2,
+   "ST": 6,
+   "BLK": 4,
+   "TO": 6
+  },
+  "champ": 23.71,
+  "playoff": 98.29,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Tyler Herro",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap PJ Washington at #87": {
+  "ecw": 5.174,
+  "rank": 1,
+  "next": 5.099,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 6,
+   "3PTM": 3,
+   "PTS": 9,
+   "REB": 6,
+   "AST": 3,
+   "ST": 5,
+   "BLK": 4,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 4,
+   "PTS": 9,
+   "REB": 7,
+   "AST": 3,
+   "ST": 6,
+   "BLK": 4,
+   "TO": 3
+  },
+  "champ": 23.91,
+  "playoff": 98.39,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "PJ Washington"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Saddiq Bey at #111": {
+  "ecw": 5.191,
+  "rank": 1,
+  "next": 5.12,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 3,
+   "ST": 10,
+   "BLK": 4,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 6,
+   "3PTM": 3,
+   "PTS": 9,
+   "REB": 7,
+   "AST": 3,
+   "ST": 10,
+   "BLK": 4,
+   "TO": 3
+  },
+  "champ": 24.23,
+  "playoff": 98.49,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Saddiq Bey"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Saddiq Bey at #130": {
+  "ecw": 5.214,
+  "rank": 1,
+  "next": 5.112,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 4,
+   "ST": 7,
+   "BLK": 4,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 7,
+   "AST": 5,
+   "ST": 8,
+   "BLK": 4,
+   "TO": 3
+  },
+  "champ": 24.39,
+  "playoff": 98.71,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Saddiq Bey"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Saddiq Bey",
+   "Daniel Gafford",
+   "Cam Thomas"
+  ]
+ },
+ "hindsight single swap Santi Aldama at #154": {
+  "ecw": 5.182,
+  "rank": 1,
+  "next": 5.123,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 9,
+   "3PTM": 5,
+   "PTS": 11,
+   "REB": 5,
+   "AST": 4,
+   "ST": 5,
+   "BLK": 3,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 9,
+   "3PTM": 5,
+   "PTS": 12,
+   "REB": 5,
+   "AST": 5,
+   "ST": 6,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 23.87,
+  "playoff": 98.66,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Santi Aldama"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Jamal Murray",
+   "Derrick White",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Daniel Gafford",
+   "Santi Aldama"
+  ]
+ }
+}

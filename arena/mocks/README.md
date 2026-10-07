@@ -407,6 +407,51 @@ is on the author. See LEDGER §3.
   (`m62_repeat_names_audit.json`): the #1 changes at 12 of 13 turns under other rooms' rosters (11 of 13 against an
   empty roster); Gafford on the Top-5 at two turns (taken at #135), Braun at two, Poeltl at none. Debrief
   `debrief_2026-10-06_mock62_slot10.md`; kit report `after-report-2026-10-06-draft62.md`.
+- **Mock 63 (2026-10-07, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL 2026-27 seating, drafted on deck v47
+  (rev `fca8f7c`, the 10/7 daily-pull build; the v44 pool with the 10/6 Yahoo prices baked), the veto live. `live_retro.MOCKS[63]` =
+  `dict(tags=("v44",), veto=True, room="cast")`; `PAGE_REV[63] = "fca8f7c"`; no punt declared (`PUNT_TIMELINES[63] = [(0, [])]`). State = the
+  owner's exported draft state verbatim (156 picks, every name a pool row, snake-consistent, `cast` = the real order; md5 `d9516e0c5d41aaaaa5148abfdf103c22`);
+  no recap and no tool log exist for a MOCK, so no DOM replay. **The card's 🎯 taken at 13 of 13 turns**:
+  as drafted 23.33% (rank 2) / ECW 5.169 rank 1 (next 5.121), favored 10/11 (`m63_followcard_grade.json`, `m63_arms.json`;
+  the retro port's self-consistent follow-card chain grades 23.33%). Deck card replayed from the v47 page
+  (`live_deckcard.py 63 rev:fca8f7c:docs/draft-deck.html arena/results/m63_deckcard_v44.json`). Hindsight's largest single swap: Chet Holmgren at #15 (+0.060 cats/week).
+  **Advice line** (`m63_advice_reads.json`, page reading): fired at #58 (Tyler Herro now); the 'now' men as single swaps grade +0.38 title points; the pair rule replayed as the marker finished at 23.71% against the blend chain's 23.33% (seed set 1).
+  Survival pooled with the 51–64 deck cards (`m63_survival.json`: this room 48 rows, Brier 0.213, mean predicted 0.608 vs realized 0.521 — optimistic against the cast again; BUY NOW 0 of 3 survived, TOSS-UP 4 of 9, quiet 21 of 36).
+  **Cast fidelity** (`m63_cast_fidelity.json`): loyalty fired on 10 of the 17 loyalty names drafted by anyone. Repeat-name audit
+  (`m63_repeat_names_audit.json`): the #1 changes at 11 of 13 turns under other rooms' rosters (11 of 13 against an empty roster); Gafford on the Top-5 at 3 turn(s), Braun at 0, Poeltl at 1.
+  Debrief `debrief_2026-10-07_mock63_slot10.md`; kit report `after-report-2026-10-07-cast.md` (§4).
+- **Mock 64 (2026-10-07, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL 2026-27 seating, drafted on deck v47
+  (rev `fca8f7c`, the 10/7 daily-pull build; the v44 pool with the 10/6 Yahoo prices baked), the veto live. `live_retro.MOCKS[64]` =
+  `dict(tags=("v44",), veto=True, room="cast")`; `PAGE_REV[64] = "fca8f7c"`; no punt declared (`PUNT_TIMELINES[64] = [(0, [])]`). State = the
+  owner's exported draft state verbatim (156 picks, every name a pool row, snake-consistent, `cast` = the real order; md5 `5abfd25ab6c579d7f12e49808ffb89aa`);
+  no recap and no tool log exist for a MOCK, so no DOM replay. **The card's 🎯 taken at 2 of 13 turns** — off the card at #10 Jayson Tatum (card #18), #15 Kevin Durant (card #3), #34 Bam Adebayo (card #11), #39 Kyrie Irving (card #5), #63 Paolo Banchero (card #21), #82 Jaden McDaniels (card #6), #87 Jabari Smith Jr. (card #13), #106 Herbert Jones (card #4), #111 Collin Gillespie (card #4), #135 Cason Wallace (card #2), #154 Stephon Castle (card #80):
+  as drafted 7.63% (rank 3) / ECW 4.555 rank 3 (next 5.357), favored 7/11 (`m64_followcard_grade.json`, `m64_arms.json`;
+  the retro port's self-consistent follow-card chain grades 18.97%). Deck card replayed from the v47 page
+  (`live_deckcard.py 64 rev:fca8f7c:docs/draft-deck.html arena/results/m64_deckcard_v44.json`). Hindsight's largest single swap: Jalen Johnson at #10 (+0.154 cats/week).
+  **Advice line** (`m64_advice_reads.json`, page reading): fired at #15 (Kevin Durant now), #34 (Franz Wagner now), #39 (Franz Wagner now), #58 (Alperen Sengun now); the 'now' men as single swaps grade +0.00 / +1.44 / +1.54 / -1.37 title points, together -0.11; the pair rule replayed as the marker finished at 18.10% against the blend chain's 18.97% (seed set 1).
+  Survival pooled with the 51–64 deck cards (`m64_survival.json`: this room 53 rows, Brier 0.196, mean predicted 0.575 vs realized 0.509 — optimistic against the cast again; BUY NOW 0 of 4 survived, TOSS-UP 5 of 14, quiet 22 of 35).
+  **Cast fidelity** (`m64_cast_fidelity.json`): loyalty fired on 11 of the 17 loyalty names drafted by anyone. Repeat-name audit
+  (`m64_repeat_names_audit.json`): the #1 changes at 12 of 13 turns under other rooms' rosters (11 of 13 against an empty roster); Gafford on the Top-5 at 1 turn(s), Braun at 2, Poeltl at 0.
+  Debrief `debrief_2026-10-07_mock64_slot10.md`; kit report `after-report-2026-10-07-cast.md` (§4).
+- **Mock 65 (2026-10-07, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL 2026-27 seating, drafted on deck v47
+  (rev `fca8f7c`, the 10/7 daily-pull build; the v44 pool with the 10/6 Yahoo prices baked), the veto live. `live_retro.MOCKS[65]` =
+  `dict(tags=("v44",), veto=True, room="cast")`; `PAGE_REV[65] = "fca8f7c"`; no punt declared (`PUNT_TIMELINES[65] = [(0, [])]`). State = the
+  owner's exported draft state verbatim (156 picks, every name a pool row, snake-consistent, `cast` = the real order; md5 `c5bd2cf159fdd1969244eb12b2de8782`);
+  no recap and no tool log exist for a MOCK, so no DOM replay. **The card's 🎯 taken at 13 of 13 turns**:
+  as drafted 23.19% (rank 2) / ECW 5.174 rank 1 (next 5.099), favored 10/11 (`m65_followcard_grade.json`, `m65_arms.json`;
+  the retro port's self-consistent follow-card chain grades 23.19%). Deck card replayed from the v47 page
+  (`live_deckcard.py 65 rev:fca8f7c:docs/draft-deck.html arena/results/m65_deckcard_v44.json`). Hindsight's largest single swap: Chet Holmgren at #15 (+0.117 cats/week).
+  **Advice line** (`m65_advice_reads.json`, page reading): fired at #39 (Franz Wagner now); the 'now' men as single swaps grade +1.40 title points; the pair rule replayed as the marker finished at 22.97% against the blend chain's 23.19% (seed set 1).
+  Survival pooled with the 51–64 deck cards (`m65_survival.json`: this room 48 rows, Brier 0.207, mean predicted 0.617 vs realized 0.542 — optimistic against the cast again; BUY NOW 0 of 2 survived, TOSS-UP 4 of 9, quiet 22 of 37).
+  **Cast fidelity** (`m65_cast_fidelity.json`): loyalty fired on 12 of the 17 loyalty names drafted by anyone. Repeat-name audit
+  (`m65_repeat_names_audit.json`): the #1 changes at 11 of 13 turns under other rooms' rosters (12 of 13 against an empty roster); Gafford on the Top-5 at 1 turn(s), Braun at 2, Poeltl at 0.
+  Debrief `debrief_2026-10-07_mock65_slot10.md`; kit report `after-report-2026-10-07-cast.md` (§4).
+- **D-CAST-1/3/4 (owner 2026-10-07, after mocks 63–65).** Unsigned free agents tagged `out-unsigned` (availability 0) on both planes; from round
+  `CARD_PRICED_FROM` (11) the card's candidates are the priced rows (`cardPool()` in the engine block; twins in `full_dom_check.mjs` engineTop5,
+  `check_parity.py` and `live_retro.py card_pool()` — gated on the constant's presence in the page at `PAGE_REV[mock]`, so every room drafted
+  before v48 replays unchanged); the pre-registered cast-bot experiment (`castsim_design_2026-10-07.md`, `castsim_n30_2026-10-07.json`):
+  no variant shipped — V2 (XRank value axis) wins M1 (7.39 vs 12.07) and M2 (7.5 vs 10.43 consensus names left) but fails the M3 regression guard (Spearman 0.30 against the shipped reach ordering); V1/V3 do not improve M2; the bots stay V0. The defense artifacts: `dcast_realism_picks_2026-10-07.json`, `dcast_botdiag_m63_2026-10-07.json`,
+  `dcast_lastseason_2026-10-07.json`, `dcast_card_effect_v48.json`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

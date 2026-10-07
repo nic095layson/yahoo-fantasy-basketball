@@ -126,6 +126,17 @@ MOCKS = {
     # REAL 2026-27 draft order (the first room on that seating), drafted on deck v46 (rev 441bba6; pool
     # sha 48456b3b18ff — the v44 pool, with the 10/6 Yahoo prices baked). room="cast": not a public room.
     62: dict(tags=("v44",), veto=True, room="cast"),
+    # mock 63 (2026-10-07, slot 10): the deck's own MOCK mode against the 11 league-mates on the REAL seating,
+    # the second cast room on it, drafted on deck v46/v47 (card-identical pages: engine, values, prices and
+    # judgment adjustments equal; v47 differs in notes only) — pinned to rev fca8f7c (v47; pool sha bdac38c827cc,
+    # the v44 pool with the 10/6 Yahoo prices baked). room="cast": not a public room; no tool log exported.
+    63: dict(tags=("v44",), veto=True, room="cast"),
+    # mock 64 (2026-10-07, slot 10): the third cast room on the REAL seating, exported the same afternoon as
+    # mock 63; same card-identical v46/v47 pages, pinned to rev fca8f7c (v47). room="cast"; no tool log.
+    64: dict(tags=("v44",), veto=True, room="cast"),
+    # mock 65 (2026-10-07, slot 10): the fourth cast room on the REAL seating, exported the same afternoon;
+    # same card-identical v46/v47 pages, pinned to rev fca8f7c (v47). room="cast"; no tool log.
+    65: dict(tags=("v44",), veto=True, room="cast"),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -216,7 +227,7 @@ def card(players, upto):
     ros, taken, missing = rosters_upto(players, upto)
     mine = ros[SLOT]
     opp = [r for s, r in ros.items() if s != SLOT and r]
-    pool = avail_pool(players, taken)
+    pool = card_pool(avail_pool(players, taken), upto)   # D-CAST-4 twin
     vals = [hoops.adj_value(p, ()) for p in pool]
     models = [arena.team_week_model(r) for r in opp]
     if not models:
@@ -619,6 +630,7 @@ def stage_arms(tag=None):
         _veto = hoops.do_not_draft() if CFG.get("veto") else set()
         pool = [p for p in players if p["player"] not in taken and hoops.availability(p) > 0
                 and p["player"] not in _veto]
+        pool = card_pool(pool, n)   # D-CAST-4 twin
         vals = [hoops.adj_value(p, ()) for p in pool]
         models = [arena.team_week_model(r) for r in opp]
         if not models:
@@ -664,7 +676,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c"}
 
 
 def _baked_prices(rev):
@@ -680,6 +692,34 @@ def _baked_prices(rev):
     rows = json.loads(subprocess.run(["node", path], capture_output=True, text=True, check=True).stdout)
     pr = {n: v for n, v in rows if v is not None}
     return pr or None
+
+
+_CARD_RULE = None
+
+
+def card_rule():
+    """(CARD_PRICED_FROM, {name: price}) for the page revision this mock was drafted on.
+    D-CAST-4 (2026-10-07): from that round the card's candidates are the priced rows.
+    (None, ...) before the rule shipped, so every earlier mock replays unchanged."""
+    global _CARD_RULE
+    if _CARD_RULE is None:
+        import re as _re, subprocess
+        rev = PAGE_REV[MOCK]
+        html = subprocess.run(["git", "-C", DECK, "show", f"{rev}:docs/draft-deck.html"],
+                              capture_output=True, text=True, check=True).stdout
+        m = _re.search(r"const CARD_PRICED_FROM = (\d+);", html)
+        _CARD_RULE = (int(m.group(1)) if m else None, (_baked_prices(rev) or {}) if m else {})
+    return _CARD_RULE
+
+
+def card_pool(pool, n):
+    """The deck's cardPool() twin at pick index n: priced rows only from round CARD_PRICED_FROM,
+    the whole pool when fewer than five priced rows remain or before the rule shipped."""
+    frm, prices = card_rule()
+    if frm is None or n // TEAMS + 1 < frm:
+        return pool
+    priced = [p for p in pool if p["player"] in prices]
+    return priced if len(priced) >= 5 else pool
 
 
 def look_through_next(n):
@@ -712,6 +752,7 @@ def stage_pairarms(tag=None, seeds1=(11, 23, 47), seeds2=(5, 17, 29)):
         mine = ros[SLOT]; opp = [r for s, r in ros.items() if s != SLOT and r]
         pool = [p for p in players if p["player"] not in taken and hoops.availability(p) > 0
                 and p["player"] not in _veto]
+        pool = card_pool(pool, n)   # D-CAST-4 twin
         vals = [hoops.adj_value(p, ()) for p in pool]
         models = [arena.team_week_model(r) for r in opp]
         if not models:

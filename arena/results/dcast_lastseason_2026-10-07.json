@@ -1,0 +1,394 @@
+{
+ "lines_2025_26": {
+  "Cam Thomas": {
+   "gp": 42,
+   "fg_pct": 0.41,
+   "fga": 11.0,
+   "ft_pct": 0.811,
+   "fta": 4.0,
+   "tpm": 1.2,
+   "pts": 13.5,
+   "reb": 1.7,
+   "ast": 2.6,
+   "stl": 0.2,
+   "blk": 0.1,
+   "tov": 1.8
+  },
+  "Saddiq Bey": {
+   "gp": 72,
+   "fg_pct": 0.451,
+   "fga": 13.4,
+   "ft_pct": 0.841,
+   "fta": 4.1,
+   "tpm": 2.1,
+   "pts": 17.7,
+   "reb": 5.6,
+   "ast": 2.5,
+   "stl": 0.9,
+   "blk": 0.1,
+   "tov": 0.9
+  },
+  "Stephon Castle": {
+   "gp": 68,
+   "fg_pct": 0.471,
+   "fga": 12.0,
+   "ft_pct": 0.734,
+   "fta": 5.6,
+   "tpm": 1.2,
+   "pts": 16.7,
+   "reb": 5.3,
+   "ast": 7.4,
+   "stl": 1.1,
+   "blk": 0.3,
+   "tov": 3.2
+  },
+  "Davion Mitchell": {
+   "gp": 70,
+   "fg_pct": 0.49,
+   "fga": 7.6,
+   "ft_pct": 0.646,
+   "fta": 0.9,
+   "tpm": 1.3,
+   "pts": 9.3,
+   "reb": 2.7,
+   "ast": 6.5,
+   "stl": 1.0,
+   "blk": 0.2,
+   "tov": 1.5
+  },
+  "RJ Barrett": {
+   "gp": 57,
+   "fg_pct": 0.491,
+   "fga": 14.3,
+   "ft_pct": 0.717,
+   "fta": 4.9,
+   "tpm": 1.7,
+   "pts": 19.3,
+   "reb": 5.3,
+   "ast": 3.3,
+   "stl": 0.7,
+   "blk": 0.3,
+   "tov": 1.7
+  },
+  "Rui Hachimura": {
+   "gp": 68,
+   "fg_pct": 0.514,
+   "fga": 8.8,
+   "ft_pct": 0.694,
+   "fta": 1.1,
+   "tpm": 1.7,
+   "pts": 11.5,
+   "reb": 3.3,
+   "ast": 0.8,
+   "stl": 0.6,
+   "blk": 0.3,
+   "tov": 0.6
+  }
+ },
+ "committed": {
+  "Cam Thomas": {
+   "rank": 121,
+   "adj": -1.788,
+   "zsum": -1.79,
+   "z": {
+    "FG%": -1.2,
+    "FT%": 1.56,
+    "3PTM": 0.77,
+    "PTS": 1.21,
+    "REB": -1.08,
+    "AST": -0.02,
+    "ST": -1.14,
+    "BLK": -1.01,
+    "TO": -0.87
+   },
+   "line": {
+    "fg_pct": 0.44,
+    "fga": 18.5,
+    "ft_pct": 0.88,
+    "fta": 5.4,
+    "tpm": 2.5,
+    "pts": 24.0,
+    "reb": 3.4,
+    "ast": 4.0,
+    "stl": 0.7,
+    "blk": 0.2,
+    "tov": 2.7
+   }
+  },
+  "Saddiq Bey": {
+   "rank": 95,
+   "adj": -1.196,
+   "zsum": -1.2,
+   "z": {
+    "FG%": -0.67,
+    "FT%": 0.4,
+    "3PTM": 0.66,
+    "PTS": -0.08,
+    "REB": -0.25,
+    "AST": -0.8,
+    "ST": -0.57,
+    "BLK": -0.63,
+    "TO": 0.75
+   },
+   "line": {
+    "fg_pct": 0.45,
+    "fga": 13.5,
+    "ft_pct": 0.84,
+    "fta": 2.6,
+    "tpm": 2.4,
+    "pts": 17.0,
+    "reb": 5.5,
+    "ast": 2.5,
+    "stl": 0.9,
+    "blk": 0.4,
+    "tov": 1.5
+   }
+  },
+  "Stephon Castle": {
+   "rank": 251,
+   "adj": -4.625,
+   "zsum": -4.62,
+   "z": {
+    "FG%": -0.94,
+    "FT%": -1.04,
+    "3PTM": -0.65,
+    "PTS": -0.17,
+    "REB": -0.85,
+    "AST": 0.39,
+    "ST": -0.28,
+    "BLK": -0.63,
+    "TO": -0.46
+   },
+   "line": {
+    "fg_pct": 0.44,
+    "fga": 14.5,
+    "ft_pct": 0.73,
+    "fta": 4.6,
+    "tpm": 1.2,
+    "pts": 16.5,
+    "reb": 4.0,
+    "ast": 4.8,
+    "stl": 1.0,
+    "blk": 0.4,
+    "tov": 2.4
+   }
+  },
+  "Davion Mitchell": {
+   "rank": 170,
+   "adj": -3.195,
+   "zsum": -3.2,
+   "z": {
+    "FG%": -0.02,
+    "FT%": -0.5,
+    "3PTM": -0.54,
+    "PTS": -1.4,
+    "REB": -1.36,
+    "AST": 1.18,
+    "ST": -0.28,
+    "BLK": -1.01,
+    "TO": 0.75
+   },
+   "line": {
+    "fg_pct": 0.48,
+    "fga": 7.8,
+    "ft_pct": 0.65,
+    "fta": 1.0,
+    "tpm": 1.3,
+    "pts": 9.8,
+    "reb": 2.7,
+    "ast": 6.3,
+    "stl": 1.0,
+    "blk": 0.2,
+    "tov": 1.5
+   }
+  },
+  "RJ Barrett": {
+   "rank": 241,
+   "adj": -4.522,
+   "zsum": -4.52,
+   "z": {
+    "FG%": -0.4,
+    "FT%": -2.85,
+    "3PTM": -0.21,
+    "PTS": 0.57,
+    "REB": 0.02,
+    "AST": 0.6,
+    "ST": -0.57,
+    "BLK": -0.82,
+    "TO": -0.87
+   },
+   "line": {
+    "fg_pct": 0.465,
+    "fga": 15.5,
+    "ft_pct": 0.63,
+    "fta": 5.0,
+    "tpm": 1.6,
+    "pts": 20.5,
+    "reb": 6.2,
+    "ast": 5.2,
+    "stl": 0.9,
+    "blk": 0.3,
+    "tov": 2.7
+   }
+  },
+  "Rui Hachimura": {
+   "rank": 186,
+   "adj": -3.424,
+   "zsum": -3.42,
+   "z": {
+    "FG%": 0.14,
+    "FT%": -0.16,
+    "3PTM": -0.43,
+    "PTS": -0.72,
+    "REB": -0.53,
+    "AST": -1.38,
+    "ST": -1.14,
+    "BLK": -0.63,
+    "TO": 1.42
+   },
+   "line": {
+    "fg_pct": 0.49,
+    "fga": 10.5,
+    "ft_pct": 0.77,
+    "fta": 1.8,
+    "tpm": 1.4,
+    "pts": 13.5,
+    "reb": 4.8,
+    "ast": 1.4,
+    "stl": 0.7,
+    "blk": 0.4,
+    "tov": 1.0
+   }
+  }
+ },
+ "last_season_deck": {
+  "Cam Thomas": {
+   "rank": 318,
+   "adj": -8.3,
+   "zsum": -8.3,
+   "z": {
+    "FG%": -1.24,
+    "FT%": 0.23,
+    "3PTM": -0.62,
+    "PTS": -0.71,
+    "REB": -1.77,
+    "AST": -0.74,
+    "ST": -2.56,
+    "BLK": -1.21,
+    "TO": 0.33
+   }
+  },
+  "Saddiq Bey": {
+   "rank": 85,
+   "adj": -0.85,
+   "zsum": -0.85,
+   "z": {
+    "FG%": -0.66,
+    "FT%": 0.66,
+    "3PTM": 0.35,
+    "PTS": 0.07,
+    "REB": -0.23,
+    "AST": -0.79,
+    "ST": -0.57,
+    "BLK": -1.21,
+    "TO": 1.53
+   }
+  },
+  "Stephon Castle": {
+   "rank": 167,
+   "adj": -3.081,
+   "zsum": -3.08,
+   "z": {
+    "FG%": -0.21,
+    "FT%": -1.16,
+    "3PTM": -0.62,
+    "PTS": -0.12,
+    "REB": -0.35,
+    "AST": 1.75,
+    "ST": 0.01,
+    "BLK": -0.83,
+    "TO": -1.55
+   }
+  },
+  "Davion Mitchell": {
+   "rank": 164,
+   "adj": -3.029,
+   "zsum": -3.03,
+   "z": {
+    "FG%": 0.09,
+    "FT%": -0.46,
+    "3PTM": -0.52,
+    "PTS": -1.48,
+    "REB": -1.37,
+    "AST": 1.28,
+    "ST": -0.28,
+    "BLK": -1.02,
+    "TO": 0.73
+   }
+  },
+  "RJ Barrett": {
+   "rank": 165,
+   "adj": -3.056,
+   "zsum": -3.06,
+   "z": {
+    "FG%": 0.19,
+    "FT%": -1.3,
+    "3PTM": -0.09,
+    "PTS": 0.36,
+    "REB": -0.35,
+    "AST": -0.38,
+    "ST": -1.14,
+    "BLK": -0.83,
+    "TO": 0.46
+   }
+  },
+  "Rui Hachimura": {
+   "rank": 228,
+   "adj": -4.227,
+   "zsum": -4.23,
+   "z": {
+    "FG%": 0.44,
+    "FT%": -0.38,
+    "3PTM": -0.09,
+    "PTS": -1.07,
+    "REB": -1.14,
+    "AST": -1.67,
+    "ST": -1.42,
+    "BLK": -0.83,
+    "TO": 1.93
+   }
+  }
+ },
+ "last_season_kit": {
+  "Cam Thomas": {
+   "kit_rank_2526": "outside 200",
+   "kit_zadj_2526": null,
+   "kit_rank_committed": "133"
+  },
+  "Saddiq Bey": {
+   "kit_rank_2526": "86",
+   "kit_zadj_2526": "-0.47",
+   "kit_rank_committed": "102"
+  },
+  "Stephon Castle": {
+   "kit_rank_2526": "172",
+   "kit_zadj_2526": "-2.56",
+   "kit_rank_committed": "98"
+  },
+  "Davion Mitchell": {
+   "kit_rank_2526": "174",
+   "kit_zadj_2526": "-2.61",
+   "kit_rank_committed": "182"
+  },
+  "RJ Barrett": {
+   "kit_rank_2526": "175",
+   "kit_zadj_2526": "-2.64",
+   "kit_rank_committed": "outside 200"
+  },
+  "Rui Hachimura": {
+   "kit_rank_2526": "outside 200",
+   "kit_zadj_2526": null,
+   "kit_rank_committed": "166"
+  }
+ }
+}

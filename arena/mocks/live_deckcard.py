@@ -45,6 +45,12 @@ PUNT_TIMELINES = {
     61: [(0, [])],
     # mock 62 (2026-10-06, the first MOCK on the real seating): no punt declared (state punt [])
     62: [(0, [])],
+    # mock 63 (2026-10-07, the second MOCK on the real seating): no punt declared (state punt [])
+    63: [(0, [])],
+    # mock 64 (2026-10-07, the third MOCK on the real seating): no punt declared (state punt [])
+    64: [(0, [])],
+    # mock 65 (2026-10-07, the fourth MOCK on the real seating): no punt declared (state punt [])
+    65: [(0, [])],
 }
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 if html_path.startswith("rev:"):
