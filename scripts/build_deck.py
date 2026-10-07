@@ -294,6 +294,7 @@ def main():
         "n": p["player"], "t": p["team"], "p": p["pos"].replace('"', ""),
         "note": p.get("note") or "", "av": hoops.availability(p),
         "mkt": p.get("_mkt"), "mktsrc": p.get("_mktsrc"),  # F8: Yahoo price or null
+        "xr": p.get("_xr"),  # V4 (2026-10-07): Yahoo XRank or null — the mock bots' value axis from round 7
         "z": {c: round(p["z"][c], 6) for c in hoops.CATS},
         # raw per-game stats (E9 ship 2026-08-04): the ΔECW weekly model
         # consumes raw rates, not z — order: tpm,pts,reb,ast,stl,blk,tov,

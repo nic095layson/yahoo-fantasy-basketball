@@ -180,3 +180,20 @@ for (const variant of ["V0", "V1", "V2", "V3"]) {
 }
 fs.writeFileSync(OUT, JSON.stringify({ design: "D-CAST-3 pre-registered 2026-10-07", rooms: ROOMS, human_rooms: HUMAN, results }, null, 1));
 ```
+
+## Amendment 4 — V4 pre-registered 2026-10-07 (after the first N=30 run's verdict, before any V4 run)
+
+The first N=30 run shipped nothing: V2 (XRank value axis in every round) won M1 and M2 but failed the M3 guard
+(Spearman 0.30 against V0's early-round reach ordering). V4 is the follow-up named in that verdict: the XRank value
+axis from round 7 only; rounds 1–6 use the shipped formula unchanged. Same metrics, same human reference, same
+30 seeds (1000–1029), same ship rule: ship V4 only if its M1 beats V0's (12.07), its M2 improves on V0's (10.43) and
+it passes the M3 guard (Spearman ≥ 0.7 against V0 and mean absolute per-manager change ≤ 8 — which V4 passes by
+construction in rounds 1–6 only if the round-7+ change does not alter earlier picks; the guard is still measured,
+not assumed). Driver: `castsim.mjs 30 castsim_n30_v4_2026-10-07.json V0,V4`. Result file: `castsim_n30_v4_2026-10-07.json`.
+
+## Amendment 5 — verdict and ship (2026-10-07, after the V4 run)
+
+`castsim_n30_v4_2026-10-07.json`: V4 M1 9.29 (V0 12.07), M2 7.2 (V0 10.43), guard Spearman 1.0 / mean abs change 0 — passes the
+pre-registered rule on every term. Shipped to the page as `BOT_XRANK_FROM = 7` in `managerScores` (the build bakes `PLAYERS[].xr`
+from the kit's Yahoo file); red-first in `scripts/test_card.py` (three cases failed on the unchanged engine, all pass after).
+From this build the harness's V0 is the shipped formula, so a future run must treat the round-7 XRank axis as the baseline.

@@ -1,0 +1,118 @@
+{
+ "design": "D-CAST-3 pre-registered 2026-10-07",
+ "rooms": 30,
+ "human_rooms": [
+  51,
+  52,
+  53,
+  54,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61
+ ],
+ "results": {
+  "V0": {
+   "rooms": 30,
+   "M1_mean_abs_gap": 12.07,
+   "M1_players": 147,
+   "M2_consensus_undrafted_mean": 10.43,
+   "M2_consensus_names": 143,
+   "ref_never_drafted_by_cast": [
+    "Stephon Castle",
+    "Khaman Maluach",
+    "Maxime Raynaud",
+    "Kyshawn George",
+    "Kevin Porter Jr.",
+    "Paul Reed",
+    "Jaime Jaquez Jr.",
+    "RJ Barrett",
+    "Jimmy Butler",
+    "Dillon Brooks",
+    "Anthony Black",
+    "Jeremiah Fears"
+   ],
+   "M3_reach_vs_market": {
+    "Oblena": -7.3,
+    "Noah": 9.8,
+    "Will": 1.4,
+    "Robby": 3.3,
+    "Kyle": -5.2,
+    "Martin": -5.9,
+    "John": -1.1,
+    "JCo": -4,
+    "Kevin": -2,
+    "Cayas": -5,
+    "Hegi": 4.1
+   },
+   "M3_mae_vs_E18": 17.92,
+   "M3_spearman_vs_E18": -0.864,
+   "M3_in_band_pm8": 2,
+   "M3_guard_spearman_vs_V0": 1,
+   "M3_guard_mean_abs_change_vs_V0": 0,
+   "M3_guard_pass": true,
+   "M3v_reach_vs_value": {
+    "Oblena": 7.2,
+    "Noah": -15.4,
+    "Will": -4.7,
+    "Robby": -10.4,
+    "Kyle": 0.9,
+    "Martin": 0.9,
+    "John": -2.6,
+    "JCo": 1.5,
+    "Kevin": -1.1,
+    "Cayas": 1.8,
+    "Hegi": -9.4
+   }
+  },
+  "V4": {
+   "rooms": 30,
+   "M1_mean_abs_gap": 9.29,
+   "M1_players": 153,
+   "M2_consensus_undrafted_mean": 7.2,
+   "M2_consensus_names": 143,
+   "ref_never_drafted_by_cast": [
+    "Cameron Johnson",
+    "Kevin Porter Jr.",
+    "Jaime Jaquez Jr.",
+    "Jimmy Butler",
+    "Wendell Carter Jr.",
+    "Darius Acuff Jr."
+   ],
+   "M3_reach_vs_market": {
+    "Oblena": -7.3,
+    "Noah": 9.8,
+    "Will": 1.4,
+    "Robby": 3.3,
+    "Kyle": -5.2,
+    "Martin": -5.9,
+    "John": -1.1,
+    "JCo": -4,
+    "Kevin": -2,
+    "Cayas": -5,
+    "Hegi": 4.1
+   },
+   "M3_mae_vs_E18": 17.92,
+   "M3_spearman_vs_E18": -0.864,
+   "M3_in_band_pm8": 2,
+   "M3_guard_spearman_vs_V0": 1,
+   "M3_guard_mean_abs_change_vs_V0": 0,
+   "M3_guard_pass": true,
+   "M3v_reach_vs_value": {
+    "Oblena": 7.2,
+    "Noah": -15.4,
+    "Will": -4.7,
+    "Robby": -10.4,
+    "Kyle": 0.9,
+    "Martin": 0.9,
+    "John": -2.6,
+    "JCo": 1.5,
+    "Kevin": -1.1,
+    "Cayas": 1.8,
+    "Hegi": -9.4
+   }
+  }
+ }
+}
