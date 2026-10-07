@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-06",
-  "note": "2026-10-06 MOCK seating (owner directive, final for the 10/14 draft): a MOCK from slot 10 seats the 11 league-mates in the league's real 2026-27 draft order (JUDGMENT.draftOrder), any other slot or size keeping the shuffle; no pool row changed (the 10/6 pull's v44 pool stands); the browser gate asserts the order",
+  "date": "2026-10-07",
+  "note": "2026-10-07 pull: four preseason box scores (CHA-BKN, OKC-NOP, UTA-DEN, GSW-LAL, all 10/6) read from ESPN's feed before the sweep; 89 dated notes; no tag, placement or line change (Hawkins signed a Chicago two-way 10/6, ESPN's feed still lists him on MEM, the lock holds, D-1005-4 re-put); JUDGMENT re-dated with ten receipts; Lendeborg started again (17 pts / 9 reb), Mathurin off the bench (team-high 13 / 5 ast), Diabate started over Steinbach, Peterson 23, Jamal Murray back; Hukporti's Achilles tear season-ending (not a pool row)",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "notes only: 89 dated notes from the four 10/6 box scores and the sweep (2 rows rewritten, 87 appended); no tag, placement or line changed"
   },
   "rosters_verified": {
-    "date": "2026-10-06",
+    "date": "2026-10-07",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-06 (site.api.espn.com, all 30 rosters); --allow-unmatched for Johni Broome (signed by Milwaukee 2026-10-06 per RotoWire, CBS Sports, Hoops Rumors; not yet on ESPN's feed at the second 10/6 direct check)"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-07 (site.api.espn.com, all 30 rosters); --allow-unmatched for Johni Broome (signed by Milwaukee 2026-10-06 per NBA.com, RotoWire, Hoops Rumors; still not on ESPN's feed at the 10/7 direct check)"
   }
 }
