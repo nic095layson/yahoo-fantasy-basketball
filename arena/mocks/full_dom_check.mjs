@@ -213,6 +213,28 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
           && (!sw || sw.classList.contains("hidden") || !!sw.querySelector("p.swone"))
           && !document.querySelector("p.zoneline");
       });
+      /* 2026-10-08 (owner): the card rows stay terse — Mkt, plus-cats and the 3rd-team warning only.
+         A player's research note never prints inline on a Top-5 row; it sits behind a muted † at the
+         end of the meta line (the name truncates, so not there), and a ▲-risk row keeps its note behind the ▲. */
+      turn.notesOff = await page.evaluate(() => {
+        const bad = [];
+        for (const li of document.querySelectorAll("#recos li")) {
+          const rk = (li.querySelector(".rk") || {}).textContent || "";
+          if (!/^[1-5]$/.test(rk.trim())) continue;
+          const nm = li.querySelector(".nm"); const meta = (li.querySelector(".meta") || {}).textContent || "";
+          const name = ((nm && nm.childNodes[0] && nm.childNodes[0].textContent) || "").replace(/^🎯\s*/, "").trim();
+          const p = PLAYERS.find(x => x.n === name);
+          if (!p) { bad.push({ name, why: "no pool row" }); continue; }
+          if (/\[(?!would be 3rd )/.test(meta)) bad.push({ name, why: "inline bracket on the row", meta: meta.slice(0, 80) });
+          if (meta.replace(/\s*†\s*$/, "").length > 60) bad.push({ name, why: "meta line over 60 characters", meta: meta.slice(0, 80) });
+          if (p.note) {
+            const tips = [...li.querySelectorAll(".flag")].map(f => f.dataset.tip);
+            if (!tips.includes(p.note)) bad.push({ name, why: "note not behind a flag" });
+            if (p.av === 1 && !li.querySelector(".meta .flag.note")) bad.push({ name, why: "no † on a noted healthy row's meta line" });
+          }
+        }
+        return { ok: bad.length === 0, bad };
+      });
       const top5 = await topFive(page); const pins = await pinNames(page); const eng = await engineTop5(page);
       turn.top5 = top5; turn.pins = pins; turn.engineTop5 = eng;
       turn.cardMatchesEngine = JSON.stringify(top5) === JSON.stringify(eng);
@@ -254,6 +276,7 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
       turn.noGapWarn = !fresh.some(l => l.includes("off the card"));
       turn.rosterShows = (await page.locator("#myRoster").innerText()).includes(top5[0].split(" ").slice(-1)[0]);
       ownerTurns.push(turn);
+      ok(`S2.card-notes-off#${n + 1}`, turn.notesOff.ok, turn.notesOff.bad);
       ok(`S2.turn#${n + 1}`, turn.onClock && turn.banner && turn.concise && turn.cardMatchesEngine && turn.onePin && turn.vetoAbsent && turn.hintOffCard && turn.hintPin && turn.takeStages && turn.logged && turn.noGapWarn && turn.rosterShows, turn);
     } else {
       let name = ST54.picks[n].player;
