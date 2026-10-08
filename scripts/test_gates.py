@@ -454,6 +454,84 @@ def main():
           manifest8() + (" snapshot-absent" if not os.path.exists(snap8) else " snapshot-present"),
           must_have=['"market": null', "snapshot-absent"])
 
+    # D-RN-1 (owner 2026-10-08): the standing repeat-name market check. A player who is the
+    # card's 🎯 in MIN_MOCKS (5) or more graded mocks while his value rank and market rank sit
+    # MIN_GAP (25) or more places apart — or who has no Yahoo price — is flagged for an
+    # outside-source check at every refresh, and --check-report refuses a report without a row
+    # for him. Synthetic replays (--cards) pin both boundaries: exactly 5 mocks and exactly 25
+    # places flag; 4 mocks or 24 places do not; the 🎯 marker wins over rank 1.
+    print("\n[D-RN-1] repeat-name market check")
+    repo_rn = fresh_copy()
+    kit_rn = os.path.join(os.path.dirname(repo_rn), "kit")
+    src_rn = open(os.path.join(repo_rn, "docs", "draft-deck.html"), encoding="utf-8").read()
+    data_rn = re.search(r'<script id="data">([\s\S]*?)</script>', src_rn).group(1)
+    players_rn = json.loads(re.search(r"const PLAYERS = (\[.*?\]);\n", data_rn, re.S).group(1))
+    priced = [p["n"] for p in players_rn if p.get("mkt")]
+    unpriced = [p["n"] for p in players_rn if not p.get("mkt") and p.get("av", 0) > 0]
+    X, Z, W, U = priced[0], priced[1], priced[2], unpriced[0]
+    ranks_rn = {X: (30, 55), Z: (40, 64), W: (20, 80), U: (100, 110)}
+
+    def row_rn(n, rank, target=True):
+        v, m = ranks_rn[n]
+        return {"rank": rank, "n": n, "target": target, "valRank": v, "mkt": m}
+
+    turns_rn = {
+        1: [[X], [Z], [W]],
+        2: [[X], [Z], [U], [W]],
+        3: [[X], [Z], [U], [W]],
+        4: [[X], [Z], [U], [W]],
+        5: [[X], [Z], [U]],
+        6: [[W, Z], [U]],  # rank 1 is W but the 🎯 is Z: the marker decides, so W stays at 4 mocks
+    }
+    cards_rn = os.path.join(os.path.dirname(repo_rn), "cards")
+    os.makedirs(cards_rn)
+    for m, turns in turns_rn.items():
+        out_turns = []
+        for i, names in enumerate(turns):
+            rows = ([row_rn(names[0], 1)] if len(names) == 1
+                    else [row_rn(names[0], 1, target=False), row_rn(names[1], 2, target=True)])
+            out_turns.append({"pick": 10 + i, "rows": rows})
+        json.dump(out_turns, open(os.path.join(cards_rn, f"m{m}.json"), "w"))
+    open(os.path.join(cards_rn, "m7.json"), "w").write("{not json")  # a replay that cannot be read
+    rn_json = os.path.join(os.path.dirname(repo_rn), "rn.json")
+    out, rc = run(repo_rn, "scripts/repeat_market_check.py", "--cards", cards_rn,
+                  "--kit", kit_rn, "--json", rn_json, kit=kit_rn)
+    check("RN: 5 mocks and 25 places flag; no Yahoo price flags; an unreadable replay is named",
+          out, must_have=["FLAGGED", X, U, "no Yahoo price", "6 of 7 mocks", "mock 7"],
+          must_not=[W], want_exit=0, got_exit=rc)
+    try:
+        rec = json.load(open(rn_json, encoding="utf-8"))
+        got = "flagged=" + "|".join(sorted(r["player"] for r in rec["flagged"]))
+        got += " counts=" + "|".join(f"{n}:{rec['counts'].get(n)}" for n in (X, Z, W, U))
+    except (OSError, ValueError, KeyError) as e:
+        got = f"no record: {e}"
+    check("RN: the record flags exactly the boundary cases (24 places and 4 mocks do not flag)",
+          got, must_have=["flagged=" + "|".join(sorted([X, U])), f"{X}:5", f"{Z}:6", f"{W}:4", f"{U}:5"])
+
+    def report_rn(name, body):
+        p = os.path.join(os.path.dirname(repo_rn), f"report-{name}.md")
+        open(p, "w", encoding="utf-8").write("# After-report\n\n" + body + "\n## Bounds\n\nnone\n")
+        return p
+
+    table_rn = ("## Repeat-name market check\n\n| player | mocks | verdict |\n|---|---|---|\n"
+                f"| {X} | 5 | SOURCES SPLIT |\n| {U} | 5 | SOURCES SPLIT |\n")
+    out, rc = run(repo_rn, "scripts/repeat_market_check.py", "--cards", cards_rn, "--kit", kit_rn,
+                  "--check-report", report_rn("ok", table_rn), kit=kit_rn)
+    check("RN --check-report: every flagged name has a row, PASS", out,
+          must_have=["REPEAT-NAME CHECK: PASS"], want_exit=0, got_exit=rc)
+    only_x = ("## Repeat-name market check\n\n| player | mocks | verdict |\n|---|---|---|\n"
+              f"| {X} | 5 | SOURCES SPLIT |\n\n{U} is discussed in prose but has no row.\n")
+    out, rc = run(repo_rn, "scripts/repeat_market_check.py", "--cards", cards_rn, "--kit", kit_rn,
+                  "--check-report", report_rn("missing", only_x), kit=kit_rn)
+    check("RN --check-report: a flagged name without a table row FAILS and is named", out,
+          must_have=["REPEAT-NAME CHECK: FAIL", U], want_exit=1, got_exit=rc)
+    out, rc = run(repo_rn, "scripts/repeat_market_check.py", "--cards", cards_rn, "--kit", kit_rn,
+                  "--check-report", report_rn("noheading", "## Open-item receipts\n\n| a | b |\n|---|---|\n"),
+                  kit=kit_rn)
+    check("RN --check-report: a report without the section FAILS", out,
+          must_have=["REPEAT-NAME CHECK: FAIL", "no 'Repeat-name market check' section"],
+          want_exit=1, got_exit=rc)
+
     print()
     if FAILURES:
         for name, bad, out in FAILURES:

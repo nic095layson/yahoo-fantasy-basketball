@@ -1,0 +1,90 @@
+{
+ "sources": {
+  "Yahoo 10/06": {
+   "fg_pct": 0.474,
+   "ft_pct": 0.84,
+   "tpm": 1.3,
+   "pts": 23.0,
+   "reb": 7.7,
+   "ast": 5.0,
+   "stl": 1.3,
+   "blk": 1.0,
+   "tov": 2.6
+  },
+  "Hashtag 10/06": {
+   "fg_pct": 0.475,
+   "ft_pct": 0.836,
+   "tpm": 1.3,
+   "pts": 23.3,
+   "reb": 7.3,
+   "ast": 4.9,
+   "stl": 1.3,
+   "blk": 1.0,
+   "tov": 2.2,
+   "fga": 18.5,
+   "fta": 5.3
+  },
+  "RotoBaller 9/29": {
+   "fg_pct": 0.46799999999999997,
+   "ft_pct": 0.828,
+   "tpm": 1.1,
+   "pts": 22.4,
+   "reb": 6.5,
+   "ast": 5.1,
+   "stl": 1.2,
+   "blk": 0.9,
+   "tov": 2.3
+  },
+  "Statdunk 8/24": {
+   "fg_pct": 0.486,
+   "ft_pct": 0.836,
+   "tpm": 1.257,
+   "pts": 24.042,
+   "reb": 7.203,
+   "ast": 5.178,
+   "stl": 1.356,
+   "blk": 1.017,
+   "tov": 2.457,
+   "fga": 18.72,
+   "fta": 5.48
+  }
+ },
+ "rookie_2025_26": {
+  "fg_pct": 0.468,
+  "fga": 17.1,
+  "ft_pct": 0.827,
+  "fta": 4.9,
+  "tpm": 1.0,
+  "pts": 21.0,
+  "reb": 6.7,
+  "ast": 4.5,
+  "stl": 1.2,
+  "blk": 0.9,
+  "tov": 2.3
+ },
+ "outside_mean": {
+  "fg_pct": 0.476,
+  "ft_pct": 0.835,
+  "tpm": 1.239,
+  "pts": 23.185,
+  "reb": 7.176,
+  "ast": 5.045,
+  "stl": 1.289,
+  "blk": 0.979,
+  "tov": 2.389,
+  "fga": 18.61,
+  "fta": 5.39
+ },
+ "our line (both planes)": {
+  "deck_rank": 22,
+  "value": 2.481
+ },
+ "2025-26 rookie line": {
+  "deck_rank": 45,
+  "value": 0.762
+ },
+ "outside mean (4 sources)": {
+  "deck_rank": 19,
+  "value": 2.56
+ }
+}

@@ -100,6 +100,12 @@ Claude adds the judgment (build fit, injury flags, when to reach).
   `draft init`)
   (Claude web-searches rosters/injuries, updates the CSV, then runs
   `freshness --stamp`). The `note` column flags injuries and rookie estimates.
+- Repeat-name market check (D-RN-1, owner 2026-10-08): `python3 scripts/repeat_market_check.py`
+  replays every graded mock on the page and flags each player the card makes its 🎯 in 5+ mocks
+  while his value rank and market rank sit 25+ places apart, with his outside ranks and the cells
+  of his line outside every outside projection; every refresh report carries its section and
+  passes `--check-report` (the kit's `DATA-PULL.md`). The mocks are graded on the card's own
+  lines, so this outside check is what stops the card repeating a wrong name draft after draft.
 - History: this repo briefly contained a Yahoo Fantasy API OAuth client
   (see git history) — scrapped after Yahoo's developer portal refused to
   grant fantasy scope to new apps.

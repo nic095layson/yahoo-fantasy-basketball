@@ -1,0 +1,594 @@
+{
+ "min_turns": 5,
+ "min_gap": 12,
+ "rows": [
+  {
+   "player": "Giannis Antetokounmpo",
+   "value_rank": 42,
+   "market_rank": 6,
+   "turns_available": 15
+  },
+  {
+   "player": "Jayson Tatum",
+   "value_rank": 21,
+   "market_rank": 8,
+   "turns_available": 11
+  },
+  {
+   "player": "Scottie Barnes",
+   "value_rank": 38,
+   "market_rank": 14,
+   "turns_available": 24
+  },
+  {
+   "player": "Jalen Brunson",
+   "value_rank": 40,
+   "market_rank": 19,
+   "turns_available": 42
+  },
+  {
+   "player": "Trae Young",
+   "value_rank": 57,
+   "market_rank": 24,
+   "turns_available": 53
+  },
+  {
+   "player": "LaMelo Ball",
+   "value_rank": 49,
+   "market_rank": 26,
+   "turns_available": 40
+  },
+  {
+   "player": "Bam Adebayo",
+   "value_rank": 47,
+   "market_rank": 28,
+   "turns_available": 53
+  },
+  {
+   "player": "Jaylen Brown",
+   "value_rank": 72,
+   "market_rank": 30,
+   "turns_available": 76
+  },
+  {
+   "player": "Paolo Banchero",
+   "value_rank": 102,
+   "market_rank": 34,
+   "turns_available": 95
+  },
+  {
+   "player": "Jalen Duren",
+   "value_rank": 60,
+   "market_rank": 35,
+   "turns_available": 72
+  },
+  {
+   "player": "LeBron James",
+   "value_rank": 62,
+   "market_rank": 36,
+   "turns_available": 80
+  },
+  {
+   "player": "Lauri Markkanen",
+   "value_rank": 52,
+   "market_rank": 37,
+   "turns_available": 63
+  },
+  {
+   "player": "Deni Avdija",
+   "value_rank": 77,
+   "market_rank": 41,
+   "turns_available": 89
+  },
+  {
+   "player": "Kon Knueppel",
+   "value_rank": 94,
+   "market_rank": 46,
+   "turns_available": 98
+  },
+  {
+   "player": "Joel Embiid",
+   "value_rank": 71,
+   "market_rank": 49,
+   "turns_available": 91
+  },
+  {
+   "player": "Stephon Castle",
+   "value_rank": 171,
+   "market_rank": 53,
+   "turns_available": 154
+  },
+  {
+   "player": "Keyonte George",
+   "value_rank": 108,
+   "market_rank": 54,
+   "turns_available": 105
+  },
+  {
+   "player": "Matas Buzelis",
+   "value_rank": 125,
+   "market_rank": 63,
+   "turns_available": 123
+  },
+  {
+   "player": "Brandon Ingram",
+   "value_rank": 117,
+   "market_rank": 64,
+   "turns_available": 121
+  },
+  {
+   "player": "Zion Williamson",
+   "value_rank": 105,
+   "market_rank": 66,
+   "turns_available": 139
+  },
+  {
+   "player": "Damian Lillard",
+   "value_rank": 88,
+   "market_rank": 67,
+   "turns_available": 110
+  },
+  {
+   "player": "Julius Randle",
+   "value_rank": 107,
+   "market_rank": 68,
+   "turns_available": 132
+  },
+  {
+   "player": "Alex Sarr",
+   "value_rank": 110,
+   "market_rank": 72,
+   "turns_available": 127
+  },
+  {
+   "player": "VJ Edgecombe",
+   "value_rank": 96,
+   "market_rank": 74,
+   "turns_available": 142
+  },
+  {
+   "player": "AJ Dybantsa",
+   "value_rank": 139,
+   "market_rank": 78,
+   "turns_available": 166
+  },
+  {
+   "player": "Caleb Wilson",
+   "value_rank": 120,
+   "market_rank": 79,
+   "turns_available": 152
+  },
+  {
+   "player": "Dylan Harper",
+   "value_rank": 146,
+   "market_rank": 84,
+   "turns_available": 164
+  },
+  {
+   "player": "Ausar Thompson",
+   "value_rank": 109,
+   "market_rank": 85,
+   "turns_available": 139
+  },
+  {
+   "player": "Derik Queen",
+   "value_rank": 155,
+   "market_rank": 86,
+   "turns_available": 168
+  },
+  {
+   "player": "Cedric Coward",
+   "value_rank": 128,
+   "market_rank": 87,
+   "turns_available": 152
+  },
+  {
+   "player": "Nic Claxton",
+   "value_rank": 134,
+   "market_rank": 89,
+   "turns_available": 155
+  },
+  {
+   "player": "Miles Bridges",
+   "value_rank": 119,
+   "market_rank": 98,
+   "turns_available": 162
+  },
+  {
+   "player": "Jalen Green",
+   "value_rank": 126,
+   "market_rank": 102,
+   "turns_available": 184
+  },
+  {
+   "player": "Darryn Peterson",
+   "value_rank": 140,
+   "market_rank": 103,
+   "turns_available": 190
+  },
+  {
+   "player": "DeMar DeRozan",
+   "value_rank": 156,
+   "market_rank": 106,
+   "turns_available": 210
+  },
+  {
+   "player": "Mitchell Robinson",
+   "value_rank": 133,
+   "market_rank": 107,
+   "turns_available": 235
+  },
+  {
+   "player": "Aday Mara",
+   "value_rank": 316,
+   "market_rank": 109,
+   "turns_available": 260
+  },
+  {
+   "player": "Alex Caruso",
+   "value_rank": 129,
+   "market_rank": 111,
+   "turns_available": 240
+  },
+  {
+   "player": "Anfernee Simons",
+   "value_rank": 160,
+   "market_rank": 112,
+   "turns_available": 246
+  },
+  {
+   "player": "Klay Thompson",
+   "value_rank": 223,
+   "market_rank": 114,
+   "turns_available": 257
+  },
+  {
+   "player": "Brook Lopez",
+   "value_rank": 168,
+   "market_rank": 115,
+   "turns_available": 236
+  },
+  {
+   "player": "Darius Acuff Jr.",
+   "value_rank": 177,
+   "market_rank": 116,
+   "turns_available": 239
+  },
+  {
+   "player": "Julian Champagnie",
+   "value_rank": 161,
+   "market_rank": 117,
+   "turns_available": 251
+  },
+  {
+   "player": "Bobby Portis",
+   "value_rank": 219,
+   "market_rank": 118,
+   "turns_available": 248
+  },
+  {
+   "player": "Jordan Poole",
+   "value_rank": 287,
+   "market_rank": 120,
+   "turns_available": 255
+  },
+  {
+   "player": "Jusuf Nurkic",
+   "value_rank": 165,
+   "market_rank": 121,
+   "turns_available": 195
+  },
+  {
+   "player": "Kelly Oubre Jr.",
+   "value_rank": 149,
+   "market_rank": 122,
+   "turns_available": 249
+  },
+  {
+   "player": "Jaime Jaquez Jr.",
+   "value_rank": 211,
+   "market_rank": 123,
+   "turns_available": 229
+  },
+  {
+   "player": "Deandre Ayton",
+   "value_rank": 158,
+   "market_rank": 126,
+   "turns_available": 251
+  },
+  {
+   "player": "Jared McCain",
+   "value_rank": 145,
+   "market_rank": 127,
+   "turns_available": 248
+  },
+  {
+   "player": "RJ Barrett",
+   "value_rank": 193,
+   "market_rank": 128,
+   "turns_available": 224
+  },
+  {
+   "player": "Ayo Dosunmu",
+   "value_rank": 147,
+   "market_rank": 131,
+   "turns_available": 204
+  },
+  {
+   "player": "Isaiah Stewart",
+   "value_rank": 181,
+   "market_rank": 132,
+   "turns_available": 257
+  },
+  {
+   "player": "Paul Reed",
+   "value_rank": 220,
+   "market_rank": 133,
+   "turns_available": 248
+  },
+  {
+   "player": "Dillon Brooks",
+   "value_rank": 209,
+   "market_rank": 134,
+   "turns_available": 241
+  },
+  {
+   "player": "Moussa Diabate",
+   "value_rank": 164,
+   "market_rank": 138,
+   "turns_available": 238
+  },
+  {
+   "player": "Collin Murray-Boyles",
+   "value_rank": 194,
+   "market_rank": 139,
+   "turns_available": 201
+  },
+  {
+   "player": "Grayson Allen",
+   "value_rank": 173,
+   "market_rank": 145,
+   "turns_available": 259
+  },
+  {
+   "player": "Bennedict Mathurin",
+   "value_rank": 244,
+   "market_rank": 146,
+   "turns_available": 256
+  },
+  {
+   "player": "Jonathan Kuminga",
+   "value_rank": 281,
+   "market_rank": 148,
+   "turns_available": 246
+  },
+  {
+   "player": "Kyle Kuzma",
+   "value_rank": 252,
+   "market_rank": 151,
+   "turns_available": 260
+  },
+  {
+   "player": "Keaton Wagler",
+   "value_rank": 176,
+   "market_rank": 153,
+   "turns_available": 259
+  },
+  {
+   "player": "Collin Sexton",
+   "value_rank": 170,
+   "market_rank": 155,
+   "turns_available": 245
+  },
+  {
+   "player": "Rui Hachimura",
+   "value_rank": 184,
+   "market_rank": 162,
+   "turns_available": 240
+  },
+  {
+   "player": "Maxime Raynaud",
+   "value_rank": 231,
+   "market_rank": 163,
+   "turns_available": 246
+  },
+  {
+   "player": "Mikel Brown Jr.",
+   "value_rank": 253,
+   "market_rank": 165,
+   "turns_available": 259
+  },
+  {
+   "player": "Khaman Maluach",
+   "value_rank": 221,
+   "market_rank": 166,
+   "turns_available": 219
+  },
+  {
+   "player": "Egor Demin",
+   "value_rank": 235,
+   "market_rank": 167,
+   "turns_available": 248
+  },
+  {
+   "player": "Jeremiah Fears",
+   "value_rank": 274,
+   "market_rank": 171,
+   "turns_available": 252
+  },
+  {
+   "player": "Kevin Porter Jr.",
+   "value_rank": 225,
+   "market_rank": 173,
+   "turns_available": 239
+  },
+  {
+   "player": "Pelle Larsson",
+   "value_rank": 239,
+   "market_rank": 185,
+   "turns_available": 257
+  },
+  {
+   "player": "Daniss Jenkins",
+   "value_rank": 290,
+   "market_rank": 186,
+   "turns_available": 259
+  },
+  {
+   "player": "Oso Ighodaro",
+   "value_rank": 291,
+   "market_rank": 187,
+   "turns_available": 260
+  },
+  {
+   "player": "Dennis Schroder",
+   "value_rank": 266,
+   "market_rank": 188,
+   "turns_available": 260
+  },
+  {
+   "player": "Sam Hauser",
+   "value_rank": 216,
+   "market_rank": 192,
+   "turns_available": 260
+  },
+  {
+   "player": "Joan Beringer",
+   "value_rank": 263,
+   "market_rank": 193,
+   "turns_available": 259
+  },
+  {
+   "player": "Isaiah Collier",
+   "value_rank": 230,
+   "market_rank": 195,
+   "turns_available": 259
+  },
+  {
+   "player": "Scoot Henderson",
+   "value_rank": 257,
+   "market_rank": 196,
+   "turns_available": 259
+  },
+  {
+   "player": "Kevin Huerter",
+   "value_rank": 292,
+   "market_rank": 201,
+   "turns_available": 260
+  },
+  {
+   "player": "Dylan Cardwell",
+   "value_rank": 229,
+   "market_rank": 202,
+   "turns_available": 260
+  },
+  {
+   "player": "Precious Achiuwa",
+   "value_rank": 260,
+   "market_rank": 205,
+   "turns_available": 260
+  },
+  {
+   "player": "Duncan Robinson",
+   "value_rank": 246,
+   "market_rank": 209,
+   "turns_available": 260
+  },
+  {
+   "player": "GG Jackson",
+   "value_rank": 234,
+   "market_rank": 213,
+   "turns_available": 260
+  },
+  {
+   "player": "Will Riley",
+   "value_rank": 272,
+   "market_rank": 215,
+   "turns_available": 260
+  },
+  {
+   "player": "Jaylin Williams",
+   "value_rank": 275,
+   "market_rank": 217,
+   "turns_available": 260
+  },
+  {
+   "player": "Nique Clifford",
+   "value_rank": 280,
+   "market_rank": 221,
+   "turns_available": 260
+  },
+  {
+   "player": "Ryan Kalkbrenner",
+   "value_rank": 271,
+   "market_rank": 223,
+   "turns_available": 259
+  },
+  {
+   "player": "Noah Clowney",
+   "value_rank": 300,
+   "market_rank": 224,
+   "turns_available": 260
+  },
+  {
+   "player": "Ben Simmons",
+   "value_rank": 270,
+   "market_rank": 226,
+   "turns_available": 260
+  },
+  {
+   "player": "Bones Hyland",
+   "value_rank": 296,
+   "market_rank": 229,
+   "turns_available": 260
+  },
+  {
+   "player": "Tristan da Silva",
+   "value_rank": 249,
+   "market_rank": 230,
+   "turns_available": 260
+  },
+  {
+   "player": "Jamal Shead",
+   "value_rank": 298,
+   "market_rank": 231,
+   "turns_available": 260
+  },
+  {
+   "player": "Zach Collins",
+   "value_rank": 286,
+   "market_rank": 233,
+   "turns_available": 260
+  },
+  {
+   "player": "Brayden Burries",
+   "value_rank": 255,
+   "market_rank": 235,
+   "turns_available": 260
+  },
+  {
+   "player": "Kingston Flemings",
+   "value_rank": 304,
+   "market_rank": 236,
+   "turns_available": 260
+  },
+  {
+   "player": "Marvin Bagley III",
+   "value_rank": 265,
+   "market_rank": 237,
+   "turns_available": 260
+  },
+  {
+   "player": "Kentavious Caldwell-Pope",
+   "value_rank": 309,
+   "market_rank": 240,
+   "turns_available": 260
+  },
+  {
+   "player": "Allen Graves",
+   "value_rank": 258,
+   "market_rank": 241,
+   "turns_available": 260
+  }
+ ]
+}
