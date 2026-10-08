@@ -531,6 +531,23 @@ is on the author. See LEDGER §3.
   **Cast fidelity** (`m70_cast_fidelity.json`): loyalty fired on 12 of the 16 loyalty names drafted by anyone. Repeat-name audit (`m70_repeat_names_audit.json`): the #1 changes at
   12 of 13 turns under other rooms' rosters (11 of 13 against an empty roster); Gafford on the Top-5 at 1 turn(s), Braun at 1, Poeltl at 0.
   Debrief `debrief_2026-10-08_mock70_slot10.md`; kit report `after-report-2026-10-08-draft70.md`.
+- **Standing repeat-name market check and the tuning tests (owner 2026-10-08, D-RN-1/D-RN-2).** The owner asked
+  whether "beating the card" trains the system and whether the card is tunnel-visioned (Flagg, Harden). The
+  standing check is `scripts/repeat_market_check.py` (the card replayed with `live_deckcard.py` on the CURRENT page
+  for every `live_retro.MOCKS` room; flags 🎯 in 5+ mocks with a 25+ place value/market gap or no Yahoo price; red-first
+  in `test_gates.py`, 5 cases). First run on v51 (sha256 `3e594b9dc16b…`): 20 of 20 mocks, 10 flagged, three LINE
+  QUESTIONED (PJ Washington, Daniel Gafford, Devin Vassell) — `arena/results/repeat_market_check_2026-10-08.json`;
+  two full runs byte-identical. `tuning_1008/` holds the read-only evidence behind the answer, outputs in
+  `arena/results/tuning_2026-10-08/`: `flagg_planes.py` (kit 14 vs deck 22: his line is identical on both planes,
+  the kit's games rule moves him one place, and all 9 players above him on the deck but below him on the kit carry
+  richer deck lines), `flagg_sensitivity.py` (deck rank 22 on our line, 45 on his rookie line, 19 on the mean of the four
+  outside lines), `bref_extract.py` (per-game CSVs from the B-Ref tables the what-if downloaded 10/07; run with
+  `python3 -I`), `tuning_tests.py` (A: last season the entering-season lines beat Yahoo's pre-draft ranks at
+  predicting 9-cat value, top 60 rho 0.640 vs 0.451, a 50/50 blend 0.592; B: no age effect worth a term — 22 and
+  under +0.28 vs all, se 0.39; C: 131 of 145 checkable top-150 rows carry a cell outside every outside reference,
+  436 cells, and pulling each to the nearest reference moves 71 of the top 150 by 10+ places), `mirror_check.py`
+  (the never-shown mirror: 98 players qualify on a one-round gap, too broad to be a check; replays from
+  `repeat_market_check.py --keep-cards DIR`). Kit report `after-report-2026-10-08-standing-checks.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

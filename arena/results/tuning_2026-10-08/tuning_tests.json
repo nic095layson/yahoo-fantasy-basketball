@@ -1,0 +1,5593 @@
+{
+ "A_market_blend": [
+  {
+   "scope": 200,
+   "actual": "season value",
+   "lines": 0.769,
+   "n": 173,
+   "yahoo": 0.713,
+   "blend": 0.766
+  },
+  {
+   "scope": 200,
+   "actual": "per-game value",
+   "lines": 0.765,
+   "n": 170,
+   "yahoo": 0.712,
+   "blend": 0.763
+  },
+  {
+   "scope": 120,
+   "actual": "season value",
+   "lines": 0.651,
+   "n": 120,
+   "yahoo": 0.552,
+   "blend": 0.629
+  },
+  {
+   "scope": 120,
+   "actual": "per-game value",
+   "lines": 0.629,
+   "n": 117,
+   "yahoo": 0.527,
+   "blend": 0.605
+  },
+  {
+   "scope": 60,
+   "actual": "season value",
+   "lines": 0.64,
+   "n": 60,
+   "yahoo": 0.451,
+   "blend": 0.592
+  },
+  {
+   "scope": 60,
+   "actual": "per-game value",
+   "lines": 0.644,
+   "n": 59,
+   "yahoo": 0.448,
+   "blend": 0.594
+  }
+ ],
+ "B_age_curve": {
+  "n_vets": 188,
+  "mean_all": -0.88,
+  "groups": [
+   {
+    "group": "<=22",
+    "n": 28,
+    "mean": -0.6,
+    "se": 0.39,
+    "beat": 12
+   },
+   {
+    "group": "23-25",
+    "n": 53,
+    "mean": -1.15,
+    "se": 0.31,
+    "beat": 16
+   },
+   {
+    "group": "26-29",
+    "n": 58,
+    "mean": -1.05,
+    "se": 0.23,
+    "beat": 13
+   },
+   {
+    "group": "30-33",
+    "n": 33,
+    "mean": -0.68,
+    "se": 0.29,
+    "beat": 13
+   },
+   {
+    "group": "34+",
+    "n": 16,
+    "mean": -0.28,
+    "se": 0.54,
+    "beat": 9
+   }
+  ]
+ },
+ "C_range_check": {
+  "checkable_rows": 145,
+  "rows_with_outlier": 131,
+  "cells": 436,
+  "cells_loose": 273,
+  "rows_loose": 116,
+  "by_cat": {
+   "reb": 40,
+   "ast": 44,
+   "blk": 26,
+   "tpm": 39,
+   "tov": 52,
+   "ft_pct": 84,
+   "fg_pct": 73,
+   "stl": 29,
+   "pts": 49
+  },
+  "flatter": 252,
+  "flatter_z": 89.36,
+  "understate": 184,
+  "understate_z": -69.01,
+  "clamp_moves_10plus": 71,
+  "largest_net": [
+   {
+    "player": "Dyson Daniels",
+    "deck_rank": 11,
+    "net_z": 2.61
+   },
+   {
+    "player": "Ja Morant",
+    "deck_rank": 65,
+    "net_z": 1.81
+   },
+   {
+    "player": "Victor Wembanyama",
+    "deck_rank": 1,
+    "net_z": 1.8
+   },
+   {
+    "player": "Anthony Davis",
+    "deck_rank": 5,
+    "net_z": 1.71
+   },
+   {
+    "player": "Kyle Filipowski",
+    "deck_rank": 123,
+    "net_z": 1.7
+   },
+   {
+    "player": "Kon Knueppel",
+    "deck_rank": 94,
+    "net_z": -1.67
+   },
+   {
+    "player": "Dylan Harper",
+    "deck_rank": 146,
+    "net_z": -1.5
+   },
+   {
+    "player": "Matas Buzelis",
+    "deck_rank": 125,
+    "net_z": -1.37
+   },
+   {
+    "player": "Kawhi Leonard",
+    "deck_rank": 34,
+    "net_z": -1.35
+   },
+   {
+    "player": "Daniel Gafford",
+    "deck_rank": 90,
+    "net_z": 1.32
+   },
+   {
+    "player": "Ty Jerome",
+    "deck_rank": 101,
+    "net_z": -1.31
+   },
+   {
+    "player": "Kristaps Porzingis",
+    "deck_rank": 39,
+    "net_z": 1.21
+   },
+   {
+    "player": "De'Aaron Fox",
+    "deck_rank": 51,
+    "net_z": 1.21
+   },
+   {
+    "player": "PJ Washington",
+    "deck_rank": 87,
+    "net_z": 1.21
+   },
+   {
+    "player": "Jaden McDaniels",
+    "deck_rank": 83,
+    "net_z": -1.13
+   }
+  ],
+  "clamp_ranks": {
+   "Victor Wembanyama": [
+    1,
+    2
+   ],
+   "Nikola Jokic": [
+    2,
+    1
+   ],
+   "Shai Gilgeous-Alexander": [
+    3,
+    3
+   ],
+   "Luka Doncic": [
+    4,
+    4
+   ],
+   "Anthony Davis": [
+    5,
+    9
+   ],
+   "Karl-Anthony Towns": [
+    6,
+    7
+   ],
+   "Tyrese Haliburton": [
+    7,
+    6
+   ],
+   "Anthony Edwards": [
+    8,
+    13
+   ],
+   "Tyrese Maxey": [
+    9,
+    5
+   ],
+   "Chet Holmgren": [
+    10,
+    10
+   ],
+   "Dyson Daniels": [
+    11,
+    42
+   ],
+   "Cade Cunningham": [
+    12,
+    23
+   ],
+   "Jalen Johnson": [
+    13,
+    12
+   ],
+   "Donovan Mitchell": [
+    14,
+    8
+   ],
+   "Kyrie Irving": [
+    15,
+    28
+   ],
+   "Jalen Williams": [
+    16,
+    25
+   ],
+   "Stephen Curry": [
+    17,
+    16
+   ],
+   "Kevin Durant": [
+    18,
+    14
+   ],
+   "Evan Mobley": [
+    19,
+    27
+   ],
+   "Jamal Murray": [
+    20,
+    18
+   ],
+   "Jayson Tatum": [
+    21,
+    17
+   ],
+   "Cooper Flagg": [
+    22,
+    20
+   ],
+   "Jaren Jackson Jr.": [
+    23,
+    26
+   ],
+   "Derrick White": [
+    24,
+    15
+   ],
+   "Domantas Sabonis": [
+    25,
+    29
+   ],
+   "Austin Reaves": [
+    26,
+    30
+   ],
+   "Desmond Bane": [
+    27,
+    34
+   ],
+   "OG Anunoby": [
+    28,
+    24
+   ],
+   "Franz Wagner": [
+    29,
+    31
+   ],
+   "Amen Thompson": [
+    30,
+    33
+   ],
+   "James Harden": [
+    31,
+    21
+   ],
+   "Josh Giddey": [
+    32,
+    41
+   ],
+   "Trey Murphy III": [
+    33,
+    22
+   ],
+   "Kawhi Leonard": [
+    34,
+    11
+   ],
+   "Devin Booker": [
+    35,
+    40
+   ],
+   "Onyeka Okongwu": [
+    36,
+    38
+   ],
+   "Payton Pritchard": [
+    37,
+    45
+   ],
+   "Scottie Barnes": [
+    38,
+    19
+   ],
+   "Kristaps Porzingis": [
+    39,
+    59
+   ],
+   "Jalen Brunson": [
+    40,
+    44
+   ],
+   "Darius Garland": [
+    41,
+    46
+   ],
+   "Giannis Antetokounmpo": [
+    42,
+    37
+   ],
+   "Tyler Herro": [
+    43,
+    36
+   ],
+   "Walker Kessler": [
+    44,
+    32
+   ],
+   "Ivica Zubac": [
+    45,
+    60
+   ],
+   "Brandon Miller": [
+    46,
+    47
+   ],
+   "Bam Adebayo": [
+    47,
+    35
+   ],
+   "Cameron Boozer": [
+    48,
+    48
+   ],
+   "LaMelo Ball": [
+    49,
+    39
+   ],
+   "Jarrett Allen": [
+    50,
+    62
+   ],
+   "De'Aaron Fox": [
+    51,
+    85
+   ],
+   "Lauri Markkanen": [
+    52,
+    51
+   ],
+   "Donovan Clingan": [
+    53,
+    49
+   ],
+   "Nickeil Alexander-Walker": [
+    54,
+    53
+   ],
+   "Michael Porter Jr.": [
+    55,
+    57
+   ],
+   "Zach LaVine": [
+    56,
+    78
+   ],
+   "Trae Young": [
+    57,
+    80
+   ],
+   "Coby White": [
+    58,
+    70
+   ],
+   "Jalen Suggs": [
+    59,
+    58
+   ],
+   "Jalen Duren": [
+    60,
+    43
+   ],
+   "Mikal Bridges": [
+    61,
+    69
+   ],
+   "LeBron James": [
+    62,
+    65
+   ],
+   "Dejounte Murray": [
+    63,
+    55
+   ],
+   "Pascal Siakam": [
+    64,
+    86
+   ],
+   "Ja Morant": [
+    65,
+    125
+   ],
+   "Paul George": [
+    66,
+    54
+   ],
+   "Josh Hart": [
+    67,
+    71
+   ],
+   "Fred VanVleet": [
+    68,
+    89
+   ],
+   "Alperen Sengun": [
+    69,
+    63
+   ],
+   "Ryan Rollins": [
+    70,
+    67
+   ],
+   "Joel Embiid": [
+    71,
+    56
+   ],
+   "Jaylen Brown": [
+    72,
+    74
+   ],
+   "Cason Wallace": [
+    73,
+    96
+   ],
+   "Herbert Jones": [
+    74,
+    64
+   ],
+   "Isaiah Hartenstein": [
+    75,
+    94
+   ],
+   "Day'Ron Sharpe": [
+    76,
+    68
+   ],
+   "Deni Avdija": [
+    77,
+    106
+   ],
+   "Rudy Gobert": [
+    78,
+    112
+   ],
+   "Naz Reid": [
+    79,
+    92
+   ],
+   "Kel'el Ware": [
+    80,
+    77
+   ],
+   "Sandro Mamukelashvili": [
+    81,
+    82
+   ],
+   "Yaxel Lendeborg": [
+    82,
+    81
+   ],
+   "Jaden McDaniels": [
+    83,
+    50
+   ],
+   "Zach Edey": [
+    84,
+    91
+   ],
+   "Norman Powell": [
+    85,
+    90
+   ],
+   "Myles Turner": [
+    86,
+    87
+   ],
+   "PJ Washington": [
+    87,
+    123
+   ],
+   "Damian Lillard": [
+    88,
+    84
+   ],
+   "Devin Vassell": [
+    89,
+    101
+   ],
+   "Daniel Gafford": [
+    90,
+    134
+   ],
+   "Immanuel Quickley": [
+    91,
+    72
+   ],
+   "Aaron Gordon": [
+    92,
+    111
+   ],
+   "Collin Gillespie": [
+    93,
+    97
+   ],
+   "Kon Knueppel": [
+    94,
+    52
+   ],
+   "Saddiq Bey": [
+    95,
+    100
+   ],
+   "VJ Edgecombe": [
+    96,
+    83
+   ],
+   "Christian Braun": [
+    97,
+    99
+   ],
+   "Toumani Camara": [
+    98,
+    117
+   ],
+   "Andrew Wiggins": [
+    99,
+    73
+   ],
+   "Keegan Murray": [
+    100,
+    79
+   ],
+   "Ty Jerome": [
+    101,
+    61
+   ],
+   "Paolo Banchero": [
+    102,
+    121
+   ],
+   "Jabari Smith Jr.": [
+    103,
+    103
+   ],
+   "Reed Sheppard": [
+    104,
+    113
+   ],
+   "Zion Williamson": [
+    105,
+    76
+   ],
+   "Cameron Johnson": [
+    106,
+    105
+   ],
+   "Julius Randle": [
+    107,
+    120
+   ],
+   "Keyonte George": [
+    108,
+    108
+   ],
+   "Ausar Thompson": [
+    109,
+    88
+   ],
+   "Alex Sarr": [
+    110,
+    93
+   ],
+   "Tari Eason": [
+    111,
+    104
+   ],
+   "Jordan Goodwin": [
+    112,
+    102
+   ],
+   "Jerami Grant": [
+    113,
+    132
+   ],
+   "John Collins": [
+    114,
+    75
+   ],
+   "Draymond Green": [
+    115,
+    130
+   ],
+   "CJ McCollum": [
+    116,
+    136
+   ],
+   "Brandon Ingram": [
+    117,
+    107
+   ],
+   "Aaron Nesmith": [
+    118,
+    118
+   ],
+   "Miles Bridges": [
+    119,
+    116
+   ],
+   "Caleb Wilson": [
+    120,
+    110
+   ],
+   "Nikola Vucevic": [
+    121,
+    129
+   ],
+   "Keon Ellis": [
+    122,
+    115
+   ],
+   "Kyle Filipowski": [
+    123,
+    194
+   ],
+   "Andrew Nembhard": [
+    124,
+    139
+   ],
+   "Matas Buzelis": [
+    125,
+    66
+   ],
+   "Jalen Green": [
+    126,
+    156
+   ],
+   "Jakob Poeltl": [
+    127,
+    109
+   ],
+   "Cedric Coward": [
+    128,
+    126
+   ],
+   "Alex Caruso": [
+    129,
+    127
+   ],
+   "Santi Aldama": [
+    130,
+    144
+   ],
+   "Bilal Coulibaly": [
+    131,
+    159
+   ],
+   "Scotty Pippen Jr.": [
+    132,
+    142
+   ],
+   "Mitchell Robinson": [
+    133,
+    143
+   ],
+   "Nic Claxton": [
+    134,
+    95
+   ],
+   "Peyton Watson": [
+    135,
+    131
+   ],
+   "Jrue Holiday": [
+    136,
+    128
+   ],
+   "Wendell Carter Jr.": [
+    137,
+    124
+   ],
+   "Tobias Harris": [
+    138,
+    122
+   ],
+   "AJ Dybantsa": [
+    139,
+    137
+   ],
+   "Darryn Peterson": [
+    140,
+    119
+   ],
+   "Robert Williams III": [
+    141,
+    133
+   ],
+   "De'Anthony Melton": [
+    142,
+    138
+   ],
+   "Tre Jones": [
+    143,
+    114
+   ],
+   "Al Horford": [
+    144,
+    165
+   ],
+   "Jared McCain": [
+    145,
+    176
+   ],
+   "Dylan Harper": [
+    146,
+    98
+   ],
+   "Ayo Dosunmu": [
+    147,
+    135
+   ],
+   "Brandin Podziemski": [
+    148,
+    140
+   ],
+   "Kelly Oubre Jr.": [
+    149,
+    141
+   ],
+   "Cam Spencer": [
+    150,
+    149
+   ]
+  },
+  "cells_list": [
+   {
+    "rank": 1,
+    "player": "Victor Wembanyama",
+    "cat": "reb",
+    "ours": 12.5,
+    "ref_lo": 11.4,
+    "ref_hi": 11.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.276
+   },
+   {
+    "rank": 1,
+    "player": "Victor Wembanyama",
+    "cat": "ast",
+    "ours": 4.0,
+    "ref_lo": 3.1,
+    "ref_hi": 3.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.207
+   },
+   {
+    "rank": 1,
+    "player": "Victor Wembanyama",
+    "cat": "blk",
+    "ours": 4.0,
+    "ref_lo": 3.1,
+    "ref_hi": 3.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 1.162
+   },
+   {
+    "rank": 1,
+    "player": "Victor Wembanyama",
+    "cat": "tpm",
+    "ours": 2.7,
+    "ref_lo": 1.9,
+    "ref_hi": 2.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.533
+   },
+   {
+    "rank": 1,
+    "player": "Victor Wembanyama",
+    "cat": "tov",
+    "ours": 3.4,
+    "ref_lo": 2.4,
+    "ref_hi": 2.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.672
+   },
+   {
+    "rank": 1,
+    "player": "Victor Wembanyama",
+    "cat": "ft_pct",
+    "ours": 0.845,
+    "ref_lo": 0.822,
+    "ref_hi": 0.831,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.298
+   },
+   {
+    "rank": 2,
+    "player": "Nikola Jokic",
+    "cat": "tpm",
+    "ours": 1.4,
+    "ref_lo": 1.7,
+    "ref_hi": 1.8,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.32
+   },
+   {
+    "rank": 2,
+    "player": "Nikola Jokic",
+    "cat": "fg_pct",
+    "ours": 0.58,
+    "ref_lo": 0.569,
+    "ref_hi": 0.574,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.167
+   },
+   {
+    "rank": 2,
+    "player": "Nikola Jokic",
+    "cat": "ft_pct",
+    "ours": 0.81,
+    "ref_lo": 0.816,
+    "ref_hi": 0.831,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.132
+   },
+   {
+    "rank": 3,
+    "player": "Shai Gilgeous-Alexander",
+    "cat": "reb",
+    "ours": 5.1,
+    "ref_lo": 4.3,
+    "ref_hi": 4.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.158
+   },
+   {
+    "rank": 3,
+    "player": "Shai Gilgeous-Alexander",
+    "cat": "stl",
+    "ours": 1.8,
+    "ref_lo": 1.4,
+    "ref_hi": 1.6,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 3,
+    "player": "Shai Gilgeous-Alexander",
+    "cat": "tpm",
+    "ours": 2.2,
+    "ref_lo": 1.7,
+    "ref_hi": 1.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 3,
+    "player": "Shai Gilgeous-Alexander",
+    "cat": "tov",
+    "ours": 2.5,
+    "ref_lo": 2.2,
+    "ref_hi": 2.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 3,
+    "player": "Shai Gilgeous-Alexander",
+    "cat": "fg_pct",
+    "ours": 0.52,
+    "ref_lo": 0.534,
+    "ref_hi": 0.553,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.471
+   },
+   {
+    "rank": 3,
+    "player": "Shai Gilgeous-Alexander",
+    "cat": "ft_pct",
+    "ours": 0.895,
+    "ref_lo": 0.879,
+    "ref_hi": 0.889,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.177
+   },
+   {
+    "rank": 4,
+    "player": "Luka Doncic",
+    "cat": "ft_pct",
+    "ours": 0.8,
+    "ref_lo": 0.78,
+    "ref_hi": 0.782,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.556
+   },
+   {
+    "rank": 5,
+    "player": "Anthony Davis",
+    "cat": "pts",
+    "ours": 24.0,
+    "ref_lo": 19.8,
+    "ref_hi": 22.0,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.369
+   },
+   {
+    "rank": 5,
+    "player": "Anthony Davis",
+    "cat": "reb",
+    "ours": 11.8,
+    "ref_lo": 9.8,
+    "ref_hi": 10.6,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.474
+   },
+   {
+    "rank": 5,
+    "player": "Anthony Davis",
+    "cat": "ast",
+    "ours": 3.4,
+    "ref_lo": 2.8,
+    "ref_hi": 3.1,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 5,
+    "player": "Anthony Davis",
+    "cat": "blk",
+    "ours": 2.1,
+    "ref_lo": 1.7,
+    "ref_hi": 1.9,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 5,
+    "player": "Anthony Davis",
+    "cat": "tpm",
+    "ours": 0.9,
+    "ref_lo": 0.5,
+    "ref_hi": 0.6,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 6,
+    "player": "Karl-Anthony Towns",
+    "cat": "pts",
+    "ours": 24.8,
+    "ref_lo": 20.1,
+    "ref_hi": 21.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.646
+   },
+   {
+    "rank": 6,
+    "player": "Karl-Anthony Towns",
+    "cat": "blk",
+    "ours": 0.8,
+    "ref_lo": 0.5,
+    "ref_hi": 0.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.194
+   },
+   {
+    "rank": 6,
+    "player": "Karl-Anthony Towns",
+    "cat": "tpm",
+    "ours": 2.1,
+    "ref_lo": 1.5,
+    "ref_hi": 1.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.426
+   },
+   {
+    "rank": 6,
+    "player": "Karl-Anthony Towns",
+    "cat": "tov",
+    "ours": 2.9,
+    "ref_lo": 2.5,
+    "ref_hi": 2.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.538
+   },
+   {
+    "rank": 6,
+    "player": "Karl-Anthony Towns",
+    "cat": "fg_pct",
+    "ours": 0.525,
+    "ref_lo": 0.501,
+    "ref_hi": 0.514,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.267
+   },
+   {
+    "rank": 6,
+    "player": "Karl-Anthony Towns",
+    "cat": "ft_pct",
+    "ours": 0.83,
+    "ref_lo": 0.844,
+    "ref_hi": 0.858,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.24
+   },
+   {
+    "rank": 7,
+    "player": "Tyrese Haliburton",
+    "cat": "pts",
+    "ours": 18.6,
+    "ref_lo": 17.3,
+    "ref_hi": 17.6,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.185
+   },
+   {
+    "rank": 7,
+    "player": "Tyrese Haliburton",
+    "cat": "tpm",
+    "ours": 3.0,
+    "ref_lo": 2.6,
+    "ref_hi": 2.8,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.213
+   },
+   {
+    "rank": 8,
+    "player": "Anthony Edwards",
+    "cat": "ast",
+    "ours": 4.8,
+    "ref_lo": 3.5,
+    "ref_hi": 3.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.569
+   },
+   {
+    "rank": 8,
+    "player": "Anthony Edwards",
+    "cat": "tpm",
+    "ours": 4.2,
+    "ref_lo": 3.4,
+    "ref_hi": 3.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.533
+   },
+   {
+    "rank": 8,
+    "player": "Anthony Edwards",
+    "cat": "tov",
+    "ours": 3.3,
+    "ref_lo": 2.9,
+    "ref_hi": 3.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 8,
+    "player": "Anthony Edwards",
+    "cat": "fg_pct",
+    "ours": 0.455,
+    "ref_lo": 0.468,
+    "ref_hi": 0.489,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.423
+   },
+   {
+    "rank": 8,
+    "player": "Anthony Edwards",
+    "cat": "ft_pct",
+    "ours": 0.84,
+    "ref_lo": 0.796,
+    "ref_hi": 0.818,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.491
+   },
+   {
+    "rank": 9,
+    "player": "Tyrese Maxey",
+    "cat": "fg_pct",
+    "ours": 0.445,
+    "ref_lo": 0.458,
+    "ref_hi": 0.47,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.376
+   },
+   {
+    "rank": 10,
+    "player": "Chet Holmgren",
+    "cat": "ast",
+    "ours": 2.4,
+    "ref_lo": 1.6,
+    "ref_hi": 2.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.207
+   },
+   {
+    "rank": 10,
+    "player": "Chet Holmgren",
+    "cat": "stl",
+    "ours": 0.9,
+    "ref_lo": 0.6,
+    "ref_hi": 0.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 10,
+    "player": "Chet Holmgren",
+    "cat": "blk",
+    "ours": 2.4,
+    "ref_lo": 1.8,
+    "ref_hi": 2.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.581
+   },
+   {
+    "rank": 10,
+    "player": "Chet Holmgren",
+    "cat": "tpm",
+    "ours": 1.7,
+    "ref_lo": 1.3,
+    "ref_hi": 1.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 10,
+    "player": "Chet Holmgren",
+    "cat": "fg_pct",
+    "ours": 0.5,
+    "ref_lo": 0.535,
+    "ref_hi": 0.557,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.739
+   },
+   {
+    "rank": 10,
+    "player": "Chet Holmgren",
+    "cat": "ft_pct",
+    "ours": 0.76,
+    "ref_lo": 0.78,
+    "ref_hi": 0.792,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.275
+   },
+   {
+    "rank": 11,
+    "player": "Dyson Daniels",
+    "cat": "pts",
+    "ours": 14.5,
+    "ref_lo": 11.3,
+    "ref_hi": 11.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.48
+   },
+   {
+    "rank": 11,
+    "player": "Dyson Daniels",
+    "cat": "stl",
+    "ours": 3.0,
+    "ref_lo": 2.0,
+    "ref_hi": 2.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 1.712
+   },
+   {
+    "rank": 11,
+    "player": "Dyson Daniels",
+    "cat": "tpm",
+    "ours": 1.1,
+    "ref_lo": 0.3,
+    "ref_hi": 0.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.533
+   },
+   {
+    "rank": 11,
+    "player": "Dyson Daniels",
+    "cat": "fg_pct",
+    "ours": 0.495,
+    "ref_lo": 0.501,
+    "ref_hi": 0.517,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.117
+   },
+   {
+    "rank": 12,
+    "player": "Cade Cunningham",
+    "cat": "pts",
+    "ours": 27.5,
+    "ref_lo": 23.9,
+    "ref_hi": 25.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.462
+   },
+   {
+    "rank": 12,
+    "player": "Cade Cunningham",
+    "cat": "blk",
+    "ours": 0.7,
+    "ref_lo": 0.8,
+    "ref_hi": 0.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.194
+   },
+   {
+    "rank": 12,
+    "player": "Cade Cunningham",
+    "cat": "fg_pct",
+    "ours": 0.475,
+    "ref_lo": 0.461,
+    "ref_hi": 0.466,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.303
+   },
+   {
+    "rank": 12,
+    "player": "Cade Cunningham",
+    "cat": "ft_pct",
+    "ours": 0.85,
+    "ref_lo": 0.812,
+    "ref_hi": 0.831,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.444
+   },
+   {
+    "rank": 13,
+    "player": "Jalen Johnson",
+    "cat": "blk",
+    "ours": 1.0,
+    "ref_lo": 0.4,
+    "ref_hi": 0.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.774
+   },
+   {
+    "rank": 13,
+    "player": "Jalen Johnson",
+    "cat": "fg_pct",
+    "ours": 0.505,
+    "ref_lo": 0.482,
+    "ref_hi": 0.498,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.181
+   },
+   {
+    "rank": 13,
+    "player": "Jalen Johnson",
+    "cat": "ft_pct",
+    "ours": 0.745,
+    "ref_lo": 0.7809999999999999,
+    "ref_hi": 0.79,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.568
+   },
+   {
+    "rank": 14,
+    "player": "Donovan Mitchell",
+    "cat": "pts",
+    "ours": 24.5,
+    "ref_lo": 26.3,
+    "ref_hi": 27.9,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.332
+   },
+   {
+    "rank": 14,
+    "player": "Donovan Mitchell",
+    "cat": "tpm",
+    "ours": 3.7,
+    "ref_lo": 3.2,
+    "ref_hi": 3.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.426
+   },
+   {
+    "rank": 14,
+    "player": "Donovan Mitchell",
+    "cat": "fg_pct",
+    "ours": 0.45,
+    "ref_lo": 0.464,
+    "ref_hi": 0.483,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.427
+   },
+   {
+    "rank": 15,
+    "player": "Kyrie Irving",
+    "cat": "pts",
+    "ours": 24.7,
+    "ref_lo": 20.7,
+    "ref_hi": 21.8,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.536
+   },
+   {
+    "rank": 15,
+    "player": "Kyrie Irving",
+    "cat": "reb",
+    "ours": 4.8,
+    "ref_lo": 4.0,
+    "ref_hi": 4.2,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.237
+   },
+   {
+    "rank": 15,
+    "player": "Kyrie Irving",
+    "cat": "stl",
+    "ours": 1.3,
+    "ref_lo": 1.1,
+    "ref_hi": 1.1,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 15,
+    "player": "Kyrie Irving",
+    "cat": "tov",
+    "ours": 2.1,
+    "ref_lo": 1.7,
+    "ref_hi": 1.9,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 16,
+    "player": "Jalen Williams",
+    "cat": "pts",
+    "ours": 22.5,
+    "ref_lo": 17.1,
+    "ref_hi": 20.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.388
+   },
+   {
+    "rank": 16,
+    "player": "Jalen Williams",
+    "cat": "reb",
+    "ours": 5.5,
+    "ref_lo": 4.6,
+    "ref_hi": 5.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.118
+   },
+   {
+    "rank": 16,
+    "player": "Jalen Williams",
+    "cat": "stl",
+    "ours": 1.7,
+    "ref_lo": 1.2,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 16,
+    "player": "Jalen Williams",
+    "cat": "tpm",
+    "ours": 2.0,
+    "ref_lo": 0.7,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.533
+   },
+   {
+    "rank": 16,
+    "player": "Jalen Williams",
+    "cat": "tov",
+    "ours": 2.6,
+    "ref_lo": 1.9,
+    "ref_hi": 2.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.672
+   },
+   {
+    "rank": 16,
+    "player": "Jalen Williams",
+    "cat": "ft_pct",
+    "ours": 0.795,
+    "ref_lo": 0.805,
+    "ref_hi": 0.837,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.172
+   },
+   {
+    "rank": 17,
+    "player": "Stephen Curry",
+    "cat": "pts",
+    "ours": 24.0,
+    "ref_lo": 25.4,
+    "ref_hi": 26.6,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.259
+   },
+   {
+    "rank": 17,
+    "player": "Stephen Curry",
+    "cat": "ast",
+    "ours": 5.9,
+    "ref_lo": 4.7,
+    "ref_hi": 5.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.362
+   },
+   {
+    "rank": 18,
+    "player": "Kevin Durant",
+    "cat": "reb",
+    "ours": 5.8,
+    "ref_lo": 5.2,
+    "ref_hi": 5.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.118
+   },
+   {
+    "rank": 18,
+    "player": "Kevin Durant",
+    "cat": "ft_pct",
+    "ours": 0.845,
+    "ref_lo": 0.86,
+    "ref_hi": 0.874,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.268
+   },
+   {
+    "rank": 19,
+    "player": "Evan Mobley",
+    "cat": "stl",
+    "ours": 1.0,
+    "ref_lo": 0.7,
+    "ref_hi": 0.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 19,
+    "player": "Evan Mobley",
+    "cat": "fg_pct",
+    "ours": 0.56,
+    "ref_lo": 0.546,
+    "ref_hi": 0.5539999999999999,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.136
+   },
+   {
+    "rank": 20,
+    "player": "Jamal Murray",
+    "cat": "stl",
+    "ours": 1.3,
+    "ref_lo": 0.9,
+    "ref_hi": 1.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 20,
+    "player": "Jamal Murray",
+    "cat": "blk",
+    "ours": 0.3,
+    "ref_lo": 0.4,
+    "ref_hi": 0.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.194
+   },
+   {
+    "rank": 20,
+    "player": "Jamal Murray",
+    "cat": "tpm",
+    "ours": 2.6,
+    "ref_lo": 2.8,
+    "ref_hi": 3.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.213
+   },
+   {
+    "rank": 22,
+    "player": "Cooper Flagg",
+    "cat": "reb",
+    "ours": 8.5,
+    "ref_lo": 6.5,
+    "ref_hi": 7.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.316
+   },
+   {
+    "rank": 22,
+    "player": "Cooper Flagg",
+    "cat": "blk",
+    "ours": 1.2,
+    "ref_lo": 0.9,
+    "ref_hi": 1.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 22,
+    "player": "Cooper Flagg",
+    "cat": "tpm",
+    "ours": 1.7,
+    "ref_lo": 1.0,
+    "ref_hi": 1.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.426
+   },
+   {
+    "rank": 22,
+    "player": "Cooper Flagg",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.827,
+    "ref_hi": 0.84,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.807
+   },
+   {
+    "rank": 23,
+    "player": "Jaren Jackson Jr.",
+    "cat": "pts",
+    "ours": 23.5,
+    "ref_lo": 18.8,
+    "ref_hi": 21.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.314
+   },
+   {
+    "rank": 23,
+    "player": "Jaren Jackson Jr.",
+    "cat": "fg_pct",
+    "ours": 0.495,
+    "ref_lo": 0.473,
+    "ref_hi": 0.483,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.31
+   },
+   {
+    "rank": 24,
+    "player": "Derrick White",
+    "cat": "pts",
+    "ours": 18.0,
+    "ref_lo": 16.5,
+    "ref_hi": 17.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.166
+   },
+   {
+    "rank": 24,
+    "player": "Derrick White",
+    "cat": "ft_pct",
+    "ours": 0.845,
+    "ref_lo": 0.871,
+    "ref_hi": 0.902,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.286
+   },
+   {
+    "rank": 25,
+    "player": "Domantas Sabonis",
+    "cat": "pts",
+    "ours": 19.5,
+    "ref_lo": 16.9,
+    "ref_hi": 18.0,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.277
+   },
+   {
+    "rank": 26,
+    "player": "Austin Reaves",
+    "cat": "ft_pct",
+    "ours": 0.88,
+    "ref_lo": 0.87,
+    "ref_hi": 0.871,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.201
+   },
+   {
+    "rank": 27,
+    "player": "Desmond Bane",
+    "cat": "reb",
+    "ours": 6.0,
+    "ref_lo": 4.1,
+    "ref_hi": 4.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.434
+   },
+   {
+    "rank": 27,
+    "player": "Desmond Bane",
+    "cat": "ast",
+    "ours": 5.2,
+    "ref_lo": 4.1,
+    "ref_hi": 4.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.31
+   },
+   {
+    "rank": 27,
+    "player": "Desmond Bane",
+    "cat": "tpm",
+    "ours": 2.6,
+    "ref_lo": 2.0,
+    "ref_hi": 2.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 27,
+    "player": "Desmond Bane",
+    "cat": "tov",
+    "ours": 2.4,
+    "ref_lo": 2.0,
+    "ref_hi": 2.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 27,
+    "player": "Desmond Bane",
+    "cat": "ft_pct",
+    "ours": 0.89,
+    "ref_lo": 0.9,
+    "ref_hi": 0.908,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.124
+   },
+   {
+    "rank": 28,
+    "player": "OG Anunoby",
+    "cat": "pts",
+    "ours": 18.5,
+    "ref_lo": 16.4,
+    "ref_hi": 17.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.277
+   },
+   {
+    "rank": 28,
+    "player": "OG Anunoby",
+    "cat": "ft_pct",
+    "ours": 0.805,
+    "ref_lo": 0.813,
+    "ref_hi": 0.828,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.069
+   },
+   {
+    "rank": 29,
+    "player": "Franz Wagner",
+    "cat": "ast",
+    "ours": 5.8,
+    "ref_lo": 3.3,
+    "ref_hi": 4.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.776
+   },
+   {
+    "rank": 29,
+    "player": "Franz Wagner",
+    "cat": "blk",
+    "ours": 0.6,
+    "ref_lo": 0.3,
+    "ref_hi": 0.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 29,
+    "player": "Franz Wagner",
+    "cat": "tov",
+    "ours": 3.0,
+    "ref_lo": 1.7,
+    "ref_hi": 2.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -1.21
+   },
+   {
+    "rank": 29,
+    "player": "Franz Wagner",
+    "cat": "ft_pct",
+    "ours": 0.86,
+    "ref_lo": 0.823,
+    "ref_hi": 0.852,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.162
+   },
+   {
+    "rank": 30,
+    "player": "Amen Thompson",
+    "cat": "reb",
+    "ours": 8.8,
+    "ref_lo": 7.3,
+    "ref_hi": 7.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.355
+   },
+   {
+    "rank": 30,
+    "player": "Amen Thompson",
+    "cat": "blk",
+    "ours": 1.3,
+    "ref_lo": 0.6,
+    "ref_hi": 1.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.581
+   },
+   {
+    "rank": 30,
+    "player": "Amen Thompson",
+    "cat": "fg_pct",
+    "ours": 0.56,
+    "ref_lo": 0.534,
+    "ref_hi": 0.543,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.332
+   },
+   {
+    "rank": 30,
+    "player": "Amen Thompson",
+    "cat": "ft_pct",
+    "ours": 0.7,
+    "ref_lo": 0.746,
+    "ref_hi": 0.779,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.711
+   },
+   {
+    "rank": 31,
+    "player": "James Harden",
+    "cat": "reb",
+    "ours": 5.6,
+    "ref_lo": 4.6,
+    "ref_hi": 4.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.276
+   },
+   {
+    "rank": 31,
+    "player": "James Harden",
+    "cat": "stl",
+    "ours": 1.4,
+    "ref_lo": 1.1,
+    "ref_hi": 1.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 31,
+    "player": "James Harden",
+    "cat": "tov",
+    "ours": 4.2,
+    "ref_lo": 3.3,
+    "ref_hi": 3.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.941
+   },
+   {
+    "rank": 31,
+    "player": "James Harden",
+    "cat": "fg_pct",
+    "ours": 0.415,
+    "ref_lo": 0.421,
+    "ref_hi": 0.434,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.155
+   },
+   {
+    "rank": 31,
+    "player": "James Harden",
+    "cat": "ft_pct",
+    "ours": 0.87,
+    "ref_lo": 0.878,
+    "ref_hi": 0.884,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.176
+   },
+   {
+    "rank": 32,
+    "player": "Josh Giddey",
+    "cat": "ast",
+    "ours": 7.8,
+    "ref_lo": 8.4,
+    "ref_hi": 9.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.31
+   },
+   {
+    "rank": 32,
+    "player": "Josh Giddey",
+    "cat": "tov",
+    "ours": 3.0,
+    "ref_lo": 3.3,
+    "ref_hi": 3.6,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.403
+   },
+   {
+    "rank": 32,
+    "player": "Josh Giddey",
+    "cat": "fg_pct",
+    "ours": 0.47,
+    "ref_lo": 0.448,
+    "ref_hi": 0.457,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.295
+   },
+   {
+    "rank": 32,
+    "player": "Josh Giddey",
+    "cat": "ft_pct",
+    "ours": 0.81,
+    "ref_lo": 0.763,
+    "ref_hi": 0.776,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.373
+   },
+   {
+    "rank": 33,
+    "player": "Trey Murphy III",
+    "cat": "stl",
+    "ours": 1.1,
+    "ref_lo": 1.3,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.571
+   },
+   {
+    "rank": 33,
+    "player": "Trey Murphy III",
+    "cat": "blk",
+    "ours": 0.7,
+    "ref_lo": 0.4,
+    "ref_hi": 0.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 33,
+    "player": "Trey Murphy III",
+    "cat": "tov",
+    "ours": 2.1,
+    "ref_lo": 1.7,
+    "ref_hi": 1.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 34,
+    "player": "Kawhi Leonard",
+    "cat": "pts",
+    "ours": 21.0,
+    "ref_lo": 23.7,
+    "ref_hi": 27.9,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.499
+   },
+   {
+    "rank": 34,
+    "player": "Kawhi Leonard",
+    "cat": "ft_pct",
+    "ours": 0.81,
+    "ref_lo": 0.872,
+    "ref_hi": 0.892,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.851
+   },
+   {
+    "rank": 35,
+    "player": "Devin Booker",
+    "cat": "ast",
+    "ours": 7.0,
+    "ref_lo": 6.0,
+    "ref_hi": 6.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 35,
+    "player": "Devin Booker",
+    "cat": "ft_pct",
+    "ours": 0.89,
+    "ref_lo": 0.873,
+    "ref_hi": 0.884,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.119
+   },
+   {
+    "rank": 36,
+    "player": "Onyeka Okongwu",
+    "cat": "stl",
+    "ours": 0.8,
+    "ref_lo": 1.0,
+    "ref_hi": 1.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.571
+   },
+   {
+    "rank": 36,
+    "player": "Onyeka Okongwu",
+    "cat": "fg_pct",
+    "ours": 0.56,
+    "ref_lo": 0.474,
+    "ref_hi": 0.517,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.773
+   },
+   {
+    "rank": 36,
+    "player": "Onyeka Okongwu",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.757,
+    "ref_hi": 0.763,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.163
+   },
+   {
+    "rank": 37,
+    "player": "Payton Pritchard",
+    "cat": "stl",
+    "ours": 1.0,
+    "ref_lo": 0.7,
+    "ref_hi": 0.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 37,
+    "player": "Payton Pritchard",
+    "cat": "tpm",
+    "ours": 3.8,
+    "ref_lo": 2.7,
+    "ref_hi": 3.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.639
+   },
+   {
+    "rank": 37,
+    "player": "Payton Pritchard",
+    "cat": "tov",
+    "ours": 2.0,
+    "ref_lo": 1.3,
+    "ref_hi": 1.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.807
+   },
+   {
+    "rank": 37,
+    "player": "Payton Pritchard",
+    "cat": "ft_pct",
+    "ours": 0.85,
+    "ref_lo": 0.873,
+    "ref_hi": 0.89,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.174
+   },
+   {
+    "rank": 38,
+    "player": "Scottie Barnes",
+    "cat": "pts",
+    "ours": 20.5,
+    "ref_lo": 18.1,
+    "ref_hi": 19.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.203
+   },
+   {
+    "rank": 38,
+    "player": "Scottie Barnes",
+    "cat": "blk",
+    "ours": 1.1,
+    "ref_lo": 1.3,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.387
+   },
+   {
+    "rank": 38,
+    "player": "Scottie Barnes",
+    "cat": "tpm",
+    "ours": 1.3,
+    "ref_lo": 0.9,
+    "ref_hi": 1.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.213
+   },
+   {
+    "rank": 38,
+    "player": "Scottie Barnes",
+    "cat": "fg_pct",
+    "ours": 0.45,
+    "ref_lo": 0.477,
+    "ref_hi": 0.507,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.718
+   },
+   {
+    "rank": 38,
+    "player": "Scottie Barnes",
+    "cat": "ft_pct",
+    "ours": 0.76,
+    "ref_lo": 0.784,
+    "ref_hi": 0.815,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.412
+   },
+   {
+    "rank": 39,
+    "player": "Kristaps Porzingis",
+    "cat": "pts",
+    "ours": 19.8,
+    "ref_lo": 16.5,
+    "ref_hi": 17.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.462
+   },
+   {
+    "rank": 39,
+    "player": "Kristaps Porzingis",
+    "cat": "reb",
+    "ours": 6.9,
+    "ref_lo": 5.0,
+    "ref_hi": 5.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.513
+   },
+   {
+    "rank": 39,
+    "player": "Kristaps Porzingis",
+    "cat": "blk",
+    "ours": 1.5,
+    "ref_lo": 1.2,
+    "ref_hi": 1.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.581
+   },
+   {
+    "rank": 39,
+    "player": "Kristaps Porzingis",
+    "cat": "tov",
+    "ours": 1.6,
+    "ref_lo": 1.2,
+    "ref_hi": 1.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.403
+   },
+   {
+    "rank": 39,
+    "player": "Kristaps Porzingis",
+    "cat": "fg_pct",
+    "ours": 0.485,
+    "ref_lo": 0.446,
+    "ref_hi": 0.474,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.234
+   },
+   {
+    "rank": 39,
+    "player": "Kristaps Porzingis",
+    "cat": "ft_pct",
+    "ours": 0.81,
+    "ref_lo": 0.822,
+    "ref_hi": 0.842,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.173
+   },
+   {
+    "rank": 40,
+    "player": "Jalen Brunson",
+    "cat": "tov",
+    "ours": 2.6,
+    "ref_lo": 2.4,
+    "ref_hi": 2.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 40,
+    "player": "Jalen Brunson",
+    "cat": "fg_pct",
+    "ours": 0.485,
+    "ref_lo": 0.467,
+    "ref_hi": 0.476,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.265
+   },
+   {
+    "rank": 40,
+    "player": "Jalen Brunson",
+    "cat": "ft_pct",
+    "ours": 0.825,
+    "ref_lo": 0.831,
+    "ref_hi": 0.841,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.136
+   },
+   {
+    "rank": 42,
+    "player": "Giannis Antetokounmpo",
+    "cat": "fg_pct",
+    "ours": 0.598,
+    "ref_lo": 0.608,
+    "ref_hi": 0.624,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.3
+   },
+   {
+    "rank": 43,
+    "player": "Tyler Herro",
+    "cat": "pts",
+    "ours": 25.0,
+    "ref_lo": 20.5,
+    "ref_hi": 23.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.24
+   },
+   {
+    "rank": 43,
+    "player": "Tyler Herro",
+    "cat": "ast",
+    "ours": 6.2,
+    "ref_lo": 4.1,
+    "ref_hi": 4.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.673
+   },
+   {
+    "rank": 43,
+    "player": "Tyler Herro",
+    "cat": "tov",
+    "ours": 3.1,
+    "ref_lo": 1.9,
+    "ref_hi": 2.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -1.076
+   },
+   {
+    "rank": 43,
+    "player": "Tyler Herro",
+    "cat": "fg_pct",
+    "ours": 0.455,
+    "ref_lo": 0.466,
+    "ref_hi": 0.48,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.323
+   },
+   {
+    "rank": 43,
+    "player": "Tyler Herro",
+    "cat": "ft_pct",
+    "ours": 0.88,
+    "ref_lo": 0.886,
+    "ref_hi": 0.917,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.095
+   },
+   {
+    "rank": 44,
+    "player": "Walker Kessler",
+    "cat": "stl",
+    "ours": 0.5,
+    "ref_lo": 0.7,
+    "ref_hi": 0.8,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.571
+   },
+   {
+    "rank": 44,
+    "player": "Walker Kessler",
+    "cat": "tpm",
+    "ours": 0.0,
+    "ref_lo": 0.2,
+    "ref_hi": 0.5,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.213
+   },
+   {
+    "rank": 45,
+    "player": "Ivica Zubac",
+    "cat": "pts",
+    "ours": 17.0,
+    "ref_lo": 14.1,
+    "ref_hi": 15.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.296
+   },
+   {
+    "rank": 45,
+    "player": "Ivica Zubac",
+    "cat": "reb",
+    "ours": 12.4,
+    "ref_lo": 10.6,
+    "ref_hi": 11.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.355
+   },
+   {
+    "rank": 45,
+    "player": "Ivica Zubac",
+    "cat": "ast",
+    "ours": 2.8,
+    "ref_lo": 2.2,
+    "ref_hi": 2.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 45,
+    "player": "Ivica Zubac",
+    "cat": "fg_pct",
+    "ours": 0.625,
+    "ref_lo": 0.598,
+    "ref_hi": 0.618,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.12
+   },
+   {
+    "rank": 45,
+    "player": "Ivica Zubac",
+    "cat": "ft_pct",
+    "ours": 0.67,
+    "ref_lo": 0.681,
+    "ref_hi": 0.711,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.143
+   },
+   {
+    "rank": 46,
+    "player": "Brandon Miller",
+    "cat": "ast",
+    "ours": 4.6,
+    "ref_lo": 3.3,
+    "ref_hi": 4.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.31
+   },
+   {
+    "rank": 46,
+    "player": "Brandon Miller",
+    "cat": "tov",
+    "ours": 2.9,
+    "ref_lo": 2.5,
+    "ref_hi": 2.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.403
+   },
+   {
+    "rank": 47,
+    "player": "Bam Adebayo",
+    "cat": "pts",
+    "ours": 16.5,
+    "ref_lo": 19.3,
+    "ref_hi": 20.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.517
+   },
+   {
+    "rank": 47,
+    "player": "Bam Adebayo",
+    "cat": "blk",
+    "ours": 0.8,
+    "ref_lo": 0.7,
+    "ref_hi": 0.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.194
+   },
+   {
+    "rank": 47,
+    "player": "Bam Adebayo",
+    "cat": "tpm",
+    "ours": 0.8,
+    "ref_lo": 1.4,
+    "ref_hi": 2.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.639
+   },
+   {
+    "rank": 47,
+    "player": "Bam Adebayo",
+    "cat": "tov",
+    "ours": 2.1,
+    "ref_lo": 1.6,
+    "ref_hi": 1.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 47,
+    "player": "Bam Adebayo",
+    "cat": "fg_pct",
+    "ours": 0.49,
+    "ref_lo": 0.442,
+    "ref_hi": 0.46399999999999997,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.528
+   },
+   {
+    "rank": 49,
+    "player": "LaMelo Ball",
+    "cat": "tov",
+    "ours": 3.4,
+    "ref_lo": 2.8,
+    "ref_hi": 3.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 49,
+    "player": "LaMelo Ball",
+    "cat": "ft_pct",
+    "ours": 0.84,
+    "ref_lo": 0.866,
+    "ref_hi": 0.899,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.402
+   },
+   {
+    "rank": 50,
+    "player": "Jarrett Allen",
+    "cat": "reb",
+    "ours": 9.8,
+    "ref_lo": 8.5,
+    "ref_hi": 9.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.276
+   },
+   {
+    "rank": 50,
+    "player": "Jarrett Allen",
+    "cat": "fg_pct",
+    "ours": 0.7,
+    "ref_lo": 0.638,
+    "ref_hi": 0.676,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.319
+   },
+   {
+    "rank": 51,
+    "player": "De'Aaron Fox",
+    "cat": "pts",
+    "ours": 24.0,
+    "ref_lo": 18.2,
+    "ref_hi": 18.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.942
+   },
+   {
+    "rank": 51,
+    "player": "De'Aaron Fox",
+    "cat": "reb",
+    "ours": 4.9,
+    "ref_lo": 3.8,
+    "ref_hi": 3.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.395
+   },
+   {
+    "rank": 51,
+    "player": "De'Aaron Fox",
+    "cat": "stl",
+    "ours": 1.6,
+    "ref_lo": 1.2,
+    "ref_hi": 1.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.856
+   },
+   {
+    "rank": 51,
+    "player": "De'Aaron Fox",
+    "cat": "tov",
+    "ours": 2.9,
+    "ref_lo": 2.3,
+    "ref_hi": 2.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.807
+   },
+   {
+    "rank": 51,
+    "player": "De'Aaron Fox",
+    "cat": "ft_pct",
+    "ours": 0.75,
+    "ref_lo": 0.76,
+    "ref_hi": 0.799,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.178
+   },
+   {
+    "rank": 52,
+    "player": "Lauri Markkanen",
+    "cat": "ft_pct",
+    "ours": 0.875,
+    "ref_lo": 0.886,
+    "ref_hi": 0.896,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.166
+   },
+   {
+    "rank": 54,
+    "player": "Nickeil Alexander-Walker",
+    "cat": "reb",
+    "ours": 3.0,
+    "ref_lo": 3.2,
+    "ref_hi": 3.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.079
+   },
+   {
+    "rank": 55,
+    "player": "Michael Porter Jr.",
+    "cat": "stl",
+    "ours": 0.7,
+    "ref_lo": 0.8,
+    "ref_hi": 1.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.285
+   },
+   {
+    "rank": 55,
+    "player": "Michael Porter Jr.",
+    "cat": "tpm",
+    "ours": 2.7,
+    "ref_lo": 2.9,
+    "ref_hi": 3.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.213
+   },
+   {
+    "rank": 55,
+    "player": "Michael Porter Jr.",
+    "cat": "tov",
+    "ours": 1.6,
+    "ref_lo": 1.9,
+    "ref_hi": 2.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.403
+   },
+   {
+    "rank": 55,
+    "player": "Michael Porter Jr.",
+    "cat": "fg_pct",
+    "ours": 0.5,
+    "ref_lo": 0.463,
+    "ref_hi": 0.47600000000000003,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.525
+   },
+   {
+    "rank": 55,
+    "player": "Michael Porter Jr.",
+    "cat": "ft_pct",
+    "ours": 0.77,
+    "ref_lo": 0.827,
+    "ref_hi": 0.859,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.47
+   },
+   {
+    "rank": 56,
+    "player": "Zach LaVine",
+    "cat": "pts",
+    "ours": 22.5,
+    "ref_lo": 17.0,
+    "ref_hi": 21.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 56,
+    "player": "Zach LaVine",
+    "cat": "reb",
+    "ours": 4.5,
+    "ref_lo": 2.8,
+    "ref_hi": 3.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.355
+   },
+   {
+    "rank": 56,
+    "player": "Zach LaVine",
+    "cat": "ast",
+    "ours": 4.0,
+    "ref_lo": 2.3,
+    "ref_hi": 3.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.31
+   },
+   {
+    "rank": 56,
+    "player": "Zach LaVine",
+    "cat": "tov",
+    "ours": 2.6,
+    "ref_lo": 1.9,
+    "ref_hi": 2.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 57,
+    "player": "Trae Young",
+    "cat": "reb",
+    "ours": 3.2,
+    "ref_lo": 2.6,
+    "ref_hi": 2.9,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.118
+   },
+   {
+    "rank": 57,
+    "player": "Trae Young",
+    "cat": "stl",
+    "ours": 1.3,
+    "ref_lo": 0.9,
+    "ref_hi": 1.1,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 57,
+    "player": "Trae Young",
+    "cat": "fg_pct",
+    "ours": 0.415,
+    "ref_lo": 0.421,
+    "ref_hi": 0.436,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.159
+   },
+   {
+    "rank": 58,
+    "player": "Coby White",
+    "cat": "ft_pct",
+    "ours": 0.9,
+    "ref_lo": 0.817,
+    "ref_hi": 0.864,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.494
+   },
+   {
+    "rank": 59,
+    "player": "Jalen Suggs",
+    "cat": "pts",
+    "ours": 17.0,
+    "ref_lo": 13.8,
+    "ref_hi": 15.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.351
+   },
+   {
+    "rank": 59,
+    "player": "Jalen Suggs",
+    "cat": "ast",
+    "ours": 4.0,
+    "ref_lo": 4.8,
+    "ref_hi": 5.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.414
+   },
+   {
+    "rank": 60,
+    "player": "Jalen Duren",
+    "cat": "pts",
+    "ours": 12.5,
+    "ref_lo": 17.2,
+    "ref_hi": 19.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.868
+   },
+   {
+    "rank": 60,
+    "player": "Jalen Duren",
+    "cat": "ast",
+    "ours": 2.8,
+    "ref_lo": 2.0,
+    "ref_hi": 2.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 60,
+    "player": "Jalen Duren",
+    "cat": "stl",
+    "ours": 0.7,
+    "ref_lo": 0.8,
+    "ref_hi": 0.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.285
+   },
+   {
+    "rank": 60,
+    "player": "Jalen Duren",
+    "cat": "fg_pct",
+    "ours": 0.69,
+    "ref_lo": 0.65,
+    "ref_hi": 0.657,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.439
+   },
+   {
+    "rank": 60,
+    "player": "Jalen Duren",
+    "cat": "ft_pct",
+    "ours": 0.7,
+    "ref_lo": 0.737,
+    "ref_hi": 0.751,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.419
+   },
+   {
+    "rank": 61,
+    "player": "Mikal Bridges",
+    "cat": "pts",
+    "ours": 18.0,
+    "ref_lo": 14.4,
+    "ref_hi": 15.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.517
+   },
+   {
+    "rank": 61,
+    "player": "Mikal Bridges",
+    "cat": "tpm",
+    "ours": 2.2,
+    "ref_lo": 1.8,
+    "ref_hi": 2.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.213
+   },
+   {
+    "rank": 61,
+    "player": "Mikal Bridges",
+    "cat": "tov",
+    "ours": 1.5,
+    "ref_lo": 1.0,
+    "ref_hi": 1.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 62,
+    "player": "LeBron James",
+    "cat": "pts",
+    "ours": 17.5,
+    "ref_lo": 19.1,
+    "ref_hi": 20.9,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.296
+   },
+   {
+    "rank": 62,
+    "player": "LeBron James",
+    "cat": "ast",
+    "ours": 6.0,
+    "ref_lo": 6.5,
+    "ref_hi": 7.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.259
+   },
+   {
+    "rank": 62,
+    "player": "LeBron James",
+    "cat": "tpm",
+    "ours": 1.8,
+    "ref_lo": 1.3,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 62,
+    "player": "LeBron James",
+    "cat": "tov",
+    "ours": 2.6,
+    "ref_lo": 2.8,
+    "ref_hi": 3.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.269
+   },
+   {
+    "rank": 62,
+    "player": "LeBron James",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.737,
+    "ref_hi": 0.76,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.233
+   },
+   {
+    "rank": 63,
+    "player": "Dejounte Murray",
+    "cat": "tpm",
+    "ours": 2.0,
+    "ref_lo": 1.3,
+    "ref_hi": 1.8,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.213
+   },
+   {
+    "rank": 63,
+    "player": "Dejounte Murray",
+    "cat": "tov",
+    "ours": 2.8,
+    "ref_lo": 3.1,
+    "ref_hi": 3.6,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.403
+   },
+   {
+    "rank": 63,
+    "player": "Dejounte Murray",
+    "cat": "fg_pct",
+    "ours": 0.41,
+    "ref_lo": 0.43200000000000005,
+    "ref_hi": 0.456,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.516
+   },
+   {
+    "rank": 63,
+    "player": "Dejounte Murray",
+    "cat": "ft_pct",
+    "ours": 0.79,
+    "ref_lo": 0.82,
+    "ref_hi": 0.837,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.371
+   },
+   {
+    "rank": 64,
+    "player": "Pascal Siakam",
+    "cat": "fg_pct",
+    "ours": 0.52,
+    "ref_lo": 0.484,
+    "ref_hi": 0.505,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.371
+   },
+   {
+    "rank": 64,
+    "player": "Pascal Siakam",
+    "cat": "ft_pct",
+    "ours": 0.745,
+    "ref_lo": 0.693,
+    "ref_hi": 0.722,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.332
+   },
+   {
+    "rank": 65,
+    "player": "Ja Morant",
+    "cat": "pts",
+    "ours": 23.5,
+    "ref_lo": 16.9,
+    "ref_hi": 19.5,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.739
+   },
+   {
+    "rank": 65,
+    "player": "Ja Morant",
+    "cat": "reb",
+    "ours": 4.2,
+    "ref_lo": 3.2,
+    "ref_hi": 3.7,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.197
+   },
+   {
+    "rank": 65,
+    "player": "Ja Morant",
+    "cat": "ast",
+    "ours": 7.5,
+    "ref_lo": 5.7,
+    "ref_hi": 6.7,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.414
+   },
+   {
+    "rank": 65,
+    "player": "Ja Morant",
+    "cat": "stl",
+    "ours": 1.3,
+    "ref_lo": 1.0,
+    "ref_hi": 1.1,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 65,
+    "player": "Ja Morant",
+    "cat": "tpm",
+    "ours": 1.8,
+    "ref_lo": 1.2,
+    "ref_hi": 1.4,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.426
+   },
+   {
+    "rank": 65,
+    "player": "Ja Morant",
+    "cat": "ft_pct",
+    "ours": 0.82,
+    "ref_lo": 0.845,
+    "ref_hi": 0.857,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.532
+   },
+   {
+    "rank": 66,
+    "player": "Paul George",
+    "cat": "tov",
+    "ours": 2.4,
+    "ref_lo": 1.7,
+    "ref_hi": 2.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 66,
+    "player": "Paul George",
+    "cat": "ft_pct",
+    "ours": 0.81,
+    "ref_lo": 0.82,
+    "ref_hi": 0.849,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.096
+   },
+   {
+    "rank": 67,
+    "player": "Josh Hart",
+    "cat": "pts",
+    "ours": 13.5,
+    "ref_lo": 11.9,
+    "ref_hi": 12.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.24
+   },
+   {
+    "rank": 67,
+    "player": "Josh Hart",
+    "cat": "tpm",
+    "ours": 1.0,
+    "ref_lo": 1.2,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.213
+   },
+   {
+    "rank": 67,
+    "player": "Josh Hart",
+    "cat": "fg_pct",
+    "ours": 0.52,
+    "ref_lo": 0.498,
+    "ref_hi": 0.508,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.178
+   },
+   {
+    "rank": 67,
+    "player": "Josh Hart",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.72,
+    "ref_hi": 0.759,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.187
+   },
+   {
+    "rank": 68,
+    "player": "Fred VanVleet",
+    "cat": "pts",
+    "ours": 14.1,
+    "ref_lo": 11.7,
+    "ref_hi": 12.6,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.277
+   },
+   {
+    "rank": 68,
+    "player": "Fred VanVleet",
+    "cat": "reb",
+    "ours": 3.7,
+    "ref_lo": 3.1,
+    "ref_hi": 3.3,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.158
+   },
+   {
+    "rank": 68,
+    "player": "Fred VanVleet",
+    "cat": "ast",
+    "ours": 5.6,
+    "ref_lo": 4.6,
+    "ref_hi": 5.2,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.207
+   },
+   {
+    "rank": 68,
+    "player": "Fred VanVleet",
+    "cat": "stl",
+    "ours": 1.6,
+    "ref_lo": 1.2,
+    "ref_hi": 1.4,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 68,
+    "player": "Fred VanVleet",
+    "cat": "tov",
+    "ours": 1.6,
+    "ref_lo": 1.2,
+    "ref_hi": 1.3,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.403
+   },
+   {
+    "rank": 69,
+    "player": "Alperen Sengun",
+    "cat": "ast",
+    "ours": 5.2,
+    "ref_lo": 5.6,
+    "ref_hi": 6.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.207
+   },
+   {
+    "rank": 69,
+    "player": "Alperen Sengun",
+    "cat": "tov",
+    "ours": 2.8,
+    "ref_lo": 3.0,
+    "ref_hi": 3.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.269
+   },
+   {
+    "rank": 69,
+    "player": "Alperen Sengun",
+    "cat": "fg_pct",
+    "ours": 0.5,
+    "ref_lo": 0.508,
+    "ref_hi": 0.519,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.2
+   },
+   {
+    "rank": 69,
+    "player": "Alperen Sengun",
+    "cat": "ft_pct",
+    "ours": 0.7,
+    "ref_lo": 0.69,
+    "ref_hi": 0.6920000000000001,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.154
+   },
+   {
+    "rank": 70,
+    "player": "Ryan Rollins",
+    "cat": "tov",
+    "ours": 1.9,
+    "ref_lo": 2.2,
+    "ref_hi": 2.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.403
+   },
+   {
+    "rank": 70,
+    "player": "Ryan Rollins",
+    "cat": "fg_pct",
+    "ours": 0.465,
+    "ref_lo": 0.472,
+    "ref_hi": 0.48,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.137
+   },
+   {
+    "rank": 71,
+    "player": "Joel Embiid",
+    "cat": "reb",
+    "ours": 8.3,
+    "ref_lo": 7.2,
+    "ref_hi": 7.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.237
+   },
+   {
+    "rank": 71,
+    "player": "Joel Embiid",
+    "cat": "ast",
+    "ours": 4.5,
+    "ref_lo": 3.0,
+    "ref_hi": 3.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.31
+   },
+   {
+    "rank": 71,
+    "player": "Joel Embiid",
+    "cat": "stl",
+    "ours": 0.8,
+    "ref_lo": 0.5,
+    "ref_hi": 0.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 71,
+    "player": "Joel Embiid",
+    "cat": "tov",
+    "ours": 3.3,
+    "ref_lo": 2.6,
+    "ref_hi": 2.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.538
+   },
+   {
+    "rank": 71,
+    "player": "Joel Embiid",
+    "cat": "fg_pct",
+    "ours": 0.45,
+    "ref_lo": 0.471,
+    "ref_hi": 0.49,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.492
+   },
+   {
+    "rank": 71,
+    "player": "Joel Embiid",
+    "cat": "ft_pct",
+    "ours": 0.825,
+    "ref_lo": 0.854,
+    "ref_hi": 0.867,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.747
+   },
+   {
+    "rank": 72,
+    "player": "Jaylen Brown",
+    "cat": "tpm",
+    "ours": 2.4,
+    "ref_lo": 1.7,
+    "ref_hi": 2.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.426
+   },
+   {
+    "rank": 72,
+    "player": "Jaylen Brown",
+    "cat": "fg_pct",
+    "ours": 0.465,
+    "ref_lo": 0.474,
+    "ref_hi": 0.486,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.267
+   },
+   {
+    "rank": 73,
+    "player": "Cason Wallace",
+    "cat": "pts",
+    "ours": 11.0,
+    "ref_lo": 8.1,
+    "ref_hi": 9.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 73,
+    "player": "Cason Wallace",
+    "cat": "ast",
+    "ours": 3.4,
+    "ref_lo": 2.4,
+    "ref_hi": 2.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 73,
+    "player": "Cason Wallace",
+    "cat": "fg_pct",
+    "ours": 0.48,
+    "ref_lo": 0.432,
+    "ref_hi": 0.453,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.359
+   },
+   {
+    "rank": 75,
+    "player": "Isaiah Hartenstein",
+    "cat": "pts",
+    "ours": 11.5,
+    "ref_lo": 9.1,
+    "ref_hi": 10.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.185
+   },
+   {
+    "rank": 75,
+    "player": "Isaiah Hartenstein",
+    "cat": "reb",
+    "ours": 11.0,
+    "ref_lo": 9.2,
+    "ref_hi": 10.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.276
+   },
+   {
+    "rank": 75,
+    "player": "Isaiah Hartenstein",
+    "cat": "fg_pct",
+    "ours": 0.585,
+    "ref_lo": 0.597,
+    "ref_hi": 0.622,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.15
+   },
+   {
+    "rank": 75,
+    "player": "Isaiah Hartenstein",
+    "cat": "ft_pct",
+    "ours": 0.68,
+    "ref_lo": 0.61,
+    "ref_hi": 0.656,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.181
+   },
+   {
+    "rank": 77,
+    "player": "Deni Avdija",
+    "cat": "ast",
+    "ours": 4.2,
+    "ref_lo": 4.9,
+    "ref_hi": 6.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.362
+   },
+   {
+    "rank": 77,
+    "player": "Deni Avdija",
+    "cat": "stl",
+    "ours": 1.1,
+    "ref_lo": 0.8,
+    "ref_hi": 0.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 77,
+    "player": "Deni Avdija",
+    "cat": "tov",
+    "ours": 2.7,
+    "ref_lo": 3.0,
+    "ref_hi": 3.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.403
+   },
+   {
+    "rank": 77,
+    "player": "Deni Avdija",
+    "cat": "fg_pct",
+    "ours": 0.48,
+    "ref_lo": 0.462,
+    "ref_hi": 0.473,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.142
+   },
+   {
+    "rank": 78,
+    "player": "Rudy Gobert",
+    "cat": "pts",
+    "ours": 12.2,
+    "ref_lo": 10.4,
+    "ref_hi": 11.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.166
+   },
+   {
+    "rank": 78,
+    "player": "Rudy Gobert",
+    "cat": "ast",
+    "ours": 1.9,
+    "ref_lo": 1.5,
+    "ref_hi": 1.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.103
+   },
+   {
+    "rank": 78,
+    "player": "Rudy Gobert",
+    "cat": "tov",
+    "ours": 1.6,
+    "ref_lo": 1.2,
+    "ref_hi": 1.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 78,
+    "player": "Rudy Gobert",
+    "cat": "fg_pct",
+    "ours": 0.665,
+    "ref_lo": 0.674,
+    "ref_hi": 0.682,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.096
+   },
+   {
+    "rank": 78,
+    "player": "Rudy Gobert",
+    "cat": "ft_pct",
+    "ours": 0.68,
+    "ref_lo": 0.526,
+    "ref_hi": 0.596,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 1.153
+   },
+   {
+    "rank": 79,
+    "player": "Naz Reid",
+    "cat": "fg_pct",
+    "ours": 0.47,
+    "ref_lo": 0.449,
+    "ref_hi": 0.46,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.18
+   },
+   {
+    "rank": 79,
+    "player": "Naz Reid",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.732,
+    "ref_hi": 0.756,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.181
+   },
+   {
+    "rank": 82,
+    "player": "Yaxel Lendeborg",
+    "cat": "reb",
+    "ours": 7.5,
+    "ref_lo": 5.5,
+    "ref_hi": 6.9,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.237
+   },
+   {
+    "rank": 82,
+    "player": "Yaxel Lendeborg",
+    "cat": "tpm",
+    "ours": 0.9,
+    "ref_lo": 1.2,
+    "ref_hi": 1.3,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.32
+   },
+   {
+    "rank": 82,
+    "player": "Yaxel Lendeborg",
+    "cat": "fg_pct",
+    "ours": 0.52,
+    "ref_lo": 0.447,
+    "ref_hi": 0.498,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.334
+   },
+   {
+    "rank": 82,
+    "player": "Yaxel Lendeborg",
+    "cat": "ft_pct",
+    "ours": 0.74,
+    "ref_lo": 0.765,
+    "ref_hi": 0.828,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.232
+   },
+   {
+    "rank": 83,
+    "player": "Jaden McDaniels",
+    "cat": "pts",
+    "ours": 13.0,
+    "ref_lo": 14.8,
+    "ref_hi": 15.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.332
+   },
+   {
+    "rank": 83,
+    "player": "Jaden McDaniels",
+    "cat": "ast",
+    "ours": 2.1,
+    "ref_lo": 2.5,
+    "ref_hi": 2.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.207
+   },
+   {
+    "rank": 83,
+    "player": "Jaden McDaniels",
+    "cat": "fg_pct",
+    "ours": 0.46,
+    "ref_lo": 0.496,
+    "ref_hi": 0.515,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.591
+   },
+   {
+    "rank": 84,
+    "player": "Zach Edey",
+    "cat": "tov",
+    "ours": 1.3,
+    "ref_lo": 1.8,
+    "ref_hi": 2.5,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.672
+   },
+   {
+    "rank": 84,
+    "player": "Zach Edey",
+    "cat": "fg_pct",
+    "ours": 0.585,
+    "ref_lo": 0.602,
+    "ref_hi": 0.619,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.252
+   },
+   {
+    "rank": 84,
+    "player": "Zach Edey",
+    "cat": "ft_pct",
+    "ours": 0.72,
+    "ref_lo": 0.7390000000000001,
+    "ref_hi": 0.775,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.209
+   },
+   {
+    "rank": 85,
+    "player": "Norman Powell",
+    "cat": "tpm",
+    "ours": 2.9,
+    "ref_lo": 2.6,
+    "ref_hi": 2.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.213
+   },
+   {
+    "rank": 85,
+    "player": "Norman Powell",
+    "cat": "ft_pct",
+    "ours": 0.805,
+    "ref_lo": 0.816,
+    "ref_hi": 0.827,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.143
+   },
+   {
+    "rank": 86,
+    "player": "Myles Turner",
+    "cat": "ft_pct",
+    "ours": 0.77,
+    "ref_lo": 0.74,
+    "ref_hi": 0.759,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.098
+   },
+   {
+    "rank": 87,
+    "player": "PJ Washington",
+    "cat": "ast",
+    "ours": 2.4,
+    "ref_lo": 1.8,
+    "ref_hi": 2.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.207
+   },
+   {
+    "rank": 87,
+    "player": "PJ Washington",
+    "cat": "tov",
+    "ours": 1.5,
+    "ref_lo": 1.7,
+    "ref_hi": 1.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.269
+   },
+   {
+    "rank": 87,
+    "player": "PJ Washington",
+    "cat": "fg_pct",
+    "ours": 0.47,
+    "ref_lo": 0.448,
+    "ref_hi": 0.451,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.312
+   },
+   {
+    "rank": 87,
+    "player": "PJ Washington",
+    "cat": "ft_pct",
+    "ours": 0.75,
+    "ref_lo": 0.687,
+    "ref_hi": 0.703,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.419
+   },
+   {
+    "rank": 88,
+    "player": "Damian Lillard",
+    "cat": "fg_pct",
+    "ours": 0.42,
+    "ref_lo": 0.436,
+    "ref_hi": 0.44,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.313
+   },
+   {
+    "rank": 89,
+    "player": "Devin Vassell",
+    "cat": "pts",
+    "ours": 16.8,
+    "ref_lo": 13.4,
+    "ref_hi": 15.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.314
+   },
+   {
+    "rank": 89,
+    "player": "Devin Vassell",
+    "cat": "tov",
+    "ours": 1.5,
+    "ref_lo": 0.9,
+    "ref_hi": 1.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.403
+   },
+   {
+    "rank": 89,
+    "player": "Devin Vassell",
+    "cat": "fg_pct",
+    "ours": 0.465,
+    "ref_lo": 0.432,
+    "ref_hi": 0.44299999999999995,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.464
+   },
+   {
+    "rank": 90,
+    "player": "Daniel Gafford",
+    "cat": "pts",
+    "ours": 10.5,
+    "ref_lo": 9.1,
+    "ref_hi": 9.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.129
+   },
+   {
+    "rank": 90,
+    "player": "Daniel Gafford",
+    "cat": "reb",
+    "ours": 7.5,
+    "ref_lo": 5.8,
+    "ref_hi": 6.9,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.237
+   },
+   {
+    "rank": 90,
+    "player": "Daniel Gafford",
+    "cat": "ast",
+    "ours": 1.5,
+    "ref_lo": 1.1,
+    "ref_hi": 1.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 90,
+    "player": "Daniel Gafford",
+    "cat": "blk",
+    "ours": 1.7,
+    "ref_lo": 1.2,
+    "ref_hi": 1.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.581
+   },
+   {
+    "rank": 90,
+    "player": "Daniel Gafford",
+    "cat": "fg_pct",
+    "ours": 0.7,
+    "ref_lo": 0.648,
+    "ref_hi": 0.689,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.112
+   },
+   {
+    "rank": 90,
+    "player": "Daniel Gafford",
+    "cat": "ft_pct",
+    "ours": 0.7,
+    "ref_lo": 0.671,
+    "ref_hi": 0.687,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.107
+   },
+   {
+    "rank": 91,
+    "player": "Immanuel Quickley",
+    "cat": "reb",
+    "ours": 3.6,
+    "ref_lo": 3.9,
+    "ref_hi": 4.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.118
+   },
+   {
+    "rank": 91,
+    "player": "Immanuel Quickley",
+    "cat": "tov",
+    "ours": 2.1,
+    "ref_lo": 1.5,
+    "ref_hi": 1.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.672
+   },
+   {
+    "rank": 91,
+    "player": "Immanuel Quickley",
+    "cat": "fg_pct",
+    "ours": 0.425,
+    "ref_lo": 0.432,
+    "ref_hi": 0.443,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.151
+   },
+   {
+    "rank": 91,
+    "player": "Immanuel Quickley",
+    "cat": "ft_pct",
+    "ours": 0.87,
+    "ref_lo": 0.821,
+    "ref_hi": 0.841,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.309
+   },
+   {
+    "rank": 92,
+    "player": "Aaron Gordon",
+    "cat": "ast",
+    "ours": 3.3,
+    "ref_lo": 2.7,
+    "ref_hi": 3.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.103
+   },
+   {
+    "rank": 92,
+    "player": "Aaron Gordon",
+    "cat": "tov",
+    "ours": 1.5,
+    "ref_lo": 1.1,
+    "ref_hi": 1.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 92,
+    "player": "Aaron Gordon",
+    "cat": "fg_pct",
+    "ours": 0.535,
+    "ref_lo": 0.497,
+    "ref_hi": 0.518,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.279
+   },
+   {
+    "rank": 92,
+    "player": "Aaron Gordon",
+    "cat": "ft_pct",
+    "ours": 0.815,
+    "ref_lo": 0.753,
+    "ref_hi": 0.789,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.312
+   },
+   {
+    "rank": 94,
+    "player": "Kon Knueppel",
+    "cat": "pts",
+    "ours": 16.5,
+    "ref_lo": 18.5,
+    "ref_hi": 20.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.369
+   },
+   {
+    "rank": 94,
+    "player": "Kon Knueppel",
+    "cat": "reb",
+    "ours": 4.2,
+    "ref_lo": 5.0,
+    "ref_hi": 5.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.316
+   },
+   {
+    "rank": 94,
+    "player": "Kon Knueppel",
+    "cat": "tpm",
+    "ours": 2.6,
+    "ref_lo": 3.4,
+    "ref_hi": 3.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.852
+   },
+   {
+    "rank": 94,
+    "player": "Kon Knueppel",
+    "cat": "tov",
+    "ours": 1.7,
+    "ref_lo": 1.9,
+    "ref_hi": 2.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.269
+   },
+   {
+    "rank": 94,
+    "player": "Kon Knueppel",
+    "cat": "fg_pct",
+    "ours": 0.455,
+    "ref_lo": 0.471,
+    "ref_hi": 0.476,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.32
+   },
+   {
+    "rank": 94,
+    "player": "Kon Knueppel",
+    "cat": "ft_pct",
+    "ours": 0.855,
+    "ref_lo": 0.863,
+    "ref_hi": 0.87,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.08
+   },
+   {
+    "rank": 95,
+    "player": "Saddiq Bey",
+    "cat": "blk",
+    "ours": 0.4,
+    "ref_lo": 0.1,
+    "ref_hi": 0.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.581
+   },
+   {
+    "rank": 95,
+    "player": "Saddiq Bey",
+    "cat": "tpm",
+    "ours": 2.4,
+    "ref_lo": 1.8,
+    "ref_hi": 2.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 95,
+    "player": "Saddiq Bey",
+    "cat": "tov",
+    "ours": 1.5,
+    "ref_lo": 0.8,
+    "ref_hi": 0.9,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.807
+   },
+   {
+    "rank": 96,
+    "player": "VJ Edgecombe",
+    "cat": "pts",
+    "ours": 17.0,
+    "ref_lo": 13.1,
+    "ref_hi": 16.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.185
+   },
+   {
+    "rank": 96,
+    "player": "VJ Edgecombe",
+    "cat": "reb",
+    "ours": 4.6,
+    "ref_lo": 5.6,
+    "ref_hi": 6.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.395
+   },
+   {
+    "rank": 96,
+    "player": "VJ Edgecombe",
+    "cat": "fg_pct",
+    "ours": 0.445,
+    "ref_lo": 0.437,
+    "ref_hi": 0.438,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.151
+   },
+   {
+    "rank": 96,
+    "player": "VJ Edgecombe",
+    "cat": "ft_pct",
+    "ours": 0.785,
+    "ref_lo": 0.815,
+    "ref_hi": 0.818,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.371
+   },
+   {
+    "rank": 98,
+    "player": "Toumani Camara",
+    "cat": "reb",
+    "ours": 5.9,
+    "ref_lo": 5.1,
+    "ref_hi": 5.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.158
+   },
+   {
+    "rank": 98,
+    "player": "Toumani Camara",
+    "cat": "stl",
+    "ours": 1.5,
+    "ref_lo": 1.1,
+    "ref_hi": 1.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 98,
+    "player": "Toumani Camara",
+    "cat": "blk",
+    "ours": 0.7,
+    "ref_lo": 0.4,
+    "ref_hi": 0.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 98,
+    "player": "Toumani Camara",
+    "cat": "tpm",
+    "ours": 1.5,
+    "ref_lo": 2.2,
+    "ref_hi": 2.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.746
+   },
+   {
+    "rank": 98,
+    "player": "Toumani Camara",
+    "cat": "fg_pct",
+    "ours": 0.46,
+    "ref_lo": 0.44,
+    "ref_hi": 0.448,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.169
+   },
+   {
+    "rank": 99,
+    "player": "Andrew Wiggins",
+    "cat": "blk",
+    "ours": 0.6,
+    "ref_lo": 0.9,
+    "ref_hi": 1.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.581
+   },
+   {
+    "rank": 99,
+    "player": "Andrew Wiggins",
+    "cat": "ft_pct",
+    "ours": 0.76,
+    "ref_lo": 0.77,
+    "ref_hi": 0.784,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.124
+   },
+   {
+    "rank": 100,
+    "player": "Keegan Murray",
+    "cat": "blk",
+    "ours": 0.8,
+    "ref_lo": 1.0,
+    "ref_hi": 1.2,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.387
+   },
+   {
+    "rank": 100,
+    "player": "Keegan Murray",
+    "cat": "ft_pct",
+    "ours": 0.77,
+    "ref_lo": 0.805,
+    "ref_hi": 0.824,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.204
+   },
+   {
+    "rank": 101,
+    "player": "Ty Jerome",
+    "cat": "reb",
+    "ours": 2.8,
+    "ref_lo": 3.0,
+    "ref_hi": 3.5,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.079
+   },
+   {
+    "rank": 101,
+    "player": "Ty Jerome",
+    "cat": "stl",
+    "ours": 1.0,
+    "ref_lo": 1.3,
+    "ref_hi": 1.4,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.856
+   },
+   {
+    "rank": 101,
+    "player": "Ty Jerome",
+    "cat": "fg_pct",
+    "ours": 0.46,
+    "ref_lo": 0.479,
+    "ref_hi": 0.498,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.371
+   },
+   {
+    "rank": 102,
+    "player": "Paolo Banchero",
+    "cat": "pts",
+    "ours": 26.5,
+    "ref_lo": 22.2,
+    "ref_hi": 24.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.406
+   },
+   {
+    "rank": 102,
+    "player": "Paolo Banchero",
+    "cat": "tpm",
+    "ours": 1.9,
+    "ref_lo": 1.2,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.426
+   },
+   {
+    "rank": 102,
+    "player": "Paolo Banchero",
+    "cat": "ft_pct",
+    "ours": 0.735,
+    "ref_lo": 0.753,
+    "ref_hi": 0.775,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.445
+   },
+   {
+    "rank": 104,
+    "player": "Reed Sheppard",
+    "cat": "ast",
+    "ours": 3.9,
+    "ref_lo": 2.7,
+    "ref_hi": 3.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 104,
+    "player": "Reed Sheppard",
+    "cat": "blk",
+    "ours": 0.4,
+    "ref_lo": 0.6,
+    "ref_hi": 0.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.387
+   },
+   {
+    "rank": 104,
+    "player": "Reed Sheppard",
+    "cat": "ft_pct",
+    "ours": 0.86,
+    "ref_lo": 0.8,
+    "ref_hi": 0.804,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.404
+   },
+   {
+    "rank": 105,
+    "player": "Zion Williamson",
+    "cat": "pts",
+    "ours": 24.8,
+    "ref_lo": 21.0,
+    "ref_hi": 23.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.332
+   },
+   {
+    "rank": 105,
+    "player": "Zion Williamson",
+    "cat": "reb",
+    "ours": 7.3,
+    "ref_lo": 5.7,
+    "ref_hi": 6.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.434
+   },
+   {
+    "rank": 105,
+    "player": "Zion Williamson",
+    "cat": "ast",
+    "ours": 5.4,
+    "ref_lo": 3.2,
+    "ref_hi": 4.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.673
+   },
+   {
+    "rank": 105,
+    "player": "Zion Williamson",
+    "cat": "blk",
+    "ours": 0.9,
+    "ref_lo": 0.5,
+    "ref_hi": 0.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 105,
+    "player": "Zion Williamson",
+    "cat": "tov",
+    "ours": 3.3,
+    "ref_lo": 2.0,
+    "ref_hi": 2.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -1.21
+   },
+   {
+    "rank": 105,
+    "player": "Zion Williamson",
+    "cat": "fg_pct",
+    "ours": 0.565,
+    "ref_lo": 0.586,
+    "ref_hi": 0.606,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.532
+   },
+   {
+    "rank": 105,
+    "player": "Zion Williamson",
+    "cat": "ft_pct",
+    "ours": 0.66,
+    "ref_lo": 0.696,
+    "ref_hi": 0.716,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.853
+   },
+   {
+    "rank": 107,
+    "player": "Julius Randle",
+    "cat": "pts",
+    "ours": 22.5,
+    "ref_lo": 19.1,
+    "ref_hi": 21.1,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 107,
+    "player": "Julius Randle",
+    "cat": "reb",
+    "ours": 8.0,
+    "ref_lo": 6.3,
+    "ref_hi": 7.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.395
+   },
+   {
+    "rank": 107,
+    "player": "Julius Randle",
+    "cat": "ast",
+    "ours": 5.5,
+    "ref_lo": 4.6,
+    "ref_hi": 5.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 107,
+    "player": "Julius Randle",
+    "cat": "tov",
+    "ours": 3.2,
+    "ref_lo": 2.7,
+    "ref_hi": 2.8,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.538
+   },
+   {
+    "rank": 107,
+    "player": "Julius Randle",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.789,
+    "ref_hi": 0.802,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.201
+   },
+   {
+    "rank": 108,
+    "player": "Keyonte George",
+    "cat": "tpm",
+    "ours": 2.9,
+    "ref_lo": 2.0,
+    "ref_hi": 2.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 108,
+    "player": "Keyonte George",
+    "cat": "ft_pct",
+    "ours": 0.83,
+    "ref_lo": 0.86,
+    "ref_hi": 0.892,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.463
+   },
+   {
+    "rank": 109,
+    "player": "Ausar Thompson",
+    "cat": "ast",
+    "ours": 2.6,
+    "ref_lo": 3.0,
+    "ref_hi": 3.3,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.207
+   },
+   {
+    "rank": 109,
+    "player": "Ausar Thompson",
+    "cat": "stl",
+    "ours": 1.7,
+    "ref_lo": 2.0,
+    "ref_hi": 2.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.856
+   },
+   {
+    "rank": 109,
+    "player": "Ausar Thompson",
+    "cat": "fg_pct",
+    "ours": 0.54,
+    "ref_lo": 0.522,
+    "ref_hi": 0.529,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 109,
+    "player": "Ausar Thompson",
+    "cat": "ft_pct",
+    "ours": 0.66,
+    "ref_lo": 0.571,
+    "ref_hi": 0.602,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.557
+   },
+   {
+    "rank": 110,
+    "player": "Alex Sarr",
+    "cat": "fg_pct",
+    "ours": 0.43,
+    "ref_lo": 0.451,
+    "ref_hi": 0.485,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.41
+   },
+   {
+    "rank": 113,
+    "player": "Jerami Grant",
+    "cat": "reb",
+    "ours": 4.5,
+    "ref_lo": 2.7,
+    "ref_hi": 3.5,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.395
+   },
+   {
+    "rank": 113,
+    "player": "Jerami Grant",
+    "cat": "ast",
+    "ours": 2.5,
+    "ref_lo": 1.8,
+    "ref_hi": 2.2,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 113,
+    "player": "Jerami Grant",
+    "cat": "ft_pct",
+    "ours": 0.83,
+    "ref_lo": 0.814,
+    "ref_hi": 0.823,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.108
+   },
+   {
+    "rank": 114,
+    "player": "John Collins",
+    "cat": "ast",
+    "ours": 2.0,
+    "ref_lo": 1.0,
+    "ref_hi": 1.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.31
+   },
+   {
+    "rank": 114,
+    "player": "John Collins",
+    "cat": "stl",
+    "ours": 0.7,
+    "ref_lo": 0.9,
+    "ref_hi": 1.0,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.571
+   },
+   {
+    "rank": 114,
+    "player": "John Collins",
+    "cat": "fg_pct",
+    "ours": 0.5,
+    "ref_lo": 0.541,
+    "ref_hi": 0.552,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.673
+   },
+   {
+    "rank": 115,
+    "player": "Draymond Green",
+    "cat": "stl",
+    "ours": 1.4,
+    "ref_lo": 0.9,
+    "ref_hi": 1.2,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 115,
+    "player": "Draymond Green",
+    "cat": "fg_pct",
+    "ours": 0.44,
+    "ref_lo": 0.418,
+    "ref_hi": 0.43,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.122
+   },
+   {
+    "rank": 116,
+    "player": "CJ McCollum",
+    "cat": "stl",
+    "ours": 1.0,
+    "ref_lo": 0.8,
+    "ref_hi": 0.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 116,
+    "player": "CJ McCollum",
+    "cat": "ft_pct",
+    "ours": 0.785,
+    "ref_lo": 0.749,
+    "ref_hi": 0.772,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.098
+   },
+   {
+    "rank": 117,
+    "player": "Brandon Ingram",
+    "cat": "fg_pct",
+    "ours": 0.465,
+    "ref_lo": 0.474,
+    "ref_hi": 0.478,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.211
+   },
+   {
+    "rank": 118,
+    "player": "Aaron Nesmith",
+    "cat": "tpm",
+    "ours": 1.9,
+    "ref_lo": 2.1,
+    "ref_hi": 2.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.213
+   },
+   {
+    "rank": 118,
+    "player": "Aaron Nesmith",
+    "cat": "fg_pct",
+    "ours": 0.48,
+    "ref_lo": 0.414,
+    "ref_hi": 0.456,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.356
+   },
+   {
+    "rank": 119,
+    "player": "Miles Bridges",
+    "cat": "ast",
+    "ours": 3.0,
+    "ref_lo": 3.2,
+    "ref_hi": 3.4,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.103
+   },
+   {
+    "rank": 120,
+    "player": "Caleb Wilson",
+    "cat": "blk",
+    "ours": 1.4,
+    "ref_lo": 1.0,
+    "ref_hi": 1.1,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.581
+   },
+   {
+    "rank": 120,
+    "player": "Caleb Wilson",
+    "cat": "tpm",
+    "ours": 0.6,
+    "ref_lo": 1.0,
+    "ref_hi": 1.5,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.426
+   },
+   {
+    "rank": 120,
+    "player": "Caleb Wilson",
+    "cat": "ft_pct",
+    "ours": 0.7,
+    "ref_lo": 0.72,
+    "ref_hi": 0.728,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.261
+   },
+   {
+    "rank": 121,
+    "player": "Nikola Vucevic",
+    "cat": "fg_pct",
+    "ours": 0.53,
+    "ref_lo": 0.493,
+    "ref_hi": 0.504,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.427
+   },
+   {
+    "rank": 121,
+    "player": "Nikola Vucevic",
+    "cat": "ft_pct",
+    "ours": 0.8,
+    "ref_lo": 0.815,
+    "ref_hi": 0.828,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.103
+   },
+   {
+    "rank": 123,
+    "player": "Kyle Filipowski",
+    "cat": "pts",
+    "ours": 15.0,
+    "ref_lo": 9.6,
+    "ref_hi": 11.4,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.665
+   },
+   {
+    "rank": 123,
+    "player": "Kyle Filipowski",
+    "cat": "reb",
+    "ours": 8.5,
+    "ref_lo": 6.0,
+    "ref_hi": 7.2,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.513
+   },
+   {
+    "rank": 123,
+    "player": "Kyle Filipowski",
+    "cat": "ast",
+    "ours": 2.8,
+    "ref_lo": 2.1,
+    "ref_hi": 2.6,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.103
+   },
+   {
+    "rank": 123,
+    "player": "Kyle Filipowski",
+    "cat": "stl",
+    "ours": 0.7,
+    "ref_lo": 0.8,
+    "ref_hi": 0.9,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.285
+   },
+   {
+    "rank": 123,
+    "player": "Kyle Filipowski",
+    "cat": "blk",
+    "ours": 0.7,
+    "ref_lo": 0.4,
+    "ref_hi": 0.5,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 123,
+    "player": "Kyle Filipowski",
+    "cat": "tpm",
+    "ours": 1.3,
+    "ref_lo": 0.9,
+    "ref_hi": 1.0,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 124,
+    "player": "Andrew Nembhard",
+    "cat": "blk",
+    "ours": 0.4,
+    "ref_lo": 0.1,
+    "ref_hi": 0.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 124,
+    "player": "Andrew Nembhard",
+    "cat": "fg_pct",
+    "ours": 0.47,
+    "ref_lo": 0.442,
+    "ref_hi": 0.455,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.258
+   },
+   {
+    "rank": 124,
+    "player": "Andrew Nembhard",
+    "cat": "ft_pct",
+    "ours": 0.8,
+    "ref_lo": 0.813,
+    "ref_hi": 0.825,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.107
+   },
+   {
+    "rank": 125,
+    "player": "Matas Buzelis",
+    "cat": "pts",
+    "ours": 14.5,
+    "ref_lo": 16.3,
+    "ref_hi": 18.6,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.332
+   },
+   {
+    "rank": 125,
+    "player": "Matas Buzelis",
+    "cat": "blk",
+    "ours": 1.1,
+    "ref_lo": 1.5,
+    "ref_hi": 1.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.774
+   },
+   {
+    "rank": 125,
+    "player": "Matas Buzelis",
+    "cat": "tpm",
+    "ours": 1.5,
+    "ref_lo": 2.2,
+    "ref_hi": 2.5,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.746
+   },
+   {
+    "rank": 125,
+    "player": "Matas Buzelis",
+    "cat": "tov",
+    "ours": 1.7,
+    "ref_lo": 2.1,
+    "ref_hi": 2.2,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.538
+   },
+   {
+    "rank": 125,
+    "player": "Matas Buzelis",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.786,
+    "ref_hi": 0.7959999999999999,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.058
+   },
+   {
+    "rank": 126,
+    "player": "Jalen Green",
+    "cat": "tpm",
+    "ours": 3.0,
+    "ref_lo": 2.2,
+    "ref_hi": 2.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.213
+   },
+   {
+    "rank": 126,
+    "player": "Jalen Green",
+    "cat": "fg_pct",
+    "ours": 0.43,
+    "ref_lo": 0.42,
+    "ref_hi": 0.423,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.195
+   },
+   {
+    "rank": 126,
+    "player": "Jalen Green",
+    "cat": "ft_pct",
+    "ours": 0.83,
+    "ref_lo": 0.747,
+    "ref_hi": 0.798,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.549
+   },
+   {
+    "rank": 127,
+    "player": "Jakob Poeltl",
+    "cat": "reb",
+    "ours": 9.0,
+    "ref_lo": 6.6,
+    "ref_hi": 8.2,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.316
+   },
+   {
+    "rank": 127,
+    "player": "Jakob Poeltl",
+    "cat": "fg_pct",
+    "ours": 0.61,
+    "ref_lo": 0.653,
+    "ref_hi": 0.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.571
+   },
+   {
+    "rank": 129,
+    "player": "Alex Caruso",
+    "cat": "pts",
+    "ours": 8.5,
+    "ref_lo": 6.2,
+    "ref_hi": 7.1,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 129,
+    "player": "Alex Caruso",
+    "cat": "ast",
+    "ours": 3.0,
+    "ref_lo": 2.0,
+    "ref_hi": 2.4,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.31
+   },
+   {
+    "rank": 129,
+    "player": "Alex Caruso",
+    "cat": "tov",
+    "ours": 1.1,
+    "ref_lo": 0.8,
+    "ref_hi": 0.9,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 129,
+    "player": "Alex Caruso",
+    "cat": "fg_pct",
+    "ours": 0.45,
+    "ref_lo": 0.423,
+    "ref_hi": 0.441,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.091
+   },
+   {
+    "rank": 129,
+    "player": "Alex Caruso",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.804,
+    "ref_hi": 0.814,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.124
+   },
+   {
+    "rank": 130,
+    "player": "Santi Aldama",
+    "cat": "ft_pct",
+    "ours": 0.75,
+    "ref_lo": 0.667,
+    "ref_hi": 0.677,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.451
+   },
+   {
+    "rank": 131,
+    "player": "Bilal Coulibaly",
+    "cat": "pts",
+    "ours": 13.5,
+    "ref_lo": 10.4,
+    "ref_hi": 11.7,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.332
+   },
+   {
+    "rank": 131,
+    "player": "Bilal Coulibaly",
+    "cat": "reb",
+    "ours": 5.2,
+    "ref_lo": 4.0,
+    "ref_hi": 4.3,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.355
+   },
+   {
+    "rank": 131,
+    "player": "Bilal Coulibaly",
+    "cat": "ast",
+    "ours": 3.8,
+    "ref_lo": 2.4,
+    "ref_hi": 2.6,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.621
+   },
+   {
+    "rank": 131,
+    "player": "Bilal Coulibaly",
+    "cat": "stl",
+    "ours": 1.5,
+    "ref_lo": 1.2,
+    "ref_hi": 1.3,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.571
+   },
+   {
+    "rank": 131,
+    "player": "Bilal Coulibaly",
+    "cat": "tov",
+    "ours": 2.1,
+    "ref_lo": 1.4,
+    "ref_hi": 1.6,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.672
+   },
+   {
+    "rank": 131,
+    "player": "Bilal Coulibaly",
+    "cat": "ft_pct",
+    "ours": 0.72,
+    "ref_lo": 0.739,
+    "ref_hi": 0.746,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.183
+   },
+   {
+    "rank": 132,
+    "player": "Scotty Pippen Jr.",
+    "cat": "reb",
+    "ours": 3.6,
+    "ref_lo": 2.8,
+    "ref_hi": 3.2,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.158
+   },
+   {
+    "rank": 132,
+    "player": "Scotty Pippen Jr.",
+    "cat": "ast",
+    "ours": 5.1,
+    "ref_lo": 4.2,
+    "ref_hi": 4.6,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 133,
+    "player": "Mitchell Robinson",
+    "cat": "pts",
+    "ours": 8.0,
+    "ref_lo": 5.6,
+    "ref_hi": 6.7,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.24
+   },
+   {
+    "rank": 133,
+    "player": "Mitchell Robinson",
+    "cat": "tov",
+    "ours": 1.0,
+    "ref_lo": 0.7,
+    "ref_hi": 0.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 133,
+    "player": "Mitchell Robinson",
+    "cat": "ft_pct",
+    "ours": 0.55,
+    "ref_lo": 0.408,
+    "ref_hi": 0.474,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.522
+   },
+   {
+    "rank": 134,
+    "player": "Nic Claxton",
+    "cat": "pts",
+    "ours": 11.0,
+    "ref_lo": 11.7,
+    "ref_hi": 12.7,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.129
+   },
+   {
+    "rank": 134,
+    "player": "Nic Claxton",
+    "cat": "ast",
+    "ours": 2.4,
+    "ref_lo": 3.1,
+    "ref_hi": 3.7,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.362
+   },
+   {
+    "rank": 134,
+    "player": "Nic Claxton",
+    "cat": "tov",
+    "ours": 1.7,
+    "ref_lo": 1.4,
+    "ref_hi": 1.4,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.403
+   },
+   {
+    "rank": 134,
+    "player": "Nic Claxton",
+    "cat": "fg_pct",
+    "ours": 0.565,
+    "ref_lo": 0.571,
+    "ref_hi": 0.61,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.084
+   },
+   {
+    "rank": 135,
+    "player": "Peyton Watson",
+    "cat": "fg_pct",
+    "ours": 0.46,
+    "ref_lo": 0.474,
+    "ref_hi": 0.491,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.219
+   },
+   {
+    "rank": 135,
+    "player": "Peyton Watson",
+    "cat": "ft_pct",
+    "ours": 0.76,
+    "ref_lo": 0.717,
+    "ref_hi": 0.73,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.237
+   },
+   {
+    "rank": 136,
+    "player": "Jrue Holiday",
+    "cat": "reb",
+    "ours": 3.6,
+    "ref_lo": 4.0,
+    "ref_hi": 4.6,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.158
+   },
+   {
+    "rank": 136,
+    "player": "Jrue Holiday",
+    "cat": "blk",
+    "ours": 0.5,
+    "ref_lo": 0.1,
+    "ref_hi": 0.3,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.387
+   },
+   {
+    "rank": 136,
+    "player": "Jrue Holiday",
+    "cat": "fg_pct",
+    "ours": 0.44,
+    "ref_lo": 0.448,
+    "ref_hi": 0.455,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.119
+   },
+   {
+    "rank": 136,
+    "player": "Jrue Holiday",
+    "cat": "ft_pct",
+    "ours": 0.8,
+    "ref_lo": 0.838,
+    "ref_hi": 0.867,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.235
+   },
+   {
+    "rank": 137,
+    "player": "Wendell Carter Jr.",
+    "cat": "reb",
+    "ours": 8.5,
+    "ref_lo": 7.4,
+    "ref_hi": 7.8,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.276
+   },
+   {
+    "rank": 137,
+    "player": "Wendell Carter Jr.",
+    "cat": "ast",
+    "ours": 2.4,
+    "ref_lo": 2.0,
+    "ref_hi": 2.1,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 137,
+    "player": "Wendell Carter Jr.",
+    "cat": "stl",
+    "ours": 0.7,
+    "ref_lo": 0.8,
+    "ref_hi": 0.8,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.285
+   },
+   {
+    "rank": 137,
+    "player": "Wendell Carter Jr.",
+    "cat": "tov",
+    "ours": 1.6,
+    "ref_lo": 1.2,
+    "ref_hi": 1.3,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.403
+   },
+   {
+    "rank": 137,
+    "player": "Wendell Carter Jr.",
+    "cat": "fg_pct",
+    "ours": 0.525,
+    "ref_lo": 0.49,
+    "ref_hi": 0.512,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.183
+   },
+   {
+    "rank": 137,
+    "player": "Wendell Carter Jr.",
+    "cat": "ft_pct",
+    "ours": 0.74,
+    "ref_lo": 0.754,
+    "ref_hi": 0.792,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.125
+   },
+   {
+    "rank": 138,
+    "player": "Tobias Harris",
+    "cat": "reb",
+    "ours": 5.9,
+    "ref_lo": 4.5,
+    "ref_hi": 5.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.316
+   },
+   {
+    "rank": 138,
+    "player": "Tobias Harris",
+    "cat": "tov",
+    "ours": 1.2,
+    "ref_lo": 0.9,
+    "ref_hi": 1.0,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 138,
+    "player": "Tobias Harris",
+    "cat": "ft_pct",
+    "ours": 0.82,
+    "ref_lo": 0.863,
+    "ref_hi": 0.869,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.354
+   },
+   {
+    "rank": 140,
+    "player": "Darryn Peterson",
+    "cat": "pts",
+    "ours": 18.2,
+    "ref_lo": 14.3,
+    "ref_hi": 16.9,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.24
+   },
+   {
+    "rank": 140,
+    "player": "Darryn Peterson",
+    "cat": "tov",
+    "ours": 2.6,
+    "ref_lo": 1.8,
+    "ref_hi": 2.0,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.807
+   },
+   {
+    "rank": 142,
+    "player": "De'Anthony Melton",
+    "cat": "ast",
+    "ours": 3.2,
+    "ref_lo": 2.4,
+    "ref_hi": 2.8,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.207
+   },
+   {
+    "rank": 142,
+    "player": "De'Anthony Melton",
+    "cat": "ft_pct",
+    "ours": 0.78,
+    "ref_lo": 0.81,
+    "ref_hi": 0.826,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.165
+   },
+   {
+    "rank": 143,
+    "player": "Tre Jones",
+    "cat": "tpm",
+    "ours": 0.9,
+    "ref_lo": 0.5,
+    "ref_hi": 0.6,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.32
+   },
+   {
+    "rank": 143,
+    "player": "Tre Jones",
+    "cat": "fg_pct",
+    "ours": 0.475,
+    "ref_lo": 0.541,
+    "ref_hi": 0.553,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -1.032
+   },
+   {
+    "rank": 143,
+    "player": "Tre Jones",
+    "cat": "ft_pct",
+    "ours": 0.815,
+    "ref_lo": 0.837,
+    "ref_hi": 0.845,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.196
+   },
+   {
+    "rank": 144,
+    "player": "Al Horford",
+    "cat": "pts",
+    "ours": 9.5,
+    "ref_lo": 5.8,
+    "ref_hi": 8.3,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.222
+   },
+   {
+    "rank": 144,
+    "player": "Al Horford",
+    "cat": "reb",
+    "ours": 5.5,
+    "ref_lo": 3.8,
+    "ref_hi": 4.9,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.237
+   },
+   {
+    "rank": 144,
+    "player": "Al Horford",
+    "cat": "fg_pct",
+    "ours": 0.465,
+    "ref_lo": 0.426,
+    "ref_hi": 0.438,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": 0.317
+   },
+   {
+    "rank": 144,
+    "player": "Al Horford",
+    "cat": "ft_pct",
+    "ours": 0.8,
+    "ref_lo": 0.846,
+    "ref_hi": 0.867,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.158
+   },
+   {
+    "rank": 145,
+    "player": "Jared McCain",
+    "cat": "pts",
+    "ours": 16.0,
+    "ref_lo": 8.3,
+    "ref_hi": 14.6,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.259
+   },
+   {
+    "rank": 145,
+    "player": "Jared McCain",
+    "cat": "ast",
+    "ours": 3.5,
+    "ref_lo": 1.3,
+    "ref_hi": 2.4,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": 0.569
+   },
+   {
+    "rank": 145,
+    "player": "Jared McCain",
+    "cat": "tov",
+    "ours": 1.7,
+    "ref_lo": 0.8,
+    "ref_hi": 1.5,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 145,
+    "player": "Jared McCain",
+    "cat": "fg_pct",
+    "ours": 0.45,
+    "ref_lo": 0.425,
+    "ref_hi": 0.443,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.137
+   },
+   {
+    "rank": 146,
+    "player": "Dylan Harper",
+    "cat": "tov",
+    "ours": 2.5,
+    "ref_lo": 1.4,
+    "ref_hi": 2.1,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.538
+   },
+   {
+    "rank": 146,
+    "player": "Dylan Harper",
+    "cat": "fg_pct",
+    "ours": 0.455,
+    "ref_lo": 0.504,
+    "ref_hi": 0.508,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.958
+   },
+   {
+    "rank": 147,
+    "player": "Ayo Dosunmu",
+    "cat": "ast",
+    "ours": 4.0,
+    "ref_lo": 3.5,
+    "ref_hi": 3.7,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": 0.155
+   },
+   {
+    "rank": 147,
+    "player": "Ayo Dosunmu",
+    "cat": "tpm",
+    "ours": 1.3,
+    "ref_lo": 1.5,
+    "ref_hi": 1.8,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.213
+   },
+   {
+    "rank": 147,
+    "player": "Ayo Dosunmu",
+    "cat": "ft_pct",
+    "ours": 0.8,
+    "ref_lo": 0.844,
+    "ref_hi": 0.876,
+    "refs": 4,
+    "loose": true,
+    "z_beyond": -0.302
+   },
+   {
+    "rank": 148,
+    "player": "Brandin Podziemski",
+    "cat": "tov",
+    "ours": 1.8,
+    "ref_lo": 1.5,
+    "ref_hi": 1.6,
+    "refs": 4,
+    "loose": false,
+    "z_beyond": -0.269
+   },
+   {
+    "rank": 149,
+    "player": "Kelly Oubre Jr.",
+    "cat": "pts",
+    "ours": 15.0,
+    "ref_lo": 11.8,
+    "ref_hi": 14.1,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.166
+   },
+   {
+    "rank": 149,
+    "player": "Kelly Oubre Jr.",
+    "cat": "reb",
+    "ours": 5.5,
+    "ref_lo": 4.6,
+    "ref_hi": 5.0,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.197
+   },
+   {
+    "rank": 149,
+    "player": "Kelly Oubre Jr.",
+    "cat": "ast",
+    "ours": 1.8,
+    "ref_lo": 1.4,
+    "ref_hi": 1.6,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": 0.103
+   },
+   {
+    "rank": 149,
+    "player": "Kelly Oubre Jr.",
+    "cat": "tov",
+    "ours": 1.7,
+    "ref_lo": 1.1,
+    "ref_hi": 1.4,
+    "refs": 3,
+    "loose": true,
+    "z_beyond": -0.403
+   },
+   {
+    "rank": 149,
+    "player": "Kelly Oubre Jr.",
+    "cat": "fg_pct",
+    "ours": 0.45,
+    "ref_lo": 0.457,
+    "ref_hi": 0.468,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.131
+   },
+   {
+    "rank": 149,
+    "player": "Kelly Oubre Jr.",
+    "cat": "ft_pct",
+    "ours": 0.75,
+    "ref_lo": 0.757,
+    "ref_hi": 0.766,
+    "refs": 3,
+    "loose": false,
+    "z_beyond": -0.072
+   }
+  ]
+ }
+}
