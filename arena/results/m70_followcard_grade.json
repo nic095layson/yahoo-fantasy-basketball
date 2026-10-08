@@ -1,0 +1,1333 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 4 of 13 turns)": {
+  "ecw": 5.092,
+  "rank": 2,
+  "next": 5.144,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 7,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 20.68,
+  "playoff": 96.98,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.359,
+  "rank": 1,
+  "next": 5.148,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 7,
+   "REB": 3,
+   "AST": 7,
+   "ST": 1,
+   "BLK": 11,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 2,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 12,
+   "TO": 1
+  },
+  "champ": 30.77,
+  "playoff": 99.69,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Desmond Bane"
+   ],
+   [
+    63,
+    "Josh Hart"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Jamal Murray",
+   "Desmond Bane",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Josh Hart",
+   "Zach LaVine",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Cason Wallace",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #10: Karl-Anthony Towns for Giannis Antetokounmpo (card #16; Karl-Anthony Towns went #11)": {
+  "ecw": 5.127,
+  "rank": 2,
+  "next": 5.142,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 10,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 8,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 10,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 6,
+   "AST": 9,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 23.25,
+  "playoff": 98.27,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #15: Jalen Williams for Cooper Flagg (card #8; Jalen Williams went #25)": {
+  "ecw": 5.013,
+  "rank": 2,
+  "next": 5.227,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 9,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 11,
+   "AST": 6,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 18.31,
+  "playoff": 96.1,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Jalen Williams"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Jalen Williams",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #34: Dyson Daniels for Trae Young (card #16; Dyson Daniels went #44)": {
+  "ecw": 5.155,
+  "rank": 1,
+  "next": 5.154,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 7,
+   "REB": 3,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 23.76,
+  "playoff": 98.54,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Dyson Daniels"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #63: Jalen Suggs for Kon Knueppel (card #29; Jalen Suggs went #91)": {
+  "ecw": 5.141,
+  "rank": 2,
+  "next": 5.141,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 8
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 7,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 6
+  },
+  "champ": 22.5,
+  "playoff": 97.99,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Jalen Suggs"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #82: Jalen Suggs for Day'Ron Sharpe (card #6; Jalen Suggs went #91)": {
+  "ecw": 5.028,
+  "rank": 2,
+  "next": 5.135,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 10,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 3,
+   "REB": 11,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 10,
+   "FT%": 10,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 11,
+   "AST": 6,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 5
+  },
+  "champ": 20.31,
+  "playoff": 96.74,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Jalen Suggs"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Jalen Suggs",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #87: Jalen Suggs for Myles Turner (card #3; Jalen Suggs went #91)": {
+  "ecw": 5.021,
+  "rank": 2,
+  "next": 5.144,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 7,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 3,
+   "REB": 7,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 9
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 9,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 7
+  },
+  "champ": 19.9,
+  "playoff": 96.33,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Jalen Suggs"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Jalen Suggs",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #106: Sandro Mamukelashvili for Yaxel Lendeborg (card #3; Sandro Mamukelashvili went #135)": {
+  "ecw": 5.092,
+  "rank": 2,
+  "next": 5.144,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 7,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 20.68,
+  "playoff": 96.98,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Sandro Mamukelashvili",
+   "Ty Jerome",
+   "PJ Washington",
+   "Yaxel Lendeborg",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #111: Sandro Mamukelashvili for Ty Jerome (card #10; Sandro Mamukelashvili went #135)": {
+  "ecw": 5.092,
+  "rank": 2,
+  "next": 5.144,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 7,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 20.68,
+  "playoff": 96.98,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Ty Jerome",
+   "Saddiq Bey"
+  ]
+ },
+ "\ud83c\udfaf at #154: Daniel Gafford for Saddiq Bey (card #2; Daniel Gafford went #undrafted)": {
+  "ecw": 5.077,
+  "rank": 2,
+  "next": 5.151,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 12,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 7,
+   "ST": 6,
+   "BLK": 3,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 12,
+   "3PTM": 6,
+   "PTS": 9,
+   "REB": 6,
+   "AST": 7,
+   "ST": 7,
+   "BLK": 3,
+   "TO": 3
+  },
+  "champ": 19.92,
+  "playoff": 97.12,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Daniel Gafford"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford"
+  ]
+ },
+ "advice at #34: Payton Pritchard for Dyson Daniels (the 'now' man; Payton Pritchard went #58)": {
+  "ecw": 5.092,
+  "rank": 2,
+  "next": 5.144,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 1,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 7,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 20.68,
+  "playoff": 96.98,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Payton Pritchard"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Payton Pritchard",
+   "OG Anunoby",
+   "Trae Young",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "advice at #39: Onyeka Okongwu for OG Anunoby (the 'now' man; Onyeka Okongwu went #42)": {
+  "ecw": 5.096,
+  "rank": 2,
+  "next": 5.146,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 6,
+   "ST": 7,
+   "BLK": 5,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 4,
+   "AST": 6,
+   "ST": 7,
+   "BLK": 6,
+   "TO": 4
+  },
+  "champ": 20.19,
+  "playoff": 97.06,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Onyeka Okongwu"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "advice at #63: Rudy Gobert for Jalen Suggs (the 'now' man; Rudy Gobert went #69)": {
+  "ecw": 5.119,
+  "rank": 2,
+  "next": 5.155,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 2,
+   "FT%": 12,
+   "3PTM": 6,
+   "PTS": 5,
+   "REB": 1,
+   "AST": 7,
+   "ST": 4,
+   "BLK": 3,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 2,
+   "FT%": 12,
+   "3PTM": 7,
+   "PTS": 7,
+   "REB": 2,
+   "AST": 8,
+   "ST": 5,
+   "BLK": 4,
+   "TO": 4
+  },
+  "champ": 21.94,
+  "playoff": 97.79,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Rudy Gobert"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Rudy Gobert",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "advice at #82: Isaiah Hartenstein for Jalen Suggs (the 'now' man; Isaiah Hartenstein went #103)": {
+  "ecw": 5.144,
+  "rank": 1,
+  "next": 5.143,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 6,
+   "ST": 7,
+   "BLK": 6,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 6,
+   "AST": 7,
+   "ST": 7,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 21.81,
+  "playoff": 97.79,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Isaiah Hartenstein"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Isaiah Hartenstein",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "the 4 advice 'now' men together (#34 Pritchard, #39 Okongwu, #63 Gobert, #82 Hartenstein)": {
+  "ecw": 5.018,
+  "rank": 2,
+  "next": 5.169,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 1,
+   "FT%": 12,
+   "3PTM": 7,
+   "PTS": 6,
+   "REB": 1,
+   "AST": 6,
+   "ST": 9,
+   "BLK": 2,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 1,
+   "FT%": 12,
+   "3PTM": 8,
+   "PTS": 9,
+   "REB": 1,
+   "AST": 7,
+   "ST": 9,
+   "BLK": 2,
+   "TO": 2
+  },
+  "champ": 18.99,
+  "playoff": 96.78,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Payton Pritchard"
+   ],
+   [
+    39,
+    "Onyeka Okongwu"
+   ],
+   [
+    63,
+    "Rudy Gobert"
+   ],
+   [
+    82,
+    "Isaiah Hartenstein"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Payton Pritchard",
+   "Onyeka Okongwu",
+   "Trae Young",
+   "Rudy Gobert",
+   "Isaiah Hartenstein",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Karl-Anthony Towns at #10": {
+  "ecw": 5.127,
+  "rank": 2,
+  "next": 5.142,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 10,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 8,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 10,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 6,
+   "AST": 9,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 23.25,
+  "playoff": 98.27,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 5.166,
+  "rank": 1,
+  "next": 5.146,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 12,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 7,
+   "ST": 7,
+   "BLK": 2,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 12,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 6,
+   "AST": 9,
+   "ST": 7,
+   "BLK": 2,
+   "TO": 2
+  },
+  "champ": 22.72,
+  "playoff": 98.22,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Chet Holmgren",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Desmond Bane at #34": {
+  "ecw": 5.199,
+  "rank": 1,
+  "next": 5.132,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 9,
+   "ST": 4,
+   "BLK": 5,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 5,
+   "AST": 10,
+   "ST": 5,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 24.11,
+  "playoff": 98.56,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Desmond Bane"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Desmond Bane",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Franz Wagner at #39": {
+  "ecw": 5.103,
+  "rank": 2,
+  "next": 5.14,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 10,
+   "3PTM": 2,
+   "PTS": 3,
+   "REB": 5,
+   "AST": 4,
+   "ST": 5,
+   "BLK": 7,
+   "TO": 10
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 6,
+   "AST": 5,
+   "ST": 7,
+   "BLK": 7,
+   "TO": 8
+  },
+  "champ": 21.4,
+  "playoff": 97.1,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Franz Wagner"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "Franz Wagner",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Paolo Banchero at #63": {
+  "ecw": 5.182,
+  "rank": 1,
+  "next": 5.072,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 1,
+   "REB": 4,
+   "AST": 5,
+   "ST": 4,
+   "BLK": 4,
+   "TO": 9
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 2,
+   "REB": 5,
+   "AST": 6,
+   "ST": 4,
+   "BLK": 6,
+   "TO": 7
+  },
+  "champ": 24.33,
+  "playoff": 98.11,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Paolo Banchero"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Isaiah Hartenstein at #82": {
+  "ecw": 5.144,
+  "rank": 1,
+  "next": 5.143,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 6,
+   "ST": 7,
+   "BLK": 6,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 11,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 6,
+   "AST": 7,
+   "ST": 7,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 21.81,
+  "playoff": 97.79,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Isaiah Hartenstein"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Isaiah Hartenstein",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Isaiah Hartenstein at #87": {
+  "ecw": 5.093,
+  "rank": 2,
+  "next": 5.154,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 4,
+   "PTS": 4,
+   "REB": 2,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 7,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 5,
+   "PTS": 5,
+   "REB": 2,
+   "AST": 6,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 20.79,
+  "playoff": 96.94,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Isaiah Hartenstein"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Collin Gillespie at #111": {
+  "ecw": 5.128,
+  "rank": 2,
+  "next": 5.139,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 12,
+   "3PTM": 1,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 12,
+   "3PTM": 1,
+   "PTS": 6,
+   "REB": 6,
+   "AST": 7,
+   "ST": 4,
+   "BLK": 7,
+   "TO": 4
+  },
+  "champ": 22.31,
+  "playoff": 97.66,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Collin Gillespie"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Collin Gillespie",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Saddiq Bey"
+  ]
+ },
+ "hindsight single swap Kyle Filipowski at #154": {
+  "ecw": 5.104,
+  "rank": 2,
+  "next": 5.147,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 3,
+   "PTS": 4,
+   "REB": 4,
+   "AST": 6,
+   "ST": 5,
+   "BLK": 4,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 12,
+   "3PTM": 4,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 7,
+   "ST": 6,
+   "BLK": 6,
+   "TO": 4
+  },
+  "champ": 21.01,
+  "playoff": 97.17,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ],
+  "roster": [
+   "Giannis Antetokounmpo",
+   "Cooper Flagg",
+   "Trae Young",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Kon Knueppel",
+   "Day'Ron Sharpe",
+   "Myles Turner",
+   "Yaxel Lendeborg",
+   "Ty Jerome",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Kyle Filipowski"
+  ]
+ }
+}

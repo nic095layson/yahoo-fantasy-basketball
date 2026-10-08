@@ -1,0 +1,1688 @@
+{
+ "1": {
+  "manager": "Oblena",
+  "profile": {
+   "adp_w": 0.35,
+   "val_w": 0.65,
+   "noise": 9.0,
+   "streamer": true,
+   "loyal": {
+    "Donovan Mitchell": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 1,
+    "player": "Victor Wembanyama",
+    "mkt": 1.8,
+    "vrank": 1,
+    "pos": "C",
+    "mkt_minus_pick": 0.8,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 24,
+    "player": "Evan Mobley",
+    "mkt": 29.7,
+    "vrank": 19,
+    "pos": "PF,C",
+    "mkt_minus_pick": 5.699999999999999,
+    "vrank_minus_pick": -5
+   },
+   {
+    "pick": 25,
+    "player": "Domantas Sabonis",
+    "mkt": 27.3,
+    "vrank": 25,
+    "pos": "C,PF",
+    "mkt_minus_pick": 2.3000000000000007,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 48,
+    "player": "Cameron Boozer",
+    "mkt": 55.9,
+    "vrank": 48,
+    "pos": "PF",
+    "mkt_minus_pick": 7.899999999999999,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 49,
+    "player": "Dyson Daniels",
+    "mkt": 64.5,
+    "vrank": 11,
+    "pos": "SG,SF",
+    "mkt_minus_pick": 15.5,
+    "vrank_minus_pick": -38
+   },
+   {
+    "pick": 72,
+    "player": "Ja Morant",
+    "mkt": 90.0,
+    "vrank": 66,
+    "pos": "PG",
+    "mkt_minus_pick": 18.0,
+    "vrank_minus_pick": -6
+   },
+   {
+    "pick": 73,
+    "player": "Keyonte George",
+    "mkt": 54.1,
+    "vrank": 110,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -18.9,
+    "vrank_minus_pick": 37
+   },
+   {
+    "pick": 96,
+    "player": "Norman Powell",
+    "mkt": 92.8,
+    "vrank": 87,
+    "pos": "SG,SF",
+    "mkt_minus_pick": -3.200000000000003,
+    "vrank_minus_pick": -9
+   },
+   {
+    "pick": 97,
+    "player": "Andrew Wiggins",
+    "mkt": 98.7,
+    "vrank": 101,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": 1.7000000000000028,
+    "vrank_minus_pick": 4
+   },
+   {
+    "pick": 120,
+    "player": "Ty Jerome",
+    "mkt": 115.1,
+    "vrank": 103,
+    "pos": "SG,PG",
+    "mkt_minus_pick": -4.900000000000006,
+    "vrank_minus_pick": -17
+   },
+   {
+    "pick": 121,
+    "player": "Neemias Queta",
+    "mkt": 117.3,
+    "vrank": 162,
+    "pos": "C",
+    "mkt_minus_pick": -3.700000000000003,
+    "vrank_minus_pick": 41
+   },
+   {
+    "pick": 144,
+    "player": "Khaman Maluach",
+    "mkt": 118.8,
+    "vrank": 233,
+    "pos": "C",
+    "mkt_minus_pick": -25.200000000000003,
+    "vrank_minus_pick": 89
+   },
+   {
+    "pick": 145,
+    "player": "Wendell Carter Jr.",
+    "mkt": 119.0,
+    "vrank": 143,
+    "pos": "C",
+    "mkt_minus_pick": -26.0,
+    "vrank_minus_pick": -2
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Donovan Mitchell": 11
+  },
+  "loyal_hits": 0,
+  "guards": 6,
+  "centers": 6,
+  "mean_mkt_minus_pick": -2.3,
+  "mean_vrank_minus_pick": 7.2
+ },
+ "2": {
+  "manager": "Noah",
+  "profile": {
+   "adp_w": 0.75,
+   "val_w": 0.25,
+   "noise": 9.0,
+   "streamer": false,
+   "loyal": {
+    "LaMelo Ball": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 2,
+    "player": "Nikola Jokic",
+    "mkt": 1.6,
+    "vrank": 2,
+    "pos": "C",
+    "mkt_minus_pick": -0.3999999999999999,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 23,
+    "player": "LaMelo Ball",
+    "mkt": 26.5,
+    "vrank": 49,
+    "pos": "PG",
+    "mkt_minus_pick": 3.5,
+    "vrank_minus_pick": 26
+   },
+   {
+    "pick": 26,
+    "player": "Josh Giddey",
+    "mkt": 23.1,
+    "vrank": 32,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -2.8999999999999986,
+    "vrank_minus_pick": 6
+   },
+   {
+    "pick": 47,
+    "player": "Donovan Clingan",
+    "mkt": 42.4,
+    "vrank": 53,
+    "pos": "C",
+    "mkt_minus_pick": -4.600000000000001,
+    "vrank_minus_pick": 6
+   },
+   {
+    "pick": 50,
+    "player": "Alperen Sengun",
+    "mkt": 18.6,
+    "vrank": 70,
+    "pos": "C,PF",
+    "mkt_minus_pick": -31.4,
+    "vrank_minus_pick": 20
+   },
+   {
+    "pick": 71,
+    "player": "Brandon Ingram",
+    "mkt": 67.1,
+    "vrank": 120,
+    "pos": "SG,SF,PF",
+    "mkt_minus_pick": -3.9000000000000057,
+    "vrank_minus_pick": 49
+   },
+   {
+    "pick": 74,
+    "player": "Paolo Banchero",
+    "mkt": 35.3,
+    "vrank": 104,
+    "pos": "PF",
+    "mkt_minus_pick": -38.7,
+    "vrank_minus_pick": 30
+   },
+   {
+    "pick": 95,
+    "player": "AJ Dybantsa",
+    "mkt": 79.1,
+    "vrank": 145,
+    "pos": "SF",
+    "mkt_minus_pick": -15.900000000000006,
+    "vrank_minus_pick": 50
+   },
+   {
+    "pick": 98,
+    "player": "Derik Queen",
+    "mkt": 84.2,
+    "vrank": 163,
+    "pos": "C,PF",
+    "mkt_minus_pick": -13.799999999999997,
+    "vrank_minus_pick": 65
+   },
+   {
+    "pick": 119,
+    "player": "Mitchell Robinson",
+    "mkt": 107.5,
+    "vrank": 139,
+    "pos": "C",
+    "mkt_minus_pick": -11.5,
+    "vrank_minus_pick": 20
+   },
+   {
+    "pick": 122,
+    "player": "Brook Lopez",
+    "mkt": 108.8,
+    "vrank": 176,
+    "pos": "C",
+    "mkt_minus_pick": -13.200000000000003,
+    "vrank_minus_pick": 54
+   },
+   {
+    "pick": 143,
+    "player": "Deandre Ayton",
+    "mkt": 111.7,
+    "vrank": 166,
+    "pos": "C",
+    "mkt_minus_pick": -31.299999999999997,
+    "vrank_minus_pick": 23
+   },
+   {
+    "pick": 146,
+    "player": "Nikola Vucevic",
+    "mkt": 114.1,
+    "vrank": 126,
+    "pos": "C",
+    "mkt_minus_pick": -31.900000000000006,
+    "vrank_minus_pick": -20
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "LaMelo Ball": 2
+  },
+  "loyal_hits": 1,
+  "guards": 3,
+  "centers": 8,
+  "mean_mkt_minus_pick": -15.1,
+  "mean_vrank_minus_pick": 25.3
+ },
+ "3": {
+  "manager": "Will",
+  "profile": {
+   "adp_w": 0.55,
+   "val_w": 0.45,
+   "noise": 11.0,
+   "streamer": true,
+   "loyal": {
+    "Onyeka Okongwu": "10",
+    "Jaden Ivey": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 3,
+    "player": "Shai Gilgeous-Alexander",
+    "mkt": 4.0,
+    "vrank": 3,
+    "pos": "PG",
+    "mkt_minus_pick": 1.0,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 22,
+    "player": "Scottie Barnes",
+    "mkt": 14.8,
+    "vrank": 38,
+    "pos": "SF,PF,C",
+    "mkt_minus_pick": -7.199999999999999,
+    "vrank_minus_pick": 16
+   },
+   {
+    "pick": 27,
+    "player": "Amen Thompson",
+    "mkt": 23.3,
+    "vrank": 30,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -3.6999999999999993,
+    "vrank_minus_pick": 3
+   },
+   {
+    "pick": 46,
+    "player": "Lauri Markkanen",
+    "mkt": 37.2,
+    "vrank": 52,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -8.799999999999997,
+    "vrank_minus_pick": 6
+   },
+   {
+    "pick": 51,
+    "player": "Pascal Siakam",
+    "mkt": 50.0,
+    "vrank": 65,
+    "pos": "PF,C",
+    "mkt_minus_pick": -1.0,
+    "vrank_minus_pick": 14
+   },
+   {
+    "pick": 70,
+    "player": "Coby White",
+    "mkt": 88.6,
+    "vrank": 58,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 18.599999999999994,
+    "vrank_minus_pick": -12
+   },
+   {
+    "pick": 75,
+    "player": "Stephon Castle",
+    "mkt": 53.8,
+    "vrank": 179,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -21.200000000000003,
+    "vrank_minus_pick": 104
+   },
+   {
+    "pick": 94,
+    "player": "Jaden McDaniels",
+    "mkt": 91.3,
+    "vrank": 85,
+    "pos": "SF",
+    "mkt_minus_pick": -2.700000000000003,
+    "vrank_minus_pick": -9
+   },
+   {
+    "pick": 99,
+    "player": "Jabari Smith Jr.",
+    "mkt": 93.8,
+    "vrank": 105,
+    "pos": "PF,C",
+    "mkt_minus_pick": -5.200000000000003,
+    "vrank_minus_pick": 6
+   },
+   {
+    "pick": 118,
+    "player": "John Collins",
+    "mkt": 116.1,
+    "vrank": 117,
+    "pos": "PF,C",
+    "mkt_minus_pick": -1.9000000000000057,
+    "vrank_minus_pick": -1
+   },
+   {
+    "pick": 123,
+    "player": "Jaime Jaquez Jr.",
+    "mkt": 111.5,
+    "vrank": 222,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": -11.5,
+    "vrank_minus_pick": 99
+   },
+   {
+    "pick": 142,
+    "player": "Tre Jones",
+    "mkt": 116.6,
+    "vrank": 150,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -25.400000000000006,
+    "vrank_minus_pick": 8
+   },
+   {
+    "pick": 147,
+    "player": "Bennedict Mathurin",
+    "mkt": 115.8,
+    "vrank": 258,
+    "pos": "SG,SF",
+    "mkt_minus_pick": -31.200000000000003,
+    "vrank_minus_pick": 111
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Onyeka Okongwu": 10,
+   "Jaden Ivey": null
+  },
+  "loyal_hits": 0,
+  "guards": 7,
+  "centers": 4,
+  "mean_mkt_minus_pick": -7.7,
+  "mean_vrank_minus_pick": 26.5
+ },
+ "4": {
+  "manager": "Robby",
+  "profile": {
+   "adp_w": 0.7,
+   "val_w": 0.3,
+   "noise": 8.0,
+   "streamer": false,
+   "loyal": {
+    "Jarrett Allen": "18",
+    "Collin Sexton": "18",
+    "Devin Booker": "10",
+    "Devin Vassell": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 4,
+    "player": "Luka Doncic",
+    "mkt": 3.4,
+    "vrank": 4,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -0.6000000000000001,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 21,
+    "player": "Devin Booker",
+    "mkt": 25.4,
+    "vrank": 35,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 4.399999999999999,
+    "vrank_minus_pick": 14
+   },
+   {
+    "pick": 28,
+    "player": "Giannis Antetokounmpo",
+    "mkt": 6.8,
+    "vrank": 42,
+    "pos": "PF,C",
+    "mkt_minus_pick": -21.2,
+    "vrank_minus_pick": 14
+   },
+   {
+    "pick": 45,
+    "player": "Jarrett Allen",
+    "mkt": 69.0,
+    "vrank": 50,
+    "pos": "C",
+    "mkt_minus_pick": 24.0,
+    "vrank_minus_pick": 5
+   },
+   {
+    "pick": 52,
+    "player": "LeBron James",
+    "mkt": 36.8,
+    "vrank": 63,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -15.200000000000003,
+    "vrank_minus_pick": 11
+   },
+   {
+    "pick": 69,
+    "player": "Kon Knueppel",
+    "mkt": 47.5,
+    "vrank": 96,
+    "pos": "SF,SG",
+    "mkt_minus_pick": -21.5,
+    "vrank_minus_pick": 27
+   },
+   {
+    "pick": 76,
+    "player": "Matas Buzelis",
+    "mkt": 65.7,
+    "vrank": 130,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -10.299999999999997,
+    "vrank_minus_pick": 54
+   },
+   {
+    "pick": 93,
+    "player": "VJ Edgecombe",
+    "mkt": 74.5,
+    "vrank": 98,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -18.5,
+    "vrank_minus_pick": 5
+   },
+   {
+    "pick": 100,
+    "player": "Day'Ron Sharpe",
+    "mkt": 94.7,
+    "vrank": 78,
+    "pos": "C",
+    "mkt_minus_pick": -5.299999999999997,
+    "vrank_minus_pick": -22
+   },
+   {
+    "pick": 117,
+    "player": "Aaron Gordon",
+    "mkt": 111.6,
+    "vrank": 94,
+    "pos": "PF,C",
+    "mkt_minus_pick": -5.400000000000006,
+    "vrank_minus_pick": -23
+   },
+   {
+    "pick": 124,
+    "player": "RJ Barrett",
+    "mkt": 112.4,
+    "vrank": 202,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": -11.599999999999994,
+    "vrank_minus_pick": 78
+   },
+   {
+    "pick": 141,
+    "player": "Devin Vassell",
+    "mkt": 115.4,
+    "vrank": 91,
+    "pos": "SG,SF",
+    "mkt_minus_pick": -25.599999999999994,
+    "vrank_minus_pick": -50
+   },
+   {
+    "pick": 148,
+    "player": "Collin Sexton",
+    "mkt": 117.1,
+    "vrank": 178,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -30.900000000000006,
+    "vrank_minus_pick": 30
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Jarrett Allen": 4,
+   "Collin Sexton": 4,
+   "Devin Booker": 4,
+   "Devin Vassell": 4
+  },
+  "loyal_hits": 4,
+  "guards": 7,
+  "centers": 4,
+  "mean_mkt_minus_pick": -10.6,
+  "mean_vrank_minus_pick": 11
+ },
+ "5": {
+  "manager": "Kyle",
+  "profile": {
+   "adp_w": 0.45,
+   "val_w": 0.55,
+   "noise": 9.0,
+   "streamer": false,
+   "loyal": {},
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 5,
+    "player": "Anthony Edwards",
+    "mkt": 7.7,
+    "vrank": 8,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 2.7,
+    "vrank_minus_pick": 3
+   },
+   {
+    "pick": 20,
+    "player": "Jalen Williams",
+    "mkt": 40.4,
+    "vrank": 16,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 20.4,
+    "vrank_minus_pick": -4
+   },
+   {
+    "pick": 29,
+    "player": "Trey Murphy III",
+    "mkt": 38.2,
+    "vrank": 33,
+    "pos": "SG,SF",
+    "mkt_minus_pick": 9.200000000000003,
+    "vrank_minus_pick": 4
+   },
+   {
+    "pick": 44,
+    "player": "Kyrie Irving",
+    "mkt": 51.7,
+    "vrank": 15,
+    "pos": "PG",
+    "mkt_minus_pick": 7.700000000000003,
+    "vrank_minus_pick": -29
+   },
+   {
+    "pick": 53,
+    "player": "Darius Garland",
+    "mkt": 63.3,
+    "vrank": 41,
+    "pos": "PG",
+    "mkt_minus_pick": 10.299999999999997,
+    "vrank_minus_pick": -12
+   },
+   {
+    "pick": 68,
+    "player": "Kristaps Porzingis",
+    "mkt": 101.3,
+    "vrank": 39,
+    "pos": "C",
+    "mkt_minus_pick": 33.3,
+    "vrank_minus_pick": -29
+   },
+   {
+    "pick": 77,
+    "player": "Damian Lillard",
+    "mkt": 68.3,
+    "vrank": 90,
+    "pos": "PG",
+    "mkt_minus_pick": -8.700000000000003,
+    "vrank_minus_pick": 13
+   },
+   {
+    "pick": 92,
+    "player": "Caleb Wilson",
+    "mkt": 79.5,
+    "vrank": 123,
+    "pos": "PF",
+    "mkt_minus_pick": -12.5,
+    "vrank_minus_pick": 31
+   },
+   {
+    "pick": 101,
+    "player": "Miles Bridges",
+    "mkt": 98.8,
+    "vrank": 122,
+    "pos": "PF",
+    "mkt_minus_pick": -2.200000000000003,
+    "vrank_minus_pick": 21
+   },
+   {
+    "pick": 116,
+    "player": "Draymond Green",
+    "mkt": 107.4,
+    "vrank": 118,
+    "pos": "PF,C",
+    "mkt_minus_pick": -8.599999999999994,
+    "vrank_minus_pick": 2
+   },
+   {
+    "pick": 125,
+    "player": "Cameron Johnson",
+    "mkt": 112.5,
+    "vrank": 108,
+    "pos": "PF,SF",
+    "mkt_minus_pick": -12.5,
+    "vrank_minus_pick": -17
+   },
+   {
+    "pick": 140,
+    "player": "Bobby Portis",
+    "mkt": 110.6,
+    "vrank": 231,
+    "pos": "PF,C",
+    "mkt_minus_pick": -29.400000000000006,
+    "vrank_minus_pick": 91
+   },
+   {
+    "pick": 149,
+    "player": "Cason Wallace",
+    "mkt": 118.1,
+    "vrank": 75,
+    "pos": "PG,SF,SG",
+    "mkt_minus_pick": -30.900000000000006,
+    "vrank_minus_pick": -74
+   }
+  ],
+  "loyal_taken_by_seat": {},
+  "loyal_hits": 0,
+  "guards": 6,
+  "centers": 3,
+  "mean_mkt_minus_pick": -1.6,
+  "mean_vrank_minus_pick": 0
+ },
+ "6": {
+  "manager": "Martin",
+  "profile": {
+   "adp_w": 0.45,
+   "val_w": 0.55,
+   "noise": 10.0,
+   "streamer": true,
+   "loyal": {
+    "Luka Doncic": "10",
+    "Brandon Ingram": "10",
+    "Jalen Suggs": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 6,
+    "player": "Tyrese Maxey",
+    "mkt": 9.4,
+    "vrank": 9,
+    "pos": "PG",
+    "mkt_minus_pick": 3.4000000000000004,
+    "vrank_minus_pick": 3
+   },
+   {
+    "pick": 19,
+    "player": "Austin Reaves",
+    "mkt": 23.2,
+    "vrank": 26,
+    "pos": "PG,SF,SG",
+    "mkt_minus_pick": 4.199999999999999,
+    "vrank_minus_pick": 7
+   },
+   {
+    "pick": 30,
+    "player": "Jalen Brunson",
+    "mkt": 21.3,
+    "vrank": 40,
+    "pos": "PG",
+    "mkt_minus_pick": -8.7,
+    "vrank_minus_pick": 10
+   },
+   {
+    "pick": 43,
+    "player": "Brandon Miller",
+    "mkt": 45.2,
+    "vrank": 46,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 2.200000000000003,
+    "vrank_minus_pick": 3
+   },
+   {
+    "pick": 54,
+    "player": "Nickeil Alexander-Walker",
+    "mkt": 60.6,
+    "vrank": 54,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 6.600000000000001,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 67,
+    "player": "Naz Reid",
+    "mkt": 62.7,
+    "vrank": 81,
+    "pos": "PF,C",
+    "mkt_minus_pick": -4.299999999999997,
+    "vrank_minus_pick": 14
+   },
+   {
+    "pick": 78,
+    "player": "Alex Sarr",
+    "mkt": 71.2,
+    "vrank": 113,
+    "pos": "C",
+    "mkt_minus_pick": -6.799999999999997,
+    "vrank_minus_pick": 35
+   },
+   {
+    "pick": 91,
+    "player": "Cedric Coward",
+    "mkt": 87.3,
+    "vrank": 134,
+    "pos": "SG,SF",
+    "mkt_minus_pick": -3.700000000000003,
+    "vrank_minus_pick": 43
+   },
+   {
+    "pick": 102,
+    "player": "Myles Turner",
+    "mkt": 100.5,
+    "vrank": 88,
+    "pos": "C",
+    "mkt_minus_pick": -1.5,
+    "vrank_minus_pick": -14
+   },
+   {
+    "pick": 115,
+    "player": "Andrew Nembhard",
+    "mkt": 114.3,
+    "vrank": 129,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -0.7000000000000028,
+    "vrank_minus_pick": 14
+   },
+   {
+    "pick": 126,
+    "player": "Rui Hachimura",
+    "mkt": 117.9,
+    "vrank": 192,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -8.099999999999994,
+    "vrank_minus_pick": 66
+   },
+   {
+    "pick": 139,
+    "player": "Kelly Oubre Jr.",
+    "mkt": 111.3,
+    "vrank": 156,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -27.700000000000003,
+    "vrank_minus_pick": 17
+   },
+   {
+    "pick": 150,
+    "player": "Keegan Murray",
+    "mkt": 120.0,
+    "vrank": 102,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -30.0,
+    "vrank_minus_pick": -48
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Luka Doncic": 4,
+   "Brandon Ingram": 2,
+   "Jalen Suggs": 10
+  },
+  "loyal_hits": 0,
+  "guards": 6,
+  "centers": 3,
+  "mean_mkt_minus_pick": -5.8,
+  "mean_vrank_minus_pick": 11.5
+ },
+ "7": {
+  "manager": "John",
+  "profile": {
+   "adp_w": 0.5,
+   "val_w": 0.5,
+   "noise": 7.0,
+   "streamer": false,
+   "loyal": {
+    "Tyrese Maxey": "10",
+    "Jakob Poeltl": "10",
+    "Jeremy Sochan": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 7,
+    "player": "Cade Cunningham",
+    "mkt": 6.0,
+    "vrank": 12,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -1.0,
+    "vrank_minus_pick": 5
+   },
+   {
+    "pick": 18,
+    "player": "Chet Holmgren",
+    "mkt": 29.0,
+    "vrank": 10,
+    "pos": "PF,C",
+    "mkt_minus_pick": 11.0,
+    "vrank_minus_pick": -8
+   },
+   {
+    "pick": 31,
+    "player": "Kawhi Leonard",
+    "mkt": 32.8,
+    "vrank": 34,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": 1.7999999999999972,
+    "vrank_minus_pick": 3
+   },
+   {
+    "pick": 42,
+    "player": "Bam Adebayo",
+    "mkt": 27.9,
+    "vrank": 47,
+    "pos": "C,PF",
+    "mkt_minus_pick": -14.100000000000001,
+    "vrank_minus_pick": 5
+   },
+   {
+    "pick": 55,
+    "player": "Michael Porter Jr.",
+    "mkt": 60.6,
+    "vrank": 55,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 5.600000000000001,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 66,
+    "player": "Dejounte Murray",
+    "mkt": 68.9,
+    "vrank": 64,
+    "pos": "PG",
+    "mkt_minus_pick": 2.9000000000000057,
+    "vrank_minus_pick": -2
+   },
+   {
+    "pick": 79,
+    "player": "Julius Randle",
+    "mkt": 68.8,
+    "vrank": 109,
+    "pos": "PF",
+    "mkt_minus_pick": -10.200000000000003,
+    "vrank_minus_pick": 30
+   },
+   {
+    "pick": 90,
+    "player": "Dylan Harper",
+    "mkt": 82.4,
+    "vrank": 153,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -7.599999999999994,
+    "vrank_minus_pick": 63
+   },
+   {
+    "pick": 103,
+    "player": "Isaiah Hartenstein",
+    "mkt": 104.2,
+    "vrank": 77,
+    "pos": "C",
+    "mkt_minus_pick": 1.2000000000000028,
+    "vrank_minus_pick": -26
+   },
+   {
+    "pick": 114,
+    "player": "Peyton Watson",
+    "mkt": 114.9,
+    "vrank": 141,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 0.9000000000000057,
+    "vrank_minus_pick": 27
+   },
+   {
+    "pick": 127,
+    "player": "Jakob Poeltl",
+    "mkt": 121.8,
+    "vrank": 132,
+    "pos": "C",
+    "mkt_minus_pick": -5.200000000000003,
+    "vrank_minus_pick": 5
+   },
+   {
+    "pick": 138,
+    "player": "Aaron Nesmith",
+    "mkt": 111.6,
+    "vrank": 121,
+    "pos": "SG,SF",
+    "mkt_minus_pick": -26.400000000000006,
+    "vrank_minus_pick": -17
+   },
+   {
+    "pick": 151,
+    "player": "Kyshawn George",
+    "mkt": 119.7,
+    "vrank": 190,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": -31.299999999999997,
+    "vrank_minus_pick": 39
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Tyrese Maxey": 6,
+   "Jakob Poeltl": 7,
+   "Jeremy Sochan": null
+  },
+  "loyal_hits": 1,
+  "guards": 6,
+  "centers": 4,
+  "mean_mkt_minus_pick": -5.6,
+  "mean_vrank_minus_pick": 9.5
+ },
+ "8": {
+  "manager": "JCo",
+  "profile": {
+   "adp_w": 0.45,
+   "val_w": 0.55,
+   "noise": 8.0,
+   "streamer": false,
+   "loyal": {
+    "Tyrese Haliburton": "10",
+    "Jimmy Butler": "10",
+    "Nic Claxton": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 8,
+    "player": "Tyrese Haliburton",
+    "mkt": 14.2,
+    "vrank": 7,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 6.199999999999999,
+    "vrank_minus_pick": -1
+   },
+   {
+    "pick": 17,
+    "player": "Stephen Curry",
+    "mkt": 23.1,
+    "vrank": 17,
+    "pos": "PG",
+    "mkt_minus_pick": 6.100000000000001,
+    "vrank_minus_pick": 0
+   },
+   {
+    "pick": 32,
+    "player": "Anthony Davis",
+    "mkt": 42.7,
+    "vrank": 5,
+    "pos": "PF,C",
+    "mkt_minus_pick": 10.700000000000003,
+    "vrank_minus_pick": -27
+   },
+   {
+    "pick": 41,
+    "player": "Jaren Jackson Jr.",
+    "mkt": 48.9,
+    "vrank": 23,
+    "pos": "PF,C",
+    "mkt_minus_pick": 7.899999999999999,
+    "vrank_minus_pick": -18
+   },
+   {
+    "pick": 56,
+    "player": "Ivica Zubac",
+    "mkt": 63.3,
+    "vrank": 45,
+    "pos": "C",
+    "mkt_minus_pick": 7.299999999999997,
+    "vrank_minus_pick": -11
+   },
+   {
+    "pick": 65,
+    "player": "Deni Avdija",
+    "mkt": 40.8,
+    "vrank": 79,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": -24.200000000000003,
+    "vrank_minus_pick": 14
+   },
+   {
+    "pick": 80,
+    "player": "Kel'el Ware",
+    "mkt": 75.6,
+    "vrank": 82,
+    "pos": "C",
+    "mkt_minus_pick": -4.400000000000006,
+    "vrank_minus_pick": 2
+   },
+   {
+    "pick": 89,
+    "player": "Nic Claxton",
+    "mkt": 89.8,
+    "vrank": 140,
+    "pos": "C",
+    "mkt_minus_pick": 0.7999999999999972,
+    "vrank_minus_pick": 51
+   },
+   {
+    "pick": 104,
+    "player": "DeMar DeRozan",
+    "mkt": 107.4,
+    "vrank": 164,
+    "pos": "PF,SF",
+    "mkt_minus_pick": 3.4000000000000057,
+    "vrank_minus_pick": 60
+   },
+   {
+    "pick": 113,
+    "player": "Ayo Dosunmu",
+    "mkt": 113.0,
+    "vrank": 154,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 0.0,
+    "vrank_minus_pick": 41
+   },
+   {
+    "pick": 128,
+    "player": "Tobias Harris",
+    "mkt": 112.5,
+    "vrank": 144,
+    "pos": "PF",
+    "mkt_minus_pick": -15.5,
+    "vrank_minus_pick": 16
+   },
+   {
+    "pick": 137,
+    "player": "Moussa Diabate",
+    "mkt": 114.5,
+    "vrank": 172,
+    "pos": "C",
+    "mkt_minus_pick": -22.5,
+    "vrank_minus_pick": 35
+   },
+   {
+    "pick": 152,
+    "player": "Egor Demin",
+    "mkt": 118.9,
+    "vrank": 249,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -33.099999999999994,
+    "vrank_minus_pick": 97
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Tyrese Haliburton": 8,
+   "Jimmy Butler": null,
+   "Nic Claxton": 8
+  },
+  "loyal_hits": 2,
+  "guards": 5,
+  "centers": 6,
+  "mean_mkt_minus_pick": -4.4,
+  "mean_vrank_minus_pick": 19.9
+ },
+ "9": {
+  "manager": "Kevin",
+  "profile": {
+   "adp_w": 0.45,
+   "val_w": 0.55,
+   "noise": 10.0,
+   "streamer": false,
+   "loyal": {
+    "Pascal Siakam": "10"
+   },
+   "bias": {
+    "G": "1.25",
+    "C": "0.85"
+   }
+  },
+  "picks": [
+   {
+    "pick": 9,
+    "player": "Jalen Johnson",
+    "mkt": 11.9,
+    "vrank": 13,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 2.9000000000000004,
+    "vrank_minus_pick": 4
+   },
+   {
+    "pick": 16,
+    "player": "Jamal Murray",
+    "mkt": 20.8,
+    "vrank": 20,
+    "pos": "PG",
+    "mkt_minus_pick": 4.800000000000001,
+    "vrank_minus_pick": 4
+   },
+   {
+    "pick": 33,
+    "player": "Derrick White",
+    "mkt": 45.2,
+    "vrank": 24,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 12.200000000000003,
+    "vrank_minus_pick": -9
+   },
+   {
+    "pick": 40,
+    "player": "Trae Young",
+    "mkt": 25.2,
+    "vrank": 57,
+    "pos": "PG",
+    "mkt_minus_pick": -14.8,
+    "vrank_minus_pick": 17
+   },
+   {
+    "pick": 57,
+    "player": "Tyler Herro",
+    "mkt": 69.1,
+    "vrank": 43,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 12.099999999999994,
+    "vrank_minus_pick": -14
+   },
+   {
+    "pick": 64,
+    "player": "Rudy Gobert",
+    "mkt": 73.6,
+    "vrank": 80,
+    "pos": "C",
+    "mkt_minus_pick": 9.599999999999994,
+    "vrank_minus_pick": 16
+   },
+   {
+    "pick": 81,
+    "player": "Ryan Rollins",
+    "mkt": 76.4,
+    "vrank": 71,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -4.599999999999994,
+    "vrank_minus_pick": -10
+   },
+   {
+    "pick": 88,
+    "player": "Paul George",
+    "mkt": 80.5,
+    "vrank": 67,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -7.5,
+    "vrank_minus_pick": -21
+   },
+   {
+    "pick": 105,
+    "player": "Toumani Camara",
+    "mkt": 110.9,
+    "vrank": 100,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 5.900000000000006,
+    "vrank_minus_pick": -5
+   },
+   {
+    "pick": 112,
+    "player": "Collin Murray-Boyles",
+    "mkt": 114.7,
+    "vrank": 203,
+    "pos": "PF,C",
+    "mkt_minus_pick": 2.700000000000003,
+    "vrank_minus_pick": 91
+   },
+   {
+    "pick": 129,
+    "player": "Davion Mitchell",
+    "mkt": 117.6,
+    "vrank": 175,
+    "pos": "PG",
+    "mkt_minus_pick": -11.400000000000006,
+    "vrank_minus_pick": 46
+   },
+   {
+    "pick": 136,
+    "player": "Jrue Holiday",
+    "mkt": 115.5,
+    "vrank": 142,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -20.5,
+    "vrank_minus_pick": 6
+   },
+   {
+    "pick": 153,
+    "player": "Fred VanVleet",
+    "mkt": 117.6,
+    "vrank": 69,
+    "pos": "PG",
+    "mkt_minus_pick": -35.400000000000006,
+    "vrank_minus_pick": -84
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Pascal Siakam": 3
+  },
+  "loyal_hits": 0,
+  "guards": 8,
+  "centers": 2,
+  "mean_mkt_minus_pick": -3.4,
+  "mean_vrank_minus_pick": 3.2
+ },
+ "10": {
+  "manager": "David",
+  "profile": null,
+  "picks": [
+   {
+    "pick": 10,
+    "player": "Karl-Anthony Towns",
+    "mkt": 15.5,
+    "vrank": 6,
+    "pos": "C,PF",
+    "mkt_minus_pick": 5.5,
+    "vrank_minus_pick": -4
+   },
+   {
+    "pick": 15,
+    "player": "James Harden",
+    "mkt": 34.5,
+    "vrank": 31,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 19.5,
+    "vrank_minus_pick": 16
+   },
+   {
+    "pick": 34,
+    "player": "OG Anunoby",
+    "mkt": 67.7,
+    "vrank": 28,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 33.7,
+    "vrank_minus_pick": -6
+   },
+   {
+    "pick": 39,
+    "player": "Onyeka Okongwu",
+    "mkt": 54.9,
+    "vrank": 36,
+    "pos": "C",
+    "mkt_minus_pick": 15.899999999999999,
+    "vrank_minus_pick": -3
+   },
+   {
+    "pick": 58,
+    "player": "Payton Pritchard",
+    "mkt": 80.9,
+    "vrank": 37,
+    "pos": "PG",
+    "mkt_minus_pick": 22.900000000000006,
+    "vrank_minus_pick": -21
+   },
+   {
+    "pick": 63,
+    "player": "Jalen Suggs",
+    "mkt": 107.6,
+    "vrank": 60,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 44.599999999999994,
+    "vrank_minus_pick": -3
+   },
+   {
+    "pick": 82,
+    "player": "Mikal Bridges",
+    "mkt": 81.0,
+    "vrank": 62,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -1.0,
+    "vrank_minus_pick": -20
+   },
+   {
+    "pick": 87,
+    "player": "Josh Hart",
+    "mkt": 95.9,
+    "vrank": 68,
+    "pos": "SG,SF",
+    "mkt_minus_pick": 8.900000000000006,
+    "vrank_minus_pick": -19
+   },
+   {
+    "pick": 106,
+    "player": "Yaxel Lendeborg",
+    "mkt": 115.7,
+    "vrank": 84,
+    "pos": "PF",
+    "mkt_minus_pick": 9.700000000000003,
+    "vrank_minus_pick": -22
+   },
+   {
+    "pick": 111,
+    "player": "PJ Washington",
+    "mkt": 116.3,
+    "vrank": 89,
+    "pos": "PF,C",
+    "mkt_minus_pick": 5.299999999999997,
+    "vrank_minus_pick": -22
+   },
+   {
+    "pick": 130,
+    "player": "Sandro Mamukelashvili",
+    "mkt": 119.3,
+    "vrank": 83,
+    "pos": "PF,C",
+    "mkt_minus_pick": -10.700000000000003,
+    "vrank_minus_pick": -47
+   },
+   {
+    "pick": 135,
+    "player": "Daniel Gafford",
+    "mkt": 123.4,
+    "vrank": 92,
+    "pos": "C",
+    "mkt_minus_pick": -11.599999999999994,
+    "vrank_minus_pick": -43
+   },
+   {
+    "pick": 154,
+    "player": "Collin Gillespie",
+    "mkt": 122.8,
+    "vrank": 95,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -31.200000000000003,
+    "vrank_minus_pick": -59
+   }
+  ],
+  "loyal_taken_by_seat": {},
+  "loyal_hits": 0,
+  "guards": 5,
+  "centers": 5,
+  "mean_mkt_minus_pick": 8.6,
+  "mean_vrank_minus_pick": -19.5
+ },
+ "11": {
+  "manager": "Cayas",
+  "profile": {
+   "adp_w": 0.4,
+   "val_w": 0.6,
+   "noise": 12.0,
+   "streamer": true,
+   "loyal": {},
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 11,
+    "player": "Donovan Mitchell",
+    "mkt": 13.6,
+    "vrank": 14,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 2.5999999999999996,
+    "vrank_minus_pick": 3
+   },
+   {
+    "pick": 14,
+    "player": "Cooper Flagg",
+    "mkt": 10.4,
+    "vrank": 22,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": -3.5999999999999996,
+    "vrank_minus_pick": 8
+   },
+   {
+    "pick": 35,
+    "player": "Franz Wagner",
+    "mkt": 52.0,
+    "vrank": 29,
+    "pos": "SF,PF",
+    "mkt_minus_pick": 17.0,
+    "vrank_minus_pick": -6
+   },
+   {
+    "pick": 38,
+    "player": "Desmond Bane",
+    "mkt": 52.9,
+    "vrank": 27,
+    "pos": "SG,SF",
+    "mkt_minus_pick": 14.899999999999999,
+    "vrank_minus_pick": -11
+   },
+   {
+    "pick": 59,
+    "player": "Joel Embiid",
+    "mkt": 50.1,
+    "vrank": 72,
+    "pos": "C",
+    "mkt_minus_pick": -8.899999999999999,
+    "vrank_minus_pick": 13
+   },
+   {
+    "pick": 62,
+    "player": "Zach LaVine",
+    "mkt": 101.4,
+    "vrank": 56,
+    "pos": "PG,SF,SG",
+    "mkt_minus_pick": 39.400000000000006,
+    "vrank_minus_pick": -6
+   },
+   {
+    "pick": 83,
+    "player": "Zach Edey",
+    "mkt": 76.2,
+    "vrank": 86,
+    "pos": "C",
+    "mkt_minus_pick": -6.799999999999997,
+    "vrank_minus_pick": 3
+   },
+   {
+    "pick": 86,
+    "player": "Ausar Thompson",
+    "mkt": 83.7,
+    "vrank": 111,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": -2.299999999999997,
+    "vrank_minus_pick": 25
+   },
+   {
+    "pick": 107,
+    "player": "Jusuf Nurkic",
+    "mkt": 111.3,
+    "vrank": 173,
+    "pos": "C",
+    "mkt_minus_pick": 4.299999999999997,
+    "vrank_minus_pick": 66
+   },
+   {
+    "pick": 110,
+    "player": "CJ McCollum",
+    "mkt": 108.7,
+    "vrank": 119,
+    "pos": "PG,SG",
+    "mkt_minus_pick": -1.2999999999999972,
+    "vrank_minus_pick": 9
+   },
+   {
+    "pick": 131,
+    "player": "Brandin Podziemski",
+    "mkt": 117.6,
+    "vrank": 155,
+    "pos": "SG,PG",
+    "mkt_minus_pick": -13.400000000000006,
+    "vrank_minus_pick": 24
+   },
+   {
+    "pick": 134,
+    "player": "Jonathan Kuminga",
+    "mkt": 116.1,
+    "vrank": 296,
+    "pos": "PF,SF",
+    "mkt_minus_pick": -17.900000000000006,
+    "vrank_minus_pick": 162
+   },
+   {
+    "pick": 155,
+    "player": "Anthony Black",
+    "mkt": 119.1,
+    "vrank": 183,
+    "pos": "PG,SG,SF",
+    "mkt_minus_pick": -35.900000000000006,
+    "vrank_minus_pick": 28
+   }
+  ],
+  "loyal_taken_by_seat": {},
+  "loyal_hits": 0,
+  "guards": 8,
+  "centers": 3,
+  "mean_mkt_minus_pick": -0.9,
+  "mean_vrank_minus_pick": 24.5
+ },
+ "12": {
+  "manager": "Hegi",
+  "profile": {
+   "adp_w": 0.65,
+   "val_w": 0.35,
+   "noise": 14.0,
+   "streamer": false,
+   "loyal": {
+    "Immanuel Quickley": "10",
+    "Andrew Wiggins": "10"
+   },
+   "bias": {}
+  },
+  "picks": [
+   {
+    "pick": 12,
+    "player": "Jayson Tatum",
+    "mkt": 8.7,
+    "vrank": 21,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -3.3000000000000007,
+    "vrank_minus_pick": 9
+   },
+   {
+    "pick": 13,
+    "player": "Kevin Durant",
+    "mkt": 16.1,
+    "vrank": 18,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": 3.1000000000000014,
+    "vrank_minus_pick": 5
+   },
+   {
+    "pick": 36,
+    "player": "Jalen Duren",
+    "mkt": 36.3,
+    "vrank": 61,
+    "pos": "C",
+    "mkt_minus_pick": 0.29999999999999716,
+    "vrank_minus_pick": 25
+   },
+   {
+    "pick": 37,
+    "player": "Walker Kessler",
+    "mkt": 40.7,
+    "vrank": 44,
+    "pos": "C",
+    "mkt_minus_pick": 3.700000000000003,
+    "vrank_minus_pick": 7
+   },
+   {
+    "pick": 60,
+    "player": "Jaylen Brown",
+    "mkt": 29.3,
+    "vrank": 74,
+    "pos": "PF,SF,SG",
+    "mkt_minus_pick": -30.7,
+    "vrank_minus_pick": 14
+   },
+   {
+    "pick": 61,
+    "player": "De'Aaron Fox",
+    "mkt": 80.2,
+    "vrank": 51,
+    "pos": "PG",
+    "mkt_minus_pick": 19.200000000000003,
+    "vrank_minus_pick": -10
+   },
+   {
+    "pick": 84,
+    "player": "Zion Williamson",
+    "mkt": 67.9,
+    "vrank": 107,
+    "pos": "C,PF",
+    "mkt_minus_pick": -16.099999999999994,
+    "vrank_minus_pick": 23
+   },
+   {
+    "pick": 85,
+    "player": "Immanuel Quickley",
+    "mkt": 96.2,
+    "vrank": 93,
+    "pos": "PG,SG",
+    "mkt_minus_pick": 11.200000000000003,
+    "vrank_minus_pick": 8
+   },
+   {
+    "pick": 108,
+    "player": "Darryn Peterson",
+    "mkt": 103.2,
+    "vrank": 146,
+    "pos": "SG",
+    "mkt_minus_pick": -4.799999999999997,
+    "vrank_minus_pick": 38
+   },
+   {
+    "pick": 109,
+    "player": "Jalen Green",
+    "mkt": 102.2,
+    "vrank": 131,
+    "pos": "SF,SG",
+    "mkt_minus_pick": -6.799999999999997,
+    "vrank_minus_pick": 22
+   },
+   {
+    "pick": 132,
+    "player": "Darius Acuff Jr.",
+    "mkt": 109.6,
+    "vrank": 185,
+    "pos": "PG",
+    "mkt_minus_pick": -22.400000000000006,
+    "vrank_minus_pick": 53
+   },
+   {
+    "pick": 133,
+    "player": "Dillon Brooks",
+    "mkt": 113.7,
+    "vrank": 220,
+    "pos": "SF,PF",
+    "mkt_minus_pick": -19.299999999999997,
+    "vrank_minus_pick": 87
+   },
+   {
+    "pick": 156,
+    "player": "Isaiah Stewart",
+    "mkt": 113.3,
+    "vrank": 189,
+    "pos": "PF,C",
+    "mkt_minus_pick": -42.7,
+    "vrank_minus_pick": 33
+   }
+  ],
+  "loyal_taken_by_seat": {
+   "Immanuel Quickley": 12,
+   "Andrew Wiggins": 1
+  },
+  "loyal_hits": 1,
+  "guards": 7,
+  "centers": 4,
+  "mean_mkt_minus_pick": -8.4,
+  "mean_vrank_minus_pick": 24.2
+ }
+}

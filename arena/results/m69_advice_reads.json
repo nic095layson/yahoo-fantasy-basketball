@@ -1,0 +1,502 @@
+[
+ {
+  "pick": 10,
+  "actual": "Karl-Anthony Towns",
+  "page_top5": [
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Chet Holmgren"
+  ],
+  "page_surv": [
+   0.525,
+   0.985,
+   0.555,
+   0.982,
+   0.946
+  ],
+  "port_top5": [
+   "Karl-Anthony Towns",
+   "Anthony Davis",
+   "Kevin Durant",
+   "Jalen Williams",
+   "Chet Holmgren"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 15,
+  "actual": "James Harden",
+  "page_top5": [
+   "Jamal Murray",
+   "Jalen Williams",
+   "Derrick White",
+   "Austin Reaves",
+   "James Harden"
+  ],
+  "page_surv": [
+   0.049,
+   0.701,
+   0.796,
+   0.089,
+   0.519
+  ],
+  "port_top5": [
+   "Jamal Murray",
+   "Jalen Williams",
+   "Derrick White",
+   "Austin Reaves",
+   "James Harden"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 34,
+  "actual": "OG Anunoby",
+  "page_top5": [
+   "OG Anunoby",
+   "Desmond Bane",
+   "Franz Wagner",
+   "Dyson Daniels",
+   "Kyrie Irving"
+  ],
+  "page_surv": [
+   0.921,
+   0.809,
+   0.798,
+   0.906,
+   0.794
+  ],
+  "port_top5": [
+   "OG Anunoby",
+   "Desmond Bane",
+   "Franz Wagner",
+   "Dyson Daniels",
+   "Kyrie Irving"
+  ],
+  "port": {
+   "moved": true,
+   "idx": 1,
+   "gain": 0.01726102962545939,
+   "why": "Desmond Bane now, Franz Wagner next turn (80% to survive): +0.017 cats/wk over the pair"
+  },
+  "page": {
+   "idx": 1,
+   "moved": true,
+   "gain": 0.017290014274041088,
+   "why": "Desmond Bane now, Franz Wagner next turn (80% to survive): +0.017 cats/wk over the pair",
+   "next": {
+    "n": "Franz Wagner",
+    "s": 0.798,
+    "idx": 2
+   }
+  }
+ },
+ {
+  "pick": 39,
+  "actual": "Onyeka Okongwu",
+  "page_top5": [
+   "Onyeka Okongwu",
+   "Kyrie Irving",
+   "Tyler Herro",
+   "Payton Pritchard",
+   "Brandon Miller"
+  ],
+  "page_surv": [
+   0.425,
+   0.342,
+   0.704,
+   0.827,
+   0.173
+  ],
+  "port_top5": [
+   "Onyeka Okongwu",
+   "Kyrie Irving",
+   "Tyler Herro",
+   "Payton Pritchard",
+   "Dyson Daniels"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 58,
+  "actual": "Payton Pritchard",
+  "page_top5": [
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Mikal Bridges",
+   "Jalen Suggs",
+   "Coby White"
+  ],
+  "page_surv": [
+   0.77,
+   0.763,
+   0.771,
+   0.916,
+   0.832
+  ],
+  "port_top5": [
+   "Payton Pritchard",
+   "De'Aaron Fox",
+   "Mikal Bridges",
+   "Jalen Suggs",
+   "Zach LaVine"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 63,
+  "actual": "Jalen Suggs",
+  "page_top5": [
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Coby White",
+   "Ryan Rollins",
+   "Josh Hart"
+  ],
+  "page_surv": [
+   0.786,
+   0.484,
+   0.598,
+   0.403,
+   0.686
+  ],
+  "port_top5": [
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Coby White",
+   "Ryan Rollins",
+   "Josh Hart"
+  ],
+  "port": {
+   "moved": true,
+   "idx": 1,
+   "gain": 0.011992332441130404,
+   "why": "Mikal Bridges now, Josh Hart next turn (69% to survive): +0.012 cats/wk over the pair"
+  },
+  "page": {
+   "idx": 1,
+   "moved": true,
+   "gain": 0.012021296352612065,
+   "why": "Mikal Bridges now, Josh Hart next turn (69% to survive): +0.012 cats/wk over the pair",
+   "next": {
+    "n": "Josh Hart",
+    "s": 0.686,
+    "idx": 4
+   }
+  }
+ },
+ {
+  "pick": 82,
+  "actual": "Mikal Bridges",
+  "page_top5": [
+   "Mikal Bridges",
+   "Josh Hart",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Day'Ron Sharpe"
+  ],
+  "page_surv": [
+   0.402,
+   0.621,
+   0.709,
+   0.796,
+   0.607
+  ],
+  "port_top5": [
+   "Mikal Bridges",
+   "Josh Hart",
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Day'Ron Sharpe"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 87,
+  "actual": "Josh Hart",
+  "page_top5": [
+   "Josh Hart",
+   "Isaiah Hartenstein",
+   "Day'Ron Sharpe",
+   "Yaxel Lendeborg",
+   "PJ Washington"
+  ],
+  "page_surv": [
+   0.363,
+   0.477,
+   0.345,
+   0.61,
+   0.616
+  ],
+  "port_top5": [
+   "Josh Hart",
+   "Isaiah Hartenstein",
+   "Day'Ron Sharpe",
+   "Yaxel Lendeborg",
+   "PJ Washington"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.016985838852741075,
+   "why": "#1 survival 0.36 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.017051297914594477,
+   "why": "#1 survival 0.36 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 106,
+  "actual": "Yaxel Lendeborg",
+  "page_top5": [
+   "Yaxel Lendeborg",
+   "Daniel Gafford",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Herbert Jones"
+  ],
+  "page_surv": [
+   0.554,
+   0.631,
+   0.56,
+   0.592,
+   0.716
+  ],
+  "port_top5": [
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Daniel Gafford",
+   "Herbert Jones"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.010618758875490908,
+   "why": "#1 survival 0.55 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.010672410621521022,
+   "why": "#1 survival 0.55 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 111,
+  "actual": "PJ Washington",
+  "page_top5": [
+   "PJ Washington",
+   "Daniel Gafford",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Aaron Gordon"
+  ],
+  "page_surv": [
+   0.347,
+   0.429,
+   0.382,
+   0.54,
+   0.291
+  ],
+  "port_top5": [
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Herbert Jones",
+   "Aaron Gordon"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.026533782583038068,
+   "why": "#1 survival 0.35 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.026463559133530712,
+   "why": "#1 survival 0.35 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 130,
+  "actual": "Sandro Mamukelashvili",
+  "page_top5": [
+   "Sandro Mamukelashvili",
+   "Cason Wallace",
+   "Daniel Gafford",
+   "Herbert Jones",
+   "Devin Vassell"
+  ],
+  "page_surv": [
+   0.33,
+   0.317,
+   0.377,
+   0.49,
+   0.286
+  ],
+  "port_top5": [
+   "Sandro Mamukelashvili",
+   "Cason Wallace",
+   "Daniel Gafford",
+   "Herbert Jones",
+   "Fred VanVleet"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.022607460339389984,
+   "why": "#1 survival 0.33 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.0212592903593829,
+   "why": "#1 survival 0.33 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 135,
+  "actual": "Daniel Gafford",
+  "page_top5": [
+   "Daniel Gafford",
+   "Herbert Jones",
+   "Devin Vassell",
+   "Cason Wallace",
+   "Saddiq Bey"
+  ],
+  "page_surv": [
+   0.204,
+   0.309,
+   0.132,
+   0.155,
+   0.172
+  ],
+  "port_top5": [
+   "Herbert Jones",
+   "Daniel Gafford",
+   "Devin Vassell",
+   "Cason Wallace",
+   "Saddiq Bey"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.0619414069007036,
+   "why": "#1 survival 0.31 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 154,
+  "actual": "Collin Gillespie",
+  "page_top5": [
+   "Collin Gillespie",
+   "Herbert Jones",
+   "Saddiq Bey",
+   "Reed Sheppard",
+   "Christian Braun"
+  ],
+  "page_surv": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "port_top5": [
+   "Collin Gillespie",
+   "Herbert Jones",
+   "Saddiq Bey",
+   "Reed Sheppard",
+   "Christian Braun"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "no next turn / no room"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "why": "no next turn / no room"
+  }
+ }
+]

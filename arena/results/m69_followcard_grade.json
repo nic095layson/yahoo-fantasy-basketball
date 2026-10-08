@@ -1,0 +1,677 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 12 of 13 turns)": {
+  "ecw": 5.228,
+  "rank": 1,
+  "next": 5.058,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 2
+  },
+  "champ": 27.51,
+  "playoff": 99.37,
+  "champ_rank": 1,
+  "swaps": [],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.179,
+  "rank": 1,
+  "next": 5.077,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 11,
+   "REB": 6,
+   "AST": 12,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 1
+  },
+  "champ": 26.58,
+  "playoff": 99.22,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Jamal Murray",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "\ud83c\udfaf at #15: Jamal Murray for James Harden (card #5; Jamal Murray went #16)": {
+  "ecw": 5.179,
+  "rank": 1,
+  "next": 5.077,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 11,
+   "REB": 6,
+   "AST": 12,
+   "ST": 3,
+   "BLK": 6,
+   "TO": 1
+  },
+  "champ": 26.58,
+  "playoff": 99.22,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Jamal Murray",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "advice at #34: Desmond Bane for OG Anunoby (the 'now' man; Desmond Bane went #38)": {
+  "ecw": 5.284,
+  "rank": 1,
+  "next": 5.059,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 4,
+   "ST": 3,
+   "BLK": 5,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 6,
+   "ST": 5,
+   "BLK": 6,
+   "TO": 5
+  },
+  "champ": 29.73,
+  "playoff": 99.53,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Desmond Bane"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "Desmond Bane",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "advice at #63: Mikal Bridges for Jalen Suggs (the 'now' man; Mikal Bridges went #82)": {
+  "ecw": 5.228,
+  "rank": 1,
+  "next": 5.058,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 2
+  },
+  "champ": 27.51,
+  "playoff": 99.37,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Mikal Bridges"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Mikal Bridges",
+   "Jalen Suggs",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "the 2 advice 'now' men together (#34 Bane, #63 Bridges)": {
+  "ecw": 5.284,
+  "rank": 1,
+  "next": 5.059,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 4,
+   "ST": 3,
+   "BLK": 5,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 6,
+   "ST": 5,
+   "BLK": 6,
+   "TO": 5
+  },
+  "champ": 29.73,
+  "playoff": 99.53,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Desmond Bane"
+   ],
+   [
+    63,
+    "Mikal Bridges"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "Desmond Bane",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Mikal Bridges",
+   "Jalen Suggs",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #15": {
+  "ecw": 5.242,
+  "rank": 1,
+  "next": 5.063,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 12,
+   "ST": 4,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 12,
+   "REB": 5,
+   "AST": 12,
+   "ST": 6,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 30.66,
+  "playoff": 99.72,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Chet Holmgren",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "hindsight single swap Franz Wagner at #34": {
+  "ecw": 5.299,
+  "rank": 1,
+  "next": 5.056,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 4,
+   "ST": 3,
+   "BLK": 5,
+   "TO": 6
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 9,
+   "REB": 5,
+   "AST": 5,
+   "ST": 5,
+   "BLK": 6,
+   "TO": 5
+  },
+  "champ": 29.99,
+  "playoff": 99.53,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Franz Wagner"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "Franz Wagner",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "hindsight single swap Dyson Daniels at #39": {
+  "ecw": 5.238,
+  "rank": 1,
+  "next": 4.864,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 7,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 11,
+   "REB": 6,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 30.36,
+  "playoff": 99.39,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Dyson Daniels"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "OG Anunoby",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "hindsight single swap Paolo Banchero at #63": {
+  "ecw": 5.247,
+  "rank": 1,
+  "next": 5.055,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 8,
+   "ST": 6,
+   "BLK": 5,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 8,
+   "REB": 5,
+   "AST": 11,
+   "ST": 7,
+   "BLK": 6,
+   "TO": 3
+  },
+  "champ": 27.69,
+  "playoff": 99.23,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Paolo Banchero"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Paolo Banchero",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "hindsight single swap Draymond Green at #106": {
+  "ecw": 5.23,
+  "rank": 1,
+  "next": 5.064,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 12,
+   "REB": 6,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 5
+  },
+  "champ": 28.98,
+  "playoff": 99.42,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Draymond Green"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Draymond Green",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "hindsight single swap Draymond Green at #111": {
+  "ecw": 5.241,
+  "rank": 1,
+  "next": 5.063,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 5,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 12,
+   "REB": 6,
+   "AST": 6,
+   "ST": 2,
+   "BLK": 5,
+   "TO": 5
+  },
+  "champ": 28.88,
+  "playoff": 99.51,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Draymond Green"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "Draymond Green",
+   "Sandro Mamukelashvili",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ },
+ "hindsight single swap Cason Wallace at #130": {
+  "ecw": 5.24,
+  "rank": 1,
+  "next": 5.065,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 10,
+   "REB": 6,
+   "AST": 7,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 12,
+   "REB": 7,
+   "AST": 10,
+   "ST": 2,
+   "BLK": 6,
+   "TO": 2
+  },
+  "champ": 29.04,
+  "playoff": 99.49,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Cason Wallace"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "James Harden",
+   "OG Anunoby",
+   "Onyeka Okongwu",
+   "Payton Pritchard",
+   "Jalen Suggs",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Cason Wallace",
+   "Daniel Gafford",
+   "Collin Gillespie"
+  ]
+ }
+}

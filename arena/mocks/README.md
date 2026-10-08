@@ -503,6 +503,34 @@ is on the author. See LEDGER §3.
   Punt advisor (`m68_advisor.json`): watched assists from #58, advised from #63, clear path only at #135 (6/8); box left empty. Owner's punt-drought question answered from `punt_advice_effect_2026-10-08.json` (the D51R-3 harness re-run over 25 committed states, now taking an output path):
   old z-sum rule 58 proposals (9 on categories the roster was winning), room-relative rule 214 reads, clear path at 7 turns of 275. Owner's injured-rivals question: `injured_rivals_cf.py` (new) → `m68_injured_rivals.json` — rivals' Butler/Porziņģis/Ingram/Nurkić at 0 lift the owner's ECW 5.371 to 5.549.
   Debrief `debrief_2026-10-08_mock68_slot10.md`; kit report `after-report-2026-10-08-draft68.md`.
+- **Mock 69 (2026-10-08, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL seating, the first cast room on deck v50
+  (rev `9f54e99`, the version live at the standing URL; engine identical to v49; pool = that commit's data/players.csv, tag `v50` = `m68_players_v50.csv`), the veto live.
+  `live_retro.MOCKS[69]` = `dict(tags=("v50",), veto=True, room="cast")`; `PAGE_REV[69] = "9f54e99"`; no punt declared (`PUNT_TIMELINES[69] = [(0, [])]`).
+  State = the owner's exported draft state verbatim (uploaded as `draft_state_56.json`, the page's own export counter; 156 picks, every name a v50 pool row, snake-consistent,
+  `cast` = the real order; md5 `899ff83b23b415fee14e7c282096f029`; at most 36 of 156 picks shared with any earlier state); no recap and no tool log exist for a MOCK, so no DOM replay.
+  **The card's 🎯 taken at 12 of 13 turns** — off the card at #15 James Harden (card #5):
+  as drafted 27.51% (rank 1) / ECW 5.228 rank 1 (next 5.058), favored 10/11 (`m69_followcard_grade.json`, `m69_arms.json`;
+  the retro port's self-consistent follow-card chain grades 26.58%). Deck card replayed from the v50 page (`live_deckcard.py 69 rev:9f54e99:docs/draft-deck.html`
+  `arena/results/m69_deckcard_v50.json`). Hindsight's largest single swap: Franz Wagner at #34 (+0.071 cats/week).
+  **Advice line** (`m69_advice_reads.json`, page reading): fired at #34 (Desmond Bane now), #63 (Mikal Bridges now); the 'now' men as single swaps grade +2.22 / +0.00 title points, together +2.22; the pair rule replayed as the marker finished at 26.58% against the blend chain's 26.58% (seed set 1).
+  Late card (rounds 11–13): 0 unpriced rows. Survival pooled with the 51–68 deck cards (`m69_survival.json`: this room 48 rows, Brier 0.219, mean predicted 0.564 vs realized 0.625; BUY NOW 1 of 6 survived, TOSS-UP 5 of 8, quiet 24 of 34).
+  **Cast fidelity** (`m69_cast_fidelity.json`): loyalty fired on 9 of the 17 loyalty names drafted by anyone. Repeat-name audit (`m69_repeat_names_audit.json`): the #1 changes at
+  12 of 13 turns under other rooms' rosters (10 of 13 against an empty roster); Gafford on the Top-5 at 4 turn(s), Braun at 1, Poeltl at 0.
+  Debrief `debrief_2026-10-08_mock69_slot10.md`; kit report `after-report-2026-10-08-draft69.md`.
+- **Mock 70 (2026-10-08, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL seating, the second cast room on deck v50 the same evening
+  (rev `9f54e99`, the version live at the standing URL; engine identical to v49; pool = that commit's data/players.csv, tag `v50` = `m68_players_v50.csv`), the veto live.
+  `live_retro.MOCKS[70]` = `dict(tags=("v50",), veto=True, room="cast")`; `PAGE_REV[70] = "9f54e99"`; no punt declared (`PUNT_TIMELINES[70] = [(0, [])]`).
+  State = the owner's exported draft state, pasted into the chat as JSON and written back in the export's own format (156 picks, every name a v50 pool row, snake-consistent,
+  `cast` = the real order; md5 `e55be4f72a1f354c7ad42935f48a551d`; at most 42 of 156 picks shared with any earlier state); no recap and no tool log exist for a MOCK, so no DOM replay.
+  **The card's 🎯 taken at 4 of 13 turns** — off the card at #10 Giannis Antetokounmpo (card #16), #15 Cooper Flagg (card #8), #34 Trae Young (card #16), #63 Kon Knueppel (card #29), #82 Day'Ron Sharpe (card #6), #87 Myles Turner (card #3), #106 Yaxel Lendeborg (card #3), #111 Ty Jerome (card #10), #154 Saddiq Bey (card #2):
+  as drafted 20.68% (rank 2) / ECW 5.092 rank 2 (next 5.144), favored 10/11 (`m70_followcard_grade.json`, `m70_arms.json`;
+  the retro port's self-consistent follow-card chain grades 30.77%). Deck card replayed from the v50 page (`live_deckcard.py 70 rev:9f54e99:docs/draft-deck.html`
+  `arena/results/m70_deckcard_v50.json`). Hindsight's largest single swap: Desmond Bane at #34 (+0.107 cats/week).
+  **Advice line** (`m70_advice_reads.json`, page reading): fired at #34 (Payton Pritchard now), #39 (Onyeka Okongwu now), #63 (Rudy Gobert now), #82 (Isaiah Hartenstein now); the 'now' men as single swaps grade +0.00 / -0.49 / +1.26 / +1.13 title points, together -1.69; the pair rule replayed as the marker finished at 30.72% against the blend chain's 30.77% (seed set 1).
+  Late card (rounds 11–13): 0 unpriced rows. Survival pooled with the 51–68 deck cards (`m70_survival.json`: this room 54 rows, Brier 0.203, mean predicted 0.562 vs realized 0.630; BUY NOW 2 of 6 survived, TOSS-UP 7 of 11, quiet 25 of 37).
+  **Cast fidelity** (`m70_cast_fidelity.json`): loyalty fired on 12 of the 16 loyalty names drafted by anyone. Repeat-name audit (`m70_repeat_names_audit.json`): the #1 changes at
+  12 of 13 turns under other rooms' rosters (11 of 13 against an empty roster); Gafford on the Top-5 at 1 turn(s), Braun at 1, Poeltl at 0.
+  Debrief `debrief_2026-10-08_mock70_slot10.md`; kit report `after-report-2026-10-08-draft70.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
