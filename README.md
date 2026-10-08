@@ -106,6 +106,11 @@ Claude adds the judgment (build fit, injury flags, when to reach).
   of his line outside every outside projection; every refresh report carries its section and
   passes `--check-report` (the kit's `DATA-PULL.md`). The mocks are graded on the card's own
   lines, so this outside check is what stops the card repeating a wrong name draft after draft.
+- Range check on projection passes (D-RN-3, owner 2026-10-08): `python3 scripts/range_check.py` lists
+  every top-150 cell of the pool's lines outside ALL its references (the kit's newest Yahoo, Hashtag
+  and RotoBaller per-game lines and the player's own 2025-26 line); at WO-5 and the 10/14 lock each
+  one comes back inside the range or carries a mechanism naming two dated outlets, and
+  `--check-report` refuses the report otherwise (outlets counted with the kit's own lexicon).
 - History: this repo briefly contained a Yahoo Fantasy API OAuth client
   (see git history) — scrapped after Yahoo's developer portal refused to
   grant fantasy scope to new apps.

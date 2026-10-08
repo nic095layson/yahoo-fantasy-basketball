@@ -532,6 +532,80 @@ def main():
           must_have=["REPEAT-NAME CHECK: FAIL", "no 'Repeat-name market check' section"],
           want_exit=1, got_exit=rc)
 
+    # D-RN-3 (owner 2026-10-08): the per-category range check for projection passes (WO-5, the
+    # 10/14 lock). A top-150 line cell outside ALL of its references (three or more of: the
+    # kit's newest Yahoo projection, Hashtag and RotoBaller lines, and the player's own 2025-26
+    # line) is listed, and --check-report refuses a report unless every listed player has a row
+    # whose mechanism names two outlets (counted with the KIT's own outlet lexicon). Fixture:
+    # Jokic's FT% sits .05 under four agreeing references; Wembanyama's references equal his
+    # line; a third man has only two references and is not checked at all.
+    print("\n[D-RN-3] per-category range check")
+    import csv as _csv
+    repo_rc = fresh_copy()
+    kit_rc = os.path.join(os.path.dirname(repo_rc), "kit")
+    with open(os.path.join(repo_rc, "data", "players.csv"), encoding="utf-8") as f:
+        pool_rc = list(_csv.DictReader(f))
+    X_rc, Y_rc, Z_rc = pool_rc[0], pool_rc[1], pool_rc[2]
+    cats_rc = ["pts", "reb", "ast", "stl", "blk", "tpm", "tov", "fg_pct", "ft_pct"]
+
+    def line_rc(r, ft_shift=0.0):
+        d = {c: float(r[c]) for c in cats_rc}
+        d["ft_pct"] = round(d["ft_pct"] + ft_shift, 3)
+        return d
+
+    mk = os.path.join(kit_rc, "report", "market")
+    os.makedirs(mk, exist_ok=True)
+    rows_rc = [(X_rc, 0.05), (Y_rc, 0.0)]
+    for fname, rows_in in (("yahoo-proj-2026-10-06.csv", rows_rc + [(Z_rc, 0.2)]),
+                           ("hashtag-2026-10-06.csv", rows_rc + [(Z_rc, 0.2)]),
+                           ("rotoballer-2026-09-29.csv", rows_rc)):
+        with open(os.path.join(mk, fname), "w", encoding="utf-8", newline="") as f:
+            w = _csv.writer(f)
+            pre = "src_" if fname.startswith("rotoballer") else ""
+            w.writerow(["player"] + [pre + c for c in cats_rc])
+            for r, s in rows_in:
+                d = line_rc(r, s)
+                scale = 100.0 if pre else 1.0
+                w.writerow([r["player"]] + [round(d[c] * (scale if c.endswith("pct") else 1.0), 3) for c in cats_rc])
+    actual_rc = os.path.join(os.path.dirname(repo_rc), "actual.csv")
+    with open(actual_rc, "w", encoding="utf-8", newline="") as f:
+        w = _csv.writer(f)
+        w.writerow(["player", "gp"] + cats_rc)
+        for r, s in rows_rc:
+            d = line_rc(r, s)
+            w.writerow([r["player"], 70] + [d[c] for c in cats_rc])
+    # a stand-in for the kit's report/check_report.py: the range check must count outlets with
+    # the KIT's lexicon, so the fixture kit carries a two-name one
+    open(os.path.join(kit_rc, "report", "check_report.py"), "w").write(
+        "def outlet_count(text):\n    low = text.lower()\n    return sum(o in low for o in ('espn', 'yahoo'))\n")
+    out, rc = run(repo_rc, "scripts/range_check.py", "--kit", kit_rc, "--actual", actual_rc, kit=kit_rc)
+    check("RC: a cell outside all four references is listed; agreeing and under-3-reference rows are not",
+          out, must_have=["RANGE CHECK", X_rc["player"], f"ft_pct {float(X_rc['ft_pct']):.3f}".replace("0.", ".", 1), "1 player"],
+          must_not=[Y_rc["player"], Z_rc["player"]], want_exit=0, got_exit=rc)
+
+    def report_rc(name, body):
+        p = os.path.join(os.path.dirname(repo_rc), f"rc-{name}.md")
+        open(p, "w", encoding="utf-8").write("# WO-5 report\n\n" + body + "\n## Bounds\n\nnone\n")
+        return p
+
+    head_rc = "## Range check (D-RN-3)\n\n| player | cells | mechanism |\n|---|---|---|\n"
+    out, rc = run(repo_rc, "scripts/range_check.py", "--kit", kit_rc, "--actual", actual_rc, "--check-report",
+                  report_rc("ok", head_rc + f"| {X_rc['player']} | ft_pct | rate per ESPN 10/9 and Yahoo 10/10 |\n"), kit=kit_rc)
+    check("RC --check-report: a row with two outlets per listed player PASSES", out,
+          must_have=["RANGE CHECK: PASS"], want_exit=0, got_exit=rc)
+    out, rc = run(repo_rc, "scripts/range_check.py", "--kit", kit_rc, "--actual", actual_rc, "--check-report",
+                  report_rc("one", head_rc + f"| {X_rc['player']} | ft_pct | rate per ESPN 10/9 |\n"), kit=kit_rc)
+    check("RC --check-report: a row with one outlet FAILS and is named", out,
+          must_have=["RANGE CHECK: FAIL", X_rc["player"], "fewer than two outlets"], want_exit=1, got_exit=rc)
+    out, rc = run(repo_rc, "scripts/range_check.py", "--kit", kit_rc, "--actual", actual_rc, "--check-report",
+                  report_rc("missing", head_rc + f"\n{X_rc['player']} in prose only, ESPN and Yahoo.\n"), kit=kit_rc)
+    check("RC --check-report: a listed player without a row FAILS and is named", out,
+          must_have=["RANGE CHECK: FAIL", X_rc["player"], "no row"], want_exit=1, got_exit=rc)
+    out, rc = run(repo_rc, "scripts/range_check.py", "--kit", kit_rc, "--actual", actual_rc, "--check-report",
+                  report_rc("nosection", "## Watchlist\n\nnone\n"), kit=kit_rc)
+    check("RC --check-report: a report without the section FAILS", out,
+          must_have=["RANGE CHECK: FAIL", "no 'Range check' section"], want_exit=1, got_exit=rc)
+
     print()
     if FAILURES:
         for name, bad, out in FAILURES:
