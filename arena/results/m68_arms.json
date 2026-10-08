@@ -1,0 +1,105 @@
+{
+ "as_drafted": {
+  "champ": 28.356,
+  "playoff": 99.73,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#58:Payton Pritchard": {
+  "champ": 27.994,
+  "playoff": 99.76,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Payton Pritchard"
+   ]
+  ]
+ },
+ "swap#82:Coby White": {
+  "champ": 31.867,
+  "playoff": 99.9,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Coby White"
+   ]
+  ]
+ },
+ "swap#87:Coby White": {
+  "champ": 30.056,
+  "playoff": 99.86,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Coby White"
+   ]
+  ]
+ },
+ "swap#111:Sandro Mamukelashvili": {
+  "champ": 31.028,
+  "playoff": 99.92,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ]
+ },
+ "swap#135:Saddiq Bey": {
+  "champ": 28.706,
+  "playoff": 99.73,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Saddiq Bey"
+   ]
+  ]
+ },
+ "swap#154:Draymond Green": {
+  "champ": 28.1,
+  "playoff": 99.79,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Draymond Green"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 35.0,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Mikal Bridges"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Fred VanVleet"
+   ]
+  ]
+ }
+}

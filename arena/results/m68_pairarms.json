@@ -1,0 +1,428 @@
+{
+ "mock": 68,
+ "tag": "v50",
+ "page_rev": "9f54e99",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 28.356,
+   "playoff": 99.73,
+   "rank": 1
+  },
+  "as_drafted_S2": {
+   "champ": 28.383,
+   "playoff": 99.69,
+   "rank": 1
+  },
+  "as_drafted_ecw": 5.371,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 35.0,
+   "playoff": 99.96,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 35.2,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "blend_ecw": 5.635,
+  "blend_swaps": [
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Mikal Bridges"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Fred VanVleet"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 36.056,
+   "playoff": 99.96,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 35.6,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "pair_ecw": 5.635,
+  "pair_swaps": [
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Rudy Gobert"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "pair_moves": [
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 2,
+    "gain": 0.0295,
+    "why": "Derrick White now, Jalen Williams next turn (55% to survive): +0.029 cats/wk over the pair",
+    "rows": [
+     "Anthony Davis",
+     "Jalen Williams",
+     "Derrick White",
+     "OG Anunoby",
+     "Dyson Daniels"
+    ],
+    "surv": [
+     0.614,
+     0.546,
+     0.676,
+     0.921,
+     0.906
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 82,
+    "moved": true,
+    "idx": 2,
+    "gain": 0.0605,
+    "why": "Rudy Gobert now, Isaiah Hartenstein next turn (71% to survive): +0.061 cats/wk over the pair",
+    "rows": [
+     "Josh Hart",
+     "Isaiah Hartenstein",
+     "Rudy Gobert",
+     "Mikal Bridges",
+     "Jalen Suggs"
+    ],
+    "surv": [
+     0.621,
+     0.709,
+     0.272,
+     0.402,
+     0.738
+    ],
+    "next_turn": 87
+   }
+  ],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.1814,
+    "why": "#1 survival 0.52 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Tyrese Maxey",
+     "Jalen Johnson",
+     "Anthony Davis",
+     "Chet Holmgren"
+    ],
+    "surv": [
+     0.525,
+     0.242,
+     0.349,
+     0.985,
+     0.946
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0219,
+    "why": "#1 survival 0.01 below 0.60 \u2014 take him now",
+    "rows": [
+     "Tyrese Maxey",
+     "Jalen Williams",
+     "Jamal Murray",
+     "Donovan Mitchell",
+     "Derrick White"
+    ],
+    "surv": [
+     0.01,
+     0.701,
+     0.049,
+     0.01,
+     0.796
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 2,
+    "gain": 0.0295,
+    "why": "Derrick White now, Jalen Williams next turn (55% to survive): +0.029 cats/wk over the pair",
+    "rows": [
+     "Anthony Davis",
+     "Jalen Williams",
+     "Derrick White",
+     "OG Anunoby",
+     "Dyson Daniels"
+    ],
+    "surv": [
+     0.614,
+     0.546,
+     0.676,
+     0.921,
+     0.906
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0102,
+    "why": "#1 survival 0.07 below 0.60 \u2014 take him now",
+    "rows": [
+     "Jalen Williams",
+     "Desmond Bane",
+     "Dyson Daniels",
+     "Franz Wagner",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.073,
+     0.374,
+     0.632,
+     0.35,
+     0.684
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0347,
+    "why": "#1 survival 0.59 below 0.60 \u2014 take him now",
+    "rows": [
+     "OG Anunoby",
+     "Dyson Daniels",
+     "Ivica Zubac",
+     "Payton Pritchard",
+     "Cameron Boozer"
+    ],
+    "surv": [
+     0.592,
+     0.531,
+     0.506,
+     0.77,
+     0.336
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.1182,
+    "why": "#1 survival 0.48 below 0.60 \u2014 take him now",
+    "rows": [
+     "Payton Pritchard",
+     "Ivica Zubac",
+     "Tyler Herro",
+     "Jarrett Allen",
+     "Dyson Daniels"
+    ],
+    "surv": [
+     0.482,
+     0.162,
+     0.267,
+     0.265,
+     0.183
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": true,
+    "idx": 2,
+    "gain": 0.0605,
+    "why": "Rudy Gobert now, Isaiah Hartenstein next turn (71% to survive): +0.061 cats/wk over the pair",
+    "rows": [
+     "Josh Hart",
+     "Isaiah Hartenstein",
+     "Rudy Gobert",
+     "Mikal Bridges",
+     "Jalen Suggs"
+    ],
+    "surv": [
+     0.621,
+     0.709,
+     0.272,
+     0.402,
+     0.738
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.022,
+    "why": "#1 survival 0.36 below 0.60 \u2014 take him now",
+    "rows": [
+     "Josh Hart",
+     "Mikal Bridges",
+     "Isaiah Hartenstein",
+     "Yaxel Lendeborg",
+     "Jalen Suggs"
+    ],
+    "surv": [
+     0.363,
+     0.152,
+     0.477,
+     0.61,
+     0.52
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0041,
+    "why": "#1 survival 0.41 below 0.60 \u2014 take him now",
+    "rows": [
+     "Isaiah Hartenstein",
+     "Yaxel Lendeborg",
+     "Sandro Mamukelashvili",
+     "PJ Washington",
+     "Daniel Gafford"
+    ],
+    "surv": [
+     0.414,
+     0.554,
+     0.592,
+     0.56,
+     0.631
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0017,
+    "why": "#1 survival 0.38 below 0.60 \u2014 take him now",
+    "rows": [
+     "Sandro Mamukelashvili",
+     "Devin Vassell",
+     "Cason Wallace",
+     "PJ Washington",
+     "Aaron Gordon"
+    ],
+    "surv": [
+     0.382,
+     0.337,
+     0.368,
+     0.347,
+     0.291
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0014,
+    "why": "#1 survival 0.30 below 0.60 \u2014 take him now",
+    "rows": [
+     "PJ Washington",
+     "Herbert Jones",
+     "Devin Vassell",
+     "Fred VanVleet",
+     "Saddiq Bey"
+    ],
+    "surv": [
+     0.296,
+     0.49,
+     0.286,
+     0.311,
+     0.337
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Devin Vassell",
+     "Fred VanVleet",
+     "Saddiq Bey",
+     "Herbert Jones",
+     "Reed Sheppard"
+    ],
+    "surv": [
+     0.132,
+     0.151,
+     0.172,
+     0.309,
+     0.184
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Herbert Jones",
+     "Draymond Green",
+     "Cameron Johnson",
+     "Jerami Grant",
+     "Christian Braun"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}

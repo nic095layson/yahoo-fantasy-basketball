@@ -14,11 +14,13 @@ winning against the majority of the room (pw >= 0.50) or ranked top-4.
 
 Mock 51's punt box changed during the draft (debrief 2026-09-21); its
 timeline is replayed. Other punted states carry their final box throughout
-(their boxes were set pre-draft). Writes arena/results/m51_punt_advice_effect.json.
+(their boxes were set pre-draft). Writes arena/results/m51_punt_advice_effect.json,
+or the path given as the first argument (2026-10-08: the re-run over every
+committed state for the owner's punt-drought question keeps the m51 record intact).
 
-    python3 arena/mocks/punt_advice_effect.py
+    python3 arena/mocks/punt_advice_effect.py [OUT.json]
 """
-import json, os, re, subprocess, tempfile
+import json, os, re, subprocess, sys, tempfile
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 html = open(os.path.join(REPO, "docs", "draft-deck.html"), encoding="utf-8").read()
 ex = lambda tag: re.search(r'<script id="%s">(.*?)</script>' % tag, html, re.S).group(1)
@@ -143,7 +145,7 @@ for x in rows:
     b["old_coh_swap"] += bool(x.get("old_coh") and x["old_coh"]["state"] != "aligned")
     b["new_coh_swap"] += bool(x.get("new_coh") and x["new_coh"]["state"] != "aligned")
 summary["by_state"] = by
-json.dump({"summary": summary, "rows": rows}, open(os.path.join(REPO, "arena", "results", "m51_punt_advice_effect.json"), "w"), indent=1)
+json.dump({"summary": summary, "rows": rows}, open(sys.argv[1] if len(sys.argv) > 1 else os.path.join(REPO, "arena", "results", "m51_punt_advice_effect.json"), "w"), indent=1)
 
 print(f"owner turns with a roster of 2+: {summary['owner_turns']} across {summary['states']} states; constants {summary['consts']}")
 for kind in ("old", "new"):

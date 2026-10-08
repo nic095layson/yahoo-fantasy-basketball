@@ -1,0 +1,693 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 9 of 13 turns)": {
+  "ecw": 5.371,
+  "rank": 1,
+  "next": 5.096,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 6,
+   "PTS": 7,
+   "REB": 5,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 28.36,
+  "playoff": 99.73,
+  "champ_rank": 1,
+  "swaps": [],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.635,
+  "rank": 1,
+  "next": 5.112,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 4,
+   "PTS": 6,
+   "REB": 2,
+   "AST": 9,
+   "ST": 1,
+   "BLK": 7,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 3,
+   "PTS": 6,
+   "REB": 3,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 1
+  },
+  "champ": 35.0,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Mikal Bridges"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Fred VanVleet"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Anthony Davis",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Mikal Bridges",
+   "Josh Hart",
+   "Isaiah Hartenstein",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Fred VanVleet",
+   "Herbert Jones"
+  ]
+ },
+ "\ud83c\udfaf at #34: Anthony Davis for Derrick White (card #3; Anthony Davis went #38)": {
+  "ecw": 5.361,
+  "rank": 1,
+  "next": 5.104,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 8,
+   "PTS": 4,
+   "REB": 1,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 2,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 8,
+   "PTS": 5,
+   "REB": 1,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.16,
+  "playoff": 99.78,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Anthony Davis"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Anthony Davis",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "\ud83c\udfaf at #82: Coby White for Ty Jerome (card #28; Coby White went #90)": {
+  "ecw": 5.48,
+  "rank": 1,
+  "next": 5.092,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 31.87,
+  "playoff": 99.9,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Coby White"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Coby White",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "\ud83c\udfaf at #87: Mikal Bridges for Jaden McDaniels (card #12; Mikal Bridges went #88)": {
+  "ecw": 5.436,
+  "rank": 1,
+  "next": 5.089,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 4,
+   "PTS": 4,
+   "REB": 5,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 6,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 5,
+   "REB": 7,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 8,
+   "TO": 1
+  },
+  "champ": 29.16,
+  "playoff": 99.83,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Mikal Bridges"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Mikal Bridges",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "\ud83c\udfaf at #111: Sandro Mamukelashvili for Darryn Peterson (card #33; Sandro Mamukelashvili went #133)": {
+  "ecw": 5.47,
+  "rank": 1,
+  "next": 5.103,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 7,
+   "REB": 2,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 2,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 6,
+   "PTS": 8,
+   "REB": 4,
+   "AST": 12,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 31.03,
+  "playoff": 99.92,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "advice at #34: Derrick White for Anthony Davis (the 'now' man; Derrick White went #34)": {
+  "ecw": 5.371,
+  "rank": 1,
+  "next": 5.096,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 6,
+   "PTS": 7,
+   "REB": 5,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 28.36,
+  "playoff": 99.73,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "hindsight single swap Payton Pritchard at #58": {
+  "ecw": 5.387,
+  "rank": 1,
+  "next": 5.081,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 4,
+   "REB": 4,
+   "AST": 7,
+   "ST": 1,
+   "BLK": 8,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 3,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 5,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 8,
+   "TO": 3
+  },
+  "champ": 27.99,
+  "playoff": 99.76,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Payton Pritchard"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "Payton Pritchard",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "hindsight single swap Coby White at #82": {
+  "ecw": 5.48,
+  "rank": 1,
+  "next": 5.092,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 5,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 31.87,
+  "playoff": 99.9,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Coby White"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Coby White",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "hindsight single swap Coby White at #87": {
+  "ecw": 5.449,
+  "rank": 1,
+  "next": 5.093,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 4,
+   "REB": 4,
+   "AST": 7,
+   "ST": 1,
+   "BLK": 8,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 3,
+   "PTS": 4,
+   "REB": 7,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 8,
+   "TO": 2
+  },
+  "champ": 30.06,
+  "playoff": 99.86,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Coby White"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Coby White",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "hindsight single swap Sandro Mamukelashvili at #111": {
+  "ecw": 5.47,
+  "rank": 1,
+  "next": 5.103,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 7,
+   "REB": 2,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 2,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 6,
+   "PTS": 8,
+   "REB": 4,
+   "AST": 12,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 31.03,
+  "playoff": 99.92,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Devin Vassell",
+   "Herbert Jones"
+  ]
+ },
+ "hindsight single swap Saddiq Bey at #135": {
+  "ecw": 5.38,
+  "rank": 1,
+  "next": 5.092,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 5,
+   "PTS": 4,
+   "REB": 3,
+   "AST": 10,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 3,
+   "3PTM": 6,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 5,
+   "TO": 1
+  },
+  "champ": 28.71,
+  "playoff": 99.73,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Saddiq Bey"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Saddiq Bey",
+   "Herbert Jones"
+  ]
+ },
+ "hindsight single swap Draymond Green at #154": {
+  "ecw": 5.401,
+  "rank": 1,
+  "next": 5.101,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 5,
+   "REB": 2,
+   "AST": 8,
+   "ST": 1,
+   "BLK": 2,
+   "TO": 5
+  },
+  "cat_rank_zsum": {
+   "FG%": 3,
+   "FT%": 5,
+   "3PTM": 6,
+   "PTS": 8,
+   "REB": 4,
+   "AST": 9,
+   "ST": 2,
+   "BLK": 3,
+   "TO": 2
+  },
+  "champ": 28.1,
+  "playoff": 99.79,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Draymond Green"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Derrick White",
+   "Jalen Williams",
+   "OG Anunoby",
+   "Ivica Zubac",
+   "Ty Jerome",
+   "Jaden McDaniels",
+   "Isaiah Hartenstein",
+   "Darryn Peterson",
+   "PJ Washington",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ }
+}
