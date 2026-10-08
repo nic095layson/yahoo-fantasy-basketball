@@ -150,6 +150,13 @@ MOCKS = {
     # mock 68 (2026-10-08, public room, LIVE mode, deck v50 = the version live at the standing URL; the four
     # owner echoes replay identically on v49, which shares the engine, so they cannot tell the two apart)
     68: dict(tags=("v50",), veto=True),
+    # mock 69 (2026-10-08, slot 10): the deck's own MOCK mode against the 11 league-mates on the REAL seating, the first
+    # cast room on deck v50 (the version live at the standing URL; engine identical to v49). The owner's exported state
+    # verbatim (the page named the file draft_state_56.json, its own export counter). room="cast"; no tool log.
+    69: dict(tags=("v50",), veto=True, room="cast"),
+    # mock 70 (2026-10-08, slot 10): the second cast room on deck v50 the same evening, pasted into the chat as JSON
+    # (the export's content verbatim). room="cast"; no tool log.
+    70: dict(tags=("v50",), veto=True, room="cast"),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -689,7 +696,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99"}
 
 
 def _baked_prices(rev):

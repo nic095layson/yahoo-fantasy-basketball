@@ -1,0 +1,142 @@
+{
+ "as_drafted": {
+  "champ": 20.678,
+  "playoff": 96.98,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Karl-Anthony Towns": {
+  "champ": 23.25,
+  "playoff": 98.27,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ]
+  ]
+ },
+ "swap#15:Chet Holmgren": {
+  "champ": 22.722,
+  "playoff": 98.22,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#34:Desmond Bane": {
+  "champ": 24.111,
+  "playoff": 98.56,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Desmond Bane"
+   ]
+  ]
+ },
+ "swap#39:Franz Wagner": {
+  "champ": 21.4,
+  "playoff": 97.1,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    39,
+    "Franz Wagner"
+   ]
+  ]
+ },
+ "swap#63:Paolo Banchero": {
+  "champ": 24.333,
+  "playoff": 98.11,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Paolo Banchero"
+   ]
+  ]
+ },
+ "swap#82:Isaiah Hartenstein": {
+  "champ": 21.806,
+  "playoff": 97.79,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    82,
+    "Isaiah Hartenstein"
+   ]
+  ]
+ },
+ "swap#87:Isaiah Hartenstein": {
+  "champ": 20.789,
+  "playoff": 96.94,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Isaiah Hartenstein"
+   ]
+  ]
+ },
+ "swap#111:Collin Gillespie": {
+  "champ": 22.306,
+  "playoff": 97.66,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Collin Gillespie"
+   ]
+  ]
+ },
+ "swap#154:Kyle Filipowski": {
+  "champ": 21.006,
+  "playoff": 97.17,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 30.767,
+  "playoff": 99.69,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Desmond Bane"
+   ],
+   [
+    63,
+    "Josh Hart"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ]
+  ]
+ }
+}
