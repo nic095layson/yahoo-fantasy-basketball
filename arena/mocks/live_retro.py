@@ -36,7 +36,9 @@ POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v35": SP + "/m58_players_v35.csv", "v37": SP + "/m59_players_v37.csv",
          "v39": SP + "/m59_players_v39.csv", "v42": SP + "/m60_players_v42.csv",
          "v44": SP + "/m61_players_v44.csv",
-         "v49": SP + "/m66_players_v49.csv"}
+         "v49": SP + "/m66_players_v49.csv",
+         # v50 = data/players.csv at main 9f54e99 (the 2026-10-08 pull: Hawkins MEM -> CHI, 151 notes, no line or tag change)
+         "v50": SP + "/m68_players_v50.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -145,6 +147,9 @@ MOCKS = {
     # data/players.csv, the v49 tag). The veto live; the owner's first LIVE human room on the round-11 priced-only
     # card and the re-derived Castle/Barrett lines; three Insert-at-#, two halts, four undos, one UNKNOWN fix.
     67: dict(tags=("v49",), veto=True),
+    # mock 68 (2026-10-08, public room, LIVE mode, deck v50 = the version live at the standing URL; the four
+    # owner echoes replay identically on v49, which shares the engine, so they cannot tell the two apart)
+    68: dict(tags=("v50",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -684,7 +689,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99"}
 
 
 def _baked_prices(rev):
