@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-07",
-  "note": "2026-10-07 evening republish (v49): D-CAST-2 first step (Castle, Barrett lines on both planes, identical); V4 bot variant shipped after the pre-registered N=30 run (BOT_XRANK_FROM = 7, red-first 99/99); the four unsigned rows stay out (D-CAST-1)",
+  "date": "2026-10-08",
+  "note": "2026-10-08 pull: five preseason box scores (IND-MIN, ORL-MEM, MIL-OKC, CHI-PHX, POR-GSW, all 10/7) read from ESPN's feed with the feed's injury blocks before the sweep; Haliburton, Lillard and Edey played their first games back; Hawkins MEM -> CHI on the feed; Nurkic re-evaluated in four weeks (Jazz release) \u2014 D-1008-1; JUDGMENT re-dated with ten receipts; deck v50",
   "pool_changes": {
     "changed": true,
-    "note": "D-CAST-2 first step (owner 2026-10-07, 'implement all fixes'): Stephon Castle and RJ Barrett re-derived on both planes from their 2025-26 Basketball-Reference lines at last season's minutes, FG%/FT% shrunk one-third toward career (Castle 7.4 ast on .463 for 4.8 on .440; Barrett .711 FT and 3.3 ast for .630 and 5.2); no team or tag changed"
+    "note": "2026-10-08 pull: one placement change (Jordan Hawkins MEM -> CHI per ESPN's official roster feed at the 10/8 direct-complete check, two-way contract signed 10/6) and 151 dated notes from the five 10/7 box scores (IND-MIN in Ames, ORL-MEM, MIL-OKC, CHI-PHX, POR-GSW) and the sweep; no tag or line changed (Nurkic's four-week re-evaluation goes to the owner's sheet as D-1008-1, the D-1005-2 precedent)"
   },
   "rosters_verified": {
-    "date": "2026-10-07",
+    "date": "2026-10-08",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-07 (site.api.espn.com, all 30 rosters); --allow-unmatched for Johni Broome (signed by Milwaukee 2026-10-06 per NBA.com, RotoWire, Hoops Rumors; still not on ESPN's feed at the 10/7 direct check)"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-08 (site.api.espn.com, all 30 rosters); 335/335 on the feed, no exemption \u2014 Johni Broome now listed on Milwaukee; Jordan Hawkins moved MEM -> CHI because the feed lists him on Chicago (the D-1005-4 lock releases)"
   }
 }

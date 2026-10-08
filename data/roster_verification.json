@@ -1,16 +1,14 @@
 {
-  "date": "2026-10-07",
-  "checked_at": "2026-10-07",
-  "evidence_date": "2026-10-07",
+  "date": "2026-10-08",
+  "checked_at": "2026-10-08",
+  "evidence_date": "2026-10-08",
   "mode": "direct-complete",
   "source": "site.api.espn.com (all 30 rosters)",
   "teams_covered": 30,
   "pool_size": 335,
-  "checked": 334,
+  "checked": 335,
   "mismatches": [],
-  "unmatched_count": 1,
-  "unmatched": [
-    "Johni Broome"
-  ],
-  "allow_unmatched": true
+  "unmatched_count": 0,
+  "unmatched": [],
+  "allow_unmatched": false
 }
