@@ -1,0 +1,808 @@
+{
+ "inputs": {
+  "pool": "arena/data/players_2025-10-21.csv",
+  "rows": 220,
+  "live": 213,
+  "risk_rows": 20,
+  "excluded": 7,
+  "replacement_total": -3.252,
+  "actual_rows": 212
+ },
+ "T1_discount_anchor": {
+  "a_shipped (\u00d7av above zero=mean)": {
+   "rho_top60": 0.636,
+   "n_top60": 60,
+   "rho_top120": 0.639,
+   "n_top120": 120,
+   "rho_top156": 0.7,
+   "n_top156": 156,
+   "rho_top200": 0.796,
+   "n_top200": 199,
+   "risk_rows_mean_realized_minus_forecast_rank": 6.3,
+   "risk_rows_forecast_too_high": 11,
+   "risk_rows_n": 20
+  },
+  "b_replacement_anchor": {
+   "rho_top60": 0.622,
+   "n_top60": 60,
+   "rho_top120": 0.604,
+   "n_top120": 120,
+   "rho_top156": 0.693,
+   "n_top156": 156,
+   "rho_top200": 0.792,
+   "n_top200": 199,
+   "risk_rows_mean_realized_minus_forecast_rank": -2.9,
+   "risk_rows_forecast_too_high": 8,
+   "risk_rows_n": 20
+  },
+  "c_no_discount": {
+   "rho_top60": 0.643,
+   "n_top60": 60,
+   "rho_top120": 0.641,
+   "n_top120": 120,
+   "rho_top156": 0.701,
+   "n_top156": 156,
+   "rho_top200": 0.796,
+   "n_top200": 199,
+   "risk_rows_mean_realized_minus_forecast_rank": 7.5,
+   "risk_rows_forecast_too_high": 11,
+   "risk_rows_n": 20
+  },
+  "d_discount_every_row": {
+   "rho_top60": 0.636,
+   "n_top60": 60,
+   "rho_top120": 0.633,
+   "n_top120": 120,
+   "rho_top156": 0.692,
+   "n_top156": 156,
+   "rho_top200": 0.79,
+   "n_top200": 199,
+   "risk_rows_mean_realized_minus_forecast_rank": 14.2,
+   "risk_rows_forecast_too_high": 13,
+   "risk_rows_n": 20
+  },
+  "risk_rows_detail (name, entering total, entering rank, actual GP)": [
+   [
+    "Anthony Davis",
+    5.62,
+    5,
+    20
+   ],
+   [
+    "Stephen Curry",
+    3.63,
+    9,
+    43
+   ],
+   [
+    "Kawhi Leonard",
+    2.46,
+    24,
+    65
+   ],
+   [
+    "Kristaps Porzingis",
+    1.37,
+    36,
+    32
+   ],
+   [
+    "Tyler Herro",
+    1.21,
+    37,
+    33
+   ],
+   [
+    "Darius Garland",
+    1.14,
+    41,
+    45
+   ],
+   [
+    "De'Aaron Fox",
+    0.54,
+    54,
+    72
+   ],
+   [
+    "Paul George",
+    0.01,
+    66,
+    37
+   ],
+   [
+    "Joel Embiid",
+    -0.18,
+    73,
+    38
+   ],
+   [
+    "Mark Williams",
+    -0.33,
+    79,
+    60
+   ],
+   [
+    "Zach Edey",
+    -0.88,
+    92,
+    11
+   ],
+   [
+    "Zion Williamson",
+    -1.51,
+    109,
+    62
+   ],
+   [
+    "Lonzo Ball",
+    -1.65,
+    117,
+    35
+   ],
+   [
+    "Bradley Beal",
+    -1.81,
+    120,
+    6
+   ],
+   [
+    "Dereck Lively II",
+    -2.06,
+    125,
+    7
+   ],
+   [
+    "De'Anthony Melton",
+    -2.33,
+    133,
+    49
+   ],
+   [
+    "Mitchell Robinson",
+    -2.54,
+    137,
+    60
+   ],
+   [
+    "Marcus Smart",
+    -3.44,
+    168,
+    62
+   ],
+   [
+    "Scoot Henderson",
+    -3.61,
+    173,
+    30
+   ],
+   [
+    "Jarred Vanderbilt",
+    -3.76,
+    179,
+    65
+   ]
+  ],
+  "risk_rows_below_zero_undiscounted": 12
+ },
+ "T2_points_identity": {
+  "n": 200,
+  "lines_with_|resid|>1": 30,
+  "pts_MAE_as_written": 2.763,
+  "pts_MAE_if_pts_set_to_implied": 2.647,
+  "flagged_rows_MAE_as_written": 2.42,
+  "flagged_rows_MAE_if_implied": 1.978,
+  "flagged_rows_improved_by_identity": 20,
+  "spearman_|resid|_vs_|pts_error|": 0.026,
+  "sign_agreement (resid and error same sign)": 0.605,
+  "flagged_detail": [
+   [
+    "Joel Embiid",
+    2.91,
+    -2.9,
+    -5.81
+   ],
+   [
+    "Victor Wembanyama",
+    -2.84,
+    -0.5,
+    2.34
+   ],
+   [
+    "Cade Cunningham",
+    -2.41,
+    2.1,
+    4.51
+   ],
+   [
+    "Cooper Flagg",
+    -2.35,
+    -4.5,
+    -2.15
+   ],
+   [
+    "Karl-Anthony Towns",
+    2.27,
+    4.7,
+    2.43
+   ],
+   [
+    "Reed Sheppard",
+    -2.15,
+    0.0,
+    2.15
+   ],
+   [
+    "Payton Pritchard",
+    -1.95,
+    -2.0,
+    -0.05
+   ],
+   [
+    "Zion Williamson",
+    1.84,
+    3.8,
+    1.96
+   ],
+   [
+    "Nikola Jokic",
+    1.77,
+    1.3,
+    -0.47
+   ],
+   [
+    "Kevin Durant",
+    1.67,
+    0.0,
+    -1.67
+   ],
+   [
+    "Jakob Poeltl",
+    1.64,
+    3.8,
+    2.16
+   ],
+   [
+    "Jalen Duren",
+    -1.54,
+    -7.0,
+    -5.46
+   ],
+   [
+    "Josh Giddey",
+    -1.52,
+    -0.5,
+    1.02
+   ],
+   [
+    "Giannis Antetokounmpo",
+    1.49,
+    3.2,
+    1.71
+   ],
+   [
+    "Matas Buzelis",
+    -1.49,
+    -3.3,
+    -1.81
+   ],
+   [
+    "Evan Mobley",
+    -1.47,
+    1.3,
+    2.77
+   ],
+   [
+    "Paolo Banchero",
+    1.37,
+    4.3,
+    2.93
+   ],
+   [
+    "RJ Barrett",
+    1.34,
+    1.2,
+    -0.14
+   ],
+   [
+    "Brandon Miller",
+    1.33,
+    1.3,
+    -0.03
+   ],
+   [
+    "Donovan Mitchell",
+    -1.27,
+    -3.4,
+    -2.13
+   ],
+   [
+    "Tyrese Maxey",
+    1.26,
+    -1.3,
+    -2.56
+   ],
+   [
+    "Jimmy Butler",
+    -1.23,
+    -1.5,
+    -0.27
+   ],
+   [
+    "OG Anunoby",
+    1.23,
+    1.8,
+    0.57
+   ],
+   [
+    "Kristaps Porzingis",
+    1.21,
+    3.1,
+    1.89
+   ],
+   [
+    "Trey Murphy III",
+    1.19,
+    0.5,
+    -0.69
+   ],
+   [
+    "Desmond Bane",
+    -1.17,
+    -0.3,
+    0.87
+   ],
+   [
+    "Jamal Murray",
+    -1.06,
+    -3.6,
+    -2.54
+   ],
+   [
+    "Andrew Nembhard",
+    -1.06,
+    -4.4,
+    -3.34
+   ],
+   [
+    "Amen Thompson",
+    -1.05,
+    -1.8,
+    -0.75
+   ],
+   [
+    "Jalen Suggs",
+    1.03,
+    3.2,
+    2.17
+   ]
+  ]
+ },
+ "T3_per_category": {
+  "pts": {
+   "n": 140,
+   "rho_line_vs_actual": 0.81,
+   "rho_prior_actual_vs_actual": 0.751,
+   "rho_line_vs_actual_same_subset": 0.807,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.676
+  },
+  "reb": {
+   "n": 140,
+   "rho_line_vs_actual": 0.921,
+   "rho_prior_actual_vs_actual": 0.897,
+   "rho_line_vs_actual_same_subset": 0.932,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.507
+  },
+  "ast": {
+   "n": 140,
+   "rho_line_vs_actual": 0.866,
+   "rho_prior_actual_vs_actual": 0.811,
+   "rho_line_vs_actual_same_subset": 0.869,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.204
+  },
+  "stl": {
+   "n": 140,
+   "rho_line_vs_actual": 0.673,
+   "rho_prior_actual_vs_actual": 0.584,
+   "rho_line_vs_actual_same_subset": 0.659,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.066
+  },
+  "blk": {
+   "n": 140,
+   "rho_line_vs_actual": 0.84,
+   "rho_prior_actual_vs_actual": 0.824,
+   "rho_line_vs_actual_same_subset": 0.836,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.092
+  },
+  "tpm": {
+   "n": 140,
+   "rho_line_vs_actual": 0.841,
+   "rho_prior_actual_vs_actual": 0.79,
+   "rho_line_vs_actual_same_subset": 0.842,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.063
+  },
+  "tov": {
+   "n": 140,
+   "rho_line_vs_actual": 0.746,
+   "rho_prior_actual_vs_actual": 0.693,
+   "rho_line_vs_actual_same_subset": 0.751,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.161
+  },
+  "fg_pct": {
+   "n": 140,
+   "rho_line_vs_actual": 0.757,
+   "rho_prior_actual_vs_actual": 0.757,
+   "rho_line_vs_actual_same_subset": 0.767,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.005
+  },
+  "ft_pct": {
+   "n": 140,
+   "rho_line_vs_actual": 0.789,
+   "rho_prior_actual_vs_actual": 0.742,
+   "rho_line_vs_actual_same_subset": 0.79,
+   "n_prior": 129,
+   "mean_line_minus_actual": 0.004
+  }
+ },
+ "T4_departures": {
+  "pts": {
+   "departures": 12,
+   "line_closer_than_prior": 9,
+   "share": 0.75,
+   "largest": [
+    [
+     "Reed Sheppard",
+     1.75,
+     13.5,
+     4.4,
+     13.5,
+     true
+    ],
+    [
+     "Ryan Rollins",
+     1.31,
+     13.0,
+     6.2,
+     17.3,
+     true
+    ],
+    [
+     "Kevin Porter Jr.",
+     1.0,
+     15.5,
+     10.3,
+     17.4,
+     true
+    ],
+    [
+     "Nickeil Alexander-Walker",
+     0.98,
+     14.5,
+     9.4,
+     20.8,
+     true
+    ]
+   ]
+  },
+  "reb": {
+   "departures": 7,
+   "line_closer_than_prior": 6,
+   "share": 0.86,
+   "largest": [
+    [
+     "Kel'el Ware",
+     1.19,
+     10.5,
+     7.4,
+     9.0,
+     true
+    ],
+    [
+     "Matas Buzelis",
+     1.04,
+     6.2,
+     3.5,
+     5.8,
+     true
+    ],
+    [
+     "Donovan Clingan",
+     1.0,
+     10.5,
+     7.9,
+     11.6,
+     true
+    ],
+    [
+     "Ryan Rollins",
+     0.73,
+     3.8,
+     1.9,
+     4.6,
+     true
+    ]
+   ]
+  },
+  "ast": {
+   "departures": 9,
+   "line_closer_than_prior": 7,
+   "share": 0.78,
+   "largest": [
+    [
+     "Reed Sheppard",
+     1.63,
+     4.5,
+     1.4,
+     3.4,
+     true
+    ],
+    [
+     "Ryan Rollins",
+     1.63,
+     5.0,
+     1.9,
+     5.6,
+     true
+    ],
+    [
+     "Kevin Porter Jr.",
+     1.26,
+     5.8,
+     3.4,
+     7.4,
+     true
+    ],
+    [
+     "Andrew Nembhard",
+     0.94,
+     6.8,
+     5.0,
+     7.7,
+     true
+    ]
+   ]
+  },
+  "stl": {
+   "departures": 24,
+   "line_closer_than_prior": 13,
+   "share": 0.54,
+   "largest": [
+    [
+     "Reed Sheppard",
+     2.29,
+     1.5,
+     0.7,
+     1.5,
+     true
+    ],
+    [
+     "Nickeil Alexander-Walker",
+     1.72,
+     1.2,
+     0.6,
+     1.3,
+     true
+    ],
+    [
+     "Ryan Rollins",
+     1.43,
+     1.3,
+     0.8,
+     1.5,
+     true
+    ],
+    [
+     "Matas Buzelis",
+     1.14,
+     0.8,
+     0.4,
+     0.7,
+     true
+    ]
+   ]
+  },
+  "blk": {
+   "departures": 4,
+   "line_closer_than_prior": 2,
+   "share": 0.5,
+   "largest": [
+    [
+     "Donovan Clingan",
+     0.76,
+     2.0,
+     1.6,
+     1.7,
+     false
+    ],
+    [
+     "Kel'el Ware",
+     0.57,
+     1.4,
+     1.1,
+     1.1,
+     false
+    ],
+    [
+     "Keon Ellis",
+     -0.57,
+     0.5,
+     0.8,
+     0.6,
+     true
+    ],
+    [
+     "Santi Aldama",
+     0.57,
+     0.7,
+     0.4,
+     0.7,
+     true
+    ]
+   ]
+  },
+  "tpm": {
+   "departures": 11,
+   "line_closer_than_prior": 8,
+   "share": 0.73,
+   "largest": [
+    [
+     "Reed Sheppard",
+     1.89,
+     2.7,
+     0.9,
+     2.8,
+     true
+    ],
+    [
+     "Kevin Porter Jr.",
+     1.05,
+     1.7,
+     0.7,
+     1.2,
+     false
+    ],
+    [
+     "Brandon Miller",
+     -0.94,
+     3.0,
+     3.9,
+     3.1,
+     true
+    ],
+    [
+     "Nikola Jokic",
+     -0.63,
+     1.4,
+     2.0,
+     1.7,
+     false
+    ]
+   ]
+  },
+  "tov": {
+   "departures": 25,
+   "line_closer_than_prior": 15,
+   "share": 0.6,
+   "largest": [
+    [
+     "Reed Sheppard",
+     -1.82,
+     2.0,
+     0.7,
+     1.5,
+     true
+    ],
+    [
+     "John Collins",
+     1.82,
+     1.3,
+     2.6,
+     1.4,
+     true
+    ],
+    [
+     "Ryan Rollins",
+     -1.4,
+     1.9,
+     0.9,
+     2.7,
+     true
+    ],
+    [
+     "Lonzo Ball",
+     -1.12,
+     2.0,
+     1.2,
+     1.5,
+     false
+    ]
+   ]
+  },
+  "fg_pct": {
+   "departures": 9,
+   "line_closer_than_prior": 6,
+   "share": 0.67,
+   "largest": [
+    [
+     "Reed Sheppard",
+     1.77,
+     0.445,
+     0.351,
+     0.43,
+     true
+    ],
+    [
+     "Wendell Carter Jr.",
+     0.88,
+     0.525,
+     0.46,
+     0.512,
+     true
+    ],
+    [
+     "Keyonte George",
+     0.74,
+     0.425,
+     0.391,
+     0.456,
+     true
+    ],
+    [
+     "Lauri Markkanen",
+     0.72,
+     0.455,
+     0.423,
+     0.477,
+     true
+    ]
+   ]
+  },
+  "ft_pct": {
+   "departures": 7,
+   "line_closer_than_prior": 5,
+   "share": 0.71,
+   "largest": [
+    [
+     "De'Aaron Fox",
+     -1.41,
+     0.75,
+     0.827,
+     0.76,
+     true
+    ],
+    [
+     "Donovan Mitchell",
+     0.86,
+     0.87,
+     0.823,
+     0.865,
+     true
+    ],
+    [
+     "Deandre Ayton",
+     0.72,
+     0.76,
+     0.667,
+     0.645,
+     false
+    ],
+    [
+     "Jrue Holiday",
+     -0.69,
+     0.8,
+     0.909,
+     0.838,
+     true
+    ]
+   ]
+  }
+ }
+}

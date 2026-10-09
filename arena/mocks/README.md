@@ -582,3 +582,14 @@ is on the author. See LEDGER §3.
   single departure is Dyson Daniels' steals (3.0 vs 2.2 vs 2.0, +2.28 z). Rotoworld's 9-cat sheet is NOT a line source
   (its stat columns are 2025-26 lines; the first run's ρ = 1.000 against the actual line showed it) and is excluded.
   Kit report `after-report-2026-10-09.md` §8; decisions D-1009-1..4.
+- **Fix backtest (owner 2026-10-09: would the audit's proposed fixes have sharpened last season's forecast?).**
+  `audit_1009/fix_backtest.py` (read-only; record `arena/results/fix_backtest_2026-10-09.json`, two runs byte-identical)
+  on the 2025-26 entering pool (`players_2025-10-21.csv`, 20 risk rows) against the actual 2025-26 lines. T1 the
+  discount anchor (D-1009-2): the shipped rule ρ .639/.700/.796 at top 120/156/200 vs replacement-anchored
+  .604/.693/.792 and no discount .641/.701/.796 — the anchor change does not help; the 0.78 tag itself barely moves
+  the ranking, and 12 of the 20 risk rows sat below zero (undiscounted) with their realized rank 6.3 places WORSE than
+  forecast on average under every rule. T2 the points identity (D-1009-3): 30 entering lines broke it by 1+; setting
+  pts to the implied value cut their points MAE 2.42 → 1.98 (20 of 30 improved) but Embiid's got worse (−2.9 → −5.8:
+  his shooting line was the wrong half). T3 per category the lines beat the prior-season actual everywhere but FG%
+  (tie); steals the least predictable (ρ .673; prior .584). T4 departures of 0.5+ z from the prior actual beat the
+  prior season in 7 of 9 categories (pts 9/12, reb 6/7, ast 7/9) but only 13 of 24 in steals and 2 of 4 in blocks.
