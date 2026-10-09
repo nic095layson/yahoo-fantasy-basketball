@@ -593,3 +593,29 @@ is on the author. See LEDGER §3.
   his shooting line was the wrong half). T3 per category the lines beat the prior-season actual everywhere but FG%
   (tie); steals the least predictable (ρ .673; prior .584). T4 departures of 0.5+ z from the prior actual beat the
   prior season in 7 of 9 categories (pts 9/12, reb 6/7, ast 7/9) but only 13 of 24 in steals and 2 of 4 in blocks.
+- **Actuals intake, four seasons from two outlets (owner 2026-10-09: "is there any missing or supplemental data … at least
+  2, preferably 3 corresponding data sets before implementing").** `actuals_1009/fetch_all.sh DL` pulls the
+  Basketball-Reference per-game pages for 2022-23 to 2025-26 and ESPN's per-athlete season statistics (12 pages of 50
+  per season) into a fresh untrusted directory and writes a manifest (url, time, HTTP code, bytes, sha256);
+  `extract_actuals.py DL OUT` derives one CSV per outlet and season (`python3 -I`); `crosscheck.py OUT` joins the two
+  by name (fold, then surname + first three letters, then surname + team, then token order) and classes every player
+  VERIFIED (every field within rounding: 0.05 per game, 0.0005 on a percentage; minutes informational; a blank
+  Basketball-Reference percentage with zero attempts equals ESPN's zero), NOTED (games equal, every deviation ≤ 0.1 or
+  ≤ 0.002) or CONFLICT (excluded, listed); `analyze_actuals.py OUT ENTERING DECK` runs the stability, baseline-backtest,
+  games-history and identity analyses. Record `arena/results/actuals_2026-10-09/` (24 files, second run byte-identical;
+  the raw pages stay out of the repo, pinned by `raw_manifest.tsv`): 539 / 572 / 569 / 582 ESPN names matched 100%;
+  recorded 536 / 570 / 569 / 582 (noted 3 / 2 / 2 / 1; conflicts 3 / 2 / 0 / 0 — 2022-23 Clarke, Ball and Tyus Jones on
+  free-throw cells, 2023-24 Isaiah Jackson's games 59 vs 60 and Tristan Thompson's FG%); the two bref-only names are
+  2022-23 two- and six-game stints ESPN omits. The fresh Basketball-Reference pull reproduces the 10/08 single-source
+  files field for field. Findings: steals least stable of the counting categories in all three transitions (ρ .803 /
+  .765 / .681; blocks .834 / .828 / .793; 3PM .885 / .899 / .831); on the 2025-26 entering pool (189 rows scored with
+  25+ games) the prior season alone beats the entering line in 1 of 9 categories on MAE, the 5/4/3 three-season line
+  in 3 (FT%, steals, blocks), a half-and-half blend in 9 of 9 on MAE but with lower rank correlation in 3PM, points,
+  rebounds, assists and turnovers; where the entering steals departed from history by half an SD the three-season line
+  was closer 24 of 39 times (blocks 9 of 13; points 8 of 20). Games history: 252 of 335 pool rows carry three seasons
+  (mean fraction .738, 108 under 60 games). The identity pts = 2·FGM + 3PM + FTM holds to 0.0002 on ESPN's unrounded
+  lines and to 0.164 at most through the check's formula on Basketball-Reference's rounded cells (p95 0.108). Kit
+  report `after-report-2026-10-09-market.md`; decisions D-1009-6..8. Blocked at the gateway (403 CONNECT), for the
+  record: stats.nba.com, cdn.nba.com, data.nba.com, RealGM, NBAstuffer, CBS, landofbasketball, Fox, StatMuse,
+  FantasyPros, Proballers, sports.yahoo.com, HoopsHype, RotoWire, Sofascore, Wikipedia, NBC — so the record is two
+  outlets, not three; nba.com's HTML and StatDunk answer without stat tables.

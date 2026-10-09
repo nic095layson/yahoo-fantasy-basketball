@@ -111,6 +111,23 @@ Claude adds the judgment (build fit, injury flags, when to reach).
   and RotoBaller per-game lines and the player's own 2025-26 line); at WO-5 and the 10/14 lock each
   one comes back inside the range or carries a mechanism naming two dated outlets, and
   `--check-report` refuses the report otherwise (outlets counted with the kit's own lexicon).
+- Points identity on projection passes (D-1009-3, owner 2026-10-09): `python3 scripts/identity_check.py` lists every
+  top-200 line on either plane whose points sit more than 1.0 from its own shooting (2·FGM + 3PM + FTM); each is
+  reconciled by evidence — either side may be the wrong half (the 2025-26 backtest, `arena/results/fix_backtest_2026-10-09.json`,
+  cut the flagged lines' points error 2.42 → 1.98 by formula but made Embiid's worse) — or its row names two dated
+  outlets, and `--check-report` refuses the WO-5 report otherwise. The z-sum's zero is the top-156 pool's mean, not
+  replacement (D-1009-2, audit 2026-10-09): the ×0.78 availability multiplier applies above it only.
+- Actual lines come from a two-outlet verified record, never one site (owner 2026-10-09): `arena/results/actuals_2026-10-09/`
+  holds 2022-23 to 2025-26 per-game lines where Basketball-Reference and ESPN match within rounding (536 / 570 / 569 / 582
+  players; every ESPN name matched; 5 conflicts and 8 noted cells listed beside them), the raw pages pinned by sha256,
+  scripts in `arena/mocks/actuals_1009/` (re-pull into a fresh directory, derive with `python3 -I`; two runs byte-identical).
+  What the record says: steals are the least stable counting category in all three season transitions (ρ .803 / .765 /
+  .681); a 5/4/3 three-season line beats the 2025-26 entering lines only in FT%, steals and blocks, so WO-5 anchors
+  steals and blocks to `baseline3_2026-27.csv` (kit work order item (8)); `gp_history_2026-27.csv` is the games record
+  for the post-draft availability model; on actual lines rounding moves the points identity by 0.164 at most.
+- Market prices refresh from Hashtag's projections page when the owner uploads it (2026-10-09): its ADP column is Yahoo's
+  ADP, so the kit's `report/market/adp_refresh.py` re-prices the newest Yahoo paste from it (`yahoo-2026-10-09.csv`: 170 of
+  250 names re-priced, XRank kept) and the build picks that file up as the newest price file.
 - History: this repo briefly contained a Yahoo Fantasy API OAuth client
   (see git history) — scrapped after Yahoo's developer portal refused to
   grant fantasy scope to new apps.
