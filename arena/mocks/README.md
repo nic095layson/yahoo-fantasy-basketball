@@ -548,6 +548,20 @@ is on the author. See LEDGER §3.
   436 cells, and pulling each to the nearest reference moves 71 of the top 150 by 10+ places), `mirror_check.py`
   (the never-shown mirror: 98 players qualify on a one-round gap, too broad to be a check; replays from
   `repeat_market_check.py --keep-cards DIR`). Kit report `after-report-2026-10-08-standing-checks.md`.
+- **Mock 71 (2026-10-08, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL seating, the third cast room the same evening, the first on deck v51
+  (rev `1026558`, the version live at the standing URL — the card-row display change; engine, values and pool identical to v50, so tag `v50` = `m68_players_v50.csv`), the veto live.
+  `live_retro.MOCKS[71]` = `dict(tags=("v50",), veto=True, room="cast")`; `PAGE_REV[71] = "1026558"`; no punt declared (`PUNT_TIMELINES[71] = [(0, [])]`).
+  State = the owner's exported draft state, pasted into the chat as JSON and written back in the export's own format (156 picks, every name a v51 pool row, snake-consistent,
+  `cast` = the real order; md5 `0fb234a092690b115e61cdf0c24bcd89`; at most 35 of 156 picks shared at the same pick with any earlier state); no recap and no tool log exist for a MOCK, so no DOM replay.
+  **The card's 🎯 taken at 0 of 13 turns** — off the card at #10 Jayson Tatum (card #19), #15 Giannis Antetokounmpo (card #23), #34 Trae Young (card #24), #39 Jaylen Brown (card #20), #58 Damian Lillard (card #72), #63 Deni Avdija (card #6), #82 Zion Williamson (card #41), #87 Day'Ron Sharpe (card #3), #106 Draymond Green (card #11), #111 Yaxel Lendeborg (card #3), #130 Herbert Jones (card #3), #135 Tari Eason (card #11), #154 Bilal Coulibaly (card #11):
+  as drafted 3.48% (rank 9) / ECW 4.316 rank 9 (next 5.346), favored 4/11 (`m71_followcard_grade.json`, `m71_arms.json`;
+  the retro port's self-consistent follow-card chain grades 27.13%). Deck card replayed from the v51 page (`live_deckcard.py 71 rev:1026558:docs/draft-deck.html`; file suffix = the pool tag, as for mock 62)
+  `arena/results/m71_deckcard_v50.json`). Hindsight's largest single swap: Tyler Herro at #58 (+0.299 cats/week).
+  **Advice line** (`m71_advice_reads.json`, page reading): fired at #15 (Chet Holmgren now), #34 (Desmond Bane now), #39 (Onyeka Okongwu now), #58 (Rudy Gobert now), #63 (Rudy Gobert now), #82 (Myles Turner now); the 'now' men as single swaps grade +0.43 / +0.90 / +1.30 / +4.51 / +1.06 / +1.58 title points, together +6.75; the pair rule replayed as the marker finished at 27.13% against the blend chain's 27.13% (seed set 1).
+  Late card (rounds 11–13): 0 unpriced rows. Survival pooled with the 51–70 deck cards (`m71_survival.json`: this room 57 rows, Brier 0.222, mean predicted 0.539 vs realized 0.544; BUY NOW 3 of 6 survived, TOSS-UP 5 of 13, quiet 23 of 38).
+  **Cast fidelity** (`m71_cast_fidelity.json`): loyalty fired on 11 of the 17 loyalty names drafted by anyone. Repeat-name audit (`m71_repeat_names_audit.json`): the #1 changes at
+  12 of 13 turns under other rooms' rosters (10 of 13 against an empty roster); Gafford on the Top-5 at 4 turn(s), Braun at 1, Poeltl at 0.
+  Debrief `debrief_2026-10-08_mock71_slot10.md`; kit report `after-report-2026-10-08-draft71.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the

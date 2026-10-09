@@ -157,6 +157,10 @@ MOCKS = {
     # mock 70 (2026-10-08, slot 10): the second cast room on deck v50 the same evening, pasted into the chat as JSON
     # (the export's content verbatim). room="cast"; no tool log.
     70: dict(tags=("v50",), veto=True, room="cast"),
+    # mock 71 (2026-10-08, slot 10): the third cast room the same evening, drafted on deck v51 (rev 1026558 — the
+    # card-row display change; engine, values and pool identical to v50, so tag v50 = m68_players_v50.csv), pasted
+    # into the chat as JSON (the export's content verbatim). room="cast"; no tool log.
+    71: dict(tags=("v50",), veto=True, room="cast"),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -696,7 +700,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558"}
 
 
 def _baked_prices(rev):
