@@ -1,0 +1,104 @@
+{
+ "as_drafted": {
+  "champ": 34.167,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#34:Chet Holmgren": {
+  "champ": 35.428,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#58:Tyler Herro": {
+  "champ": 31.817,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ]
+ },
+ "swap#87:Immanuel Quickley": {
+  "champ": 37.778,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Immanuel Quickley"
+   ]
+  ]
+ },
+ "swap#106:Myles Turner": {
+  "champ": 35.111,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#111:Myles Turner": {
+  "champ": 36.25,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#135:Kyle Filipowski": {
+  "champ": 33.689,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "swap#154:Kyle Filipowski": {
+  "champ": 36.206,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 40.439,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    154,
+    "Cameron Johnson"
+   ]
+  ]
+ }
+}

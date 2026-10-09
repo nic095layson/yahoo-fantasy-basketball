@@ -1,0 +1,367 @@
+{
+ "mock": 73,
+ "tag": "v53",
+ "page_rev": "03cba0a",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 34.167,
+   "playoff": 99.94,
+   "rank": 1
+  },
+  "as_drafted_S2": {
+   "champ": 33.472,
+   "playoff": 99.92,
+   "rank": 1
+  },
+  "as_drafted_ecw": 5.498,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 40.439,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 40.194,
+   "playoff": 99.99,
+   "rank": 1
+  },
+  "blend_ecw": 5.69,
+  "blend_swaps": [
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    154,
+    "Cameron Johnson"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 40.439,
+   "playoff": 99.98,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 40.194,
+   "playoff": 99.99,
+   "rank": 1
+  },
+  "pair_ecw": 5.69,
+  "pair_swaps": [
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    154,
+    "Cameron Johnson"
+   ]
+  ],
+  "pair_moves": [],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.1039,
+    "why": "#1 survival 0.53 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Jalen Johnson",
+     "Tyrese Haliburton",
+     "Anthony Davis",
+     "Chet Holmgren"
+    ],
+    "surv": [
+     0.53,
+     0.354,
+     0.44,
+     0.985,
+     0.951
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0594,
+    "why": "#1 survival 0.01 below 0.60 \u2014 take him now",
+    "rows": [
+     "Donovan Mitchell",
+     "Jalen Williams",
+     "Jamal Murray",
+     "Derrick White",
+     "Kevin Durant"
+    ],
+    "surv": [
+     0.01,
+     0.696,
+     0.049,
+     0.789,
+     0.012
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0193,
+    "why": "#1 survival 0.15 below 0.60 \u2014 take him now",
+    "rows": [
+     "Chet Holmgren",
+     "Anthony Davis",
+     "Derrick White",
+     "Dyson Daniels",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.148,
+     0.614,
+     0.667,
+     0.909,
+     0.922
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Derrick White",
+     "Desmond Bane",
+     "Dyson Daniels",
+     "Franz Wagner",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.163,
+     0.377,
+     0.64,
+     0.348,
+     0.687
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Dyson Daniels",
+     "OG Anunoby",
+     "Onyeka Okongwu",
+     "Payton Pritchard",
+     "Darius Garland"
+    ],
+    "surv": [
+     0.541,
+     0.595,
+     0.314,
+     0.775,
+     0.485
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0207,
+    "why": "#1 survival 0.49 below 0.60 \u2014 take him now",
+    "rows": [
+     "Payton Pritchard",
+     "OG Anunoby",
+     "Darius Garland",
+     "De'Aaron Fox",
+     "Cameron Boozer"
+    ],
+    "surv": [
+     0.492,
+     0.244,
+     0.146,
+     0.467,
+     0.055
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Payton Pritchard",
+     "Coby White",
+     "Josh Hart",
+     "Isaiah Hartenstein",
+     "Sandro Mamukelashvili"
+    ],
+    "surv": [
+     0.411,
+     0.533,
+     0.623,
+     0.711,
+     0.816
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0031,
+    "why": "#1 survival 0.36 below 0.60 \u2014 take him now",
+    "rows": [
+     "Josh Hart",
+     "Isaiah Hartenstein",
+     "Yaxel Lendeborg",
+     "Ja Morant",
+     "Sandro Mamukelashvili"
+    ],
+    "surv": [
+     0.364,
+     0.48,
+     0.604,
+     0.268,
+     0.643
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0125,
+    "why": "#1 survival 0.55 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Sandro Mamukelashvili",
+     "PJ Washington",
+     "Myles Turner",
+     "Aaron Gordon"
+    ],
+    "surv": [
+     0.547,
+     0.59,
+     0.561,
+     0.372,
+     0.501
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0316,
+    "why": "#1 survival 0.38 below 0.60 \u2014 take him now",
+    "rows": [
+     "Sandro Mamukelashvili",
+     "Aaron Gordon",
+     "PJ Washington",
+     "Saddiq Bey",
+     "Devin Vassell"
+    ],
+    "surv": [
+     0.38,
+     0.285,
+     0.348,
+     0.388,
+     0.329
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0023,
+    "why": "#1 survival 0.30 below 0.60 \u2014 take him now",
+    "rows": [
+     "PJ Washington",
+     "Sandro Mamukelashvili",
+     "Saddiq Bey",
+     "Cason Wallace",
+     "Devin Vassell"
+    ],
+    "surv": [
+     0.297,
+     0.328,
+     0.336,
+     0.32,
+     0.279
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0077,
+    "why": "#1 survival 0.14 below 0.60 \u2014 take him now",
+    "rows": [
+     "PJ Washington",
+     "Saddiq Bey",
+     "Devin Vassell",
+     "Christian Braun",
+     "Draymond Green"
+    ],
+    "surv": [
+     0.141,
+     0.171,
+     0.128,
+     0.167,
+     0.074
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Christian Braun",
+     "Draymond Green",
+     "Kyle Filipowski",
+     "Herbert Jones",
+     "Cameron Johnson"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}
