@@ -606,6 +606,56 @@ def main():
     check("RC --check-report: a report without the section FAILS", out,
           must_have=["RANGE CHECK: FAIL", "no 'Range check' section"], want_exit=1, got_exit=rc)
 
+    # D-1009-3 (owner yes 2026-10-09): the points identity for projection passes. A top-200 line whose
+    # points sit more than 1.0 from 2·FGM + 3PM + FTM (its own shooting) is listed, either direction, and
+    # --check-report refuses a report unless every listed player has a row naming two outlets (the KIT's
+    # lexicon). Fixture: a 12-row synthetic pool — X's points 2.0 above its shooting, Z's 1.5 below, Y and
+    # nine fillers exact; the kit beside it carries no board, so the kit plane is skipped and said so.
+    print("\n[D-1009-3] points identity check")
+    repo_pi = fresh_copy()
+    kit_pi = os.path.join(os.path.dirname(repo_pi), "kit")
+    open(os.path.join(kit_pi, "report", "check_report.py"), "w").write(
+        "def outlet_count(text):\n    low = text.lower()\n    return sum(o in low for o in ('espn', 'yahoo'))\n")
+    cols_pi = ["player", "team", "pos", "fg_pct", "fga", "ft_pct", "fta", "tpm", "pts", "reb", "ast", "stl", "blk", "tov", "note"]
+
+    def prow(name, shift, fg=0.5, fga=12.0, ft=0.8, fta=4.0, tpm=1.5):
+        implied = 2 * fg * fga + tpm + ft * fta
+        return [name, "DAL", "C", fg, fga, ft, fta, tpm, round(implied + shift, 2), 6.0, 3.0, 1.0, 0.8, 2.0, ""]
+    rows_pi = [prow("Xavier Identity", 2.0), prow("Yves Exact", 0.0), prow("Zed Short", -1.5)]
+    rows_pi += [prow(f"Filler {i}", 0.0, fg=0.45 + i * 0.01, fga=8.0 + i, tpm=1.0 + 0.1 * i) for i in range(9)]
+    with open(os.path.join(repo_pi, "data", "players.csv"), "w", encoding="utf-8", newline="") as f:
+        w = _csv.writer(f)
+        w.writerow(cols_pi)
+        w.writerows(rows_pi)
+    out, rc = run(repo_pi, "scripts/identity_check.py", "--kit", kit_pi, kit=kit_pi)
+    check("PI: a line 1.0+ from its own shooting is listed either way; an exact one is not; the boardless kit is skipped",
+          out, must_have=["POINTS IDENTITY", "Xavier Identity", "Zed Short", "2 player", "kit board not found"],
+          must_not=["Yves Exact", "Filler"], want_exit=0, got_exit=rc)
+
+    def report_pi(name, body):
+        p = os.path.join(os.path.dirname(repo_pi), f"pi-{name}.md")
+        open(p, "w", encoding="utf-8").write("# WO-5 report\n\n" + body + "\n## Bounds\n\nnone\n")
+        return p
+
+    head_pi = "## Points identity (D-1009-3)\n\n| player | plane | pts | implied | gap | mechanism |\n|---|---|---|---|---|---|\n"
+    both = "| Xavier Identity | deck | 20.8 | 18.8 | +2.0 | usage per ESPN 10/9 and Yahoo 10/10 |\n"
+    out, rc = run(repo_pi, "scripts/identity_check.py", "--kit", kit_pi, "--check-report",
+                  report_pi("ok", head_pi + both + "| Zed Short | deck | 15.3 | 16.8 | -1.5 | FT rate per ESPN 10/9 and Yahoo 10/10 |\n"), kit=kit_pi)
+    check("PI --check-report: a row with two outlets per listed player PASSES", out,
+          must_have=["POINTS IDENTITY: PASS"], want_exit=0, got_exit=rc)
+    out, rc = run(repo_pi, "scripts/identity_check.py", "--kit", kit_pi, "--check-report",
+                  report_pi("one", head_pi + both + "| Zed Short | deck | 15.3 | 16.8 | -1.5 | FT rate per ESPN 10/9 |\n"), kit=kit_pi)
+    check("PI --check-report: a row with one outlet FAILS and is named", out,
+          must_have=["POINTS IDENTITY: FAIL", "Zed Short", "fewer than two outlets"], want_exit=1, got_exit=rc)
+    out, rc = run(repo_pi, "scripts/identity_check.py", "--kit", kit_pi, "--check-report",
+                  report_pi("missing", head_pi + both + "\nZed Short in prose only, ESPN and Yahoo.\n"), kit=kit_pi)
+    check("PI --check-report: a listed player without a row FAILS and is named", out,
+          must_have=["POINTS IDENTITY: FAIL", "Zed Short", "no row"], want_exit=1, got_exit=rc)
+    out, rc = run(repo_pi, "scripts/identity_check.py", "--kit", kit_pi, "--check-report",
+                  report_pi("nosection", "## Watchlist\n\nnone\n"), kit=kit_pi)
+    check("PI --check-report: a report without the section FAILS", out,
+          must_have=["POINTS IDENTITY: FAIL", "no 'Points identity' section"], want_exit=1, got_exit=rc)
+
     print()
     if FAILURES:
         for name, bad, out in FAILURES:

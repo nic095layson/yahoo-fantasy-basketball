@@ -265,8 +265,16 @@ def zscores(players):
     sub-replacement rows shifted every baseline by 0.16-0.40 sigma and
     mispriced the top-100 by up to 14 ranks. The fixed-point parameters
     are applied to ALL rows so undrafted players still carry comparable
-    z's, and the z-sum's zero sits at replacement level, which is what
-    the availability haircut in adj_value taxes.
+    z's. The z-sum's zero is the MEAN of the top-156 pool (about the 58th
+    playable row on the 2026-10-09 pool), not replacement level as this
+    docstring said until the 2026-10-09 category audit (D-1009-2);
+    adj_value's availability haircut applies only above that zero, so a
+    risk-tagged row below the draftable average carries no discount (19 of
+    the 29 risk rows in the top 200 that day). Measured on the 2025-26
+    entering pool, anchoring the haircut at replacement did not improve
+    the ranking (arena/results/fix_backtest_2026-10-09.json: rho .604 vs
+    .639 at the top 120); the anchor and the flat 0.78 are reviewed after
+    the draft with D-RN-4.
     """
     def params_over(pool):
         n = len(pool)

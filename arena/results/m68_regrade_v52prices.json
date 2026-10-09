@@ -1,0 +1,225 @@
+{
+ "mock": 68,
+ "tag": "v53",
+ "label": "v52prices",
+ "page_rev": "4024ddb",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey",
+    "Jalen Johnson",
+    "Anthony Davis",
+    "Chet Holmgren"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": null
+  },
+  {
+   "pick": 15,
+   "target": "Tyrese Maxey",
+   "top5": [
+    "Tyrese Maxey",
+    "Jalen Williams",
+    "Jamal Murray",
+    "Donovan Mitchell",
+    "Derrick White"
+   ],
+   "actual": "Tyrese Maxey",
+   "swap": null
+  },
+  {
+   "pick": 34,
+   "target": "Anthony Davis",
+   "top5": [
+    "Anthony Davis",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Dyson Daniels"
+   ],
+   "actual": "Derrick White",
+   "swap": "Anthony Davis"
+  },
+  {
+   "pick": 39,
+   "target": "Jalen Williams",
+   "top5": [
+    "Jalen Williams",
+    "Desmond Bane",
+    "Payton Pritchard",
+    "OG Anunoby",
+    "Franz Wagner"
+   ],
+   "actual": "Jalen Williams",
+   "swap": null
+  },
+  {
+   "pick": 58,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "De'Aaron Fox"
+   ],
+   "actual": "OG Anunoby",
+   "swap": null
+  },
+  {
+   "pick": 63,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "Tyler Herro",
+    "Michael Porter Jr.",
+    "De'Aaron Fox",
+    "Dyson Daniels"
+   ],
+   "actual": "Ivica Zubac",
+   "swap": "Payton Pritchard"
+  },
+  {
+   "pick": 82,
+   "target": "Mikal Bridges",
+   "top5": [
+    "Mikal Bridges",
+    "Josh Hart",
+    "Jalen Suggs",
+    "Isaiah Hartenstein",
+    "Coby White"
+   ],
+   "actual": "Ty Jerome",
+   "swap": "Mikal Bridges"
+  },
+  {
+   "pick": 87,
+   "target": "Josh Hart",
+   "top5": [
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Sandro Mamukelashvili",
+    "Myles Turner"
+   ],
+   "actual": "Jaden McDaniels",
+   "swap": "Josh Hart"
+  },
+  {
+   "pick": 106,
+   "target": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Daniel Gafford"
+   ],
+   "actual": "Isaiah Hartenstein",
+   "swap": null
+  },
+  {
+   "pick": 111,
+   "target": "Sandro Mamukelashvili",
+   "top5": [
+    "Sandro Mamukelashvili",
+    "Cason Wallace",
+    "PJ Washington",
+    "Devin Vassell",
+    "Collin Gillespie"
+   ],
+   "actual": "Darryn Peterson",
+   "swap": "Sandro Mamukelashvili"
+  },
+  {
+   "pick": 130,
+   "target": "PJ Washington",
+   "top5": [
+    "PJ Washington",
+    "Herbert Jones",
+    "Devin Vassell",
+    "Fred VanVleet",
+    "Daniel Gafford"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  },
+  {
+   "pick": 135,
+   "target": "Fred VanVleet",
+   "top5": [
+    "Fred VanVleet",
+    "Devin Vassell",
+    "Herbert Jones",
+    "Reed Sheppard",
+    "Saddiq Bey"
+   ],
+   "actual": "Devin Vassell",
+   "swap": "Fred VanVleet"
+  },
+  {
+   "pick": 154,
+   "target": "Herbert Jones",
+   "top5": [
+    "Herbert Jones",
+    "Draymond Green",
+    "Christian Braun",
+    "Jerami Grant",
+    "Kyle Filipowski"
+   ],
+   "actual": "Herbert Jones",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 29.389,
+   "playoff": 99.77,
+   "champ_rank": 1,
+   "ecw": 5.387,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 36.394,
+   "playoff": 99.96,
+   "champ_rank": 1,
+   "ecw": 5.652,
+   "swaps": [
+    [
+     34,
+     "Anthony Davis"
+    ],
+    [
+     63,
+     "Payton Pritchard"
+    ],
+    [
+     82,
+     "Mikal Bridges"
+    ],
+    [
+     87,
+     "Josh Hart"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Fred VanVleet"
+    ]
+   ]
+  }
+ }
+}

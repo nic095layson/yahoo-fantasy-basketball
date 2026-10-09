@@ -1,0 +1,446 @@
+{
+ "top": 200,
+ "tol": 1.0,
+ "deck_checked": 200,
+ "kit_checked": 200,
+ "kit_note": null,
+ "players": 41,
+ "lines": 49,
+ "player_names": [
+  "Aaron Gordon",
+  "AJ Dybantsa",
+  "Amen Thompson",
+  "Andrew Nembhard",
+  "Austin Reaves",
+  "Bam Adebayo",
+  "Cameron Boozer",
+  "Daniel Gafford",
+  "Derrick White",
+  "Desmond Bane",
+  "Donovan Mitchell",
+  "Evan Mobley",
+  "Giannis Antetokounmpo",
+  "Jalen Duren",
+  "Jalen Suggs",
+  "Jamal Murray",
+  "James Harden",
+  "Jayson Tatum",
+  "Joel Embiid",
+  "Josh Giddey",
+  "Karl-Anthony Towns",
+  "Kevin Durant",
+  "Kristaps Porzingis",
+  "Kyrie Irving",
+  "Luka Doncic",
+  "Nikola Jokic",
+  "OG Anunoby",
+  "Onyeka Okongwu",
+  "Paolo Banchero",
+  "Paul George",
+  "Rudy Gobert",
+  "Shai Gilgeous-Alexander",
+  "Stephen Curry",
+  "Trae Young",
+  "Trey Murphy III",
+  "Tyrese Haliburton",
+  "Tyrese Maxey",
+  "Victor Wembanyama",
+  "Walker Kessler",
+  "Zach Edey",
+  "Zion Williamson"
+ ],
+ "rows": [
+  {
+   "player": "Joel Embiid",
+   "plane": "deck",
+   "rank": 71,
+   "pts": 24.0,
+   "implied": 21.09,
+   "gap": 2.91
+  },
+  {
+   "player": "Kyrie Irving",
+   "plane": "deck",
+   "rank": 15,
+   "pts": 24.7,
+   "implied": 22.16,
+   "gap": 2.54
+  },
+  {
+   "player": "Karl-Anthony Towns",
+   "plane": "deck",
+   "rank": 6,
+   "pts": 24.8,
+   "implied": 22.53,
+   "gap": 2.27
+  },
+  {
+   "player": "Jayson Tatum",
+   "plane": "deck",
+   "rank": 21,
+   "pts": 26.8,
+   "implied": 24.84,
+   "gap": 1.96
+  },
+  {
+   "player": "Zion Williamson",
+   "plane": "deck",
+   "rank": 105,
+   "pts": 24.8,
+   "implied": 22.96,
+   "gap": 1.84
+  },
+  {
+   "player": "Amen Thompson",
+   "plane": "kit",
+   "rank": 28,
+   "pts": 16.5,
+   "implied": 18.3,
+   "gap": -1.8
+  },
+  {
+   "player": "Bam Adebayo",
+   "plane": "kit",
+   "rank": 32,
+   "pts": 17.5,
+   "implied": 19.29,
+   "gap": -1.79
+  },
+  {
+   "player": "Tyrese Haliburton",
+   "plane": "deck",
+   "rank": 7,
+   "pts": 18.6,
+   "implied": 20.39,
+   "gap": -1.79
+  },
+  {
+   "player": "Nikola Jokic",
+   "plane": "deck",
+   "rank": 2,
+   "pts": 29.0,
+   "implied": 27.23,
+   "gap": 1.77
+  },
+  {
+   "player": "Onyeka Okongwu",
+   "plane": "deck",
+   "rank": 36,
+   "pts": 15.0,
+   "implied": 16.76,
+   "gap": -1.76
+  },
+  {
+   "player": "Kevin Durant",
+   "plane": "deck",
+   "rank": 18,
+   "pts": 26.0,
+   "implied": 24.33,
+   "gap": 1.67
+  },
+  {
+   "player": "Trae Young",
+   "plane": "deck",
+   "rank": 57,
+   "pts": 23.5,
+   "implied": 21.9,
+   "gap": 1.6
+  },
+  {
+   "player": "Walker Kessler",
+   "plane": "kit",
+   "rank": 35,
+   "pts": 11.5,
+   "implied": 13.08,
+   "gap": -1.58
+  },
+  {
+   "player": "Jalen Duren",
+   "plane": "deck",
+   "rank": 60,
+   "pts": 12.5,
+   "implied": 14.04,
+   "gap": -1.54
+  },
+  {
+   "player": "Josh Giddey",
+   "plane": "deck",
+   "rank": 32,
+   "pts": 16.5,
+   "implied": 18.02,
+   "gap": -1.52
+  },
+  {
+   "player": "Rudy Gobert",
+   "plane": "kit",
+   "rank": 85,
+   "pts": 11.0,
+   "implied": 12.5,
+   "gap": -1.5
+  },
+  {
+   "player": "Giannis Antetokounmpo",
+   "plane": "deck",
+   "rank": 42,
+   "pts": 30.8,
+   "implied": 29.31,
+   "gap": 1.49
+  },
+  {
+   "player": "Jalen Duren",
+   "plane": "kit",
+   "rank": 57,
+   "pts": 13.5,
+   "implied": 14.99,
+   "gap": -1.49
+  },
+  {
+   "player": "AJ Dybantsa",
+   "plane": "deck",
+   "rank": 139,
+   "pts": 20.5,
+   "implied": 21.98,
+   "gap": -1.48
+  },
+  {
+   "player": "James Harden",
+   "plane": "kit",
+   "rank": 37,
+   "pts": 20.5,
+   "implied": 21.91,
+   "gap": -1.41
+  },
+  {
+   "player": "Paolo Banchero",
+   "plane": "deck",
+   "rank": 102,
+   "pts": 26.5,
+   "implied": 25.13,
+   "gap": 1.37
+  },
+  {
+   "player": "Victor Wembanyama",
+   "plane": "kit",
+   "rank": 2,
+   "pts": 26.5,
+   "implied": 27.86,
+   "gap": -1.36
+  },
+  {
+   "player": "Luka Doncic",
+   "plane": "deck",
+   "rank": 4,
+   "pts": 33.5,
+   "implied": 32.15,
+   "gap": 1.35
+  },
+  {
+   "player": "Luka Doncic",
+   "plane": "kit",
+   "rank": 4,
+   "pts": 33.5,
+   "implied": 32.15,
+   "gap": 1.35
+  },
+  {
+   "player": "Donovan Mitchell",
+   "plane": "deck",
+   "rank": 14,
+   "pts": 24.5,
+   "implied": 25.77,
+   "gap": -1.27
+  },
+  {
+   "player": "Stephen Curry",
+   "plane": "kit",
+   "rank": 13,
+   "pts": 23.5,
+   "implied": 24.74,
+   "gap": -1.24
+  },
+  {
+   "player": "OG Anunoby",
+   "plane": "deck",
+   "rank": 28,
+   "pts": 18.5,
+   "implied": 17.27,
+   "gap": 1.23
+  },
+  {
+   "player": "Kristaps Porzingis",
+   "plane": "deck",
+   "rank": 39,
+   "pts": 19.8,
+   "implied": 18.59,
+   "gap": 1.21
+  },
+  {
+   "player": "Evan Mobley",
+   "plane": "deck",
+   "rank": 19,
+   "pts": 19.5,
+   "implied": 20.7,
+   "gap": -1.2
+  },
+  {
+   "player": "Trey Murphy III",
+   "plane": "deck",
+   "rank": 33,
+   "pts": 22.0,
+   "implied": 20.81,
+   "gap": 1.19
+  },
+  {
+   "player": "Aaron Gordon",
+   "plane": "kit",
+   "rank": 93,
+   "pts": 15.5,
+   "implied": 16.68,
+   "gap": -1.18
+  },
+  {
+   "player": "Derrick White",
+   "plane": "kit",
+   "rank": 23,
+   "pts": 17.5,
+   "implied": 18.68,
+   "gap": -1.18
+  },
+  {
+   "player": "Nikola Jokic",
+   "plane": "kit",
+   "rank": 3,
+   "pts": 28.0,
+   "implied": 29.18,
+   "gap": -1.18
+  },
+  {
+   "player": "Daniel Gafford",
+   "plane": "kit",
+   "rank": 130,
+   "pts": 9.5,
+   "implied": 10.67,
+   "gap": -1.17
+  },
+  {
+   "player": "Desmond Bane",
+   "plane": "deck",
+   "rank": 27,
+   "pts": 19.8,
+   "implied": 20.97,
+   "gap": -1.17
+  },
+  {
+   "player": "OG Anunoby",
+   "plane": "kit",
+   "rank": 44,
+   "pts": 16.5,
+   "implied": 17.67,
+   "gap": -1.17
+  },
+  {
+   "player": "Zach Edey",
+   "plane": "deck",
+   "rank": 84,
+   "pts": 12.5,
+   "implied": 13.62,
+   "gap": -1.12
+  },
+  {
+   "player": "Shai Gilgeous-Alexander",
+   "plane": "kit",
+   "rank": 1,
+   "pts": 31.0,
+   "implied": 32.11,
+   "gap": -1.11
+  },
+  {
+   "player": "Cameron Boozer",
+   "plane": "deck",
+   "rank": 48,
+   "pts": 18.5,
+   "implied": 19.6,
+   "gap": -1.1
+  },
+  {
+   "player": "Cameron Boozer",
+   "plane": "kit",
+   "rank": 41,
+   "pts": 18.5,
+   "implied": 19.6,
+   "gap": -1.1
+  },
+  {
+   "player": "Paul George",
+   "plane": "kit",
+   "rank": 51,
+   "pts": 17.5,
+   "implied": 18.58,
+   "gap": -1.08
+  },
+  {
+   "player": "AJ Dybantsa",
+   "plane": "kit",
+   "rank": 166,
+   "pts": 18.0,
+   "implied": 19.06,
+   "gap": -1.06
+  },
+  {
+   "player": "Andrew Nembhard",
+   "plane": "deck",
+   "rank": 124,
+   "pts": 12.5,
+   "implied": 13.56,
+   "gap": -1.06
+  },
+  {
+   "player": "Jamal Murray",
+   "plane": "deck",
+   "rank": 20,
+   "pts": 21.8,
+   "implied": 22.86,
+   "gap": -1.06
+  },
+  {
+   "player": "Amen Thompson",
+   "plane": "deck",
+   "rank": 30,
+   "pts": 16.5,
+   "implied": 17.55,
+   "gap": -1.05
+  },
+  {
+   "player": "Jamal Murray",
+   "plane": "kit",
+   "rank": 26,
+   "pts": 22.0,
+   "implied": 23.05,
+   "gap": -1.05
+  },
+  {
+   "player": "Austin Reaves",
+   "plane": "deck",
+   "rank": 26,
+   "pts": 23.0,
+   "implied": 24.04,
+   "gap": -1.04
+  },
+  {
+   "player": "Jalen Suggs",
+   "plane": "deck",
+   "rank": 59,
+   "pts": 17.0,
+   "implied": 15.97,
+   "gap": 1.03
+  },
+  {
+   "player": "Tyrese Maxey",
+   "plane": "deck",
+   "rank": 9,
+   "pts": 25.0,
+   "implied": 23.97,
+   "gap": 1.03
+  }
+ ]
+}

@@ -1,9 +1,9 @@
 {
   "date": "2026-10-09",
-  "note": "2026-10-09 pull: six 10/8 preseason box scores (BOS@CLE, NOP@MIA, PHI@BKN, WAS@NYK, ATL@SAS, SAC@LAL) read from ESPN's feed; the 10/9 Macao game in progress at the window's end (next pull); Nurkic re-tagged foot-recovery by the D-1008-1 default (excluded); 139 notes; no line or placement change; rosters verified direct-complete 335/335, no exemption",
+  "note": "2026-10-09 ADP refresh rebuild (v53): the 10/6 Yahoo paste re-priced from Hashtag's 10/9 page (Yahoo ADP column, owner upload; 170 of 250 names re-priced, mean move 0.42 places, max 2.1) plus the D-1009-2 wording (the z-sum's zero is the pool mean); pool identical to v52 (the 10/9 pull: six 10/8 box scores, Nurkic excluded, 139 notes; rosters verified direct-complete 335/335)",
   "pool_changes": {
-    "changed": true,
-    "note": "one tier: Jusuf Nurkic re-tagged foot-recovery (excluded, D-1008-1 default); 139 notes appended; no line, team or other tag change"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-10-09",

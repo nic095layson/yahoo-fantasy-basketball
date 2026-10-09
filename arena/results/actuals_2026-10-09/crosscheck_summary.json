@@ -1,0 +1,129 @@
+{
+ "2022-23": {
+  "bref_rows": 541,
+  "espn_rows": 539,
+  "matched": 539,
+  "join": {
+   "fold": 539,
+   "key3": 0,
+   "team": 0
+  },
+  "recorded": 536,
+  "verified_clean": 533,
+  "noted": 3,
+  "conflict": 3,
+  "players_with_disagreement": 6,
+  "disagreeing_cells": 9,
+  "cells_by_field": {
+   "fta": 2,
+   "ft_pct": 3,
+   "reb": 1,
+   "fga": 1,
+   "fg_pct": 2
+  },
+  "unmatched_bref": 2,
+  "unmatched_espn": 0,
+  "disagreeing_players": [
+   "Brandon Clarke",
+   "Isaiah Roby",
+   "John Wall",
+   "LaMelo Ball",
+   "Rudy Gay",
+   "Tyus Jones"
+  ],
+  "unmatched_bref_names": [
+   "Tristan Thompson",
+   "DaQuan Jeffries"
+  ],
+  "unmatched_espn_names": []
+ },
+ "2023-24": {
+  "bref_rows": 572,
+  "espn_rows": 572,
+  "matched": 572,
+  "join": {
+   "fold": 570,
+   "key3": 2,
+   "team": 0
+  },
+  "recorded": 570,
+  "verified_clean": 568,
+  "noted": 2,
+  "conflict": 2,
+  "players_with_disagreement": 4,
+  "disagreeing_cells": 6,
+  "cells_by_field": {
+   "fga": 1,
+   "fg_pct": 2,
+   "gp": 1,
+   "pts": 1,
+   "blk": 1
+  },
+  "unmatched_bref": 0,
+  "unmatched_espn": 0,
+  "disagreeing_players": [
+   "Evan Mobley",
+   "Isaiah Jackson",
+   "Reggie Jackson",
+   "Tristan Thompson"
+  ],
+  "unmatched_bref_names": [],
+  "unmatched_espn_names": []
+ },
+ "2024-25": {
+  "bref_rows": 569,
+  "espn_rows": 569,
+  "matched": 569,
+  "join": {
+   "fold": 567,
+   "key3": 1,
+   "team": 0,
+   "tokens": 1
+  },
+  "recorded": 569,
+  "verified_clean": 567,
+  "noted": 2,
+  "conflict": 0,
+  "players_with_disagreement": 2,
+  "disagreeing_cells": 2,
+  "cells_by_field": {
+   "tov": 1,
+   "blk": 1
+  },
+  "unmatched_bref": 0,
+  "unmatched_espn": 0,
+  "disagreeing_players": [
+   "RJ Barrett",
+   "Royce O'Neale"
+  ],
+  "unmatched_bref_names": [],
+  "unmatched_espn_names": []
+ },
+ "2025-26": {
+  "bref_rows": 582,
+  "espn_rows": 582,
+  "matched": 582,
+  "join": {
+   "fold": 579,
+   "key3": 3,
+   "team": 0
+  },
+  "recorded": 582,
+  "verified_clean": 581,
+  "noted": 1,
+  "conflict": 0,
+  "players_with_disagreement": 1,
+  "disagreeing_cells": 2,
+  "cells_by_field": {
+   "fga": 1,
+   "fg_pct": 1
+  },
+  "unmatched_bref": 0,
+  "unmatched_espn": 0,
+  "disagreeing_players": [
+   "Jabari Smith Jr."
+  ],
+  "unmatched_bref_names": [],
+  "unmatched_espn_names": []
+ }
+}
