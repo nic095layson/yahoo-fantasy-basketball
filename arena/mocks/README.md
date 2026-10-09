@@ -562,6 +562,20 @@ is on the author. See LEDGER §3.
   **Cast fidelity** (`m71_cast_fidelity.json`): loyalty fired on 11 of the 17 loyalty names drafted by anyone. Repeat-name audit (`m71_repeat_names_audit.json`): the #1 changes at
   12 of 13 turns under other rooms' rosters (10 of 13 against an empty roster); Gafford on the Top-5 at 4 turn(s), Braun at 1, Poeltl at 0.
   Debrief `debrief_2026-10-08_mock71_slot10.md`; kit report `after-report-2026-10-08-draft71.md`.
+- **Mock 72 (2026-10-09, slot 10).** The deck's own MOCK mode against the 11 league-mates on the REAL seating, the first cast room on deck v54
+  (rev `03cba0a`, the version live at the standing URL since the research pass — the role-and-health receipts and the Macao box score on the rows; engine, values, prices and pool identical to v53, so tag `v53` = `players_v53.csv`), the veto live.
+  `live_retro.MOCKS[72]` = `dict(tags=("v53",), veto=True, room="cast")`; `PAGE_REV[72] = "03cba0a"`; no punt declared (`PUNT_TIMELINES[72] = [(0, [])]`).
+  State = the owner's exported draft state, uploaded as the file (the page named it draft_state_57.json, its own export counter) and pinned verbatim (156 picks, every name a v54 pool row, snake-consistent,
+  `cast` = the real order; md5 `266420b4cc7e2c2cc3ce8b4bc97f211b`; at most 43 of 156 picks shared at the same pick with any earlier state); no recap and no tool log exist for a MOCK, so no DOM replay.
+  **The card's 🎯 taken at 5 of 13 turns** — off the card at #15 James Harden (card #6), #34 Kyrie Irving (card #5), #63 Deni Avdija (card #11), #82 Rudy Gobert (card #3), #87 Josh Hart (card #2), #106 Yaxel Lendeborg (card #4), #135 Devin Vassell (card #2), #154 Sandro Mamukelashvili (card #2):
+  as drafted 28.19% (rank 1) / ECW 5.224 rank 1 (next 4.786), favored 11/11 (`m72_followcard_grade.json`, `m72_arms.json`;
+  the retro port's self-consistent follow-card chain grades 30.36%). Deck card replayed from the v54 page (`live_deckcard.py 72 rev:03cba0a:docs/draft-deck.html`; file suffix = the pool tag, as for mocks 62 and 71)
+  `arena/results/m72_deckcard_v53.json`). Hindsight's largest single swap: Franz Wagner at #34 (+0.076 cats/week).
+  **Advice line** (`m72_advice_reads.json`, page reading): fired at #34 (Desmond Bane now), #58 (De'Aaron Fox now), #82 (Kel'el Ware now); the 'now' men as single swaps grade +0.00 / -2.46 / -1.26 title points, together -2.73; the pair rule replayed as the marker finished at 30.36% against the blend chain's 30.36% (seed set 1).
+  Late card (rounds 11–13): 0 unpriced rows. Survival pooled with the 51–71 deck cards (`m72_survival.json`: this room 50 rows, Brier 0.244, mean predicted 0.565 vs realized 0.680; BUY NOW 2 of 5 survived, TOSS-UP 8 of 11, quiet 24 of 34).
+  **Cast fidelity** (`m72_cast_fidelity.json`): loyalty fired on 11 of the 17 loyalty names drafted by anyone. Repeat-name audit (`m72_repeat_names_audit.json`): the #1 changes at
+  12 of 13 turns under other rooms' rosters (10 of 13 against an empty roster); Gafford on the Top-5 at 2 turn(s), Braun at 0, Poeltl at 0.
+  Debrief `debrief_2026-10-09_mock72_slot10.md`; kit report `after-report-2026-10-09-draft72.md`.
 - **Chromium harnesses and TMPDIR (found 2026-09-29).** Run `full_dom_check.mjs`, `live_replay_dom.mjs`,
   `d54_dom_check.mjs` and `veto_dom_check.mjs` with the DEFAULT temp dir. With `TMPDIR` pointed at the
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
