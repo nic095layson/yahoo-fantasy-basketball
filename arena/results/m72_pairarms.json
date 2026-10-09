@@ -1,0 +1,375 @@
+{
+ "mock": 72,
+ "tag": "v53",
+ "page_rev": "03cba0a",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 28.189,
+   "playoff": 98.91,
+   "rank": 1
+  },
+  "as_drafted_S2": {
+   "champ": 28.694,
+   "playoff": 98.98,
+   "rank": 1
+  },
+  "as_drafted_ecw": 5.224,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 30.361,
+   "playoff": 99.42,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 30.967,
+   "playoff": 99.5,
+   "rank": 1
+  },
+  "blend_ecw": 5.285,
+  "blend_swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Isaiah Hartenstein"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 30.361,
+   "playoff": 99.42,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 30.967,
+   "playoff": 99.5,
+   "rank": 1
+  },
+  "pair_ecw": 5.285,
+  "pair_swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Isaiah Hartenstein"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ]
+  ],
+  "pair_moves": [],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Jalen Johnson",
+     "Jalen Williams",
+     "Anthony Davis",
+     "Kevin Durant"
+    ],
+    "surv": [
+     0.53,
+     0.354,
+     0.982,
+     0.985,
+     0.545
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Jamal Murray",
+     "Jalen Williams",
+     "Derrick White",
+     "Austin Reaves",
+     "Desmond Bane"
+    ],
+    "surv": [
+     0.049,
+     0.696,
+     0.789,
+     0.097,
+     0.884
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0064,
+    "why": "pair gain 0.006 below 0.01",
+    "rows": [
+     "OG Anunoby",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "Jaren Jackson Jr.",
+     "Kyrie Irving"
+    ],
+    "surv": [
+     0.922,
+     0.909,
+     0.811,
+     0.741,
+     0.781
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0268,
+    "why": "#1 survival 0.38 below 0.60 \u2014 take him now",
+    "rows": [
+     "Desmond Bane",
+     "Kyrie Irving",
+     "Onyeka Okongwu",
+     "Franz Wagner",
+     "Payton Pritchard"
+    ],
+    "surv": [
+     0.377,
+     0.318,
+     0.428,
+     0.348,
+     0.832
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0065,
+    "why": "pair gain 0.006 below 0.01",
+    "rows": [
+     "Payton Pritchard",
+     "Tyler Herro",
+     "De'Aaron Fox",
+     "Jalen Suggs",
+     "Mikal Bridges"
+    ],
+    "surv": [
+     0.775,
+     0.612,
+     0.761,
+     0.914,
+     0.773
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Isaiah Hartenstein",
+     "Mikal Bridges",
+     "Josh Hart",
+     "Jalen Suggs",
+     "Rudy Gobert"
+    ],
+    "surv": [
+     0.763,
+     0.489,
+     0.687,
+     0.781,
+     0.354
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0099,
+    "why": "pair gain 0.010 below 0.01",
+    "rows": [
+     "Zach LaVine",
+     "Josh Hart",
+     "Kel'el Ware",
+     "Deni Avdija",
+     "Herbert Jones"
+    ],
+    "surv": [
+     0.68,
+     0.623,
+     0.315,
+     0.01,
+     0.879
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0192,
+    "why": "#1 survival 0.36 below 0.60 \u2014 take him now",
+    "rows": [
+     "Josh Hart",
+     "Rudy Gobert",
+     "Deni Avdija",
+     "Yaxel Lendeborg",
+     "Myles Turner"
+    ],
+    "surv": [
+     0.364,
+     0.072,
+     0.01,
+     0.604,
+     0.436
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0087,
+    "why": "#1 survival 0.58 below 0.60 \u2014 take him now",
+    "rows": [
+     "Cason Wallace",
+     "Yaxel Lendeborg",
+     "PJ Washington",
+     "Herbert Jones",
+     "Sandro Mamukelashvili"
+    ],
+    "surv": [
+     0.583,
+     0.547,
+     0.561,
+     0.716,
+     0.59
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0051,
+    "why": "#1 survival 0.37 below 0.60 \u2014 take him now",
+    "rows": [
+     "Cason Wallace",
+     "PJ Washington",
+     "Sandro Mamukelashvili",
+     "Herbert Jones",
+     "Devin Vassell"
+    ],
+    "surv": [
+     0.372,
+     0.348,
+     0.38,
+     0.54,
+     0.329
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0298,
+    "why": "#1 survival 0.30 below 0.60 \u2014 take him now",
+    "rows": [
+     "PJ Washington",
+     "Sandro Mamukelashvili",
+     "Collin Gillespie",
+     "Devin Vassell",
+     "Daniel Gafford"
+    ],
+    "surv": [
+     0.297,
+     0.328,
+     0.373,
+     0.279,
+     0.378
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0545,
+    "why": "#1 survival 0.16 below 0.60 \u2014 take him now",
+    "rows": [
+     "Sandro Mamukelashvili",
+     "Daniel Gafford",
+     "Devin Vassell",
+     "Collin Gillespie",
+     "Saddiq Bey"
+    ],
+    "surv": [
+     0.164,
+     0.205,
+     0.128,
+     0.2,
+     0.171
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Sandro Mamukelashvili",
+     "Daniel Gafford",
+     "Collin Gillespie",
+     "Herbert Jones",
+     "Christian Braun"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}
