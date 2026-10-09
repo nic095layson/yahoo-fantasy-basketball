@@ -168,6 +168,10 @@ MOCKS = {
     # Macao box score; engine, values, prices and pool identical to v53, so tag v53 = players_v53.csv), uploaded as the
     # export file (the page named it draft_state_57.json, its own counter). room="cast"; no tool log.
     72: dict(tags=("v53",), veto=True, room="cast"),
+    # mock 73 (2026-10-09, slot 10): public Yahoo room (random humans), LIVE mode, drafted on deck v54 (rev 03cba0a; engine,
+    # values, prices and pool identical to v53, so tag v53 = players_v53.csv); the owner's seven "off the card" echoes replay
+    # identically on the v54 page. One halt ("Jalen"), one undo (Gordon at #110), 19 shared-token feeds, two heads-ups.
+    73: dict(tags=("v53",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -714,7 +718,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a"}
 if REV_OVERRIDE:
     PAGE_REV[MOCK] = REV_OVERRIDE
 

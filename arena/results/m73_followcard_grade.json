@@ -1,0 +1,837 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 6 of 13 turns)": {
+  "ecw": 5.498,
+  "rank": 1,
+  "next": 5.08,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 34.17,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.69,
+  "rank": 1,
+  "next": 5.082,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 8,
+   "REB": 3,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 40.44,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    154,
+    "Cameron Johnson"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Chet Holmgren",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Cameron Johnson"
+  ]
+ },
+ "\ud83c\udfaf at #34: Chet Holmgren for Anthony Davis (card #2; Chet Holmgren went #36)": {
+  "ecw": 5.511,
+  "rank": 1,
+  "next": 5.083,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 35.43,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Chet Holmgren",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "\ud83c\udfaf at #58: OG Anunoby for Dyson Daniels (card #2; OG Anunoby went #63)": {
+  "ecw": 5.498,
+  "rank": 1,
+  "next": 5.08,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 34.17,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "OG Anunoby"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "\ud83c\udfaf at #63: Payton Pritchard for OG Anunoby (card #2; Payton Pritchard went #82)": {
+  "ecw": 5.498,
+  "rank": 1,
+  "next": 5.08,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 34.17,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Payton Pritchard"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "Payton Pritchard",
+   "OG Anunoby",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "\ud83c\udfaf at #87: Josh Hart for Dylan Harper (card #59; Josh Hart went #88)": {
+  "ecw": 5.624,
+  "rank": 1,
+  "next": 5.073,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 8,
+   "REB": 2,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 2,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 38.67,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Josh Hart"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Josh Hart",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "\ud83c\udfaf at #111: Sandro Mamukelashvili for Aaron Gordon (card #2; Sandro Mamukelashvili went #130)": {
+  "ecw": 5.498,
+  "rank": 1,
+  "next": 5.08,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 34.17,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "Aaron Gordon",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "\ud83c\udfaf at #130: PJ Washington for Sandro Mamukelashvili (card #2; PJ Washington went #135)": {
+  "ecw": 5.498,
+  "rank": 1,
+  "next": 5.08,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 34.17,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "PJ Washington"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Tari Eason"
+  ]
+ },
+ "\ud83c\udfaf at #154: Christian Braun for Tari Eason (card #9; Christian Braun went #undrafted)": {
+  "ecw": 5.547,
+  "rank": 1,
+  "next": 5.078,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 6,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 2,
+   "PTS": 8,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 34.84,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Christian Braun"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Christian Braun"
+  ]
+ },
+ "hindsight single swap Chet Holmgren at #34": {
+  "ecw": 5.511,
+  "rank": 1,
+  "next": 5.083,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 35.43,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Chet Holmgren"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Chet Holmgren",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "hindsight single swap Tyler Herro at #58": {
+  "ecw": 5.504,
+  "rank": 1,
+  "next": 5.081,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 9,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 1,
+   "REB": 4,
+   "AST": 11,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 3
+  },
+  "cat_rank_zsum": {
+   "FG%": 9,
+   "FT%": 3,
+   "3PTM": 1,
+   "PTS": 3,
+   "REB": 4,
+   "AST": 12,
+   "ST": 2,
+   "BLK": 4,
+   "TO": 2
+  },
+  "champ": 31.82,
+  "playoff": 99.88,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Tyler Herro",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "hindsight single swap Immanuel Quickley at #87": {
+  "ecw": 5.628,
+  "rank": 1,
+  "next": 4.932,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 4,
+   "3PTM": 1,
+   "PTS": 8,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 37.78,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Immanuel Quickley"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Immanuel Quickley",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "hindsight single swap Myles Turner at #106": {
+  "ecw": 5.502,
+  "rank": 1,
+  "next": 5.084,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 8,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 7,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 7,
+   "FT%": 5,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 35.11,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Myles Turner",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "hindsight single swap Myles Turner at #111": {
+  "ecw": 5.499,
+  "rank": 1,
+  "next": 5.072,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 9,
+   "FT%": 6,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 9,
+   "FT%": 7,
+   "3PTM": 1,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 36.25,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Myles Turner"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Myles Turner",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Tari Eason"
+  ]
+ },
+ "hindsight single swap Kyle Filipowski at #135": {
+  "ecw": 5.503,
+  "rank": 1,
+  "next": 5.078,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 3,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 7,
+   "3PTM": 2,
+   "PTS": 9,
+   "REB": 4,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 33.69,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Kyle Filipowski"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "Kyle Filipowski",
+   "Tari Eason"
+  ]
+ },
+ "hindsight single swap Kyle Filipowski at #154": {
+  "ecw": 5.583,
+  "rank": 1,
+  "next": 5.071,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 7,
+   "3PTM": 2,
+   "PTS": 5,
+   "REB": 3,
+   "AST": 11,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 7,
+   "3PTM": 2,
+   "PTS": 7,
+   "REB": 3,
+   "AST": 12,
+   "ST": 1,
+   "BLK": 4,
+   "TO": 1
+  },
+  "champ": 36.21,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Kyle Filipowski"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Donovan Mitchell",
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Dylan Harper",
+   "Yaxel Lendeborg",
+   "Aaron Gordon",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Kyle Filipowski"
+  ]
+ }
+}
