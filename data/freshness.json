@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-08",
-  "note": "2026-10-08 pull: five preseason box scores (IND-MIN, ORL-MEM, MIL-OKC, CHI-PHX, POR-GSW, all 10/7) read from ESPN's feed with the feed's injury blocks before the sweep; Haliburton, Lillard and Edey played their first games back; Hawkins MEM -> CHI on the feed; Nurkic re-evaluated in four weeks (Jazz release) \u2014 D-1008-1; JUDGMENT re-dated with ten receipts; deck v50",
+  "date": "2026-10-09",
+  "note": "2026-10-09 pull: six 10/8 preseason box scores (BOS@CLE, NOP@MIA, PHI@BKN, WAS@NYK, ATL@SAS, SAC@LAL) read from ESPN's feed; the 10/9 Macao game in progress at the window's end (next pull); Nurkic re-tagged foot-recovery by the D-1008-1 default (excluded); 139 notes; no line or placement change; rosters verified direct-complete 335/335, no exemption",
   "pool_changes": {
     "changed": true,
-    "note": "2026-10-08 pull: one placement change (Jordan Hawkins MEM -> CHI per ESPN's official roster feed at the 10/8 direct-complete check, two-way contract signed 10/6) and 151 dated notes from the five 10/7 box scores (IND-MIN in Ames, ORL-MEM, MIL-OKC, CHI-PHX, POR-GSW) and the sweep; no tag or line changed (Nurkic's four-week re-evaluation goes to the owner's sheet as D-1008-1, the D-1005-2 precedent)"
+    "note": "one tier: Jusuf Nurkic re-tagged foot-recovery (excluded, D-1008-1 default); 139 notes appended; no line, team or other tag change"
   },
   "rosters_verified": {
-    "date": "2026-10-08",
+    "date": "2026-10-09",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-08 (site.api.espn.com, all 30 rosters); 335/335 on the feed, no exemption \u2014 Johni Broome now listed on Milwaukee; Jordan Hawkins moved MEM -> CHI because the feed lists him on Chicago (the D-1005-4 lock releases)"
+    "sources": "scripts/verify_rosters.py"
   }
 }
