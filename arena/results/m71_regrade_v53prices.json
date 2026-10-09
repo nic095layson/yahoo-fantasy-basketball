@@ -1,0 +1,249 @@
+{
+ "mock": 71,
+ "tag": "v53",
+ "label": "v53prices",
+ "page_rev": "1c97b7e",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson",
+    "Jalen Williams",
+    "Anthony Davis",
+    "Kevin Durant"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Karl-Anthony Towns"
+  },
+  {
+   "pick": 15,
+   "target": "Jamal Murray",
+   "top5": [
+    "Jamal Murray",
+    "Jalen Williams",
+    "Derrick White",
+    "Austin Reaves",
+    "Desmond Bane"
+   ],
+   "actual": "Giannis Antetokounmpo",
+   "swap": "Jamal Murray"
+  },
+  {
+   "pick": 34,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Desmond Bane",
+    "Dyson Daniels",
+    "Jaren Jackson Jr.",
+    "Franz Wagner"
+   ],
+   "actual": "Trae Young",
+   "swap": "OG Anunoby"
+  },
+  {
+   "pick": 39,
+   "target": "Desmond Bane",
+   "top5": [
+    "Desmond Bane",
+    "Franz Wagner",
+    "Onyeka Okongwu",
+    "Payton Pritchard",
+    "Darius Garland"
+   ],
+   "actual": "Jaylen Brown",
+   "swap": "Desmond Bane"
+  },
+  {
+   "pick": 58,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "Tyler Herro",
+    "De'Aaron Fox",
+    "Mikal Bridges",
+    "Jalen Suggs"
+   ],
+   "actual": "Damian Lillard",
+   "swap": "Payton Pritchard"
+  },
+  {
+   "pick": 63,
+   "target": "De'Aaron Fox",
+   "top5": [
+    "De'Aaron Fox",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Rudy Gobert",
+    "Jalen Suggs"
+   ],
+   "actual": "Deni Avdija",
+   "swap": "De'Aaron Fox"
+  },
+  {
+   "pick": 82,
+   "target": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "Jalen Suggs",
+    "Zach LaVine",
+    "Day'Ron Sharpe",
+    "Yaxel Lendeborg"
+   ],
+   "actual": "Zion Williamson",
+   "swap": "Isaiah Hartenstein"
+  },
+  {
+   "pick": 87,
+   "target": "Jalen Suggs",
+   "top5": [
+    "Jalen Suggs",
+    "Zach LaVine",
+    "Yaxel Lendeborg",
+    "Myles Turner",
+    "Sandro Mamukelashvili"
+   ],
+   "actual": "Day'Ron Sharpe",
+   "swap": "Jalen Suggs"
+  },
+  {
+   "pick": 106,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Daniel Gafford",
+    "Devin Vassell"
+   ],
+   "actual": "Draymond Green",
+   "swap": "Sandro Mamukelashvili"
+  },
+  {
+   "pick": 111,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "PJ Washington",
+    "Daniel Gafford",
+    "Aaron Gordon",
+    "Herbert Jones"
+   ],
+   "actual": "Yaxel Lendeborg",
+   "swap": null
+  },
+  {
+   "pick": 130,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Cason Wallace",
+    "Saddiq Bey",
+    "Herbert Jones",
+    "Collin Gillespie"
+   ],
+   "actual": "Herbert Jones",
+   "swap": "Daniel Gafford"
+  },
+  {
+   "pick": 135,
+   "target": "Cason Wallace",
+   "top5": [
+    "Cason Wallace",
+    "Saddiq Bey",
+    "Herbert Jones",
+    "Collin Gillespie",
+    "Fred VanVleet"
+   ],
+   "actual": "Tari Eason",
+   "swap": "Cason Wallace"
+  },
+  {
+   "pick": 154,
+   "target": "Saddiq Bey",
+   "top5": [
+    "Saddiq Bey",
+    "Collin Gillespie",
+    "Fred VanVleet",
+    "Christian Braun",
+    "Kyle Filipowski"
+   ],
+   "actual": "Bilal Coulibaly",
+   "swap": "Saddiq Bey"
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 3.583,
+   "playoff": 54.87,
+   "champ_rank": 9,
+   "ecw": 4.334,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 26.961,
+   "playoff": 99.59,
+   "champ_rank": 2,
+   "ecw": 5.347,
+   "swaps": [
+    [
+     10,
+     "Karl-Anthony Towns"
+    ],
+    [
+     15,
+     "Jamal Murray"
+    ],
+    [
+     34,
+     "OG Anunoby"
+    ],
+    [
+     39,
+     "Desmond Bane"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     63,
+     "De'Aaron Fox"
+    ],
+    [
+     82,
+     "Isaiah Hartenstein"
+    ],
+    [
+     87,
+     "Jalen Suggs"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     130,
+     "Daniel Gafford"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ],
+    [
+     154,
+     "Saddiq Bey"
+    ]
+   ]
+  }
+ }
+}

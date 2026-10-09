@@ -1,0 +1,237 @@
+{
+ "mock": 66,
+ "tag": "v53",
+ "label": "v52prices",
+ "page_rev": "4024ddb",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Jalen Johnson",
+   "top5": [
+    "Jalen Johnson",
+    "Jalen Williams",
+    "Kevin Durant",
+    "Donovan Mitchell",
+    "Anthony Davis"
+   ],
+   "actual": "Giannis Antetokounmpo",
+   "swap": "Jalen Johnson"
+  },
+  {
+   "pick": 15,
+   "target": "Kevin Durant",
+   "top5": [
+    "Kevin Durant",
+    "Jamal Murray",
+    "Jalen Williams",
+    "Desmond Bane",
+    "Kyrie Irving"
+   ],
+   "actual": "Scottie Barnes",
+   "swap": "Kevin Durant"
+  },
+  {
+   "pick": 34,
+   "target": "Derrick White",
+   "top5": [
+    "Derrick White",
+    "Dyson Daniels",
+    "Desmond Bane",
+    "Franz Wagner",
+    "OG Anunoby"
+   ],
+   "actual": "Trae Young",
+   "swap": "Derrick White"
+  },
+  {
+   "pick": 39,
+   "target": "Desmond Bane",
+   "top5": [
+    "Desmond Bane",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Franz Wagner",
+    "Payton Pritchard"
+   ],
+   "actual": "Dyson Daniels",
+   "swap": "Desmond Bane"
+  },
+  {
+   "pick": 58,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "De'Aaron Fox",
+    "Jalen Suggs",
+    "Zach LaVine",
+    "Coby White"
+   ],
+   "actual": "Payton Pritchard",
+   "swap": null
+  },
+  {
+   "pick": 63,
+   "target": "De'Aaron Fox",
+   "top5": [
+    "De'Aaron Fox",
+    "Josh Hart",
+    "Jalen Suggs",
+    "Isaiah Hartenstein",
+    "Day'Ron Sharpe"
+   ],
+   "actual": "Paolo Banchero",
+   "swap": "De'Aaron Fox"
+  },
+  {
+   "pick": 82,
+   "target": "Jalen Suggs",
+   "top5": [
+    "Jalen Suggs",
+    "Isaiah Hartenstein",
+    "Day'Ron Sharpe",
+    "Yaxel Lendeborg",
+    "Jaden McDaniels"
+   ],
+   "actual": "VJ Edgecombe",
+   "swap": "Jalen Suggs"
+  },
+  {
+   "pick": 87,
+   "target": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "Day'Ron Sharpe",
+    "Yaxel Lendeborg",
+    "Daniel Gafford",
+    "Jaden McDaniels"
+   ],
+   "actual": "Coby White",
+   "swap": "Isaiah Hartenstein"
+  },
+  {
+   "pick": 106,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Daniel Gafford",
+    "Herbert Jones"
+   ],
+   "actual": "Jalen Green",
+   "swap": "Sandro Mamukelashvili"
+  },
+  {
+   "pick": 111,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "PJ Washington",
+    "Herbert Jones",
+    "Daniel Gafford",
+    "Cason Wallace"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  },
+  {
+   "pick": 130,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Herbert Jones",
+    "Daniel Gafford",
+    "Cason Wallace",
+    "Saddiq Bey"
+   ],
+   "actual": "Yaxel Lendeborg",
+   "swap": null
+  },
+  {
+   "pick": 135,
+   "target": "Herbert Jones",
+   "top5": [
+    "Herbert Jones",
+    "Cason Wallace",
+    "Saddiq Bey",
+    "Devin Vassell",
+    "Daniel Gafford"
+   ],
+   "actual": "Fred VanVleet",
+   "swap": "Cason Wallace"
+  },
+  {
+   "pick": 154,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Herbert Jones",
+    "Saddiq Bey",
+    "Kyle Filipowski",
+    "Christian Braun"
+   ],
+   "actual": "Daniel Gafford",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 20.344,
+   "playoff": 96.89,
+   "champ_rank": 1,
+   "ecw": 5.029,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 34.428,
+   "playoff": 99.93,
+   "champ_rank": 1,
+   "ecw": 5.529,
+   "swaps": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     15,
+     "Kevin Durant"
+    ],
+    [
+     34,
+     "Derrick White"
+    ],
+    [
+     39,
+     "Desmond Bane"
+    ],
+    [
+     63,
+     "De'Aaron Fox"
+    ],
+    [
+     82,
+     "Jalen Suggs"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ]
+   ]
+  }
+ }
+}

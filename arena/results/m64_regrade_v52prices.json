@@ -1,0 +1,241 @@
+{
+ "mock": 64,
+ "tag": "v53",
+ "label": "v52prices",
+ "page_rev": "4024ddb",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Jalen Johnson",
+   "top5": [
+    "Jalen Johnson",
+    "Jalen Williams",
+    "Kevin Durant",
+    "Donovan Mitchell",
+    "Anthony Davis"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Jalen Johnson"
+  },
+  {
+   "pick": 15,
+   "target": "Kevin Durant",
+   "top5": [
+    "Kevin Durant",
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Stephen Curry"
+   ],
+   "actual": "Kevin Durant",
+   "swap": null
+  },
+  {
+   "pick": 34,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Kyrie Irving",
+    "Payton Pritchard"
+   ],
+   "actual": "Bam Adebayo",
+   "swap": "OG Anunoby"
+  },
+  {
+   "pick": 39,
+   "target": "Franz Wagner",
+   "top5": [
+    "Franz Wagner",
+    "Payton Pritchard",
+    "Kyrie Irving",
+    "Tyler Herro",
+    "Onyeka Okongwu"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Franz Wagner"
+  },
+  {
+   "pick": 58,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "De'Aaron Fox",
+    "Zach LaVine",
+    "Jalen Suggs",
+    "Coby White"
+   ],
+   "actual": "Payton Pritchard",
+   "swap": null
+  },
+  {
+   "pick": 63,
+   "target": "Jalen Suggs",
+   "top5": [
+    "Jalen Suggs",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Mikal Bridges",
+    "Naz Reid"
+   ],
+   "actual": "Paolo Banchero",
+   "swap": "Jalen Suggs"
+  },
+  {
+   "pick": 82,
+   "target": "Zach LaVine",
+   "top5": [
+    "Zach LaVine",
+    "Isaiah Hartenstein",
+    "Day'Ron Sharpe",
+    "Yaxel Lendeborg",
+    "PJ Washington"
+   ],
+   "actual": "Jaden McDaniels",
+   "swap": "Zach LaVine"
+  },
+  {
+   "pick": 87,
+   "target": "Day'Ron Sharpe",
+   "top5": [
+    "Day'Ron Sharpe",
+    "Yaxel Lendeborg",
+    "PJ Washington",
+    "Myles Turner",
+    "Daniel Gafford"
+   ],
+   "actual": "Jabari Smith Jr.",
+   "swap": "Day'Ron Sharpe"
+  },
+  {
+   "pick": 106,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Daniel Gafford",
+    "Herbert Jones"
+   ],
+   "actual": "Herbert Jones",
+   "swap": "Yaxel Lendeborg"
+  },
+  {
+   "pick": 111,
+   "target": "Sandro Mamukelashvili",
+   "top5": [
+    "Sandro Mamukelashvili",
+    "Devin Vassell",
+    "Saddiq Bey",
+    "Collin Gillespie",
+    "Daniel Gafford"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": "Sandro Mamukelashvili"
+  },
+  {
+   "pick": 130,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Saddiq Bey",
+    "Collin Gillespie",
+    "Cason Wallace",
+    "Christian Braun"
+   ],
+   "actual": "Daniel Gafford",
+   "swap": null
+  },
+  {
+   "pick": 135,
+   "target": "Saddiq Bey",
+   "top5": [
+    "Saddiq Bey",
+    "Cason Wallace",
+    "Reed Sheppard",
+    "Christian Braun",
+    "Santi Aldama"
+   ],
+   "actual": "Cason Wallace",
+   "swap": "Saddiq Bey"
+  },
+  {
+   "pick": 154,
+   "target": "Santi Aldama",
+   "top5": [
+    "Santi Aldama",
+    "Wendell Carter Jr.",
+    "Bilal Coulibaly",
+    "Scotty Pippen Jr.",
+    "Malik Monk"
+   ],
+   "actual": "Stephon Castle",
+   "swap": "Scotty Pippen Jr."
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 9.711,
+   "playoff": 83.22,
+   "champ_rank": 3,
+   "ecw": 4.675,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 22.511,
+   "playoff": 97.62,
+   "champ_rank": 2,
+   "ecw": 5.091,
+   "swaps": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     34,
+     "OG Anunoby"
+    ],
+    [
+     39,
+     "Franz Wagner"
+    ],
+    [
+     63,
+     "Jalen Suggs"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Day'Ron Sharpe"
+    ],
+    [
+     106,
+     "Yaxel Lendeborg"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Saddiq Bey"
+    ],
+    [
+     154,
+     "Scotty Pippen Jr."
+    ]
+   ]
+  }
+ }
+}

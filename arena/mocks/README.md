@@ -619,3 +619,14 @@ is on the author. See LEDGER §3.
   record: stats.nba.com, cdn.nba.com, data.nba.com, RealGM, NBAstuffer, CBS, landofbasketball, Fox, StatMuse,
   FantasyPros, Proballers, sports.yahoo.com, HoopsHype, RotoWire, Sofascore, Wikipedia, NBC — so the record is two
   outlets, not three; nba.com's HTML and StatDunk answer without stat tables.
+- **Before/after re-grade of the last 15 rooms (owner 2026-10-09: "use the last 15 live/mock drafts to see if the
+  computational dialing in affected anything").** `live_retro.py <mock> regrade --tag v53 --rev <page> --label <name>`:
+  a two-arm stage (as drafted; follow the shipped card, self-consistent; 6,000 seasons × seeds 11/23/47) that takes the
+  baked prices and the card rule from the page at `--rev` and records the card's 🎯 and top five at every owner turn
+  (`m<mock>_regrade_<label>.json`). Pool tag `v53` = `players_v53.csv` (byte-identical to v52's pool). Mocks 57–71 run
+  twice — rev 4024ddb (the v52 page) and rev 1c97b7e (the v53 page: wording, identity check, the 10/9 ADP refresh) —
+  summary `arena/results/regrade_2026-10-09.json`: title odds identical to the third decimal in all 15 rooms under both
+  price pages, the 🎯 the same name at all 195 owner turns, no follow-card chain changed (mean follow-card 31.6% on
+  both); the repeat-name replays of the real pages (21 rooms, 273 owner turns) show the same 🎯 everywhere. The
+  "recorded" grades differ from today's pool in most rooms — the two weeks of pool work since, not the 10/9 changes.
+  Kit report `after-report-2026-10-09-market.md` §8.

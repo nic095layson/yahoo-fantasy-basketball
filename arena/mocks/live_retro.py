@@ -38,7 +38,10 @@ POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v44": SP + "/m61_players_v44.csv",
          "v49": SP + "/m66_players_v49.csv",
          # v50 = data/players.csv at main 9f54e99 (the 2026-10-08 pull: Hawkins MEM -> CHI, 151 notes, no line or tag change)
-         "v50": SP + "/m68_players_v50.csv"}
+         "v50": SP + "/m68_players_v50.csv",
+         # v53 = data/players.csv at the 2026-10-09 ADP refresh (the pool is v52's, byte-identical; the page's
+         # prices differ) — the owner's before/after re-grade of the last 15 rooms (--rev picks the price page)
+         "v53": SP + "/players_v53.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -172,6 +175,13 @@ TAG_OVERRIDE = sys.argv[_ti + 1] if _ti >= 0 and _ti + 1 < len(sys.argv) else No
 TAGS = (TAG_OVERRIDE,) if TAG_OVERRIDE else CFG["tags"]
 GRADE_TAG = TAGS[-1]   # the pool the grading stages run on: the deck the owner drafted against (mock 53: v25)
 OUT_SUFFIX = f"_{TAG_OVERRIDE}" if TAG_OVERRIDE else ""
+# --rev <commit>: take the baked prices and the card rule from that page revision instead of the
+# one the room was drafted on (owner 2026-10-09: the same room on the re-priced page). --label <name>
+# names the regrade stage's output (m<mock>_regrade_<label>.json).
+_ri = sys.argv.index("--rev") if "--rev" in sys.argv else -1
+REV_OVERRIDE = sys.argv[_ri + 1] if _ri >= 0 and _ri + 1 < len(sys.argv) else None
+_li = sys.argv.index("--label") if "--label" in sys.argv else -1
+LABEL = sys.argv[_li + 1] if _li >= 0 and _li + 1 < len(sys.argv) else (TAG_OVERRIDE or "own")
 STATE = DECK + f"/arena/data/states/draft_state_{MOCK}.json"
 state = json.load(open(STATE, encoding="utf-8"))
 TEAMS, SLOT, SIZE = state["teams"], state["slot"], state["size"]
@@ -701,6 +711,8 @@ def stage_arms(tag=None):
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
     60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558"}
+if REV_OVERRIDE:
+    PAGE_REV[MOCK] = REV_OVERRIDE
 
 
 def _baked_prices(rev):
@@ -862,12 +874,78 @@ def stage_pairarms(tag=None, seeds1=(11, 23, 47), seeds2=(5, 17, 29)):
     return out
 
 
+def stage_regrade(tag=None):
+    """Owner 2026-10-09: the same room graded on another page's prices (--rev) and a pool tag — two arms
+    only (as drafted; follow the shipped card, self-consistent), so a before/after of the card's chain is one
+    simulation pair per room. Records the card's 🎯 and top five at every owner turn under those prices.
+    Writes m<mock>_regrade_<label>.json."""
+    tag = tag or GRADE_TAG
+    players = load_pool(tag)
+    byn = {p["player"]: p for p in players}
+    _veto = hoops.do_not_draft() if CFG.get("veto") else set()
+    picks_run = [dict(pk) for pk in PICKS]
+    swaps, chain = [], []
+    for n in OWNER_IDX:
+        taken = {pk["player"] for pk in picks_run[:n]}
+        ros = {s: [] for s in range(1, TEAMS + 1)}
+        for pk in picks_run[:n]:
+            if pk["player"] in byn:
+                ros[pk["slot"]].append(byn[pk["player"]])
+        mine = ros[SLOT]; opp = [r for s, r in ros.items() if s != SLOT and r]
+        pool = [p for p in players if p["player"] not in taken and hoops.availability(p) > 0
+                and p["player"] not in _veto]
+        pool = card_pool(pool, n)
+        vals = [hoops.adj_value(p, ()) for p in pool]
+        models = [arena.team_week_model(r) for r in opp]
+        if not models:
+            ds = pct(vals)
+        else:
+            base = pwins(arena.team_week_model(mine), models) if mine else 0.0
+            decw = [pwins(arena.team_week_model(mine + [p]), models) - base for p in pool]
+            pd, pv = pct(decw), pct(vals)
+            ds = [0.5 * pd[i] + 0.5 * pv[i] for i in range(len(pool))]
+        order = sorted(range(len(pool)), key=lambda i: (-ds[i], [-ord(ch) for ch in pool[i]["player"]]))
+        actual = picks_run[n]["player"]
+        later = {pk["player"]: j for j, pk in enumerate(picks_run) if j > n}
+        chosen = None
+        for i in order[:5]:
+            nm = pool[i]["player"]
+            if nm == actual:
+                chosen = None; break
+            j = later.get(nm)
+            if j is not None and picks_run[j]["slot"] != SLOT:
+                chosen = (nm, j); break
+        chain.append(dict(pick=n + 1, target=pool[order[0]]["player"], top5=[pool[i]["player"] for i in order[:5]],
+                          actual=actual, swap=(chosen[0] if chosen else None)))
+        if chosen:
+            nm, j = chosen
+            picks_run[n]["player"], picks_run[j]["player"] = nm, actual
+            swaps.append((n, nm))
+    results = {}
+    for name, sw in (("as_drafted", []), ("follow_card_selfconsistent", swaps)):
+        ros, _ = apply_swaps(players, sw)
+        res = run_arm(ros)
+        me = res[SLOT]
+        rank = 1 + sum(1 for s in ros if s != SLOT and res[s][0] > me[0])
+        models = {s: arena.team_week_model(r) for s, r in ros.items()}
+        results[name] = dict(champ=round(me[0], 3), playoff=round(me[1], 2), champ_rank=rank,
+                             ecw=round(pwins(models[SLOT], [models[o] for o in ros if o != SLOT]), 3),
+                             swaps=[(n + 1, a) for n, a in sw])
+        print(f"{MOCK} {LABEL} {name:<28} champ {me[0]:6.3f}%  playoff {me[1]:5.2f}%  rank {rank}/12  ecw {results[name]['ecw']}")
+    out = dict(mock=MOCK, tag=tag, label=LABEL, page_rev=PAGE_REV[MOCK], seasons=6000, seeds=[11, 23, 47],
+               card_rule=card_rule()[0], chain=chain, results=results)
+    json.dump(out, open(SP + f"/m{MOCK}_regrade_{LABEL}.json", "w"), indent=1)
+    return out
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
+    ap.add_argument("--rev", default=None, help="page revision for the baked prices and card rule (regrade)")
+    ap.add_argument("--label", default=None, help="output label for the regrade stage")
     ap.add_argument("mock", type=int, choices=sorted(MOCKS))
-    ap.add_argument("stage", choices=["replay", "final", "hindsight", "forecast", "arms", "pairarms"])
+    ap.add_argument("stage", choices=["replay", "final", "hindsight", "forecast", "arms", "pairarms", "regrade"])
     ap.add_argument("--tag", choices=sorted(POOLS), default=None,
                     help="re-grade on this pool tag instead of the mock's own; outputs carry the _<tag> suffix")
     a = ap.parse_args()
     {"replay": stage_replay, "final": stage_final, "hindsight": stage_hindsight,
-     "forecast": stage_forecast, "arms": stage_arms, "pairarms": stage_pairarms}[a.stage]()
+     "forecast": stage_forecast, "arms": stage_arms, "pairarms": stage_pairarms, "regrade": stage_regrade}[a.stage]()

@@ -1,0 +1,237 @@
+{
+ "mock": 57,
+ "tag": "v53",
+ "label": "v52prices",
+ "page_rev": "4024ddb",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson",
+    "Tyrese Haliburton",
+    "Anthony Davis",
+    "Chet Holmgren"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Jalen Johnson"
+  },
+  {
+   "pick": 15,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Jamal Murray",
+    "Derrick White",
+    "Kyrie Irving"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": null
+  },
+  {
+   "pick": 34,
+   "target": "Jalen Williams",
+   "top5": [
+    "Jalen Williams",
+    "Dyson Daniels",
+    "Derrick White",
+    "Desmond Bane",
+    "Anthony Davis"
+   ],
+   "actual": "Jalen Williams",
+   "swap": null
+  },
+  {
+   "pick": 39,
+   "target": "Derrick White",
+   "top5": [
+    "Derrick White",
+    "Desmond Bane",
+    "Kyrie Irving",
+    "Payton Pritchard",
+    "OG Anunoby"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Derrick White"
+  },
+  {
+   "pick": 58,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Tyler Herro",
+    "Darius Garland",
+    "De'Aaron Fox"
+   ],
+   "actual": "Damian Lillard",
+   "swap": "Payton Pritchard"
+  },
+  {
+   "pick": 63,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Darius Garland",
+    "De'Aaron Fox",
+    "Ivica Zubac",
+    "Jalen Suggs"
+   ],
+   "actual": "OG Anunoby",
+   "swap": null
+  },
+  {
+   "pick": 82,
+   "target": "Jalen Suggs",
+   "top5": [
+    "Jalen Suggs",
+    "Coby White",
+    "Zach LaVine",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Jalen Suggs"
+  },
+  {
+   "pick": 87,
+   "target": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "Day'Ron Sharpe",
+    "Yaxel Lendeborg",
+    "Sandro Mamukelashvili",
+    "Myles Turner"
+   ],
+   "actual": "Jaden McDaniels",
+   "swap": "Day'Ron Sharpe"
+  },
+  {
+   "pick": 106,
+   "target": "Sandro Mamukelashvili",
+   "top5": [
+    "Sandro Mamukelashvili",
+    "Isaiah Hartenstein",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Saddiq Bey"
+   ],
+   "actual": "Isaiah Hartenstein",
+   "swap": "Sandro Mamukelashvili"
+  },
+  {
+   "pick": 111,
+   "target": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "PJ Washington",
+    "Devin Vassell",
+    "Saddiq Bey"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": "Isaiah Hartenstein"
+  },
+  {
+   "pick": 130,
+   "target": "Devin Vassell",
+   "top5": [
+    "Devin Vassell",
+    "Collin Gillespie",
+    "Yaxel Lendeborg",
+    "PJ Washington",
+    "Herbert Jones"
+   ],
+   "actual": "PJ Washington",
+   "swap": "Collin Gillespie"
+  },
+  {
+   "pick": 135,
+   "target": "Devin Vassell",
+   "top5": [
+    "Devin Vassell",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Saddiq Bey",
+    "Herbert Jones"
+   ],
+   "actual": "Devin Vassell",
+   "swap": null
+  },
+  {
+   "pick": 154,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Herbert Jones",
+    "Draymond Green",
+    "Jerami Grant",
+    "Cameron Johnson"
+   ],
+   "actual": "Quentin Grimes",
+   "swap": "Draymond Green"
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 13.211,
+   "playoff": 86.81,
+   "champ_rank": 2,
+   "ecw": 4.758,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 38.183,
+   "playoff": 99.95,
+   "champ_rank": 1,
+   "ecw": 5.542,
+   "swaps": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     39,
+     "Derrick White"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     82,
+     "Jalen Suggs"
+    ],
+    [
+     87,
+     "Day'Ron Sharpe"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     111,
+     "Isaiah Hartenstein"
+    ],
+    [
+     130,
+     "Collin Gillespie"
+    ],
+    [
+     154,
+     "Draymond Green"
+    ]
+   ]
+  }
+ }
+}

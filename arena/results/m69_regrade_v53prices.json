@@ -1,0 +1,205 @@
+{
+ "mock": 69,
+ "tag": "v53",
+ "label": "v53prices",
+ "page_rev": "1c97b7e",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Anthony Davis",
+    "Kevin Durant",
+    "Jalen Williams",
+    "Chet Holmgren"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": null
+  },
+  {
+   "pick": 15,
+   "target": "Jamal Murray",
+   "top5": [
+    "Jamal Murray",
+    "Jalen Williams",
+    "Derrick White",
+    "Austin Reaves",
+    "James Harden"
+   ],
+   "actual": "James Harden",
+   "swap": "Jamal Murray"
+  },
+  {
+   "pick": 34,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Desmond Bane",
+    "Kyrie Irving",
+    "Franz Wagner",
+    "Dyson Daniels"
+   ],
+   "actual": "OG Anunoby",
+   "swap": null
+  },
+  {
+   "pick": 39,
+   "target": "Onyeka Okongwu",
+   "top5": [
+    "Onyeka Okongwu",
+    "Kyrie Irving",
+    "Payton Pritchard",
+    "Jaren Jackson Jr.",
+    "Tyler Herro"
+   ],
+   "actual": "Onyeka Okongwu",
+   "swap": null
+  },
+  {
+   "pick": 58,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "De'Aaron Fox",
+    "Jalen Suggs",
+    "Coby White",
+    "Mikal Bridges"
+   ],
+   "actual": "Payton Pritchard",
+   "swap": null
+  },
+  {
+   "pick": 63,
+   "target": "Jalen Suggs",
+   "top5": [
+    "Jalen Suggs",
+    "Mikal Bridges",
+    "Coby White",
+    "Ryan Rollins",
+    "Josh Hart"
+   ],
+   "actual": "Jalen Suggs",
+   "swap": null
+  },
+  {
+   "pick": 82,
+   "target": "Mikal Bridges",
+   "top5": [
+    "Mikal Bridges",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Myles Turner"
+   ],
+   "actual": "Mikal Bridges",
+   "swap": null
+  },
+  {
+   "pick": 87,
+   "target": "Josh Hart",
+   "top5": [
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Day'Ron Sharpe",
+    "Yaxel Lendeborg",
+    "Daniel Gafford"
+   ],
+   "actual": "Josh Hart",
+   "swap": null
+  },
+  {
+   "pick": 106,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Herbert Jones",
+    "Daniel Gafford"
+   ],
+   "actual": "Yaxel Lendeborg",
+   "swap": null
+  },
+  {
+   "pick": 111,
+   "target": "PJ Washington",
+   "top5": [
+    "PJ Washington",
+    "Sandro Mamukelashvili",
+    "Daniel Gafford",
+    "Herbert Jones",
+    "Aaron Gordon"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  },
+  {
+   "pick": 130,
+   "target": "Sandro Mamukelashvili",
+   "top5": [
+    "Sandro Mamukelashvili",
+    "Herbert Jones",
+    "Daniel Gafford",
+    "Cason Wallace",
+    "Devin Vassell"
+   ],
+   "actual": "Sandro Mamukelashvili",
+   "swap": null
+  },
+  {
+   "pick": 135,
+   "target": "Herbert Jones",
+   "top5": [
+    "Herbert Jones",
+    "Daniel Gafford",
+    "Cason Wallace",
+    "Devin Vassell",
+    "Saddiq Bey"
+   ],
+   "actual": "Daniel Gafford",
+   "swap": null
+  },
+  {
+   "pick": 154,
+   "target": "Herbert Jones",
+   "top5": [
+    "Herbert Jones",
+    "Collin Gillespie",
+    "Saddiq Bey",
+    "Reed Sheppard",
+    "Christian Braun"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 27.694,
+   "playoff": 99.5,
+   "champ_rank": 1,
+   "ecw": 5.251,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 26.7,
+   "playoff": 99.37,
+   "champ_rank": 1,
+   "ecw": 5.204,
+   "swaps": [
+    [
+     15,
+     "Jamal Murray"
+    ]
+   ]
+  }
+ }
+}

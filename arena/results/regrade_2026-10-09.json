@@ -1,0 +1,1134 @@
+{
+ "rooms": [
+  {
+   "mock": 57,
+   "recorded": {
+    "as_drafted": 27.444,
+    "follow": 41.433,
+    "rank": 1
+   },
+   "before": {
+    "as_drafted": 13.211,
+    "follow": 38.183,
+    "ecw_follow": 5.542,
+    "rank": 2
+   },
+   "after": {
+    "as_drafted": 13.211,
+    "follow": 38.183,
+    "ecw_follow": 5.542,
+    "rank": 2
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     39,
+     "Derrick White"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     82,
+     "Jalen Suggs"
+    ],
+    [
+     87,
+     "Day'Ron Sharpe"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     111,
+     "Isaiah Hartenstein"
+    ],
+    [
+     130,
+     "Collin Gillespie"
+    ],
+    [
+     154,
+     "Draymond Green"
+    ]
+   ],
+   "swaps_after": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     39,
+     "Derrick White"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     82,
+     "Jalen Suggs"
+    ],
+    [
+     87,
+     "Day'Ron Sharpe"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     111,
+     "Isaiah Hartenstein"
+    ],
+    [
+     130,
+     "Collin Gillespie"
+    ],
+    [
+     154,
+     "Draymond Green"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 58,
+   "recorded": {
+    "as_drafted": 36.75,
+    "follow": 40.894,
+    "rank": 1
+   },
+   "before": {
+    "as_drafted": 22.633,
+    "follow": 38.511,
+    "ecw_follow": 5.652,
+    "rank": 1
+   },
+   "after": {
+    "as_drafted": 22.633,
+    "follow": 38.511,
+    "ecw_follow": 5.652,
+    "rank": 1
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     10,
+     "Tyrese Maxey"
+    ],
+    [
+     39,
+     "Jalen Williams"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Josh Hart"
+    ],
+    [
+     106,
+     "Yaxel Lendeborg"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     130,
+     "PJ Washington"
+    ]
+   ],
+   "swaps_after": [
+    [
+     10,
+     "Tyrese Maxey"
+    ],
+    [
+     39,
+     "Jalen Williams"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Josh Hart"
+    ],
+    [
+     106,
+     "Yaxel Lendeborg"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     130,
+     "PJ Washington"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 59,
+   "recorded": {
+    "as_drafted": 20.378,
+    "follow": 39.183,
+    "rank": 2
+   },
+   "before": {
+    "as_drafted": 14.95,
+    "follow": 36.672,
+    "ecw_follow": 5.566,
+    "rank": 2
+   },
+   "after": {
+    "as_drafted": 14.95,
+    "follow": 36.672,
+    "ecw_follow": 5.566,
+    "rank": 2
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     10,
+     "Tyrese Maxey"
+    ],
+    [
+     39,
+     "Derrick White"
+    ],
+    [
+     63,
+     "Jarrett Allen"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Josh Hart"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     111,
+     "Cason Wallace"
+    ]
+   ],
+   "swaps_after": [
+    [
+     10,
+     "Tyrese Maxey"
+    ],
+    [
+     39,
+     "Derrick White"
+    ],
+    [
+     63,
+     "Jarrett Allen"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Josh Hart"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     111,
+     "Cason Wallace"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 60,
+   "recorded": {
+    "as_drafted": 33.017,
+    "follow": 43.144,
+    "rank": 1
+   },
+   "before": {
+    "as_drafted": 33.728,
+    "follow": 41.389,
+    "ecw_follow": 5.621,
+    "rank": 1
+   },
+   "after": {
+    "as_drafted": 33.728,
+    "follow": 41.389,
+    "ecw_follow": 5.621,
+    "rank": 1
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     15,
+     "Donovan Mitchell"
+    ],
+    [
+     34,
+     "Anthony Davis"
+    ],
+    [
+     39,
+     "Jalen Williams"
+    ],
+    [
+     58,
+     "OG Anunoby"
+    ],
+    [
+     63,
+     "Payton Pritchard"
+    ],
+    [
+     106,
+     "Daniel Gafford"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ]
+   ],
+   "swaps_after": [
+    [
+     15,
+     "Donovan Mitchell"
+    ],
+    [
+     34,
+     "Anthony Davis"
+    ],
+    [
+     39,
+     "Jalen Williams"
+    ],
+    [
+     58,
+     "OG Anunoby"
+    ],
+    [
+     63,
+     "Payton Pritchard"
+    ],
+    [
+     106,
+     "Daniel Gafford"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 61,
+   "recorded": {
+    "as_drafted": 16.661,
+    "follow": 34.494,
+    "rank": 2
+   },
+   "before": {
+    "as_drafted": 16.6,
+    "follow": 34.994,
+    "ecw_follow": 5.537,
+    "rank": 2
+   },
+   "after": {
+    "as_drafted": 16.6,
+    "follow": 34.994,
+    "ecw_follow": 5.537,
+    "rank": 2
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     63,
+     "Jarrett Allen"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     111,
+     "Cason Wallace"
+    ],
+    [
+     135,
+     "Saddiq Bey"
+    ]
+   ],
+   "swaps_after": [
+    [
+     63,
+     "Jarrett Allen"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     111,
+     "Cason Wallace"
+    ],
+    [
+     135,
+     "Saddiq Bey"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 62,
+   "recorded": {
+    "as_drafted": 18.05,
+    "follow": 18.222,
+    "rank": 2
+   },
+   "before": {
+    "as_drafted": 18.294,
+    "follow": 17.444,
+    "ecw_follow": 4.97,
+    "rank": 2
+   },
+   "after": {
+    "as_drafted": 18.294,
+    "follow": 17.444,
+    "ecw_follow": 4.97,
+    "rank": 2
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     130,
+     "Herbert Jones"
+    ]
+   ],
+   "swaps_after": [
+    [
+     130,
+     "Herbert Jones"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 63,
+   "recorded": {
+    "as_drafted": 23.333,
+    "follow": 23.333,
+    "rank": 2
+   },
+   "before": {
+    "as_drafted": 24.061,
+    "follow": 25.044,
+    "ecw_follow": 5.24,
+    "rank": 2
+   },
+   "after": {
+    "as_drafted": 24.061,
+    "follow": 25.044,
+    "ecw_follow": 5.24,
+    "rank": 2
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     130,
+     "Saddiq Bey"
+    ]
+   ],
+   "swaps_after": [
+    [
+     130,
+     "Saddiq Bey"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 64,
+   "recorded": {
+    "as_drafted": 7.633,
+    "follow": 18.972,
+    "rank": 3
+   },
+   "before": {
+    "as_drafted": 9.711,
+    "follow": 22.511,
+    "ecw_follow": 5.091,
+    "rank": 3
+   },
+   "after": {
+    "as_drafted": 9.711,
+    "follow": 22.511,
+    "ecw_follow": 5.091,
+    "rank": 3
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     34,
+     "OG Anunoby"
+    ],
+    [
+     39,
+     "Franz Wagner"
+    ],
+    [
+     63,
+     "Jalen Suggs"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Day'Ron Sharpe"
+    ],
+    [
+     106,
+     "Yaxel Lendeborg"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Saddiq Bey"
+    ],
+    [
+     154,
+     "Scotty Pippen Jr."
+    ]
+   ],
+   "swaps_after": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     34,
+     "OG Anunoby"
+    ],
+    [
+     39,
+     "Franz Wagner"
+    ],
+    [
+     63,
+     "Jalen Suggs"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Day'Ron Sharpe"
+    ],
+    [
+     106,
+     "Yaxel Lendeborg"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Saddiq Bey"
+    ],
+    [
+     154,
+     "Scotty Pippen Jr."
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 65,
+   "recorded": {
+    "as_drafted": 23.189,
+    "follow": 23.189,
+    "rank": 2
+   },
+   "before": {
+    "as_drafted": 25.289,
+    "follow": 25.289,
+    "ecw_follow": 5.192,
+    "rank": 1
+   },
+   "after": {
+    "as_drafted": 25.289,
+    "follow": 25.289,
+    "ecw_follow": 5.192,
+    "rank": 1
+   },
+   "target_changes": [],
+   "swaps_before": [],
+   "swaps_after": [],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 66,
+   "recorded": {
+    "as_drafted": 20.156,
+    "follow": 34.928,
+    "rank": 1
+   },
+   "before": {
+    "as_drafted": 20.344,
+    "follow": 34.428,
+    "ecw_follow": 5.529,
+    "rank": 1
+   },
+   "after": {
+    "as_drafted": 20.344,
+    "follow": 34.428,
+    "ecw_follow": 5.529,
+    "rank": 1
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     15,
+     "Kevin Durant"
+    ],
+    [
+     34,
+     "Derrick White"
+    ],
+    [
+     39,
+     "Desmond Bane"
+    ],
+    [
+     63,
+     "De'Aaron Fox"
+    ],
+    [
+     82,
+     "Jalen Suggs"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ]
+   ],
+   "swaps_after": [
+    [
+     10,
+     "Jalen Johnson"
+    ],
+    [
+     15,
+     "Kevin Durant"
+    ],
+    [
+     34,
+     "Derrick White"
+    ],
+    [
+     39,
+     "Desmond Bane"
+    ],
+    [
+     63,
+     "De'Aaron Fox"
+    ],
+    [
+     82,
+     "Jalen Suggs"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 67,
+   "recorded": {
+    "as_drafted": 17.511,
+    "follow": 37.511,
+    "rank": 2
+   },
+   "before": {
+    "as_drafted": 18.483,
+    "follow": 38.856,
+    "ecw_follow": 5.691,
+    "rank": 2
+   },
+   "after": {
+    "as_drafted": 18.483,
+    "follow": 38.856,
+    "ecw_follow": 5.691,
+    "rank": 2
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     63,
+     "OG Anunoby"
+    ],
+    [
+     82,
+     "De'Aaron Fox"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     111,
+     "Yaxel Lendeborg"
+    ]
+   ],
+   "swaps_after": [
+    [
+     63,
+     "OG Anunoby"
+    ],
+    [
+     82,
+     "De'Aaron Fox"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     111,
+     "Yaxel Lendeborg"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 68,
+   "recorded": {
+    "as_drafted": 28.356,
+    "follow": 35.0,
+    "rank": 1
+   },
+   "before": {
+    "as_drafted": 29.389,
+    "follow": 36.394,
+    "ecw_follow": 5.652,
+    "rank": 1
+   },
+   "after": {
+    "as_drafted": 29.389,
+    "follow": 36.394,
+    "ecw_follow": 5.652,
+    "rank": 1
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     34,
+     "Anthony Davis"
+    ],
+    [
+     63,
+     "Payton Pritchard"
+    ],
+    [
+     82,
+     "Mikal Bridges"
+    ],
+    [
+     87,
+     "Josh Hart"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Fred VanVleet"
+    ]
+   ],
+   "swaps_after": [
+    [
+     34,
+     "Anthony Davis"
+    ],
+    [
+     63,
+     "Payton Pritchard"
+    ],
+    [
+     82,
+     "Mikal Bridges"
+    ],
+    [
+     87,
+     "Josh Hart"
+    ],
+    [
+     111,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     135,
+     "Fred VanVleet"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 69,
+   "recorded": {
+    "as_drafted": 27.506,
+    "follow": 26.583,
+    "rank": 1
+   },
+   "before": {
+    "as_drafted": 27.694,
+    "follow": 26.7,
+    "ecw_follow": 5.204,
+    "rank": 1
+   },
+   "after": {
+    "as_drafted": 27.694,
+    "follow": 26.7,
+    "ecw_follow": 5.204,
+    "rank": 1
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     15,
+     "Jamal Murray"
+    ]
+   ],
+   "swaps_after": [
+    [
+     15,
+     "Jamal Murray"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 70,
+   "recorded": {
+    "as_drafted": 20.678,
+    "follow": 30.767,
+    "rank": 2
+   },
+   "before": {
+    "as_drafted": 20.461,
+    "follow": 30.639,
+    "ecw_follow": 5.381,
+    "rank": 2
+   },
+   "after": {
+    "as_drafted": 20.461,
+    "follow": 30.639,
+    "ecw_follow": 5.381,
+    "rank": 2
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     10,
+     "Karl-Anthony Towns"
+    ],
+    [
+     15,
+     "Jamal Murray"
+    ],
+    [
+     34,
+     "Desmond Bane"
+    ],
+    [
+     63,
+     "Josh Hart"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     111,
+     "Cason Wallace"
+    ]
+   ],
+   "swaps_after": [
+    [
+     10,
+     "Karl-Anthony Towns"
+    ],
+    [
+     15,
+     "Jamal Murray"
+    ],
+    [
+     34,
+     "Desmond Bane"
+    ],
+    [
+     63,
+     "Josh Hart"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ],
+    [
+     87,
+     "Isaiah Hartenstein"
+    ],
+    [
+     111,
+     "Cason Wallace"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  },
+  {
+   "mock": 71,
+   "recorded": {
+    "as_drafted": 3.478,
+    "follow": 27.133,
+    "rank": 9
+   },
+   "before": {
+    "as_drafted": 3.583,
+    "follow": 26.961,
+    "ecw_follow": 5.347,
+    "rank": 9
+   },
+   "after": {
+    "as_drafted": 3.583,
+    "follow": 26.961,
+    "ecw_follow": 5.347,
+    "rank": 9
+   },
+   "target_changes": [],
+   "swaps_before": [
+    [
+     10,
+     "Karl-Anthony Towns"
+    ],
+    [
+     15,
+     "Jamal Murray"
+    ],
+    [
+     34,
+     "OG Anunoby"
+    ],
+    [
+     39,
+     "Desmond Bane"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     63,
+     "De'Aaron Fox"
+    ],
+    [
+     82,
+     "Isaiah Hartenstein"
+    ],
+    [
+     87,
+     "Jalen Suggs"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     130,
+     "Daniel Gafford"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ],
+    [
+     154,
+     "Saddiq Bey"
+    ]
+   ],
+   "swaps_after": [
+    [
+     10,
+     "Karl-Anthony Towns"
+    ],
+    [
+     15,
+     "Jamal Murray"
+    ],
+    [
+     34,
+     "OG Anunoby"
+    ],
+    [
+     39,
+     "Desmond Bane"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     63,
+     "De'Aaron Fox"
+    ],
+    [
+     82,
+     "Isaiah Hartenstein"
+    ],
+    [
+     87,
+     "Jalen Suggs"
+    ],
+    [
+     106,
+     "Sandro Mamukelashvili"
+    ],
+    [
+     130,
+     "Daniel Gafford"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ],
+    [
+     154,
+     "Saddiq Bey"
+    ]
+   ],
+   "chain_differs": false,
+   "page_before": "4024ddb",
+   "page_after": "1c97b7e"
+  }
+ ],
+ "summary": {
+  "rooms": 15,
+  "owner_turns": 195,
+  "target_changes": 0,
+  "rooms_with_chain_change": 0,
+  "mean_follow_before": 31.6,
+  "mean_follow_after": 31.6,
+  "as_drafted_identical": true
+ },
+ "repeat_name_pages": {
+  "before": "d44734abf093",
+  "after": "8978f6cde216",
+  "rooms": 21,
+  "owner_turns": 273,
+  "target_changes": []
+ }
+}
