@@ -567,3 +567,18 @@ is on the author. See LEDGER §3.
   session scratchpad (a ~100-character path) Playwright puts Chromium's user-data-dir there and the
   launch dies with `SIGTRAP` before any event (three of three attempts; the browser's Unix-socket paths
   exceed the socket path limit). The same command with `TMPDIR` unset passed every time (four of four).
+- **Category integrity audit (owner 2026-10-09: "conduct full categorical research to ensure data computation is operating
+  with integrity and accuracy").** `audit_1009/category_audit.py` (read-only on both repos; record
+  `arena/results/category_audit_2026-10-09.json`, two runs byte-identical). A: an independent re-implementation of each
+  plane's z-score method from its spec reproduces the deck engine (`hoops.zscores`, all 335 rows) and the kit engine
+  (`rank_engine.py`, 321 signed rows, unrounded) to **0.0** in all nine categories; the kit board prints the engine
+  exactly; every category's direction checks (Spearman ±1.000, TO negated). A4: the availability discount applies only to
+  positive totals and the zero is the pool MEAN (deck: last positive playable row #58; 19 of the 29 risk rows in the top
+  200 carry no discount; the docstring's "replacement level" is not what the arithmetic does) — the card's ΔECW half is
+  unaffected (`teamWeekModel` prices games for every player). A5: the kit board keeps GP ≤ 25 rows (Butler #68 …
+  Nurkić #172). B: domains, 3PM ≤ FGM and duplicates clean; the points identity (pts = 2·FGM + 3PM + FTM) fails by more
+  than max(1, 8%) on 9 deck and 6 kit top-200 lines (Embiid +2.9) where the outside lines hold it to ±0.06. C/D: per
+  category against the median of the Yahoo, Hashtag and RotoBaller lines and the 2025-26 actual line; the largest
+  single departure is Dyson Daniels' steals (3.0 vs 2.2 vs 2.0, +2.28 z). Rotoworld's 9-cat sheet is NOT a line source
+  (its stat columns are 2025-26 lines; the first run's ρ = 1.000 against the actual line showed it) and is excluded.
+  Kit report `after-report-2026-10-09.md` §8; decisions D-1009-1..4.
