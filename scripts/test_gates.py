@@ -532,6 +532,49 @@ def main():
           must_have=["REPEAT-NAME CHECK: FAIL", "no 'Repeat-name market check' section"],
           want_exit=1, got_exit=rc)
 
+    # D-RN-6 (owner 2026-10-10): spellings. The kit's outside files write some names as the kit's
+    # market builder documents them (ALIASES: "Herb Jones" for our "Herbert Jones"); the check
+    # must read that table, or a flagged man prints as absent from a list that ranks him (the
+    # 10/09 runs printed Jones ">490" and ">200" where Yahoo and Rotoworld rank him 147 and 134). Fixture:
+    # a kit whose Yahoo and Rotoworld files list "Herb Jones", whose Hashtag file lists "Herbert
+    # Jones", whose RotoBaller file lists neither, and whose build_market.py carries the alias
+    # (and would exit if imported); five single-turn replays make our "Herbert Jones" the 🎯.
+    # The report gate accepts either documented spelling in the table row.
+    print("\n[D-RN-6] repeat-name market check — the kit's alias table")
+    kit_al = os.path.join(os.path.dirname(repo_rn), "kit-alias")
+    mk_al = os.path.join(kit_al, "report", "market")
+    os.makedirs(mk_al)
+    for fname, text in (("yahoo-proj-2026-10-06.csv", "player,yrank\nHerb Jones,147\nTre Jones,490\n"),
+                        ("hashtag-2026-10-09.csv", "player,rank\nHerbert Jones,169\nTre Jones,300\n"),
+                        ("rotoworld-9cat-2026-10-05.csv", "Player,Rank\nHerb Jones,134\nTre Jones,200\n"),
+                        ("rotoballer-2026-09-29.csv", "player,src_rank\nTre Jones,250\n")):
+        open(os.path.join(mk_al, fname), "w", encoding="utf-8").write(text)
+    open(os.path.join(mk_al, "build_market.py"), "w", encoding="utf-8").write(
+        "import sys\n"
+        "ALIASES = {\n"
+        '    "Herb Jones": {"Herbert Jones"},   # hashtag uses the given name\n'
+        '    "Cam Johnson": {"Cameron Johnson"},\n'
+        "}\n"
+        'sys.exit("build_market.py is a script: the check must read ALIASES without importing it")\n')
+    cards_al = os.path.join(os.path.dirname(repo_rn), "cards-alias")
+    os.makedirs(cards_al)
+    for m in range(1, 6):
+        json.dump([{"pick": 154, "rows": [{"rank": 1, "n": "Herbert Jones", "target": True,
+                                             "valRank": 74, "mkt": 182}]}],
+                  open(os.path.join(cards_al, f"m{m}.json"), "w"))
+    al_json = os.path.join(os.path.dirname(repo_rn), "rn-alias.json")
+    out, rc = run(repo_rn, "scripts/repeat_market_check.py", "--cards", cards_al, "--kit", kit_al,
+                  "--json", al_json, kit=kit_al)
+    check("RN-6: a flagged name is found in the files that spell him by the kit's alias; absence prints only where real",
+          out, must_have=["FLAGGED Herbert Jones", "| 147 | 169 | 134 | >250 |", "LINE QUESTIONED: all 4",
+                          "alias table", "2 players"],
+          must_not=[">490", ">200"], want_exit=0, got_exit=rc)
+    out, rc = run(repo_rn, "scripts/repeat_market_check.py", "--cards", cards_al, "--kit", kit_al,
+                  "--check-report", report_rn("alias", "## Repeat-name market check\n\n| player | mocks | verdict |\n"
+                                              "|---|---|---|\n| Herb Jones | 5 | LINE QUESTIONED |\n"), kit=kit_al)
+    check("RN-6 --check-report: the kit's documented spelling in the table row PASSES", out,
+          must_have=["REPEAT-NAME CHECK: PASS"], want_exit=0, got_exit=rc)
+
     # D-RN-3 (owner 2026-10-08): the per-category range check for projection passes (WO-5, the
     # 10/14 lock). A top-150 line cell outside ALL of its references (three or more of: the
     # kit's newest Yahoo projection, Hashtag and RotoBaller lines, and the player's own 2025-26
