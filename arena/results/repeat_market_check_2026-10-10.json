@@ -1,0 +1,1680 @@
+{
+ "page": "/home/user/yahoo-fantasy-basketball/docs/draft-deck.html",
+ "page_sha256": "f17f55ea920cbd618ef05ec786f31935effb34102f3d8ed5dbfaa799c7e4a73b",
+ "mocks": [
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73
+ ],
+ "replayed": [
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73
+ ],
+ "failed": {},
+ "thresholds": {
+  "min_mocks": 5,
+  "min_gap": 25
+ },
+ "aliases": 5,
+ "alias_file": "report/market/build_market.py",
+ "rank_files": {
+  "Yahoo Rank": "yahoo-proj-2026-10-06.csv",
+  "Hashtag": "hashtag-2026-10-09.csv",
+  "Rotoworld": "rotoworld-9cat-2026-10-05.csv",
+  "RotoBaller": "rotoballer-2026-09-29.csv"
+ },
+ "line_files": {
+  "Yahoo": "yahoo-proj-2026-10-06.csv",
+  "Hashtag": "hashtag-2026-10-09.csv",
+  "RotoBaller": "rotoballer-2026-09-29.csv"
+ },
+ "targets": {
+  "51": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Karl-Anthony Towns"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "PJ Washington"
+   ],
+   [
+    154,
+    "Jerami Grant"
+   ]
+  ],
+  "52": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Karl-Anthony Towns"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    58,
+    "Franz Wagner"
+   ],
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "Coby White"
+   ],
+   [
+    87,
+    "Mikal Bridges"
+   ],
+   [
+    106,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "PJ Washington"
+   ],
+   [
+    154,
+    "PJ Washington"
+   ]
+  ],
+  "53": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Karl-Anthony Towns"
+   ],
+   [
+    34,
+    "Jalen Williams"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    106,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "PJ Washington"
+   ],
+   [
+    154,
+    "PJ Washington"
+   ]
+  ],
+  "54": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jalen Johnson"
+   ],
+   [
+    34,
+    "Jalen Williams"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Coby White"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "Herbert Jones"
+   ],
+   [
+    135,
+    "PJ Washington"
+   ],
+   [
+    154,
+    "PJ Washington"
+   ]
+  ],
+  "55": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jalen Williams"
+   ],
+   [
+    34,
+    "OG Anunoby"
+   ],
+   [
+    39,
+    "Desmond Bane"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "De'Aaron Fox"
+   ],
+   [
+    82,
+    "Cameron Boozer"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    106,
+    "PJ Washington"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    154,
+    "Day'Ron Sharpe"
+   ]
+  ],
+  "56": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Tyrese Haliburton"
+   ],
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    106,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Zach LaVine"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "PJ Washington"
+   ],
+   [
+    154,
+    "Daniel Gafford"
+   ]
+  ],
+  "57": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Karl-Anthony Towns"
+   ],
+   [
+    34,
+    "Jalen Williams"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "Payton Pritchard"
+   ],
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    106,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    154,
+    "Daniel Gafford"
+   ]
+  ],
+  "58": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Karl-Anthony Towns"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    106,
+    "Josh Hart"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Daniel Gafford"
+   ],
+   [
+    154,
+    "Daniel Gafford"
+   ]
+  ],
+  "59": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Karl-Anthony Towns"
+   ],
+   [
+    34,
+    "Jalen Williams"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Zach LaVine"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    135,
+    "Devin Vassell"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "60": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jalen Williams"
+   ],
+   [
+    34,
+    "Jalen Williams"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Dyson Daniels"
+   ],
+   [
+    63,
+    "Tyler Herro"
+   ],
+   [
+    82,
+    "Mikal Bridges"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    106,
+    "PJ Washington"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "Yaxel Lendeborg"
+   ],
+   [
+    135,
+    "Yaxel Lendeborg"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "61": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Donovan Mitchell"
+   ],
+   [
+    34,
+    "Jalen Williams"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Jarrett Allen"
+   ],
+   [
+    82,
+    "Isaiah Hartenstein"
+   ],
+   [
+    87,
+    "Mikal Bridges"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "62": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Jalen Williams"
+   ],
+   [
+    34,
+    "OG Anunoby"
+   ],
+   [
+    39,
+    "Payton Pritchard"
+   ],
+   [
+    58,
+    "Tyler Herro"
+   ],
+   [
+    63,
+    "Isaiah Hartenstein"
+   ],
+   [
+    82,
+    "Yaxel Lendeborg"
+   ],
+   [
+    87,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    106,
+    "PJ Washington"
+   ],
+   [
+    111,
+    "Saddiq Bey"
+   ],
+   [
+    130,
+    "Herbert Jones"
+   ],
+   [
+    135,
+    "Daniel Gafford"
+   ],
+   [
+    154,
+    "Bilal Coulibaly"
+   ]
+  ],
+  "63": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "Onyeka Okongwu"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "De'Aaron Fox"
+   ],
+   [
+    82,
+    "Isaiah Hartenstein"
+   ],
+   [
+    87,
+    "Yaxel Lendeborg"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    111,
+    "Herbert Jones"
+   ],
+   [
+    130,
+    "Saddiq Bey"
+   ],
+   [
+    135,
+    "Daniel Gafford"
+   ],
+   [
+    154,
+    "Santi Aldama"
+   ]
+  ],
+  "64": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Jalen Williams"
+   ],
+   [
+    34,
+    "Dyson Daniels"
+   ],
+   [
+    39,
+    "OG Anunoby"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Jalen Suggs"
+   ],
+   [
+    82,
+    "Isaiah Hartenstein"
+   ],
+   [
+    87,
+    "Myles Turner"
+   ],
+   [
+    106,
+    "PJ Washington"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ],
+   [
+    130,
+    "Daniel Gafford"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ],
+   [
+    154,
+    "Santi Aldama"
+   ]
+  ],
+  "65": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    39,
+    "OG Anunoby"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Mikal Bridges"
+   ],
+   [
+    82,
+    "Isaiah Hartenstein"
+   ],
+   [
+    87,
+    "Yaxel Lendeborg"
+   ],
+   [
+    106,
+    "PJ Washington"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "Saddiq Bey"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ],
+   [
+    154,
+    "Bilal Coulibaly"
+   ]
+  ],
+  "66": [
+   [
+    10,
+    "Jalen Johnson"
+   ],
+   [
+    15,
+    "Derrick White"
+   ],
+   [
+    34,
+    "Dyson Daniels"
+   ],
+   [
+    39,
+    "OG Anunoby"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Zach LaVine"
+   ],
+   [
+    82,
+    "Coby White"
+   ],
+   [
+    87,
+    "Coby White"
+   ],
+   [
+    106,
+    "PJ Washington"
+   ],
+   [
+    111,
+    "PJ Washington"
+   ],
+   [
+    130,
+    "Yaxel Lendeborg"
+   ],
+   [
+    135,
+    "Daniel Gafford"
+   ],
+   [
+    154,
+    "Daniel Gafford"
+   ]
+  ],
+  "67": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Tyrese Haliburton"
+   ],
+   [
+    34,
+    "Jalen Williams"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Desmond Bane"
+   ],
+   [
+    63,
+    "OG Anunoby"
+   ],
+   [
+    82,
+    "De'Aaron Fox"
+   ],
+   [
+    87,
+    "De'Aaron Fox"
+   ],
+   [
+    106,
+    "Zach LaVine"
+   ],
+   [
+    111,
+    "PJ Washington"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "68": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Tyrese Maxey"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Jalen Williams"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Ivica Zubac"
+   ],
+   [
+    82,
+    "Coby White"
+   ],
+   [
+    87,
+    "Mikal Bridges"
+   ],
+   [
+    106,
+    "Isaiah Hartenstein"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "Devin Vassell"
+   ],
+   [
+    154,
+    "Herbert Jones"
+   ]
+  ],
+  "69": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "OG Anunoby"
+   ],
+   [
+    39,
+    "Onyeka Okongwu"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Jalen Suggs"
+   ],
+   [
+    82,
+    "Mikal Bridges"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "PJ Washington"
+   ],
+   [
+    130,
+    "Cason Wallace"
+   ],
+   [
+    135,
+    "Daniel Gafford"
+   ],
+   [
+    154,
+    "Collin Gillespie"
+   ]
+  ],
+  "70": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jalen Williams"
+   ],
+   [
+    34,
+    "Dyson Daniels"
+   ],
+   [
+    39,
+    "OG Anunoby"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Jalen Suggs"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    106,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    154,
+    "Daniel Gafford"
+   ]
+  ],
+  "71": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jalen Williams"
+   ],
+   [
+    34,
+    "Dyson Daniels"
+   ],
+   [
+    39,
+    "Dyson Daniels"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Jalen Suggs"
+   ],
+   [
+    82,
+    "Jalen Suggs"
+   ],
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    106,
+    "PJ Washington"
+   ],
+   [
+    111,
+    "PJ Washington"
+   ],
+   [
+    130,
+    "Daniel Gafford"
+   ],
+   [
+    135,
+    "Daniel Gafford"
+   ],
+   [
+    154,
+    "Saddiq Bey"
+   ]
+  ],
+  "72": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "OG Anunoby"
+   ],
+   [
+    39,
+    "Desmond Bane"
+   ],
+   [
+    58,
+    "Payton Pritchard"
+   ],
+   [
+    63,
+    "Jalen Suggs"
+   ],
+   [
+    82,
+    "Josh Hart"
+   ],
+   [
+    87,
+    "Zach LaVine"
+   ],
+   [
+    106,
+    "Herbert Jones"
+   ],
+   [
+    111,
+    "Cason Wallace"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    154,
+    "Daniel Gafford"
+   ]
+  ],
+  "73": [
+   [
+    10,
+    "Karl-Anthony Towns"
+   ],
+   [
+    15,
+    "Donovan Mitchell"
+   ],
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ],
+   [
+    63,
+    "Payton Pritchard"
+   ],
+   [
+    82,
+    "Payton Pritchard"
+   ],
+   [
+    87,
+    "Josh Hart"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ],
+   [
+    130,
+    "PJ Washington"
+   ],
+   [
+    135,
+    "PJ Washington"
+   ],
+   [
+    154,
+    "Christian Braun"
+   ]
+  ]
+ },
+ "counts": {
+  "Derrick White": 12,
+  "Payton Pritchard": 18,
+  "Zach LaVine": 7,
+  "Sandro Mamukelashvili": 17,
+  "PJ Washington": 19,
+  "Karl-Anthony Towns": 18,
+  "Jerami Grant": 1,
+  "Anthony Davis": 4,
+  "Franz Wagner": 1,
+  "Jalen Williams": 15,
+  "Coby White": 4,
+  "Jalen Suggs": 11,
+  "Mikal Bridges": 6,
+  "OG Anunoby": 17,
+  "Cason Wallace": 3,
+  "Herbert Jones": 5,
+  "Jalen Johnson": 6,
+  "De'Aaron Fox": 3,
+  "Cameron Boozer": 1,
+  "Day'Ron Sharpe": 1,
+  "Desmond Bane": 3,
+  "Daniel Gafford": 11,
+  "Tyrese Haliburton": 2,
+  "Chet Holmgren": 2,
+  "Isaiah Hartenstein": 7,
+  "Josh Hart": 5,
+  "Yaxel Lendeborg": 10,
+  "Devin Vassell": 5,
+  "Tyler Herro": 2,
+  "Dyson Daniels": 5,
+  "Donovan Mitchell": 2,
+  "Jarrett Allen": 1,
+  "Bilal Coulibaly": 2,
+  "Saddiq Bey": 5,
+  "Jamal Murray": 4,
+  "Santi Aldama": 2,
+  "Onyeka Okongwu": 2,
+  "Myles Turner": 1,
+  "Tyrese Maxey": 1,
+  "Ivica Zubac": 1,
+  "Collin Gillespie": 1,
+  "Christian Braun": 1
+ },
+ "flagged": [
+  {
+   "player": "PJ Washington",
+   "mocks": 19,
+   "value_rank": 87,
+   "market_rank": 151,
+   "gap": 64,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "178",
+    "Hashtag": "144",
+    "Rotoworld": "141",
+    "RotoBaller": "121"
+   },
+   "cells": [
+    "ast 2.4 vs 1.9-2",
+    "tov 1.5 vs 1.7-1.8",
+    "fg_pct .470 vs .448-.451",
+    "ft_pct .750 vs .698-.703"
+   ],
+   "verdict": "LINE QUESTIONED: all 4 outside ranks sit 25+ places below ours; re-derive at the next projection pass (two dated outlets)"
+  },
+  {
+   "player": "Payton Pritchard",
+   "mocks": 18,
+   "value_rank": 37,
+   "market_rank": 83,
+   "gap": 46,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "33",
+    "Hashtag": "90",
+    "Rotoworld": "92",
+    "RotoBaller": "72"
+   },
+   "cells": [
+    "stl 1 vs 0.7-0.8",
+    "tpm 3.8 vs 3-3.2",
+    "tov 2 vs 1.3-1.3",
+    "ft_pct .850 vs .873-.875"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "OG Anunoby",
+   "mocks": 17,
+   "value_rank": 28,
+   "market_rank": 65,
+   "gap": 37,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "60",
+    "Hashtag": "56",
+    "Rotoworld": "43",
+    "RotoBaller": "44"
+   },
+   "cells": [
+    "pts 18.5 vs 16.4-17",
+    "ast 2.3 vs 2.1-2.1",
+    "ft_pct .805 vs .813-.819"
+   ],
+   "verdict": "SOURCES SPLIT: 2 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Sandro Mamukelashvili",
+   "mocks": 17,
+   "value_rank": 81,
+   "market_rank": 169,
+   "gap": 88,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "138",
+    "Hashtag": "105",
+    "Rotoworld": "153",
+    "RotoBaller": "120"
+   },
+   "cells": [],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Daniel Gafford",
+   "mocks": 11,
+   "value_rank": 90,
+   "market_rank": 181,
+   "gap": 91,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "188",
+    "Hashtag": "180",
+    "Rotoworld": "161",
+    "RotoBaller": "155"
+   },
+   "cells": [
+    "pts 10.5 vs 9.1-9.8",
+    "reb 7.5 vs 5.8-6.5",
+    "ast 1.5 vs 1.1-1.2",
+    "blk 1.7 vs 1.2-1.4",
+    "fg_pct .700 vs .648-.689",
+    "ft_pct .700 vs .671-.687"
+   ],
+   "verdict": "LINE QUESTIONED: all 4 outside ranks sit 25+ places below ours; re-derive at the next projection pass (two dated outlets)"
+  },
+  {
+   "player": "Jalen Suggs",
+   "mocks": 11,
+   "value_rank": 59,
+   "market_rank": 105,
+   "gap": 46,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "89",
+    "Hashtag": "54",
+    "Rotoworld": "84",
+    "RotoBaller": "99"
+   },
+   "cells": [
+    "pts 17 vs 14.1-15.1",
+    "ast 4 vs 4.8-5"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Yaxel Lendeborg",
+   "mocks": 10,
+   "value_rank": 82,
+   "market_rank": 144,
+   "gap": 62,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "94",
+    "Hashtag": "121",
+    "Rotoworld": "137",
+    "RotoBaller": "98"
+   },
+   "cells": [
+    "reb 7.5 vs 5.5-6.9",
+    "tpm 0.9 vs 1.2-1.3",
+    "fg_pct .520 vs .447-.498",
+    "ft_pct .740 vs .765-.828"
+   ],
+   "verdict": "SOURCES SPLIT: 2 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Isaiah Hartenstein",
+   "mocks": 7,
+   "value_rank": 75,
+   "market_rank": 104,
+   "gap": 29,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "141",
+    "Hashtag": "92",
+    "Rotoworld": "100",
+    "RotoBaller": "102"
+   },
+   "cells": [
+    "pts 11.5 vs 9.1-10.5",
+    "reb 11 vs 9.2-10.3",
+    "fg_pct .585 vs .597-.611",
+    "ft_pct .680 vs .642-.656"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Zach LaVine",
+   "mocks": 7,
+   "value_rank": 56,
+   "market_rank": 100,
+   "gap": 44,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "162",
+    "Hashtag": "68",
+    "Rotoworld": "77",
+    "RotoBaller": "118"
+   },
+   "cells": [
+    "pts 22.5 vs 17-21.1",
+    "reb 4.5 vs 3.1-3.6",
+    "ast 4 vs 2.8-3.4",
+    "tov 2.6 vs 2-2.4"
+   ],
+   "verdict": "SOURCES SPLIT: 2 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Devin Vassell",
+   "mocks": 5,
+   "value_rank": 89,
+   "market_rank": 142,
+   "gap": 53,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "122",
+    "Hashtag": "131",
+    "Rotoworld": "125",
+    "RotoBaller": "123"
+   },
+   "cells": [
+    "pts 16.8 vs 13.4-15.1",
+    "tov 1.5 vs 1-1.2",
+    "fg_pct .465 vs .432-.443"
+   ],
+   "verdict": "LINE QUESTIONED: all 4 outside ranks sit 25+ places below ours; re-derive at the next projection pass (two dated outlets)"
+  },
+  {
+   "player": "Dyson Daniels",
+   "mocks": 5,
+   "value_rank": 11,
+   "market_rank": 62,
+   "gap": 51,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "20",
+    "Hashtag": "64",
+    "Rotoworld": "56",
+    "RotoBaller": "53"
+   },
+   "cells": [
+    "pts 14.5 vs 11.3-11.8",
+    "stl 3 vs 2-2.4",
+    "tpm 1.1 vs 0.5-0.6",
+    "fg_pct .495 vs .501-.513"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Herbert Jones",
+   "mocks": 5,
+   "value_rank": 74,
+   "market_rank": 182,
+   "gap": 108,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "147",
+    "Hashtag": "169",
+    "Rotoworld": "134",
+    "RotoBaller": ">250"
+   },
+   "cells": null,
+   "verdict": "LINE QUESTIONED: all 4 outside ranks sit 25+ places below ours; re-derive at the next projection pass (two dated outlets)"
+  },
+  {
+   "player": "Josh Hart",
+   "mocks": 5,
+   "value_rank": 67,
+   "market_rank": 96,
+   "gap": 29,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "68",
+    "Hashtag": "84",
+    "Rotoworld": "91",
+    "RotoBaller": "94"
+   },
+   "cells": [
+    "pts 13.5 vs 11.9-12.2",
+    "tpm 1 vs 1.2-1.5",
+    "fg_pct .520 vs .498-.503",
+    "ft_pct .780 vs .751-.759"
+   ],
+   "verdict": "SOURCES SPLIT: 1 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Saddiq Bey",
+   "mocks": 5,
+   "value_rank": 95,
+   "market_rank": 176,
+   "gap": 81,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "109",
+    "Hashtag": "132",
+    "Rotoworld": "169",
+    "RotoBaller": "143"
+   },
+   "cells": [
+    "blk 0.4 vs 0.1-0.1",
+    "tpm 2.4 vs 1.8-2",
+    "tov 1.5 vs 0.8-0.9"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  }
+ ],
+ "near_misses": [
+  {
+   "player": "Karl-Anthony Towns",
+   "mocks": 18,
+   "value_rank": 6,
+   "market_rank": 15,
+   "gap": 9
+  },
+  {
+   "player": "Jalen Williams",
+   "mocks": 15,
+   "value_rank": 16,
+   "market_rank": 39,
+   "gap": 23
+  },
+  {
+   "player": "Derrick White",
+   "mocks": 12,
+   "value_rank": 24,
+   "market_rank": 44,
+   "gap": 20
+  },
+  {
+   "player": "Jalen Johnson",
+   "mocks": 6,
+   "value_rank": 13,
+   "market_rank": 11,
+   "gap": 2
+  },
+  {
+   "player": "Mikal Bridges",
+   "mocks": 6,
+   "value_rank": 61,
+   "market_rank": 82,
+   "gap": 21
+  }
+ ]
+}
