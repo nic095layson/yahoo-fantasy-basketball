@@ -39,8 +39,15 @@ LINE QUESTIONED when three or more outside ranks exist and every one sits MIN_GA
 or more places from our value rank on the same side (re-derive the line at the
 next projection pass, two dated outlets); SOURCES SPLIT otherwise (the line
 holds). A name a list leaves out counts as one place past the list's end.
+
+Spellings (D-RN-6, owner 2026-10-10): our pool spelling and every outside file's spelling are
+resolved through the kit's documented alias table (report/market/build_market.py ALIASES —
+Herb/Herbert Jones, Cam/Cameron Johnson, Nic/Nicolas Claxton, ...), read from the file
+without importing it. Before this, "Herbert Jones" was looked up in two files that list
+"Herb Jones" and printed as absent (">490", ">200") where the files rank him 147 and 134.
 """
 import argparse
+import ast
 import csv
 import glob
 import hashlib
@@ -90,6 +97,43 @@ def fold(s):
     s = re.sub(r"[.'’]", "", s)
     s = re.sub(r"\b(jr|sr|ii|iii|iv)\b", "", s)
     return re.sub(r"\s+", " ", s).strip()
+
+
+def kit_aliases(kit):
+    """The kit's documented spelling aliases (report/market/build_market.py ALIASES: pool
+    spelling -> the source spellings that mean the same player), read from the file as a
+    literal — never imported, the module is a script. Returns fold(any spelling) ->
+    fold(canonical); empty when the kit carries no table (the suite's fixture kits). The
+    record counts players (alias groups), not spellings."""
+    path = os.path.join(kit, "report", "market", "build_market.py")
+    if not os.path.exists(path):
+        return {}
+    try:
+        tree = ast.parse(open(path, encoding="utf-8").read())
+    except (SyntaxError, ValueError):
+        return {}
+    for node in tree.body:
+        if not (isinstance(node, ast.Assign)
+                and any(isinstance(t, ast.Name) and t.id == "ALIASES" for t in node.targets)):
+            continue
+        try:
+            table = ast.literal_eval(node.value)
+        except ValueError:
+            return {}
+        idx = {}
+        for canonical, variants in table.items():
+            key = fold(canonical)
+            idx[key] = key
+            for v in variants:
+                idx[fold(v)] = key
+        return idx
+    return {}
+
+
+def canon(s, idx):
+    """fold() then the alias table: every spelling of one player keys the same way."""
+    f = fold(s)
+    return idx.get(f, f)
 
 
 def graded_mocks():
@@ -159,7 +203,7 @@ def newest(kit, pattern):
     return files[-1] if files else None
 
 
-def outside_ranks(kit):
+def outside_ranks(kit, idx):
     lists = {}
     for label, pat, ncol, rcol in RANK_SOURCES:
         f = newest(kit, pat)
@@ -168,7 +212,7 @@ def outside_ranks(kit):
         ranks = {}
         for r in csv.DictReader(open(f, encoding="utf-8-sig")):
             try:
-                ranks.setdefault(fold(r[ncol]), int(float(r[rcol])))
+                ranks.setdefault(canon(r[ncol], idx), int(float(r[rcol])))
             except (KeyError, TypeError, ValueError):
                 continue
         if ranks:
@@ -176,7 +220,7 @@ def outside_ranks(kit):
     return lists
 
 
-def outside_lines(kit):
+def outside_lines(kit, idx):
     lines = {}
     for label, pat, ncol, pre, scale in LINE_SOURCES:
         f = newest(kit, pat)
@@ -185,18 +229,18 @@ def outside_lines(kit):
         d = {}
         for r in csv.DictReader(open(f, encoding="utf-8-sig")):
             try:
-                d[fold(r[ncol])] = {c: float(r[pre + c]) / (scale if c.endswith("pct") else 1.0) for c in CATS}
+                d[canon(r[ncol], idx)] = {c: float(r[pre + c]) / (scale if c.endswith("pct") else 1.0) for c in CATS}
             except (KeyError, TypeError, ValueError):
                 continue
         lines[label] = (os.path.basename(f), d)
     return lines
 
 
-def our_lines():
+def our_lines(idx):
     out = {}
     for r in csv.DictReader(open(POOL, encoding="utf-8")):
         try:
-            out[fold(r["player"])] = {c: float(r[c]) for c in CATS}
+            out[canon(r["player"], idx)] = {c: float(r[c]) for c in CATS}
         except (KeyError, ValueError):
             continue
     return out
@@ -249,9 +293,10 @@ def compute(args):
             counts[n] = counts.get(n, 0) + 1
         for _, r in tg:
             rowinfo.setdefault(r["n"], r)
-    lists = outside_ranks(args.kit)
-    lines = outside_lines(args.kit)
-    ours_all = our_lines()
+    idx = kit_aliases(args.kit)
+    lists = outside_ranks(args.kit, idx)
+    lines = outside_lines(args.kit, idx)
+    ours_all = our_lines(idx)
     flagged, near = [], []
     for n, k in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])):
         if k < MIN_MOCKS:
@@ -263,7 +308,7 @@ def compute(args):
         if not no_price and (gap is None or gap < MIN_GAP):
             near.append(dict(player=n, mocks=k, value_rank=val, market_rank=mkt, gap=gap))
             continue
-        f = fold(n)
+        f = canon(n, idx)
         ranks, shown = [], {}
         for label, (_, rk, last) in lists.items():
             v = rk.get(f)
@@ -276,6 +321,7 @@ def compute(args):
     return dict(page=page, page_sha256=hashlib.sha256(open(page, "rb").read()).hexdigest(),
                 mocks=mocks, replayed=sorted(cards), failed={str(k): v for k, v in failed.items()},
                 thresholds=dict(min_mocks=MIN_MOCKS, min_gap=MIN_GAP),
+                aliases=len(set(idx.values())), alias_file=("report/market/build_market.py" if idx else None),
                 rank_files={k: v[0] for k, v in lists.items()}, line_files={k: v[0] for k, v in lines.items()},
                 targets={str(k): v for k, v in per_mock.items()}, counts=counts, flagged=flagged, near_misses=near)
 
@@ -292,7 +338,9 @@ def section(rec):
            + ". Outside ranks: " + (", ".join(f"{k} `{v}`" for k, v in rec["rank_files"].items()) or "none on file")
            + ". Cells: our per-game line against "
            + (", ".join(f"`{v}`" for v in rec["line_files"].values()) or "no outside lines on file")
-           + " (outside all three; tolerance .005 on percentages, 5% with a 0.1 floor on counting stats).", ""]
+           + " (outside all three; tolerance .005 on percentages, 5% with a 0.1 floor on counting stats). "
+           + (f"Spellings resolved through the kit's alias table (`build_market.py`, {rec['aliases']} players)."
+              if rec.get("aliases") else "No alias table on file: spellings matched as folded."), ""]
     if rec["flagged"]:
         out += ["| player | 🎯 in mocks | value rank | market rank | " + " | ".join(labels)
                 + " | cells outside all three projections | verdict |",
@@ -311,7 +359,7 @@ def section(rec):
     return "\n".join(out) + "\n"
 
 
-def check_report(path, rec):
+def check_report(path, rec, idx):
     text = open(path, encoding="utf-8").read()
     lines = text.splitlines()
     start = next((i for i, ln in enumerate(lines) if ln.startswith("#") and HEADING in ln), None)
@@ -324,9 +372,9 @@ def check_report(path, rec):
         if ln.startswith("#") and len(ln) - len(ln.lstrip("#")) <= level:
             break
         body.append(ln)
-    rows = [fold(ln.strip().strip("|").split("|")[0]) for ln in body
+    rows = [canon(ln.strip().strip("|").split("|")[0], idx) for ln in body
             if ln.strip().startswith("|") and not set(ln.strip()) <= set("|-: ")]
-    missing = [f["player"] for f in rec["flagged"] if fold(f["player"]) not in rows]
+    missing = [f["player"] for f in rec["flagged"] if canon(f["player"], idx) not in rows]
     if missing:
         print(f"REPEAT-NAME CHECK: FAIL — {os.path.basename(path)}: flagged name(s) with no row in the "
               f"'{HEADING}' table: " + ", ".join(missing))
@@ -353,7 +401,7 @@ def main():
     if args.json:
         json.dump(rec, open(args.json, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     if args.check_report:
-        sys.exit(check_report(args.check_report, rec))
+        sys.exit(check_report(args.check_report, rec, kit_aliases(args.kit)))
     print(f"{len(rec['replayed'])} of {len(rec['mocks'])} mocks replayed; "
           + (("failed: " + "; ".join(f"mock {k}: {v}" for k, v in rec["failed"].items()) + "; ") if rec["failed"] else "")
           + f"{len(rec['flagged'])} FLAGGED, {len(rec['near_misses'])} near miss(es)")
