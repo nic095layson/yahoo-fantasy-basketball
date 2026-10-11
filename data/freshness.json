@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-10",
-  "note": "2026-10-10 daily pull (WO-3): the one preseason box score in the window (Grizzlies 104, Bulls 100 in Chicago, 10/9) read from ESPN's feed; the league injuries feed diffed both ways against the 50-row tag inventory; the Basketball-Reference ledger (newest block 10/8) and NBA.com's index read directly; 30 dated queries (ten open-item receipts, seven team shadows, the ledger, the game's recap, the carried items); 38 dated notes on 38 rows; no line, tag or placement change; Isaiah Stewart's two-week ankle re-evaluation (Grizzlies release 10/10) to the owner's sheet as D-1010-2; deck v55",
+  "date": "2026-10-11",
+  "note": "2026-10-11 early pull (WO-3; the seven 10/10 finals): Raptors-Clippers (Vancouver), Hawks-Pacers, Wizards-Pistons, Timberwolves-Heat, Celtics-76ers, Warriors-Kings and Suns-Spurs read from ESPN's feed; the league injuries feed (131 rows) diffed both ways against the 50-row tag inventory; the Basketball-Reference ledger (newest block 10/8) and NBA.com's index read directly; 32 dated queries (seven recaps, ten open-item receipts, the ledger, the league injury report, the follow-ups); 165 dated notes on 165 rows; one tag change \u2014 Isaiah Stewart to inj-ankle-risk by D-1010-2's default, the owner silent (no board movement); no line or placement change; the owner's 10/11 notes recorded (Lendeborg and Acuff note cards; LaVine as D-1011-1); deck v56",
   "pool_changes": {
     "changed": true,
-    "note": "notes only: 38 dated notes on 38 rows (the Bulls-Grizzlies box score on 23 rows, the sweep on 15); no tag, placement or line changed"
+    "note": "one tag: Isaiah Stewart -> inj-ankle-risk (D-1010-2 default (a), the owner silent); notes only otherwise: 165 dated notes on 165 rows (the seven box scores on 123 rows, the sweep on 42); no placement or line changed"
   },
   "rosters_verified": {
-    "date": "2026-10-10",
+    "date": "2026-10-11",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-10 (site.api.espn.com, all 30 rosters; roster_verification.json dated 2026-10-10); 335/335 on the feed, no exemption"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-11 (site.api.espn.com, all 30 rosters; roster_verification.json dated 2026-10-11); 335/335 on the feed, no exemption"
   }
 }
