@@ -1,9 +1,9 @@
 {
   "date": "2026-10-11",
-  "note": "2026-10-11 early pull (WO-3; the seven 10/10 finals): Raptors-Clippers (Vancouver), Hawks-Pacers, Wizards-Pistons, Timberwolves-Heat, Celtics-76ers, Warriors-Kings and Suns-Spurs read from ESPN's feed; the league injuries feed (131 rows) diffed both ways against the 50-row tag inventory; the Basketball-Reference ledger (newest block 10/8) and NBA.com's index read directly; 32 dated queries (seven recaps, ten open-item receipts, the ledger, the league injury report, the follow-ups); 165 dated notes on 165 rows; one tag change \u2014 Isaiah Stewart to inj-ankle-risk by D-1010-2's default, the owner silent (no board movement); no line or placement change; the owner's 10/11 notes recorded (Lendeborg and Acuff note cards; LaVine as D-1011-1); deck v56",
+  "note": "2026-10-11 second build (the owner's decisions, same day as the early pull): judgment adjustments only \u2014 LaVine -0.10 (D-1011-1 a), Lendeborg +0.10 (D-1011-2 c, Lendeborg only), Fox -0.10 (the owner's direct call, D-1011-3); no pool change (data/players.csv byte-identical to the v56 build); deck v57",
   "pool_changes": {
-    "changed": true,
-    "note": "one tag: Isaiah Stewart -> inj-ankle-risk (D-1010-2 default (a), the owner silent); notes only otherwise: 165 dated notes on 165 rows (the seven box scores on 123 rows, the sweep on 42); no placement or line changed"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-10-11",
