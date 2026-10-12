@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-11",
-  "note": "2026-10-11 second build (the owner's decisions, same day as the early pull): judgment adjustments only \u2014 LaVine -0.10 (D-1011-1 a), Lendeborg +0.10 (D-1011-2 c, Lendeborg only), Fox -0.10 (the owner's direct call, D-1011-3); no pool change (data/players.csv byte-identical to the v56 build); deck v57",
+  "date": "2026-10-12",
+  "note": "2026-10-12 daily pull (WO-3): the four 10/11 finals (Mavericks-Rockets in Macao, Cavaliers-Magic, Hornets-Bucks, Nuggets-Bulls) read from ESPN's feed; the league injuries feed (130 rows) diffed both ways against the 51-row tag inventory; the Basketball-Reference ledger (newest block 10/8) read directly (NBA.com's pages egress-blocked); 32 dated queries (four recaps, ten open-item receipts, the ledger, the league injury report, seven team shadows, the follow-ups); 93 dated notes on 93 rows; no line, tag or placement change; Maxime Raynaud's two-week re-evaluation (Kings 10/11) to the owner's sheet as D-1012-1; deck v58",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "notes only: 93 dated notes on 93 rows (the four box scores on 75 rows, the sweep on 18); no tag, placement or line changed"
   },
   "rosters_verified": {
-    "date": "2026-10-11",
+    "date": "2026-10-12",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-11 (site.api.espn.com, all 30 rosters; roster_verification.json dated 2026-10-11); 335/335 on the feed, no exemption"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-12 (site.api.espn.com, all 30 rosters; roster_verification.json dated 2026-10-12); 335/335 on the feed, no exemption"
   }
 }
