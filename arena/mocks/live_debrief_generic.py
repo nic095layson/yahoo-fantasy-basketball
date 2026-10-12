@@ -111,7 +111,8 @@ for k, a in sorted(arms.items(), key=lambda kv: -kv[1]["champ"]):
 if TOOL_VS_TRUTH:
     tv = TOOL_VS_TRUTH
     L.append(""); L.append("## Tool-state integrity — the deck's board vs Yahoo's recap"); L.append("")
-    L.append(f"The owner's tool log replayed into its final board ({len(tv['tool_final'])} picks) and diffed position by position against the recap: "
+    lbl = tv.get("board_label") or "The owner's tool log replayed into its final board"  # an exported board (no tool log) names itself (mock 74)
+    L.append(f"{lbl} ({len(tv['tool_final'])} picks) and diffed position by position against the recap: "
              f"**{len(tv['diff'])} position(s) differ**; the owner's own roster is {'identical' if tv['owner_identical'] else 'NOT identical'}. "
              f"Recap names missing from the tool board: {', '.join(tv['missing']) or 'none'}; tool names not in the recap: {', '.join(tv['extra']) or 'none'}.")
     if tv["diff"]:
