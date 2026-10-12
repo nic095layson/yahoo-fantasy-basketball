@@ -1,0 +1,78 @@
+{
+ "as_drafted": {
+  "champ": 29.394,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Jalen Johnson": {
+  "champ": 30.633,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ]
+  ]
+ },
+ "swap#58:Tyler Herro": {
+  "champ": 29.961,
+  "playoff": 99.89,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ]
+ },
+ "swap#63:Tyler Herro": {
+  "champ": 29.233,
+  "playoff": 99.9,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Tyler Herro"
+   ]
+  ]
+ },
+ "swap#87:Zach LaVine": {
+  "champ": 29.522,
+  "playoff": 99.88,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Zach LaVine"
+   ]
+  ]
+ },
+ "swap#111:Aaron Gordon": {
+  "champ": 34.644,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Aaron Gordon"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 35.789,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ]
+ }
+}

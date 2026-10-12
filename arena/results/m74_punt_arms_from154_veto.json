@@ -1,0 +1,49 @@
+{
+ "mock": 74,
+ "from_pick": 154,
+ "punt": [
+  "AST",
+  "PTS"
+ ],
+ "veto": [
+  "Kristaps Porzingis"
+ ],
+ "arms": {
+  "as_drafted": {
+   "champ": 17.911,
+   "playoff": 96.98,
+   "per_seed": {
+    "11": 18.017,
+    "23": 18.167,
+    "47": 17.55
+   },
+   "swaps": []
+  },
+  "follow_card_from154": {
+   "champ": 17.911,
+   "playoff": 96.98,
+   "per_seed": {
+    "11": 18.017,
+    "23": 18.167,
+    "47": 17.55
+   },
+   "swaps": []
+  },
+  "follow_card_from154_puntAST+PTS": {
+   "champ": 17.911,
+   "playoff": 96.98,
+   "per_seed": {
+    "11": 18.017,
+    "23": 18.167,
+    "47": 17.55
+   },
+   "swaps": []
+  }
+ },
+ "verdict": {
+  "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+  "seeds_meeting_bar": 0,
+  "steered_minus_unsteered_pp": 0.0,
+  "passes": false
+ }
+}

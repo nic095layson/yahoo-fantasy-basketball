@@ -1,0 +1,502 @@
+[
+ {
+  "pick": 10,
+  "actual": "Karl-Anthony Towns",
+  "page_top5": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Jalen Johnson",
+   "Tyrese Haliburton",
+   "Anthony Davis"
+  ],
+  "page_surv": [
+   0.53,
+   0.254,
+   0.358,
+   0.426,
+   0.985
+  ],
+  "port_top5": [
+   "Karl-Anthony Towns",
+   "Tyrese Maxey",
+   "Jalen Johnson",
+   "Tyrese Haliburton",
+   "Anthony Davis"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.08241003993218943,
+   "why": "#1 survival 0.53 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.08241234673508124,
+   "why": "#1 survival 0.53 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 15,
+  "actual": "Tyrese Haliburton",
+  "page_top5": [
+   "Tyrese Haliburton",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Jamal Murray",
+   "Derrick White"
+  ],
+  "page_surv": [
+   0.01,
+   0.01,
+   0.701,
+   0.049,
+   0.794
+  ],
+  "port_top5": [
+   "Tyrese Haliburton",
+   "Donovan Mitchell",
+   "Jalen Williams",
+   "Jamal Murray",
+   "Derrick White"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 34,
+  "actual": "Anthony Davis",
+  "page_top5": [
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "Desmond Bane",
+   "OG Anunoby"
+  ],
+  "page_surv": [
+   0.611,
+   0.674,
+   0.91,
+   0.811,
+   0.921
+  ],
+  "port_top5": [
+   "Anthony Davis",
+   "Derrick White",
+   "Dyson Daniels",
+   "Desmond Bane",
+   "OG Anunoby"
+  ],
+  "port": {
+   "moved": true,
+   "idx": 1,
+   "gain": 0.022179036547521847,
+   "why": "Derrick White now, Desmond Bane next turn (81% to survive): +0.022 cats/wk over the pair"
+  },
+  "page": {
+   "idx": 1,
+   "moved": true,
+   "gain": 0.022173581734803438,
+   "why": "Derrick White now, Desmond Bane next turn (81% to survive): +0.022 cats/wk over the pair",
+   "next": {
+    "n": "Desmond Bane",
+    "s": 0.811,
+    "idx": 3
+   }
+  }
+ },
+ {
+  "pick": 39,
+  "actual": "Derrick White",
+  "page_top5": [
+   "Derrick White",
+   "Desmond Bane",
+   "OG Anunoby",
+   "Dyson Daniels",
+   "Payton Pritchard"
+  ],
+  "page_surv": [
+   0.17,
+   0.377,
+   0.684,
+   0.644,
+   0.837
+  ],
+  "port_top5": [
+   "Derrick White",
+   "Desmond Bane",
+   "OG Anunoby",
+   "Dyson Daniels",
+   "Payton Pritchard"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 58,
+  "actual": "OG Anunoby",
+  "page_top5": [
+   "Payton Pritchard",
+   "OG Anunoby",
+   "Tyler Herro",
+   "Darius Garland",
+   "Cameron Boozer"
+  ],
+  "page_surv": [
+   0.782,
+   0.592,
+   0.609,
+   0.468,
+   0.324
+  ],
+  "port_top5": [
+   "Payton Pritchard",
+   "OG Anunoby",
+   "Tyler Herro",
+   "Darius Garland",
+   "Cameron Boozer"
+  ],
+  "port": {
+   "moved": true,
+   "idx": 1,
+   "gain": 0.03482703238928275,
+   "why": "OG Anunoby now, Payton Pritchard next turn (78% to survive): +0.035 cats/wk over the pair"
+  },
+  "page": {
+   "idx": 1,
+   "moved": true,
+   "gain": 0.034758314465395124,
+   "why": "OG Anunoby now, Payton Pritchard next turn (78% to survive): +0.035 cats/wk over the pair",
+   "next": {
+    "n": "Payton Pritchard",
+    "s": 0.782,
+    "idx": 0
+   }
+  }
+ },
+ {
+  "pick": 63,
+  "actual": "Payton Pritchard",
+  "page_top5": [
+   "Payton Pritchard",
+   "Tyler Herro",
+   "De'Aaron Fox",
+   "Cameron Boozer",
+   "Coby White"
+  ],
+  "page_surv": [
+   0.503,
+   0.259,
+   0.468,
+   0.055,
+   0.619
+  ],
+  "port_top5": [
+   "Payton Pritchard",
+   "Tyler Herro",
+   "De'Aaron Fox",
+   "Cameron Boozer",
+   "Coby White"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.002528687013425568,
+   "why": "#1 survival 0.50 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.002550296933199636,
+   "why": "#1 survival 0.50 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 82,
+  "actual": "Coby White",
+  "page_top5": [
+   "Coby White",
+   "Josh Hart",
+   "Jalen Suggs",
+   "Zach LaVine",
+   "Isaiah Hartenstein"
+  ],
+  "page_surv": [
+   0.547,
+   0.623,
+   0.733,
+   0.686,
+   0.715
+  ],
+  "port_top5": [
+   "Coby White",
+   "Zach LaVine",
+   "Josh Hart",
+   "Jalen Suggs",
+   "Isaiah Hartenstein"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.00540118617555474,
+   "why": "#1 survival 0.55 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.0054127873026419415,
+   "why": "#1 survival 0.55 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 87,
+  "actual": "Day'Ron Sharpe",
+  "page_top5": [
+   "Isaiah Hartenstein",
+   "Jalen Suggs",
+   "Day'Ron Sharpe",
+   "Zach LaVine",
+   "Yaxel Lendeborg"
+  ],
+  "page_surv": [
+   0.486,
+   0.511,
+   0.337,
+   0.445,
+   0.598
+  ],
+  "port_top5": [
+   "Isaiah Hartenstein",
+   "Jalen Suggs",
+   "Day'Ron Sharpe",
+   "Zach LaVine",
+   "Yaxel Lendeborg"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 106,
+  "actual": "Isaiah Hartenstein",
+  "page_top5": [
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "PJ Washington",
+   "Sandro Mamukelashvili",
+   "Herbert Jones"
+  ],
+  "page_surv": [
+   0.423,
+   0.541,
+   0.563,
+   0.59,
+   0.716
+  ],
+  "port_top5": [
+   "Isaiah Hartenstein",
+   "Yaxel Lendeborg",
+   "Sandro Mamukelashvili",
+   "PJ Washington",
+   "Herbert Jones"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0,
+   "why": "#1 is the best pair",
+   "next": null
+  }
+ },
+ {
+  "pick": 111,
+  "actual": "Rui Hachimura",
+  "page_top5": [
+   "Devin Vassell",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Aaron Gordon"
+  ],
+  "page_surv": [
+   0.321,
+   0.38,
+   0.54,
+   0.427,
+   0.284
+  ],
+  "port_top5": [
+   "Sandro Mamukelashvili",
+   "Devin Vassell",
+   "Herbert Jones",
+   "Yaxel Lendeborg",
+   "Collin Gillespie"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "#1 is the best pair"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.009559640758150856,
+   "why": "#1 survival 0.32 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 130,
+  "actual": "Yaxel Lendeborg",
+  "page_top5": [
+   "Yaxel Lendeborg",
+   "Herbert Jones",
+   "Collin Gillespie",
+   "Devin Vassell",
+   "Sandro Mamukelashvili"
+  ],
+  "page_surv": [
+   0.275,
+   0.49,
+   0.375,
+   0.271,
+   0.328
+  ],
+  "port_top5": [
+   "Yaxel Lendeborg",
+   "Herbert Jones",
+   "Sandro Mamukelashvili",
+   "Fred VanVleet",
+   "Devin Vassell"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.0052240856876779596,
+   "why": "#1 survival 0.28 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.0026563506329848607,
+   "why": "#1 survival 0.28 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 135,
+  "actual": "Devin Vassell",
+  "page_top5": [
+   "Devin Vassell",
+   "Herbert Jones",
+   "Fred VanVleet",
+   "Sandro Mamukelashvili",
+   "Collin Gillespie"
+  ],
+  "page_surv": [
+   0.122,
+   0.309,
+   0.148,
+   0.164,
+   0.202
+  ],
+  "port_top5": [
+   "Devin Vassell",
+   "Sandro Mamukelashvili",
+   "Herbert Jones",
+   "Fred VanVleet",
+   "Collin Gillespie"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0.00870562073200376,
+   "why": "#1 survival 0.12 below 0.60 \u2014 take him now"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "gain": 0.00877364853809115,
+   "why": "#1 survival 0.12 below 0.60 \u2014 take him now",
+   "next": null
+  }
+ },
+ {
+  "pick": 154,
+  "actual": "Draymond Green",
+  "page_top5": [
+   "Draymond Green",
+   "Saddiq Bey",
+   "Herbert Jones",
+   "Jerami Grant",
+   "Kyle Filipowski"
+  ],
+  "page_surv": [
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "port_top5": [
+   "Saddiq Bey",
+   "Herbert Jones",
+   "Draymond Green",
+   "Jerami Grant",
+   "Kyle Filipowski"
+  ],
+  "port": {
+   "moved": false,
+   "idx": 0,
+   "gain": 0,
+   "why": "no next turn / no room"
+  },
+  "page": {
+   "idx": 0,
+   "moved": false,
+   "why": "no next turn / no room"
+  }
+ }
+]

@@ -181,6 +181,11 @@ MOCKS = {
     # build; the 10/9 Yahoo prices baked; tag v58 = m74_players_v58.csv, Stewart's availability the one value change since
     # v53), pasted into the chat as the tracker's export JSON (one UNKNOWN, #112 "Jurkic" = Nurkic) plus Yahoo's recap; no tool log.
     74: dict(tags=("v58",), veto=True),
+    # mock 75 (2026-10-12, slot 10): public Yahoo room (random humans; two seats named "David", the owner is seat 10), LIVE
+    # mode, drafted on deck v59 (rev f918062, the 10/12 ADP refresh: the 10/12 Yahoo prices baked; pool and values identical
+    # to v58, so tag v58 = m74_players_v58.csv); the owner's three "off the card" echoes replay identically on the v59 page.
+    # One halt ("Jalen"), one UNKNOWN fix ("Mavion" -> Davion Mitchell), one empty-resync refusal, 12 shared-token feeds.
+    75: dict(tags=("v58",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -727,7 +732,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a", 74: "df1c754"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a", 74: "df1c754", 75: "f918062"}
 if REV_OVERRIDE:
     PAGE_REV[MOCK] = REV_OVERRIDE
 
