@@ -1,0 +1,403 @@
+{
+ "mock": 67,
+ "tag": "v58",
+ "owner10": "Karl-Anthony Towns",
+ "owner15": "Tyrese Haliburton",
+ "where": {
+  "Karl-Anthony Towns": 10,
+  "Tyrese Haliburton": 15
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Jalen Johnson"
+  ],
+  [
+   12,
+   12,
+   "Tyrese Maxey"
+  ],
+  [
+   13,
+   12,
+   "Donovan Mitchell"
+  ],
+  [
+   14,
+   11,
+   "Cooper Flagg"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 18.483,
+   "playoff": 97.51,
+   "champ_rank": 2,
+   "ecw": 5.041,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton",
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Ivica Zubac",
+    "Damian Lillard",
+    "Dylan Harper",
+    "Zach LaVine",
+    "DeMar DeRozan",
+    "PJ Washington",
+    "Sandro Mamukelashvili",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Tyrese Maxey"
+    ],
+    [
+     13,
+     "Donovan Mitchell"
+    ],
+    [
+     14,
+     "Cooper Flagg"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 18.483,
+   "playoff": 97.51,
+   "champ_rank": 2,
+   "ecw": 5.041,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Ivica Zubac",
+    "Damian Lillard",
+    "Dylan Harper",
+    "Zach LaVine",
+    "DeMar DeRozan",
+    "PJ Washington",
+    "Sandro Mamukelashvili",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Tyrese Maxey"
+    ],
+    [
+     13,
+     "Donovan Mitchell"
+    ],
+    [
+     14,
+     "Cooper Flagg"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 21.9,
+   "playoff": 98.78,
+   "champ_rank": 2,
+   "ecw": 5.186,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson",
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Ivica Zubac",
+    "Damian Lillard",
+    "Dylan Harper",
+    "Zach LaVine",
+    "DeMar DeRozan",
+    "PJ Washington",
+    "Sandro Mamukelashvili",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Jalen Johnson",
+     0.9901,
+     1.829
+    ],
+    [
+     "Jalen Williams",
+     0.9851,
+     1.806
+    ],
+    [
+     "Jamal Murray",
+     0.9818,
+     1.833
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.848
+    ],
+    [
+     "Kevin Durant",
+     0.9719,
+     1.732
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Tyrese Maxey"
+    ],
+    [
+     13,
+     "Donovan Mitchell"
+    ],
+    [
+     14,
+     "Cooper Flagg"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 19.389,
+   "playoff": 98.01,
+   "champ_rank": 2,
+   "ecw": 5.071,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Ivica Zubac",
+    "Damian Lillard",
+    "Dylan Harper",
+    "Zach LaVine",
+    "DeMar DeRozan",
+    "PJ Washington",
+    "Sandro Mamukelashvili",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     2.07
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     2.02
+    ],
+    [
+     "Jalen Johnson",
+     0.9884,
+     1.983
+    ],
+    [
+     "Evan Mobley",
+     0.9851,
+     2.036
+    ],
+    [
+     "Kevin Durant",
+     0.9801,
+     1.951
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Tyrese Maxey"
+    ],
+    [
+     13,
+     "Donovan Mitchell"
+    ],
+    [
+     14,
+     "Cooper Flagg"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 20.372,
+   "playoff": 98.26,
+   "champ_rank": 2,
+   "ecw": 5.12,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Cooper Flagg",
+    "Derrick White",
+    "Desmond Bane",
+    "Ivica Zubac",
+    "Damian Lillard",
+    "Dylan Harper",
+    "Zach LaVine",
+    "DeMar DeRozan",
+    "PJ Washington",
+    "Sandro Mamukelashvili",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Jalen Williams",
+     0.9884,
+     1.815
+    ],
+    [
+     "Jamal Murray",
+     0.9834,
+     1.834
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.857
+    ],
+    [
+     "Kevin Durant",
+     0.9752,
+     1.744
+    ],
+    [
+     "Kyrie Irving",
+     0.9719,
+     1.679
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Williams"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Tyrese Maxey"
+    ],
+    [
+     13,
+     "Donovan Mitchell"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 20.078,
+   "playoff": 98.07,
+   "champ_rank": 2,
+   "ecw": 5.075,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Ivica Zubac",
+    "Damian Lillard",
+    "Dylan Harper",
+    "Zach LaVine",
+    "DeMar DeRozan",
+    "PJ Washington",
+    "Sandro Mamukelashvili",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     2.073
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     2.025
+    ],
+    [
+     "Evan Mobley",
+     0.9868,
+     2.045
+    ],
+    [
+     "Kevin Durant",
+     0.9818,
+     1.968
+    ],
+    [
+     "Cooper Flagg",
+     0.9801,
+     2.014
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Tyrese Maxey"
+    ],
+    [
+     13,
+     "Donovan Mitchell"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

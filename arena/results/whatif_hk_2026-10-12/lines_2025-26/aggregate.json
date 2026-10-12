@@ -1,0 +1,271 @@
+{
+ "rows": [
+  {
+   "mock": 51,
+   "ad": 6.317,
+   "both": 3.661,
+   "K_noH": 5.806,
+   "H_noK": 4.183,
+   "k15": "Jamal Murray",
+   "h15": "Lauri Markkanen",
+   "k15b": "Jamal Murray",
+   "h15b": "Lauri Markkanen",
+   "owner": [
+    "Anthony Edwards",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 52,
+   "ad": 5.494,
+   "both": 4.111,
+   "K_noH": 5.389,
+   "H_noK": 6.4585,
+   "k15": "Jamal Murray",
+   "h15": "Anthony Davis",
+   "k15b": "Jamal Murray",
+   "h15b": "Anthony Davis",
+   "owner": [
+    "Jayson Tatum",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 17,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 53,
+   "ad": 8.05,
+   "both": 10.372,
+   "K_noH": 12.217,
+   "H_noK": 12.136,
+   "k15": "Jamal Murray",
+   "h15": "Lauri Markkanen",
+   "k15b": "Jamal Murray",
+   "h15b": "Lauri Markkanen",
+   "owner": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 56,
+   "ad": 1.483,
+   "both": 1.483,
+   "K_noH": 6.135999999999999,
+   "H_noK": 4.7330000000000005,
+   "k15": "Tyrese Maxey",
+   "h15": "Tyrese Maxey",
+   "k15b": "Tyrese Maxey",
+   "h15b": "Tyrese Maxey",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 15
+   },
+   "missing": []
+  },
+  {
+   "mock": 57,
+   "ad": 2.933,
+   "both": 3.128,
+   "K_noH": 4.542,
+   "H_noK": 4.3085,
+   "k15": "Jamal Murray",
+   "h15": "Lauri Markkanen",
+   "k15b": "Jamal Murray",
+   "h15b": "Lauri Markkanen",
+   "owner": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 13
+   },
+   "missing": []
+  },
+  {
+   "mock": 58,
+   "ad": 6.144,
+   "both": 6.144,
+   "K_noH": 10.4555,
+   "H_noK": 11.122499999999999,
+   "k15": "Tyrese Maxey",
+   "h15": "Tyrese Maxey",
+   "k15b": "Jamal Murray",
+   "h15b": "Lauri Markkanen",
+   "owner": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 10
+   },
+   "missing": []
+  },
+  {
+   "mock": 59,
+   "ad": 9.656,
+   "both": 9.656,
+   "K_noH": 15.125,
+   "H_noK": 15.119499999999999,
+   "k15": "Tyrese Maxey",
+   "h15": "Tyrese Maxey",
+   "k15b": "Tyrese Maxey",
+   "h15b": "Tyrese Maxey",
+   "owner": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 10
+   },
+   "missing": [
+    "UNKNOWN #126"
+   ]
+  },
+  {
+   "mock": 60,
+   "ad": 20.289,
+   "both": 19.817,
+   "K_noH": 24.239,
+   "H_noK": 22.311,
+   "k15": "Jamal Murray",
+   "h15": "Anthony Davis",
+   "k15b": "Jamal Murray",
+   "h15b": "Anthony Davis",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Kevin Durant"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 61,
+   "ad": 6.3,
+   "both": 5.344,
+   "K_noH": 7.483,
+   "H_noK": 6.133,
+   "k15": "Jamal Murray",
+   "h15": "Kawhi Leonard",
+   "k15b": "Jamal Murray",
+   "h15b": "Kawhi Leonard",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 11
+   },
+   "missing": []
+  },
+  {
+   "mock": 67,
+   "ad": 4.717,
+   "both": 4.717,
+   "K_noH": 5.9945,
+   "H_noK": 6.980499999999999,
+   "k15": "Jamal Murray",
+   "h15": "Lauri Markkanen",
+   "k15b": "Jamal Murray",
+   "h15b": "Lauri Markkanen",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 15
+   },
+   "missing": []
+  },
+  {
+   "mock": 73,
+   "ad": 13.278,
+   "both": 10.967,
+   "K_noH": 13.2945,
+   "H_noK": 10.9945,
+   "k15": "Jamal Murray",
+   "h15": "Kawhi Leonard",
+   "k15b": "Jamal Murray",
+   "h15b": "Kawhi Leonard",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 12
+   },
+   "missing": []
+  },
+  {
+   "mock": 74,
+   "ad": 3.578,
+   "both": 2.539,
+   "K_noH": 3.578,
+   "H_noK": 3.65,
+   "k15": "Jamal Murray",
+   "h15": "Anthony Davis",
+   "k15b": "Jamal Murray",
+   "h15b": "Anthony Davis",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 75,
+   "ad": 4.094,
+   "both": 4.094,
+   "K_noH": 5.375,
+   "H_noK": 4.702999999999999,
+   "k15": "Jamal Murray",
+   "h15": "Kawhi Leonard",
+   "k15b": "Jamal Murray",
+   "h15b": "Kawhi Leonard",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 15
+   },
+   "missing": []
+  }
+ ],
+ "means": {
+  "both": 6.617923076923077,
+  "K_noH": 9.202653846153845,
+  "H_noK": 8.679461538461538
+ }
+}

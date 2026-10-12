@@ -1,0 +1,405 @@
+{
+ "mock": 74,
+ "tag": "v58",
+ "haliburton_healthy": true,
+ "lines_2025_26": false,
+ "owner10": "Karl-Anthony Towns",
+ "owner15": "Donovan Mitchell",
+ "where": {
+  "Karl-Anthony Towns": 10,
+  "Tyrese Haliburton": 14
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Anthony Edwards"
+  ],
+  [
+   12,
+   12,
+   "Jalen Johnson"
+  ],
+  [
+   13,
+   12,
+   "Scottie Barnes"
+  ],
+  [
+   14,
+   11,
+   "Tyrese Haliburton"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 17.839,
+   "playoff": 96.64,
+   "champ_rank": 2,
+   "ecw": 4.939,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Khaman Maluach",
+    "Wendell Carter Jr.",
+    "Daniel Gafford",
+    "Tari Eason"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Anthony Edwards"
+    ],
+    [
+     12,
+     "Jalen Johnson"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 19.7,
+   "playoff": 98.07,
+   "champ_rank": 2,
+   "ecw": 5.003,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Khaman Maluach",
+    "Wendell Carter Jr.",
+    "Daniel Gafford",
+    "Tari Eason"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Anthony Edwards"
+    ],
+    [
+     12,
+     "Jalen Johnson"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Donovan Mitchell"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 17.839,
+   "playoff": 96.64,
+   "champ_rank": 2,
+   "ecw": 4.939,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Donovan Mitchell",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Khaman Maluach",
+    "Wendell Carter Jr.",
+    "Daniel Gafford",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Jalen Williams",
+     0.9884,
+     1.87
+    ],
+    [
+     "Donovan Mitchell",
+     0.9834,
+     1.813
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.887
+    ],
+    [
+     "Jamal Murray",
+     0.9801,
+     1.865
+    ],
+    [
+     "Kevin Durant",
+     0.9752,
+     1.811
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Williams"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Jalen Johnson"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Anthony Edwards"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 16.417,
+   "playoff": 95.89,
+   "champ_rank": 2,
+   "ecw": 4.851,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Khaman Maluach",
+    "Wendell Carter Jr.",
+    "Daniel Gafford",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.858
+    ],
+    [
+     "Anthony Davis",
+     0.9983,
+     1.82
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     1.813
+    ],
+    [
+     "Kevin Durant",
+     0.9818,
+     1.733
+    ],
+    [
+     "Jalen Williams",
+     0.9752,
+     1.638
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Jalen Johnson"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Anthony Edwards"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 17.839,
+   "playoff": 96.64,
+   "champ_rank": 2,
+   "ecw": 4.939,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Donovan Mitchell",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Khaman Maluach",
+    "Wendell Carter Jr.",
+    "Daniel Gafford",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Jalen Williams",
+     0.9884,
+     1.87
+    ],
+    [
+     "Donovan Mitchell",
+     0.9834,
+     1.813
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.887
+    ],
+    [
+     "Jamal Murray",
+     0.9801,
+     1.865
+    ],
+    [
+     "Kevin Durant",
+     0.9752,
+     1.811
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Williams"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Anthony Edwards"
+    ],
+    [
+     12,
+     "Jalen Johnson"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 16.417,
+   "playoff": 95.89,
+   "champ_rank": 2,
+   "ecw": 4.851,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Josh Hart",
+    "Isaiah Hartenstein",
+    "Yaxel Lendeborg",
+    "Khaman Maluach",
+    "Wendell Carter Jr.",
+    "Daniel Gafford",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.858
+    ],
+    [
+     "Anthony Davis",
+     0.9983,
+     1.82
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     1.813
+    ],
+    [
+     "Kevin Durant",
+     0.9818,
+     1.733
+    ],
+    [
+     "Jalen Williams",
+     0.9752,
+     1.638
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Anthony Edwards"
+    ],
+    [
+     12,
+     "Jalen Johnson"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

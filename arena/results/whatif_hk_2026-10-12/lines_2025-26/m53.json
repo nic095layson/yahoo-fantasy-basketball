@@ -1,0 +1,405 @@
+{
+ "mock": 53,
+ "tag": "v58",
+ "haliburton_healthy": false,
+ "lines_2025_26": true,
+ "owner10": "Jayson Tatum",
+ "owner15": "Karl-Anthony Towns",
+ "where": {
+  "Karl-Anthony Towns": 15,
+  "Tyrese Haliburton": 14
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Cooper Flagg"
+  ],
+  [
+   12,
+   12,
+   "Donovan Mitchell"
+  ],
+  [
+   13,
+   12,
+   "Scottie Barnes"
+  ],
+  [
+   14,
+   11,
+   "Tyrese Haliburton"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 8.05,
+   "playoff": 81.46,
+   "champ_rank": 5,
+   "ecw": 4.608,
+   "roster": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Evan Mobley",
+    "Jalen Williams",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Immanuel Quickley",
+    "Myles Turner",
+    "Jakob Poeltl",
+    "Reed Sheppard",
+    "Tre Jones",
+    "Cameron Johnson",
+    "PJ Washington"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 10.372,
+   "playoff": 86.98,
+   "champ_rank": 4,
+   "ecw": 4.685,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Evan Mobley",
+    "Jalen Williams",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Immanuel Quickley",
+    "Myles Turner",
+    "Jakob Poeltl",
+    "Reed Sheppard",
+    "Tre Jones",
+    "Cameron Johnson",
+    "PJ Washington"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Jayson Tatum"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 12.217,
+   "playoff": 91.69,
+   "champ_rank": 3,
+   "ecw": 4.805,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Evan Mobley",
+    "Jalen Williams",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Immanuel Quickley",
+    "Myles Turner",
+    "Jakob Poeltl",
+    "Reed Sheppard",
+    "Tre Jones",
+    "Cameron Johnson",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Jamal Murray",
+     0.995,
+     2.222
+    ],
+    [
+     "Kawhi Leonard",
+     0.9901,
+     2.034
+    ],
+    [
+     "Kevin Durant",
+     0.9884,
+     2.139
+    ],
+    [
+     "Lauri Markkanen",
+     0.9884,
+     2.037
+    ],
+    [
+     "Jalen Williams",
+     0.9834,
+     2.123
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jamal Murray"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Cooper Flagg"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 12.289,
+   "playoff": 91.67,
+   "champ_rank": 3,
+   "ecw": 4.775,
+   "roster": [
+    "Tyrese Haliburton",
+    "Lauri Markkanen",
+    "Evan Mobley",
+    "Jalen Williams",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Immanuel Quickley",
+    "Myles Turner",
+    "Jakob Poeltl",
+    "Reed Sheppard",
+    "Tre Jones",
+    "Cameron Johnson",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Lauri Markkanen",
+     0.9967,
+     2.189
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     2.049
+    ],
+    [
+     "Kawhi Leonard",
+     0.9967,
+     2.043
+    ],
+    [
+     "Kevin Durant",
+     0.9868,
+     2.016
+    ],
+    [
+     "Jamal Murray",
+     0.9868,
+     1.985
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Lauri Markkanen"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Jayson Tatum"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 12.217,
+   "playoff": 91.69,
+   "champ_rank": 3,
+   "ecw": 4.805,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Evan Mobley",
+    "Jalen Williams",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Immanuel Quickley",
+    "Myles Turner",
+    "Jakob Poeltl",
+    "Reed Sheppard",
+    "Tre Jones",
+    "Cameron Johnson",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Jamal Murray",
+     0.995,
+     2.222
+    ],
+    [
+     "Kawhi Leonard",
+     0.9901,
+     2.034
+    ],
+    [
+     "Kevin Durant",
+     0.9884,
+     2.139
+    ],
+    [
+     "Lauri Markkanen",
+     0.9884,
+     2.037
+    ],
+    [
+     "Jalen Williams",
+     0.9834,
+     2.123
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jamal Murray"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 11.983,
+   "playoff": 91.18,
+   "champ_rank": 3,
+   "ecw": 4.755,
+   "roster": [
+    "Tyrese Haliburton",
+    "Lauri Markkanen",
+    "Evan Mobley",
+    "Jalen Williams",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Immanuel Quickley",
+    "Myles Turner",
+    "Jakob Poeltl",
+    "Reed Sheppard",
+    "Tre Jones",
+    "Cameron Johnson",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Lauri Markkanen",
+     0.9967,
+     2.169
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     2.061
+    ],
+    [
+     "Kawhi Leonard",
+     0.9967,
+     2.031
+    ],
+    [
+     "Kevin Durant",
+     0.9851,
+     1.998
+    ],
+    [
+     "Jamal Murray",
+     0.9851,
+     1.956
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Lauri Markkanen"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Scottie Barnes"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

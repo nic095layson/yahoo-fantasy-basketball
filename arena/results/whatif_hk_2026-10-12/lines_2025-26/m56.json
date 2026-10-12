@@ -1,0 +1,405 @@
+{
+ "mock": 56,
+ "tag": "v58",
+ "haliburton_healthy": false,
+ "lines_2025_26": true,
+ "owner10": "Karl-Anthony Towns",
+ "owner15": "Tyrese Haliburton",
+ "where": {
+  "Karl-Anthony Towns": 10,
+  "Tyrese Haliburton": 15
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Jalen Johnson"
+  ],
+  [
+   12,
+   12,
+   "Cooper Flagg"
+  ],
+  [
+   13,
+   12,
+   "Amen Thompson"
+  ],
+  [
+   14,
+   11,
+   "Kevin Durant"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 1.483,
+   "playoff": 39.21,
+   "champ_rank": 11,
+   "ecw": 4.095,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton",
+    "Evan Mobley",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Myles Turner",
+    "Tari Eason",
+    "Reed Sheppard",
+    "Christian Braun",
+    "Brook Lopez"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 1.483,
+   "playoff": 39.21,
+   "champ_rank": 11,
+   "ecw": 4.095,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Evan Mobley",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Myles Turner",
+    "Tari Eason",
+    "Reed Sheppard",
+    "Christian Braun",
+    "Brook Lopez"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 6.361,
+   "playoff": 71.77,
+   "champ_rank": 6,
+   "ecw": 4.441,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey",
+    "Evan Mobley",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Myles Turner",
+    "Tari Eason",
+    "Reed Sheppard",
+    "Christian Braun",
+    "Brook Lopez"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     1.0,
+     2.446
+    ],
+    [
+     "Jamal Murray",
+     0.9901,
+     2.133
+    ],
+    [
+     "Donovan Mitchell",
+     0.9884,
+     2.067
+    ],
+    [
+     "Kawhi Leonard",
+     0.9851,
+     1.973
+    ],
+    [
+     "Jalen Williams",
+     0.9834,
+     2.073
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 4.783,
+   "playoff": 66.38,
+   "champ_rank": 6,
+   "ecw": 4.372,
+   "roster": [
+    "Tyrese Haliburton",
+    "Tyrese Maxey",
+    "Evan Mobley",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Myles Turner",
+    "Tari Eason",
+    "Reed Sheppard",
+    "Christian Braun",
+    "Brook Lopez"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     1.0,
+     2.122
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     2.043
+    ],
+    [
+     "Lauri Markkanen",
+     0.9917,
+     2.097
+    ],
+    [
+     "Kawhi Leonard",
+     0.9917,
+     1.946
+    ],
+    [
+     "Jamal Murray",
+     0.9801,
+     1.851
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 5.911,
+   "playoff": 71.23,
+   "champ_rank": 6,
+   "ecw": 4.442,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey",
+    "Evan Mobley",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Myles Turner",
+    "Tari Eason",
+    "Reed Sheppard",
+    "Christian Braun",
+    "Brook Lopez"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     1.0,
+     2.486
+    ],
+    [
+     "Jamal Murray",
+     0.9901,
+     2.168
+    ],
+    [
+     "Donovan Mitchell",
+     0.9868,
+     2.103
+    ],
+    [
+     "Kevin Durant",
+     0.9834,
+     2.141
+    ],
+    [
+     "Kawhi Leonard",
+     0.9818,
+     2.021
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 4.683,
+   "playoff": 66.27,
+   "champ_rank": 7,
+   "ecw": 4.374,
+   "roster": [
+    "Tyrese Haliburton",
+    "Tyrese Maxey",
+    "Evan Mobley",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Myles Turner",
+    "Tari Eason",
+    "Reed Sheppard",
+    "Christian Braun",
+    "Brook Lopez"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     1.0,
+     2.161
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     2.038
+    ],
+    [
+     "Lauri Markkanen",
+     0.9917,
+     2.115
+    ],
+    [
+     "Kawhi Leonard",
+     0.9917,
+     1.971
+    ],
+    [
+     "Kevin Durant",
+     0.9801,
+     1.96
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

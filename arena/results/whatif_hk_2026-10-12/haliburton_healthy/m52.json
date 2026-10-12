@@ -1,0 +1,405 @@
+{
+ "mock": 52,
+ "tag": "v58",
+ "haliburton_healthy": true,
+ "lines_2025_26": false,
+ "owner10": "Jayson Tatum",
+ "owner15": "Donovan Mitchell",
+ "where": {
+  "Karl-Anthony Towns": 17,
+  "Tyrese Haliburton": 14
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Jalen Johnson"
+  ],
+  [
+   12,
+   12,
+   "Kevin Durant"
+  ],
+  [
+   13,
+   12,
+   "Austin Reaves"
+  ],
+  [
+   14,
+   11,
+   "Tyrese Haliburton"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 11.05,
+   "playoff": 89.25,
+   "champ_rank": 5,
+   "ecw": 4.761,
+   "roster": [
+    "Jayson Tatum",
+    "Donovan Mitchell",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Miles Bridges",
+    "Cameron Johnson",
+    "Jordan Poole",
+    "Tari Eason",
+    "PJ Washington"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Jayson Tatum",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Kevin Durant"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 19.817,
+   "playoff": 98.24,
+   "champ_rank": 1,
+   "ecw": 5.079,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Miles Bridges",
+    "Cameron Johnson",
+    "Jordan Poole",
+    "Tari Eason",
+    "PJ Washington"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Kevin Durant"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Jayson Tatum"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 17.6,
+   "playoff": 96.27,
+   "champ_rank": 1,
+   "ecw": 4.976,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Miles Bridges",
+    "Cameron Johnson",
+    "Jordan Poole",
+    "Tari Eason",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Donovan Mitchell",
+     0.9884,
+     1.899
+    ],
+    [
+     "Jalen Williams",
+     0.9868,
+     1.917
+    ],
+    [
+     "Jamal Murray",
+     0.9834,
+     1.928
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.974
+    ],
+    [
+     "James Harden",
+     0.9719,
+     1.98
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Kevin Durant"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 16.75,
+   "playoff": 96.56,
+   "champ_rank": 3,
+   "ecw": 4.931,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Miles Bridges",
+    "Cameron Johnson",
+    "Jordan Poole",
+    "Tari Eason",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.971
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     1.912
+    ],
+    [
+     "Jalen Johnson",
+     0.9868,
+     1.852
+    ],
+    [
+     "Evan Mobley",
+     0.9851,
+     1.926
+    ],
+    [
+     "Derrick White",
+     0.9719,
+     1.824
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Kevin Durant"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Jayson Tatum"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 17.6,
+   "playoff": 96.27,
+   "champ_rank": 1,
+   "ecw": 4.976,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Miles Bridges",
+    "Cameron Johnson",
+    "Jordan Poole",
+    "Tari Eason",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Donovan Mitchell",
+     0.9884,
+     1.899
+    ],
+    [
+     "Jalen Williams",
+     0.9868,
+     1.917
+    ],
+    [
+     "Jamal Murray",
+     0.9834,
+     1.928
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.974
+    ],
+    [
+     "James Harden",
+     0.9719,
+     1.98
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Kevin Durant"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 17.383,
+   "playoff": 96.6,
+   "champ_rank": 2,
+   "ecw": 4.932,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Miles Bridges",
+    "Cameron Johnson",
+    "Jordan Poole",
+    "Tari Eason",
+    "PJ Washington"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.981
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     1.917
+    ],
+    [
+     "Evan Mobley",
+     0.9868,
+     1.934
+    ],
+    [
+     "Jalen Williams",
+     0.9785,
+     1.756
+    ],
+    [
+     "Derrick White",
+     0.9735,
+     1.827
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Kevin Durant"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

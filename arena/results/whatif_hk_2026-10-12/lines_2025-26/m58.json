@@ -1,0 +1,405 @@
+{
+ "mock": 58,
+ "tag": "v58",
+ "haliburton_healthy": false,
+ "lines_2025_26": true,
+ "owner10": "Tyrese Haliburton",
+ "owner15": "Karl-Anthony Towns",
+ "where": {
+  "Karl-Anthony Towns": 15,
+  "Tyrese Haliburton": 10
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Tyrese Maxey"
+  ],
+  [
+   12,
+   12,
+   "Donovan Mitchell"
+  ],
+  [
+   13,
+   12,
+   "Stephen Curry"
+  ],
+  [
+   14,
+   11,
+   "Jalen Johnson"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 6.144,
+   "playoff": 74.52,
+   "champ_rank": 7,
+   "ecw": 4.515,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Miles Bridges",
+    "Jakob Poeltl",
+    "Ja Morant",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Herbert Jones",
+    "Daniel Gafford"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Stephen Curry"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 6.144,
+   "playoff": 74.52,
+   "champ_rank": 7,
+   "ecw": 4.515,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Miles Bridges",
+    "Jakob Poeltl",
+    "Ja Morant",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Herbert Jones",
+    "Daniel Gafford"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Stephen Curry"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 12.472,
+   "playoff": 91.96,
+   "champ_rank": 5,
+   "ecw": 4.824,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Miles Bridges",
+    "Jakob Poeltl",
+    "Ja Morant",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Herbert Jones",
+    "Daniel Gafford"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     1.0,
+     2.443
+    ],
+    [
+     "Jamal Murray",
+     0.9917,
+     2.13
+    ],
+    [
+     "Kevin Durant",
+     0.9868,
+     2.076
+    ],
+    [
+     "Kawhi Leonard",
+     0.9851,
+     1.971
+    ],
+    [
+     "Jalen Williams",
+     0.9834,
+     2.068
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Stephen Curry"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 13.828,
+   "playoff": 93.92,
+   "champ_rank": 5,
+   "ecw": 4.86,
+   "roster": [
+    "Tyrese Haliburton",
+    "Tyrese Maxey",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Miles Bridges",
+    "Jakob Poeltl",
+    "Ja Morant",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Herbert Jones",
+    "Daniel Gafford"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     1.0,
+     2.189
+    ],
+    [
+     "Lauri Markkanen",
+     0.9934,
+     2.17
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     2.037
+    ],
+    [
+     "Kawhi Leonard",
+     0.9934,
+     2.014
+    ],
+    [
+     "Kevin Durant",
+     0.9834,
+     1.995
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Stephen Curry"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 8.439,
+   "playoff": 81.91,
+   "champ_rank": 6,
+   "ecw": 4.635,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Miles Bridges",
+    "Jakob Poeltl",
+    "Ja Morant",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Herbert Jones",
+    "Daniel Gafford"
+   ],
+   "card15": [
+    [
+     "Jamal Murray",
+     0.995,
+     2.039
+    ],
+    [
+     "Kevin Durant",
+     0.9901,
+     1.983
+    ],
+    [
+     "Kawhi Leonard",
+     0.9884,
+     1.873
+    ],
+    [
+     "Jalen Williams",
+     0.9868,
+     1.966
+    ],
+    [
+     "Lauri Markkanen",
+     0.9818,
+     1.854
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jamal Murray"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Stephen Curry"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 8.417,
+   "playoff": 82.53,
+   "champ_rank": 6,
+   "ecw": 4.616,
+   "roster": [
+    "Tyrese Haliburton",
+    "Lauri Markkanen",
+    "Anthony Davis",
+    "Kyrie Irving",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Miles Bridges",
+    "Jakob Poeltl",
+    "Ja Morant",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Herbert Jones",
+    "Daniel Gafford"
+   ],
+   "card15": [
+    [
+     "Lauri Markkanen",
+     0.9967,
+     2.128
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     2.025
+    ],
+    [
+     "Kawhi Leonard",
+     0.995,
+     1.972
+    ],
+    [
+     "Kevin Durant",
+     0.9868,
+     1.94
+    ],
+    [
+     "Jamal Murray",
+     0.9834,
+     1.877
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Lauri Markkanen"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Stephen Curry"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

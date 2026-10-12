@@ -1,0 +1,405 @@
+{
+ "mock": 73,
+ "tag": "v58",
+ "haliburton_healthy": false,
+ "lines_2025_26": true,
+ "owner10": "Karl-Anthony Towns",
+ "owner15": "Donovan Mitchell",
+ "where": {
+  "Karl-Anthony Towns": 10,
+  "Tyrese Haliburton": 12
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Cooper Flagg"
+  ],
+  [
+   12,
+   12,
+   "Tyrese Haliburton"
+  ],
+  [
+   13,
+   12,
+   "Jalen Johnson"
+  ],
+  [
+   14,
+   11,
+   "Austin Reaves"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 13.278,
+   "playoff": 90.41,
+   "champ_rank": 3,
+   "ecw": 4.791,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Tyrese Haliburton"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 10.967,
+   "playoff": 85.62,
+   "champ_rank": 4,
+   "ecw": 4.69,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 13.289,
+   "playoff": 91.29,
+   "champ_rank": 3,
+   "ecw": 4.809,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Jamal Murray",
+     0.9934,
+     2.246
+    ],
+    [
+     "Donovan Mitchell",
+     0.9917,
+     2.183
+    ],
+    [
+     "Kevin Durant",
+     0.9851,
+     2.196
+    ],
+    [
+     "Kawhi Leonard",
+     0.9851,
+     2.077
+    ],
+    [
+     "Lauri Markkanen",
+     0.9834,
+     2.091
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jamal Murray"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 11.067,
+   "playoff": 86.74,
+   "champ_rank": 4,
+   "ecw": 4.687,
+   "roster": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Kawhi Leonard",
+     0.9983,
+     2.065
+    ],
+    [
+     "Lauri Markkanen",
+     0.995,
+     2.209
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     2.038
+    ],
+    [
+     "Jamal Murray",
+     0.9868,
+     2.007
+    ],
+    [
+     "Kevin Durant",
+     0.9851,
+     2.061
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 13.3,
+   "playoff": 91.12,
+   "champ_rank": 3,
+   "ecw": 4.806,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Jamal Murray",
+     0.9934,
+     2.271
+    ],
+    [
+     "Donovan Mitchell",
+     0.9934,
+     2.212
+    ],
+    [
+     "Kevin Durant",
+     0.9868,
+     2.212
+    ],
+    [
+     "Kawhi Leonard",
+     0.9851,
+     2.091
+    ],
+    [
+     "Lauri Markkanen",
+     0.9818,
+     2.106
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jamal Murray"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Austin Reaves"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 10.922,
+   "playoff": 86.84,
+   "champ_rank": 4,
+   "ecw": 4.691,
+   "roster": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Kawhi Leonard",
+     0.9983,
+     2.057
+    ],
+    [
+     "Lauri Markkanen",
+     0.995,
+     2.203
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     2.027
+    ],
+    [
+     "Jamal Murray",
+     0.9868,
+     1.991
+    ],
+    [
+     "Kevin Durant",
+     0.9851,
+     2.042
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Austin Reaves"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}
