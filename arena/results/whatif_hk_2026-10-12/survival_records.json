@@ -1,0 +1,595 @@
+{
+ "rooms": [
+  {
+   "mock": 51,
+   "room": "public",
+   "owner10": "Anthony Edwards",
+   "owner15": "Karl-Anthony Towns",
+   "towns": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   },
+   "haliburton": {
+    "pick": 14,
+    "by": "andrew",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 52,
+   "room": "public",
+   "owner10": "Jayson Tatum",
+   "owner15": "Donovan Mitchell",
+   "towns": {
+    "pick": 17,
+    "by": "David (seat 8)",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   },
+   "haliburton": {
+    "pick": 14,
+    "by": "Jack",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 53,
+   "room": "public",
+   "owner10": "Jayson Tatum",
+   "owner15": "Karl-Anthony Towns",
+   "towns": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   },
+   "haliburton": {
+    "pick": 14,
+    "by": "Anmol",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 54,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Jalen Johnson",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 6,
+    "by": "Rogelio",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 55,
+   "room": "cast",
+   "owner10": "Jayson Tatum",
+   "owner15": "Scottie Barnes",
+   "towns": {
+    "pick": 11,
+    "by": "Noah",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   },
+   "haliburton": {
+    "pick": 9,
+    "by": "Kevin",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 56,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Tyrese Haliburton",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   }
+  },
+  {
+   "mock": 57,
+   "room": "public",
+   "owner10": "Jayson Tatum",
+   "owner15": "Karl-Anthony Towns",
+   "towns": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   },
+   "haliburton": {
+    "pick": 13,
+    "by": "Yoann",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 58,
+   "room": "public",
+   "owner10": "Tyrese Haliburton",
+   "owner15": "Karl-Anthony Towns",
+   "towns": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   },
+   "haliburton": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 59,
+   "room": "public",
+   "owner10": "Tyrese Haliburton",
+   "owner15": "Karl-Anthony Towns",
+   "towns": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   },
+   "haliburton": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 60,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Kevin Durant",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 14,
+    "by": "seat 11",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 61,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Donovan Mitchell",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 11,
+    "by": "seat 11",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 62,
+   "room": "cast",
+   "owner10": "Jalen Johnson",
+   "owner15": "Jalen Williams",
+   "towns": {
+    "pick": 9,
+    "by": "Kevin",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 63,
+   "room": "cast",
+   "owner10": "Jalen Johnson",
+   "owner15": "Jamal Murray",
+   "towns": {
+    "pick": 9,
+    "by": "Kevin",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 64,
+   "room": "cast",
+   "owner10": "Jayson Tatum",
+   "owner15": "Kevin Durant",
+   "towns": {
+    "pick": 9,
+    "by": "Kevin",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 65,
+   "room": "cast",
+   "owner10": "Jalen Johnson",
+   "owner15": "Jamal Murray",
+   "towns": {
+    "pick": 9,
+    "by": "Kevin",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 66,
+   "room": "cast",
+   "owner10": "Giannis Antetokounmpo",
+   "owner15": "Scottie Barnes",
+   "towns": {
+    "pick": 9,
+    "by": "Kevin",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 67,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Tyrese Haliburton",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   }
+  },
+  {
+   "mock": 68,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Tyrese Maxey",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 9,
+    "by": "seat 9",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 69,
+   "room": "cast",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "James Harden",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 70,
+   "room": "cast",
+   "owner10": "Giannis Antetokounmpo",
+   "owner15": "Cooper Flagg",
+   "towns": {
+    "pick": 11,
+    "by": "Cayas",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 71,
+   "room": "cast",
+   "owner10": "Jayson Tatum",
+   "owner15": "Giannis Antetokounmpo",
+   "towns": {
+    "pick": 11,
+    "by": "Cayas",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   },
+   "haliburton": {
+    "pick": 6,
+    "by": "Martin",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 72,
+   "room": "cast",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "James Harden",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 8,
+    "by": "JCo",
+    "on_board_at_10": false,
+    "left_at_10": false,
+    "lasted_to_15": null
+   }
+  },
+  {
+   "mock": 73,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Donovan Mitchell",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 12,
+    "by": "seat 12",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 74,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Donovan Mitchell",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 14,
+    "by": "seat 11",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": false
+   }
+  },
+  {
+   "mock": 75,
+   "room": "public",
+   "owner10": "Karl-Anthony Towns",
+   "owner15": "Tyrese Haliburton",
+   "towns": {
+    "pick": 10,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": false,
+    "lasted_to_15": null
+   },
+   "haliburton": {
+    "pick": 15,
+    "by": "owner",
+    "on_board_at_10": true,
+    "left_at_10": true,
+    "lasted_to_15": true
+   }
+  }
+ ],
+ "summary": {
+  "public": {
+   "towns": {
+    "rooms": 15,
+    "on_board_at_10": 15,
+    "left_at_10": 6,
+    "lasted_to_15": 6,
+    "gone_11_14": []
+   },
+   "haliburton": {
+    "rooms": 15,
+    "on_board_at_10": 13,
+    "left_at_10": 11,
+    "lasted_to_15": 3,
+    "gone_11_14": [
+     [
+      51,
+      14,
+      "andrew"
+     ],
+     [
+      52,
+      14,
+      "Jack"
+     ],
+     [
+      53,
+      14,
+      "Anmol"
+     ],
+     [
+      57,
+      13,
+      "Yoann"
+     ],
+     [
+      60,
+      14,
+      "seat 11"
+     ],
+     [
+      61,
+      11,
+      "seat 11"
+     ],
+     [
+      73,
+      12,
+      "seat 12"
+     ],
+     [
+      74,
+      14,
+      "seat 11"
+     ]
+    ]
+   }
+  },
+  "cast": {
+   "towns": {
+    "rooms": 10,
+    "on_board_at_10": 5,
+    "left_at_10": 3,
+    "lasted_to_15": 0,
+    "gone_11_14": [
+     [
+      55,
+      11,
+      "Noah"
+     ],
+     [
+      70,
+      11,
+      "Cayas"
+     ],
+     [
+      71,
+      11,
+      "Cayas"
+     ]
+    ]
+   },
+   "haliburton": {
+    "rooms": 10,
+    "on_board_at_10": 0,
+    "left_at_10": 0,
+    "lasted_to_15": 0,
+    "gone_11_14": []
+   }
+  }
+ }
+}

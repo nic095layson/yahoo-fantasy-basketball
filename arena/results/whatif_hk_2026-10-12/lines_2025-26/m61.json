@@ -1,0 +1,405 @@
+{
+ "mock": 61,
+ "tag": "v58",
+ "haliburton_healthy": false,
+ "lines_2025_26": true,
+ "owner10": "Karl-Anthony Towns",
+ "owner15": "Donovan Mitchell",
+ "where": {
+  "Karl-Anthony Towns": 10,
+  "Tyrese Haliburton": 11
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Tyrese Haliburton"
+  ],
+  [
+   12,
+   12,
+   "Scottie Barnes"
+  ],
+  [
+   13,
+   12,
+   "Austin Reaves"
+  ],
+  [
+   14,
+   11,
+   "Jalen Johnson"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 6.3,
+   "playoff": 74.22,
+   "champ_rank": 6,
+   "ecw": 4.481,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Isaiah Hartenstein",
+    "Mikal Bridges",
+    "Collin Murray-Boyles",
+    "Davion Mitchell",
+    "PJ Washington",
+    "Herbert Jones",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 5.344,
+   "playoff": 69.31,
+   "champ_rank": 6,
+   "ecw": 4.428,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Isaiah Hartenstein",
+    "Mikal Bridges",
+    "Collin Murray-Boyles",
+    "Davion Mitchell",
+    "PJ Washington",
+    "Herbert Jones",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Donovan Mitchell"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 7.483,
+   "playoff": 77.13,
+   "champ_rank": 6,
+   "ecw": 4.526,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Isaiah Hartenstein",
+    "Mikal Bridges",
+    "Collin Murray-Boyles",
+    "Davion Mitchell",
+    "PJ Washington",
+    "Herbert Jones",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Jamal Murray",
+     0.9934,
+     2.276
+    ],
+    [
+     "Donovan Mitchell",
+     0.9934,
+     2.214
+    ],
+    [
+     "Kawhi Leonard",
+     0.9868,
+     2.103
+    ],
+    [
+     "Kevin Durant",
+     0.9851,
+     2.213
+    ],
+    [
+     "Lauri Markkanen",
+     0.9851,
+     2.119
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jamal Murray"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 6.133,
+   "playoff": 74.5,
+   "champ_rank": 6,
+   "ecw": 4.48,
+   "roster": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Isaiah Hartenstein",
+    "Mikal Bridges",
+    "Collin Murray-Boyles",
+    "Davion Mitchell",
+    "PJ Washington",
+    "Herbert Jones",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Kawhi Leonard",
+     0.9983,
+     2.074
+    ],
+    [
+     "Lauri Markkanen",
+     0.995,
+     2.218
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     2.049
+    ],
+    [
+     "Jamal Murray",
+     0.9868,
+     2.02
+    ],
+    [
+     "Kevin Durant",
+     0.9868,
+     2.068
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Jalen Johnson"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 7.483,
+   "playoff": 77.13,
+   "champ_rank": 6,
+   "ecw": 4.526,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jamal Murray",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Isaiah Hartenstein",
+    "Mikal Bridges",
+    "Collin Murray-Boyles",
+    "Davion Mitchell",
+    "PJ Washington",
+    "Herbert Jones",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Jamal Murray",
+     0.9934,
+     2.276
+    ],
+    [
+     "Donovan Mitchell",
+     0.9934,
+     2.214
+    ],
+    [
+     "Kawhi Leonard",
+     0.9868,
+     2.103
+    ],
+    [
+     "Kevin Durant",
+     0.9851,
+     2.213
+    ],
+    [
+     "Lauri Markkanen",
+     0.9851,
+     2.119
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jamal Murray"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 6.133,
+   "playoff": 74.5,
+   "champ_rank": 6,
+   "ecw": 4.48,
+   "roster": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard",
+    "Jalen Williams",
+    "Derrick White",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Isaiah Hartenstein",
+    "Mikal Bridges",
+    "Collin Murray-Boyles",
+    "Davion Mitchell",
+    "PJ Washington",
+    "Herbert Jones",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Kawhi Leonard",
+     0.9983,
+     2.074
+    ],
+    [
+     "Lauri Markkanen",
+     0.995,
+     2.218
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     2.049
+    ],
+    [
+     "Jamal Murray",
+     0.9868,
+     2.02
+    ],
+    [
+     "Kevin Durant",
+     0.9868,
+     2.068
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Kawhi Leonard"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Jalen Johnson"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Austin Reaves"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,24 @@
+room  owner #10 / #15                            as drafted    both Towns, no Hali Hali, no Towns  card #15 fallbacks
+m51   Edwards / Towns                                  6.32    3.66           5.81           4.18  K-path Jamal Murray/Jamal Murray · H-path Lauri Markkanen/Lauri Markkanen
+m52   Tatum / Mitchell                                 5.49    4.11           5.39           6.46  K-path Jamal Murray/Jamal Murray · H-path Anthony Davis/Anthony Davis
+m53   Tatum / Towns                                    8.05   10.37          12.22          12.14  K-path Jamal Murray/Jamal Murray · H-path Lauri Markkanen/Lauri Markkanen
+m56   Towns / Haliburton                               1.48    1.48           6.14           4.73  K-path Tyrese Maxey/Tyrese Maxey · H-path Tyrese Maxey/Tyrese Maxey
+m57   Tatum / Towns                                    2.93    3.13           4.54           4.31  K-path Jamal Murray/Jamal Murray · H-path Lauri Markkanen/Lauri Markkanen
+m58   Haliburton / Towns                               6.14    6.14          10.46          11.12  K-path Tyrese Maxey/Jamal Murray · H-path Tyrese Maxey/Lauri Markkanen
+m59   Haliburton / Towns                               9.66    9.66          15.12          15.12  K-path Tyrese Maxey/Tyrese Maxey · H-path Tyrese Maxey/Tyrese Maxey  missing ['UNKNOWN #126']
+m60   Towns / Durant                                  20.29   19.82          24.24          22.31  K-path Jamal Murray/Jamal Murray · H-path Anthony Davis/Anthony Davis
+m61   Towns / Mitchell                                 6.30    5.34           7.48           6.13  K-path Jamal Murray/Jamal Murray · H-path Kawhi Leonard/Kawhi Leonard
+m67   Towns / Haliburton                               4.72    4.72           5.99           6.98  K-path Jamal Murray/Jamal Murray · H-path Lauri Markkanen/Lauri Markkanen
+m73   Towns / Mitchell                                13.28   10.97          13.29          10.99  K-path Jamal Murray/Jamal Murray · H-path Kawhi Leonard/Kawhi Leonard
+m74   Towns / Mitchell                                 3.58    2.54           3.58           3.65  K-path Jamal Murray/Jamal Murray · H-path Anthony Davis/Anthony Davis
+m75   Towns / Haliburton                               4.09    4.09           5.38           4.70  K-path Jamal Murray/Jamal Murray · H-path Kawhi Leonard/Kawhi Leonard
+
+means over 13 rooms: both 6.62 | Towns + fallback 9.20 (cost of losing Haliburton +2.58) | Haliburton + fallback 8.68 (cost of losing Towns +2.06)
+without mock 51 (the K-path fallback there is the owner's own #10, Edwards): both 6.86 | Towns + fallback 9.49 | Haliburton + fallback 9.05
+rooms where losing Towns costs more than losing Haliburton: 9 of 13
+human public rooms on record (Towns 6 of 6, Haliburton 3 of 11): Towns first 8.50, Haliburton first 6.62, difference -1.88
+the deck's survival model at #10, v59 prices (Towns 0.53, Haliburton 0.43): Towns first 8.09, Haliburton first 7.59, difference -0.50
+the league cast on the real seating (Cayas took Towns at #11 both times; Haliburton 0.43 from the model): Towns first 8.09, Haliburton first 8.68, difference +0.59
+break-even: with Haliburton's survival at 0.27, Haliburton first wins once Towns survives to #15 with probability >= 1.00
+break-even: with Haliburton's survival at 0.43, Haliburton first wins once Towns survives to #15 with probability >= 1.00
+break-even: with Haliburton's survival at 0.60, Haliburton first wins once Towns survives to #15 with probability >= 1.00

@@ -1,0 +1,405 @@
+{
+ "mock": 57,
+ "tag": "v58",
+ "haliburton_healthy": true,
+ "lines_2025_26": false,
+ "owner10": "Jayson Tatum",
+ "owner15": "Karl-Anthony Towns",
+ "where": {
+  "Karl-Anthony Towns": 15,
+  "Tyrese Haliburton": 13
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Cooper Flagg"
+  ],
+  [
+   12,
+   12,
+   "Donovan Mitchell"
+  ],
+  [
+   13,
+   12,
+   "Tyrese Haliburton"
+  ],
+  [
+   14,
+   11,
+   "Kevin Durant"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 12.7,
+   "playoff": 86.29,
+   "champ_rank": 3,
+   "ecw": 4.747,
+   "roster": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell",
+    "Quentin Grimes"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Tyrese Haliburton"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 19.761,
+   "playoff": 95.37,
+   "champ_rank": 1,
+   "ecw": 4.97,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell",
+    "Quentin Grimes"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Jayson Tatum"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 17.517,
+   "playoff": 93.37,
+   "champ_rank": 2,
+   "ecw": 4.905,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell",
+    "Quentin Grimes"
+   ],
+   "card15": [
+    [
+     "Jalen Johnson",
+     0.9917,
+     1.893
+    ],
+    [
+     "Jalen Williams",
+     0.9851,
+     1.864
+    ],
+    [
+     "Jamal Murray",
+     0.9818,
+     1.884
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.915
+    ],
+    [
+     "James Harden",
+     0.9702,
+     1.951
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Cooper Flagg"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 18.456,
+   "playoff": 94.24,
+   "champ_rank": 1,
+   "ecw": 4.905,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell",
+    "Quentin Grimes"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.921
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     1.87
+    ],
+    [
+     "Evan Mobley",
+     0.9868,
+     1.87
+    ],
+    [
+     "Jalen Johnson",
+     0.9851,
+     1.79
+    ],
+    [
+     "Cooper Flagg",
+     0.9768,
+     1.816
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Jayson Tatum"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 18.2,
+   "playoff": 93.5,
+   "champ_rank": 1,
+   "ecw": 4.909,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell",
+    "Quentin Grimes"
+   ],
+   "card15": [
+    [
+     "Jalen Johnson",
+     0.9917,
+     1.9
+    ],
+    [
+     "Jalen Williams",
+     0.9851,
+     1.874
+    ],
+    [
+     "Jamal Murray",
+     0.9818,
+     1.893
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.922
+    ],
+    [
+     "James Harden",
+     0.9702,
+     1.957
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Johnson"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Kevin Durant"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 18.85,
+   "playoff": 94.27,
+   "champ_rank": 1,
+   "ecw": 4.905,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "OG Anunoby",
+    "Jakob Poeltl",
+    "Jaden McDaniels",
+    "Isaiah Hartenstein",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell",
+    "Quentin Grimes"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.922
+    ],
+    [
+     "Anthony Davis",
+     0.9983,
+     1.872
+    ],
+    [
+     "Jalen Johnson",
+     0.9851,
+     1.791
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     1.871
+    ],
+    [
+     "Kevin Durant",
+     0.9801,
+     1.795
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Jayson Tatum"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

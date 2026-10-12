@@ -1,0 +1,271 @@
+{
+ "rows": [
+  {
+   "mock": 51,
+   "ad": 19.044,
+   "both": 10.917,
+   "K_noH": 19.044,
+   "H_noK": 8.5415,
+   "k15": "Anthony Edwards",
+   "h15": "Chet Holmgren",
+   "k15b": "Anthony Edwards",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Anthony Edwards",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 52,
+   "ad": 11.15,
+   "both": 15.889,
+   "K_noH": 17.589,
+   "H_noK": 13.7475,
+   "k15": "Donovan Mitchell",
+   "h15": "Chet Holmgren",
+   "k15b": "Donovan Mitchell",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Jayson Tatum",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 17,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 53,
+   "ad": 12.956,
+   "both": 15.433,
+   "K_noH": 12.956,
+   "H_noK": 14.583,
+   "k15": "Jalen Williams",
+   "h15": "Chet Holmgren",
+   "k15b": "Jalen Williams",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 56,
+   "ad": 9.628,
+   "both": 9.628,
+   "K_noH": 13.739,
+   "H_noK": 5.7305,
+   "k15": "Tyrese Maxey",
+   "h15": "Chet Holmgren",
+   "k15b": "Tyrese Maxey",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 15
+   },
+   "missing": []
+  },
+  {
+   "mock": 57,
+   "ad": 13.211,
+   "both": 15.156,
+   "K_noH": 18.2335,
+   "H_noK": 13.8305,
+   "k15": "Jalen Johnson",
+   "h15": "Chet Holmgren",
+   "k15b": "Jalen Johnson",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Jayson Tatum",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 13
+   },
+   "missing": []
+  },
+  {
+   "mock": 58,
+   "ad": 22.633,
+   "both": 22.633,
+   "K_noH": 24.9165,
+   "H_noK": 19.296999999999997,
+   "k15": "Tyrese Maxey",
+   "h15": "Chet Holmgren",
+   "k15b": "Jalen Johnson",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 10
+   },
+   "missing": []
+  },
+  {
+   "mock": 59,
+   "ad": 14.95,
+   "both": 14.95,
+   "K_noH": 15.7525,
+   "H_noK": 12.714,
+   "k15": "Tyrese Maxey",
+   "h15": "Chet Holmgren",
+   "k15b": "Tyrese Maxey",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 15,
+    "Tyrese Haliburton": 10
+   },
+   "missing": [
+    "UNKNOWN #126"
+   ]
+  },
+  {
+   "mock": 60,
+   "ad": 33.728,
+   "both": 33.222,
+   "K_noH": 33.728,
+   "H_noK": 32.272,
+   "k15": "Jalen Williams",
+   "h15": "Chet Holmgren",
+   "k15b": "Jalen Williams",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Kevin Durant"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 61,
+   "ad": 16.6,
+   "both": 15.422,
+   "K_noH": 16.6,
+   "H_noK": 14.544,
+   "k15": "Donovan Mitchell",
+   "h15": "Chet Holmgren",
+   "k15b": "Donovan Mitchell",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 11
+   },
+   "missing": []
+  },
+  {
+   "mock": 67,
+   "ad": 18.483,
+   "both": 18.483,
+   "K_noH": 21.136,
+   "H_noK": 19.7335,
+   "k15": "Jalen Johnson",
+   "h15": "Chet Holmgren",
+   "k15b": "Jalen Williams",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 15
+   },
+   "missing": []
+  },
+  {
+   "mock": 73,
+   "ad": 34.167,
+   "both": 33.222,
+   "K_noH": 34.891999999999996,
+   "H_noK": 28.189,
+   "k15": "Donovan Mitchell",
+   "h15": "Chet Holmgren",
+   "k15b": "Donovan Mitchell",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 12
+   },
+   "missing": []
+  },
+  {
+   "mock": 74,
+   "ad": 17.911,
+   "both": 16.1,
+   "K_noH": 17.911,
+   "H_noK": 12.294,
+   "k15": "Jalen Williams",
+   "h15": "Chet Holmgren",
+   "k15b": "Jalen Williams",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 14
+   },
+   "missing": []
+  },
+  {
+   "mock": 75,
+   "ad": 29.394,
+   "both": 29.394,
+   "K_noH": 29.661,
+   "H_noK": 25.858,
+   "k15": "Donovan Mitchell",
+   "h15": "Chet Holmgren",
+   "k15b": "Donovan Mitchell",
+   "h15b": "Chet Holmgren",
+   "owner": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton"
+   ],
+   "where": {
+    "Karl-Anthony Towns": 10,
+    "Tyrese Haliburton": 15
+   },
+   "missing": []
+  }
+ ],
+ "means": {
+  "both": 19.265307692307694,
+  "K_noH": 21.24296153846154,
+  "H_noK": 17.02573076923077
+ }
+}

@@ -1,0 +1,24 @@
+room  owner #10 / #15                            as drafted    both Towns, no Hali Hali, no Towns  card #15 fallbacks
+m51   Edwards / Towns                                 18.67   14.76          18.67          12.15  K-path Anthony Edwards/Anthony Edwards · H-path Chet Holmgren/Chet Holmgren
+m52   Tatum / Mitchell                                11.05   19.82          17.60          17.07  K-path Donovan Mitchell/Donovan Mitchell · H-path Chet Holmgren/Chet Holmgren
+m53   Tatum / Towns                                   12.99   20.41          12.99          19.24  K-path Jalen Williams/Jalen Williams · H-path Chet Holmgren/Chet Holmgren
+m56   Towns / Haliburton                              13.52   13.52          13.47           8.47  K-path Tyrese Maxey/Tyrese Maxey · H-path Anthony Davis/Anthony Davis
+m57   Tatum / Towns                                   12.70   19.76          17.86          18.65  K-path Jalen Johnson/Jalen Johnson · H-path Chet Holmgren/Chet Holmgren
+m58   Haliburton / Towns                              26.92   26.92          24.90          23.90  K-path Tyrese Maxey/Jalen Johnson · H-path Chet Holmgren/Chet Holmgren
+m59   Haliburton / Towns                              18.47   18.47          15.75          15.62  K-path Tyrese Maxey/Tyrese Maxey · H-path Anthony Davis/Anthony Davis  missing ['UNKNOWN #126']
+m60   Towns / Durant                                  33.39   38.42          33.39          37.78  K-path Jalen Williams/Jalen Williams · H-path Chet Holmgren/Chet Holmgren
+m61   Towns / Mitchell                                16.36   20.18          16.36          19.19  K-path Donovan Mitchell/Donovan Mitchell · H-path Chet Holmgren/Chet Holmgren
+m67   Towns / Haliburton                              22.64   22.64          20.93          24.11  K-path Jalen Johnson/Jalen Williams · H-path Chet Holmgren/Chet Holmgren
+m73   Towns / Mitchell                                33.09   38.31          34.34          33.34  K-path Donovan Mitchell/Donovan Mitchell · H-path Chet Holmgren/Chet Holmgren
+m74   Towns / Mitchell                                17.84   19.70          17.84          16.42  K-path Jalen Williams/Jalen Williams · H-path Chet Holmgren/Chet Holmgren
+m75   Towns / Haliburton                              35.31   35.31          29.77          31.12  K-path Donovan Mitchell/Donovan Mitchell · H-path Chet Holmgren/Chet Holmgren
+
+means over 13 rooms: both 23.71 | Towns + fallback 21.07 (cost of losing Haliburton -2.64) | Haliburton + fallback 21.31 (cost of losing Towns -2.40)
+without mock 51 (the K-path fallback there is the owner's own #10, Edwards): both 24.45 | Towns + fallback 21.27 | Haliburton + fallback 22.08
+rooms where losing Towns costs more than losing Haliburton: 7 of 13
+human public rooms on record (Towns 6 of 6, Haliburton 3 of 11): Towns first 21.79, Haliburton first 23.71, difference +1.92
+the deck's survival model at #10, v59 prices (Towns 0.53, Haliburton 0.43): Towns first 22.20, Haliburton first 22.58, difference +0.38
+the league cast on the real seating (Cayas took Towns at #11 both times; Haliburton 0.43 from the model): Towns first 22.20, Haliburton first 21.31, difference -0.89
+break-even: with Haliburton's survival at 0.27, Haliburton first wins once Towns survives to #15 with probability >= 0.20
+break-even: with Haliburton's survival at 0.43, Haliburton first wins once Towns survives to #15 with probability >= 0.37
+break-even: with Haliburton's survival at 0.60, Haliburton first wins once Towns survives to #15 with probability >= 0.56

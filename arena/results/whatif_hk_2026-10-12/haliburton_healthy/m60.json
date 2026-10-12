@@ -1,0 +1,405 @@
+{
+ "mock": 60,
+ "tag": "v58",
+ "haliburton_healthy": true,
+ "lines_2025_26": false,
+ "owner10": "Karl-Anthony Towns",
+ "owner15": "Kevin Durant",
+ "where": {
+  "Karl-Anthony Towns": 10,
+  "Tyrese Haliburton": 14
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Tyrese Maxey"
+  ],
+  [
+   12,
+   12,
+   "Scottie Barnes"
+  ],
+  [
+   13,
+   12,
+   "Cooper Flagg"
+  ],
+  [
+   14,
+   11,
+   "Tyrese Haliburton"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 33.389,
+   "playoff": 99.84,
+   "champ_rank": 1,
+   "ecw": 5.416,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Kevin Durant",
+    "Jalen Williams",
+    "Derrick White",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "Mikal Bridges",
+    "Josh Hart",
+    "Collin Murray-Boyles",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Kevin Durant"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Cooper Flagg"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 38.417,
+   "playoff": 99.95,
+   "champ_rank": 1,
+   "ecw": 5.607,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Derrick White",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "Mikal Bridges",
+    "Josh Hart",
+    "Collin Murray-Boyles",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Cooper Flagg"
+    ],
+    [
+     14,
+     "Kevin Durant"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 33.389,
+   "playoff": 99.84,
+   "champ_rank": 1,
+   "ecw": 5.416,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kevin Durant",
+    "Derrick White",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "Mikal Bridges",
+    "Josh Hart",
+    "Collin Murray-Boyles",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Jalen Williams",
+     0.9868,
+     1.844
+    ],
+    [
+     "Donovan Mitchell",
+     0.9834,
+     1.807
+    ],
+    [
+     "Jamal Murray",
+     0.9818,
+     1.86
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.882
+    ],
+    [
+     "Kevin Durant",
+     0.9719,
+     1.78
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Williams"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Cooper Flagg"
+    ],
+    [
+     14,
+     "Tyrese Maxey"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 37.778,
+   "playoff": 99.93,
+   "champ_rank": 1,
+   "ecw": 5.523,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Derrick White",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "Mikal Bridges",
+    "Josh Hart",
+    "Collin Murray-Boyles",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.946
+    ],
+    [
+     "Anthony Davis",
+     0.9983,
+     1.908
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     1.903
+    ],
+    [
+     "Kevin Durant",
+     0.9801,
+     1.792
+    ],
+    [
+     "Derrick White",
+     0.9719,
+     1.766
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Cooper Flagg"
+    ],
+    [
+     14,
+     "Tyrese Maxey"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 33.389,
+   "playoff": 99.84,
+   "champ_rank": 1,
+   "ecw": 5.416,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Kevin Durant",
+    "Derrick White",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "Mikal Bridges",
+    "Josh Hart",
+    "Collin Murray-Boyles",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Jalen Williams",
+     0.9868,
+     1.844
+    ],
+    [
+     "Donovan Mitchell",
+     0.9834,
+     1.807
+    ],
+    [
+     "Jamal Murray",
+     0.9818,
+     1.86
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.882
+    ],
+    [
+     "Kevin Durant",
+     0.9719,
+     1.78
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Jalen Williams"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Cooper Flagg"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 37.778,
+   "playoff": 99.93,
+   "champ_rank": 1,
+   "ecw": 5.523,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Derrick White",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "Mikal Bridges",
+    "Josh Hart",
+    "Collin Murray-Boyles",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     1.946
+    ],
+    [
+     "Anthony Davis",
+     0.9983,
+     1.908
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     1.903
+    ],
+    [
+     "Kevin Durant",
+     0.9801,
+     1.792
+    ],
+    [
+     "Derrick White",
+     0.9719,
+     1.766
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Maxey"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Cooper Flagg"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

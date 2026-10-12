@@ -1,0 +1,403 @@
+{
+ "mock": 73,
+ "tag": "v58",
+ "owner10": "Karl-Anthony Towns",
+ "owner15": "Donovan Mitchell",
+ "where": {
+  "Karl-Anthony Towns": 10,
+  "Tyrese Haliburton": 12
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Cooper Flagg"
+  ],
+  [
+   12,
+   12,
+   "Tyrese Haliburton"
+  ],
+  [
+   13,
+   12,
+   "Jalen Johnson"
+  ],
+  [
+   14,
+   11,
+   "Austin Reaves"
+  ]
+ ],
+ "missing_from_v58": [],
+ "arms": {
+  "as_drafted": {
+   "champ": 34.167,
+   "playoff": 99.94,
+   "champ_rank": 1,
+   "ecw": 5.498,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Tyrese Haliburton"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 33.222,
+   "playoff": 99.89,
+   "champ_rank": 1,
+   "ecw": 5.487,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Donovan Mitchell"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 35.656,
+   "playoff": 99.94,
+   "champ_rank": 1,
+   "ecw": 5.512,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Donovan Mitchell",
+     0.9901,
+     1.894
+    ],
+    [
+     "Jalen Williams",
+     0.9851,
+     1.889
+    ],
+    [
+     "Jamal Murray",
+     0.9834,
+     1.93
+    ],
+    [
+     "Derrick White",
+     0.9785,
+     1.922
+    ],
+    [
+     "Kevin Durant",
+     0.9735,
+     1.814
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 27.761,
+   "playoff": 99.78,
+   "champ_rank": 1,
+   "ecw": 5.307,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     2.003
+    ],
+    [
+     "Anthony Davis",
+     0.9934,
+     1.953
+    ],
+    [
+     "Kevin Durant",
+     0.9868,
+     1.973
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     1.972
+    ],
+    [
+     "Donovan Mitchell",
+     0.9801,
+     1.864
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Cooper Flagg"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 34.128,
+   "playoff": 99.96,
+   "champ_rank": 1,
+   "ecw": 5.507,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Donovan Mitchell",
+     0.9901,
+     1.93
+    ],
+    [
+     "Jalen Williams",
+     0.9851,
+     1.926
+    ],
+    [
+     "Jamal Murray",
+     0.9818,
+     1.958
+    ],
+    [
+     "Derrick White",
+     0.9801,
+     1.974
+    ],
+    [
+     "Kevin Durant",
+     0.9752,
+     1.865
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Donovan Mitchell"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Austin Reaves"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 28.617,
+   "playoff": 99.77,
+   "champ_rank": 1,
+   "ecw": 5.314,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Anthony Davis",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Dylan Harper",
+    "Yaxel Lendeborg",
+    "Aaron Gordon",
+    "Sandro Mamukelashvili",
+    "PJ Washington",
+    "Tari Eason"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9983,
+     2.011
+    ],
+    [
+     "Anthony Davis",
+     0.995,
+     1.954
+    ],
+    [
+     "Evan Mobley",
+     0.9851,
+     1.97
+    ],
+    [
+     "Kevin Durant",
+     0.9851,
+     1.966
+    ],
+    [
+     "Donovan Mitchell",
+     0.9801,
+     1.851
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Austin Reaves"
+    ],
+    [
+     13,
+     "Jalen Johnson"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}

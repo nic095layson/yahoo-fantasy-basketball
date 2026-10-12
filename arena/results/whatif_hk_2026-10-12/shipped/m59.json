@@ -1,0 +1,405 @@
+{
+ "mock": 59,
+ "tag": "v58",
+ "owner10": "Tyrese Haliburton",
+ "owner15": "Karl-Anthony Towns",
+ "where": {
+  "Karl-Anthony Towns": 15,
+  "Tyrese Haliburton": 10
+ },
+ "picks_11_14": [
+  [
+   11,
+   11,
+   "Cooper Flagg"
+  ],
+  [
+   12,
+   12,
+   "Scottie Barnes"
+  ],
+  [
+   13,
+   12,
+   "Amen Thompson"
+  ],
+  [
+   14,
+   11,
+   "Austin Reaves"
+  ]
+ ],
+ "missing_from_v58": [
+  "UNKNOWN #126"
+ ],
+ "arms": {
+  "as_drafted": {
+   "champ": 14.95,
+   "playoff": 95.82,
+   "champ_rank": 2,
+   "ecw": 4.893,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Walker Kessler",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Day'Ron Sharpe",
+    "VJ Edgecombe",
+    "Neemias Queta",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "both": {
+   "champ": 14.95,
+   "playoff": 95.82,
+   "champ_rank": 2,
+   "ecw": 4.893,
+   "roster": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Walker Kessler",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Day'Ron Sharpe",
+    "VJ Edgecombe",
+    "Neemias Queta",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": null,
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Karl-Anthony Towns"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "K_noH_11": {
+   "champ": 15.722,
+   "playoff": 96.25,
+   "champ_rank": 2,
+   "ecw": 4.924,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey",
+    "Jalen Williams",
+    "Walker Kessler",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Day'Ron Sharpe",
+    "VJ Edgecombe",
+    "Neemias Queta",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     0.9967,
+     1.915
+    ],
+    [
+     "Jalen Williams",
+     0.9834,
+     1.849
+    ],
+    [
+     "Donovan Mitchell",
+     0.9818,
+     1.802
+    ],
+    [
+     "Jamal Murray",
+     0.9785,
+     1.866
+    ],
+    [
+     "Derrick White",
+     0.9752,
+     1.878
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Tyrese Haliburton"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "H_noK_11": {
+   "champ": 12.589,
+   "playoff": 92.61,
+   "champ_rank": 3,
+   "ecw": 4.769,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Walker Kessler",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Day'Ron Sharpe",
+    "VJ Edgecombe",
+    "Neemias Queta",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9967,
+     2.049
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     2.026
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     2.033
+    ],
+    [
+     "Tyrese Maxey",
+     0.9801,
+     1.851
+    ],
+    [
+     "Kevin Durant",
+     0.9785,
+     1.941
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Karl-Anthony Towns"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Austin Reaves"
+    ]
+   ]
+  },
+  "K_noH_14": {
+   "champ": 15.783,
+   "playoff": 96.7,
+   "champ_rank": 2,
+   "ecw": 4.941,
+   "roster": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey",
+    "Jalen Williams",
+    "Walker Kessler",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Day'Ron Sharpe",
+    "VJ Edgecombe",
+    "Neemias Queta",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Tyrese Maxey",
+     0.9967,
+     1.934
+    ],
+    [
+     "Jalen Williams",
+     0.9818,
+     1.875
+    ],
+    [
+     "Donovan Mitchell",
+     0.9801,
+     1.823
+    ],
+    [
+     "Jamal Murray",
+     0.9785,
+     1.891
+    ],
+    [
+     "Derrick White",
+     0.9768,
+     1.913
+    ]
+   ],
+   "owner_10_15": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Tyrese Haliburton"
+    ]
+   ]
+  },
+  "H_noK_14": {
+   "champ": 12.839,
+   "playoff": 92.59,
+   "champ_rank": 2,
+   "ecw": 4.776,
+   "roster": [
+    "Tyrese Haliburton",
+    "Chet Holmgren",
+    "Jalen Williams",
+    "Walker Kessler",
+    "OG Anunoby",
+    "Damian Lillard",
+    "Day'Ron Sharpe",
+    "VJ Edgecombe",
+    "Neemias Queta",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Yaxel Lendeborg",
+    "Devin Vassell"
+   ],
+   "card15": [
+    [
+     "Chet Holmgren",
+     0.9967,
+     2.048
+    ],
+    [
+     "Anthony Davis",
+     0.9967,
+     2.008
+    ],
+    [
+     "Evan Mobley",
+     0.9834,
+     2.011
+    ],
+    [
+     "Tyrese Maxey",
+     0.9834,
+     1.829
+    ],
+    [
+     "Kevin Durant",
+     0.9801,
+     1.917
+    ]
+   ],
+   "owner_10_15": [
+    "Tyrese Haliburton",
+    "Chet Holmgren"
+   ],
+   "seat_j_took": [
+    [
+     11,
+     "Cooper Flagg"
+    ],
+    [
+     12,
+     "Scottie Barnes"
+    ],
+    [
+     13,
+     "Amen Thompson"
+    ],
+    [
+     14,
+     "Karl-Anthony Towns"
+    ]
+   ]
+  }
+ }
+}
