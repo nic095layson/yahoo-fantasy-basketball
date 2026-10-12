@@ -168,6 +168,26 @@ function tmpJson(name, obj) { const p = path.join(os.tmpdir(), name); fs.writeFi
   await page.click("#resetBtn");
   ok("S1.reset-clears", !(await hidden(page, "#setup")) && (await hidden(page, "#draft")) && (await stateOf(page)) === null && (await page.locator("#mirror").innerText()).trim() === "" && (await page.locator("#resetBtn").innerText()) === "Reset draft");
   ok("S1.reset-remembers-slot", (await page.inputValue("#cfgSlot")) === "10", await page.inputValue("#cfgSlot"));
+  // A roster no lineup can hold — one C among 13, so a C slot stays open and one player fits no open slot —
+  // still shows every drafted player, and the open slot still shows as open (WO-5 find, 2026-10-12: the panel
+  // dropped the 13th man when the bench and Utils were full; S2's last owner turn hit it on the v60 lines).
+  {
+    const pos = await page.evaluate(() => PLAYERS.filter(p => p.av > 0).map(p => ({ n: p.n, c: positionsOf(p).includes("C") })));
+    const others = new Set(ST54.picks.filter(pk => pk.slot !== SLOT).map(pk => pk.player));
+    const free = pos.filter(p => !others.has(p.n));
+    const mine = [...free.filter(p => p.c).slice(0, 1), ...free.filter(p => !p.c).slice(0, 12)].map(p => p.n);
+    let k = 0;
+    const oneC = { ...ST54, picks: ST54.picks.map(pk => pk.slot === SLOT ? { ...pk, player: mine[k++] } : pk) };
+    await page.setInputFiles("#importFile", tmpJson("s54_one_c.json", oneC));
+    await page.waitForSelector("#draft:not(.hidden)");
+    const shown = await page.locator("#myRoster li:not(.empty) .nm").evaluateAll(ns => ns.map(n => (n.dataset.tip || "").split(" — ")[0]));
+    const open = await page.locator("#myRoster li.empty .slot").evaluateAll(ss => ss.map(s => s.textContent));
+    // one C among 13 leaves a C slot open by construction, so at least one man fits no open slot — the case under test
+    ok("S1.roster-shows-every-pick-one-C", mine.length === 13 && k === 13 && shown.length === 13 && mine.every(n => shown.includes(n)) && open.includes("C"),
+      { mine, shown, open });
+    await page.click("#resetBtn"); await page.click("#resetBtn");
+    ok("S1.reset-after-one-C", !(await hidden(page, "#setup")) && (await stateOf(page)) === null);
+  }
   await ctx.close();
 }
 
