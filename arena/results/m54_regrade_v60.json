@@ -1,0 +1,249 @@
+{
+ "mock": 54,
+ "tag": "v60",
+ "label": "v60",
+ "page_rev": "eaf2b72",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Jamal Murray",
+   "top5": [
+    "Jamal Murray",
+    "Kawhi Leonard",
+    "Jalen Johnson",
+    "Kevin Durant",
+    "Lauri Markkanen"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": "Jamal Murray"
+  },
+  {
+   "pick": 15,
+   "target": "Jalen Johnson",
+   "top5": [
+    "Jalen Johnson",
+    "Kevin Durant",
+    "Kawhi Leonard",
+    "Chet Holmgren",
+    "Lauri Markkanen"
+   ],
+   "actual": "Jalen Johnson",
+   "swap": null
+  },
+  {
+   "pick": 34,
+   "target": "Lauri Markkanen",
+   "top5": [
+    "Lauri Markkanen",
+    "Bam Adebayo",
+    "Derrick White",
+    "Trey Murphy III",
+    "Ryan Rollins"
+   ],
+   "actual": "Jalen Williams",
+   "swap": "Lauri Markkanen"
+  },
+  {
+   "pick": 39,
+   "target": "Derrick White",
+   "top5": [
+    "Derrick White",
+    "Dyson Daniels",
+    "Ryan Rollins",
+    "Onyeka Okongwu",
+    "Donovan Clingan"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Derrick White"
+  },
+  {
+   "pick": 58,
+   "target": "Ryan Rollins",
+   "top5": [
+    "Ryan Rollins",
+    "Cameron Boozer",
+    "Ty Jerome",
+    "Naz Reid",
+    "OG Anunoby"
+   ],
+   "actual": "OG Anunoby",
+   "swap": "Ryan Rollins"
+  },
+  {
+   "pick": 63,
+   "target": "Cameron Boozer",
+   "top5": [
+    "Cameron Boozer",
+    "Naz Reid",
+    "OG Anunoby",
+    "Zach Edey",
+    "Mikal Bridges"
+   ],
+   "actual": "Payton Pritchard",
+   "swap": "Cameron Boozer"
+  },
+  {
+   "pick": 82,
+   "target": "VJ Edgecombe",
+   "top5": [
+    "VJ Edgecombe",
+    "Ty Jerome",
+    "Yaxel Lendeborg",
+    "Reed Sheppard",
+    "Immanuel Quickley"
+   ],
+   "actual": "Jaden McDaniels",
+   "swap": "VJ Edgecombe"
+  },
+  {
+   "pick": 87,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Ty Jerome",
+    "Neemias Queta",
+    "Reed Sheppard",
+    "Kristaps Porzingis"
+   ],
+   "actual": "Myles Turner",
+   "swap": "Yaxel Lendeborg"
+  },
+  {
+   "pick": 106,
+   "target": "Ty Jerome",
+   "top5": [
+    "Ty Jerome",
+    "Reed Sheppard",
+    "Neemias Queta",
+    "Ayo Dosunmu",
+    "Grayson Allen"
+   ],
+   "actual": "Cameron Johnson",
+   "swap": "Ty Jerome"
+  },
+  {
+   "pick": 111,
+   "target": "Keegan Murray",
+   "top5": [
+    "Keegan Murray",
+    "Myles Turner",
+    "Saddiq Bey",
+    "Ayo Dosunmu",
+    "Reed Sheppard"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Keegan Murray"
+  },
+  {
+   "pick": 130,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Collin Gillespie",
+    "Jrue Holiday",
+    "DeMar DeRozan",
+    "Saddiq Bey"
+   ],
+   "actual": "Tari Eason",
+   "swap": "Grayson Allen"
+  },
+  {
+   "pick": 135,
+   "target": "DeMar DeRozan",
+   "top5": [
+    "DeMar DeRozan",
+    "Deandre Ayton",
+    "Daniel Gafford",
+    "Tobias Harris",
+    "Saddiq Bey"
+   ],
+   "actual": "Ajay Mitchell",
+   "swap": "Tobias Harris"
+  },
+  {
+   "pick": 154,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Deandre Ayton",
+    "Julian Champagnie",
+    "DeMar DeRozan",
+    "Tari Eason"
+   ],
+   "actual": "PJ Washington",
+   "swap": "Tari Eason"
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 5.111,
+   "playoff": 65.44,
+   "champ_rank": 7,
+   "ecw": 4.415,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 33.55,
+   "playoff": 99.94,
+   "champ_rank": 1,
+   "ecw": 5.489,
+   "swaps": [
+    [
+     10,
+     "Jamal Murray"
+    ],
+    [
+     34,
+     "Lauri Markkanen"
+    ],
+    [
+     39,
+     "Derrick White"
+    ],
+    [
+     58,
+     "Ryan Rollins"
+    ],
+    [
+     63,
+     "Cameron Boozer"
+    ],
+    [
+     82,
+     "VJ Edgecombe"
+    ],
+    [
+     87,
+     "Yaxel Lendeborg"
+    ],
+    [
+     106,
+     "Ty Jerome"
+    ],
+    [
+     111,
+     "Keegan Murray"
+    ],
+    [
+     130,
+     "Grayson Allen"
+    ],
+    [
+     135,
+     "Tobias Harris"
+    ],
+    [
+     154,
+     "Tari Eason"
+    ]
+   ]
+  }
+ }
+}

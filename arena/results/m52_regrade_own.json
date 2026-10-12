@@ -1,0 +1,229 @@
+{
+ "mock": 52,
+ "tag": "v23",
+ "label": "own",
+ "page_rev": "f724435",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": null,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton",
+    "Jalen Johnson",
+    "Evan Mobley",
+    "Anthony Davis"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Karl-Anthony Towns"
+  },
+  {
+   "pick": 15,
+   "target": "Donovan Mitchell",
+   "top5": [
+    "Donovan Mitchell",
+    "Jalen Williams",
+    "Derrick White",
+    "Evan Mobley",
+    "Desmond Bane"
+   ],
+   "actual": "Donovan Mitchell",
+   "swap": null
+  },
+  {
+   "pick": 34,
+   "target": "Anthony Davis",
+   "top5": [
+    "Anthony Davis",
+    "Jalen Williams",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby"
+   ],
+   "actual": "Anthony Davis",
+   "swap": null
+  },
+  {
+   "pick": 39,
+   "target": "Jalen Williams",
+   "top5": [
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Kyrie Irving",
+    "Dyson Daniels"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Jalen Williams"
+  },
+  {
+   "pick": 58,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Franz Wagner",
+    "Dyson Daniels",
+    "Darius Garland"
+   ],
+   "actual": "Franz Wagner",
+   "swap": "OG Anunoby"
+  },
+  {
+   "pick": 63,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "Franz Wagner",
+    "Tyler Herro",
+    "Cameron Johnson",
+    "Myles Turner"
+   ],
+   "actual": "Dyson Daniels",
+   "swap": "Payton Pritchard"
+  },
+  {
+   "pick": 82,
+   "target": "Jakob Poeltl",
+   "top5": [
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Tari Eason",
+    "Kristaps Porzingis",
+    "Brook Lopez"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": null
+  },
+  {
+   "pick": 87,
+   "target": "Cameron Johnson",
+   "top5": [
+    "Cameron Johnson",
+    "Myles Turner",
+    "Brook Lopez",
+    "Christian Braun",
+    "Kristaps Porzingis"
+   ],
+   "actual": "Myles Turner",
+   "swap": null
+  },
+  {
+   "pick": 106,
+   "target": "Cameron Johnson",
+   "top5": [
+    "Cameron Johnson",
+    "Tari Eason",
+    "Christian Braun",
+    "Miles Bridges",
+    "Jalen Suggs"
+   ],
+   "actual": "Miles Bridges",
+   "swap": "Christian Braun"
+  },
+  {
+   "pick": 111,
+   "target": "Cameron Johnson",
+   "top5": [
+    "Cameron Johnson",
+    "Tari Eason",
+    "Brook Lopez",
+    "Miles Bridges",
+    "Collin Gillespie"
+   ],
+   "actual": "Cameron Johnson",
+   "swap": null
+  },
+  {
+   "pick": 130,
+   "target": "Tari Eason",
+   "top5": [
+    "Tari Eason",
+    "Miles Bridges",
+    "PJ Washington",
+    "Cason Wallace",
+    "Jordan Poole"
+   ],
+   "actual": "Jordan Poole",
+   "swap": "Miles Bridges"
+  },
+  {
+   "pick": 135,
+   "target": "Cason Wallace",
+   "top5": [
+    "Cason Wallace",
+    "Tari Eason",
+    "Collin Gillespie",
+    "PJ Washington",
+    "Devin Vassell"
+   ],
+   "actual": "Tari Eason",
+   "swap": "Cason Wallace"
+  },
+  {
+   "pick": 154,
+   "target": "PJ Washington",
+   "top5": [
+    "PJ Washington",
+    "Jordan Poole",
+    "Malik Monk",
+    "Herbert Jones",
+    "Quentin Grimes"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 37.95,
+   "playoff": 99.96,
+   "champ_rank": 1,
+   "ecw": 5.634,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 45.806,
+   "playoff": 100.0,
+   "champ_rank": 1,
+   "ecw": 5.846,
+   "swaps": [
+    [
+     10,
+     "Karl-Anthony Towns"
+    ],
+    [
+     39,
+     "Jalen Williams"
+    ],
+    [
+     58,
+     "OG Anunoby"
+    ],
+    [
+     63,
+     "Payton Pritchard"
+    ],
+    [
+     106,
+     "Christian Braun"
+    ],
+    [
+     130,
+     "Miles Bridges"
+    ],
+    [
+     135,
+     "Cason Wallace"
+    ]
+   ]
+  }
+ }
+}

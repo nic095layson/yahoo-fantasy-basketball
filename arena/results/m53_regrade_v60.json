@@ -1,0 +1,249 @@
+{
+ "mock": 53,
+ "tag": "v60",
+ "label": "v60",
+ "page_rev": "eaf2b72",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Jamal Murray",
+   "top5": [
+    "Jamal Murray",
+    "Kawhi Leonard",
+    "Lauri Markkanen",
+    "Kevin Durant",
+    "Donovan Mitchell"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Jamal Murray"
+  },
+  {
+   "pick": 15,
+   "target": "Kevin Durant",
+   "top5": [
+    "Kevin Durant",
+    "Chet Holmgren",
+    "Lauri Markkanen",
+    "Amen Thompson",
+    "Kawhi Leonard"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": "Kevin Durant"
+  },
+  {
+   "pick": 34,
+   "target": "Lauri Markkanen",
+   "top5": [
+    "Lauri Markkanen",
+    "Ryan Rollins",
+    "Dyson Daniels",
+    "Derrick White",
+    "Anthony Davis"
+   ],
+   "actual": "Evan Mobley",
+   "swap": "Lauri Markkanen"
+  },
+  {
+   "pick": 39,
+   "target": "Dyson Daniels",
+   "top5": [
+    "Dyson Daniels",
+    "Derrick White",
+    "Anthony Davis",
+    "Ryan Rollins",
+    "Onyeka Okongwu"
+   ],
+   "actual": "Jalen Williams",
+   "swap": "Dyson Daniels"
+  },
+  {
+   "pick": 58,
+   "target": "Ryan Rollins",
+   "top5": [
+    "Ryan Rollins",
+    "Joel Embiid",
+    "Cameron Boozer",
+    "Naz Reid",
+    "Ty Jerome"
+   ],
+   "actual": "Damian Lillard",
+   "swap": "Ryan Rollins"
+  },
+  {
+   "pick": 63,
+   "target": "Joel Embiid",
+   "top5": [
+    "Joel Embiid",
+    "Cameron Boozer",
+    "Zach Edey",
+    "OG Anunoby",
+    "Mikal Bridges"
+   ],
+   "actual": "OG Anunoby",
+   "swap": "Joel Embiid"
+  },
+  {
+   "pick": 82,
+   "target": "Ty Jerome",
+   "top5": [
+    "Ty Jerome",
+    "Reed Sheppard",
+    "Jalen Suggs",
+    "Immanuel Quickley",
+    "Yaxel Lendeborg"
+   ],
+   "actual": "Immanuel Quickley",
+   "swap": "Ty Jerome"
+  },
+  {
+   "pick": 87,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Neemias Queta",
+    "Jaden McDaniels",
+    "Reed Sheppard",
+    "Kristaps Porzingis"
+   ],
+   "actual": "Myles Turner",
+   "swap": "Yaxel Lendeborg"
+  },
+  {
+   "pick": 106,
+   "target": "Reed Sheppard",
+   "top5": [
+    "Reed Sheppard",
+    "Jalen Suggs",
+    "Neemias Queta",
+    "Collin Gillespie",
+    "Grayson Allen"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Jalen Suggs"
+  },
+  {
+   "pick": 111,
+   "target": "Keegan Murray",
+   "top5": [
+    "Keegan Murray",
+    "Myles Turner",
+    "Peyton Watson",
+    "Saddiq Bey",
+    "Daniel Gafford"
+   ],
+   "actual": "Reed Sheppard",
+   "swap": "Keegan Murray"
+  },
+  {
+   "pick": 130,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Jrue Holiday",
+    "Saddiq Bey",
+    "DeMar DeRozan",
+    "Daniel Gafford"
+   ],
+   "actual": "Tre Jones",
+   "swap": "Jrue Holiday"
+  },
+  {
+   "pick": 135,
+   "target": "Deandre Ayton",
+   "top5": [
+    "Deandre Ayton",
+    "Daniel Gafford",
+    "Tobias Harris",
+    "Julian Champagnie",
+    "Saddiq Bey"
+   ],
+   "actual": "Cameron Johnson",
+   "swap": "Tobias Harris"
+  },
+  {
+   "pick": 154,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Daniel Gafford",
+    "Deandre Ayton",
+    "Julian Champagnie",
+    "DeMar DeRozan"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 8.239,
+   "playoff": 74.57,
+   "champ_rank": 6,
+   "ecw": 4.544,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 35.278,
+   "playoff": 99.82,
+   "champ_rank": 1,
+   "ecw": 5.452,
+   "swaps": [
+    [
+     10,
+     "Jamal Murray"
+    ],
+    [
+     15,
+     "Kevin Durant"
+    ],
+    [
+     34,
+     "Lauri Markkanen"
+    ],
+    [
+     39,
+     "Dyson Daniels"
+    ],
+    [
+     58,
+     "Ryan Rollins"
+    ],
+    [
+     63,
+     "Joel Embiid"
+    ],
+    [
+     82,
+     "Ty Jerome"
+    ],
+    [
+     87,
+     "Yaxel Lendeborg"
+    ],
+    [
+     106,
+     "Jalen Suggs"
+    ],
+    [
+     111,
+     "Keegan Murray"
+    ],
+    [
+     130,
+     "Jrue Holiday"
+    ],
+    [
+     135,
+     "Tobias Harris"
+    ]
+   ]
+  }
+ }
+}

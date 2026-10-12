@@ -1,0 +1,13 @@
+== mutation cardpool
+  FAIL  D-CAST-4 mock 63 #154: the card pool keeps no unpriced row and the Top-5 changes — got {'rnd': 13, 'poolN': 167, 'cpN': 167, 'unpricedInCp':
+CARD: 1 of 99 cases FAILED
+== mutation xrank
+  FAIL  V4 BOT_XRANK_FROM is 7 and managerScores is exported — got {'present': True, 'from': 99, 'xrRows': 246, 'dropped': ['Nikola Jokic', 'Victor 
+  FAIL  V4 round 7: the same manager takes Yahoo's top XRank instead — got {'top': 'Shai Gilgeous-Alexander', 'byXr': 'Luka Doncic'} distinct=True
+CARD: 2 of 99 cases FAILED
+== mutation pingap
+  FAIL  D51R-4 PIN_MAX_GAP is 0.05 cats/wk — got 1
+  FAIL  D51R-4 draft_state_75.json #58: urgent pin withheld (behind #1) — got {'fn': 'draft_state_75.json', 'pickNo': 58, 'urgent': True, 'pin': 'Na
+  FAIL  D51R-4 gate: urgent pin 0.100 cats/wk behind #1 is withheld (behind, limit 0.05) — got {'pinTarget': {'n': 'Pin', 'av': 1}, 'tgOnPin': True,
+CARD: 3 of 99 cases FAILED
+Shell cwd was reset to /home/user/fantasy-basketball-2026-27

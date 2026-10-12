@@ -1,0 +1,245 @@
+{
+ "mock": 57,
+ "tag": "v60",
+ "label": "v60",
+ "page_rev": "eaf2b72",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Jamal Murray",
+   "top5": [
+    "Jamal Murray",
+    "Kawhi Leonard",
+    "Jalen Johnson",
+    "Lauri Markkanen",
+    "Kevin Durant"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Jamal Murray"
+  },
+  {
+   "pick": 15,
+   "target": "Jalen Johnson",
+   "top5": [
+    "Jalen Johnson",
+    "Kawhi Leonard",
+    "Chet Holmgren",
+    "Lauri Markkanen",
+    "Amen Thompson"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": "Jalen Johnson"
+  },
+  {
+   "pick": 34,
+   "target": "Anthony Davis",
+   "top5": [
+    "Anthony Davis",
+    "Derrick White",
+    "Onyeka Okongwu",
+    "Donovan Clingan",
+    "Ryan Rollins"
+   ],
+   "actual": "Jalen Williams",
+   "swap": "Anthony Davis"
+  },
+  {
+   "pick": 39,
+   "target": "Trey Murphy III",
+   "top5": [
+    "Trey Murphy III",
+    "Derrick White",
+    "Ryan Rollins",
+    "Michael Porter Jr.",
+    "Onyeka Okongwu"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Trey Murphy III"
+  },
+  {
+   "pick": 58,
+   "target": "Ryan Rollins",
+   "top5": [
+    "Ryan Rollins",
+    "Michael Porter Jr.",
+    "Ty Jerome",
+    "Nickeil Alexander-Walker",
+    "Naz Reid"
+   ],
+   "actual": "Damian Lillard",
+   "swap": "Ryan Rollins"
+  },
+  {
+   "pick": 63,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Naz Reid",
+    "Ty Jerome",
+    "VJ Edgecombe",
+    "Mikal Bridges"
+   ],
+   "actual": "OG Anunoby",
+   "swap": null
+  },
+  {
+   "pick": 82,
+   "target": "Ty Jerome",
+   "top5": [
+    "Ty Jerome",
+    "VJ Edgecombe",
+    "Immanuel Quickley",
+    "Reed Sheppard",
+    "Yaxel Lendeborg"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Ty Jerome"
+  },
+  {
+   "pick": 87,
+   "target": "VJ Edgecombe",
+   "top5": [
+    "VJ Edgecombe",
+    "Yaxel Lendeborg",
+    "Neemias Queta",
+    "Immanuel Quickley",
+    "Andrew Wiggins"
+   ],
+   "actual": "Jaden McDaniels",
+   "swap": "VJ Edgecombe"
+  },
+  {
+   "pick": 106,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Reed Sheppard",
+    "Ayo Dosunmu",
+    "Grayson Allen",
+    "Collin Gillespie"
+   ],
+   "actual": "Isaiah Hartenstein",
+   "swap": "Yaxel Lendeborg"
+  },
+  {
+   "pick": 111,
+   "target": "Saddiq Bey",
+   "top5": [
+    "Saddiq Bey",
+    "Keegan Murray",
+    "Ayo Dosunmu",
+    "Grayson Allen",
+    "Peyton Watson"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": "Saddiq Bey"
+  },
+  {
+   "pick": 130,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Collin Gillespie",
+    "Ayo Dosunmu",
+    "Jrue Holiday",
+    "DeMar DeRozan"
+   ],
+   "actual": "PJ Washington",
+   "swap": "Collin Gillespie"
+  },
+  {
+   "pick": 135,
+   "target": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "DeMar DeRozan",
+    "Daniel Gafford",
+    "Deandre Ayton",
+    "Grayson Allen"
+   ],
+   "actual": "Devin Vassell",
+   "swap": "Isaiah Hartenstein"
+  },
+  {
+   "pick": 154,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Daniel Gafford",
+    "Deandre Ayton",
+    "Santi Aldama",
+    "Royce O'Neale"
+   ],
+   "actual": "Quentin Grimes",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 1.556,
+   "playoff": 44.55,
+   "champ_rank": 10,
+   "ecw": 4.169,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 22.539,
+   "playoff": 99.53,
+   "champ_rank": 2,
+   "ecw": 5.235,
+   "swaps": [
+    [
+     10,
+     "Jamal Murray"
+    ],
+    [
+     15,
+     "Jalen Johnson"
+    ],
+    [
+     34,
+     "Anthony Davis"
+    ],
+    [
+     39,
+     "Trey Murphy III"
+    ],
+    [
+     58,
+     "Ryan Rollins"
+    ],
+    [
+     82,
+     "Ty Jerome"
+    ],
+    [
+     87,
+     "VJ Edgecombe"
+    ],
+    [
+     106,
+     "Yaxel Lendeborg"
+    ],
+    [
+     111,
+     "Saddiq Bey"
+    ],
+    [
+     130,
+     "Collin Gillespie"
+    ],
+    [
+     135,
+     "Isaiah Hartenstein"
+    ]
+   ]
+  }
+ }
+}
