@@ -1,0 +1,59 @@
+{
+ "mock": 59,
+ "from_pick": 135,
+ "punt": [
+  "PTS",
+  "AST"
+ ],
+ "veto": [
+  "Kristaps Porzingis"
+ ],
+ "arms": {
+  "as_drafted": {
+   "champ": 20.378,
+   "playoff": 98.5,
+   "per_seed": {
+    "11": 20.067,
+    "23": 20.217,
+    "47": 20.85
+   },
+   "swaps": []
+  },
+  "follow_card_from135": {
+   "champ": 20.694,
+   "playoff": 98.52,
+   "per_seed": {
+    "11": 20.833,
+    "23": 19.983,
+    "47": 21.267
+   },
+   "swaps": [
+    [
+     135,
+     "Saddiq Bey"
+    ]
+   ]
+  },
+  "follow_card_from135_puntPTS+AST": {
+   "champ": 19.678,
+   "playoff": 98.39,
+   "per_seed": {
+    "11": 19.317,
+    "23": 19.45,
+    "47": 20.267
+   },
+   "swaps": [
+    [
+     135,
+     "Herbert Jones"
+    ]
+   ]
+  }
+ },
+ "verdict": {
+  "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+  "seeds_meeting_bar": 0,
+  "steered_minus_unsteered_pp": -1.016,
+  "passes": false
+ }
+}

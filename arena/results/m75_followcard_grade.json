@@ -1,0 +1,681 @@
+{
+ "as drafted (the card's \ud83c\udfaf at 10 of 13 turns)": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.39,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "follow-card, self-consistent (arms stage)": {
+  "ecw": 5.678,
+  "rank": 1,
+  "next": 5.48,
+  "favored": 11,
+  "cat_rank_weekly": {
+   "FG%": 6,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 8,
+   "REB": 6,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 2,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 6,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 8,
+   "REB": 5,
+   "AST": 5,
+   "ST": 2,
+   "BLK": 2,
+   "TO": 1
+  },
+  "champ": 35.79,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Jalen Suggs",
+   "Isaiah Hartenstein",
+   "Sandro Mamukelashvili",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "\ud83c\udfaf at #58: Payton Pritchard for OG Anunoby (card #2; Payton Pritchard went #63)": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.39,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "Payton Pritchard"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "Payton Pritchard",
+   "OG Anunoby",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "\ud83c\udfaf at #87: Isaiah Hartenstein for Day'Ron Sharpe (card #3; Isaiah Hartenstein went #106)": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.39,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Isaiah Hartenstein"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Isaiah Hartenstein",
+   "Day'Ron Sharpe",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "\ud83c\udfaf at #111: Devin Vassell for Rui Hachimura (card #67; Devin Vassell went #135)": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.39,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    111,
+    "Devin Vassell"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Devin Vassell",
+   "Yaxel Lendeborg",
+   "Rui Hachimura",
+   "Draymond Green"
+  ]
+ },
+ "advice at #34: Derrick White for Anthony Davis (the 'now' man; Derrick White went #39)": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.39,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Derrick White",
+   "Anthony Davis",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "advice at #58: OG Anunoby for Payton Pritchard (the 'now' man; OG Anunoby went #58)": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.39,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "OG Anunoby"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "the 2 advice 'now' men together (#34 White, #58 Anunoby)": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.39,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "Derrick White"
+   ],
+   [
+    58,
+    "OG Anunoby"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Derrick White",
+   "Anthony Davis",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "hindsight single swap Jalen Johnson at #10": {
+  "ecw": 5.489,
+  "rank": 2,
+  "next": 5.504,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 4,
+   "AST": 3,
+   "ST": 3,
+   "BLK": 2,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 6,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 4,
+   "AST": 4,
+   "ST": 3,
+   "BLK": 2,
+   "TO": 1
+  },
+  "champ": 30.63,
+  "playoff": 99.92,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ]
+  ],
+  "roster": [
+   "Jalen Johnson",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "hindsight single swap Tyler Herro at #58": {
+  "ecw": 5.486,
+  "rank": 2,
+  "next": 5.5,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 4,
+   "PTS": 7,
+   "REB": 3,
+   "AST": 4,
+   "ST": 5,
+   "BLK": 4,
+   "TO": 4
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 5,
+   "PTS": 7,
+   "REB": 3,
+   "AST": 4,
+   "ST": 7,
+   "BLK": 3,
+   "TO": 3
+  },
+  "champ": 29.96,
+  "playoff": 99.89,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    58,
+    "Tyler Herro"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "Tyler Herro",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "hindsight single swap Tyler Herro at #63": {
+  "ecw": 5.495,
+  "rank": 2,
+  "next": 5.509,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 7,
+   "REB": 2,
+   "AST": 6,
+   "ST": 4,
+   "BLK": 3,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 7,
+   "REB": 2,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.23,
+  "playoff": 99.9,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    63,
+    "Tyler Herro"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Tyler Herro",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "hindsight single swap Zach LaVine at #87": {
+  "ecw": 5.514,
+  "rank": 1,
+  "next": 5.508,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 5,
+   "REB": 5,
+   "AST": 6,
+   "ST": 4,
+   "BLK": 4,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 4,
+   "3PTM": 3,
+   "PTS": 4,
+   "REB": 4,
+   "AST": 6,
+   "ST": 4,
+   "BLK": 3,
+   "TO": 1
+  },
+  "champ": 29.52,
+  "playoff": 99.88,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    87,
+    "Zach LaVine"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Zach LaVine",
+   "Isaiah Hartenstein",
+   "Rui Hachimura",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ },
+ "hindsight single swap Aaron Gordon at #111": {
+  "ecw": 5.645,
+  "rank": 1,
+  "next": 5.505,
+  "favored": 10,
+  "cat_rank_weekly": {
+   "FG%": 4,
+   "FT%": 5,
+   "3PTM": 4,
+   "PTS": 9,
+   "REB": 3,
+   "AST": 6,
+   "ST": 3,
+   "BLK": 2,
+   "TO": 2
+  },
+  "cat_rank_zsum": {
+   "FG%": 5,
+   "FT%": 5,
+   "3PTM": 5,
+   "PTS": 10,
+   "REB": 3,
+   "AST": 5,
+   "ST": 3,
+   "BLK": 2,
+   "TO": 1
+  },
+  "champ": 34.64,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Aaron Gordon"
+   ]
+  ],
+  "roster": [
+   "Karl-Anthony Towns",
+   "Tyrese Haliburton",
+   "Anthony Davis",
+   "Derrick White",
+   "OG Anunoby",
+   "Payton Pritchard",
+   "Coby White",
+   "Day'Ron Sharpe",
+   "Isaiah Hartenstein",
+   "Aaron Gordon",
+   "Yaxel Lendeborg",
+   "Devin Vassell",
+   "Draymond Green"
+  ]
+ }
+}

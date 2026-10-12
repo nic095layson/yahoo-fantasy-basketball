@@ -1,0 +1,404 @@
+{
+ "mock": 75,
+ "tag": "v58",
+ "page_rev": "f918062",
+ "price_source": "baked Yahoo price (F8) at the page revision",
+ "seeds": {
+  "S1": [
+   11,
+   23,
+   47
+  ],
+  "S2": [
+   5,
+   17,
+   29
+  ]
+ },
+ "seasons": 6000,
+ "blend_matches_recorded_arms": true,
+ "results": {
+  "as_drafted_S1": {
+   "champ": 29.394,
+   "playoff": 99.92,
+   "rank": 2
+  },
+  "as_drafted_S2": {
+   "champ": 29.794,
+   "playoff": 99.91,
+   "rank": 2
+  },
+  "as_drafted_ecw": 5.486,
+  "as_drafted_swaps": [],
+  "blend_S1": {
+   "champ": 35.789,
+   "playoff": 99.96,
+   "rank": 1
+  },
+  "blend_S2": {
+   "champ": 36.372,
+   "playoff": 99.99,
+   "rank": 1
+  },
+  "blend_ecw": 5.678,
+  "blend_swaps": [
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "pair_S1": {
+   "champ": 35.789,
+   "playoff": 99.96,
+   "rank": 1
+  },
+  "pair_S2": {
+   "champ": 36.372,
+   "playoff": 99.99,
+   "rank": 1
+  },
+  "pair_ecw": 5.678,
+  "pair_swaps": [
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Sandro Mamukelashvili"
+   ]
+  ],
+  "pair_moves": [
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0222,
+    "why": "Derrick White now, Desmond Bane next turn (81% to survive): +0.022 cats/wk over the pair",
+    "rows": [
+     "Anthony Davis",
+     "Derrick White",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.611,
+     0.674,
+     0.91,
+     0.811,
+     0.921
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 58,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0348,
+    "why": "OG Anunoby now, Payton Pritchard next turn (78% to survive): +0.035 cats/wk over the pair",
+    "rows": [
+     "Payton Pritchard",
+     "OG Anunoby",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Boozer"
+    ],
+    "surv": [
+     0.782,
+     0.592,
+     0.609,
+     0.468,
+     0.324
+    ],
+    "next_turn": 63
+   }
+  ],
+  "pair_reads": [
+   {
+    "pick": 10,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0824,
+    "why": "#1 survival 0.53 below 0.60 \u2014 take him now",
+    "rows": [
+     "Karl-Anthony Towns",
+     "Tyrese Maxey",
+     "Jalen Johnson",
+     "Tyrese Haliburton",
+     "Anthony Davis"
+    ],
+    "surv": [
+     0.53,
+     0.254,
+     0.358,
+     0.426,
+     0.985
+    ],
+    "next_turn": 15
+   },
+   {
+    "pick": 15,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Tyrese Haliburton",
+     "Donovan Mitchell",
+     "Jalen Williams",
+     "Jamal Murray",
+     "Derrick White"
+    ],
+    "surv": [
+     0.01,
+     0.01,
+     0.701,
+     0.049,
+     0.794
+    ],
+    "next_turn": 34
+   },
+   {
+    "pick": 34,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0222,
+    "why": "Derrick White now, Desmond Bane next turn (81% to survive): +0.022 cats/wk over the pair",
+    "rows": [
+     "Anthony Davis",
+     "Derrick White",
+     "Dyson Daniels",
+     "Desmond Bane",
+     "OG Anunoby"
+    ],
+    "surv": [
+     0.611,
+     0.674,
+     0.91,
+     0.811,
+     0.921
+    ],
+    "next_turn": 39
+   },
+   {
+    "pick": 39,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Derrick White",
+     "Desmond Bane",
+     "OG Anunoby",
+     "Dyson Daniels",
+     "Payton Pritchard"
+    ],
+    "surv": [
+     0.17,
+     0.377,
+     0.684,
+     0.644,
+     0.837
+    ],
+    "next_turn": 58
+   },
+   {
+    "pick": 58,
+    "moved": true,
+    "idx": 1,
+    "gain": 0.0348,
+    "why": "OG Anunoby now, Payton Pritchard next turn (78% to survive): +0.035 cats/wk over the pair",
+    "rows": [
+     "Payton Pritchard",
+     "OG Anunoby",
+     "Tyler Herro",
+     "Darius Garland",
+     "Cameron Boozer"
+    ],
+    "surv": [
+     0.782,
+     0.592,
+     0.609,
+     0.468,
+     0.324
+    ],
+    "next_turn": 63
+   },
+   {
+    "pick": 63,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0025,
+    "why": "#1 survival 0.50 below 0.60 \u2014 take him now",
+    "rows": [
+     "Payton Pritchard",
+     "Tyler Herro",
+     "De'Aaron Fox",
+     "Cameron Boozer",
+     "Coby White"
+    ],
+    "surv": [
+     0.503,
+     0.259,
+     0.468,
+     0.055,
+     0.619
+    ],
+    "next_turn": 82
+   },
+   {
+    "pick": 82,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0054,
+    "why": "#1 survival 0.55 below 0.60 \u2014 take him now",
+    "rows": [
+     "Coby White",
+     "Zach LaVine",
+     "Josh Hart",
+     "Jalen Suggs",
+     "Isaiah Hartenstein"
+    ],
+    "surv": [
+     0.547,
+     0.686,
+     0.623,
+     0.733,
+     0.715
+    ],
+    "next_turn": 87
+   },
+   {
+    "pick": 87,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Isaiah Hartenstein",
+     "Jalen Suggs",
+     "Day'Ron Sharpe",
+     "Zach LaVine",
+     "Yaxel Lendeborg"
+    ],
+    "surv": [
+     0.486,
+     0.511,
+     0.337,
+     0.445,
+     0.598
+    ],
+    "next_turn": 106
+   },
+   {
+    "pick": 106,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Isaiah Hartenstein",
+     "Yaxel Lendeborg",
+     "PJ Washington",
+     "Sandro Mamukelashvili",
+     "Herbert Jones"
+    ],
+    "surv": [
+     0.423,
+     0.541,
+     0.563,
+     0.59,
+     0.716
+    ],
+    "next_turn": 111
+   },
+   {
+    "pick": 111,
+    "moved": false,
+    "idx": 0,
+    "gain": 0.0049,
+    "why": "#1 survival 0.33 below 0.60 \u2014 take him now",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Sandro Mamukelashvili",
+     "PJ Washington",
+     "Herbert Jones",
+     "Devin Vassell"
+    ],
+    "surv": [
+     0.326,
+     0.38,
+     0.35,
+     0.54,
+     0.321
+    ],
+    "next_turn": 130
+   },
+   {
+    "pick": 130,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Yaxel Lendeborg",
+     "Herbert Jones",
+     "Devin Vassell",
+     "Saddiq Bey",
+     "Draymond Green"
+    ],
+    "surv": [
+     0.275,
+     0.49,
+     0.271,
+     0.336,
+     0.192
+    ],
+    "next_turn": 135
+   },
+   {
+    "pick": 135,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "#1 is the best pair",
+    "rows": [
+     "Devin Vassell",
+     "Collin Gillespie",
+     "Herbert Jones",
+     "Saddiq Bey",
+     "Draymond Green"
+    ],
+    "surv": [
+     0.122,
+     0.202,
+     0.309,
+     0.171,
+     0.072
+    ],
+    "next_turn": 154
+   },
+   {
+    "pick": 154,
+    "moved": false,
+    "idx": 0,
+    "gain": 0,
+    "why": "no next turn / no room",
+    "rows": [
+     "Herbert Jones",
+     "Draymond Green",
+     "Saddiq Bey",
+     "Kyle Filipowski",
+     "Jerami Grant"
+    ],
+    "surv": [],
+    "next_turn": null
+   }
+  ]
+ }
+}

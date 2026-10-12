@@ -1,0 +1,379 @@
+[
+ {
+  "pick": 10,
+  "actual": "Karl-Anthony Towns",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Tyrese Maxey",
+   "top1_hgain": -0.0646,
+   "top5_mean_hgain": -0.0938,
+   "rho": 0.689
+  },
+  "forecast": {
+   "top1": "Kyrie Irving",
+   "top1_hgain": -0.2499,
+   "top5_mean_hgain": -0.1431,
+   "rho": 0.359
+  },
+  "oracle(final)": {
+   "top1": "Kyrie Irving",
+   "top1_hgain": -0.2499,
+   "top5_mean_hgain": -0.1431,
+   "rho": 0.335
+  },
+  "value-only": {
+   "top1": "Tyrese Maxey",
+   "top1_hgain": -0.0646,
+   "top5_mean_hgain": -0.1117,
+   "rho": 0.572
+  }
+ },
+ {
+  "pick": 15,
+  "actual": "Tyrese Haliburton",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Donovan Mitchell",
+   "top1_hgain": -0.016,
+   "top5_mean_hgain": -0.0382,
+   "rho": 0.868
+  },
+  "forecast": {
+   "top1": "Kyrie Irving",
+   "top1_hgain": -0.1531,
+   "top5_mean_hgain": -0.0733,
+   "rho": 0.525
+  },
+  "oracle(final)": {
+   "top1": "Kyrie Irving",
+   "top1_hgain": -0.1531,
+   "top5_mean_hgain": -0.0733,
+   "rho": 0.492
+  },
+  "value-only": {
+   "top1": "Chet Holmgren",
+   "top1_hgain": -0.093,
+   "top5_mean_hgain": -0.0953,
+   "rho": 0.608
+  }
+ },
+ {
+  "pick": 34,
+  "actual": "Anthony Davis",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Dyson Daniels",
+   "top1_hgain": -0.1414,
+   "top5_mean_hgain": -0.1159,
+   "rho": 0.894
+  },
+  "forecast": {
+   "top1": "Desmond Bane",
+   "top1_hgain": -0.0883,
+   "top5_mean_hgain": -0.132,
+   "rho": 0.566
+  },
+  "oracle(final)": {
+   "top1": "Desmond Bane",
+   "top1_hgain": -0.0883,
+   "top5_mean_hgain": -0.132,
+   "rho": 0.547
+  },
+  "value-only": {
+   "top1": "Dyson Daniels",
+   "top1_hgain": -0.1414,
+   "top5_mean_hgain": -0.1159,
+   "rho": 0.773
+  }
+ },
+ {
+  "pick": 39,
+  "actual": "Derrick White",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Desmond Bane",
+   "top1_hgain": -0.0327,
+   "top5_mean_hgain": -0.0746,
+   "rho": 0.883
+  },
+  "forecast": {
+   "top1": "Desmond Bane",
+   "top1_hgain": -0.0327,
+   "top5_mean_hgain": -0.1546,
+   "rho": 0.401
+  },
+  "oracle(final)": {
+   "top1": "Desmond Bane",
+   "top1_hgain": -0.0327,
+   "top5_mean_hgain": -0.1546,
+   "rho": 0.384
+  },
+  "value-only": {
+   "top1": "Dyson Daniels",
+   "top1_hgain": -0.1198,
+   "top5_mean_hgain": -0.1039,
+   "rho": 0.626
+  }
+ },
+ {
+  "pick": 58,
+  "actual": "OG Anunoby",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Darius Garland",
+   "top1_hgain": -0.0209,
+   "top5_mean_hgain": -0.043,
+   "rho": 0.848
+  },
+  "forecast": {
+   "top1": "Jarrett Allen",
+   "top1_hgain": -0.1868,
+   "top5_mean_hgain": -0.0778,
+   "rho": 0.246
+  },
+  "oracle(final)": {
+   "top1": "Jarrett Allen",
+   "top1_hgain": -0.1868,
+   "top5_mean_hgain": -0.0824,
+   "rho": 0.275
+  },
+  "value-only": {
+   "top1": "Darius Garland",
+   "top1_hgain": -0.0209,
+   "top5_mean_hgain": -0.0598,
+   "rho": 0.582
+  }
+ },
+ {
+  "pick": 63,
+  "actual": "Payton Pritchard",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Tyler Herro",
+   "top1_hgain": 0.0092,
+   "top5_mean_hgain": -0.0785,
+   "rho": 0.835
+  },
+  "forecast": {
+   "top1": "Jarrett Allen",
+   "top1_hgain": -0.2355,
+   "top5_mean_hgain": -0.1181,
+   "rho": 0.139
+  },
+  "oracle(final)": {
+   "top1": "Jarrett Allen",
+   "top1_hgain": -0.2355,
+   "top5_mean_hgain": -0.1181,
+   "rho": 0.188
+  },
+  "value-only": {
+   "top1": "Tyler Herro",
+   "top1_hgain": 0.0092,
+   "top5_mean_hgain": -0.1041,
+   "rho": 0.526
+  }
+ },
+ {
+  "pick": 82,
+  "actual": "Coby White",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Zach LaVine",
+   "top1_hgain": -0.0115,
+   "top5_mean_hgain": -0.0784,
+   "rho": 0.789
+  },
+  "forecast": {
+   "top1": "Zach LaVine",
+   "top1_hgain": -0.0115,
+   "top5_mean_hgain": -0.1355,
+   "rho": 0.279
+  },
+  "oracle(final)": {
+   "top1": "Zach LaVine",
+   "top1_hgain": -0.0115,
+   "top5_mean_hgain": -0.1226,
+   "rho": 0.435
+  },
+  "value-only": {
+   "top1": "Zach LaVine",
+   "top1_hgain": -0.0115,
+   "top5_mean_hgain": -0.0799,
+   "rho": 0.585
+  }
+ },
+ {
+  "pick": 87,
+  "actual": "Day'Ron Sharpe",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Jalen Suggs",
+   "top1_hgain": 0.0244,
+   "top5_mean_hgain": -0.0287,
+   "rho": 0.615
+  },
+  "forecast": {
+   "top1": "Zach LaVine",
+   "top1_hgain": 0.028,
+   "top5_mean_hgain": -0.0301,
+   "rho": 0.389
+  },
+  "oracle(final)": {
+   "top1": "Zach LaVine",
+   "top1_hgain": 0.028,
+   "top5_mean_hgain": -0.0301,
+   "rho": 0.372
+  },
+  "value-only": {
+   "top1": "Zach LaVine",
+   "top1_hgain": 0.028,
+   "top5_mean_hgain": -0.0337,
+   "rho": 0.381
+  }
+ },
+ {
+  "pick": 106,
+  "actual": "Isaiah Hartenstein",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Sandro Mamukelashvili",
+   "top1_hgain": -0.0867,
+   "top5_mean_hgain": -0.0959,
+   "rho": 0.795
+  },
+  "forecast": {
+   "top1": "Myles Turner",
+   "top1_hgain": -0.0825,
+   "top5_mean_hgain": -0.0922,
+   "rho": 0.681
+  },
+  "oracle(final)": {
+   "top1": "Herbert Jones",
+   "top1_hgain": -0.114,
+   "top5_mean_hgain": -0.0922,
+   "rho": 0.6
+  },
+  "value-only": {
+   "top1": "Fred VanVleet",
+   "top1_hgain": -0.1379,
+   "top5_mean_hgain": -0.0967,
+   "rho": 0.599
+  }
+ },
+ {
+  "pick": 111,
+  "actual": "Rui Hachimura",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Sandro Mamukelashvili",
+   "top1_hgain": 0.1486,
+   "top5_mean_hgain": 0.1414,
+   "rho": 0.872
+  },
+  "forecast": {
+   "top1": "PJ Washington",
+   "top1_hgain": 0.1508,
+   "top5_mean_hgain": 0.1245,
+   "rho": 0.639
+  },
+  "oracle(final)": {
+   "top1": "Herbert Jones",
+   "top1_hgain": 0.1105,
+   "top5_mean_hgain": 0.1245,
+   "rho": 0.559
+  },
+  "value-only": {
+   "top1": "Fred VanVleet",
+   "top1_hgain": 0.1292,
+   "top5_mean_hgain": 0.1185,
+   "rho": 0.644
+  }
+ },
+ {
+  "pick": 130,
+  "actual": "Yaxel Lendeborg",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Herbert Jones",
+   "top1_hgain": -0.024,
+   "top5_mean_hgain": -0.021,
+   "rho": 0.943
+  },
+  "forecast": {
+   "top1": "Sandro Mamukelashvili",
+   "top1_hgain": -0.0197,
+   "top5_mean_hgain": -0.021,
+   "rho": 0.904
+  },
+  "oracle(final)": {
+   "top1": "Herbert Jones",
+   "top1_hgain": -0.024,
+   "top5_mean_hgain": -0.021,
+   "rho": 0.873
+  },
+  "value-only": {
+   "top1": "Fred VanVleet",
+   "top1_hgain": -0.0339,
+   "top5_mean_hgain": -0.021,
+   "rho": 0.819
+  }
+ },
+ {
+  "pick": 135,
+  "actual": "Devin Vassell",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Fred VanVleet",
+   "top1_hgain": -0.0447,
+   "top5_mean_hgain": -0.032,
+   "rho": 0.93
+  },
+  "forecast": {
+   "top1": "Herbert Jones",
+   "top1_hgain": -0.0301,
+   "top5_mean_hgain": -0.032,
+   "rho": 0.883
+  },
+  "oracle(final)": {
+   "top1": "Herbert Jones",
+   "top1_hgain": -0.0301,
+   "top5_mean_hgain": -0.032,
+   "rho": 0.862
+  },
+  "value-only": {
+   "top1": "Fred VanVleet",
+   "top1_hgain": -0.0447,
+   "top5_mean_hgain": -0.032,
+   "rho": 0.744
+  }
+ },
+ {
+  "pick": 154,
+  "actual": "Draymond Green",
+  "actual_hgain": 0.0,
+  "shipped(partial)": {
+   "top1": "Saddiq Bey",
+   "top1_hgain": -0.0464,
+   "top5_mean_hgain": -0.0522,
+   "rho": 0.933
+  },
+  "forecast": {
+   "top1": "Saddiq Bey",
+   "top1_hgain": -0.0464,
+   "top5_mean_hgain": -0.0522,
+   "rho": 0.931
+  },
+  "oracle(final)": {
+   "top1": "Saddiq Bey",
+   "top1_hgain": -0.0464,
+   "top5_mean_hgain": -0.0522,
+   "rho": 0.93
+  },
+  "value-only": {
+   "top1": "Herbert Jones",
+   "top1_hgain": -0.0473,
+   "top5_mean_hgain": -0.0612,
+   "rho": 0.734
+  }
+ }
+]

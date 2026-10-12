@@ -1,0 +1,74 @@
+{
+ "mock": 65,
+ "from_pick": 63,
+ "punt": [
+  "REB",
+  "PTS"
+ ],
+ "veto": [
+  "Kristaps Porzingis"
+ ],
+ "arms": {
+  "as_drafted": {
+   "champ": 23.189,
+   "playoff": 98.39,
+   "per_seed": {
+    "11": 23.3,
+    "23": 23.517,
+    "47": 22.75
+   },
+   "swaps": []
+  },
+  "follow_card_from63": {
+   "champ": 23.189,
+   "playoff": 98.39,
+   "per_seed": {
+    "11": 23.3,
+    "23": 23.517,
+    "47": 22.75
+   },
+   "swaps": []
+  },
+  "follow_card_from63_puntREB+PTS": {
+   "champ": 16.906,
+   "playoff": 94.24,
+   "per_seed": {
+    "11": 17.0,
+    "23": 17.367,
+    "47": 16.35
+   },
+   "swaps": [
+    [
+     63,
+     "Cason Wallace"
+    ],
+    [
+     82,
+     "Herbert Jones"
+    ],
+    [
+     87,
+     "Mikal Bridges"
+    ],
+    [
+     106,
+     "Reed Sheppard"
+    ],
+    [
+     111,
+     "Fred VanVleet"
+    ],
+    [
+     135,
+     "Daniel Gafford"
+    ]
+   ]
+  }
+ },
+ "verdict": {
+  "bar": "steered beats unsteered by >= 2.0 pp on >= 2 of 3 seeds",
+  "seeds_meeting_bar": 0,
+  "steered_minus_unsteered_pp": -6.283,
+  "passes": false
+ }
+}
