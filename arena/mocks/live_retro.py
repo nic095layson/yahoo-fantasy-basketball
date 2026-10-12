@@ -44,7 +44,10 @@ POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v53": SP + "/players_v53.csv",
          # v58 = data/players.csv at deck main df1c754 (the 2026-10-12 daily-pull build, v58): the values equal v53's
          # except Isaiah Stewart (inj-ankle-risk since v56, D-1010-2: availability 1.0 -> 0.78); regenerated from git
-         "v58": SP + "/m74_players_v58.csv"}
+         "v58": SP + "/m74_players_v58.csv",
+         # v60 = data/players.csv at the 2026-10-12 WO-5 projection refresh (deck v60): every line with an NBA season of
+         # 25+ games re-derived on both planes (kit report/wo5/); the re-calibration of the seven live rooms 52-58 runs on it
+         "v60": SP + "/players_v60.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).

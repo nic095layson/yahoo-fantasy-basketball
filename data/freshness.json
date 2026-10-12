@@ -1,9 +1,9 @@
 {
   "date": "2026-10-12",
-  "note": "2026-10-12 ADP refresh rebuild (v59): the 10/9 price file re-priced from Hashtag's 12 October page (Yahoo ADP column, owner upload Hashtag_ADP_10.12.26; 169 of 250 names re-priced, mean move 0.48 places, max 3.5, none of 5 or more; Tre Jones and Maxime Raynaud keep the 10/9 ADP); pool identical to v58 (the 10/12 pull: the four 10/11 finals, 93 notes, no line, tag or placement change; rosters verified direct-complete 335/335)",
+  "note": "2026-10-12 WO-5 projection refresh (v60): every line with an NBA season of 25+ games re-derived by the work-order method on both planes in one asserted script (326 deck rows, 311 kit rows; 2025-26 per-36 rates, else the latest season of 25+ games, at the base season's minutes or a role move on two dated outlets \u2014 7 role moves; FG%/FT% one-third to career; steals and blocks on the three-season anchor; points by identity); the range rule moved 10 players' minutes, 11 shooting cells and 6 rookie counting cells; Dybantsa unified to the kit's line (D-R1) and two rookie shot volumes set by the points identity; no tag, games or placement change; rosters verified direct-complete 335/335",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "WO-5: 326 stat lines re-derived (data/players.csv stat columns + one dated note entry per row); no row added or removed, no tag, team or position change"
   },
   "rosters_verified": {
     "date": "2026-10-12",

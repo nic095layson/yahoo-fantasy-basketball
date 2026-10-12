@@ -1,0 +1,225 @@
+{
+ "mock": 57,
+ "tag": "v33",
+ "label": "own",
+ "page_rev": "0dfbe77",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": null,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Tyrese Haliburton",
+    "Jalen Johnson",
+    "Anthony Davis",
+    "Chet Holmgren"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Tyrese Haliburton"
+  },
+  {
+   "pick": 15,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Chet Holmgren",
+    "Anthony Davis",
+    "Jalen Johnson",
+    "Evan Mobley"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": null
+  },
+  {
+   "pick": 34,
+   "target": "Anthony Davis",
+   "top5": [
+    "Anthony Davis",
+    "Jalen Williams",
+    "Derrick White",
+    "Evan Mobley",
+    "Dyson Daniels"
+   ],
+   "actual": "Jalen Williams",
+   "swap": "Anthony Davis"
+  },
+  {
+   "pick": 39,
+   "target": "Derrick White",
+   "top5": [
+    "Derrick White",
+    "Desmond Bane",
+    "OG Anunoby",
+    "Kyrie Irving",
+    "Dyson Daniels"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Derrick White"
+  },
+  {
+   "pick": 58,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Payton Pritchard",
+    "Tyler Herro",
+    "Darius Garland",
+    "Damian Lillard"
+   ],
+   "actual": "Damian Lillard",
+   "swap": "Payton Pritchard"
+  },
+  {
+   "pick": 63,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Darius Garland",
+    "Jakob Poeltl",
+    "De'Aaron Fox",
+    "Damian Lillard"
+   ],
+   "actual": "OG Anunoby",
+   "swap": null
+  },
+  {
+   "pick": 82,
+   "target": "Jakob Poeltl",
+   "top5": [
+    "Jakob Poeltl",
+    "Damian Lillard",
+    "Miles Bridges",
+    "Jalen Suggs",
+    "Coby White"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": null
+  },
+  {
+   "pick": 87,
+   "target": "Zach LaVine",
+   "top5": [
+    "Zach LaVine",
+    "Miles Bridges",
+    "Jalen Suggs",
+    "Isaiah Hartenstein",
+    "Cason Wallace"
+   ],
+   "actual": "Jaden McDaniels",
+   "swap": "Zach LaVine"
+  },
+  {
+   "pick": 106,
+   "target": "Isaiah Hartenstein",
+   "top5": [
+    "Isaiah Hartenstein",
+    "PJ Washington",
+    "Cason Wallace",
+    "Collin Gillespie",
+    "Herbert Jones"
+   ],
+   "actual": "Isaiah Hartenstein",
+   "swap": null
+  },
+  {
+   "pick": 111,
+   "target": "Cason Wallace",
+   "top5": [
+    "Cason Wallace",
+    "Collin Gillespie",
+    "Herbert Jones",
+    "Fred VanVleet",
+    "Devin Vassell"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": "Cason Wallace"
+  },
+  {
+   "pick": 130,
+   "target": "Devin Vassell",
+   "top5": [
+    "Devin Vassell",
+    "Quentin Grimes",
+    "PJ Washington",
+    "Herbert Jones",
+    "Malik Monk"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  },
+  {
+   "pick": 135,
+   "target": "Devin Vassell",
+   "top5": [
+    "Devin Vassell",
+    "Quentin Grimes",
+    "Saddiq Bey",
+    "Herbert Jones",
+    "Malik Monk"
+   ],
+   "actual": "Devin Vassell",
+   "swap": null
+  },
+  {
+   "pick": 154,
+   "target": "Quentin Grimes",
+   "top5": [
+    "Quentin Grimes",
+    "Malik Monk",
+    "Herbert Jones",
+    "Draymond Green",
+    "Cameron Johnson"
+   ],
+   "actual": "Quentin Grimes",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 27.444,
+   "playoff": 99.3,
+   "champ_rank": 1,
+   "ecw": 5.271,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 41.433,
+   "playoff": 99.97,
+   "champ_rank": 1,
+   "ecw": 5.678,
+   "swaps": [
+    [
+     10,
+     "Tyrese Haliburton"
+    ],
+    [
+     34,
+     "Anthony Davis"
+    ],
+    [
+     39,
+     "Derrick White"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     87,
+     "Zach LaVine"
+    ],
+    [
+     111,
+     "Cason Wallace"
+    ]
+   ]
+  }
+ }
+}

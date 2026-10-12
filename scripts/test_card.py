@@ -121,7 +121,11 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   adjValue: typeof adjValue === "function" ? adjValue : null,
   BOT_XRANK_FROM: typeof BOT_XRANK_FROM === "undefined" ? null : BOT_XRANK_FROM };
 """)
-    probes = [("draft_state_mock31.json", 64)]
+    # D51R-4 probe re-pointed 2026-10-12 (WO-5): on the re-derived lines no committed owner turn withholds an urgent pin
+    # on availability (the scan of all 416 owner turns on the v60 page: 39 urgent reads, two pins withheld, both "behind
+    # #1"), so the committed example is the behind branch at mock 75 #58 (Naz Reid, 0.121 cats/wk behind); the
+    # availability branch keeps its direct gate case (pinUnit) below. Until v59 the probe was mock31 #64 (availability).
+    probes = [("draft_state_75.json", 58)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
     for fn in ("draft_state_51.json", "draft_state_53.json", "draft_state_63.json"):  # advisor / veto / clock / D-CAST-4 probes below
         states[fn] = json.load(open(os.path.join(STATES, fn), encoding="utf-8"))
@@ -334,18 +338,25 @@ if (api.cardPool) {
   const st = inp.states["draft_state_63.json"];
   const by = new Map(api.PLAYERS.map(p => [p.n, p]));
   const veto = new Set(["Kristaps Porzingis"]);
-  const probe = (upto) => {
+  const probe = (upto, extra) => {
     const taken = new Set(st.picks.slice(0, upto).map(pk => pk.player)); const ros = new Map();
     for (const pk of st.picks.slice(0, upto)) { const p = by.get(pk.player); if (p) { if (!ros.has(pk.slot)) ros.set(pk.slot, []); ros.get(pk.slot).push(p); } }
     const mine = ros.get(st.slot) || []; const opp = [...ros.entries()].filter(([s]) => s !== st.slot).map(([, r]) => r);
-    const pool = api.PLAYERS.filter(p => !taken.has(p.n) && p.av > 0 && !veto.has(p.n));
+    const pool = api.PLAYERS.filter(p => !taken.has(p.n) && p.av > 0 && !veto.has(p.n)).concat(extra || []);
+    const look = new Map([...by, ...(extra || []).map(p => [p.n, p])]);
     const rnd = Math.floor(upto / st.teams) + 1; const cp = api.cardPool(pool, rnd);
     const top = api.rankCard(api.decwScores(cp, mine, opp)).slice(0, 5).map(x => x.p.n);
     const topAll = api.rankCard(api.decwScores(pool, mine, opp)).slice(0, 5).map(x => x.p.n);
     return { rnd, poolN: pool.length, cpN: cp.length, unpricedInCp: cp.filter(p => p.mkt == null).length, top, topAll,
-             unpricedInTopAll: topAll.filter(n => by.get(n).mkt == null).length };
+             unpricedInTopAll: topAll.filter(n => look.get(n).mkt == null).length };
   };
-  out.cast4.r13 = probe(153); out.cast4.r8 = probe(86);
+  /* WO-5 (2026-10-12): on the re-derived lines no committed owner turn from round 11 has an unpriced row in the
+     unfiltered Top-5 (scan of every committed state on the v60 page), so the #154 probe adds an unpriced twin of that
+     turn's unfiltered leader — the same line, no price — and the rule must keep it off the card. */
+  const real13 = probe(153);
+  const lead = by.get(real13.topAll[0]);
+  const twin = { ...lead, n: lead.n + " (unpriced twin)", mkt: null, mktsrc: null, xr: null };
+  out.cast4.r13real = real13; out.cast4.r13 = probe(153, [twin]); out.cast4.r8 = probe(86);
   const four = api.PLAYERS.filter(p => p.av > 0 && p.mkt != null).slice(0, 4).concat(api.PLAYERS.filter(p => p.av > 0 && p.mkt == null).slice(0, 6));
   out.cast4.fallback = { n: four.length, kept: api.cardPool(four, 13).length };
 }
@@ -356,9 +367,16 @@ out.v4 = { present: !!api.managerScores && api.MANAGERS != null, from: api.BOT_X
            xrRows: api.PLAYERS.filter(p => p.xr != null).length };
 if (api.managerScores && api.MANAGERS && api.makeRng) {
   api.MANAGERS["_v4test"] = { adp_w: 0.0, val_w: 1.0, noise: 0, streamer: false, bias: {}, loyal: {} };
-  const pool = api.PLAYERS.filter(p => p.av > 0);
-  const byVal = [...pool].sort((a, b) => api.adjValue(b, new Set()) - api.adjValue(a, new Set()))[0].n;
-  const byXr = [...pool].filter(p => p.xr != null).sort((a, b) => a.xr - b.xr)[0]?.n ?? null;
+  /* WO-5 (2026-10-12): the probe needs a pool whose top value and top XRank are different men; on the re-derived lines
+     both are Jokic, so the shared leader is set aside until they differ (recorded as v4.dropped). */
+  let pool = api.PLAYERS.filter(p => p.av > 0);
+  const topVal = pl => [...pl].sort((a, b) => api.adjValue(b, new Set()) - api.adjValue(a, new Set()))[0].n;
+  const topXr = pl => [...pl].filter(p => p.xr != null).sort((a, b) => a.xr - b.xr)[0]?.n ?? null;
+  const dropped = [];
+  while (topVal(pool) === topXr(pool) && dropped.length < 20) { const n = topVal(pool); dropped.push(n); pool = pool.filter(p => p.n !== n); }
+  out.v4.dropped = dropped;
+  const byVal = topVal(pool);
+  const byXr = topXr(pool);
   const top = rnd => api.managerScores("_v4test", pool, [], rnd, 13, api.makeRng(1))[0].p.n;
   out.v4.r6 = { top: top(6), byVal }; out.v4.r7 = { top: top(7), byXr };
   out.v4.distinct = byVal !== byXr;
@@ -404,7 +422,7 @@ process.stdout.write(JSON.stringify(out));
     # ---- D51R-4 pin gate
     case("D51R-4 pinDecision exists in the engine block", pres["pinDecision"], "pinDecision absent")
     case("D51R-4 PIN_MAX_GAP is 0.05 cats/wk", js.get("PIN_MAX_GAP") == 0.05, f"got {js.get('PIN_MAX_GAP')}")
-    want = {("draft_state_mock31.json", 64): (False, "availability")}
+    want = {("draft_state_75.json", 58): (False, "behind #1")}
     got = {(p["fn"], p["pickNo"]): p for p in js.get("pins", [])}
     for key, (tg, frag) in want.items():
         p = got.get(key)

@@ -1,0 +1,249 @@
+{
+ "mock": 56,
+ "tag": "v60",
+ "label": "v60",
+ "page_rev": "eaf2b72",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Tyrese Maxey",
+   "top5": [
+    "Tyrese Maxey",
+    "Jamal Murray",
+    "Kawhi Leonard",
+    "Jalen Johnson",
+    "Lauri Markkanen"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": "Tyrese Maxey"
+  },
+  {
+   "pick": 15,
+   "target": "Chet Holmgren",
+   "top5": [
+    "Chet Holmgren",
+    "Jamal Murray",
+    "Lauri Markkanen",
+    "Kawhi Leonard",
+    "Anthony Davis"
+   ],
+   "actual": "Tyrese Haliburton",
+   "swap": "Chet Holmgren"
+  },
+  {
+   "pick": 34,
+   "target": "James Harden",
+   "top5": [
+    "James Harden",
+    "Tyrese Haliburton",
+    "Bam Adebayo",
+    "Trey Murphy III",
+    "Ryan Rollins"
+   ],
+   "actual": "Evan Mobley",
+   "swap": "James Harden"
+  },
+  {
+   "pick": 39,
+   "target": "Bam Adebayo",
+   "top5": [
+    "Bam Adebayo",
+    "Tyrese Haliburton",
+    "Onyeka Okongwu",
+    "Derrick White",
+    "Ryan Rollins"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Bam Adebayo"
+  },
+  {
+   "pick": 58,
+   "target": "Ryan Rollins",
+   "top5": [
+    "Ryan Rollins",
+    "Cameron Boozer",
+    "Ty Jerome",
+    "OG Anunoby",
+    "Nickeil Alexander-Walker"
+   ],
+   "actual": "OG Anunoby",
+   "swap": "Ryan Rollins"
+  },
+  {
+   "pick": 63,
+   "target": "Ty Jerome",
+   "top5": [
+    "Ty Jerome",
+    "VJ Edgecombe",
+    "OG Anunoby",
+    "Nickeil Alexander-Walker",
+    "Mikal Bridges"
+   ],
+   "actual": "Damian Lillard",
+   "swap": "Ty Jerome"
+  },
+  {
+   "pick": 82,
+   "target": "Mikal Bridges",
+   "top5": [
+    "Mikal Bridges",
+    "Yaxel Lendeborg",
+    "Immanuel Quickley",
+    "Neemias Queta",
+    "Reed Sheppard"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Mikal Bridges"
+  },
+  {
+   "pick": 87,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Neemias Queta",
+    "Immanuel Quickley",
+    "Josh Hart",
+    "Ayo Dosunmu"
+   ],
+   "actual": "Cameron Johnson",
+   "swap": "Yaxel Lendeborg"
+  },
+  {
+   "pick": 106,
+   "target": "Neemias Queta",
+   "top5": [
+    "Neemias Queta",
+    "Reed Sheppard",
+    "Ayo Dosunmu",
+    "Jalen Suggs",
+    "Grayson Allen"
+   ],
+   "actual": "Myles Turner",
+   "swap": "Neemias Queta"
+  },
+  {
+   "pick": 111,
+   "target": "Ayo Dosunmu",
+   "top5": [
+    "Ayo Dosunmu",
+    "Collin Gillespie",
+    "Saddiq Bey",
+    "Grayson Allen",
+    "Jrue Holiday"
+   ],
+   "actual": "Tari Eason",
+   "swap": "Ayo Dosunmu"
+  },
+  {
+   "pick": 130,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Reed Sheppard",
+    "Collin Gillespie",
+    "Saddiq Bey",
+    "Jrue Holiday"
+   ],
+   "actual": "Reed Sheppard",
+   "swap": null
+  },
+  {
+   "pick": 135,
+   "target": "Saddiq Bey",
+   "top5": [
+    "Saddiq Bey",
+    "Grayson Allen",
+    "Keegan Murray",
+    "Deandre Ayton",
+    "Jrue Holiday"
+   ],
+   "actual": "Christian Braun",
+   "swap": "Saddiq Bey"
+  },
+  {
+   "pick": 154,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Deandre Ayton",
+    "Daniel Gafford",
+    "Collin Gillespie",
+    "Bobby Portis"
+   ],
+   "actual": "Brook Lopez",
+   "swap": "Daniel Gafford"
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 3.511,
+   "playoff": 54.08,
+   "champ_rank": 8,
+   "ecw": 4.275,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 40.433,
+   "playoff": 99.99,
+   "champ_rank": 1,
+   "ecw": 5.623,
+   "swaps": [
+    [
+     10,
+     "Tyrese Maxey"
+    ],
+    [
+     15,
+     "Chet Holmgren"
+    ],
+    [
+     34,
+     "James Harden"
+    ],
+    [
+     39,
+     "Bam Adebayo"
+    ],
+    [
+     58,
+     "Ryan Rollins"
+    ],
+    [
+     63,
+     "Ty Jerome"
+    ],
+    [
+     82,
+     "Mikal Bridges"
+    ],
+    [
+     87,
+     "Yaxel Lendeborg"
+    ],
+    [
+     106,
+     "Neemias Queta"
+    ],
+    [
+     111,
+     "Ayo Dosunmu"
+    ],
+    [
+     135,
+     "Saddiq Bey"
+    ],
+    [
+     154,
+     "Daniel Gafford"
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,249 @@
+{
+ "mock": 58,
+ "tag": "v60",
+ "label": "v60",
+ "page_rev": "eaf2b72",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Tyrese Maxey",
+   "top5": [
+    "Tyrese Maxey",
+    "Jamal Murray",
+    "Kawhi Leonard",
+    "Jalen Johnson",
+    "Lauri Markkanen"
+   ],
+   "actual": "Tyrese Haliburton",
+   "swap": "Tyrese Maxey"
+  },
+  {
+   "pick": 15,
+   "target": "Chet Holmgren",
+   "top5": [
+    "Chet Holmgren",
+    "Kevin Durant",
+    "Lauri Markkanen",
+    "Jamal Murray",
+    "Kawhi Leonard"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": "Chet Holmgren"
+  },
+  {
+   "pick": 34,
+   "target": "Kawhi Leonard",
+   "top5": [
+    "Kawhi Leonard",
+    "Lauri Markkanen",
+    "Ryan Rollins",
+    "Michael Porter Jr.",
+    "Derrick White"
+   ],
+   "actual": "Anthony Davis",
+   "swap": "Kawhi Leonard"
+  },
+  {
+   "pick": 39,
+   "target": "Lauri Markkanen",
+   "top5": [
+    "Lauri Markkanen",
+    "Derrick White",
+    "Ryan Rollins",
+    "Dyson Daniels",
+    "Onyeka Okongwu"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Lauri Markkanen"
+  },
+  {
+   "pick": 58,
+   "target": "Ryan Rollins",
+   "top5": [
+    "Ryan Rollins",
+    "Cameron Boozer",
+    "OG Anunoby",
+    "Ty Jerome",
+    "Nickeil Alexander-Walker"
+   ],
+   "actual": "OG Anunoby",
+   "swap": "Ryan Rollins"
+  },
+  {
+   "pick": 63,
+   "target": "Cameron Boozer",
+   "top5": [
+    "Cameron Boozer",
+    "Ty Jerome",
+    "VJ Edgecombe",
+    "Immanuel Quickley",
+    "Mikal Bridges"
+   ],
+   "actual": "Payton Pritchard",
+   "swap": "Cameron Boozer"
+  },
+  {
+   "pick": 82,
+   "target": "VJ Edgecombe",
+   "top5": [
+    "VJ Edgecombe",
+    "Ty Jerome",
+    "Immanuel Quickley",
+    "Yaxel Lendeborg",
+    "Reed Sheppard"
+   ],
+   "actual": "Miles Bridges",
+   "swap": "VJ Edgecombe"
+  },
+  {
+   "pick": 87,
+   "target": "Immanuel Quickley",
+   "top5": [
+    "Immanuel Quickley",
+    "Ty Jerome",
+    "Yaxel Lendeborg",
+    "Neemias Queta",
+    "Josh Hart"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Immanuel Quickley"
+  },
+  {
+   "pick": 106,
+   "target": "Yaxel Lendeborg",
+   "top5": [
+    "Yaxel Lendeborg",
+    "Ty Jerome",
+    "Josh Hart",
+    "Jrue Holiday",
+    "Grayson Allen"
+   ],
+   "actual": "Ja Morant",
+   "swap": "Yaxel Lendeborg"
+  },
+  {
+   "pick": 111,
+   "target": "Ty Jerome",
+   "top5": [
+    "Ty Jerome",
+    "Jrue Holiday",
+    "DeMar DeRozan",
+    "Saddiq Bey",
+    "Keegan Murray"
+   ],
+   "actual": "PJ Washington",
+   "swap": "Ty Jerome"
+  },
+  {
+   "pick": 130,
+   "target": "DeMar DeRozan",
+   "top5": [
+    "DeMar DeRozan",
+    "Grayson Allen",
+    "Keegan Murray",
+    "Deandre Ayton",
+    "Daniel Gafford"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": "Keegan Murray"
+  },
+  {
+   "pick": 135,
+   "target": "DeMar DeRozan",
+   "top5": [
+    "DeMar DeRozan",
+    "Daniel Gafford",
+    "Deandre Ayton",
+    "Jrue Holiday",
+    "Saddiq Bey"
+   ],
+   "actual": "Herbert Jones",
+   "swap": "Deandre Ayton"
+  },
+  {
+   "pick": 154,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "DeMar DeRozan",
+    "Saddiq Bey",
+    "Daniel Gafford",
+    "Julian Champagnie"
+   ],
+   "actual": "Daniel Gafford",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 2.706,
+   "playoff": 48.67,
+   "champ_rank": 9,
+   "ecw": 4.231,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 43.761,
+   "playoff": 99.99,
+   "champ_rank": 1,
+   "ecw": 5.742,
+   "swaps": [
+    [
+     10,
+     "Tyrese Maxey"
+    ],
+    [
+     15,
+     "Chet Holmgren"
+    ],
+    [
+     34,
+     "Kawhi Leonard"
+    ],
+    [
+     39,
+     "Lauri Markkanen"
+    ],
+    [
+     58,
+     "Ryan Rollins"
+    ],
+    [
+     63,
+     "Cameron Boozer"
+    ],
+    [
+     82,
+     "VJ Edgecombe"
+    ],
+    [
+     87,
+     "Immanuel Quickley"
+    ],
+    [
+     106,
+     "Yaxel Lendeborg"
+    ],
+    [
+     111,
+     "Ty Jerome"
+    ],
+    [
+     130,
+     "Keegan Murray"
+    ],
+    [
+     135,
+     "Deandre Ayton"
+    ]
+   ]
+  }
+ }
+}

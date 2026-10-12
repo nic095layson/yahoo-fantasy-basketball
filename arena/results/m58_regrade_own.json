@@ -1,0 +1,213 @@
+{
+ "mock": 58,
+ "tag": "v35",
+ "label": "own",
+ "page_rev": "6426a59",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": null,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Tyrese Maxey",
+    "Tyrese Haliburton",
+    "Jalen Johnson",
+    "Anthony Davis"
+   ],
+   "actual": "Tyrese Haliburton",
+   "swap": "Tyrese Maxey"
+  },
+  {
+   "pick": 15,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Chet Holmgren",
+    "Anthony Davis",
+    "Evan Mobley",
+    "Kevin Durant"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": null
+  },
+  {
+   "pick": 34,
+   "target": "Anthony Davis",
+   "top5": [
+    "Anthony Davis",
+    "Jalen Williams",
+    "Derrick White",
+    "Dyson Daniels",
+    "OG Anunoby"
+   ],
+   "actual": "Anthony Davis",
+   "swap": null
+  },
+  {
+   "pick": 39,
+   "target": "Jalen Williams",
+   "top5": [
+    "Jalen Williams",
+    "Derrick White",
+    "Desmond Bane",
+    "Kyrie Irving",
+    "OG Anunoby"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Jalen Williams"
+  },
+  {
+   "pick": 58,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "OG Anunoby",
+    "Tyler Herro",
+    "Darius Garland",
+    "Damian Lillard"
+   ],
+   "actual": "OG Anunoby",
+   "swap": null
+  },
+  {
+   "pick": 63,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "Tyler Herro",
+    "Darius Garland",
+    "Coby White",
+    "De'Aaron Fox"
+   ],
+   "actual": "Payton Pritchard",
+   "swap": null
+  },
+  {
+   "pick": 82,
+   "target": "Jakob Poeltl",
+   "top5": [
+    "Jakob Poeltl",
+    "Zach LaVine",
+    "Ja Morant",
+    "Coby White",
+    "Miles Bridges"
+   ],
+   "actual": "Miles Bridges",
+   "swap": "Zach LaVine"
+  },
+  {
+   "pick": 87,
+   "target": "Jakob Poeltl",
+   "top5": [
+    "Jakob Poeltl",
+    "Josh Hart",
+    "Miles Bridges",
+    "Isaiah Hartenstein",
+    "Day'Ron Sharpe"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": null
+  },
+  {
+   "pick": 106,
+   "target": "Ja Morant",
+   "top5": [
+    "Ja Morant",
+    "Josh Hart",
+    "PJ Washington",
+    "Collin Gillespie",
+    "Aaron Gordon"
+   ],
+   "actual": "Ja Morant",
+   "swap": null
+  },
+  {
+   "pick": 111,
+   "target": "PJ Washington",
+   "top5": [
+    "PJ Washington",
+    "Daniel Gafford",
+    "Cason Wallace",
+    "Aaron Gordon",
+    "Herbert Jones"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  },
+  {
+   "pick": 130,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Collin Gillespie",
+    "Fred VanVleet",
+    "Quentin Grimes",
+    "Saddiq Bey"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": null
+  },
+  {
+   "pick": 135,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Herbert Jones",
+    "Christian Braun",
+    "Draymond Green",
+    "Saddiq Bey"
+   ],
+   "actual": "Herbert Jones",
+   "swap": null
+  },
+  {
+   "pick": 154,
+   "target": "Daniel Gafford",
+   "top5": [
+    "Daniel Gafford",
+    "Malik Monk",
+    "Saddiq Bey",
+    "Kyle Filipowski",
+    "Jerami Grant"
+   ],
+   "actual": "Daniel Gafford",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 36.75,
+   "playoff": 99.99,
+   "champ_rank": 1,
+   "ecw": 5.667,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 40.894,
+   "playoff": 100.0,
+   "champ_rank": 1,
+   "ecw": 5.744,
+   "swaps": [
+    [
+     10,
+     "Tyrese Maxey"
+    ],
+    [
+     39,
+     "Jalen Williams"
+    ],
+    [
+     82,
+     "Zach LaVine"
+    ]
+   ]
+  }
+ }
+}

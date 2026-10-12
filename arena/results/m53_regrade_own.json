@@ -1,0 +1,237 @@
+{
+ "mock": 53,
+ "tag": "v25",
+ "label": "own",
+ "page_rev": "2e217f9",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": null,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Anthony Davis",
+    "Tyrese Haliburton",
+    "Evan Mobley",
+    "Chet Holmgren"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Anthony Davis"
+  },
+  {
+   "pick": 15,
+   "target": "Jalen Williams",
+   "top5": [
+    "Jalen Williams",
+    "Derrick White",
+    "Austin Reaves",
+    "Desmond Bane",
+    "Stephen Curry"
+   ],
+   "actual": "Karl-Anthony Towns",
+   "swap": "Derrick White"
+  },
+  {
+   "pick": 34,
+   "target": "Karl-Anthony Towns",
+   "top5": [
+    "Karl-Anthony Towns",
+    "Jalen Williams",
+    "Evan Mobley",
+    "Desmond Bane",
+    "Dyson Daniels"
+   ],
+   "actual": "Evan Mobley",
+   "swap": "Karl-Anthony Towns"
+  },
+  {
+   "pick": 39,
+   "target": "Jalen Williams",
+   "top5": [
+    "Jalen Williams",
+    "Desmond Bane",
+    "Kyrie Irving",
+    "Dyson Daniels",
+    "OG Anunoby"
+   ],
+   "actual": "Jalen Williams",
+   "swap": null
+  },
+  {
+   "pick": 58,
+   "target": "Payton Pritchard",
+   "top5": [
+    "Payton Pritchard",
+    "OG Anunoby",
+    "Dyson Daniels",
+    "Tyler Herro",
+    "Darius Garland"
+   ],
+   "actual": "Damian Lillard",
+   "swap": "Payton Pritchard"
+  },
+  {
+   "pick": 63,
+   "target": "OG Anunoby",
+   "top5": [
+    "OG Anunoby",
+    "Darius Garland",
+    "Tyler Herro",
+    "Damian Lillard",
+    "Cameron Johnson"
+   ],
+   "actual": "OG Anunoby",
+   "swap": null
+  },
+  {
+   "pick": 82,
+   "target": "Cameron Johnson",
+   "top5": [
+    "Cameron Johnson",
+    "Tari Eason",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Christian Braun"
+   ],
+   "actual": "Immanuel Quickley",
+   "swap": "Tari Eason"
+  },
+  {
+   "pick": 87,
+   "target": "Cameron Johnson",
+   "top5": [
+    "Cameron Johnson",
+    "Christian Braun",
+    "Jakob Poeltl",
+    "Myles Turner",
+    "Ja Morant"
+   ],
+   "actual": "Myles Turner",
+   "swap": "Christian Braun"
+  },
+  {
+   "pick": 106,
+   "target": "Myles Turner",
+   "top5": [
+    "Myles Turner",
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Ja Morant",
+    "Brook Lopez"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Myles Turner"
+  },
+  {
+   "pick": 111,
+   "target": "Jakob Poeltl",
+   "top5": [
+    "Jakob Poeltl",
+    "Cameron Johnson",
+    "Brook Lopez",
+    "Immanuel Quickley",
+    "PJ Washington"
+   ],
+   "actual": "Reed Sheppard",
+   "swap": "Jakob Poeltl"
+  },
+  {
+   "pick": 130,
+   "target": "Cameron Johnson",
+   "top5": [
+    "Cameron Johnson",
+    "Jordan Poole",
+    "Brook Lopez",
+    "Immanuel Quickley",
+    "Saddiq Bey"
+   ],
+   "actual": "Tre Jones",
+   "swap": "Immanuel Quickley"
+  },
+  {
+   "pick": 135,
+   "target": "Cameron Johnson",
+   "top5": [
+    "Cameron Johnson",
+    "Brook Lopez",
+    "Jordan Poole",
+    "Collin Gillespie",
+    "Quentin Grimes"
+   ],
+   "actual": "Cameron Johnson",
+   "swap": null
+  },
+  {
+   "pick": 154,
+   "target": "Brook Lopez",
+   "top5": [
+    "Brook Lopez",
+    "PJ Washington",
+    "Jordan Poole",
+    "Quentin Grimes",
+    "Malik Monk"
+   ],
+   "actual": "PJ Washington",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 31.1,
+   "playoff": 99.95,
+   "champ_rank": 1,
+   "ecw": 5.563,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 46.144,
+   "playoff": 100.0,
+   "champ_rank": 1,
+   "ecw": 5.892,
+   "swaps": [
+    [
+     10,
+     "Anthony Davis"
+    ],
+    [
+     15,
+     "Derrick White"
+    ],
+    [
+     34,
+     "Karl-Anthony Towns"
+    ],
+    [
+     58,
+     "Payton Pritchard"
+    ],
+    [
+     82,
+     "Tari Eason"
+    ],
+    [
+     87,
+     "Christian Braun"
+    ],
+    [
+     106,
+     "Myles Turner"
+    ],
+    [
+     111,
+     "Jakob Poeltl"
+    ],
+    [
+     130,
+     "Immanuel Quickley"
+    ]
+   ]
+  }
+ }
+}

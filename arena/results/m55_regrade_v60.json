@@ -1,0 +1,245 @@
+{
+ "mock": 55,
+ "tag": "v60",
+ "label": "v60",
+ "page_rev": "eaf2b72",
+ "seasons": 6000,
+ "seeds": [
+  11,
+  23,
+  47
+ ],
+ "card_rule": 11,
+ "chain": [
+  {
+   "pick": 10,
+   "target": "Jamal Murray",
+   "top5": [
+    "Jamal Murray",
+    "Kawhi Leonard",
+    "Lauri Markkanen",
+    "Kevin Durant",
+    "Donovan Mitchell"
+   ],
+   "actual": "Jayson Tatum",
+   "swap": "Jamal Murray"
+  },
+  {
+   "pick": 15,
+   "target": "Kawhi Leonard",
+   "top5": [
+    "Kawhi Leonard",
+    "Lauri Markkanen",
+    "Scottie Barnes",
+    "Amen Thompson",
+    "Bam Adebayo"
+   ],
+   "actual": "Scottie Barnes",
+   "swap": "Kawhi Leonard"
+  },
+  {
+   "pick": 34,
+   "target": "Lauri Markkanen",
+   "top5": [
+    "Lauri Markkanen",
+    "Bam Adebayo",
+    "Donovan Clingan",
+    "Onyeka Okongwu",
+    "Walker Kessler"
+   ],
+   "actual": "Kyrie Irving",
+   "swap": "Lauri Markkanen"
+  },
+  {
+   "pick": 39,
+   "target": "Walker Kessler",
+   "top5": [
+    "Walker Kessler",
+    "Onyeka Okongwu",
+    "Donovan Clingan",
+    "Ryan Rollins",
+    "Joel Embiid"
+   ],
+   "actual": "Desmond Bane",
+   "swap": "Walker Kessler"
+  },
+  {
+   "pick": 58,
+   "target": "Ryan Rollins",
+   "top5": [
+    "Ryan Rollins",
+    "Donovan Clingan",
+    "Joel Embiid",
+    "Ty Jerome",
+    "Naz Reid"
+   ],
+   "actual": "Donovan Clingan",
+   "swap": "Ryan Rollins"
+  },
+  {
+   "pick": 63,
+   "target": "Donovan Clingan",
+   "top5": [
+    "Donovan Clingan",
+    "Cameron Boozer",
+    "Ty Jerome",
+    "Naz Reid",
+    "VJ Edgecombe"
+   ],
+   "actual": "De'Aaron Fox",
+   "swap": "Donovan Clingan"
+  },
+  {
+   "pick": 82,
+   "target": "Ty Jerome",
+   "top5": [
+    "Ty Jerome",
+    "Cameron Boozer",
+    "De'Aaron Fox",
+    "Reed Sheppard",
+    "Keyonte George"
+   ],
+   "actual": "Jakob Poeltl",
+   "swap": "Ty Jerome"
+  },
+  {
+   "pick": 87,
+   "target": "Cameron Boozer",
+   "top5": [
+    "Cameron Boozer",
+    "De'Aaron Fox",
+    "Reed Sheppard",
+    "Collin Gillespie",
+    "Jalen Suggs"
+   ],
+   "actual": "Cameron Johnson",
+   "swap": "Cameron Boozer"
+  },
+  {
+   "pick": 106,
+   "target": "Reed Sheppard",
+   "top5": [
+    "Reed Sheppard",
+    "Collin Gillespie",
+    "Grayson Allen",
+    "Yaxel Lendeborg",
+    "Ayo Dosunmu"
+   ],
+   "actual": "Tari Eason",
+   "swap": "Reed Sheppard"
+  },
+  {
+   "pick": 111,
+   "target": "Collin Gillespie",
+   "top5": [
+    "Collin Gillespie",
+    "Ayo Dosunmu",
+    "Yaxel Lendeborg",
+    "Grayson Allen",
+    "Jrue Holiday"
+   ],
+   "actual": "Christian Braun",
+   "swap": "Ayo Dosunmu"
+  },
+  {
+   "pick": 130,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Neemias Queta",
+    "Saddiq Bey",
+    "DeMar DeRozan",
+    "Collin Gillespie"
+   ],
+   "actual": "Jordan Poole",
+   "swap": "Neemias Queta"
+  },
+  {
+   "pick": 135,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Collin Gillespie",
+    "DeMar DeRozan",
+    "Saddiq Bey",
+    "Jrue Holiday"
+   ],
+   "actual": "Collin Gillespie",
+   "swap": null
+  },
+  {
+   "pick": 154,
+   "target": "Grayson Allen",
+   "top5": [
+    "Grayson Allen",
+    "Kyshawn George",
+    "Royce O'Neale",
+    "Bobby Portis",
+    "Bradley Beal"
+   ],
+   "actual": "Malik Monk",
+   "swap": null
+  }
+ ],
+ "results": {
+  "as_drafted": {
+   "champ": 1.678,
+   "playoff": 39.78,
+   "champ_rank": 11,
+   "ecw": 4.132,
+   "swaps": []
+  },
+  "follow_card_selfconsistent": {
+   "champ": 34.772,
+   "playoff": 99.89,
+   "champ_rank": 1,
+   "ecw": 5.426,
+   "swaps": [
+    [
+     10,
+     "Jamal Murray"
+    ],
+    [
+     15,
+     "Kawhi Leonard"
+    ],
+    [
+     34,
+     "Lauri Markkanen"
+    ],
+    [
+     39,
+     "Walker Kessler"
+    ],
+    [
+     58,
+     "Ryan Rollins"
+    ],
+    [
+     63,
+     "Donovan Clingan"
+    ],
+    [
+     82,
+     "Ty Jerome"
+    ],
+    [
+     87,
+     "Cameron Boozer"
+    ],
+    [
+     106,
+     "Reed Sheppard"
+    ],
+    [
+     111,
+     "Ayo Dosunmu"
+    ],
+    [
+     130,
+     "Neemias Queta"
+    ]
+   ]
+  }
+ }
+}
