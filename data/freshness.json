@@ -1,9 +1,9 @@
 {
   "date": "2026-10-12",
-  "note": "2026-10-12 daily pull (WO-3): the four 10/11 finals (Mavericks-Rockets in Macao, Cavaliers-Magic, Hornets-Bucks, Nuggets-Bulls) read from ESPN's feed; the league injuries feed (130 rows) diffed both ways against the 51-row tag inventory; the Basketball-Reference ledger (newest block 10/8) read directly (NBA.com's pages egress-blocked); 32 dated queries (four recaps, ten open-item receipts, the ledger, the league injury report, seven team shadows, the follow-ups); 93 dated notes on 93 rows; no line, tag or placement change; Maxime Raynaud's two-week re-evaluation (Kings 10/11) to the owner's sheet as D-1012-1; deck v58",
+  "note": "2026-10-12 ADP refresh rebuild (v59): the 10/9 price file re-priced from Hashtag's 12 October page (Yahoo ADP column, owner upload Hashtag_ADP_10.12.26; 169 of 250 names re-priced, mean move 0.48 places, max 3.5, none of 5 or more; Tre Jones and Maxime Raynaud keep the 10/9 ADP); pool identical to v58 (the 10/12 pull: the four 10/11 finals, 93 notes, no line, tag or placement change; rosters verified direct-complete 335/335)",
   "pool_changes": {
-    "changed": true,
-    "note": "notes only: 93 dated notes on 93 rows (the four box scores on 75 rows, the sweep on 18); no tag, placement or line changed"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-10-12",
