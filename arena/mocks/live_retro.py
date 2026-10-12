@@ -41,7 +41,10 @@ POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v50": SP + "/m68_players_v50.csv",
          # v53 = data/players.csv at the 2026-10-09 ADP refresh (the pool is v52's, byte-identical; the page's
          # prices differ) — the owner's before/after re-grade of the last 15 rooms (--rev picks the price page)
-         "v53": SP + "/players_v53.csv"}
+         "v53": SP + "/players_v53.csv",
+         # v58 = data/players.csv at deck main df1c754 (the 2026-10-12 daily-pull build, v58): the values equal v53's
+         # except Isaiah Stewart (inj-ankle-risk since v56, D-1010-2: availability 1.0 -> 0.78); regenerated from git
+         "v58": SP + "/m74_players_v58.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -83,6 +86,8 @@ V42_REV = "6ae36ab"
 # v44 = data/players.csv as of the 2026-10-06 daily-pull build (deck v44) (mock 61; pool sha 48456b3b18ff),
 # pinned to rev 583435c.
 V44_REV = "583435c"
+# v58 = data/players.csv as of the 2026-10-12 daily-pull build (deck v58; mock 74; pool sha 5e4acef794a2), pinned to rev df1c754.
+V58_REV = "df1c754"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -172,6 +177,10 @@ MOCKS = {
     # values, prices and pool identical to v53, so tag v53 = players_v53.csv); the owner's seven "off the card" echoes replay
     # identically on the v54 page. One halt ("Jalen"), one undo (Gordon at #110), 19 shared-token feeds, two heads-ups.
     73: dict(tags=("v53",), veto=True),
+    # mock 74 (2026-10-12, slot 10): public Yahoo room (random humans), drafted on deck v58 (rev df1c754, the 10/12 daily-pull
+    # build; the 10/9 Yahoo prices baked; tag v58 = m74_players_v58.csv, Stewart's availability the one value change since
+    # v53), pasted into the chat as the tracker's export JSON (one UNKNOWN, #112 "Jurkic" = Nurkic) plus Yahoo's recap; no tool log.
+    74: dict(tags=("v58",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -202,7 +211,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV), ("v39", V39_REV), ("v42", V42_REV), ("v44", V44_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV), ("v39", V39_REV), ("v42", V42_REV), ("v44", V44_REV), ("v58", V58_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:
@@ -718,7 +727,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a"}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a", 74: "df1c754"}
 if REV_OVERRIDE:
     PAGE_REV[MOCK] = REV_OVERRIDE
 
