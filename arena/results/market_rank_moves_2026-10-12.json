@@ -1,0 +1,1035 @@
+{
+ "before_file": "yahoo-2026-10-09.csv",
+ "after_file": "yahoo-2026-10-12.csv",
+ "rows": 246,
+ "price_changed": 142,
+ "order_changed": 112,
+ "max_shift": 16,
+ "sources_before": {
+  "ADP": 184,
+  "XR": 62
+ },
+ "sources_after": {
+  "ADP": 184,
+  "XR": 62
+ },
+ "one_side_only": [],
+ "priced_off_board": [
+  "Dereck Lively II",
+  "Jimmy Butler",
+  "Jusuf Nurkic",
+  "Mark Williams",
+  "Max Strus",
+  "Shaedon Sharpe"
+ ],
+ "moves": [
+  {
+   "player": "John Collins",
+   "rank_before": 140,
+   "rank_after": 124,
+   "price_before": 114.5,
+   "price_after": 111.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Keegan Murray",
+   "rank_before": 168,
+   "rank_after": 152,
+   "price_before": 119.0,
+   "price_after": 116.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ty Jerome",
+   "rank_before": 133,
+   "rank_after": 117,
+   "price_before": 113.7,
+   "price_after": 110.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Brandin Podziemski",
+   "rank_before": 160,
+   "rank_after": 149,
+   "price_before": 117.3,
+   "price_after": 115.9,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Toumani Camara",
+   "rank_before": 123,
+   "rank_after": 131,
+   "price_before": 111.6,
+   "price_after": 112.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Aaron Nesmith",
+   "rank_before": 125,
+   "rank_after": 118,
+   "price_before": 111.9,
+   "price_after": 110.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Collin Murray-Boyles",
+   "rank_before": 134,
+   "rank_after": 127,
+   "price_before": 113.7,
+   "price_after": 111.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ajay Mitchell",
+   "rank_before": 159,
+   "rank_after": 164,
+   "price_before": 117.2,
+   "price_after": 118.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Dillon Brooks",
+   "rank_before": 132,
+   "rank_after": 137,
+   "price_before": 113.4,
+   "price_after": 113.6,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Neemias Queta",
+   "rank_before": 156,
+   "rank_after": 151,
+   "price_before": 117.0,
+   "price_after": 116.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Scotty Pippen Jr.",
+   "rank_before": 138,
+   "rank_after": 143,
+   "price_before": 114.4,
+   "price_after": 114.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ausar Thompson",
+   "rank_before": 85,
+   "rank_after": 81,
+   "price_before": 82.0,
+   "price_after": 80.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Cameron Johnson",
+   "rank_before": 139,
+   "rank_after": 135,
+   "price_before": 114.5,
+   "price_after": 113.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "DeMar DeRozan",
+   "rank_before": 106,
+   "rank_after": 110,
+   "price_before": 107.0,
+   "price_after": 108.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Devin Vassell",
+   "rank_before": 142,
+   "rank_after": 138,
+   "price_before": 114.8,
+   "price_after": 114.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jaime Jaquez Jr.",
+   "rank_before": 128,
+   "rank_after": 132,
+   "price_before": 112.3,
+   "price_after": 112.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jonathan Kuminga",
+   "rank_before": 149,
+   "rank_after": 153,
+   "price_before": 116.1,
+   "price_after": 116.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jordan Poole",
+   "rank_before": 119,
+   "rank_after": 123,
+   "price_before": 111.0,
+   "price_after": 111.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kyle Kuzma",
+   "rank_before": 153,
+   "rank_after": 157,
+   "price_before": 116.7,
+   "price_after": 116.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Nic Claxton",
+   "rank_before": 90,
+   "rank_after": 94,
+   "price_before": 91.5,
+   "price_after": 94.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "PJ Washington",
+   "rank_before": 151,
+   "rank_after": 155,
+   "price_before": 116.4,
+   "price_after": 116.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Tari Eason",
+   "rank_before": 150,
+   "rank_after": 146,
+   "price_before": 116.3,
+   "price_after": 115.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ace Bailey",
+   "rank_before": 157,
+   "rank_after": 160,
+   "price_before": 117.1,
+   "price_after": 116.9,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Alex Caruso",
+   "rank_before": 111,
+   "rank_after": 108,
+   "price_before": 108.7,
+   "price_after": 107.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Alex Sarr",
+   "rank_before": 72,
+   "rank_after": 69,
+   "price_before": 70.3,
+   "price_after": 68.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ayo Dosunmu",
+   "rank_before": 130,
+   "rank_after": 133,
+   "price_before": 112.6,
+   "price_after": 113.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Cason Wallace",
+   "rank_before": 165,
+   "rank_after": 168,
+   "price_before": 118.4,
+   "price_after": 118.9,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Grayson Allen",
+   "rank_before": 136,
+   "rank_after": 139,
+   "price_before": 114.3,
+   "price_after": 114.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Isaiah Stewart",
+   "rank_before": 131,
+   "rank_after": 134,
+   "price_before": 113.2,
+   "price_after": 113.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jared McCain",
+   "rank_before": 122,
+   "rank_after": 125,
+   "price_before": 111.5,
+   "price_after": 111.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Keaton Wagler",
+   "rank_before": 155,
+   "rank_after": 158,
+   "price_before": 116.8,
+   "price_after": 116.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kyle Filipowski",
+   "rank_before": 137,
+   "rank_after": 140,
+   "price_before": 114.4,
+   "price_after": 114.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kyrie Irving",
+   "rank_before": 50,
+   "rank_after": 47,
+   "price_before": 50.8,
+   "price_after": 49.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Paul Reed",
+   "rank_before": 126,
+   "rank_after": 129,
+   "price_before": 112.0,
+   "price_after": 111.9,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "RJ Barrett",
+   "rank_before": 127,
+   "rank_after": 130,
+   "price_before": 112.3,
+   "price_after": 112.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Yaxel Lendeborg",
+   "rank_before": 144,
+   "rank_after": 141,
+   "price_before": 115.1,
+   "price_after": 114.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Aaron Gordon",
+   "rank_before": 120,
+   "rank_after": 122,
+   "price_before": 111.1,
+   "price_after": 111.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Andrew Nembhard",
+   "rank_before": 143,
+   "rank_after": 145,
+   "price_before": 114.8,
+   "price_after": 115.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Anthony Black",
+   "rank_before": 170,
+   "rank_after": 172,
+   "price_before": 119.2,
+   "price_after": 119.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Bobby Portis",
+   "rank_before": 118,
+   "rank_after": 120,
+   "price_before": 111.0,
+   "price_after": 110.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Brandon Ingram",
+   "rank_before": 70,
+   "rank_after": 72,
+   "price_before": 69.2,
+   "price_after": 71.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Collin Sexton",
+   "rank_before": 152,
+   "rank_after": 154,
+   "price_before": 116.6,
+   "price_after": 116.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Darius Acuff Jr.",
+   "rank_before": 114,
+   "rank_after": 112,
+   "price_before": 108.9,
+   "price_after": 108.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Darius Garland",
+   "rank_before": 59,
+   "rank_after": 57,
+   "price_before": 62.3,
+   "price_after": 61.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Davion Mitchell",
+   "rank_before": 164,
+   "rank_after": 166,
+   "price_before": 118.0,
+   "price_after": 118.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Deandre Ayton",
+   "rank_before": 124,
+   "rank_after": 126,
+   "price_before": 111.7,
+   "price_after": 111.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jabari Smith Jr.",
+   "rank_before": 93,
+   "rank_after": 91,
+   "price_before": 93.6,
+   "price_after": 93.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jerami Grant",
+   "rank_before": 154,
+   "rank_after": 156,
+   "price_before": 116.8,
+   "price_after": 116.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jrue Holiday",
+   "rank_before": 146,
+   "rank_after": 144,
+   "price_before": 115.5,
+   "price_after": 115.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Julian Champagnie",
+   "rank_before": 117,
+   "rank_after": 119,
+   "price_before": 110.7,
+   "price_after": 110.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kevin Porter Jr.",
+   "rank_before": 172,
+   "rank_after": 170,
+   "price_before": 119.3,
+   "price_after": 119.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Michael Porter Jr.",
+   "rank_before": 58,
+   "rank_after": 60,
+   "price_before": 61.2,
+   "price_after": 62.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Mikal Bridges",
+   "rank_before": 82,
+   "rank_after": 84,
+   "price_before": 81.3,
+   "price_after": 81.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Mikel Brown Jr.",
+   "rank_before": 163,
+   "rank_after": 161,
+   "price_before": 118.0,
+   "price_after": 117.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Myles Turner",
+   "rank_before": 99,
+   "rank_after": 101,
+   "price_before": 101.1,
+   "price_after": 103.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Payton Pritchard",
+   "rank_before": 83,
+   "rank_after": 85,
+   "price_before": 81.5,
+   "price_after": 82.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Peyton Watson",
+   "rank_before": 145,
+   "rank_after": 147,
+   "price_before": 115.1,
+   "price_after": 115.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Stephen Curry",
+   "rank_before": 20,
+   "rank_after": 22,
+   "price_before": 23.1,
+   "price_after": 23.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Tre Jones",
+   "rank_before": 148,
+   "rank_after": 150,
+   "price_before": 115.9,
+   "price_after": 115.9,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Trey Murphy III",
+   "rank_before": 38,
+   "rank_after": 36,
+   "price_before": 37.5,
+   "price_after": 36.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Wendell Carter Jr.",
+   "rank_before": 174,
+   "rank_after": 176,
+   "price_before": 119.6,
+   "price_after": 120.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Aday Mara",
+   "rank_before": 108,
+   "rank_after": 107,
+   "price_before": 107.7,
+   "price_after": 107.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Amen Thompson",
+   "rank_before": 22,
+   "rank_after": 21,
+   "price_before": 23.2,
+   "price_after": 23.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Bennedict Mathurin",
+   "rank_before": 147,
+   "rank_after": 148,
+   "price_before": 115.8,
+   "price_after": 115.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Brandon Miller",
+   "rank_before": 45,
+   "rank_after": 44,
+   "price_before": 44.9,
+   "price_after": 44.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Brook Lopez",
+   "rank_before": 113,
+   "rank_after": 114,
+   "price_before": 108.8,
+   "price_after": 108.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Coby White",
+   "rank_before": 88,
+   "rank_after": 89,
+   "price_before": 89.2,
+   "price_after": 90.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Collin Gillespie",
+   "rank_before": 180,
+   "rank_after": 181,
+   "price_before": 123.0,
+   "price_after": 123.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Damian Lillard",
+   "rank_before": 69,
+   "rank_after": 70,
+   "price_before": 69.1,
+   "price_after": 69.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Daniel Gafford",
+   "rank_before": 181,
+   "rank_after": 180,
+   "price_before": 123.5,
+   "price_after": 123.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Darryn Peterson",
+   "rank_before": 103,
+   "rank_after": 102,
+   "price_before": 103.3,
+   "price_after": 103.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Day'Ron Sharpe",
+   "rank_before": 94,
+   "rank_after": 93,
+   "price_before": 94.5,
+   "price_after": 94.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Deni Avdija",
+   "rank_before": 40,
+   "rank_after": 39,
+   "price_before": 40.8,
+   "price_after": 40.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Derrick White",
+   "rank_before": 44,
+   "rank_after": 45,
+   "price_before": 44.8,
+   "price_after": 45.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Donovan Mitchell",
+   "rank_before": 12,
+   "rank_after": 13,
+   "price_before": 13.7,
+   "price_after": 13.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Draymond Green",
+   "rank_before": 107,
+   "rank_after": 106,
+   "price_before": 107.4,
+   "price_after": 107.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Dylan Harper",
+   "rank_before": 84,
+   "rank_after": 83,
+   "price_before": 81.8,
+   "price_after": 81.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Egor Demin",
+   "rank_before": 166,
+   "rank_after": 165,
+   "price_before": 118.4,
+   "price_after": 118.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Fred VanVleet",
+   "rank_before": 161,
+   "rank_after": 162,
+   "price_before": 117.7,
+   "price_after": 117.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Immanuel Quickley",
+   "rank_before": 95,
+   "rank_after": 96,
+   "price_before": 96.0,
+   "price_after": 96.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ivica Zubac",
+   "rank_before": 60,
+   "rank_after": 59,
+   "price_before": 62.7,
+   "price_after": 61.9,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ja Morant",
+   "rank_before": 89,
+   "rank_after": 88,
+   "price_before": 89.4,
+   "price_after": 89.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jaden McDaniels",
+   "rank_before": 91,
+   "rank_after": 90,
+   "price_before": 91.7,
+   "price_after": 92.1,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jalen Green",
+   "rank_before": 101,
+   "rank_after": 100,
+   "price_before": 102.1,
+   "price_after": 101.9,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Jalen Williams",
+   "rank_before": 39,
+   "rank_after": 40,
+   "price_before": 40.2,
+   "price_after": 40.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Joel Embiid",
+   "rank_before": 49,
+   "rank_after": 50,
+   "price_before": 50.3,
+   "price_after": 50.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Josh Giddey",
+   "rank_before": 21,
+   "rank_after": 20,
+   "price_before": 23.1,
+   "price_after": 23.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Josh Hart",
+   "rank_before": 96,
+   "rank_after": 95,
+   "price_before": 96.0,
+   "price_after": 96.0,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kel'el Ware",
+   "rank_before": 76,
+   "rank_after": 77,
+   "price_before": 76.0,
+   "price_after": 76.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Klay Thompson",
+   "rank_before": 112,
+   "rank_after": 113,
+   "price_before": 108.8,
+   "price_after": 108.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kon Knueppel",
+   "rank_before": 47,
+   "rank_after": 48,
+   "price_before": 48.9,
+   "price_after": 49.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kristaps Porzingis",
+   "rank_before": 102,
+   "rank_after": 103,
+   "price_before": 102.7,
+   "price_after": 103.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Kyshawn George",
+   "rank_before": 175,
+   "rank_after": 174,
+   "price_before": 119.7,
+   "price_after": 119.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Lauri Markkanen",
+   "rank_before": 36,
+   "rank_after": 37,
+   "price_before": 37.1,
+   "price_after": 36.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "LeBron James",
+   "rank_before": 37,
+   "rank_after": 38,
+   "price_before": 37.2,
+   "price_after": 37.6,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Maxime Raynaud",
+   "rank_before": 162,
+   "rank_after": 163,
+   "price_before": 117.7,
+   "price_after": 117.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Mitchell Robinson",
+   "rank_before": 110,
+   "rank_after": 111,
+   "price_before": 108.3,
+   "price_after": 108.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Moussa Diabate",
+   "rank_before": 141,
+   "rank_after": 142,
+   "price_before": 114.6,
+   "price_after": 114.6,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Nickeil Alexander-Walker",
+   "rank_before": 57,
+   "rank_after": 58,
+   "price_before": 60.9,
+   "price_after": 61.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Nikola Vucevic",
+   "rank_before": 135,
+   "rank_after": 136,
+   "price_before": 114.0,
+   "price_after": 113.3,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "OG Anunoby",
+   "rank_before": 65,
+   "rank_after": 64,
+   "price_before": 67.9,
+   "price_after": 67.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Pascal Siakam",
+   "rank_before": 48,
+   "rank_after": 49,
+   "price_before": 50.0,
+   "price_after": 50.2,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Paul George",
+   "rank_before": 81,
+   "rank_after": 82,
+   "price_before": 80.8,
+   "price_after": 80.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Rui Hachimura",
+   "rank_before": 158,
+   "rank_after": 159,
+   "price_before": 117.1,
+   "price_after": 116.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Ryan Rollins",
+   "rank_before": 75,
+   "rank_after": 74,
+   "price_before": 75.3,
+   "price_after": 74.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Saddiq Bey",
+   "rank_before": 176,
+   "rank_after": 175,
+   "price_before": 119.8,
+   "price_after": 119.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Tobias Harris",
+   "rank_before": 129,
+   "rank_after": 128,
+   "price_before": 112.6,
+   "price_after": 111.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Tyrese Haliburton",
+   "rank_before": 13,
+   "rank_after": 12,
+   "price_before": 13.8,
+   "price_after": 13.5,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "VJ Edgecombe",
+   "rank_before": 74,
+   "rank_after": 75,
+   "price_before": 74.7,
+   "price_after": 74.6,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Zach Edey",
+   "rank_before": 77,
+   "rank_after": 76,
+   "price_before": 76.1,
+   "price_after": 75.4,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Zach LaVine",
+   "rank_before": 100,
+   "rank_after": 99,
+   "price_before": 101.2,
+   "price_after": 101.8,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  },
+  {
+   "player": "Zion Williamson",
+   "rank_before": 64,
+   "rank_after": 65,
+   "price_before": 67.5,
+   "price_after": 67.7,
+   "src_before": "ADP",
+   "src_after": "ADP"
+  }
+ ]
+}
