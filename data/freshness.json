@@ -1,13 +1,13 @@
 {
- "date": "2026-10-13",
- "note": "2026-10-13 MG pass (v61, the Council's recommendation, owner 'proceed'): minutes and games for the top-150 players on a new team or with a base season under 50 games (47 candidates) moved to the Yahoo 10/06 and Hashtag 10/12 consensus where both outlets agree — MG-1: 15 minutes moves (8 up, 7 down), rates unchanged, steals and blocks ride along, points by identity, applied through the WO-5 pipeline seeded with the 10/12 range resolution (the range rule re-ran and re-fixed Dejounte Murray at 29.2); MG-2: 5 games moves on the kit plane only (the deck's modifier is tag-based); 32 candidates held (references split, within tolerance, or single-source: Ayton); no tag, team, games or placement change on this plane; rosters verified direct-complete 335/335",
- "pool_changes": {
-  "changed": true,
-  "note": "MG pass: 15 stat lines moved with their minutes (data/players.csv stat columns + one dated note entry on each of the 15 rows) and a dated games note on the five MG-2 rows (17 rows' notes in all; no stat, tag or placement change on those two games-only rows — Poeltl and Robinson waived by name on gate 7, D-MG-2); no row added or removed, no tag, team or position change"
- },
- "rosters_verified": {
   "date": "2026-10-13",
-  "mode": "direct-complete",
-  "sources": "scripts/verify_rosters.py direct-complete run 2026-10-13 (site.api.espn.com (all 30 rosters), all 30 rosters; roster_verification.json dated 2026-10-13); 335/335 on the feed, 0 mismatches, no exemption"
- }
+  "note": "2026-10-13 daily pull (WO-3) on top of the morning's MG pass (v62): the five 10/12 finals read from ESPN's feed (Trail Blazers 119 London Lions 66; Hawks 113 Thunder 110; Nets 131 Wizards 122; Timberwolves 122 Knicks 104; Jazz 119 Spurs 109), the league injuries feed diffed both ways (137 rows), the Basketball-Reference ledger read directly (10/9-10/11 blocks, no pool placement moved), 32 dated queries (five recaps, seven team shadows, the ten open-item receipts with five narrowed follow-ups); 117 dated notes; ONE tag change \u2014 Maxime Raynaud inj-knee-risk (D-1012-1 default (a) applied, the owner silent since 10/12; the kit's GP 72 to 66 is the twin; no rank moves, he sits below the pool mean); no line, team or placement change; rosters verified direct-complete 335/335",
+  "pool_changes": {
+    "changed": true,
+    "note": "daily pull 10/13: 117 dated notes appended (the five 10/12 box scores on 81 rows, the sweep and receipts on 36) and one leading tag on Maxime Raynaud (inj-knee-risk, D-1012-1 default (a)); no stat, team or position change; no row added or removed"
+  },
+  "rosters_verified": {
+    "date": "2026-10-13",
+    "mode": "direct-complete",
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-13 (site.api.espn.com (all 30 rosters), all 30 rosters; roster_verification.json dated 2026-10-13); 335/335 on the feed, 0 mismatches, no exemption"
+  }
 }
