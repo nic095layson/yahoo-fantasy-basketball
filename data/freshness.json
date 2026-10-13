@@ -1,9 +1,9 @@
 {
   "date": "2026-10-13",
-  "note": "2026-10-13 daily pull (WO-3) on top of the morning's MG pass (v62): the five 10/12 finals read from ESPN's feed (Trail Blazers 119 London Lions 66; Hawks 113 Thunder 110; Nets 131 Wizards 122; Timberwolves 122 Knicks 104; Jazz 119 Spurs 109), the league injuries feed diffed both ways (137 rows), the Basketball-Reference ledger read directly (10/9-10/11 blocks, no pool placement moved), 32 dated queries (five recaps, seven team shadows, the ten open-item receipts with five narrowed follow-ups); 117 dated notes; ONE tag change \u2014 Maxime Raynaud inj-knee-risk (D-1012-1 default (a) applied, the owner silent since 10/12; the kit's GP 72 to 66 is the twin; no rank moves, he sits below the pool mean); no line, team or placement change; rosters verified direct-complete 335/335",
+  "note": "2026-10-13 WO-4 re-price (v63 pool unchanged): the owner's Yahoo projected-stats paste as of 10/13 (300 rows, 187 with ADP) landed on the kit as yahoo-2026-10-13.csv and yahoo-proj-2026-10-13.csv (transcription gate PASS, I7 297/300, absence gate PASS, derived 24/24); the deck's Mkt rank re-reads it at build \u2014 294 of 335 rows priced (was 246 on the 10/12 file), 48 rows newly priced, 152 of the 246 rows already priced change market order (mean 3.5 places); no stat, tag, team or placement change on this plane; rosters verified direct-complete 335/335 earlier today",
   "pool_changes": {
-    "changed": true,
-    "note": "daily pull 10/13: 117 dated notes appended (the five 10/12 box scores on 81 rows, the sweep and receipts on 36) and one leading tag on Maxime Raynaud (inj-knee-risk, D-1012-1 default (a)); no stat, team or position change; no row added or removed"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-10-13",
