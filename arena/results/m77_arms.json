@@ -1,0 +1,115 @@
+{
+ "as_drafted": {
+  "champ": 35.983,
+  "playoff": 99.91,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#10:Jamal Murray": {
+  "champ": 37.644,
+  "playoff": 99.97,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jamal Murray"
+   ]
+  ]
+ },
+ "swap#15:Chet Holmgren": {
+  "champ": 37.9,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Chet Holmgren"
+   ]
+  ]
+ },
+ "swap#34:Lauri Markkanen": {
+  "champ": 37.833,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Lauri Markkanen"
+   ]
+  ]
+ },
+ "swap#39:Donovan Clingan": {
+  "champ": 40.144,
+  "playoff": 99.96,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Donovan Clingan"
+   ]
+  ]
+ },
+ "swap#87:Jabari Smith Jr.": {
+  "champ": 36.489,
+  "playoff": 99.92,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    87,
+    "Jabari Smith Jr."
+   ]
+  ]
+ },
+ "swap#106:Myles Turner": {
+  "champ": 36.328,
+  "playoff": 99.92,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#111:Myles Turner": {
+  "champ": 38.828,
+  "playoff": 99.95,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#130:PJ Washington": {
+  "champ": 39.394,
+  "playoff": 99.94,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "PJ Washington"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 38.044,
+  "playoff": 99.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Chet Holmgren"
+   ],
+   [
+    39,
+    "Dyson Daniels"
+   ]
+  ]
+ }
+}
