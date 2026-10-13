@@ -76,13 +76,18 @@ def main():
     print(f"  {'ok  ' if silent else 'FAIL'} trigger: 'draft in' trivia -> silent")
 
     # --- (d): Stop gate on synthetic transcripts ----------------------------------------------
-    def transcript(prompt, skill_loaded, list_content=False, meta_after=False):
+    def transcript(prompt, skill_loaded, list_content=False, meta_after=False, notification_after=None):
         u = {"type": "user", "message": {"role": "user", "content": ([{"type": "text", "text": prompt}] if list_content else prompt)}}
         a_blocks = [{"type": "text", "text": "answer"}]
         if skill_loaded:
             a_blocks.insert(0, {"type": "tool_use", "name": "Skill", "input": {"skill": skill_loaded}})
         a = {"type": "assistant", "message": {"role": "assistant", "content": a_blocks}}
         rows = [u, a]
+        if notification_after:
+            # a background task finishing mid-turn arrives as a user entry with harness text, then the
+            # assistant finishes; before 2026-10-13 the gate took this text as "the prompt" and allowed
+            rows.append({"type": "user", "message": {"role": "user", "content": notification_after}})
+            rows.append({"type": "assistant", "message": {"role": "assistant", "content": [{"type": "text", "text": "done"}]}})
         if meta_after:
             # what the harness writes after a Skill load: the skill's own text as an isMeta user entry
             # (its text reads as governed work: "analyze", "review", "assess") and a hook-feedback entry
@@ -103,6 +108,12 @@ def main():
         ("governed, NOT loaded, isMeta entries present -> BLOCK", transcript(CASES[0][0], None, meta_after=True), "block"),
         ("requirement only (advisory) -> ALLOW", transcript(CASES[1][0], None), "allow"),
         ("trivia -> ALLOW", transcript("what time zone is the draft in?", None), "allow"),
+        ("governed, NOT loaded, task notification arrives mid-turn -> BLOCK (red-first 2026-10-13)",
+         transcript(CASES[0][0], None, notification_after="<task-notification>\n<status>completed</status>\n</task-notification>"), "block"),
+        ("governed, NOT loaded, system-notification banner mid-turn -> BLOCK (red-first 2026-10-13)",
+         transcript(CASES[0][0], None, notification_after="[SYSTEM NOTIFICATION - NOT USER INPUT]\nThis is an automated background-task event"), "block"),
+        ("governed, loaded before a mid-turn notification -> ALLOW",
+         transcript(CASES[0][0], "adversarial-verify", notification_after="<task-notification>\n<status>completed</status>\n</task-notification>"), "allow"),
     ]
     for label, path, want in checks:
         out = run(["python3", gate], json.dumps({"transcript_path": path, "stop_hook_active": False}))

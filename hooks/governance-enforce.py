@@ -23,6 +23,10 @@ try:
     from govclass import classify, governors, ENFORCED
 except Exception:
     sys.exit(0)
+try:
+    from govclass import HARNESS_MARKERS
+except Exception:  # older classifier without the constant: same markers, kept in step by the fixture
+    HARNESS_MARKERS = ("[SYSTEM NOTIFICATION", "<task-notification>", "<wake ", "<agent-message", "<webhook-payload")
 
 
 def user_text(msg):
@@ -74,6 +78,12 @@ for i, d in enumerate(lines):
     if not isinstance(m, dict):
         continue
     t = user_text(m)
+    # Harness-generated user turns (background-task notifications, wake envelopes, subagent hand-backs)
+    # are not the owner's request either. Before 2026-10-13 they were taken as "the prompt", classified
+    # as nothing, and let a governed, unloaded turn through whenever a background task finished
+    # mid-turn (reproduced red-first, results/2026-10-13/system-validation/).
+    if t and any(mk in t for mk in HARNESS_MARKERS):
+        continue
     if t and not t.startswith("GOV-ENFORCE") and not t.startswith("Stop hook feedback"):
         prompt, li = t, i
 if not prompt:
