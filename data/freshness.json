@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-12",
-  "note": "2026-10-12 WO-5 projection refresh (v60): every line with an NBA season of 25+ games re-derived by the work-order method on both planes in one asserted script (326 deck rows, 311 kit rows; 2025-26 per-36 rates, else the latest season of 25+ games, at the base season's minutes or a role move on two dated outlets \u2014 7 role moves; FG%/FT% one-third to career; steals and blocks on the three-season anchor; points by identity); the range rule moved 10 players' minutes, 11 shooting cells and 6 rookie counting cells; Dybantsa unified to the kit's line (D-R1) and two rookie shot volumes set by the points identity; no tag, games or placement change; rosters verified direct-complete 335/335",
-  "pool_changes": {
-    "changed": true,
-    "note": "WO-5: 326 stat lines re-derived (data/players.csv stat columns + one dated note entry per row); no row added or removed, no tag, team or position change"
-  },
-  "rosters_verified": {
-    "date": "2026-10-12",
-    "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-12 (site.api.espn.com, all 30 rosters; roster_verification.json dated 2026-10-12); 335/335 on the feed, no exemption"
-  }
+ "date": "2026-10-13",
+ "note": "2026-10-13 MG pass (v61, the Council's recommendation, owner 'proceed'): minutes and games for the top-150 players on a new team or with a base season under 50 games (47 candidates) moved to the Yahoo 10/06 and Hashtag 10/12 consensus where both outlets agree — MG-1: 15 minutes moves (8 up, 7 down), rates unchanged, steals and blocks ride along, points by identity, applied through the WO-5 pipeline seeded with the 10/12 range resolution (the range rule re-ran and re-fixed Dejounte Murray at 29.2); MG-2: 5 games moves on the kit plane only (the deck's modifier is tag-based); 32 candidates held (references split, within tolerance, or single-source: Ayton); no tag, team, games or placement change on this plane; rosters verified direct-complete 335/335",
+ "pool_changes": {
+  "changed": true,
+  "note": "MG pass: 15 stat lines moved with their minutes (data/players.csv stat columns + one dated note entry on each of the 15 rows) and a dated games note on the five MG-2 rows (17 rows' notes in all; no stat, tag or placement change on those two games-only rows — Poeltl and Robinson waived by name on gate 7, D-MG-2); no row added or removed, no tag, team or position change"
+ },
+ "rosters_verified": {
+  "date": "2026-10-13",
+  "mode": "direct-complete",
+  "sources": "scripts/verify_rosters.py direct-complete run 2026-10-13 (site.api.espn.com (all 30 rosters), all 30 rosters; roster_verification.json dated 2026-10-13); 335/335 on the feed, 0 mismatches, no exemption"
+ }
 }
