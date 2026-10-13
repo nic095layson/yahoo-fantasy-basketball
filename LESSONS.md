@@ -382,3 +382,16 @@ numbers — content unchanged)*
     v35 pool (67 → 34 percent, below the single swap they contain) until the
     kept-total z-sum — bracket-independent — gave it away. A harness names a
     frozen pool by revision or materialized file, never by the live path.
+
+## 2026-10-13 — Scope-fence breach on the career-averages question (kit after-report of the same date)
+
+24. **A `CLAUDE.md` that says the governors run is a promise; the mechanism has
+    to exist on the surface.** Three weeks of cloud sessions loaded no governor:
+    `~/.claude/CLAUDE.md` is absent in cloud containers, this repo and the kit had no
+    `.claude/settings.json`, and the library's enforcement hooks were wired nowhere.
+    The 20-season window chose itself from a file's first season and was never
+    stated; a WO-5b candidate was built to answer a question. Countermeasures live
+    in `claude-core-skills` (`results/2026-10-13/gauntlet-fortification/`): the
+    project enforcement pack, the doctrine block, and three rules now written into
+    plan-gate and scope-fence. Portable rule: before trusting "governed", run
+    `test -f ~/.claude/CLAUDE.md && cat .claude/settings.json` on the surface.
