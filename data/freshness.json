@@ -1,9 +1,9 @@
 {
   "date": "2026-10-13",
-  "note": "2026-10-13 WO-4 re-price (v63 pool unchanged): the owner's Yahoo projected-stats paste as of 10/13 (300 rows, 187 with ADP) landed on the kit as yahoo-2026-10-13.csv and yahoo-proj-2026-10-13.csv (transcription gate PASS, I7 297/300, absence gate PASS, derived 24/24); the deck's Mkt rank re-reads it at build \u2014 294 of 335 rows priced (was 246 on the 10/12 file), 48 rows newly priced, 152 of the 246 rows already priced change market order (mean 3.5 places); no stat, tag, team or placement change on this plane; rosters verified direct-complete 335/335 earlier today",
+  "note": "2026-10-13 dial pass (D-1013-6, Council 4-1, owner go): 24 lines clamped category by category to the nearest edge of the Yahoo 10/13, Hashtag 10/12 and RotoBaller 9/29 range (the 21 with more than 0.5 z beyond it, 13 high and 8 low, plus Philadelphia's LeBron James, Joel Embiid and VJ Edgecombe); 104 cells, shot attempts rescaled on 22 lines for the points identity; written to both planes by report/dial/tools/dial_apply.py (assertions A1-A9 PASS); no tag, team, placement, games or minutes change; rosters verified direct-complete 335/335 earlier today",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "dial pass 10/13: 24 lines clamped inside the three outside projections' range (D-1013-6), both planes"
   },
   "rosters_verified": {
     "date": "2026-10-13",
