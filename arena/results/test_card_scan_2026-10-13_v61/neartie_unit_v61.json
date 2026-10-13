@@ -1,0 +1,36 @@
+{
+ "checked": "2026-10-13",
+ "helper": "near_tie_order (scripts/test_card.py)",
+ "v61_own5": [
+  "Ryan Rollins",
+  "Ty Jerome",
+  "Naz Reid",
+  "Cameron Boozer",
+  "Joel Embiid"
+ ],
+ "v61_rawMinusVeto5": [
+  "Ryan Rollins",
+  "Ty Jerome",
+  "Naz Reid",
+  "Joel Embiid",
+  "Cameron Boozer"
+ ],
+ "v61_ownS": [
+  1,
+  0.9902,
+  0.9882,
+  0.9823,
+  0.9823
+ ],
+ "cases": {
+  "measured v61 (Embiid/Boozer adjacent swap, 0.9823/0.9823)": true,
+  "identical order": true,
+  "adjacent swap within 0.001": true,
+  "adjacent swap at 0.002 -> reject": true,
+  "non-adjacent swap -> reject": true,
+  "different name set -> reject": true,
+  "rotation of three near-ties -> reject": true,
+  "scores list short -> reject": true
+ },
+ "all_pass": true
+}

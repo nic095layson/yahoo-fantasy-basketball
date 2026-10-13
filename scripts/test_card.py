@@ -125,7 +125,12 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
     # on availability (the scan of all 416 owner turns on the v60 page: 39 urgent reads, two pins withheld, both "behind
     # #1"), so the committed example is the behind branch at mock 75 #58 (Naz Reid, 0.121 cats/wk behind); the
     # availability branch keeps its direct gate case (pinUnit) below. Until v59 the probe was mock31 #64 (availability).
-    probes = [("draft_state_75.json", 58)]
+    # Re-pointed 2026-10-13 (MG pass): the minutes-and-games moves changed the card at mock 75 #58 (no pin read there now).
+    # The scan of all 416 owner turns on the v61 page (arena/results/test_card_scan_2026-10-13_v61/pins_v61.json) finds
+    # 30 urgent reads, 29 pin reads, and exactly one withheld: mock 53 #63, Joel Embiid, on availability 0.78 (his risk
+    # tag). No turn withholds a pin "behind #1" on these lines, so the availability branch takes the committed example again
+    # and the behind / kept / non-urgent branches stay pinned by the direct gate cases (pinUnit) below.
+    probes = [("draft_state_53.json", 63)]
     states = {fn: json.load(open(os.path.join(STATES, fn), encoding="utf-8")) for fn, _ in probes}
     for fn in ("draft_state_51.json", "draft_state_53.json", "draft_state_63.json"):  # advisor / veto / clock / D-CAST-4 probes below
         states[fn] = json.load(open(os.path.join(STATES, fn), encoding="utf-8"))
@@ -290,7 +295,9 @@ if (inp.veto && inp.veto.length) {
   const holder = Object.entries(ros99).find(([s, r]) => (r || []).some(p => V.has(p.n)));
   const ranks87 = api.categoryRanks(st99, api.PLAYERS).ranks;
   const ownerSlot53 = s53.slot;
-  out.veto = { raw5: raw.slice(0, 5), own5: own.slice(0, 5), rawMinusVeto5: raw.filter(nm => !V.has(nm)).slice(0, 5),
+  const rawS = api.rankCard(api.decwScores(pool, mine, opp)).slice(0, 5).map(x => +x.ds.toFixed(5));
+  const ownS = api.rankCard(api.decwScores(pool.filter(p => !V.has(p.n)), mine, opp)).slice(0, 5).map(x => +x.ds.toFixed(5));
+  out.veto = { raw5: raw.slice(0, 5), own5: own.slice(0, 5), rawMinusVeto5: raw.filter(nm => !V.has(nm)).slice(0, 5), rawS, ownS,
                poolN: pool.length, ownN: pool.filter(p => !V.has(p.n)).length, vetoAvail: pool.filter(p => V.has(p.n)).length,
                holder: holder ? +holder[0] : null, ownerSlot53, ranksCats: Object.keys(ranks87 || {}).length };
 }
@@ -422,7 +429,7 @@ process.stdout.write(JSON.stringify(out));
     # ---- D51R-4 pin gate
     case("D51R-4 pinDecision exists in the engine block", pres["pinDecision"], "pinDecision absent")
     case("D51R-4 PIN_MAX_GAP is 0.05 cats/wk", js.get("PIN_MAX_GAP") == 0.05, f"got {js.get('PIN_MAX_GAP')}")
-    want = {("draft_state_75.json", 58): (False, "behind #1")}
+    want = {("draft_state_53.json", 63): (False, "availability")}
     got = {(p["fn"], p["pickNo"]): p for p in js.get("pins", [])}
     for key, (tg, frag) in want.items():
         p = got.get(key)
@@ -559,8 +566,22 @@ process.stdout.write(JSON.stringify(out));
     case("VETO doNotDraft precedes the players block (gate 5 reads players: as the last key)",
          bool(vm) and jblock.find("doNotDraft") < jblock.find("players: {"), "doNotDraft missing or after players:")
     vt = js.get("veto")
-    case("VETO mock 51 #63: the owner card is the unfiltered card minus the veto list, and never names a vetoed player",
-         bool(vt) and vt["own5"] == vt["rawMinusVeto5"] and not any(nm in (veto or []) for nm in vt["own5"]),
+    # 2026-10-13 (MG pass): the card's blend is pool-relative, so removing the vetoed man shifts every percentile by a
+    # hair; on the v61 lines Joel Embiid and Cameron Boozer sit at 0.9824 / 0.9824 in the full pool and 0.9823 / 0.9823
+    # in the owner pool and swap 4th/5th. That is a near-tie moving with the frame, not a veto defect: the five names are
+    # the same, no vetoed name appears, and the order may differ only by adjacent swaps whose blend scores are within
+    # 0.001 (measured 2026-10-13: arena/results/test_card_scan_2026-10-13_v61/vetodbg_v61.json).
+    def near_tie_order(own, want, own_s):
+        if own == want: return True
+        if sorted(own) != sorted(want) or len(own) != len(own_s): return False
+        i = 0
+        while i < len(own):
+            if own[i] == want[i]: i += 1; continue
+            if i + 1 < len(own) and own[i] == want[i + 1] and own[i + 1] == want[i] and abs(own_s[i] - own_s[i + 1]) < 0.001: i += 2; continue
+            return False
+        return True
+    case("VETO mock 51 #63: the owner card is the unfiltered card minus the veto list (adjacent near-ties within 0.001 may swap), and never names a vetoed player",
+         bool(vt) and near_tie_order(vt["own5"], vt["rawMinusVeto5"], vt.get("ownS") or []) and not any(nm in (veto or []) for nm in vt["own5"]),
          f"got {vt}")
     case("VETO the owner pool is exactly the available pool minus the available vetoed names",
          bool(vt) and vt["ownN"] == vt["poolN"] - vt["vetoAvail"] and vt["vetoAvail"] >= 1, f"got {vt}")
