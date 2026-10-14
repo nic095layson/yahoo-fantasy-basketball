@@ -1,0 +1,130 @@
+{
+ "as_drafted": {
+  "champ": 23.839,
+  "playoff": 98.38,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#10:Tyrese Maxey": {
+  "champ": 26.2,
+  "playoff": 98.93,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ]
+  ]
+ },
+ "swap#15:Jalen Johnson": {
+  "champ": 26.3,
+  "playoff": 98.91,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jalen Johnson"
+   ]
+  ]
+ },
+ "swap#34:Domantas Sabonis": {
+  "champ": 25.122,
+  "playoff": 98.66,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Domantas Sabonis"
+   ]
+  ]
+ },
+ "swap#58:Michael Porter Jr.": {
+  "champ": 25.311,
+  "playoff": 98.65,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Michael Porter Jr."
+   ]
+  ]
+ },
+ "swap#106:Myles Turner": {
+  "champ": 25.789,
+  "playoff": 99.04,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#111:Myles Turner": {
+  "champ": 27.45,
+  "playoff": 99.37,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    111,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#130:Draymond Green": {
+  "champ": 26.517,
+  "playoff": 99.1,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "Draymond Green"
+   ]
+  ]
+ },
+ "swap#135:Draymond Green": {
+  "champ": 27.35,
+  "playoff": 99.26,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Draymond Green"
+   ]
+  ]
+ },
+ "swap#154:Bobby Portis": {
+  "champ": 25.144,
+  "playoff": 98.71,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    154,
+    "Bobby Portis"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 31.75,
+  "playoff": 99.72,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Jalen Johnson"
+   ],
+   [
+    111,
+    "Myles Turner"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ]
+  ]
+ }
+}
