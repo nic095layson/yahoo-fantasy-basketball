@@ -1,13 +1,13 @@
 {
   "date": "2026-10-14",
-  "note": "2026-10-14 final morning pull (Version 68): the owner's three lock calls — Cardwell (out 2+ weeks, left calf, 10/29 estimate) and Coby White (third calf strain in about a year, 10/21 estimate) tagged inj-calf-risk with the kit's GP 65 to 59 and 68 to 62; Kornet's pre-blend line restored (preseason backs our minutes); the 24 disputed-minutes players read against every preseason box score 9/28-10/13 (46 games; 9 back the outside minutes, 1 ours, 6 split, 8 too little data); ESPN's injuries feed items dated 10/14 on pool rows; no other line, tag, team or placement change; rosters verified direct-complete 335/335; on top of Version 67's six-way blend",
+  "note": "2026-10-14 WO-4 lock re-price (v68 pool unchanged): the owner's Yahoo projected-stats paste of 10/14 (350 rows, 186 with ADP) landed on the kit as yahoo-2026-10-14.csv and yahoo-proj-2026-10-14.csv (transcription gate PASS, I7 306/350 after two resolver fixes, absence gate PASS, derived 28/28); the deck's Mkt rank re-reads it at build - 302 of 335 rows priced (was 294 on the 10/13 file), 8 rows newly priced, none lost; XRank identical on every row both pastes carry, ADP moved on 130 rows by at most 1.0 place, Anfernee Simons lost his ADP (110.4, now XRank 201); no stat, tag, team or placement change on this plane; rosters verified direct-complete 335/335 earlier today",
   "pool_changes": {
-    "changed": true,
-    "note": "owner lock calls 10/14: Kornet's stat line to his pre-blend line (both planes); Coby White and Dylan Cardwell tagged inj-calf-risk (deck) with kit GP 68 to 62 and 65 to 59; notes on 37 players (preseason readings, ESPN feed items dated 10/14); no team or placement change"
+    "changed": false,
+    "note": ""
   },
   "rosters_verified": {
     "date": "2026-10-14",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-14 UTC (site.api.espn.com, all 30 rosters; roster_verification.json dated 2026-10-14); 335/335 on the feed, 0 mismatches, no exemption"
+    "sources": "scripts/verify_rosters.py"
   }
 }
