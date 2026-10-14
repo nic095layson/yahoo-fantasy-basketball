@@ -516,6 +516,28 @@ def main():
         else:
             print(f"  ok    turn card at 155 picks: {ms:.0f}ms "
                   "(process incl. interpreter start)")
+        # Owner-reported 2026-10-14 (lock day, from the live card): the LEAN
+        # roster-balance line read "7G vs 2F" on a six-man roster of four
+        # dual-eligible guards and two forwards — it counted position TOKENS
+        # (PG and SG separately), so one PG,SG player counted twice. A lean is
+        # a count of PLAYERS, once per family, like the roster header's
+        # "G (4) F (2) C (2)". Two teams, owner at slot 1: picks 1/4/5/8/9/12.
+        fresh(st, slot=1, teams=2)
+        run(st, "draft", "turn",
+            "my:Derrick White; Nikola Jokic; Victor Wembanyama; my:Devin Booker; "
+            "my:Tyrese Haliburton; Shai Gilgeous-Alexander; Luka Doncic; "
+            "my:Desmond Bane; my:Karl-Anthony Towns; Giannis Antetokounmpo; "
+            "Anthony Edwards; my:Onyeka Okongwu", "--top", "0")
+        check("LEAN counts players once per family: four PG,SG guards + two forwards is no lean",
+              run(st, "draft", "turn", "", "--top", "0"), must_not=["LEAN:"])
+        fresh(st, slot=1, teams=2)
+        run(st, "draft", "turn",
+            "my:Trae Young; Nikola Jokic; Victor Wembanyama; my:Jalen Brunson; "
+            "my:Stephen Curry; Shai Gilgeous-Alexander; Luka Doncic; "
+            "my:Damian Lillard; my:Ja Morant; Giannis Antetokounmpo; "
+            "Anthony Edwards; my:Jayson Tatum", "--top", "0")
+        check("LEAN still fires on five pure guards and one SF,PF forward, counted once (not 5G vs 2F)",
+              run(st, "draft", "turn", "", "--top", "0"), must_have=["LEAN: 5G vs 1F"])
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 

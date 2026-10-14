@@ -53,7 +53,10 @@ POOLS = {"v22": SP + "/m51_players_v22.csv", "v23": SP + "/m52_players_v23.csv",
          "v65": SP + "/players_v65.csv",
          # v68 = data/players.csv at deck cb1a922 (Version 68, the 10/14 final morning pull + the owner's three lock calls;
          # pool sha 30246ac015fe), the page live at the standing URL from 2026-10-14 ~15:55 UTC
-         "v68": SP + "/players_v68.csv"}
+         "v68": SP + "/players_v68.csv",
+         # v69 = data/players.csv at deck main af91b23 (the lock of 2026-10-14, published as Version 69: the six-way blend
+         # re-taken on Yahoo 10/14 + Hashtag 10/14, Kawhi and Davis at 0.78); regenerated from git
+         "v69": SP + "/players_v69.csv"}
 # v23 = the 264-row pool mocks 51 (tuned replay) and 52 were drafted against
 # (data pull 2026-09-21, players.csv md5 a1a1eda60f34; the live file grew to
 # 330 rows on 2026-09-22, so it is regenerated from git like v22).
@@ -99,6 +102,7 @@ V44_REV = "583435c"
 V58_REV = "df1c754"
 V65_REV = "dd6b719"
 V68_REV = "cb1a922"
+V69_REV = "af91b23"
 # v22 = the pool the deck the owner drafted against in mock 51 was built from
 # (data pull 2026-09-15, players.csv sha256 e3e17e279ea5); regenerated from git
 # below, only for a mock whose config names it.
@@ -214,6 +218,11 @@ MOCKS = {
     # Haliburton, #87 Queta, #111 Lendeborg, #130 Mamukelashvili); one numbered UNKNOWN fix (#5 "Giannas"), one page
     # resume after 15 picks; the feed equals Yahoo's recap 156 of 156.
     81: dict(tags=("v68",), veto=True),
+    # mock 82 (2026-10-14 late, slot 10): public Yahoo room (random humans), LIVE mode, drafted on the LOCK page (published
+    # as Version 69; rev af91b23, tag v69 = players_v69.csv): the owner's three "off the card" echoes (#87 Pritchard, #106
+    # Lendeborg, #111 Claxton) replay identically on the lock page; no numbered fix, no resume; the feed equals Yahoo's
+    # recap 155 of 156 — at #124 the tool resolved an ambiguous "Green" to Draymond, Yahoo's recap has Jalen Green there.
+    82: dict(tags=("v69",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -244,7 +253,7 @@ if "v22" in TAGS and not os.path.exists(POOLS["v22"]):
     with open(POOLS["v22"], "w", encoding="utf-8") as _f:
         _f.write(subprocess.run(["git", "-C", DECK, "show", CFG["v22_rev"] + ":data/players.csv"],
                                 capture_output=True, text=True, check=True).stdout)
-for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV), ("v39", V39_REV), ("v42", V42_REV), ("v44", V44_REV), ("v58", V58_REV), ("v65", V65_REV), ("v68", V68_REV)):
+for _tag, _rev in (("v23", V23_REV), ("v25", V25_REV), ("v28", V28_REV), ("v31", V31_REV), ("v33", V33_REV), ("v35", V35_REV), ("v37", V37_REV), ("v39", V39_REV), ("v42", V42_REV), ("v44", V44_REV), ("v58", V58_REV), ("v65", V65_REV), ("v68", V68_REV), ("v69", V69_REV)):
     if not os.path.exists(POOLS[_tag]):   # regenerated whenever missing — every mock's hindsight/forecast/arms may grade on it
         import subprocess
         with open(POOLS[_tag], "w", encoding="utf-8") as _f:
@@ -760,7 +769,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a", 74: "df1c754", 75: "f918062", 77: V65_REV, 78: V65_REV, 79: V65_REV, 80: V68_REV, 81: V68_REV}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a", 74: "df1c754", 75: "f918062", 77: V65_REV, 78: V65_REV, 79: V65_REV, 80: V68_REV, 81: V68_REV, 82: V69_REV}
 if REV_OVERRIDE:
     PAGE_REV[MOCK] = REV_OVERRIDE
 

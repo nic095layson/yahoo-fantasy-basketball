@@ -1,0 +1,632 @@
+{
+"teams": 12,
+"slot": 10,
+"size": 13,
+"punt": [],
+"picks": [
+{
+"player": "Nikola Jokic",
+"slot": 1
+},
+{
+"player": "Victor Wembanyama",
+"slot": 2
+},
+{
+"player": "Shai Gilgeous-Alexander",
+"slot": 3
+},
+{
+"player": "Luka Doncic",
+"slot": 4
+},
+{
+"player": "Cade Cunningham",
+"slot": 5
+},
+{
+"player": "Giannis Antetokounmpo",
+"slot": 6
+},
+{
+"player": "Anthony Edwards",
+"slot": 7
+},
+{
+"player": "Tyrese Maxey",
+"slot": 8
+},
+{
+"player": "Jayson Tatum",
+"slot": 9
+},
+{
+"player": "Tyrese Haliburton",
+"slot": 10
+},
+{
+"player": "Cooper Flagg",
+"slot": 11
+},
+{
+"player": "Jalen Johnson",
+"slot": 12
+},
+{
+"player": "Scottie Barnes",
+"slot": 12
+},
+{
+"player": "Donovan Mitchell",
+"slot": 11
+},
+{
+"player": "Karl-Anthony Towns",
+"slot": 10
+},
+{
+"player": "Jamal Murray",
+"slot": 9
+},
+{
+"player": "Kevin Durant",
+"slot": 8
+},
+{
+"player": "Paolo Banchero",
+"slot": 7
+},
+{
+"player": "Alperen Sengun",
+"slot": 6
+},
+{
+"player": "Josh Giddey",
+"slot": 5
+},
+{
+"player": "Anthony Davis",
+"slot": 4
+},
+{
+"player": "Trae Young",
+"slot": 3
+},
+{
+"player": "Amen Thompson",
+"slot": 2
+},
+{
+"player": "Austin Reaves",
+"slot": 1
+},
+{
+"player": "LaMelo Ball",
+"slot": 1
+},
+{
+"player": "Chet Holmgren",
+"slot": 2
+},
+{
+"player": "Devin Booker",
+"slot": 3
+},
+{
+"player": "Kawhi Leonard",
+"slot": 4
+},
+{
+"player": "Stephen Curry",
+"slot": 5
+},
+{
+"player": "Jalen Brunson",
+"slot": 6
+},
+{
+"player": "Kyrie Irving",
+"slot": 7
+},
+{
+"player": "Evan Mobley",
+"slot": 8
+},
+{
+"player": "Bam Adebayo",
+"slot": 9
+},
+{
+"player": "Lauri Markkanen",
+"slot": 10
+},
+{
+"player": "Walker Kessler",
+"slot": 11
+},
+{
+"player": "James Harden",
+"slot": 12
+},
+{
+"player": "Domantas Sabonis",
+"slot": 12
+},
+{
+"player": "Brandon Miller",
+"slot": 11
+},
+{
+"player": "Derrick White",
+"slot": 10
+},
+{
+"player": "Trey Murphy III",
+"slot": 9
+},
+{
+"player": "Desmond Bane",
+"slot": 8
+},
+{
+"player": "Jalen Duren",
+"slot": 7
+},
+{
+"player": "Deni Avdija",
+"slot": 6
+},
+{
+"player": "Jalen Williams",
+"slot": 5
+},
+{
+"player": "Jaylen Brown",
+"slot": 4
+},
+{
+"player": "Jaren Jackson Jr.",
+"slot": 3
+},
+{
+"player": "Donovan Clingan",
+"slot": 2
+},
+{
+"player": "Franz Wagner",
+"slot": 1
+},
+{
+"player": "Darius Garland",
+"slot": 1
+},
+{
+"player": "Keyonte George",
+"slot": 2
+},
+{
+"player": "LeBron James",
+"slot": 3
+},
+{
+"player": "Nickeil Alexander-Walker",
+"slot": 4
+},
+{
+"player": "Onyeka Okongwu",
+"slot": 5
+},
+{
+"player": "Pascal Siakam",
+"slot": 6
+},
+{
+"player": "Joel Embiid",
+"slot": 7
+},
+{
+"player": "OG Anunoby",
+"slot": 8
+},
+{
+"player": "Cameron Boozer",
+"slot": 9
+},
+{
+"player": "Dyson Daniels",
+"slot": 10
+},
+{
+"player": "Michael Porter Jr.",
+"slot": 11
+},
+{
+"player": "Tyler Herro",
+"slot": 12
+},
+{
+"player": "Matas Buzelis",
+"slot": 12
+},
+{
+"player": "Kon Knueppel",
+"slot": 11
+},
+{
+"player": "Kel'el Ware",
+"slot": 10
+},
+{
+"player": "Alex Sarr",
+"slot": 9
+},
+{
+"player": "Rudy Gobert",
+"slot": 8
+},
+{
+"player": "Ivica Zubac",
+"slot": 7
+},
+{
+"player": "Julius Randle",
+"slot": 6
+},
+{
+"player": "Dejounte Murray",
+"slot": 5
+},
+{
+"player": "Stephon Castle",
+"slot": 4
+},
+{
+"player": "Ryan Rollins",
+"slot": 3
+},
+{
+"player": "Naz Reid",
+"slot": 2
+},
+{
+"player": "Damian Lillard",
+"slot": 1
+},
+{
+"player": "Zion Williamson",
+"slot": 1
+},
+{
+"player": "Paul George",
+"slot": 2
+},
+{
+"player": "Zach Edey",
+"slot": 3
+},
+{
+"player": "Caleb Wilson",
+"slot": 4
+},
+{
+"player": "De'Aaron Fox",
+"slot": 5
+},
+{
+"player": "Dylan Harper",
+"slot": 6
+},
+{
+"player": "Jarrett Allen",
+"slot": 7
+},
+{
+"player": "Mikal Bridges",
+"slot": 8
+},
+{
+"player": "Brandon Ingram",
+"slot": 9
+},
+{
+"player": "Ty Jerome",
+"slot": 10
+},
+{
+"player": "Norman Powell",
+"slot": 11
+},
+{
+"player": "Immanuel Quickley",
+"slot": 12
+},
+{
+"player": "Jaden McDaniels",
+"slot": 12
+},
+{
+"player": "VJ Edgecombe",
+"slot": 11
+},
+{
+"player": "Payton Pritchard",
+"slot": 10
+},
+{
+"player": "Jabari Smith Jr.",
+"slot": 9
+},
+{
+"player": "Josh Hart",
+"slot": 8
+},
+{
+"player": "Ausar Thompson",
+"slot": 7
+},
+{
+"player": "Cedric Coward",
+"slot": 6
+},
+{
+"player": "Day'Ron Sharpe",
+"slot": 5
+},
+{
+"player": "Miles Bridges",
+"slot": 4
+},
+{
+"player": "Coby White",
+"slot": 3
+},
+{
+"player": "Collin Murray-Boyles",
+"slot": 2
+},
+{
+"player": "Isaiah Hartenstein",
+"slot": 1
+},
+{
+"player": "Myles Turner",
+"slot": 1
+},
+{
+"player": "Ja Morant",
+"slot": 2
+},
+{
+"player": "Andrew Wiggins",
+"slot": 3
+},
+{
+"player": "Darryn Peterson",
+"slot": 4
+},
+{
+"player": "AJ Dybantsa",
+"slot": 5
+},
+{
+"player": "Jalen Suggs",
+"slot": 6
+},
+{
+"player": "John Collins",
+"slot": 7
+},
+{
+"player": "Keegan Murray",
+"slot": 8
+},
+{
+"player": "Zach LaVine",
+"slot": 9
+},
+{
+"player": "Yaxel Lendeborg",
+"slot": 10
+},
+{
+"player": "Derik Queen",
+"slot": 11
+},
+{
+"player": "Brandin Podziemski",
+"slot": 12
+},
+{
+"player": "Khaman Maluach",
+"slot": 12
+},
+{
+"player": "Aaron Gordon",
+"slot": 11
+},
+{
+"player": "Nic Claxton",
+"slot": 10
+},
+{
+"player": "Neemias Queta",
+"slot": 9
+},
+{
+"player": "Cason Wallace",
+"slot": 8
+},
+{
+"player": "CJ McCollum",
+"slot": 7
+},
+{
+"player": "Jusuf Nurkic",
+"slot": 6
+},
+{
+"player": "Toumani Camara",
+"slot": 5
+},
+{
+"player": "Peyton Watson",
+"slot": 4
+},
+{
+"player": "Rui Hachimura",
+"slot": 3
+},
+{
+"player": "Davion Mitchell",
+"slot": 2
+},
+{
+"player": "Wendell Carter Jr.",
+"slot": 1
+},
+{
+"player": "Darius Acuff Jr.",
+"slot": 1
+},
+{
+"player": "Jaime Jaquez Jr.",
+"slot": 2
+},
+{
+"player": "Ayo Dosunmu",
+"slot": 3
+},
+{
+"player": "Jalen Green",
+"slot": 4
+},
+{
+"player": "Andrew Nembhard",
+"slot": 5
+},
+{
+"player": "Collin Gillespie",
+"slot": 6
+},
+{
+"player": "Jakob Poeltl",
+"slot": 7
+},
+{
+"player": "Sandro Mamukelashvili",
+"slot": 8
+},
+{
+"player": "Kyshawn George",
+"slot": 9
+},
+{
+"player": "Reed Sheppard",
+"slot": 10
+},
+{
+"player": "RJ Barrett",
+"slot": 11
+},
+{
+"player": "Ajay Mitchell",
+"slot": 12
+},
+{
+"player": "Kevin Porter Jr.",
+"slot": 12
+},
+{
+"player": "Jonathan Kuminga",
+"slot": 11
+},
+{
+"player": "Cameron Johnson",
+"slot": 10
+},
+{
+"player": "Quentin Grimes",
+"slot": 9
+},
+{
+"player": "Saddiq Bey",
+"slot": 8
+},
+{
+"player": "Daniel Gafford",
+"slot": 7
+},
+{
+"player": "Yves Missi",
+"slot": 6
+},
+{
+"player": "PJ Washington",
+"slot": 5
+},
+{
+"player": "Anthony Black",
+"slot": 4
+},
+{
+"player": "Tre Jones",
+"slot": 3
+},
+{
+"player": "Jrue Holiday",
+"slot": 2
+},
+{
+"player": "Fred VanVleet",
+"slot": 1
+},
+{
+"player": "Aday Mara",
+"slot": 1
+},
+{
+"player": "Dillon Brooks",
+"slot": 2
+},
+{
+"player": "DeMar DeRozan",
+"slot": 3
+},
+{
+"player": "Moussa Diabate",
+"slot": 4
+},
+{
+"player": "Egor Demin",
+"slot": 5
+},
+{
+"player": "Jimmy Butler",
+"slot": 6
+},
+{
+"player": "Ace Bailey",
+"slot": 7
+},
+{
+"player": "Collin Sexton",
+"slot": 8
+},
+{
+"player": "Bennedict Mathurin",
+"slot": 9
+},
+{
+"player": "Tobias Harris",
+"slot": 10
+},
+{
+"player": "Aaron Nesmith",
+"slot": 11
+},
+{
+"player": "Gui Santos",
+"slot": 12
+}
+]
+}

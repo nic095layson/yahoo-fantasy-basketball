@@ -1460,8 +1460,13 @@ def cmd_draft(args, players):
         if stacked:
             print("NBA-team stacks: " + " ".join(
                 f"{k}:{v}" for k, v in sorted(stacked.items())))
-        g_ct = pos_counts.get("PG", 0) + pos_counts.get("SG", 0)
-        f_ct = pos_counts.get("SF", 0) + pos_counts.get("PF", 0)
+        # A lean counts PLAYERS once per family (owner-reported 2026-10-14,
+        # lock day: the token tally read "7G vs 2F" on four PG,SG guards and
+        # two forwards). Same rule as the roster header's G/F/C census.
+        g_ct = sum(1 for p in mine_r
+                   if any(ps in ("PG", "SG") for ps in positions_of(p)))
+        f_ct = sum(1 for p in mine_r
+                   if any(ps in ("SF", "PF") for ps in positions_of(p)))
         if len(mine_r) >= 5 and abs(g_ct - f_ct) >= 4:
             lean = f"{f_ct}F vs {g_ct}G" if f_ct > g_ct else f"{g_ct}G vs {f_ct}F"
             print(f"⚠ LEAN: {lean} — flag for roster balance")
