@@ -209,6 +209,11 @@ MOCKS = {
     # v67 (Lendeborg's 🎯 there is Turner); three numbered UNKNOWN fixes (#13, #93, #133 the last sent four picks late), one
     # page resume; the feed equals Yahoo's recap 156 of 156.
     80: dict(tags=("v68",), veto=True),
+    # mock 81 (2026-10-14 evening, slot 10): public Yahoo room (random humans), LIVE mode, drafted on deck Version 68 (rev
+    # cb1a922, tag v68 = players_v68.csv; the lock page was not yet live); the owner's four "off the card" echoes (#10
+    # Haliburton, #87 Queta, #111 Lendeborg, #130 Mamukelashvili); one numbered UNKNOWN fix (#5 "Giannas"), one page
+    # resume after 15 picks; the feed equals Yahoo's recap 156 of 156.
+    81: dict(tags=("v68",), veto=True),
 }
 MOCK = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 51
 CFG = MOCKS[MOCK]
@@ -755,7 +760,7 @@ def stage_arms(tag=None):
 # is the survival price, else the internal market position the pre-F8 page used.
 PAGE_REV = {51: "e7aac6b53351f23fd2ef6c8b6c177fbccdcb428b", 52: V23_REV, 53: V25_REV, 54: V28_REV,
             55: "28266d8", 56: V31_REV, 57: "0dfbe77", 58: V35_REV, 59: V37_REV,
-    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a", 74: "df1c754", 75: "f918062", 77: V65_REV, 78: V65_REV, 79: V65_REV, 80: V68_REV}
+    60: "6ae36ab", 61: V44_REV, 62: "441bba6", 63: "fca8f7c", 64: "fca8f7c", 65: "fca8f7c", 66: "269c522", 67: "269c522", 68: "9f54e99", 69: "9f54e99", 70: "9f54e99", 71: "1026558", 72: "03cba0a", 73: "03cba0a", 74: "df1c754", 75: "f918062", 77: V65_REV, 78: V65_REV, 79: V65_REV, 80: V68_REV, 81: V68_REV}
 if REV_OVERRIDE:
     PAGE_REV[MOCK] = REV_OVERRIDE
 
