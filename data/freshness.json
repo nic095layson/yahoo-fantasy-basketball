@@ -1,9 +1,9 @@
 {
   "date": "2026-10-14",
-  "note": "2026-10-14 WO-4 lock re-price (v68 pool unchanged): the owner's Yahoo projected-stats paste of 10/14 (350 rows, 186 with ADP) landed on the kit as yahoo-2026-10-14.csv and yahoo-proj-2026-10-14.csv (transcription gate PASS, I7 306/350 after two resolver fixes, absence gate PASS, derived 28/28); the deck's Mkt rank re-reads it at build - 302 of 335 rows priced (was 294 on the 10/13 file), 8 rows newly priced, none lost; XRank identical on every row both pastes carry, ADP moved on 130 rows by at most 1.0 place, Anfernee Simons lost his ADP (110.4, now XRank 201); no stat, tag, team or placement change on this plane; rosters verified direct-complete 335/335 earlier today",
+  "note": "2026-10-14 the lock (owner: 'Take the Yahoo and Hashtag projections dated today, and synergize with kit's ... and lock'; 'for Kawhi and Anthony Davis, revert their health multiplier to 0.78'): the six-way blend re-taken from the pre-blend lines with Yahoo 10/14 and Hashtag 10/14 replacing their 10/13 and 10/12 versions (control: the old sources reproduce Version 67's blend on 241 of 241 rows); 54 lines move on both planes, Toppin newly blended, Kornet held on his restored line; Kawhi and Davis inj-risk-mild to inj-risk; prices Yahoo's 10/14 lock paste (302/335); rosters verified direct-complete 335/335 earlier today",
   "pool_changes": {
-    "changed": false,
-    "note": ""
+    "changed": true,
+    "note": "the lock 10/14: the six-way blend re-taken from our own lines with Yahoo and Hashtag 10/14 (54 lines move on 238 blended rows, Toppin newly blended, Kornet held); Kawhi Leonard and Anthony Davis back to inj-risk (0.78) by the owner's call; no game, minute, team or placement change"
   },
   "rosters_verified": {
     "date": "2026-10-14",
