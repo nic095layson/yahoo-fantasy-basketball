@@ -1,0 +1,153 @@
+{
+ "as_drafted": {
+  "champ": 25.65,
+  "playoff": 99.36,
+  "champ_rank": 1,
+  "swaps": []
+ },
+ "swap#10:Jamal Murray": {
+  "champ": 33.039,
+  "playoff": 99.87,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jamal Murray"
+   ]
+  ]
+ },
+ "swap#15:Jamal Murray": {
+  "champ": 28.844,
+  "playoff": 99.68,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ]
+  ]
+ },
+ "swap#34:Domantas Sabonis": {
+  "champ": 26.283,
+  "playoff": 99.23,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    34,
+    "Domantas Sabonis"
+   ]
+  ]
+ },
+ "swap#39:Kel'el Ware": {
+  "champ": 26.111,
+  "playoff": 99.49,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Kel'el Ware"
+   ]
+  ]
+ },
+ "swap#58:Kel'el Ware": {
+  "champ": 27.044,
+  "playoff": 99.69,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Kel'el Ware"
+   ]
+  ]
+ },
+ "swap#63:Kel'el Ware": {
+  "champ": 32.961,
+  "playoff": 99.91,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    63,
+    "Kel'el Ware"
+   ]
+  ]
+ },
+ "swap#82:Ty Jerome": {
+  "champ": 26.978,
+  "playoff": 99.56,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Ty Jerome"
+   ]
+  ]
+ },
+ "swap#106:Josh Hart": {
+  "champ": 26.0,
+  "playoff": 99.34,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    106,
+    "Josh Hart"
+   ]
+  ]
+ },
+ "swap#130:PJ Washington": {
+  "champ": 26.061,
+  "playoff": 99.52,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    130,
+    "PJ Washington"
+   ]
+  ]
+ },
+ "swap#135:Reed Sheppard": {
+  "champ": 26.761,
+  "playoff": 99.51,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Reed Sheppard"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 46.178,
+  "playoff": 100.0,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    39,
+    "Dyson Daniels"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Michael Porter Jr."
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Miles Bridges"
+   ]
+  ]
+ }
+}
