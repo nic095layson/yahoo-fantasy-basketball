@@ -366,6 +366,7 @@ def availability(p):
     out-*        -> 0.0: season-ending; excluded from all boards
     *recovery*   -> 0.0: serious-injury recovery; excluded from all boards
     *risk*       -> 0.78: chronic availability concern; downgraded
+    *mild*       -> 0.85: owner-named lighter risk (2026-10-13 night)
 
     Owner ruling 2026-07-12 (supersedes the same-day 0.60 discount):
     recovery-flagged players are REMOVED from the pool, not priced —
@@ -392,6 +393,13 @@ def availability(p):
     tag = note_tag(p.get("note"))
     if tag.startswith("out-"):
         return 0.0
+    # Owner call 2026-10-13 night: a lighter tier for named players the owner
+    # judges less fragile than the generic risk class ("-mild" leading tag,
+    # e.g. inj-acl-mild). 0.85 sits where the outside projections put these
+    # players' games (Yahoo, Hashtag, FantasyPros: 0.84-0.87 of a healthy
+    # season). Checked before the risk rules; "mild" never appears in them.
+    if "mild" in tag:
+        return 0.85
     if tag.endswith("-recovery"):
         return 0.0
     if tag.endswith("-risk") or tag == "risk" or tag == "inj-risk":

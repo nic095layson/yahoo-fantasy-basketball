@@ -1,0 +1,1849 @@
+{
+ "page": "/home/user/yahoo-fantasy-basketball/docs/draft-deck.html",
+ "page_sha256": "7d4bab2d61bf4da7b62132e2f4d59259ab37f762de010d612ef139543b1b358c",
+ "mocks": [
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  77,
+  78,
+  79
+ ],
+ "replayed": [
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  77,
+  78,
+  79
+ ],
+ "failed": {},
+ "thresholds": {
+  "min_mocks": 5,
+  "min_gap": 25
+ },
+ "aliases": 6,
+ "alias_file": "report/market/build_market.py",
+ "rank_files": {
+  "Yahoo Rank": "yahoo-proj-2026-10-13.csv",
+  "Hashtag": "hashtag-2026-10-12.csv",
+  "Rotoworld": "rotoworld-9cat-2026-10-05.csv",
+  "RotoBaller": "rotoballer-2026-10-13.csv"
+ },
+ "line_files": {
+  "Yahoo": "yahoo-proj-2026-10-13.csv",
+  "Hashtag": "hashtag-2026-10-12.csv",
+  "RotoBaller": "rotoballer-2026-10-13.csv"
+ },
+ "targets": {
+  "51": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Michael Porter Jr."
+   ],
+   [
+    63,
+    "Ty Jerome"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Collin Gillespie"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ],
+   [
+    154,
+    "Julian Champagnie"
+   ]
+  ],
+  "52": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "VJ Edgecombe"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Collin Gillespie"
+   ],
+   [
+    135,
+    "Collin Gillespie"
+   ],
+   [
+    154,
+    "Saddiq Bey"
+   ]
+  ],
+  "53": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Kevin Durant"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Dyson Daniels"
+   ],
+   [
+    63,
+    "Ty Jerome"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Collin Gillespie"
+   ],
+   [
+    135,
+    "Collin Gillespie"
+   ],
+   [
+    154,
+    "Cam Spencer"
+   ]
+  ],
+  "54": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Naz Reid"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Collin Gillespie"
+   ],
+   [
+    135,
+    "Collin Gillespie"
+   ],
+   [
+    154,
+    "Julian Champagnie"
+   ]
+  ],
+  "55": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Ty Jerome"
+   ],
+   [
+    82,
+    "Cameron Boozer"
+   ],
+   [
+    87,
+    "Ryan Rollins"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Tre Jones"
+   ]
+  ],
+  "56": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Tyrese Maxey"
+   ],
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Jalen Suggs"
+   ],
+   [
+    106,
+    "Jalen Suggs"
+   ],
+   [
+    111,
+    "Jalen Suggs"
+   ],
+   [
+    130,
+    "Yaxel Lendeborg"
+   ],
+   [
+    135,
+    "Collin Gillespie"
+   ],
+   [
+    154,
+    "Collin Gillespie"
+   ]
+  ],
+  "57": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Reed Sheppard"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Ayo Dosunmu"
+   ],
+   [
+    135,
+    "Yaxel Lendeborg"
+   ],
+   [
+    154,
+    "Cam Spencer"
+   ]
+  ],
+  "58": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Chet Holmgren"
+   ],
+   [
+    34,
+    "Kawhi Leonard"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Yaxel Lendeborg"
+   ],
+   [
+    135,
+    "Tari Eason"
+   ],
+   [
+    154,
+    "Saddiq Bey"
+   ]
+  ],
+  "59": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Tyrese Maxey"
+   ],
+   [
+    34,
+    "Kawhi Leonard"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Dyson Daniels"
+   ],
+   [
+    63,
+    "Michael Porter Jr."
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Reed Sheppard"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Reed Sheppard"
+   ]
+  ],
+  "60": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Kawhi Leonard"
+   ],
+   [
+    39,
+    "Kawhi Leonard"
+   ],
+   [
+    58,
+    "Dyson Daniels"
+   ],
+   [
+    63,
+    "Michael Porter Jr."
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Yaxel Lendeborg"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "61": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Michael Porter Jr."
+   ],
+   [
+    82,
+    "VJ Edgecombe"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "62": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Cam Spencer"
+   ]
+  ],
+  "63": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Yaxel Lendeborg"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Neemias Queta"
+   ],
+   [
+    154,
+    "Neemias Queta"
+   ]
+  ],
+  "64": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Kevin Durant"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Dyson Daniels"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Reed Sheppard"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Kyshawn George"
+   ]
+  ],
+  "65": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Kel'el Ware"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Neemias Queta"
+   ]
+  ],
+  "66": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Zach Edey"
+   ],
+   [
+    87,
+    "John Collins"
+   ],
+   [
+    106,
+    "John Collins"
+   ],
+   [
+    111,
+    "Yaxel Lendeborg"
+   ],
+   [
+    130,
+    "Yaxel Lendeborg"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Saddiq Bey"
+   ]
+  ],
+  "67": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Tyrese Haliburton"
+   ],
+   [
+    34,
+    "Kawhi Leonard"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Reed Sheppard"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Collin Gillespie"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ],
+   [
+    154,
+    "Julian Champagnie"
+   ]
+  ],
+  "68": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Tyrese Maxey"
+   ],
+   [
+    34,
+    "Anthony Davis"
+   ],
+   [
+    39,
+    "Kel'el Ware"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "VJ Edgecombe"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Julian Champagnie"
+   ]
+  ],
+  "69": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Reed Sheppard"
+   ]
+  ],
+  "70": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Dyson Daniels"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Reed Sheppard"
+   ]
+  ],
+  "71": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Kel'el Ware"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "VJ Edgecombe"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Reed Sheppard"
+   ]
+  ],
+  "72": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Kel'el Ware"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Kel'el Ware"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Ty Jerome"
+   ],
+   [
+    111,
+    "Ty Jerome"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Reed Sheppard"
+   ]
+  ],
+  "73": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Nickeil Alexander-Walker"
+   ],
+   [
+    82,
+    "VJ Edgecombe"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Reed Sheppard"
+   ],
+   [
+    154,
+    "Julian Champagnie"
+   ]
+  ],
+  "74": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Kawhi Leonard"
+   ],
+   [
+    39,
+    "Kawhi Leonard"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "VJ Edgecombe"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Reed Sheppard"
+   ],
+   [
+    111,
+    "Reed Sheppard"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ],
+   [
+    154,
+    "Tari Eason"
+   ]
+  ],
+  "75": [
+   [
+    10,
+    "Tyrese Maxey"
+   ],
+   [
+    15,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Lauri Markkanen"
+   ],
+   [
+    39,
+    "Lauri Markkanen"
+   ],
+   [
+    58,
+    "Michael Porter Jr."
+   ],
+   [
+    63,
+    "Ty Jerome"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Yaxel Lendeborg"
+   ],
+   [
+    111,
+    "Collin Gillespie"
+   ],
+   [
+    130,
+    "Yaxel Lendeborg"
+   ],
+   [
+    135,
+    "Collin Gillespie"
+   ],
+   [
+    154,
+    "Saddiq Bey"
+   ]
+  ],
+  "77": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Chet Holmgren"
+   ],
+   [
+    34,
+    "Kawhi Leonard"
+   ],
+   [
+    39,
+    "Kel'el Ware"
+   ],
+   [
+    58,
+    "Michael Porter Jr."
+   ],
+   [
+    63,
+    "Ty Jerome"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "VJ Edgecombe"
+   ],
+   [
+    106,
+    "Reed Sheppard"
+   ],
+   [
+    111,
+    "Ayo Dosunmu"
+   ],
+   [
+    130,
+    "Saddiq Bey"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "78": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Kevin Durant"
+   ],
+   [
+    34,
+    "Kawhi Leonard"
+   ],
+   [
+    39,
+    "Derrick White"
+   ],
+   [
+    58,
+    "Kel'el Ware"
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Ty Jerome"
+   ],
+   [
+    106,
+    "Collin Gillespie"
+   ],
+   [
+    111,
+    "Collin Gillespie"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Devin Vassell"
+   ],
+   [
+    154,
+    "Devin Vassell"
+   ]
+  ],
+  "79": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    15,
+    "Chet Holmgren"
+   ],
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    39,
+    "Franz Wagner"
+   ],
+   [
+    58,
+    "Michael Porter Jr."
+   ],
+   [
+    63,
+    "Kel'el Ware"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Immanuel Quickley"
+   ],
+   [
+    106,
+    "Reed Sheppard"
+   ],
+   [
+    111,
+    "Collin Gillespie"
+   ],
+   [
+    130,
+    "Reed Sheppard"
+   ],
+   [
+    135,
+    "Saddiq Bey"
+   ],
+   [
+    154,
+    "Tari Eason"
+   ]
+  ]
+ },
+ "counts": {
+  "Julian Champagnie": 5,
+  "Collin Gillespie": 9,
+  "Jamal Murray": 23,
+  "Saddiq Bey": 9,
+  "Lauri Markkanen": 16,
+  "Ty Jerome": 23,
+  "Derrick White": 10,
+  "Michael Porter Jr.": 7,
+  "Kel'el Ware": 23,
+  "VJ Edgecombe": 12,
+  "Anthony Davis": 3,
+  "Reed Sheppard": 23,
+  "Dyson Daniels": 5,
+  "Cam Spencer": 3,
+  "Jalen Suggs": 2,
+  "Kevin Durant": 3,
+  "Naz Reid": 1,
+  "Tre Jones": 1,
+  "Ryan Rollins": 1,
+  "Cameron Boozer": 1,
+  "Chet Holmgren": 5,
+  "Yaxel Lendeborg": 11,
+  "Tyrese Maxey": 7,
+  "Ayo Dosunmu": 2,
+  "Kawhi Leonard": 7,
+  "Tari Eason": 3,
+  "Devin Vassell": 4,
+  "Neemias Queta": 2,
+  "Kyshawn George": 1,
+  "John Collins": 1,
+  "Zach Edey": 1,
+  "Tyrese Haliburton": 1,
+  "Nickeil Alexander-Walker": 1,
+  "Franz Wagner": 1,
+  "Immanuel Quickley": 1
+ },
+ "flagged": [
+  {
+   "player": "Kel'el Ware",
+   "mocks": 23,
+   "value_rank": 27,
+   "market_rank": 77,
+   "gap": 50,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "51",
+    "Hashtag": "51",
+    "Rotoworld": "63",
+    "RotoBaller": "61"
+   },
+   "cells": [
+    "ft_pct .732 vs .714-.723"
+   ],
+   "verdict": "SOURCES SPLIT: 2 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Reed Sheppard",
+   "mocks": 23,
+   "value_rank": 63,
+   "market_rank": 180,
+   "gap": 117,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "56",
+    "Hashtag": "118",
+    "Rotoworld": "126",
+    "RotoBaller": "129"
+   },
+   "cells": [
+    "tpm 2.8 vs 2.2-2.6"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Ty Jerome",
+   "mocks": 23,
+   "value_rank": 40,
+   "market_rank": 117,
+   "gap": 77,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "48",
+    "Hashtag": "60",
+    "Rotoworld": "101",
+    "RotoBaller": "65"
+   },
+   "cells": [],
+   "verdict": "SOURCES SPLIT: 2 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Yaxel Lendeborg",
+   "mocks": 11,
+   "value_rank": 70,
+   "market_rank": 143,
+   "gap": 73,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "93",
+    "Hashtag": "121",
+    "Rotoworld": "137",
+    "RotoBaller": "91"
+   },
+   "cells": [],
+   "verdict": "SOURCES SPLIT: 2 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Collin Gillespie",
+   "mocks": 9,
+   "value_rank": 79,
+   "market_rank": 183,
+   "gap": 104,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "100",
+    "Hashtag": "126",
+    "Rotoworld": "148",
+    "RotoBaller": "155"
+   },
+   "cells": [
+    "pts 12.7 vs 9.5-11.9",
+    "reb 4.1 vs 3.3-3.9",
+    "tpm 2.9 vs 2.1-2.7",
+    "tov 1.6 vs 1.1-1.4"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Saddiq Bey",
+   "mocks": 9,
+   "value_rank": 90,
+   "market_rank": 177,
+   "gap": 87,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "108",
+    "Hashtag": "132",
+    "Rotoworld": "169",
+    "RotoBaller": "157"
+   },
+   "cells": [],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Kawhi Leonard",
+   "mocks": 7,
+   "value_rank": 6,
+   "market_rank": 32,
+   "gap": 26,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "15",
+    "Hashtag": "16",
+    "Rotoworld": "15",
+    "RotoBaller": "20"
+   },
+   "cells": [],
+   "verdict": "SOURCES SPLIT: 0 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Michael Porter Jr.",
+   "mocks": 7,
+   "value_rank": 32,
+   "market_rank": 60,
+   "gap": 28,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "55",
+    "Hashtag": "62",
+    "Rotoworld": "70",
+    "RotoBaller": "57"
+   },
+   "cells": [
+    "pts 24.5 vs 18.7-21.8",
+    "ast 3 vs 2.4-2.6",
+    "stl 0.7 vs 0.8-1",
+    "tpm 3.4 vs 2.9-3.1",
+    "tov 2.3 vs 1.9-2"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  },
+  {
+   "player": "Dyson Daniels",
+   "mocks": 5,
+   "value_rank": 23,
+   "market_rank": 62,
+   "gap": 39,
+   "no_price": false,
+   "outside": {
+    "Yahoo Rank": "20",
+    "Hashtag": "64",
+    "Rotoworld": "56",
+    "RotoBaller": "55"
+   },
+   "cells": [
+    "reb 6.8 vs 5.8-6.4",
+    "ast 5.9 vs 4.7-5.5",
+    "tpm 0.3 vs 0.5-0.6"
+   ],
+   "verdict": "SOURCES SPLIT: 3 of 4 sit 25+ places on one side; the line holds"
+  }
+ ],
+ "near_misses": [
+  {
+   "player": "Jamal Murray",
+   "mocks": 23,
+   "value_rank": 7,
+   "market_rank": 18,
+   "gap": 11
+  },
+  {
+   "player": "Lauri Markkanen",
+   "mocks": 16,
+   "value_rank": 21,
+   "market_rank": 37,
+   "gap": 16
+  },
+  {
+   "player": "VJ Edgecombe",
+   "mocks": 12,
+   "value_rank": 58,
+   "market_rank": 75,
+   "gap": 17
+  },
+  {
+   "player": "Derrick White",
+   "mocks": 10,
+   "value_rank": 29,
+   "market_rank": 45,
+   "gap": 16
+  },
+  {
+   "player": "Tyrese Maxey",
+   "mocks": 7,
+   "value_rank": 5,
+   "market_rank": 9,
+   "gap": 4
+  },
+  {
+   "player": "Chet Holmgren",
+   "mocks": 5,
+   "value_rank": 15,
+   "market_rank": 31,
+   "gap": 16
+  },
+  {
+   "player": "Julian Champagnie",
+   "mocks": 5,
+   "value_rank": 110,
+   "market_rank": 122,
+   "gap": 12
+  }
+ ]
+}
