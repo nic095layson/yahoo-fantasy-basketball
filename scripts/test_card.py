@@ -60,6 +60,12 @@ import subprocess
 import sys
 import tempfile
 
+# Owner call 2026-10-13 night: a lighter availability tier ("-mild" leading tag) between healthy and risk —
+# ranking 0.85 (risk 0.78) and weekly 0.79 (risk 0.75, healthy 0.88; the same proportion of the gap).
+# Expected (ranking, weekly) per leading tag; prose after the tag never counts (F16).
+MILD_TAGS = ["inj-acl-risk-mild (owner 10/13)", "inj-risk-mild; owner call", "inj-achilles-risk", "10/13: healthy (owner call)", "inj-achilles-risk (mild recovery)"]
+MILD_WANT = [(0.85, 0.79), (0.85, 0.79), (0.78, 0.75), (1.0, 0.88), (0.78, 0.75)]
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
 DECK = os.path.join(ROOT, "docs", "draft-deck.html")
@@ -98,6 +104,7 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
   rankCard: typeof rankCard === "function" ? rankCard : null,
   pinDecision: typeof pinDecision === "function" ? pinDecision : null,
   survivalChip: typeof survivalChip === "function" ? survivalChip : null,
+  weeklyAvail: typeof weeklyAvail === "function" ? weeklyAvail : null,
   survivalProb: typeof survivalProb === "function" ? survivalProb : null,
   clockRead: typeof clockRead === "function" ? clockRead : null,
   adviceText: typeof adviceText === "function" ? adviceText : null,
@@ -188,13 +195,14 @@ export const api = { PLAYERS, decwScores, archetypeRead, categoryRanks, buildRos
                 {"t": "— your pick, #4 —", "cls": ""}],
         "insertAt": 2, "insertName": "Luka Doncic"}
     json.dump({"states": states, "probes": probes, "veto": veto or [],
-               "pairFixtures": PAIR_FIXTURES, "relabel": RELABEL_FIXTURE}, open(fixture, "w"))
+               "pairFixtures": PAIR_FIXTURES, "relabel": RELABEL_FIXTURE, "mildTags": MILD_TAGS}, open(fixture, "w"))
     driver = os.path.join(tmp, "run.mjs")
     with open(driver, "w", encoding="utf-8") as f:
         f.write(r"""
 import { api } from "__MOD__";
 import fs from "node:fs";
 const inp = JSON.parse(fs.readFileSync("__FIXTURE__", "utf8"));
+const MILD_TAGS = inp.mildTags || [];
 const out = { present: { rankCard: !!api.rankCard, pinDecision: !!api.pinDecision, survivalChip: !!api.survivalChip },
               SURVIVAL_DISPLAY: api.SURVIVAL_DISPLAY, PIN_MAX_GAP: api.PIN_MAX_GAP };
 if (api.rankCard) {
@@ -210,6 +218,8 @@ out.advice = api.adviceText ? [
   api.adviceText("OG Anunoby", "Payton Pritchard", -0.012, 0.012, null, false),
   api.adviceText("Nikola Jokic", null, null, null, 1, true),
   api.adviceText("Aaron", "Zed", 0.0, 0.0, 30, false)] : null;
+out.wavail = api.weeklyAvail ? MILD_TAGS.map(t => api.weeklyAvail({ note: t })) : null;
+out.pavail = MILD_TAGS.map(t => { const r = api.PLAYERS.find(p => (p.note || "") === t); return r ? r.av : null; });
 out.surv = api.survivalProb ? [api.survivalProb(60, 40), api.survivalProb(5, 150), api.survivalProb(null, 40), api.survivalProb(120, 100), api.survivalProb(200, 30)] : null;
 out.pins = [];
 if (api.pinDecision && api.rankCard) {
@@ -738,6 +748,19 @@ process.stdout.write(JSON.stringify(out));
     case("D59-1 pick lines carry their pick index and kind so the re-render is mechanical",
          'kind: "pick"' in app4 or "kind: \"pick\"" in app4 or 'kind:"pick"' in app4, "log entries carry no pick index")
 
+    # ---- owner call 2026-10-13 night: the -mild tier, three engines agree
+    import importlib.util as _ilu  # noqa: E402
+    _spec = _ilu.spec_from_file_location("arena_mod", os.path.join(ROOT, "arena", "arena.py"))
+    _arena = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_arena)
+    hv = [hoops.availability({"note": t}) for t in MILD_TAGS]
+    av_ = [_arena.weekly_availability({"note": t}) for t in MILD_TAGS]
+    case("MILD hoops.availability: -mild 0.85, risk 0.78, healthy 1.0, prose ignored",
+         hv == [w[0] for w in MILD_WANT], f"got {hv}")
+    case("MILD arena.weekly_availability: -mild 0.79, risk 0.75, healthy 0.88, prose ignored",
+         av_ == [w[1] for w in MILD_WANT], f"got {av_}")
+    case("MILD page weeklyAvail is the exact twin of arena.weekly_availability",
+         js.get("wavail") == [w[1] for w in MILD_WANT], f"got {js.get('wavail')}")
+    case("MILD the page legend names the 0.85 tier", "\u00d70.85" in html or "×0.85" in html, "legend does not mention ×0.85")
     print()
     if FAILS:
         print(f"CARD: {len(FAILS)} of {CASES} cases FAILED")

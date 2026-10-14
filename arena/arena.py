@@ -456,6 +456,10 @@ def weekly_availability(p):
     # hoops.availability). Substring-matching the whole note made
     # "inj-achilles-risk (recovery on track)" score as a 0.60 recovery tier.
     tag = hoops.note_tag(p.get("note"))
+    # Owner call 2026-10-13 night: the -mild tier (ranking 0.85) takes the same
+    # share of the healthy-to-risk gap here: 0.88 - 0.13 * (0.15 / 0.22) = 0.79.
+    if "mild" in tag:
+        return 0.79
     if tag.endswith("-recovery"):
         return 0.60
     if tag.endswith("-risk") or tag in ("risk", "inj-risk"):

@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-13",
-  "note": "2026-10-13 dial pass (D-1013-6, Council 4-1, owner go): 24 lines clamped category by category to the nearest edge of the Yahoo 10/13, Hashtag 10/12 and RotoBaller 9/29 range (the 21 with more than 0.5 z beyond it, 13 high and 8 low, plus Philadelphia's LeBron James, Joel Embiid and VJ Edgecombe); 104 cells, shot attempts rescaled on 22 lines for the points identity; written to both planes by report/dial/tools/dial_apply.py (assertions A1-A9 PASS); no tag, team, placement, games or minutes change; rosters verified direct-complete 335/335 earlier today",
+  "date": "2026-10-14",
+  "note": "2026-10-13 night owner calls (Version 66): availability tags only \u2014 Haliburton and Kessler untagged; Kawhi Leonard, Anthony Davis, Kyrie Irving and Damian Lillard on the new -mild tier (ranking 0.85, weekly 0.79; engine twins hoops/arena/page); Holmgren stays untagged after missing 10/13 (quad bruise, day-to-day); Black, Merrill, Hartenstein unchanged; no stat line, team or placement change; rosters verified direct-complete 335/335",
   "pool_changes": {
     "changed": true,
-    "note": "dial pass 10/13: 24 lines clamped inside the three outside projections' range (D-1013-6), both planes"
+    "note": "owner calls 10/13 night: Haliburton and Kessler untagged (healthy); Kawhi, Davis, Kyrie, Lillard to the new -mild tier (0.85 ranking, 0.79 weekly); notes on Holmgren (stays untagged) and Lendeborg; no line, team or placement change"
   },
   "rosters_verified": {
-    "date": "2026-10-13",
+    "date": "2026-10-14",
     "mode": "direct-complete",
-    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-13 (site.api.espn.com (all 30 rosters), all 30 rosters; roster_verification.json dated 2026-10-13); 335/335 on the feed, 0 mismatches, no exemption"
+    "sources": "scripts/verify_rosters.py direct-complete run 2026-10-14 UTC (site.api.espn.com, all 30 rosters; roster_verification.json dated 2026-10-14); 335/335 on the feed, 0 mismatches, no exemption"
   }
 }
