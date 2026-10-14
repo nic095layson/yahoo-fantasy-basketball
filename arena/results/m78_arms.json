@@ -1,0 +1,142 @@
+{
+ "as_drafted": {
+  "champ": 19.483,
+  "playoff": 98.89,
+  "champ_rank": 2,
+  "swaps": []
+ },
+ "swap#10:Jalen Johnson": {
+  "champ": 26.65,
+  "playoff": 99.76,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jalen Johnson"
+   ]
+  ]
+ },
+ "swap#15:Jamal Murray": {
+  "champ": 21.678,
+  "playoff": 99.42,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    15,
+    "Jamal Murray"
+   ]
+  ]
+ },
+ "swap#34:James Harden": {
+  "champ": 20.878,
+  "playoff": 99.14,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    34,
+    "James Harden"
+   ]
+  ]
+ },
+ "swap#39:Michael Porter Jr.": {
+  "champ": 20.306,
+  "playoff": 99.06,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    39,
+    "Michael Porter Jr."
+   ]
+  ]
+ },
+ "swap#58:Cameron Boozer": {
+  "champ": 24.628,
+  "playoff": 99.72,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    58,
+    "Cameron Boozer"
+   ]
+  ]
+ },
+ "swap#82:Josh Hart": {
+  "champ": 21.361,
+  "playoff": 99.15,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    82,
+    "Josh Hart"
+   ]
+  ]
+ },
+ "swap#106:Myles Turner": {
+  "champ": 21.083,
+  "playoff": 99.29,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    106,
+    "Myles Turner"
+   ]
+  ]
+ },
+ "swap#135:Tari Eason": {
+  "champ": 22.828,
+  "playoff": 99.39,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    135,
+    "Tari Eason"
+   ]
+  ]
+ },
+ "swap#154:Tari Eason": {
+  "champ": 20.428,
+  "playoff": 99.0,
+  "champ_rank": 2,
+  "swaps": [
+   [
+    154,
+    "Tari Eason"
+   ]
+  ]
+ },
+ "follow_card_selfconsistent": {
+  "champ": 35.961,
+  "playoff": 99.98,
+  "champ_rank": 1,
+  "swaps": [
+   [
+    10,
+    "Jamal Murray"
+   ],
+   [
+    34,
+    "Chet Holmgren"
+   ],
+   [
+    39,
+    "Dyson Daniels"
+   ],
+   [
+    58,
+    "Derrick White"
+   ],
+   [
+    82,
+    "Ty Jerome"
+   ],
+   [
+    87,
+    "Immanuel Quickley"
+   ],
+   [
+    135,
+    "Bobby Portis"
+   ]
+  ]
+ }
+}
