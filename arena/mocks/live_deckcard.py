@@ -79,6 +79,7 @@ PUNT_TIMELINES = {
     81: [(0, [])],
     82: [(0, [])],
     83: [(0, [])],
+    100: [(0, [])],
 }
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 if html_path.startswith("rev:"):
