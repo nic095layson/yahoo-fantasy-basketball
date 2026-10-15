@@ -5,6 +5,11 @@ simulator's, in its order, so on the same seed the champion and playoff counts e
 exactly; --verify asserts that before anything is written.
 
     python3 arena/mocks/league_sim.py <draft_state.json> <tag> <seasons> <seed> <out.json> [--verify]
+                                      [--schedule <kit data/league_schedule.json>]
+
+--schedule fixes the owner's seat against the listed opponent in every regular-season week
+(the league's real schedule, owner message 2026-10-15) and pairs the other ten teams at random
+each week; it changes the draw order, so it cannot be combined with --verify.
 
 Built for the league draft of 2026-10-14 (owner: "simulate 10000 seasons")."""
 import json, math, os, random, sys
@@ -15,6 +20,11 @@ import arena  # noqa: E402
 
 state_path, tag, SEASONS, SEED, out_path = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
 VERIFY = "--verify" in sys.argv
+SCHEDULE = None
+if "--schedule" in sys.argv:
+    sched_path = sys.argv[sys.argv.index("--schedule") + 1]
+    SCHEDULE = json.load(open(sched_path, encoding="utf-8"))
+    assert not VERIFY, "--schedule changes the draw order; run --verify without it"
 hoops.DATA_PATH = os.path.join(DECK, "arena", "results", f"players_{tag}.csv")
 players = hoops.zscores(hoops.load_players()); by = {p["player"]: p for p in players}
 st = json.load(open(state_path, encoding="utf-8"))
@@ -25,6 +35,11 @@ for pk in st["picks"]:
 assert not missing, missing
 CATS, TEAMS, WEEKS, PO = hoops.CATS, arena.TEAMS, arena.WEEKS, arena.PLAYOFF_TEAMS
 assert TEAMS == len(rosters)
+if SCHEDULE:
+    assert SCHEDULE["regular_season_weeks"] == WEEKS, (SCHEDULE["regular_season_weeks"], WEEKS)
+    OWNER = SCHEDULE["owner_seat"]
+    OPP = [o["seat"] for o in sorted(SCHEDULE["owner_opponents"], key=lambda o: o["week"])]
+HONORED = [0]
 
 
 def simulate(rosters, seasons, rng):
@@ -54,8 +69,14 @@ def simulate(rosters, seasons, rng):
     for _ in range(seasons):
         record = {i: 0 for i in ids}
         for _w in range(WEEKS):
-            pairing = ids[:]
-            rng.shuffle(pairing)
+            if SCHEDULE:
+                rest = [i for i in ids if i not in (OWNER, OPP[_w])]
+                rng.shuffle(rest)
+                pairing = [OWNER, OPP[_w]] + rest
+                HONORED[0] += 1
+            else:
+                pairing = ids[:]
+                rng.shuffle(pairing)
             for k in range(0, TEAMS, 2):
                 a, b = pairing[k], pairing[k + 1]
                 wa = week_result(a, b, rec=True)
@@ -73,7 +94,7 @@ def simulate(rosters, seasons, rng):
         qf = [(top[0], top[7]), (top[3], top[4]), (top[1], top[6]), (top[2], top[5])]
         w1 = [a if week_result(a, b) >= 5 else b for a, b in qf]
         for i in w1: R[i]["semi"] += 1
-        sf = [(w1[0], w1[1]), (w1[2], w1[3])]
+        sf = arena.reseed(w1, top)
         w2 = [a if week_result(a, b) >= 5 else b for a, b in sf]
         for i in w2: R[i]["final"] += 1
         champ = w2[0] if week_result(*w2) >= 5 else w2[1]
@@ -88,6 +109,9 @@ if VERIFY:
     print(f"verify: champions and playoff counts equal arena.simulate_seasons on seed {SEED} for all {len(rosters)} teams")
 out = dict(state=os.path.relpath(state_path, DECK), tag=tag, seasons=SEASONS, seed=SEED, weeks=WEEKS, playoff_teams=PO,
            verified_against_arena=VERIFY, teams={})
+if SCHEDULE:
+    out["schedule"] = dict(file=os.path.relpath(sched_path, DECK), owner_seat=OWNER, opponents=OPP,
+                           honored=HONORED[0], others="the other ten teams paired at random each week")
 n_matchups = SEASONS * WEEKS
 for i in rosters:
     r = R[i]; mean = r["cat_wins"] / SEASONS

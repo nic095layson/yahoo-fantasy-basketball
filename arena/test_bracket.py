@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Playoff-bracket tests for arena.simulate_seasons (E14, shipped 2026-09-30).
 
-The owner's league sends 8 of 12 teams to a fixed, no-bye bracket
-(1v8, 4v5, 2v7, 3v6; winners meet in seed order; one week per round).
+The owner's league sends 8 of 12 teams to a no-bye bracket (1v8, 4v5, 2v7,
+3v6; one week per round), RESEEDED after round 1 per the settings page pinned
+2026-10-15 — the reseeding itself is asserted by the kit's scripts/test_settings.py.
+Until 2026-10-15 the arena played the semifinals in fixed bracket order.
 The arena shipped a six-team bracket with byes for seeds 1-2 from 2026-07
 until this test went red on 2026-09-30 (league_intel_2025-26.md §1/§4/§7).
 
