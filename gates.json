@@ -1,0 +1,66 @@
+{
+ "ran_at_utc": "2026-10-15T06:40:48Z",
+ "inputs": {
+  "../fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-15-co-gm-rules.md": "01f0123eedec4fbb4e60ae22c1424d7b0a84022444b6f726bce6304ae99bc528",
+  "../fantasy-basketball-2026-27/RULES.md": "0693ef72baaa24858f5d9d4268e375a59552b56ec11cd69b9c9bd36dbaf2beee",
+  "../fantasy-basketball-2026-27/OPEN.md": "b260263838c35e6ac62e06625fa368a56b3a2a8420394448efef2490e92b6414"
+ },
+ "gates": [
+  {
+   "name": "kit check_report",
+   "cmd": "/usr/bin/python3 report/check_report.py /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-15-co-gm-rules.md",
+   "cwd": ".",
+   "pass_re": "^REPORT GATE: PASS",
+   "exit": 0,
+   "pass_line": "REPORT GATE: PASS \u2014 after-report-2026-10-15-co-gm-rules.md (structure, publication rule, pull-log row)",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "REPORT GATE: PASS \u2014 after-report-2026-10-15-co-gm-rules.md (structure, publication rule, pull-log row)"
+   ]
+  },
+  {
+   "name": "deck judgment_open_items --check-report",
+   "cmd": "/usr/bin/python3 scripts/judgment_open_items.py --check-report /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-15-co-gm-rules.md",
+   "cwd": "../yahoo-fantasy-basketball",
+   "pass_re": "^receipts check PASS",
+   "exit": 0,
+   "pass_line": "receipts check PASS \u2014 all 10 flagged names carry a receipts row in after-report-2026-10-15-co-gm-rules.md",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "receipts check PASS \u2014 all 10 flagged names carry a receipts row in after-report-2026-10-15-co-gm-rules.md"
+   ]
+  },
+  {
+   "name": "deck repeat_market_check --check-report",
+   "cmd": "/usr/bin/python3 scripts/repeat_market_check.py --check-report /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-15-co-gm-rules.md",
+   "cwd": "../yahoo-fantasy-basketball",
+   "pass_re": "^REPEAT-NAME CHECK: PASS",
+   "exit": 0,
+   "pass_line": "REPEAT-NAME CHECK: PASS \u2014 after-report-2026-10-15-co-gm-rules.md: 12 flagged name(s), each with a row (33 of 33 mocks replayed)",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "REPEAT-NAME CHECK: PASS \u2014 after-report-2026-10-15-co-gm-rules.md: 12 flagged name(s), each with a row (33 of 33 mocks replayed)"
+   ]
+  },
+  {
+   "name": "kit test_gates_runner",
+   "cmd": "python3 scripts/test_gates_runner.py",
+   "cwd": ".",
+   "pass_re": "^OK$",
+   "exit": 0,
+   "pass_line": "OK",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "----------------------------------------------------------------------",
+    "Ran 9 tests in 0.218s",
+    "OK"
+   ]
+  }
+ ],
+ "verdict": "PASS",
+ "base_commit": "82e16791f1c22e7d6826bf6434e5851684530b72"
+}
