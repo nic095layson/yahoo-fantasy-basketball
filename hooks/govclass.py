@@ -60,7 +60,34 @@ GOVERNORS_FOR = {
 ENFORCED = ("analysis", "review", "build", "dispute")
 
 
-HARNESS_MARKERS = ("[SYSTEM NOTIFICATION", "<task-notification>", "<wake ", "<agent-message", "<webhook-payload")
+# Slash-command echoes added 2026-10-19: a /model echo was the latest user string in a real session
+# and hid the owner's governed prompt from the Stop gate (red-team attack G5).
+HARNESS_MARKERS = ("[SYSTEM NOTIFICATION", "<task-notification>", "<wake ", "<agent-message", "<webhook-payload",
+                   "<command-name>", "<local-command-stdout>", "<local-command-caveat>")
+
+# The advisory cue tier (2026-10-19, D-SV-3 option c). The five patterns above catch 14/36 governed
+# owner prompts on the sealed set (results/2026-10-19/system-red-team), so the TRIGGER also cues on any
+# substantive owner prompt the patterns miss; the Stop gate still blocks only on the patterns. Both
+# thresholds are hand-set (uncalibrated, registry of the same date): a prompt of fewer than
+# CUE_MIN_WORDS words, or one that is only an acknowledgement, is not cued.
+CUE_MIN_WORDS = 5
+ACK_RX = re.compile(
+    r"^(ok(ay)?|yes|no|yep|nope|sure|thanks?( you)?|ty|great|perfect|nice|good|sounds good|looks good"
+    r"|go ahead|proceed|continue|done|complete[d]?|confirmed|approved|lgtm)[\s!.,]*"
+    r"((ok(ay)?|yes|yep|sure|thanks?( you)?|great|perfect|nice|good|sounds good|looks good|go ahead"
+    r"|proceed|continue|that'?s all( for (now|tonight|today))?|for (now|tonight|today)|all set"
+    r"|instructions? (complete|done)|re-?pasted?|uploaded?|pasted|saved|merged?|and|the|it|them|is|are)[\s!.,]*)*$",
+    re.I)
+
+
+def cue(prompt: str) -> bool:
+    """True when the advisory tier should cue governance on an owner prompt the patterns missed."""
+    p = (prompt or "").strip()
+    if not p or any(m in p for m in HARNESS_MARKERS):
+        return False
+    if len(p.split()) < CUE_MIN_WORDS:
+        return False
+    return not ACK_RX.match(p)
 
 
 def classify(prompt: str):

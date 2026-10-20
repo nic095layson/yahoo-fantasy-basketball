@@ -16,12 +16,14 @@
 # Wiring: .claude/settings.json -> SessionStart, matcher "compact|resume". Pipe-tested 2026-10-13.
 set -u
 input=$(cat 2>/dev/null || true)
-src=$(printf '%s' "$input" | jq -r '.source // ""' 2>/dev/null || echo "")
-sid=$(printf '%s' "$input" | jq -r '.session_id // "nosession"' 2>/dev/null || echo nosession)
+# python3, not jq: with no jq on PATH this hook emitted nothing and re-armed nothing, silently
+# (red-team 2026-10-19, attack S3; D-GF-8). python3 is already required by the pack's other hooks.
+src=$(printf '%s' "$input" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("source") or "")' 2>/dev/null || echo "")
+sid=$(printf '%s' "$input" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("session_id") or "nosession")' 2>/dev/null || echo nosession)
 
 emit() {
   # $1 = context text. Emitted as SessionStart additionalContext.
-  jq -cn --arg ctx "$1" '{hookSpecificOutput:{hookEventName:"SessionStart",additionalContext:$ctx}}' 2>/dev/null
+  python3 -c 'import json,sys; print(json.dumps({"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":sys.argv[1]}}))' "$1" 2>/dev/null
 }
 
 case "$src" in

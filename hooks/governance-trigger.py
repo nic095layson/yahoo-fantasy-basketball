@@ -17,6 +17,11 @@ try:
     from govclass import classify, governors
 except Exception:
     sys.exit(0)
+try:
+    from govclass import cue
+except Exception:  # older classifier without the cue tier
+    def cue(_):
+        return False
 
 MESSAGES = {
     "dispute": (
@@ -40,6 +45,14 @@ except Exception:
 prompt = (data.get("prompt") or "").strip()
 classes = classify(prompt)
 if not classes:
+    # The advisory cue tier (2026-10-19, D-SV-3 option c): the patterns catch 14/36 governed owner
+    # prompts on the sealed set, so prompts they miss get one advisory line. Never enforced.
+    if cue(prompt):
+        print(json.dumps({"hookSpecificOutput": {"hookEventName": "UserPromptSubmit", "additionalContext": (
+            "Governance cue (advisory, from your operating rules): if this request is non-trivial work the "
+            "owner will rely on, load the governor it calls for with the Skill tool before acting — plan-gate "
+            "before building, adversarial-verify before delivering or when checking, scope-fence when the ask "
+            "could widen. A trivial or conversational message: answer directly, no ceremony.")}}))
     sys.exit(0)
 
 parts = []
@@ -57,7 +70,12 @@ if "requirement" in classes:
     parts.append(MESSAGES["requirement"])
 if not parts:
     sys.exit(0)
-parts.append("If on inspection it is genuinely trivial, say so in one line and skip.")
+# The skip clause stays OFF build-class prompts: in 4/4 live build runs it was taken before the first
+# write, so the governor loaded only after the Stop block (red-team 2026-10-19, runs L1/L8). Plan-gate's
+# own triage rule is the anti-ceremony valve once it loads. Other classes keep the clause: with it, the
+# Stop gate's trivia allowance, and invariant 5, a trivial review is answered in one line, not ritualized.
+if "build" not in classes:
+    parts.append("If on inspection it is genuinely trivial, say so in one line and skip.")
 
 print(json.dumps({"hookSpecificOutput": {"hookEventName": "UserPromptSubmit",
                                          "additionalContext": " ".join(parts)}}))

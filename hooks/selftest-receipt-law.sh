@@ -96,5 +96,20 @@ run t7-first-fire ALLOW "$WORK/t7"   # same sid+promptId -> sentinel suppresses
 # 8. Fail-open: transcript missing entirely.
 run t8-missing-transcript ALLOW "$WORK/does-not-exist.jsonl"
 
+# 9-12. Red-team 2026-10-19 (results/2026-10-19/system-red-team, attacks R2-R6): the claim
+#    pattern missed curly apostrophes and paraphrases, and a receipt word anywhere in the turn,
+#    even as a substring, excused the claim.
+mk "$WORK/t9" "I couldn’t verify the release date."
+run t9-curly-apostrophe BLOCK "$WORK/t9"
+mk "$WORK/t10" "I wasn't able to verify the release date, and I have no way to confirm the venue."
+run t10-paraphrases BLOCK "$WORK/t10"
+mk "$WORK/t11" "I couldn't verify the date the veteran guard was traded."
+run t11-receipt-substring BLOCK "$WORK/t11"
+far=$(python3 -c 'print("The CI job ran fine and the lint passed. " + "Filler sentence about the deck layout. " * 14 + "Separately, I couldn'"'"'t verify the release date.")')
+mk "$WORK/t12" "$far"
+run t12-receipt-far-from-claim BLOCK "$WORK/t12"
+mk "$WORK/t13" "I couldn't verify the release date: I searched the press page and the wiki and neither lists one."
+run t13-receipt-beside-claim ALLOW "$WORK/t13"
+
 echo "== $PASS passed, $FAIL failed =="
 [ "$FAIL" -eq 0 ] || exit 1
