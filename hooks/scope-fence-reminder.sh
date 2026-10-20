@@ -6,7 +6,9 @@
 # campaign, 2026-07-11). Silent on every subsequent edit in the session.
 set -u
 input=$(cat)
-sid=$(printf '%s' "$input" | /usr/bin/jq -r '.session_id // "nosession"' 2>/dev/null || echo nosession)
+# python3, not jq: the hard-coded /usr/bin/jq made every session on a jq-elsewhere machine share one
+# "nosession" sentinel, so the reminder fired once per machine (red-team 2026-10-19, attack M3; D-GF-8).
+sid=$(printf '%s' "$input" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("session_id") or "nosession")' 2>/dev/null || echo nosession)
 sentinel="${TMPDIR:-/tmp}/scope-fence-reminder-${sid}"
 if [ ! -e "$sentinel" ]; then
   touch "$sentinel"

@@ -92,26 +92,56 @@ if not prompt:
 classes = [c for c in classify(prompt) if c in ENFORCED]
 if not classes:
     sys.exit(0)  # not governed, or advisory-only -> allow
-needed = set(governors(classes))
 
-loaded = set()
+# What must have loaded: the PRIMARY governor of every enforced class the prompt matched (the first in
+# its GOVERNORS_FOR tuple). Before 2026-10-19 any one needed governor passed, so a dispute — which needs
+# adversarial-verify's assessment — passed on a scope-fence load alone (red-team attack G4).
+try:
+    from govclass import GOVERNORS_FOR
+    needed = {GOVERNORS_FOR[c][0] for c in classes}
+except Exception:
+    needed = set(governors(classes))
+
+loaded, tools_ran, said = set(), 0, []
 for d in lines[li:]:
     if d.get("type") != "assistant":
         continue
     m = d.get("message") or {}
     for b in (m.get("content") or []) if isinstance(m, dict) else []:
-        if isinstance(b, dict) and b.get("type") == "tool_use" and b.get("name") == "Skill":
-            inp = json.dumps(b.get("input", {}))
-            for g in ("plan-gate", "adversarial-verify", "scope-fence"):
-                if g in inp:
-                    loaded.add(g)
+        if not isinstance(b, dict):
+            continue
+        if b.get("type") == "text":
+            said.append(b.get("text") or "")
+        if b.get("type") != "tool_use":
+            continue
+        if b.get("name") == "Skill":
+            # Exact match on the Skill NAME (after any scope prefix). Before 2026-10-19 a substring
+            # match on the whole input let a call whose ARGS merely mentioned a governor count as
+            # loading it (red-team attack G3).
+            inp = b.get("input") or {}
+            name = str(inp.get("skill") or "").split(":")[-1].strip()
+            if name in ("plan-gate", "adversarial-verify", "scope-fence"):
+                loaded.add(name)
+        else:
+            tools_ran += 1
 
-if loaded & needed:
+if needed <= loaded:
     sys.exit(0)  # complied
 
-first = governors(classes)[0]
-reason = ("GOV-ENFORCE: this is governed work (" + ", ".join(governors(classes)) + ") and you finished "
-          "WITHOUT loading it. Load " + first + " with the Skill tool now, follow its procedure, and revise "
+# Trivia allowance (D-SV-5, 2026-10-19), REVIEW-ONLY: a review-class turn that ran no tool and
+# answered in under TRIVIA_MAX_CHARS characters did no governed work — "quick sanity check: 2+2=4,
+# right?" was blocked 2/2 live and the forced load added nothing. Scoped to {review} alone: a dispute,
+# build or analysis answered short without tools is the INC-2026-10-13-01 shape (acquiescing without
+# the assessment), not trivia. TRIVIA_MAX_CHARS is hand-set (uncalibrated, registry
+# results/2026-10-19/system-red-team). Any tool call or a longer answer re-arms the gate.
+TRIVIA_MAX_CHARS = 400
+if set(classes) == {"review"} and tools_ran == 0 and len("".join(said).strip()) < TRIVIA_MAX_CHARS:
+    sys.exit(0)
+
+first = sorted(needed - loaded)[0]
+reason = ("GOV-ENFORCE: this is governed work (" + ", ".join(sorted(needed)) + ") and you finished "
+          "WITHOUT loading " + ("it" if len(needed) == 1 else "all of it") + ". Load " + first +
+          " with the Skill tool now, follow its procedure, and revise "
           "your answer before finishing. Governor text already in your context from before a compaction "
           "does not count: it was loaded for an earlier task.")
 print(json.dumps({"decision": "block", "reason": reason}))

@@ -125,30 +125,46 @@ n_lookups = sum(1 for t in tools if t in VERIFY_TOOLS or t.startswith("mcp__"))
 clean = re.sub(r"```.*?```", " ", text, flags=re.DOTALL)   # fenced blocks
 clean = re.sub(r"\x60[^\x60\n]*\x60", " ", clean)          # inline code
 clean = re.sub(r"^\s*>.*$", " ", clean, flags=re.MULTILINE)  # blockquotes
+# Curly quotes normalized (red-team 2026-10-19, attack R2: "couldn’t verify" passed 2/2 live).
+clean = clean.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
 
 INABILITY = re.compile(
     r"could ?n[o']?t (verify|confirm|check|determine|find out)"
     r"|can ?n[o']?t (verify|confirm|determine)"
     r"|cannot (verify|confirm|determine)"
     r"|unable to (verify|confirm|determine)"
+    # paraphrases added 2026-10-19 (red-team attacks R3-R4)
+    r"|was ?n[o']?t able to (verify|confirm|check|determine)"
+    r"|no way (for me )?to (verify|confirm|check|determine)"
     r"|no data (exists|is available)"
     r"|(remain|are|is|left) (unverified|unconfirmed)"
     r"|not (verifiable|possible to verify)",
     re.IGNORECASE)
 
-m = INABILITY.search(clean)
-if not m:
+claims = list(INABILITY.finditer(clean))
+if not claims:
     allow()
 
-# --- the receipt: was an attempt and a failure mode named? --------------------
+# --- the receipt: was an attempt and a failure mode named BESIDE the claim? ----
+# Two corrections 2026-10-19 (red-team attacks R5-R6): word boundaries, so "ran " inside "veteran"
+# is no longer a receipt; and the receipt must sit within RECEIPT_WINDOW characters of the claim,
+# not anywhere in the turn — the receipt is owed per claim. The window is hand-set (uncalibrated,
+# registry results/2026-10-19/system-red-team).
+RECEIPT_WINDOW = 400
 RECEIPT = re.compile(
-    r"searched|search(ed)? for|looked up|queried|fetched|tried to (fetch|load|open|reach)"
-    r"|ran |returned no|no results|404|403|timed out|timeout|paywall|rate.?limit"
-    r"|blocked|requires (a )?(login|account|subscription)|behind a login"
+    r"\b(searched|search(ed)? for|looked up|queried|fetched)\b|tried to (fetch|load|open|reach)"
+    r"|\bran\b|returned no|no results|\b404\b|\b403\b|timed out|timeout|paywall|rate.?limit"
+    r"|\bblocked\b|requires (a )?(login|account|subscription)|behind a login"
     r"|javascript.rendered|not (in|within) my training|after my (training )?cut.?off"
-    r"|permission|not (approved|granted)|did not check|didn't check|by choice",
+    r"|\bpermission\b|not (approved|granted)|did not check|didn't check|by choice",
     re.IGNORECASE)
-if RECEIPT.search(clean):
+m = None
+for c in claims:
+    window = clean[max(0, c.start() - RECEIPT_WINDOW):c.end() + RECEIPT_WINDOW]
+    if not RECEIPT.search(window):
+        m = c
+        break
+if m is None:
     allow()
 
 # --- once per turn ------------------------------------------------------------
