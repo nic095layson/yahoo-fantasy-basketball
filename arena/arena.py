@@ -460,12 +460,16 @@ def weekly_availability(p):
     # share of the healthy-to-risk gap here: 0.88 - 0.13 * (0.15 / 0.22) = 0.79.
     if "mild" in tag:
         return 0.79
+    # D-PM-4 recovery (owner "build council's fixes", 2026-10-21): 0.0, the board's exclusion
+    # (hoops.availability, owner ruling 2026-07-12), not the superseded 0.60 — real 2025-26
+    # recovery players played ~9% of games (LESSONS item 5), and a returnee is re-tagged
+    # -risk, so a recovery tag means "not playing now", like an IL slot under D-IS-8.
     if tag.endswith("-recovery"):
-        return 0.60
+        return 0.0
     if tag.endswith("-risk") or tag in ("risk", "inj-risk"):
         return 0.75
     if "recovery" in tag:
-        return 0.60
+        return 0.0
     if "risk" in tag:
         return 0.75
     return 0.88

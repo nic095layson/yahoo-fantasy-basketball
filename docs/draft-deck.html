@@ -1337,9 +1337,10 @@ function weeklyAvail(p) {
   /* Owner call 2026-10-13 night: the -mild tier (ranking 0.85) takes the same
      share of the healthy-to-risk gap: 0.88 - 0.13 * (0.15 / 0.22) = 0.79. */
   if (tag.includes("mild")) return 0.79;
-  if (tag.endsWith("-recovery")) return 0.60;
+  /* D-PM-4 recovery (2026-10-21): 0.0, the board's exclusion, not the superseded 0.60. */
+  if (tag.endsWith("-recovery")) return 0.0;
   if (tag.endsWith("-risk") || tag === "risk" || tag === "inj-risk") return 0.75;
-  if (tag.includes("recovery")) return 0.60;
+  if (tag.includes("recovery")) return 0.0;
   if (tag.includes("risk")) return 0.75;
   return 0.88;
 }
