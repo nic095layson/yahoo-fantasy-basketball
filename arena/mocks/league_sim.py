@@ -5,11 +5,15 @@ simulator's, in its order, so on the same seed the champion and playoff counts e
 exactly; --verify asserts that before anything is written.
 
     python3 arena/mocks/league_sim.py <draft_state.json> <tag> <seasons> <seed> <out.json> [--verify]
-                                      [--schedule <kit data/league_schedule.json>]
+                                      [--schedule <kit data/league_schedule.json>] [--season-cv]
 
 --schedule fixes the owner's seat against the listed opponent in every regular-season week
 (the league's real schedule, owner message 2026-10-15) and pairs the other ten teams at random
 each week; it changes the draw order, so it cannot be combined with --verify.
+
+--season-cv runs the weekly model on arena.SEASON_CV, the per-game variation fitted to the 2025-26 game logs
+(D-ZS-3, owner 2026-10-21: the season tools only); without it the draft engine's arena.CV, as before. --verify
+compares against arena.simulate_seasons on the same CV, and the record says "cv": "season".
 
 Built for the league draft of 2026-10-14 (owner: "simulate 10000 seasons")."""
 import json, math, os, random, sys
@@ -20,6 +24,7 @@ import arena  # noqa: E402
 
 state_path, tag, SEASONS, SEED, out_path = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
 VERIFY = "--verify" in sys.argv
+CV = arena.SEASON_CV if "--season-cv" in sys.argv else None
 SCHEDULE = None
 if "--schedule" in sys.argv:
     sched_path = sys.argv[sys.argv.index("--schedule") + 1]
@@ -44,7 +49,7 @@ HONORED = [0]
 
 def simulate(rosters, seasons, rng):
     """arena.simulate_seasons, line for line, plus the record."""
-    models = {i: arena.team_week_model(r) for i, r in rosters.items()}
+    models = {i: arena.team_week_model(r, CV) for i, r in rosters.items()}
     sigmas = {i: {c: math.sqrt(models[i][1][c]) or 1e-6 for c in CATS} for i in rosters}
     counting = set(hoops.COUNT_COLS)
     ids = list(rosters)
@@ -104,11 +109,13 @@ def simulate(rosters, seasons, rng):
 
 R, models = simulate(rosters, SEASONS, random.Random(SEED))
 if VERIFY:
-    c, p = arena.simulate_seasons(rosters, SEASONS, random.Random(SEED))
+    c, p = arena.simulate_seasons(rosters, SEASONS, random.Random(SEED), cv=CV)
     assert all(c[i] == R[i]["champ"] and p[i] == R[i]["playoff"] for i in rosters), ({i: (c[i], R[i]["champ"], p[i], R[i]["playoff"]) for i in rosters})
     print(f"verify: champions and playoff counts equal arena.simulate_seasons on seed {SEED} for all {len(rosters)} teams")
 out = dict(state=os.path.relpath(state_path, DECK), tag=tag, seasons=SEASONS, seed=SEED, weeks=WEEKS, playoff_teams=PO,
            verified_against_arena=VERIFY, teams={})
+if CV is not None:
+    out["cv"] = "season"
 if SCHEDULE:
     out["schedule"] = dict(file=os.path.relpath(sched_path, DECK), owner_seat=OWNER, opponents=OPP,
                            honored=HONORED[0], others="the other ten teams paired at random each week")

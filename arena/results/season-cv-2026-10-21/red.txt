@@ -1,0 +1,61 @@
+/home/user/yahoo-fantasy-basketball/arena/test_season_cv.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='arena/data/states/draft_state_100.json' mode='r' encoding='utf-8'>
+  st = json.load(open(STATE, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_default_paths_compute_exactly_as_before (__main__.SeasonCV.test_default_paths_compute_exactly_as_before) ... ERROR
+test_league_sim_season_cv_flag_verifies_against_the_house_simulator (__main__.SeasonCV.test_league_sim_season_cv_flag_verifies_against_the_house_simulator) ... /home/user/yahoo-fantasy-basketball/arena/test_season_cv.py:90: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpghjp6u51/ls.json' mode='r' encoding='utf-8'>
+  rec = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FAIL
+test_season_cv_is_the_2025_26_fit (__main__.SeasonCV.test_season_cv_is_the_2025_26_fit) ... ERROR
+test_simulate_seasons_takes_the_season_cv (__main__.SeasonCV.test_simulate_seasons_takes_the_season_cv) ... ERROR
+test_the_draft_engine_values_are_untouched (__main__.SeasonCV.test_the_draft_engine_values_are_untouched) ... ok
+test_the_season_cv_widens_only_the_counting_variances (__main__.SeasonCV.test_the_season_cv_widens_only_the_counting_variances) ... ERROR
+
+======================================================================
+ERROR: test_default_paths_compute_exactly_as_before (__main__.SeasonCV.test_default_paths_compute_exactly_as_before)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/yahoo-fantasy-basketball/arena/test_season_cv.py", line 66, in test_default_paths_compute_exactly_as_before
+    champs_none, _ = arena.simulate_seasons(self.ros, 600, random.Random(2026), cv=None)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: simulate_seasons() got an unexpected keyword argument 'cv'
+
+======================================================================
+ERROR: test_season_cv_is_the_2025_26_fit (__main__.SeasonCV.test_season_cv_is_the_2025_26_fit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/yahoo-fantasy-basketball/arena/test_season_cv.py", line 55, in test_season_cv_is_the_2025_26_fit
+    self.assertEqual(arena.SEASON_CV, FIT)
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'arena' has no attribute 'SEASON_CV'
+
+======================================================================
+ERROR: test_simulate_seasons_takes_the_season_cv (__main__.SeasonCV.test_simulate_seasons_takes_the_season_cv)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/yahoo-fantasy-basketball/arena/test_season_cv.py", line 80, in test_simulate_seasons_takes_the_season_cv
+    a, _ = arena.simulate_seasons(self.ros, 600, random.Random(2026), cv=arena.SEASON_CV)
+                                                                         ^^^^^^^^^^^^^^^
+AttributeError: module 'arena' has no attribute 'SEASON_CV'
+
+======================================================================
+ERROR: test_the_season_cv_widens_only_the_counting_variances (__main__.SeasonCV.test_the_season_cv_widens_only_the_counting_variances)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/yahoo-fantasy-basketball/arena/test_season_cv.py", line 72, in test_the_season_cv_widens_only_the_counting_variances
+    mu1, var1 = arena.team_week_model(r, cv=arena.SEASON_CV)
+                                            ^^^^^^^^^^^^^^^
+AttributeError: module 'arena' has no attribute 'SEASON_CV'
+
+======================================================================
+FAIL: test_league_sim_season_cv_flag_verifies_against_the_house_simulator (__main__.SeasonCV.test_league_sim_season_cv_flag_verifies_against_the_house_simulator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/yahoo-fantasy-basketball/arena/test_season_cv.py", line 91, in test_league_sim_season_cv_flag_verifies_against_the_house_simulator
+    self.assertEqual(rec.get("cv"), "season")
+AssertionError: None != 'season'
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.509s
+
+FAILED (failures=1, errors=4)
