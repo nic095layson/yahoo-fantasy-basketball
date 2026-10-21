@@ -1334,6 +1334,8 @@ function weeklyAvail(p) {
      whole note scored "inj-achilles-risk (recovery on track)" as a 0.60
      recovery tier; all four re-entered returnees carry that note shape. */
   const tag = tagOf(p.note);
+  /* out-* (2026-10-21): excluded, as hoops.availability excludes them, first in the same order. */
+  if (tag.startsWith("out-")) return 0.0;
   /* Owner call 2026-10-13 night: the -mild tier (ranking 0.85) takes the same
      share of the healthy-to-risk gap: 0.88 - 0.13 * (0.15 / 0.22) = 0.79. */
   if (tag.includes("mild")) return 0.79;
