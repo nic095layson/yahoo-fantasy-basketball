@@ -63,8 +63,11 @@ import tempfile
 # Owner call 2026-10-13 night: a lighter availability tier ("-mild" leading tag) between healthy and risk —
 # ranking 0.85 (risk 0.78) and weekly 0.79 (risk 0.75, healthy 0.88; the same proportion of the gap).
 # Expected (ranking, weekly) per leading tag; prose after the tag never counts (F16).
-MILD_TAGS = ["inj-acl-risk-mild (owner 10/13)", "inj-risk-mild; owner call", "inj-achilles-risk", "10/13: healthy (owner call)", "inj-achilles-risk (mild recovery)"]
-MILD_WANT = [(0.85, 0.79), (0.85, 0.79), (0.78, 0.75), (1.0, 0.88), (0.78, 0.75)]
+MILD_TAGS = ["inj-acl-risk-mild (owner 10/13)", "inj-risk-mild; owner call", "inj-achilles-risk", "10/13: healthy (owner call)", "inj-achilles-risk (mild recovery)",
+             "foot-recovery (D-1008-1 default)", "acl-recovery-jan26 (light work)"]
+# D-PM-4 recovery (owner "build council's fixes" 2026-10-21): the simulator's recovery tier follows the board's
+# exclusion (0.0, owner ruling 2026-07-12) instead of the superseded 0.60 — both engines and the page twin.
+MILD_WANT = [(0.85, 0.79), (0.85, 0.79), (0.78, 0.75), (1.0, 0.88), (0.78, 0.75), (0.0, 0.0), (0.0, 0.0)]
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
