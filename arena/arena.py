@@ -456,6 +456,11 @@ def weekly_availability(p):
     # hoops.availability). Substring-matching the whole note made
     # "inj-achilles-risk (recovery on track)" score as a 0.60 recovery tier.
     tag = hoops.note_tag(p.get("note"))
+    # out-* (owner "proceed with all", 2026-10-21): season-ending, retired, unsigned or overseas —
+    # excluded, as hoops.availability excludes them, first in the same tier order. Without this
+    # branch the tag fell through to the healthy 0.88 (the A-9 attack's pre-registered divergence).
+    if tag.startswith("out-"):
+        return 0.0
     # Owner call 2026-10-13 night: the -mild tier (ranking 0.85) takes the same
     # share of the healthy-to-risk gap here: 0.88 - 0.13 * (0.15 / 0.22) = 0.79.
     if "mild" in tag:
