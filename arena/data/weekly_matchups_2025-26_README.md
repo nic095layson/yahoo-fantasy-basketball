@@ -46,6 +46,22 @@ is the strongest in-league evidence for the E14 bracket emphasis: the
 title ran through three coin-flip weeks, not through season-long
 category dominance.
 
+**Corrections.**
+
+- **2026-10-21 — week 1, Kyle, `gp` 29 → 28.** The owner supplied the Yahoo
+  week-1 matchup page (David vs Kyle), which reads `Games Played 32/32` and
+  `28/28`. The stored row said 29. Receipt: that screenshot, delivered
+  2026-10-21. All 20 other week-1 values reproduce the screenshot exactly
+  (both teams' makes/attempts and all nine categories), and recomputing the
+  nine categories from the stored totals returns David **8-0-1** with the
+  TO 68-68 tie, matching the recorded `cats_won`. `gp` is not a scoring
+  category, so the matchup result is unaffected. **The `gp` column of the
+  other 43 rows has NOT been checked against a screenshot** — only week 1 has
+  one in hand, so an isolated slip and a systematic one are not yet
+  distinguishable. Anything fitting the games/shock model on this file should
+  treat `gp` as carrying unquantified transcription error until the remaining
+  weeks are re-checked.
+
 **Known limits.** (a) Mostly owner-matchup weeks (2 of 6 league matchups
 per week) plus the champion's three playoff matchups; other
 opponent-vs-opponent weeks are not visible to this account's scoreboard
