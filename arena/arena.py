@@ -56,6 +56,13 @@ BENCH_WEIGHT = 0.15
 # Per-game coefficient of variation by category: low-count stats are noisier.
 CV = {"PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55,
       "ST": 0.70, "BLK": 0.75, "TO": 0.50}
+# The season tools' per-game CV (D-ZS-3, owner 2026-10-21: "Adopt the fitted values", then "Season tools only"),
+# fitted to the 2025-26 game logs of the kit season board's top 180 with 20+ games: kit record
+# report/after-reports/zscore-assessment-2026-10-21/gamelogs/gscore_weights_2025-26.json (cv_fit). The season tools
+# opt in through team_week_model(cv=) / simulate_seasons(cv=) / league_sim.py --season-cv; CV above stays the draft
+# engine's, frozen with the draft page's port of team_week_model (scripts/check_parity.py).
+SEASON_CV = {"PTS": 0.395, "REB": 0.445, "AST": 0.496, "3PTM": 0.717,
+             "ST": 0.945, "BLK": 1.072, "TO": 0.668}
 # Slot-conditional gradient ordering (codified 2026-07-30, council 5-0):
 # from draft slots 1-3 the council seat scores candidates by the marginal
 # category-win-probability gradient instead of the flat z-sum. CRN-paired
@@ -480,13 +487,15 @@ def weekly_availability(p):
     return 0.88
 
 
-def team_week_model(roster):
+def team_week_model(roster, cv=None):
     """Per-category weekly (mu, var). Each player's contribution is scaled by
     his DAILY-FILL start rate (started/played across DF_K simulated weeks),
     which replaced the static 10-starters + 3-bench weighting on 2026-08-05
     (re-landed with its deck half 2026-08-13). Counting-stat variance = compound-sum
     E[G]*Var[X] + Var[G]*E[X]^2 with category-specific per-game CV and
-    availability-tier game-count variance Var[G] = 3.5*a*(1-a)."""
+    availability-tier game-count variance Var[G] = 3.5*a*(1-a). cv: the per-game CV
+    by category; None = CV, the draft engine's (the season tools pass SEASON_CV)."""
+    cv = CV if cv is None else cv
     mu = {c: 0.0 for c in CATS}
     var = {c: 0.0 for c in CATS}
     lw = daily_fill_weights(roster)
@@ -499,7 +508,7 @@ def team_week_model(roster):
         for c, col in hoops.COUNT_COLS.items():
             x = p[col]
             mu[c] += w * x * g
-            var[c] += w * ((x * CV[c]) ** 2 * g + x ** 2 * g_var)
+            var[c] += w * ((x * cv[c]) ** 2 * g + x ** 2 * g_var)
         fg_mk += w * p["fg_pct"] * p["fga"] * g
         fg_at += w * p["fga"] * g
         ft_mk += w * p["ft_pct"] * p["fta"] * g
@@ -516,8 +525,8 @@ def team_week_model(roster):
     return mu, var
 
 
-def simulate_seasons(rosters, seasons, rng):
-    models = {i: team_week_model(r) for i, r in rosters.items()}
+def simulate_seasons(rosters, seasons, rng, cv=None):
+    models = {i: team_week_model(r, cv) for i, r in rosters.items()}
     sigmas = {i: {c: math.sqrt(models[i][1][c]) or 1e-6 for c in CATS}
               for i in rosters}
     champs = {i: 0 for i in rosters}

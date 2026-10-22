@@ -48,6 +48,11 @@ and the bracket winner takes the title. Championship% aggregates over every
 draft slot, so no strategy benefits from slot luck. Bracket test:
 `python3 arena/test_bracket.py`.
 
+The season tools (the kit's waiver swaps, week preview and title odds, and the standing sweep) run the weekly model
+on `arena.SEASON_CV`, the per-game variation fitted to the 2025-26 game logs (D-ZS-3, 2026-10-21), through
+`team_week_model(cv=)`, `simulate_seasons(cv=)` and `league_sim.py --season-cv`. Every default path, including the
+draft page's port and every grade above, stays on the hand-set `arena.CV`. Test: `python3 arena/test_season_cv.py`.
+
 ## The twelve personalities
 
 `council` (the production ruleset: contested-category weighting, recovery

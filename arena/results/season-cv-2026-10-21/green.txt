@@ -1,0 +1,17 @@
+/home/user/yahoo-fantasy-basketball/arena/test_season_cv.py:42: ResourceWarning: unclosed file <_io.TextIOWrapper name='arena/data/states/draft_state_100.json' mode='r' encoding='utf-8'>
+  st = json.load(open(STATE, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_default_paths_compute_exactly_as_before (__main__.SeasonCV.test_default_paths_compute_exactly_as_before) ... ok
+test_league_sim_season_cv_flag_verifies_against_the_house_simulator (__main__.SeasonCV.test_league_sim_season_cv_flag_verifies_against_the_house_simulator) ... /home/user/yahoo-fantasy-basketball/arena/test_season_cv.py:90: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpdl0fwhoj/ls.json' mode='r' encoding='utf-8'>
+  rec = json.load(open(out, encoding="utf-8"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_season_cv_is_the_2025_26_fit (__main__.SeasonCV.test_season_cv_is_the_2025_26_fit) ... ok
+test_simulate_seasons_takes_the_season_cv (__main__.SeasonCV.test_simulate_seasons_takes_the_season_cv) ... ok
+test_the_draft_engine_values_are_untouched (__main__.SeasonCV.test_the_draft_engine_values_are_untouched) ... ok
+test_the_season_cv_widens_only_the_counting_variances (__main__.SeasonCV.test_the_season_cv_widens_only_the_counting_variances) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.589s
+
+OK
