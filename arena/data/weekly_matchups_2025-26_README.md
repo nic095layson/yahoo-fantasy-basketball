@@ -61,6 +61,21 @@ category dominance.
   distinguishable. Anything fitting the games/shock model on this file should
   treat `gp` as carrying unquantified transcription error until the remaining
   weeks are re-checked.
+- **2026-10-22 — what `gp` counts (owner decision D-GP-2: do not fit on it).**
+  `gp` is Yahoo's "Games Played" counter as displayed. It does **not** equal
+  the player-games behind the row's recorded totals. Five team-weeks were
+  rebuilt from Yahoo's daily rosters (Flaim) and Basketball-Reference game
+  logs: weeks 13 and 5 for David, week 8 for Robert, and week 1 for both
+  teams. The players in active slots reproduce the row's eleven totals
+  exactly in four of them, and ten of eleven in the fifth (Kyle's week-1
+  assists, 88 against 87). Yet their games differ from `gp` by −7 to +8,
+  including both screenshot-verified week-1 values (32 against 33, and 28
+  against 35). What Yahoo's counter counts is unsettled. Do not fit the
+  games, shock or availability model on `gp`. The totals columns are
+  unaffected; all 44 rows equal Yahoo's own recorded totals. Record: kit
+  `report/after-reports/after-report-2026-10-22-gp-reconstruction.md` §2–§3
+  (kit PR #162). The player-games behind each 2025-26 row are being counted
+  there (D-GP-1); this file is unchanged.
 
 **Known limits.** (a) Mostly owner-matchup weeks (2 of 6 league matchups
 per week) plus the champion's three playoff matchups; other
