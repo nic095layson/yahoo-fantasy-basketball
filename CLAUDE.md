@@ -20,7 +20,7 @@ before delivering — and they are **loaded with the Skill tool, never applied f
 memory**. Governor text already in context from an earlier task or from a compaction
 does not count as loaded. Source of truth: `nic095layson/claude-core-skills`.
 
-Three rules this project binds every session to, in addition to the governors:
+Four rules this project binds every session to, in addition to the governors:
 
 1. **A question gets an assessment, not a fix.** When the owner asks whether something
    is right, or disagrees with a result, the deliverable is the assessment. A fix,
@@ -31,6 +31,13 @@ Three rules this project binds every session to, in addition to the governors:
    default is an assumption, not a choice.
 3. **A stated requirement is not a build order.** "X is critical" says what the work
    must respect; it authorizes nothing new.
+4. **Decisions come as options.** When there is a decision for the owner to make, offer
+   2–4 options, each with a brief plain-language explanation, the recommended one listed
+   first and marked "(Recommended)". Where the surface has clickable choices (Claude Code:
+   the AskUserQuestion tool, with a preview card when comparing options helps), use them;
+   otherwise a numbered list. Not for trivial choices or ones with an obvious default (state
+   the default in one line), and never in an unattended run, where nobody is there to click:
+   record the open decision in the report instead.
 
 After a compaction: list the owner's open objections in one line before continuing;
 a result the owner disputed stays disputed; reload the governors before the next
