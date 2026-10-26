@@ -10,6 +10,12 @@ exactly; --verify asserts that before anything is written.
 --schedule fixes the owner's seat against the listed opponent in every regular-season week
 (the league's real schedule, owner message 2026-10-15) and pairs the other ten teams at random
 each week; it changes the draw order, so it cannot be combined with --verify.
+  With "pairings" in the file ({week: [[seatA, seatB] x 6]}, the kit's league_pairings.py from Yahoo's
+  published schedule; kit owner 2026-10-26) every team's pairing comes from the file every week.
+  With "played" ({week: {seat: [wins, losses, ties]}}, the kit's data/weeks records) those weeks are
+  not simulated: each season starts from the recorded category record (a tie counts half a win,
+  Yahoo's standings rule) and only the remaining weeks and the playoffs are drawn. A played week
+  that does not cover every seat is an error before anything is written.
 
 --season-cv runs the weekly model on arena.SEASON_CV, the per-game variation fitted to the 2025-26 game logs
 (D-ZS-3, owner 2026-10-21: the season tools only); without it the draft engine's arena.CV, as before. --verify
@@ -40,10 +46,21 @@ for pk in st["picks"]:
 assert not missing, missing
 CATS, TEAMS, WEEKS, PO = hoops.CATS, arena.TEAMS, arena.WEEKS, arena.PLAYOFF_TEAMS
 assert TEAMS == len(rosters)
+PAIRINGS, PLAYED = {}, {}
 if SCHEDULE:
     assert SCHEDULE["regular_season_weeks"] == WEEKS, (SCHEDULE["regular_season_weeks"], WEEKS)
     OWNER = SCHEDULE["owner_seat"]
     OPP = [o["seat"] for o in sorted(SCHEDULE["owner_opponents"], key=lambda o: o["week"])]
+    PAIRINGS = {int(w): [(int(a), int(b)) for a, b in pairs] for w, pairs in (SCHEDULE.get("pairings") or {}).items()}
+    for w, pairs in PAIRINGS.items():
+        seen = sorted(s for pr in pairs for s in pr)
+        assert seen == list(range(1, TEAMS + 1)), f"pairings week {w}: seats {seen} do not cover every team once"
+    if PAIRINGS:
+        assert sorted(PAIRINGS) == list(range(1, WEEKS + 1)), f"pairings cover weeks {sorted(PAIRINGS)}, not 1..{WEEKS}"
+    PLAYED = {int(w): {int(s): tuple(int(x) for x in rec) for s, rec in recs.items()} for w, recs in (SCHEDULE.get("played") or {}).items()}
+    for w, recs in PLAYED.items():
+        assert sorted(recs) == list(range(1, TEAMS + 1)), f"played week {w}: records for seats {sorted(recs)}, not every team"
+        assert 1 <= w <= WEEKS, f"played week {w} is outside 1..{WEEKS}"
 HONORED = [0]
 
 
@@ -74,7 +91,17 @@ def simulate(rosters, seasons, rng):
     for _ in range(seasons):
         record = {i: 0 for i in ids}
         for _w in range(WEEKS):
-            if SCHEDULE:
+            if (_w + 1) in PLAYED:
+                # the week is final: the recorded category record, no draw (a tie is half a win, Yahoo's standings rule);
+                # cat_by stays simulated-only, the record's per-category rates say so
+                for i, (w_, l_, t_) in PLAYED[_w + 1].items():
+                    record[i] += w_ + 0.5 * t_
+                    if w_ >= 5: R[i]["weeks_won"] += 1
+                continue
+            if PAIRINGS:
+                pairing = [s for pr in PAIRINGS[_w + 1] for s in pr]
+                HONORED[0] += 1
+            elif SCHEDULE:
                 rest = [i for i in ids if i not in (OWNER, OPP[_w])]
                 rng.shuffle(rest)
                 pairing = [OWNER, OPP[_w]] + rest
@@ -117,8 +144,14 @@ out = dict(state=os.path.relpath(state_path, DECK), tag=tag, seasons=SEASONS, se
 if CV is not None:
     out["cv"] = "season"
 if SCHEDULE:
-    out["schedule"] = dict(file=os.path.relpath(sched_path, DECK), owner_seat=OWNER, opponents=OPP,
-                           honored=HONORED[0], others="the other ten teams paired at random each week")
+    out["schedule"] = dict(file=os.path.relpath(sched_path, DECK), owner_seat=OWNER, opponents=OPP, honored=HONORED[0],
+                           weeks_played=len(PLAYED), played_weeks=sorted(PLAYED))
+    if PAIRINGS:
+        out["schedule"]["pairings"] = f"every team's pairing from the file, all {WEEKS} weeks"
+    else:
+        out["schedule"]["others"] = "the other ten teams paired at random each week"
+    if PLAYED:
+        out["schedule"]["played_rule"] = "recorded category record, a tie half a win; cat_win_pct covers simulated weeks only"
 n_matchups = SEASONS * WEEKS
 for i in rosters:
     r = R[i]; mean = r["cat_wins"] / SEASONS
