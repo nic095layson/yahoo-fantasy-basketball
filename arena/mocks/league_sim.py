@@ -5,7 +5,7 @@ simulator's, in its order, so on the same seed the champion and playoff counts e
 exactly; --verify asserts that before anything is written.
 
     python3 arena/mocks/league_sim.py <draft_state.json> <tag> <seasons> <seed> <out.json> [--verify]
-                                      [--schedule <kit data/league_schedule.json>] [--season-cv]
+                                      [--schedule <kit data/league_schedule.json>] [--season-cv] [--pool <players.csv>]
 
 --schedule fixes the owner's seat against the listed opponent in every regular-season week
 (the league's real schedule, owner message 2026-10-15) and pairs the other ten teams at random
@@ -21,8 +21,13 @@ each week; it changes the draw order, so it cannot be combined with --verify.
 (D-ZS-3, owner 2026-10-21: the season tools only); without it the draft engine's arena.CV, as before. --verify
 compares against arena.simulate_seasons on the same CV, and the record says "cv": "season".
 
+--pool loads the player lines from the named deck-schema CSV instead of arena/results/players_<tag>.csv (kit owner
+2026-10-26, "use the season pool": the kit's data/season/pool_season.csv, the season-blended lines its board already
+plays, with the in-season pickups in data/pool_additions.csv); the record names the file, its sha256 and its player
+count. Without it the frozen tag file, as before, and the record has no "pool" key.
+
 Built for the league draft of 2026-10-14 (owner: "simulate 10000 seasons")."""
-import json, math, os, random, sys
+import hashlib, json, math, os, random, sys
 DECK = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 sys.path.insert(0, DECK + "/scripts"); sys.path.insert(0, DECK + "/arena")
 import hoops  # noqa: E402
@@ -36,7 +41,8 @@ if "--schedule" in sys.argv:
     sched_path = sys.argv[sys.argv.index("--schedule") + 1]
     SCHEDULE = json.load(open(sched_path, encoding="utf-8"))
     assert not VERIFY, "--schedule changes the draw order; run --verify without it"
-hoops.DATA_PATH = os.path.join(DECK, "arena", "results", f"players_{tag}.csv")
+POOL = sys.argv[sys.argv.index("--pool") + 1] if "--pool" in sys.argv else None
+hoops.DATA_PATH = POOL or os.path.join(DECK, "arena", "results", f"players_{tag}.csv")
 players = hoops.zscores(hoops.load_players()); by = {p["player"]: p for p in players}
 st = json.load(open(state_path, encoding="utf-8"))
 rosters = {s: [] for s in range(1, st["teams"] + 1)}
@@ -143,6 +149,8 @@ out = dict(state=os.path.relpath(state_path, DECK), tag=tag, seasons=SEASONS, se
            verified_against_arena=VERIFY, teams={})
 if CV is not None:
     out["cv"] = "season"
+if POOL:
+    out["pool"] = dict(file=POOL, sha256=hashlib.sha256(open(POOL, "rb").read()).hexdigest(), players=len(players))
 if SCHEDULE:
     out["schedule"] = dict(file=os.path.relpath(sched_path, DECK), owner_seat=OWNER, opponents=OPP, honored=HONORED[0],
                            weeks_played=len(PLAYED), played_weeks=sorted(PLAYED))
