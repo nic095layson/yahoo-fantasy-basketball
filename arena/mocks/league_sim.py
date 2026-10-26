@@ -6,6 +6,7 @@ exactly; --verify asserts that before anything is written.
 
     python3 arena/mocks/league_sim.py <draft_state.json> <tag> <seasons> <seed> <out.json> [--verify]
                                       [--schedule <kit data/league_schedule.json>] [--season-cv] [--pool <players.csv>]
+                                      [--patch <patch.json>]
 
 --schedule fixes the owner's seat against the listed opponent in every regular-season week
 (the league's real schedule, owner message 2026-10-15) and pairs the other ten teams at random
@@ -32,9 +33,15 @@ DECK = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 sys.path.insert(0, DECK + "/scripts"); sys.path.insert(0, DECK + "/arena")
 import hoops  # noqa: E402
 import arena  # noqa: E402
+import patches  # noqa: E402
 
 state_path, tag, SEASONS, SEED, out_path = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
 VERIFY = "--verify" in sys.argv
+# kit owner 2026-10-26: one hand-set constant moved (arena/patches.py, the sweep's own patch), applied before anything
+# reads SEASON_CV or builds a team model; --verify then checks against arena.simulate_seasons patched the same way
+PATCH = json.load(open(sys.argv[sys.argv.index("--patch") + 1], encoding="utf-8")) if "--patch" in sys.argv else None
+if PATCH:
+    patches.apply(arena, PATCH)
 CV = arena.SEASON_CV if "--season-cv" in sys.argv else None
 SCHEDULE = None
 if "--schedule" in sys.argv:
@@ -149,6 +156,8 @@ out = dict(state=os.path.relpath(state_path, DECK), tag=tag, seasons=SEASONS, se
            verified_against_arena=VERIFY, teams={})
 if CV is not None:
     out["cv"] = "season"
+if PATCH:
+    out["patch"] = PATCH
 if POOL:
     out["pool"] = dict(file=POOL, sha256=hashlib.sha256(open(POOL, "rb").read()).hexdigest(), players=len(players))
 if SCHEDULE:
