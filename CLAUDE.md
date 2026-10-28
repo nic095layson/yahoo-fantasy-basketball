@@ -39,6 +39,17 @@ Four rules this project binds every session to, in addition to the governors:
    the default in one line), and never in an unattended run, where nobody is there to click:
    record the open decision in the report instead.
 
+Communication (owner preferences, 2026-10-28; they shorten how things are said and never
+remove a gate, a check or an honest caveat): the owner is a visual learner — show, don't
+narrate. Between tool calls write nothing (one heartbeat line at most on a long task; a
+surprise — a failed check, a result that contradicts the plan, a blocker — is said at once,
+in one line). Tables for comparisons, options, statuses and before→after; text diagrams for
+flows; bold the one line that matters, short bullets beneath; rendered charts and artifacts
+only on request. A required plan is shown before acting as one compact table — Goal ·
+Method / parameters · Done when · If it breaks — which is plan-gate's accepted compact form
+here. A final answer is: the outcome in one bold line, a table or before→after, only the
+caveats that matter, and what the owner needs to do next.
+
 After a compaction: list the owner's open objections in one line before continuing;
 a result the owner disputed stays disputed; reload the governors before the next
 consequential action.
