@@ -28,6 +28,18 @@ Adopted 2026-10-15 from the Co-GM self-audit (`report/plans/co-gm-self-audit-202
    page; never during a live room. (LESSONS 21)
 10. **Scope.** The session's scope is its prompt (Session 1: items 1–8 of plan §6).
     Anything else noticed goes on the after-report's decision sheet, not into the build.
+11. **Runner changes travel downstream (kit; owner 2026-10-28).** When a main-session change
+    alters what the runner's scheduled tasks run, read, write, commit or report (a step, an
+    output, a PASS/HALT line, a source pin, a retry), the same session, before it calls the
+    work done: reads both stored task prompts (`get_trigger`); drafts each edited prompt with
+    its diff against the stored text, byte count and sha256; hands the owner one paste-ask for
+    the runner's conversation with what changed and what the next runs should show; and after
+    the paste, reads both tasks back and confirms byte equality. The tasks take prompt edits
+    only from the conversation they post into, so the paste is the owner's; never route it
+    through another session. A code-only change still reaches the runner (each run merges
+    main) and is named for it. Every after-report carries a "Runner impact" line: none,
+    code-only (with what the next runs should show), or a prompt edit with its read-back
+    state. Work with a prompt edit is not done until the read-back matches.
 
 **Urgency rule (L1).** A finding that touches more than 25% of the top 150 within 7 days of
 a lock is raised to the owner the same day, not queued. (I8)
