@@ -64,6 +64,37 @@ try:
 except Exception:
     sys.exit(0)
 
+# F1 (2026-10-29): gate on what the turn DID. If it took an outward action (commit, push, PR create/
+# update/merge, scheduled-task change), plan-gate must have loaded before the first such action and
+# adversarial-verify somewhere in the turn — whatever the prompt said. (First draft required
+# adversarial-verify AFTER the first outward action; the replay control "verify, then commit and push"
+# — 2026-10-21 17:13 — was blocked by it, so the rule was narrowed, not the fixture loosened.) Every governor miss in the 2026-10-28 session
+# audit was a short follow-up turn the prompt classifier does not match ("Continue", "proceed").
+# Pre-registered: experiments/hypothesis-2026-10-29-turn-gates.md.
+try:
+    import turngate
+    _li = turngate.owner_index(lines)
+    if _li >= 0:
+        _ev = turngate.events(lines, _li)
+        _first = next((k for k, (kind, b) in enumerate(_ev) if kind == "tool" and turngate.is_outward(b)), None)
+        if _first is not None:
+            _pg = any(kind == "tool" and turngate.skill_name(b) == "plan-gate" for kind, b in _ev[:_first])
+            _av = any(kind == "tool" and turngate.skill_name(b) == "adversarial-verify" for kind, b in _ev)
+            if not (_pg and _av):
+                _miss = [g for g, ok in (("plan-gate (before the first outward action)", _pg),
+                                          ("adversarial-verify", _av)) if not ok]
+                print(json.dumps({"decision": "block", "reason": (
+                    "GOV-ENFORCE: this turn took an outward action (commit, push, PR or merge) without "
+                    + " and ".join(_miss) + ". Load the missing governor with the Skill tool now and follow it."
+                    + (" The plan comes after the action this time: say so plainly to the owner, then state"
+                       " the goal and what was done." if not _pg else "")
+                    + " This applies however short the owner's message was ('continue', 'proceed').")}))
+                sys.exit(0)
+except SystemExit:
+    raise
+except Exception:
+    pass  # fail open: the prompt-class gate below still runs
+
 prompt, li = None, -1
 for i, d in enumerate(lines):
     if d.get("type") != "user":
