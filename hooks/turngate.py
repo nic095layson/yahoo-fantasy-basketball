@@ -151,6 +151,21 @@ def merge_target(block):
 
 
 MERGE_WORD = re.compile(r"\bmerg(e|ed|ing)\b", re.I)
+# "Do not merge yet" contains the word and forbids the act (refutation pass, 2026-10-29): an occurrence
+# counts only when no negation sits in the few words before it.
+NEGATION = re.compile(r"\b(don'?t|do\s+not|dont|never|not|no|without|hold\s+off(\s+on)?|wait\s+(to|before))\W+(\w+\W+){0,1}$", re.I)
+
+
+def says_merge(text):
+    for m in MERGE_WORD.finditer(text or ""):
+        if not NEGATION.search(text[:m.start()]):
+            return True
+    return False
+
+
+def answer_choices(text):
+    """The chosen options of an AskUserQuestion answer ("question"="choice"), never the question text."""
+    return re.findall(r'="([^"]*)"', text or "")
 
 
 def merge_authorized(rows, li, block):
@@ -158,10 +173,10 @@ def merge_authorized(rows, li, block):
     assistant's last text before their message together with the PR's number."""
     if li < 0:
         return False
-    if MERGE_WORD.search(owner_text(rows, li) or ""):
+    if says_merge(owner_text(rows, li) or ""):
         return True
     for kind, payload in events(rows, li):
-        if kind == "answer" and MERGE_WORD.search(payload):
+        if kind == "answer" and any(says_merge(c) for c in answer_choices(payload)):
             return True
     target = merge_target(block)
     for d in reversed(rows[:li]):
@@ -170,5 +185,5 @@ def merge_authorized(rows, li, block):
         t = _text(d.get("message")) or ""
         if not t.strip():
             continue
-        return bool(MERGE_WORD.search(t) and target and re.search(r"#\s?" + re.escape(target) + r"\b", t))
+        return bool(says_merge(t) and target and re.search(r"#\s?" + re.escape(target) + r"\b", t))
     return False
