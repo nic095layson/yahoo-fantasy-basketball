@@ -35,9 +35,10 @@ Six rules this project binds every session to, in addition to the governors:
    2–4 options, each with a brief plain-language explanation, the recommended one listed
    first and marked "(Recommended)". Where the surface has clickable choices (Claude Code:
    the AskUserQuestion tool, with a preview card when comparing options helps), use them;
-   otherwise a numbered list. Not for trivial choices or ones with an obvious default (state
-   the default in one line), and never in an unattended run, where nobody is there to click:
-   record the open decision in the report instead.
+   otherwise a numbered list. A default is not an exemption: it goes first on the card as
+   "(Recommended)", and this rule outranks the tool's own "only when blocked" guidance. Only a
+   trivial yes/no follow-up skips the card; and never in an unattended run, where nobody is
+   there to click: record the open decision in the report instead.
 5. **A skill the owner names is used.** When the owner's message names a skill or its
    trigger word ("red team", "gauntlet", "after-report"), load that skill, or say in one line
    why another one fits better and load that instead. Silently substituting is a miss.

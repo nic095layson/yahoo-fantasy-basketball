@@ -156,6 +156,36 @@ PRE_CASES = [
 ]
 
 
+TRIGGER = os.path.join(HERE, "governance-trigger.py")
+
+
+def trigger(rows, prompt):
+    """UserPromptSubmit: the transcript holds the earlier turns; the new prompt arrives in the payload."""
+    p = write(rows)
+    try:
+        r = subprocess.run(["python3", TRIGGER], input=json.dumps({"transcript_path": p, "prompt": prompt}),
+                           capture_output=True, text=True)
+        out = r.stdout.strip()
+        return (json.loads(out).get("hookSpecificOutput") or {}).get("additionalContext", "") if out else ""
+    finally:
+        os.unlink(p)
+
+
+LIST = "Pick one:\n1. **Merge all three (Recommended)** — fastest\n2. Library only"
+CARD_CASES = [
+    ("D1 numbered '(Recommended)' list, no card -> reminder",
+     [owner("what next?"), say(LIST)], "1", True),
+    ("D2 same list but AskUserQuestion was called -> silent",
+     [owner("what next?"), say(LIST), tool("AskUserQuestion", questions=[])], "1", False),
+    ("D3 '(Recommended)' only in prose -> silent",
+     [owner("what next?"), say("I went with the option marked (Recommended) last time, as you chose.")], "thanks", False),
+    ("D4 no '(Recommended)' at all -> silent",
+     [owner("what next?"), say("1. Done\n2. Done")], "ok", False),
+    ("D5 bullet '- Keep advisory (Recommended)', no card -> reminder",
+     [owner("which?"), say("- Keep advisory (Recommended)\n- Make it blocking")], "keep it", True),
+]
+
+
 def main():
     fails = 0
     for label, rows, want in STOP_CASES:
@@ -166,6 +196,15 @@ def main():
         got = pre(rows, name, **inp)
         fails += got != want
         print(f"  {'ok  ' if got == want else 'FAIL'} {label}" + ("" if got == want else f"  (got {got})"))
+    for label, rows, prompt, want in CARD_CASES:
+        ctx = trigger(rows, prompt)
+        got = "decision as a clickable card" in ctx
+        fails += got != want
+        print(f"  {'ok  ' if got == want else 'FAIL'} {label}" + ("" if got == want else f"  (context: {ctx[:80]!r})"))
+    ctx = trigger([owner("what next?"), say(LIST)], "Build a script that processes the sample files and outputs JSON.")
+    d6 = "decision as a clickable card" in ctx and "plan-gate" in ctx
+    fails += not d6
+    print(f"  {'ok  ' if d6 else 'FAIL'} D6 reminder added alongside the governance cue, not instead of it")
     extra = []
     # F3 advises once per plan-gate load, not on every write
     rows = [owner("go"), skill("plan-gate")]
@@ -179,7 +218,7 @@ def main():
     for label, ok, note in extra:
         fails += not ok
         print(f"  {'ok  ' if ok else 'FAIL'} {label}" + ("" if ok else f"  ({note})"))
-    total = len(STOP_CASES) + len(PRE_CASES) + len(extra)
+    total = len(STOP_CASES) + len(PRE_CASES) + len(CARD_CASES) + 1 + len(extra)
     print(f"== {total - fails} passed, {fails} failed ==")
     sys.exit(1 if fails else 0)
 
