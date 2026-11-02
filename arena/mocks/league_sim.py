@@ -7,6 +7,8 @@ exactly; --verify asserts that before anything is written.
     python3 arena/mocks/league_sim.py <draft_state.json> <tag> <seasons> <seed> <out.json> [--verify]
                                       [--schedule <kit data/league_schedule.json>] [--season-cv] [--pool <players.csv>]
                                       [--patch <patch.json>]
+A pick with "from_week" / "to_week" counts only in that window of regular-season weeks (kit owner 2026-10-31, the
+IL-return scenarios); the record carries "windows".
 
 --schedule fixes the owner's seat against the listed opponent in every regular-season week
 (the league's real schedule, owner message 2026-10-15) and pairs the other ten teams at random
@@ -58,6 +60,18 @@ for pk in st["picks"]:
     (rosters[pk["slot"]].append(by[pk["player"]]) if pk["player"] in by else missing.append(pk["player"]))
 assert not missing, missing
 CATS, TEAMS, WEEKS, PO = hoops.CATS, arena.TEAMS, arena.WEEKS, arena.PLAYOFF_TEAMS
+# kit owner 2026-10-31 ("take ESPN injury return as a variable title odds in a separate section"): a pick may carry
+# "from_week" and/or "to_week", the first and last regular-season week the player counts for his team; outside that
+# window he is absent, as an IL player is under the kit's D-IS-8. A team's weekly model is rebuilt only where its
+# active roster changes; the playoffs play the final week's roster. Without any window the draws are the same as
+# before, in the same order. --verify cannot follow a window (arena.simulate_seasons has no weeks).
+WINDOWS = {}
+for pk in st["picks"]:
+    if "from_week" in pk or "to_week" in pk:
+        lo, hi = int(pk.get("from_week", 1)), int(pk.get("to_week", WEEKS))
+        assert 1 <= lo and hi <= WEEKS + 1 and lo <= hi + 1, (pk["player"], lo, hi)
+        WINDOWS[(pk["slot"], pk["player"])] = (lo, hi)
+assert not (WINDOWS and VERIFY), "from_week/to_week change the weekly rosters; run --verify without them"
 assert TEAMS == len(rosters)
 PAIRINGS, PLAYED = {}, {}
 if SCHEDULE:
@@ -79,22 +93,44 @@ HONORED = [0]
 
 def simulate(rosters, seasons, rng):
     """arena.simulate_seasons, line for line, plus the record."""
-    models = {i: arena.team_week_model(r, CV) for i, r in rosters.items()}
-    sigmas = {i: {c: math.sqrt(models[i][1][c]) or 1e-6 for c in CATS} for i in rosters}
-    counting = set(hoops.COUNT_COLS)
     ids = list(rosters)
+    if WINDOWS:
+        def active(i, w):
+            return [p for p in rosters[i] if WINDOWS.get((i, p["player"]), (1, WEEKS))[0] <= w <= WINDOWS.get((i, p["player"]), (1, WEEKS))[1]]
+        cache, weekly = {}, {}
+        for i in ids:
+            weekly[i] = []
+            for w in range(1, WEEKS + 1):
+                key = (i, tuple(p["player"] for p in active(i, w)))
+                if key not in cache:
+                    cache[key] = arena.team_week_model(active(i, w), CV)
+                weekly[i].append(cache[key])
+        models = {i: weekly[i][-1] for i in ids}
+    else:
+        models = {i: arena.team_week_model(r, CV) for i, r in rosters.items()}
+        weekly = {i: [models[i]] * WEEKS for i in ids}
+    sig_of = {}
+
+    def sigmas_for(m):
+        if id(m) not in sig_of:
+            sig_of[id(m)] = {c: math.sqrt(m[1][c]) or 1e-6 for c in CATS}
+        return sig_of[id(m)]
+    counting = set(hoops.COUNT_COLS)
     R = {i: dict(champ=0, final=0, semi=0, playoff=0, seed=[0] * TEAMS, cat_wins=0.0, cat_wins_sq=0.0,
                  cat_by={c: 0 for c in CATS}, weeks_won=0) for i in ids}
 
-    def week_result(a, b, rec=None):
+    def week_result(a, b, rec=None, week=None):
+        m_a = weekly[a][week - 1] if week else models[a]
+        m_b = weekly[b][week - 1] if week else models[b]
+        s_a, s_b = sigmas_for(m_a), sigmas_for(m_b)
         sh_a = rng.gauss(1.0, arena.TEAM_WEEK_SHOCK)
         sh_b = rng.gauss(1.0, arena.TEAM_WEEK_SHOCK)
         wins = 0
         for c in CATS:
-            ma = models[a][0][c] * (sh_a if c in counting else 1.0)
-            mb = models[b][0][c] * (sh_b if c in counting else 1.0)
-            sa = rng.gauss(ma, sigmas[a][c])
-            sb = rng.gauss(mb, sigmas[b][c])
+            ma = m_a[0][c] * (sh_a if c in counting else 1.0)
+            mb = m_b[0][c] * (sh_b if c in counting else 1.0)
+            sa = rng.gauss(ma, s_a[c])
+            sb = rng.gauss(mb, s_b[c])
             better = sa < sb if c == "TO" else sa > sb
             wins += 1 if better else 0
             if rec is not None:
@@ -124,7 +160,7 @@ def simulate(rosters, seasons, rng):
                 rng.shuffle(pairing)
             for k in range(0, TEAMS, 2):
                 a, b = pairing[k], pairing[k + 1]
-                wa = week_result(a, b, rec=True)
+                wa = week_result(a, b, rec=True, week=_w + 1)
                 record[a] += wa
                 record[b] += 9 - wa
                 if wa >= 5: R[a]["weeks_won"] += 1
@@ -160,6 +196,9 @@ if PATCH:
     out["patch"] = PATCH
 if POOL:
     out["pool"] = dict(file=POOL, sha256=hashlib.sha256(open(POOL, "rb").read()).hexdigest(), players=len(players))
+if WINDOWS:
+    out["windows"] = {str(i): {p: list(w) for (s_, p), w in sorted(WINDOWS.items()) if s_ == i} for i in sorted({s_ for s_, _ in WINDOWS})}
+    out["windows_rule"] = "from_week..to_week inclusive, regular season; absent outside; playoffs on the final week's roster"
 if SCHEDULE:
     out["schedule"] = dict(file=os.path.relpath(sched_path, DECK), owner_seat=OWNER, opponents=OPP, honored=HONORED[0],
                            weeks_played=len(PLAYED), played_weeks=sorted(PLAYED))
