@@ -37,10 +37,16 @@ try:
     if not (turngate.is_merge(block) or turngate.is_write(block)):
         sys.exit(0)
     rows = turngate.load(tp)
-    li = turngate.owner_index(rows)
+    oi = turngate.owner_index(rows)
+    li = turngate.turn_start(rows)   # 2026-11-04: a scheduled run is a turn of its own
     if li < 0:
         sys.exit(0)
 
+    # A scheduled run carries no owner message, so it carries no owner word to merge: it never merges.
+    if turngate.is_merge(block) and li > oi:
+        target = turngate.merge_target(block)
+        deny("TURN-GATE (merge word): a scheduled run never merges" + (f" PR #{target}" if target else "")
+             + ". Record it as an open decision in the run's report; the owner merges on their own word.")
     if turngate.is_merge(block) and not turngate.merge_authorized(rows, li, block):
         target = turngate.merge_target(block)
         deny("TURN-GATE (merge word): the owner has not said to merge" + (f" PR #{target}" if target else "")

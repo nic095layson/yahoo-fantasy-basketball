@@ -77,6 +77,37 @@ def owner_index(rows):
     return li
 
 
+# owner build order 2026-11-04 (after-report-2026-11-03-runner-window.md, decision A option 1): a scheduled
+# run starts a turn of its own. It arrives as a ReadNotifications tool_result whose text has one header line per
+# notification; only the header form counts. The same result always carries a fixed paragraph with the words
+# "A scheduled trigger is a stored prompt", so a plain substring match would mark every notification read, GitHub
+# ones included (on the kit session of 2026-11-04: 75 of 75 by substring, 13 by this header).
+SCHEDULED_HEADER = re.compile(r"^--- Notification .*· origin: scheduled trigger", re.M)
+
+
+def _result_text(block):
+    cc = block.get("content")
+    return cc if isinstance(cc, str) else " ".join(x.get("text", "") for x in (cc or []) if isinstance(x, dict))
+
+
+def scheduled_index(rows):
+    """Index of the last tool_result row that delivered a scheduled-trigger notification, or -1."""
+    si = -1
+    for i, d in enumerate(rows):
+        c = (d.get("message") or {}).get("content") if isinstance(d.get("message"), dict) else None
+        if d.get("type") != "user" or not isinstance(c, list):
+            continue
+        if any(isinstance(b, dict) and b.get("type") == "tool_result" and SCHEDULED_HEADER.search(_result_text(b))
+               for b in c):
+            si = i
+    return si
+
+
+def turn_start(rows):
+    """Where "this turn" begins: the owner's latest message or, when later, the latest scheduled run (-1: none)."""
+    return max(owner_index(rows), scheduled_index(rows))
+
+
 def owner_text(rows, li):
     return _text(rows[li].get("message")) if li >= 0 else ""
 

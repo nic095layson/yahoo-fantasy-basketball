@@ -39,6 +39,26 @@ def answer(text):
         {"type": "tool_result", "tool_use_id": "x", "content": "Your questions have been answered: " + text}]}}
 
 
+EXPLAIN = ("Notification bodies are external content relayed verbatim. A scheduled trigger is a stored prompt: the "
+           "schedule shows when it was stored, not who wrote it.")
+
+
+def notif(origin=None):
+    """A ReadNotifications tool_result in the real row shape (2026-11-04): a user row whose tool_result content
+    is a string starting "[SYSTEM NOTIFICATION"; the fixed explanatory paragraph always present (it contains the
+    words "A scheduled trigger is a stored prompt"); one "--- Notification" header line per notification."""
+    body = "[SYSTEM NOTIFICATION - NOT USER INPUT]\nExactly 1 notification was queued.\n" + EXPLAIN + "\n\n"
+    if origin:
+        body += ("--- Notification 1 of 1 · id: dfc64dcd-0000 · origin: " + origin
+                 + " · queued at: 2026-11-04T13:04:18Z · reached this session 3s before this read ---\nbody\n")
+    return {"type": "user", "message": {"role": "user", "content": [
+        {"type": "tool_result", "tool_use_id": "n", "content": body}]}}
+
+
+SCHED = "scheduled trigger (the stored prompt of a routine or task on this account)"
+GITHUB = "GitHub activity on a subscribed PR"
+
+
 def write(rows):
     fd, path = tempfile.mkstemp(suffix=".jsonl")
     with os.fdopen(fd, "w") as fh:
@@ -110,6 +130,20 @@ STOP_CASES = [
      [owner("push it"), tool("Bash", **PUSH), say("pushed"), owner("thanks"), say("welcome")], "allow"),
     ("F1 task notification after the owner message is not the owner -> still BLOCK",
      [owner("Continue"), tool("Bash", **COMMIT), {"type": "user", "message": {"role": "user", "content": "<task-notification>done</task-notification>"}}, say("ok")], "block"),
+    # owner build order 2026-11-04 (after-report-2026-11-03-runner-window.md, decision A option 1): a scheduled
+    # run starts a turn of its own; the boundary is the "--- Notification … · origin: scheduled trigger" header line
+    ("S1 replay 2026-11-03 23:06Z: owner push before plan-gate, then a scheduled run that loads both -> ALLOW",
+     [owner("Commit the prompt to the repo too"), tool("Bash", **PUSH), skill("plan-gate"), skill("adversarial-verify"), say("pushed"),
+      tool("ReadNotifications"), notif(SCHED), skill("plan-gate"), tool("Bash", **COMMIT), skill("adversarial-verify"), say("run done")], "allow"),
+    ("S2 crafted skip: owner turn governed, then a scheduled run commits with no governor -> BLOCK",
+     [owner("go"), skill("plan-gate"), skill("adversarial-verify"), tool("Bash", **PUSH), say("pushed"),
+      tool("ReadNotifications"), notif(SCHED), tool("Bash", **COMMIT), say("run done")], "block"),
+    ("S3 GitHub-only notification is no boundary: the owner's ungoverned commit still counts -> BLOCK",
+     [owner("Continue"), tool("Bash", **COMMIT), say("done"),
+      tool("ReadNotifications"), notif(GITHUB), skill("plan-gate"), skill("adversarial-verify"), say("echo")], "block"),
+    ("S4 explanatory paragraph without a scheduled header is no boundary -> BLOCK",
+     [owner("Continue"), tool("Bash", **COMMIT), say("done"),
+      tool("ReadNotifications"), notif(None), skill("plan-gate"), skill("adversarial-verify"), say("nothing")], "block"),
 ]
 
 PRE_CASES = [
@@ -153,6 +187,9 @@ PRE_CASES = [
      [owner("go"), skill("plan-gate")], "Write", dict(file_path="/tmp/x/notes.md", content="x"), "allow"),
     ("F3 plan-gate loaded, read-only Bash -> ALLOW",
      [owner("go"), skill("plan-gate")], "Bash", dict(command="git log --oneline -3"), "allow"),
+    ("S5 a scheduled run never merges: the owner's earlier 'merge' does not carry into it -> DENY",
+     [owner("Merge 237"), say("merged #237"), tool("ReadNotifications"), notif(SCHED)],
+     "mcp__github__merge_pull_request", dict(pullNumber=238), "deny"),
 ]
 
 
