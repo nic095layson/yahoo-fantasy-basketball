@@ -73,7 +73,7 @@ except Exception:
 # Pre-registered: experiments/hypothesis-2026-10-29-turn-gates.md.
 try:
     import turngate
-    _li = turngate.owner_index(lines)
+    _li = turngate.turn_start(lines)   # 2026-11-04: a scheduled run is a turn of its own
     if _li >= 0:
         _ev = turngate.events(lines, _li)
         _first = next((k for k, (kind, b) in enumerate(_ev) if kind == "tool" and turngate.is_outward(b)), None)
