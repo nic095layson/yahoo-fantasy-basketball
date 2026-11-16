@@ -3,7 +3,7 @@ simulator (arena/mocks/league_sim.py --patch). One module so the two cannot drif
 real-schedule re-measurement"); the four kinds are the sweep's, moved here verbatim:
 
   const  {NAME: value}   set arena.NAME (an unknown name is an error)
-  avail  [healthy, risk] the weekly availability tiers 0.88 and 0.75 replaced
+  avail  [healthy, risk] the weekly availability tiers 0.80 and 0.65 replaced (0.88 and 0.75 before 2026-11-16)
   cv     factor          every category of arena.SEASON_CV scaled
   games  value           the 3.5 games/week literal inside team_week_model replaced (no literal found is an error)
 
@@ -20,7 +20,9 @@ def apply(arena, patch):
         h, r = patch["avail"]
         orig = arena.weekly_availability
         arena.weekly_availability = lambda p, h=h, r=r, orig=orig: (
-            r if orig(p) == 0.75 else h if orig(p) == 0.88 else orig(p))
+            # keyed by the live tier values (owner pick 2026-11-16: 0.80 / 0.65); a stale key here makes every
+            # avail variant a silent no-op in the kit sweep
+            r if orig(p) == 0.65 else h if orig(p) == 0.80 else orig(p))
     if "cv" in patch:
         # the season headline's per-game variation is SEASON_CV since D-ZS-3 (arena.CV is the frozen draft engine's)
         arena.SEASON_CV = {c: v * patch["cv"] for c, v in arena.SEASON_CV.items()}

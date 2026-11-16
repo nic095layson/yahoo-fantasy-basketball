@@ -1337,14 +1337,16 @@ function weeklyAvail(p) {
   /* out-* (2026-10-21): excluded, as hoops.availability excludes them, first in the same order. */
   if (tag.startsWith("out-")) return 0.0;
   /* Owner call 2026-10-13 night: the -mild tier (ranking 0.85) takes the same
-     share of the healthy-to-risk gap: 0.88 - 0.13 * (0.15 / 0.22) = 0.79. */
+     share of the healthy-to-risk gap: 0.88 - 0.13 * (0.15 / 0.22) = 0.79
+     (derived on the pre-2026-11-16 tiers; kept at 0.79 by the owner's 2026-11-16 pick). */
   if (tag.includes("mild")) return 0.79;
   /* D-PM-4 recovery (2026-10-21): 0.0, the board's exclusion, not the superseded 0.60. */
   if (tag.endsWith("-recovery")) return 0.0;
-  if (tag.endsWith("-risk") || tag === "risk" || tag === "inj-risk") return 0.75;
+  /* Owner pick 2026-11-16 ("Fit with a floor"): risk 0.75 -> 0.65, healthy 0.88 -> 0.80 (kit fit_week4.json); -mild stays 0.79. */
+  if (tag.endsWith("-risk") || tag === "risk" || tag === "inj-risk") return 0.65;
   if (tag.includes("recovery")) return 0.0;
-  if (tag.includes("risk")) return 0.75;
-  return 0.88;
+  if (tag.includes("risk")) return 0.65;
+  return 0.80;
 }
 /* Instrument v2 (2026-08-05): daily-fill start rates. Yahoo lineups are set
    DAILY — every started game counts 100%, bench games count 0, and a bench
