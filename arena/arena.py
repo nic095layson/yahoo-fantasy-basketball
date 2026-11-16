@@ -469,7 +469,8 @@ def weekly_availability(p):
     if tag.startswith("out-"):
         return 0.0
     # Owner call 2026-10-13 night: the -mild tier (ranking 0.85) takes the same
-    # share of the healthy-to-risk gap here: 0.88 - 0.13 * (0.15 / 0.22) = 0.79.
+    # share of the healthy-to-risk gap here: 0.88 - 0.13 * (0.15 / 0.22) = 0.79
+    # (derived on the pre-2026-11-16 tiers; kept at 0.79 by the owner's 2026-11-16 pick).
     if "mild" in tag:
         return 0.79
     # D-PM-4 recovery (owner "build council's fixes", 2026-10-21): 0.0, the board's exclusion
@@ -478,13 +479,16 @@ def weekly_availability(p):
     # -risk, so a recovery tag means "not playing now", like an IL slot under D-IS-8.
     if tag.endswith("-recovery"):
         return 0.0
+    # Owner pick 2026-11-16 ("Fit with a floor", "Band edge: 0.80 / 0.65"): risk 0.75 -> 0.65 and healthy
+    # 0.88 -> 0.80, fit to weeks 1-4 of 2026-27 (kit report/fits/fit_week4.json on season/daily: healthy measured
+    # 0.779, n 3,694; risk 0.559, n 438) and floored at the edge of the declared band. -mild stays 0.79 (owner).
     if tag.endswith("-risk") or tag in ("risk", "inj-risk"):
-        return 0.75
+        return 0.65
     if "recovery" in tag:
         return 0.0
     if "risk" in tag:
-        return 0.75
-    return 0.88
+        return 0.65
+    return 0.80
 
 
 def team_week_model(roster, cv=None):

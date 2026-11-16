@@ -1,53 +1,29 @@
 {
- "ran_at_utc": "2026-10-28T19:39:14Z",
+ "ran_at_utc": "2026-11-16T20:44:11Z",
  "inputs": {
-  "../fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-28-runner-impact-gate.md": "fb7796df00024c657bbd29476e4d089dc17d9cd4bdbc828f245aaee39d797f5b",
-  "RULES.md": "6f908b54e59579a463d20937c96fe635e4cd1884de6491eddd450c278365db1b",
-  "../fantasy-basketball-2026-27/RULES.md": "6f908b54e59579a463d20937c96fe635e4cd1884de6491eddd450c278365db1b"
+  "../fantasy-basketball-2026-27/report/after-reports/after-report-2026-11-16-availability-tiers.md": "58fb7a956bbc25f5190191a1181be34a302af2ea0877e94867b7c4c5e54fecf4",
+  "arena/arena.py": "d6c75a738f006ef714790f31ab60e20ff17dbec2717c88d9de6d4db50a547082",
+  "arena/patches.py": "f81077ab6ca47e0b56bcc832ab74137b9dd6feec6c29167efdc3c23dc44a5575",
+  "docs/draft-deck.html": "6e93b254f38ae3e6bf41ca86be04c69badfe361dcdfbd22762d1729d5b405238",
+  "../fantasy-basketball-2026-27/report/after-reports/availability-tiers-2026-11-16/sweep.json": "ea6ac03e65ac2b56e0146a5754f8e2f66f939f2d4aad34b4c14df1aa394da95d"
  },
  "gates": [
   {
    "name": "kit check_report",
-   "cmd": "/usr/local/bin/python3 report/check_report.py /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-28-runner-impact-gate.md",
+   "cmd": "/usr/local/bin/python3 report/check_report.py /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-11-16-availability-tiers.md",
    "cwd": ".",
    "pass_re": "^REPORT GATE: PASS",
    "exit": 0,
-   "pass_line": "REPORT GATE: PASS \u2014 after-report-2026-10-28-runner-impact-gate.md (structure, publication rule, pull-log row)",
+   "pass_line": "REPORT GATE: PASS \u2014 after-report-2026-11-16-availability-tiers.md (structure, publication rule, pull-log row; no pool row touched, checked against main: tail sections not owed)",
    "verdict": "PASS",
    "why": "",
    "tail": [
-    "REPORT GATE: PASS \u2014 after-report-2026-10-28-runner-impact-gate.md (structure, publication rule, pull-log row)"
-   ]
-  },
-  {
-   "name": "deck judgment_open_items --check-report",
-   "cmd": "/usr/local/bin/python3 scripts/judgment_open_items.py --check-report /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-28-runner-impact-gate.md",
-   "cwd": "../yahoo-fantasy-basketball",
-   "pass_re": "^receipts check PASS",
-   "exit": 0,
-   "pass_line": "receipts check PASS \u2014 all 10 flagged names carry a receipts row in after-report-2026-10-28-runner-impact-gate.md",
-   "verdict": "PASS",
-   "why": "",
-   "tail": [
-    "receipts check PASS \u2014 all 10 flagged names carry a receipts row in after-report-2026-10-28-runner-impact-gate.md"
-   ]
-  },
-  {
-   "name": "deck repeat_market_check --check-report",
-   "cmd": "/usr/local/bin/python3 scripts/repeat_market_check.py --check-report /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-28-runner-impact-gate.md",
-   "cwd": "../yahoo-fantasy-basketball",
-   "pass_re": "^REPEAT-NAME CHECK: PASS",
-   "exit": 0,
-   "pass_line": "REPEAT-NAME CHECK: PASS \u2014 after-report-2026-10-28-runner-impact-gate.md: 12 flagged name(s), each with a row (33 of 33 mocks replayed)",
-   "verdict": "PASS",
-   "why": "",
-   "tail": [
-    "REPEAT-NAME CHECK: PASS \u2014 after-report-2026-10-28-runner-impact-gate.md: 12 flagged name(s), each with a row (33 of 33 mocks replayed)"
+    "REPORT GATE: PASS \u2014 after-report-2026-11-16-availability-tiers.md (structure, publication rule, pull-log row; no pool row touched, checked against main: tail sections not owed)"
    ]
   },
   {
    "name": "claim receipts",
-   "cmd": "/usr/local/bin/python3 /home/user/fantasy-basketball-2026-27/scripts/independent_audit/claim_receipts.py /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-10-28-runner-impact-gate.md",
+   "cmd": "/usr/local/bin/python3 /home/user/fantasy-basketball-2026-27/scripts/independent_audit/claim_receipts.py /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-11-16-availability-tiers.md",
    "cwd": ".",
    "pass_re": "^CLAIM RECEIPTS: (PASS|ADVISORY)",
    "exit": 0,
@@ -59,8 +35,53 @@
    ]
   },
   {
-   "name": "test_check_report",
-   "cmd": "python3 scripts/test_check_report.py",
+   "name": "deck test_patches",
+   "cmd": "python3 arena/test_patches.py",
+   "cwd": "../yahoo-fantasy-basketball",
+   "pass_re": "^OK",
+   "exit": 0,
+   "pass_line": "OK",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "----------------------------------------------------------------------",
+    "Ran 8 tests in 1.894s",
+    "OK"
+   ]
+  },
+  {
+   "name": "deck test_season_cv",
+   "cmd": "python3 arena/test_season_cv.py",
+   "cwd": "../yahoo-fantasy-basketball",
+   "pass_re": "^OK",
+   "exit": 0,
+   "pass_line": "OK",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "----------------------------------------------------------------------",
+    "Ran 6 tests in 2.623s",
+    "OK"
+   ]
+  },
+  {
+   "name": "deck test_card",
+   "cmd": "python3 scripts/test_card.py",
+   "cwd": "../yahoo-fantasy-basketball",
+   "pass_re": "^CARD: all",
+   "exit": 0,
+   "pass_line": "CARD: all 103 cases passed",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "  ok    MILD page weeklyAvail is the exact twin of arena.weekly_availability",
+    "  ok    MILD the page legend names the 0.85 tier",
+    "CARD: all 103 cases passed"
+   ]
+  },
+  {
+   "name": "kit test_fit_constants",
+   "cmd": "python3 scripts/test_fit_constants.py",
    "cwd": ".",
    "pass_re": "^OK",
    "exit": 0,
@@ -69,8 +90,107 @@
    "why": "",
    "tail": [
     "----------------------------------------------------------------------",
-    "Ran 4 tests in 0.007s",
+    "Ran 11 tests in 1.542s",
     "OK"
+   ]
+  },
+  {
+   "name": "kit test_weekly_preview",
+   "cmd": "python3 scripts/test_weekly_preview.py",
+   "cwd": ".",
+   "pass_re": "^OK",
+   "exit": 0,
+   "pass_line": "OK",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "----------------------------------------------------------------------",
+    "Ran 19 tests in 0.104s",
+    "OK"
+   ]
+  },
+  {
+   "name": "kit test_tag_overrides",
+   "cmd": "python3 scripts/test_tag_overrides.py",
+   "cwd": ".",
+   "pass_re": "^OK",
+   "exit": 0,
+   "pass_line": "OK",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "----------------------------------------------------------------------",
+    "Ran 11 tests in 0.159s",
+    "OK"
+   ]
+  },
+  {
+   "name": "kit test_redteam_attacks",
+   "cmd": "python3 scripts/test_redteam_attacks.py",
+   "cwd": ".",
+   "pass_re": "^OK",
+   "exit": 0,
+   "pass_line": "OK",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "----------------------------------------------------------------------",
+    "Ran 12 tests in 0.003s",
+    "OK"
+   ]
+  },
+  {
+   "name": "kit test_redteam_sweep",
+   "cmd": "python3 scripts/test_redteam_sweep.py",
+   "cwd": ".",
+   "pass_re": "^OK",
+   "exit": 0,
+   "pass_line": "OK",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "----------------------------------------------------------------------",
+    "Ran 16 tests in 2.580s",
+    "OK"
+   ]
+  },
+  {
+   "name": "redteam constants",
+   "cmd": "/usr/local/bin/python3 /home/user/fantasy-basketball-2026-27/scripts/redteam/check_constants.py --deck /home/user/yahoo-fantasy-basketball",
+   "cwd": ".",
+   "pass_re": "^CONSTANTS CHECK: PASS",
+   "exit": 0,
+   "pass_line": "CONSTANTS CHECK: PASS \u2014 53 registered = 53 live on deck 56b3a6b; declared_band 5, measured 10, settings 8, structural 6, uncalibrated 24",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "CONSTANTS CHECK: PASS \u2014 53 registered = 53 live on deck 56b3a6b; declared_band 5, measured 10, settings 8, structural 6, uncalibrated 24"
+   ]
+  },
+  {
+   "name": "redteam bands",
+   "cmd": "/usr/local/bin/python3 /home/user/fantasy-basketball-2026-27/scripts/redteam/check_bands.py --report /home/user/fantasy-basketball-2026-27/report/after-reports/after-report-2026-11-16-availability-tiers.md --sweep /home/user/fantasy-basketball-2026-27/report/after-reports/availability-tiers-2026-11-16/sweep.json",
+   "cwd": ".",
+   "pass_re": "^BANDS CHECK: PASS",
+   "exit": 0,
+   "pass_line": "BANDS CHECK: PASS \u2014 1 FRAGILE band(s) quoted (arena.weekly_availability); engine 9a009af",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "BANDS CHECK: PASS \u2014 1 FRAGILE band(s) quoted (arena.weekly_availability); engine 9a009af"
+   ]
+  },
+  {
+   "name": "redteam attacks",
+   "cmd": "/usr/local/bin/python3 /home/user/fantasy-basketball-2026-27/scripts/redteam/run_attacks.py --check --deck /home/user/yahoo-fantasy-basketball",
+   "cwd": ".",
+   "pass_re": "^ATTACKS CHECK: PASS",
+   "exit": 0,
+   "pass_line": "ATTACKS CHECK: PASS \u2014 11 attacks on engine 56b3a6b (engine files last changed 9a009af), simulator aa470f8; CURRENT 11",
+   "verdict": "PASS",
+   "why": "",
+   "tail": [
+    "ATTACKS CHECK: PASS \u2014 11 attacks on engine 56b3a6b (engine files last changed 9a009af), simulator aa470f8; CURRENT 11"
    ]
   },
   {
@@ -89,5 +209,5 @@
   }
  ],
  "verdict": "PASS",
- "base_commit": "366d3cabe2a5b88fa2e105be17a041cc5cabb916"
+ "base_commit": "56b3a6bd91a5b1fb50e7949acbe7504dca0e60b6"
 }

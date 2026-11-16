@@ -70,7 +70,9 @@ MILD_TAGS = ["inj-acl-risk-mild (owner 10/13)", "inj-risk-mild; owner call", "in
 # exclusion (0.0, owner ruling 2026-07-12) instead of the superseded 0.60 — both engines and the page twin.
 # out-* (owner "proceed with all" 2026-10-21, decision-sheet item 2): the simulator excludes out-* like the board
 # (0.0) instead of scoring it healthy (0.88) for want of a branch — the 2026-10-21 A-9 attack's pre-registered divergence.
-MILD_WANT = [(0.85, 0.79), (0.85, 0.79), (0.78, 0.75), (1.0, 0.88), (0.78, 0.75), (0.0, 0.0), (0.0, 0.0),
+# Owner pick 2026-11-16 ("Fit with a floor", "Band edge: 0.80 / 0.65"): weekly healthy 0.88 -> 0.80 and risk 0.75 -> 0.65
+# (kit report/fits/fit_week4.json: healthy measured 0.779 n 3,694; risk 0.559 n 438); -mild stays 0.79.
+MILD_WANT = [(0.85, 0.79), (0.85, 0.79), (0.78, 0.65), (1.0, 0.80), (0.78, 0.65), (0.0, 0.0), (0.0, 0.0),
              (0.0, 0.0), (0.0, 0.0)]
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -763,7 +765,7 @@ process.stdout.write(JSON.stringify(out));
     av_ = [_arena.weekly_availability({"note": t}) for t in MILD_TAGS]
     case("MILD hoops.availability: -mild 0.85, risk 0.78, healthy 1.0, prose ignored",
          hv == [w[0] for w in MILD_WANT], f"got {hv}")
-    case("MILD arena.weekly_availability: -mild 0.79, risk 0.75, healthy 0.88, prose ignored",
+    case("MILD arena.weekly_availability: -mild 0.79, risk 0.65, healthy 0.80, prose ignored",
          av_ == [w[1] for w in MILD_WANT], f"got {av_}")
     case("MILD page weeklyAvail is the exact twin of arena.weekly_availability",
          js.get("wavail") == [w[1] for w in MILD_WANT], f"got {js.get('wavail')}")

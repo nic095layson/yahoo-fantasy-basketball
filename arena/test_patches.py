@@ -38,8 +38,8 @@ class Patches(unittest.TestCase):
     def test_the_availability_patch_remaps_the_two_tiers(self):
         import patches
         a = fresh(); a.weekly_availability = lambda p: p["x"]     # a stand-in returning the tier it is given
-        patches.apply(a, {"avail": [0.95, 0.65]})
-        self.assertEqual([a.weekly_availability(dict(x=v)) for v in (0.88, 0.75, 0.5)], [0.95, 0.65, 0.5])
+        patches.apply(a, {"avail": [0.95, 0.56]})
+        self.assertEqual([a.weekly_availability(dict(x=v)) for v in (0.80, 0.65, 0.5)], [0.95, 0.56, 0.5])
 
     def test_the_cv_patch_scales_every_category(self):
         import patches

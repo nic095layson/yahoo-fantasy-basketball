@@ -32,8 +32,10 @@ POOL = "arena/results/players_v69.csv"
 STATE = "arena/data/states/draft_state_100.json"
 FIT = {"PTS": 0.395, "REB": 0.445, "AST": 0.496, "3PTM": 0.717, "ST": 0.945, "BLK": 1.072, "TO": 0.668}
 # deck 80eecdf, before the change: simulate_seasons(rosters, 600, Random(2026)) and the twelve default weekly models
-KNOWN_CHAMPS = {1: 92, 2: 10, 3: 97, 4: 20, 5: 37, 6: 88, 7: 14, 8: 17, 9: 5, 10: 155, 11: 65, 12: 0}
-KNOWN_MODELS_SHA = "88073a511f9ef895"
+# re-pinned 2026-11-16 for the owner's availability pick (weekly healthy 0.88 -> 0.80, risk 0.75 -> 0.65); before it:
+# champs {1: 92, 2: 10, 3: 97, 4: 20, 5: 37, 6: 88, 7: 14, 8: 17, 9: 5, 10: 155, 11: 65, 12: 0}, models sha 88073a511f9ef895
+KNOWN_CHAMPS = {1: 94, 2: 19, 3: 83, 4: 22, 5: 33, 6: 90, 7: 7, 8: 16, 9: 4, 10: 163, 11: 69, 12: 0}
+KNOWN_MODELS_SHA = "3d65e38a2a74c817"
 
 
 def rosters():
