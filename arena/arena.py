@@ -78,7 +78,9 @@ PCT_MIX_INFL = 1.15     # shot-mix/lineup inflation over the binomial floor
 #  floor of the sim's own attempt volumes, making % cats near-deterministic
 #  — 9-CAT math audit, findings_2026-07-30. Weekly % variance is now
 #  per-roster binomial x PCT_MIX_INFL, computed in team_week_model.)
-TEAM_WEEK_SHOCK = 0.06  # shared games-played shock, correlates counting cats
+TEAM_WEEK_SHOCK = 0.11  # shared games-played shock, correlates counting cats. 0.06 (hand-set) until the Council of
+# 2026-11-16 (owner: "Have council deliberate the shock fit and proceed"), 4-1: the level-relative fit of weeks 1-4
+# (kit fit_constants on season/daily: 0.107, SE 0.013, 48 team-weeks; the same on the 0.88/0.75 and 0.80/0.65 tiers)
 
 
 # --------------------------------------------------------------------------

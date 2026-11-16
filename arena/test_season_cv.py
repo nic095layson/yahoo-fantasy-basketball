@@ -34,7 +34,9 @@ FIT = {"PTS": 0.395, "REB": 0.445, "AST": 0.496, "3PTM": 0.717, "ST": 0.945, "BL
 # deck 80eecdf, before the change: simulate_seasons(rosters, 600, Random(2026)) and the twelve default weekly models
 # re-pinned 2026-11-16 for the owner's availability pick (weekly healthy 0.88 -> 0.80, risk 0.75 -> 0.65); before it:
 # champs {1: 92, 2: 10, 3: 97, 4: 20, 5: 37, 6: 88, 7: 14, 8: 17, 9: 5, 10: 155, 11: 65, 12: 0}, models sha 88073a511f9ef895
-KNOWN_CHAMPS = {1: 94, 2: 19, 3: 83, 4: 22, 5: 33, 6: 90, 7: 7, 8: 16, 9: 4, 10: 163, 11: 69, 12: 0}
+# re-pinned 2026-11-16 again for the shock 0.06 -> 0.11 (Council); on 0.06: {1: 94, 2: 19, 3: 83, 4: 22, 5: 33, 6: 90, 7: 7,
+# 8: 16, 9: 4, 10: 163, 11: 69, 12: 0} (the models sha does not move: the shock is drawn in the season, not the model)
+KNOWN_CHAMPS = {1: 80, 2: 24, 3: 73, 4: 35, 5: 37, 6: 86, 7: 13, 8: 24, 9: 10, 10: 147, 11: 71, 12: 0}
 KNOWN_MODELS_SHA = "3d65e38a2a74c817"
 
 
@@ -55,6 +57,11 @@ class SeasonCV(unittest.TestCase):
 
     def test_season_cv_is_the_2025_26_fit(self):
         self.assertEqual(arena.SEASON_CV, FIT)
+
+    def test_the_shock_is_the_week_4_fit(self):
+        # Council 2026-11-16 (owner: "Have council deliberate the shock fit and proceed"), 4-1: the shared games
+        # shock is the level-relative fit of weeks 1-4 (0.107, SE 0.013; kit fit_constants on season/daily), 0.11
+        self.assertEqual(arena.TEAM_WEEK_SHOCK, 0.11)
 
     def test_the_draft_engine_values_are_untouched(self):
         self.assertEqual(arena.CV, {"PTS": 0.30, "REB": 0.35, "AST": 0.40, "3PTM": 0.55, "ST": 0.70, "BLK": 0.75, "TO": 0.50})
