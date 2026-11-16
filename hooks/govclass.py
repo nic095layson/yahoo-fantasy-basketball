@@ -60,10 +60,10 @@ GOVERNORS_FOR = {
 ENFORCED = ("analysis", "review", "build", "dispute")
 
 
-# Slash-command echoes added 2026-10-19: a /model echo was the latest user string in a real session
-# and hid the owner's governed prompt from the Stop gate (red-team attack G5).
-HARNESS_MARKERS = ("[SYSTEM NOTIFICATION", "<task-notification>", "<wake ", "<agent-message", "<webhook-payload",
-                   "<command-name>", "<local-command-stdout>", "<local-command-caveat>")
+# What a harness text STARTS with: one list, kept in turngate.py, and one test, turngate.harness_lead. A prompt
+# that merely quotes one of these strings is the owner's and is classified (2026-11-15; before, a marker anywhere
+# in the prompt hid it from both hooks).
+from turngate import HARNESS_MARKERS, harness_lead  # noqa: E402
 
 # The advisory cue tier (2026-10-19, D-SV-3 option c). The five patterns above catch 14/36 governed
 # owner prompts on the sealed set (results/2026-10-19/system-red-team), so the TRIGGER also cues on any
@@ -83,7 +83,7 @@ ACK_RX = re.compile(
 def cue(prompt: str) -> bool:
     """True when the advisory tier should cue governance on an owner prompt the patterns missed."""
     p = (prompt or "").strip()
-    if not p or any(m in p for m in HARNESS_MARKERS):
+    if not p or harness_lead(p):
         return False
     if len(p.split()) < CUE_MIN_WORDS:
         return False
@@ -97,7 +97,7 @@ def classify(prompt: str):
     are never owner requests, so they classify as nothing: on 2026-10-13 the trigger fired on a
     task-failure notification whose text happened to contain a build verb."""
     p = (prompt or "").strip()
-    if not p or any(m in p for m in HARNESS_MARKERS):
+    if not p or harness_lead(p):
         return []
     return [name for name, rx in PATTERNS.items() if rx.search(p)]
 

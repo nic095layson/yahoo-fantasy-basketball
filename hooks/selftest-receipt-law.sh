@@ -1,18 +1,25 @@
 #!/usr/bin/env bash
-# selftest-receipt-law — pipe-test for receipt-law-stop-gate.sh.
+# selftest-receipt-law — pipe-test for receipt-law-stop-gate.sh (which runs receiptlaw.py beside it).
 #
 # Builds synthetic transcripts covering both directions and asserts BLOCK /
 # no-BLOCK. The should-NOT-block cases matter more than the should-block one:
 # a Stop hook that fires wrongly interrupts every turn it touches, which is a
 # far worse failure than the defect it guards (anti-ceremony, invariant 5).
 #
+# These are the gate's first 15 cases, kept as a quick check that needs nothing but
+# bash and python3. The full table of the gate (every sentence of the 2026-11-12
+# audit, the record shapes, the failure paths) is table "R" of
+# selftest-turn-gates.py:  python3 hooks/selftest-turn-gates.py RL
+# and the guard runs both. One case changed on 2026-11-15, t7 (see there).
+#
 # Usage: bash hooks/selftest-receipt-law.sh     Exit 0 = all pass.
 set -u
 HOOK="$(cd "$(dirname "$0")" && pwd)/receipt-law-stop-gate.sh"
 WORK="$(mktemp -d)"; trap 'rm -rf "$WORK"' EXIT
-# Hermetic: the gate writes once-per-turn sentinels into TMPDIR. Sharing the real
-# /tmp across runs let a previous run's sentinel suppress this run's block — the
-# first version of this file failed exactly that way on its second execution.
+# The gate keeps no state file since 2026-11-15 (it used to write once-per-turn
+# sentinels into TMPDIR, and a previous run's sentinel could suppress this run's
+# block). TMPDIR still points into the work folder so that nothing here can touch
+# the real one.
 export TMPDIR="$WORK"
 PASS=0; FAIL=0
 
@@ -80,7 +87,11 @@ couldn'"'"'t verify / unable to confirm
 That is what the gate looks for.'
 run t4-quoted-only ALLOW "$WORK/t4"
 
-# 5. Loop guard: we are already continuing because of this hook.
+# 5. Loop guard: the retry flag is set and the record shows no block at all (the
+#    record does not keep every row): the stop is let go. The flag alone no longer
+#    means "this gate already blocked" (2026-11-15: it is true after ANY Stop hook's
+#    block); with a block of another hook on record the gate still judges, which the
+#    table tests (RLX01, RLX03, RLX07).
 mk "$WORK/t5" "The remaining items are unverified and I couldn't confirm them."
 run t5-loop-guard ALLOW "$WORK/t5" true
 
@@ -88,10 +99,21 @@ run t5-loop-guard ALLOW "$WORK/t5" true
 mk "$WORK/t6" "PostgreSQL listens on port 5432 by default."
 run t6-plain-answer ALLOW "$WORK/t6"
 
-# 7. Once per turn: same session+turn must not block twice.
+# 7. At most one block in a stretch. CHANGED 2026-11-15 (findings RL-2, FU2-1, TB-5 of the
+#    2026-11-12 audit): the count is read from the record, not from a sentinel file. The
+#    second stop is therefore judged on the record as the program leaves it after a block:
+#    the feedback row that carries this gate's reason, then the answer again. (The old case
+#    ran the same file twice and relied on the sentinel; with no block on record the same
+#    file blocks again, which is table case RLX11.)
 mk "$WORK/t7" "Three of the twelve I could not determine, so I am going with the estimate."
 run t7-first-fire BLOCK "$WORK/t7"
-run t7-first-fire ALLOW "$WORK/t7"   # same sid+promptId -> sentinel suppresses
+python3 -c '
+import json,sys
+print(json.dumps({"type":"user","isMeta":True,"message":{"role":"user","content":
+  "Stop hook feedback: Receipt law: this answer says \"could not determine\" and the same sentence names no attempt and no failure."}}))
+print(json.dumps({"type":"assistant","message":{"role":"assistant","content":[
+  {"type":"text","text":sys.argv[1]}]}}))' "Three of the twelve I could not determine, so I am going with the estimate." >> "$WORK/t7"
+run t7-second-stop-after-own-block ALLOW "$WORK/t7"
 
 # 8. Fail-open: transcript missing entirely.
 run t8-missing-transcript ALLOW "$WORK/does-not-exist.jsonl"
