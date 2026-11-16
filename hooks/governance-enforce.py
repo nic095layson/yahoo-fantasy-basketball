@@ -1,178 +1,172 @@
 #!/usr/bin/env python3
-"""Stop hook: if the turn answered governed-class work AND no governor Skill loaded for it, BLOCK once
-and force the load. Single retry (stop_hook_active) => loop-safe. Fails open on every error.
+"""Stop hook: two rules, both on the turn model in turngate.py.
 
-This is the mechanism behind the kit's promise that "the core governors run on every session": a
-promise with no mechanism was INC-2026-10-13-01. Validated form (2026-07-15, phase 2b A/B): every
-governed case loaded the governor 3/3 under enforcement vs 0/3 without; both should-not cases silent.
+Outward actions. The stretch this stop answers for (the rows since the owner's latest message or the latest
+completed stop) committed, pushed, created, updated or merged a pull request, pushed a file or changed a
+scheduled task: plan-gate must have been loaded in the governance turn before the first such action, and
+adversarial-verify anywhere in it. After a compaction both must be loaded again before the next such action.
+The rule itself is turngate.f1_decision. Blocks at most F1_MAX_BLOCKS times in one stretch.
 
-Rebuilt 2026-10-13 on hooks/govclass.py (shared with the trigger) and made robust to user messages
-whose content is a list of blocks, which is how cloud sessions record them.
+Prompt class. The owner's prompts of the turn (the typed message, a slash command's arguments, messages sent
+while the assistant worked) are governed-class work (govclass.py) and the governor each class needs was not
+loaded: block, at most PROMPT_CLASS_MAX_BLOCKS times in one stretch. Judged only at the first stop after the
+owner's message: a scheduled run, and work woken after a completed stop, carry no prompt of the owner's. A
+stretch whose record holds no owner message (the file starts at a compaction, or a scheduled run) is not judged
+by this rule (PROMPT_CLASS_SILENT_WITHOUT_OWNER_MESSAGE; with False, such a stretch that made a real write is
+judged as work that needs plan-gate).
 
-What counts as "loaded": a Skill tool call this turn whose input names the governor — including a
-synced copy such as "anthropic-skills:plan-gate". Governor text merely re-attached after a compaction
-does NOT count (it is bound to an earlier task); that distinction is the gauntlet skill's rule, and
-this hook enforces it by looking only at Skill calls after the latest owner message.
+What counts as loaded: a Skill call in the governance turn whose name, after any scope prefix, is the
+governor's, and whose result is not an error. Governor text remembered from an earlier turn does not count; for
+this rule a load made earlier in the same turn does, also before a compaction.
+
+The retry flag (stop_hook_active) is true after ANY Stop hook blocked, for the rest of the turn, so it does not
+mean "this hook already blocked": each rule counts its own earlier blocks from the record. A block is counted
+when work followed it in the record, or when it is the record's last block and the flag is set (this stop
+answers it; the record may not hold the reply yet). Only when the flag is set and no block is counted at all
+does a rule let the stop go.
+
+Which way a failure goes: an input or a record that cannot be read, an error here or in turngate.py, and this
+hook's own deadline all ALLOW the stop. Every path ends with exit status 0 and prints one JSON object or nothing.
 """
 import json
 import os
+import signal
 import sys
+import threading
+import time
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-try:
-    from govclass import classify, governors, ENFORCED
-except Exception:
-    sys.exit(0)
-try:
-    from govclass import HARNESS_MARKERS
-except Exception:  # older classifier without the constant: same markers, kept in step by the fixture
-    HARNESS_MARKERS = ("[SYSTEM NOTIFICATION", "<task-notification>", "<wake ", "<agent-message", "<webhook-payload")
-
-
-def user_text(msg):
-    """Plain text of a user message, or None when it carries no owner text (tool results etc.)."""
-    c = msg.get("content")
-    if isinstance(c, str):
-        return c
-    if isinstance(c, list):
-        texts = [b.get("text", "") for b in c if isinstance(b, dict) and b.get("type") == "text"]
-        return "\n".join(t for t in texts if t) or None
-    return None
-
-
-try:
-    data = json.load(sys.stdin)
-except Exception:
-    sys.exit(0)
-if data.get("stop_hook_active"):
-    sys.exit(0)  # already forced one retry -> allow (loop-safe)
-tp = data.get("transcript_path")
-if not tp or not os.path.exists(tp):
-    sys.exit(0)
-
-lines = []
-try:
-    with open(tp, encoding="utf-8", errors="replace") as fh:
-        for raw in fh:
-            raw = raw.strip()
-            if not raw:
-                continue
-            try:
-                lines.append(json.loads(raw))
-            except Exception:
-                pass
-except Exception:
-    sys.exit(0)
-
-# F1 (2026-10-29): gate on what the turn DID. If it took an outward action (commit, push, PR create/
-# update/merge, scheduled-task change), plan-gate must have loaded before the first such action and
-# adversarial-verify somewhere in the turn — whatever the prompt said. (First draft required
-# adversarial-verify AFTER the first outward action; the replay control "verify, then commit and push"
-# — 2026-10-21 17:13 — was blocked by it, so the rule was narrowed, not the fixture loosened.) Every governor miss in the 2026-10-28 session
-# audit was a short follow-up turn the prompt classifier does not match ("Continue", "proceed").
-# Pre-registered: experiments/hypothesis-2026-10-29-turn-gates.md.
-try:
-    import turngate
-    _li = turngate.turn_start(lines)   # 2026-11-04: a scheduled run is a turn of its own
-    if _li >= 0:
-        _ev = turngate.events(lines, _li)
-        _first = next((k for k, (kind, b) in enumerate(_ev) if kind == "tool" and turngate.is_outward(b)), None)
-        if _first is not None:
-            _pg = any(kind == "tool" and turngate.skill_name(b) == "plan-gate" for kind, b in _ev[:_first])
-            _av = any(kind == "tool" and turngate.skill_name(b) == "adversarial-verify" for kind, b in _ev)
-            if not (_pg and _av):
-                _miss = [g for g, ok in (("plan-gate (before the first outward action)", _pg),
-                                          ("adversarial-verify", _av)) if not ok]
-                print(json.dumps({"decision": "block", "reason": (
-                    "GOV-ENFORCE: this turn took an outward action (commit, push, PR or merge) without "
-                    + " and ".join(_miss) + ". Load the missing governor with the Skill tool now and follow it."
-                    + (" The plan comes after the action this time: say so plainly to the owner, then state"
-                       " the goal and what was done." if not _pg else "")
-                    + " This applies however short the owner's message was ('continue', 'proceed').")}))
-                sys.exit(0)
-except SystemExit:
-    raise
-except Exception:
-    pass  # fail open: the prompt-class gate below still runs
-
-prompt, li = None, -1
-for i, d in enumerate(lines):
-    if d.get("type") != "user":
-        continue
-    # Harness-injected user entries (loaded skill text, hook feedback, compaction summaries) are
-    # marked isMeta / isCompactSummary. They are not the owner's request: in the 2026-10-13 live
-    # A/B the gate took a loaded skill's own text as "the prompt", put the Skill call before it,
-    # and blocked a compliant turn. Only un-marked user text counts.
-    if d.get("isMeta") or d.get("isCompactSummary"):
-        continue
-    m = d.get("message") or {}
-    if not isinstance(m, dict):
-        continue
-    t = user_text(m)
-    # Harness-generated user turns (background-task notifications, wake envelopes, subagent hand-backs)
-    # are not the owner's request either. Before 2026-10-13 they were taken as "the prompt", classified
-    # as nothing, and let a governed, unloaded turn through whenever a background task finished
-    # mid-turn (reproduced red-first, results/2026-10-13/system-validation/).
-    if t and any(mk in t for mk in HARNESS_MARKERS):
-        continue
-    if t and not t.startswith("GOV-ENFORCE") and not t.startswith("Stop hook feedback"):
-        prompt, li = t, i
-if not prompt:
-    sys.exit(0)
-
-classes = [c for c in classify(prompt) if c in ENFORCED]
-if not classes:
-    sys.exit(0)  # not governed, or advisory-only -> allow
-
-# What must have loaded: the PRIMARY governor of every enforced class the prompt matched (the first in
-# its GOVERNORS_FOR tuple). Before 2026-10-19 any one needed governor passed, so a dispute — which needs
-# adversarial-verify's assessment — passed on a scope-fence load alone (red-team attack G4).
-try:
-    from govclass import GOVERNORS_FOR
-    needed = {GOVERNORS_FOR[c][0] for c in classes}
-except Exception:
-    needed = set(governors(classes))
-
-loaded, tools_ran, said = set(), 0, []
-for d in lines[li:]:
-    if d.get("type") != "assistant":
-        continue
-    m = d.get("message") or {}
-    for b in (m.get("content") or []) if isinstance(m, dict) else []:
-        if not isinstance(b, dict):
-            continue
-        if b.get("type") == "text":
-            said.append(b.get("text") or "")
-        if b.get("type") != "tool_use":
-            continue
-        if b.get("name") == "Skill":
-            # Exact match on the Skill NAME (after any scope prefix). Before 2026-10-19 a substring
-            # match on the whole input let a call whose ARGS merely mentioned a governor count as
-            # loading it (red-team attack G3).
-            inp = b.get("input") or {}
-            name = str(inp.get("skill") or "").split(":")[-1].strip()
-            if name in ("plan-gate", "adversarial-verify", "scope-fence"):
-                loaded.add(name)
-        else:
-            tools_ran += 1
-
-if needed <= loaded:
-    sys.exit(0)  # complied
-
-# Trivia allowance (D-SV-5, 2026-10-19), REVIEW-ONLY: a review-class turn that ran no tool and
-# answered in under TRIVIA_MAX_CHARS characters did no governed work — "quick sanity check: 2+2=4,
-# right?" was blocked 2/2 live and the forced load added nothing. Scoped to {review} alone: a dispute,
-# build or analysis answered short without tools is the INC-2026-10-13-01 shape (acquiescing without
-# the assessment), not trivia. TRIVIA_MAX_CHARS is hand-set (uncalibrated, registry
-# results/2026-10-19/system-red-team). Any tool call or a longer answer re-arms the gate.
+HOOK_DEADLINE_SECONDS = 8           # under the wired timeout: this hook ends itself, quietly, before it is cut off
 TRIVIA_MAX_CHARS = 400
-if set(classes) == {"review"} and tools_ran == 0 and len("".join(said).strip()) < TRIVIA_MAX_CHARS:
-    sys.exit(0)
+TRIVIA_CLASSES = ("review",)        # the only classes a short answer with no tool call may pass without a governor
+# AS-7 (default taken without a question): a stretch whose record holds no owner message is not judged by the
+# prompt-class rule. False: such a stretch that made a real write (WRITE_GOVERNED_CLASS) is judged as governed work.
+PROMPT_CLASS_SILENT_WITHOUT_OWNER_MESSAGE = True
+WRITE_GOVERNED_CLASS = "build"      # the class a stretch with no owner message is judged as, when it is judged
+ACTION_WORDS = {"merge": "merge", "push_default": "push to a default branch", "push": "push", "commit": "commit",
+                "pr_write": "pull-request change", "file_push": "file push", "schedule": "scheduled-task change"}
+REASON_F1 = ("GOV-ENFORCE: this turn took an outward action (%s) without %s. Load the missing governor with the "
+             "Skill tool now and follow it.")
+REASON_F1_PLAN_LATE = (" The plan comes after the action this time: say so plainly to the owner, then state the goal "
+                       "and what was done.")
+REASON_F1_COMPACTION = (" The governors were loaded before a compaction; what a compaction carries over does not "
+                        "count, so they must be loaded again before the next commit, push or merge.")
+REASON_F1_ANY_PROMPT = " This applies however short the owner's message was ('continue', 'proceed')."
+REASON_PROMPT_CLASS = ("GOV-ENFORCE: this is governed work (%s) and you finished WITHOUT loading %s. Load %s with the "
+                       "Skill tool now, follow its procedure, and revise your answer before finishing. Only a load "
+                       "with the Skill tool in this turn counts (one made earlier in this turn counts, also before a "
+                       "compaction); governor text you remember from an earlier turn does not.")
 
-first = sorted(needed - loaded)[0]
-reason = ("GOV-ENFORCE: this is governed work (" + ", ".join(sorted(needed)) + ") and you finished "
-          "WITHOUT loading " + ("it" if len(needed) == 1 else "all of it") + ". Load " + first +
-          " with the Skill tool now, follow its procedure, and revise "
-          "your answer before finishing. Governor text already in your context from before a compaction "
-          "does not count: it was loaded for an earlier task.")
-print(json.dumps({"decision": "block", "reason": reason}))
+_answered = threading.Lock()                # taken by whoever ends the hook
+
+
+def finish(answer):
+    """Print the one answer (or nothing) and end with status 0. Only the first caller prints."""
+    if not _answered.acquire(False):
+        return
+    try:
+        if answer is not None:
+            sys.stdout.write(json.dumps(answer) + "\n")
+        sys.stdout.flush()
+    except Exception:
+        pass
+    os._exit(0)
+
+
+def on_deadline(*_unused):
+    finish(None)                            # a Stop hook does not hold ordinary work on its own failure
+
+
+def arm_deadline():
+    if hasattr(signal, "SIGALRM"):
+        signal.signal(signal.SIGALRM, on_deadline)
+        signal.alarm(HOOK_DEADLINE_SECONDS)
+    else:
+        timer = threading.Timer(HOOK_DEADLINE_SECONDS, on_deadline)
+        timer.daemon = True
+        timer.start()
+
+
+def block(reason):
+    return {"decision": "block", "reason": reason}
+
+
+def outward_rule(turngate, model, path, active):
+    blocked, missing, kinds = turngate.f1_decision(model, turngate.ledger_read(path), active)
+    if not blocked:
+        return None
+    reason = REASON_F1 % (", ".join(ACTION_WORDS.get(k, k) for k in kinds), " and ".join(missing))
+    if any(m in (turngate.MISSING_PLAN, turngate.MISSING_PLAN_RELOAD) for m in missing):
+        reason += REASON_F1_PLAN_LATE
+    if any(m in (turngate.MISSING_PLAN_RELOAD, turngate.MISSING_VERIFY_RELOAD) for m in missing):
+        reason += REASON_F1_COMPACTION
+    reason += (" " + model.f1_note) if model.f1_note else REASON_F1_ANY_PROMPT
+    return block(reason)
+
+
+def wrote(turngate, model, after):
+    """The main thread made a real write (a file outside scratch, a commit, a push ...) after row `after`: a call
+    the record does not show denied (the same test as the outward-action rule's, turngate.was_denied)."""
+    for tid, (i, _k, b, side) in model.uses.items():
+        if i <= after or side or not turngate.is_write(b):
+            continue
+        res = model.results.get(tid)
+        if res is None or not turngate.was_denied(res[1], res[2]):
+            return True
+    return False
+
+
+def prompt_class_rule(turngate, govclass, model, data, active):
+    if any(row > model.gov_start for row in model.stops_done + model.idle_wakes):
+        return None                         # the answer to that prompt was judged at its own stop
+    if model.gov_kind != "owner":           # a scheduled run, or no owner message on record: no prompt to classify
+        if PROMPT_CLASS_SILENT_WITHOUT_OWNER_MESSAGE or not wrote(turngate, model, model.gov_start):
+            return None
+        classes = [WRITE_GOVERNED_CLASS]
+    else:
+        classes = sorted(set(c for prompt in model.owner_prompts() for c in govclass.classify(prompt)
+                             if c in govclass.ENFORCED))
+    if not classes:
+        return None
+    needed = set(govclass.GOVERNORS_FOR[c][0] for c in classes)      # the primary governor of every matched class
+    loaded = set(governor for _row, _block, governor in model.loads(model.gov_start))
+    if needed <= loaded:
+        return None
+    said = model.prose(model.gov_start, data.get("last_assistant_message"))
+    if (all(c in TRIVIA_CLASSES for c in classes) and model.tools_ran(model.gov_start) == 0
+            and len("".join(said).strip()) < TRIVIA_MAX_CHARS):
+        return None                         # a short answer to a quick check, with no tool call: no governed work
+    start = model.stretch_start
+    if active and not model.feedback(start, None, active):
+        return None                         # the flag is set and the record shows no block: the one retry
+    if len(model.feedback(start, turngate.own_prompt_class_block, active)) >= turngate.PROMPT_CLASS_MAX_BLOCKS:
+        return None
+    missing = sorted(needed - loaded)
+    return block(REASON_PROMPT_CLASS % (", ".join(sorted(needed)), "it" if len(needed) == 1 else "all of it", missing[0]))
+
+
+def main():
+    data = json.loads(sys.stdin.read())
+    if not isinstance(data, dict):
+        return None
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import govclass
+    import turngate
+    path = data.get("transcript_path")
+    rows = turngate.load(path) if isinstance(path, str) and path else []
+    if not any(row.get("type") != "BAD" for row in rows):
+        return None                         # no record to judge
+    model = turngate.Model(rows)
+    active = bool(data.get("stop_hook_active"))
+    return (outward_rule(turngate, model, path, active)
+            or prompt_class_rule(turngate, govclass, model, data, active))
+
+
+if __name__ == "__main__":
+    arm_deadline()
+    try:
+        answer = main()
+    except BaseException:
+        answer = None
+    finish(answer)
+    time.sleep(HOOK_DEADLINE_SECONDS)       # reached only while the deadline's timer thread is ending the hook
+    os._exit(0)

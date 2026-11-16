@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/hooks/session-doctrine.sh",
+            "command": "if [ -f \"$CLAUDE_PROJECT_DIR\"/hooks/session-doctrine.sh ]; then bash \"$CLAUDE_PROJECT_DIR\"/hooks/session-doctrine.sh; fi",
             "timeout": 10
           }
         ]
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/hooks/governance-trigger.py",
+            "command": "if [ -f \"$CLAUDE_PROJECT_DIR\"/hooks/governance-trigger.py ]; then python3 \"$CLAUDE_PROJECT_DIR\"/hooks/governance-trigger.py; fi",
             "timeout": 10
           }
         ]
@@ -30,22 +30,32 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/hooks/plan-gate-first-write-reminder.sh",
+            "command": "if [ -f \"$CLAUDE_PROJECT_DIR\"/hooks/plan-gate-first-write-reminder.sh ]; then bash \"$CLAUDE_PROJECT_DIR\"/hooks/plan-gate-first-write-reminder.sh; fi",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/hooks/scope-fence-reminder.sh",
+            "command": "if [ -f \"$CLAUDE_PROJECT_DIR\"/hooks/scope-fence-reminder.sh ]; then bash \"$CLAUDE_PROJECT_DIR\"/hooks/scope-fence-reminder.sh; fi",
             "timeout": 10
           }
         ]
       },
       {
-        "matcher": "Edit|Write|NotebookEdit|Bash|mcp__.*__(merge_pull_request|create_pull_request|update_pull_request|push_files|create_or_update_file|delete_file)",
+        "matcher": "^mcp__.*__(merge_pull_request|enable_pr_auto_merge)$",
         "hooks": [
           {
             "type": "command",
             "command": "python3 \"$CLAUDE_PROJECT_DIR\"/hooks/turn-gates-pretool.py",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "^(Edit|Write|NotebookEdit|Bash|Monitor|CronCreate|CronDelete|ScheduleWakeup|mcp__.*__(disable_pr_auto_merge|create_pull_request|update_pull_request|update_pull_request_branch|push_files|create_or_update_file|delete_file|actions_run_trigger|create_trigger|update_trigger|delete_trigger|fire_trigger|send_later))$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f \"$CLAUDE_PROJECT_DIR\"/hooks/turn-gates-pretool.py ]; then python3 \"$CLAUDE_PROJECT_DIR\"/hooks/turn-gates-pretool.py; fi",
             "timeout": 10
           }
         ]
@@ -56,12 +66,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/hooks/governance-enforce.py",
+            "command": "if [ -f \"$CLAUDE_PROJECT_DIR\"/hooks/governance-enforce.py ]; then python3 \"$CLAUDE_PROJECT_DIR\"/hooks/governance-enforce.py; fi",
             "timeout": 15
           },
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR\"/hooks/receipt-law-stop-gate.sh",
+            "command": "if [ -f \"$CLAUDE_PROJECT_DIR\"/hooks/receipt-law-stop-gate.sh ]; then bash \"$CLAUDE_PROJECT_DIR\"/hooks/receipt-law-stop-gate.sh; fi",
             "timeout": 10
           }
         ]
