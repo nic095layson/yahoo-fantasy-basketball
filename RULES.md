@@ -40,6 +40,15 @@ Adopted 2026-10-15 from the Co-GM self-audit (`report/plans/co-gm-self-audit-202
     main) and is named for it. Every after-report carries a "Runner impact" line: none,
     code-only (with what the next runs should show), or a prompt edit with its read-back
     state. Work with a prompt edit is not done until the read-back matches.
+12. **Method changes land on Mondays, and a title share carries its method (kit; owner
+    2026-11-17).** A change to a registered constant, or to how the season line is made,
+    merges on a Monday after that morning's grading, unless the owner says otherwise for
+    that pull request; the pull request names the day it is meant to land. A title share is
+    quoted with the method line of the record it came from (the brief's `method`: the deck
+    engine's commit, the line method, the registry's hash), and two shares are compared
+    only when their method lines match or the difference is walked like for like
+    (`scripts/title_watch.py`). A session that runs its own simulation says which lines
+    file it used and when that file was built, against the last line-method merge.
 
 **Urgency rule (L1).** A finding that touches more than 25% of the top 150 within 7 days of
 a lock is raised to the owner the same day, not queued. (I8)
