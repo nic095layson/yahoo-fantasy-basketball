@@ -395,3 +395,20 @@ numbers — content unchanged)*
     project enforcement pack, the doctrine block, and three rules now written into
     plan-gate and scope-fence. Portable rule: before trusting "governed", run
     `test -f ~/.claude/CLAUDE.md && cat .claude/settings.json` on the surface.
+
+## 2026-11-23 — The Braun drop and the Queta question (kit, owner's own lesson)
+
+25. **A board rank is not a player's value to this roster; read the category line and the team-level scan
+    before a drop.** The owner dropped Christian Braun on 2026-10-24 (kit `data/decisions/moves.jsonl`
+    M-2026-10-24-01). The kit's own briefs had named Braun as the drop on 10-20, 10-21 and 10-22, on title edges
+    inside the sampling error, and all three calls graded KIT WRONG (Braun ahead by 1.7 to 3.3 board points over 28
+    days; kit `report/decisions/scorecard.md`). Braun is the quiet all-category profile 9-cat rewards: #56 on the
+    2026-11-23 board with steals +1.14, turnovers +1.15, FG% +0.66 and no category below -0.6. The reverse case is
+    Neemias Queta: #129 (z_adj -1.59; strong in FG%, blocks, rebounds and turnovers, weak in five), yet the 11-23
+    team-level scan valued keeping him over Andrew Wiggins (#147), because rebounds are this roster's weak category.
+    The owner, 2026-11-23: "I really messed up with dropping Braun. Cautious tale for moving forward. I personally
+    think Queta is a solid center, but the Kit and even Yahoo say otherwise (ranked ~180 player)". Rule for sessions:
+    before naming or endorsing a drop, show the player's nine z values (not the rank), score the drop with the
+    team-level tool (waiver or package scan) and its sampling error, and flag a drop whose player has no category
+    below average. A drop call whose edge is inside the sampling error is a coin flip and is said to be one.
+
