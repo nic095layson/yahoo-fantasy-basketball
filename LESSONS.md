@@ -409,6 +409,6 @@ numbers — content unchanged)*
     The owner, 2026-11-23: "I really messed up with dropping Braun. Cautious tale for moving forward. I personally
     think Queta is a solid center, but the Kit and even Yahoo say otherwise (ranked ~180 player)". Rule for sessions:
     before naming or endorsing a drop, show the player's nine z values (not the rank), score the drop with the
-    team-level tool (waiver or package scan) and its sampling error, and flag a drop whose player has no category
-    below average. A drop call whose edge is inside the sampling error is a coin flip and is said to be one.
+    team-level tool (waiver or package scan) and its sampling error, and flag a drop whose player has no big hole
+    (no category worse than about -0.6 z, as Braun). A drop call whose edge is inside the sampling error is a coin flip and is said to be one.
 
